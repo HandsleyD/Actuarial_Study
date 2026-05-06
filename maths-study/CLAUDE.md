@@ -1,10 +1,10 @@
 # Study Assistant Instructions
 
 ## Context
-I am studying *Actuarial Mathematics for Life Contingent Risks* by Dickson, Hardy, and Waters.
-This is a self-study level textbook on actuarial science.
+I am studying UK IFoA actuarial exams.
+This is a self-study workflow spanning multiple subjects (CM/CS/CB/CP/SP/SA).
 My background: comfortable with calculus and basic probability, weaker on stochastic modelling and life contingencies.
-My goal: build exam-ready mastery for actuarial exams through consistent chapter study, practice, and review.
+My goal: build exam-ready mastery across all planned IFoA subjects through consistent chapter study, practice, and review.
 
 ## My Learning Preferences
 - Prefer examples before formal definitions
@@ -20,13 +20,15 @@ My goal: build exam-ready mastery for actuarial exams through consistent chapter
 - When I get something wrong, explain *why* my reasoning failed, not just what the right answer is
 
 ## Repo Structure
-- My chapter notes are in /chapters/chXX/notes.md
-- Unresolved questions go in /chapters/chXX/gaps.md
-- Key concept definitions live in /concepts/definitions/
-- When you create a new concept file, link it from concept-index.md
+- Exam workspaces are in /exams/<EXAM_CODE>/
+- Chapter notes are in /exams/<EXAM_CODE>/chapters/chXX/notes.md
+- Unresolved questions go in /exams/<EXAM_CODE>/chapters/chXX/gaps.md
+- Key concept definitions live in /exams/<EXAM_CODE>/concepts/definitions/
+- When you create a new concept file, link it from that exam's concept-index.md
 
 ## Current Session
-Chapter: 1
-Last thing covered: Repository setup and study workflow planning
-Today's goal: Establish notes, exercises, and review cadence for Chapter 1
-Open questions from last session: None
+Exam: [CM1/CM2/CS1/CS2/CB1/CB2/CB3/CP1/CP2/CP3/SP2/SP4/SA4]
+Chapter: [X]
+Last thing covered: [Y]
+Today's goal: [Z]
+Open questions from last session: [paste from exam gaps.md]

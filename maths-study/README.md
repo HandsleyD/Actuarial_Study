@@ -1,6 +1,6 @@
 # AI-Assisted Actuarial Study Repo
 
-This folder contains a structured markdown workflow for studying actuarial exams with AI assistance.
+This folder is structured for **multi-exam IFoA study** (UK route), with a complete study workspace per exam.
 
 ## Structure
 
@@ -9,31 +9,39 @@ maths-study/
 ├── CLAUDE.md
 ├── README.md
 ├── progress.md
-├── chapters/
-│   └── ch01/
-│       ├── notes.md
-│       ├── exercises.md
-│       ├── solutions.md
-│       └── gaps.md
-├── concepts/
-│   ├── concept-index.md
-│   └── definitions/
-├── flashcards/
-│   └── deck.md
-├── review/
-│   ├── weekly-review.md
-│   └── cumulative-gaps.md
+├── exams/
+│   ├── CM1/
+│   ├── CM2/
+│   ├── CS1/
+│   ├── CS2/
+│   ├── CB1/
+│   ├── CB2/
+│   ├── CB3/
+│   ├── CP1/
+│   ├── CP2/
+│   ├── CP3/
+│   ├── SP2/
+│   ├── SP4/
+│   └── SA4/
+└── ifoa-exam-overview.md
+```
+
+Each exam folder contains the same study scaffold:
+
+```text
+EXAM/
+├── README.md
+├── progress.md
+├── chapters/ch01/{notes.md,exercises.md,solutions.md,gaps.md}
+├── concepts/{concept-index.md,definitions/}
+├── flashcards/deck.md
+├── review/{weekly-review.md,cumulative-gaps.md}
 └── notebooks/
 ```
 
-Duplicate `chapters/ch01` for each new chapter as you progress.
-
 ## Quick Start
-1. Open this folder in Obsidian as a vault.
-2. Update `CLAUDE.md` current session details.
-3. Study chapter-by-chapter and record:
-   - Notes in `chapters/chXX/notes.md`
-   - Practice in `chapters/chXX/exercises.md`
-   - Worked answers in `chapters/chXX/solutions.md`
-   - Unclear topics in `chapters/chXX/gaps.md`
-4. Update `progress.md` after each study session.
+1. Open `maths-study` in Obsidian as a vault.
+2. Pick your current exam folder in `exams/`.
+3. Update `CLAUDE.md` with the exam/session context.
+4. Study chapter-by-chapter inside that exam folder.
+5. Update both the exam `progress.md` and root `progress.md` after each session.
