@@ -45,3 +45,31 @@ EXAM/
 3. Update `CLAUDE.md` with the exam/session context.
 4. Study chapter-by-chapter inside that exam folder.
 5. Update both the exam `progress.md` and root `progress.md` after each session.
+
+## Past Papers Workflow
+
+Past papers are now handled as a two-layer data system:
+
+1. `resources/past-papers/raw/` keeps canonical source files.
+2. `resources/past-papers/processed/` keeps markdown derivatives for search and retrieval.
+3. `resources/past-papers/index/` stores metadata and audit indexes.
+
+### One-Time Setup
+
+Run these commands from the repository root:
+
+```powershell
+git lfs install
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\past-papers\Import-PastPapers.ps1
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\past-papers\Build-PastPapersIndex.ps1
+```
+
+### Optional Conversion Pass
+
+To build markdown derivatives from indexed sources:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\past-papers\Convert-PastPapersToMarkdown.ps1
+```
+
+If conversion tools are not installed, stub markdown files are created with metadata so QA can proceed incrementally.
