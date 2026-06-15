@@ -3,7 +3,7 @@
 Auto-generated from resources/past-papers/index/master-index.csv.
 
 | Year | Sitting | Type | File | QA |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 2020 | September | examiner-report | [IandF_CP2_202009_Examiners_Report.pdf](../../../resources/past-papers/raw/CP2/CP2%20Paper%201/Sep20/IandF_CP2_202009_Examiners_Report.pdf) | pending |
 | 2020 | September | examiner-report | [IandF_CP2_202009_Examiners_Report.pdf](../../../resources/past-papers/raw/CP2/CP2%20Paper%202/Sep20/IandF_CP2_202009_Examiners_Report.pdf) | pending |
 | 2020 | September | examiner-report | [IandF_CP2_202009_Examiners_Report.pdf](../../../resources/past-papers/raw/CP2/Sep20/IandF_CP2_202009_Examiners_Report.pdf) | pending |

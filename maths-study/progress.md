@@ -9,7 +9,7 @@
 ## Exam Tracker
 
 | Exam | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CM1 | Not started | Workspace created |
 | CM2 | Not started | Workspace created |
 | CS1 | Not started | Workspace created |
