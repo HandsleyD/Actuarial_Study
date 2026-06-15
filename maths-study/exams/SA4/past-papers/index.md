@@ -3,7 +3,7 @@
 Auto-generated from resources/past-papers/index/master-index.csv.
 
 | Year | Sitting | Type | File | QA |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 2020 | September | examiner-report | [IandF_SA4_202009_Examiners_Report.pdf](../../../resources/past-papers/raw/SA4/Sep20/IandF_SA4_202009_Examiners_Report.pdf) | pending |
 | 2020 | September | question-paper | [IandF_SA4_202009_ExamPaper.pdf](../../../resources/past-papers/raw/SA4/Sep20/IandF_SA4_202009_ExamPaper.pdf) | pending |
 | 2021 | April | examiner-report | [IandF_SA4_202104_Examiners_Report.pdf](../../../resources/past-papers/raw/SA4/Apr21/IandF_SA4_202104_Examiners_Report.pdf) | pending |

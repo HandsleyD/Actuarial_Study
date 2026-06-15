@@ -40,6 +40,7 @@ EXAM/
 ```
 
 ## Quick Start
+
 1. Open `maths-study` in Obsidian as a vault.
 2. Pick your current exam folder in `exams/`.
 3. Update `CLAUDE.md` with the exam/session context.
