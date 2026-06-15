@@ -409,5 +409,3 @@ those assumed here and therefore so could the profit made.
   released gradually over the policy year and update the model.
 
 - Obtain a peer review of the model.
-
-

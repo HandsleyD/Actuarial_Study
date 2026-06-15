@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-Unknown-april-question-paper-121-cp2-p1-audit-trail-v5
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

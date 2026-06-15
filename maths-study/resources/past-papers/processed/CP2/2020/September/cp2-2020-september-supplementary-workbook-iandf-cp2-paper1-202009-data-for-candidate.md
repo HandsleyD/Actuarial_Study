@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-2020-september-supplementary-workbook-iandf-cp2-paper1-202009-data-for-candidate
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -11,4 +11,3 @@ qa_status: pending
 # cm2-Unknown-april-question-paper-cm2b-april23-exam-clean-proof
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

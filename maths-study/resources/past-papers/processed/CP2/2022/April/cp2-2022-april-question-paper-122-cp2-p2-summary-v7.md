@@ -596,5 +596,3 @@ could mean future profits are not as expected by this model.
 - Obtain a peer review of the work done to date.
 
 **END OF SUMMARY**
-
-

@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-Unknown-september-question-paper-r-for-cs1b-and-cs2b-for-2023-exams
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

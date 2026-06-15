@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-Unknown-april-question-paper-cs1a-april-2024-exam-paper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -389,4 +389,3 @@ Number of claims      25          16            11              8            3
 
 CS1A A2025–10
 
-

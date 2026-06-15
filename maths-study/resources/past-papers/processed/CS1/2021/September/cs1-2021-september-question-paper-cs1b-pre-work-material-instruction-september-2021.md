@@ -51,4 +51,3 @@ If you encounter any issues, please contact the Examinations Team on +44 (0) 186
 
 CS1B A2021                                                © Institute and Faculty of Actuaries
 
-

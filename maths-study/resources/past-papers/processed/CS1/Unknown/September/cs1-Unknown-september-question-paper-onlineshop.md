@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-Unknown-september-question-paper-onlineshop
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

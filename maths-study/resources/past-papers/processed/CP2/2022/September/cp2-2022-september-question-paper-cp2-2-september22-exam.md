@@ -417,4 +417,3 @@ These factors are intended to be applied to the annuity payments after the appli
 
 CP22 S2022–9
 
-

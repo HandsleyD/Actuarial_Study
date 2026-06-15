@@ -152,4 +152,3 @@ Q4
 
 CM2B S2021                                                             © Institute and Faculty of Actuaries
 
-

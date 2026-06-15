@@ -323,5 +323,3 @@ This worksheet produces two charts:
   of these three scenarios
 
 **END OF AUDIT TRAIL**
-
-

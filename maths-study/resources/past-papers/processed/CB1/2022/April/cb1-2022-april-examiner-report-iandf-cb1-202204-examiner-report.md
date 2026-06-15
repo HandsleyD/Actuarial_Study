@@ -513,4 +513,3 @@ to expand further by acquisition so that their salaries increase by even more   
 
 CB1 A2022                                                              © Institute and Faculty of Actuaries
 
-

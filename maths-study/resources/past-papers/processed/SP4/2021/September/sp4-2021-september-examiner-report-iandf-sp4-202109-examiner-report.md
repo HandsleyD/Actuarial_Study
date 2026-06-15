@@ -906,4 +906,3 @@ generate enough points to score full marks.
 
 SP4 S2021                                                               © Institute and Faculty of Actuaries
 
-

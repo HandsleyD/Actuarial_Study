@@ -11,4 +11,3 @@ qa_status: pending
 # cm1-Unknown-april-mark-scheme-cm1b-april2022-answer-sheet-final
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

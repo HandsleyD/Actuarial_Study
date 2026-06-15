@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-Unknown-september-question-paper-221-cp2-p2-model-for-candidate
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

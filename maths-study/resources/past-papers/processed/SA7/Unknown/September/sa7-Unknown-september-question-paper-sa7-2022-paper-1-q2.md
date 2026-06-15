@@ -11,4 +11,3 @@ qa_status: pending
 # sa7-Unknown-september-question-paper-sa7-2022-paper-1-q2
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -539,4 +539,3 @@ expected net present outgo, divided by the expected net present outgo.
 
 CP22 A2021–11
 
-

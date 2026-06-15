@@ -496,5 +496,3 @@ Requirement.
   amounts.
 
 - Allow for tax on the cashflow calculations.
-
-

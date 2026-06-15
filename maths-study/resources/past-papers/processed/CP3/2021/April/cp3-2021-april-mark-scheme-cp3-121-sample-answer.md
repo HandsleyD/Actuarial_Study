@@ -214,5 +214,3 @@ impact on the pension pot for different starting pot values. While I
 could have used a chart to display this data I felt that the table was
 more appropriate for the size of the data set, and made it easier to
 compare.
-
-

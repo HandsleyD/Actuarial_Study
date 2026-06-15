@@ -69,4 +69,3 @@ refer to the Getting started with ‘R’ guide that can be found here:
 
 https://www.actuaries.org.uk/studying/curriculum/actuarial-statistics
 
-

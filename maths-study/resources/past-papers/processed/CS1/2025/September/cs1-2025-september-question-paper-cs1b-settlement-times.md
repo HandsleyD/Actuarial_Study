@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-2025-september-question-paper-cs1b-settlement-times
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-Unknown-september-question-paper-cs2b-september-2024-exam-paper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

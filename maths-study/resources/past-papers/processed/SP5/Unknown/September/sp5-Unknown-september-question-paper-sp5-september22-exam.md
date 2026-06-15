@@ -11,4 +11,3 @@ qa_status: pending
 # sp5-Unknown-september-question-paper-sp5-september22-exam
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

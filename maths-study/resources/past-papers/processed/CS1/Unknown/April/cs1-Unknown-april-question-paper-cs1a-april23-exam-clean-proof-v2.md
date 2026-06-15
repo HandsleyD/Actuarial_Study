@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-Unknown-april-question-paper-cs1a-april23-exam-clean-proof-v2
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

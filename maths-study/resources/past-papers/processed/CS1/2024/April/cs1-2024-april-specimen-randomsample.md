@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-2024-april-specimen-randomsample
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

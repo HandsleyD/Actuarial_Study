@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-2024-april-mark-scheme-cp2-1-model-for-solution
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

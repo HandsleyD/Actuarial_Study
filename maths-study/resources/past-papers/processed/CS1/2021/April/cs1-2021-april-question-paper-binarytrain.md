@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-2021-april-question-paper-binarytrain
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

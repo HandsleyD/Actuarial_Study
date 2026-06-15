@@ -198,4 +198,3 @@ Proportion of tax used to pay pension      19%        24%        28%         29%
 
 CP3 A2025–6
 
-

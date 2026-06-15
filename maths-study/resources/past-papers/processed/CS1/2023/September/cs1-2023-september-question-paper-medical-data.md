@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-2023-september-question-paper-medical-data
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

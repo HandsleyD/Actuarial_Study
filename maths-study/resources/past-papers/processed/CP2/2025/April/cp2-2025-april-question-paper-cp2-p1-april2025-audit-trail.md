@@ -617,5 +617,3 @@ The inclusion of tax income to offset the costs of the CT program has
 significantly reduced the overall funding requirement for the program.
 Therefore, we see an excess budget of \$1.56bn i.e. 52% of the proposed
 budget shall remain unused.
-
-

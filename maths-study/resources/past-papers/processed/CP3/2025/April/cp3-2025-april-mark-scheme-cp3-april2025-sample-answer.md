@@ -292,5 +292,3 @@ v\)
 - I kept the titles and legend very simple and clear, and ensured that
   the chart had easy-to-read and simple labels on axes, to make
   interpreting it easier for those not used to interpreting charts.
-
-

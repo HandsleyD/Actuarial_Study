@@ -738,4 +738,3 @@ this means that the posterior variance will also be reduced (but not necessarily
 
 CS1A A2021                                                               © Institute and Faculty of Actuaries
 
-

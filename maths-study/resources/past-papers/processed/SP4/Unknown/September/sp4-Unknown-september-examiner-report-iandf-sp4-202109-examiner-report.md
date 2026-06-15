@@ -11,4 +11,3 @@ qa_status: pending
 # sp4-Unknown-september-examiner-report-iandf-sp4-202109-examiner-report
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

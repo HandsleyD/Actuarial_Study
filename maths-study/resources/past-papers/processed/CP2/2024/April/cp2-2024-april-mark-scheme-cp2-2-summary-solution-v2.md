@@ -528,5 +528,3 @@ Costs and Revenue.
 
 26. Get the model peer reviewed by an appropriately qualified and
     independent person.
-
-

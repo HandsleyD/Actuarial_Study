@@ -859,4 +859,3 @@ But they pay insufficient attention to the variability in these parameters      
 
 SP5 S2021                                                                © Institute and Faculty of Actuaries
 
-

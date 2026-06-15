@@ -1025,4 +1025,3 @@ wasn’t stated in the question, but was one of the possibilities.
 
 SP7 S2021                                                                © Institute and Faculty of Actuaries
 
-

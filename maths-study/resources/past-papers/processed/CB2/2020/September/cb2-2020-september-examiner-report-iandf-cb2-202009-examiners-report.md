@@ -596,4 +596,3 @@ In part (ii) a clear and detailed explanation of the impact of policy (monetary 
 
 CB2 S2020                                                              ©Institute and Faculty of Actuaries
 
-

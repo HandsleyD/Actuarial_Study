@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-Unknown-april-question-paper-cp2-p1-april2025-data-for-candidate
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

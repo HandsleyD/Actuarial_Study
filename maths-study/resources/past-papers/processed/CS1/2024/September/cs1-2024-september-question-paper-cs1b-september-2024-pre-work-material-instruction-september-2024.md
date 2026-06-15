@@ -62,5 +62,3 @@ If you encounter any issues, please contact the Examinations Team on +44
 **END OF PRE-WORK MATERIAL**
 
 CS1B © Institute and Faculty of Actuaries
-
-

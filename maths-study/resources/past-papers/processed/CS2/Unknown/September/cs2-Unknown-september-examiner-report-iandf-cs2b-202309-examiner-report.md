@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-Unknown-september-examiner-report-iandf-cs2b-202309-examiner-report
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

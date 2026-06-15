@@ -973,4 +973,3 @@ Credit awarded for other relevant examples
 
 SA1 A2022                                                              © Institute and Faculty of Actuaries
 
-

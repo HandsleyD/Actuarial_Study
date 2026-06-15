@@ -1418,4 +1418,3 @@ could be onerous for the insurer and confusing for the policyholder             
 
 SP1 A2021                                                         © Institute and Faculty of Actuaries
 
-

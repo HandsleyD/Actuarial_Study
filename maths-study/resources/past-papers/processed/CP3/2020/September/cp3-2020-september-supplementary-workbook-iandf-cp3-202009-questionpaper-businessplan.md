@@ -11,4 +11,3 @@ qa_status: pending
 # cp3-2020-september-supplementary-workbook-iandf-cp3-202009-questionpaper-businessplan
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

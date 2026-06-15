@@ -1178,4 +1178,3 @@ SA1 S2021                                                              © Instit
 
 SA1 S2021                                                              © Institute and Faculty of Actuaries
 
-

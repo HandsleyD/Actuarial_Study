@@ -257,4 +257,3 @@ Model3 <- glm(Passengers~temp+temp:semester,family=poisson(link="log"))
 
 CS1B A2021–6
 
-

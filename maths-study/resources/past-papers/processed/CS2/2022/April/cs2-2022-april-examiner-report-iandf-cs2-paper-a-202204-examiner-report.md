@@ -710,4 +710,3 @@ Hence q = 2/3 and r = -1/3.
 
 CS2A A2022                                                              © Institute and Faculty of Actuaries
 
-

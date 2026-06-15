@@ -605,4 +605,3 @@ So λ = 0.0291                                                                  
 
 CM2A A2022                                                             © Institute and Faculty of Actuaries
 
-

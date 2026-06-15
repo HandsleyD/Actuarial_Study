@@ -11,4 +11,3 @@ qa_status: pending
 # cp3-Unknown-september-mark-scheme-cp3-september23-sample-answer
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

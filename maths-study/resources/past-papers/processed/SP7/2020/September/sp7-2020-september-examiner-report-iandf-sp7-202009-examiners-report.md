@@ -1378,4 +1378,3 @@ writing sufficient premiums.
 
 SP7 S2020                                                                 ©Institute and Faculty of Actuaries
 
-

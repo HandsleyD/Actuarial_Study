@@ -369,4 +369,3 @@ profits across all ten cohorts divided by the aggregate revenue.
 
 CP22 A2023–9
 
-

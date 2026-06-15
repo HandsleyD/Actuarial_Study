@@ -870,4 +870,3 @@ Therefore a=(0.0431+1.812) = 2.32%                                              
 
 SP6 A2021                                                                 © Institute and Faculty of Actuaries
 
-

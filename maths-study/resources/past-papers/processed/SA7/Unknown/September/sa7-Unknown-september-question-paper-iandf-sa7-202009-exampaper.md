@@ -11,4 +11,3 @@ qa_status: pending
 # sa7-Unknown-september-question-paper-iandf-sa7-202009-exampaper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

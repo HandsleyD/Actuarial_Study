@@ -356,5 +356,3 @@ is most likely to collect all those up movements.
 The final fund values for each strategy are within reasonable bounds.
 They range from +14% to -16%, which is within the upper and lower limits
 for the annual returns on the individual stocks.
-
-

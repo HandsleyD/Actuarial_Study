@@ -11,4 +11,3 @@ qa_status: pending
 # cm1-2022-september-mark-scheme-cm1b-sept22-answer-sheet-final
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-
