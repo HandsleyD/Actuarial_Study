@@ -11,4 +11,3 @@ qa_status: pending
 # cp3-Unknown-september-question-paper-iandf-cp3-202009-scenariomaterial-businessplan
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

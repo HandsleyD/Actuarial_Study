@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-Unknown-april-question-paper-cs2b-pre-work-material-instruction-april-2023
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

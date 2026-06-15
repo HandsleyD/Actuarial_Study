@@ -11,4 +11,3 @@ qa_status: pending
 # sp4-Unknown-april-question-paper-sp4-121-exam
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

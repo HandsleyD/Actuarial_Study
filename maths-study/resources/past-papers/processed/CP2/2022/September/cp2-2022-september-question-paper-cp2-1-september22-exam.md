@@ -239,4 +239,3 @@ transaction, then following the sell transaction, the value of the portfolio wil
 
 CP21 S2022–5
 
-

@@ -350,5 +350,3 @@ a bar graph. The numbers have been divided by 1,000, and the scale of
 the graph has been truncated to better illustrate the variation.
 
 **END OF AUDIT TRAIL**
-
-

@@ -145,4 +145,3 @@ Question 2
       Pricing multiple – it is far simpler to refer to the percentage of the number of expected
       claims than going into the details of the adjustments that goes into a pricing multiple.
 
-

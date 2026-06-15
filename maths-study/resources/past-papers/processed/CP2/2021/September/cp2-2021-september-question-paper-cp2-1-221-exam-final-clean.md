@@ -289,4 +289,3 @@ where v =         i is the rate of interest and d = 1 – v.
 
 CP21 S2021–6
 
-

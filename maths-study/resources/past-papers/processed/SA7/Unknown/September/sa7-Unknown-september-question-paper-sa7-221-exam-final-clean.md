@@ -11,4 +11,3 @@ qa_status: pending
 # sa7-Unknown-september-question-paper-sa7-221-exam-final-clean
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

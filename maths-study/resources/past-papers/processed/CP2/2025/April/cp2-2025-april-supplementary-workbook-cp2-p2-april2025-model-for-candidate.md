@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-2025-april-supplementary-workbook-cp2-p2-april2025-model-for-candidate
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -11,4 +11,3 @@ qa_status: pending
 # sp8-Unknown-april-examiner-report-landf-sp8-202204-examiner-report
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

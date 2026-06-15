@@ -404,5 +404,3 @@ reasonable as the share price has had more time to diverge from \$100
 and from the \$6,000 profit at that level.
 
 **END OF AUDIT TRAIL**
-
-

@@ -594,4 +594,3 @@ Insurer A: £78.4m, Insurer B: £19.4m, Insurer C: £124.3m, Insurer D: £46.7m 
 
 CS1B A2022                                                               © Institute and Faculty of Actuaries
 
-

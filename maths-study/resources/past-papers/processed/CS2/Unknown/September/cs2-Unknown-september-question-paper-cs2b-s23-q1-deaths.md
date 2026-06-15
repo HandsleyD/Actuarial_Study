@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-Unknown-september-question-paper-cs2b-s23-q1-deaths
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

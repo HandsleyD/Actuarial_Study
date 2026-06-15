@@ -364,4 +364,3 @@ The summary is well laid out, in a reasonable order, with good formatting to aid
 
 CP22 S2021                                                             © Institute and Faculty of Actuaries
 
-

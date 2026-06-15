@@ -11,4 +11,3 @@ qa_status: pending
 # sp5-Unknown-april-question-paper-sp5-april2025-exam-paper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-Unknown-september-question-paper-cs2-pre-work-material-instruction-september-2023
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

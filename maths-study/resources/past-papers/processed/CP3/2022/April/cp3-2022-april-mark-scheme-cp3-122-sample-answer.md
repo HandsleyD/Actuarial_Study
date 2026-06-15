@@ -175,5 +175,3 @@ QUESTION 2
 > of their ability to understand formulae. I also avoided complexities
 > such as different categories of shares like preference versus ordinary
 > as I do not think these are basic expressions.
-
-

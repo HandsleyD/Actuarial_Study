@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-2024-september-formula-sheet-s24-q2-table2
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

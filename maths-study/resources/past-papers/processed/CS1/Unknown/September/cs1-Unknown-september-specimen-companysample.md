@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-Unknown-september-specimen-companysample
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

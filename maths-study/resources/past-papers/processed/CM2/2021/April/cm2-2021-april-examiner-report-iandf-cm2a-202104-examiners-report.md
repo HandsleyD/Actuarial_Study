@@ -660,4 +660,3 @@ and B)                                                                          
 
 CM2A A2021                                                              © Institute and Faculty of Actuaries
 
-

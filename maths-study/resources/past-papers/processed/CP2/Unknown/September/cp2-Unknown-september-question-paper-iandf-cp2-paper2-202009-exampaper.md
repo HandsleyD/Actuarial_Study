@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-Unknown-september-question-paper-iandf-cp2-paper2-202009-exampaper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

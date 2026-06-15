@@ -440,4 +440,3 @@ functions. The median total 10-year profit is hardcoded as the 50th simulation.
 
 CP22 A2022–9
 
-

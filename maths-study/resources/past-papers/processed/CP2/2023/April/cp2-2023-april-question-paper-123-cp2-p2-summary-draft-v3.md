@@ -372,5 +372,3 @@ be based on actual growth experience and prevailing market prices.
     weather to allow chinchillas more time to grow.
 
 19. Update the model over time with experience
-
-

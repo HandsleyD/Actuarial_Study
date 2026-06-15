@@ -468,5 +468,3 @@ change.
 - Allow for taxation in the profit calculation.
 
 - Obtain a peer review of the model.
-
-

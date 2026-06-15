@@ -11,4 +11,3 @@ qa_status: pending
 # cp3-2025-september-supplementary-workbook-cp3-sept2025-exam-data
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -504,4 +504,3 @@ Example: Total values in B1 to B4 if text starting with a Y is in column A:
 
 CP22 A2025–11
 
-

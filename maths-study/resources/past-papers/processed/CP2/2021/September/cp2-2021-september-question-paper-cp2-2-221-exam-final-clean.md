@@ -409,4 +409,3 @@ a check in cell I9 that determines if the result is positive or negative.
 
 CP22 S2021–9
 
-

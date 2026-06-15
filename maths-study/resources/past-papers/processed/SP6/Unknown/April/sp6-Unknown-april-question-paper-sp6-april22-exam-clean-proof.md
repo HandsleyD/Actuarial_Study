@@ -11,4 +11,3 @@ qa_status: pending
 # sp6-Unknown-april-question-paper-sp6-april22-exam-clean-proof
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

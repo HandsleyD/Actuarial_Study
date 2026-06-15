@@ -11,4 +11,3 @@ qa_status: pending
 # cp3-Unknown-september-question-paper-cp3-221-sa
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

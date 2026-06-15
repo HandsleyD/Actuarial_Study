@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-Unknown-april-question-paper-cp2-2-121-exam-clean-proof
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

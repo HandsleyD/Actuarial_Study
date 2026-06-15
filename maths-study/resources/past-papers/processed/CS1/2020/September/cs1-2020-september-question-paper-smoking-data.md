@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-2020-september-question-paper-smoking-data
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -762,4 +762,3 @@ different impact of closing to new entrants or future accrual.
 
   SA4 A2022                                                          © Institute and Faculty of Actuaries
 
-

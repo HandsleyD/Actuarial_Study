@@ -438,5 +438,3 @@ significantly from those assumed here.
   tax deductible
 
 - Obtain a peer review of the model.
-
-

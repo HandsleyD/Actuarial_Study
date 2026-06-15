@@ -11,4 +11,3 @@ qa_status: pending
 # sp2-Unknown-april-question-paper-sp2-april-2024-exam-paper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

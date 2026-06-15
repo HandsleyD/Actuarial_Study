@@ -11,4 +11,3 @@ qa_status: pending
 # cm2-2020-september-mark-scheme-iandf-cm2b-202009-examiners-report-solutions
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

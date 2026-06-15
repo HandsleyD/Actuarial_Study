@@ -67,5 +67,3 @@ If you encounter any issues, please contact the Examinations Team on +44
 **END OF PRE-WORK MATERIAL**
 
 CS2 © Institute and Faculty of Actuaries
-
-

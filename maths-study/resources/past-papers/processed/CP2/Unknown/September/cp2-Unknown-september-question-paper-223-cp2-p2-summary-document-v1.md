@@ -11,4 +11,3 @@ qa_status: pending
 # cp2-Unknown-september-question-paper-223-cp2-p2-summary-document-v1
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

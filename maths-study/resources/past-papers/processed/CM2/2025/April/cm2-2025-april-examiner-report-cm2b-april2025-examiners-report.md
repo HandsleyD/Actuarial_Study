@@ -166,4 +166,3 @@ CM2B A2025                                                           © Institut
 www.actuaries.org.uk
 © 2021 Institute and Faculty of Actuaries
 
-

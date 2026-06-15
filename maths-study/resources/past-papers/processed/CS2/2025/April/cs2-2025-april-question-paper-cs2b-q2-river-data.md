@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-2025-april-question-paper-cs2b-q2-river-data
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

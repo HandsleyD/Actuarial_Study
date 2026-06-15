@@ -11,4 +11,3 @@ qa_status: pending
 # cm1-2023-september-mark-scheme-cm1b-sept23-excel-solution
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

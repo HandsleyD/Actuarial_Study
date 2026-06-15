@@ -11,4 +11,3 @@ qa_status: pending
 # cb1-Unknown-april-examiner-report-iandf-cb1-202304-examiner-report
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -11,4 +11,3 @@ qa_status: pending
 # cm1-Unknown-april-question-paper-cm1a-april2025-exam-paper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

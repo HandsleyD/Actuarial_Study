@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-2021-september-question-paper-onebedflat
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

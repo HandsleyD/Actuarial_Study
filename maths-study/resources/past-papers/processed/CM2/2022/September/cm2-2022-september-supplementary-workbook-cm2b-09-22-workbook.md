@@ -11,4 +11,3 @@ qa_status: pending
 # cm2-2022-september-supplementary-workbook-cm2b-09-22-workbook
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

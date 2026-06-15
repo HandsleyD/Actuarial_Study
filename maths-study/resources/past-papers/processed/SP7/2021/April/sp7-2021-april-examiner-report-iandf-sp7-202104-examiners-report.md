@@ -1052,4 +1052,3 @@ curves, this does not have an impact on the Income Statement, i.e. volatility re
 
 SP7 A2021                                                                © Institute and Faculty of Actuaries
 
-

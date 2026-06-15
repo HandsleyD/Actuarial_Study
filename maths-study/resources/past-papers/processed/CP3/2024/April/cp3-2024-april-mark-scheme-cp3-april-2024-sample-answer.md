@@ -255,5 +255,3 @@ The scenario refers to medical underwriting. The scheme member may not
 understand underwriting in this context. I therefore did not use it but
 explained that medical investigations would be needed to change tier
 back to the standard as this is a concept that is readily understand.
-
-

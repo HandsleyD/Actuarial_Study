@@ -229,4 +229,3 @@ The average costs for 2026-2030 are also calculated just below this.
 
 Then, the increase in temperature over that period is calculated as 1.87%
 
-

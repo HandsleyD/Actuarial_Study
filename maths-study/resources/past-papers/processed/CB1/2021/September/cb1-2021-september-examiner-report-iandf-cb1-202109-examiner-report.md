@@ -487,4 +487,3 @@ discuss geared beta well and apply it to the question asked.
 
 CB1 S2021                                                             © Institute and Faculty of Actuaries
 
-

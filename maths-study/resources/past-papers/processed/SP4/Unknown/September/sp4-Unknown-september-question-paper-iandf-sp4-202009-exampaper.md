@@ -11,4 +11,3 @@ qa_status: pending
 # sp4-Unknown-september-question-paper-iandf-sp4-202009-exampaper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

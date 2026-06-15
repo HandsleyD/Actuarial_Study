@@ -517,4 +517,3 @@ leverage has on risk adjusted return measures.
 
 SA7 S2020
 
-

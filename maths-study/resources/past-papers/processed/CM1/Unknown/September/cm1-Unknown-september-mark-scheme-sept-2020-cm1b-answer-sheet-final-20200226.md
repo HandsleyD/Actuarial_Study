@@ -11,4 +11,3 @@ qa_status: pending
 # cm1-Unknown-september-mark-scheme-sept-2020-cm1b-answer-sheet-final-20200226
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

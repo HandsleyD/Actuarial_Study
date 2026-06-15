@@ -866,4 +866,3 @@ Both the insurer and reinsurer will need to increase their reserves             
 
 SP2 S2021                                                               © Institute and Faculty of Actuaries
 
-

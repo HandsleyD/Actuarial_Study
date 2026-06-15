@@ -11,4 +11,3 @@ qa_status: pending
 # cs1-Unknown-april-examiner-report-cs1b-april-2024-examiner-report
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

@@ -11,4 +11,3 @@ qa_status: pending
 # cm2-Unknown-september-question-paper-cm2b-september22-exam
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

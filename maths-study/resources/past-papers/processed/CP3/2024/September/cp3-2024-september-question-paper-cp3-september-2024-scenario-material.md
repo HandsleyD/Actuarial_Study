@@ -279,4 +279,3 @@ The annual premium for the above policy, adjusted for price inflation, for each 
 
 CP3 S2024–7
 
-

@@ -130,5 +130,3 @@ If you encounter any issues, please contact the Examinations Team on +44
 (0) 1865 268 873.
 
 **END OF PRE-WORK MATERIAL**
-
-

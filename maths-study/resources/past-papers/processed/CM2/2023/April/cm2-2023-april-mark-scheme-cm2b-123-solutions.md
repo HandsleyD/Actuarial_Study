@@ -11,4 +11,3 @@ qa_status: pending
 # cm2-2023-april-mark-scheme-cm2b-123-solutions
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

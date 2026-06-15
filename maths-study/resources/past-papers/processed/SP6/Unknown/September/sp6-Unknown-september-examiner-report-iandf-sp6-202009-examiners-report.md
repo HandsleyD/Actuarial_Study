@@ -11,4 +11,3 @@ qa_status: pending
 # sp6-Unknown-september-examiner-report-iandf-sp6-202009-examiners-report
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

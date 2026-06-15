@@ -11,4 +11,3 @@ qa_status: pending
 # cs2-2023-september-question-paper-cs2b-s23-q2-data
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

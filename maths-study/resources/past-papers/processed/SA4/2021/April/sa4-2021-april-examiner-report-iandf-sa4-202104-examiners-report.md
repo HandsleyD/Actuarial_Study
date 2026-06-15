@@ -1071,4 +1071,3 @@ and there may also be clustering around the minimum.                            
 
 SA4 A2021                                                               © Institute and Faculty of Actuaries
 
-

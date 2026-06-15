@@ -267,4 +267,3 @@ You are welcome to use alternative approaches or formatting.
 
 CP21 S2024–6
 
-

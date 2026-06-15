@@ -1490,4 +1490,3 @@ Company A’s culture, brand and strategy                                       
 
 SP1 A2022                                                                © Institute and Faculty of Actuaries
 
-

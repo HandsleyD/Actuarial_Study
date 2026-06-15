@@ -11,4 +11,3 @@ qa_status: pending
 # sp7-Unknown-september-question-paper-sp7-september-2024-exam-paper
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-

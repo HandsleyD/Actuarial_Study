@@ -220,4 +220,3 @@ Profit or loss                                                 Profit or loss
 
 SP9 S2020–5
 
-

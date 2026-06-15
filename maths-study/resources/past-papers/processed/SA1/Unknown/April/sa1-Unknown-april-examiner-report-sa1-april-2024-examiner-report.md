@@ -11,4 +11,3 @@ qa_status: pending
 # sa1-Unknown-april-examiner-report-sa1-april-2024-examiner-report
 
 Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
-
