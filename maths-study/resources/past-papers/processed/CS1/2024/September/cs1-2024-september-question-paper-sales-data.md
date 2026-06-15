@@ -1,0 +1,14 @@
+﻿---
+normalized_id: cs1-2024-september-question-paper-sales-data
+exam_code: CS1
+year: 2024
+sitting: September
+document_type: question-paper
+source_repo_path: resources/past-papers/raw/CS1/CS1B/Sep24/sales_data.RData
+conversion_method: stub
+qa_status: pending
+---
+# cs1-2024-september-question-paper-sales-data
+
+Extraction pending. Install pdftotext and/or pandoc, then rerun conversion.
+

@@ -1,0 +1,6 @@
+# Local-only working files
+maths-study/.local/
+
+# Temporary extraction artifacts
+*.tmp
+*.temp
