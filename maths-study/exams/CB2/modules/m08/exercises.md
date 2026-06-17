@@ -1,2 +1,6 @@
-# m08 - exercises.md 
+# Module 08 Exercises
 
+## Practice Problems
+1. 
+2. 
+3. 

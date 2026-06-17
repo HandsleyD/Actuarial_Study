@@ -1,2 +1,6 @@
-# m24 - solutions.md 
+# Module 24 Solutions
 
+## Solution Attempts
+1. 
+2. 
+3. 

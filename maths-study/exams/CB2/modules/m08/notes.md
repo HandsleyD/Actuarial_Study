@@ -1,2 +1,10 @@
-# m08 - notes.md 
+# Module 08 Notes
 
+## Overview
+- 
+
+## Key Ideas
+- 
+
+## Questions
+- 

@@ -4,8 +4,8 @@
 - **Date:** 2026-05-06
   - Workspace initialized
 
-## Chapter Progress
+## Module Progress
 
-| Chapter | Status | Notes |
+| Module | Status | Notes |
 |---|---|---|
-| ch01 | Not started | Starter files created |
+| m01 | Not started | |

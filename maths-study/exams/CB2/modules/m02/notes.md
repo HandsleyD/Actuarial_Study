@@ -1,2 +1,10 @@
-# m02 - notes.md 
+# Module 02 Notes
 
+## Overview
+- 
+
+## Key Ideas
+- 
+
+## Questions
+- 

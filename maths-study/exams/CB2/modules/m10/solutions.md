@@ -1,2 +1,6 @@
-# m10 - solutions.md 
+# Module 10 Solutions
 
+## Solution Attempts
+1. 
+2. 
+3. 

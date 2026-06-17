@@ -1,2 +1,6 @@
-# m07 - solutions.md 
+# Module 07 Solutions
 
+## Solution Attempts
+1. 
+2. 
+3. 

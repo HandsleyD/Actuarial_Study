@@ -1,2 +1,6 @@
-# m03 - exercises.md 
+# Module 03 Exercises
 
+## Practice Problems
+1. 
+2. 
+3. 

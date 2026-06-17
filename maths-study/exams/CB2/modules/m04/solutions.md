@@ -1,2 +1,6 @@
-# m04 - solutions.md 
+# Module 04 Solutions
 
+## Solution Attempts
+1. 
+2. 
+3. 

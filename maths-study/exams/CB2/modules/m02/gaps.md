@@ -1,2 +1,7 @@
-# m02 - gaps.md 
+# Module 02 Gaps
 
+## Unresolved Questions
+- 
+
+## Follow-up Actions
+- 

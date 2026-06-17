@@ -53,7 +53,7 @@ If you are new to Obsidian:
 4. Once it opens, use the left file pane to browse notes in `exams/`.
 5. Pick your current exam folder in `exams/`.
 6. Update `CLAUDE.md` with the exam/session context.
-7. Study chapter-by-chapter inside that exam folder.
+7. Study module-by-module inside that exam folder.
 8. Update both the exam `progress.md` and root `progress.md` after each session.
 
 ## Past Papers Workflow
@@ -83,3 +83,28 @@ powershell -ExecutionPolicy Bypass -File .\maths-study\tools\past-papers\Convert
 ```
 
 If conversion tools are not installed, stub markdown files are created with metadata so QA can proceed incrementally.
+
+## Source Material Workflow
+
+Use `resources/source-material/` for open-licensed textbooks, notes, glossaries, and formula sheets that you want the assistant to use as local study references.
+
+Recommended structure:
+
+```text
+resources/source-material/
+├── README.md
+├── shared/
+│   └── README.md
+└── exams/
+    ├── README.md
+    └── <EXAM_CODE>/
+        └── index.md
+```
+
+Suggested use:
+
+1. Put general material used across subjects in `shared/`.
+2. Put exam-specific material under `exams/<EXAM_CODE>/`.
+3. Keep an `index.md` in each exam folder listing the sources that matter for that exam.
+4. Prefer open-licensed or self-authored material so it can be stored and reused safely.
+5. When asking questions, mention the exam and module so the assistant can search the relevant local sources first.
