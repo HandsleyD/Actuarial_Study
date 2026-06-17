@@ -27,8 +27,8 @@ My goal: build exam-ready mastery across all planned IFoA subjects through consi
 - When you create a new concept file, link it from that exam's concept-index.md
 
 ## Current Session
-Exam: [CM1/CM2/CS1/CS2/CB1/CB2/CB3/CP1/CP2/CP3/SP2/SP4/SA4]
-Chapter: [X]
+Exam: [CB2]
+Chapter: [1]
 Last thing covered: [Y]
 Today's goal: [Z]
 Open questions from last session: [paste from exam gaps.md]

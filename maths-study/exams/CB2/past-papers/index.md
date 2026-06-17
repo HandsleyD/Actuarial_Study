@@ -1,4 +1,4 @@
-﻿# CB2 Past Papers Index
+# CB2 Past Papers Index
 
 Auto-generated from resources/past-papers/index/master-index.csv.
 

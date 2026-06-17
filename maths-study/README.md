@@ -32,7 +32,7 @@ Each exam folder contains the same study scaffold:
 EXAM/
 ├── README.md
 ├── progress.md
-├── chapters/ch01/{notes.md,exercises.md,solutions.md,gaps.md}
+├── modules/m01/{notes.md,exercises.md,solutions.md,gaps.md}
 ├── concepts/{concept-index.md,definitions/}
 ├── flashcards/deck.md
 ├── review/{weekly-review.md,cumulative-gaps.md}
@@ -41,11 +41,20 @@ EXAM/
 
 ## Quick Start
 
-1. Open `maths-study` in Obsidian as a vault.
-2. Pick your current exam folder in `exams/`.
-3. Update `CLAUDE.md` with the exam/session context.
-4. Study chapter-by-chapter inside that exam folder.
-5. Update both the exam `progress.md` and root `progress.md` after each session.
+If you are new to Obsidian:
+
+- **Obsidian** is a notes app that works directly on local Markdown files (`.md`).
+- A **vault** is just a folder on your computer that Obsidian treats as one workspace.
+- In this repo, `maths-study/` is the vault folder.
+
+1. Install Obsidian from [obsidian.md](https://obsidian.md/) and open the app.
+2. In Obsidian, choose **Open folder as vault**.
+3. Select this folder: `c:\Users\Danha\source\repos\Actuarial_Study\maths-study`.
+4. Once it opens, use the left file pane to browse notes in `exams/`.
+5. Pick your current exam folder in `exams/`.
+6. Update `CLAUDE.md` with the exam/session context.
+7. Study chapter-by-chapter inside that exam folder.
+8. Update both the exam `progress.md` and root `progress.md` after each session.
 
 ## Past Papers Workflow
 
