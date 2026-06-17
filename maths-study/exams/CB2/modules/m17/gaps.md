@@ -1,2 +1,7 @@
-# m17 - gaps.md 
+# Module 17 Gaps
 
+## Unresolved Questions
+- 
+
+## Follow-up Actions
+- 

@@ -3,7 +3,7 @@
 Use this folder for all notes, exercises, and review material for **CS2**.
 
 ## Structure
-- `chapters/chXX/` for chapter-by-chapter study
+- `modules/mXX/` for module-by-module study
 - `concepts/definitions/` for key definitions
 - `flashcards/deck.md` for spaced-repetition prompts
 - `review/` for weekly and cumulative review

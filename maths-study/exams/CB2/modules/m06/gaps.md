@@ -1,2 +1,7 @@
-# m06 - gaps.md 
+# Module 06 Gaps
 
+## Unresolved Questions
+- 
+
+## Follow-up Actions
+- 

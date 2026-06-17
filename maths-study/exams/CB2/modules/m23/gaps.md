@@ -1,2 +1,7 @@
-# m23 - gaps.md 
+# Module 23 Gaps
 
+## Unresolved Questions
+- 
+
+## Follow-up Actions
+- 

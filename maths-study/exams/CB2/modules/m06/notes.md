@@ -1,2 +1,10 @@
-# m06 - notes.md 
+# Module 06 Notes
 
+## Overview
+- 
+
+## Key Ideas
+- 
+
+## Questions
+- 
