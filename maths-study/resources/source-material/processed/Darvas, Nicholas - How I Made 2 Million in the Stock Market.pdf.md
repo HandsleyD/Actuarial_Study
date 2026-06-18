@@ -1,0 +1,15 @@
+﻿---
+normalized_id: shared-pdf-reference-darvas-nicholas-how-i-made-2-million-in-the-stock-market
+exam_code: SHARED
+material_scope: darvas, nicholas - how i made 2 million in the stock market.pdf
+material_group: shared
+document_type: pdf-reference
+source_repo_path: resources/source-material/shared/Darvas, Nicholas - How I Made 2 Million in the Stock Market.pdf
+conversion_method: pdftotext
+qa_status: pending
+---
+# shared-pdf-reference-darvas-nicholas-how-i-made-2-million-in-the-stock-market
+
+www.GetPedia.com
+
+

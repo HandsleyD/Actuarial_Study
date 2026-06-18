@@ -1,0 +1,68 @@
+﻿---
+normalized_id: shared-pdf-reference-modelling-financial-derivatives-with-mathematica
+exam_code: SHARED
+material_scope: modelling financial derivatives with mathematica
+material_group: shared
+document_type: pdf-reference
+source_repo_path: resources/source-material/shared/Modelling Financial Derivatives with Mathematica/Modelling Financial Derivatives with Mathematica.pdf
+conversion_method: pdftotext
+qa_status: pending
+---
+# shared-pdf-reference-modelling-financial-derivatives-with-mathematica
+
+                                                                1. Advanced Tools for Rocket Science
+                                                                          -
+
+
+
+
+(i) separation of variables,
+(ii) similarity methods,
+(iii) Green's functions and images,
+(iv) finite-difference numerics,
+(v) tree numerics,
+(vi) Monte Carlo simulation
+
+as solution techniques. all within the Matlirtn~ticaenvironmenl. A comparison of these approaches and
+their outcomes is more than just an interesting academic exercise, as we shall consider next.
+
+
+1.2 The Concept of Model Risk and the Need for Verification
+
+Informal Definitions of Model and Algorithm Risk
+Model risk can arise in a variety of ways. Given a financial instrument. we generally formulate a three-
+stage valuation process:
+
+(a) conceptual description;
+(b) mathematical formulation of the conceptual description;
+(c) solution of the mathematical model through an analytical andlor numerical process.
+
+It is possible to make mistakes, or perhaps unreasonable simplifying assumptions, at any one of these
+three stages. Each of these gives rise to a form of model risk - the risk that the process from reading a
+conlracl to responding with a set of answers (fair value, Delta, Gamma, ..., implied volatility) has led to
+the wrong answer being supplied.
+
+This book uses Mcrthetn~rticlrto look intelligently at the third point, which we might call crlgot-ithtn risk.
+One might think that this can be eliminated just by being careful - the real story is that derivative securities
+are capable of exhibiting some diverse forms of malhematical pathology that confound our intuition and
+play havoc with standard or even state-of-thc-art algorithms. This book will present some familiar and
+rather less familiar examples of trouble.
+
+I wish to emphasize that this is not just a matter of worrying about a level of accuracy that is below the
+"noise level" of traders. It is possible to get horribly wrong answers even when one thinks that one is being
+rather careful. I also tend to think that it is the job of a Quants team to supply as accurate an answer as
+possible to trading and sales teams. If they want to modify your answer by 50 basis points, for whatever
+reasons, that is their responsibility!
+
+
+Verification and Resolving Disagreement amongst Experts
+A good rule of thumb is that in general you can give what you think is the same problem to six different
+groups and obtain at least three materially different answers. In derivatives modelling you can usually get
+four different answers, especially if you include
+
+(a) one analytics fanatic,
+(b) one tree-model fanatic,
+(c) one Monte-Carlo fanatic,
+(d) one finite-difference fanatic
+
+

@@ -88,6 +88,65 @@ If conversion tools are not installed, stub markdown files are created with meta
 
 Use `resources/source-material/` for open-licensed textbooks, notes, glossaries, and formula sheets that you want the assistant to use as local study references.
 
+### Import And Convert Materials
+
+If you add many textbooks or references into `resources/source-material/shared/` (or exam-specific folders), run the materials pipeline so they are indexed and available as markdown.
+
+Run from repository root:
+
+```powershell
+git lfs install
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Import-Materials.ps1
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Build-MaterialsIndex.ps1
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Convert-MaterialsToMarkdown.ps1
+```
+
+Fast metadata-first run (recommended for very large textbook drops):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Convert-MaterialsToMarkdown.ps1 -ExtractContent false
+```
+
+Parallel full extraction (recommended for large libraries):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Split-MaterialsIndex.ps1 -ShardCount 4
+```
+
+Then run one command per terminal (4 terminals total):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Convert-MaterialsToMarkdown.ps1 -MasterIndexCsv .\maths-study\resources\source-material\index\shards\master-index.shard-01.csv -ExtractContent true -SkipExisting true -ToolTimeoutSeconds 180
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Convert-MaterialsToMarkdown.ps1 -MasterIndexCsv .\maths-study\resources\source-material\index\shards\master-index.shard-02.csv -ExtractContent true -SkipExisting true -ToolTimeoutSeconds 180
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Convert-MaterialsToMarkdown.ps1 -MasterIndexCsv .\maths-study\resources\source-material\index\shards\master-index.shard-03.csv -ExtractContent true -SkipExisting true -ToolTimeoutSeconds 180
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Convert-MaterialsToMarkdown.ps1 -MasterIndexCsv .\maths-study\resources\source-material\index\shards\master-index.shard-04.csv -ExtractContent true -SkipExisting true -ToolTimeoutSeconds 180
+```
+
+If existing files were created with `stub-no-extract`, rerun with `-SkipExisting false` to overwrite those stubs.
+
+After all shards finish, run one consolidation pass:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Convert-MaterialsToMarkdown.ps1 -ExtractContent true -SkipExisting true -ToolTimeoutSeconds 300
+```
+
+Optional: only index shared material directly:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\maths-study\tools\materials\Import-Materials.ps1 -SourceRoot .\maths-study\resources\source-material\shared
+```
+
+Outputs:
+
+- `resources/source-material/index/source-inventory.csv`
+- `resources/source-material/index/master-index.csv`
+- `resources/source-material/processed/` (markdown derivatives used for search/retrieval)
+
+LFS note:
+
+- Binary study assets (for example `pdf`, `docx`, `epub`, `xls`, `xlsx`, `pptx`, archives) are tracked through `.gitattributes` and stored in Git LFS.
+- If a conversion tool is unavailable for a format, the conversion script writes a metadata-first markdown stub and marks extraction as pending.
+
 Recommended structure:
 
 ```text

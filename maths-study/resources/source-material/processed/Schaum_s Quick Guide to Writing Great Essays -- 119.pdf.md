@@ -1,0 +1,15 @@
+﻿---
+normalized_id: shared-pdf-reference-schaum-s-quick-guide-to-writing-great-essays-119
+exam_code: SHARED
+material_scope: schaum_s quick guide to writing great essays -- 119.pdf
+material_group: shared
+document_type: pdf-reference
+source_repo_path: resources/source-material/shared/Schaum_s Quick Guide to Writing Great Essays -- 119.pdf
+conversion_method: pdftotext
+qa_status: pending
+---
+# shared-pdf-reference-schaum-s-quick-guide-to-writing-great-essays-119
+
+FARIS
+
+

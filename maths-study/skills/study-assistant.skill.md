@@ -26,6 +26,25 @@ Help me study IFoA actuarial exams by answering questions, quizzing me, and keep
 - If no relevant local source exists, fall back to built-in knowledge.
 - If the answer is mainly based on fallback knowledge rather than local sources, say so briefly.
 
+## Source Material Import Workflow
+
+When the user asks to import, index, or convert shared textbooks/materials into searchable markdown:
+
+1. Ensure Git LFS is enabled in the repository (`git lfs install`).
+2. Run `maths-study/tools/materials/Import-Materials.ps1` to inventory raw source files.
+3. Run `maths-study/tools/materials/Build-MaterialsIndex.ps1` to generate normalized metadata.
+4. Run `maths-study/tools/materials/Convert-MaterialsToMarkdown.ps1` to create markdown derivatives under `resources/source-material/processed/`.
+5. Confirm outputs exist in:
+   - `maths-study/resources/source-material/index/source-inventory.csv`
+   - `maths-study/resources/source-material/index/master-index.csv`
+   - `maths-study/resources/source-material/processed/`
+
+Notes:
+
+- The materials workflow supersedes using `tools/past-papers` for shared source textbooks.
+- If conversion tools are missing, conversion may create markdown stubs with metadata and a pending extraction note.
+- For very large imports, use `Convert-MaterialsToMarkdown.ps1 -ExtractContent false` first to guarantee markdown coverage, then rerun with extraction enabled when needed.
+
 ## Learning Style
 
 - Prefer examples before formal definitions.

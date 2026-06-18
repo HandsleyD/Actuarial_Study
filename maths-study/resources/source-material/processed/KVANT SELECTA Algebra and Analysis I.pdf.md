@@ -1,0 +1,20 @@
+﻿---
+normalized_id: shared-pdf-reference-kvant-selecta-algebra-and-analysis-i
+exam_code: SHARED
+material_scope: kvant selecta algebra and analysis i.pdf
+material_group: shared
+document_type: pdf-reference
+source_repo_path: resources/source-material/shared/KVANT SELECTA Algebra and Analysis I.pdf
+conversion_method: pdftotext
+qa_status: pending
+---
+# shared-pdf-reference-kvant-selecta-algebra-and-analysis-i
+
+namdatviet E-books collection
+
+Visit us at:
+         http://tusachtonghop.com/forums/
+
+Thank you, and happy learning!
+
+
