@@ -4,3 +4,32 @@ maths-study/.local/
 # Temporary extraction artifacts
 *.tmp
 *.temp
+
+# Large shared material - keep local only (not uploaded to remote)
+# Only source materials (textbooks, PDFs) are excluded
+maths-study/resources/source-material/
+maths-study/tools/materials/
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
