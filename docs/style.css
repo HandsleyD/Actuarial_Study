@@ -234,6 +234,10 @@ main {
   z-index: 20;
 }
 
+.settings-panel[hidden] {
+  display: none;
+}
+
 .settings-card {
   background: var(--card-bg);
   border-radius: 12px;
