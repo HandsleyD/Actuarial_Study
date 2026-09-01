@@ -210,6 +210,47 @@ function buildExamGrid() {
   });
 }
 
+const examQueues = {};
+
+function enqueue(code, fn) {
+  const prev = examQueues[code] || Promise.resolve();
+  const next = prev.catch(() => {}).then(fn);
+  examQueues[code] = next;
+  return next;
+}
+
+async function saveModuleStatus(code, moduleId, next, token, attempt = 0) {
+  const { text, sha } = await fetchViaApi(code);
+  const newText = setModuleStatus(text, moduleId, next);
+
+  const res = await fetch(
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${pathFor(code)}`,
+    {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github+json",
+      },
+      body: JSON.stringify({
+        message: `Update ${code} ${moduleId}: ${next}`,
+        content: toBase64(newText),
+        sha,
+        branch: CONFIG.branch,
+      }),
+    }
+  );
+
+  if (!res.ok) {
+    if (res.status === 409 && attempt === 0) {
+      return saveModuleStatus(code, moduleId, next, token, attempt + 1);
+    }
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.message || `save failed (${res.status})`);
+  }
+
+  return newText;
+}
+
 async function handleToggle(btn) {
   const code = btn.dataset.exam;
   const moduleId = btn.dataset.module;
@@ -230,30 +271,7 @@ async function handleToggle(btn) {
   btn.textContent = "Saving…";
 
   try {
-    const { text, sha } = await fetchViaApi(code);
-    const newText = setModuleStatus(text, moduleId, next);
-
-    const res = await fetch(
-      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${pathFor(code)}`,
-      {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: "application/vnd.github+json",
-        },
-        body: JSON.stringify({
-          message: `Update ${code} ${moduleId}: ${next}`,
-          content: toBase64(newText),
-          sha,
-          branch: CONFIG.branch,
-        }),
-      }
-    );
-
-    if (!res.ok) {
-      const body = await res.json().catch(() => ({}));
-      throw new Error(body.message || `save failed (${res.status})`);
-    }
+    const newText = await enqueue(code, () => saveModuleStatus(code, moduleId, next, token));
 
     const data = examData[code];
     const mod = data.modules.find((m) => m.id === moduleId);
