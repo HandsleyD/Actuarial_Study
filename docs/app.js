@@ -297,6 +297,7 @@ function initSettings() {
       document.getElementById("tokenInput").value = "";
       updateTokenStatus();
       loadAll();
+      closeSettings();
     }
   });
   document.getElementById("clearToken").addEventListener("click", () => {
