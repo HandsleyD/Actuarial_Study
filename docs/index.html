@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actuarial Study Progress</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>Actuarial Study Progress</h1>
+    <button id="settingsBtn" class="icon-btn" title="Settings">&#9881;</button>
+  </div>
+</header>
+
+<main>
+  <section class="overview" id="overview">
+    <div class="overview-stat">
+      <div class="overview-number" id="overallPct">&mdash;</div>
+      <div class="overview-label">modules complete</div>
+    </div>
+    <div class="overview-bar-wrap">
+      <div class="overview-bar"><div class="overview-bar-fill" id="overallBarFill"></div></div>
+      <div class="overview-sub" id="overallSub">Loading progress&hellip;</div>
+    </div>
+  </section>
+
+  <div id="statusBanner" class="banner" hidden></div>
+
+  <section id="examGrid" class="exam-grid"></section>
+</main>
+
+<div id="settingsPanel" class="settings-panel" hidden>
+  <div class="settings-card">
+    <div class="settings-header">
+      <h2>Settings</h2>
+      <button id="closeSettings" class="icon-btn" title="Close">&times;</button>
+    </div>
+    <p>To save progress from this device, add a GitHub personal access token scoped only to this repository (<code>Contents: Read and write</code>). Without a token you can still browse progress read-only.</p>
+    <ol class="settings-steps">
+      <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></li>
+      <li>Repository access &rarr; Only select repositories &rarr; <code>Actuarial_Study</code></li>
+      <li>Permissions &rarr; Repository permissions &rarr; Contents &rarr; Read and write</li>
+      <li>Generate token, paste it below</li>
+    </ol>
+    <input id="tokenInput" type="password" placeholder="github_pat_..." autocomplete="off">
+    <div class="settings-actions">
+      <button id="saveToken" class="btn primary">Save token</button>
+      <button id="clearToken" class="btn">Remove token</button>
+    </div>
+    <p class="settings-note">The token is stored only in this browser's local storage and is sent directly to api.github.com when you tick a module. It is never sent anywhere else.</p>
+    <div id="tokenStatus" class="token-status"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

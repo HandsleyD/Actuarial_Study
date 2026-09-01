@@ -1,0 +1,300 @@
+:root {
+  --bg: #f7f7f5;
+  --card-bg: #ffffff;
+  --text: #1f2328;
+  --text-muted: #656d76;
+  --border: #d8dee4;
+  --accent: #6d4aff;
+  --accent-soft: #efeaff;
+  --done: #1a7f37;
+  --done-bg: #dafbe1;
+  --progress: #9a6700;
+  --progress-bg: #fff8c5;
+  --not-started: #656d76;
+  --not-started-bg: #eef0f2;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 1px 8px rgba(0,0,0,0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --card-bg: #161b22;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --border: #30363d;
+    --accent: #a48fff;
+    --accent-soft: #221c3d;
+    --done: #3fb950;
+    --done-bg: #113321;
+    --progress: #d29922;
+    --progress-bg: #3a2e0d;
+    --not-started: #8b949e;
+    --not-started-bg: #21262d;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 8px rgba(0,0,0,0.2);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.topbar {
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar h1 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.icon-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.icon-btn:hover { background: var(--accent-soft); }
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.overview-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  min-width: 70px;
+}
+
+.overview-bar-wrap { flex: 1; }
+
+.overview-bar {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--not-started-bg);
+  overflow: hidden;
+}
+
+.overview-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.overview-sub {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.banner {
+  background: var(--progress-bg);
+  color: var(--progress);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.exam-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.exam-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.exam-code {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.exam-pct {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.exam-bar {
+  height: 6px;
+  border-radius: 4px;
+  background: var(--not-started-bg);
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.exam-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.module-list {
+  margin-top: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exam-card.open .module-list { display: flex; }
+
+.module-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.85rem;
+  padding: 4px 0;
+  border-top: 1px solid var(--border);
+}
+
+.module-row:first-child { border-top: none; }
+
+.module-id { color: var(--text-muted); min-width: 40px; }
+
+.status-badge {
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge.not-started { background: var(--not-started-bg); color: var(--not-started); }
+.status-badge.in-progress { background: var(--progress-bg); color: var(--progress); }
+.status-badge.done { background: var(--done-bg); color: var(--done); }
+.status-badge:disabled { opacity: 0.5; cursor: wait; }
+
+.exam-card.loading .exam-code::after {
+  content: " loading\2026";
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.settings-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.settings-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 440px;
+  width: 92%;
+  box-shadow: var(--shadow);
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-steps {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding-left: 20px;
+}
+
+.settings-steps a { color: var(--accent); }
+
+#tokenInput {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-family: monospace;
+  margin-bottom: 12px;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.settings-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.token-status {
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
