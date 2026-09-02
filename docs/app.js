@@ -450,15 +450,23 @@ function updateHomeCard(code) {
   pctEl.textContent = `${pct}% (${d.modules.length} modules)`;
   barEl.style.width = `${pct}%`;
 
-  const studying = d.modules.some((m) => m.status.toLowerCase() === "in progress");
+  const completed = pct === 100;
+  const studying = !completed && d.modules.some((m) => m.status.toLowerCase() === "in progress");
+
+  card.classList.toggle("completed", completed);
   card.classList.toggle("studying", studying);
-  let ribbon = card.querySelector(".studying-ribbon");
-  if (studying && !ribbon) {
-    ribbon = document.createElement("div");
-    ribbon.className = "studying-ribbon";
-    ribbon.textContent = "Currently studying";
-    card.prepend(ribbon);
-  } else if (!studying && ribbon) {
+
+  let ribbon = card.querySelector(".status-ribbon");
+  if (completed || studying) {
+    if (!ribbon) {
+      ribbon = document.createElement("div");
+      ribbon.className = "status-ribbon";
+      card.prepend(ribbon);
+    }
+    ribbon.classList.toggle("completed-ribbon", completed);
+    ribbon.classList.toggle("studying-ribbon", studying);
+    ribbon.textContent = completed ? "Completed ✓" : "Currently studying";
+  } else if (ribbon) {
     ribbon.remove();
   }
 }
