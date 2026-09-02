@@ -2214,4 +2214,1212 @@ const MODULES = {
         ]
     }
 ],
+  CM2: [
+    {
+        "id": "m01",
+        "title": "The Efficient Markets Hypothesis",
+        "description": "Introduces the EMH's three forms (weak, semi-strong, strong) and what each implies about whether investors can beat the market using different types of information.",
+        "cards": [
+            {
+                "q": "What are the three forms of the Efficient Markets Hypothesis?",
+                "a": "Weak form, semi-strong form, and strong form."
+            },
+            {
+                "q": "What does the weak form of EMH state?",
+                "a": "Current prices reflect all information contained in the historical price series — technical analysis cannot generate abnormal returns."
+            },
+            {
+                "q": "What does the semi-strong form of EMH state?",
+                "a": "Current prices reflect all publicly available information, not just historical prices — fundamental analysis of public information cannot generate abnormal returns."
+            },
+            {
+                "q": "What does the strong form of EMH state?",
+                "a": "Current prices reflect all information, public and private (inside) — even insider information cannot generate abnormal returns."
+            },
+            {
+                "q": "If markets are semi-strong form efficient, can an investor profit from insider information?",
+                "a": "Yes — semi-strong form only covers publicly available information, so private/inside information could still generate abnormal returns."
+            },
+            {
+                "q": "What is one piece of evidence often cited against weak form efficiency?",
+                "a": "Momentum or mean-reversion patterns found in some studies of historical stock returns."
+            },
+            {
+                "q": "What is one piece of evidence often cited against semi-strong form efficiency?",
+                "a": "Anomalies such as the small-firm effect or post-earnings-announcement drift, where returns following public announcements are partly predictable."
+            },
+            {
+                "q": "What is the 'rational expectations' hypothesis?",
+                "a": "The idea that market participants form expectations optimally, using all available information, without systematic bias."
+            },
+            {
+                "q": "What is 'technical analysis'?",
+                "a": "Using patterns in historical prices/volumes to try to predict future price movements."
+            },
+            {
+                "q": "What is 'fundamental analysis'?",
+                "a": "Using publicly available information (accounts, economic data, etc.) to estimate an asset's intrinsic value."
+            },
+            {
+                "q": "Why is testing for strong form efficiency inherently difficult?",
+                "a": "It requires observing outcomes from genuine inside information, which is hard to identify and often illegal to trade on."
+            },
+            {
+                "q": "What does the 'joint hypothesis problem' refer to in testing market efficiency?",
+                "a": "Any test of market efficiency is also a test of the asset pricing model used to define 'abnormal' returns, so a rejection could mean either is wrong."
+            },
+            {
+                "q": "If a market is EMH-efficient, what happens to prices when new information arrives?",
+                "a": "Prices adjust quickly and accurately to reflect the new information."
+            },
+            {
+                "q": "Give one implication of weak form efficiency for investment strategy.",
+                "a": "There's no value in trying to predict future prices purely from past price patterns (technical analysis is futile)."
+            },
+            {
+                "q": "Why is understanding EMH important for actuaries pricing financial guarantees?",
+                "a": "It underpins assumptions about how quickly and accurately markets price risk, which affects valuation and hedging assumptions."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Utility theory",
+        "description": "Introduces utility functions as a way to model investor preferences and risk attitudes, the expected utility theorem, and common utility function forms.",
+        "cards": [
+            {
+                "q": "What is a 'utility function'?",
+                "a": "A mathematical function representing an investor's preferences over different levels of wealth or outcomes."
+            },
+            {
+                "q": "What is the expected utility theorem?",
+                "a": "Under certain axioms of rational choice, an investor's preferences over uncertain outcomes can be represented by maximising expected utility."
+            },
+            {
+                "q": "What does 'non-satiation' mean for a utility function?",
+                "a": "More wealth is always preferred to less — the utility function is increasing (positive marginal utility)."
+            },
+            {
+                "q": "How is risk aversion characterised in terms of a utility function's shape?",
+                "a": "A risk-averse investor has a concave utility function (diminishing marginal utility of wealth)."
+            },
+            {
+                "q": "What distinguishes risk aversion, risk neutrality, and risk seeking in terms of utility function curvature?",
+                "a": "Risk aversion is concave, risk neutrality is linear, and risk seeking is convex."
+            },
+            {
+                "q": "What does it mean for an investor to display 'declining absolute risk aversion'?",
+                "a": "They become less risk-averse (in absolute monetary terms) as their wealth increases."
+            },
+            {
+                "q": "How is the Arrow-Pratt measure of absolute risk aversion defined?",
+                "a": "$A(w) = -\\frac{u''(w)}{u'(w)}$"
+            },
+            {
+                "q": "How is relative risk aversion defined?",
+                "a": "$R(w) = -\\frac{w\\,u''(w)}{u'(w)} = w\\,A(w)$"
+            },
+            {
+                "q": "What is a 'state-dependent' utility function?",
+                "a": "A utility function that depends not just on wealth but also on which state of the world has occurred."
+            },
+            {
+                "q": "Give one commonly used utility function with constant relative risk aversion.",
+                "a": "The power utility function (isoelastic utility)."
+            },
+            {
+                "q": "Give one commonly used utility function with constant absolute risk aversion.",
+                "a": "The exponential utility function."
+            },
+            {
+                "q": "How can utility theory be used to analyse a simple insurance problem?",
+                "a": "By comparing the expected utility of wealth with and without insurance, to see whether purchasing insurance increases expected utility."
+            },
+            {
+                "q": "Why might a risk-averse individual pay a premium for insurance greater than the expected loss?",
+                "a": "The certainty of a smaller, known loss gives higher expected utility than an uncertain, potentially large loss, even at a premium above the expected claim cost."
+            },
+            {
+                "q": "What is quadratic utility, and what is one criticism of it?",
+                "a": "$u(w) = w - bw^2$; it implies increasing absolute risk aversion and has a maximum, beyond which more wealth reduces utility — unrealistic."
+            },
+            {
+                "q": "How does log utility ($u(w) = \\ln w$) behave in terms of risk aversion?",
+                "a": "It displays constant relative risk aversion equal to 1, a special case of the power utility family."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Measures of investment risk",
+        "description": "Covers different ways to quantify investment risk beyond simple variance — semi-variance, shortfall probabilities, Value at Risk, TailVaR — and how insurers help mitigate risk.",
+        "cards": [
+            {
+                "q": "What is the 'variance of return' as a risk measure?",
+                "a": "The expected squared deviation of the return from its mean, treating upside and downside deviations symmetrically."
+            },
+            {
+                "q": "What is 'downside semi-variance'?",
+                "a": "A risk measure only counting deviations below the mean (or a target return), ignoring upside variability."
+            },
+            {
+                "q": "What is a 'shortfall probability'?",
+                "a": "The probability that returns fall below some specified target or threshold level."
+            },
+            {
+                "q": "What is 'Value at Risk' (VaR)?",
+                "a": "The loss amount that will not be exceeded with a given confidence level over a specified time horizon."
+            },
+            {
+                "q": "What is 'TailVaR' (also called Expected Shortfall)?",
+                "a": "The expected loss, given that the loss exceeds the VaR threshold — the average of the losses in the worst tail of the distribution."
+            },
+            {
+                "q": "Give one criticism of VaR as a risk measure.",
+                "a": "It doesn't indicate how large losses could be beyond the threshold, and it isn't always sub-additive across a diversified portfolio."
+            },
+            {
+                "q": "Why is TailVaR generally considered a better risk measure than VaR?",
+                "a": "It captures the severity of losses in the tail beyond the threshold, and satisfies coherent risk measure properties including sub-additivity."
+            },
+            {
+                "q": "How does the choice of risk measure relate to an investor's utility function?",
+                "a": "Risk measures implicitly assume something about what an investor cares about, which should be consistent with the shape of their utility function."
+            },
+            {
+                "q": "Why might variance be a poor risk measure for a skewed return distribution?",
+                "a": "It treats upside and downside deviations symmetrically, but investors typically care more about downside risk for skewed distributions."
+            },
+            {
+                "q": "How does the thickness of a return distribution's tails affect risk assessment?",
+                "a": "Fat-tailed distributions have a higher chance of extreme outcomes than the normal distribution suggests, understating true tail risk if ignored."
+            },
+            {
+                "q": "How can insurance companies help reduce or remove risk for policyholders?",
+                "a": "By pooling many independent risks, diversifying away idiosyncratic risk, and charging a premium to cover expected cost plus a margin."
+            },
+            {
+                "q": "What is 'moral hazard'?",
+                "a": "The tendency for a party to take on more risk (or behave less carefully) once they are insured against the consequences of that risk."
+            },
+            {
+                "q": "What is 'adverse selection'?",
+                "a": "The tendency for those most likely to claim (highest risk) to be more likely to seek insurance, if the insurer cannot fully distinguish risk levels."
+            },
+            {
+                "q": "How might an insurer mitigate adverse selection?",
+                "a": "Through underwriting (using available information to price risk accurately) or by requiring evidence of insurability."
+            },
+            {
+                "q": "How would you compare two investment opportunities using multiple risk measures at once?",
+                "a": "Calculate each measure for both opportunities and compare — different measures can give different rankings."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Portfolio theory",
+        "description": "Covers mean-variance portfolio theory — how combining risky assets can reduce risk through diversification, and how to construct an optimal portfolio.",
+        "cards": [
+            {
+                "q": "What are the key assumptions of mean-variance portfolio theory?",
+                "a": "Investors care only about the expected return and variance of returns, and choose portfolios to maximise return for a given variance (or minimise variance for a given return)."
+            },
+            {
+                "q": "How is the expected return of a portfolio of two assets calculated?",
+                "a": "As the weighted average of the individual assets' expected returns, weighted by their portfolio proportions."
+            },
+            {
+                "q": "How is the variance of a two-asset portfolio calculated?",
+                "a": "$\\sigma_p^2 = w_1^2\\sigma_1^2 + w_2^2\\sigma_2^2 + 2w_1w_2\\,\\text{Cov}(R_1,R_2)$"
+            },
+            {
+                "q": "What is the 'efficient frontier'?",
+                "a": "The set of portfolios offering the highest expected return for each level of risk (variance/standard deviation)."
+            },
+            {
+                "q": "What benefit does diversification provide, according to mean-variance theory?",
+                "a": "Combining assets that aren't perfectly positively correlated reduces overall portfolio variance below the weighted average of individual variances."
+            },
+            {
+                "q": "What happens to the potential diversification benefit as the correlation between two assets decreases?",
+                "a": "The diversification benefit increases — lower (especially negative) correlation gives greater risk reduction for a given expected return."
+            },
+            {
+                "q": "When does mean-variance portfolio theory lead to a unique 'optimum' portfolio for an investor?",
+                "a": "When combined with the investor's specific indifference curves (from their utility function/risk aversion), which pick a single point on the efficient frontier."
+            },
+            {
+                "q": "What is the 'minimum variance portfolio'?",
+                "a": "The portfolio on the efficient frontier (or feasible set) with the lowest possible variance, regardless of expected return."
+            },
+            {
+                "q": "Why can adding a poorly-performing asset to a portfolio sometimes still be beneficial?",
+                "a": "If its returns are weakly or negatively correlated with the rest of the portfolio, it can reduce overall variance more than it reduces expected return."
+            },
+            {
+                "q": "How does mean-variance theory extend from two assets to $n$ assets?",
+                "a": "Portfolio variance depends on all pairwise covariances between assets, requiring a full covariance matrix."
+            },
+            {
+                "q": "What is a key limitation of mean-variance portfolio theory?",
+                "a": "It assumes returns are adequately described by mean and variance alone, ignoring skewness/kurtosis and other risk aspects."
+            },
+            {
+                "q": "What does it mean for a portfolio to be 'dominated' in mean-variance space?",
+                "a": "There exists another portfolio with at least as high expected return and no higher variance — a rational investor would never choose the dominated one."
+            },
+            {
+                "q": "Why might mean-variance theory be less appropriate for assets with highly skewed or fat-tailed return distributions?",
+                "a": "Two moments (mean and variance) don't fully capture risk when distributions are skewed or have fat tails."
+            },
+            {
+                "q": "Give one practical benefit of mean-variance theory for investors, despite its simplifying assumptions.",
+                "a": "It provides a tractable, quantifiable framework for balancing risk and return, and demonstrates the benefit of diversification clearly."
+            },
+            {
+                "q": "If two assets are perfectly positively correlated, what happens to the diversification benefit of combining them?",
+                "a": "There is none — portfolio risk is simply the weighted average of the individual risks."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Models of asset returns",
+        "description": "Introduces multifactor models for explaining and predicting asset returns — macroeconomic, fundamental, and statistical factor models — and the single-index model.",
+        "cards": [
+            {
+                "q": "What is a 'multifactor model' of asset returns?",
+                "a": "A model expressing an asset's return as a linear function of several underlying risk factors, plus an asset-specific (idiosyncratic) term."
+            },
+            {
+                "q": "What is a 'macroeconomic factor model'?",
+                "a": "A multifactor model where the factors are observable macroeconomic variables, such as GDP growth, inflation, or interest rates."
+            },
+            {
+                "q": "What is a 'fundamental factor model'?",
+                "a": "A multifactor model where the factors are company/security-specific characteristics, such as size, dividend yield, or industry."
+            },
+            {
+                "q": "What is a 'statistical factor model'?",
+                "a": "A multifactor model where the factors are derived statistically from the historical covariance structure of returns, without being pre-specified as economic variables."
+            },
+            {
+                "q": "What is the 'single-index model' of asset returns?",
+                "a": "A simplified model where an asset's return depends on a single common factor (often the market return) plus an idiosyncratic term."
+            },
+            {
+                "q": "In the single-index model, what does 'beta' represent?",
+                "a": "The sensitivity of an asset's return to the common (market) factor."
+            },
+            {
+                "q": "What is 'diversifiable' (or idiosyncratic) risk?",
+                "a": "Risk specific to an individual asset that can be reduced or eliminated by holding a diversified portfolio."
+            },
+            {
+                "q": "What is 'non-diversifiable' (or systematic) risk?",
+                "a": "Risk common to all assets, which cannot be eliminated through diversification."
+            },
+            {
+                "q": "Why does diversification reduce idiosyncratic risk but not systematic risk?",
+                "a": "Idiosyncratic shocks are (assumed) uncorrelated and average out across a large portfolio; systematic risk affects all assets simultaneously."
+            },
+            {
+                "q": "How is the variance of an asset's return decomposed in a single-index model?",
+                "a": "Into systematic variance (from the common factor) plus idiosyncratic (specific) variance."
+            },
+            {
+                "q": "What is one advantage of a fundamental factor model over a macroeconomic factor model?",
+                "a": "Fundamental factors can often explain a larger share of return variation and are directly observable at the security level."
+            },
+            {
+                "q": "What is one disadvantage of a statistical factor model?",
+                "a": "The derived statistical factors often lack a clear economic interpretation, making the model's outputs harder to explain."
+            },
+            {
+                "q": "How would you use a multifactor model to estimate a portfolio's exposure to a particular risk factor?",
+                "a": "Sum the (weighted) factor sensitivities (loadings) of each asset in the portfolio for that factor."
+            },
+            {
+                "q": "Why might an investment manager prefer a multifactor model over a single-index model?",
+                "a": "A multifactor model can capture multiple distinct sources of systematic risk, giving a richer description of return drivers."
+            },
+            {
+                "q": "What data would you need to estimate the parameters of a macroeconomic factor model?",
+                "a": "Historical time series of both the security returns and the chosen macroeconomic variables, estimating sensitivities via regression."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Asset pricing models",
+        "description": "Introduces the Capital Asset Pricing Model (CAPM) — its assumptions, main results, uses, and limitations.",
+        "cards": [
+            {
+                "q": "What is the Capital Asset Pricing Model (CAPM) used for?",
+                "a": "To determine the expected/required return on an asset, given its systematic risk (beta) relative to the market portfolio."
+            },
+            {
+                "q": "What is the CAPM formula for expected return?",
+                "a": "$E[R_i] = R_f + \\beta_i\\,(E[R_m]-R_f)$"
+            },
+            {
+                "q": "What does beta ($\\beta_i$) measure in the CAPM?",
+                "a": "The sensitivity of an asset's excess return to the excess return of the market portfolio."
+            },
+            {
+                "q": "Name one key assumption of the basic CAPM.",
+                "a": "All investors have homogeneous expectations about returns, risk and correlations; investors can borrow/lend unlimited amounts at a risk-free rate."
+            },
+            {
+                "q": "What is the 'market portfolio' in CAPM?",
+                "a": "A portfolio containing all risky assets in the market, weighted by their market values."
+            },
+            {
+                "q": "What is the 'security market line' (SML)?",
+                "a": "A graphical representation of the CAPM, plotting expected return against beta — all correctly priced assets should lie on this line."
+            },
+            {
+                "q": "What does it mean for an asset to plot above the security market line?",
+                "a": "It's offering a higher expected return than CAPM predicts for its level of systematic risk — it appears undervalued."
+            },
+            {
+                "q": "Give one limitation of the basic CAPM.",
+                "a": "Its assumptions are unrealistic, and empirical tests often find beta alone doesn't fully explain observed returns."
+            },
+            {
+                "q": "How have researchers tried to extend/develop CAPM to address its limitations?",
+                "a": "By relaxing assumptions, or developing multifactor extensions like the Arbitrage Pricing Theory (APT)."
+            },
+            {
+                "q": "What is a major issue in estimating parameters for CAPM in practice?",
+                "a": "Identifying and measuring the true 'market portfolio', and estimating beta reliably from limited historical data."
+            },
+            {
+                "q": "According to CAPM, should investors be compensated for holding idiosyncratic (diversifiable) risk?",
+                "a": "No — only systematic risk (beta) is rewarded, since idiosyncratic risk can be diversified away at no cost."
+            },
+            {
+                "q": "What is the risk-free rate's role in the CAPM formula?",
+                "a": "It represents the baseline return available with no risk, against which the market risk premium (scaled by beta) is added."
+            },
+            {
+                "q": "If an asset has a beta of zero, what does CAPM predict its expected return should be?",
+                "a": "Equal to the risk-free rate, since it has no systematic risk exposure."
+            },
+            {
+                "q": "If an asset has a beta greater than 1, what does that imply?",
+                "a": "The asset's returns are more volatile than (amplify) the market's returns — more systematic risk than the market portfolio."
+            },
+            {
+                "q": "How is beta typically estimated in practice?",
+                "a": "By regressing an asset's historical excess returns against the market portfolio's historical excess returns; the slope is the estimated beta."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Brownian motion and martingales",
+        "description": "Introduces standard Brownian motion (the Wiener process) and its defining properties, plus the concept of a martingale — foundations for modelling security prices continuously through time.",
+        "cards": [
+            {
+                "q": "What are the defining properties of standard Brownian motion $W_t$?",
+                "a": "$W_0 = 0$; independent increments; increments $W_t - W_s \\sim N(0, t-s)$ for $t>s$; and continuous paths."
+            },
+            {
+                "q": "What is the distribution of $W_t$ for a standard Brownian motion?",
+                "a": "$W_t \\sim N(0, t)$"
+            },
+            {
+                "q": "What does it mean for Brownian motion to have 'independent increments'?",
+                "a": "The change in the process over any time interval is independent of the change over any other non-overlapping time interval."
+            },
+            {
+                "q": "Why are the paths of Brownian motion described as continuous but 'nowhere differentiable'?",
+                "a": "The process moves continuously (no jumps) but is so erratic at every point that it has no well-defined instantaneous slope."
+            },
+            {
+                "q": "What is a 'martingale'?",
+                "a": "A stochastic process where the expected future value, given all information up to now, equals the current value: $E[X_t \\mid \\mathcal{F}_s] = X_s$ for $t>s$."
+            },
+            {
+                "q": "Is standard Brownian motion a martingale?",
+                "a": "Yes — its expected future value, given current information, equals its current value (zero drift)."
+            },
+            {
+                "q": "What role does the martingale property play in 'fair game' pricing intuition?",
+                "a": "A martingale reflects no predictable drift, consistent with discounted asset prices not being systematically predictable under the risk-neutral measure."
+            },
+            {
+                "q": "What is meant by a 'filtration' $\\mathcal{F}_t$ in this context?",
+                "a": "The information available up to time $t$, representing the history of the process observed so far."
+            },
+            {
+                "q": "What is the variance of the increment $W_t - W_s$ for standard Brownian motion?",
+                "a": "$t - s$"
+            },
+            {
+                "q": "How does Brownian motion relate to a random walk?",
+                "a": "Brownian motion is the limit of a discrete-time random walk as time steps become infinitesimally small and numerous, appropriately scaled."
+            },
+            {
+                "q": "What is a key reason Brownian motion is used to model asset price randomness?",
+                "a": "Its independent, normally-distributed increments provide a tractable way to model continuous, unpredictable price movements."
+            },
+            {
+                "q": "Give one property that would disqualify a process from being a martingale.",
+                "a": "Having a non-zero expected drift given current information, i.e. $E[X_t \\mid \\mathcal{F}_s] \\neq X_s$."
+            },
+            {
+                "q": "What does 'quadratic variation' of Brownian motion over $[0,t]$ equal?",
+                "a": "$t$ — a distinctive feature exploited in stochastic calculus (e.g. Ito's Lemma)."
+            },
+            {
+                "q": "Why can't standard calculus techniques be applied directly to functions of Brownian motion?",
+                "a": "Because Brownian motion is nowhere differentiable and has non-zero quadratic variation — stochastic (Ito) calculus is needed instead."
+            },
+            {
+                "q": "What is the covariance $\\text{Cov}(W_s, W_t)$ for standard Brownian motion, with $s<t$?",
+                "a": "$\\min(s,t) = s$"
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Stochastic calculus and Ito processes",
+        "description": "Introduces stochastic differential equations, the Ito integral, Ito's Lemma, and key example processes — geometric Brownian motion and the Ornstein-Uhlenbeck process.",
+        "cards": [
+            {
+                "q": "What is a 'stochastic differential equation' (SDE)?",
+                "a": "An equation describing how a process evolves over time, involving a deterministic (drift) term and a random (diffusion) term driven by Brownian motion."
+            },
+            {
+                "q": "What is the general form of an Ito process SDE?",
+                "a": "$dX_t = \\mu(X_t,t)\\,dt + \\sigma(X_t,t)\\,dW_t$"
+            },
+            {
+                "q": "What does the 'drift' term in an SDE represent?",
+                "a": "The deterministic (expected, per unit time) rate of change of the process."
+            },
+            {
+                "q": "What does the 'diffusion' term in an SDE represent?",
+                "a": "The magnitude/scale of the random fluctuations driven by Brownian motion."
+            },
+            {
+                "q": "What is Ito's Lemma used for?",
+                "a": "Finding the SDE satisfied by a (twice-differentiable) function of an Ito process — the stochastic calculus analogue of the chain rule."
+            },
+            {
+                "q": "What is the key extra term in Ito's Lemma compared with the ordinary chain rule?",
+                "a": "A second-order term $\\frac{1}{2}\\frac{\\partial^2 f}{\\partial x^2}\\sigma^2\\,dt$, arising from the non-zero quadratic variation of Brownian motion."
+            },
+            {
+                "q": "What is the SDE for geometric Brownian motion (GBM)?",
+                "a": "$dS_t = \\mu S_t\\,dt + \\sigma S_t\\,dW_t$"
+            },
+            {
+                "q": "Why is GBM commonly used to model security prices?",
+                "a": "It ensures prices stay positive and gives log-normally distributed prices, broadly consistent with observed return behaviour."
+            },
+            {
+                "q": "What is a 'mean-reverting' process?",
+                "a": "A process whose drift pulls it back towards a long-run mean level whenever it deviates from that level."
+            },
+            {
+                "q": "What is the SDE for the Ornstein-Uhlenbeck process?",
+                "a": "$dX_t = \\alpha(\\mu - X_t)\\,dt + \\sigma\\,dW_t$, where the drift pulls $X_t$ back towards the long-run mean $\\mu$."
+            },
+            {
+                "q": "What does the parameter $\\alpha$ represent in the Ornstein-Uhlenbeck process?",
+                "a": "The speed of mean reversion — how quickly the process is pulled back towards its long-run mean."
+            },
+            {
+                "q": "What is the 'Ito integral'?",
+                "a": "A way of defining integrals with respect to Brownian motion (e.g. $\\int_0^t \\sigma_s\\,dW_s$), needed since Brownian motion isn't differentiable in the ordinary sense."
+            },
+            {
+                "q": "Solve the GBM SDE to express $S_t$ in terms of $S_0$.",
+                "a": "$S_t = S_0 \\exp\\left[\\left(\\mu - \\tfrac{1}{2}\\sigma^2\\right)t + \\sigma W_t\\right]$"
+            },
+            {
+                "q": "Why does GBM's solution feature a $-\\frac{1}{2}\\sigma^2 t$ adjustment relative to the naive exponential of the drift?",
+                "a": "It arises from applying Ito's Lemma to $\\ln S_t$, correcting for the extra second-order term in stochastic calculus."
+            },
+            {
+                "q": "Why might a mean-reverting process (like Ornstein-Uhlenbeck) be more appropriate than GBM for modelling short-term interest rates?",
+                "a": "Interest rates fluctuate around a long-run economic equilibrium rather than drifting indefinitely, which mean reversion captures but GBM does not."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Stochastic models of security prices",
+        "description": "Focuses on the continuous-time log-normal model of security prices — its structure, implications, and the empirical evidence for and against it.",
+        "cards": [
+            {
+                "q": "What does the continuous-time log-normal model assume about security prices?",
+                "a": "That prices follow geometric Brownian motion, so log returns over any period are normally distributed."
+            },
+            {
+                "q": "If $S_t$ follows the log-normal model, what is the distribution of $\\ln(S_t/S_0)$?",
+                "a": "Normal, with mean $(\\mu - \\tfrac12\\sigma^2)t$ and variance $\\sigma^2 t$."
+            },
+            {
+                "q": "What does the log-normal model imply about the possible range of future prices?",
+                "a": "Prices remain strictly positive (can never go negative), consistent with limited liability of shares."
+            },
+            {
+                "q": "Give one piece of empirical evidence against the log-normal model.",
+                "a": "Observed asset returns often show 'fat tails' (more extreme moves than a normal distribution predicts) and negative skewness."
+            },
+            {
+                "q": "What is 'volatility clustering,' and how does it challenge the log-normal model?",
+                "a": "Periods of high volatility tend to cluster together; the simple log-normal model assumes constant volatility, which doesn't capture this."
+            },
+            {
+                "q": "What does 'skewness' in observed return distributions typically show, compared to the log-normal model assumption?",
+                "a": "Many equity return distributions show negative skewness (large downward moves more common/severe), unlike the symmetric assumption."
+            },
+            {
+                "q": "What is 'kurtosis,' and why is it relevant when testing the log-normal model?",
+                "a": "A measure of the 'fatness' of a distribution's tails; observed returns typically have higher kurtosis than the normal distribution predicts."
+            },
+            {
+                "q": "Why might the log-normal model still be widely used despite its known limitations?",
+                "a": "It is mathematically tractable, provides a reasonable first approximation, and underlies foundational results such as Black-Scholes."
+            },
+            {
+                "q": "What alternative models have been proposed to address fat tails not captured by the log-normal model?",
+                "a": "Models incorporating jumps (jump-diffusion models) or stochastic volatility."
+            },
+            {
+                "q": "How would you test whether historical returns are consistent with the log-normal model?",
+                "a": "Statistically test whether log returns are normally distributed (e.g. skewness/kurtosis tests), and check for constant volatility over time."
+            },
+            {
+                "q": "What does the log-normal model assume about the independence of returns over non-overlapping periods?",
+                "a": "That they are independent (and identically distributed), consistent with the independent increments of the underlying Brownian motion."
+            },
+            {
+                "q": "Why is independence of returns a strong (and often violated) assumption?",
+                "a": "Empirical evidence shows some serial correlation and volatility clustering in real markets."
+            },
+            {
+                "q": "What would 'excess kurtosis' of zero indicate about a return distribution?",
+                "a": "The distribution's tails match those of a normal distribution."
+            },
+            {
+                "q": "Why is the log-normal model considered a 'continuous-time' model?",
+                "a": "Prices are modelled as evolving continuously through time (via a diffusion process), rather than only at discrete intervals."
+            },
+            {
+                "q": "What is one practical consequence of using the log-normal model when real markets exhibit fat tails?",
+                "a": "Risk measures (e.g. VaR) based on the log-normal assumption can understate the true probability/severity of extreme losses."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Characteristics of derivative securities",
+        "description": "Covers the basic building blocks of derivatives pricing — arbitrage, complete markets, forward contracts, and model-independent bounds and relationships for options.",
+        "cards": [
+            {
+                "q": "What is 'arbitrage'?",
+                "a": "A trading strategy that guarantees a profit with no risk and no net initial investment."
+            },
+            {
+                "q": "What is a 'complete market'?",
+                "a": "A market in which every contingent claim (payoff pattern) can be replicated using a combination of the available traded assets."
+            },
+            {
+                "q": "How is the fair (no-arbitrage) forward price of an asset with no income derived?",
+                "a": "$F_0 = S_0\\,e^{rT}$, the spot price accumulated at the risk-free rate to the forward's maturity."
+            },
+            {
+                "q": "How does the forward price formula change if the underlying asset pays a continuous dividend yield $q$?",
+                "a": "$F_0 = S_0\\,e^{(r-q)T}$"
+            },
+            {
+                "q": "What are the general upper and lower bounds for a European call option's price (no dividends)?",
+                "a": "Lower bound: $\\max(S_0 - Ke^{-rT}, 0)$; upper bound: $S_0$."
+            },
+            {
+                "q": "What is 'put-call parity' for European options (no dividends)?",
+                "a": "$C - P = S_0 - Ke^{-rT}$, linking the prices of a call and put with the same strike and maturity."
+            },
+            {
+                "q": "Why does put-call parity hold without needing any specific pricing model?",
+                "a": "It follows purely from a no-arbitrage argument comparing two portfolios with identical payoffs at maturity."
+            },
+            {
+                "q": "What is the key difference between a European and an American option?",
+                "a": "A European option can only be exercised at maturity; an American option can be exercised at any time up to and including maturity."
+            },
+            {
+                "q": "Why is it (generally) never optimal to exercise an American call option early on a non-dividend-paying stock?",
+                "a": "Holding the option (with its time value and deferred payment of the strike) is worth at least as much as exercising early."
+            },
+            {
+                "q": "How does an upper bound for an American put option compare with a European put?",
+                "a": "An American put's upper bound is the strike price $K$ itself, since it can be exercised early."
+            },
+            {
+                "q": "What does 'factors that affect option prices' typically include?",
+                "a": "The underlying asset price, strike price, time to maturity, volatility, risk-free interest rate, and any dividends."
+            },
+            {
+                "q": "How does higher volatility of the underlying asset affect both call and put option prices, all else equal?",
+                "a": "It increases both, since greater uncertainty increases the value of the option's asymmetric (limited downside) payoff."
+            },
+            {
+                "q": "What is meant by 'long' and 'short' positions in a forward contract?",
+                "a": "The long position agrees to buy the underlying at the forward price at maturity; the short position agrees to sell."
+            },
+            {
+                "q": "What is the payoff to the holder of a European call option at maturity?",
+                "a": "$\\max(S_T - K, 0)$"
+            },
+            {
+                "q": "What is the payoff to the holder of a European put option at maturity?",
+                "a": "$\\max(K - S_T, 0)$"
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "The Greeks",
+        "description": "Introduces the standard sensitivity measures ('the Greeks') describing how an option's price changes with respect to underlying market variables.",
+        "cards": [
+            {
+                "q": "What does 'Delta' ($\\Delta$) measure?",
+                "a": "The sensitivity of an option's price to a small change in the price of the underlying asset: $\\Delta = \\frac{\\partial V}{\\partial S}$"
+            },
+            {
+                "q": "What does 'Gamma' ($\\Gamma$) measure?",
+                "a": "The rate of change of Delta with respect to the underlying asset price: $\\Gamma = \\frac{\\partial^2 V}{\\partial S^2}$"
+            },
+            {
+                "q": "What does 'Vega' measure?",
+                "a": "The sensitivity of an option's price to a small change in the volatility of the underlying asset."
+            },
+            {
+                "q": "What does 'Theta' ($\\Theta$) measure?",
+                "a": "The sensitivity of an option's price to the passage of time (time decay), holding other factors constant."
+            },
+            {
+                "q": "What does 'Rho' ($\\rho$) measure?",
+                "a": "The sensitivity of an option's price to a small change in the risk-free interest rate."
+            },
+            {
+                "q": "What is the range of Delta for a European call option?",
+                "a": "Between 0 and 1."
+            },
+            {
+                "q": "What is the range of Delta for a European put option?",
+                "a": "Between -1 and 0."
+            },
+            {
+                "q": "Why is Theta typically negative for a long option position?",
+                "a": "As time passes, there's less time for the underlying to move favourably, so the option's time value erodes."
+            },
+            {
+                "q": "What does it mean to 'delta-hedge' a derivative position?",
+                "a": "Holding an offsetting position in the underlying asset (equal to Delta) so the combined portfolio is insensitive to small moves in the underlying."
+            },
+            {
+                "q": "Why does a delta-hedged position need to be rebalanced over time?",
+                "a": "Delta itself changes as the underlying price and time to maturity change (this rate is Gamma), needing periodic adjustment."
+            },
+            {
+                "q": "Why is Gamma particularly important for assessing hedging risk?",
+                "a": "High Gamma means Delta can change rapidly, so a delta-hedge can quickly become outdated, requiring more frequent rebalancing."
+            },
+            {
+                "q": "For a European call option (no dividends), how does Delta relate to the risk-neutral probability the option finishes in the money?",
+                "a": "They're closely related — in the Black-Scholes model, call Delta equals $N(d_1)$."
+            },
+            {
+                "q": "How does an option's Vega typically behave as the option approaches maturity?",
+                "a": "It tends to decrease towards zero — there's less time remaining for volatility to have an effect."
+            },
+            {
+                "q": "What second-order derivative measures the sensitivity of Vega to changes in volatility?",
+                "a": "'Vomma' (or volga) — a more advanced Greek beyond the basic set."
+            },
+            {
+                "q": "Why might a trader want a portfolio that is both 'delta-neutral' and 'gamma-neutral'?",
+                "a": "To be protected against both small and larger moves in the underlying price, reducing the need for frequent rebalancing."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "The binomial model",
+        "description": "Introduces binomial trees for option pricing, the risk-neutral probability measure, and the equivalent state-price deflator approach.",
+        "cards": [
+            {
+                "q": "What is the basic structure of a one-step binomial model?",
+                "a": "The underlying asset price can move to one of two possible values (up or down) over one time step, from a known starting price."
+            },
+            {
+                "q": "What is the 'risk-neutral probability' in a binomial model?",
+                "a": "The (hypothetical) probability of an up-move under which the discounted expected value of the asset (and any derivative) equals its current price."
+            },
+            {
+                "q": "How is the risk-neutral up-probability $p$ derived in a simple one-step binomial model?",
+                "a": "$p = \\frac{e^{r\\Delta t} - d}{u - d}$, from the no-arbitrage condition that the stock's expected return under $p$ equals the risk-free rate."
+            },
+            {
+                "q": "How is a derivative's price found using risk-neutral valuation in the binomial model?",
+                "a": "Discount the expected payoff of the derivative, calculated using the risk-neutral probabilities, at the risk-free rate."
+            },
+            {
+                "q": "Why is the risk-neutral measure described as 'a computational tool' rather than the real-world probability?",
+                "a": "It doesn't represent investors' actual beliefs — it's a mathematical device making discounted prices martingales, simplifying valuation."
+            },
+            {
+                "q": "What is the key advantage of using risk-neutral valuation?",
+                "a": "It allows derivatives to be priced without needing to know investors' risk preferences or the real-world probability of price movements."
+            },
+            {
+                "q": "How does a multi-step binomial 'lattice' extend the one-step model?",
+                "a": "By chaining together many one-step up/down moves over successive time intervals, building a tree of possible price paths to expiry."
+            },
+            {
+                "q": "What is a 'state-price deflator'?",
+                "a": "A stochastic process used to convert real-world expected payoffs into current prices by discounting with state-dependent factors."
+            },
+            {
+                "q": "How does the state-price deflator approach relate to the risk-neutral approach?",
+                "a": "They are equivalent — the deflator re-weights real-world probabilities in exactly the way the risk-neutral measure does, giving the same prices."
+            },
+            {
+                "q": "What no-arbitrage condition must the up and down factors ($u, d$) satisfy relative to the risk-free rate?",
+                "a": "$d < e^{r\\Delta t} < u$, for the risk-neutral probability to lie strictly between 0 and 1."
+            },
+            {
+                "q": "How would you value an American option within a binomial tree?",
+                "a": "Work backwards through the tree, at each node taking the greater of the discounted continuation value and the immediate exercise value."
+            },
+            {
+                "q": "Why does increasing the number of steps in a binomial tree improve pricing accuracy?",
+                "a": "It better approximates continuous-time price movements, converging towards continuous-time models like Black-Scholes."
+            },
+            {
+                "q": "What determines a security's price under the state-price deflator approach?",
+                "a": "The expected value, under the real-world measure, of the state-price deflator multiplied by the security's future payoff."
+            },
+            {
+                "q": "How is delta hedging naturally derived from a one-step binomial model?",
+                "a": "By solving for the number of shares (combined with risk-free borrowing/lending) needed to exactly replicate the derivative's payoff in both states."
+            },
+            {
+                "q": "Why is the binomial model considered pedagogically useful, despite being an approximation?",
+                "a": "It illustrates no-arbitrage pricing, risk-neutral valuation and replication in a simple, discrete setting that generalises to continuous-time models."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "The Black-Scholes option pricing formula",
+        "description": "Covers the Black-Scholes partial differential equation and formula, the martingale (risk-neutral) approach to pricing, and the model's underlying assumptions.",
+        "cards": [
+            {
+                "q": "What is the Black-Scholes formula for a European call option price?",
+                "a": "$C = S_0 N(d_1) - Ke^{-rT}N(d_2)$, where $N(\\cdot)$ is the standard normal CDF."
+            },
+            {
+                "q": "What are $d_1$ and $d_2$ in the Black-Scholes formula?",
+                "a": "$d_1 = \\frac{\\ln(S_0/K) + (r+\\tfrac12\\sigma^2)T}{\\sigma\\sqrt{T}}$, and $d_2 = d_1 - \\sigma\\sqrt{T}$"
+            },
+            {
+                "q": "What is the Black-Scholes partial differential equation?",
+                "a": "$\\frac{\\partial V}{\\partial t} + rS\\frac{\\partial V}{\\partial S} + \\tfrac12\\sigma^2 S^2\\frac{\\partial^2 V}{\\partial S^2} = rV$"
+            },
+            {
+                "q": "What is the 'Garman-Kohlhagen' form of the Black-Scholes model used for?",
+                "a": "Pricing options on foreign currencies, adjusting for a continuous dividend-like yield equal to the foreign risk-free rate."
+            },
+            {
+                "q": "What is the 'martingale approach' to derivative pricing?",
+                "a": "Pricing a derivative as the discounted expected payoff under the risk-neutral measure, since discounted asset prices are martingales under that measure."
+            },
+            {
+                "q": "List two key assumptions underlying the basic Black-Scholes model.",
+                "a": "Constant volatility and constant risk-free rate (also: no dividends, frictionless markets, continuous trading, log-normal price dynamics)."
+            },
+            {
+                "q": "Why is the assumption of constant volatility considered unrealistic in practice?",
+                "a": "Observed volatility varies over time and differs by strike/maturity (the volatility smile/skew), unlike the model's single constant parameter."
+            },
+            {
+                "q": "How would you use the Black-Scholes model to hedge a written call option?",
+                "a": "Continuously hold Delta shares of the underlying asset (delta-hedging), financed at the risk-free rate, rebalancing as Delta changes."
+            },
+            {
+                "q": "What does it mean for a market to be 'frictionless' in the Black-Scholes assumptions?",
+                "a": "No transaction costs, no taxes, and assets are infinitely divisible and can be traded continuously."
+            },
+            {
+                "q": "How does the Black-Scholes formula for a put option relate to the call formula?",
+                "a": "Via put-call parity: $P = Ke^{-rT}N(-d_2) - S_0N(-d_1)$"
+            },
+            {
+                "q": "What does the martingale representation theorem provide, conceptually?",
+                "a": "A justification that, under the risk-neutral measure, any attainable payoff can be replicated by a self-financing trading strategy."
+            },
+            {
+                "q": "What happens to a European call's Black-Scholes price as time to maturity $T$ approaches zero?",
+                "a": "It converges to the option's intrinsic value, $\\max(S_0 - K, 0)$."
+            },
+            {
+                "q": "How does the Black-Scholes formula need to be adjusted for an underlying paying a continuous dividend yield $q$?",
+                "a": "Replace $S_0$ with $S_0e^{-qT}$ in the formula (and correspondingly in $d_1$)."
+            },
+            {
+                "q": "Why is validity of the Black-Scholes assumptions important to consider when applying the model in practice?",
+                "a": "If assumptions like constant volatility or frictionless markets are significantly violated, the model's prices/hedges can be materially inaccurate."
+            },
+            {
+                "q": "What connects the Black-Scholes PDE approach and the martingale (risk-neutral expectation) approach?",
+                "a": "The Feynman-Kac theorem — the PDE's solution can be represented as a discounted risk-neutral expectation."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "The 5-step method",
+        "description": "Introduces a systematic risk-neutral valuation procedure — the '5-step method' — for pricing derivatives using a general change-of-measure/numeraire approach.",
+        "cards": [
+            {
+                "q": "What is the general purpose of the '5-step method'?",
+                "a": "To provide a systematic procedure for pricing a derivative by risk-neutral valuation, choosing a convenient numeraire and change of measure."
+            },
+            {
+                "q": "What is a 'numeraire'?",
+                "a": "A reference asset used to express the prices of all other assets in relative terms — chosen so the pricing calculation becomes simpler."
+            },
+            {
+                "q": "Why might a different numeraire (rather than the cash/money-market account) sometimes simplify a pricing problem?",
+                "a": "Expressing payoffs relative to a well-chosen numeraire can turn a complex expectation into a much simpler one."
+            },
+            {
+                "q": "What is the first general step in the 5-step method (in broad terms)?",
+                "a": "Express the derivative's payoff in terms of the chosen numeraire."
+            },
+            {
+                "q": "What does 'changing measure' (via Girsanov's theorem, conceptually) achieve in this method?",
+                "a": "It adjusts the probability measure so that asset prices expressed in the new numeraire become martingales."
+            },
+            {
+                "q": "Why is the risk-neutral measure associated with the money-market account often the most common numeraire choice?",
+                "a": "It's a natural, intuitive default, directly giving the standard discounted-expected-payoff pricing formula."
+            },
+            {
+                "q": "What must be true of the process for an asset price expressed in units of the chosen numeraire?",
+                "a": "It must be a martingale, under the corresponding measure."
+            },
+            {
+                "q": "How does the 5-step method relate to the standard risk-neutral pricing formula used with the money-market account?",
+                "a": "The standard formula is a special case of the 5-step method, using the money-market account as the numeraire."
+            },
+            {
+                "q": "Give an example of an alternative numeraire that might be useful for pricing an exchange option.",
+                "a": "Using one of the two underlying assets itself as the numeraire, rather than cash."
+            },
+            {
+                "q": "What is the final step of the 5-step method typically concerned with?",
+                "a": "Evaluating the resulting expectation (often reducing to a standard distributional calculation) to obtain the price."
+            },
+            {
+                "q": "Why can choosing a well-suited numeraire reduce the dimensionality or complexity of a pricing problem?",
+                "a": "It can eliminate one source of randomness, simplifying the remaining expectation."
+            },
+            {
+                "q": "What mathematical tool underlies the change of numeraire/measure technique?",
+                "a": "The Radon-Nikodym derivative, which relates probabilities under one measure to probabilities under another."
+            },
+            {
+                "q": "Why is the 5-step method described as a general procedure rather than a single formula?",
+                "a": "It's a systematic approach applicable to a wide range of payoffs and numeraire choices, not a single closed-form result like Black-Scholes."
+            },
+            {
+                "q": "How does the 5-step method help when a derivative's payoff depends on more than one underlying asset?",
+                "a": "By choosing a numeraire that simplifies the relationship between the assets, reducing a multi-asset problem to a simpler one."
+            },
+            {
+                "q": "Why is understanding the 5-step method valuable beyond just memorising the Black-Scholes formula?",
+                "a": "It provides a flexible, general framework applicable to a much wider range of derivative pricing problems."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "The term structure of interest rates",
+        "description": "Covers models describing how interest rates vary by term — desirable characteristics, risk-neutral bond pricing, and the Vasicek, Cox-Ingersoll-Ross and Hull-White models.",
+        "cards": [
+            {
+                "q": "What does a 'model of the term structure of interest rates' attempt to describe?",
+                "a": "How interest rates (or bond prices/yields) of different maturities are related and evolve over time, typically via a short-rate model."
+            },
+            {
+                "q": "Give one desirable characteristic of a good term structure model.",
+                "a": "Non-negative interest rates, mean reversion, and analytical tractability for bond/derivative pricing."
+            },
+            {
+                "q": "What is the 'risk-neutral approach' to pricing a zero-coupon bond?",
+                "a": "The bond price equals the risk-neutral expectation of the discounted (at the stochastic short rate) payoff of $1$ at maturity."
+            },
+            {
+                "q": "What is the SDE for the short rate under the Vasicek model?",
+                "a": "$dr_t = a(b - r_t)\\,dt + \\sigma\\,dW_t$ — an Ornstein-Uhlenbeck (mean-reverting) process."
+            },
+            {
+                "q": "What is a key limitation of the Vasicek model?",
+                "a": "It allows the short rate to become negative with positive probability."
+            },
+            {
+                "q": "What is the SDE for the short rate under the Cox-Ingersoll-Ross (CIR) model?",
+                "a": "$dr_t = a(b - r_t)\\,dt + \\sigma\\sqrt{r_t}\\,dW_t$ — mean-reverting, with volatility proportional to $\\sqrt{r_t}$."
+            },
+            {
+                "q": "How does the CIR model address the Vasicek model's main limitation?",
+                "a": "The $\\sqrt{r_t}$ term means volatility shrinks to zero as rates approach zero, keeping rates non-negative under suitable conditions."
+            },
+            {
+                "q": "What distinguishes the Hull-White model from the Vasicek model?",
+                "a": "Hull-White allows the mean-reversion level (and potentially other parameters) to be time-dependent, exactly fitting the current yield curve."
+            },
+            {
+                "q": "Why is exactly fitting the current yield curve (as Hull-White allows) often desirable in practice?",
+                "a": "It ensures the model's bond prices match observed market prices today, important for consistent pricing and hedging."
+            },
+            {
+                "q": "What is a 'one-factor' model of the term structure?",
+                "a": "A model where all interest rates of different maturities are driven by a single source of randomness (typically the short rate)."
+            },
+            {
+                "q": "What is a limitation of one-factor short-rate models generally?",
+                "a": "They imply all points on the yield curve are perfectly (or near-perfectly) correlated, unlike real yield curve movements."
+            },
+            {
+                "q": "How would you use a term structure model to price an interest-rate derivative?",
+                "a": "Use the risk-neutral dynamics of the short rate to compute the discounted expected payoff of the derivative."
+            },
+            {
+                "q": "What are 'principal concepts and terms' typically covered when introducing term structure models?",
+                "a": "Concepts such as the short rate, the yield curve, forward rates, and the risk-neutral valuation framework linking them."
+            },
+            {
+                "q": "Why might the Vasicek model still be used in practice despite allowing negative rates?",
+                "a": "It's analytically tractable (closed-form bond prices), and negative rates became less of a concern once real rates occasionally went negative."
+            },
+            {
+                "q": "What role does mean reversion play in all three models (Vasicek, CIR, Hull-White)?",
+                "a": "It reflects the empirical observation that rates fluctuate around a long-run level rather than drifting off indefinitely."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Credit risk",
+        "description": "Introduces simple models for credit risk — credit events, recovery rates, structural models (like Merton's), and reduced-form/intensity-based models.",
+        "cards": [
+            {
+                "q": "What is a 'credit event'?",
+                "a": "An event (default, bankruptcy, failure to pay) that triggers a loss or change in status for a debt obligation."
+            },
+            {
+                "q": "What is the 'recovery rate'?",
+                "a": "The proportion of a debt's face value that is recovered by creditors following a credit event (default)."
+            },
+            {
+                "q": "What are the two broad approaches to modelling credit risk?",
+                "a": "Structural models (based on the firm's asset value) and reduced-form (intensity-based) models (based on a statistical default intensity)."
+            },
+            {
+                "q": "What is the core idea of the Merton (structural) model?",
+                "a": "A firm defaults if the value of its assets falls below the face value of its debt at maturity; equity is modelled as a call option on the firm's assets."
+            },
+            {
+                "q": "In the Merton model, what financial instrument is a firm's equity analogous to?",
+                "a": "A European call option on the firm's assets, with strike price equal to the face value of the debt."
+            },
+            {
+                "q": "What does the Merton model imply about the firm's debt value?",
+                "a": "It's equivalent to a risk-free bond minus a put option on the firm's assets."
+            },
+            {
+                "q": "What is a key input needed to apply the Merton model?",
+                "a": "The current value and volatility of the firm's assets (often estimated indirectly from observable equity value and volatility)."
+            },
+            {
+                "q": "What is a 'reduced-form' (intensity-based) credit risk model?",
+                "a": "A model where default occurs according to a statistical hazard rate/intensity process, without explicitly modelling the firm's asset value."
+            },
+            {
+                "q": "What is the 'two-state model' for credit rating with constant transition intensity?",
+                "a": "A simple model where a bond/issuer is in one of two states (non-default or default), moving to default at a constant intensity $\\lambda$."
+            },
+            {
+                "q": "Under the two-state model with constant intensity $\\lambda$, what is the probability of surviving (no default) to time $t$?",
+                "a": "$e^{-\\lambda t}$"
+            },
+            {
+                "q": "What is one advantage of reduced-form models over structural models?",
+                "a": "They don't require modelling the firm's underlying asset value, and can be calibrated directly to observed credit spreads/bond prices."
+            },
+            {
+                "q": "What is one advantage of structural models over reduced-form models?",
+                "a": "They provide an economic explanation for why default occurs, giving more intuitive insight into default drivers."
+            },
+            {
+                "q": "How does a higher recovery rate affect the expected loss from a credit event, all else equal?",
+                "a": "It reduces the expected loss, since a larger fraction of the debt's value is recovered."
+            },
+            {
+                "q": "Why might credit spreads on corporate bonds be higher than what expected default losses alone would suggest?",
+                "a": "Additional compensation for illiquidity, uncertainty in recovery rates, and risk premia demanded by investors."
+            },
+            {
+                "q": "How could the two-state constant-intensity model be extended to reflect changing credit quality over time?",
+                "a": "By using a multi-state model with several credit rating states and transition intensities between them."
+            }
+        ]
+    },
+    {
+        "id": "m17",
+        "title": "Ruin theory",
+        "description": "Models an insurer's aggregate claims and cashflow process to assess the probability of ruin — using the Poisson process, the adjustment coefficient, Lundberg's inequality, and the effect of reinsurance.",
+        "cards": [
+            {
+                "q": "What does 'ruin' mean in ruin theory?",
+                "a": "The insurer's surplus (assets minus liabilities, broadly) falling below zero at some point."
+            },
+            {
+                "q": "What is the 'aggregate claim process'?",
+                "a": "The cumulative total of claim amounts paid by an insurer up to time $t$, as a stochastic process."
+            },
+            {
+                "q": "What is a Poisson process used to model in this context?",
+                "a": "The number of claim events occurring over time, assuming events occur independently at a constant average rate."
+            },
+            {
+                "q": "What is the distribution of the number of events of a Poisson process with rate $\\lambda$ in an interval of length $t$?",
+                "a": "Poisson with mean $\\lambda t$."
+            },
+            {
+                "q": "What is the distribution of the waiting time between events in a Poisson process?",
+                "a": "Exponential with rate $\\lambda$ (mean $1/\\lambda$)."
+            },
+            {
+                "q": "What is a 'compound Poisson process,' as used to model aggregate claims?",
+                "a": "A process where the number of claims follows a Poisson process, and each claim has a random size, giving a total that's the sum of a Poisson-distributed number of claim sizes."
+            },
+            {
+                "q": "What is the 'probability of ruin'?",
+                "a": "The probability that the insurer's surplus falls below zero at some point, either within a finite time horizon or ever (infinite time)."
+            },
+            {
+                "q": "How does the probability of ruin in finite time relate to the probability of ruin in infinite time?",
+                "a": "The infinite-time ruin probability is always at least as large as the probability within any finite time horizon."
+            },
+            {
+                "q": "What is the 'adjustment coefficient' (Lundberg's coefficient)?",
+                "a": "A parameter $R>0$ appearing in bounds/approximations for the probability of ruin, determined by the premium loading and claim size distribution."
+            },
+            {
+                "q": "What does Lundberg's inequality state?",
+                "a": "The probability of ultimate ruin is bounded above by $e^{-Ru}$, where $u$ is the initial surplus and $R$ is the adjustment coefficient."
+            },
+            {
+                "q": "How does increasing initial surplus $u$ affect the (Lundberg) bound on the probability of ruin?",
+                "a": "It decreases the bound, since $e^{-Ru}$ falls as $u$ increases."
+            },
+            {
+                "q": "How does proportional reinsurance typically affect the adjustment coefficient (and hence the probability of ruin)?",
+                "a": "It can increase the adjustment coefficient (reducing ruin probability) by reducing retained claims variability, though it also reduces retained premium income."
+            },
+            {
+                "q": "How can the probability of ruin be estimated when no closed-form solution is available?",
+                "a": "By simulation — repeatedly simulating the claims and premium process and estimating the proportion of paths resulting in ruin."
+            },
+            {
+                "q": "What is the effect of excess of loss reinsurance on an insurer's aggregate claims variability?",
+                "a": "It caps exposure to very large individual claims, reducing the variability (and tail risk) of retained aggregate claims."
+            },
+            {
+                "q": "Why might an insurer choose a level of reinsurance that maximises the adjustment coefficient?",
+                "a": "A higher adjustment coefficient corresponds to a lower bound on the probability of ruin, a natural way to manage solvency risk against reinsurance cost."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Run-off triangles",
+        "description": "Covers actuarial reserving techniques for estimating outstanding general insurance claims — the chain ladder method, average cost per claim, and the Bornhuetter-Ferguson method.",
+        "cards": [
+            {
+                "q": "What is a 'run-off triangle' (or 'delay triangle')?",
+                "a": "A table showing claims data by origin year and development year, used to project how claims for each origin year will develop to their ultimate value."
+            },
+            {
+                "q": "What is a 'development factor' in the chain ladder method?",
+                "a": "A ratio, estimated from historical data, used to project cumulative claims from one development period to the next."
+            },
+            {
+                "q": "How is a development factor typically estimated from a run-off triangle?",
+                "a": "As the ratio of the sum of cumulative claims at one development year to the sum at the previous development year, across origin years with data for both."
+            },
+            {
+                "q": "What is the basic chain ladder method used for?",
+                "a": "Projecting the future development of a run-off triangle, using development factors, to estimate ultimate claims for each origin year."
+            },
+            {
+                "q": "What key assumption underlies the basic chain ladder method?",
+                "a": "That development patterns are consistent across all origin years."
+            },
+            {
+                "q": "How can the basic chain ladder method be adjusted to allow explicitly for inflation?",
+                "a": "By separating out an assumed inflation index from the development factors, so projected future claims incorporate an explicit inflation assumption."
+            },
+            {
+                "q": "What is the 'average cost per claim' method for estimating outstanding claims?",
+                "a": "Estimating outstanding claims as the projected number of outstanding claims multiplied by an assumed average cost per claim."
+            },
+            {
+                "q": "What is the 'Bornhuetter-Ferguson' method used for?",
+                "a": "Estimating outstanding claims by combining a prior estimate of ultimate claims with the chain-ladder-implied proportion of claims still to emerge."
+            },
+            {
+                "q": "How does the Bornhuetter-Ferguson method differ in philosophy from the pure chain ladder method?",
+                "a": "It blends an independent prior view of ultimate claims with the observed data pattern, rather than relying entirely on the chain ladder projection."
+            },
+            {
+                "q": "Why might Bornhuetter-Ferguson be preferred over pure chain ladder for the most recent origin year?",
+                "a": "The most recent year has little data, so a pure chain ladder projection can be very sensitive to random fluctuation — blending stabilises the estimate."
+            },
+            {
+                "q": "What is a 'statistical model' underlying run-off triangle methods generally used for?",
+                "a": "To provide a probabilistic framework justifying and generalising the deterministic chain-ladder-type calculations, and allowing uncertainty to be quantified."
+            },
+            {
+                "q": "Name one assumption underlying the basic chain ladder method (beyond consistent development patterns).",
+                "a": "That there are no changes in the claims process (legal environment, claims handling) over time that would invalidate using historical patterns."
+            },
+            {
+                "q": "How would a change in claims handling processes partway through the historical data affect chain ladder projections?",
+                "a": "It could distort the development pattern, potentially requiring an adjustment or a different approach for affected years."
+            },
+            {
+                "q": "What is 'delay' (development) year, in the context of a run-off triangle?",
+                "a": "The number of years (or periods) since the origin (accident/underwriting) year, tracking how claims for that origin year have developed."
+            },
+            {
+                "q": "Why is estimating outstanding claims important for a general insurer?",
+                "a": "To hold adequate reserves for claims that have occurred but are not yet fully paid/settled, ensuring it can meet future obligations."
+            }
+        ]
+    }
+],
 };
