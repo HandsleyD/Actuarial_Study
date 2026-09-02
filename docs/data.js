@@ -5905,4 +5905,2686 @@ const MODULES = {
         ]
     }
 ],
+  CP1: [
+    {
+        "id": "m01",
+        "title": "What is Subject CP1 all about?",
+        "description": "An orientation chapter explaining CP1's role as the bridge between technical actuarial subjects and real-world professional practice, and the skills it develops.",
+        "cards": [
+            {
+                "q": "What is the primary aim of Subject CP1?",
+                "a": "To teach how to apply actuarial, financial and statistical techniques from earlier subjects to real commercial and business problems."
+            },
+            {
+                "q": "How does CP1 differ from the earlier CB/CM/CS subjects?",
+                "a": "It focuses on applying and combining prior technical knowledge to practical business scenarios, rather than teaching new theory."
+            },
+            {
+                "q": "What kind of skills does CP1 particularly develop?",
+                "a": "Higher-order skills — judgement, application of technique to context, and communication of reasoned advice."
+            },
+            {
+                "q": "Why is CP1 described as underpinning the Specialist Principles (SP) subjects?",
+                "a": "The general actuarial practice skills it covers are then applied more deeply within each specialist practice area at Fellowship level."
+            },
+            {
+                "q": "What broad areas of actuarial work does CP1 span?",
+                "a": "Financial products, investments, modelling, risk management, and financial reporting/capital management."
+            },
+            {
+                "q": "Why might CP1 questions often present a scenario rather than ask for a direct calculation?",
+                "a": "The exam tests the ability to apply concepts and exercise judgement in realistic situations, not just recall or compute."
+            },
+            {
+                "q": "What subjects does CP1 explicitly build upon?",
+                "a": "CB1, CB2, CS1, CS2, CM1, and CM2."
+            },
+            {
+                "q": "What does CP1 contribute to the Chartered Enterprise Risk Actuary credential?",
+                "a": "An essential introduction to Enterprise Risk Management concepts later developed fully in Subject SP9."
+            },
+            {
+                "q": "Why is CP1 relevant across so many different practice areas (life, general insurance, pensions, investment)?",
+                "a": "Its core concepts (products, risk, modelling, capital) are common building blocks used throughout actuarial work."
+            },
+            {
+                "q": "What is the general structure of the CP1 course, in terms of parts?",
+                "a": "Ten parts, covering products/environment, investments, modelling/pricing, risk management, and financial reporting/capital in turn."
+            },
+            {
+                "q": "Why might understanding 'the external environment' be considered foundational to CP1?",
+                "a": "Actuarial advice and financial products don't exist in a vacuum — the wider context shapes what's appropriate and viable."
+            },
+            {
+                "q": "What is meant by applying 'actuarial principles' to a problem, in the CP1 sense?",
+                "a": "Using concepts like risk pooling, time value of money, and probabilistic thinking to structure and solve practical business problems."
+            },
+            {
+                "q": "Why does CP1 require synthesising knowledge from several earlier subjects at once?",
+                "a": "Real actuarial problems rarely fall neatly into one technical area — they typically require combining finance, statistics, and risk concepts."
+            },
+            {
+                "q": "What is a common feature of CP1 exam questions across different chapters?",
+                "a": "They tend to require reasoned, structured written answers applying concepts to a scenario, rather than a single numerical answer."
+            },
+            {
+                "q": "Why is CP1 sometimes seen as a bridge between the 'technical' and 'specialist' stages of the actuarial exams?",
+                "a": "It shows how the technical tools built up in CB/CM/CS combine to address real actuarial practice questions."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Actuarial advice",
+        "description": "Covers the nature of actuarial advice — the role of the actuary as adviser, the advice process, and professional standards underpinning it.",
+        "cards": [
+            {
+                "q": "What is the fundamental role of an actuary giving advice?",
+                "a": "To apply technical expertise and judgement to help a client or employer make informed financial decisions under uncertainty."
+            },
+            {
+                "q": "Who might be the 'client' for actuarial advice?",
+                "a": "An employer, a board of directors, a regulator, trustees, or the general public, depending on the actuary's role."
+            },
+            {
+                "q": "Why must an actuary understand their client's objectives before giving advice?",
+                "a": "Advice that is technically correct but doesn't address the client's actual needs/objectives is of limited practical value."
+            },
+            {
+                "q": "What does it mean for actuarial advice to be 'proportionate'?",
+                "a": "The depth and rigour of the analysis should be appropriate to the materiality and complexity of the decision being informed."
+            },
+            {
+                "q": "Why is clear communication considered as important as technical accuracy in actuarial advice?",
+                "a": "Advice that isn't understood or actioned correctly by the client fails to achieve its purpose, however technically sound."
+            },
+            {
+                "q": "What professional duty does an actuary have beyond satisfying their client?",
+                "a": "A duty to the wider public interest and to uphold the standards of the actuarial profession, even where this may conflict with a client's immediate wishes."
+            },
+            {
+                "q": "Why might an actuary need to make their assumptions and limitations explicit when giving advice?",
+                "a": "So the client understands the basis and boundaries of the advice, and isn't misled about its certainty or scope."
+            },
+            {
+                "q": "What is a key difference between advice given to a sophisticated institutional client versus an individual policyholder?",
+                "a": "The level of technical detail and explanation needed differs — advice must be tailored to the recipient's ability to understand and act on it."
+            },
+            {
+                "q": "Why might an actuary be required to consider alternative courses of action, not just evaluate one proposed option?",
+                "a": "To provide balanced advice that genuinely helps the client choose the best course of action, rather than just validating a predetermined decision."
+            },
+            {
+                "q": "What role does judgement play in actuarial advice, beyond pure calculation?",
+                "a": "Actuarial problems often involve genuine uncertainty and incomplete data, requiring judgement to select appropriate methods and interpret results sensibly."
+            },
+            {
+                "q": "Why might an actuary need to consider the interests of multiple stakeholders when advising on a single decision?",
+                "a": "Actuarial decisions (e.g. on pricing or reserving) often affect several groups (shareholders, policyholders, regulators) whose interests may not align."
+            },
+            {
+                "q": "What does it mean to 'peer review' actuarial work?",
+                "a": "Having another suitably qualified actuary independently check the work for errors, reasonableness, and appropriate professional judgement."
+            },
+            {
+                "q": "Why is peer review particularly important for actuarial advice with significant financial consequences?",
+                "a": "It reduces the risk of undetected errors or biased judgement materially affecting an important decision."
+            },
+            {
+                "q": "What is meant by 'reliance' in the context of actuarial advice?",
+                "a": "When a client or third party depends on the actuary's work/advice for their own decisions, creating a responsibility on the actuary to ensure it's fit for that purpose."
+            },
+            {
+                "q": "Why might an actuary decline to give advice on a matter, even if technically able to perform the calculations?",
+                "a": "If it falls outside their competence, involves a conflict of interest, or the necessary data/information isn't reliable enough to support sound advice."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "External environment",
+        "description": "Covers the wider economic, social, political, legal and technological environment within which actuaries and the businesses they advise operate.",
+        "cards": [
+            {
+                "q": "What does 'PESTLE' commonly stand for, as a framework for external environment analysis?",
+                "a": "Political, Economic, Social, Technological, Legal, and Environmental factors."
+            },
+            {
+                "q": "Why must actuaries consider the economic environment when giving advice?",
+                "a": "Interest rates, inflation, and economic growth directly affect asset returns, liability values, and the viability of financial products."
+            },
+            {
+                "q": "Give one example of a social/demographic trend relevant to actuarial work.",
+                "a": "An ageing population, affecting pension and healthcare costs, or changing family structures affecting insurance needs."
+            },
+            {
+                "q": "Why is the legal and regulatory environment particularly important for actuaries to monitor?",
+                "a": "Laws and regulations directly constrain what products/practices are permissible and shape solvency/reporting requirements."
+            },
+            {
+                "q": "How might technological change affect the insurance industry?",
+                "a": "Through new data sources (e.g. telematics) enabling more granular pricing, automation of processes, and new distribution channels."
+            },
+            {
+                "q": "Why might political factors (e.g. a change of government) matter for long-term actuarial projections?",
+                "a": "Government policy affects taxation, regulation, state benefits, and the wider economy, all of which feed into actuarial assumptions."
+            },
+            {
+                "q": "What is meant by the 'environmental' factor in an external environment analysis, in an actuarial context?",
+                "a": "Climate change and environmental risk, increasingly relevant to general insurance pricing, investment strategy, and long-term liability assessment."
+            },
+            {
+                "q": "Why should an actuary consider global, not just domestic, external factors?",
+                "a": "Financial markets and reinsurance/investment exposures are often international, so overseas developments can have direct domestic impact."
+            },
+            {
+                "q": "How might rising interest rates affect a life insurer's balance sheet, as an external environment consideration?",
+                "a": "It could reduce the value of fixed-interest liabilities more than assets (or vice versa), affecting solvency depending on asset-liability matching."
+            },
+            {
+                "q": "Why is understanding competitor behaviour part of assessing a company's external environment?",
+                "a": "Competitors' pricing, product design, and market share affect a company's own commercial strategy and viability."
+            },
+            {
+                "q": "How does the external environment influence the assumptions used in actuarial modelling?",
+                "a": "Assumptions about future inflation, mortality, lapse rates, and investment returns should reflect realistic expectations shaped by the external environment."
+            },
+            {
+                "q": "Why might an actuary need to monitor the external environment on an ongoing basis, not just at a single point in time?",
+                "a": "External conditions change, and models/assumptions set at one point can become outdated, requiring periodic review."
+            },
+            {
+                "q": "Give an example of how a legal change could directly affect an insurance product's viability.",
+                "a": "A change in liability law affecting the cost of claims under a general insurance product, requiring re-pricing."
+            },
+            {
+                "q": "Why might social attitudes towards risk and insurance affect demand for actuarially-priced products?",
+                "a": "Changing attitudes to risk-sharing versus self-insurance affect consumer demand for different types of financial protection products."
+            },
+            {
+                "q": "How does the external environment analysis in CP1 relate to the broader risk management topics covered later in the course?",
+                "a": "External factors are a key source of risks that businesses must identify, assess and manage as part of their overall risk framework."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Regulation",
+        "description": "Covers why financial services are regulated, the aims and principles of prudential and market conduct regulation, and the role of regulators.",
+        "cards": [
+            {
+                "q": "Why are financial services industries typically subject to significant regulation?",
+                "a": "To protect consumers, maintain confidence in the financial system, and ensure firms remain solvent enough to meet their promises."
+            },
+            {
+                "q": "What is 'prudential regulation'?",
+                "a": "Regulation focused on ensuring firms are financially sound and able to meet their obligations, e.g. through capital and solvency requirements."
+            },
+            {
+                "q": "What is 'market conduct regulation' (or 'conduct of business' regulation)?",
+                "a": "Regulation focused on how firms treat and interact with customers — fair treatment, transparency, and appropriate product design/sale."
+            },
+            {
+                "q": "Why might prudential and conduct regulation be handled by separate regulatory bodies in some jurisdictions?",
+                "a": "Each requires different expertise and focus, and separating them can avoid conflicts of interest or diluted attention on either objective."
+            },
+            {
+                "q": "What is a key aim of solvency-related prudential regulation?",
+                "a": "To reduce the probability that a firm becomes unable to meet its liabilities to policyholders/customers."
+            },
+            {
+                "q": "What is 'information asymmetry', and why is it a common justification for financial regulation?",
+                "a": "Customers often know much less than the firm about a complex financial product's risks/suitability, justifying rules to protect them."
+            },
+            {
+                "q": "What is meant by 'treating customers fairly' (TCF) as a regulatory principle?",
+                "a": "A regulatory expectation that firms design, sell and administer products in ways that deliver fair outcomes for customers throughout the product lifecycle."
+            },
+            {
+                "q": "Why might regulation impose capital requirements beyond the amount needed to cover expected liabilities?",
+                "a": "To provide a buffer against adverse, unexpected experience, reducing the probability of insolvency."
+            },
+            {
+                "q": "What is 'regulatory arbitrage'?",
+                "a": "When firms structure their business to exploit differences between regulatory regimes (e.g. across jurisdictions or product types) to reduce regulatory burden."
+            },
+            {
+                "q": "Why is international coordination of financial regulation sometimes pursued (e.g. via international bodies)?",
+                "a": "To reduce opportunities for regulatory arbitrage and address risks that cross national borders (e.g. global financial institutions)."
+            },
+            {
+                "q": "What role does a regulator typically play beyond setting rules?",
+                "a": "Supervision (monitoring firms' ongoing compliance) and enforcement (taking action against breaches)."
+            },
+            {
+                "q": "Why might excessive regulation have a downside, despite its protective aims?",
+                "a": "It can increase costs (passed to consumers), reduce competition/innovation, and potentially restrict access to useful products."
+            },
+            {
+                "q": "How does regulation typically differ between retail (individual consumer) and wholesale (institutional) markets?",
+                "a": "Retail markets usually have more extensive consumer protection regulation, since institutional counterparties are assumed more capable of protecting their own interests."
+            },
+            {
+                "q": "Why might an actuary need to understand regulation even if not directly involved in compliance work?",
+                "a": "Regulatory requirements directly shape permissible product design, pricing, reserving and capital calculations that actuaries perform."
+            },
+            {
+                "q": "What is the role of an actuary in demonstrating compliance with prudential regulatory requirements?",
+                "a": "Performing and certifying technical calculations (e.g. reserves, capital) required to demonstrate the firm meets regulatory solvency standards."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Introduction to financial products and customer needs",
+        "description": "Covers the broad landscape of financial products, the customer needs they address, and how products are designed to meet those needs.",
+        "cards": [
+            {
+                "q": "What is the fundamental purpose of a financial product?",
+                "a": "To help a customer manage financial risk, save for the future, or meet a specific financial need (e.g. borrowing, protection, income)."
+            },
+            {
+                "q": "Give three broad categories of customer financial need that products might address.",
+                "a": "Protection against risk (e.g. death, illness), saving/investment for the future, and income provision (e.g. in retirement)."
+            },
+            {
+                "q": "What is 'protection' insurance designed to do?",
+                "a": "Provide a financial payout if a specified adverse event occurs, protecting the policyholder or their dependants from financial loss."
+            },
+            {
+                "q": "What is a 'savings' product designed to do?",
+                "a": "Help a customer accumulate funds over time, typically for a specific future goal."
+            },
+            {
+                "q": "Why might a single financial product bundle both protection and savings elements?",
+                "a": "To meet multiple customer needs simultaneously in one product, which can be more convenient or cost-effective than separate products."
+            },
+            {
+                "q": "What is meant by a customer's 'risk appetite' when considering product design?",
+                "a": "How much investment or financial risk a customer is willing and able to bear, which should inform suitable product recommendations."
+            },
+            {
+                "q": "Why is understanding the customer's time horizon important in product design/selection?",
+                "a": "Products with different liquidity, risk, and return profiles suit different time horizons — e.g. long-term pension saving versus short-term protection needs."
+            },
+            {
+                "q": "What does 'suitability' mean in the context of recommending a financial product?",
+                "a": "That the product genuinely matches the customer's needs, circumstances, and risk profile."
+            },
+            {
+                "q": "How might a customer's life stage affect their financial product needs?",
+                "a": "Younger customers may prioritise protection/saving for the future; those near retirement may prioritise income and capital preservation."
+            },
+            {
+                "q": "Why might demand for certain financial products change over an economic cycle?",
+                "a": "Risk appetite, disposable income, and confidence in the future all vary with economic conditions, affecting demand for saving versus protection products."
+            },
+            {
+                "q": "What is 'financial inclusion', and why might it be relevant to product design?",
+                "a": "Ensuring financial products are accessible and appropriate for a broad range of customers, including those often underserved by mainstream products."
+            },
+            {
+                "q": "How does the concept of 'moral hazard' relate to designing protection products?",
+                "a": "Overly generous or poorly structured benefits could reduce a policyholder's incentive to avoid the insured event, requiring careful product design to mitigate."
+            },
+            {
+                "q": "Why might a provider need to balance customer needs against commercial viability when designing a product?",
+                "a": "A product that perfectly meets customer needs but isn't profitable/sustainable for the provider won't remain available in the market."
+            },
+            {
+                "q": "What role does distribution channel (e.g. direct, adviser, broker) play in matching products to customer needs?",
+                "a": "Different channels reach different customer segments and provide different levels of guidance, affecting which products are appropriate to offer through them."
+            },
+            {
+                "q": "Why is ongoing product review important after a financial product has been designed and launched?",
+                "a": "Customer needs, the external environment, and regulation can change, potentially making a previously suitable product design outdated or unsuitable."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Benefits overview and providers of benefits",
+        "description": "Covers the range of financial benefits individuals may need (state, employer, personal) and the different types of organisations that provide them.",
+        "cards": [
+            {
+                "q": "What are the three broad sources of financial benefits available to an individual?",
+                "a": "The state, an employer, and personal (individually purchased) arrangements."
+            },
+            {
+                "q": "What is a 'state benefit'?",
+                "a": "A benefit provided by the government, typically funded through taxation or social insurance contributions."
+            },
+            {
+                "q": "What is an 'employer-provided' (occupational) benefit?",
+                "a": "A benefit provided by an employer to employees, such as a pension scheme or group life/health insurance."
+            },
+            {
+                "q": "What is a 'personal' (individually purchased) benefit?",
+                "a": "A financial product bought directly by an individual to meet their own needs, independent of state or employer provision."
+            },
+            {
+                "q": "Why might the level of state benefit provision affect demand for personal/employer benefits?",
+                "a": "If state provision is generous, individuals may have less need to supplement it privately, and vice versa."
+            },
+            {
+                "q": "What is a key advantage of employer-provided benefits, from the employee's perspective?",
+                "a": "Often cheaper (group purchasing power, employer subsidy) and more accessible (less individual underwriting) than equivalent personal cover."
+            },
+            {
+                "q": "What is a key advantage of employer-provided benefits, from the employer's perspective?",
+                "a": "Helps attract and retain employees, and can improve productivity/wellbeing, though it comes at a cost to the employer."
+            },
+            {
+                "q": "What type of organisation typically provides personal insurance and investment products?",
+                "a": "Insurance companies and investment/asset management firms."
+            },
+            {
+                "q": "What is a 'mutual' organisation, as a provider of benefits?",
+                "a": "An organisation owned by its members (e.g. policyholders) rather than external shareholders, run for members' collective benefit."
+            },
+            {
+                "q": "How does a mutual insurer's structure differ from a proprietary (shareholder-owned) insurer's?",
+                "a": "A mutual has no external shareholders to pay profits to — surplus is typically returned to members, whereas a proprietary insurer distributes profit to shareholders."
+            },
+            {
+                "q": "What role do trustees typically play as 'providers' of benefits in an occupational pension scheme?",
+                "a": "They hold assets and administer benefits on behalf of scheme members, with a duty to act in members' interests."
+            },
+            {
+                "q": "Why might government social insurance schemes be described as operating on a 'pay-as-you-go' basis?",
+                "a": "Current contributions/taxes are used to pay current benefits, rather than being pre-funded from accumulated assets."
+            },
+            {
+                "q": "What is a key risk consideration for an individual relying heavily on employer-provided benefits?",
+                "a": "Benefits may be lost or reduced if they change employer, or if the employer becomes insolvent (depending on how benefits are secured)."
+            },
+            {
+                "q": "Why might governments regulate or incentivise (e.g. via tax relief) employer and personal benefit provision?",
+                "a": "To encourage adequate private provision, reducing reliance on state benefits and improving overall financial security."
+            },
+            {
+                "q": "How might the balance between state, employer, and personal benefit provision differ between countries?",
+                "a": "Different countries have different social/political traditions and fiscal capacity, leading to varying reliance on each of the three sources."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Life insurance products",
+        "description": "Covers the main types of life insurance and long-term savings products, their structures, and the needs they meet.",
+        "cards": [
+            {
+                "q": "What is 'term assurance'?",
+                "a": "A life insurance product paying a benefit only if the policyholder dies within a specified term."
+            },
+            {
+                "q": "What is 'whole of life' assurance?",
+                "a": "A life insurance product paying a benefit whenever the policyholder dies, with no fixed term."
+            },
+            {
+                "q": "What is an 'endowment' policy?",
+                "a": "A savings-linked life insurance product paying a benefit on survival to the end of a specified term, or on earlier death."
+            },
+            {
+                "q": "What is a 'unit-linked' life insurance product?",
+                "a": "A product where the policyholder's benefits are directly linked to the value of units in an underlying investment fund."
+            },
+            {
+                "q": "What is a 'with-profits' life insurance product?",
+                "a": "A product where the policyholder receives smoothed investment returns via bonuses added to their policy, reflecting the insurer's overall investment performance."
+            },
+            {
+                "q": "What is an 'annuity'?",
+                "a": "A product paying a regular income, typically for the rest of the annuitant's life, in exchange for an initial lump sum."
+            },
+            {
+                "q": "What is a 'critical illness' insurance product?",
+                "a": "A product paying a lump sum on diagnosis of a specified serious illness, rather than on death."
+            },
+            {
+                "q": "What is 'income protection' (or permanent health) insurance?",
+                "a": "A product paying a regular income if the policyholder is unable to work due to illness or disability."
+            },
+            {
+                "q": "Why might an individual purchase term assurance rather than whole of life cover?",
+                "a": "It's typically cheaper, and suits a temporary protection need (e.g. covering a mortgage term) rather than lifelong cover."
+            },
+            {
+                "q": "What is 'guaranteed insurability', as a product feature?",
+                "a": "An option allowing the policyholder to increase cover in the future without further medical underwriting, e.g. at specified life events."
+            },
+            {
+                "q": "How does a 'decreasing term assurance' differ from a level term assurance?",
+                "a": "The sum assured reduces over the policy term, often used to match a reducing liability like a repayment mortgage."
+            },
+            {
+                "q": "What is the purpose of medical underwriting when a life insurance policy is purchased?",
+                "a": "To assess the applicant's health-related risk, ensuring premiums appropriately reflect their individual mortality/morbidity risk."
+            },
+            {
+                "q": "Why might insurers offer 'guaranteed acceptance' products with limited or no underwriting?",
+                "a": "To reach customers who might not pass full underwriting, though this typically comes with more restrictive terms or higher relative pricing."
+            },
+            {
+                "q": "What is a key risk to the insurer of offering long-term guarantees (e.g. guaranteed annuity rates) within a life product?",
+                "a": "Future economic conditions (e.g. falling interest rates, improving longevity) could make honouring the guarantee much more costly than originally priced for."
+            },
+            {
+                "q": "How do life insurance products typically differ in the balance between insurance risk (mortality/morbidity) and investment risk they transfer to the insurer?",
+                "a": "Protection products (term, critical illness) are mainly insurance risk; unit-linked savings products pass most investment risk to the policyholder; with-profits and annuities involve more investment risk retained by the insurer."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "General insurance products",
+        "description": "Covers the main types of general (non-life) insurance products, how they're structured, and the risks they cover.",
+        "cards": [
+            {
+                "q": "What distinguishes 'general insurance' from 'life insurance'?",
+                "a": "General insurance covers short-term, typically non-life risks (e.g. property, motor, liability), usually renewed annually, as opposed to long-term life-contingent products."
+            },
+            {
+                "q": "What is 'motor insurance' typically designed to cover?",
+                "a": "Damage to the policyholder's vehicle, and liability for injury/damage caused to third parties in an accident."
+            },
+            {
+                "q": "What is 'property' (household/buildings) insurance designed to cover?",
+                "a": "Damage to buildings and/or contents from specified perils (e.g. fire, flood, theft)."
+            },
+            {
+                "q": "What is 'liability' insurance designed to cover?",
+                "a": "The policyholder's legal liability to pay compensation to third parties for injury or damage they've caused."
+            },
+            {
+                "q": "What is 'business interruption' insurance?",
+                "a": "Insurance covering a business's lost income/profit resulting from a disruption to normal operations, e.g. following an insured property damage event."
+            },
+            {
+                "q": "What is a 'short-tail' general insurance claim?",
+                "a": "A claim that is typically reported and settled relatively quickly after the insured event (e.g. most property damage claims)."
+            },
+            {
+                "q": "What is a 'long-tail' general insurance claim?",
+                "a": "A claim that may take many years to be reported and/or settled after the insured event (e.g. many liability claims, especially latent disease claims)."
+            },
+            {
+                "q": "Why is the distinction between short-tail and long-tail business important for reserving?",
+                "a": "Long-tail business carries much greater uncertainty in reserving, since claims can emerge and develop over a much longer period."
+            },
+            {
+                "q": "What is 'catastrophe' risk in general insurance?",
+                "a": "The risk of an extreme event (e.g. a natural disaster) causing a very large number of claims simultaneously."
+            },
+            {
+                "q": "How might an insurer manage catastrophe risk?",
+                "a": "Through reinsurance, careful geographic diversification/accumulation control, and holding sufficient capital."
+            },
+            {
+                "q": "What is a 'claims-made' basis of cover, as opposed to a 'losses-occurring' basis?",
+                "a": "Claims-made covers claims reported during the policy period (regardless of when the event occurred); losses-occurring covers events occurring during the policy period (regardless of when reported)."
+            },
+            {
+                "q": "Why might liability insurance often be written on a claims-made basis?",
+                "a": "Because the underlying event causing harm can occur long before a claim is actually made/reported, so claims-made limits the insurer's exposure to a defined period."
+            },
+            {
+                "q": "What is 'excess' (or 'deductible') in a general insurance policy?",
+                "a": "The amount the policyholder must bear themselves before the insurer's cover responds."
+            },
+            {
+                "q": "Why might a general insurer offer a no-claims discount/bonus to policyholders?",
+                "a": "To reward and incentivise low-risk behaviour, and to reflect that policyholders with a claims-free history tend to have lower expected future claims."
+            },
+            {
+                "q": "How does general insurance pricing typically need to respond more frequently than life insurance pricing?",
+                "a": "General insurance risks (e.g. weather, claims inflation, legal environment) can change quickly year to year, requiring more frequent repricing at each renewal."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Bond and money markets",
+        "description": "Covers the characteristics of fixed-interest bonds and money market instruments as asset classes for investment.",
+        "cards": [
+            {
+                "q": "What is a 'bond'?",
+                "a": "A debt instrument where the issuer promises to pay the holder specified interest (coupon) payments and repay the principal (redemption value) at maturity."
+            },
+            {
+                "q": "What is a 'money market instrument'?",
+                "a": "A short-term, highly liquid debt instrument (e.g. Treasury bills, commercial paper), typically with maturity under a year."
+            },
+            {
+                "q": "What is the key difference between a government bond and a corporate bond?",
+                "a": "A government bond is issued by a national government; a corporate bond is issued by a company, and typically carries higher credit risk."
+            },
+            {
+                "q": "What is 'credit risk' in the context of bonds?",
+                "a": "The risk that the bond issuer fails to make the promised interest and/or principal payments."
+            },
+            {
+                "q": "What is an 'index-linked' bond?",
+                "a": "A bond whose coupon and/or redemption payments are adjusted in line with a specified inflation index."
+            },
+            {
+                "q": "Why might an investor hold index-linked bonds rather than fixed-interest bonds?",
+                "a": "To protect the real value of their investment against inflation, which fixed-interest bonds don't provide."
+            },
+            {
+                "q": "What is 'duration', as a measure relevant to bonds?",
+                "a": "A measure of the weighted-average time to receipt of a bond's cashflows, indicating its sensitivity to interest rate changes."
+            },
+            {
+                "q": "How does bond price typically respond to a rise in market interest rates?",
+                "a": "The bond's price falls, since its fixed future cashflows are now discounted at a higher rate."
+            },
+            {
+                "q": "What is 'credit rating', and what is it used for?",
+                "a": "An assessment (by a ratings agency) of an issuer's creditworthiness, helping investors gauge the risk of default."
+            },
+            {
+                "q": "Why are money market instruments generally considered very low risk?",
+                "a": "Their short maturity limits exposure to interest rate and credit risk, and they're often issued by highly creditworthy borrowers (e.g. governments, large banks)."
+            },
+            {
+                "q": "What role do money market instruments typically play in an investment portfolio?",
+                "a": "Providing liquidity and capital preservation, often used for short-term cash management rather than long-term return generation."
+            },
+            {
+                "q": "What is the 'yield' on a bond?",
+                "a": "The return an investor receives, accounting for coupon payments and any capital gain/loss to redemption, expressed as an annualised rate."
+            },
+            {
+                "q": "Why might corporate bonds offer a higher yield than equivalent-maturity government bonds?",
+                "a": "To compensate investors for the additional credit risk of the corporate issuer relative to the (typically safer) government."
+            },
+            {
+                "q": "What is a 'callable' bond?",
+                "a": "A bond that gives the issuer the right to redeem it early, before the stated maturity date, usually under specified conditions."
+            },
+            {
+                "q": "Why might bonds be an attractive asset class for insurers backing predictable liabilities?",
+                "a": "Their relatively predictable cashflows make them well-suited to matching against similarly predictable insurance/pension liabilities."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Equity and property markets",
+        "description": "Covers the characteristics of equities and property as asset classes for investment, and how they differ from fixed-interest investments.",
+        "cards": [
+            {
+                "q": "What is an 'equity' (ordinary share)?",
+                "a": "A unit of ownership in a company, entitling the holder to a share of profits (via dividends) and voting rights, with no fixed maturity or guaranteed return."
+            },
+            {
+                "q": "How does the risk/return profile of equities typically compare with bonds?",
+                "a": "Equities typically offer higher expected long-term returns but with greater volatility/risk than bonds."
+            },
+            {
+                "q": "What is a 'dividend'?",
+                "a": "A distribution of a company's profits to its shareholders, typically paid periodically but not guaranteed."
+            },
+            {
+                "q": "Why is equity considered a 'residual' claim on a company's assets/profits?",
+                "a": "Shareholders are paid only after all other obligations (e.g. debt holders, creditors) have been satisfied."
+            },
+            {
+                "q": "What is 'capital growth', as a component of equity return?",
+                "a": "The increase in the market value/price of the shares themselves, separate from dividend income."
+            },
+            {
+                "q": "What is 'property' as an investment asset class?",
+                "a": "Physical real estate (e.g. commercial or residential) held for rental income and/or capital growth."
+            },
+            {
+                "q": "What is a key characteristic of property that distinguishes it from equities and bonds as an investment?",
+                "a": "Illiquidity — property typically takes much longer and costs more to buy or sell than listed securities."
+            },
+            {
+                "q": "Why might property returns show some correlation with, but also differ from, equity market returns?",
+                "a": "Both are affected by the general economy, but property is also driven by local supply/demand and rental market conditions specific to real estate."
+            },
+            {
+                "q": "What is 'rental yield'?",
+                "a": "The annual rental income from a property, expressed as a percentage of the property's value."
+            },
+            {
+                "q": "Why might diversification benefits arise from including property alongside equities and bonds in a portfolio?",
+                "a": "Property returns aren't perfectly correlated with equities or bonds, so adding it can reduce overall portfolio risk for a given return."
+            },
+            {
+                "q": "What is a 'real estate investment trust' (REIT)?",
+                "a": "A listed vehicle that holds property assets, offering investors more liquid, tradeable exposure to property than direct ownership."
+            },
+            {
+                "q": "How does the volatility of listed equity prices compare with the volatility of (infrequently valued) direct property?",
+                "a": "Listed equity prices appear more volatile partly because they're valued continuously by the market, whereas property valuations are updated infrequently, smoothing apparent volatility."
+            },
+            {
+                "q": "Why might an investor accept equities' higher volatility in exchange for their higher expected return?",
+                "a": "Over a sufficiently long time horizon, the equity risk premium is expected to compensate for the additional short-term volatility risk."
+            },
+            {
+                "q": "What is a key risk specific to property investment beyond general market risk?",
+                "a": "Risks like void periods (no tenant), maintenance costs, and the illiquidity of individual property assets."
+            },
+            {
+                "q": "Why might pension funds with long-term liabilities hold a significant allocation to equities and property, despite their volatility?",
+                "a": "Their long investment horizon allows them to ride out short-term volatility while benefiting from the higher expected long-term returns."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Other investment classes",
+        "description": "Covers alternative asset classes beyond traditional bonds, equities and property — including cash, derivatives, private equity, infrastructure, and overseas investments.",
+        "cards": [
+            {
+                "q": "What is 'cash' as an asset class, in an investment context?",
+                "a": "Bank deposits or highly liquid short-term instruments, offering capital security and liquidity but typically low returns."
+            },
+            {
+                "q": "What is a 'derivative'?",
+                "a": "A financial instrument whose value is derived from an underlying asset, index, or rate (e.g. options, futures, swaps)."
+            },
+            {
+                "q": "Why might an investor use derivatives, rather than investing directly in the underlying asset?",
+                "a": "To hedge existing risk, gain leveraged exposure, or achieve a specific payoff profile more efficiently than direct investment."
+            },
+            {
+                "q": "What is 'private equity'?",
+                "a": "Investment in companies not listed on a public stock exchange, often involving active management influence and a longer investment horizon."
+            },
+            {
+                "q": "What is 'infrastructure' as an investment asset class?",
+                "a": "Investment in large-scale physical assets (e.g. toll roads, utilities, renewable energy) often providing stable, long-term, inflation-linked cashflows."
+            },
+            {
+                "q": "Why might infrastructure investments be attractive to pension funds and insurers?",
+                "a": "Their long-term, relatively predictable and often inflation-linked cashflows can suit matching long-term liabilities."
+            },
+            {
+                "q": "What is a 'hedge fund'?",
+                "a": "An actively managed investment fund often using a wide range of strategies (including leverage and derivatives) to pursue absolute returns, typically less regulated than traditional funds."
+            },
+            {
+                "q": "What is 'overseas' (international) investment, and why might an investor hold it?",
+                "a": "Investment in assets outside the investor's home market, providing diversification and access to different economic growth/opportunities."
+            },
+            {
+                "q": "What additional risk does overseas investment introduce, beyond the risk of the underlying asset itself?",
+                "a": "Currency risk — the value of the investment in the investor's home currency can be affected by exchange rate movements."
+            },
+            {
+                "q": "What is 'currency hedging'?",
+                "a": "Using financial instruments (e.g. forward contracts) to reduce or eliminate the impact of exchange rate movements on an overseas investment's value."
+            },
+            {
+                "q": "Why might private equity investments require a longer investment horizon than listed equities?",
+                "a": "They are illiquid, and value creation (e.g. through operational improvements) often takes years to be realised and exited."
+            },
+            {
+                "q": "What is 'commodities' as an asset class?",
+                "a": "Physical goods (e.g. oil, gold, agricultural products) or instruments tracking their prices, often used for diversification or inflation protection."
+            },
+            {
+                "q": "Why might commodities provide diversification benefits within a broader portfolio?",
+                "a": "Their returns are often driven by different (e.g. supply/demand, geopolitical) factors than traditional financial assets, giving low correlation."
+            },
+            {
+                "q": "What is a key challenge in valuing illiquid alternative assets like private equity or infrastructure?",
+                "a": "Without frequent market transactions, valuations rely more heavily on models/judgement, introducing valuation uncertainty."
+            },
+            {
+                "q": "Why might a sophisticated institutional investor include a wider range of alternative asset classes than a typical retail investor?",
+                "a": "Greater resources for due diligence, longer investment horizons, and higher risk tolerance/capacity to bear illiquidity."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Behaviour of the markets",
+        "description": "Covers how financial markets behave — market efficiency, factors driving asset price movements, and behavioural influences on investor decisions.",
+        "cards": [
+            {
+                "q": "What does 'market efficiency' broadly mean?",
+                "a": "The degree to which asset prices reflect all available relevant information."
+            },
+            {
+                "q": "What factors are widely believed to drive long-term equity returns?",
+                "a": "Economic growth, corporate earnings growth, and the required risk premium investors demand for holding equities."
+            },
+            {
+                "q": "What factors influence short-term market price movements, beyond fundamentals?",
+                "a": "Investor sentiment, news flow, liquidity conditions, and short-term supply/demand imbalances."
+            },
+            {
+                "q": "What is 'behavioural finance' concerned with?",
+                "a": "How psychological biases and irrational behaviour can cause real investor decisions/market prices to deviate from purely rational models."
+            },
+            {
+                "q": "Give an example of a behavioural bias relevant to investment decisions.",
+                "a": "Overconfidence, herding behaviour, or loss aversion (weighting losses more heavily than equivalent gains)."
+            },
+            {
+                "q": "What is 'herding' behaviour in financial markets?",
+                "a": "Investors following the actions of others rather than their own independent analysis, which can amplify price trends/bubbles."
+            },
+            {
+                "q": "What is an 'asset price bubble'?",
+                "a": "A situation where an asset's price rises well above levels justified by underlying fundamentals, often driven by speculation and expectation of further price rises."
+            },
+            {
+                "q": "What typically happens after an asset price bubble 'bursts'?",
+                "a": "Prices fall sharply, often overshooting back below fundamental value, as sentiment reverses."
+            },
+            {
+                "q": "How might interest rate changes affect equity and bond markets?",
+                "a": "Rising rates typically reduce bond prices (higher discounting) and can also pressure equity valuations (higher discount rates on future earnings)."
+            },
+            {
+                "q": "Why might markets react strongly to unexpected news, even if the underlying fundamentals haven't materially changed?",
+                "a": "Prices reflect expectations; unexpected news forces a rapid reassessment of those expectations, causing sharp price adjustments."
+            },
+            {
+                "q": "What is 'market liquidity', and why does it matter for price behaviour?",
+                "a": "The ease of buying/selling an asset without materially affecting its price; low liquidity can amplify price volatility, especially in stressed conditions."
+            },
+            {
+                "q": "How might correlations between different asset classes change during a financial crisis?",
+                "a": "Correlations often increase ('correlations go to one'), reducing the diversification benefit investors expected during exactly the periods they need it most."
+            },
+            {
+                "q": "Why is understanding market behaviour important for setting actuarial investment assumptions?",
+                "a": "Assumptions about future returns/volatility should be informed by a realistic understanding of how markets actually behave, not just theoretical models."
+            },
+            {
+                "q": "What is 'momentum' in financial markets?",
+                "a": "The tendency for assets that have recently performed well (or poorly) to continue doing so in the near term, contrary to simple efficient market predictions."
+            },
+            {
+                "q": "Why might understanding behavioural biases help an actuary advising on investment strategy?",
+                "a": "It helps anticipate how clients/trustees might react emotionally to market movements, informing communication and potentially guarding against poorly-timed decisions."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Valuation of investments",
+        "description": "Covers the principles and methods used to value different types of investment assets, including market value and various theoretical valuation approaches.",
+        "cards": [
+            {
+                "q": "What is 'market value', as a basis for valuing an investment?",
+                "a": "The price at which the asset could currently be bought or sold in the open market."
+            },
+            {
+                "q": "Why is market value often considered the most objective valuation basis for listed assets?",
+                "a": "It reflects an actual, observable price agreed between willing buyers and sellers, rather than a theoretical/model-based estimate."
+            },
+            {
+                "q": "What challenge arises in obtaining a 'market value' for an illiquid or unlisted asset?",
+                "a": "There's no frequent, observable market price, so valuation must rely on models, comparable transactions, or professional judgement instead."
+            },
+            {
+                "q": "What is a 'discounted cashflow' valuation approach?",
+                "a": "Valuing an asset as the present value of its expected future cashflows, discounted at an appropriate rate."
+            },
+            {
+                "q": "What discount rate considerations arise when using a discounted cashflow valuation?",
+                "a": "The rate should reflect the riskiness and timing of the cashflows, often incorporating a risk premium above the risk-free rate."
+            },
+            {
+                "q": "Why might different valuation bases give different answers for the same asset?",
+                "a": "Each basis reflects different assumptions/purposes (e.g. market value reflects current trading conditions; a discounted cashflow reflects an investor's own return requirements and forecasts)."
+            },
+            {
+                "q": "What is 'fair value', as commonly used in financial reporting?",
+                "a": "An estimate of the price at which an asset could be exchanged between knowledgeable, willing parties in an arm's length transaction."
+            },
+            {
+                "q": "Why might a valuation need to distinguish between an asset's value 'in use' versus its value if sold?",
+                "a": "An asset might be worth more to its current owner through continued use than its resale value would suggest, or vice versa."
+            },
+            {
+                "q": "What is a 'dividend discount model', as applied to equity valuation?",
+                "a": "Valuing a share as the present value of its expected future dividend payments."
+            },
+            {
+                "q": "How might bonds typically be valued?",
+                "a": "As the present value of their future coupon and redemption cashflows, discounted at a market-consistent yield."
+            },
+            {
+                "q": "Why is the choice of valuation basis particularly important for actuarial work involving both assets and liabilities?",
+                "a": "Using inconsistent bases for assets and liabilities could give a misleading picture of a firm's true financial position."
+            },
+            {
+                "q": "What is meant by valuing assets on a 'smoothed' or 'averaged' basis?",
+                "a": "Using an average of recent market values (rather than a single point-in-time value) to reduce short-term volatility in reported figures."
+            },
+            {
+                "q": "Give one advantage of smoothed asset valuation.",
+                "a": "It reduces artificial short-term volatility in reported financial results, which might not reflect genuine underlying changes."
+            },
+            {
+                "q": "Give one disadvantage of smoothed asset valuation.",
+                "a": "It can obscure the true current financial position, potentially delaying recognition of genuine, sustained changes in asset value."
+            },
+            {
+                "q": "Why might regulators generally prefer market-consistent valuation over smoothed or historical-cost valuation for solvency purposes?",
+                "a": "Market-consistent values better reflect the actual current financial position, giving a more accurate and timely assessment of solvency."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Relationship between returns on asset classes",
+        "description": "Covers how returns on different asset classes relate to each other, including correlation and its role in diversification and portfolio construction.",
+        "cards": [
+            {
+                "q": "What does 'correlation' measure, in the context of asset class returns?",
+                "a": "The degree to which the returns of two asset classes move together (positively or negatively)."
+            },
+            {
+                "q": "Why is correlation between asset classes important for portfolio construction?",
+                "a": "Combining assets with low or negative correlation can reduce overall portfolio risk for a given expected return (diversification)."
+            },
+            {
+                "q": "What would a correlation of +1 between two asset classes imply?",
+                "a": "Their returns move perfectly in the same direction together, offering no diversification benefit when combined."
+            },
+            {
+                "q": "What would a correlation of -1 between two asset classes imply?",
+                "a": "Their returns move perfectly in opposite directions, offering maximum diversification benefit when combined."
+            },
+            {
+                "q": "Why do equities and bonds often (though not always) show relatively low or negative correlation?",
+                "a": "They can respond differently to changes in economic conditions and interest rates, e.g. a 'flight to safety' into bonds during equity market stress."
+            },
+            {
+                "q": "Why might correlations between asset classes be unstable over time, rather than fixed constants?",
+                "a": "Correlations depend on prevailing economic conditions and market dynamics, which change, especially in periods of stress."
+            },
+            {
+                "q": "What is the relationship between an asset's risk premium and its expected correlation with 'growth' assets like equities?",
+                "a": "Assets whose returns are more closely tied to overall economic growth (e.g. equities, property, corporate bonds) tend to be positively correlated, and typically demand a higher risk premium."
+            },
+            {
+                "q": "Why might government bonds sometimes act as a 'safe haven' relative to riskier asset classes?",
+                "a": "Investors often shift towards perceived safer assets like government bonds during periods of market stress, pushing bond prices up (yields down) as equities fall."
+            },
+            {
+                "q": "How does the relationship between asset returns inform the construction of a diversified multi-asset portfolio?",
+                "a": "By combining assets that don't all move together, a portfolio can achieve a smoother, more consistent overall return path than any single asset class alone."
+            },
+            {
+                "q": "Why is understanding the relationship between returns on different asset classes important for asset-liability management?",
+                "a": "It helps assess how a mix of assets is likely to perform relative to liabilities under different economic scenarios."
+            },
+            {
+                "q": "What is a 'risk premium'?",
+                "a": "The additional expected return investors require for holding a riskier asset compared to a risk-free alternative."
+            },
+            {
+                "q": "Why might the equity risk premium vary over time and across markets?",
+                "a": "It reflects changing investor risk aversion, economic outlook, and market conditions, which are not constant."
+            },
+            {
+                "q": "How might inflation link the returns of different asset classes together?",
+                "a": "Unexpected inflation can simultaneously affect bond yields, equity valuations, and property/rental income, creating a common driver of correlated movements."
+            },
+            {
+                "q": "Why might historical correlations between asset classes not be a reliable guide to future correlations?",
+                "a": "Economic structures and relationships between markets evolve, so past correlation patterns may not persist unchanged into the future."
+            },
+            {
+                "q": "How might an actuary use knowledge of asset return relationships in setting investment strategy for a pension scheme?",
+                "a": "To select a mix of assets expected to deliver required returns while managing overall portfolio risk relative to the scheme's liabilities."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Choosing an appropriate investment strategy",
+        "description": "Covers the factors that inform selecting an investment strategy — matching assets to liabilities, risk appetite, time horizon, and constraints.",
+        "cards": [
+            {
+                "q": "What is the primary purpose of an investment strategy in an actuarial context?",
+                "a": "To select and manage a portfolio of assets that appropriately meets the investor's objectives, given their liabilities, risk appetite and constraints."
+            },
+            {
+                "q": "What does 'matching' assets to liabilities mean?",
+                "a": "Selecting assets whose cashflows/value movements closely mirror those of the liabilities they're intended to back, reducing mismatch risk."
+            },
+            {
+                "q": "Why might a pension scheme with long-term liabilities adopt a different investment strategy than a general insurer with short-tail liabilities?",
+                "a": "The pension scheme's long horizon can better tolerate short-term volatility for higher expected returns, while the insurer needs more liquid, closely-matched assets."
+            },
+            {
+                "q": "What is 'risk appetite', in the context of choosing an investment strategy?",
+                "a": "The amount and type of investment risk an investor (or their governing body) is willing to accept in pursuit of their objectives."
+            },
+            {
+                "q": "Why is time horizon an important factor in choosing an investment strategy?",
+                "a": "Longer time horizons generally allow greater tolerance for short-term volatility, since there's more time to recover from downturns."
+            },
+            {
+                "q": "What are 'liquidity requirements', and why do they constrain investment strategy?",
+                "a": "The need to hold sufficient readily-realisable assets to meet expected (and unexpected) cash outflows, limiting allocation to illiquid assets."
+            },
+            {
+                "q": "How might regulatory requirements constrain an investment strategy?",
+                "a": "Regulation may restrict permissible asset types, concentration limits, or impose capital charges that make certain strategies less attractive."
+            },
+            {
+                "q": "What is a 'strategic asset allocation'?",
+                "a": "The long-term target mix of asset classes chosen to meet an investor's objectives, before shorter-term tactical adjustments."
+            },
+            {
+                "q": "What is 'tactical asset allocation'?",
+                "a": "Shorter-term deviations from the strategic asset allocation, made in response to changing market views/conditions."
+            },
+            {
+                "q": "Why might an investment strategy need periodic review, rather than being set once and left unchanged?",
+                "a": "Circumstances (liabilities, risk appetite, market conditions, regulation) change over time, so a strategy that was once appropriate may become unsuitable."
+            },
+            {
+                "q": "How does the size of an investor's surplus (assets minus liabilities) affect the investment risk they can tolerate?",
+                "a": "A larger surplus provides a bigger buffer to absorb adverse investment experience without threatening solvency, allowing more investment risk."
+            },
+            {
+                "q": "Why might governance/decision-making structure (e.g. trustee board) be relevant to choosing an investment strategy?",
+                "a": "The strategy must be one that the actual decision-makers understand, agree with, and can implement/monitor effectively."
+            },
+            {
+                "q": "What is meant by 'de-risking' an investment strategy over time, e.g. for a maturing pension scheme?",
+                "a": "Gradually shifting from higher-risk, higher-return assets (e.g. equities) towards more liability-matching assets (e.g. bonds) as the scheme matures."
+            },
+            {
+                "q": "Why might an insurer's investment strategy be more constrained than a typical unconstrained investor's?",
+                "a": "Regulatory solvency requirements and the need to closely match specific insurance liabilities limit the freedom to pursue purely return-maximising strategies."
+            },
+            {
+                "q": "What role does stress testing play in validating a chosen investment strategy?",
+                "a": "It assesses how the strategy would perform under adverse scenarios, helping confirm it remains appropriate even in less favourable conditions."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Asset-liability management",
+        "description": "Covers techniques for managing the relationship between an organisation's assets and liabilities, including matching and immunisation concepts.",
+        "cards": [
+            {
+                "q": "What is 'asset-liability management' (ALM)?",
+                "a": "The practice of managing an organisation's investment strategy in conjunction with its liabilities, to control the risk arising from mismatches between them."
+            },
+            {
+                "q": "What is 'mismatching risk'?",
+                "a": "The risk that changes in market conditions (e.g. interest rates) affect the value of assets and liabilities differently, harming the investor's financial position."
+            },
+            {
+                "q": "What does it mean to 'match' assets and liabilities by cashflow?",
+                "a": "Selecting assets whose cashflows occur at the same times and amounts as the liability cashflows they're intended to fund."
+            },
+            {
+                "q": "What does it mean to match assets and liabilities by 'duration'?",
+                "a": "Choosing assets with a similar overall interest-rate sensitivity (duration) to the liabilities, even if individual cashflows aren't matched exactly."
+            },
+            {
+                "q": "What is 'immunisation', in the Redington sense, applied here?",
+                "a": "Structuring a portfolio so its value is protected (to a first approximation) against small changes in interest rates, by matching present value and duration (and appropriate convexity) with the liabilities."
+            },
+            {
+                "q": "Why might perfect cashflow matching be difficult to achieve in practice?",
+                "a": "Suitable assets with exactly matching cashflows may not exist or be available in sufficient quantity, or may not offer an attractive return."
+            },
+            {
+                "q": "What is 'currency matching' in asset-liability management?",
+                "a": "Holding assets denominated in the same currency as the liabilities, to avoid unwanted currency risk."
+            },
+            {
+                "q": "Why might an organisation choose to deliberately mismatch assets and liabilities to some extent?",
+                "a": "To pursue higher expected returns by taking on some investment risk, accepting the associated mismatch risk in return."
+            },
+            {
+                "q": "How does uncertainty in the liabilities themselves (e.g. from mortality or lapse risk) complicate asset-liability management?",
+                "a": "If the liability cashflows are uncertain, it's harder to construct assets that reliably match them, adding another layer of risk beyond pure market risk."
+            },
+            {
+                "q": "What is a 'liability-driven investment' (LDI) strategy?",
+                "a": "An investment approach explicitly designed around meeting a specific set of liabilities, prioritising matching over pure return maximisation."
+            },
+            {
+                "q": "Why is asset-liability management particularly important for defined benefit pension schemes?",
+                "a": "Their liabilities are long-term, interest-rate sensitive, and the sponsor bears the risk of any deficit, making mismatch risk especially consequential."
+            },
+            {
+                "q": "What role do interest rate and inflation derivatives (e.g. swaps) play in some ALM strategies?",
+                "a": "They can be used to hedge interest rate or inflation exposure more precisely/efficiently than only using physical bonds."
+            },
+            {
+                "q": "Why might ALM strategies need to be revisited as a pension scheme matures (liabilities become shorter-term)?",
+                "a": "The appropriate matching assets and risk tolerance change as the profile and timing of liability cashflows shifts over time."
+            },
+            {
+                "q": "What is 'basis risk' in the context of hedging liabilities with derivatives?",
+                "a": "The risk that the hedge instrument doesn't move in perfect alignment with the liability being hedged, due to differences in the underlying reference or terms."
+            },
+            {
+                "q": "How does effective asset-liability management support an organisation's solvency position?",
+                "a": "By reducing the volatility of the surplus (assets minus liabilities) arising from market movements, making the organisation's solvency more stable and predictable."
+            }
+        ]
+    },
+    {
+        "id": "m17",
+        "title": "Investment management",
+        "description": "Covers how investment portfolios are managed in practice — active versus passive management, mandates, and the investment management process.",
+        "cards": [
+            {
+                "q": "What is 'active' investment management?",
+                "a": "An approach where the manager seeks to outperform a benchmark by selecting specific investments based on research and judgement."
+            },
+            {
+                "q": "What is 'passive' investment management?",
+                "a": "An approach that seeks to replicate the performance of a benchmark index, rather than trying to outperform it."
+            },
+            {
+                "q": "What is a key argument in favour of passive management?",
+                "a": "Lower costs, and the difficulty (supported by market efficiency arguments) of consistently outperforming the market after fees."
+            },
+            {
+                "q": "What is a key argument in favour of active management?",
+                "a": "The potential to outperform the benchmark, exploit market inefficiencies, and manage risk more flexibly than a fixed index replication."
+            },
+            {
+                "q": "What is an 'investment mandate'?",
+                "a": "A formal agreement setting out the objectives, constraints, and permitted asset classes/strategies for an investment manager."
+            },
+            {
+                "q": "Why is a clear investment mandate important when appointing an investment manager?",
+                "a": "It ensures the manager's actions align with the investor's objectives and risk tolerance, and provides a basis for monitoring performance."
+            },
+            {
+                "q": "What is a 'benchmark', in investment management?",
+                "a": "A reference index or target used to measure and evaluate an investment manager's performance."
+            },
+            {
+                "q": "What is 'tracking error'?",
+                "a": "A measure of how much an actively (or passively) managed portfolio's returns deviate from its benchmark."
+            },
+            {
+                "q": "Why might an investor use multiple investment managers rather than a single manager?",
+                "a": "To diversify manager-specific risk (e.g. key person risk, style risk) and access different areas of expertise."
+            },
+            {
+                "q": "What is 'manager selection', and what factors might it consider?",
+                "a": "The process of choosing an investment manager, considering track record, investment process, fees, and organisational stability."
+            },
+            {
+                "q": "Why is past performance alone not a reliable basis for selecting an investment manager?",
+                "a": "Past performance may reflect luck or a particular market environment, and isn't a guaranteed indicator of future results."
+            },
+            {
+                "q": "What is a 'fund of funds' structure?",
+                "a": "An investment vehicle that invests in a range of other underlying funds, rather than directly in individual securities."
+            },
+            {
+                "q": "What is 'environmental, social and governance' (ESG) investing?",
+                "a": "An approach to investment management that explicitly incorporates environmental, social and governance factors into investment decisions."
+            },
+            {
+                "q": "Why might institutional investors increasingly incorporate ESG considerations into their investment management approach?",
+                "a": "Growing recognition that ESG factors can be financially material to long-term risk/return, alongside stakeholder and regulatory pressure."
+            },
+            {
+                "q": "How might investment management fees affect the net return delivered to the underlying investor/beneficiary?",
+                "a": "Fees directly reduce net returns, so higher-cost active strategies need to outperform sufficiently to justify their additional cost over passive alternatives."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Modelling",
+        "description": "Covers the general principles of actuarial modelling — the purpose, process, strengths, and limitations of models used to inform decisions.",
+        "cards": [
+            {
+                "q": "What is the general purpose of an actuarial model?",
+                "a": "To represent a real-world system or process mathematically, in order to understand, project, or make decisions about it."
+            },
+            {
+                "q": "What does 'garbage in, garbage out' mean in the context of modelling?",
+                "a": "A model is only as reliable as the data and assumptions feeding into it — poor inputs produce unreliable outputs, however sophisticated the model."
+            },
+            {
+                "q": "What is meant by a model's 'purpose', and why must it be defined clearly before building the model?",
+                "a": "The intended use of the model's output — a model built for one purpose may not be appropriate or accurate enough for a different purpose."
+            },
+            {
+                "q": "What is a 'deterministic' model?",
+                "a": "A model that produces a single, fixed output for a given set of inputs, with no explicit representation of randomness."
+            },
+            {
+                "q": "What is a 'stochastic' model?",
+                "a": "A model that explicitly incorporates randomness, typically producing a range/distribution of possible outcomes rather than a single figure."
+            },
+            {
+                "q": "Why might a stochastic model be preferred over a deterministic one for certain actuarial applications?",
+                "a": "It captures the uncertainty/variability inherent in the real system, which is often crucial for risk-based decisions (e.g. capital setting)."
+            },
+            {
+                "q": "What is 'model risk'?",
+                "a": "The risk that a model is wrong or is used inappropriately, leading to incorrect conclusions or decisions."
+            },
+            {
+                "q": "Give one source of model risk.",
+                "a": "Incorrect model structure/assumptions, coding errors, or applying the model outside the range of conditions it was designed/validated for."
+            },
+            {
+                "q": "Why is model validation an essential step in the modelling process?",
+                "a": "To check the model behaves sensibly and produces results consistent with expectations/reality, reducing the risk of undetected errors."
+            },
+            {
+                "q": "What is meant by 'sensitivity testing' a model?",
+                "a": "Varying individual assumptions/inputs to see how much the model's output changes, helping identify which assumptions matter most."
+            },
+            {
+                "q": "Why is documentation important for an actuarial model?",
+                "a": "It allows others (including the original author, later) to understand, check, reproduce, and appropriately rely on the model's results."
+            },
+            {
+                "q": "What is meant by the 'balance' between model complexity and practicality?",
+                "a": "A more complex/detailed model may better represent reality but takes longer to build, run, and understand — a proportionate level of complexity should be chosen."
+            },
+            {
+                "q": "Why might an actuary need to communicate a model's limitations clearly to those using its results?",
+                "a": "So that decisions based on the model's output appropriately account for its uncertainties and don't over-rely on it beyond its intended scope."
+            },
+            {
+                "q": "What is 'reproducibility' of a model, and why does it matter?",
+                "a": "The ability for the model to be re-run (by the same or another person) and consistently produce the same results, supporting checking and audit."
+            },
+            {
+                "q": "Why is it important to consider a model's outputs 'reasonableness' even after successful validation?",
+                "a": "Validation checks the model behaves as designed, but the output still needs a final sense-check against real-world plausibility before being relied upon."
+            }
+        ]
+    },
+    {
+        "id": "m19",
+        "title": "Data",
+        "description": "Covers the role of data in actuarial modelling — data quality, sources, and how data limitations affect the reliability of actuarial work.",
+        "cards": [
+            {
+                "q": "Why is data quality fundamental to reliable actuarial analysis?",
+                "a": "Actuarial models and assumptions are ultimately derived from data, so poor quality data directly undermines the reliability of the results."
+            },
+            {
+                "q": "What does 'data completeness' refer to?",
+                "a": "Whether all the required data fields/records are present, without significant gaps."
+            },
+            {
+                "q": "What does 'data accuracy' refer to?",
+                "a": "Whether the data correctly reflects the real underlying values/events it's meant to represent."
+            },
+            {
+                "q": "What does 'data consistency' refer to?",
+                "a": "Whether data is recorded and defined in the same way across different sources, time periods, or systems."
+            },
+            {
+                "q": "Why might data from different systems or time periods need reconciliation before use?",
+                "a": "Definitions, formats, or recording practices may have changed, and inconsistencies could distort analysis if not identified and adjusted for."
+            },
+            {
+                "q": "What is a 'data check' or validation process typically used for?",
+                "a": "Identifying anomalies, errors, or implausible values in a data set before it's used for analysis."
+            },
+            {
+                "q": "Why might actuaries need to make adjustments for known data deficiencies rather than simply excluding incomplete records?",
+                "a": "Excluding records could introduce bias if the missing/incomplete data isn't random, so adjustments may better preserve the overall picture."
+            },
+            {
+                "q": "What is 'external' data, as distinct from an organisation's own internal data?",
+                "a": "Data sourced from outside the organisation, e.g. industry-wide statistics, published mortality tables, or economic data."
+            },
+            {
+                "q": "Why might an actuary use external data even when internal data is available?",
+                "a": "Internal data may be too sparse (e.g. for a small portfolio) to be statistically credible alone, so external data can supplement or validate it."
+            },
+            {
+                "q": "What is a potential drawback of relying on external, rather than internal, data for an actuarial analysis?",
+                "a": "External data may not accurately reflect the specific characteristics/experience of the organisation's own population or portfolio."
+            },
+            {
+                "q": "Why might data protection/privacy regulation affect how actuaries can access and use certain data?",
+                "a": "Legal restrictions on collecting, storing, and using personal data can limit what data is available or how it can be processed."
+            },
+            {
+                "q": "What is 'data governance'?",
+                "a": "The overall framework of policies, processes, and responsibilities an organisation uses to manage and control the quality/use of its data."
+            },
+            {
+                "q": "Why is understanding how data was collected important before using it in an actuarial model?",
+                "a": "The collection method can introduce biases or limitations (e.g. selection bias) that materially affect how the data should be interpreted or adjusted."
+            },
+            {
+                "q": "How might large, complex ('big') data sets present both opportunities and challenges for actuarial work?",
+                "a": "They can enable more granular/accurate modelling, but also raise challenges around processing capability, data quality control, and privacy."
+            },
+            {
+                "q": "Why should an actuary document any data limitations and adjustments made, as part of their analysis?",
+                "a": "To ensure transparency and allow others (including reviewers or future users of the analysis) to understand and appropriately rely on the results."
+            }
+        ]
+    },
+    {
+        "id": "m20",
+        "title": "Setting assumptions",
+        "description": "Covers the principles and considerations involved in setting actuarial assumptions used within models, balancing prudence, best estimate, and consistency.",
+        "cards": [
+            {
+                "q": "What is a 'best estimate' assumption?",
+                "a": "An assumption reflecting the actuary's unbiased, most likely view of a future outcome, without deliberate margins for caution."
+            },
+            {
+                "q": "What is a 'prudent' assumption?",
+                "a": "An assumption that deliberately includes a margin of caution, e.g. for reserving purposes, to reduce the risk of understating liabilities."
+            },
+            {
+                "q": "Why might different purposes (e.g. pricing versus reserving) call for different bases (best estimate versus prudent) for the same assumption?",
+                "a": "Pricing may use a best estimate (possibly with a profit margin) to remain competitive, while reserving may require prudence to protect solvency."
+            },
+            {
+                "q": "What sources of information might inform setting a mortality assumption?",
+                "a": "The organisation's own past experience, industry/national mortality tables, and expected future trends (e.g. mortality improvements)."
+            },
+            {
+                "q": "Why is 'experience analysis' (comparing actual to expected past experience) important when setting assumptions?",
+                "a": "It helps validate or refine assumptions by checking how well past predictions matched what actually happened."
+            },
+            {
+                "q": "What does it mean for assumptions to be set 'consistently' with each other?",
+                "a": "Different assumptions used together in a model shouldn't contradict each other or reflect inconsistent underlying views of the future."
+            },
+            {
+                "q": "Why might economic assumptions (e.g. investment return, inflation) need to be internally consistent?",
+                "a": "E.g. assumed investment returns should be plausible given the assumed inflation and interest rate environment, not set independently without regard to each other."
+            },
+            {
+                "q": "What is 'assumption uncertainty', and why does it matter?",
+                "a": "The risk that the true future outcome differs from the assumption used, which itself is a source of risk that may need separate consideration (e.g. via sensitivity testing)."
+            },
+            {
+                "q": "Why might an actuary need to exercise judgement, rather than purely relying on statistical analysis, when setting assumptions?",
+                "a": "Historical data may not fully capture future changes (e.g. new trends, regulatory changes, or emerging risks) that judgement can help anticipate."
+            },
+            {
+                "q": "What is 'credibility', in the context of setting assumptions from limited data?",
+                "a": "How much weight to place on an organisation's own (potentially sparse) data versus wider/external data, based on the volume and reliability of the own data."
+            },
+            {
+                "q": "Why might assumptions need to be reviewed and updated periodically, rather than set once?",
+                "a": "Actual experience, external conditions, and understanding of future trends evolve over time, so assumptions can become outdated."
+            },
+            {
+                "q": "What is a 'margin for adverse deviation'?",
+                "a": "An additional buffer built into an assumption (beyond the best estimate) to provide a cushion against the actual outcome being worse than expected."
+            },
+            {
+                "q": "Why might regulators specify minimum standards or constraints on the assumptions insurers can use for regulatory reporting?",
+                "a": "To ensure a degree of comparability and appropriate prudence across the industry, rather than relying entirely on individual company judgement."
+            },
+            {
+                "q": "How might setting an assumption too prudently (over-cautiously) create its own problems?",
+                "a": "It could lead to overstated liabilities/understated profits, potentially resulting in uncompetitive pricing or an inaccurate view of true financial position."
+            },
+            {
+                "q": "Why is transparency about the assumptions used important when presenting actuarial results?",
+                "a": "It allows users of the results to understand the basis for the figures and assess whether the assumptions are appropriate for their purposes."
+            }
+        ]
+    },
+    {
+        "id": "m21",
+        "title": "Mortality and morbidity",
+        "description": "Covers the assumptions and considerations relevant to mortality (death) and morbidity (sickness/disability) risk in actuarial work.",
+        "cards": [
+            {
+                "q": "What is 'mortality risk', in general insurance/actuarial terms?",
+                "a": "The risk associated with the timing and incidence of death within a population, relevant to life insurance and annuity business."
+            },
+            {
+                "q": "What is 'morbidity risk'?",
+                "a": "The risk associated with the incidence and duration of sickness, injury, or disability within a population."
+            },
+            {
+                "q": "Why might mortality experience differ significantly between different groups within a population?",
+                "a": "Factors like age, sex, health status, occupation, lifestyle, and socioeconomic status all influence mortality risk."
+            },
+            {
+                "q": "What is 'selection', in the context of setting mortality assumptions for a newly underwritten group?",
+                "a": "Recently underwritten lives typically have lighter mortality than the general population, since the underwriting process screens out higher-risk individuals."
+            },
+            {
+                "q": "Why does mortality typically improve over time (mortality improvement)?",
+                "a": "Ongoing advances in medical treatment, public health, and living standards tend to reduce mortality rates at given ages over successive years."
+            },
+            {
+                "q": "Why is uncertainty in future mortality improvement a significant risk for annuity providers?",
+                "a": "If people live longer than assumed, annuity providers must pay income for longer than priced/reserved for, increasing their costs."
+            },
+            {
+                "q": "What is 'anti-selection' (adverse selection) in the context of life/health insurance underwriting?",
+                "a": "Individuals with higher-than-average risk being more likely to seek insurance, especially where underwriting is limited."
+            },
+            {
+                "q": "How might occupation affect a morbidity assumption for income protection insurance?",
+                "a": "Certain occupations carry higher physical/health risks, affecting both the incidence and likely duration of claims."
+            },
+            {
+                "q": "What is a 'sickness' or 'disability' inception rate?",
+                "a": "The rate at which individuals in a population newly become sick/disabled (start a claim) over a given period."
+            },
+            {
+                "q": "What is a 'recovery' rate, in the context of income protection/morbidity modelling?",
+                "a": "The rate at which individuals who are currently sick/disabled recover and return to health/work."
+            },
+            {
+                "q": "Why might morbidity assumptions need to vary by duration since the onset of a claim, not just by age?",
+                "a": "The probability of recovery (or continued claim) often depends on how long someone has already been sick, not just their age."
+            },
+            {
+                "q": "How might pandemics or widespread health events affect mortality and morbidity assumptions?",
+                "a": "They can cause significant, correlated deviations in mortality/morbidity across a whole population simultaneously, a risk not well captured by assuming independent individual risks."
+            },
+            {
+                "q": "Why is understanding both mortality and morbidity important for pricing a critical illness product?",
+                "a": "The product depends on the incidence of specified illnesses (morbidity) as well as potentially competing with the risk of death (mortality) before diagnosis."
+            },
+            {
+                "q": "What data sources might be used to set morbidity assumptions, given they are often less standardised than mortality data?",
+                "a": "Industry experience studies, the insurer's own claims experience, and (where available) national health statistics."
+            },
+            {
+                "q": "Why might mortality and morbidity assumptions be particularly significant drivers of profitability for life and health insurance products?",
+                "a": "These products' costs are directly determined by the incidence of the insured events, so misestimating these risks directly affects whether pricing and reserves are adequate."
+            }
+        ]
+    },
+    {
+        "id": "m22",
+        "title": "Expenses",
+        "description": "Covers how expenses are analysed, allocated and allowed for in actuarial pricing and reserving work.",
+        "cards": [
+            {
+                "q": "What are 'initial expenses', in the context of a financial product?",
+                "a": "Costs incurred at the outset of a policy/contract, e.g. underwriting, commission, and setup administration costs."
+            },
+            {
+                "q": "What are 'renewal expenses'?",
+                "a": "Ongoing costs incurred throughout the life of a policy/contract, e.g. regular administration and servicing costs."
+            },
+            {
+                "q": "What are 'termination expenses'?",
+                "a": "Costs incurred when a policy/contract ends, e.g. claim payment processing or surrender administration."
+            },
+            {
+                "q": "Why is it important to distinguish between fixed and variable expenses when analysing costs?",
+                "a": "Fixed expenses don't change with business volume, while variable expenses scale with it — this distinction matters for pricing and profitability projections at different volumes."
+            },
+            {
+                "q": "What does 'expense overrun' mean?",
+                "a": "When actual expenses incurred exceed the amount allowed for in pricing/reserving assumptions."
+            },
+            {
+                "q": "Why might an organisation carry out an 'expense investigation'?",
+                "a": "To analyse actual expense experience, compare it to assumptions, and inform more accurate future expense assumptions."
+            },
+            {
+                "q": "How might expenses typically be allocated across different products/business lines?",
+                "a": "Using an appropriate cost driver/basis (e.g. per policy, per unit of premium, or per claim) to fairly attribute shared costs."
+            },
+            {
+                "q": "Why might a growing business have a distorted view of its true underlying expense levels, if using recent overall expense experience?",
+                "a": "Initial (acquisition) expenses tend to dominate in a rapidly growing book, potentially overstating the ongoing (steady-state) per-policy expense level."
+            },
+            {
+                "q": "What is meant by 'economies of scale' in relation to expenses?",
+                "a": "As business volume grows, certain fixed costs are spread over more policies, potentially reducing the average expense per policy."
+            },
+            {
+                "q": "Why might expense assumptions need separate allowance for inflation?",
+                "a": "Expenses (especially staff costs) often increase over time due to general or salary-specific inflation, which should be reflected in long-term projections."
+            },
+            {
+                "q": "How might outsourcing part of an organisation's operations affect its expense structure?",
+                "a": "It can convert some fixed costs into variable costs (paid per unit of activity), potentially changing the risk profile of the expense base."
+            },
+            {
+                "q": "Why is accurate expense allowance important for pricing a new insurance product?",
+                "a": "Underestimating expenses could result in premiums that don't cover the true cost of writing and servicing the business, harming profitability."
+            },
+            {
+                "q": "What is a 'per policy' expense assumption used for?",
+                "a": "Allocating expenses that don't vary much with policy size (e.g. basic administration) on a flat amount per policy in force."
+            },
+            {
+                "q": "Why might expense assumptions differ between a new, rapidly growing insurer and a mature, stable one?",
+                "a": "A growing insurer has proportionally higher acquisition costs relative to its (smaller) in-force book, while a mature insurer's expense base is more dominated by renewal/maintenance costs."
+            },
+            {
+                "q": "How can inaccurate expense assumptions undermine an otherwise well-priced insurance product?",
+                "a": "Even with accurate mortality/investment assumptions, understated expenses mean the actual cost of running the business exceeds what premiums were designed to cover."
+            }
+        ]
+    },
+    {
+        "id": "m23",
+        "title": "Contract design",
+        "description": "Covers the principles of designing financial product contracts, balancing customer needs, provider risk, and commercial viability.",
+        "cards": [
+            {
+                "q": "What are the main objectives to balance when designing a financial product contract?",
+                "a": "Meeting genuine customer needs, managing the provider's risk appropriately, and ensuring commercial viability/profitability."
+            },
+            {
+                "q": "Why might overly complex contract terms be problematic, even if they technically better match customer needs?",
+                "a": "Complexity can reduce customer understanding, increase administration costs, and create mis-selling or dispute risk."
+            },
+            {
+                "q": "What is a 'guarantee' within a contract, and why does it add risk for the provider?",
+                "a": "A promise of a minimum benefit/outcome regardless of how underlying experience (e.g. investment returns) actually turns out, which the provider must fund if experience is adverse."
+            },
+            {
+                "q": "Why might a provider limit the guarantees offered within a contract design?",
+                "a": "Guarantees transfer risk from the customer to the provider, which must be priced for and backed by capital — excessive guarantees can be costly or unsustainable."
+            },
+            {
+                "q": "What is an 'option' within a contract (e.g. a guaranteed insurability option)?",
+                "a": "A right (but not obligation) for the policyholder to take a specified future action (e.g. increase cover) under pre-agreed terms."
+            },
+            {
+                "q": "Why do options embedded in contracts typically have a cost to the provider, even if never exercised?",
+                "a": "The policyholder is more likely to exercise the option when it's financially advantageous to them (and disadvantageous to the provider), creating anti-selective risk that must be priced for."
+            },
+            {
+                "q": "What does 'flexibility' in contract design refer to?",
+                "a": "The ability for the contract terms (e.g. premiums, benefits) to be adjusted, either by the policyholder or the provider, over the life of the contract."
+            },
+            {
+                "q": "Why might a provider want the ability to review/adjust certain contract terms (e.g. reviewable premiums) after inception?",
+                "a": "To manage the risk of adverse experience diverging from original pricing assumptions over a long contract term."
+            },
+            {
+                "q": "What is a potential downside, from a customer perspective, of a provider retaining the right to review/adjust contract terms?",
+                "a": "It introduces uncertainty for the customer, who cannot be fully certain of their future costs/benefits."
+            },
+            {
+                "q": "How does the choice between a 'with-profits' and 'unit-linked' structure reflect different risk-sharing in contract design?",
+                "a": "With-profits pools and smooths risk with the provider retaining more investment risk; unit-linked passes investment risk more directly to the policyholder."
+            },
+            {
+                "q": "Why might contract design need to consider how the product will be administered in practice?",
+                "a": "Overly complex or bespoke designs can be difficult/costly to administer accurately at scale, undermining the product's commercial viability."
+            },
+            {
+                "q": "What role does competitor product design play in shaping a new contract's features?",
+                "a": "Providers must remain competitive, so understanding what similar products in the market offer influences the features and pricing of a new design."
+            },
+            {
+                "q": "Why might regulation constrain certain contract design choices?",
+                "a": "Rules on fair treatment of customers, disclosure, or permitted product features can limit what terms a provider may legally offer."
+            },
+            {
+                "q": "What is 'moral hazard' in contract design, and how might a contract be designed to mitigate it?",
+                "a": "The risk a policyholder behaves differently (more riskily) because they're insured; mitigated via excesses, no-claims discounts, or exclusions."
+            },
+            {
+                "q": "Why is contract design considered an iterative process, rather than a one-off exercise?",
+                "a": "Products are often refined over time based on sales experience, claims experience, customer feedback, and changes in the external environment."
+            }
+        ]
+    },
+    {
+        "id": "m24",
+        "title": "Pricing and financing strategies",
+        "description": "Covers the principles of setting prices for financial products and the strategic considerations around financing/capital allocation for new business.",
+        "cards": [
+            {
+                "q": "What is the 'equivalence principle' in the context of pricing?",
+                "a": "Setting the price so that, on the assumptions used, the expected present value of income equals the expected present value of outgo (benefits plus expenses, possibly plus a profit margin)."
+            },
+            {
+                "q": "Why might a provider price a product below the strict actuarial cost implied by best-estimate assumptions?",
+                "a": "For strategic reasons, e.g. to gain market share, cross-subsidise from other products, or as a loss-leader — though this carries commercial risk."
+            },
+            {
+                "q": "What is a 'pricing strategy' based on 'cost-plus' pricing?",
+                "a": "Setting price by adding a target margin on top of the estimated cost of providing the product."
+            },
+            {
+                "q": "What is a 'market-based' pricing strategy?",
+                "a": "Setting price primarily with reference to what competitors charge and what the market will bear, rather than purely from underlying cost."
+            },
+            {
+                "q": "Why might a provider need to balance cost-based and market-based pricing considerations?",
+                "a": "Pure cost-based pricing might be uncompetitive; pure market-based pricing might not cover the true cost of the product — a balance protects both viability and competitiveness."
+            },
+            {
+                "q": "What is 'new business strain'?",
+                "a": "The initial capital cost/loss a provider incurs when writing new business, often because upfront expenses exceed initial premium income."
+            },
+            {
+                "q": "Why does new business strain arise particularly for long-term insurance products?",
+                "a": "High initial expenses (e.g. commission, underwriting) are incurred immediately, while premium income and profit emerge only gradually over the life of the policy."
+            },
+            {
+                "q": "How might a provider finance new business strain?",
+                "a": "Using existing free capital/surplus, external financing (e.g. reinsurance financing, debt), or by moderating the pace of new business growth."
+            },
+            {
+                "q": "What is 'reinsurance financing', as a way to manage new business strain?",
+                "a": "An arrangement where a reinsurer provides upfront financing to the insurer (effectively an advance against future profits), in exchange for a share of future profits/premiums."
+            },
+            {
+                "q": "Why might rapid new business growth create a capital strain challenge for a provider, even if each policy is profitably priced?",
+                "a": "Even profitable policies individually cause an initial capital drain; rapid growth means many such policies draining capital simultaneously before profits emerge."
+            },
+            {
+                "q": "What does 'profit testing' contribute to setting a pricing strategy?",
+                "a": "Projecting a policy's expected cashflows over its lifetime to assess whether a proposed price achieves the desired profitability target."
+            },
+            {
+                "q": "Why might a provider set different prices for essentially the same underlying risk across different distribution channels?",
+                "a": "Different channels have different associated costs (e.g. commission) and customer price sensitivity, justifying differentiated pricing."
+            },
+            {
+                "q": "What is 'cross-subsidy' in pricing, and why might a provider choose to use it?",
+                "a": "Pricing one product/group more favourably than its standalone cost would justify, funded by pricing another product/group less favourably — often for strategic/competitive reasons."
+            },
+            {
+                "q": "Why is it important to monitor actual experience against pricing assumptions after a product has launched?",
+                "a": "To identify emerging deviations early, allowing timely repricing or other management action before losses accumulate significantly."
+            },
+            {
+                "q": "How does a provider's overall financing/capital strategy interact with its new business pricing strategy?",
+                "a": "The capital available to fund new business strain directly constrains how much (and how aggressively-priced) new business a provider can sustainably write."
+            }
+        ]
+    },
+    {
+        "id": "m25",
+        "title": "Risk governance",
+        "description": "Covers how organisations govern and oversee risk-taking — risk appetite, risk culture, and the roles and responsibilities involved in risk governance.",
+        "cards": [
+            {
+                "q": "What is 'risk governance'?",
+                "a": "The framework of structures, policies, and processes an organisation uses to identify, oversee, and manage the risks it faces."
+            },
+            {
+                "q": "What is 'risk appetite'?",
+                "a": "The amount and type of risk an organisation is willing to accept in pursuit of its objectives."
+            },
+            {
+                "q": "Why is a clearly defined risk appetite important for effective risk governance?",
+                "a": "It provides a benchmark against which actual risk-taking can be measured and managed, guiding consistent decision-making across the organisation."
+            },
+            {
+                "q": "What is 'risk culture'?",
+                "a": "The shared values, attitudes, and behaviours within an organisation that shape how risk is understood and managed in practice, beyond formal policies."
+            },
+            {
+                "q": "Why might a strong risk culture matter as much as formal risk policies?",
+                "a": "Even well-designed policies can fail if the organisational culture doesn't genuinely support risk-aware behaviour and honest escalation of concerns."
+            },
+            {
+                "q": "What is the 'three lines of defence' model of risk governance?",
+                "a": "A framework distinguishing: (1) business functions that own and manage risk day-to-day; (2) risk management/compliance functions providing oversight; (3) internal audit providing independent assurance."
+            },
+            {
+                "q": "What is the typical role of a board of directors in risk governance?",
+                "a": "Setting overall risk appetite/strategy, and holding ultimate responsibility for oversight of the organisation's risk management."
+            },
+            {
+                "q": "What is a 'risk committee'?",
+                "a": "A board or management sub-committee dedicated to overseeing risk management matters in more detail than the full board typically would."
+            },
+            {
+                "q": "What is the role of a Chief Risk Officer (CRO)?",
+                "a": "Senior executive responsible for overseeing the organisation's risk management framework and ensuring risks are appropriately identified and managed."
+            },
+            {
+                "q": "Why might risk governance need to be embedded throughout the organisation, not just at senior/board level?",
+                "a": "Risk decisions are made at all levels of an organisation's day-to-day operations, so effective risk management requires broad ownership, not just top-down policy."
+            },
+            {
+                "q": "What is meant by 'independence' of the risk management function from business/operational units?",
+                "a": "The risk function should be able to provide objective oversight/challenge without being unduly influenced by the units generating the risk-taking."
+            },
+            {
+                "q": "Why might poor risk governance contribute to major organisational failures, even when individual risk models are technically sound?",
+                "a": "Good models are ineffective if governance fails to ensure their outputs are properly escalated, acted on, and integrated into actual decision-making."
+            },
+            {
+                "q": "What is a 'risk policy'?",
+                "a": "A formal document setting out an organisation's approach, standards, and responsibilities for managing a particular category of risk."
+            },
+            {
+                "q": "Why might regulators place significant emphasis on firms' risk governance arrangements, not just their risk models/capital levels?",
+                "a": "Robust governance is seen as essential to ensuring risks are actually managed effectively in practice, not just measured accurately on paper."
+            },
+            {
+                "q": "How does risk governance relate to the concept of risk appetite being 'cascaded' through an organisation?",
+                "a": "High-level risk appetite set by the board needs to be translated into specific, actionable limits/guidelines relevant to each business area's decisions."
+            }
+        ]
+    },
+    {
+        "id": "m26",
+        "title": "Risk identification and classification",
+        "description": "Covers techniques for identifying an organisation's risks and classifying them into categories to support systematic risk management.",
+        "cards": [
+            {
+                "q": "Why is risk identification described as the foundational first step of risk management?",
+                "a": "Risks that aren't identified cannot be assessed, managed or monitored — an incomplete risk identification undermines the whole risk management process."
+            },
+            {
+                "q": "What is a 'risk register'?",
+                "a": "A structured record listing an organisation's identified risks, along with information such as their assessed likelihood, impact, and owner."
+            },
+            {
+                "q": "Give one common technique for identifying risks.",
+                "a": "Brainstorming/workshops with relevant staff, reviewing historical loss events, or systematic checklists based on risk categories."
+            },
+            {
+                "q": "What is 'market risk'?",
+                "a": "The risk of loss arising from movements in market prices/rates, e.g. interest rates, equity prices, or exchange rates."
+            },
+            {
+                "q": "What is 'credit risk'?",
+                "a": "The risk of loss arising from a counterparty failing to meet its financial obligations."
+            },
+            {
+                "q": "What is 'insurance risk' (or underwriting risk)?",
+                "a": "The risk of loss arising from the incidence, timing, or severity of insured events differing from what was assumed in pricing/reserving."
+            },
+            {
+                "q": "What is 'operational risk'?",
+                "a": "The risk of loss arising from inadequate or failed internal processes, people, systems, or from external events."
+            },
+            {
+                "q": "What is 'liquidity risk'?",
+                "a": "The risk of being unable to meet cash outflow obligations as they fall due, even if the organisation is solvent overall."
+            },
+            {
+                "q": "What is 'group risk'?",
+                "a": "Risk arising from an organisation's membership of a wider corporate group, e.g. contagion from problems elsewhere in the group."
+            },
+            {
+                "q": "Why might risks be classified into standard categories (market, credit, insurance, operational, etc.)?",
+                "a": "To ensure systematic, comprehensive coverage of risk types and enable consistent measurement, aggregation, and reporting across the organisation."
+            },
+            {
+                "q": "What is an 'emerging risk'?",
+                "a": "A risk that is new or evolving, not yet fully understood or reflected in existing risk management frameworks."
+            },
+            {
+                "q": "Why is identifying emerging risks particularly challenging compared to identifying established, well-understood risks?",
+                "a": "By definition, there's limited historical data or experience to draw on, requiring more judgement, scenario thinking, and horizon-scanning."
+            },
+            {
+                "q": "What is 'concentration risk'?",
+                "a": "The risk arising from a lack of diversification, e.g. excessive exposure to a single counterparty, sector, or geography."
+            },
+            {
+                "q": "Why might risk identification need to be an ongoing, rather than one-off, process?",
+                "a": "New risks emerge and existing risks evolve as the organisation and its external environment change over time."
+            },
+            {
+                "q": "How does effective risk identification support the later stages of risk management (measurement, mitigation, monitoring)?",
+                "a": "You can only measure, manage and monitor the risks you've identified — thorough identification ensures nothing significant is inadvertently overlooked."
+            }
+        ]
+    },
+    {
+        "id": "m27",
+        "title": "Financial product and benefit scheme risks",
+        "description": "Covers the specific risks arising from financial products and benefit schemes — how product design and scheme structure generate particular risk exposures.",
+        "cards": [
+            {
+                "q": "How can product design itself be a source of risk to the provider?",
+                "a": "Features like guarantees, options, and long-term commitments can create exposures (e.g. investment, longevity risk) beyond simple insurance risk."
+            },
+            {
+                "q": "What is 'anti-selection risk', as it relates to product/scheme design?",
+                "a": "The risk that individuals with higher-than-average risk are disproportionately likely to take up or retain a product, worsening the provider's experience versus assumptions."
+            },
+            {
+                "q": "Why might guaranteed annuity options embedded in older life insurance contracts create significant risk for a provider?",
+                "a": "If market annuity rates fall below the guaranteed rate, policyholders are much more likely to exercise the guarantee, creating a costly, anti-selective liability."
+            },
+            {
+                "q": "What is 'lapse risk'?",
+                "a": "The risk that policyholders discontinue (lapse/surrender) their policies at a different rate than assumed, affecting the provider's expected profitability."
+            },
+            {
+                "q": "Why might lapse risk be particularly significant for products with high initial (acquisition) costs?",
+                "a": "Early lapses mean the provider may not recoup the upfront costs (e.g. commission) before the policy is given up, resulting in a loss on that policy."
+            },
+            {
+                "q": "What risks does a defined benefit pension scheme expose the sponsoring employer to?",
+                "a": "Investment risk, longevity risk, and inflation risk, since the employer bears the cost of funding whatever benefits are ultimately due, regardless of how assets perform."
+            },
+            {
+                "q": "Why does a defined contribution pension scheme shift risk differently than a defined benefit scheme?",
+                "a": "Investment and longevity risk are largely borne by the individual member, rather than the employer/scheme sponsor."
+            },
+            {
+                "q": "What is 'longevity risk'?",
+                "a": "The risk that people live longer than assumed, increasing the cost of providing income for life (e.g. via annuities or pensions)."
+            },
+            {
+                "q": "How might inflation risk affect a benefit scheme with inflation-linked benefits?",
+                "a": "Higher-than-assumed inflation directly increases the real cost of providing the promised (inflation-linked) benefits."
+            },
+            {
+                "q": "What is a 'basis risk' that might arise from a mismatch between a scheme's chosen inflation-linked benefit index and its available inflation-hedging assets?",
+                "a": "If the benefit is linked to one inflation measure but hedging assets/derivatives reference a different one, the hedge won't perfectly offset the liability risk."
+            },
+            {
+                "q": "Why might a general insurance product's design create exposure to 'latent' claims risk?",
+                "a": "Some liability exposures (e.g. certain industrial diseases) may not manifest as claims until many years after the underlying insured period, creating long-tail uncertainty."
+            },
+            {
+                "q": "What risk arises from offering a product with premiums that cannot be adjusted after inception (guaranteed premiums)?",
+                "a": "The provider bears the full risk that future experience is worse than assumed at outset, with no ability to reprice in response."
+            },
+            {
+                "q": "How can a scheme/product's benefit structure create risk concentration for the provider?",
+                "a": "E.g. if many policyholders share a common risk factor (same employer, same region), an adverse event affecting that factor could generate many simultaneous claims."
+            },
+            {
+                "q": "Why is understanding the specific risks generated by a product/scheme's design important before it's launched/established?",
+                "a": "It allows the provider to price, reserve, and capitalise appropriately for the risks being taken on, and to consider risk mitigation at the design stage."
+            },
+            {
+                "q": "How might a provider redesign a product to reduce a previously identified risk exposure?",
+                "a": "E.g. removing or capping a costly guarantee, introducing reviewable premiums, or adding exclusions/limits to reduce anti-selection potential."
+            }
+        ]
+    },
+    {
+        "id": "m28",
+        "title": "Accepting risk",
+        "description": "Covers the process and considerations involved in an organisation's decision to accept (underwrite) risk, including underwriting principles.",
+        "cards": [
+            {
+                "q": "What is 'underwriting'?",
+                "a": "The process of assessing and classifying risk before deciding whether, and on what terms, to accept it."
+            },
+            {
+                "q": "Why is underwriting important to an insurer's overall risk management?",
+                "a": "It helps ensure the risk actually accepted matches (or is appropriately priced relative to) the assumptions used in pricing the product."
+            },
+            {
+                "q": "What is 'risk classification', as part of underwriting?",
+                "a": "Grouping applicants into categories reflecting similar levels of risk, so appropriate (differentiated) pricing/terms can be applied."
+            },
+            {
+                "q": "Why might an insurer decline to accept certain risks, rather than simply charging a very high price?",
+                "a": "Some risks may be so far outside normal experience/pricing models that reliable pricing isn't possible, or the risk conflicts with the insurer's risk appetite."
+            },
+            {
+                "q": "What is a 'rating factor', in underwriting?",
+                "a": "A characteristic (e.g. age, occupation, claims history) used to assess and price an individual risk relative to the wider pool."
+            },
+            {
+                "q": "Why must rating factors used in underwriting be relevant and (where applicable) permitted by regulation?",
+                "a": "Using irrelevant or prohibited factors (e.g. certain protected characteristics) could be unfair, discriminatory, or unlawful, beyond just being poor risk assessment."
+            },
+            {
+                "q": "What is 'accepting risk at standard terms'?",
+                "a": "Offering a risk the same premium/terms as the general pool, on the basis that its risk level is in line with the assumptions underlying standard pricing."
+            },
+            {
+                "q": "What is 'accepting risk at non-standard (loaded) terms'?",
+                "a": "Offering cover but with adjusted terms (e.g. higher premium, exclusions) reflecting an assessed higher-than-standard risk level."
+            },
+            {
+                "q": "Why might an insurer set overall 'underwriting limits' on the amount of risk it will accept from a single source?",
+                "a": "To manage concentration risk and avoid excessive exposure to any single policyholder, event, or risk factor."
+            },
+            {
+                "q": "What role does reinsurance play in an insurer's risk acceptance strategy?",
+                "a": "It allows an insurer to accept risks larger than it could otherwise prudently retain alone, by passing on part of the risk to a reinsurer."
+            },
+            {
+                "q": "Why might automated/algorithmic underwriting be increasingly used for straightforward risks?",
+                "a": "It can process large volumes of standard applications quickly and consistently, reserving more detailed manual underwriting for complex/high-value cases."
+            },
+            {
+                "q": "What is 'accumulation risk', relevant to an organisation's overall risk acceptance decisions?",
+                "a": "The risk that many individually accepted risks turn out to be correlated (e.g. same geography, same peril), causing a much larger aggregate loss than expected."
+            },
+            {
+                "q": "Why might an organisation review and update its risk acceptance criteria over time?",
+                "a": "Emerging experience, changes in the external environment, or shifts in risk appetite may mean previous acceptance criteria are no longer appropriate."
+            },
+            {
+                "q": "How does the risk acceptance process connect to the earlier topic of setting assumptions?",
+                "a": "Underwriting is designed to ensure the risks actually accepted are consistent with the population/assumptions the pricing basis was built on."
+            },
+            {
+                "q": "Why is consistent application of underwriting standards important across an organisation?",
+                "a": "Inconsistent underwriting could lead to unintended risk selection, undermining the overall pricing basis and creating unfair outcomes between customers."
+            }
+        ]
+    },
+    {
+        "id": "m29",
+        "title": "Risk measurement and reporting",
+        "description": "Covers how organisations quantify and report on the risks they face, including common risk measures and the principles of effective risk reporting.",
+        "cards": [
+            {
+                "q": "Why is risk measurement necessary, beyond simply identifying risks?",
+                "a": "Quantifying risk allows it to be compared, prioritised, and managed against a defined risk appetite, rather than remaining a purely qualitative concern."
+            },
+            {
+                "q": "What is 'Value at Risk' (VaR), as a risk measure?",
+                "a": "The loss amount that will not be exceeded with a given confidence level over a specified time horizon."
+            },
+            {
+                "q": "What is a limitation of VaR as a sole risk measure?",
+                "a": "It doesn't indicate the potential severity of losses beyond the VaR threshold."
+            },
+            {
+                "q": "What is 'TailVaR' (Expected Shortfall), and how does it address VaR's limitation?",
+                "a": "The expected loss given that the loss exceeds the VaR threshold — it captures information about the severity of tail losses that VaR alone misses."
+            },
+            {
+                "q": "Why might qualitative risk assessment (e.g. a risk matrix of likelihood versus impact) be used alongside quantitative measures?",
+                "a": "Some risks (e.g. reputational, some operational risks) are difficult to quantify precisely but still need to be assessed and prioritised."
+            },
+            {
+                "q": "What is a 'risk dashboard' or risk report typically used for?",
+                "a": "Summarising key risk information concisely for senior management/the board, supporting oversight and decision-making."
+            },
+            {
+                "q": "Why is timely risk reporting important?",
+                "a": "Delayed reporting could mean risks aren't escalated and acted upon quickly enough to prevent or limit adverse outcomes."
+            },
+            {
+                "q": "What does it mean for risk reporting to be tailored to its audience?",
+                "a": "Different levels of detail/technicality are appropriate for a board summary versus a detailed technical risk report for a specialist committee."
+            },
+            {
+                "q": "Why might an organisation use risk measures relative to a defined risk appetite/limit, rather than just absolute figures?",
+                "a": "It provides immediate context on whether current risk levels are within acceptable bounds, supporting clearer decision-making."
+            },
+            {
+                "q": "What is 'aggregation' of risk, in the context of risk measurement?",
+                "a": "Combining the measurement of multiple individual risks into an overall assessment of total organisational risk, accounting for diversification/correlation between them."
+            },
+            {
+                "q": "Why is risk aggregation more complex than simply summing individual risk measures?",
+                "a": "Risks are often not perfectly correlated, so naively summing individual measures can overstate the true combined risk (ignoring diversification benefits)."
+            },
+            {
+                "q": "What is 'key risk indicator' (KRI) reporting?",
+                "a": "Monitoring specific measurable indicators that provide early warning signals of a risk materialising or increasing."
+            },
+            {
+                "q": "Why might trends in risk measures over time be as important to report as a single point-in-time snapshot?",
+                "a": "Trends can reveal a risk that is steadily worsening, prompting earlier action than waiting for it to breach an absolute limit."
+            },
+            {
+                "q": "What challenge arises in measuring risks (like operational or reputational risk) that lack extensive historical loss data?",
+                "a": "Statistical measurement is harder without sufficient data, often requiring more judgement-based or scenario-based approaches instead."
+            },
+            {
+                "q": "Why is it important for risk reporting to flag not just current risk levels, but also emerging or forward-looking risk concerns?",
+                "a": "Effective risk management should be forward-looking, allowing action to be taken before a risk fully materialises into a loss."
+            }
+        ]
+    },
+    {
+        "id": "m30",
+        "title": "Risk transfer",
+        "description": "Covers the methods organisations use to transfer risk to third parties, including reinsurance and other risk transfer/hedging mechanisms.",
+        "cards": [
+            {
+                "q": "What is 'risk transfer'?",
+                "a": "Shifting some or all of a risk's financial consequences to another party, in exchange for a payment or other consideration."
+            },
+            {
+                "q": "What is 'reinsurance'?",
+                "a": "A form of risk transfer where an insurer (the cedant) transfers part of its insurance risk to another insurer (the reinsurer)."
+            },
+            {
+                "q": "Why might an insurer use reinsurance rather than simply retaining all risk itself?",
+                "a": "To reduce volatility, limit exposure to large losses, free up capital, and access reinsurer expertise/capacity for risks it couldn't otherwise write."
+            },
+            {
+                "q": "What is 'proportional' reinsurance, in brief?",
+                "a": "An arrangement where the reinsurer takes a fixed proportion of both premium and claims on the ceded business."
+            },
+            {
+                "q": "What is 'non-proportional' (excess of loss) reinsurance, in brief?",
+                "a": "An arrangement where the reinsurer pays claims exceeding a specified retention level, rather than sharing all claims proportionally."
+            },
+            {
+                "q": "What is 'financial reinsurance'?",
+                "a": "A reinsurance arrangement primarily structured to achieve a financial/capital management effect (e.g. financing new business strain), rather than pure risk transfer."
+            },
+            {
+                "q": "What is 'securitisation' of insurance risk?",
+                "a": "Transferring risk to capital markets investors by issuing securities (e.g. catastrophe bonds) whose payouts are linked to specified insurance loss events."
+            },
+            {
+                "q": "Why might an insurer use securitisation in addition to (or instead of) traditional reinsurance?",
+                "a": "It can access a wider pool of capital (capital markets investors), potentially at competitive terms, and diversify sources of risk transfer capacity."
+            },
+            {
+                "q": "What is a 'catastrophe bond'?",
+                "a": "A security whose principal/interest payments are reduced or forfeited if a specified catastrophic event occurs, effectively transferring that risk to bond investors."
+            },
+            {
+                "q": "What is 'hedging', as a form of risk transfer for market risks?",
+                "a": "Using financial instruments (e.g. derivatives) to offset exposure to a specific risk, such as interest rate or currency movements."
+            },
+            {
+                "q": "Why might an organisation only partially, rather than fully, transfer a given risk?",
+                "a": "Full transfer can be costly, and retaining some risk keeps the organisation's incentives aligned with careful risk management (avoiding pure moral hazard)."
+            },
+            {
+                "q": "What is 'counterparty risk' introduced by risk transfer arrangements themselves?",
+                "a": "The risk that the party to whom risk was transferred (e.g. a reinsurer) fails to honour its obligations when called upon."
+            },
+            {
+                "q": "Why is diversifying risk transfer counterparties (e.g. using multiple reinsurers) often considered good practice?",
+                "a": "It reduces concentration/counterparty risk, so the failure of a single counterparty doesn't undermine the whole risk transfer programme."
+            },
+            {
+                "q": "How does risk transfer interact with an organisation's overall capital requirements?",
+                "a": "Effective risk transfer typically reduces the retained risk, which can correspondingly reduce the regulatory/economic capital the organisation needs to hold."
+            },
+            {
+                "q": "Why might the cost of risk transfer (e.g. reinsurance premium) itself need to be weighed carefully against the risk reduction achieved?",
+                "a": "Risk transfer isn't free — the organisation must judge whether the price charged for taking on the risk is worth the reduction in retained risk/volatility."
+            }
+        ]
+    },
+    {
+        "id": "m31",
+        "title": "Other risk controls",
+        "description": "Covers risk management techniques beyond risk transfer — risk avoidance, mitigation, and control mechanisms used to manage retained risk.",
+        "cards": [
+            {
+                "q": "What is 'risk avoidance'?",
+                "a": "Choosing not to undertake an activity at all, in order to avoid the risk associated with it entirely."
+            },
+            {
+                "q": "What is 'risk mitigation' (or reduction)?",
+                "a": "Taking action to reduce the likelihood and/or impact of a risk, without transferring it or avoiding the activity entirely."
+            },
+            {
+                "q": "What is 'risk retention'?",
+                "a": "Deliberately choosing to bear a risk (or part of it) within the organisation, rather than transferring or avoiding it."
+            },
+            {
+                "q": "Why might an organisation deliberately retain some risk rather than transfer or mitigate it fully?",
+                "a": "Some risk retention may be cost-effective (e.g. for small, predictable risks) or unavoidable, and full transfer/mitigation is rarely costless."
+            },
+            {
+                "q": "Give an example of an operational risk control.",
+                "a": "Segregation of duties, staff training, or system access controls, aimed at reducing the likelihood of operational errors or fraud."
+            },
+            {
+                "q": "What is 'diversification' as a risk control technique?",
+                "a": "Spreading exposure across a range of different risks/assets so that no single adverse event has a disproportionate impact on the whole organisation."
+            },
+            {
+                "q": "Why is diversification generally more effective against idiosyncratic risk than systematic risk?",
+                "a": "Idiosyncratic risks are (largely) independent across exposures and average out with diversification; systematic risks affect all exposures simultaneously and don't diversify away."
+            },
+            {
+                "q": "What is a 'contingency plan' or 'business continuity plan', as a risk control?",
+                "a": "A predetermined plan for how the organisation will respond to and recover from a significant adverse event, limiting its impact."
+            },
+            {
+                "q": "Why might internal controls (e.g. approval limits, checks) be considered a key risk control for operational risk?",
+                "a": "They reduce the likelihood of errors, fraud, or unauthorised actions going undetected, limiting potential losses."
+            },
+            {
+                "q": "What is meant by a 'risk limit' or 'exposure limit'?",
+                "a": "A predefined maximum level of exposure to a particular risk that the organisation will accept, used to keep risk-taking within appetite."
+            },
+            {
+                "q": "Why might setting risk limits be considered a form of risk control, even though it doesn't reduce the underlying risk itself?",
+                "a": "It constrains the organisation's exposure, preventing risk-taking from growing beyond what the organisation can safely bear."
+            },
+            {
+                "q": "What is 'risk-based capital', in relation to risk control?",
+                "a": "Holding capital proportional to the level of risk taken, providing a financial buffer against retained risks that aren't otherwise mitigated or transferred."
+            },
+            {
+                "q": "Why might an organisation combine several different risk control techniques for a single significant risk, rather than relying on just one?",
+                "a": "A layered ('defence in depth') approach provides more robust protection, since no single control technique is likely to be perfectly effective on its own."
+            },
+            {
+                "q": "How does the appropriate mix of avoidance, mitigation, transfer, and retention typically depend on the specific risk being managed?",
+                "a": "It depends on factors like the risk's likelihood, potential severity, correlation with other risks, and the cost of each risk management option relative to its benefit."
+            },
+            {
+                "q": "Why is monitoring the ongoing effectiveness of risk controls important, rather than just implementing them once?",
+                "a": "Controls can become less effective over time (e.g. as circumstances change or controls are circumvented), so ongoing review helps ensure they remain fit for purpose."
+            }
+        ]
+    },
+    {
+        "id": "m32",
+        "title": "Provisions",
+        "description": "Covers the concept of provisions (reserves) held by an organisation against its liabilities, and the principles underlying how they are calculated.",
+        "cards": [
+            {
+                "q": "What is a 'provision' (or reserve), in an actuarial/accounting context?",
+                "a": "An amount set aside to meet expected future liabilities/obligations arising from past events or existing contracts."
+            },
+            {
+                "q": "Why do organisations need to hold provisions rather than just pay liabilities as they fall due from current income?",
+                "a": "To ensure sufficient assets are set aside now to meet liabilities that will crystallise later, protecting solvency and giving an accurate picture of financial position."
+            },
+            {
+                "q": "What is a 'best estimate' provision?",
+                "a": "A provision calculated using unbiased, most-likely assumptions about future experience, without deliberate additional margins."
+            },
+            {
+                "q": "What is a 'risk margin' (or margin for prudence), added to a best estimate provision?",
+                "a": "An additional amount added to the best estimate to allow for the uncertainty inherent in the estimate, providing a buffer against adverse deviation."
+            },
+            {
+                "q": "Why might a 'prospective' method be used to calculate a provision?",
+                "a": "It directly represents the provision as the present value of expected future outgo less expected future income, matching the definition of what the provision should cover."
+            },
+            {
+                "q": "Why might a 'retrospective' method sometimes be used or cross-checked against a prospective calculation?",
+                "a": "It can provide a consistency check, calculating the provision as accumulated past income less accumulated past outgo, which should match the prospective figure under consistent assumptions."
+            },
+            {
+                "q": "What is 'IBNR' (incurred but not reported) provision, in general insurance?",
+                "a": "A reserve for claims that have already occurred but have not yet been reported to the insurer."
+            },
+            {
+                "q": "Why is IBNR reserving particularly challenging?",
+                "a": "By definition, the insurer has no direct record of these claims yet, so the reserve must be estimated using statistical/actuarial techniques applied to historical patterns."
+            },
+            {
+                "q": "What is a 'claims outstanding' provision?",
+                "a": "A reserve for claims that have been reported but not yet fully settled/paid."
+            },
+            {
+                "q": "Why might provisions need to be calculated differently for regulatory reporting versus internal management purposes?",
+                "a": "Different purposes may call for different levels of prudence or different prescribed methodologies (e.g. regulatory solvency rules versus best-estimate internal management view)."
+            },
+            {
+                "q": "What is a 'discount rate', and why is it relevant to calculating provisions?",
+                "a": "The rate used to convert future expected cashflows into a present value; the choice of discount rate can materially affect the size of the resulting provision."
+            },
+            {
+                "q": "Why might holding an inadequate provision be a serious concern for an insurer?",
+                "a": "It could mean the insurer doesn't hold sufficient assets to meet its actual future obligations, threatening its ability to pay claims and its solvency."
+            },
+            {
+                "q": "Why might holding an excessively prudent provision also be undesirable, despite appearing 'safe'?",
+                "a": "It ties up capital unnecessarily, can distort reported profitability, and may not give an accurate/transparent view of the organisation's true financial position."
+            },
+            {
+                "q": "How does the choice of assumptions (e.g. mortality, expenses, lapses) directly affect the calculated provision?",
+                "a": "Provisions are calculated by projecting future cashflows using these assumptions, so different assumption choices produce materially different provision amounts."
+            },
+            {
+                "q": "Why must provisions be reviewed and updated regularly, rather than calculated once at policy inception?",
+                "a": "Experience, assumptions, and the remaining term of liabilities all change over time, requiring the provision to be recalculated to remain appropriate."
+            }
+        ]
+    },
+    {
+        "id": "m33",
+        "title": "Valuation of liabilities",
+        "description": "Covers the principles and methods used to place a value on an organisation's liabilities, including different valuation bases and their purposes.",
+        "cards": [
+            {
+                "q": "What is meant by 'valuing' a liability?",
+                "a": "Placing a monetary figure on the expected cost of meeting a future obligation, typically as a present value of expected future cashflows."
+            },
+            {
+                "q": "Why might liabilities be valued on more than one basis (e.g. regulatory versus best estimate)?",
+                "a": "Different purposes (solvency assessment, pricing, internal management, financial reporting) may require different levels of prudence or different prescribed methodologies."
+            },
+            {
+                "q": "What is a 'market-consistent' valuation of liabilities?",
+                "a": "A valuation approach using assumptions (e.g. discount rates) derived from, and consistent with, current observable market prices/conditions."
+            },
+            {
+                "q": "Why might a market-consistent approach be considered more objective than a valuation based on an organisation's own chosen assumptions?",
+                "a": "It anchors key assumptions to observable, verifiable market data rather than relying purely on internal judgement, improving comparability and reducing scope for manipulation."
+            },
+            {
+                "q": "What challenge arises in applying market-consistent valuation to liabilities that have no direct market equivalent (e.g. long-term insurance liabilities)?",
+                "a": "There's no directly observable market price for the liability itself, so techniques must proxy/replicate a market-consistent value using available market data on related instruments."
+            },
+            {
+                "q": "What is the relationship between the valuation of assets and liabilities in assessing an organisation's solvency?",
+                "a": "Solvency is typically assessed by comparing the value of assets to the value of liabilities — using inconsistent bases for each could give a misleading picture."
+            },
+            {
+                "q": "Why might the discount rate used to value liabilities be a particularly significant/sensitive assumption?",
+                "a": "Small changes in the discount rate can have a large effect on the present value of long-term liability cashflows, especially for long-duration liabilities."
+            },
+            {
+                "q": "What is an 'options and guarantees' allowance within a liability valuation?",
+                "a": "An additional value placed on embedded financial options/guarantees within the liability, reflecting their potential cost to the provider under different future scenarios."
+            },
+            {
+                "q": "Why might a simple deterministic (single-scenario) valuation understate the true cost of embedded options and guarantees?",
+                "a": "Options/guarantees are typically more valuable (costly to the provider) in adverse scenarios, so their true expected cost requires averaging across a range of scenarios (e.g. stochastically), not just a central estimate."
+            },
+            {
+                "q": "What is a 'risk margin', in the context of valuing liabilities for solvency purposes?",
+                "a": "An additional amount added to the best estimate liability value, intended to represent the cost of transferring the liability (with its inherent uncertainty) to another party."
+            },
+            {
+                "q": "Why is consistency in the valuation approach important when comparing an organisation's financial position over time?",
+                "a": "Changing valuation methodology/assumptions between periods could create the appearance of a change in financial position that doesn't reflect genuine underlying change."
+            },
+            {
+                "q": "How does liability valuation differ conceptually between a life insurer's long-term liabilities and a general insurer's shorter-term liabilities?",
+                "a": "Life liabilities typically require long-term projection of mortality/persistency/investment assumptions; general insurance liabilities focus more on claims development patterns over a (usually) shorter horizon."
+            },
+            {
+                "q": "Why might an actuary need to exercise significant judgement in valuing liabilities, even within a market-consistent framework?",
+                "a": "Market data for hedging/replicating certain long-term or complex liability features may be limited or unavailable, requiring judgement to extrapolate/approximate."
+            },
+            {
+                "q": "What is the role of sensitivity analysis in liability valuation?",
+                "a": "Assessing how the valuation changes under different assumption scenarios, helping to understand which assumptions are most material to the result."
+            },
+            {
+                "q": "Why is accurate valuation of liabilities fundamental to nearly every other area of actuarial practice covered in CP1?",
+                "a": "Pricing, reserving, capital management, and risk assessment all depend on a reliable understanding of the value/cost of the organisation's obligations."
+            }
+        ]
+    },
+    {
+        "id": "m34",
+        "title": "Reporting results",
+        "description": "Covers how organisations report their financial results — the purposes of financial reporting, and how actuarial figures feed into it.",
+        "cards": [
+            {
+                "q": "What is the general purpose of an organisation's financial reporting?",
+                "a": "To communicate its financial position and performance to stakeholders (e.g. shareholders, regulators, policyholders) in a clear, reliable way."
+            },
+            {
+                "q": "Why might different stakeholders want different information from financial reporting?",
+                "a": "Shareholders may focus on profitability/growth; regulators on solvency; policyholders on security of benefits — each has different information needs."
+            },
+            {
+                "q": "What is the difference between a 'balance sheet' and an 'income statement'?",
+                "a": "A balance sheet shows the financial position (assets, liabilities, and equity/surplus) at a point in time; an income statement shows performance (income and expenses) over a period."
+            },
+            {
+                "q": "Why do actuarial calculations (e.g. reserves) directly feed into an insurer's reported financial statements?",
+                "a": "Liabilities (largely actuarially calculated) are a major component of the balance sheet, and changes in reserves directly affect reported profit."
+            },
+            {
+                "q": "What is 'profit emergence', in the context of long-term insurance business?",
+                "a": "The pattern over time in which profit from a policy is recognised in the financial statements, which can differ from when cash is actually received/paid."
+            },
+            {
+                "q": "Why might different accounting/valuation bases lead to different patterns of profit emergence for the same underlying business?",
+                "a": "The timing of when reserves recognise expected future profit varies by basis, shifting how much profit is reported in earlier versus later years."
+            },
+            {
+                "q": "What is a 'true and fair view', as a principle of financial reporting?",
+                "a": "Financial statements should accurately and honestly represent the organisation's actual financial position and performance, without material misstatement."
+            },
+            {
+                "q": "Why is comparability of financial reporting across different organisations/time periods considered important?",
+                "a": "It allows stakeholders to meaningfully compare performance/position between companies or over time, supporting informed decision-making."
+            },
+            {
+                "q": "What role does an external auditor play in relation to financial reporting?",
+                "a": "Providing independent assurance that the financial statements give a true and fair view and comply with relevant accounting standards."
+            },
+            {
+                "q": "Why might an actuary's calculations be subject to particular scrutiny within the financial reporting/audit process?",
+                "a": "They often involve significant judgement and materially affect reported figures (e.g. insurance liabilities), warranting careful independent review."
+            },
+            {
+                "q": "What is the difference between statutory (regulatory) reporting and management reporting?",
+                "a": "Statutory reporting follows prescribed external rules/standards for external stakeholders; management reporting is more flexible, tailored to internal decision-making needs."
+            },
+            {
+                "q": "Why might an organisation's reported results under one basis (e.g. regulatory) differ materially from another (e.g. internal economic) basis?",
+                "a": "Different bases can use different assumptions, prudence margins, or recognition timing, leading to genuinely different reported figures for the same underlying business."
+            },
+            {
+                "q": "How might reported financial results influence external stakeholders' perceptions of an organisation, beyond its actual underlying position?",
+                "a": "Reported figures (e.g. profit, solvency ratio) are often used as a proxy for underlying health, so reporting choices (within permitted rules) can influence market/stakeholder perception."
+            },
+            {
+                "q": "Why is transparency about the assumptions and methods underlying reported actuarial figures important?",
+                "a": "It allows stakeholders to understand and appropriately interpret the reported results, rather than taking headline figures at face value without context."
+            },
+            {
+                "q": "How does reporting results connect back to the earlier topics of provisions and liability valuation?",
+                "a": "The provisions/liability valuations calculated using actuarial methods directly determine key figures presented within the organisation's financial reports."
+            }
+        ]
+    },
+    {
+        "id": "m35",
+        "title": "Insolvency and closure",
+        "description": "Covers what happens when an organisation becomes insolvent or ceases to write new business, and the actuarial considerations involved.",
+        "cards": [
+            {
+                "q": "What does 'insolvency' mean for a financial institution?",
+                "a": "Being unable to meet its liabilities as they fall due, or having liabilities that exceed its assets."
+            },
+            {
+                "q": "Why is insolvency of particular concern for insurers and pension schemes, beyond the immediate organisation itself?",
+                "a": "Their failure can directly harm policyholders/members who are relying on future promised benefits, not just shareholders/creditors."
+            },
+            {
+                "q": "What is a 'run-off', in the context of an insurer or fund that has stopped writing new business?",
+                "a": "Continuing to administer and pay claims/benefits on existing (in-force) business, without accepting new policies."
+            },
+            {
+                "q": "Why might an insurer choose to enter voluntary run-off, even if not insolvent?",
+                "a": "Strategic reasons, e.g. exiting an unprofitable line of business or focusing resources elsewhere, while still honouring existing obligations."
+            },
+            {
+                "q": "What is a 'policyholder protection scheme' (or compensation scheme)?",
+                "a": "A scheme (often government or industry-backed) providing some protection/compensation to policyholders if their insurer becomes insolvent."
+            },
+            {
+                "q": "Why might regulators intervene early with a financially weakening insurer, rather than waiting until formal insolvency?",
+                "a": "Early intervention (e.g. restricting new business, requiring a recovery plan) may prevent full insolvency and better protect policyholders."
+            },
+            {
+                "q": "What actuarial input might be needed when an insurer is approaching insolvency?",
+                "a": "Updated, realistic valuations of assets and liabilities to assess the true financial position and inform regulatory/management decisions."
+            },
+            {
+                "q": "What is a 'scheme of arrangement' or portfolio transfer, in the context of an insurer in difficulty?",
+                "a": "A formal mechanism to transfer some or all of an insurer's policies/liabilities to another (financially sound) insurer."
+            },
+            {
+                "q": "Why might policyholders receive less than their full contractual entitlement if an insurer becomes insolvent?",
+                "a": "If the insurer's assets are insufficient to cover all liabilities in full, policyholders (as creditors) may only receive a proportionate share, subject to any protection scheme."
+            },
+            {
+                "q": "What is the role of an independent actuary in assessing a proposed transfer of insurance business between companies?",
+                "a": "To provide an independent opinion on whether the transfer is fair to the affected policyholders (both transferring and remaining)."
+            },
+            {
+                "q": "How might a pension scheme's assets be distributed if the scheme is wound up?",
+                "a": "Typically according to a priority order set out in legislation/scheme rules, which may mean not all promised benefits are met in full if the scheme is underfunded."
+            },
+            {
+                "q": "Why is understanding the 'wind-up' or 'buy-out' cost of a pension scheme's liabilities relevant to its sponsor and trustees?",
+                "a": "It indicates the cost of fully securing member benefits with an insurer, an important reference point for funding and risk management decisions, especially if the sponsor is at risk of insolvency."
+            },
+            {
+                "q": "What is the purpose of a 'recovery plan' for an underfunded pension scheme?",
+                "a": "A plan agreed between the sponsor and trustees setting out how the scheme's funding shortfall will be addressed over time."
+            },
+            {
+                "q": "Why might the order in which different creditors/policyholders are paid matter significantly in an insolvency?",
+                "a": "Assets are typically insufficient to pay everyone in full, so priority ranking determines who bears the greatest share of any shortfall."
+            },
+            {
+                "q": "How does understanding insolvency and closure processes reinforce the importance of the capital management topics covered elsewhere in CP1?",
+                "a": "Adequate capital management is precisely what's intended to reduce the likelihood of an organisation ever reaching insolvency in the first place."
+            }
+        ]
+    },
+    {
+        "id": "m36",
+        "title": "Capital management",
+        "description": "Covers how organisations manage their capital — the purposes capital serves, sources of capital, and the principles of an effective capital management framework.",
+        "cards": [
+            {
+                "q": "What is the general purpose of holding capital, for a financial institution?",
+                "a": "To provide a buffer against adverse experience, supporting solvency and the ability to meet obligations even if things go worse than expected."
+            },
+            {
+                "q": "What is 'available capital' (or own funds)?",
+                "a": "The actual capital resources an organisation holds, typically assets in excess of liabilities."
+            },
+            {
+                "q": "What is 'required capital'?",
+                "a": "The minimum amount of capital an organisation is required (e.g. by regulation, or its own risk appetite) to hold, given its risk profile."
+            },
+            {
+                "q": "What does a 'capital surplus' (available capital exceeding required capital) indicate?",
+                "a": "The organisation holds more capital than the minimum needed, providing an additional margin of financial strength."
+            },
+            {
+                "q": "What are common sources of capital for an insurer?",
+                "a": "Retained profits, shareholder capital injections (equity), and various forms of debt/subordinated capital."
+            },
+            {
+                "q": "Why might an organisation raise capital via debt (e.g. subordinated debt) rather than equity?",
+                "a": "Debt can be cheaper (no dilution of ownership, potential tax deductibility of interest), though it creates a fixed repayment obligation."
+            },
+            {
+                "q": "What is 'capital fungibility', and why might it matter for a group with multiple subsidiaries?",
+                "a": "Whether capital held in one part of the group can be freely moved to support another part — restrictions (e.g. regulatory, currency) can limit fungibility, reducing the group's effective capital efficiency."
+            },
+            {
+                "q": "Why might a well-diversified group of businesses need less total capital than the sum of its individual businesses' standalone requirements?",
+                "a": "Diversification benefits mean the group's risks aren't all likely to materialise simultaneously, reducing aggregate required capital versus treating each business in isolation."
+            },
+            {
+                "q": "What is the role of capital management in supporting an organisation's strategic objectives, beyond just meeting minimum regulatory requirements?",
+                "a": "Sufficient, efficiently deployed capital enables growth, new product development, and resilience, supporting broader business strategy."
+            },
+            {
+                "q": "Why must capital management balance policyholder/creditor security against shareholder return objectives?",
+                "a": "Holding more capital increases security but can reduce shareholder returns (capital is expensive to hold); capital management seeks an appropriate balance."
+            },
+            {
+                "q": "What is a 'dividend policy', and how does it relate to capital management?",
+                "a": "An organisation's approach to how much profit is distributed to shareholders versus retained as capital, directly affecting available capital levels."
+            },
+            {
+                "q": "Why might an organisation model its capital position under a range of future scenarios, not just the current position?",
+                "a": "To understand how capital adequacy might evolve under different (including adverse) future conditions, supporting proactive management."
+            },
+            {
+                "q": "What is 'capital efficiency'?",
+                "a": "Achieving the organisation's objectives (e.g. required security level) while minimising the amount of (costly) capital tied up to do so."
+            },
+            {
+                "q": "How might reinsurance or other risk transfer contribute to capital management?",
+                "a": "By reducing retained risk, it can reduce the required capital, freeing up capital for other uses."
+            },
+            {
+                "q": "Why is capital management considered a continuous process, not a one-off exercise?",
+                "a": "An organisation's risk profile, business volumes, and the external environment all change over time, requiring ongoing monitoring and adjustment of capital plans."
+            }
+        ]
+    },
+    {
+        "id": "m37",
+        "title": "Capital requirements",
+        "description": "Covers how the amount of capital an organisation needs to hold is determined, including regulatory capital requirements and internal economic capital assessment.",
+        "cards": [
+            {
+                "q": "What is a 'regulatory capital requirement'?",
+                "a": "The minimum amount of capital a regulator requires an organisation to hold, based on prescribed rules/formulas reflecting its risk profile."
+            },
+            {
+                "q": "What is 'economic capital'?",
+                "a": "An organisation's own internal assessment of the capital needed to cover its risks to a chosen confidence level, which may differ from the regulatory minimum."
+            },
+            {
+                "q": "Why might an organisation's economic capital assessment differ from its regulatory capital requirement?",
+                "a": "Regulatory formulas are often standardised/simplified across the industry, while economic capital can reflect the organisation's own specific risk profile and chosen confidence level."
+            },
+            {
+                "q": "What is a 'standard formula' approach to calculating regulatory capital?",
+                "a": "A prescribed, standardised calculation method applied to all firms, rather than requiring each firm to build its own bespoke risk model."
+            },
+            {
+                "q": "What is an 'internal model' approach to calculating regulatory capital?",
+                "a": "A firm-specific model (subject to regulatory approval) used to calculate capital requirements, tailored to the firm's actual risk profile."
+            },
+            {
+                "q": "Give one advantage of a standard formula approach over an internal model.",
+                "a": "Simpler, cheaper to implement, and ensures comparability/consistency across the industry."
+            },
+            {
+                "q": "Give one advantage of an internal model approach over a standard formula.",
+                "a": "Can more accurately reflect the firm's specific risk profile, potentially avoiding over- or under-stating capital needs relative to actual risk."
+            },
+            {
+                "q": "What confidence level (or similar risk measure) is a common basis for setting regulatory capital requirements (e.g. under many risk-based regimes)?",
+                "a": "A high confidence level (e.g. 99.5% over one year) is a common basis, though the specific approach varies by regulatory regime."
+            },
+            {
+                "q": "Why might capital requirements be calibrated using a one-year time horizon, even for long-term liabilities?",
+                "a": "It focuses on the risk of the organisation's position deteriorating materially within the near term, on the view that action could be taken (e.g. management intervention, run-off) if that happened."
+            },
+            {
+                "q": "What is a 'minimum capital requirement', as distinct from a higher solvency capital requirement?",
+                "a": "An absolute floor below which regulatory intervention becomes especially urgent/severe, typically lower than the main solvency capital target."
+            },
+            {
+                "q": "Why might capital requirements need to capture diversification benefits across different risk types (e.g. market, insurance, operational risk)?",
+                "a": "Different risk types aren't perfectly correlated, so the combined capital requirement should generally be less than the simple sum of standalone requirements for each risk."
+            },
+            {
+                "q": "What is a 'correlation matrix' used for in aggregating capital requirements across risk types?",
+                "a": "Specifying the assumed correlation between different risk categories, used to combine individual risk capital charges into an overall (diversified) total requirement."
+            },
+            {
+                "q": "Why might regulators require firms to hold capital requirements calculated on a market-consistent valuation basis?",
+                "a": "To ensure the assessment of risk and required capital reflects the organisation's true current financial exposure, rather than a potentially outdated or overly smoothed valuation."
+            },
+            {
+                "q": "What is the purpose of 'stress and scenario testing' in relation to capital requirements?",
+                "a": "To assess how capital adequacy would be affected by specific adverse scenarios, complementing the statistical/formulaic capital calculation."
+            },
+            {
+                "q": "Why might capital requirements for the same underlying risks differ significantly between different countries' regulatory regimes?",
+                "a": "Different regulators may adopt different risk measures, confidence levels, time horizons, or methodologies, reflecting different regulatory philosophies and priorities."
+            }
+        ]
+    },
+    {
+        "id": "m38",
+        "title": "Surplus and surplus management",
+        "description": "Covers the concept of an organisation's surplus (assets in excess of liabilities and required capital), and how it can be managed and distributed.",
+        "cards": [
+            {
+                "q": "What is 'surplus', in the actuarial sense?",
+                "a": "The excess of an organisation's assets over its liabilities (and potentially over its required capital), representing available financial strength."
+            },
+            {
+                "q": "Why does surplus naturally emerge over the life of a portfolio of insurance business, even under a best-estimate valuation basis?",
+                "a": "Prudent margins built into pricing/reserving, combined with favourable variances in actual versus assumed experience, tend to release surplus over time as uncertainty resolves."
+            },
+            {
+                "q": "What are the main sources from which surplus can arise?",
+                "a": "Favourable investment experience, favourable insurance experience (e.g. lower claims/expenses than assumed), and the release of margins as reserves run off."
+            },
+            {
+                "q": "What is 'surplus management' (or appropriation)?",
+                "a": "The process of deciding how emerging surplus is used — e.g. distributed to shareholders/policyholders, retained as additional capital, or reinvested in the business."
+            },
+            {
+                "q": "Why might a mutual insurer's approach to surplus distribution differ from a proprietary (shareholder-owned) insurer's?",
+                "a": "A mutual typically returns surplus to its policyholder members (e.g. via bonuses), while a proprietary insurer can distribute surplus to external shareholders as dividends."
+            },
+            {
+                "q": "What is a 'bonus' in the context of with-profits life insurance surplus distribution?",
+                "a": "A share of the insurer's distributable surplus allocated to with-profits policyholders, increasing their policy benefits."
+            },
+            {
+                "q": "Why might an insurer retain some emerging surplus rather than distributing all of it immediately?",
+                "a": "To build additional capital strength/buffers, fund future growth, or smooth distributions over time rather than distributing volatile amounts each period."
+            },
+            {
+                "q": "What is 'orphan estate' (or inherited estate), in a with-profits fund context?",
+                "a": "Surplus accumulated within a with-profits fund that isn't clearly attributable to specific current policyholders or shareholders, raising questions over its appropriate ownership/use."
+            },
+            {
+                "q": "Why might the treatment of surplus be a source of tension between shareholders and policyholders in a proprietary insurer with a with-profits fund?",
+                "a": "Both groups may have some claim on how surplus is allocated, and their interests (distribution now versus retained security) may not align."
+            },
+            {
+                "q": "How does surplus management interact with an organisation's regulatory capital position?",
+                "a": "Distributing surplus reduces available capital, so surplus decisions must consider whether sufficient capital remains to meet ongoing regulatory requirements."
+            },
+            {
+                "q": "Why might surplus distributions be smoothed over time, rather than directly reflecting each year's actual emerging surplus?",
+                "a": "To avoid excessive volatility in what policyholders/shareholders receive, providing more stable and predictable outcomes."
+            },
+            {
+                "q": "What role does the board (or with-profits committee, where relevant) play in surplus management decisions?",
+                "a": "Providing oversight and approval of surplus distribution policy, balancing the interests of different stakeholder groups fairly."
+            },
+            {
+                "q": "Why might regulators take an interest in how an insurer manages and distributes surplus, not just its minimum capital adequacy?",
+                "a": "Surplus management practices can affect policyholder fairness (e.g. with-profits bonus policy) and the organisation's ongoing financial resilience, both regulatory concerns."
+            },
+            {
+                "q": "How does surplus relate to the concept of 'free assets' or 'free capital'?",
+                "a": "Surplus (assets less liabilities and required capital) broadly represents the organisation's free assets — capital not needed to back existing liabilities/requirements."
+            },
+            {
+                "q": "Why is surplus management considered an ongoing strategic decision, rather than a purely mechanical calculation?",
+                "a": "It involves balancing multiple stakeholder interests, strategic priorities, and risk appetite, requiring judgement beyond simply calculating the numerical surplus figure."
+            }
+        ]
+    },
+    {
+        "id": "m39",
+        "title": "Monitoring",
+        "description": "Covers the ongoing monitoring of an organisation's experience, assumptions, and financial position, and how this feeds back into actuarial management processes.",
+        "cards": [
+            {
+                "q": "Why is ongoing monitoring an essential part of the actuarial control cycle?",
+                "a": "It allows actual experience to be compared against assumptions, so models and decisions can be updated/refined as new information emerges."
+            },
+            {
+                "q": "What is 'experience monitoring'?",
+                "a": "Regularly comparing actual outcomes (e.g. mortality, lapses, expenses, investment returns) against the assumptions used in pricing/reserving."
+            },
+            {
+                "q": "Why might significant deviations between actual and expected experience prompt management action?",
+                "a": "Persistent deviations suggest the assumptions (and hence pricing/reserving) may no longer be appropriate, requiring review and potential correction."
+            },
+            {
+                "q": "What is meant by monitoring an organisation's 'solvency position' on an ongoing basis?",
+                "a": "Regularly assessing whether available capital continues to exceed required capital, tracking the organisation's financial resilience over time."
+            },
+            {
+                "q": "Why might monitoring need to happen more frequently during periods of market volatility or stress?",
+                "a": "Rapid changes in market conditions can quickly affect asset and liability values, requiring closer, more frequent oversight to catch emerging problems early."
+            },
+            {
+                "q": "What is a 'management information' (MI) report, in the context of ongoing monitoring?",
+                "a": "Regular reporting summarising key metrics/trends to support informed, timely management decision-making."
+            },
+            {
+                "q": "Why is timely monitoring particularly important for identifying emerging risks before they become severe?",
+                "a": "Early identification allows corrective action to be taken while the issue is still manageable, rather than after it has caused significant damage."
+            },
+            {
+                "q": "What role does monitoring play in validating the actuarial models used for pricing and reserving?",
+                "a": "Comparing actual outcomes to model predictions helps assess whether the model remains a reasonable representation of reality, or needs recalibration."
+            },
+            {
+                "q": "Why might an organisation set specific tolerance thresholds/triggers as part of its monitoring framework?",
+                "a": "To define in advance what level of deviation from expectations should prompt escalation or action, ensuring a consistent, disciplined response."
+            },
+            {
+                "q": "How does monitoring feed back into the 'setting assumptions' process covered earlier in the course?",
+                "a": "Monitoring results (actual versus expected experience) provide the evidence base used to refine and update future assumptions."
+            },
+            {
+                "q": "Why is monitoring not just a backward-looking activity, but also relevant to forward-looking risk management?",
+                "a": "Trends identified through monitoring can signal emerging risks or changing conditions that should inform forward-looking projections and risk assessments."
+            },
+            {
+                "q": "What is the risk of an organisation monitoring its experience infrequently or superficially?",
+                "a": "Problems could go undetected for longer, potentially becoming more severe and harder/costlier to correct by the time they're identified."
+            },
+            {
+                "q": "Why might different aspects of an organisation's business (e.g. mortality experience versus investment performance) need different monitoring frequencies?",
+                "a": "Different risks evolve at different speeds — investment markets can move daily, while mortality trends typically emerge over years, warranting different monitoring cadences."
+            },
+            {
+                "q": "How does effective monitoring support good risk governance, as covered earlier in the course?",
+                "a": "It provides the ongoing information flow that allows a risk governance framework to actually function in practice, rather than being a purely theoretical structure."
+            },
+            {
+                "q": "Why is monitoring described as completing the 'actuarial control cycle' — linking back to setting assumptions, modelling, and decision-making?",
+                "a": "It closes the loop: results are monitored, informing revised assumptions/models, which inform new decisions, whose outcomes are then monitored again — a continuous, iterative process."
+            }
+        ]
+    },
+    {
+        "id": "m40",
+        "title": "Glossary",
+        "description": "A reference chapter of key CP1 terminology — useful for testing recall of core definitions spanning products, risk, and financial management.",
+        "cards": [
+            {
+                "q": "What does 'solvency' mean, in an actuarial/regulatory context?",
+                "a": "An organisation's ability to meet its liabilities as they fall due, typically assessed by comparing assets to liabilities (plus any required capital buffer)."
+            },
+            {
+                "q": "What is a 'policyholder'?",
+                "a": "An individual or entity that holds an insurance policy, entitled to its benefits and bound by its terms."
+            },
+            {
+                "q": "What is 'underwriting'?",
+                "a": "The process of assessing and classifying risk before deciding whether, and on what terms, to accept it."
+            },
+            {
+                "q": "What is a 'premium'?",
+                "a": "The amount a policyholder pays to an insurer in exchange for insurance cover."
+            },
+            {
+                "q": "What is a 'claim'?",
+                "a": "A request by a policyholder (or beneficiary) for payment under the terms of an insurance policy, following an insured event."
+            },
+            {
+                "q": "What is 'reinsurance'?",
+                "a": "Insurance purchased by an insurer to transfer part of its own risk to another insurer (the reinsurer)."
+            },
+            {
+                "q": "What is a 'reserve' (or provision)?",
+                "a": "An amount set aside to meet expected future liabilities arising from past events or existing contracts."
+            },
+            {
+                "q": "What does 'prudent' mean, as applied to an actuarial assumption or basis?",
+                "a": "Deliberately incorporating a margin of caution, to reduce the risk of understating a liability or overstating available resources."
+            },
+            {
+                "q": "What is a 'best estimate'?",
+                "a": "An assumption or calculation reflecting the actuary's unbiased, most likely view, without deliberate additional margins."
+            },
+            {
+                "q": "What is 'risk appetite'?",
+                "a": "The amount and type of risk an organisation is willing to accept in pursuit of its objectives."
+            },
+            {
+                "q": "What is 'diversification'?",
+                "a": "Spreading exposure across a range of different risks/assets so that no single adverse event has a disproportionate impact overall."
+            },
+            {
+                "q": "What is a 'with-profits' policy?",
+                "a": "A life insurance policy where the policyholder receives smoothed investment returns via bonuses, reflecting the insurer's overall investment performance."
+            },
+            {
+                "q": "What is 'moral hazard'?",
+                "a": "The tendency for a party to take on more risk (or behave less carefully) once they are insured against the consequences of that risk."
+            },
+            {
+                "q": "What is 'anti-selection' (adverse selection)?",
+                "a": "The tendency for individuals with higher-than-average risk to be more likely to seek insurance, especially where underwriting is limited."
+            },
+            {
+                "q": "What is 'capital', in this context?",
+                "a": "Financial resources held by an organisation in excess of its liabilities, providing a buffer against adverse experience and supporting solvency."
+            }
+        ]
+    }
+],
 };
