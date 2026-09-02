@@ -3422,4 +3422,1078 @@ const MODULES = {
         ]
     }
 ],
+  CS1: [
+    {
+        "id": "m01",
+        "title": "Data analysis",
+        "description": "Covers the purpose of data analysis (descriptive, inferential, predictive), sources and characteristics of data, reproducible research, exploratory data analysis, and correlation/PCA techniques.",
+        "cards": [
+            {
+                "q": "What are the three main aims of a data analysis?",
+                "a": "Descriptive (summarising data), inferential (drawing conclusions about a population), and predictive (forecasting future/unseen outcomes)."
+            },
+            {
+                "q": "What is 'reproducible research'?",
+                "a": "Research where the analysis can be independently repeated and verified by others, given the same data and code/methods."
+            },
+            {
+                "q": "Name one element required to ensure a data analysis is reproducible.",
+                "a": "Documented, shareable code/scripts, and access to the same data and software versions."
+            },
+            {
+                "q": "What does 'Pearson's correlation coefficient' measure?",
+                "a": "The strength and direction of the linear relationship between two variables."
+            },
+            {
+                "q": "What does 'Spearman's rank correlation' measure, and how does it differ from Pearson's?",
+                "a": "The strength of a monotonic (not necessarily linear) relationship, calculated using the ranks of the data rather than raw values."
+            },
+            {
+                "q": "What does 'Kendall's tau' measure?",
+                "a": "The association between two variables based on the number of concordant versus discordant pairs of observations."
+            },
+            {
+                "q": "Why might Spearman's or Kendall's correlation be preferred over Pearson's for some data sets?",
+                "a": "They don't assume a linear relationship and are less sensitive to outliers, since they use ranks rather than raw values."
+            },
+            {
+                "q": "What is 'principal components analysis' (PCA) used for?",
+                "a": "Reducing the dimensionality of a complex data set by finding a smaller number of uncorrelated components that capture most of the variation."
+            },
+            {
+                "q": "What are 'extremely large data sets' likely to present as a data source challenge?",
+                "a": "Issues of storage, processing power, and potentially messier/less structured data requiring more preprocessing."
+            },
+            {
+                "q": "Give one example of an appropriate data visualisation for exploring a single continuous variable.",
+                "a": "A histogram or box plot."
+            },
+            {
+                "q": "What summary statistics might you calculate as part of exploratory data analysis?",
+                "a": "Measures of central tendency (mean, median) and spread (variance, standard deviation, interquartile range)."
+            },
+            {
+                "q": "Why is exploratory data analysis typically performed before formal statistical modelling?",
+                "a": "To understand the data's structure, spot anomalies/outliers, and inform appropriate modelling choices."
+            },
+            {
+                "q": "What might cause you to question the reliability of a data source?",
+                "a": "Inconsistent recording methods, missing data, known biases in collection, or an unclear/undocumented provenance."
+            },
+            {
+                "q": "How can principal components analysis help before fitting a predictive model?",
+                "a": "By reducing many correlated explanatory variables to a smaller set of uncorrelated components, simplifying the model and reducing overfitting risk."
+            },
+            {
+                "q": "What is the difference between descriptive and inferential data analysis aims?",
+                "a": "Descriptive analysis summarises the data itself; inferential analysis uses the data to draw conclusions about a broader population."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Probability distributions",
+        "description": "Covers the standard discrete and continuous probability distributions used in actuarial work, their properties, and how to generate random samples from them.",
+        "cards": [
+            {
+                "q": "What is the probability function of a Binomial($n,p$) distribution?",
+                "a": "$P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}$ for $k=0,1,\\dots,n$"
+            },
+            {
+                "q": "What is the mean and variance of a Poisson($\\lambda$) distribution?",
+                "a": "Mean $=\\lambda$, variance $=\\lambda$"
+            },
+            {
+                "q": "What is the relationship between the Poisson process and the Poisson distribution?",
+                "a": "The number of events of a Poisson process in a fixed time interval follows a Poisson distribution with mean equal to the rate times the interval length."
+            },
+            {
+                "q": "What is a 'negative binomial' distribution typically used to model?",
+                "a": "The number of failures before a fixed number of successes in a sequence of independent trials (or an over-dispersed alternative to the Poisson)."
+            },
+            {
+                "q": "What is the key difference between the binomial and hypergeometric distributions?",
+                "a": "The binomial assumes sampling with replacement; the hypergeometric assumes sampling without replacement from a finite population."
+            },
+            {
+                "q": "What distribution results from summing the squares of $k$ independent standard normal random variables?",
+                "a": "The chi-square distribution with $k$ degrees of freedom."
+            },
+            {
+                "q": "What is the relationship between the normal and log-normal distributions?",
+                "a": "If $X$ is normally distributed, then $Y = e^X$ is log-normally distributed."
+            },
+            {
+                "q": "What is the 'inverse transform method' used for?",
+                "a": "Generating a random sample from a distribution by applying the inverse of its CDF to a uniform(0,1) random variable."
+            },
+            {
+                "q": "What is the $t$-distribution typically used for?",
+                "a": "Inference about a normal population's mean when the population variance is unknown and estimated from the sample."
+            },
+            {
+                "q": "What is the $F$-distribution typically used for?",
+                "a": "Comparing the ratio of two sample variances from independent normal samples."
+            },
+            {
+                "q": "Why is the exponential distribution described as 'memoryless'?",
+                "a": "The probability of waiting an additional time $t$ given no event has occurred yet is the same as waiting $t$ from the start."
+            },
+            {
+                "q": "How would you generate a sample from an exponential distribution using the inverse transform method?",
+                "a": "$x = -\\frac{1}{\\lambda}\\ln(1-u)$, setting $u$ equal to the CDF and solving for $x$."
+            },
+            {
+                "q": "What is the beta distribution commonly used to model?",
+                "a": "A random variable restricted to the interval $[0,1]$, such as a probability or proportion."
+            },
+            {
+                "q": "What is the gamma distribution, and what is one common actuarial use?",
+                "a": "A flexible continuous distribution for positive values, often used to model claim sizes or waiting times; generalises the exponential and chi-square."
+            },
+            {
+                "q": "How would statistical software typically be used to generate samples from these distributions?",
+                "a": "Using built-in random number generator functions for each distribution, implementing efficient/exact sampling algorithms internally."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Generating functions",
+        "description": "Introduces moment generating functions and cumulant generating functions, and how to use them to derive moments of a distribution.",
+        "cards": [
+            {
+                "q": "What is the moment generating function (MGF) of a random variable $X$?",
+                "a": "$M_X(t) = E[e^{tX}]$"
+            },
+            {
+                "q": "How do you find the mean of $X$ from its MGF?",
+                "a": "$E[X] = M_X'(0)$, the first derivative of the MGF evaluated at $t=0$."
+            },
+            {
+                "q": "How do you find $E[X^2]$ from the MGF?",
+                "a": "$E[X^2] = M_X''(0)$, the second derivative of the MGF evaluated at $t=0$."
+            },
+            {
+                "q": "What is the cumulant generating function (CGF)?",
+                "a": "$K_X(t) = \\ln M_X(t)$, the natural log of the moment generating function."
+            },
+            {
+                "q": "How is the variance of $X$ obtained from the CGF?",
+                "a": "$\\text{Var}(X) = K_X''(0)$, the second derivative of the CGF evaluated at $t=0$."
+            },
+            {
+                "q": "What is a key property of MGFs for sums of independent random variables?",
+                "a": "The MGF of a sum of independent random variables equals the product of their individual MGFs."
+            },
+            {
+                "q": "What is the corresponding property of CGFs for sums of independent random variables?",
+                "a": "The CGF of a sum of independent random variables equals the sum of their individual CGFs."
+            },
+            {
+                "q": "What is the MGF of a Poisson($\\lambda$) distribution?",
+                "a": "$M_X(t) = \\exp[\\lambda(e^t-1)]$"
+            },
+            {
+                "q": "How can generating functions help identify a distribution?",
+                "a": "If two random variables have the same MGF (where it exists), they have the same distribution."
+            },
+            {
+                "q": "How would you find moments of a distribution using a series expansion of the MGF?",
+                "a": "Expand $M_X(t)$ as a power series in $t$; the coefficient of $\\frac{t^n}{n!}$ gives $E[X^n]$."
+            },
+            {
+                "q": "Why might the CGF be more convenient than the MGF for finding variance?",
+                "a": "Its second derivative directly gives the variance, without separately computing and combining the first and second moments."
+            },
+            {
+                "q": "What does it mean if a distribution's MGF doesn't exist for any $t\\neq 0$?",
+                "a": "The distribution's moments may not all be finite (e.g. heavy-tailed distributions), so the MGF approach can't be used."
+            },
+            {
+                "q": "How can generating functions derive the distribution of a sum of independent Poisson random variables?",
+                "a": "Multiply their MGFs (or add their CGFs); the result matches a Poisson MGF/CGF with the summed rate."
+            },
+            {
+                "q": "What is the third derivative of the CGF at zero related to?",
+                "a": "The third central moment (related to skewness) of the distribution."
+            },
+            {
+                "q": "Why are generating functions particularly useful in actuarial applications like aggregate claims modelling?",
+                "a": "They provide a convenient way to combine distributions and extract moments without complex direct integration/summation."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Joint distributions",
+        "description": "Covers the properties of jointly distributed random variables — marginal and conditional distributions, independence, covariance and correlation, and combining random variables.",
+        "cards": [
+            {
+                "q": "What is a 'marginal distribution'?",
+                "a": "The probability distribution of one variable from a joint distribution, obtained by summing/integrating out the other variable(s)."
+            },
+            {
+                "q": "What is a 'conditional distribution'?",
+                "a": "The probability distribution of one variable given a specific (fixed) value of another variable."
+            },
+            {
+                "q": "What condition must hold for two random variables $X$ and $Y$ to be independent?",
+                "a": "$f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all $x,y$ — the joint function factorises as the product of marginals."
+            },
+            {
+                "q": "How is the covariance of two random variables defined?",
+                "a": "$\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$"
+            },
+            {
+                "q": "How is the correlation coefficient related to covariance?",
+                "a": "$\\rho = \\frac{\\text{Cov}(X,Y)}{\\sqrt{\\text{Var}(X)\\text{Var}(Y)}}$, a standardised (unit-free) version of covariance."
+            },
+            {
+                "q": "If $X$ and $Y$ are independent, what is $\\text{Cov}(X,Y)$?",
+                "a": "Zero."
+            },
+            {
+                "q": "Does zero covariance imply independence?",
+                "a": "No — zero covariance means no linear relationship, but there could still be non-linear dependence."
+            },
+            {
+                "q": "What is the formula for the variance of a linear combination $aX+bY$?",
+                "a": "$\\text{Var}(aX+bY) = a^2\\text{Var}(X) + b^2\\text{Var}(Y) + 2ab\\,\\text{Cov}(X,Y)$"
+            },
+            {
+                "q": "How does the formula for $\\text{Var}(aX+bY)$ simplify if $X$ and $Y$ are independent?",
+                "a": "The covariance term drops out: $\\text{Var}(aX+bY) = a^2\\text{Var}(X) + b^2\\text{Var}(Y)$"
+            },
+            {
+                "q": "How would you find the marginal distribution of $X$ from a joint discrete distribution?",
+                "a": "Sum the joint probabilities over all values of $Y$, for each value of $X$."
+            },
+            {
+                "q": "How would you find the conditional probability function of $Y$ given $X=x$?",
+                "a": "$f_{Y|X}(y|x) = \\frac{f_{X,Y}(x,y)}{f_X(x)}$"
+            },
+            {
+                "q": "What is $E[XY]$ used for in calculating covariance?",
+                "a": "It's the expected value of the product of the two random variables, needed alongside the means to compute covariance."
+            },
+            {
+                "q": "Give an example of two random variables that are dependent but have zero correlation.",
+                "a": "$X$ uniform on $[-1,1]$ and $Y=X^2$ — dependent, but correlation is zero due to the symmetric, non-linear relationship."
+            },
+            {
+                "q": "How is the expected value of a function of two jointly distributed random variables calculated?",
+                "a": "By summing/integrating the function's value at each point, weighted by the joint probability/density."
+            },
+            {
+                "q": "Why is understanding joint distributions important for actuarial applications like reinsurance or portfolio risk?",
+                "a": "Many real quantities depend on the joint behaviour of several random variables, not just their individual behaviour."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Conditional expectation",
+        "description": "Covers conditional expectation of one random variable given another, and how to use the 'tower property' to find unconditional means and variances via conditioning.",
+        "cards": [
+            {
+                "q": "What is $E[Y|X=x]$?",
+                "a": "The expected value of $Y$, calculated using the conditional distribution of $Y$ given that $X$ takes the specific value $x$."
+            },
+            {
+                "q": "What is the 'tower property' (law of total expectation)?",
+                "a": "$E[Y] = E[E[Y|X]]$ — the overall mean equals the expectation, over $X$, of the conditional mean of $Y$ given $X$."
+            },
+            {
+                "q": "What is the 'law of total variance' (conditional variance formula)?",
+                "a": "$\\text{Var}(Y) = E[\\text{Var}(Y|X)] + \\text{Var}(E[Y|X])$"
+            },
+            {
+                "q": "What does the first term, $E[\\text{Var}(Y|X)]$, in the law of total variance represent?",
+                "a": "The average 'within-group' variance — variability in $Y$ remaining after accounting for $X$."
+            },
+            {
+                "q": "What does the second term, $\\text{Var}(E[Y|X])$, in the law of total variance represent?",
+                "a": "The 'between-group' variance — variability in the conditional means as $X$ varies."
+            },
+            {
+                "q": "Why is the law of total variance useful in actuarial applications like credibility theory?",
+                "a": "It decomposes total variability into within-risk and between-risk components, central to how credibility weights are derived."
+            },
+            {
+                "q": "If $Y$ and $X$ are independent, what does $E[Y|X=x]$ equal?",
+                "a": "$E[Y]$ — the conditional mean doesn't depend on $x$."
+            },
+            {
+                "q": "How would you use conditioning to find the unconditional mean of a compound distribution?",
+                "a": "Condition on the number of claims $N$, find the expected total given $N$, then take the expectation over $N$ using the tower property."
+            },
+            {
+                "q": "What is $E[Y|X]$ as a random variable (rather than $E[Y|X=x]$ as a number)?",
+                "a": "A function of the random variable $X$ itself — its value depends on the (random) outcome of $X$."
+            },
+            {
+                "q": "Give an example of a practical actuarial scenario where conditional expectation would naturally be used.",
+                "a": "Finding the expected total claim amount for a risk, conditioning on an unknown/random underlying claim frequency or severity parameter."
+            },
+            {
+                "q": "How does the tower property help simplify calculating $E[XY]$?",
+                "a": "You can write $E[XY] = E[X \\cdot E[Y|X]]$, replacing $Y$ with its conditional mean given $X$."
+            },
+            {
+                "q": "Why might conditioning on a variable simplify an otherwise complex expectation calculation?",
+                "a": "Breaking a calculation into simpler conditional pieces can be much easier than working with the full joint distribution directly."
+            },
+            {
+                "q": "What is meant by 'iterated expectation'?",
+                "a": "Another name for the tower property — taking an expectation of a conditional expectation gives back the overall (unconditional) expectation."
+            },
+            {
+                "q": "How would you verify the law of total variance using a simple two-group example?",
+                "a": "Calculate the overall variance directly, then separately the within-group and between-group variance of the group means, and check they sum correctly."
+            },
+            {
+                "q": "Why is conditional expectation described as itself a random variable when written as $E[Y|X]$?",
+                "a": "Because its value changes depending on the (random) value that $X$ takes, so it inherits randomness from $X$."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Central Limit Theorem",
+        "description": "States the Central Limit Theorem for sums/means of independent, identically distributed random variables, and compares simulated sample distributions with the normal approximation.",
+        "cards": [
+            {
+                "q": "What does the Central Limit Theorem (CLT) state?",
+                "a": "For i.i.d. random variables with finite mean and variance, the standardised sample mean converges in distribution to standard normal as sample size increases."
+            },
+            {
+                "q": "What is the approximate distribution of the sample mean $\\bar{X}$ for large $n$?",
+                "a": "Approximately $N(\\mu, \\sigma^2/n)$"
+            },
+            {
+                "q": "Does the CLT require the underlying distribution to be normal?",
+                "a": "No — it applies to almost any distribution with finite mean and variance."
+            },
+            {
+                "q": "How does the accuracy of the normal approximation from the CLT typically depend on sample size?",
+                "a": "It generally improves as sample size increases; smaller samples need the underlying distribution closer to normal for a good approximation."
+            },
+            {
+                "q": "Why might the CLT approximation be poor for small samples from a highly skewed distribution?",
+                "a": "Skewness takes a larger sample size to 'average out' via the CLT, so small samples can still show noticeable skewness."
+            },
+            {
+                "q": "How is the CLT used to justify approximating a Binomial distribution with a Normal distribution?",
+                "a": "A binomial is a sum of many independent Bernoulli trials, so for large $n$ the CLT justifies a normal approximation with matching mean and variance."
+            },
+            {
+                "q": "What continuity correction is often applied when approximating a discrete distribution with a normal distribution?",
+                "a": "Adjusting the boundary by $0.5$ to account for the discrete-to-continuous approximation."
+            },
+            {
+                "q": "How would you use simulation to check the CLT's accuracy for a given sample size and distribution?",
+                "a": "Simulate many samples, compute the sample mean for each, and compare the empirical distribution to the theoretical normal approximation."
+            },
+            {
+                "q": "Why is the CLT considered foundational for much of classical statistical inference?",
+                "a": "Many inference procedures rely on the approximate normality of sample means/estimators, which the CLT justifies even when the underlying data isn't normal."
+            },
+            {
+                "q": "What happens to the variance of the sample mean as sample size $n$ increases?",
+                "a": "It decreases, proportionally to $1/n$."
+            },
+            {
+                "q": "Does the CLT say anything about the distribution of individual observations, or only about sums/means?",
+                "a": "Only about sums/means (and similar aggregated statistics) — individual observations retain their original distribution."
+            },
+            {
+                "q": "How does the CLT apply to the distribution of a sum (rather than a mean) of i.i.d. random variables?",
+                "a": "The sum is also approximately normal for large $n$, with mean $n\\mu$ and variance $n\\sigma^2$."
+            },
+            {
+                "q": "What condition on the underlying distribution is required for the CLT to apply?",
+                "a": "The distribution must have a finite mean and finite variance."
+            },
+            {
+                "q": "Give an example of a distribution for which the CLT would not apply in its standard form.",
+                "a": "A distribution with infinite variance, such as a Cauchy distribution."
+            },
+            {
+                "q": "Why is comparing simulated sample means to the normal distribution a useful practical check?",
+                "a": "It helps assess how large a sample size is actually needed in practice for the normal approximation to be adequate."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Sampling and statistical inference",
+        "description": "Covers random sampling from a population, sampling distributions of statistics, and the key sampling distributions used for inference about a normal population's mean and variance.",
+        "cards": [
+            {
+                "q": "What is a 'random sample'?",
+                "a": "A set of observations drawn such that each is independent and identically distributed according to the population distribution."
+            },
+            {
+                "q": "What is a 'sampling distribution'?",
+                "a": "The probability distribution of a statistic (e.g. the sample mean), across all possible samples of a given size from the population."
+            },
+            {
+                "q": "What is the mean of the sampling distribution of the sample mean $\\bar{X}$?",
+                "a": "Equal to the population mean $\\mu$."
+            },
+            {
+                "q": "What is the variance of the sampling distribution of the sample mean $\\bar{X}$, for a sample of size $n$?",
+                "a": "$\\sigma^2/n$, where $\\sigma^2$ is the population variance."
+            },
+            {
+                "q": "What is the mean of the sampling distribution of the sample variance $S^2$?",
+                "a": "Equal to the population variance $\\sigma^2$."
+            },
+            {
+                "q": "For a random sample from a Normal distribution, what is the exact distribution of the sample mean $\\bar{X}$?",
+                "a": "Exactly normal, $N(\\mu, \\sigma^2/n)$ — not just approximately."
+            },
+            {
+                "q": "For a random sample of size $n$ from $N(\\mu,\\sigma^2)$, what is the distribution of $\\frac{(n-1)S^2}{\\sigma^2}$?",
+                "a": "Chi-square with $n-1$ degrees of freedom."
+            },
+            {
+                "q": "For a random sample from a normal distribution with unknown variance, what distribution does the standardised sample mean follow?",
+                "a": "The $t$-distribution with $n-1$ degrees of freedom."
+            },
+            {
+                "q": "Why is the $t$-distribution used instead of the normal distribution when the population variance is unknown?",
+                "a": "Estimating the variance from the sample introduces extra uncertainty, which the heavier-tailed $t$-distribution accounts for."
+            },
+            {
+                "q": "What happens to the $t$-distribution as the degrees of freedom increase?",
+                "a": "It converges to the standard normal distribution."
+            },
+            {
+                "q": "What is the $F$-distribution used for, in terms of two independent samples?",
+                "a": "Comparing the ratio of two independent sample variances, used e.g. to test equality of variances."
+            },
+            {
+                "q": "Are the sample mean and sample variance independent for a random sample from a normal distribution?",
+                "a": "Yes — a special property that holds for normal samples."
+            },
+            {
+                "q": "What is meant by 'degrees of freedom' for the sample variance's chi-square distribution?",
+                "a": "$n-1$ — one degree of freedom is 'used up' estimating the mean from the same sample."
+            },
+            {
+                "q": "Why is understanding the sampling distribution of a statistic essential for statistical inference?",
+                "a": "It tells us how much a statistic varies from sample to sample, underpinning confidence intervals and hypothesis tests."
+            },
+            {
+                "q": "If you take repeated samples of the same size and calculate the sample mean each time, what pattern would you expect?",
+                "a": "The sample means would vary, following the sampling distribution of the mean (approximately normal, centred on the population mean)."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Point estimation",
+        "description": "Covers methods for constructing estimators — method of moments and maximum likelihood — and criteria for assessing estimator quality such as bias, efficiency, consistency, and mean square error.",
+        "cards": [
+            {
+                "q": "What is the 'method of moments' for constructing an estimator?",
+                "a": "Setting sample moments equal to the corresponding theoretical population moments, and solving for the unknown parameter(s)."
+            },
+            {
+                "q": "What is the 'method of maximum likelihood' for constructing an estimator?",
+                "a": "Choosing the parameter value(s) that maximise the likelihood of observing the actual sample data."
+            },
+            {
+                "q": "What does it mean for an estimator to be 'unbiased'?",
+                "a": "$E[\\hat\\theta] = \\theta$ — its expected value equals the true population parameter."
+            },
+            {
+                "q": "What is the 'mean square error' (MSE) of an estimator?",
+                "a": "$\\text{MSE}(\\hat\\theta) = E[(\\hat\\theta-\\theta)^2] = \\text{Var}(\\hat\\theta) + \\text{Bias}(\\hat\\theta)^2$"
+            },
+            {
+                "q": "What does it mean for an estimator to be 'efficient'?",
+                "a": "Among a class of estimators, it has the smallest variance."
+            },
+            {
+                "q": "What does it mean for an estimator to be 'consistent'?",
+                "a": "As sample size increases, the estimator converges (in probability) to the true parameter value."
+            },
+            {
+                "q": "How can an estimator be biased but still have a lower MSE than an unbiased estimator?",
+                "a": "If its variance is sufficiently smaller, the reduction in variance can outweigh the squared bias in the MSE formula."
+            },
+            {
+                "q": "What is the 'asymptotic distribution' of a maximum likelihood estimator, for large samples?",
+                "a": "Approximately normal, centred on the true value, with variance given by the inverse of the Fisher information."
+            },
+            {
+                "q": "Why are maximum likelihood estimators often preferred despite sometimes being biased in small samples?",
+                "a": "They are asymptotically efficient and consistent, with well-understood large-sample properties."
+            },
+            {
+                "q": "What is the 'bootstrap method' used for in estimating an estimator's properties?",
+                "a": "Resampling (with replacement) from the observed sample to empirically approximate the sampling distribution of an estimator."
+            },
+            {
+                "q": "How would you compare two competing estimators of the same parameter?",
+                "a": "Compare their bias, variance, and/or mean square error — the estimator with the smaller MSE is generally preferred."
+            },
+            {
+                "q": "What is a potential drawback of the method of moments compared to maximum likelihood?",
+                "a": "It can be less statistically efficient (higher variance), especially where moments don't fully capture the information in the data."
+            },
+            {
+                "q": "How would you find the maximum likelihood estimator in practice?",
+                "a": "Write the log-likelihood function, differentiate with respect to the parameter(s), set equal to zero, and solve."
+            },
+            {
+                "q": "Why is the log-likelihood function typically used instead of the likelihood function directly when finding MLEs?",
+                "a": "Taking logs turns products into sums, easier to differentiate, with the maximum at the same parameter value."
+            },
+            {
+                "q": "If an estimator's bias tends to zero as sample size increases, does that guarantee it is consistent?",
+                "a": "Not necessarily alone — consistency also typically requires the variance to shrink appropriately."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Confidence intervals and prediction intervals",
+        "description": "Covers how to construct confidence intervals for unknown parameters and prediction intervals for future observations, including standard cases and the bootstrap method.",
+        "cards": [
+            {
+                "q": "What is a 'confidence interval'?",
+                "a": "A range of plausible values for an unknown population parameter, containing the true parameter in a specified proportion of repeated samples."
+            },
+            {
+                "q": "What is a 'prediction interval'?",
+                "a": "A range of plausible values for a single future observation, based on a fitted model, rather than for a population parameter."
+            },
+            {
+                "q": "What is the general form of a 95% confidence interval for a normal population mean with known variance?",
+                "a": "$\\bar{x} \\pm 1.96\\frac{\\sigma}{\\sqrt{n}}$"
+            },
+            {
+                "q": "How does the confidence interval formula change if the population variance is unknown?",
+                "a": "Replace the normal quantile with a $t$-distribution quantile ($n-1$ df), and use the sample standard deviation in place of $\\sigma$."
+            },
+            {
+                "q": "How would you construct a confidence interval for a binomial proportion using the normal approximation?",
+                "a": "$\\hat{p} \\pm z\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$"
+            },
+            {
+                "q": "How would you construct a confidence interval for a Poisson mean using the normal approximation?",
+                "a": "Using the sample mean's approximate normal sampling distribution, e.g. $\\bar{x} \\pm z\\sqrt{\\bar{x}/n}$"
+            },
+            {
+                "q": "What is different about a two-sample confidence interval compared with a one-sample interval?",
+                "a": "It's for the difference between two population parameters, requiring the variance of the difference of the two sample statistics."
+            },
+            {
+                "q": "How would you construct a confidence interval for the difference between two means from paired data?",
+                "a": "Treat the paired differences as a single sample, and construct a standard one-sample interval for the mean of the differences."
+            },
+            {
+                "q": "How does the bootstrap method construct a confidence interval?",
+                "a": "By resampling from the data many times and using the empirical distribution of the resulting bootstrap statistics (e.g. its percentiles)."
+            },
+            {
+                "q": "Why is a prediction interval generally wider than a confidence interval for the mean, at the same confidence level?",
+                "a": "It accounts for both the uncertainty in estimating the mean and the additional individual variability of a single future observation."
+            },
+            {
+                "q": "What happens to the width of a confidence interval as sample size $n$ increases, all else equal?",
+                "a": "It narrows, since the standard error decreases as $n$ increases."
+            },
+            {
+                "q": "What happens to the width of a confidence interval as the confidence level increases?",
+                "a": "It widens, since a higher confidence level requires a larger quantile/multiplier."
+            },
+            {
+                "q": "Why might you use the bootstrap method rather than a standard formula for a confidence interval?",
+                "a": "When the underlying distribution is unknown or complex, or no simple closed-form formula exists."
+            },
+            {
+                "q": "What confidence interval formula would you use for the variance of a normal population?",
+                "a": "One based on the chi-square distribution of $\\frac{(n-1)S^2}{\\sigma^2}$."
+            },
+            {
+                "q": "Why is it important to interpret a 95% confidence interval correctly?",
+                "a": "The true parameter is fixed (not random); the 95% refers to the long-run proportion of such intervals that would contain the true value."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Hypothesis testing",
+        "description": "Covers the framework of hypothesis testing — null/alternative hypotheses, type I/II errors, test statistics, and standard tests including chi-square goodness-of-fit and tests of independence.",
+        "cards": [
+            {
+                "q": "What is a 'null hypothesis'?",
+                "a": "A default or baseline statement (often of 'no effect') that is tested against an alternative hypothesis."
+            },
+            {
+                "q": "What is a 'Type I error'?",
+                "a": "Rejecting the null hypothesis when it is actually true (a 'false positive')."
+            },
+            {
+                "q": "What is a 'Type II error'?",
+                "a": "Failing to reject the null hypothesis when it is actually false (a 'false negative')."
+            },
+            {
+                "q": "What is the 'significance level' of a test?",
+                "a": "The probability of making a Type I error, chosen in advance (commonly 5% or 1%)."
+            },
+            {
+                "q": "What is the 'power' of a test?",
+                "a": "The probability of correctly rejecting the null hypothesis when it is false."
+            },
+            {
+                "q": "What is a 'p-value'?",
+                "a": "The probability, assuming the null hypothesis is true, of obtaining a test statistic at least as extreme as the one observed."
+            },
+            {
+                "q": "What decision rule is typically used with a p-value?",
+                "a": "Reject the null hypothesis if the p-value is less than the chosen significance level."
+            },
+            {
+                "q": "What is the 'critical region' of a test?",
+                "a": "The set of values of the test statistic for which the null hypothesis would be rejected."
+            },
+            {
+                "q": "What is the difference between a 'simple' and a 'composite' hypothesis?",
+                "a": "A simple hypothesis fully specifies the distribution; a composite hypothesis allows a range of possible parameter values."
+            },
+            {
+                "q": "What does the 'likelihood ratio' compare, in hypothesis testing?",
+                "a": "The likelihood of the data under the null hypothesis versus under the alternative hypothesis."
+            },
+            {
+                "q": "What are 'sensitivity' and 'specificity' in the context of a diagnostic/statistical test?",
+                "a": "Sensitivity is the probability of correctly identifying a true positive; specificity of correctly identifying a true negative."
+            },
+            {
+                "q": "What is the chi-square goodness-of-fit test used for?",
+                "a": "Testing whether observed data is consistent with coming from a specified probability distribution."
+            },
+            {
+                "q": "How does the chi-square test's degrees of freedom change if parameters are estimated from the data?",
+                "a": "The degrees of freedom are reduced by one for each parameter estimated from the data."
+            },
+            {
+                "q": "What is a 'contingency table' used for?",
+                "a": "Summarising the joint frequency distribution of two categorical variables, often to test independence using a chi-square test."
+            },
+            {
+                "q": "What is the 'permutation approach' to a non-parametric hypothesis test?",
+                "a": "Comparing the observed test statistic to the distribution obtained by randomly permuting the data labels, without a specific parametric assumption."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Correlation",
+        "description": "Covers exploratory analysis and inference for measures of association between two variables — Pearson's, Spearman's, and Kendall's correlation coefficients.",
+        "cards": [
+            {
+                "q": "What does a Pearson correlation coefficient of $+1$ indicate?",
+                "a": "A perfect positive linear relationship between the two variables."
+            },
+            {
+                "q": "What does a Pearson correlation coefficient of $0$ indicate?",
+                "a": "No linear relationship between the two variables (though there could still be a non-linear relationship)."
+            },
+            {
+                "q": "How is the sample Pearson correlation coefficient calculated?",
+                "a": "The sample covariance of the two variables, divided by the product of their sample standard deviations."
+            },
+            {
+                "q": "How would you test whether a population correlation coefficient is significantly different from zero?",
+                "a": "Using a $t$-test based on the sample correlation coefficient and sample size (assuming bivariate normality)."
+            },
+            {
+                "q": "What is Spearman's rank correlation coefficient based on?",
+                "a": "The Pearson correlation coefficient applied to the ranks of the data, rather than the raw values."
+            },
+            {
+                "q": "Why might Spearman's correlation be more robust to outliers than Pearson's?",
+                "a": "Because it uses ranks, an extreme value only affects its rank position, not the magnitude of its influence."
+            },
+            {
+                "q": "What does Kendall's tau measure conceptually?",
+                "a": "The tendency for pairs of observations to be 'concordant' versus 'discordant'."
+            },
+            {
+                "q": "How is a pair of observations classified as 'concordant' under Kendall's tau?",
+                "a": "If the observation with the higher value of $X$ also has the higher value of $Y$."
+            },
+            {
+                "q": "Can Pearson's correlation be misleading for data with a strong non-linear (but monotonic) relationship?",
+                "a": "Yes — it can understate the strength of association since it only captures the linear component."
+            },
+            {
+                "q": "What assumption does the standard significance test for Pearson's correlation coefficient typically rely on?",
+                "a": "That the underlying data follows a bivariate normal distribution."
+            },
+            {
+                "q": "How does sample size affect the significance of an observed correlation coefficient?",
+                "a": "Larger samples make smaller correlation coefficients statistically significant, since the standard error decreases."
+            },
+            {
+                "q": "What could cause two variables to show a high correlation despite having no causal relationship?",
+                "a": "A confounding third variable influencing both, or pure coincidence (spurious correlation)."
+            },
+            {
+                "q": "Why might you calculate Pearson's, Spearman's, and Kendall's correlations all together for the same pair of variables?",
+                "a": "To compare linear versus monotonic association, and check robustness to outliers or non-linearity."
+            },
+            {
+                "q": "What range of values can any of these three correlation coefficients take?",
+                "a": "Between $-1$ and $+1$ inclusive."
+            },
+            {
+                "q": "How would you interpret a Kendall's tau close to zero, alongside a high Pearson's correlation?",
+                "a": "Unusual and worth investigating, but generally a low Kendall's tau suggests little consistent ordering association despite a linear trend driven by a few points."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Linear regression",
+        "description": "Covers simple and multiple linear regression models — fitting, inference on parameters, measures of goodness of fit, prediction, and using residuals to check model validity.",
+        "cards": [
+            {
+                "q": "What is the simple linear regression model?",
+                "a": "$Y_i = \\alpha + \\beta x_i + \\epsilon_i$, with independent error terms usually assumed $N(0,\\sigma^2)$."
+            },
+            {
+                "q": "What method is typically used to estimate the slope and intercept in linear regression?",
+                "a": "Least squares — minimising the sum of squared residuals."
+            },
+            {
+                "q": "What is the least squares estimate of the slope $\\beta$ in simple linear regression?",
+                "a": "$\\hat\\beta = \\frac{\\sum(x_i-\\bar{x})(y_i-\\bar{y})}{\\sum(x_i-\\bar{x})^2}$"
+            },
+            {
+                "q": "What is $R^2$ (the coefficient of determination) a measure of?",
+                "a": "The proportion of the total variability in the response explained by the fitted regression model."
+            },
+            {
+                "q": "How would you perform statistical inference on the slope parameter $\\beta$?",
+                "a": "Using a $t$-test (or confidence interval) based on the estimated slope, its standard error, and the $t$-distribution with $n-2$ df."
+            },
+            {
+                "q": "What is a 'residual' in regression?",
+                "a": "The difference between an observed value and the value predicted by the model, $e_i = y_i - \\hat{y}_i$"
+            },
+            {
+                "q": "How can residuals be used to check the validity of a linear regression model?",
+                "a": "By plotting them against fitted values or explanatory variables to check for patterns violating model assumptions."
+            },
+            {
+                "q": "What pattern in a residual plot would suggest non-constant error variance (heteroscedasticity)?",
+                "a": "A 'funnel' or fan shape, where the spread of residuals changes systematically with the fitted values."
+            },
+            {
+                "q": "What is the difference between a confidence interval for a 'mean response' and a prediction interval for an 'individual response'?",
+                "a": "The mean response interval only reflects estimation uncertainty; the prediction interval also includes individual variability, so it's wider."
+            },
+            {
+                "q": "How does multiple linear regression differ from simple linear regression?",
+                "a": "It includes more than one explanatory variable, modelling the response as a linear combination of several predictors."
+            },
+            {
+                "q": "What issue can arise in multiple regression if explanatory variables are highly correlated with each other?",
+                "a": "Multicollinearity, which can make individual coefficient estimates unstable and hard to interpret."
+            },
+            {
+                "q": "What is an 'interaction term' in a regression model?",
+                "a": "A term (typically the product of two explanatory variables) allowing one variable's effect to depend on the level of another."
+            },
+            {
+                "q": "How would you use measures of model fit to select an appropriate set of explanatory variables?",
+                "a": "Compare models using criteria like adjusted $R^2$, AIC, or significance tests, favouring good fit without unnecessary complexity."
+            },
+            {
+                "q": "What does it mean for an explanatory variable to be a 'factor' (as opposed to continuous)?",
+                "a": "It takes categorical values, typically represented using indicator/dummy variables for each level."
+            },
+            {
+                "q": "Why is checking residuals important even if $R^2$ is high?",
+                "a": "A high $R^2$ doesn't guarantee the model's assumptions are valid — residual analysis can reveal issues a summary statistic would miss."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Generalised linear models",
+        "description": "Extends linear regression to the exponential family of distributions via generalised linear models (GLMs) — link functions, deviance, and model selection.",
+        "cards": [
+            {
+                "q": "What is a 'generalised linear model' (GLM)?",
+                "a": "A regression model where the response follows an exponential family distribution, related to a linear predictor via a link function."
+            },
+            {
+                "q": "What is the 'linear predictor' in a GLM?",
+                "a": "The linear combination of explanatory variables and coefficients that, via the link function, determines the mean of the response."
+            },
+            {
+                "q": "What is the 'link function'?",
+                "a": "A function relating the mean of the response distribution to the linear predictor: $g(\\mu) = \\eta$"
+            },
+            {
+                "q": "What is the 'canonical link function'?",
+                "a": "The link function naturally associated with a given exponential family distribution (e.g. log link for Poisson, logit for binomial)."
+            },
+            {
+                "q": "Give two distributions that are members of the exponential family, used as GLM response distributions.",
+                "a": "Binomial and Poisson (also: exponential, gamma, and normal)."
+            },
+            {
+                "q": "What is the 'variance function' in a GLM?",
+                "a": "A function describing how the variance of the response depends on its mean, specific to the chosen distribution."
+            },
+            {
+                "q": "What is 'deviance' in a GLM?",
+                "a": "A measure of discrepancy between the fitted model and a 'saturated' model, used to assess goodness of fit."
+            },
+            {
+                "q": "What is 'scaled deviance'?",
+                "a": "The deviance divided by the dispersion (scale) parameter, used in significance testing and model comparison."
+            },
+            {
+                "q": "How is deviance used to compare two nested GLMs?",
+                "a": "The difference in (scaled) deviance approximately follows a chi-square distribution, testing whether extra terms significantly improve fit."
+            },
+            {
+                "q": "What are 'Pearson residuals' in a GLM?",
+                "a": "Residuals standardised by the estimated standard deviation implied by the model's variance function."
+            },
+            {
+                "q": "What are 'deviance residuals'?",
+                "a": "Residuals based on each observation's individual contribution to the total deviance."
+            },
+            {
+                "q": "What is the purpose of the 'likelihood-ratio test' in the context of GLMs?",
+                "a": "To formally test whether adding/removing explanatory variables significantly improves fit, based on the change in deviance."
+            },
+            {
+                "q": "How would you fit a Poisson GLM with a log link function, conceptually?",
+                "a": "Model the log of the expected count as a linear function of the explanatory variables, estimating coefficients via maximum likelihood."
+            },
+            {
+                "q": "Why might a Poisson GLM be a natural choice for modelling claim counts in general insurance?",
+                "a": "Claim counts are non-negative integers, and a log-link Poisson model naturally ensures positive predicted means."
+            },
+            {
+                "q": "How would you use an analysis of deviance to choose a suitable GLM?",
+                "a": "Compare the reduction in deviance from adding each variable against its degrees of freedom, retaining significant improvements."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Bayesian statistics",
+        "description": "Introduces the Bayesian approach to statistical inference — using Bayes' theorem to combine prior beliefs with observed data to obtain a posterior distribution, and Bayesian point/interval estimation.",
+        "cards": [
+            {
+                "q": "What is Bayes' theorem, in terms of a parameter $\\theta$ and data $x$?",
+                "a": "$f(\\theta|x) \\propto f(x|\\theta)\\,f(\\theta)$ — posterior is proportional to likelihood times prior."
+            },
+            {
+                "q": "What is the 'prior distribution'?",
+                "a": "A probability distribution representing beliefs about a parameter before observing the data."
+            },
+            {
+                "q": "What is the 'posterior distribution'?",
+                "a": "The updated distribution of the parameter after combining the prior with the observed data via Bayes' theorem."
+            },
+            {
+                "q": "What is a 'conjugate prior'?",
+                "a": "A prior that, when combined with a given likelihood, produces a posterior from the same family as the prior."
+            },
+            {
+                "q": "Give an example of a conjugate prior/likelihood pair commonly used in actuarial applications.",
+                "a": "A Gamma prior for a Poisson mean (giving a Gamma posterior), or a Beta prior for a binomial probability (giving a Beta posterior)."
+            },
+            {
+                "q": "How is a Bayesian point estimate typically derived from the posterior distribution?",
+                "a": "By minimising the expected value of a chosen loss function under the posterior — e.g. the posterior mean minimises squared-error loss."
+            },
+            {
+                "q": "What loss function leads to the posterior median as the optimal Bayesian point estimate?",
+                "a": "Absolute error loss."
+            },
+            {
+                "q": "What loss function leads to the posterior mode as the optimal Bayesian point estimate?",
+                "a": "The 'zero-one' (all-or-nothing) loss function."
+            },
+            {
+                "q": "What is a 'credible interval'?",
+                "a": "A Bayesian interval, derived from the posterior distribution, within which the parameter lies with a specified posterior probability."
+            },
+            {
+                "q": "How does a credible interval's interpretation differ from a classical confidence interval's?",
+                "a": "A credible interval directly states 'the probability the parameter lies here is X%', unlike a confidence interval's long-run frequency interpretation."
+            },
+            {
+                "q": "What is the 'credibility premium formula'?",
+                "a": "$\\text{Premium} = Z \\times (\\text{own experience}) + (1-Z) \\times (\\text{prior mean})$"
+            },
+            {
+                "q": "What role does the credibility factor $Z$ play?",
+                "a": "It determines how much weight is given to the individual risk's own data versus the wider prior/collective information."
+            },
+            {
+                "q": "How does the Bayesian approach to credibility theory derive the credibility premium?",
+                "a": "As the posterior mean, combining a prior distribution for the risk parameter with the observed individual experience."
+            },
+            {
+                "q": "What happens to the credibility factor $Z$ as the amount of individual data increases?",
+                "a": "It increases towards 1, giving more weight to the individual's own experience."
+            },
+            {
+                "q": "Why is Bayesian credibility theory particularly relevant to actuarial pricing?",
+                "a": "It provides a principled way to blend an individual risk's own experience with wider portfolio experience, especially when individual data is sparse."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Credibility theory",
+        "description": "Covers the Bayesian and classical approaches to credibility theory, and the role of the credibility factor in blending individual and collective experience.",
+        "cards": [
+            {
+                "q": "What is the fundamental idea behind credibility theory?",
+                "a": "Combining an individual risk's own claims experience with wider (collective) experience, weighted by how credible/reliable the individual data is."
+            },
+            {
+                "q": "What is the 'credibility factor' $Z$ constrained to?",
+                "a": "A value between 0 and 1."
+            },
+            {
+                "q": "What happens to the estimated premium if $Z=0$?",
+                "a": "The premium equals the collective (prior/overall) mean entirely, ignoring the individual's own experience."
+            },
+            {
+                "q": "What happens to the estimated premium if $Z=1$?",
+                "a": "The premium equals the individual's own observed experience entirely, ignoring the wider collective information."
+            },
+            {
+                "q": "What factors typically increase the credibility factor $Z$ for a given risk?",
+                "a": "More individual data, and lower variability in the individual's own claims relative to variability between different risks."
+            },
+            {
+                "q": "How does 'between-risk' variance affect the credibility factor, relative to 'within-risk' variance?",
+                "a": "Higher between-risk variance increases $Z$, since individual experience is then more informative relative to the average."
+            },
+            {
+                "q": "How does the Bayesian approach to credibility theory determine $Z$?",
+                "a": "Implicitly, through the shape of the posterior distribution derived from the prior and likelihood of the observed data."
+            },
+            {
+                "q": "What does it mean for the Bayesian credibility premium to be 'exact' in certain cases?",
+                "a": "For specific conjugate prior/likelihood pairs, the posterior mean takes exactly the linear credibility-weighted form."
+            },
+            {
+                "q": "Why is credibility theory particularly useful for pricing risks with limited individual claims history?",
+                "a": "It avoids over-relying on sparse, noisy individual data by blending it with more stable collective experience."
+            },
+            {
+                "q": "What is a practical example of using credibility theory in insurance pricing?",
+                "a": "Setting a commercial policyholder's renewal premium by blending their own claims history with the insurer's overall experience."
+            },
+            {
+                "q": "How does credibility theory relate to the law of total variance covered under conditional expectation?",
+                "a": "The within-risk and between-risk variance components directly determine the credibility factor in classical credibility theory."
+            },
+            {
+                "q": "What would happen to premiums across a portfolio if $Z$ were set too high for all risks?",
+                "a": "Premiums would be too heavily influenced by random fluctuations in individual experience, becoming more volatile than appropriate."
+            },
+            {
+                "q": "What would happen to premiums across a portfolio if $Z$ were set too low for all risks?",
+                "a": "Premiums would fail to reflect genuine differences between risks, becoming too similar across dissimilar policyholders."
+            },
+            {
+                "q": "How does increasing the volume of individual exposure/data typically affect $Z$ in classical credibility formulas?",
+                "a": "It increases $Z$, since $Z$ is typically an increasing function of the amount of individual data/exposure."
+            },
+            {
+                "q": "Why might an actuary need to justify their choice of credibility approach for a given pricing problem?",
+                "a": "The methods rest on different assumptions and can give different results, so the choice should suit the data and context available."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Empirical Bayes credibility theory",
+        "description": "Covers the empirical Bayes approach to credibility theory, which estimates the credibility parameters directly from the observed data rather than assuming a fully specified prior.",
+        "cards": [
+            {
+                "q": "What is the key difference between the (fully) Bayesian and empirical Bayes approaches to credibility theory?",
+                "a": "Empirical Bayes estimates the prior's parameters from the observed data itself, rather than assuming a fully specified prior in advance."
+            },
+            {
+                "q": "What does 'Empirical Bayes Credibility Theory Model 1' typically assume about the risks in a portfolio?",
+                "a": "Each risk has the same number of years of data/exposure (a balanced data structure)."
+            },
+            {
+                "q": "What does 'Empirical Bayes Credibility Theory Model 2' allow for, that Model 1 does not?",
+                "a": "Different risks having different (unequal) amounts of exposure/data."
+            },
+            {
+                "q": "How are the within-risk and between-risk variance components estimated in empirical Bayes credibility theory?",
+                "a": "Using sample variance-type estimators calculated directly from the observed claims data across the risks."
+            },
+            {
+                "q": "Why is it called 'empirical' Bayes?",
+                "a": "Because the prior's parameters are estimated empirically from the data, rather than specified from external judgement or theory."
+            },
+            {
+                "q": "What is a practical advantage of the empirical Bayes approach over the full Bayesian approach?",
+                "a": "It doesn't require specifying a full prior distribution in advance — the observed portfolio data determines the credibility weighting."
+            },
+            {
+                "q": "What data structure issue does 'Model 2' specifically address that 'Model 1' cannot handle well?",
+                "a": "Risks with differing volumes of exposure, since the credibility factor formula needs to reflect each risk's different information."
+            },
+            {
+                "q": "How does the credibility factor formula typically depend on exposure/data volume in empirical Bayes models?",
+                "a": "It increases with an individual risk's exposure/data volume relative to the estimated variance components."
+            },
+            {
+                "q": "Why might estimating variance components from limited data be a practical challenge in empirical Bayes credibility theory?",
+                "a": "With few risks or little data per risk, the estimated variances can themselves be noisy/unreliable."
+            },
+            {
+                "q": "What assumption is generally made about the risk parameters of different risks within a portfolio?",
+                "a": "That they are drawn independently from some common (but not fully specified) underlying distribution across the portfolio."
+            },
+            {
+                "q": "How does empirical Bayes credibility theory relate to conditional expectation and the law of total variance?",
+                "a": "It applies the same within/between variance decomposition, but estimates those components directly from data."
+            },
+            {
+                "q": "What would you check before applying 'Model 1' (equal exposure) rather than 'Model 2' to a data set?",
+                "a": "Whether all the risks genuinely have the same amount of exposure — if not, Model 2's unequal-exposure approach is more appropriate."
+            },
+            {
+                "q": "Why is empirical Bayes credibility theory particularly useful in general insurance ratemaking?",
+                "a": "Real portfolios often have many risks with varying claims histories and no natural, fully specified prior — empirical Bayes lets data calibrate the weighting."
+            },
+            {
+                "q": "What happens to the empirical Bayes credibility factor for a risk with an unusually large amount of exposure?",
+                "a": "It tends to be higher, giving that risk's own experience more relative weight in its premium estimate."
+            },
+            {
+                "q": "How would you interpret an estimated between-risk variance of (approximately) zero in an empirical Bayes analysis?",
+                "a": "Risks in the portfolio are quite homogeneous, so credibility factors would tend to be low, favouring the collective mean."
+            }
+        ]
+    }
+],
 };
