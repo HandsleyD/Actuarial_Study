@@ -363,11 +363,15 @@ main {
   box-shadow: 0 0 0 2px var(--studying), var(--shadow);
 }
 
-.studying-ribbon {
+.exam-card.completed {
+  border-color: var(--done);
+  box-shadow: 0 0 0 2px var(--done), var(--shadow);
+}
+
+.status-ribbon {
   position: absolute;
   top: -10px;
   left: 14px;
-  background: var(--studying);
   color: white;
   font-size: 0.68rem;
   font-weight: 700;
@@ -376,6 +380,14 @@ main {
   padding: 3px 9px;
   border-radius: 999px;
   box-shadow: var(--shadow);
+}
+
+.status-ribbon.studying-ribbon {
+  background: var(--studying);
+}
+
+.status-ribbon.completed-ribbon {
+  background: var(--done);
 }
 
 .exam-card-heading {
