@@ -118,6 +118,18 @@ function getToken() {
   return localStorage.getItem(TOKEN_KEY) || "";
 }
 
+function renderMath(el) {
+  if (window.renderMathInElement) {
+    renderMathInElement(el, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+}
+
 function statusClass(status) {
   const s = status.toLowerCase();
   if (s === "done") return "done";
@@ -680,6 +692,8 @@ function renderSubjectView(code) {
   el.querySelectorAll(".module-card.clickable").forEach((card) => {
     card.addEventListener("click", () => navigate(`#/${code}/${card.dataset.module}`));
   });
+
+  renderMath(el);
 }
 
 /* ---------- flashcard view ---------- */
@@ -823,6 +837,8 @@ function renderFlashView(code, moduleId) {
     document.getElementById("scoreGood").addEventListener("click", () => scoreCard(code, moduleId, realIdx, true));
     document.getElementById("scoreBad").addEventListener("click", () => scoreCard(code, moduleId, realIdx, false));
   }
+
+  renderMath(el);
 }
 
 /* ---------- mixed session view ---------- */
@@ -944,6 +960,8 @@ function renderMixedView(code) {
     document.getElementById("scoreGood").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true));
     document.getElementById("scoreBad").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false));
   }
+
+  renderMath(el);
 }
 
 /* ---------- data-change hooks ---------- */
