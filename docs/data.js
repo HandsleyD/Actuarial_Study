@@ -4496,4 +4496,1413 @@ const MODULES = {
         ]
     }
 ],
+  CS2: [
+    {
+        "id": "m01",
+        "title": "Stochastic processes",
+        "description": "Introduces the general concept of a stochastic process, classifying processes by state space and time (discrete/continuous), and the Markov property.",
+        "cards": [
+            {
+                "q": "What is a 'stochastic process'?",
+                "a": "A collection of random variables indexed by time (or another parameter), representing how a system evolves under uncertainty."
+            },
+            {
+                "q": "What is a 'counting process'?",
+                "a": "A stochastic process that counts the number of events that have occurred by time $t$, non-decreasing and integer-valued."
+            },
+            {
+                "q": "What does it mean for a process to have a 'discrete state space'?",
+                "a": "The process can only take values from a countable set of possible states."
+            },
+            {
+                "q": "What does it mean for a process to have a 'continuous state space'?",
+                "a": "The process can take any value within a continuous range."
+            },
+            {
+                "q": "What does it mean for a process to operate in 'discrete time'?",
+                "a": "The process is only observed/defined at a countable sequence of time points."
+            },
+            {
+                "q": "What does it mean for a process to operate in 'continuous time'?",
+                "a": "The process is defined at every point in time within an interval."
+            },
+            {
+                "q": "What is a 'mixed type' process, in terms of state space and time?",
+                "a": "A process combining aspects of discrete and continuous state spaces or time (e.g. continuous time but a discrete state space)."
+            },
+            {
+                "q": "What is the 'Markov property'?",
+                "a": "The future evolution of the process, given its present state, is independent of its past history."
+            },
+            {
+                "q": "How is the Markov property expressed in terms of a filtration $\\mathcal{F}_t$?",
+                "a": "$P(X_{t+s} = j \\mid \\mathcal{F}_t) = P(X_{t+s} = j \\mid X_t)$"
+            },
+            {
+                "q": "Give an example of a discrete-time, discrete-state stochastic process.",
+                "a": "A Markov chain, e.g. modelling a policyholder's no-claims-discount category year by year."
+            },
+            {
+                "q": "Give an example of a continuous-time, discrete-state stochastic process.",
+                "a": "A Markov jump process, e.g. modelling an individual's health state over continuous time."
+            },
+            {
+                "q": "Why is the Markov property a useful simplifying assumption in actuarial modelling?",
+                "a": "It greatly simplifies calculations, since only the current state (not the full history) is needed to determine future probabilities."
+            },
+            {
+                "q": "What is a 'filtration'?",
+                "a": "An increasing sequence of information sets over time, representing everything known/observable up to each point in time."
+            },
+            {
+                "q": "Give an example of a real-world process that is NOT well-approximated by the Markov property.",
+                "a": "A no-claims-discount system with memory of multiple past years, or a process where recent trend affects future behaviour."
+            },
+            {
+                "q": "Why might insurance/actuarial models often use 'mixed type' processes?",
+                "a": "Real-world events (e.g. claims) often occur at random continuous times, but affect a discrete state (e.g. a claims category)."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Markov chains",
+        "description": "Covers discrete-time Markov chains — transition matrices, the Chapman-Kolmogorov equations, stationary distributions, and applications like no-claims-discount systems.",
+        "cards": [
+            {
+                "q": "What is a 'transition matrix' for a Markov chain?",
+                "a": "A matrix whose $(i,j)$ entry gives the probability of moving from state $i$ to state $j$ in one time step."
+            },
+            {
+                "q": "What must each row of a transition matrix sum to?",
+                "a": "1, since the chain must move to some state, including possibly staying in the same state."
+            },
+            {
+                "q": "What are the Chapman-Kolmogorov equations?",
+                "a": "Equations expressing $n$-step transition probabilities as the matrix product of one-step transition probabilities: $P^{(n)} = P^n$"
+            },
+            {
+                "q": "What is a 'stationary distribution' of a Markov chain?",
+                "a": "A probability distribution $\\pi$ over the states such that $\\pi P = \\pi$."
+            },
+            {
+                "q": "Under what condition does a Markov chain have a unique stationary distribution that it converges to?",
+                "a": "If the chain is irreducible and aperiodic (with a finite state space)."
+            },
+            {
+                "q": "What does it mean for a Markov chain to be 'irreducible'?",
+                "a": "Every state can be reached from every other state with positive probability."
+            },
+            {
+                "q": "What does it mean for a state in a Markov chain to be 'periodic'?",
+                "a": "The chain can only return to that state at multiples of some period greater than 1."
+            },
+            {
+                "q": "How would you calculate the stationary distribution of a Markov chain in a simple case?",
+                "a": "Solve $\\pi P = \\pi$ together with the constraint that the probabilities in $\\pi$ sum to 1."
+            },
+            {
+                "q": "What is a 'no-claims-discount' (NCD) system, modelled as a Markov chain?",
+                "a": "A system where a policyholder's premium discount category changes each year based on claims, following fixed transition probabilities."
+            },
+            {
+                "q": "How would frequency-based experience rating be modelled using a Markov chain?",
+                "a": "Each policyholder's rating category is a state, and claims experience each period determines transition probabilities between categories."
+            },
+            {
+                "q": "What is a 'time-inhomogeneous' Markov chain?",
+                "a": "A Markov chain where the transition probabilities can change over time, not just depend on the current state."
+            },
+            {
+                "q": "How would you simulate a Markov chain?",
+                "a": "At each step, generate a random number to determine the next state according to the probabilities in the current state's row of the transition matrix."
+            },
+            {
+                "q": "What information is lost when only the one-step transition matrix is retained?",
+                "a": "Any information about how the chain arrived at its current state, which is irrelevant to future transitions under the Markov property."
+            },
+            {
+                "q": "How would the $n$-step transition matrix be used to find the probability of being in state $j$ after $n$ steps, starting in state $i$?",
+                "a": "Take the $(i,j)$ entry of the matrix $P^n$."
+            },
+            {
+                "q": "Why might an actuary use a Markov chain model for a no-claims-discount system rather than tracking full claims history?",
+                "a": "It's a tractable simplification that captures the essential dynamics without needing the full history."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "The two-state Markov model and the Poisson model",
+        "description": "Covers the simplest continuous-time Markov models — a two-state (alive/dead) model with constant transition intensity, and the Poisson process, including inter-event time distributions.",
+        "cards": [
+            {
+                "q": "What are the two states in the basic two-state Markov model of mortality?",
+                "a": "'Alive' and 'Dead.'"
+            },
+            {
+                "q": "What is the transition intensity $\\mu$ in the two-state model?",
+                "a": "The instantaneous rate (force of mortality) of transitioning from alive to dead."
+            },
+            {
+                "q": "How does the two-state Markov model relate to the random lifetime model?",
+                "a": "It's an alternative formulation giving equivalent results for a single decrement — mortality only, no competing risks."
+            },
+            {
+                "q": "What is the probability of remaining in the 'alive' state for $t$ years, under a constant transition intensity $\\mu$?",
+                "a": "$e^{-\\mu t}$"
+            },
+            {
+                "q": "What is a 'Poisson process'?",
+                "a": "A counting process where events occur independently over time at a constant average rate $\\lambda$, with the number of events in any interval Poisson distributed."
+            },
+            {
+                "q": "What is the distribution of the number of events of a Poisson process in an interval of length $t$?",
+                "a": "Poisson with mean $\\lambda t$."
+            },
+            {
+                "q": "What is the distribution of the time between consecutive events (inter-event times) of a Poisson process?",
+                "a": "Exponential with rate $\\lambda$."
+            },
+            {
+                "q": "What is the distribution of the waiting time until the $k$-th event of a Poisson process?",
+                "a": "Gamma (Erlang) distribution with shape $k$ and rate $\\lambda$."
+            },
+            {
+                "q": "What key property do the increments of a Poisson process have?",
+                "a": "Independent increments — the number of events in non-overlapping intervals are independent of each other."
+            },
+            {
+                "q": "How is the Poisson process related to the Poisson model of mortality?",
+                "a": "Deaths under a constant-intensity two-state model can be viewed as a Poisson process with rate equal to the transition intensity."
+            },
+            {
+                "q": "What is the key assumption of 'constant transition intensity' in these simple models?",
+                "a": "The rate of transitioning between states doesn't change over time (or age), giving exponential holding times."
+            },
+            {
+                "q": "How would you derive the maximum likelihood estimator of $\\mu$ in the two-state model?",
+                "a": "$\\hat\\mu = \\frac{\\text{number of deaths observed}}{\\text{total waiting time (central exposed to risk) observed}}$"
+            },
+            {
+                "q": "What is the asymptotic distribution of the maximum likelihood estimator of a constant transition intensity?",
+                "a": "Approximately normal, with variance related to the inverse of the total exposure/information observed."
+            },
+            {
+                "q": "Why is the two-state model considered a special/simple case of the general Markov jump process framework?",
+                "a": "It has only two states and a single constant intensity, whereas general Markov jump processes can have many states and time-varying intensities."
+            },
+            {
+                "q": "How would the Poisson process be used to model claim arrivals in general insurance?",
+                "a": "Treating each claim as an event of a Poisson process with a given claim frequency rate."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Time-homogeneous Markov jump processes",
+        "description": "Extends the two-state model to multi-state continuous-time Markov processes with constant (time-independent) transition intensities, using the Kolmogorov equations.",
+        "cards": [
+            {
+                "q": "What is a 'Markov jump process'?",
+                "a": "A continuous-time stochastic process that moves between a discrete set of states, with the Markov property, changing state at random jump times."
+            },
+            {
+                "q": "What does 'time-homogeneous' mean for a Markov jump process?",
+                "a": "The transition intensities between states don't depend on the current time — only on the states involved."
+            },
+            {
+                "q": "What is the 'transition intensity' $\\mu_{ij}$ between states $i$ and $j$?",
+                "a": "The instantaneous rate of transitioning directly from state $i$ to state $j$, given currently in state $i$."
+            },
+            {
+                "q": "What are the (forward) Kolmogorov equations used for?",
+                "a": "Describing how the transition probabilities of a Markov jump process evolve over time via a system of differential equations."
+            },
+            {
+                "q": "What is the general form of the Kolmogorov forward equations?",
+                "a": "$\\frac{d}{dt}p_{ij}(t) = \\sum_{k \\neq j} p_{ik}(t)\\mu_{kj} - p_{ij}(t)\\mu_j$, where $\\mu_j$ is the total rate of leaving state $j$."
+            },
+            {
+                "q": "How would you use the Kolmogorov equations in a simple case?",
+                "a": "Set up and solve the system of differential equations directly, or use known closed-form solutions for standard small models."
+            },
+            {
+                "q": "What does it mean for transition intensities to be 'time-independent' in this context?",
+                "a": "They remain constant regardless of elapsed or calendar time, depending only on current/destination state."
+            },
+            {
+                "q": "Give an example of a multi-state model that could be a time-homogeneous Markov jump process.",
+                "a": "A simple sickness model with 'healthy,' 'sick,' and 'dead' states, with constant transition rates between them."
+            },
+            {
+                "q": "How would you simulate a Markov jump process?",
+                "a": "Simulate an exponential holding time (using the total exit rate) before jumping, then choose the destination state proportional to each transition intensity."
+            },
+            {
+                "q": "What is the total 'exit rate' from a state $i$ in a Markov jump process?",
+                "a": "The sum of all transition intensities out of state $i$ to every other reachable state."
+            },
+            {
+                "q": "How is the holding time in a given state distributed, under time-homogeneous intensities?",
+                "a": "Exponentially distributed, with rate equal to the total exit rate from that state."
+            },
+            {
+                "q": "Why is the exponential holding time a natural consequence of the Markov property?",
+                "a": "The memoryless property of the exponential distribution matches the requirement that future transitions don't depend on elapsed time in the current state."
+            },
+            {
+                "q": "What data would you need to estimate the transition intensities of a time-homogeneous Markov jump process?",
+                "a": "The number of observed transitions between each pair of states, and the total waiting time individuals spent exposed in each state."
+            },
+            {
+                "q": "How does a time-homogeneous multi-state model generalise the simple two-state (alive/dead) model?",
+                "a": "It allows more than two states and more complex transition patterns (e.g. recovery, multiple causes of exit)."
+            },
+            {
+                "q": "Why might 'time-homogeneous' be an unrealistic assumption for modelling mortality across a wide age range?",
+                "a": "Mortality rates genuinely change with age, so a constant intensity would poorly approximate this."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Time-inhomogeneous Markov jump processes",
+        "description": "Extends the Markov jump process framework to allow transition intensities that depend on time (e.g. age) and, more generally, on duration in a state.",
+        "cards": [
+            {
+                "q": "What does 'time-inhomogeneous' mean for a Markov jump process?",
+                "a": "The transition intensities can depend on the current time (e.g. age), not just the states involved."
+            },
+            {
+                "q": "How do the Kolmogorov equations change for a time-inhomogeneous process?",
+                "a": "The transition intensities $\\mu_{ij}(t)$ become functions of time $t$, giving differential equations with time-varying coefficients."
+            },
+            {
+                "q": "Why is a time-inhomogeneous model more realistic for modelling human mortality across ages?",
+                "a": "Mortality rates genuinely vary systematically with age, which a constant-intensity model cannot capture."
+            },
+            {
+                "q": "What is a 'duration-dependent' Markov process?",
+                "a": "A process where transition intensities depend on how long the individual has already spent in their current state, not just age/time."
+            },
+            {
+                "q": "Give an example of a real-world scenario where duration dependence matters.",
+                "a": "A sickness model, where recovery probability might depend on how long someone has already been sick."
+            },
+            {
+                "q": "How can duration dependence be incorporated into a Markov model while retaining a Markov structure?",
+                "a": "By expanding the state space to include duration as part of the state, restoring the Markov property."
+            },
+            {
+                "q": "What is a 'marriage model,' as an example of a Markov process application?",
+                "a": "A model tracking transitions between single, married, widowed, and divorced states, used e.g. in pension valuations."
+            },
+            {
+                "q": "How would you write the Kolmogorov equations for a model where intensities depend on both age and duration?",
+                "a": "Include both age $t$ and duration $z$ as arguments, e.g. $\\mu_{ij}(t,z)$, within the differential equation framework."
+            },
+            {
+                "q": "Why might sickness models need duration-dependent intensities specifically for the 'recovery' transition?",
+                "a": "Recovery chance often changes systematically the longer someone has already been ill."
+            },
+            {
+                "q": "How would you simulate a time-inhomogeneous Markov jump process?",
+                "a": "Simulate holding times using the time-varying intensities applicable at each point, since exact exponential holding times only apply under time-homogeneity."
+            },
+            {
+                "q": "What complicates solving the Kolmogorov equations for time-inhomogeneous models?",
+                "a": "The equations no longer have simple constant-coefficient closed-form solutions in general, often requiring numerical methods."
+            },
+            {
+                "q": "How does mortality projection relate to time-inhomogeneous Markov modelling?",
+                "a": "Mortality projection explicitly models how mortality intensities change over calendar time, an application of time-inhomogeneous ideas."
+            },
+            {
+                "q": "What data challenge arises when estimating duration-dependent transition intensities?",
+                "a": "You need data broken down by both age/time and duration in state, requiring more granular (and often sparser) data."
+            },
+            {
+                "q": "Why is understanding age- and duration-dependence important for health/income protection insurance?",
+                "a": "Both age and time already spent claiming genuinely affect recovery probability, affecting reserving and pricing."
+            },
+            {
+                "q": "How would a Markov jump process model be simulated as a tool for modelling more generally?",
+                "a": "By repeatedly simulating individual paths according to the model's intensities, and aggregating results across many simulated paths."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Survival models",
+        "description": "Introduces the mathematical framework for modelling time until an event (e.g. death) as a random variable — survival function, force of mortality, and key relationships including Gompertz and Makeham's laws.",
+        "cards": [
+            {
+                "q": "What is the survival function $_tp_x$ for a life aged $x$?",
+                "a": "The probability that the life survives at least $t$ further years."
+            },
+            {
+                "q": "What is the force of mortality $\\mu_x$?",
+                "a": "The instantaneous rate of mortality at exact age $x$, defined so that $\\mu_x = -\\frac{d}{dx}\\ln S(x)$."
+            },
+            {
+                "q": "How is the survival function related to the force of mortality via an integral?",
+                "a": "$_tp_x = \\exp\\left(-\\int_0^t \\mu_{x+s}\\,ds\\right)$"
+            },
+            {
+                "q": "What is the 'consistency condition' for random lifetime models across different starting ages?",
+                "a": "$_{t+s}p_x = {_tp_x}\\cdot{_sp_{x+t}}$"
+            },
+            {
+                "q": "What does Gompertz's law of mortality state?",
+                "a": "The force of mortality increases exponentially with age: $\\mu_x = Bc^x$"
+            },
+            {
+                "q": "What does Makeham's law of mortality state?",
+                "a": "$\\mu_x = A + Bc^x$ — a constant background component plus an exponentially increasing component."
+            },
+            {
+                "q": "What is the 'curtate future lifetime' $K_x$?",
+                "a": "The integer number of complete future years lived by a life aged $x$ before death."
+            },
+            {
+                "q": "What is the probability function of the curtate future lifetime $K_x$?",
+                "a": "$P(K_x = k) = {_kp_x}\\cdot q_{x+k}$"
+            },
+            {
+                "q": "What does $e_x$ (the 'curtate expectation of life') represent?",
+                "a": "The expected number of complete future years lived by a life aged $x$."
+            },
+            {
+                "q": "What does $\\overset{\\circ}{e}_x$ (the 'complete expectation of life') represent?",
+                "a": "The expected complete future lifetime (not restricted to whole years) of a life aged $x$."
+            },
+            {
+                "q": "What is the approximate relationship between $e_x$ and $\\overset{\\circ}{e}_x$?",
+                "a": "$\\overset{\\circ}{e}_x \\approx e_x + 0.5$"
+            },
+            {
+                "q": "What is the 'two-state model of a single decrement', and how does it compare to the random lifetime model?",
+                "a": "A continuous-time Markov model with 'alive' and 'dead' states, mathematically equivalent to the random future lifetime model."
+            },
+            {
+                "q": "How would you derive the variance of the curtate future lifetime $K_x$?",
+                "a": "$\\text{Var}(K_x) = E[K_x^2] - (E[K_x])^2$, calculated from the probability function of $K_x$."
+            },
+            {
+                "q": "Why is the force of mortality a more fundamental quantity than $q_x$ for continuous-time modelling?",
+                "a": "It's defined instantaneously and directly links to the survival function via integration."
+            },
+            {
+                "q": "What advantage does Makeham's law have over Gompertz's law?",
+                "a": "The added constant term $A$ better captures a background level of mortality risk, improving fit especially at younger ages."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Estimating the lifetime distribution",
+        "description": "Covers non-parametric estimation of survival functions from censored data — the Kaplan-Meier and Nelson-Aalen estimators.",
+        "cards": [
+            {
+                "q": "What is 'censoring' in survival data?",
+                "a": "When the exact event time is not observed for some individuals, only that it occurred after (or before) a certain point."
+            },
+            {
+                "q": "What is 'right censoring'?",
+                "a": "When an individual is known to have survived to a certain point, but their exact time of death beyond that is unknown."
+            },
+            {
+                "q": "Why can't the empirical survival function simply be estimated by the proportion still alive, when censoring is present?",
+                "a": "Censored individuals' true event times are unknown, so excluding or misclassifying them would bias the estimate."
+            },
+            {
+                "q": "What is the Kaplan-Meier (product-limit) estimator used for?",
+                "a": "Estimating the survival function non-parametrically from censored data."
+            },
+            {
+                "q": "What is the general form of the Kaplan-Meier estimator?",
+                "a": "$\\hat{S}(t) = \\prod_{t_i \\le t} \\left(1 - \\frac{d_i}{n_i}\\right)$"
+            },
+            {
+                "q": "What does $d_i$ represent in the Kaplan-Meier formula?",
+                "a": "The number of deaths observed at time $t_i$."
+            },
+            {
+                "q": "What does $n_i$ represent in the Kaplan-Meier formula?",
+                "a": "The number of individuals still 'at risk' just before time $t_i$."
+            },
+            {
+                "q": "What is the Nelson-Aalen estimator used for?",
+                "a": "Estimating the cumulative hazard function non-parametrically from censored data."
+            },
+            {
+                "q": "What is the general form of the Nelson-Aalen estimator?",
+                "a": "$\\hat{H}(t) = \\sum_{t_i \\le t} \\frac{d_i}{n_i}$"
+            },
+            {
+                "q": "How is the Nelson-Aalen estimator related to an alternative survival function estimate?",
+                "a": "$\\hat{S}(t) = e^{-\\hat{H}(t)}$"
+            },
+            {
+                "q": "How is the variance of the Kaplan-Meier estimator typically estimated?",
+                "a": "Using Greenwood's formula, summing contributions from each observed death time."
+            },
+            {
+                "q": "What happens to confidence in the Kaplan-Meier estimate as time increases beyond the range of most of the data?",
+                "a": "It becomes less reliable (wider confidence intervals), since fewer individuals remain at risk."
+            },
+            {
+                "q": "What do 'proportional hazards models' (like the Cox model) add beyond Kaplan-Meier/Nelson-Aalen?",
+                "a": "They allow the hazard to depend on covariates, rather than just estimating a single overall survival curve."
+            },
+            {
+                "q": "What is the Cox proportional hazards model's key structural assumption?",
+                "a": "The hazard is the baseline hazard multiplied by a factor depending on covariates, constant (proportional) over time."
+            },
+            {
+                "q": "Why is partial likelihood used to estimate the Cox model's coefficients, rather than full likelihood?",
+                "a": "It allows estimation of covariate effects without needing to specify the unknown baseline hazard function."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Proportional hazards models",
+        "description": "Covers the Cox proportional hazards model for incorporating covariates into survival analysis, including partial likelihood estimation.",
+        "cards": [
+            {
+                "q": "What is the general form of the Cox proportional hazards model?",
+                "a": "$h_i(t) = h_0(t)\\exp(\\beta^T z_i)$, where $h_0(t)$ is the baseline hazard and $z_i$ are covariates."
+            },
+            {
+                "q": "What does 'proportional hazards' mean?",
+                "a": "The ratio of hazards between any two individuals with different covariates is constant over time."
+            },
+            {
+                "q": "Why is the Cox model described as 'semi-parametric'?",
+                "a": "Covariate effects are modelled parametrically, but the baseline hazard $h_0(t)$ is left unspecified."
+            },
+            {
+                "q": "What is the 'partial likelihood' in the Cox model?",
+                "a": "A likelihood based only on the order of events (and who was at risk), allowing estimation of $\\beta$ without specifying $h_0(t)$."
+            },
+            {
+                "q": "What are 'ties' in the context of the Cox model's partial likelihood?",
+                "a": "When two or more individuals experience the event at exactly the same observed time."
+            },
+            {
+                "q": "What is the asymptotic distribution of the Cox model's partial likelihood estimator $\\hat\\beta$?",
+                "a": "Approximately normal, for large samples, allowing standard hypothesis tests and confidence intervals."
+            },
+            {
+                "q": "How would you interpret a positive coefficient $\\beta_j$ for a covariate in the Cox model?",
+                "a": "An increase in that covariate is associated with a higher hazard, holding other covariates constant."
+            },
+            {
+                "q": "How would you interpret $e^{\\beta_j}$ in the Cox model?",
+                "a": "The 'hazard ratio' — the multiplicative change in hazard for a one-unit increase in $z_j$."
+            },
+            {
+                "q": "What is a key assumption of the Cox model that should be checked in practice?",
+                "a": "That the proportional hazards assumption actually holds — covariate effects don't change over time."
+            },
+            {
+                "q": "How could a time-varying covariate effect be incorporated into an extended Cox model?",
+                "a": "By including a time-dependent covariate or interaction term (covariate times a function of time)."
+            },
+            {
+                "q": "What is the role of covariates in a proportional hazards model, compared with the basic survival model?",
+                "a": "They allow the hazard to vary by individual characteristics, rather than assuming everyone shares the same survival distribution."
+            },
+            {
+                "q": "Why might the Cox model be preferred over fitting a fully parametric survival model with covariates?",
+                "a": "It avoids needing to correctly specify the baseline hazard's functional form."
+            },
+            {
+                "q": "What data would you need to fit a Cox proportional hazards model?",
+                "a": "Event/censoring times, censoring indicators, and covariate values for each individual."
+            },
+            {
+                "q": "How does the Cox model use 'risk sets' in its partial likelihood construction?",
+                "a": "At each event time, the risk set is used to compute the probability that the specific individual who failed did so, given everyone at risk."
+            },
+            {
+                "q": "Why is understanding proportional hazards models valuable for pricing life or health insurance?",
+                "a": "They allow risk factors to be incorporated directly into mortality/morbidity risk assessment, improving pricing accuracy."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Exposed to risk",
+        "description": "Covers how to estimate transition intensities from observed data using maximum likelihood, and the concept of 'central exposed to risk.'",
+        "cards": [
+            {
+                "q": "What is the 'central exposed to risk'?",
+                "a": "The total time individuals in a study were observed while in a particular state, used as the denominator in estimating transition rates."
+            },
+            {
+                "q": "How is the maximum likelihood estimator of a constant transition intensity $\\mu$ calculated?",
+                "a": "$\\hat\\mu = \\frac{\\text{observed number of transitions}}{\\text{total central exposed to risk}}$"
+            },
+            {
+                "q": "What is the 'principle of correspondence'?",
+                "a": "The requirement that the definition of exposure (denominator) must exactly match the definition of the events being counted (numerator)."
+            },
+            {
+                "q": "Why is the principle of correspondence fundamentally important in exposed-to-risk calculations?",
+                "a": "Mismatches between exposure and event definitions lead to systematically biased estimates."
+            },
+            {
+                "q": "What is meant by 'dividing the data into homogeneous classes'?",
+                "a": "Splitting the population into groups (e.g. by age, sex) believed to have similar transition intensities."
+            },
+            {
+                "q": "What is the 'rate interval'?",
+                "a": "The interval of time (typically one year) over which the transition intensity is assumed constant."
+            },
+            {
+                "q": "What is the 'census approximation' method of estimating exposed to risk?",
+                "a": "Approximating central exposed to risk using snapshot counts of the population at specific census points."
+            },
+            {
+                "q": "What assumptions underlie the census approximation of waiting times?",
+                "a": "That entries and exits are, on average, spread evenly over the period."
+            },
+            {
+                "q": "How would you calculate a central exposed to risk given exact entry and exit dates?",
+                "a": "Sum, for each individual, the exact amount of time they were observed within the relevant age/state band."
+            },
+            {
+                "q": "What is the difference between 'exact age' and 'age nearest/last birthday' in exposure calculations?",
+                "a": "Exact age uses precise age at any moment; age nearest/last birthday groups individuals into whole-year bands by convention."
+            },
+            {
+                "q": "What is the asymptotic distribution of the maximum likelihood estimator of a transition intensity?",
+                "a": "Approximately normal, with variance approximately inversely proportional to the total exposure."
+            },
+            {
+                "q": "How does the amount of central exposed to risk affect the precision of an estimated transition intensity?",
+                "a": "More exposure gives a more precise (lower variance) estimate."
+            },
+            {
+                "q": "Why might subdividing data by age and sex reduce bias in transition intensity estimates?",
+                "a": "Rates genuinely vary by age and sex, so pooling without subdivision distorts estimates for individual subgroups."
+            },
+            {
+                "q": "What data would be needed to calculate an exact central exposed to risk for a mortality investigation?",
+                "a": "Exact dates of entry into and exit from observation (and reason for exit) for each individual."
+            },
+            {
+                "q": "Why is the 'waiting time' statistic important in the maximum likelihood framework for Markov jump processes?",
+                "a": "It directly forms the denominator (central exposed to risk) in the maximum likelihood estimator of a transition intensity."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Graduation and statistical tests",
+        "description": "Covers statistical tests used to compare a set of crude mortality/transition estimates against a standard table, checking overall fit, bias, and smoothness.",
+        "cards": [
+            {
+                "q": "What is 'graduation' of mortality estimates?",
+                "a": "The process of smoothing crude (statistically noisy) estimates of mortality/transition rates."
+            },
+            {
+                "q": "Why is graduation performed, rather than just using crude estimates directly?",
+                "a": "Crude estimates from limited data are noisy; graduation produces smoother, more stable and plausible estimates."
+            },
+            {
+                "q": "What does a chi-square test for 'overall fit' of graduated rates to crude data test?",
+                "a": "Whether differences between crude and graduated rates are consistent with random sampling variation."
+            },
+            {
+                "q": "What does a 'test for the presence of consistent bias' (e.g. the signs test) check?",
+                "a": "Whether graduated rates are systematically too high or too low compared to the crude data."
+            },
+            {
+                "q": "What is the 'signs test' used for?",
+                "a": "Testing whether there's an unusually large or small number of positive/negative deviations, as a check for bias."
+            },
+            {
+                "q": "What does a 'test for individual ages where the fit is poor' check?",
+                "a": "Whether any specific ages show a standardised deviation large enough to suggest a poor fit at that age."
+            },
+            {
+                "q": "What does the 'cumulative deviations test' check?",
+                "a": "Whether deviations tend to accumulate in one direction rather than fluctuating randomly around zero."
+            },
+            {
+                "q": "What does the 'grouping of signs test' (runs test) check?",
+                "a": "Whether the pattern of positive/negative deviations shows too few or too many 'runs.'"
+            },
+            {
+                "q": "What does 'the consistency of the shape' of crude estimates and a standard table refer to?",
+                "a": "Whether the graduated curve follows the same overall pattern with age as the crude data, not just matching on average."
+            },
+            {
+                "q": "What is a 'desirable property' of a set of graduated estimates, beyond just fitting the data well?",
+                "a": "Smoothness — the rates should progress steadily with age, without implausible jumps."
+            },
+            {
+                "q": "How would you test for 'smoothness' of a set of graduated estimates?",
+                "a": "Examine higher-order differences of the graduated rates — a smooth progression should show small, steadily varying differences."
+            },
+            {
+                "q": "How should tests for fit be amended when comparing crude estimates to a graduation of the same data?",
+                "a": "Adjust degrees of freedom to account for the number of parameters used in the graduation."
+            },
+            {
+                "q": "How should statistical tests be adjusted to allow for the presence of duplicate policies in the data?",
+                "a": "Inflate the variance of the test statistic to reflect the reduced effective sample size."
+            },
+            {
+                "q": "Why is a hypothesis test's distribution important to specify correctly for these graduation tests?",
+                "a": "An incorrect distributional assumption gives an inaccurate critical value/p-value, leading to wrong conclusions."
+            },
+            {
+                "q": "Why would an actuary compare crude estimates against both a standard table and a graduated version?",
+                "a": "To assess both how well an in-house smoothed model fits and how the population compares to an external benchmark."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Methods of graduation",
+        "description": "Covers practical methods for graduating (smoothing) crude mortality/transition estimates — parametric formulae, reference to a standard table, and spline functions.",
+        "cards": [
+            {
+                "q": "What is 'graduation by parametric formula'?",
+                "a": "Fitting a mathematical formula (e.g. Gompertz or Makeham) with a small number of parameters to the crude data."
+            },
+            {
+                "q": "Give one advantage of graduation by parametric formula.",
+                "a": "A smooth, compact representation requiring few parameters, extrapolable beyond the data range."
+            },
+            {
+                "q": "Give one disadvantage of graduation by parametric formula.",
+                "a": "It might not be flexible enough to capture the true pattern across all ages."
+            },
+            {
+                "q": "What is 'graduation by reference to a standard table'?",
+                "a": "Adjusting a recognised standard mortality table (e.g. by a multiplicative factor) to fit the crude data."
+            },
+            {
+                "q": "Give one advantage of graduation by reference to a standard table.",
+                "a": "It leverages a well-established, smooth external table, requiring less data to calibrate."
+            },
+            {
+                "q": "Give one disadvantage of graduation by reference to a standard table.",
+                "a": "The standard table's shape may not match the true pattern of the population being studied."
+            },
+            {
+                "q": "What is 'graduation using spline functions'?",
+                "a": "Fitting piecewise polynomial functions, smoothly joined together, to the crude data."
+            },
+            {
+                "q": "Give one advantage of graduation by spline functions.",
+                "a": "More flexibility to capture the true shape of the data than a single global formula."
+            },
+            {
+                "q": "Give one disadvantage of graduation by spline functions.",
+                "a": "More complex, requiring more parameters, and may extrapolate poorly beyond the data range."
+            },
+            {
+                "q": "Are candidates typically required to carry out a full graduation calculation in the exam?",
+                "a": "No — the syllabus notes candidates are not required to carry out a graduation, but should understand the methods."
+            },
+            {
+                "q": "How would you choose between these three graduation methods for a given data set?",
+                "a": "Consider data volume/quality, whether a suitable standard table exists, and the robustness-vs-flexibility trade-off."
+            },
+            {
+                "q": "Why might combining approaches (e.g. standard table plus a smooth adjustment) sometimes be used?",
+                "a": "To get robustness from the standard table while still reflecting genuine differences in the specific population."
+            },
+            {
+                "q": "How does the number of parameters used in a graduation method affect subsequent statistical tests?",
+                "a": "More parameters typically reduces the effective degrees of freedom in goodness-of-fit tests."
+            },
+            {
+                "q": "Why might an actuary prefer a graduation method with fewer parameters, all else equal?",
+                "a": "Less prone to overfitting the noise in the crude data, and more parsimonious/interpretable."
+            },
+            {
+                "q": "How does the balance between 'smoothness' and 'fit to the data' inform the choice of graduation method?",
+                "a": "Too flexible risks overfitting noise; too rigid risks poor fit — the method should balance both."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Mortality projection",
+        "description": "Covers approaches to forecasting future mortality rates, including extrapolative, explanatory, and expectation-based approaches, and specific models like Lee-Carter.",
+        "cards": [
+            {
+                "q": "What are the three broad approaches to forecasting future mortality mentioned in the syllabus?",
+                "a": "Extrapolation, explanation (modelling underlying causes), and expectation (expert judgement)."
+            },
+            {
+                "q": "What is an 'extrapolative' approach to mortality forecasting?",
+                "a": "Projecting observed historical trends in mortality rates forward into the future."
+            },
+            {
+                "q": "Give one advantage of extrapolative mortality forecasting methods.",
+                "a": "Relatively simple, objective, and directly grounded in observed historical data."
+            },
+            {
+                "q": "Give one disadvantage of extrapolative mortality forecasting methods.",
+                "a": "They assume past trends continue, which may not hold given structural changes."
+            },
+            {
+                "q": "What is the Lee-Carter model?",
+                "a": "A statistical model decomposing log mortality into an age-specific pattern, a time-varying mortality index, and age-specific sensitivity to that index."
+            },
+            {
+                "q": "What is the general structure of the Lee-Carter model?",
+                "a": "$\\ln(m_{x,t}) = a_x + b_x k_t + \\epsilon_{x,t}$"
+            },
+            {
+                "q": "How is the Lee-Carter model typically used for forecasting?",
+                "a": "The time index $k_t$ is projected forward (often via a simple time series model), combined with fixed age effects."
+            },
+            {
+                "q": "What is an 'age-period-cohort' model, as an extension beyond Lee-Carter?",
+                "a": "A model that also allows for a cohort (year of birth) effect, capturing generation-specific mortality patterns."
+            },
+            {
+                "q": "What is a '$p$-spline regression model' used for in mortality projection?",
+                "a": "Smoothing and forecasting mortality surfaces using penalized spline techniques."
+            },
+            {
+                "q": "What software-related skill does the syllabus specify for mortality projection models?",
+                "a": "The ability to use an appropriate computer package to apply models like Lee-Carter to a real mortality data set."
+            },
+            {
+                "q": "What is a major source of error in mortality forecasts?",
+                "a": "Uncertainty in extrapolating trends that may not continue, and unforeseen future shocks or medical advances."
+            },
+            {
+                "q": "Why is mortality projection important for pricing and reserving in annuity and pension business?",
+                "a": "Future mortality improvements mean annuitants are expected to live longer, increasing the expected cost."
+            },
+            {
+                "q": "What does 'explanation-based' mortality forecasting attempt to do, distinct from extrapolation?",
+                "a": "Model the underlying causes/drivers of mortality change to forecast future rates based on those drivers."
+            },
+            {
+                "q": "Why might different mortality forecasting approaches give materially different projections?",
+                "a": "They rely on different assumptions, and mortality trends are inherently uncertain over longer horizons."
+            },
+            {
+                "q": "What would cause an insurer/actuary to revise a Lee-Carter-based mortality forecast?",
+                "a": "New data suggesting a change in the time index trend, or evidence of a structural break."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Time Series 1",
+        "description": "Introduces core concepts of time series modelling — stationarity, the backwards shift/difference operators, and the basic AR, MA, ARMA and ARIMA model families.",
+        "cards": [
+            {
+                "q": "What does it mean for a time series to be 'stationary'?",
+                "a": "Its statistical properties (mean, variance, autocovariance structure) don't change over time."
+            },
+            {
+                "q": "What is meant by a series being '$I(0)$'?",
+                "a": "The series is already stationary (integrated of order zero)."
+            },
+            {
+                "q": "What is meant by a series being '$I(1)$'?",
+                "a": "The series becomes stationary after taking first differences."
+            },
+            {
+                "q": "What is the 'backwards shift operator' $B$?",
+                "a": "An operator such that $BX_t = X_{t-1}$, shifting the series back by one period."
+            },
+            {
+                "q": "What is the 'backwards difference operator'?",
+                "a": "$\\nabla X_t = X_t - X_{t-1} = (1-B)X_t$"
+            },
+            {
+                "q": "What is an autoregressive (AR) model?",
+                "a": "A model expressing the current value as a linear function of its own past values, plus a random error term."
+            },
+            {
+                "q": "What is a moving average (MA) model?",
+                "a": "A model expressing the current value as a linear function of current and past random error (white noise) terms."
+            },
+            {
+                "q": "What is an ARMA model?",
+                "a": "A model combining both autoregressive and moving average components to describe a stationary time series."
+            },
+            {
+                "q": "What is an ARIMA model?",
+                "a": "An ARMA model applied to a differenced series, used to model non-stationary series that become stationary after differencing."
+            },
+            {
+                "q": "What are the 'roots of the characteristic equation' used for in time series analysis?",
+                "a": "Determining whether an AR (or ARMA) process is stationary — stationary if all roots lie outside the unit circle."
+            },
+            {
+                "q": "What is a 'random walk'?",
+                "a": "A time series where each value equals the previous value plus a random error term: $X_t = X_{t-1} + \\epsilon_t$"
+            },
+            {
+                "q": "What is a 'random walk with drift'?",
+                "a": "A random walk with an added constant term, giving a systematic trend: $X_t = X_{t-1} + c + \\epsilon_t$"
+            },
+            {
+                "q": "Is a random walk stationary?",
+                "a": "No — its variance grows over time, though its first differences are stationary."
+            },
+            {
+                "q": "What is a 'multivariate autoregressive model'?",
+                "a": "An extension of the AR model to several time series simultaneously, where each depends on past values of itself and the others."
+            },
+            {
+                "q": "What does it mean for two (or more) time series to be 'cointegrated'?",
+                "a": "Each is individually non-stationary, but a particular linear combination of them is stationary."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Time Series 2",
+        "description": "Covers applying time series models in practice — identification, estimation and diagnosis, forecasting, and applications to security prices and economic variables.",
+        "cards": [
+            {
+                "q": "What does 'identification' mean in the Box-Jenkins approach to time series modelling?",
+                "a": "Selecting an appropriate model structure based on the observed data's characteristics."
+            },
+            {
+                "q": "What does 'estimation' mean in this context?",
+                "a": "Fitting the chosen model's parameters to the observed data, typically via maximum likelihood or least squares."
+            },
+            {
+                "q": "What does 'diagnosis' (diagnostic checking) mean in this context?",
+                "a": "Checking whether the fitted model's residuals behave like white noise, validating model adequacy."
+            },
+            {
+                "q": "What criteria might be used to choose between candidate time series models?",
+                "a": "Information criteria (AIC, BIC), goodness of fit, and parsimony."
+            },
+            {
+                "q": "What diagnostic tests might be applied to the residuals of a fitted time series model?",
+                "a": "Tests for autocorrelation in the residuals, e.g. the Ljung-Box test."
+            },
+            {
+                "q": "Give an example of a 'non-stationary, non-linear' time series model beyond the standard ARIMA family.",
+                "a": "A GARCH model, allowing time-varying volatility, or a threshold/regime-switching model."
+            },
+            {
+                "q": "How would a random walk model be applied to security prices?",
+                "a": "Modelling the log price as a random walk, consistent with weak-form market efficiency."
+            },
+            {
+                "q": "How would an autoregressive model be applied to an economic variable like inflation?",
+                "a": "Modelling current inflation as depending on its own recent past values, capturing persistence."
+            },
+            {
+                "q": "What is a 'deterministic forecast' using simple extrapolation?",
+                "a": "A forecast projecting an identified pattern forward without incorporating the model's inherent random uncertainty."
+            },
+            {
+                "q": "What is a 'moving average' forecasting/smoothing technique, distinct from the MA model?",
+                "a": "Averaging recent observations to smooth out short-term fluctuations and estimate an underlying trend."
+            },
+            {
+                "q": "What is 'seasonal adjustment,' and why might it be applied before analysis?",
+                "a": "Removing a regular repeating seasonal pattern, so underlying trend/cyclical behaviour can be seen more clearly."
+            },
+            {
+                "q": "How would you check whether a cointegrated model is appropriate for two economic time series?",
+                "a": "Test each series for non-stationarity, then test whether a linear combination of them is stationary."
+            },
+            {
+                "q": "Why might cointegrated models be useful for modelling pairs of related economic/financial series?",
+                "a": "They capture a stable long-run equilibrium relationship even though each series individually wanders."
+            },
+            {
+                "q": "How might a univariate time series with the Markov property be rearranged as a multivariate Markov model?",
+                "a": "By including enough lagged values as additional 'state' variables."
+            },
+            {
+                "q": "Why is diagnostic checking an essential final step in the time series modelling process?",
+                "a": "A model with structured (non-white-noise) residuals suggests genuine patterns weren't captured, undermining forecasts."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Loss distributions",
+        "description": "Covers statistical distributions suitable for modelling individual and aggregate insurance losses, the effect of excesses/deductibles and reinsurance, and parameter estimation and goodness of fit.",
+        "cards": [
+            {
+                "q": "What properties make a distribution suitable for modelling individual insurance losses?",
+                "a": "Non-negative support, and typically a right-skewed shape — e.g. lognormal, gamma, or Pareto."
+            },
+            {
+                "q": "What is an 'excess' (or 'deductible')?",
+                "a": "An amount the policyholder bears themselves before the insurer pays anything on a claim."
+            },
+            {
+                "q": "What is a 'retention limit'?",
+                "a": "The maximum amount an insurer (or reinsurer) retains/pays, with any excess passed on."
+            },
+            {
+                "q": "How does an excess of $d$ affect the distribution of amounts actually paid by the insurer?",
+                "a": "The insurer pays the loss amount minus $d$, so the paid amount is truncated/shifted, conditional on the loss exceeding $d$."
+            },
+            {
+                "q": "What is 'proportional reinsurance'?",
+                "a": "A reinsurance arrangement where the reinsurer pays a fixed proportion of every claim, and receives the same proportion of premium."
+            },
+            {
+                "q": "What is 'excess of loss reinsurance'?",
+                "a": "A reinsurance arrangement where the reinsurer pays the amount of any claim exceeding a specified retention level."
+            },
+            {
+                "q": "How would you calculate the distribution of claim amounts paid by the insurer under excess of loss reinsurance with retention $M$?",
+                "a": "The insurer pays $\\min(X, M)$ for each claim of size $X$."
+            },
+            {
+                "q": "How would you estimate parameters of a loss distribution using maximum likelihood, when data is incomplete (censored/truncated)?",
+                "a": "Adjust the likelihood function to reflect the actual observation scheme, then maximise as usual."
+            },
+            {
+                "q": "What is the 'method of moments' applied to loss distribution parameter estimation?",
+                "a": "Equating sample moments of the observed losses to theoretical moments of the assumed distribution, solving for parameters."
+            },
+            {
+                "q": "How would you assess 'goodness of fit' of a fitted loss distribution to a data set?",
+                "a": "Using tests like chi-square goodness of fit, or graphical methods (comparing empirical and fitted CDFs)."
+            },
+            {
+                "q": "Why might the choice of loss distribution matter significantly for reinsurance pricing?",
+                "a": "Reinsurance often covers the tail, so assumed tail behaviour strongly affects the reinsurer's required premium."
+            },
+            {
+                "q": "What is 'left truncation' of loss data, in the context of an excess?",
+                "a": "Only losses exceeding the excess are recorded/observed at all, truncating the observable data from below."
+            },
+            {
+                "q": "How does the presence of an excess complicate estimating the parameters of the ground-up loss distribution?",
+                "a": "Only losses above the excess are observed, so estimation must account for truncation to recover the true parameters."
+            },
+            {
+                "q": "What is the effect of applying both an excess and a reinsurance retention limit to a claim?",
+                "a": "The insurer pays the claim amount between the excess and the retention limit."
+            },
+            {
+                "q": "Why might an actuary calculate both mean and variance of insurer/reinsurer loss distributions under a reinsurance arrangement?",
+                "a": "To understand not just expected cost, but also variability/risk each party bears, informing pricing."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Extreme value theory",
+        "description": "Introduces distributions and measures suitable for modelling the extreme tail (severity) of loss distributions, and how to compare their tail weight.",
+        "cards": [
+            {
+                "q": "What is 'extreme value theory' (EVT) used for in an actuarial context?",
+                "a": "Modelling the behaviour of extreme (very large) losses in the tail of a distribution."
+            },
+            {
+                "q": "What is the 'generalised extreme value' (GEV) distribution?",
+                "a": "A family of distributions describing the limiting distribution of the maximum of a large number of i.i.d. random variables."
+            },
+            {
+                "q": "What is the 'generalised Pareto distribution' (GPD) used for in EVT?",
+                "a": "Modelling the distribution of exceedances over a high threshold — the 'peaks over threshold' approach."
+            },
+            {
+                "q": "What are the three types (domains of attraction) within the GEV family?",
+                "a": "Gumbel, Fréchet, and (reversed) Weibull, corresponding to light-tailed, heavy-tailed, and bounded-tailed distributions."
+            },
+            {
+                "q": "What is meant by a 'heavy-tailed' distribution?",
+                "a": "A distribution where extreme values are relatively more likely compared to a light-tailed distribution."
+            },
+            {
+                "q": "Give an example of a heavy-tailed distribution commonly used for modelling large losses.",
+                "a": "The Pareto distribution."
+            },
+            {
+                "q": "What is a common measure of 'tail weight' used to compare distributions?",
+                "a": "The ratio of higher to lower moments, or examining the hazard rate's behaviour as $x \\to \\infty$."
+            },
+            {
+                "q": "How does a decreasing hazard rate (as $x$ increases) relate to tail weight?",
+                "a": "Associated with a heavier tail — large values remain relatively likely."
+            },
+            {
+                "q": "How does an increasing hazard rate (as $x$ increases) relate to tail weight?",
+                "a": "Associated with a lighter tail — extreme values become rarer more quickly."
+            },
+            {
+                "q": "Why is comparing tail weight important when choosing a distribution for reinsurance pricing?",
+                "a": "Underestimating tail weight could significantly understate the true risk for high-layer reinsurance."
+            },
+            {
+                "q": "What is the 'peaks over threshold' approach in extreme value theory?",
+                "a": "Modelling only exceedances above a chosen high threshold using the generalised Pareto distribution."
+            },
+            {
+                "q": "What practical challenge arises from having limited historical data on extreme events?",
+                "a": "Extreme events are rare, so little data is available to reliably estimate tail behaviour, leading to estimation uncertainty."
+            },
+            {
+                "q": "How might you use extreme value theory to estimate a high quantile beyond the range of observed data?",
+                "a": "Fit an appropriate extreme value distribution to the tail, then extrapolate using the fitted model."
+            },
+            {
+                "q": "Why is extreme value theory particularly relevant for catastrophe risk modelling?",
+                "a": "Catastrophic losses are by nature in the extreme tail, critical for solvency and reinsurance decisions."
+            },
+            {
+                "q": "How does the choice of threshold in the peaks-over-threshold approach affect the resulting model?",
+                "a": "Too low violates the theoretical justification; too high leaves too little data — a bias-variance trade-off."
+            }
+        ]
+    },
+    {
+        "id": "m17",
+        "title": "Copulas",
+        "description": "Introduces copulas as a way of modelling the dependence structure between random variables separately from their marginal distributions, including the Gaussian copula and the Archimedean family.",
+        "cards": [
+            {
+                "q": "What is a 'copula'?",
+                "a": "A multivariate distribution function on $[0,1]^n$ that captures the dependence structure between random variables, separate from their marginals."
+            },
+            {
+                "q": "What does Sklar's theorem state (conceptually)?",
+                "a": "Any multivariate joint distribution can be decomposed into its marginal distributions and a copula describing dependence between them."
+            },
+            {
+                "q": "Why is it useful to model dependence via a copula, separately from the marginals?",
+                "a": "It allows flexible combination of any chosen marginals with any chosen dependence structure."
+            },
+            {
+                "q": "What is 'concordance' between two random variables, loosely speaking?",
+                "a": "A tendency for large values of one variable to be associated with large values of the other."
+            },
+            {
+                "q": "What is 'tail dependence'?",
+                "a": "The tendency for extreme values of two variables to occur together, more or less than average dependence would suggest."
+            },
+            {
+                "q": "What is 'upper tail dependence'?",
+                "a": "The tendency for both variables to take extremely high values simultaneously."
+            },
+            {
+                "q": "What is 'lower tail dependence'?",
+                "a": "The tendency for both variables to take extremely low values simultaneously."
+            },
+            {
+                "q": "Why is tail dependence particularly important for actuarial risk modelling?",
+                "a": "It captures whether extreme losses in different risks tend to occur together, critical for aggregate risk under stress."
+            },
+            {
+                "q": "What is the Gaussian copula?",
+                "a": "A copula derived from the multivariate normal distribution, characterised by a correlation matrix, with zero tail dependence."
+            },
+            {
+                "q": "What is a key limitation of the Gaussian copula for modelling financial/insurance risk?",
+                "a": "Its lack of tail dependence can understate simultaneous extreme events, implicated in the 2008 financial crisis."
+            },
+            {
+                "q": "What is the 'Archimedean' family of copulas?",
+                "a": "A class constructed from a generator function, including the Gumbel, Clayton, and Frank copulas, with varying tail dependence."
+            },
+            {
+                "q": "How does the Clayton copula typically behave in terms of tail dependence?",
+                "a": "It exhibits lower tail dependence but no upper tail dependence."
+            },
+            {
+                "q": "How does the Gumbel copula typically behave in terms of tail dependence?",
+                "a": "It exhibits upper tail dependence but no lower tail dependence."
+            },
+            {
+                "q": "How would you select a copula suitable for modelling a particular pair of risks?",
+                "a": "Consider the type of tail dependence expected, and choose a family whose properties match that expectation."
+            },
+            {
+                "q": "Why might an insurer model the dependence between two lines of business using a copula?",
+                "a": "Losses across lines are often correlated (e.g. a common event), and independence would understate aggregate risk."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Reinsurance",
+        "description": "Covers the main forms of reinsurance — proportional and excess of loss — and how they affect the distribution of claims retained by the insurer and ceded to the reinsurer.",
+        "cards": [
+            {
+                "q": "What is 'reinsurance'?",
+                "a": "Insurance purchased by an insurer to transfer part of its risk to another party (the reinsurer)."
+            },
+            {
+                "q": "What is 'proportional reinsurance'?",
+                "a": "An arrangement where the reinsurer receives a fixed proportion of premium and pays the same proportion of every claim."
+            },
+            {
+                "q": "What is 'quota share' reinsurance?",
+                "a": "A form of proportional reinsurance where the same fixed proportion applies to every policy in a defined portfolio."
+            },
+            {
+                "q": "What is 'surplus' reinsurance?",
+                "a": "A form of proportional reinsurance where the proportion ceded varies by policy, often based on risk size relative to the insurer's retention."
+            },
+            {
+                "q": "What is 'excess of loss' (non-proportional) reinsurance?",
+                "a": "An arrangement where the reinsurer pays the amount by which a claim exceeds a specified retention level."
+            },
+            {
+                "q": "What is 'aggregate excess of loss' reinsurance?",
+                "a": "A form of excess of loss reinsurance where the retention applies to total aggregate claims over a period."
+            },
+            {
+                "q": "How does excess of loss reinsurance affect the insurer's retained claim amount for a claim of size $X$, with retention $M$?",
+                "a": "The insurer retains $\\min(X,M)$; the reinsurer pays $\\max(X-M,0)$."
+            },
+            {
+                "q": "How does proportional reinsurance (retained proportion $\\alpha$) affect the insurer's retained claim amount?",
+                "a": "The insurer retains $\\alpha X$; the reinsurer pays $(1-\\alpha)X$."
+            },
+            {
+                "q": "What is the effect of excess of loss reinsurance on the skewness of the insurer's retained aggregate claims?",
+                "a": "It reduces skewness (and variance), removing the largest, most extreme individual claims."
+            },
+            {
+                "q": "Why might an insurer choose excess of loss reinsurance over proportional reinsurance?",
+                "a": "To specifically protect against large individual claims (tail risk), while retaining more premium/profit from smaller claims."
+            },
+            {
+                "q": "How would you calculate the moments of claims paid by the insurer versus the reinsurer?",
+                "a": "Apply the reinsurance transformation to the underlying claim distribution, and calculate the relevant moments."
+            },
+            {
+                "q": "How does excess of loss reinsurance interact with a compound distribution model of aggregate claims?",
+                "a": "It's applied at the individual claim severity level before aggregating, changing the severity feeding into the compound model."
+            },
+            {
+                "q": "What is the effect on the reinsurer's claims of a very high retention level $M$?",
+                "a": "Fewer claims exceed the retention, so the reinsurer pays out less frequently."
+            },
+            {
+                "q": "Why might an insurer use a combination of both proportional and excess of loss reinsurance?",
+                "a": "To get proportional risk/profit sharing plus specific protection against very large individual claims."
+            },
+            {
+                "q": "How does reinsurance reduce an insurer's regulatory capital requirements, broadly speaking?",
+                "a": "By transferring some of the variability/tail risk of claims, reducing the capital needed to support retained risk."
+            }
+        ]
+    },
+    {
+        "id": "m19",
+        "title": "Risk models 1",
+        "description": "Introduces models for the number of claims (frequency) and total claim amounts (aggregate/compound distributions) arising from a portfolio of insurance risks.",
+        "cards": [
+            {
+                "q": "What is the 'individual risk model' for total claims?",
+                "a": "A model treating total claims as the sum of a fixed number of individual policies' claim amounts (each possibly zero)."
+            },
+            {
+                "q": "What is the 'collective risk model' for total claims?",
+                "a": "A model treating total claims as the sum of a random number of claims, each of random size — a compound distribution."
+            },
+            {
+                "q": "What is a 'compound distribution'?",
+                "a": "The distribution of $S = X_1 + X_2 + \\dots + X_N$, where $N$ (claim count) and each $X_i$ (claim size) are random, typically independent."
+            },
+            {
+                "q": "What is a 'compound Poisson distribution'?",
+                "a": "A compound distribution where the number of claims $N$ follows a Poisson distribution."
+            },
+            {
+                "q": "What key result holds for the sum of independent compound Poisson random variables?",
+                "a": "The sum is itself compound Poisson, with rate parameters and severity distributions combined appropriately."
+            },
+            {
+                "q": "How is the mean of a compound distribution $S$ calculated (in terms of $N$ and $X$)?",
+                "a": "$E[S] = E[N]\\cdot E[X]$"
+            },
+            {
+                "q": "How is the variance of a compound distribution $S$ calculated?",
+                "a": "$\\text{Var}(S) = E[N]\\text{Var}(X) + \\text{Var}(N)(E[X])^2$"
+            },
+            {
+                "q": "What is the formula for the variance of a compound Poisson distribution, specifically?",
+                "a": "$\\text{Var}(S) = \\lambda E[X^2]$"
+            },
+            {
+                "q": "What is the coefficient of skewness used to describe about a compound distribution?",
+                "a": "The asymmetry of the distribution — actuarial claim distributions are typically positively (right) skewed."
+            },
+            {
+                "q": "What are the major simplifying assumptions typically underlying compound distribution models?",
+                "a": "Individual claim amounts are i.i.d. and independent of the number of claims."
+            },
+            {
+                "q": "What is a 'compound binomial' distribution?",
+                "a": "A compound distribution where the number of claims $N$ follows a binomial distribution."
+            },
+            {
+                "q": "What is a 'compound negative binomial' distribution, and why might it be used instead of compound Poisson?",
+                "a": "$N$ follows a negative binomial; often used to model claim frequency showing overdispersion beyond what Poisson allows."
+            },
+            {
+                "q": "How would excess of loss reinsurance be incorporated into a compound distribution model?",
+                "a": "Apply the reinsurance transformation to the individual claim severity distribution before combining with the claim count distribution."
+            },
+            {
+                "q": "Why is the compound Poisson distribution particularly mathematically convenient for actuarial applications?",
+                "a": "Its additive property under independent sums and tractable moment formulas make combining risks/reinsurance easy."
+            },
+            {
+                "q": "How would you calculate the probability that aggregate claims $S$ exceed a certain amount, in general?",
+                "a": "Using the (often approximated, e.g. via simulation or recursion) distribution of $S$ derived from frequency and severity."
+            }
+        ]
+    },
+    {
+        "id": "m20",
+        "title": "Risk models 2",
+        "description": "Extends risk model theory further — approximating aggregate claims distributions, and applying compound distribution results to reinsurance and portfolio risk assessment.",
+        "cards": [
+            {
+                "q": "What is one common method for approximating the distribution of aggregate claims $S$ when an exact formula is intractable?",
+                "a": "A normal approximation using the mean and variance of $S$, or simulation."
+            },
+            {
+                "q": "Why might a normal approximation be poor for aggregate claims from a small or highly skewed portfolio?",
+                "a": "Aggregate claims are often positively skewed, so a symmetric normal approximation can be inaccurate, especially in the tails."
+            },
+            {
+                "q": "What is a translated gamma approximation used for?",
+                "a": "A more accurate approximation to a skewed aggregate claims distribution than normal, matching the first three moments."
+            },
+            {
+                "q": "How would simulation be used to estimate the distribution of aggregate claims?",
+                "a": "Repeatedly simulate claim numbers and sizes, sum to get simulated aggregate claims, and use the empirical distribution."
+            },
+            {
+                "q": "How does reinsurance affect the mean and variance of an insurer's retained aggregate claims?",
+                "a": "It typically reduces both, since reinsurance removes some claim amount from the insurer's exposure."
+            },
+            {
+                "q": "How would you calculate the reinsurer's expected aggregate claims under excess of loss reinsurance with retention $M$?",
+                "a": "Apply $\\max(X-M,0)$ to the individual claim severity distribution, then combine with the claim frequency distribution."
+            },
+            {
+                "q": "What effect does increasing the retention level $M$ have on the insurer's retained variance?",
+                "a": "It increases the insurer's retained variance, though it also reduces the reinsurance premium cost."
+            },
+            {
+                "q": "How might an insurer decide on an appropriate retention level for excess of loss reinsurance?",
+                "a": "Balancing reinsurance premium cost against reduced retained risk/capital, informed by risk appetite."
+            },
+            {
+                "q": "Why is understanding both frequency and severity distributions separately important, rather than just modelling aggregate claims?",
+                "a": "Different risk mitigation tools act on severity (reinsurance) versus frequency (underwriting)."
+            },
+            {
+                "q": "How would a change in claim frequency affect the aggregate claims distribution, holding severity fixed?",
+                "a": "It shifts the mean and variance of $N$, correspondingly changing the mean and variance of $S$."
+            },
+            {
+                "q": "What role does correlation between different risks/policies play in aggregate portfolio risk?",
+                "a": "Positive correlation (e.g. from a common catastrophic event) increases variance beyond independent-claims assumptions."
+            },
+            {
+                "q": "How might copulas be combined with risk models to assess portfolio-level risk?",
+                "a": "By modelling dependence between lines of business, then combining with each line's aggregate claims distribution."
+            },
+            {
+                "q": "Why might an insurer calculate risk measures like VaR or TailVaR on the aggregate claims distribution?",
+                "a": "To quantify capital needed to withstand adverse claims experience at a given confidence level."
+            },
+            {
+                "q": "How does the choice of severity distribution affect the accuracy of a normal approximation to aggregate claims?",
+                "a": "A heavier-tailed severity makes aggregate claims more skewed, worsening the normal approximation."
+            },
+            {
+                "q": "Why is risk model theory foundational to general insurance pricing and reserving work?",
+                "a": "It provides the mathematical framework for quantifying claims cost and variability, underlying premiums, reserving and capital."
+            }
+        ]
+    },
+    {
+        "id": "m21",
+        "title": "Machine learning",
+        "description": "Introduces elementary machine learning principles relevant to actuarial work — the bias-variance trade-off, cross-validation, regularisation, supervised/unsupervised learning, and evaluation metrics.",
+        "cards": [
+            {
+                "q": "What is the 'bias-variance trade-off'?",
+                "a": "The tension between a model's bias and variance — increasing complexity typically reduces bias but increases variance."
+            },
+            {
+                "q": "How does model complexity typically relate to overfitting?",
+                "a": "More complex/flexible models are more prone to overfitting — fitting noise rather than the true underlying pattern."
+            },
+            {
+                "q": "What is 'cross-validation' used for?",
+                "a": "Evaluating a model's performance on unseen data (and tuning hyperparameters) by repeatedly splitting into training/validation sets."
+            },
+            {
+                "q": "How does k-fold cross-validation work?",
+                "a": "Split into $k$ parts; train on $k-1$, validate on the remaining one, repeated $k$ times, then average results."
+            },
+            {
+                "q": "What is 'regularisation' used for?",
+                "a": "Reducing overfitting in highly parameterised models by penalising model complexity within the fitting process."
+            },
+            {
+                "q": "Give two common types of regularisation.",
+                "a": "Ridge regression (L2 penalty) and Lasso (L1 penalty, which can shrink some coefficients to exactly zero)."
+            },
+            {
+                "q": "What is 'supervised learning'?",
+                "a": "Machine learning where models are trained on data with known outcomes (labels), to predict outcomes for new data."
+            },
+            {
+                "q": "What is 'unsupervised learning'?",
+                "a": "Machine learning where models find structure/patterns in data without pre-labelled outcomes, e.g. clustering."
+            },
+            {
+                "q": "What is 'precision' in evaluating a binary classifier?",
+                "a": "Of the cases predicted positive, the proportion that are actually positive."
+            },
+            {
+                "q": "What is 'recall' (sensitivity) in evaluating a binary classifier?",
+                "a": "Of the actual positive cases, the proportion correctly predicted as positive."
+            },
+            {
+                "q": "What is the '$F_1$ score'?",
+                "a": "The harmonic mean of precision and recall, providing a single combined measure."
+            },
+            {
+                "q": "What is a 'ROC curve' used for?",
+                "a": "Visualising a classifier's performance across thresholds, plotting true positive rate against false positive rate."
+            },
+            {
+                "q": "What is a 'confusion matrix'?",
+                "a": "A table summarising a classifier's predictions versus actual outcomes."
+            },
+            {
+                "q": "What is 'K-means clustering'?",
+                "a": "An unsupervised technique partitioning data into $K$ groups by minimising within-cluster variation."
+            },
+            {
+                "q": "How does principal component analysis (PCA) relate to its earlier mention in Data Analysis (CS1)?",
+                "a": "Same underlying technique — reducing dimensionality by finding uncorrelated components — applied here for identifying latent structure or anomalies."
+            }
+        ]
+    }
+],
 };
