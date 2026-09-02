@@ -19,7 +19,50 @@ const STREAK_KEY = "actuarialStudyStreak";
 
 const examData = {}; // code -> { modules: [{id, status, notes}], sha, text }
 const flashData = {}; // code -> { mastery: { m01: { "0": true, ... } }, sha }
-const flashState = { code: null, moduleId: null, cardIndex: 0, revealed: false, typed: "", _lastKey: "" };
+const SESSION_SIZE = 10;
+const flashState = {
+  code: null,
+  moduleId: null,
+  cardIndex: 0,
+  revealed: false,
+  typed: "",
+  mode: "session", // "session" | "full"
+  sessionIndices: [],
+  _lastKey: "",
+};
+
+function shuffleArray(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Weighted random draw: unmastered cards first (shuffled), topped up with
+// mastered ones only if the module has fewer than SESSION_SIZE unmastered.
+function generateSession(code, moduleId) {
+  const def = (MODULES[code] || []).find((m) => m.id === moduleId);
+  if (!def) return [];
+  const fd = flashData[code];
+  const moduleMastery = (fd && fd.mastery && fd.mastery[moduleId]) || {};
+  const total = def.cards.length;
+  const allIdx = Array.from({ length: total }, (_, i) => i);
+  const unmastered = shuffleArray(allIdx.filter((i) => !moduleMastery[i]));
+  const mastered = shuffleArray(allIdx.filter((i) => !!moduleMastery[i]));
+  return [...unmastered, ...mastered].slice(0, Math.min(SESSION_SIZE, total));
+}
+
+function currentSequence(code, moduleId, def) {
+  if (flashState.mode === "session") {
+    if (!flashState.sessionIndices.length) {
+      flashState.sessionIndices = generateSession(code, moduleId);
+    }
+    return flashState.sessionIndices;
+  }
+  return Array.from({ length: def.cards.length }, (_, i) => i);
+}
 
 const RANKS = [
   { min: 0, label: "Trainee Actuary" },
@@ -327,11 +370,11 @@ async function scoreCard(code, moduleId, idx, sufficient) {
     flashData[code] = { mastery: data, sha: flashData[code] ? flashData[code].sha : null };
 
     const def = (MODULES[code] || []).find((m) => m.id === moduleId);
-    const total = def ? def.cards.length : 0;
+    const seq = def ? currentSequence(code, moduleId, def) : [];
 
     flashState.revealed = false;
     flashState.typed = "";
-    flashState.cardIndex = Math.min(total - 1, idx + 1);
+    flashState.cardIndex = Math.min(seq.length - 1, flashState.cardIndex + 1);
 
     renderFlashView(code, moduleId);
     renderGameBar();
@@ -589,15 +632,17 @@ function renderFlashView(code, moduleId) {
   const total = cards.length;
   const masteredCount = Object.values(moduleMastery).filter(Boolean).length;
 
-  if (flashState.cardIndex >= total) flashState.cardIndex = 0;
-  const idx = flashState.cardIndex;
-  const card = cards[idx];
-  const isMastered = !!moduleMastery[idx];
+  const seq = currentSequence(code, moduleId, def);
+  if (flashState.cardIndex >= seq.length) flashState.cardIndex = 0;
+  const pos = flashState.cardIndex;
+  const realIdx = seq[pos];
+  const card = cards[realIdx];
+  const isMastered = !!moduleMastery[realIdx];
 
-  const dots = cards
-    .map((c, i) => {
-      const m = !!moduleMastery[i];
-      const active = i === idx;
+  const dots = seq
+    .map((realI, i) => {
+      const m = !!moduleMastery[realI];
+      const active = i === pos;
       return `<button class="card-dot ${m ? "mastered" : ""} ${active ? "active" : ""}" data-idx="${i}" title="Card ${i + 1}">${m ? "&#11088;" : i + 1}</button>`;
     })
     .join("");
@@ -611,10 +656,15 @@ function renderFlashView(code, moduleId) {
       </div>
       <div class="flash-progress-track"><div class="flash-progress-fill" style="width:${Math.round((masteredCount / total) * 100)}%"></div></div>
     </div>
+    <div class="flash-mode-tabs">
+      <button class="mode-tab ${flashState.mode === "session" ? "active" : ""}" id="tabSession">Session (${Math.min(SESSION_SIZE, total)})</button>
+      <button class="mode-tab ${flashState.mode === "full" ? "active" : ""}" id="tabFull">Full deck (${total})</button>
+      ${flashState.mode === "session" ? `<button class="btn shuffle-btn" id="shuffleBtn">&#128256; New session</button>` : ""}
+    </div>
     <div class="card-dots">${dots}</div>
     <div class="flashcard ${isMastered ? "is-mastered" : ""}">
       ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
-      <div class="flashcard-label">Card ${idx + 1} of ${total}</div>
+      <div class="flashcard-label">Card ${pos + 1} of ${seq.length}</div>
       <div class="flashcard-question">${card.q}</div>
       ${
         !flashState.revealed
@@ -628,12 +678,42 @@ function renderFlashView(code, moduleId) {
       }
     </div>
     <div class="flash-nav">
-      <button class="btn" id="prevCard" ${idx === 0 ? "disabled" : ""}>&larr; Prev</button>
-      <button class="btn" id="nextCard" ${idx === total - 1 ? "disabled" : ""}>Next &rarr;</button>
+      <button class="btn" id="prevCard" ${pos === 0 ? "disabled" : ""}>&larr; Prev</button>
+      <button class="btn" id="nextCard" ${pos === seq.length - 1 ? "disabled" : ""}>Next &rarr;</button>
     </div>
   `;
 
   document.getElementById("backToSubject").addEventListener("click", () => navigate(`#/${code}`));
+
+  document.getElementById("tabSession").addEventListener("click", () => {
+    if (flashState.mode !== "session") {
+      flashState.mode = "session";
+      if (!flashState.sessionIndices.length) flashState.sessionIndices = generateSession(code, moduleId);
+      flashState.cardIndex = 0;
+      flashState.revealed = false;
+      flashState.typed = "";
+      renderFlashView(code, moduleId);
+    }
+  });
+  document.getElementById("tabFull").addEventListener("click", () => {
+    if (flashState.mode !== "full") {
+      flashState.mode = "full";
+      flashState.cardIndex = 0;
+      flashState.revealed = false;
+      flashState.typed = "";
+      renderFlashView(code, moduleId);
+    }
+  });
+  const shuffleBtn = document.getElementById("shuffleBtn");
+  if (shuffleBtn) {
+    shuffleBtn.addEventListener("click", () => {
+      flashState.sessionIndices = generateSession(code, moduleId);
+      flashState.cardIndex = 0;
+      flashState.revealed = false;
+      flashState.typed = "";
+      renderFlashView(code, moduleId);
+    });
+  }
 
   el.querySelectorAll(".card-dot").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -645,13 +725,13 @@ function renderFlashView(code, moduleId) {
   });
 
   document.getElementById("prevCard").addEventListener("click", () => {
-    flashState.cardIndex = Math.max(0, idx - 1);
+    flashState.cardIndex = Math.max(0, pos - 1);
     flashState.revealed = false;
     flashState.typed = "";
     renderFlashView(code, moduleId);
   });
   document.getElementById("nextCard").addEventListener("click", () => {
-    flashState.cardIndex = Math.min(total - 1, idx + 1);
+    flashState.cardIndex = Math.min(seq.length - 1, pos + 1);
     flashState.revealed = false;
     flashState.typed = "";
     renderFlashView(code, moduleId);
@@ -667,8 +747,8 @@ function renderFlashView(code, moduleId) {
       renderFlashView(code, moduleId);
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => scoreCard(code, moduleId, idx, true));
-    document.getElementById("scoreBad").addEventListener("click", () => scoreCard(code, moduleId, idx, false));
+    document.getElementById("scoreGood").addEventListener("click", () => scoreCard(code, moduleId, realIdx, true));
+    document.getElementById("scoreBad").addEventListener("click", () => scoreCard(code, moduleId, realIdx, false));
   }
 }
 
@@ -721,6 +801,8 @@ function renderRoute() {
       flashState.cardIndex = 0;
       flashState.revealed = false;
       flashState.typed = "";
+      flashState.mode = "session";
+      flashState.sessionIndices = generateSession(r.exam, r.module);
       flashState._lastKey = key;
     }
     renderFlashView(r.exam, r.module);
