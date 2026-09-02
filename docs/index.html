@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Actuarial Study Progress</title>
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="topbar">
@@ -15,20 +15,44 @@
 </header>
 
 <main>
-  <section class="overview" id="overview">
-    <div class="overview-stat">
-      <div class="overview-number" id="overallPct">&mdash;</div>
-      <div class="overview-label">modules complete</div>
-    </div>
-    <div class="overview-bar-wrap">
-      <div class="overview-bar"><div class="overview-bar-fill" id="overallBarFill"></div></div>
-      <div class="overview-sub" id="overallSub">Loading progress&hellip;</div>
-    </div>
-  </section>
-
   <div id="statusBanner" class="banner" hidden></div>
 
-  <section id="examGrid" class="exam-grid"></section>
+  <div id="homeView">
+    <section class="overview" id="overview">
+      <div class="overview-stat">
+        <div class="overview-number" id="overallPct">&mdash;</div>
+        <div class="overview-label">modules complete</div>
+      </div>
+      <div class="overview-bar-wrap">
+        <div class="overview-bar"><div class="overview-bar-fill" id="overallBarFill"></div></div>
+        <div class="overview-sub" id="overallSub">Loading progress&hellip;</div>
+      </div>
+    </section>
+
+    <section class="game-bar" id="gameBar">
+      <div class="game-stat">
+        <span class="game-stat-icon">&#11088;</span>
+        <span class="game-stat-value" id="starTotal">0</span>
+        <span class="game-stat-label">cards mastered</span>
+      </div>
+      <div class="game-stat">
+        <span class="game-stat-icon">&#127942;</span>
+        <span class="game-stat-value" id="rankLabel">Trainee Actuary</span>
+        <span class="game-stat-label" id="rankSub">Rank</span>
+      </div>
+      <div class="game-stat">
+        <span class="game-stat-icon">&#128293;</span>
+        <span class="game-stat-value" id="streakValue">0</span>
+        <span class="game-stat-label">day streak</span>
+      </div>
+    </section>
+
+    <section id="examGrid" class="exam-grid"></section>
+  </div>
+
+  <div id="subjectView" class="subject-view" hidden></div>
+
+  <div id="flashView" class="flash-view" hidden></div>
 </main>
 
 <div id="settingsPanel" class="settings-panel" hidden>
@@ -54,6 +78,7 @@
   </div>
 </div>
 
-<script src="app.js?v=3"></script>
+<script src="data.js?v=1"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

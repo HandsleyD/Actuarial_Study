@@ -13,6 +13,9 @@
   --not-started: #656d76;
   --not-started-bg: #eef0f2;
   --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 1px 8px rgba(0,0,0,0.04);
+  --star: #b8860b;
+  --star-bg: #fff3cf;
+  --studying: #6d4aff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,6 +34,9 @@
     --not-started: #8b949e;
     --not-started-bg: #21262d;
     --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 8px rgba(0,0,0,0.2);
+    --star: #ffd35c;
+    --star-bg: #3a2e0d;
+    --studying: #a48fff;
   }
 }
 
@@ -301,4 +307,384 @@ main {
 .token-status {
   font-size: 0.85rem;
   margin-top: 4px;
+}
+
+/* ---------- gamification bar ---------- */
+
+.game-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.game-stat {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.game-stat-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.game-stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.game-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ---------- home exam cards ---------- */
+
+.exam-card {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exam-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.exam-card.studying {
+  border-color: var(--studying);
+  box-shadow: 0 0 0 2px var(--studying), var(--shadow);
+}
+
+.studying-ribbon {
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  background: var(--studying);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.exam-card-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.exam-name {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ---------- back link ---------- */
+
+.back-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- subject view ---------- */
+
+.subject-head {
+  margin-bottom: 20px;
+}
+
+.subject-code {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin-bottom: 8px;
+}
+
+.subject-head h2 {
+  margin: 0 0 6px;
+}
+
+.subject-blurb {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  max-width: 640px;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.module-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.module-card.clickable {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.module-card.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.module-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.module-card-id {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.module-card-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.module-card-desc {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+}
+
+.module-card-desc.muted, .module-card-foot.muted {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.module-card-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.mastery-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--not-started-bg);
+  overflow: hidden;
+}
+
+.mastery-fill {
+  height: 100%;
+  background: var(--star);
+  transition: width 0.3s ease;
+}
+
+.mastery-label {
+  color: var(--star);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------- flashcard view ---------- */
+
+.flash-head {
+  margin-bottom: 12px;
+}
+
+.flash-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flash-title-row h2 {
+  margin: 0;
+}
+
+.flash-progress {
+  font-size: 0.85rem;
+  color: var(--star);
+  font-weight: 700;
+}
+
+.flash-progress-track {
+  height: 8px;
+  border-radius: 5px;
+  background: var(--not-started-bg);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.flash-progress-fill {
+  height: 100%;
+  background: var(--star);
+  transition: width 0.3s ease;
+}
+
+.card-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.card-dot {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.card-dot.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.card-dot.mastered {
+  background: var(--star-bg);
+  color: var(--star);
+  border-color: var(--star);
+}
+
+.flashcard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  max-width: 620px;
+  position: relative;
+  min-height: 220px;
+}
+
+.flashcard.is-mastered {
+  border-color: var(--star);
+}
+
+.flashcard-star {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.3rem;
+}
+
+.flashcard-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.flashcard-question {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.answer-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  margin-bottom: 14px;
+}
+
+.flashcard-answer {
+  background: var(--accent-soft);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.flash-score-row {
+  display: flex;
+  gap: 10px;
+}
+
+.score-btn {
+  flex: 1;
+  font-weight: 700;
+  padding: 10px 14px;
+}
+
+.score-btn.sufficient {
+  background: var(--done-bg);
+  color: var(--done);
+  border-color: var(--done);
+}
+
+.score-btn.insufficient {
+  background: var(--progress-bg);
+  color: var(--progress);
+  border-color: var(--progress);
+}
+
+.score-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.flash-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  max-width: 620px;
+}
+
+.flash-empty {
+  color: var(--text-muted);
+}
+
+#statusBanner {
+  margin-bottom: 16px;
 }
