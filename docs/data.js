@@ -537,4 +537,1681 @@ const MODULES = {
       ],
     },
   ],
+  CM1: [
+    {
+        "id": "m01",
+        "title": "The time value of money",
+        "description": "Introduces compound and simple interest, and why money today is worth more than the same amount in the future — the foundation for every CM1 calculation.",
+        "cards": [
+            {
+                "q": "What is the accumulated value of $C$ invested for $n$ years at effective annual rate $i$ under compound interest?",
+                "a": "$C(1+i)^n$"
+            },
+            {
+                "q": "What is the accumulated value of $C$ invested for $n$ years under simple interest at rate $i$?",
+                "a": "$C(1+in)$"
+            },
+            {
+                "q": "What is the present value of a payment of $C$ due in $n$ years, at effective rate $i$?",
+                "a": "$Cv^n$, where $v=\\frac{1}{1+i}$"
+            },
+            {
+                "q": "How does compound interest differ from simple interest over multiple periods?",
+                "a": "Compound interest earns interest on previously accumulated interest; simple interest only ever earns interest on the original principal."
+            },
+            {
+                "q": "What is the 'time value of money'?",
+                "a": "The principle that a given sum of money is worth more now than the same sum received in the future, because it can be invested to earn interest."
+            },
+            {
+                "q": "For $n<1$, does simple or compound interest give a higher accumulated value?",
+                "a": "Simple interest gives a slightly higher accumulated value than compound interest for periods less than one year."
+            },
+            {
+                "q": "What is the discount factor $v$?",
+                "a": "$v = \\frac{1}{1+i}$, the present value of $1$ due in one year's time."
+            },
+            {
+                "q": "If $i = 5\\%$, what is $v$?",
+                "a": "$v = \\frac{1}{1.05} \\approx 0.9524$"
+            },
+            {
+                "q": "Why is discounting the reverse operation of accumulating?",
+                "a": "Accumulating moves a value forward in time by multiplying by $(1+i)^n$; discounting moves it backward by multiplying by $v^n$."
+            },
+            {
+                "q": "What assumption underlies most CM1 compound interest calculations unless stated otherwise?",
+                "a": "That the effective rate of interest is constant over the period considered."
+            },
+            {
+                "q": "What is a 'cashflow'?",
+                "a": "A payment or receipt of money at a specified point (or points) in time."
+            },
+            {
+                "q": "Why might an actuary need to compare cashflows occurring at different times?",
+                "a": "Because money at different times isn't directly comparable \\u2014 it must first be accumulated or discounted to a common point in time."
+            },
+            {
+                "q": "What does it mean for interest to be 'effective'?",
+                "a": "It's the actual amount of interest earned over the full period (e.g. a year), as opposed to a nominal rate that must be converted."
+            },
+            {
+                "q": "True or false: doubling the interest rate $i$ exactly doubles the accumulated value $(1+i)^n$ for $n>1$.",
+                "a": "False \\u2014 because of compounding, the relationship is not linear once $n>1$."
+            },
+            {
+                "q": "What single quantity lets you move a cashflow both forwards and backwards in time?",
+                "a": "The effective rate of interest $i$ (equivalently, $v$)."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Interest rates",
+        "description": "Covers how interest rates can be expressed in different ways — nominal rates convertible pthly, the force of interest — and how to convert between them.",
+        "cards": [
+            {
+                "q": "What is the relationship between the effective annual rate $i$ and effective annual discount rate $d$?",
+                "a": "$d = \\frac{i}{1+i}$, or equivalently $1-d = \\frac{1}{1+i} = v$"
+            },
+            {
+                "q": "What does $i^{(p)}$ represent?",
+                "a": "The nominal rate of interest per year, convertible (compounded) $p$ times per year."
+            },
+            {
+                "q": "How do you convert $i^{(p)}$ to the effective annual rate $i$?",
+                "a": "$1+i = \\left(1+\\frac{i^{(p)}}{p}\\right)^p$"
+            },
+            {
+                "q": "What is the force of interest $\\delta$?",
+                "a": "The instantaneous, continuously-compounded rate of interest, defined so that $1+i = e^{\\delta}$."
+            },
+            {
+                "q": "As $p \\to \\infty$, what does $i^{(p)}$ converge to?",
+                "a": "The force of interest $\\delta$."
+            },
+            {
+                "q": "What is $d^{(p)}$?",
+                "a": "The nominal rate of discount per year, convertible $p$ times per year."
+            },
+            {
+                "q": "Which is larger for the same effective annual rate: $i$, $i^{(p)}$, or $\\delta$ (for $p>1$)?",
+                "a": "$i$ is largest, then $i^{(p)}$ (decreasing as $p$ increases), with $\\delta$ the smallest limiting value."
+            },
+            {
+                "q": "How do you accumulate $C$ for $n$ years at nominal rate $i^{(p)}$ convertible $p$thly?",
+                "a": "$C\\left(1+\\frac{i^{(p)}}{p}\\right)^{pn}$"
+            },
+            {
+                "q": "What is the relationship between $\\delta$ and $d$?",
+                "a": "$\\delta = -\\ln(1-d)$, equivalently $1-d = e^{-\\delta}$"
+            },
+            {
+                "q": "If the force of interest is constant, how do you find the present value of $1$ due at time $t$?",
+                "a": "$v^t = e^{-\\delta t}$"
+            },
+            {
+                "q": "Why might a bank quote a 'nominal' rather than 'effective' interest rate?",
+                "a": "It's a convention for rates compounded more frequently than annually, and can make quoted rates look lower than the true effective rate."
+            },
+            {
+                "q": "What happens to the accumulated value as compounding frequency $p$ increases, holding $i^{(p)}$ fixed?",
+                "a": "The accumulated value increases, approaching continuous compounding (using $\\delta$) in the limit."
+            },
+            {
+                "q": "Express $i$ in terms of $d$.",
+                "a": "$i = \\frac{d}{1-d}$"
+            },
+            {
+                "q": "What is the effective annual rate equivalent to a force of interest of $\\delta = 0.05$?",
+                "a": "$i = e^{0.05} - 1 \\approx 5.13\\%$"
+            },
+            {
+                "q": "Why is $\\delta$ particularly convenient for continuous cashflow calculations?",
+                "a": "Because integrals of continuously paid cashflows discount/accumulate cleanly using $e^{-\\delta t}$ or $e^{\\delta t}$."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Real and money interest rates",
+        "description": "Distinguishes 'money' (nominal, cash) interest rates from 'real' (inflation-adjusted) interest rates, and shows how to convert between them.",
+        "cards": [
+            {
+                "q": "What is the difference between a 'money' rate of interest and a 'real' rate of interest?",
+                "a": "The money rate reflects actual cash growth; the real rate reflects growth in purchasing power after removing the effect of inflation."
+            },
+            {
+                "q": "What is the formula linking the money rate $i$, real rate $i'$, and inflation rate $e$?",
+                "a": "$1+i = (1+i')(1+e)$"
+            },
+            {
+                "q": "If the money rate is $8\\%$ and inflation is $3\\%$, what is the exact real rate?",
+                "a": "$\\frac{1.08}{1.03}-1 \\approx 4.85\\%$"
+            },
+            {
+                "q": "Why might an investor care more about the real rate of return than the money rate?",
+                "a": "The real rate shows how much their purchasing power actually grows, which is what matters for future consumption."
+            },
+            {
+                "q": "How would you find the real yield on an index-linked bond?",
+                "a": "Discount the real (inflation-adjusted) cashflows at the real rate of interest, since index-linked payments already move with inflation."
+            },
+            {
+                "q": "What happens to the real rate of interest if money interest rates and inflation rise by the same percentage points?",
+                "a": "It stays approximately the same (not exactly, because the relationship is multiplicative not additive)."
+            },
+            {
+                "q": "Can the real rate of interest be negative even if the money rate is positive?",
+                "a": "Yes \\u2014 if inflation exceeds the money rate of interest."
+            },
+            {
+                "q": "In index-linked bond calculations, what typically happens to coupon and redemption payments?",
+                "a": "They are increased in line with a specified inflation index between issue and payment."
+            },
+            {
+                "q": "Why is estimating future inflation important for pricing index-linked bonds?",
+                "a": "Because future coupon/redemption cashflows are uncertain in money terms until the relevant inflation index values are known."
+            },
+            {
+                "q": "What does it mean if the real rate of interest is exactly zero?",
+                "a": "Money grows at exactly the rate of inflation \\u2014 no gain or loss in purchasing power."
+            },
+            {
+                "q": "How is the money rate of interest related to real rate and inflation using a small-rate approximation?",
+                "a": "$i \\approx i' + e$ (ignoring the small cross term $i' \\times e$)."
+            },
+            {
+                "q": "What data would you need to calculate a realised real rate of return over a past period?",
+                "a": "The money rate of return actually achieved, and the actual inflation rate over that period."
+            },
+            {
+                "q": "Give one reason actual and expected inflation might differ.",
+                "a": "Unexpected economic shocks, changes in monetary policy, or unanticipated supply/demand shifts in the economy."
+            },
+            {
+                "q": "Why do pension schemes often care about real rates of interest?",
+                "a": "Because future pension liabilities are often linked to (or intended to keep pace with) inflation/salary growth."
+            },
+            {
+                "q": "If money rate $i=6\\%$ and real rate $i'=6\\%$, what must inflation be?",
+                "a": "$0\\%$ \\u2014 no inflation."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Discounting and accumulating",
+        "description": "Applies the concepts of interest rates to actual cashflow streams — evaluating the present or accumulated value of one-off or multiple non-annuity payments.",
+        "cards": [
+            {
+                "q": "How do you find the present value of several distinct payments made at different future times?",
+                "a": "Discount each payment to today separately, using the appropriate discount factor for its own timing, then sum."
+            },
+            {
+                "q": "What is meant by 'present value' of a cashflow?",
+                "a": "The value today that is equivalent (under a given interest rate) to a cashflow or set of cashflows occurring at other points in time."
+            },
+            {
+                "q": "How would you find the accumulated value at time $n$ of a set of payments made at various times before $n$?",
+                "a": "Accumulate each payment separately from its own payment date to time $n$, then sum the results."
+            },
+            {
+                "q": "If a rate of interest varies over time, how do you accumulate $1$ from time $0$ to time $n$?",
+                "a": "Multiply together the accumulation factors for each sub-period of constant (or known) interest rate."
+            },
+            {
+                "q": "What is the present value at time 0 of $1$ due at time $t$ using a time-varying force of interest $\\delta(s)$?",
+                "a": "$\\exp\\left(-\\int_0^t \\delta(s)\\,ds\\right)$"
+            },
+            {
+                "q": "What is the accumulated value at time $t$ of $1$ invested at time $0$ under a time-varying force of interest?",
+                "a": "$\\exp\\left(\\int_0^t \\delta(s)\\,ds\\right)$"
+            },
+            {
+                "q": "How do you handle a payment that occurs exactly 'now' (time 0) when finding present value?",
+                "a": "It needs no discounting \\u2014 its present value equals its face amount."
+            },
+            {
+                "q": "What's the general approach to comparing two different cashflow schedules?",
+                "a": "Discount (or accumulate) both to the same point in time using a common interest rate, then compare the resulting values."
+            },
+            {
+                "q": "How would you find the present value of a continuously paid cashflow of rate $\\rho(t)$ per unit time, from 0 to $n$, at constant force of interest $\\delta$?",
+                "a": "$\\int_0^n \\rho(t)e^{-\\delta t}\\,dt$"
+            },
+            {
+                "q": "What does 'equation of value' mean in this context?",
+                "a": "An equation stating that the present value of money received equals the present value of money paid, at a given rate of interest."
+            },
+            {
+                "q": "If interest rates are expected to change in the future, why can't you use one accumulation factor for the whole period?",
+                "a": "Because the accumulation must reflect the actual (or assumed) rate applying in each distinct sub-period."
+            },
+            {
+                "q": "Why is choosing a consistent valuation date important when comparing cashflows?",
+                "a": "Because present/accumulated values depend on the timing reference point \\u2014 comparing values discounted to different dates isn't meaningful."
+            },
+            {
+                "q": "What's the present value of a single payment of $500$ in 3 years at $i=4\\%$?",
+                "a": "$500v^3 = 500(1.04)^{-3} \\approx 444.5$"
+            },
+            {
+                "q": "How would a negative cashflow (a payment out) be treated in a present value calculation?",
+                "a": "Included with a negative sign, so it reduces the total present value."
+            },
+            {
+                "q": "Why might actuaries discount cashflows using a different rate for different risk profiles?",
+                "a": "Riskier or less certain cashflows may warrant a different (often higher) discount rate to reflect that risk."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Level annuities",
+        "description": "Introduces the standard annuity functions — level payments made annually in arrears ($a_{\\overline{n}|}$) or in advance ($\\ddot{a}_{\\overline{n}|}$) — and their accumulated-value equivalents.",
+        "cards": [
+            {
+                "q": "What does $a_{\\overline{n}|}$ represent?",
+                "a": "The present value of an annuity of $1$ per year, paid annually in arrears for $n$ years."
+            },
+            {
+                "q": "What is the formula for $a_{\\overline{n}|}$ in terms of $v$ and $i$?",
+                "a": "$a_{\\overline{n}|} = \\frac{1-v^n}{i}$"
+            },
+            {
+                "q": "What does $\\ddot{a}_{\\overline{n}|}$ represent?",
+                "a": "The present value of an annuity of $1$ per year, paid annually in advance for $n$ years."
+            },
+            {
+                "q": "How is $\\ddot{a}_{\\overline{n}|}$ related to $a_{\\overline{n}|}$?",
+                "a": "$\\ddot{a}_{\\overline{n}|} = (1+i)\\,a_{\\overline{n}|} = \\frac{1-v^n}{d}$"
+            },
+            {
+                "q": "What does $s_{\\overline{n}|}$ represent?",
+                "a": "The accumulated value at time $n$ of an annuity of $1$ per year paid annually in arrears for $n$ years."
+            },
+            {
+                "q": "What is the formula for $s_{\\overline{n}|}$?",
+                "a": "$s_{\\overline{n}|} = \\frac{(1+i)^n-1}{i}$"
+            },
+            {
+                "q": "What does $\\ddot{s}_{\\overline{n}|}$ represent, and how does it relate to $s_{\\overline{n}|}$?",
+                "a": "The accumulated value at time $n$ of an annuity-due; $\\ddot{s}_{\\overline{n}|} = (1+i)\\,s_{\\overline{n}|}$"
+            },
+            {
+                "q": "What is a 'perpetuity', and what is the present value of a level perpetuity of $1$ per year in arrears?",
+                "a": "An annuity with no end date; its present value is $a_{\\overline{\\infty}|} = \\frac{1}{i}$"
+            },
+            {
+                "q": "What does $_{m|}a_{\\overline{n}|}$ represent?",
+                "a": "A deferred annuity \\u2014 an annuity of $1$ per year in arrears, for $n$ years, starting $m$ years from now."
+            },
+            {
+                "q": "How do you calculate $_{m|}a_{\\overline{n}|}$ in terms of standard annuity functions?",
+                "a": "$_{m|}a_{\\overline{n}|} = v^m \\, a_{\\overline{n}|}$"
+            },
+            {
+                "q": "If payments are made $p$ times per year, what symbol is used for the present value of the annuity-immediate?",
+                "a": "$a_{\\overline{n}|}^{(p)}$"
+            },
+            {
+                "q": "What is the relationship between $a_{\\overline{n}|}^{(p)}$ and $a_{\\overline{n}|}$ (in terms of $i$ and $i^{(p)}$)?",
+                "a": "$a_{\\overline{n}|}^{(p)} = \\frac{i}{i^{(p)}}\\,a_{\\overline{n}|}$"
+            },
+            {
+                "q": "What is the present value of a continuously paid level annuity of $1$ per year for $n$ years, $\\overline{a}_{\\overline{n}|}$?",
+                "a": "$\\overline{a}_{\\overline{n}|} = \\frac{1-v^n}{\\delta}$"
+            },
+            {
+                "q": "Why is $\\ddot{a}_{\\overline{n}|}$ always greater than $a_{\\overline{n}|}$ for $i>0$?",
+                "a": "Because each payment under the annuity-due is received one period earlier, so it's worth more in present value terms."
+            },
+            {
+                "q": "What is the present value of an annuity-immediate of $1$ per year for 10 years, if $i = 5\\%$?",
+                "a": "$a_{\\overline{10}|} = \\frac{1-1.05^{-10}}{0.05} \\approx 7.722$"
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Increasing annuities",
+        "description": "Extends level annuities to payments that increase (or decrease) by a constant amount each period, giving the $(Ia)$ and $(I\\ddot{a})$ family of functions.",
+        "cards": [
+            {
+                "q": "What does $(Ia)_{\\overline{n}|}$ represent?",
+                "a": "The present value of an annuity paid annually in arrears for $n$ years, where the payment is $1$ in year 1, $2$ in year 2, ..., $n$ in year $n$."
+            },
+            {
+                "q": "What is the formula for $(Ia)_{\\overline{n}|}$?",
+                "a": "$(Ia)_{\\overline{n}|} = \\frac{\\ddot{a}_{\\overline{n}|} - nv^n}{i}$"
+            },
+            {
+                "q": "What does $(I\\ddot{a})_{\\overline{n}|}$ represent, and how does it relate to $(Ia)_{\\overline{n}|}$?",
+                "a": "The increasing annuity-due equivalent; $(I\\ddot{a})_{\\overline{n}|} = (1+i)(Ia)_{\\overline{n}|}$"
+            },
+            {
+                "q": "What does $(Da)_{\\overline{n}|}$ represent?",
+                "a": "A decreasing annuity: payments of $n$ in year 1, $n-1$ in year 2, ..., down to $1$ in year $n$, paid in arrears."
+            },
+            {
+                "q": "What is the formula for $(Da)_{\\overline{n}|}$?",
+                "a": "$(Da)_{\\overline{n}|} = \\frac{n - a_{\\overline{n}|}}{i}$"
+            },
+            {
+                "q": "What does $(I\\overline{a})_{\\overline{n}|}$ represent?",
+                "a": "A continuously-increasing, continuously-paid annuity, where the payment rate at time $t$ is $t$ per year."
+            },
+            {
+                "q": "What is a common real-world use for increasing annuity functions?",
+                "a": "Modelling salary-linked or inflation-linked cashflows that step up by a fixed monetary amount each year, such as certain pension or loan structures."
+            },
+            {
+                "q": "What is $(I\\ddot{a})_{\\overline{\\infty}|}$, the present value of a perpetuity increasing by $1$ each year, paid in advance?",
+                "a": "$(I\\ddot{a})_{\\overline{\\infty}|} = \\frac{1}{d^2}$"
+            },
+            {
+                "q": "How would you value an annuity that increases by a constant monetary amount each year, but is paid continuously?",
+                "a": "Using the continuously-increasing, continuously-paid annuity function, integrating the increasing payment rate against the discount factor."
+            },
+            {
+                "q": "What is the accumulated value equivalent of $(Ia)_{\\overline{n}|}$, denoted $(Is)_{\\overline{n}|}$?",
+                "a": "$(Is)_{\\overline{n}|} = (1+i)^n (Ia)_{\\overline{n}|}$"
+            },
+            {
+                "q": "Why can't you just multiply the level annuity value by the average payment to value an increasing annuity?",
+                "a": "Because each payment is discounted differently depending on when it occurs, so timing and magnitude interact \\u2014 a simple average ignores this."
+            },
+            {
+                "q": "If payments increase geometrically rather than arithmetically, can you still use $(Ia)_{\\overline{n}|}$?",
+                "a": "No \\u2014 a geometrically increasing annuity needs a different approach (effectively discounting at a modified net rate), not the arithmetic increasing annuity formula."
+            },
+            {
+                "q": "What does $n$ represent in $(Ia)_{\\overline{n}|} = \\frac{\\ddot{a}_{\\overline{n}|}-nv^n}{i}$?",
+                "a": "Both the number of years the annuity runs for, and the final (largest) payment amount."
+            },
+            {
+                "q": "How would you value a decreasing annuity that pays continuously and decreases continuously?",
+                "a": "Using $(D\\overline{a})_{\\overline{n}|}$, the continuous decreasing annuity function, found by integration."
+            },
+            {
+                "q": "What is the present value of an annuity paying 100 in year 1, 200 in year 2, and 300 in year 3 (arrears), at rate $i$?",
+                "a": "$100\\,(Ia)_{\\overline{3}|}$ at rate $i$"
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Equations of value",
+        "description": "Formalises the 'equation of value' — setting the present value of money received equal to the present value of money paid — and the conditions needed for it to have a unique, meaningful solution.",
+        "cards": [
+            {
+                "q": "What is an 'equation of value'?",
+                "a": "An equation setting the present value of a series of payments (or receipts) equal to the present value of another series, at an unknown or specified rate of interest."
+            },
+            {
+                "q": "What two conditions are typically required for an equation of value to have a unique solution for $i$?",
+                "a": "Payments in and payments out must each occur at least once, and the net cashflow's sign should change only once over time."
+            },
+            {
+                "q": "What might happen if an equation of value has multiple sign changes in the net cashflow?",
+                "a": "There could be more than one mathematically valid solution for the interest rate (multiple roots), making the answer ambiguous."
+            },
+            {
+                "q": "How is an equation of value typically solved when it can't be solved algebraically?",
+                "a": "By numerical/iterative methods, such as linear interpolation between two trial rates."
+            },
+            {
+                "q": "What does it mean for a project or loan to have an 'exact' solution for the equation of value?",
+                "a": "There's a single, well-defined rate of interest at which the present value of inflows equals the present value of outflows."
+            },
+            {
+                "q": "Why might a loan have both an initial payment received and periodic repayments made?",
+                "a": "The lender pays out the loan amount up front (a receipt from the borrower's perspective) and receives repayments afterwards."
+            },
+            {
+                "q": "If a project has 'one change of sign' in its net cashflow, what does that tell you about solving its equation of value?",
+                "a": "A single, well-defined internal rate of return (root) is guaranteed to exist under standard conditions."
+            },
+            {
+                "q": "What's the general approach to setting up an equation of value for a loan repaid by instalments?",
+                "a": "Set the loan amount (present value at outset) equal to the present value of all the repayment instalments, at the loan's interest rate."
+            },
+            {
+                "q": "Give an example of 'payment is uncertain' in an equation of value context.",
+                "a": "A cashflow that depends on a future event, e.g. a payment only made if someone survives to a certain age."
+            },
+            {
+                "q": "What is linear interpolation used for when solving an equation of value?",
+                "a": "Approximating the root (interest rate) by assuming the net present value function is approximately linear between two trial rates."
+            },
+            {
+                "q": "Why is it useful to check the sign pattern of a cashflow before solving for a yield?",
+                "a": "To ensure a unique and meaningful solution exists, avoiding a misleading or ambiguous result."
+            },
+            {
+                "q": "In an equation of value with payment or receipt 'certain', what does 'certain' mean?",
+                "a": "The amount and timing of the payment are known with certainty, not contingent on any future uncertain event."
+            },
+            {
+                "q": "What's a practical example of an equation of value used to find an unknown interest rate?",
+                "a": "Finding the annual percentage rate (APR) implied by a loan's fixed repayment schedule."
+            },
+            {
+                "q": "If two trial rates give present values of $+50$ and $-30$, roughly how would linear interpolation estimate the root?",
+                "a": "Weight the two trial rates in proportion to the sizes of $50$ and $30$ (closer to the trial rate giving the smaller absolute present value)."
+            },
+            {
+                "q": "Can an equation of value be used with more than two parties/cashflow streams?",
+                "a": "Yes \\u2014 any number of cashflow streams can be combined into a single equation of value, as long as they're all expressed at a common valuation date and rate."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Loan schedules",
+        "description": "Shows how to split each loan repayment into its capital and interest components, and build a full schedule of outstanding loan balances over time.",
+        "cards": [
+            {
+                "q": "In a loan repayment schedule, what two components does each instalment split into?",
+                "a": "Interest (on the outstanding balance) and capital repayment (reducing the outstanding balance)."
+            },
+            {
+                "q": "How is the interest portion of an instalment calculated?",
+                "a": "The outstanding loan balance at the start of the period, multiplied by the interest rate for that period."
+            },
+            {
+                "q": "How is the capital portion of a level instalment found, once the interest portion is known?",
+                "a": "Capital repaid = total instalment \\u2212 interest due for that period."
+            },
+            {
+                "q": "What happens to the split between interest and capital over the life of a level-instalment loan?",
+                "a": "The interest portion decreases and the capital portion increases over time, as the outstanding balance falls."
+            },
+            {
+                "q": "How would you find the outstanding loan balance after the $t$-th instalment, using the 'prospective' method?",
+                "a": "As the present value of all remaining future instalments, discounted at the loan rate."
+            },
+            {
+                "q": "How would you find the outstanding loan balance after the $t$-th instalment, using the 'retrospective' method?",
+                "a": "As the accumulated original loan amount, less the accumulated value of instalments paid so far."
+            },
+            {
+                "q": "Do the prospective and retrospective methods give the same outstanding balance?",
+                "a": "Yes, provided the same interest rate is used for both accumulating and discounting throughout."
+            },
+            {
+                "q": "What is the total 'capital repaid', summed over the whole loan term, equal to?",
+                "a": "The original loan amount (the total capital borrowed)."
+            },
+            {
+                "q": "How is the level instalment amount $X$ found for a loan of $L$ repaid over $n$ years at rate $i$?",
+                "a": "$X = \\frac{L}{a_{\\overline{n}|}}$"
+            },
+            {
+                "q": "What is the annual percentage rate (APR) of a loan?",
+                "a": "The effective annual rate of interest implied by the loan's actual cashflows (amount lent vs. repayments), which may differ from the quoted nominal rate."
+            },
+            {
+                "q": "Why might a loan's APR differ from its stated nominal interest rate?",
+                "a": "Because of fees or charges, or the compounding frequency used, which the APR calculation accounts for but a simple nominal rate doesn't."
+            },
+            {
+                "q": "If a borrower makes an extra lump-sum repayment partway through a loan, how does this affect future instalments (if the term stays fixed)?",
+                "a": "It reduces the outstanding balance, so subsequent level instalments can be recalculated to be smaller for the same remaining term."
+            },
+            {
+                "q": "How would you construct a full loan schedule table?",
+                "a": "For each period, show the opening balance, interest due, instalment paid, capital repaid, and closing balance, working forward period by period."
+            },
+            {
+                "q": "If the interest rate changes partway through a loan's term, which method is more natural for finding the new outstanding balance?",
+                "a": "Prospective \\u2014 discount all remaining future instalments at the new rate(s) applying going forward."
+            },
+            {
+                "q": "What does it mean if the capital repaid in the final instalment exactly clears the outstanding balance?",
+                "a": "The loan is fully repaid (amortised) by that instalment, with zero balance remaining."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Project appraisal",
+        "description": "Applies equation-of-value thinking to investment decisions — net present value, internal rate of return, payback period — and discusses when each is most appropriate.",
+        "cards": [
+            {
+                "q": "What is the Net Present Value (NPV) of a project?",
+                "a": "The present value of all its cash inflows minus the present value of all its cash outflows, at a chosen discount rate."
+            },
+            {
+                "q": "What decision rule follows from a project's NPV?",
+                "a": "Accept the project if NPV is positive (at the company's required rate of return); reject if negative."
+            },
+            {
+                "q": "What is the Internal Rate of Return (IRR) of a project?",
+                "a": "The discount rate at which the project's NPV equals zero."
+            },
+            {
+                "q": "What is the 'payback period' of a project?",
+                "a": "The length of time until the cumulative (undiscounted) net cashflow becomes positive \\u2014 i.e. the initial investment is recouped."
+            },
+            {
+                "q": "What is the 'discounted payback period'?",
+                "a": "Like payback period, but using discounted cashflows \\u2014 the time until cumulative discounted net cashflow becomes positive."
+            },
+            {
+                "q": "Give one weakness of using payback period alone to assess a project.",
+                "a": "It ignores the time value of money and ignores all cashflows occurring after the payback point."
+            },
+            {
+                "q": "Give one weakness of using IRR to compare two mutually exclusive projects.",
+                "a": "IRR ignores the scale of the project, and can have multiple solutions if cashflows change sign more than once."
+            },
+            {
+                "q": "When comparing two mutually exclusive projects of different sizes, which measure is usually preferred: NPV or IRR?",
+                "a": "NPV, because it reflects the absolute value created and doesn't have the scale/multiple-root issues of IRR."
+            },
+            {
+                "q": "What does 'accumulated profit' of a project mean?",
+                "a": "The accumulated value (rather than present value) of the project's net cashflows, evaluated at a given interest rate, typically at the end of the project."
+            },
+            {
+                "q": "If a project's IRR exceeds the company's cost of capital, what does that suggest?",
+                "a": "The project is expected to be worthwhile \\u2014 it earns a higher return than the minimum required."
+            },
+            {
+                "q": "Why might discounted payback period be considered better than simple payback period?",
+                "a": "It accounts for the time value of money, giving a more economically meaningful measure of how quickly the investment is recovered."
+            },
+            {
+                "q": "What is a 'mutually exclusive' set of projects?",
+                "a": "A set of projects where choosing one means the others cannot also be undertaken (e.g. limited capital or resources)."
+            },
+            {
+                "q": "How would you calculate a project's NPV at a rate of $10\\%$ given a series of net cashflows?",
+                "a": "Discount each year's net cashflow by $(1.10)^{-t}$ and sum the results."
+            },
+            {
+                "q": "Why is choosing the 'right' discount rate important for NPV-based decisions?",
+                "a": "A different discount rate can change whether NPV is positive or negative, and hence the accept/reject decision."
+            },
+            {
+                "q": "If a project's net cashflows change sign more than once, what problem can arise when calculating IRR?",
+                "a": "There may be multiple internal rates of return, making the IRR measure ambiguous or unreliable."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Bonds, equity and property",
+        "description": "Applies present value techniques to real financial instruments — fixed-interest and index-linked bonds, equities, and property — including price, yield, and the effect of taxation.",
+        "cards": [
+            {
+                "q": "What is the 'coupon' on a fixed-interest bond?",
+                "a": "The regular (usually annual or semi-annual) interest payment made to the bondholder, typically a fixed percentage of the nominal (face) value."
+            },
+            {
+                "q": "What is the 'redemption value' of a bond?",
+                "a": "The amount repaid to the bondholder at maturity, often (but not always) equal to the nominal value."
+            },
+            {
+                "q": "How do you find the price of a bond given a required yield $i$?",
+                "a": "The price equals the present value of all future coupon payments plus the present value of the redemption payment, discounted at $i$."
+            },
+            {
+                "q": "What is the 'running yield' (or 'flat yield') on a bond?",
+                "a": "The annual coupon payment divided by the current price of the bond, ignoring capital gain/loss at redemption."
+            },
+            {
+                "q": "What is the 'redemption yield' on a bond?",
+                "a": "The effective rate of interest that equates the bond's current price to the present value of all its future cashflows (coupons and redemption)."
+            },
+            {
+                "q": "How does income tax on coupon payments affect the price an investor is willing to pay for a bond, other things equal?",
+                "a": "It reduces the value of the coupons received net of tax, so reduces the price the investor is willing to pay for a given yield."
+            },
+            {
+                "q": "How does capital gains tax affect bond pricing, if the redemption value exceeds the purchase price?",
+                "a": "It reduces the effective (net) redemption proceeds, since tax is paid on the capital gain, reducing the price for a given required net yield."
+            },
+            {
+                "q": "When a bond is 'optionally redeemable' within a range of dates at the borrower's choice, how do you find price bounds?",
+                "a": "Calculate the price assuming redemption at each extreme of the range, and use the more cautious (from the investor's viewpoint) of the two results."
+            },
+            {
+                "q": "What general rule helps decide which redemption date to test when a bond's redemption date is at the borrower's option?",
+                "a": "Compare coupon rate to the required net yield: if coupon exceeds yield the borrower favours later redemption from the investor's perspective (and vice versa) \\u2014 but always check both extremes explicitly."
+            },
+            {
+                "q": "How would you value an index-linked bond's cashflows?",
+                "a": "Increase each coupon and the redemption payment in line with the relevant inflation index between issue and payment date, then discount at the required money (or real) yield."
+            },
+            {
+                "q": "How is the price of an ordinary share (equity) typically valued using dividend discounting?",
+                "a": "As the present value of expected future dividends, discounted at the investor's required rate of return."
+            },
+            {
+                "q": "What is the Gordon growth model used for?",
+                "a": "Valuing a share (or property) whose dividends/rents grow at a constant rate $g$ forever: price $= \\frac{D_1}{i-g}$"
+            },
+            {
+                "q": "What is a key difference between valuing a bond and valuing an equity?",
+                "a": "A bond's cashflows are usually known/fixed; an equity's future dividends are uncertain and often assumed to grow."
+            },
+            {
+                "q": "How might property be valued similarly to equities in CM1?",
+                "a": "By discounting expected future rental income (and possibly a terminal sale value) at a required rate of return, similarly to dividend discounting."
+            },
+            {
+                "q": "Why does a bond's price fall when the required yield rises?",
+                "a": "Because future cashflows are discounted more heavily at a higher rate, reducing their present value."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Term structure of interest rates",
+        "description": "Introduces spot rates, forward rates, and yield to maturity — how interest rates vary by term — plus duration, convexity and Redington's conditions for immunisation.",
+        "cards": [
+            {
+                "q": "What is a 'spot rate' of interest?",
+                "a": "The annualised rate of return on a zero-coupon investment made now and maturing at a specific future date."
+            },
+            {
+                "q": "What is a 'forward rate' of interest?",
+                "a": "The rate of interest agreed now for a loan/investment to be made over a specified future period."
+            },
+            {
+                "q": "How are discrete spot rates and forward rates related for consecutive periods?",
+                "a": "$(1+y_2)^2 = (1+y_1)(1+f_{1,2})$, where $y_1, y_2$ are spot rates and $f_{1,2}$ is the forward rate from time 1 to time 2."
+            },
+            {
+                "q": "What is the 'yield to maturity' of a bond?",
+                "a": "The single, constant rate of interest that equates the present value of a bond's cashflows to its current price (its redemption yield)."
+            },
+            {
+                "q": "What does the 'par yield' represent?",
+                "a": "The coupon rate at which a bond would be priced exactly at par (price equals nominal value), given the current term structure."
+            },
+            {
+                "q": "What does an upward-sloping term structure (yield curve) typically mean?",
+                "a": "Longer-term spot rates are higher than shorter-term spot rates."
+            },
+            {
+                "q": "Name one factor that can influence the shape of the term structure of interest rates.",
+                "a": "Expectations of future interest rate/inflation changes, liquidity preference, or supply/demand for bonds of different maturities."
+            },
+            {
+                "q": "What is (Macaulay) duration of a cashflow sequence?",
+                "a": "The weighted average time until cashflows are received, weighted by the present value of each cashflow."
+            },
+            {
+                "q": "What is the formula concept for duration?",
+                "a": "$\\text{Duration} = \\frac{\\sum_t t \\cdot v^t C_t}{\\sum_t v^t C_t}$, the present-value-weighted average payment time."
+            },
+            {
+                "q": "What is 'convexity' of a cashflow sequence used for?",
+                "a": "Measuring the curvature of how a cashflow sequence's present value changes with interest rates \\u2014 a refinement beyond duration for larger rate changes."
+            },
+            {
+                "q": "What does duration tell you about a cashflow sequence's sensitivity to interest rate changes?",
+                "a": "A higher duration means the present value is more sensitive (changes by a larger percentage) to a given change in interest rates."
+            },
+            {
+                "q": "What is 'immunisation' of a portfolio of liabilities?",
+                "a": "Structuring assets so that the portfolio's value is protected (to a first approximation) against small changes in the rate of interest."
+            },
+            {
+                "q": "What are Redington's three conditions for immunisation?",
+                "a": "(1) PV of assets equals PV of liabilities; (2) duration of assets equals duration of liabilities; (3) convexity of assets exceeds convexity of liabilities."
+            },
+            {
+                "q": "Why is condition 3 (asset convexity exceeding liability convexity) needed in Redington's theory?",
+                "a": "It ensures that for both small rises and small falls in interest rates, asset value doesn't fall below liability value \\u2014 a second-order protection beyond duration matching."
+            },
+            {
+                "q": "If spot rates are constant across all terms, what is the relationship between spot rates and forward rates?",
+                "a": "They are all equal \\u2014 the forward rate over any period equals the (constant) spot rate."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "The life table",
+        "description": "Introduces the life table and the probability functions built from it — the foundation for every life-contingent calculation in CM1.",
+        "cards": [
+            {
+                "q": "What does $l_x$ represent in a life table?",
+                "a": "The expected number of survivors to exact age $x$, out of an initial (radix) cohort."
+            },
+            {
+                "q": "What does $d_x$ represent?",
+                "a": "The expected number of deaths between exact ages $x$ and $x+1$: $d_x = l_x - l_{x+1}$"
+            },
+            {
+                "q": "What does $p_x$ represent?",
+                "a": "The probability that a life aged exactly $x$ survives to age $x+1$: $p_x = \\frac{l_{x+1}}{l_x}$"
+            },
+            {
+                "q": "What does $q_x$ represent?",
+                "a": "The probability that a life aged exactly $x$ dies before reaching age $x+1$: $q_x = \\frac{d_x}{l_x} = 1-p_x$"
+            },
+            {
+                "q": "What does $_np_x$ represent?",
+                "a": "The probability that a life aged $x$ survives at least $n$ further years, to age $x+n$: $_np_x = \\frac{l_{x+n}}{l_x}$"
+            },
+            {
+                "q": "What does $_nq_x$ represent?",
+                "a": "The probability that a life aged $x$ dies within the next $n$ years: $_nq_x = 1 - {_np_x}$"
+            },
+            {
+                "q": "What does $_{n|m}q_x$ represent?",
+                "a": "The probability that a life aged $x$ survives $n$ years and then dies within the following $m$ years."
+            },
+            {
+                "q": "How do you express $_{n|m}q_x$ in terms of $l$ values?",
+                "a": "$_{n|m}q_x = \\frac{l_{x+n} - l_{x+n+m}}{l_x}$"
+            },
+            {
+                "q": "What does 'select' mortality mean, as in $l_{[x]+r}$?",
+                "a": "Mortality that depends not just on current age but also on how long ago the life was selected (e.g. underwritten) \\u2014 recently selected lives typically have lighter mortality."
+            },
+            {
+                "q": "What does $l_{[x]}$ represent, as distinct from $l_x$?",
+                "a": "The number of survivors to age $x$ among lives who were selected (e.g. underwritten) at exactly age $x$, as opposed to $l_x$ which doesn't track selection."
+            },
+            {
+                "q": "Why does select mortality typically converge to 'ultimate' mortality after a few years?",
+                "a": "The effect of underwriting/selection wears off over time, so mortality experience converges to that of the general population of the same attained age."
+            },
+            {
+                "q": "What assumption is commonly used for deaths occurring between integer ages, when needed for calculations?",
+                "a": "The uniform distribution of deaths (UDD) assumption, or otherwise the constant force of mortality assumption."
+            },
+            {
+                "q": "Under the constant force of mortality assumption between integer ages, how is $\\mu$ related to $q_x$?",
+                "a": "$\\mu = -\\ln(1-q_x) = -\\ln p_x$, constant over the year of age."
+            },
+            {
+                "q": "If $l_{60} = 9{,}000{,}000$ and $l_{61} = 8{,}910{,}000$, what is $q_{60}$?",
+                "a": "$q_{60} = \\frac{9{,}000{,}000 - 8{,}910{,}000}{9{,}000{,}000} = 0.01$"
+            },
+            {
+                "q": "Why is the life table considered the building block for pricing life insurance and annuity products?",
+                "a": "Because every assurance/annuity valuation requires the probability of survival or death at each future age, which the life table directly provides."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Life assurance contracts",
+        "description": "Defines the standard types of life assurance contract — whole life, term, endowment, pure endowment — and their expected present value ('actuarial value') functions.",
+        "cards": [
+            {
+                "q": "What does $A_x$ represent?",
+                "a": "The expected present value of a whole life assurance of $1$, payable at the end of the year of death of a life currently aged $x$."
+            },
+            {
+                "q": "What is a 'term assurance'?",
+                "a": "A policy paying a benefit only if the life dies within a specified term; nothing is paid if the life survives the term."
+            },
+            {
+                "q": "What symbol is commonly used for a term assurance of $1$ for $n$ years, and what does the superscript mean?",
+                "a": "$A^1_{x:\\overline{n}|}$ \\u2014 the superscript '1' over the $x$ indicates the benefit is contingent on death of the life aged $x$ within the term."
+            },
+            {
+                "q": "What is a 'pure endowment'?",
+                "a": "A policy paying a benefit only if the life survives to the end of a specified term; nothing is paid on earlier death."
+            },
+            {
+                "q": "What is an 'endowment assurance'?",
+                "a": "A policy that pays a benefit on death within the term, or on survival to the end of the term, whichever occurs first."
+            },
+            {
+                "q": "How does the endowment assurance function $A_{x:\\overline{n}|}$ relate to term assurance and pure endowment?",
+                "a": "$A_{x:\\overline{n}|} = A^1_{x:\\overline{n}|} + A_{x:\\overline{n}|}^{\\ 1}$ (term assurance plus pure endowment)."
+            },
+            {
+                "q": "What does it mean for a death benefit to be 'payable immediately on death' rather than 'at the end of year of death'?",
+                "a": "The benefit is paid as soon as death occurs, rather than being delayed until the policy anniversary following death."
+            },
+            {
+                "q": "What notation typically distinguishes an immediate-death-benefit assurance from an end-of-year one?",
+                "a": "A bar over the $A$, e.g. $\\overline{A}_x$, denotes the benefit payable immediately on death."
+            },
+            {
+                "q": "What is a 'deferred' assurance benefit?",
+                "a": "A benefit that only starts to apply after a deferment period \\u2014 e.g. death benefit only payable if death occurs after a certain number of years."
+            },
+            {
+                "q": "What does 'return of premiums' annuity/assurance mean?",
+                "a": "On death (or another trigger event), the benefit paid is linked to the premiums paid so far, rather than a fixed sum assured."
+            },
+            {
+                "q": "How would you describe the cashflow timing of a whole life assurance versus a term assurance?",
+                "a": "Whole life assurance guarantees eventual payment (on death, whenever it occurs); term assurance only pays if death occurs within the specified period."
+            },
+            {
+                "q": "Why would a pure endowment alone be an unusual product to sell on its own?",
+                "a": "It provides no benefit at all if the policyholder dies before the term ends, so it's usually combined with a term assurance to form an endowment assurance."
+            },
+            {
+                "q": "What does 'joint life' mean in the context of assurance contracts?",
+                "a": "The contract's benefit depends on the death (or survival) status of two (or more) lives, rather than just one."
+            },
+            {
+                "q": "For a term assurance, what happens to $A^1_{x:\\overline{n}|}$ as $n$ increases (with $x$ fixed)?",
+                "a": "It increases, since a longer term gives more opportunity for the death benefit to become payable."
+            },
+            {
+                "q": "How do variable death benefits (increasing/decreasing sums assured) generally get valued?",
+                "a": "Combine the varying sum assured with the corresponding annual mortality/discounting terms, similar in spirit to increasing annuity techniques."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Life annuity contracts",
+        "description": "Defines annuity contracts contingent on survival — whole life, temporary, deferred, guaranteed — and their expected present value functions.",
+        "cards": [
+            {
+                "q": "What does $\\ddot{a}_x$ represent?",
+                "a": "The expected present value of a whole life annuity of $1$ per year, paid annually in advance, to a life currently aged $x$, for as long as they survive."
+            },
+            {
+                "q": "What is a 'temporary' (or 'term') life annuity, $\\ddot{a}_{x:\\overline{n}|}$?",
+                "a": "An annuity paid annually in advance to a life aged $x$, for at most $n$ years, ceasing on earlier death."
+            },
+            {
+                "q": "What is a 'deferred' life annuity, e.g. $_{m|}\\ddot{a}_x$?",
+                "a": "An annuity that starts paying only after a deferment period of $m$ years, provided the life survives that long, and then continues for life."
+            },
+            {
+                "q": "What is a 'guaranteed' annuity?",
+                "a": "An annuity that continues to be paid for a minimum guarantee period regardless of death, and then continues (if the life survives) beyond the guarantee period."
+            },
+            {
+                "q": "How would you value a whole life annuity guaranteed for the first $n$ years, then continuing for life?",
+                "a": "As a certain annuity for $n$ years, plus a deferred whole life annuity starting after $n$ years contingent on survival."
+            },
+            {
+                "q": "What is the relationship between $\\ddot{a}_x$ and $a_x$ for a life aged $x$?",
+                "a": "$\\ddot{a}_x = 1 + a_x$ (the annuity-due includes an immediate payment at time 0 that the annuity-immediate does not)."
+            },
+            {
+                "q": "What does $\\overline{a}_x$ represent?",
+                "a": "A whole life annuity paid continuously (rather than annually) at rate $1$ per year, to a life aged $x$."
+            },
+            {
+                "q": "How do $\\ddot{a}_x$, $\\overline{a}_x$ and $a_x$ typically compare in size, for the same $x$?",
+                "a": "$\\ddot{a}_x > \\overline{a}_x > a_x$, since annuity-due payments are received earliest on average and annuity-immediate latest."
+            },
+            {
+                "q": "What is a common real-world product modelled using $\\ddot{a}_x$?",
+                "a": "A pension annuity, paying a level income for as long as the pensioner survives."
+            },
+            {
+                "q": "How does temporary annuity value $\\ddot{a}_{x:\\overline{n}|}$ change as $n$ increases?",
+                "a": "It increases, up to the limit of the whole life annuity value $\\ddot{a}_x$ as $n \\to \\infty$."
+            },
+            {
+                "q": "What is the relationship between a temporary annuity and a deferred annuity using the pure endowment factor $_nE_x$?",
+                "a": "$\\ddot{a}_x = \\ddot{a}_{x:\\overline{n}|} + {_n}E_x \\cdot \\ddot{a}_{x+n}$"
+            },
+            {
+                "q": "What is the pure endowment factor $_nE_x$?",
+                "a": "$_nE_x = v^n \\cdot {_np_x}$, the expected present value of $1$ payable in $n$ years if the life aged $x$ survives that long."
+            },
+            {
+                "q": "How would you express a deferred annuity $_{m|}\\ddot{a}_x$ using $_mE_x$?",
+                "a": "$_{m|}\\ddot{a}_x = {_mE_x} \\cdot \\ddot{a}_{x+m}$"
+            },
+            {
+                "q": "Why do life annuities typically use annuity-due (in advance) rather than annuity-immediate (in arrears) conventions?",
+                "a": "Pension/annuity payments are conventionally paid at the start of each period covered, avoiding paying for a period after the annuitant may have already died."
+            },
+            {
+                "q": "What is the key difference between valuing an annuity-certain and a life annuity?",
+                "a": "A life annuity multiplies each period's discount factor by the relevant survival probability, since payment is contingent on the annuitant being alive."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Evaluation of assurances and annuities",
+        "description": "Covers how assurance and annuity factors relate to each other via the equation of value, how to extend them to different payment frequencies, and how to compute the mean and variance of the present value of benefits.",
+        "cards": [
+            {
+                "q": "What is the key equation of value linking a whole life assurance and whole life annuity-due at the same age?",
+                "a": "$A_x = 1 - d\\,\\ddot{a}_x$"
+            },
+            {
+                "q": "Why does the relationship $A_x = 1 - d\\,\\ddot{a}_x$ hold?",
+                "a": "It follows from a standard identity linking the discounted cashflow of $1$ at outset to the assurance and annuity-due present values."
+            },
+            {
+                "q": "What is meant by the 'curtate future lifetime' $K_x$?",
+                "a": "The complete number of future years lived by a life aged $x$ before death (the integer number of full years survived)."
+            },
+            {
+                "q": "How is the present value of a whole life assurance benefit expressed as a random variable in terms of $K_x$?",
+                "a": "$Z = v^{K_x+1}$, since the benefit is paid at the end of the year of death."
+            },
+            {
+                "q": "How do you find the variance of the present value of a whole life assurance benefit?",
+                "a": "$\\text{Var}(Z) = E[Z^2] - (E[Z])^2$, where $E[Z] = A_x$ and $E[Z^2]$ is found using $v^2$ in place of $v$."
+            },
+            {
+                "q": "What does $^2A_x$ represent?",
+                "a": "The expected present value of a whole life assurance calculated at double the force of interest (using $v^2$ instead of $v$) \\u2014 used to find the second moment for variance calculations."
+            },
+            {
+                "q": "How would you extend $\\ddot{a}_x$ to a monthly-in-advance annuity, $\\ddot{a}_x^{(12)}$?",
+                "a": "Approximate using $\\ddot{a}_x^{(12)} \\approx \\ddot{a}_x - \\frac{11}{24}$, or calculate exactly if the underlying assumptions allow."
+            },
+            {
+                "q": "What is the general logic for extending annual annuity/assurance functions to more frequent payments?",
+                "a": "Adjust for the fact that payments occur more often, typically via standard approximations linking annual and $p$thly functions."
+            },
+            {
+                "q": "Why do we need both the mean and the variance of the present value of a benefit, not just the mean?",
+                "a": "The mean gives the expected cost (used for pricing); the variance quantifies the uncertainty/risk around that expected cost."
+            },
+            {
+                "q": "How would you find the mean and variance of the present value of a term assurance benefit?",
+                "a": "Similarly to whole life assurance, but restricting the curtate future lifetime to values within the term, with zero benefit if death occurs after the term."
+            },
+            {
+                "q": "What is the general relationship used to move between 'immediate' and 'due' annuity values, applied to life annuities?",
+                "a": "$\\ddot{a}_x = 1 + a_x$, since the first payment under the due version occurs at time 0 with certainty."
+            },
+            {
+                "q": "How does discounting at 'twice the force of interest' arise naturally when computing $E[Z^2]$ for an assurance benefit?",
+                "a": "Because $Z = v^{K_x+1}$, so $Z^2 = (v^2)^{K_x+1}$ \\u2014 equivalent to discounting at a rate whose discount factor is $v^2$."
+            },
+            {
+                "q": "What does it mean to evaluate assurance/annuity factors 'by table look-up'?",
+                "a": "Using pre-computed values (from standard mortality/interest tables) for common ages and rates, rather than calculating from first principles each time."
+            },
+            {
+                "q": "How would premiums payable 'for a limited period' (rather than the whole policy term) affect the annuity function used to value them?",
+                "a": "You would use a temporary annuity function covering only the premium-paying period."
+            },
+            {
+                "q": "Give one reason select mortality might be used when evaluating a newly-issued policy's assurance/annuity factors.",
+                "a": "The policyholder was recently underwritten/selected, so their mortality is expected to be lighter than the general population for the first few years."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Variable benefits and conventional with-profits policies",
+        "description": "Covers policies where the benefit amount isn't fixed — increasing/decreasing sums assured, conventional with-profits bonuses, and unit-linked / accumulating with-profits structures.",
+        "cards": [
+            {
+                "q": "What is a 'conventional with-profits' policy?",
+                "a": "A policy with a basic guaranteed sum assured, to which bonuses are added over time (funded by the insurer's profits), increasing the eventual benefit paid."
+            },
+            {
+                "q": "What is a 'reversionary bonus'?",
+                "a": "A bonus added to a with-profits policy's sum assured during the policy term, which \\u2014 once added \\u2014 is guaranteed and cannot be taken away."
+            },
+            {
+                "q": "What is a 'terminal bonus'?",
+                "a": "An additional bonus paid only at the point the policy becomes a claim (death or maturity), not guaranteed in advance."
+            },
+            {
+                "q": "Why do insurers use reversionary bonuses rather than just paying a single large terminal bonus?",
+                "a": "Reversionary bonuses smooth policyholder returns over time and build in guaranteed increases, helping manage expectations and smooth investment performance."
+            },
+            {
+                "q": "What is a 'unit-linked' contract?",
+                "a": "A contract where the policyholder's premiums (net of charges) buy units in an investment fund, and benefits are linked to the value of those units."
+            },
+            {
+                "q": "How is the death benefit often structured under a unit-linked contract?",
+                "a": "As a combination of a fixed (absolute) amount and an amount relative to the value of the unit fund (e.g. the higher of the two)."
+            },
+            {
+                "q": "What is an 'accumulating with-profits' contract?",
+                "a": "A contract where the policyholder's benefit is expressed as an accumulating fund of premiums, increased by regular bonus additions."
+            },
+            {
+                "q": "What is the key difference between accumulating with-profits and unit-linked structures?",
+                "a": "Accumulating with-profits funds grow via smoothed bonus additions with no explicit unit price; unit-linked funds fluctuate directly with a market-based unit price."
+            },
+            {
+                "q": "What are 'unitised with-profits' contracts?",
+                "a": "A hybrid structure \\u2014 benefits are expressed as a unit fund like unit-linked contracts, but the fund grows via smoothed bonus additions rather than direct market-value-linked unit prices."
+            },
+            {
+                "q": "What does 'explicit charges' mean in the context of unit-linked contracts?",
+                "a": "Charges are deducted transparently and separately from the fund, rather than being implicitly built into bonus rates."
+            },
+            {
+                "q": "Why might terminal bonuses vary significantly between one claim and another?",
+                "a": "They reflect the insurer's actual investment performance and profits over the specific period the policy was in force, which varies by cohort/timing."
+            },
+            {
+                "q": "What risk does an insurer bear differently under conventional with-profits versus unit-linked contracts?",
+                "a": "With conventional with-profits, the insurer bears more investment risk (guarantees + smoothing); under unit-linked, more risk passes directly to the policyholder."
+            },
+            {
+                "q": "How might a 'guaranteed level annuity' fit within the variable benefits topic?",
+                "a": "It provides a fixed, non-varying income, in contrast to with-profits or unit-linked products where the benefit level can vary with investment performance."
+            },
+            {
+                "q": "Why is smoothing important to policyholders in with-profits products?",
+                "a": "It reduces the impact of short-term market volatility on the benefits they eventually receive, giving more stable, predictable growth."
+            },
+            {
+                "q": "In an accumulating with-profits contract with a fund 'defined in monetary terms,' how are bonuses typically added?",
+                "a": "As regular guaranteed and bonus interest payments credited directly to the monetary fund value, plus a terminal bonus at claim."
+            }
+        ]
+    },
+    {
+        "id": "m17",
+        "title": "Gross premiums",
+        "description": "Shows how to calculate the premium an insurer charges for a policy — using the equivalence principle to balance expected premium income against expected benefit and expense outgo.",
+        "cards": [
+            {
+                "q": "What is the 'equivalence principle' used to calculate gross premiums?",
+                "a": "The premium is set so that, at the outset, the expected present value of premium income equals the expected present value of benefit outgo plus expenses."
+            },
+            {
+                "q": "What is the difference between a 'net premium' and a 'gross premium'?",
+                "a": "A gross premium includes an allowance for expenses (and often profit); a net premium only covers the expected cost of benefits."
+            },
+            {
+                "q": "Give two types of expense typically allowed for in gross premium calculations.",
+                "a": "Initial expenses (incurred at the start of the policy) and renewal expenses (incurred regularly throughout the policy)."
+            },
+            {
+                "q": "How does a single premium contract's gross premium calculation differ from a regular premium contract's?",
+                "a": "A single premium is set equal to the present value of benefits plus expenses; a regular premium's annual amount is found by dividing that total by the relevant premium annuity factor."
+            },
+            {
+                "q": "How would you calculate a level annual gross premium $P$ for a whole life assurance, allowing for expenses?",
+                "a": "Set $P \\cdot \\ddot{a}_x = (\\text{sum assured}) A_x + (\\text{PV of expenses})$, then solve for $P$."
+            },
+            {
+                "q": "What does it mean for death benefits to 'increase by a constant compound rate'?",
+                "a": "The sum assured paid on death grows by a fixed percentage each policy year (e.g. increasing with assumed inflation)."
+            },
+            {
+                "q": "How would you handle a death benefit payable 'immediately on death' rather than 'at the end of year of death' in a premium calculation?",
+                "a": "Use the corresponding 'immediate' assurance function (e.g. $\\overline{A}_x$ instead of $A_x$) in the equation of value."
+            },
+            {
+                "q": "What does it mean for survival benefits to be 'payable at defined intervals other than at maturity'?",
+                "a": "The policy pays out at multiple points during the term if the policyholder survives to each of those points, not just a single benefit at the end."
+            },
+            {
+                "q": "Why might renewal expenses be expressed 'per premium' rather than as a fixed amount?",
+                "a": "Because some renewal costs (e.g. commission) are often set as a percentage of each premium collected."
+            },
+            {
+                "q": "What's the effect of higher assumed initial expenses on the calculated gross premium, all else equal?",
+                "a": "The gross premium increases, since more expense needs to be recovered from the same premium income."
+            },
+            {
+                "q": "Why must the equivalence principle use expected present values rather than just nominal totals?",
+                "a": "Because both premiums and benefits are contingent on survival/death and paid at different points in time, so must be discounted and probability-weighted consistently."
+            },
+            {
+                "q": "What does 'regular premiums payable annually or more frequently' affect in the premium equation?",
+                "a": "The choice of annuity function used for premiums \\u2014 e.g. $\\ddot{a}_x^{(12)}$ for monthly premiums instead of $\\ddot{a}_x$ for annual."
+            },
+            {
+                "q": "How would a policy allowing 'only a single premium' simplify the gross premium equation?",
+                "a": "There's no premium annuity term \\u2014 the single premium itself directly equals the present value of benefits plus expenses."
+            },
+            {
+                "q": "Give one reason an insurer would want to allow for expenses when setting premiums, beyond just covering benefit cost.",
+                "a": "To ensure the policy is profitable / commercially viable, since running the business has real costs beyond the benefits themselves."
+            },
+            {
+                "q": "How would combined death and survival benefits (an endowment assurance) be reflected in a gross premium equation?",
+                "a": "The benefit side would use the endowment assurance function (sum of term assurance and pure endowment components)."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Gross premium reserves",
+        "description": "Explains why insurers hold reserves, how to calculate them prospectively and retrospectively, and the recursive relationship linking reserves at successive durations.",
+        "cards": [
+            {
+                "q": "Why does an insurance company set up reserves for its policies?",
+                "a": "To ensure it holds enough assets to meet future liabilities under existing policies, since premiums received to date may not yet cover the expected cost of future benefits/expenses."
+            },
+            {
+                "q": "What is the 'prospective' gross premium reserve?",
+                "a": "The expected present value of future benefits and expenses, minus the expected present value of future premiums, calculated at a given valuation date."
+            },
+            {
+                "q": "What is the 'retrospective' gross premium reserve?",
+                "a": "The accumulated value of past premiums received, minus the accumulated value of past benefits and expenses paid, up to the valuation date (per surviving policyholder)."
+            },
+            {
+                "q": "Under what conditions are the prospective and retrospective reserves equal?",
+                "a": "When the same mortality, interest and expense assumptions are used throughout (at issue and at the valuation date) as were used to set the original premium."
+            },
+            {
+                "q": "What is the 'future loss random variable' for a policy?",
+                "a": "The present value of future benefits and expenses minus the present value of future premiums, viewed as a random variable at a given point in time."
+            },
+            {
+                "q": "How does the gross premium reserve relate to the expected future loss random variable?",
+                "a": "The reserve equals the expected value of the future loss random variable (the prospective reserve)."
+            },
+            {
+                "q": "What is the recursive relationship between successive annual gross premium reserves (in words)?",
+                "a": "The reserve at the start of a year, plus that year's premium, less expenses, accumulated with interest, less the expected cost of death claims during the year, gives the reserve at the end of the year (per survivor)."
+            },
+            {
+                "q": "Why is the recursive reserve relationship useful in practice?",
+                "a": "It allows reserves to be rolled forward year by year using only the previous year's reserve and that year's assumptions, rather than recalculating from scratch."
+            },
+            {
+                "q": "What does the recursive relationship let you derive about a year's mortality profit?",
+                "a": "The relationship's 'release' or 'strain' from actual versus expected deaths during the year effectively gives the mortality profit or loss for that year."
+            },
+            {
+                "q": "What is a 'net premium' reserve, and how does it differ from a gross premium reserve?",
+                "a": "A net premium reserve uses only the net premium (no expense loading), ignoring both future and past expenses \\u2014 a simplified, historically more conservative reserving approach."
+            },
+            {
+                "q": "How do net premiums relate to gross premiums in reserving?",
+                "a": "The net premium is calculated using the equivalence principle applied only to benefits; the net premium reserve uses this net premium, not the actual gross premium charged."
+            },
+            {
+                "q": "Why might a net premium reserving approach be considered more prudent than a gross premium approach?",
+                "a": "It ignores the (potentially unreliable) expense loading in premiums, giving a more cautious reserve, less sensitive to expense assumption changes."
+            },
+            {
+                "q": "What happens to a policy's reserve over its term for a typical whole life or endowment assurance?",
+                "a": "It generally increases over time, as the policy moves closer to the eventual claim."
+            },
+            {
+                "q": "Why is understanding equivalence between prospective and retrospective reserves useful for exam calculations?",
+                "a": "It lets you choose whichever method is computationally easier for a given problem, knowing both give the same answer under consistent assumptions."
+            },
+            {
+                "q": "How would allowing for expenses generally affect the size of the gross premium reserve compared to a net premium reserve?",
+                "a": "It can increase or decrease the reserve depending on the expense pattern \\u2014 high initial expenses can reduce early reserves relative to net premium reserves."
+            }
+        ]
+    },
+    {
+        "id": "m19",
+        "title": "Joint life and last survivor functions",
+        "description": "Extends single-life assurance and annuity functions to two (or more) lives — joint life (first death/survival) and last survivor functions.",
+        "cards": [
+            {
+                "q": "What does $\\ddot{a}_{xy}$ represent?",
+                "a": "The expected present value of an annuity of $1$ per year, paid annually in advance, while both lives $x$ and $y$ are alive (a 'joint life' annuity, ceasing on first death)."
+            },
+            {
+                "q": "What does $A_{xy}$ represent?",
+                "a": "The expected present value of a benefit of $1$ payable at the end of the year in which the first of the two lives $(x)$ and $(y)$ dies."
+            },
+            {
+                "q": "What is a 'last survivor' annuity, $\\ddot{a}_{\\overline{xy}}$?",
+                "a": "An annuity that continues to be paid as long as at least one of the two lives is still alive, ceasing only on the second (later) death."
+            },
+            {
+                "q": "What is the key identity linking joint life and last survivor functions?",
+                "a": "$\\ddot{a}_x + \\ddot{a}_y = \\ddot{a}_{xy} + \\ddot{a}_{\\overline{xy}}$ (and similarly for assurance functions)."
+            },
+            {
+                "q": "Under the common assumption of independent future lifetimes, how do you calculate the joint survival probability $_tp_{xy}$?",
+                "a": "$_tp_{xy} = {_tp_x} \\times {_tp_y}$ \\u2014 the product of the individual survival probabilities."
+            },
+            {
+                "q": "What does $_tq_{xy}$ represent?",
+                "a": "The probability that at least one of the two lives $(x)$ and $(y)$ has died within $t$ years: $_tq_{xy} = 1 - {_tp_{xy}}$"
+            },
+            {
+                "q": "What does the last survivor assurance function $A_{\\overline{xy}}$ represent?",
+                "a": "The expected present value of $1$ payable at the end of the year of the second (later) death of the two lives."
+            },
+            {
+                "q": "How would you find $_tp_{\\overline{xy}}$, the probability that at least one life survives $t$ years?",
+                "a": "$_tp_{\\overline{xy}} = {_tp_x} + {_tp_y} - {_tp_{xy}}$"
+            },
+            {
+                "q": "Why is a 'joint life last survivor' annuity a common real-world product?",
+                "a": "It's often used for a married couple's pension, continuing payments until both spouses have died, providing income security to the surviving spouse."
+            },
+            {
+                "q": "What assumption is typically made about the two lives' future lifetimes unless stated otherwise?",
+                "a": "That they are independent \\u2014 the death or survival of one life doesn't affect the probability distribution of the other's future lifetime."
+            },
+            {
+                "q": "How would you extend joint life functions to three or more lives?",
+                "a": "The same multiplicative independence logic extends \\u2014 e.g. $_tp_{xyz} = {_tp_x}\\cdot{_tp_y}\\cdot{_tp_z}$ for the probability all three survive."
+            },
+            {
+                "q": "What does 'contingent' mean in the phrase 'contingent and reversionary benefits'?",
+                "a": "A benefit that is payable only if a specified life dies before (or after) another specified life \\u2014 payment is contingent on the order of deaths."
+            },
+            {
+                "q": "How would a term assurance on the first death of two lives, $A^1_{xy:\\overline{n}|}$, be interpreted?",
+                "a": "The expected present value of $1$ payable at the end of the year of the first death of $(x)$ and $(y)$, provided that first death occurs within $n$ years."
+            },
+            {
+                "q": "Why is the 'first death' (joint life) function always smaller than either individual single-life annuity function?",
+                "a": "Because the annuity ceases as soon as either life dies, which happens no later than either individual's own death \\u2014 so payments are expected to stop sooner."
+            },
+            {
+                "q": "Why is the 'last survivor' annuity always at least as large as the larger of the two individual single-life annuities?",
+                "a": "Because it continues paying until the later of the two deaths, which is at least as late as either individual life's own death."
+            }
+        ]
+    },
+    {
+        "id": "m20",
+        "title": "Contingent and reversionary benefits",
+        "description": "Values benefits payable only if one specified life dies before (or after) another — contingent assurances and reversionary annuities.",
+        "cards": [
+            {
+                "q": "What is a 'contingent' assurance benefit?",
+                "a": "A benefit payable on the death of one specified life, but only if that death occurs before (or after) the death of another specified life."
+            },
+            {
+                "q": "What does the notation $A^1_{xy}$ (with a '1' over just the $x$) mean in a two-life context?",
+                "a": "A benefit payable on the death of $(x)$, but only if $(x)$ dies before $(y)$."
+            },
+            {
+                "q": "What is a 'reversionary annuity'?",
+                "a": "An annuity payable to one life (e.g. $y$), but only starting after another specified life (e.g. $x$) has died, and only while $y$ is still alive."
+            },
+            {
+                "q": "What real-world product commonly uses a reversionary annuity structure?",
+                "a": "A 'widow's' or dependant's pension \\u2014 income starting only after the main pensioner's death, paid to the surviving dependant."
+            },
+            {
+                "q": "How is a reversionary annuity to $y$ after $x$'s death, $a_{x|y}$, related to standard joint life and single life functions?",
+                "a": "$a_{x|y} = a_y - a_{xy}$ \\u2014 the full annuity to $y$, minus the portion payable while both are alive."
+            },
+            {
+                "q": "Why must you be careful about the exact timing convention (annuity-due vs. immediate) when deriving reversionary annuity formulas?",
+                "a": "Because the identity linking the reversionary, single-life and joint-life annuities depends on consistent timing assumptions \\u2014 mixing conventions gives the wrong result."
+            },
+            {
+                "q": "What does 'contingent probability' mean in the context of these benefits?",
+                "a": "The probability of an event (e.g. death of one life) occurring, conditional on (or in a specified order relative to) an event affecting the other life."
+            },
+            {
+                "q": "Why can't you simply say the probability $(x)$ dies first is $\\frac{1}{2}$ in general?",
+                "a": "Because the probability depends on each life's specific mortality (age, health, etc.) \\u2014 it's only $\\frac12$ under special symmetric assumptions."
+            },
+            {
+                "q": "How would you calculate the probability that $(x)$ dies before $(y)$, within $n$ years?",
+                "a": "By integrating (or summing) the probability $(x)$ dies at each future time $t$ within the term, multiplied by the probability $(y)$ is still alive at that time."
+            },
+            {
+                "q": "What is a 'contingent' annuity, as opposed to a contingent assurance?",
+                "a": "An annuity payable to one life only while a specific ordering of survival/death between the two lives holds \\u2014 the reversionary annuity is one example."
+            },
+            {
+                "q": "How would you calculate $A^1_{xy}$ (benefit on $(x)$'s death before $(y)$'s) using an integral, in continuous terms?",
+                "a": "Integrate over $t$ the probability density of $(x)$'s death at $t$, multiplied by the probability $(y)$ is still alive at $t$, discounted to present value."
+            },
+            {
+                "q": "Why are contingent benefit calculations generally more involved than simple joint life (first-death) calculations?",
+                "a": "Because they require tracking not just whether a death has occurred, but the specific order in which the two lives died."
+            },
+            {
+                "q": "What identity links $A^1_{xy}$ and $A^1_{yx}$ to the joint life assurance $A_{xy}$?",
+                "a": "$A^1_{xy} + A^1_{yx} = A_{xy}$ \\u2014 one of the two lives must die first, and together they account for the full joint life first-death assurance."
+            },
+            {
+                "q": "Why might contingent benefits appear less often in real products than joint life or last survivor benefits?",
+                "a": "They're a more niche/specialised structure, less common than the standard joint life or last-survivor pension/insurance products."
+            },
+            {
+                "q": "How does the deferred nature of a reversionary annuity affect its value compared to an equivalent immediate annuity to the same life?",
+                "a": "It's smaller, since payment only begins after a triggering event (the other life's death) that may occur late or not be certain within any fixed horizon."
+            }
+        ]
+    },
+    {
+        "id": "m21",
+        "title": "Mortality profit",
+        "description": "Compares actual mortality experience to that expected under the pricing/reserving assumptions, and shows how to quantify the resulting profit or loss.",
+        "cards": [
+            {
+                "q": "What is 'death strain at risk' (DSAR) for a policy?",
+                "a": "The extra amount the insurer must pay out on death beyond what it has already reserved \\u2014 benefit minus the reserve already held."
+            },
+            {
+                "q": "What is 'expected death strain' (EDS)?",
+                "a": "The death strain at risk multiplied by the expected (assumed) probability of death during the year, summed across the portfolio."
+            },
+            {
+                "q": "What is 'actual death strain' (ADS)?",
+                "a": "The death strain at risk, summed only over the policies where death actually occurred during the year."
+            },
+            {
+                "q": "How is 'mortality profit' calculated?",
+                "a": "Mortality profit = Expected death strain \\u2212 Actual death strain."
+            },
+            {
+                "q": "What does it mean if actual death strain exceeds expected death strain?",
+                "a": "More claims (or larger claims) occurred than assumed, resulting in a mortality loss (negative mortality profit) for the insurer."
+            },
+            {
+                "q": "For a whole life assurance with a level sum assured $S$ and reserve $_tV$ at the start of the year, what is the death strain at risk?",
+                "a": "$S - {_tV}$, approximately (adjusted for interest/timing conventions as needed)."
+            },
+            {
+                "q": "How does death strain at risk differ for an annuity in payment, compared to an assurance?",
+                "a": "For an annuity, death strain is typically the reserve released (a gain to the insurer), unlike an assurance where death triggers a payment."
+            },
+            {
+                "q": "Why might death strain at risk be negative for certain products?",
+                "a": "If the reserve held already exceeds the benefit payable on death (e.g. for annuities in payment), the insurer effectively benefits (releases reserve) on death."
+            },
+            {
+                "q": "How would mortality profit be calculated for policies where death benefits are payable immediately on death rather than end of year?",
+                "a": "Similarly, but adjusted for the mid-year (or exact) timing of payment, typically using a half-year interest adjustment or exact timing if known."
+            },
+            {
+                "q": "Why is monitoring mortality profit/loss important for an insurer?",
+                "a": "It shows whether the mortality assumptions used for pricing/reserving are accurate, informing whether assumptions need to be revised."
+            },
+            {
+                "q": "If a life office assumed higher mortality than actually occurred, what would you expect for mortality profit?",
+                "a": "A mortality profit (gain) \\u2014 fewer/smaller claims occurred than the (pessimistic) assumption predicted."
+            },
+            {
+                "q": "How is death strain at risk affected by policies with survival (rather than death) benefits, e.g. pure endowments?",
+                "a": "Death strain at risk is simply the negative of the reserve held, since the insurer keeps the reserve (no death benefit is paid)."
+            },
+            {
+                "q": "What role does the number of policies (portfolio size) play in expected vs. actual death strain calculations?",
+                "a": "Expected death strain is summed over the whole portfolio using assumed probabilities; actual death strain only involves the subset of policies where death genuinely occurred."
+            },
+            {
+                "q": "How could an insurer use mortality profit analysis over several years?",
+                "a": "To track trends in mortality experience versus assumptions, informing decisions on updating mortality tables or repricing products."
+            },
+            {
+                "q": "What is the fundamental intuition behind mortality profit?",
+                "a": "The insurer effectively 'insures' against the cost of death strain; if fewer or cheaper claims occur than priced for, it keeps the difference as profit."
+            }
+        ]
+    },
+    {
+        "id": "m22",
+        "title": "Competing risks",
+        "description": "Extends single-decrement modelling to multiple simultaneous risks (e.g. death, withdrawal, ill-health retirement) using multi-state Markov and multiple decrement models.",
+        "cards": [
+            {
+                "q": "What is a 'multiple state model'?",
+                "a": "A model describing how a life can move between different states (e.g. healthy, sick, dead) over time, with transition probabilities/forces between states."
+            },
+            {
+                "q": "What is a 'multiple decrement' model?",
+                "a": "A special case of a multi-state model with one starting ('active') state and several possible ways of leaving it, with no return to the active state."
+            },
+            {
+                "q": "What is a 'dependent probability' of decrement in a multiple decrement context?",
+                "a": "The probability of leaving the active state via a specific decrement, allowing for the fact that other decrements are also competing to remove the life from the active state first."
+            },
+            {
+                "q": "What is an 'independent' rate of decrement, as distinct from a 'dependent' probability?",
+                "a": "The rate of decrement that would apply if that decrement were the only one operating, ignoring competition from other decrements."
+            },
+            {
+                "q": "Why are dependent probabilities of decrement generally lower than the corresponding independent rates?",
+                "a": "Because other decrements can remove the life from the active state first, so there's less exposure remaining for any single decrement to act on."
+            },
+            {
+                "q": "What does it mean for forces of transition to be 'constant over single years of age' in this context?",
+                "a": "A simplifying assumption used to convert between dependent probabilities and underlying forces of decrement within a given year."
+            },
+            {
+                "q": "How would you construct a multiple decrement table?",
+                "a": "Track, for each age, the number in the active state, and the number leaving via each separate decrement, analogous to a life table but with multiple causes of exit."
+            },
+            {
+                "q": "How does a multiple decrement model relate to health/sickness insurance premium and benefit structures?",
+                "a": "It can model transitions between healthy and sick states (and death), allowing premiums and sickness benefits to be valued based on the probability of being in each state at each future time."
+            },
+            {
+                "q": "What does it mean for a cashflow to be 'contingent upon multiple transition events'?",
+                "a": "The cashflow's payment depends on the life having undergone a specific sequence or combination of state transitions."
+            },
+            {
+                "q": "How is the expected present value of a benefit calculated under a multi-state model, in general terms?",
+                "a": "Sum (or integrate) over all relevant future times and states, the probability of being in (or transitioning into) the triggering state, multiplied by the discounted benefit amount."
+            },
+            {
+                "q": "What is the relationship between forces of transition and dependent probabilities when forces are assumed constant over a year?",
+                "a": "The dependent probability of a specific decrement over the year can be derived from the constant forces of all decrements operating simultaneously."
+            },
+            {
+                "q": "Why might a pension scheme use a multiple decrement model?",
+                "a": "To allow for the several ways a member can leave active service \\u2014 death, withdrawal, ill-health retirement, and normal retirement \\u2014 each with different associated benefits."
+            },
+            {
+                "q": "How would you determine independent decrement forces given dependent (observed) probabilities?",
+                "a": "Using the assumed relationship between forces and dependent probabilities, solving the equations linking them, typically requiring the dependent probabilities of all competing decrements simultaneously."
+            },
+            {
+                "q": "Why is a multiple decrement model described as 'a special case of a multi-state Markov model'?",
+                "a": "Because it has a single starting state with several absorbing (exit) states and no transitions back into the active state."
+            },
+            {
+                "q": "Give one example of a health insurance benefit structure that would need a multi-state (rather than simple two-state) model.",
+                "a": "An income protection / permanent health insurance policy, which needs to model transitions between healthy, sick, and dead states (and possibly recovery)."
+            }
+        ]
+    },
+    {
+        "id": "m23",
+        "title": "Unit-linked and accumulating with-profits contracts",
+        "description": "Focuses on cashflow modelling for unit-linked and accumulating with-profits contracts, covering unit fund growth, charges, and the interaction between unit and non-unit funds.",
+        "cards": [
+            {
+                "q": "What is the 'unit fund' in a unit-linked contract?",
+                "a": "The notional pool of units purchased with (net) premiums, whose value grows or falls in line with the performance of the underlying investments."
+            },
+            {
+                "q": "What is a 'bid-offer spread' in a unit-linked contract?",
+                "a": "The difference between the price at which units are bought (offer price) and sold (bid price), a source of income/charge for the insurer."
+            },
+            {
+                "q": "What is the 'non-unit fund' (or 'sterling fund') in a unit-linked contract?",
+                "a": "The part of the insurer's cashflows not related to the unit fund \\u2014 covering charges collected, expenses paid, and non-unit-linked benefits."
+            },
+            {
+                "q": "Why might an insurer need to hold 'non-unit reserves'?",
+                "a": "To cover situations where future non-unit cashflows are expected to be negative, even if the overall contract is profitable."
+            },
+            {
+                "q": "What does it mean to 'zeroise' future negative cashflows in this context?",
+                "a": "Setting up a non-unit reserve specifically to eliminate (offset) any future years' projected negative cashflows."
+            },
+            {
+                "q": "How do management charges typically affect the unit fund?",
+                "a": "They are deducted regularly (e.g. as a percentage of fund value) from the unit fund, reducing its growth compared to the raw investment return."
+            },
+            {
+                "q": "What are 'unallocated premiums' in a unit-linked contract?",
+                "a": "The portion of a premium not used to purchase units for the policyholder, effectively retained by the insurer."
+            },
+            {
+                "q": "How does an 'accumulating with-profits' fund differ operationally from a standard unit-linked fund?",
+                "a": "Its value grows through regular guaranteed and bonus interest additions (smoothed), rather than fluctuating directly with a market-based unit price."
+            },
+            {
+                "q": "Why is cashflow projection important for pricing and reserving unit-linked contracts?",
+                "a": "Because the insurer's own (non-unit) profit emerges as the difference between charges collected and expenses/benefits paid over time, needing year-by-year projection."
+            },
+            {
+                "q": "What might cause unit fund growth to differ from gross investment return?",
+                "a": "Deduction of management charges and other fund-based charges reduces the net growth credited to the policyholder's units."
+            },
+            {
+                "q": "How would extra life cover (death benefit above the unit fund value) be funded in a unit-linked contract?",
+                "a": "Through a specific mortality charge deducted from the fund, covering the 'sum at risk' (the extra amount above the fund value payable on death)."
+            },
+            {
+                "q": "What does 'sum at risk' mean for unit-linked death benefits?",
+                "a": "The excess of the guaranteed minimum death benefit over the current unit fund value."
+            },
+            {
+                "q": "Why might insurers separate unit and non-unit cashflows when modelling a unit-linked contract?",
+                "a": "Because the unit fund cashflows belong to the policyholder, while the non-unit cashflows determine the insurer's own profit/loss and reserving needs."
+            },
+            {
+                "q": "How does a fall in investment markets typically affect a unit-linked insurer's non-unit fund position?",
+                "a": "It can increase the sum at risk (if death benefits have a fixed minimum) and reduce charge income if charges are based on fund value."
+            },
+            {
+                "q": "Why is profit testing especially important for unit-linked products compared to simple non-profit assurances?",
+                "a": "Because unit-linked profitability depends on the interaction of charges, expenses, and investment performance over time, not captured by a simple equation of value."
+            }
+        ]
+    },
+    {
+        "id": "m24",
+        "title": "Profit testing",
+        "description": "Projects a policy's year-by-year cashflows to determine its expected profitability — the profit vector, profit signature, net present value, and profit margin.",
+        "cards": [
+            {
+                "q": "What is a 'profit vector' in profit testing?",
+                "a": "The sequence of expected end-of-year profits (per policy in force at the start of each year) projected over the policy's term."
+            },
+            {
+                "q": "What is a 'profit signature'?",
+                "a": "The profit vector adjusted to allow for the probability of the policy still being in force at each duration \\u2014 profit per policy originally issued."
+            },
+            {
+                "q": "How do you convert a profit vector into a profit signature?",
+                "a": "Multiply each year's profit (per policy in force at the start of that year) by the probability of being in force at the start of that year."
+            },
+            {
+                "q": "What is the Net Present Value (NPV) of a policy, in the profit testing context?",
+                "a": "The present value of the profit signature, discounted at the insurer's chosen risk discount rate."
+            },
+            {
+                "q": "What is the 'profit margin' of a policy?",
+                "a": "The NPV of the profit signature expressed as a percentage of the present value of premium income (or another chosen base)."
+            },
+            {
+                "q": "What cashflows are typically included when profit testing a policy for a given year?",
+                "a": "Premium income, investment income on reserves/assets, expenses, cost of any benefit, and the increase in reserve required."
+            },
+            {
+                "q": "How is profit testing used to determine an appropriate premium?",
+                "a": "The premium can be varied until the resulting NPV (or profit margin) meets a target set by the insurer, rather than relying solely on the equivalence principle."
+            },
+            {
+                "q": "What is the 'risk discount rate' used in profit testing?",
+                "a": "The rate used to discount the profit signature to present value, often set higher than the risk-free rate to reflect the riskiness of the profit cashflows."
+            },
+            {
+                "q": "Why might profit testing use a different (higher) discount rate than the interest rate assumed for reserving?",
+                "a": "To build in a margin for risk/uncertainty in the profit projections, reflecting that actual experience may differ from assumptions."
+            },
+            {
+                "q": "How does profit testing show the effect of setting up reserves each year?",
+                "a": "The increase in reserve required each year (funded from that year's cashflows) reduces that year's profit."
+            },
+            {
+                "q": "How could an insurer use profit testing to compare two different premium bases for the same product?",
+                "a": "Run the profit test under each premium basis and compare the resulting NPV/profit margin, choosing the basis that best meets profitability targets."
+            },
+            {
+                "q": "What does it mean if a policy's profit vector shows a loss in its first year but profits in later years?",
+                "a": "This is common where initial expenses exceed first-year premium income, but the policy becomes profitable later as expenses fall and margins are earned."
+            },
+            {
+                "q": "Why is the probability of a policy remaining in force important to profit testing (via the profit signature)?",
+                "a": "Because expected total profit depends on how many of the original policies are still generating profit cashflows each year."
+            },
+            {
+                "q": "What could cause profit testing results to change even if the premium and product design stay the same?",
+                "a": "A change in assumptions (e.g. mortality, expenses, lapses, investment returns) used for the projection."
+            },
+            {
+                "q": "How would profit testing be adapted for a unit-linked contract, compared to a conventional contract?",
+                "a": "It would separately project unit fund growth and non-unit fund cashflows, summing the non-unit profit signature much as for a conventional contract."
+            }
+        ]
+    },
+    {
+        "id": "m25",
+        "title": "Reserving aspects of profit testing",
+        "description": "Shows how gross premium reserves can be derived from, and incorporated into, the cashflow projection used for profit testing — including 'zeroising' for unit-linked contracts.",
+        "cards": [
+            {
+                "q": "How can gross premium reserves be computed using a cashflow projection model, rather than the standard prospective formula?",
+                "a": "By projecting expected future cashflows year by year and finding the reserve needed at each duration so that, with future premiums, it exactly covers future benefits and expenses."
+            },
+            {
+                "q": "Why might an insurer calculate reserves via profit testing rather than the standard prospective/retrospective formulas?",
+                "a": "It naturally extends to complex products (e.g. unit-linked, multiple decrements) where a simple closed-form reserve formula may not exist."
+            },
+            {
+                "q": "How does including reserves in a profit test change the year-by-year profit signature compared to ignoring reserves?",
+                "a": "It smooths profit emergence \\u2014 reserves capture money that would otherwise appear as an early profit, releasing it as the policy progresses."
+            },
+            {
+                "q": "What is the effect on first-year profit of holding a reserve at the end of the first year (compared to holding none)?",
+                "a": "First-year profit is reduced, since the increase in reserve is deducted from that year's cashflow."
+            },
+            {
+                "q": "How would 'zeroising' affect a unit-linked policy's projected profit signature?",
+                "a": "It removes any projected negative cashflows in later years (by holding a sufficient non-unit reserve upfront), though it reduces earlier profit to fund the reserve."
+            },
+            {
+                "q": "Why is zeroising particularly relevant to unit-linked products?",
+                "a": "Because unit-linked non-unit cashflows can naturally be negative in some future years, which a reserve can pre-fund to avoid future losses."
+            },
+            {
+                "q": "What information do you need to determine the required non-unit reserve at a given duration to zeroise future cashflows?",
+                "a": "The projected non-unit cashflows in all future years, discounted appropriately, identifying the reserve needed so no future year's cashflow is negative."
+            },
+            {
+                "q": "How does the reserving basis differ from the pricing/profit-testing basis, potentially?",
+                "a": "The reserving basis is often chosen more prudently (e.g. more cautious mortality, lower interest) than the best-estimate assumptions used for profit testing."
+            },
+            {
+                "q": "Why might a reserve calculated via cashflow projection differ from one calculated via the standard prospective formula, even for a simple product?",
+                "a": "If different (e.g. more prudent) assumptions are used for reserving than for the profit-testing projection, the resulting reserve figures would differ."
+            },
+            {
+                "q": "What role does the recursive reserve relationship play in profit testing calculations?",
+                "a": "It's effectively the mechanism by which reserve movements (increase in reserve, release on death) are built into each year's profit cashflow in the projection."
+            },
+            {
+                "q": "How would gross premium reserves computed via profit testing be validated against a formula-based reserve?",
+                "a": "By checking that, under the same reserving assumptions, the reserve implied by the projected cashflows matches the standard prospective reserve formula result."
+            },
+            {
+                "q": "What happens to the profit signature of a policy if reserves are set higher than the minimum needed to avoid future losses?",
+                "a": "Earlier profit is further reduced, and later profit correspondingly increases as the excess reserve is released."
+            },
+            {
+                "q": "Why is it important for reserves derived via profit testing to be non-negative at each duration for a unit-linked contract?",
+                "a": "A negative non-unit reserve would imply the insurer expects to extract more value than it has set aside, leaving it unable to cover a future shortfall."
+            },
+            {
+                "q": "How does the choice of risk discount rate in profit testing interact with reserve calculations?",
+                "a": "The risk discount rate values the emerging profit signature (after reserving), but the reserving calculation itself typically uses separate, often more prudent, assumptions."
+            },
+            {
+                "q": "What's the overall link between profit testing and reserving aspects of profit testing?",
+                "a": "Profit testing introduces the cashflow projection technique itself; reserving aspects apply and extend that same technique specifically to derive and validate reserves, including zeroising for unit-linked contracts."
+            }
+        ]
+    }
+],
 };
