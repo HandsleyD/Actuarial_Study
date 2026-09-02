@@ -445,6 +445,11 @@ main {
   max-width: 640px;
 }
 
+.mixed-session-btn {
+  margin-top: 14px;
+  font-weight: 700;
+}
+
 .module-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -648,6 +653,22 @@ main {
   top: 14px;
   right: 18px;
   font-size: 1.3rem;
+}
+
+.flashcard-source {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 3px 10px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.flashcard-source:hover {
+  text-decoration: underline;
 }
 
 .flashcard-label {

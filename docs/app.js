@@ -64,6 +64,40 @@ function currentSequence(code, moduleId, def) {
   return Array.from({ length: def.cards.length }, (_, i) => i);
 }
 
+/* ---------- mixed session (across every module in a subject) ---------- */
+
+const mixedState = { code: null, cardIndex: 0, revealed: false, typed: "", entries: [], _lastKey: "" };
+
+function subjectMasteryTotals(code) {
+  const modules = MODULES[code] || [];
+  const fd = flashData[code];
+  const mastery = (fd && fd.mastery) || {};
+  let total = 0;
+  let masteredCount = 0;
+  for (const mod of modules) {
+    total += mod.cards.length;
+    const modMastery = mastery[mod.id] || {};
+    masteredCount += Object.values(modMastery).filter(Boolean).length;
+  }
+  return { total, masteredCount };
+}
+
+function generateMixedSession(code) {
+  const modules = MODULES[code] || [];
+  const fd = flashData[code];
+  const mastery = (fd && fd.mastery) || {};
+  const unmastered = [];
+  const mastered = [];
+  for (const mod of modules) {
+    const modMastery = mastery[mod.id] || {};
+    mod.cards.forEach((c, i) => {
+      const entry = { moduleId: mod.id, cardIdx: i };
+      (modMastery[i] ? mastered : unmastered).push(entry);
+    });
+  }
+  return [...shuffleArray(unmastered), ...shuffleArray(mastered)].slice(0, SESSION_SIZE);
+}
+
 const RANKS = [
   { min: 0, label: "Trainee Actuary" },
   { min: 5, label: "Student Actuary" },
@@ -385,6 +419,33 @@ async function scoreCard(code, moduleId, idx, sufficient) {
   }
 }
 
+async function scoreMixedCard(code, moduleId, idx, sufficient) {
+  const token = getToken();
+  if (!token) {
+    openSettings();
+    showBanner("Add a GitHub token in Settings to save flashcard scores.", true);
+    return;
+  }
+
+  document.querySelectorAll(".score-btn").forEach((b) => (b.disabled = true));
+
+  try {
+    const data = await enqueue(`flash:${code}`, () => saveMastery(code, moduleId, idx, sufficient, token));
+    flashData[code] = { mastery: data, sha: flashData[code] ? flashData[code].sha : null };
+
+    mixedState.revealed = false;
+    mixedState.typed = "";
+    mixedState.cardIndex = Math.min(mixedState.entries.length - 1, mixedState.cardIndex + 1);
+
+    renderMixedView(code);
+    renderGameBar();
+    hideBanner();
+  } catch (e) {
+    showBanner(`Could not save score: ${e.message}`, true);
+    renderMixedView(code);
+  }
+}
+
 /* ---------- request queueing (avoid concurrent PUTs to the same file) ---------- */
 
 const requestQueues = {};
@@ -585,17 +646,29 @@ function renderSubjectView(code) {
       .join("")}</div>`;
   }
 
+  const totalCards = modDefs.reduce((s, m) => s + m.cards.length, 0);
+
   el.innerHTML = `
     <button class="back-link" id="backToHome">&larr; All subjects</button>
     <div class="subject-head">
       <div class="subject-code">${code}</div>
       <h2>${info.name}</h2>
       ${info.blurb ? `<p class="subject-blurb">${info.blurb}</p>` : ""}
+      ${
+        totalCards > 0
+          ? `<button class="btn primary mixed-session-btn" id="startMixed">&#128256; Mixed session &mdash; 10 random cards across all of ${code}</button>`
+          : ""
+      }
     </div>
     ${modulesHtml}
   `;
 
   document.getElementById("backToHome").addEventListener("click", () => navigate("#/"));
+
+  const mixedBtn = document.getElementById("startMixed");
+  if (mixedBtn) {
+    mixedBtn.addEventListener("click", () => navigate(`#/${code}/mixed`));
+  }
 
   el.querySelectorAll(".status-badge").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -752,6 +825,127 @@ function renderFlashView(code, moduleId) {
   }
 }
 
+/* ---------- mixed session view ---------- */
+
+function renderMixedView(code) {
+  const el = document.getElementById("mixedView");
+  const modules = MODULES[code] || [];
+  const info = SUBJECTS[code] || { name: code };
+
+  if (!modules.length || !mixedState.entries.length) {
+    el.innerHTML = `
+      <button class="back-link" id="backToSubjectMixed">&larr; ${code}</button>
+      <div class="flash-empty">
+        <h2>Mixed session</h2>
+        <p>No flashcards for ${code} yet.</p>
+      </div>`;
+    document.getElementById("backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
+    return;
+  }
+
+  if (mixedState.cardIndex >= mixedState.entries.length) mixedState.cardIndex = 0;
+  const pos = mixedState.cardIndex;
+  const entry = mixedState.entries[pos];
+  const def = modules.find((m) => m.id === entry.moduleId);
+  const card = def.cards[entry.cardIdx];
+
+  const fd = flashData[code] || { mastery: {} };
+  const moduleMastery = (fd.mastery && fd.mastery[entry.moduleId]) || {};
+  const isMastered = !!moduleMastery[entry.cardIdx];
+  const { total, masteredCount } = subjectMasteryTotals(code);
+
+  const dots = mixedState.entries
+    .map((e, i) => {
+      const eMastery = (fd.mastery && fd.mastery[e.moduleId]) || {};
+      const m = !!eMastery[e.cardIdx];
+      const active = i === pos;
+      return `<button class="card-dot ${m ? "mastered" : ""} ${active ? "active" : ""}" data-idx="${i}" title="Card ${i + 1} (${e.moduleId.toUpperCase()})">${m ? "&#11088;" : i + 1}</button>`;
+    })
+    .join("");
+
+  el.innerHTML = `
+    <button class="back-link" id="backToSubjectMixed">&larr; ${code}</button>
+    <div class="flash-head">
+      <div class="flash-title-row">
+        <h2>Mixed session &mdash; ${info.name}</h2>
+        <span class="flash-progress">${masteredCount}/${total} mastered</span>
+      </div>
+      <div class="flash-progress-track"><div class="flash-progress-fill" style="width:${Math.round((masteredCount / total) * 100)}%"></div></div>
+    </div>
+    <div class="flash-mode-tabs">
+      <span class="mode-tab active">Session (${mixedState.entries.length})</span>
+      <button class="btn shuffle-btn" id="shuffleMixedBtn">&#128256; New session</button>
+    </div>
+    <div class="card-dots">${dots}</div>
+    <div class="flashcard ${isMastered ? "is-mastered" : ""}">
+      ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
+      <a class="flashcard-source" href="#/${code}/${entry.moduleId}">${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
+      <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length}</div>
+      <div class="flashcard-question">${card.q}</div>
+      ${
+        !mixedState.revealed
+          ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${mixedState.typed}</textarea>
+             <button class="btn primary" id="revealBtn">Reveal answer</button>`
+          : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+             <div class="flash-score-row">
+               <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
+               <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
+             </div>`
+      }
+    </div>
+    <div class="flash-nav">
+      <button class="btn" id="prevCard" ${pos === 0 ? "disabled" : ""}>&larr; Prev</button>
+      <button class="btn" id="nextCard" ${pos === mixedState.entries.length - 1 ? "disabled" : ""}>Next &rarr;</button>
+    </div>
+  `;
+
+  document.getElementById("backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
+
+  document.getElementById("shuffleMixedBtn").addEventListener("click", () => {
+    mixedState.entries = generateMixedSession(code);
+    mixedState.cardIndex = 0;
+    mixedState.revealed = false;
+    mixedState.typed = "";
+    renderMixedView(code);
+  });
+
+  el.querySelectorAll(".card-dot").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      mixedState.cardIndex = Number(btn.dataset.idx);
+      mixedState.revealed = false;
+      mixedState.typed = "";
+      renderMixedView(code);
+    });
+  });
+
+  document.getElementById("prevCard").addEventListener("click", () => {
+    mixedState.cardIndex = Math.max(0, pos - 1);
+    mixedState.revealed = false;
+    mixedState.typed = "";
+    renderMixedView(code);
+  });
+  document.getElementById("nextCard").addEventListener("click", () => {
+    mixedState.cardIndex = Math.min(mixedState.entries.length - 1, pos + 1);
+    mixedState.revealed = false;
+    mixedState.typed = "";
+    renderMixedView(code);
+  });
+
+  if (!mixedState.revealed) {
+    const ta = document.getElementById("answerInput");
+    ta.addEventListener("input", () => {
+      mixedState.typed = ta.value;
+    });
+    document.getElementById("revealBtn").addEventListener("click", () => {
+      mixedState.revealed = true;
+      renderMixedView(code);
+    });
+  } else {
+    document.getElementById("scoreGood").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true));
+    document.getElementById("scoreBad").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false));
+  }
+}
+
 /* ---------- data-change hooks ---------- */
 
 function onExamDataChanged(code) {
@@ -767,6 +961,7 @@ function onFlashDataChanged(code) {
   const r = parseHash();
   if (r.view === "subject" && r.exam === code) renderSubjectView(code);
   if (r.view === "flash" && r.exam === code) renderFlashView(code, r.module);
+  if (r.view === "mixed" && r.exam === code) renderMixedView(code);
 }
 
 /* ---------- routing ---------- */
@@ -776,6 +971,7 @@ function parseHash() {
   if (!h) return { view: "home" };
   const parts = h.split("/").filter(Boolean);
   if (parts.length === 1) return { view: "subject", exam: parts[0].toUpperCase() };
+  if (parts[1].toLowerCase() === "mixed") return { view: "mixed", exam: parts[0].toUpperCase() };
   return { view: "flash", exam: parts[0].toUpperCase(), module: parts[1].toLowerCase() };
 }
 
@@ -788,6 +984,7 @@ function renderRoute() {
   document.getElementById("homeView").hidden = r.view !== "home";
   document.getElementById("subjectView").hidden = r.view !== "subject";
   document.getElementById("flashView").hidden = r.view !== "flash";
+  document.getElementById("mixedView").hidden = r.view !== "mixed";
   window.scrollTo(0, 0);
 
   if (r.view === "home") {
@@ -806,6 +1003,16 @@ function renderRoute() {
       flashState._lastKey = key;
     }
     renderFlashView(r.exam, r.module);
+  } else if (r.view === "mixed") {
+    const key = `mixed:${r.exam}`;
+    if (mixedState._lastKey !== key) {
+      mixedState.cardIndex = 0;
+      mixedState.revealed = false;
+      mixedState.typed = "";
+      mixedState.entries = generateMixedSession(r.exam);
+      mixedState._lastKey = key;
+    }
+    renderMixedView(r.exam);
   }
 }
 
