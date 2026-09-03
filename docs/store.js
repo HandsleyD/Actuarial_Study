@@ -5,7 +5,7 @@
 // this file, not the UI code.
 //
 // Behaviour:
-//   - No SUPABASE_URL/SUPABASE_ANON_KEY configured (see config.js): everything
+//   - No SUPABASE_URL/SUPABASE_PUBLISHABLE_KEY configured (see config.js): everything
 //     is read/written to localStorage only. No login, no cross-device sync,
 //     but the site is fully usable.
 //   - Configured but signed out: same as above (local-only), plus the option
@@ -32,7 +32,7 @@ const Store = (function () {
 
   function isConfigured() {
     return typeof SUPABASE_URL === "string" && SUPABASE_URL.length > 0 &&
-      typeof SUPABASE_ANON_KEY === "string" && SUPABASE_ANON_KEY.length > 0;
+      typeof SUPABASE_PUBLISHABLE_KEY === "string" && SUPABASE_PUBLISHABLE_KEY.length > 0;
   }
 
   function userKey() {
@@ -107,7 +107,7 @@ const Store = (function () {
       readyPromise = Promise.resolve();
       return readyPromise;
     }
-    client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    client = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
     readyPromise = client.auth
       .getSession()
       .then(({ data }) => {

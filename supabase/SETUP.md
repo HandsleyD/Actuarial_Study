@@ -4,6 +4,12 @@ Without this, the study site works fine on its own — progress just stays on
 whatever device you're using. This adds email/password login and syncs
 module status, flashcard mastery, and your study streak across devices.
 
+A note on naming: newer Supabase projects show **"Publishable key"** and
+**"Secret key"** in the dashboard where older projects showed **"anon"** and
+**"service_role"**. Same two slots, same privileges — this guide uses the
+newer names throughout since that's what a new project shows; if yours shows
+the old ones instead, "anon" = publishable key, "service_role" = secret key.
+
 ## 1. Create a Supabase project
 
 1. Go to [supabase.com](https://supabase.com) and create a free account/project.
@@ -31,16 +37,16 @@ off: **Authentication → Providers → Email → uncheck "Confirm email"**.
 (Leave it on if you'd rather have the extra check — you'll just need to click
 the confirmation link Supabase emails you after signing up, once.)
 
-## 4. Get your API keys
+## 4. Get your Publishable key
 
-**Project Settings → API** (or **Data API**, depending on the Supabase
-version). You need two values:
+**Project Settings → API Keys**. You need two values:
 
 - **Project URL** — looks like `https://xxxxxxxxxxxx.supabase.co`
-- **anon / public key** — a long token labelled `anon` or `publishable`
+- **Publishable key** — starts with `sb_publishable_...`
 
-Do **not** use the `service_role` key — that one bypasses Row Level Security
-entirely and must never go in client-side code.
+Do **not** use the **Secret key** (`sb_secret_...`) here — that one bypasses
+Row Level Security entirely and must never go in client-side code. It's only
+used later, in step 6, and only outside the browser.
 
 ## 5. Paste them into the site
 
@@ -48,13 +54,13 @@ Open [`docs/config.js`](../docs/config.js) and fill in the two blank strings:
 
 ```js
 const SUPABASE_URL = "https://xxxxxxxxxxxx.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOi...";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_...";
 ```
 
-Commit and push. The anon key is safe to commit — it's designed to be public;
-`schema.sql`'s Row Level Security policies are what actually keep your data
-private. The site will pick up the change automatically once it's live and
-show a sign-in option instead of "cloud sync isn't set up yet."
+Commit and push. The publishable key is safe to commit — it's designed to be
+public; `schema.sql`'s Row Level Security policies are what actually keep
+your data private. The site will pick up the change automatically once it's
+live and show a sign-in option instead of "cloud sync isn't set up yet."
 
 ## Using it
 
@@ -76,38 +82,49 @@ and a scheduled GitHub Action that mirror Supabase's status **into**
 This step is optional; skip it if you're fine with `progress.md` just being
 whatever it was last set to.
 
-**What it needs, and why it's not the anon key:** the mirror has to read
-every module's status regardless of who's "logged in" as far as the script
-is concerned, so it uses Supabase's `service_role` key, which bypasses Row
-Level Security. That's fine here because this key only ever runs
-server-side (a GitHub Action, or your own machine) — it must **never** go in
-`docs/config.js` or any other file that ships to the browser. This is the
-same category of thing as the GitHub PAT the site used to hold in
-`localStorage`; the whole point of the Supabase move was getting that kind
-of credential out of client-side storage, so don't undo that here.
+**What it needs, and why it's not the publishable key:** the mirror has to
+read every module's status regardless of who's "logged in" as far as the
+script is concerned, so it uses Supabase's **Secret key**
+(`sb_secret_...`), which bypasses Row Level Security. That's fine here
+because this key only ever runs server-side (a GitHub Action, or your own
+machine) — it must **never** go in `docs/config.js` or any other file that
+ships to the browser. Supabase enforces this too: secret keys return 401 if
+a request looks like it came from a browser. This is the same category of
+thing as the GitHub PAT the site used to hold in `localStorage`; the whole
+point of the Supabase move was getting that kind of credential out of
+client-side storage, so don't undo that here.
 
-1. **Get the service_role key**: Project Settings → API → the key labelled
-   `service_role` (not `anon`).
+1. **Get the Secret key**: Project Settings → API Keys → the key labelled
+   **Secret key** (not Publishable).
 2. **Add repo secrets**: in the GitHub repo, Settings → Secrets and
    variables → Actions → New repository secret. Add two:
    - `SUPABASE_URL` — same project URL as in `docs/config.js`
-   - `SUPABASE_SERVICE_ROLE_KEY` — the service_role key from step 1
+   - `SUPABASE_SECRET_KEY` — the Secret key from step 1
 3. That's it — [`.github/workflows/sync-progress.yml`](../.github/workflows/sync-progress.yml)
    runs daily and commits any status changes automatically. You can also
    trigger it on demand from the repo's **Actions** tab → "Sync progress.md
    from Supabase" → **Run workflow**.
 
 **Running it yourself instead**, without the Action (e.g. to sync right
-before a study session, or if you'd rather not store the service_role key in
+before a study session, or if you'd rather not store the Secret key in
 GitHub at all):
 
 ```bash
 SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co \
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi... \
+SUPABASE_SECRET_KEY=sb_secret_... \
 node scripts/sync-progress-md.mjs
 ```
 
 This only writes files locally — review the diff and commit/push yourself
-when you're happy with it. Don't put the service_role key in a file; pass it
-as an environment variable each time (or keep it in a password manager and
-paste it into the shell command when you need it).
+when you're happy with it. Don't put the Secret key in a file; pass it as an
+environment variable each time (or keep it in a password manager and paste
+it into the shell command when you need it).
+
+## If your project still uses the old anon/service_role keys
+
+Some existing Supabase projects (created before the newer key format) still
+show **anon** and **service_role** as long `eyJ...` tokens instead of the
+`sb_publishable_.../sb_secret_...` format above. Both formats work
+identically everywhere in this repo — just use anon wherever this guide says
+Publishable key, and service_role wherever it says Secret key. Nothing else
+changes.

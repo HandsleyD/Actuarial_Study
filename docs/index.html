@@ -93,7 +93,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- Pinned rather than @2 (floating tag): recent-enough to speak Supabase's
+     newer sb_publishable_/sb_secret_ API key format, which older 2.x
+     releases predate. createClient() itself needs no code changes for the
+     new format either way -- see supabase/SETUP.md. -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
 <script src="store.js"></script>
 <script src="data.js?v=8"></script>
