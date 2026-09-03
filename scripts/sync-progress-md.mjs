@@ -19,18 +19,22 @@
 //
 // Requires two environment variables (never commit either of these):
 //   SUPABASE_URL
-//   SUPABASE_SERVICE_ROLE_KEY
+//   SUPABASE_SECRET_KEY
 //
-// The service_role key bypasses Row Level Security, which is exactly why it
-// must never appear in the site's client-side code (docs/config.js uses the
-// separate, RLS-restricted anon key instead). This script only ever runs
-// server-side: as a GitHub Action (see .github/workflows/sync-progress.yml,
-// key stored in repo secrets) or locally on demand. It must never be ported
-// into docs/ or run from a browser.
+// This is the key labelled "Secret key" (sb_secret_...) in newer Supabase
+// projects' dashboards, or "service_role" (a long eyJ... JWT) in older ones
+// -- same privileges either way. It bypasses Row Level Security, which is
+// exactly why it must never appear in the site's client-side code
+// (docs/config.js uses the separate, RLS-restricted publishable/anon key
+// instead). This script only ever runs server-side: as a GitHub Action (see
+// .github/workflows/sync-progress.yml, key stored in repo secrets) or
+// locally on demand. It must never be ported into docs/ or run from a
+// browser -- Supabase's secret keys are explicitly guarded against that:
+// they return 401 if the request looks like it came from a browser.
 //
 // Usage:
 //   SUPABASE_URL=https://xxxx.supabase.co \
-//   SUPABASE_SERVICE_ROLE_KEY=eyJ... \
+//   SUPABASE_SECRET_KEY=sb_secret_... \
 //   node scripts/sync-progress-md.mjs
 
 import { readFile, writeFile, readdir } from "node:fs/promises";
@@ -38,10 +42,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
-const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const SECRET_KEY = process.env.SUPABASE_SECRET_KEY;
 
-if (!SUPABASE_URL || !SERVICE_KEY) {
-  console.error("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY before running this script.");
+if (!SUPABASE_URL || !SECRET_KEY) {
+  console.error("Set SUPABASE_URL and SUPABASE_SECRET_KEY before running this script.");
   process.exit(1);
 }
 
@@ -61,8 +65,14 @@ const GENERATED_NOTE = [
 
 async function fetchAllStatuses() {
   const url = `${SUPABASE_URL.replace(/\/$/, "")}/rest/v1/module_status?select=exam_code,module_id,status`;
+  // apikey header only. Newer sb_secret_... keys aren't JWTs, and if the same
+  // key is also sent as `Authorization: Bearer`, the platform tries to parse
+  // it as one and rejects the request with "Invalid JWT" -- apikey alone is
+  // sufficient to authenticate as service_role (bypassing RLS) whether the
+  // project uses a legacy service_role JWT or a new secret key, so this
+  // works against either without needing to know which one it's given.
   const res = await fetch(url, {
-    headers: { apikey: SERVICE_KEY, Authorization: `Bearer ${SERVICE_KEY}` },
+    headers: { apikey: SECRET_KEY },
   });
   if (!res.ok) {
     throw new Error(`Supabase fetch failed (${res.status}): ${await res.text()}`);

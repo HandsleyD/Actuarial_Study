@@ -11,8 +11,8 @@
 --   study_streak        — daily study-streak counter
 --
 -- Row Level Security is what actually protects this data — the app talks to
--- Supabase using the public anon key, which by itself grants no special
--- access. Each policy below restricts a user to rows where user_id matches
+-- Supabase using the public publishable/anon key, which by itself grants no
+-- special access. Each policy below restricts a user to rows where user_id matches
 -- their own auth.uid(), so one signed-in user can never read or write
 -- another's progress, however the request is crafted.
 

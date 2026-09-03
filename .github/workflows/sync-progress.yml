@@ -5,9 +5,10 @@ name: Sync progress.md from Supabase
 # hand from the Actions tab. See scripts/sync-progress-md.mjs for the sync
 # logic and supabase/SETUP.md for the secrets this needs.
 #
-# Credentials note: SUPABASE_SERVICE_ROLE_KEY is a repo secret, injected only
-# into this workflow's environment -- it never touches the site or the
-# browser. The commit/push at the end uses the workflow's own short-lived
+# Credentials note: SUPABASE_SECRET_KEY (the dashboard's "Secret key", or
+# "service_role" on older projects) is a repo secret, injected only into
+# this workflow's environment -- it never touches the site or the browser.
+# The commit/push at the end uses the workflow's own short-lived
 # GITHUB_TOKEN (via the `permissions` block below), not a personal access
 # token stored anywhere.
 
@@ -32,7 +33,7 @@ jobs:
       - name: Sync module status from Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: node scripts/sync-progress-md.mjs
 
       - name: Commit and push if progress.md changed
