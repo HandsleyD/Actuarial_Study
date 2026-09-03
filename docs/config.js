@@ -12,5 +12,5 @@
 // Leave both blank to run the site in local-only mode: it still works fully,
 // flashcard/module progress just stays on the current device instead of
 // syncing to an account.
-const SUPABASE_URL = "";
-const SUPABASE_PUBLISHABLE_KEY = "";
+const SUPABASE_URL = "https://wcrrobslfcngnwgpsnqa.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_t_KmKf3PSxtnNcZuli1JDg_2tlnhXWd";
