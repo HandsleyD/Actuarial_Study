@@ -14,10 +14,8 @@ const EXAMS = [
 ];
 
 const STATUSES = ["Not started", "In progress", "Done"];
-const TOKEN_KEY = "actuarialStudyPAT";
-const STREAK_KEY = "actuarialStudyStreak";
 
-const examData = {}; // code -> { modules: [{id, status, notes}], sha, text }
+const examData = {}; // code -> { modules: [{id, status, notes}] }
 const flashData = {}; // code -> { mastery: { m01: { "0": true, ... } }, sha }
 const SESSION_SIZE = 10;
 const flashState = {
@@ -110,14 +108,6 @@ function pathFor(code) {
   return `maths-study/exams/${code}/progress.md`;
 }
 
-function pathForFlash(code) {
-  return `maths-study/exams/${code}/flashcards/mastery.json`;
-}
-
-function getToken() {
-  return localStorage.getItem(TOKEN_KEY) || "";
-}
-
 function renderMath(el) {
   if (window.renderMathInElement) {
     renderMathInElement(el, {
@@ -137,19 +127,6 @@ function statusClass(status) {
   return "not-started";
 }
 
-function toBase64(str) {
-  const bytes = new TextEncoder().encode(str);
-  let binary = "";
-  bytes.forEach((b) => (binary += String.fromCharCode(b)));
-  return btoa(binary);
-}
-
-function fromBase64(b64) {
-  const binary = atob(b64.replace(/\n/g, ""));
-  const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
-  return new TextDecoder().decode(bytes);
-}
-
 function parseModules(text) {
   const rows = [];
   const lines = text.split("\n");
@@ -163,31 +140,6 @@ function parseModules(text) {
   return rows;
 }
 
-function setModuleStatus(text, moduleId, newStatus) {
-  const lines = text.split("\n");
-  const rowRe = new RegExp(`^(\\|\\s*${moduleId}\\s*\\|)([^|]*)(\\|.*)$`, "i");
-  for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(rowRe);
-    if (m) {
-      lines[i] = `${m[1]} ${newStatus} ${m[3]}`;
-      break;
-    }
-  }
-  return lines.join("\n");
-}
-
-function showBanner(msg, isError) {
-  const el = document.getElementById("statusBanner");
-  el.textContent = msg;
-  el.hidden = false;
-  el.style.background = isError ? "var(--progress-bg)" : "var(--accent-soft)";
-  el.style.color = isError ? "var(--progress)" : "var(--accent)";
-}
-
-function hideBanner() {
-  document.getElementById("statusBanner").hidden = true;
-}
-
 /* ---------- progress.md (module status) ---------- */
 
 async function fetchRaw(code) {
@@ -197,35 +149,31 @@ async function fetchRaw(code) {
   return res.text();
 }
 
-async function fetchViaApi(code) {
-  const token = getToken();
-  const res = await fetch(
-    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${pathFor(code)}?ref=${CONFIG.branch}`,
-    {
-      headers: token
-        ? { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" }
-        : { Accept: "application/vnd.github+json" },
-    }
-  );
-  if (!res.ok) throw new Error(`api fetch failed (${res.status})`);
-  const json = await res.json();
-  return { text: fromBase64(json.content), sha: json.sha };
-}
-
+// Module status baseline: read-only, unauthenticated fetch of progress.md
+// from the public repo. This stays as-is (no Supabase involved) since it's
+// also the file your study-session chats edit directly — it's a useful
+// starting point for anyone loading the site, logged in or not. Once
+// Supabase is configured and you're signed in, any status you toggle on the
+// site is layered on top of this baseline and saved to your account, not
+// written back to progress.md.
 async function loadExam(code) {
+  let baseModules = null;
   try {
-    let text, sha;
-    if (getToken()) {
-      const r = await fetchViaApi(code);
-      text = r.text;
-      sha = r.sha;
-    } else {
-      text = await fetchRaw(code);
-      sha = null;
-    }
-    examData[code] = { modules: parseModules(text), sha, text };
+    const text = await fetchRaw(code);
+    baseModules = parseModules(text);
   } catch (e) {
-    examData[code] = { modules: [], error: true };
+    baseModules = null;
+  }
+
+  const overrides = await Store.loadModuleStatus(code);
+
+  if (baseModules) {
+    examData[code] = { modules: baseModules.map((m) => ({ ...m, status: overrides[m.id] || m.status })) };
+  } else {
+    const ids = Object.keys(overrides).sort();
+    examData[code] = ids.length
+      ? { modules: ids.map((id) => ({ id, status: overrides[id], notes: "" })) }
+      : { modules: [], error: true };
   }
   onExamDataChanged(code);
 }
@@ -240,126 +188,28 @@ function loadAll() {
   for (const code of EXAMS) loadExam(code);
 }
 
-async function saveModuleStatus(code, moduleId, next, token, attempt = 0) {
-  const { text, sha } = await fetchViaApi(code);
-  const newText = setModuleStatus(text, moduleId, next);
-
-  const res = await fetch(
-    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${pathFor(code)}`,
-    {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/vnd.github+json",
-      },
-      body: JSON.stringify({
-        message: `Update ${code} ${moduleId}: ${next}`,
-        content: toBase64(newText),
-        sha,
-        branch: CONFIG.branch,
-      }),
-    }
-  );
-
-  if (!res.ok) {
-    if (res.status === 409 && attempt === 0) {
-      return saveModuleStatus(code, moduleId, next, token, attempt + 1);
-    }
-    const body = await res.json().catch(() => ({}));
-    throw new Error(body.message || `save failed (${res.status})`);
-  }
-
-  return newText;
-}
-
-async function handleToggle(btn) {
+function handleToggle(btn) {
   const code = btn.dataset.exam;
   const moduleId = btn.dataset.module;
-  const token = getToken();
-
-  if (!token) {
-    openSettings();
-    showBanner("Add a GitHub token in Settings to save progress.", true);
-    return;
-  }
 
   const current = btn.textContent.trim();
   const idx = STATUSES.findIndex((s) => s.toLowerCase() === current.toLowerCase());
   const next = STATUSES[(idx + 1) % STATUSES.length];
 
-  btn.disabled = true;
-  const prevLabel = btn.textContent;
-  btn.textContent = "Saving…";
+  const data = examData[code];
+  const mod = data.modules.find((m) => m.id === moduleId);
+  if (mod) mod.status = next;
+  onExamDataChanged(code);
 
-  try {
-    const newText = await enqueue(code, () => saveModuleStatus(code, moduleId, next, token));
-
-    const data = examData[code];
-    const mod = data.modules.find((m) => m.id === moduleId);
-    if (mod) mod.status = next;
-    data.text = newText;
-    onExamDataChanged(code);
-    hideBanner();
-  } catch (e) {
-    btn.textContent = prevLabel;
-    showBanner(`Could not save ${code} ${moduleId}: ${e.message}`, true);
-  } finally {
-    btn.disabled = false;
-  }
+  Store.setModuleStatus(code, moduleId, next); // instant locally; syncs to your account in the background if signed in
+  renderSyncStatus();
 }
 
 /* ---------- flashcard mastery (per-card sufficient/insufficient) ---------- */
 
-async function fetchFlashRaw(code) {
-  const url = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${pathForFlash(code)}?t=${Date.now()}`;
-  const res = await fetch(url, { cache: "no-store" });
-  if (res.status === 404) return {};
-  if (!res.ok) throw new Error(`raw fetch failed (${res.status})`);
-  const text = await res.text();
-  try {
-    return JSON.parse(text);
-  } catch {
-    return {};
-  }
-}
-
-async function fetchFlashViaApi(code) {
-  const token = getToken();
-  const res = await fetch(
-    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${pathForFlash(code)}?ref=${CONFIG.branch}`,
-    {
-      headers: token
-        ? { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" }
-        : { Accept: "application/vnd.github+json" },
-    }
-  );
-  if (res.status === 404) return { data: {}, sha: null };
-  if (!res.ok) throw new Error(`api fetch failed (${res.status})`);
-  const json = await res.json();
-  let data = {};
-  try {
-    data = JSON.parse(fromBase64(json.content) || "{}");
-  } catch {
-    data = {};
-  }
-  return { data, sha: json.sha };
-}
-
 async function loadFlash(code) {
-  try {
-    let data, sha;
-    if (getToken()) {
-      const r = await fetchFlashViaApi(code);
-      data = r.data;
-      sha = r.sha;
-    } else {
-      data = await fetchFlashRaw(code);
-      sha = null;
-    }
-    flashData[code] = { mastery: data, sha };
-  } catch (e) {
-    flashData[code] = { mastery: {}, error: true };
-  }
+  const mastery = await Store.loadMastery(code);
+  flashData[code] = { mastery };
   onFlashDataChanged(code);
 }
 
@@ -367,106 +217,33 @@ function loadAllFlash() {
   for (const code of Object.keys(MODULES)) loadFlash(code);
 }
 
-async function saveMastery(code, moduleId, cardIdx, value, token, attempt = 0) {
-  const { data, sha } = await fetchFlashViaApi(code);
-  if (!data[moduleId]) data[moduleId] = {};
-  data[moduleId][String(cardIdx)] = value;
-  const newText = JSON.stringify(data, null, 2);
+function scoreCard(code, moduleId, idx, sufficient) {
+  Store.setMastery(code, moduleId, idx, sufficient); // instant locally; syncs in the background if signed in
+  flashData[code] = { mastery: Store.getMasteryCache(code) };
 
-  const res = await fetch(
-    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${pathForFlash(code)}`,
-    {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/vnd.github+json",
-      },
-      body: JSON.stringify({
-        message: `Update ${code} ${moduleId} flashcard ${cardIdx}: ${value ? "sufficient" : "insufficient"}`,
-        content: toBase64(newText),
-        sha: sha || undefined,
-        branch: CONFIG.branch,
-      }),
-    }
-  );
+  const def = (MODULES[code] || []).find((m) => m.id === moduleId);
+  const seq = def ? currentSequence(code, moduleId, def) : [];
 
-  if (!res.ok) {
-    if (res.status === 409 && attempt === 0) {
-      return saveMastery(code, moduleId, cardIdx, value, token, attempt + 1);
-    }
-    const body = await res.json().catch(() => ({}));
-    throw new Error(body.message || `save failed (${res.status})`);
-  }
+  flashState.revealed = false;
+  flashState.typed = "";
+  flashState.cardIndex = Math.min(seq.length - 1, flashState.cardIndex + 1);
 
-  return data;
+  renderFlashView(code, moduleId);
+  renderGameBar();
+  renderSyncStatus();
 }
 
-async function scoreCard(code, moduleId, idx, sufficient) {
-  const token = getToken();
-  if (!token) {
-    openSettings();
-    showBanner("Add a GitHub token in Settings to save flashcard scores.", true);
-    return;
-  }
+function scoreMixedCard(code, moduleId, idx, sufficient) {
+  Store.setMastery(code, moduleId, idx, sufficient);
+  flashData[code] = { mastery: Store.getMasteryCache(code) };
 
-  document.querySelectorAll(".score-btn").forEach((b) => (b.disabled = true));
+  mixedState.revealed = false;
+  mixedState.typed = "";
+  mixedState.cardIndex = Math.min(mixedState.entries.length - 1, mixedState.cardIndex + 1);
 
-  try {
-    const data = await enqueue(`flash:${code}`, () => saveMastery(code, moduleId, idx, sufficient, token));
-    flashData[code] = { mastery: data, sha: flashData[code] ? flashData[code].sha : null };
-
-    const def = (MODULES[code] || []).find((m) => m.id === moduleId);
-    const seq = def ? currentSequence(code, moduleId, def) : [];
-
-    flashState.revealed = false;
-    flashState.typed = "";
-    flashState.cardIndex = Math.min(seq.length - 1, flashState.cardIndex + 1);
-
-    renderFlashView(code, moduleId);
-    renderGameBar();
-    hideBanner();
-  } catch (e) {
-    showBanner(`Could not save score: ${e.message}`, true);
-    renderFlashView(code, moduleId);
-  }
-}
-
-async function scoreMixedCard(code, moduleId, idx, sufficient) {
-  const token = getToken();
-  if (!token) {
-    openSettings();
-    showBanner("Add a GitHub token in Settings to save flashcard scores.", true);
-    return;
-  }
-
-  document.querySelectorAll(".score-btn").forEach((b) => (b.disabled = true));
-
-  try {
-    const data = await enqueue(`flash:${code}`, () => saveMastery(code, moduleId, idx, sufficient, token));
-    flashData[code] = { mastery: data, sha: flashData[code] ? flashData[code].sha : null };
-
-    mixedState.revealed = false;
-    mixedState.typed = "";
-    mixedState.cardIndex = Math.min(mixedState.entries.length - 1, mixedState.cardIndex + 1);
-
-    renderMixedView(code);
-    renderGameBar();
-    hideBanner();
-  } catch (e) {
-    showBanner(`Could not save score: ${e.message}`, true);
-    renderMixedView(code);
-  }
-}
-
-/* ---------- request queueing (avoid concurrent PUTs to the same file) ---------- */
-
-const requestQueues = {};
-
-function enqueue(key, fn) {
-  const prev = requestQueues[key] || Promise.resolve();
-  const next = prev.catch(() => {}).then(fn);
-  requestQueues[key] = next;
-  return next;
+  renderMixedView(code);
+  renderGameBar();
+  renderSyncStatus();
 }
 
 /* ---------- gamification ---------- */
@@ -489,30 +266,6 @@ function rankFor(count) {
   return r;
 }
 
-function getStreak() {
-  try {
-    const raw = localStorage.getItem(STREAK_KEY);
-    return raw ? JSON.parse(raw).count : 0;
-  } catch {
-    return 0;
-  }
-}
-
-function bumpStreak() {
-  try {
-    const today = new Date().toISOString().slice(0, 10);
-    const raw = localStorage.getItem(STREAK_KEY);
-    const state = raw ? JSON.parse(raw) : { lastDate: null, count: 0 };
-    if (state.lastDate === today) return;
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-    state.count = state.lastDate === yesterday ? state.count + 1 : 1;
-    state.lastDate = today;
-    localStorage.setItem(STREAK_KEY, JSON.stringify(state));
-  } catch {
-    /* localStorage unavailable — streak just won't persist */
-  }
-}
-
 function renderGameBar() {
   const total = totalMasteredCards();
   const rank = rankFor(total);
@@ -522,7 +275,7 @@ function renderGameBar() {
   document.getElementById("starTotal").textContent = total;
   document.getElementById("rankLabel").textContent = rank.label;
   document.getElementById("rankSub").textContent = next ? `${next.min - total} to ${next.label}` : "Max rank!";
-  document.getElementById("streakValue").textContent = getStreak();
+  document.getElementById("streakValue").textContent = Store.getStreakCache().count;
 }
 
 /* ---------- home view ---------- */
@@ -1034,52 +787,154 @@ function renderRoute() {
   }
 }
 
-/* ---------- settings panel ---------- */
+/* ---------- account panel (Supabase auth) ---------- */
 
 function openSettings() {
   document.getElementById("settingsPanel").hidden = false;
-  updateTokenStatus();
+  renderAuthPanel();
 }
 
 function closeSettings() {
   document.getElementById("settingsPanel").hidden = true;
+  hideAuthMessage();
 }
 
-function updateTokenStatus() {
-  const el = document.getElementById("tokenStatus");
-  el.textContent = getToken() ? "A token is saved on this device." : "No token saved — browsing is read-only.";
+function renderAuthPanel() {
+  const unconfigured = document.getElementById("authUnconfigured");
+  const signedOut = document.getElementById("authSignedOut");
+  const signedIn = document.getElementById("authSignedIn");
+
+  if (!Store.isConfigured()) {
+    unconfigured.hidden = false;
+    signedOut.hidden = true;
+    signedIn.hidden = true;
+    return;
+  }
+  unconfigured.hidden = true;
+
+  const user = Store.getUser();
+  signedOut.hidden = !!user;
+  signedIn.hidden = !user;
+
+  if (user) {
+    document.getElementById("authEmailLabel").textContent = user.email || "(no email)";
+    const pending = Store.pendingCount();
+    document.getElementById("syncDetail").textContent =
+      pending > 0 ? `${pending} change${pending === 1 ? "" : "s"} waiting to sync.` : "All changes saved.";
+  }
 }
 
-function initSettings() {
+function showAuthMessage(msg, isError) {
+  const el = document.getElementById("authError");
+  el.textContent = msg;
+  el.hidden = false;
+  el.classList.toggle("is-error", !!isError);
+}
+
+function hideAuthMessage() {
+  document.getElementById("authError").hidden = true;
+}
+
+function renderSyncStatus() {
+  const el = document.getElementById("syncStatus");
+  if (!Store.isConfigured()) {
+    el.hidden = true;
+    return;
+  }
+  el.hidden = false;
+  const user = Store.getUser();
+  if (!user) {
+    el.textContent = "Local only";
+    el.className = "sync-status local";
+  } else {
+    const pending = Store.pendingCount();
+    if (pending > 0) {
+      el.textContent = `Syncing… (${pending})`;
+      el.className = "sync-status syncing";
+    } else {
+      el.textContent = "Synced";
+      el.className = "sync-status synced";
+    }
+  }
+  if (!document.getElementById("settingsPanel").hidden) renderAuthPanel();
+}
+
+function reloadAllForAuthChange() {
+  loadAll();
+  loadAllFlash();
+  Store.loadStreak().then(() => renderGameBar());
+}
+
+function initAuthUI() {
   document.getElementById("settingsBtn").addEventListener("click", openSettings);
   document.getElementById("closeSettings").addEventListener("click", closeSettings);
   document.getElementById("settingsPanel").addEventListener("click", (e) => {
     if (e.target.id === "settingsPanel") closeSettings();
   });
-  document.getElementById("saveToken").addEventListener("click", () => {
-    const val = document.getElementById("tokenInput").value.trim();
-    if (val) {
-      localStorage.setItem(TOKEN_KEY, val);
-      document.getElementById("tokenInput").value = "";
-      updateTokenStatus();
-      loadAll();
-      loadAllFlash();
+
+  document.getElementById("signInBtn").addEventListener("click", async () => {
+    hideAuthMessage();
+    const email = document.getElementById("authEmail").value.trim();
+    const password = document.getElementById("authPassword").value;
+    if (!email || !password) {
+      showAuthMessage("Enter an email and password.", true);
+      return;
+    }
+    try {
+      await Store.signIn(email, password);
+      document.getElementById("authPassword").value = "";
       closeSettings();
+    } catch (e) {
+      showAuthMessage(e.message || "Could not sign in.", true);
     }
   });
-  document.getElementById("clearToken").addEventListener("click", () => {
-    localStorage.removeItem(TOKEN_KEY);
-    updateTokenStatus();
+
+  document.getElementById("signUpBtn").addEventListener("click", async () => {
+    hideAuthMessage();
+    const email = document.getElementById("authEmail").value.trim();
+    const password = document.getElementById("authPassword").value;
+    if (!email || !password) {
+      showAuthMessage("Enter an email and password.", true);
+      return;
+    }
+    if (password.length < 6) {
+      showAuthMessage("Password must be at least 6 characters.", true);
+      return;
+    }
+    try {
+      await Store.signUp(email, password);
+      showAuthMessage("Account created. Check your email to confirm it, then sign in (unless confirmation is turned off).", false);
+    } catch (e) {
+      showAuthMessage(e.message || "Could not create account.", true);
+    }
   });
+
+  document.getElementById("signOutBtn").addEventListener("click", async () => {
+    await Store.signOut();
+    closeSettings();
+  });
+
+  Store.onAuthChange(() => {
+    renderAuthPanel();
+    renderSyncStatus();
+    reloadAllForAuthChange();
+  });
+  Store.onSyncChange(renderSyncStatus);
 }
 
 /* ---------- init ---------- */
 
 buildExamGrid();
-initSettings();
-bumpStreak();
-renderGameBar();
+initAuthUI();
 window.addEventListener("hashchange", renderRoute);
 renderRoute();
-loadAll();
-loadAllFlash();
+
+Store.init().then(() => {
+  renderSyncStatus();
+  loadAll();
+  loadAllFlash();
+  Store.loadStreak().then(() => {
+    Store.bumpStreak();
+    renderGameBar();
+  });
+});

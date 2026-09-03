@@ -4,20 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Actuarial Study Progress</title>
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-inner">
     <h1>Actuarial Study Progress</h1>
-    <button id="settingsBtn" class="icon-btn" title="Settings">&#9881;</button>
+    <div class="topbar-right">
+      <span id="syncStatus" class="sync-status" hidden></span>
+      <button id="settingsBtn" class="icon-btn" title="Account">&#9881;</button>
+    </div>
   </div>
 </header>
 
 <main>
-  <div id="statusBanner" class="banner" hidden></div>
-
   <div id="homeView">
     <section class="overview" id="overview">
       <div class="overview-stat">
@@ -61,29 +62,41 @@
 <div id="settingsPanel" class="settings-panel" hidden>
   <div class="settings-card">
     <div class="settings-header">
-      <h2>Settings</h2>
+      <h2>Account</h2>
       <button id="closeSettings" class="icon-btn" title="Close">&times;</button>
     </div>
-    <p>To save progress from this device, add a GitHub personal access token scoped only to this repository (<code>Contents: Read and write</code>). Without a token you can still browse progress read-only.</p>
-    <ol class="settings-steps">
-      <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></li>
-      <li>Repository access &rarr; Only select repositories &rarr; <code>Actuarial_Study</code></li>
-      <li>Permissions &rarr; Repository permissions &rarr; Contents &rarr; Read and write</li>
-      <li>Generate token, paste it below</li>
-    </ol>
-    <input id="tokenInput" type="password" placeholder="github_pat_..." autocomplete="off">
-    <div class="settings-actions">
-      <button id="saveToken" class="btn primary">Save token</button>
-      <button id="clearToken" class="btn">Remove token</button>
+
+    <div id="authUnconfigured" hidden>
+      <p class="settings-note">Cloud sync isn't set up on this site yet — progress is saved on this device only. See <code>supabase/SETUP.md</code> in the repo to add it.</p>
     </div>
-    <p class="settings-note">The token is stored only in this browser's local storage and is sent directly to api.github.com when you tick a module. It is never sent anywhere else.</p>
-    <div id="tokenStatus" class="token-status"></div>
+
+    <div id="authSignedOut" hidden>
+      <p class="settings-note">Sign in to sync progress across devices. Without an account, progress still saves on this device.</p>
+      <input id="authEmail" class="text-input" type="email" placeholder="Email" autocomplete="email">
+      <input id="authPassword" class="text-input" type="password" placeholder="Password" autocomplete="current-password">
+      <div class="settings-actions">
+        <button id="signInBtn" class="btn primary">Sign in</button>
+        <button id="signUpBtn" class="btn">Create account</button>
+      </div>
+      <div id="authError" class="auth-error" hidden></div>
+    </div>
+
+    <div id="authSignedIn" hidden>
+      <p class="settings-note">Signed in as <strong id="authEmailLabel"></strong>.</p>
+      <div id="syncDetail" class="settings-note"></div>
+      <div class="settings-actions">
+        <button id="signOutBtn" class="btn">Sign out</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="store.js"></script>
 <script src="data.js?v=8"></script>
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

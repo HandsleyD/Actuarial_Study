@@ -1,0 +1,48 @@
+name: Sync progress.md from Supabase
+
+# One-directional mirror: Supabase's module_status table -> each exam's
+# progress.md in the repo. Runs on a schedule and can also be triggered by
+# hand from the Actions tab. See scripts/sync-progress-md.mjs for the sync
+# logic and supabase/SETUP.md for the secrets this needs.
+#
+# Credentials note: SUPABASE_SERVICE_ROLE_KEY is a repo secret, injected only
+# into this workflow's environment -- it never touches the site or the
+# browser. The commit/push at the end uses the workflow's own short-lived
+# GITHUB_TOKEN (via the `permissions` block below), not a personal access
+# token stored anywhere.
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync module status from Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/sync-progress-md.mjs
+
+      - name: Commit and push if progress.md changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add maths-study/exams/*/progress.md
+          if git diff --cached --quiet; then
+            echo "No status changes to commit."
+          else
+            git commit -m "Sync module status from Supabase [skip ci]"
+            git push
+          fi
