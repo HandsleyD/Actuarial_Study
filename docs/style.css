@@ -130,14 +130,22 @@ main {
   color: var(--text-muted);
 }
 
-.banner {
-  background: var(--progress-bg);
-  color: var(--progress);
-  border-radius: 8px;
-  padding: 10px 14px;
-  margin-bottom: 16px;
-  font-size: 0.9rem;
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.sync-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.sync-status.local { background: var(--not-started-bg); color: var(--not-started); }
+.sync-status.syncing { background: var(--progress-bg); color: var(--progress); }
+.sync-status.synced { background: var(--done-bg); color: var(--done); }
 
 .exam-grid {
   display: grid;
@@ -259,23 +267,16 @@ main {
   align-items: center;
 }
 
-.settings-steps {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  padding-left: 20px;
-}
-
-.settings-steps a { color: var(--accent); }
-
-#tokenInput {
+.text-input {
   width: 100%;
   padding: 8px 10px;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--text);
-  font-family: monospace;
-  margin-bottom: 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
 .settings-actions {
@@ -302,11 +303,21 @@ main {
 .settings-note {
   font-size: 0.75rem;
   color: var(--text-muted);
+  margin: 0 0 10px;
 }
 
-.token-status {
-  font-size: 0.85rem;
-  margin-top: 4px;
+.auth-error {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.auth-error.is-error {
+  background: var(--progress-bg);
+  color: var(--progress);
 }
 
 /* ---------- gamification bar ---------- */
@@ -749,6 +760,3 @@ main {
   color: var(--text-muted);
 }
 
-#statusBanner {
-  margin-bottom: 16px;
-}
