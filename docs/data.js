@@ -7113,63 +7113,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the primary aim of Subject CP1?",
-                "a": "To teach how to apply actuarial, financial and statistical techniques from earlier subjects to real commercial and business problems."
+                "a": "To teach how to apply actuarial, financial and statistical techniques from earlier subjects to real commercial and business problems.",
+                "explain": "This opening card sets the tone for the whole of CP1: unlike CB1-3, CM1-2 and CS1-2, which each taught a self-contained body of technique, CP1 assumes you already have those tools and instead trains the judgement needed to pick the RIGHT tool for a messy, under-specified real-world problem — a skill this whole module set will keep testing rather than teaching afresh."
             },
             {
                 "q": "How does CP1 differ from the earlier CB/CM/CS subjects?",
-                "a": "It focuses on applying and combining prior technical knowledge to practical business scenarios, rather than teaching new theory."
+                "a": "It focuses on applying and combining prior technical knowledge to practical business scenarios, rather than teaching new theory.",
+                "explain": "Worth internalising early: almost nothing in CP1 is a wholly new formula to memorise — it's CB1's investment appraisal, CB2's market/government-failure concepts, CM1's time value of money and life contingencies, CM2's asset models, and CS1/CS2's statistical and risk modelling toolkits, all being reached for AS NEEDED within a business scenario, often several at once."
             },
             {
                 "q": "What kind of skills does CP1 particularly develop?",
-                "a": "Higher-order skills — judgement, application of technique to context, and communication of reasoned advice."
+                "a": "Higher-order skills — judgement, application of technique to context, and communication of reasoned advice.",
+                "explain": "This is precisely why CP1 exam answers look so different from a CS1 regression calculation or a CM2 Black-Scholes derivation — there is rarely one 'correct' numeric answer, and marks instead reward a well-reasoned chain of judgement that a fellow professional could follow and defend, which is exactly the skill Module 2's discussion of actuarial advice develops next."
             },
             {
                 "q": "Why is CP1 described as underpinning the Specialist Principles (SP) subjects?",
-                "a": "The general actuarial practice skills it covers are then applied more deeply within each specialist practice area at Fellowship level."
+                "a": "The general actuarial practice skills it covers are then applied more deeply within each specialist practice area at Fellowship level.",
+                "explain": "This explains why CP1's coverage feels broad rather than deep — modules like this one on products (Modules 5-8), investments (9-17), and risk/capital (25-39) are each a single, general-purpose pass over ground that SP1/SP2 (health/life), SP7/SP8 (general insurance), SP4 (pensions), and SP5/SP9 (investment/ERM) will each revisit in much greater depth for one specific practice area."
             },
             {
                 "q": "What broad areas of actuarial work does CP1 span?",
-                "a": "Financial products, investments, modelling, risk management, and financial reporting/capital management."
+                "a": "Financial products, investments, modelling, risk management, and financial reporting/capital management.",
+                "explain": "This is effectively the table of contents for the rest of CP1 — worth treating as a map: products and the environment they sit in (Modules 2-8), investments (9-17), modelling and pricing (18-24), risk management (25-31), and financial reporting/capital (32-39), each building on the last."
             },
             {
                 "q": "Why might CP1 questions often present a scenario rather than ask for a direct calculation?",
-                "a": "The exam tests the ability to apply concepts and exercise judgement in realistic situations, not just recall or compute."
+                "a": "The exam tests the ability to apply concepts and exercise judgement in realistic situations, not just recall or compute.",
+                "explain": "This is worth contrasting directly with CS1/CS2's question style: a CS1 exam asks you to calculate a confidence interval given data, while a CP1 question is more likely to describe a company facing a decision and ask what an actuary should consider or recommend — testing whether you can recognise WHICH concepts from the whole technical curriculum are relevant, not just whether you can execute one of them."
             },
             {
                 "q": "What subjects does CP1 explicitly build upon?",
-                "a": "CB1, CB2, CS1, CS2, CM1, and CM2."
+                "a": "CB1, CB2, CS1, CS2, CM1, and CM2.",
+                "explain": "This is a genuinely useful checklist to keep in mind while working through CP1 — whenever a module here feels unfamiliar, it's worth asking which of these six subjects it's drawing on (e.g. discounted cashflow analysis from CB1/CM1, market structure from CB2, statistical modelling from CS1/CS2, or asset pricing from CM2), since CP1 rarely explains that underlying technique again from scratch."
             },
             {
                 "q": "What does CP1 contribute to the Chartered Enterprise Risk Actuary credential?",
-                "a": "An essential introduction to Enterprise Risk Management concepts later developed fully in Subject SP9."
+                "a": "An essential introduction to Enterprise Risk Management concepts later developed fully in Subject SP9.",
+                "explain": "This is an early signal of just how much risk-management content CP1 itself contains — Modules 25-31 (risk governance, identification, acceptance, measurement, transfer, and other controls) are effectively a compact ERM course in miniature, which is exactly why this material transfers so directly into SP9's much deeper treatment."
             },
             {
                 "q": "Why is CP1 relevant across so many different practice areas (life, general insurance, pensions, investment)?",
-                "a": "Its core concepts (products, risk, modelling, capital) are common building blocks used throughout actuarial work."
+                "a": "Its core concepts (products, risk, modelling, capital) are common building blocks used throughout actuarial work.",
+                "explain": "This is the practical justification for why every actuarial student takes CP1 regardless of eventual specialism — a pension scheme, a life insurer, and a general insurer all face the SAME underlying questions (what product/promise is being made, what risks does that create, how is it modelled, priced, reserved for, and capitalised), just with different specific products and risks."
             },
             {
                 "q": "What is the general structure of the CP1 course, in terms of parts?",
-                "a": "Ten parts, covering products/environment, investments, modelling/pricing, risk management, and financial reporting/capital in turn."
+                "a": "Ten parts, covering products/environment, investments, modelling/pricing, risk management, and financial reporting/capital in turn.",
+                "explain": "This structure maps directly onto the module numbering used throughout this deck: environment/products (Modules 2-8), investments (9-17), modelling/data/pricing (18-24), risk management (25-31), and reporting/capital (32-39), with Module 40 closing out as a glossary of terms used throughout."
             },
             {
                 "q": "Why might understanding 'the external environment' be considered foundational to CP1?",
-                "a": "Actuarial advice and financial products don't exist in a vacuum — the wider context shapes what's appropriate and viable."
+                "a": "Actuarial advice and financial products don't exist in a vacuum — the wider context shapes what's appropriate and viable.",
+                "explain": "This directly previews Module 3, which develops a full PESTLE-style framework for external environment analysis — the point to carry forward is that almost every later CP1 topic (product design, pricing, risk, capital) is implicitly conditioned on assumptions about this external context, so getting it wrong upstream corrupts everything built on top of it."
             },
             {
                 "q": "What is meant by applying 'actuarial principles' to a problem, in the CP1 sense?",
-                "a": "Using concepts like risk pooling, time value of money, and probabilistic thinking to structure and solve practical business problems."
+                "a": "Using concepts like risk pooling, time value of money, and probabilistic thinking to structure and solve practical business problems.",
+                "explain": "Each of these three concepts has a home earlier in the curriculum worth recalling explicitly: risk pooling underlies why insurance and pensions work at all (CB2's risk-sharing ideas), time value of money is CM1's compound interest and discounting machinery, and probabilistic thinking is CS1/CS2's whole statistical toolkit — CP1's job is knowing when each applies."
             },
             {
                 "q": "Why does CP1 require synthesising knowledge from several earlier subjects at once?",
-                "a": "Real actuarial problems rarely fall neatly into one technical area — they typically require combining finance, statistics, and risk concepts."
+                "a": "Real actuarial problems rarely fall neatly into one technical area — they typically require combining finance, statistics, and risk concepts.",
+                "explain": "This is the single hardest adjustment moving from the technical subjects into CP1 — a real pricing decision, for instance, needs CM1/CM2's discounting and asset modelling, CS1/CS2's statistical assumption-setting, AND CB2's understanding of market structure and competitor behaviour, all reasoned about together rather than as separate exam questions."
             },
             {
                 "q": "What is a common feature of CP1 exam questions across different chapters?",
-                "a": "They tend to require reasoned, structured written answers applying concepts to a scenario, rather than a single numerical answer."
+                "a": "They tend to require reasoned, structured written answers applying concepts to a scenario, rather than a single numerical answer.",
+                "explain": "This restates and reinforces the earlier point about exam style — the practical implication is that CP1 revision looks different from CS1/CS2 revision: rather than drilling calculation methods, it's about building a mental checklist of considerations per topic (e.g. 'what regulatory, product-design, and risk factors are relevant here') that can be applied to an unfamiliar scenario on the day."
             },
             {
                 "q": "Why is CP1 sometimes seen as a bridge between the 'technical' and 'specialist' stages of the actuarial exams?",
-                "a": "It shows how the technical tools built up in CB/CM/CS combine to address real actuarial practice questions."
+                "a": "It shows how the technical tools built up in CB/CM/CS combine to address real actuarial practice questions.",
+                "explain": "This closing card of the orientation module names the arc the rest of CP1 will follow explicitly — everything from here on is really answering one question repeatedly, in different guises: given the technical toolkit already built, how does a working actuary actually use it to advise on real products, risks, and capital decisions."
             }
         ]
     },
@@ -7180,63 +7195,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the fundamental role of an actuary giving advice?",
-                "a": "To apply technical expertise and judgement to help a client or employer make informed financial decisions under uncertainty."
+                "a": "To apply technical expertise and judgement to help a client or employer make informed financial decisions under uncertainty.",
+                "explain": "This module turns from CP1's orientation (Module 1) to its first substantive topic — worth noting 'under uncertainty' is doing real work here: it's precisely the probabilistic, risk-based thinking built up across CM1/CM2 and CS1/CS2 that distinguishes actuarial advice from generic business or financial consulting."
             },
             {
                 "q": "Who might be the 'client' for actuarial advice?",
-                "a": "An employer, a board of directors, a regulator, trustees, or the general public, depending on the actuary's role."
+                "a": "An employer, a board of directors, a regulator, trustees, or the general public, depending on the actuary's role.",
+                "explain": "This range matters because it foreshadows the 'multiple stakeholders' tension explored later in this module — an actuary can genuinely have different clients on different engagements (e.g. advising trustees on a pension scheme versus advising an insurer's board), each with their own objectives that the advice must be tailored to."
             },
             {
                 "q": "Why must an actuary understand their client's objectives before giving advice?",
-                "a": "Advice that is technically correct but doesn't address the client's actual needs/objectives is of limited practical value."
+                "a": "Advice that is technically correct but doesn't address the client's actual needs/objectives is of limited practical value.",
+                "explain": "This is a genuinely common trap in CP1-style exam scenarios worth watching for — a numerically flawless piece of analysis that answers the wrong question (because the underlying business objective wasn't properly understood first) typically earns few marks, since CP1 explicitly rewards relevance and judgement over technical polish alone."
             },
             {
                 "q": "What does it mean for actuarial advice to be 'proportionate'?",
-                "a": "The depth and rigour of the analysis should be appropriate to the materiality and complexity of the decision being informed."
+                "a": "The depth and rigour of the analysis should be appropriate to the materiality and complexity of the decision being informed.",
+                "explain": "This is a recurring theme that resurfaces throughout CP1 (e.g. in modelling, Module 18, and risk measurement, Module 29) — a small, low-risk decision doesn't warrant the same exhaustive stochastic modelling as a decision that could threaten an insurer's solvency, and correctly judging that scale is itself part of exercising sound professional judgement."
             },
             {
                 "q": "Why is clear communication considered as important as technical accuracy in actuarial advice?",
-                "a": "Advice that isn't understood or actioned correctly by the client fails to achieve its purpose, however technically sound."
+                "a": "Advice that isn't understood or actioned correctly by the client fails to achieve its purpose, however technically sound.",
+                "explain": "This is exactly why CP1 exam answers are marked on communication as well as content — a sophisticated piece of analysis that a client (often a non-actuary board member or trustee) can't understand or act on has, in a very real sense, failed at its job, regardless of how correct the underlying maths is."
             },
             {
                 "q": "What professional duty does an actuary have beyond satisfying their client?",
-                "a": "A duty to the wider public interest and to uphold the standards of the actuarial profession, even where this may conflict with a client's immediate wishes."
+                "a": "A duty to the wider public interest and to uphold the standards of the actuarial profession, even where this may conflict with a client's immediate wishes.",
+                "explain": "This is the seed of a tension CP1 returns to repeatedly under different names — a client's short-term commercial interest and the actuary's public-interest duty (e.g. ensuring a pension scheme or insurer remains genuinely solvent) can genuinely diverge, and professional standards exist precisely to resolve that conflict in the public's favour."
             },
             {
                 "q": "Why might an actuary need to make their assumptions and limitations explicit when giving advice?",
-                "a": "So the client understands the basis and boundaries of the advice, and isn't misled about its certainty or scope."
+                "a": "So the client understands the basis and boundaries of the advice, and isn't misled about its certainty or scope.",
+                "explain": "This connects directly to Module 20's later treatment of setting assumptions — every actuarial calculation rests on assumptions (about mortality, inflation, investment returns, and so on) that could turn out wrong, so disclosing them transparently lets the client judge for themselves how much confidence to place in the resulting advice."
             },
             {
                 "q": "What is a key difference between advice given to a sophisticated institutional client versus an individual policyholder?",
-                "a": "The level of technical detail and explanation needed differs — advice must be tailored to the recipient's ability to understand and act on it."
+                "a": "The level of technical detail and explanation needed differs — advice must be tailored to the recipient's ability to understand and act on it.",
+                "explain": "This directly echoes Module 4's later distinction between retail and wholesale regulatory protection — the same underlying principle (less sophisticated recipients need more protection and more careful explanation) shows up both in how an actuary personally communicates advice and in how the wider regulatory system is structured around them."
             },
             {
                 "q": "Why might an actuary be required to consider alternative courses of action, not just evaluate one proposed option?",
-                "a": "To provide balanced advice that genuinely helps the client choose the best course of action, rather than just validating a predetermined decision."
+                "a": "To provide balanced advice that genuinely helps the client choose the best course of action, rather than just validating a predetermined decision.",
+                "explain": "This is worth remembering as an exam-answer strategy as much as a professional principle — a CP1 scenario that proposes one course of action is often implicitly testing whether you'll identify and weigh up genuine alternatives, rather than simply rubber-stamping the option presented in the question."
             },
             {
                 "q": "What role does judgement play in actuarial advice, beyond pure calculation?",
-                "a": "Actuarial problems often involve genuine uncertainty and incomplete data, requiring judgement to select appropriate methods and interpret results sensibly."
+                "a": "Actuarial problems often involve genuine uncertainty and incomplete data, requiring judgement to select appropriate methods and interpret results sensibly.",
+                "explain": "This is the module's central theme stated most directly — it's worth contrasting with CS1/CS2, where a dataset and a specified model usually pin down a single defensible answer; in practice, actuarial work often involves incomplete data and multiple defensible modelling choices, and judgement is precisely the skill of choosing sensibly among them."
             },
             {
                 "q": "Why might an actuary need to consider the interests of multiple stakeholders when advising on a single decision?",
-                "a": "Actuarial decisions (e.g. on pricing or reserving) often affect several groups (shareholders, policyholders, regulators) whose interests may not align."
+                "a": "Actuarial decisions (e.g. on pricing or reserving) often affect several groups (shareholders, policyholders, regulators) whose interests may not align.",
+                "explain": "This generalises the client/public-interest tension raised earlier in this module into a genuinely multi-party problem — shareholders typically want lower reserves and higher profit, policyholders want security and fair pricing, and regulators want solvency margins, and good advice has to be transparent about how it balances these competing interests rather than pretending the tension doesn't exist."
             },
             {
                 "q": "What does it mean to 'peer review' actuarial work?",
-                "a": "Having another suitably qualified actuary independently check the work for errors, reasonableness, and appropriate professional judgement."
+                "a": "Having another suitably qualified actuary independently check the work for errors, reasonableness, and appropriate professional judgement.",
+                "explain": "This is a practical, structural safeguard against exactly the kind of error CS1/CS2 material would flag as a modelling risk (e.g. an unreasonable assumption, an overlooked edge case) — a second qualified reviewer, working independently, is far more likely to catch a mistake the original author has become blind to through over-familiarity with their own work."
             },
             {
                 "q": "Why is peer review particularly important for actuarial advice with significant financial consequences?",
-                "a": "It reduces the risk of undetected errors or biased judgement materially affecting an important decision."
+                "a": "It reduces the risk of undetected errors or biased judgement materially affecting an important decision.",
+                "explain": "This is the same proportionality principle from earlier in this module applied specifically to quality control — just as the DEPTH of analysis should scale with materiality, so should the rigour of review: a routine, low-stakes calculation may need only a light check, while a decision that could threaten solvency warrants thorough independent scrutiny."
             },
             {
                 "q": "What is meant by 'reliance' in the context of actuarial advice?",
-                "a": "When a client or third party depends on the actuary's work/advice for their own decisions, creating a responsibility on the actuary to ensure it's fit for that purpose."
+                "a": "When a client or third party depends on the actuary's work/advice for their own decisions, creating a responsibility on the actuary to ensure it's fit for that purpose.",
+                "explain": "This is worth linking forward to Module 34's later treatment of reporting results — once other parties (a board, a regulator, an auditor) are known to be relying on a piece of actuarial work for their own decisions, the actuary's responsibility for its accuracy and clarity extends well beyond just satisfying the immediate client who commissioned it."
             },
             {
                 "q": "Why might an actuary decline to give advice on a matter, even if technically able to perform the calculations?",
-                "a": "If it falls outside their competence, involves a conflict of interest, or the necessary data/information isn't reliable enough to support sound advice."
+                "a": "If it falls outside their competence, involves a conflict of interest, or the necessary data/information isn't reliable enough to support sound advice.",
+                "explain": "This closing card names three genuinely distinct reasons worth keeping separate in an exam answer: a competence issue (this isn't my area of expertise), an independence issue (I have a conflicting interest that could bias my judgement), and a data quality issue (I can't responsibly conclude anything reliable from what's available) — each calls for a different professional response."
             }
         ]
     },
@@ -7247,63 +7277,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'PESTLE' commonly stand for, as a framework for external environment analysis?",
-                "a": "Political, Economic, Social, Technological, Legal, and Environmental factors."
+                "a": "Political, Economic, Social, Technological, Legal, and Environmental factors.",
+                "explain": "This module gives structure to the 'wider context shapes what's appropriate and viable' point flagged back in Module 1 — PESTLE is worth treating as a checklist to run through systematically in any CP1 scenario question, since a strong answer typically shows awareness across several of these six categories rather than fixating on just one."
             },
             {
                 "q": "Why must actuaries consider the economic environment when giving advice?",
-                "a": "Interest rates, inflation, and economic growth directly affect asset returns, liability values, and the viability of financial products."
+                "a": "Interest rates, inflation, and economic growth directly affect asset returns, liability values, and the viability of financial products.",
+                "explain": "This is the direct practical bridge from CM1/CM2's technical machinery (discount rates, asset return models) into CP1's advisory context — those subjects taught HOW to value cashflows and model returns, while this card is about recognising WHICH real-world economic conditions actually drive the inputs to those models."
             },
             {
                 "q": "Give one example of a social/demographic trend relevant to actuarial work.",
-                "a": "An ageing population, affecting pension and healthcare costs, or changing family structures affecting insurance needs."
+                "a": "An ageing population, affecting pension and healthcare costs, or changing family structures affecting insurance needs.",
+                "explain": "This connects forward to Module 21's mortality and morbidity assumptions and to the pensions-focused SP4 subject — demographic trends aren't just background colour, they are a primary driver of the long-term assumption-setting work covered later in CP1, since a systematically ageing population changes the entire economics of pension and healthcare provision."
             },
             {
                 "q": "Why is the legal and regulatory environment particularly important for actuaries to monitor?",
-                "a": "Laws and regulations directly constrain what products/practices are permissible and shape solvency/reporting requirements."
+                "a": "Laws and regulations directly constrain what products/practices are permissible and shape solvency/reporting requirements.",
+                "explain": "This directly previews Module 4's full treatment of regulation — the point to hold onto here is that legal/regulatory factors aren't just one item on the PESTLE checklist among many; they are uniquely BINDING in a way economic or social trends aren't, since a firm can choose how to respond to a recession but cannot simply choose to ignore a solvency requirement."
             },
             {
                 "q": "How might technological change affect the insurance industry?",
-                "a": "Through new data sources (e.g. telematics) enabling more granular pricing, automation of processes, and new distribution channels."
+                "a": "Through new data sources (e.g. telematics) enabling more granular pricing, automation of processes, and new distribution channels.",
+                "explain": "This anticipates Module 19's later treatment of data and Module 23's contract design — telematics-based motor insurance is a good concrete example worth keeping in mind: richer individual-level data enables far more granular risk segmentation than traditional rating factors allowed, changing both how products are priced and designed."
             },
             {
                 "q": "Why might political factors (e.g. a change of government) matter for long-term actuarial projections?",
-                "a": "Government policy affects taxation, regulation, state benefits, and the wider economy, all of which feed into actuarial assumptions."
+                "a": "Government policy affects taxation, regulation, state benefits, and the wider economy, all of which feed into actuarial assumptions.",
+                "explain": "This is especially relevant for the very long-duration liabilities actuaries deal with (pensions, life insurance) — a projection spanning decades will very likely span multiple changes of government and policy direction, making political risk a genuine, if hard-to-quantify, source of assumption uncertainty over such long time horizons."
             },
             {
                 "q": "What is meant by the 'environmental' factor in an external environment analysis, in an actuarial context?",
-                "a": "Climate change and environmental risk, increasingly relevant to general insurance pricing, investment strategy, and long-term liability assessment."
+                "a": "Climate change and environmental risk, increasingly relevant to general insurance pricing, investment strategy, and long-term liability assessment.",
+                "explain": "This is worth flagging as an increasingly prominent, cross-cutting theme rather than a narrow, standalone topic — it touches general insurance pricing (more frequent/severe catastrophe claims), investment strategy (transition and physical climate risk to asset values), and even long-term mortality/morbidity assumptions, making it relevant across almost every later part of CP1."
             },
             {
                 "q": "Why should an actuary consider global, not just domestic, external factors?",
-                "a": "Financial markets and reinsurance/investment exposures are often international, so overseas developments can have direct domestic impact."
+                "a": "Financial markets and reinsurance/investment exposures are often international, so overseas developments can have direct domestic impact.",
+                "explain": "This is a natural extension of CM2's asset modelling material into a practical advisory context — an insurer's domestic balance sheet can be directly exposed to an overseas economic shock (via international investments) or an overseas catastrophic event (via global reinsurance markets), so a purely domestic external-environment scan would miss real sources of risk."
             },
             {
                 "q": "How might rising interest rates affect a life insurer's balance sheet, as an external environment consideration?",
-                "a": "It could reduce the value of fixed-interest liabilities more than assets (or vice versa), affecting solvency depending on asset-liability matching."
+                "a": "It could reduce the value of fixed-interest liabilities more than assets (or vice versa), affecting solvency depending on asset-liability matching.",
+                "explain": "This is a direct preview of Module 16's asset-liability management material — the key insight worth carrying forward is that the DIRECTION of the effect (helping or hurting solvency) depends entirely on how well matched the insurer's assets and liabilities already are in duration, not on the interest rate move alone."
             },
             {
                 "q": "Why is understanding competitor behaviour part of assessing a company's external environment?",
-                "a": "Competitors' pricing, product design, and market share affect a company's own commercial strategy and viability."
+                "a": "Competitors' pricing, product design, and market share affect a company's own commercial strategy and viability.",
+                "explain": "This connects back to CB2's market structure and competition concepts — a technically sound premium calculated in isolation could still be commercially unviable if competitors are pricing the same risk more cheaply, so the external environment analysis has to sit alongside, not replace, the technical pricing work covered in Modules 23-24."
             },
             {
                 "q": "How does the external environment influence the assumptions used in actuarial modelling?",
-                "a": "Assumptions about future inflation, mortality, lapse rates, and investment returns should reflect realistic expectations shaped by the external environment."
+                "a": "Assumptions about future inflation, mortality, lapse rates, and investment returns should reflect realistic expectations shaped by the external environment.",
+                "explain": "This is the module's key practical payoff, directly previewing Module 20 — every external factor discussed in this module (economic, social, technological, and so on) ultimately has to translate into a concrete assumption feeding a model, which is exactly the process that setting assumptions formalises."
             },
             {
                 "q": "Why might an actuary need to monitor the external environment on an ongoing basis, not just at a single point in time?",
-                "a": "External conditions change, and models/assumptions set at one point can become outdated, requiring periodic review."
+                "a": "External conditions change, and models/assumptions set at one point can become outdated, requiring periodic review.",
+                "explain": "This connects forward to Module 39's monitoring material — an actuarial model isn't a one-off deliverable but something whose underlying assumptions need revisiting as the world changes, which is exactly why ongoing monitoring against actual experience is treated as its own dedicated topic later in CP1."
             },
             {
                 "q": "Give an example of how a legal change could directly affect an insurance product's viability.",
-                "a": "A change in liability law affecting the cost of claims under a general insurance product, requiring re-pricing."
+                "a": "A change in liability law affecting the cost of claims under a general insurance product, requiring re-pricing.",
+                "explain": "This makes the abstract 'legal factors constrain permissible practice' point from earlier in this module concrete — a shift in how courts award damages for a certain type of claim doesn't just affect ongoing pricing, it can also retroactively affect the adequacy of reserves already held for claims not yet settled, linking this to Module 33's liability valuation material."
             },
             {
                 "q": "Why might social attitudes towards risk and insurance affect demand for actuarially-priced products?",
-                "a": "Changing attitudes to risk-sharing versus self-insurance affect consumer demand for different types of financial protection products."
+                "a": "Changing attitudes to risk-sharing versus self-insurance affect consumer demand for different types of financial protection products.",
+                "explain": "This is a subtle but important point: even a perfectly-priced, actuarially fair product can fail commercially if social attitudes shift away from wanting that form of protection at all (e.g. growing comfort with self-insuring smaller risks), which is a demand-side consideration entirely separate from whether the underlying pricing technique (CS1/CS2, Modules 23-24) is sound."
             },
             {
                 "q": "How does the external environment analysis in CP1 relate to the broader risk management topics covered later in the course?",
-                "a": "External factors are a key source of risks that businesses must identify, assess and manage as part of their overall risk framework."
+                "a": "External factors are a key source of risks that businesses must identify, assess and manage as part of their overall risk framework.",
+                "explain": "This closing card is the module's explicit hand-off to Part 5 of CP1 — everything catalogued here under PESTLE reappears later as a category of RISK to be identified, assessed, and managed (Modules 25-31), so this module is best understood as building the raw material that the later risk-management framework then organises and acts upon."
             }
         ]
     },
@@ -7314,63 +7359,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "Why are financial services industries typically subject to significant regulation?",
-                "a": "To protect consumers, maintain confidence in the financial system, and ensure firms remain solvent enough to meet their promises."
+                "a": "To protect consumers, maintain confidence in the financial system, and ensure firms remain solvent enough to meet their promises.",
+                "explain": "This module develops the legal/regulatory strand of Module 3's PESTLE framework in full — the three aims named here (consumer protection, systemic confidence, solvency) recur as a lens throughout the rest of CP1, particularly in the risk management (Modules 25-31) and capital (Modules 36-39) material that follows."
             },
             {
                 "q": "What is 'prudential regulation'?",
-                "a": "Regulation focused on ensuring firms are financially sound and able to meet their obligations, e.g. through capital and solvency requirements."
+                "a": "Regulation focused on ensuring firms are financially sound and able to meet their obligations, e.g. through capital and solvency requirements.",
+                "explain": "This is the regulatory category that most directly touches the technical actuarial work covered later in CP1 — the capital requirements discussed here are exactly what Module 37 develops in detail, and reserving/valuation work (Modules 32-33) exists largely to demonstrate compliance with prudential solvency standards."
             },
             {
                 "q": "What is 'market conduct regulation' (or 'conduct of business' regulation)?",
-                "a": "Regulation focused on how firms treat and interact with customers — fair treatment, transparency, and appropriate product design/sale."
+                "a": "Regulation focused on how firms treat and interact with customers — fair treatment, transparency, and appropriate product design/sale.",
+                "explain": "This is the regulatory counterpart to prudential regulation, and it connects directly back to Module 2's advice principles — 'treating customers fairly' as a REGULATORY requirement is really just the professional advice standards from Module 2 (clear communication, proportionality, understanding client needs) enforced externally rather than left to individual professional judgement alone."
             },
             {
                 "q": "Why might prudential and conduct regulation be handled by separate regulatory bodies in some jurisdictions?",
-                "a": "Each requires different expertise and focus, and separating them can avoid conflicts of interest or diluted attention on either objective."
+                "a": "Each requires different expertise and focus, and separating them can avoid conflicts of interest or diluted attention on either objective.",
+                "explain": "Worth noting the underlying tension this separation is designed to manage: a regulator focused purely on solvency might tolerate product features that are technically well-capitalised but poor value or unclear for consumers, while a regulator focused purely on conduct might overlook solvency risk — splitting the roles keeps both objectives from being traded off against each other internally."
             },
             {
                 "q": "What is a key aim of solvency-related prudential regulation?",
-                "a": "To reduce the probability that a firm becomes unable to meet its liabilities to policyholders/customers."
+                "a": "To reduce the probability that a firm becomes unable to meet its liabilities to policyholders/customers.",
+                "explain": "This is deliberately phrased as reducing a PROBABILITY, not eliminating risk entirely — this framing connects directly to Module 37's capital requirements, which are typically set using an explicit confidence level (e.g. 99.5% over one year), reflecting that solvency regulation manages risk to an acceptable level rather than promising absolute certainty."
             },
             {
                 "q": "What is 'information asymmetry', and why is it a common justification for financial regulation?",
-                "a": "Customers often know much less than the firm about a complex financial product's risks/suitability, justifying rules to protect them."
+                "a": "Customers often know much less than the firm about a complex financial product's risks/suitability, justifying rules to protect them.",
+                "explain": "This is CB2's classic market-failure concept (also central to why insurance markets themselves exist and are regulated) reapplied here specifically to justify conduct regulation — the more complex and opaque a financial product is to an ordinary consumer, the stronger the case for regulatory intervention rather than relying on market competition alone to protect them."
             },
             {
                 "q": "What is meant by 'treating customers fairly' (TCF) as a regulatory principle?",
-                "a": "A regulatory expectation that firms design, sell and administer products in ways that deliver fair outcomes for customers throughout the product lifecycle."
+                "a": "A regulatory expectation that firms design, sell and administer products in ways that deliver fair outcomes for customers throughout the product lifecycle.",
+                "explain": "The phrase 'throughout the product lifecycle' is worth taking literally — TCF isn't just about the point of sale, it extends through Module 23's contract design, ongoing administration, and even how claims or benefits are eventually paid out, making it a thread that runs through most of the product-related modules in CP1."
             },
             {
                 "q": "Why might regulation impose capital requirements beyond the amount needed to cover expected liabilities?",
-                "a": "To provide a buffer against adverse, unexpected experience, reducing the probability of insolvency."
+                "a": "To provide a buffer against adverse, unexpected experience, reducing the probability of insolvency.",
+                "explain": "This is exactly the distinction CS1/CS2's risk modelling material formalises: EXPECTED liabilities are just the mean of a distribution, but actual experience will deviate from that mean, sometimes badly — the capital buffer exists specifically to absorb that deviation, which is precisely the logic behind Module 37's risk-based capital requirements."
             },
             {
                 "q": "What is 'regulatory arbitrage'?",
-                "a": "When firms structure their business to exploit differences between regulatory regimes (e.g. across jurisdictions or product types) to reduce regulatory burden."
+                "a": "When firms structure their business to exploit differences between regulatory regimes (e.g. across jurisdictions or product types) to reduce regulatory burden.",
+                "explain": "This is a direct, if unwelcome, consequence of the global external-environment point from Module 3 — because financial firms increasingly operate across jurisdictions, differences in regulatory stringency create an incentive to book business wherever the requirements are lightest, which is exactly why international coordination (the next card) is pursued."
             },
             {
                 "q": "Why is international coordination of financial regulation sometimes pursued (e.g. via international bodies)?",
-                "a": "To reduce opportunities for regulatory arbitrage and address risks that cross national borders (e.g. global financial institutions)."
+                "a": "To reduce opportunities for regulatory arbitrage and address risks that cross national borders (e.g. global financial institutions).",
+                "explain": "This is the direct policy response to the regulatory arbitrage problem just described — by narrowing the GAPS between different jurisdictions' rules, international coordination reduces the incentive to relocate business purely for regulatory reasons rather than genuine commercial ones."
             },
             {
                 "q": "What role does a regulator typically play beyond setting rules?",
-                "a": "Supervision (monitoring firms' ongoing compliance) and enforcement (taking action against breaches)."
+                "a": "Supervision (monitoring firms' ongoing compliance) and enforcement (taking action against breaches).",
+                "explain": "This distinction between RULE-SETTING and the ongoing work of supervision/enforcement is worth keeping separate — it connects forward to Module 39's monitoring material on the firm side: just as a firm needs ongoing monitoring against its own assumptions, a regulator needs ongoing supervision to check firms are actually complying, not just that rules exist on paper."
             },
             {
                 "q": "Why might excessive regulation have a downside, despite its protective aims?",
-                "a": "It can increase costs (passed to consumers), reduce competition/innovation, and potentially restrict access to useful products."
+                "a": "It can increase costs (passed to consumers), reduce competition/innovation, and potentially restrict access to useful products.",
+                "explain": "This is worth holding in tension with every earlier card in this module praising regulation's protective aims — CP1 exam scenarios often test exactly this balance, since a strong answer usually acknowledges both that regulation protects consumers AND that regulatory burden isn't a free good, rather than treating more regulation as unambiguously better."
             },
             {
                 "q": "How does regulation typically differ between retail (individual consumer) and wholesale (institutional) markets?",
-                "a": "Retail markets usually have more extensive consumer protection regulation, since institutional counterparties are assumed more capable of protecting their own interests."
+                "a": "Retail markets usually have more extensive consumer protection regulation, since institutional counterparties are assumed more capable of protecting their own interests.",
+                "explain": "This is the same information-asymmetry logic from earlier in this module, just varying by counterparty sophistication — it also echoes Module 2's point about tailoring advice to the recipient's ability to understand it, showing the same underlying principle operating at both the individual-advice level and the system-wide regulatory level."
             },
             {
                 "q": "Why might an actuary need to understand regulation even if not directly involved in compliance work?",
-                "a": "Regulatory requirements directly shape permissible product design, pricing, reserving and capital calculations that actuaries perform."
+                "a": "Regulatory requirements directly shape permissible product design, pricing, reserving and capital calculations that actuaries perform.",
+                "explain": "This closes the loop back to CP1's whole premise from Module 1 — regulation isn't a separate, siloed topic from the 'real' actuarial technical work; it's a binding constraint that shapes almost every other module in this course, from contract design (Module 23) through to capital management (Modules 36-39)."
             },
             {
                 "q": "What is the role of an actuary in demonstrating compliance with prudential regulatory requirements?",
-                "a": "Performing and certifying technical calculations (e.g. reserves, capital) required to demonstrate the firm meets regulatory solvency standards."
+                "a": "Performing and certifying technical calculations (e.g. reserves, capital) required to demonstrate the firm meets regulatory solvency standards.",
+                "explain": "This is the module's closing, concrete link between regulation and the actuary's own day-to-day work — it directly previews Modules 32-33 (valuation of liabilities and provisions) and 37 (capital requirements), which are, in large part, exactly the technical calculations this card describes actuaries as responsible for certifying."
             }
         ]
     },
