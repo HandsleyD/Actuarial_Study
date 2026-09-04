@@ -2103,63 +2103,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'contingent' assurance benefit?",
-                "a": "A benefit payable on the death of one specified life, but only if that death occurs before (or after) the death of another specified life."
+                "a": "A benefit payable on the death of one specified life, but only if that death occurs before (or after) the death of another specified life.",
+                "explain": "This module takes Module 19's 'which of the two died' question and sharpens it into 'which SPECIFIC life died first' \\u2014 Module 19's $A_{xy}$ just cared that A first death happened; contingent assurances additionally care WHOSE death it was, which is a genuinely finer-grained (and computationally harder) question."
             },
             {
                 "q": "What does the notation $A^1_{xy}$ (with a '1' over just the $x$) mean in a two-life context?",
-                "a": "A benefit payable on the death of $(x)$, but only if $(x)$ dies before $(y)$."
+                "a": "A benefit payable on the death of $(x)$, but only if $(x)$ dies before $(y)$.",
+                "explain": "This is exactly the same '1 over the trigger life' convention introduced back in Module 13 and reused in Module 19 \\u2014 the superscript sits specifically over $x$ here (not over both, and not over $y$), precisely pinpointing which life's death is both required AND must come first."
             },
             {
                 "q": "What is a 'reversionary annuity'?",
-                "a": "An annuity payable to one life (e.g. $y$), but only starting after another specified life (e.g. $x$) has died, and only while $y$ is still alive."
+                "a": "An annuity payable to one life (e.g. $y$), but only starting after another specified life (e.g. $x$) has died, and only while $y$ is still alive.",
+                "explain": "This is a contingent ANNUITY rather than a contingent assurance \\u2014 note it combines TWO conditions that must both hold at each point in time: $(x)$ must already be dead (the triggering event) AND $(y)$ must still be alive (the ongoing payment condition), unlike Module 19's simpler joint/last-survivor annuities which only track one condition at a time."
             },
             {
                 "q": "What real-world product commonly uses a reversionary annuity structure?",
-                "a": "A 'widow's' or dependant's pension \\u2014 income starting only after the main pensioner's death, paid to the surviving dependant."
+                "a": "A 'widow's' or dependant's pension \\u2014 income starting only after the main pensioner's death, paid to the surviving dependant.",
+                "explain": "This is the genuinely important real-world application that makes this whole (mathematically fiddly) module worth learning \\u2014 many pension schemes provide exactly this structure: no benefit to the dependant while the main pensioner is alive, but a continuing income once they've died, for as long as the dependant survives."
             },
             {
                 "q": "How is a reversionary annuity to $y$ after $x$'s death, $a_{x|y}$, related to standard joint life and single life functions?",
-                "a": "$a_{x|y} = a_y - a_{xy}$ \\u2014 the full annuity to $y$, minus the portion payable while both are alive."
+                "a": "$a_{x|y} = a_y - a_{xy}$ \\u2014 the full annuity to $y$, minus the portion payable while both are alive.",
+                "explain": "This elegant identity avoids needing any new integral or summation technique at all \\u2014 the logic: $(y)$'s full lifetime annuity naturally splits into 'the period while both are alive' (which is $a_{xy}$, Module 19's joint life annuity) plus 'the period after $(x)$ has died but $(y)$ is still alive' (which is exactly the reversionary annuity you want) \\u2014 subtracting isolates that second piece."
             },
             {
                 "q": "Why must you be careful about the exact timing convention (annuity-due vs. immediate) when deriving reversionary annuity formulas?",
-                "a": "Because the identity linking the reversionary, single-life and joint-life annuities depends on consistent timing assumptions \\u2014 mixing conventions gives the wrong result."
+                "a": "Because the identity linking the reversionary, single-life and joint-life annuities depends on consistent timing assumptions \\u2014 mixing conventions gives the wrong result.",
+                "explain": "This is a genuine, common source of exam errors: the clean identity above requires $a_y$ and $a_{xy}$ to use the SAME payment convention (both immediate, or both due) \\u2014 accidentally mixing $\\ddot{a}_y - a_{xy}$ (due minus immediate) breaks the subtraction logic, since the two annuities would then be measuring slightly different things."
             },
             {
                 "q": "What does 'contingent probability' mean in the context of these benefits?",
-                "a": "The probability of an event (e.g. death of one life) occurring, conditional on (or in a specified order relative to) an event affecting the other life."
+                "a": "The probability of an event (e.g. death of one life) occurring, conditional on (or in a specified order relative to) an event affecting the other life.",
+                "explain": "This generalises the everyday statistical idea of conditional probability to the specific ORDERING question this module cares about \\u2014 not just 'does $(x)$ die within $n$ years' (Module 12's $_nq_x$), but 'does $(x)$ die within $n$ years AND before $(y)$', which needs the joint reasoning covered in the calculation cards below."
             },
             {
                 "q": "Why can't you simply say the probability $(x)$ dies first is $\\frac{1}{2}$ in general?",
-                "a": "Because the probability depends on each life's specific mortality (age, health, etc.) \\u2014 it's only $\\frac12$ under special symmetric assumptions."
+                "a": "Because the probability depends on each life's specific mortality (age, health, etc.) \\u2014 it's only $\\frac12$ under special symmetric assumptions.",
+                "explain": "This is a useful trap-avoidance card: it's tempting to assume 'coin flip' odds for something that sounds symmetric, but a much older or sicker life is genuinely more likely to die first than a young, healthy one \\u2014 the actual probability must be calculated properly using both lives' specific mortality, per the integral technique below."
             },
             {
                 "q": "How would you calculate the probability that $(x)$ dies before $(y)$, within $n$ years?",
-                "a": "By integrating (or summing) the probability $(x)$ dies at each future time $t$ within the term, multiplied by the probability $(y)$ is still alive at that time."
+                "a": "By integrating (or summing) the probability $(x)$ dies at each future time $t$ within the term, multiplied by the probability $(y)$ is still alive at that time.",
+                "explain": "The logic, in words: for $(x)$ to die BEFORE $(y)$ at some specific instant $t$, TWO things must both be true \\u2014 $(x)$ actually dies right around time $t$, AND $(y)$ is still alive at time $t$ (hasn't already died earlier) \\u2014 multiplying these and summing/integrating over all possible values of $t$ within the term builds up the total probability."
             },
             {
                 "q": "What is a 'contingent' annuity, as opposed to a contingent assurance?",
-                "a": "An annuity payable to one life only while a specific ordering of survival/death between the two lives holds \\u2014 the reversionary annuity is one example."
+                "a": "An annuity payable to one life only while a specific ordering of survival/death between the two lives holds \\u2014 the reversionary annuity is one example.",
+                "explain": "This is just the general category name that the specific reversionary annuity (earlier in this module) belongs to \\u2014 useful to know the broader term exists, since a question could describe a DIFFERENT ordering-dependent annuity structure and expect you to recognise it as another instance of this same general contingent-annuity idea."
             },
             {
                 "q": "How would you calculate $A^1_{xy}$ (benefit on $(x)$'s death before $(y)$'s) using an integral, in continuous terms?",
-                "a": "Integrate over $t$ the probability density of $(x)$'s death at $t$, multiplied by the probability $(y)$ is still alive at $t$, discounted to present value."
+                "a": "Integrate over $t$ the probability density of $(x)$'s death at $t$, multiplied by the probability $(y)$ is still alive at $t$, discounted to present value.",
+                "explain": "This is exactly the probability-calculation card above, with a discount factor $v^t$ (or $e^{-\\delta t}$) now added into the integrand to convert the raw probability into a present VALUE \\u2014 the same 'multiply and integrate' structure as every other continuous life-contingent formula in this course, just with the two-life ordering condition folded in."
             },
             {
                 "q": "Why are contingent benefit calculations generally more involved than simple joint life (first-death) calculations?",
-                "a": "Because they require tracking not just whether a death has occurred, but the specific order in which the two lives died."
+                "a": "Because they require tracking not just whether a death has occurred, but the specific order in which the two lives died.",
+                "explain": "This is the module's central theme stated directly \\u2014 Module 19's joint-life functions only needed a YES/NO answer (has the first death happened yet), while this module needs a WHICH answer (whose death was it), which is a strictly harder question requiring the extra integral/summation machinery covered throughout."
             },
             {
                 "q": "What identity links $A^1_{xy}$ and $A^1_{yx}$ to the joint life assurance $A_{xy}$?",
-                "a": "$A^1_{xy} + A^1_{yx} = A_{xy}$ \\u2014 one of the two lives must die first, and together they account for the full joint life first-death assurance."
+                "a": "$A^1_{xy} + A^1_{yx} = A_{xy}$ \\u2014 one of the two lives must die first, and together they account for the full joint life first-death assurance.",
+                "explain": "This is the assurance-side analogue of the earlier probability card ($_tp_{\\overline{xy}}$'s inclusion-exclusion logic in Module 19), but simpler here since 'x dies first' and 'y dies first' are mutually exclusive AND exhaustive outcomes (exactly one must happen) \\u2014 no double-counting correction is needed, just a straight sum."
             },
             {
                 "q": "Why might contingent benefits appear less often in real products than joint life or last survivor benefits?",
-                "a": "They're a more niche/specialised structure, less common than the standard joint life or last-survivor pension/insurance products."
+                "a": "They're a more niche/specialised structure, less common than the standard joint life or last-survivor pension/insurance products.",
+                "explain": "Worth knowing this is genuinely a more theoretical/exam-focused topic than a heavily-sold real product \\u2014 straightforward joint-life and last-survivor products (Module 19) are common (couples' pensions, joint mortgages), while pure contingent/ordering-dependent benefits are a more specialised structure, included mainly to build your general multi-life mathematical toolkit."
             },
             {
                 "q": "How does the deferred nature of a reversionary annuity affect its value compared to an equivalent immediate annuity to the same life?",
-                "a": "It's smaller, since payment only begins after a triggering event (the other life's death) that may occur late or not be certain within any fixed horizon."
+                "a": "It's smaller, since payment only begins after a triggering event (the other life's death) that may occur late or not be certain within any fixed horizon.",
+                "explain": "This is the same 'sooner is worth more, and uncertain/delayed is worth less' intuition that's run through the whole course since Module 1 \\u2014 a reversionary annuity to $(y)$ is always worth LESS than an ordinary $\\ddot{a}_y$ to the same life, since it might start very late (if $(x)$ lives a long time) or, in a temporary version, might never start at all."
             }
         ]
     },
@@ -2170,63 +2185,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'death strain at risk' (DSAR) for a policy?",
-                "a": "The extra amount the insurer must pay out on death beyond what it has already reserved \\u2014 benefit minus the reserve already held."
+                "a": "The extra amount the insurer must pay out on death beyond what it has already reserved \\u2014 benefit minus the reserve already held.",
+                "explain": "This is the genuinely crucial insight underlying this whole module: an insurer doesn't need to fund the FULL sum assured out of nowhere when a claim happens, because it's already been building up a reserve (Module 18) toward that policy \\u2014 DSAR isolates just the INCREMENTAL cost death actually creates, on top of what's already been set aside."
             },
             {
                 "q": "What is 'expected death strain' (EDS)?",
-                "a": "The death strain at risk multiplied by the expected (assumed) probability of death during the year, summed across the portfolio."
+                "a": "The death strain at risk multiplied by the expected (assumed) probability of death during the year, summed across the portfolio.",
+                "explain": "This is what the insurer BUDGETED for \\u2014 exactly the death-cost term embedded in Module 18's recursive reserve formula ('less the expected cost of death claims during the year'), now isolated and named explicitly as its own quantity for comparison against what actually happens."
             },
             {
                 "q": "What is 'actual death strain' (ADS)?",
-                "a": "The death strain at risk, summed only over the policies where death actually occurred during the year."
+                "a": "The death strain at risk, summed only over the policies where death actually occurred during the year.",
+                "explain": "This is the REAL cost the insurer actually faced, as opposed to EDS's budgeted/assumed cost \\u2014 note ADS sums DSAR only over policies where a claim genuinely happened, while EDS sums (DSAR \\u00d7 probability) across the WHOLE portfolio, since before the year begins you don't know which specific policies will claim."
             },
             {
                 "q": "How is 'mortality profit' calculated?",
-                "a": "Mortality profit = Expected death strain \\u2212 Actual death strain."
+                "a": "Mortality profit = Expected death strain \\u2212 Actual death strain.",
+                "explain": "This is the module's headline formula, and the direction is worth memorising precisely: EXPECTED minus ACTUAL (not the other way round) \\u2014 if actual costs come in below what was budgeted, that's a profit (a positive number), which matches the everyday intuition of 'spending less than budgeted is good'."
             },
             {
                 "q": "What does it mean if actual death strain exceeds expected death strain?",
-                "a": "More claims (or larger claims) occurred than assumed, resulting in a mortality loss (negative mortality profit) for the insurer."
+                "a": "More claims (or larger claims) occurred than assumed, resulting in a mortality loss (negative mortality profit) for the insurer.",
+                "explain": "This is simply the formula above producing a negative result \\u2014 worth being able to state the real-world interpretation directly: either more people died than the mortality assumption predicted, or the ones who died had larger death strains (bigger sum-at-risk relative to reserve) than typical, or some combination of both."
             },
             {
                 "q": "For a whole life assurance with a level sum assured $S$ and reserve $_tV$ at the start of the year, what is the death strain at risk?",
-                "a": "$S - {_tV}$, approximately (adjusted for interest/timing conventions as needed)."
+                "a": "$S - {_tV}$, approximately (adjusted for interest/timing conventions as needed).",
+                "explain": "A direct worked instance of the opening card's definition \\u2014 the sum assured $S$ is the full benefit owed, and $_tV$ (using Module 18's reserve notation) is what's already been set aside, so the GAP between them is exactly the extra cost death creates for the insurer this year."
             },
             {
                 "q": "How does death strain at risk differ for an annuity in payment, compared to an assurance?",
-                "a": "For an annuity, death strain is typically the reserve released (a gain to the insurer), unlike an assurance where death triggers a payment."
+                "a": "For an annuity, death strain is typically the reserve released (a gain to the insurer), unlike an assurance where death triggers a payment.",
+                "explain": "This is a genuinely important sign-flip to understand: for an assurance, death CREATES a liability (paying the sum assured); for an annuity in payment, death ENDS a liability (no more payments needed) \\u2014 so death strain at risk can be NEGATIVE for annuities, meaning the insurer is financially better off (releases reserve) when an annuitant dies, the exact opposite of the assurance case."
             },
             {
                 "q": "Why might death strain at risk be negative for certain products?",
-                "a": "If the reserve held already exceeds the benefit payable on death (e.g. for annuities in payment), the insurer effectively benefits (releases reserve) on death."
+                "a": "If the reserve held already exceeds the benefit payable on death (e.g. for annuities in payment), the insurer effectively benefits (releases reserve) on death.",
+                "explain": "This directly explains the annuity case above in general terms \\u2014 whenever the reserve $_tV$ held is LARGER than the benefit owed on death (zero, for a pure annuity), the formula 'benefit minus reserve' naturally goes negative, confirming the insurer keeps (releases) reserve rather than paying out."
             },
             {
                 "q": "How would mortality profit be calculated for policies where death benefits are payable immediately on death rather than end of year?",
-                "a": "Similarly, but adjusted for the mid-year (or exact) timing of payment, typically using a half-year interest adjustment or exact timing if known."
+                "a": "Similarly, but adjusted for the mid-year (or exact) timing of payment, typically using a half-year interest adjustment or exact timing if known.",
+                "explain": "This is Module 13's immediate-vs-end-of-year distinction resurfacing here \\u2014 the underlying EDS/ADS/mortality-profit framework doesn't change at all, only the precise timing adjustment applied to each death strain calculation, similar in spirit to the UDD-based interpolation from Module 12."
             },
             {
                 "q": "Why is monitoring mortality profit/loss important for an insurer?",
-                "a": "It shows whether the mortality assumptions used for pricing/reserving are accurate, informing whether assumptions need to be revised."
+                "a": "It shows whether the mortality assumptions used for pricing/reserving are accurate, informing whether assumptions need to be revised.",
+                "explain": "This is the whole module's practical justification \\u2014 mortality profit isn't just an accounting curiosity, it's a direct FEEDBACK SIGNAL: a persistent pattern of mortality profit or loss over several years (see the trend-analysis card below) tells the insurer their pricing/reserving mortality table itself may need updating."
             },
             {
                 "q": "If a life office assumed higher mortality than actually occurred, what would you expect for mortality profit?",
-                "a": "A mortality profit (gain) \\u2014 fewer/smaller claims occurred than the (pessimistic) assumption predicted."
+                "a": "A mortality profit (gain) \\u2014 fewer/smaller claims occurred than the (pessimistic) assumption predicted.",
+                "explain": "A useful direction check: assuming MORE deaths than actually happen means the insurer collected premiums/held reserves for a pessimistic scenario that didn't materialise, so paying out LESS than budgeted naturally produces a gain \\u2014 this is exactly why insurers often deliberately use slightly prudent (pessimistic) mortality assumptions."
             },
             {
                 "q": "How is death strain at risk affected by policies with survival (rather than death) benefits, e.g. pure endowments?",
-                "a": "Death strain at risk is simply the negative of the reserve held, since the insurer keeps the reserve (no death benefit is paid)."
+                "a": "Death strain at risk is simply the negative of the reserve held, since the insurer keeps the reserve (no death benefit is paid).",
+                "explain": "This is the pure-endowment special case of the annuity logic from earlier in this module \\u2014 since a pure endowment (Module 13) pays NOTHING on death, the full reserve held is effectively released back to the insurer's benefit, giving DSAR $= 0 - {_tV} = -{_tV}$."
             },
             {
                 "q": "What role does the number of policies (portfolio size) play in expected vs. actual death strain calculations?",
-                "a": "Expected death strain is summed over the whole portfolio using assumed probabilities; actual death strain only involves the subset of policies where death genuinely occurred."
+                "a": "Expected death strain is summed over the whole portfolio using assumed probabilities; actual death strain only involves the subset of policies where death genuinely occurred.",
+                "explain": "This restates the ADS/EDS definitions from earlier with the portfolio angle made explicit \\u2014 worth noting a genuine statistical point: with a LARGE portfolio, actual claims tend to track expected claims more closely (a law-of-large-numbers effect), so mortality profit/loss for a big insurer tends to be smaller and steadier than for a small one, purely due to scale."
             },
             {
                 "q": "How could an insurer use mortality profit analysis over several years?",
-                "a": "To track trends in mortality experience versus assumptions, informing decisions on updating mortality tables or repricing products."
+                "a": "To track trends in mortality experience versus assumptions, informing decisions on updating mortality tables or repricing products.",
+                "explain": "A single year's mortality profit/loss could just be random noise \\u2014 but a consistent PATTERN across several years (repeated profits, or repeated losses) is a much stronger signal that the underlying mortality assumption itself is systematically wrong and needs revisiting, which is exactly the practical use this card describes."
             },
             {
                 "q": "What is the fundamental intuition behind mortality profit?",
-                "a": "The insurer effectively 'insures' against the cost of death strain; if fewer or cheaper claims occur than priced for, it keeps the difference as profit."
+                "a": "The insurer effectively 'insures' against the cost of death strain; if fewer or cheaper claims occur than priced for, it keeps the difference as profit.",
+                "explain": "This closes the module with the one-sentence version worth having ready for any 'explain mortality profit' question \\u2014 it's the same 'actual vs assumed' comparison that appears throughout actuarial work (pricing assumptions vs experience), here applied specifically to the mortality risk embedded in reserves via the death strain framework."
             }
         ]
     },
