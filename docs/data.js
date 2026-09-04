@@ -3335,63 +3335,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'arbitrage'?",
-                "a": "A trading strategy that guarantees a profit with no risk and no net initial investment."
+                "a": "A trading strategy that guarantees a profit with no risk and no net initial investment.",
+                "explain": "This module marks the pivot from MODELLING how prices evolve (Modules 7-9) to actually PRICING derivatives — and the no-arbitrage principle is the single foundational idea the entire rest of CM2's derivatives content rests on: every bound and formula in this module holds purely because its violation would create a risk-free money-making machine, which can't persist in a functioning market."
             },
             {
                 "q": "What is a 'complete market'?",
-                "a": "A market in which every contingent claim (payoff pattern) can be replicated using a combination of the available traded assets."
+                "a": "A market in which every contingent claim (payoff pattern) can be replicated using a combination of the available traded assets.",
+                "explain": "'Completeness' is what makes unique, well-defined derivative pricing possible at all — if a payoff CAN be replicated exactly using tradeable assets, then by no-arbitrage the derivative must cost exactly what the replicating portfolio costs, which is the core logic behind risk-neutral valuation (Module 12) and the whole Black-Scholes framework (Module 13)."
             },
             {
                 "q": "How is the fair (no-arbitrage) forward price of an asset with no income derived?",
-                "a": "$F_0 = S_0\\,e^{rT}$, the spot price accumulated at the risk-free rate to the forward's maturity."
+                "a": "$F_0 = S_0\\,e^{rT}$, the spot price accumulated at the risk-free rate to the forward's maturity.",
+                "explain": "The no-arbitrage logic worth internalising: buying the asset now and holding it to maturity should cost exactly the same as agreeing today to buy it at the forward price later (financed at the risk-free rate) — if these two routes to owning the asset at time $T$ ever priced differently, you could arbitrage the gap risk-free."
             },
             {
                 "q": "How does the forward price formula change if the underlying asset pays a continuous dividend yield $q$?",
-                "a": "$F_0 = S_0\\,e^{(r-q)T}$"
+                "a": "$F_0 = S_0\\,e^{(r-q)T}$",
+                "explain": "The dividend yield effectively REDUCES the cost of carrying the asset, since holding it earns you income along the way — this exact same $r-q$ adjustment pattern reappears in Module 13's Black-Scholes dividend adjustment, so it's worth recognising as a recurring theme, not a one-off formula."
             },
             {
                 "q": "What are the general upper and lower bounds for a European call option's price (no dividends)?",
-                "a": "Lower bound: $\\max(S_0 - Ke^{-rT}, 0)$; upper bound: $S_0$."
+                "a": "Lower bound: $\\max(S_0 - Ke^{-rT}, 0)$; upper bound: $S_0$.",
+                "explain": "These bounds hold for ANY pricing model whatsoever, purely from no-arbitrage arguments — the upper bound ($S_0$) makes sense since a call can never be worth more than the stock itself (you'd never pay more for the RIGHT to buy something than for the thing outright), while the lower bound comes from comparing the option to a specific replicating portfolio."
             },
             {
                 "q": "What is 'put-call parity' for European options (no dividends)?",
-                "a": "$C - P = S_0 - Ke^{-rT}$, linking the prices of a call and put with the same strike and maturity."
+                "a": "$C - P = S_0 - Ke^{-rT}$, linking the prices of a call and put with the same strike and maturity.",
+                "explain": "This is arguably the single most useful model-independent relationship in the whole options syllabus — given ANY three of $C$, $P$, $S_0$, $Ke^{-rT}$, you can solve for the fourth, and it's exactly the identity used to derive the Black-Scholes put formula from the call formula in Module 13."
             },
             {
                 "q": "Why does put-call parity hold without needing any specific pricing model?",
-                "a": "It follows purely from a no-arbitrage argument comparing two portfolios with identical payoffs at maturity."
+                "a": "It follows purely from a no-arbitrage argument comparing two portfolios with identical payoffs at maturity.",
+                "explain": "The standard proof: a portfolio of (long call + cash of $Ke^{-rT}$) and a portfolio of (long put + long stock) both pay off exactly $\\max(S_T,K)$ at maturity, whatever $S_T$ turns out to be — since two portfolios with IDENTICAL payoffs in every future scenario must cost the same today (or arbitrage exists), the parity relationship follows immediately, with no need to assume GBM, constant volatility, or anything else."
             },
             {
                 "q": "What is the key difference between a European and an American option?",
-                "a": "A European option can only be exercised at maturity; an American option can be exercised at any time up to and including maturity."
+                "a": "A European option can only be exercised at maturity; an American option can be exercised at any time up to and including maturity.",
+                "explain": "This extra flexibility means an American option can never be worth LESS than the corresponding European option (more choice is never a disadvantage) — but the very next card shows this extra right is sometimes worthless in practice, a genuinely counterintuitive result worth understanding properly."
             },
             {
                 "q": "Why is it (generally) never optimal to exercise an American call option early on a non-dividend-paying stock?",
-                "a": "Holding the option (with its time value and deferred payment of the strike) is worth at least as much as exercising early."
+                "a": "Holding the option (with its time value and deferred payment of the strike) is worth at least as much as exercising early.",
+                "explain": "This is a genuinely surprising result worth being able to justify: exercising early gets you the stock now, but GIVES UP the option's remaining time value AND requires paying the strike price immediately rather than at maturity — both of these costs mean early exercise is (weakly) dominated by simply holding, at least when there are no dividends to capture."
             },
             {
                 "q": "How does an upper bound for an American put option compare with a European put?",
-                "a": "An American put's upper bound is the strike price $K$ itself, since it can be exercised early."
+                "a": "An American put's upper bound is the strike price $K$ itself, since it can be exercised early.",
+                "explain": "This is where the early-exercise story genuinely differs between calls and puts — unlike the call case above, early exercise CAN be optimal for a put (e.g. if the stock price falls to near zero, exercising now to lock in close to the full strike $K$ beats waiting, since a put's payoff is capped at $K$ regardless of how low the price falls further)."
             },
             {
                 "q": "What does 'factors that affect option prices' typically include?",
-                "a": "The underlying asset price, strike price, time to maturity, volatility, risk-free interest rate, and any dividends."
+                "a": "The underlying asset price, strike price, time to maturity, volatility, risk-free interest rate, and any dividends.",
+                "explain": "This six-item checklist is worth having automatic — it's precisely the list of inputs the Black-Scholes formula (Module 13) requires, and every one of the 'Greeks' (Module 11) measures sensitivity to exactly one of these six factors."
             },
             {
                 "q": "How does higher volatility of the underlying asset affect both call and put option prices, all else equal?",
-                "a": "It increases both, since greater uncertainty increases the value of the option's asymmetric (limited downside) payoff."
+                "a": "It increases both, since greater uncertainty increases the value of the option's asymmetric (limited downside) payoff.",
+                "explain": "This is worth understanding via the option's asymmetric payoff shape: an option holder benefits from large favourable moves but is protected (payoff floored at zero) from large unfavourable ones — MORE volatility means bigger potential favourable moves without any extra downside cost, so both call and put values rise together, unlike a symmetric position where volatility alone wouldn't obviously help."
             },
             {
                 "q": "What is meant by 'long' and 'short' positions in a forward contract?",
-                "a": "The long position agrees to buy the underlying at the forward price at maturity; the short position agrees to sell."
+                "a": "The long position agrees to buy the underlying at the forward price at maturity; the short position agrees to sell.",
+                "explain": "This long/short terminology is used consistently throughout derivatives (and reappears for options too) — 'long' always means the buying/upside-benefiting side of a contract, 'short' the selling/downside-benefiting side, a convention worth having completely automatic before tackling the Greeks and hedging material ahead."
             },
             {
                 "q": "What is the payoff to the holder of a European call option at maturity?",
-                "a": "$\\max(S_T - K, 0)$"
+                "a": "$\\max(S_T - K, 0)$",
+                "explain": "This payoff function is the starting point for literally every pricing formula in Modules 12-13 — worth picturing its shape directly: flat at zero for $S_T<K$ (worthless, walk away), then rising one-for-one with the stock price above $K$ (exercise and profit), the classic 'hockey stick' option payoff diagram."
             },
             {
                 "q": "What is the payoff to the holder of a European put option at maturity?",
-                "a": "$\\max(K - S_T, 0)$"
+                "a": "$\\max(K - S_T, 0)$",
+                "explain": "This closes the module with the mirror-image payoff to the call above — a put pays off when the stock finishes BELOW the strike, and together the call and put payoffs are exactly what put-call parity (earlier in this module) links algebraically: $\\max(S_T-K,0) - \\max(K-S_T,0) = S_T - K$ always, which is the payoff-level intuition behind that whole identity."
             }
         ]
     },
