@@ -2843,63 +2843,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the key assumptions of mean-variance portfolio theory?",
-                "a": "Investors care only about the expected return and variance of returns, and choose portfolios to maximise return for a given variance (or minimise variance for a given return)."
+                "a": "Investors care only about the expected return and variance of returns, and choose portfolios to maximise return for a given variance (or minimise variance for a given return).",
+                "explain": "This is the direct link back to Module 2's quadratic utility function — assuming investors care ONLY about mean and variance is equivalent to assuming (or approximating) a quadratic-style utility function, which is exactly why that unrealistic-looking utility form kept appearing throughout Module 2: it's the theoretical foundation this whole module builds on."
             },
             {
                 "q": "How is the expected return of a portfolio of two assets calculated?",
-                "a": "As the weighted average of the individual assets' expected returns, weighted by their portfolio proportions."
+                "a": "As the weighted average of the individual assets' expected returns, weighted by their portfolio proportions.",
+                "explain": "Expected return is straightforwardly linear in the weights — this simple additivity is what makes the VARIANCE formula (next card) comparatively more interesting, since variance does NOT behave the same simple linear way once you account for how the two assets move together."
             },
             {
                 "q": "How is the variance of a two-asset portfolio calculated?",
-                "a": "$\\sigma_p^2 = w_1^2\\sigma_1^2 + w_2^2\\sigma_2^2 + 2w_1w_2\\,\\text{Cov}(R_1,R_2)$"
+                "a": "$\\sigma_p^2 = w_1^2\\sigma_1^2 + w_2^2\\sigma_2^2 + 2w_1w_2\\,\\text{Cov}(R_1,R_2)$",
+                "explain": "This is exactly CS1 Module 4's variance-of-a-linear-combination formula, applied here to portfolio returns — the crucial third term (the covariance cross-term) is precisely what creates the possibility of diversification benefit, since it can be negative even when both individual variances are positive."
             },
             {
                 "q": "What is the 'efficient frontier'?",
-                "a": "The set of portfolios offering the highest expected return for each level of risk (variance/standard deviation)."
+                "a": "The set of portfolios offering the highest expected return for each level of risk (variance/standard deviation).",
+                "explain": "This is the module's central geometric object, and it's worth picturing directly: plot every achievable portfolio's risk and return, and the efficient frontier is the upper-left boundary of that whole feasible region — any portfolio not on this boundary is 'dominated' (see the dedicated card below) by one that offers more return for the same risk."
             },
             {
                 "q": "What benefit does diversification provide, according to mean-variance theory?",
-                "a": "Combining assets that aren't perfectly positively correlated reduces overall portfolio variance below the weighted average of individual variances."
+                "a": "Combining assets that aren't perfectly positively correlated reduces overall portfolio variance below the weighted average of individual variances.",
+                "explain": "This is the direct payoff of the covariance cross-term in the variance formula above — as long as correlation is below +1, that cross-term contributes LESS than it would if the assets moved in perfect lockstep, pulling total portfolio variance below the naive weighted-average figure."
             },
             {
                 "q": "What happens to the potential diversification benefit as the correlation between two assets decreases?",
-                "a": "The diversification benefit increases — lower (especially negative) correlation gives greater risk reduction for a given expected return."
+                "a": "The diversification benefit increases — lower (especially negative) correlation gives greater risk reduction for a given expected return.",
+                "explain": "This follows directly from the variance formula: the covariance term $2w_1w_2\\text{Cov}(R_1,R_2)$ shrinks (and can go negative) as correlation falls, pulling total portfolio variance down further — negatively correlated assets are the most powerful diversifiers, since one tends to rise exactly when the other falls."
             },
             {
                 "q": "When does mean-variance portfolio theory lead to a unique 'optimum' portfolio for an investor?",
-                "a": "When combined with the investor's specific indifference curves (from their utility function/risk aversion), which pick a single point on the efficient frontier."
+                "a": "When combined with the investor's specific indifference curves (from their utility function/risk aversion), which pick a single point on the efficient frontier.",
+                "explain": "This is the module's genuine synthesis point, tying Modules 2 and 4 together explicitly — the efficient frontier alone only narrows down the SENSIBLE choices; it takes an individual investor's own risk-aversion-derived indifference curves (Module 2) to pin down exactly WHERE on that frontier they personally should sit."
             },
             {
                 "q": "What is the 'minimum variance portfolio'?",
-                "a": "The portfolio on the efficient frontier (or feasible set) with the lowest possible variance, regardless of expected return."
+                "a": "The portfolio on the efficient frontier (or feasible set) with the lowest possible variance, regardless of expected return.",
+                "explain": "This is the single specific point at the very leftmost tip of the efficient frontier — it's the natural choice for an EXTREMELY risk-averse investor, and it also serves as the boundary point separating the efficient frontier (above it) from the inefficient lower portion of the feasible set (below it, which no rational investor would choose)."
             },
             {
                 "q": "Why can adding a poorly-performing asset to a portfolio sometimes still be beneficial?",
-                "a": "If its returns are weakly or negatively correlated with the rest of the portfolio, it can reduce overall variance more than it reduces expected return."
+                "a": "If its returns are weakly or negatively correlated with the rest of the portfolio, it can reduce overall variance more than it reduces expected return.",
+                "explain": "This is a genuinely counterintuitive result worth internalising — an asset judged 'bad' purely by looking at its own expected return in isolation can still IMPROVE a portfolio's risk-return trade-off overall, precisely because diversification benefit (from the covariance cards above) is a property of the WHOLE portfolio, not of any single asset viewed alone."
             },
             {
                 "q": "How does mean-variance theory extend from two assets to $n$ assets?",
-                "a": "Portfolio variance depends on all pairwise covariances between assets, requiring a full covariance matrix."
+                "a": "Portfolio variance depends on all pairwise covariances between assets, requiring a full covariance matrix.",
+                "explain": "This is the same two-asset variance formula generalised — with $n$ assets there are $n$ variance terms plus $\\binom{n}{2}$ distinct pairwise covariance terms, all of which must be estimated to compute portfolio variance, which is exactly why real-world implementations need a full $n\\times n$ covariance matrix rather than just $n$ individual variance figures."
             },
             {
                 "q": "What is a key limitation of mean-variance portfolio theory?",
-                "a": "It assumes returns are adequately described by mean and variance alone, ignoring skewness/kurtosis and other risk aspects."
+                "a": "It assumes returns are adequately described by mean and variance alone, ignoring skewness/kurtosis and other risk aspects.",
+                "explain": "This is exactly Module 3's critique of variance as a risk measure, now applied specifically to the portfolio-optimisation context — if real returns are skewed or fat-tailed (as Module 9 shows empirically), optimising purely for mean and variance can lead to portfolios that look efficient on paper but carry meaningfully more downside risk than the two-moment summary suggests."
             },
             {
                 "q": "What does it mean for a portfolio to be 'dominated' in mean-variance space?",
-                "a": "There exists another portfolio with at least as high expected return and no higher variance — a rational investor would never choose the dominated one."
+                "a": "There exists another portfolio with at least as high expected return and no higher variance — a rational investor would never choose the dominated one.",
+                "explain": "This is the formal definition underlying the efficient frontier's construction — the frontier is, by definition, exactly the set of NON-dominated portfolios; every portfolio below or to the right of it is dominated by some portfolio on the frontier, which is why no rational mean-variance investor would ever choose one."
             },
             {
                 "q": "Why might mean-variance theory be less appropriate for assets with highly skewed or fat-tailed return distributions?",
-                "a": "Two moments (mean and variance) don't fully capture risk when distributions are skewed or have fat tails."
+                "a": "Two moments (mean and variance) don't fully capture risk when distributions are skewed or have fat tails.",
+                "explain": "This restates the earlier limitation card with the specific mechanism named — mean and variance are only the first two moments of a distribution; skewness (the third moment) and kurtosis (the fourth) can matter a great deal for genuinely risk-averse decision-making, and a two-moment framework is blind to both by construction."
             },
             {
                 "q": "Give one practical benefit of mean-variance theory for investors, despite its simplifying assumptions.",
-                "a": "It provides a tractable, quantifiable framework for balancing risk and return, and demonstrates the benefit of diversification clearly."
+                "a": "It provides a tractable, quantifiable framework for balancing risk and return, and demonstrates the benefit of diversification clearly.",
+                "explain": "This closes the module by weighing its known limitations against its enduring practical value — despite every critique raised in this module (ignoring skewness/kurtosis, assuming only two moments matter), mean-variance theory remains the standard STARTING framework in real portfolio management, precisely because it's tractable enough to actually implement with real data, unlike some more theoretically complete alternatives."
             },
             {
                 "q": "If two assets are perfectly positively correlated, what happens to the diversification benefit of combining them?",
-                "a": "There is none — portfolio risk is simply the weighted average of the individual risks."
+                "a": "There is none — portfolio risk is simply the weighted average of the individual risks.",
+                "explain": "This is the limiting case at the opposite extreme from the earlier 'lower correlation increases benefit' card — plug correlation $=+1$ into the two-asset variance formula and the covariance term becomes exactly $2w_1w_2\\sigma_1\\sigma_2$, making the whole expression a perfect square that simplifies to $(w_1\\sigma_1+w_2\\sigma_2)^2$, i.e. portfolio standard deviation is exactly the weighted average with zero diversification benefit."
             }
         ]
     },
@@ -2910,63 +2925,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'multifactor model' of asset returns?",
-                "a": "A model expressing an asset's return as a linear function of several underlying risk factors, plus an asset-specific (idiosyncratic) term."
+                "a": "A model expressing an asset's return as a linear function of several underlying risk factors, plus an asset-specific (idiosyncratic) term.",
+                "explain": "This is the SOURCE side of the covariance structure Module 4's portfolio theory needs — rather than estimating every pairwise covariance directly (a huge number for many assets), a factor model explains co-movement between assets through their SHARED exposure to a smaller number of common factors, which is far more tractable, as later cards make explicit."
             },
             {
                 "q": "What is a 'macroeconomic factor model'?",
-                "a": "A multifactor model where the factors are observable macroeconomic variables, such as GDP growth, inflation, or interest rates."
+                "a": "A multifactor model where the factors are observable macroeconomic variables, such as GDP growth, inflation, or interest rates.",
+                "explain": "This is CS1's regression toolkit (Module 12 there) applied directly to finance — the factors here are genuinely external, economy-wide variables that plausibly drive many assets' returns simultaneously, which is exactly what makes them useful for explaining SYSTEMATIC co-movement across a portfolio."
             },
             {
                 "q": "What is a 'fundamental factor model'?",
-                "a": "A multifactor model where the factors are company/security-specific characteristics, such as size, dividend yield, or industry."
+                "a": "A multifactor model where the factors are company/security-specific characteristics, such as size, dividend yield, or industry.",
+                "explain": "Unlike macroeconomic factors (external to any one company), fundamental factors are properties OF the securities themselves — this is a genuinely different philosophy: rather than asking 'what's happening in the economy', it asks 'what KIND of company is this, and do similar companies move together'."
             },
             {
                 "q": "What is a 'statistical factor model'?",
-                "a": "A multifactor model where the factors are derived statistically from the historical covariance structure of returns, without being pre-specified as economic variables."
+                "a": "A multifactor model where the factors are derived statistically from the historical covariance structure of returns, without being pre-specified as economic variables.",
+                "explain": "This is CS1's principal components analysis (Module 1 there) applied directly to returns data — rather than choosing factors based on economic theory beforehand, this approach lets the DATA itself reveal whatever common patterns of co-movement exist, at the cost of the interpretability problem raised in a card below."
             },
             {
                 "q": "What is the 'single-index model' of asset returns?",
-                "a": "A simplified model where an asset's return depends on a single common factor (often the market return) plus an idiosyncratic term."
+                "a": "A simplified model where an asset's return depends on a single common factor (often the market return) plus an idiosyncratic term.",
+                "explain": "This is the simplest possible multifactor model — just ONE factor, almost always the overall market return — and it's the direct bridge into Module 6's CAPM, which builds its entire theory of expected returns around exactly this single-factor structure."
             },
             {
                 "q": "In the single-index model, what does 'beta' represent?",
-                "a": "The sensitivity of an asset's return to the common (market) factor."
+                "a": "The sensitivity of an asset's return to the common (market) factor.",
+                "explain": "This is precisely the same beta that reappears as the centrepiece of Module 6's CAPM formula — recognising it here first, as simply a regression slope coefficient measuring market sensitivity, demystifies what can otherwise feel like an arbitrary parameter suddenly introduced in the CAPM."
             },
             {
                 "q": "What is 'diversifiable' (or idiosyncratic) risk?",
-                "a": "Risk specific to an individual asset that can be reduced or eliminated by holding a diversified portfolio."
+                "a": "Risk specific to an individual asset that can be reduced or eliminated by holding a diversified portfolio.",
+                "explain": "This is precisely the 'asset-specific term' from the multifactor-model definition at the top of this module — it's the part of an asset's return NOT explained by the common factor(s), and Module 4's diversification logic is exactly why holding many such assets together averages this idiosyncratic component down toward zero."
             },
             {
                 "q": "What is 'non-diversifiable' (or systematic) risk?",
-                "a": "Risk common to all assets, which cannot be eliminated through diversification."
+                "a": "Risk common to all assets, which cannot be eliminated through diversification.",
+                "explain": "This is the part of return variability driven by the shared factor(s) — since EVERY asset in the model responds (to varying degrees) to the same underlying factor, no amount of combining different assets together can cancel this component out, which is exactly why CAPM (Module 6) argues only THIS risk should be compensated with extra expected return."
             },
             {
                 "q": "Why does diversification reduce idiosyncratic risk but not systematic risk?",
-                "a": "Idiosyncratic shocks are (assumed) uncorrelated and average out across a large portfolio; systematic risk affects all assets simultaneously."
+                "a": "Idiosyncratic shocks are (assumed) uncorrelated and average out across a large portfolio; systematic risk affects all assets simultaneously.",
+                "explain": "This is the precise mechanical reason behind the diversifiable/non-diversifiable split — idiosyncratic shocks are (by construction) independent across assets, so combining many of them is exactly the law-of-large-numbers averaging effect that shrinks their combined impact, while systematic risk moves every asset the SAME way, so no amount of combining assets can offset it."
             },
             {
                 "q": "How is the variance of an asset's return decomposed in a single-index model?",
-                "a": "Into systematic variance (from the common factor) plus idiosyncratic (specific) variance."
+                "a": "Into systematic variance (from the common factor) plus idiosyncratic (specific) variance.",
+                "explain": "This is CS1's variance-of-a-sum formula (Module 4 there) applied to the single-index model's structure — since the common-factor component and the idiosyncratic term are assumed uncorrelated by construction, the two variance pieces simply ADD, with no covariance cross-term to complicate things."
             },
             {
                 "q": "What is one advantage of a fundamental factor model over a macroeconomic factor model?",
-                "a": "Fundamental factors can often explain a larger share of return variation and are directly observable at the security level."
+                "a": "Fundamental factors can often explain a larger share of return variation and are directly observable at the security level.",
+                "explain": "This is a practical, empirical claim worth remembering as the standard trade-off point in this module — macroeconomic factors are conceptually clean but often weakly linked to any SPECIFIC stock's return, while fundamental factors (size, industry, valuation ratios) tend to have a more direct, measurable relationship to individual security returns."
             },
             {
                 "q": "What is one disadvantage of a statistical factor model?",
-                "a": "The derived statistical factors often lack a clear economic interpretation, making the model's outputs harder to explain."
+                "a": "The derived statistical factors often lack a clear economic interpretation, making the model's outputs harder to explain.",
+                "explain": "This is the direct cost of the statistical approach's main strength (letting data reveal patterns without imposing economic theory) — a factor extracted purely from historical covariances might explain returns well, but if nobody can say WHAT that factor represents economically, it's hard to communicate the model's implications or trust it out-of-sample."
             },
             {
                 "q": "How would you use a multifactor model to estimate a portfolio's exposure to a particular risk factor?",
-                "a": "Sum the (weighted) factor sensitivities (loadings) of each asset in the portfolio for that factor."
+                "a": "Sum the (weighted) factor sensitivities (loadings) of each asset in the portfolio for that factor.",
+                "explain": "This is exactly analogous to how a portfolio's overall beta (Module 6) is the weighted average of its constituent assets' individual betas — the same additive logic extends naturally from a single-factor model to a full multifactor model, just with one weighted sum per factor instead of one overall figure."
             },
             {
                 "q": "Why might an investment manager prefer a multifactor model over a single-index model?",
-                "a": "A multifactor model can capture multiple distinct sources of systematic risk, giving a richer description of return drivers."
+                "a": "A multifactor model can capture multiple distinct sources of systematic risk, giving a richer description of return drivers.",
+                "explain": "The single-index model (earlier in this module) forces ALL systematic risk into one dimension (market sensitivity alone) — a genuine investment manager might want to separately understand, say, exposure to interest-rate risk versus exposure to inflation risk versus exposure to a specific industry, which only a genuinely multi-factor structure can distinguish."
             },
             {
                 "q": "What data would you need to estimate the parameters of a macroeconomic factor model?",
-                "a": "Historical time series of both the security returns and the chosen macroeconomic variables, estimating sensitivities via regression."
+                "a": "Historical time series of both the security returns and the chosen macroeconomic variables, estimating sensitivities via regression.",
+                "explain": "This closes the module by making the estimation process concrete — it's CS1's multiple linear regression (Module 12 there) applied directly: security returns as the response variable, the chosen macroeconomic series as explanatory variables, with the resulting regression coefficients serving as the factor sensitivities (loadings) this whole module has been building toward."
             }
         ]
     },
