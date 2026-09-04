@@ -1829,4 +1829,456 @@ const QUESTIONS = {
       ],
     },
   ],
+  CS2: [
+    {
+      id: "cs2-q1",
+      title: "A two-state Markov chain model of policyholder status",
+      modules: "Modules 1, 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the Markov property for a discrete-time stochastic process, and explain what it means for a chain to be time-homogeneous.",
+          answer:
+            "The Markov property states that, given the present state, the future evolution of the process is independent of its past states: $P(X_{n+1}=j \\mid X_n=i, X_{n-1}, \\dots, X_0) = P(X_{n+1}=j \\mid X_n=i)$. A chain is time-homogeneous if this one-step transition probability does not depend on $n$ &mdash; the same transition matrix applies at every step.",
+          note: "Candidates should state the conditional independence precisely (conditioning on the FULL history collapsing to conditioning on just the current state), not just say 'the future depends only on the present' without the formal statement.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A no-claims-discount-style model of policyholder status has two states, Active (A) and Suspended (S), with one-step transition matrix $P=\\begin{pmatrix}0.9 & 0.1\\\\0.4 & 0.6\\end{pmatrix}$ (rows: from A, from S; columns: to A, to S). Calculate the two-step transition matrix $P^2$.",
+          answer:
+            "$P^2 = P \\times P = \\begin{pmatrix}0.9(0.9)+0.1(0.4) & 0.9(0.1)+0.1(0.6)\\\\0.4(0.9)+0.6(0.4) & 0.4(0.1)+0.6(0.6)\\end{pmatrix} = \\begin{pmatrix}0.85 & 0.15\\\\0.60 & 0.40\\end{pmatrix}$",
+          note: "Each entry of $P^2$ is a row-by-column dot product with $P$ itself &mdash; candidates should keep the row (from-state) and column (to-state) convention consistent throughout, since transposing it silently gives a different, wrong matrix.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "Calculate the stationary distribution $(\\pi_A, \\pi_S)$ of this chain.",
+          answer:
+            "Solve $\\pi P = \\pi$ with $\\pi_A+\\pi_S=1$: $0.9\\pi_A+0.4\\pi_S=\\pi_A \\Rightarrow 0.4\\pi_S=0.1\\pi_A \\Rightarrow \\pi_S=0.25\\pi_A$. Substituting: $\\pi_A+0.25\\pi_A=1 \\Rightarrow \\pi_A=0.8$, $\\pi_S=0.2$.",
+          note: "It's worth checking the answer by substituting back into $\\pi P=\\pi$: $0.8(0.9)+0.2(0.4)=0.8$ and $0.8(0.1)+0.2(0.6)=0.2$, confirming the solution.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on how the stationary distribution found in part (iii) should be interpreted, and on one limitation of this model for representing real policyholder behaviour.",
+          answer:
+            "The stationary distribution represents the long-run proportion of time the chain spends in each state (or, across a large population started from any mix of states, the long-run proportion Active/Suspended), regardless of the starting distribution &mdash; here, 80% Active and 20% Suspended in the long run. A key limitation is the time-homogeneity assumption: real transition probabilities (e.g. probability of suspension) likely change with policy duration, claims experience, or calendar time, none of which this simple constant-matrix model captures.",
+          note: "Candidates should distinguish the stationary distribution's TWO valid interpretations (long-run time average for one chain, or long-run population proportions for many independent chains) rather than conflating them carelessly, and should give a concrete, specific limitation rather than a vague 'the model is too simple'.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q2",
+      title: "The two-state sickness-health model and a Poisson claims process",
+      modules: "Module 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the transition intensities $\\sigma$ and $\\rho$ in the two-state (Healthy/Sick) Markov model, and state the defining property of a Poisson process.",
+          answer:
+            "$\\sigma$ is the force of sickness (instantaneous rate of transition from Healthy to Sick) and $\\rho$ is the force of recovery (instantaneous rate of transition from Sick to Healthy), both assumed constant. A Poisson process with rate $\\lambda$ has independent increments, and the number of events in any interval of length $t$ follows a Poisson distribution with mean $\\lambda t$.",
+          note: "Both definitions should be given in terms of instantaneous, continuous-time rates, not discrete-time transition probabilities, since this module works in continuous time throughout.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "For the two-state model with constant intensities $\\sigma=0.1$ and $\\rho=0.3$, the probability of being Healthy at time $t$ given Healthy at time 0 is $p_{HH}(t) = \\dfrac{\\rho}{\\sigma+\\rho} + \\dfrac{\\sigma}{\\sigma+\\rho}e^{-(\\sigma+\\rho)t}$. Calculate $p_{HH}(2)$.",
+          answer:
+            "$\\sigma+\\rho=0.4$. $p_{HH}(2) = \\dfrac{0.3}{0.4} + \\dfrac{0.1}{0.4}e^{-0.4(2)} = 0.75 + 0.25\\,e^{-0.8} = 0.75+0.25(0.4493) = 0.8623$",
+          note: "As $t\\to\\infty$, $p_{HH}(t)\\to\\rho/(\\sigma+\\rho)=0.75$, which is exactly this model's stationary probability of being Healthy &mdash; candidates should notice $p_{HH}(2)=0.8623$ is already fairly close to this limit.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "Independently, sickness claims on a separate policy arrive as a Poisson process with rate $\\lambda=4$ per year. Calculate the probability of exactly 2 claims arising in a 6-month period.",
+          answer:
+            "$\\lambda t = 4(0.5) = 2$. $P(N=2) = \\dfrac{e^{-2}2^2}{2!} = \\dfrac{e^{-2}(4)}{2} = 2e^{-2} = 0.2707$",
+          note: "The Poisson mean must be rescaled to the 6-month window ($\\lambda t=2$), not left at the annual rate $\\lambda=4$ &mdash; using the wrong mean is the most common error in this type of calculation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on the relationship between the two-state Markov model of part (ii) and the Poisson process of part (iii), and on a situation where a two-state model with constant intensities would be a poor representation of sickness experience.",
+          answer:
+            "Both models are built from the same underlying assumption of constant instantaneous transition/event rates and the Markov (memoryless) property &mdash; indeed, the number of Healthy-to-Sick transitions for an individual who stays Healthy for a long period behaves like a Poisson process with rate $\\sigma$. A two-state model with constant intensities would be a poor fit where sickness risk depends on duration already sick (e.g. recovery becoming less likely the longer an illness persists), which violates the memoryless assumption underlying constant $\\sigma$ and $\\rho$.",
+          note: "The strongest answers identify the shared memoryless/exponential-holding-time structure explicitly, and give a concrete duration-dependence example (rather than a generic 'sickness is complicated') for why the constant-intensity assumption can fail.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q3",
+      title: "Markov jump processes: constant and age-dependent transition intensities",
+      modules: "Modules 4, 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the Kolmogorov forward equations for a time-inhomogeneous Markov jump process with generator matrix $A(t)$, and explain what distinguishes a time-inhomogeneous process from a time-homogeneous one.",
+          answer:
+            "The Kolmogorov forward equations are $\\dfrac{d}{dt}P(s,t) = P(s,t)A(t)$, where $P(s,t)$ is the matrix of transition probabilities from time $s$ to time $t$. In a time-homogeneous process, the generator (transition intensity) matrix $A$ is constant, so transition probabilities depend only on the elapsed time $t-s$; in a time-inhomogeneous process, $A(t)$ varies with $t$ itself (e.g. with age), so transition probabilities depend on the specific times $s$ and $t$, not just their difference.",
+          note: "Candidates should note the equation holds with $A(t)$ evaluated at the LATER time $t$, post-multiplying $P(s,t)$ &mdash; this is the forward equation convention, distinct from the backward equations.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A time-inhomogeneous force of mortality follows Gompertz's law, $\\mu_x = Bc^x$ with $B=0.0001$ and $c=1.1$. Using $_tp_x = \\exp\\left(-\\displaystyle\\int_0^t \\mu_{x+s}\\,ds\\right)$ and $\\displaystyle\\int_0^t Bc^{x+s}\\,ds = \\dfrac{Bc^x(c^t-1)}{\\ln c}$, calculate $_{10}p_{50}$.",
+          answer:
+            "$\\displaystyle\\int_0^{10}\\mu_{50+s}\\,ds = \\dfrac{0.0001(1.1^{50})(1.1^{10}-1)}{\\ln 1.1} = \\dfrac{0.0001(117.391)(1.5937-1)}{0.09531} = \\dfrac{0.0001(117.391)(0.5937)}{0.09531} = 0.19630$. $_{10}p_{50} = e^{-0.19630} = 0.8218$",
+          note: "This is exactly the time-inhomogeneous analogue of the constant-force survival formula $_tp_x=e^{-\\mu t}$ from earlier CM1/CS2 material &mdash; the only difference is that the constant $\\mu t$ in the exponent is replaced by the INTEGRAL of the age-varying $\\mu_{x+s}$ over the period, using the given closed-form result for a Gompertz force.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why a time-homogeneous Markov jump process would be an inappropriate model for human mortality over a wide age range, in light of part (ii).",
+          answer:
+            "A time-homogeneous model assumes a constant transition intensity (force of mortality) regardless of age, implying survival probabilities depend only on elapsed time, not on the age at which that time is spent. Part (ii)'s Gompertz law shows mortality rises exponentially with age in reality, so a 10-year survival probability starting at age 50 should differ substantially from one starting at, say, age 80 &mdash; a feature only a time-inhomogeneous model (with $\\mu_x$ varying by age) can represent.",
+          note: "The key point to make explicit is that a constant-intensity model forces $_tp_x$ to depend only on $t$, not on $x$ &mdash; which is exactly the feature Gompertz's law (and mortality in general) violates.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss briefly why a time-homogeneous Markov jump process remains a useful modelling simplification despite the limitation identified in part (iii).",
+          answer:
+            "Over a sufficiently short age range or short projection horizon, transition intensities change relatively little, so a time-homogeneous approximation can be adequate and is far more mathematically tractable (e.g. yielding simple closed-form results like $_tp_x=e^{-\\mu t}$, and simpler estimation), making it a reasonable working simplification for short-term or narrow-age-band applications.",
+          note: "The point to convey is a trade-off between tractability and realism, not that time-homogeneity is simply 'wrong' &mdash; it remains a defensible approximation in the right circumstances.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q4",
+      title: "Estimating a survival function from censored data",
+      modules: "Modules 6, 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define right-censoring and explain why the Kaplan-Meier estimator, rather than a simple empirical proportion, is used to estimate a survival function from censored data.",
+          answer:
+            "A right-censored observation is one where the individual's true event (e.g. death) time is only known to exceed some observed value &mdash; e.g. because the individual is still alive when the study ends, or withdraws early. A simple empirical proportion of survivors would treat censored individuals as if their status at censoring were their final outcome, discarding the partial survival information they do provide; the Kaplan-Meier estimator instead uses each individual's observed period at risk, correctly incorporating that information without assuming an event occurred.",
+          note: "The key point is that censored individuals are NOT discarded entirely and are NOT treated as deaths &mdash; they contribute exposure up to their censoring time, then leave the risk set, which is exactly what the Kaplan-Meier construction in part (ii) reflects.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "A study of 5 individuals records the following times (in months) since entry: 2 (death), 3 (death), 5 (censored), 6 (death), 8 (death). Calculate the Kaplan-Meier estimate of the survival function $S(t)$ at each death time.",
+          answer:
+            "$t=2$: at risk $n=5$, 1 death, $S(2)=1\\times(1-1/5)=0.800$. $t=3$: at risk $n=4$, 1 death, $S(3)=0.800\\times(1-1/4)=0.600$. $t=5$: censored, removed from the risk set (no change to $S$); at risk falls to $n=2$ for the next death. $t=6$: at risk $n=2$, 1 death, $S(6)=0.600\\times(1-1/2)=0.300$. $t=8$: at risk $n=1$, 1 death, $S(8)=0.300\\times(1-1/1)=0.000$.",
+          note: "The risk set size must be reduced by the censored individual at $t=5$ even though $S(t)$ itself is unchanged at that point &mdash; forgetting to remove the censored individual from the at-risk count before the next death (giving $n=3$ instead of $n=2$ at $t=6$) is the most common error.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on why $S(8)=0$ in part (ii), and whether this should be interpreted as meaning no individual could survive beyond 8 months.",
+          answer:
+            "$S(8)=0$ simply because every individual in this small sample who was not censored had died by $t=8$ &mdash; it is an artefact of the specific (small) sample observed, not evidence that survival beyond 8 months is impossible in the underlying population. With only 5 individuals, the Kaplan-Meier estimate is subject to considerable sampling variability, especially in the tail.",
+          note: "Candidates should recognise this as a small-sample estimation artefact rather than a substantive finding about the true survival distribution.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain what would happen to the Kaplan-Meier estimate at $t=6$ and $t=8$ if the individual censored at $t=5$ had instead died at $t=5$.",
+          answer:
+            "The death at $t=5$ would itself produce a drop in $S$: $S(5)=0.600\\times(1-1/3)=0.400$ (at risk $n=3$ at that point). The subsequent risk set at $t=6$ would still be $n=2$ (unchanged from the original calculation, since the individual leaves the risk set either way), so $S(6)=0.400\\times(1-1/2)=0.200$ and $S(8)=0.200\\times(1-1/1)=0.000$ &mdash; lower throughout from $t=5$ onward than in part (ii), since this extra death removes probability mass that censoring alone would not have.",
+          note: "The at-risk counts from $t=6$ onward are unaffected by whether the $t=5$ individual died or was censored (either way, they leave the risk set) &mdash; only the survival function level itself drops further, because a death (unlike censoring) directly reduces $S$.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q5",
+      title: "Proportional hazards and estimating exposure to risk",
+      modules: "Modules 8, 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the proportional hazards assumption underlying the Cox model, and explain the interpretation of a fitted coefficient $\\beta$ for a binary covariate.",
+          answer:
+            "The Cox proportional hazards model assumes each individual's hazard is a fixed multiple of a common baseline hazard: $h(t\\mid \\mathbf{z}) = h_0(t)e^{\\boldsymbol{\\beta}^T\\mathbf{z}}$, so the ratio of hazards between any two individuals is constant over time, regardless of the (unspecified) baseline hazard's shape. For a binary covariate $z$ (e.g. smoker=1, non-smoker=0) with coefficient $\\beta$, $e^{\\beta}$ is the hazard ratio &mdash; the multiplicative factor by which the hazard changes for $z=1$ relative to $z=0$.",
+          note: "The 'proportional' in proportional hazards refers specifically to the hazard RATIO being constant over time, not to the hazard itself being constant &mdash; the baseline hazard $h_0(t)$ is left completely unspecified and can vary with $t$ in any shape.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 2,
+          question: "A Cox model fitted to lapse data gives a coefficient of $\\beta=0.5$ for a covariate indicating whether a policyholder pays annually rather than monthly. Calculate the hazard ratio, and state which payment frequency is associated with higher lapse risk.",
+          answer:
+            "Hazard ratio $=e^{0.5}=1.6487$. Annual payers have a lapse hazard 1.65 times that of monthly payers (holding other covariates fixed), so annual payment is associated with higher lapse risk.",
+          note: "Since $\\beta>0$, the hazard ratio $e^\\beta>1$ confirms higher risk for the covariate's indicated group &mdash; a negative $\\beta$ would instead give a hazard ratio below 1, indicating lower risk.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A mortality investigation covers exact age 50 to exact age 51, over calendar year 2020. Life A turns exact age 50 on 1 March 2020 and survives the full period. Life B is already exact age 50 at 1 January 2020 and dies on 1 July 2020 (exact age 50.5). Life C is exact age 50 at 1 January 2020 and withdraws from observation on 1 October 2020 (exact age 50.75). Calculate the total central exposed to risk (in years) across all three lives.",
+          answer:
+            "Life A: observed from 1 March to 31 December 2020, i.e. 10 months $=10/12=0.8333$ years. Life B: observed from 1 January to death on 1 July, i.e. 6 months $=0.5$ years. Life C: observed from 1 January to withdrawal on 1 October, i.e. 9 months $=0.75$ years. Total central exposed to risk $=0.8333+0.5+0.75=2.0833$ years.",
+          note: "Each life's exposure runs only over the period they are actually both alive AND under observation within the age 50-51 rate interval &mdash; Life A only enters the interval on 1 March (turning 50), while Lives B and C are already in it from 1 January, and each life's exposure ends at death, withdrawal, or the period end, whichever comes first.",
+        },
+        {
+          label: "(iv)",
+          command: "Calculate",
+          marks: 3,
+          question: "Using the total exposure from part (iii) and the single death observed (Life B), calculate the central mortality rate $m_{50}$, and comment on the reliability of this estimate.",
+          answer:
+            "$m_{50} = \\dfrac{\\text{deaths}}{\\text{central exposed to risk}} = \\dfrac{1}{2.0833} = 0.480$. This estimate is based on only 3 lives and 1 death, so it is subject to very high sampling variability and should not be treated as a reliable estimate of the true underlying mortality rate &mdash; a credible estimate would require a far larger exposed-to-risk investigation.",
+          note: "The formula divides the observed death COUNT by the exposure in years, giving units of 'deaths per life-year' &mdash; candidates should flag the tiny sample size explicitly rather than just quoting the number without comment.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q6",
+      title: "Testing and constructing a graduated mortality table",
+      modules: "Modules 10, 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "State two distinct purposes served by applying statistical tests to a graduated mortality table.",
+          answer:
+            "(1) To check overall goodness of fit &mdash; whether the graduated rates are, in aggregate, consistent with the crude (observed) data (e.g. via a chi-square test). (2) To check for the presence of systematic features not captured by the graduation, such as bias in a particular direction across ages (e.g. via the signs test or cumulative deviations test) or dependence between adjacent ages' deviations (e.g. via the serial correlations test).",
+          note: "The two purposes are genuinely distinct: an overall chi-square test can pass even while a systematic pattern (e.g. consistent over-estimation at younger ages, under-estimation at older ages) goes undetected, which is exactly why the additional tests exist.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A graduation is tested against 5 age groups with actual deaths $O$ and graduated (expected) deaths $E$: $O=(40,55,30,45,50)$, $E=(35,50,34,48,53)$. Calculate the chi-square test statistic $\\chi^2=\\sum\\dfrac{(O-E)^2}{E}$.",
+          answer:
+            "$\\dfrac{(40-35)^2}{35}+\\dfrac{(55-50)^2}{50}+\\dfrac{(30-34)^2}{34}+\\dfrac{(45-48)^2}{48}+\\dfrac{(50-53)^2}{53} = 0.714+0.500+0.471+0.188+0.170 = 2.042$",
+          note: "It's worth checking $\\sum O = \\sum E = 220$ before computing &mdash; a mismatch here would indicate a data entry error, since a graduation is normally constructed to preserve the total number of deaths.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on the conclusion from the chi-square statistic in part (ii), given a 5% critical value of 9.488 on 4 degrees of freedom.",
+          answer:
+            "Since $\\chi^2=2.042 < 9.488$, there is no evidence to reject the null hypothesis that the graduated rates are consistent with the crude data &mdash; the graduation passes this overall goodness-of-fit test.",
+          note: "Degrees of freedom here is (number of age groups) $-1$; candidates should be able to identify why 1 degree of freedom is lost (the graduation is typically constrained to reproduce the total observed deaths, as noted in part (ii)).",
+        },
+        {
+          label: "(iv)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A separate graduation by mathematical formula uses Makeham's law $\\mu_x=A+Bc^x$ with fitted parameters $A=0.0002$, $B=0.00005$, $c=1.09$. Calculate the graduated force of mortality $\\mu_{60}$.",
+          answer:
+            "$\\mu_{60} = 0.0002 + 0.00005(1.09^{60}) = 0.0002 + 0.00005(180.0) = 0.0002+0.00900 = 0.00920$",
+          note: "$1.09^{60}$ grows very large ($\\approx180$) &mdash; candidates should compute this power carefully (e.g. via repeated squaring or logarithms) rather than approximating it loosely, since the whole answer is dominated by this term.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q7",
+      title: "Projecting future mortality and an AR(1) time series model",
+      modules: "Modules 12, 13, 14",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the 'reduction factor' approach to mortality projection.",
+          answer:
+            "The reduction factor approach projects future mortality rates by applying a multiplicative annual improvement factor to a base-year mortality rate: $q_x^{(t)} = q_x^{(0)}\\times RF(x,t)$, where $RF(x,t)$ (often of the form $(1-r_x)^t$ for an age-specific annual reduction rate $r_x$) declines below 1 as $t$ increases, reflecting assumed continuing mortality improvement.",
+          note: "The reduction factor is applied MULTIPLICATIVELY to the base rate, and typically compounds year-on-year (i.e. raised to the power of the number of years projected), not simply subtracted once.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question: "A base mortality rate is $q_{65}^{2000}=0.012$, with an assumed constant annual reduction factor of 1.5%. Calculate the projected rate $q_{65}^{2030}$.",
+          answer:
+            "$q_{65}^{2030} = 0.012\\times(1-0.015)^{30} = 0.012\\times(0.985)^{30} = 0.012\\times0.6354 = 0.007625$",
+          note: "The exponent is the number of YEARS projected (30, from 2000 to 2030), applied to the single-year reduction factor $(1-0.015)$ &mdash; using 0.015 directly as a one-off percentage reduction, rather than compounding it over 30 years, is a common error.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 4,
+          question: "A time series of annual mortality improvement rates is modelled as a stationary AR(1) process $X_t=\\phi X_{t-1}+\\varepsilon_t$ with $\\phi=0.7$ and $\\text{Var}(\\varepsilon_t)=4$. Calculate the unconditional variance of $X_t$, and the autocorrelations $\\rho(1)$ and $\\rho(2)$.",
+          answer:
+            "$\\text{Var}(X_t) = \\dfrac{\\sigma_\\varepsilon^2}{1-\\phi^2} = \\dfrac{4}{1-0.49} = \\dfrac{4}{0.51} = 7.843$. For an AR(1), $\\rho(k)=\\phi^k$, so $\\rho(1)=0.7$ and $\\rho(2)=0.7^2=0.49$.",
+          note: "The unconditional variance formula $\\sigma_\\varepsilon^2/(1-\\phi^2)$ is only valid because $|\\phi|=0.7<1$, which is exactly the stationarity condition for an AR(1) process &mdash; the formula would be meaningless (negative or undefined) for $|\\phi|\\geq1$.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss briefly why the stationarity condition $|\\phi|<1$ matters for using this AR(1) model to project future mortality improvement rates.",
+          answer:
+            "Stationarity ensures the process has a constant, finite unconditional mean and variance, and that shocks $\\varepsilon_t$ have a diminishing (rather than ever-growing) effect on future values as $\\phi^k\\to0$ &mdash; this means projections revert toward a stable long-run mean rather than diverging or drifting without bound, which is essential for a mortality improvement model to give sensible, bounded long-term projections rather than explosive or non-mean-reverting ones.",
+          note: "The key mechanism to name explicitly is that $\\phi^k\\to0$ as $k\\to\\infty$ only when $|\\phi|<1$, which is exactly what causes both the autocorrelations (part iii) and the influence of past shocks to decay over time, underpinning stable long-run projections.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q8",
+      title: "A Pareto severity model and excess of loss reinsurance",
+      modules: "Modules 15, 16",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Explain, in terms of the hazard rate, why the Pareto distribution is described as 'heavy-tailed', and why this makes it a common choice for modelling large general insurance losses.",
+          answer:
+            "The Pareto distribution has a decreasing hazard rate as $x\\to\\infty$, meaning that, conditional on a loss already being large, the 'resistance' to it becoming even larger diminishes rather than increases &mdash; this produces a slowly-decaying, power-law tail. This makes it a natural choice for modelling large losses, since it does not understate the probability of extreme, catastrophic claims the way a lighter-tailed distribution (e.g. exponential or normal) would.",
+          note: "The defining feature to state explicitly is the DECREASING hazard rate (linking back to the general tail-weight measures of EVT), not simply 'it has a long tail', which is imprecise.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question: "Claim sizes $X$ follow a Pareto distribution with survival function $P(X>x) = \\left(\\dfrac{\\lambda}{\\lambda+x}\\right)^\\alpha$, with $\\alpha=3$ and $\\lambda=2{,}000$ (&pound;). Calculate the probability that a claim exceeds &pound;5,000.",
+          answer:
+            "$P(X>5{,}000) = \\left(\\dfrac{2{,}000}{2{,}000+5{,}000}\\right)^3 = \\left(\\dfrac{2{,}000}{7{,}000}\\right)^3 = (0.2857)^3 = 0.02332$",
+          note: "This is a direct substitution into the given survival function &mdash; candidates should keep $\\lambda$ and $x$ in the same monetary units throughout (both in &pound; here) to avoid a scaling error.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "For this Pareto distribution ($\\alpha=3$, $\\lambda=2{,}000$), the mean is $E[X]=\\dfrac{\\lambda}{\\alpha-1}$ and the expected amount retained by the insurer under excess of loss reinsurance with retention $M$ is $E[\\min(X,M)] = \\dfrac{\\lambda}{\\alpha-1}\\left[1-\\left(\\dfrac{\\lambda}{\\lambda+M}\\right)^{\\alpha-1}\\right]$. Calculate $E[X]$ and, for a retention of $M=\\pounds3{,}000$, the reinsurer's expected payout per claim.",
+          answer:
+            "$E[X] = \\dfrac{2{,}000}{3-1} = \\pounds1{,}000$. $E[\\min(X,3{,}000)] = \\dfrac{2{,}000}{2}\\left[1-\\left(\\dfrac{2{,}000}{5{,}000}\\right)^{2}\\right] = 1{,}000\\left[1-(0.4)^2\\right] = 1{,}000(1-0.16) = \\pounds840$. Reinsurer's expected payout $= E[X]-E[\\min(X,M)] = 1{,}000-840 = \\pounds160$ per claim.",
+          note: "The exponent in $E[\\min(X,M)]$ is $\\alpha-1=2$, NOT $\\alpha=3$ &mdash; using the wrong exponent (matching the survival function's exponent from part (ii) instead) is the most common error here.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on how the reinsurer's expected payout found in part (iii) would change if the severity distribution instead had a lighter tail than Pareto, with the same overall mean claim size of &pound;1,000.",
+          answer:
+            "With a lighter-tailed severity distribution but the same mean, less probability mass would sit in the extreme right tail above the retention $M=\\pounds3{,}000$, so the reinsurer's expected payout would typically be lower than the &pound;160 found for the heavy-tailed Pareto &mdash; illustrating that excess of loss reinsurance pricing depends critically on tail weight, not just on the mean claim size.",
+          note: "This connects directly back to the module's opening point (part (i)): two severity distributions can share the same mean yet imply very different reinsurance costs, purely because of differing tail weight.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q9",
+      title: "Dependence between lines of business: copulas and reinsurance",
+      modules: "Modules 17, 18",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "State Sklar's theorem, and explain what is meant by 'upper tail dependence' between two risks.",
+          answer:
+            "Sklar's theorem states that any joint distribution can be decomposed into its marginal distributions together with a copula function describing the dependence structure between them, independently of what those marginals are. Upper tail dependence is the tendency for both risks to take extremely high (bad, for losses) values simultaneously, more than an assumption of independence (or a dependence structure like the Gaussian copula) would suggest.",
+          note: "Candidates should be precise that Sklar's theorem allows the marginals and the dependence structure to be specified SEPARATELY and then combined &mdash; it doesn't say marginals and dependence are unrelated in general, just that they can always be decomposed this way.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why using a Gaussian copula to model the dependence between an insurer's property and business-interruption claims (both of which can be triggered by the same storm event) could understate the insurer's true aggregate risk.",
+          answer:
+            "The Gaussian copula has zero tail dependence by construction, regardless of its correlation parameter &mdash; even with a high overall correlation, it implies that jointly extreme losses on both lines become vanishingly unlikely relative to what physically correlated risks (like storm-driven property and business-interruption claims) would actually produce. An Archimedean copula with genuine upper tail dependence (e.g. Gumbel) would better reflect the real risk of both lines producing extreme losses from the same catastrophic event simultaneously, and would imply a higher, more realistic aggregate capital requirement.",
+          note: "The key technical point is that the Gaussian copula's flaw is structural (zero tail dependence at ANY correlation level), not simply that its correlation parameter might be mis-estimated &mdash; this is the same limitation historically implicated in underestimating correlated risk in the 2008 financial crisis.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 4,
+          question: "A line of business has individual claim mean &pound;1,000 and variance &pound;4,000,000. The insurer cedes 30% of every claim under a quota share treaty (retaining $\\alpha=0.7$). Calculate the insurer's retained mean and variance per claim.",
+          answer:
+            "Retained mean $=\\alpha E[X] = 0.7(1{,}000) = \\pounds700$. Retained variance $=\\alpha^2\\text{Var}(X) = 0.7^2(4{,}000{,}000) = 0.49(4{,}000{,}000) = \\pounds1{,}960{,}000$ (retained SD $\\approx\\pounds1{,}400$).",
+          note: "Variance scales with $\\alpha^2$, not $\\alpha$ &mdash; a common error is to apply the same linear scaling to variance as to the mean, giving $0.7(4{,}000{,}000)$ instead of the correct $0.7^2(4{,}000{,}000)$.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on how quota share reinsurance (part (iii)) and the choice of copula (part (ii)) address different aspects of the insurer's overall risk.",
+          answer:
+            "Quota share reinsurance reduces the insurer's retained mean and variance on EACH individual line proportionally, regardless of how that line relates to any other; it does nothing, by itself, to address dependence BETWEEN lines. The copula, by contrast, governs how extreme outcomes on different lines co-occur, and matters specifically for assessing and managing AGGREGATE risk across the whole portfolio &mdash; an insurer could reduce each line's individual variance via proportional reinsurance and still be badly exposed to a correlated catastrophic event across both lines if the dependence structure between them is misspecified.",
+          note: "The distinction to draw out clearly is per-line risk reduction (reinsurance) versus cross-line dependence modelling (copulas) &mdash; both matter for overall capital adequacy, but neither substitutes for the other.",
+        },
+      ],
+    },
+    {
+      id: "cs2-q10",
+      title: "Aggregate claims for a compound Poisson portfolio, and evaluating a fraud classifier",
+      modules: "Modules 19, 20, 21",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A portfolio generates claims as a compound Poisson process with annual claim frequency $\\lambda=50$ and individual claim sizes exponentially distributed with mean &pound;800 (so $E[X^2]=2(800)^2$ for an exponential distribution). Calculate $E[S]$ and $\\text{Var}(S)$ for annual aggregate claims $S$.",
+          answer:
+            "$E[S] = \\lambda E[X] = 50(800) = \\pounds40{,}000$. $E[X^2] = 2(800)^2 = 1{,}280{,}000$. $\\text{Var}(S) = \\lambda E[X^2] = 50(1{,}280{,}000) = \\pounds^2\\,64{,}000{,}000$ (SD $=\\pounds8{,}000$).",
+          note: "The compound Poisson variance formula $\\text{Var}(S)=\\lambda E[X^2]$ uses the SECOND MOMENT of the severity distribution, not its variance alone &mdash; for the exponential distribution, $E[X^2]=2(\\text{mean})^2$, which is easy to substitute incorrectly as just $(\\text{mean})^2$.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 2,
+          question: "Using a normal approximation to $S$ with the mean and standard deviation from part (i), calculate the approximate 95th percentile of annual aggregate claims (using $z_{0.95}=1.645$).",
+          answer:
+            "95th percentile $\\approx E[S] + z_{0.95}\\,SD(S) = 40{,}000 + 1.645(8{,}000) = 40{,}000+13{,}160 = \\pounds53{,}160$",
+          note: "Since aggregate claims are typically right-skewed (as covered in Risk models 2), this normal approximation likely understates the true 95th percentile somewhat &mdash; a translated gamma approximation or simulation would generally be preferred for a more accurate capital-setting figure.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A machine learning model is used to flag potentially fraudulent claims. Tested against 1,000 claims with known outcomes, it produces: 80 true positives, 20 false positives, 30 false negatives, and 870 true negatives. Calculate the model's precision, recall, and $F_1$ score.",
+          answer:
+            "Precision $=\\dfrac{TP}{TP+FP}=\\dfrac{80}{100}=0.800$. Recall $=\\dfrac{TP}{TP+FN}=\\dfrac{80}{110}=0.7273$. $F_1 = \\dfrac{2\\times\\text{Precision}\\times\\text{Recall}}{\\text{Precision}+\\text{Recall}} = \\dfrac{2(0.800)(0.7273)}{0.800+0.7273} = \\dfrac{1.1636}{1.5273} = 0.7619$",
+          note: "Precision's denominator is ALL predicted positives ($TP+FP=100$), while recall's denominator is ALL actual positives ($TP+FN=110$) &mdash; mixing these two denominators up is the most common error in this type of calculation.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why recall might be prioritised over precision when tuning this fraud-detection classifier's threshold, despite the resulting increase in false positives.",
+          answer:
+            "A missed fraudulent claim (a false negative) directly costs the insurer the full fraudulent payout, whereas a false positive (a genuine claim incorrectly flagged) typically only costs the resource of a manual review before being paid correctly &mdash; given this asymmetry in the cost of the two error types, prioritising recall (catching more true fraud, even at the cost of more false alarms) can be the more economically sensible choice, provided the manual review capacity can absorb the extra false positives.",
+          note: "The strongest answers explicitly weigh the asymmetric COSTS of the two error types for this specific business context, rather than asserting recall is 'just better' in general &mdash; the right threshold choice is a business trade-off, not a universal rule.",
+        },
+      ],
+    },
+  ],
 };
