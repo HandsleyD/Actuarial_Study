@@ -8835,63 +8835,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are 'initial expenses', in the context of a financial product?",
-                "a": "Costs incurred at the outset of a policy/contract, e.g. underwriting, commission, and setup administration costs."
+                "a": "Costs incurred at the outset of a policy/contract, e.g. underwriting, commission, and setup administration costs.",
+                "explain": "This module gives Module 20's assumption-setting framework a concrete application to a firm's own cost base — worth previewing Module 24's new business strain concept here, since these upfront initial expenses are precisely what creates that strain: money out the door before any premium income has had a chance to accumulate."
             },
             {
                 "q": "What are 'renewal expenses'?",
-                "a": "Ongoing costs incurred throughout the life of a policy/contract, e.g. regular administration and servicing costs."
+                "a": "Ongoing costs incurred throughout the life of a policy/contract, e.g. regular administration and servicing costs.",
+                "explain": "This is the SECOND of three expense categories this module develops by policy lifecycle stage (initial, renewal, termination) — worth noting a mature, stable insurer's overall expense base is dominated by this category, in contrast to a growing insurer, as a later card in this module explains."
             },
             {
                 "q": "What are 'termination expenses'?",
-                "a": "Costs incurred when a policy/contract ends, e.g. claim payment processing or surrender administration."
+                "a": "Costs incurred when a policy/contract ends, e.g. claim payment processing or surrender administration.",
+                "explain": "This completes the three-stage lifecycle expense framework (initial, renewal, termination) — worth keeping all three distinct in an exam answer, since expense investigations (a later card) typically analyse experience separately by category, not as one lumped total."
             },
             {
                 "q": "Why is it important to distinguish between fixed and variable expenses when analysing costs?",
-                "a": "Fixed expenses don't change with business volume, while variable expenses scale with it — this distinction matters for pricing and profitability projections at different volumes."
+                "a": "Fixed expenses don't change with business volume, while variable expenses scale with it — this distinction matters for pricing and profitability projections at different volumes.",
+                "explain": "This is a second, orthogonal way of classifying expenses alongside the lifecycle-stage split above — worth recognising these are two independent dimensions (WHEN a cost is incurred, versus whether it scales with volume), both needed for a genuinely accurate expense model."
             },
             {
                 "q": "What does 'expense overrun' mean?",
-                "a": "When actual expenses incurred exceed the amount allowed for in pricing/reserving assumptions."
+                "a": "When actual expenses incurred exceed the amount allowed for in pricing/reserving assumptions.",
+                "explain": "This is Module 20's assumption uncertainty concept made concrete for the expense assumption specifically — worth connecting directly to Module 24's pricing material: an expense overrun directly erodes the profit margin built into the equivalence-principle pricing calculation described there."
             },
             {
                 "q": "Why might an organisation carry out an 'expense investigation'?",
-                "a": "To analyse actual expense experience, compare it to assumptions, and inform more accurate future expense assumptions."
+                "a": "To analyse actual expense experience, compare it to assumptions, and inform more accurate future expense assumptions.",
+                "explain": "This is precisely Module 20's experience analysis principle applied specifically to expenses — the same actual-versus-expected comparison logic used for mortality and morbidity assumptions (Module 21) applies equally well here, closing the feedback loop between assumption-setting and real outcomes."
             },
             {
                 "q": "How might expenses typically be allocated across different products/business lines?",
-                "a": "Using an appropriate cost driver/basis (e.g. per policy, per unit of premium, or per claim) to fairly attribute shared costs."
+                "a": "Using an appropriate cost driver/basis (e.g. per policy, per unit of premium, or per claim) to fairly attribute shared costs.",
+                "explain": "This is a genuinely important practical judgement call worth flagging — many expenses (e.g. shared head-office costs) aren't naturally attributable to one product alone, so the CHOICE of allocation basis can materially affect each product's apparent profitability, even though total company-wide costs are unchanged."
             },
             {
                 "q": "Why might a growing business have a distorted view of its true underlying expense levels, if using recent overall expense experience?",
-                "a": "Initial (acquisition) expenses tend to dominate in a rapidly growing book, potentially overstating the ongoing (steady-state) per-policy expense level."
+                "a": "Initial (acquisition) expenses tend to dominate in a rapidly growing book, potentially overstating the ongoing (steady-state) per-policy expense level.",
+                "explain": "This is a genuinely subtle but important trap worth remembering for CP1 scenarios — a naive per-policy expense average calculated during a period of rapid growth will be skewed upward by all the initial expenses being incurred simultaneously, misrepresenting what the STEADY-STATE renewal-dominated cost base will eventually look like."
             },
             {
                 "q": "What is meant by 'economies of scale' in relation to expenses?",
-                "a": "As business volume grows, certain fixed costs are spread over more policies, potentially reducing the average expense per policy."
+                "a": "As business volume grows, certain fixed costs are spread over more policies, potentially reducing the average expense per policy.",
+                "explain": "This is the fixed-versus-variable distinction from earlier in this module playing out dynamically over time — worth noting this cuts in the OPPOSITE direction to the growth-distortion trap above: growth can simultaneously inflate the apparent expense level (via dominant initial costs) while genuinely reducing the underlying fixed-cost-per-policy over the longer run."
             },
             {
                 "q": "Why might expense assumptions need separate allowance for inflation?",
-                "a": "Expenses (especially staff costs) often increase over time due to general or salary-specific inflation, which should be reflected in long-term projections."
+                "a": "Expenses (especially staff costs) often increase over time due to general or salary-specific inflation, which should be reflected in long-term projections.",
+                "explain": "This connects directly to Module 20's assumption-consistency principle — an expense assumption set without its own inflation allowance, used alongside separately-assumed investment returns and other economic assumptions, risks exactly the internal-inconsistency problem that module warned against."
             },
             {
                 "q": "How might outsourcing part of an organisation's operations affect its expense structure?",
-                "a": "It can convert some fixed costs into variable costs (paid per unit of activity), potentially changing the risk profile of the expense base."
+                "a": "It can convert some fixed costs into variable costs (paid per unit of activity), potentially changing the risk profile of the expense base.",
+                "explain": "This is a direct, deliberate lever an organisation can pull on the fixed/variable classification from earlier in this module — worth noting this changes not just the AMOUNT of expense risk but its whole SHAPE, converting a fixed cost that must be paid regardless of volume into one that scales down automatically if business shrinks."
             },
             {
                 "q": "Why is accurate expense allowance important for pricing a new insurance product?",
-                "a": "Underestimating expenses could result in premiums that don't cover the true cost of writing and servicing the business, harming profitability."
+                "a": "Underestimating expenses could result in premiums that don't cover the true cost of writing and servicing the business, harming profitability.",
+                "explain": "This directly previews Module 24's equivalence principle — expenses are one of the three components (alongside benefits and profit margin) that pricing has to cover, so an inaccurate expense assumption feeds straight into an inadequately-priced product regardless of how accurate the other assumptions are."
             },
             {
                 "q": "What is a 'per policy' expense assumption used for?",
-                "a": "Allocating expenses that don't vary much with policy size (e.g. basic administration) on a flat amount per policy in force."
+                "a": "Allocating expenses that don't vary much with policy size (e.g. basic administration) on a flat amount per policy in force.",
+                "explain": "This is a specific, common allocation basis from the earlier card on expense allocation — worth noting it deliberately does NOT scale with premium or sum assured, appropriate for administrative costs (like sending a statement) that cost roughly the same whether the policy is large or small."
             },
             {
                 "q": "Why might expense assumptions differ between a new, rapidly growing insurer and a mature, stable one?",
-                "a": "A growing insurer has proportionally higher acquisition costs relative to its (smaller) in-force book, while a mature insurer's expense base is more dominated by renewal/maintenance costs."
+                "a": "A growing insurer has proportionally higher acquisition costs relative to its (smaller) in-force book, while a mature insurer's expense base is more dominated by renewal/maintenance costs.",
+                "explain": "This closes the loop on the growth-distortion trap flagged earlier in this module — it's exactly why a mature insurer's historical expense experience is generally a MORE reliable guide to its own future expenses than a young, rapidly growing insurer's would be, since the latter's recent experience is skewed by disproportionate initial costs."
             },
             {
                 "q": "How can inaccurate expense assumptions undermine an otherwise well-priced insurance product?",
-                "a": "Even with accurate mortality/investment assumptions, understated expenses mean the actual cost of running the business exceeds what premiums were designed to cover."
+                "a": "Even with accurate mortality/investment assumptions, understated expenses mean the actual cost of running the business exceeds what premiums were designed to cover.",
+                "explain": "This closing card echoes Module 21's closing point about mortality/morbidity being significant profitability drivers — worth reading them together as a pair: a product's profitability depends on getting EVERY major assumption right (mortality, investment returns, AND expenses), and a single mis-set assumption can undermine an otherwise sound pricing exercise."
             }
         ]
     },
@@ -8902,63 +8917,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the main objectives to balance when designing a financial product contract?",
-                "a": "Meeting genuine customer needs, managing the provider's risk appropriately, and ensuring commercial viability/profitability."
+                "a": "Meeting genuine customer needs, managing the provider's risk appropriately, and ensuring commercial viability/profitability.",
+                "explain": "This module returns directly to Module 5's product-design themes, now with the technical machinery of Modules 18-22 (modelling, assumptions, mortality/morbidity, expenses) available to inform the design choices — worth reading this module as Part 4's practical synthesis point, much as Module 15 was for Part 3's investment material."
             },
             {
                 "q": "Why might overly complex contract terms be problematic, even if they technically better match customer needs?",
-                "a": "Complexity can reduce customer understanding, increase administration costs, and create mis-selling or dispute risk."
+                "a": "Complexity can reduce customer understanding, increase administration costs, and create mis-selling or dispute risk.",
+                "explain": "This is Module 2's clear-communication principle and Module 4's conduct regulation both converging on contract design specifically — a technically superior but poorly-understood contract can fail the suitability test (Module 5) just as surely as a genuinely poorly-designed one."
             },
             {
                 "q": "What is a 'guarantee' within a contract, and why does it add risk for the provider?",
-                "a": "A promise of a minimum benefit/outcome regardless of how underlying experience (e.g. investment returns) actually turns out, which the provider must fund if experience is adverse."
+                "a": "A promise of a minimum benefit/outcome regardless of how underlying experience (e.g. investment returns) actually turns out, which the provider must fund if experience is adverse.",
+                "explain": "This is exactly Module 7's guaranteed annuity rate risk generalised into a design principle — worth recognising every guarantee as a transfer of risk FROM the customer TO the provider, which then has to be reflected in pricing (Module 24) and backed by capital (Modules 36-39 later in CP1)."
             },
             {
                 "q": "Why might a provider limit the guarantees offered within a contract design?",
-                "a": "Guarantees transfer risk from the customer to the provider, which must be priced for and backed by capital — excessive guarantees can be costly or unsustainable."
+                "a": "Guarantees transfer risk from the customer to the provider, which must be priced for and backed by capital — excessive guarantees can be costly or unsustainable.",
+                "explain": "This directly connects the previous card's risk-transfer point to the capital-requirement material later in CP1 — worth remembering guarantees aren't free just because a customer values them; every guarantee ultimately needs capital support, making excessive guarantee generosity a genuine commercial viability risk."
             },
             {
                 "q": "What is an 'option' within a contract (e.g. a guaranteed insurability option)?",
-                "a": "A right (but not obligation) for the policyholder to take a specified future action (e.g. increase cover) under pre-agreed terms."
+                "a": "A right (but not obligation) for the policyholder to take a specified future action (e.g. increase cover) under pre-agreed terms.",
+                "explain": "This is Module 7's guaranteed insurability card and Module 9's callable bond option both recalled here as the same general structure — worth noting the key distinguishing feature from a guarantee: an option is only exercised if and when the policyholder CHOOSES to, but as the next card explains, that choice itself is exactly what makes options costly."
             },
             {
                 "q": "Why do options embedded in contracts typically have a cost to the provider, even if never exercised?",
-                "a": "The policyholder is more likely to exercise the option when it's financially advantageous to them (and disadvantageous to the provider), creating anti-selective risk that must be priced for."
+                "a": "The policyholder is more likely to exercise the option when it's financially advantageous to them (and disadvantageous to the provider), creating anti-selective risk that must be priced for.",
+                "explain": "This is precisely CM2's option-pricing intuition (an option has value simply from EXISTING, regardless of whether it's ultimately exercised) combined with Module 21's anti-selection concept — the policyholder's freedom to choose WHEN to exercise is systematically used against the provider's interest, which is exactly why options must be priced for even before knowing whether any given one will be used."
             },
             {
                 "q": "What does 'flexibility' in contract design refer to?",
-                "a": "The ability for the contract terms (e.g. premiums, benefits) to be adjusted, either by the policyholder or the provider, over the life of the contract."
+                "a": "The ability for the contract terms (e.g. premiums, benefits) to be adjusted, either by the policyholder or the provider, over the life of the contract.",
+                "explain": "Worth noting this flexibility can run in EITHER direction — a policyholder-side option (like guaranteed insurability above) benefits the customer, while provider-side flexibility (reviewable premiums, discussed next) benefits the provider, and contract design is largely about choosing where along this spectrum a given product should sit."
             },
             {
                 "q": "Why might a provider want the ability to review/adjust certain contract terms (e.g. reviewable premiums) after inception?",
-                "a": "To manage the risk of adverse experience diverging from original pricing assumptions over a long contract term."
+                "a": "To manage the risk of adverse experience diverging from original pricing assumptions over a long contract term.",
+                "explain": "This is a direct, structural response to Module 20's assumption-uncertainty concern — rather than bearing all the risk of an assumption turning out wrong over a long-term contract, a reviewable-premium design lets the provider adjust terms as genuine experience (Module 22's expense investigations, Module 21's mortality studies) emerges."
             },
             {
                 "q": "What is a potential downside, from a customer perspective, of a provider retaining the right to review/adjust contract terms?",
-                "a": "It introduces uncertainty for the customer, who cannot be fully certain of their future costs/benefits."
+                "a": "It introduces uncertainty for the customer, who cannot be fully certain of their future costs/benefits.",
+                "explain": "This is the direct trade-off against the previous card's benefit, and it's exactly the guarantee-versus-flexibility tension this module keeps returning to — shifting uncertainty AWAY from the provider (via review rights) necessarily shifts it BACK toward the customer, echoing the guarantee cards' risk-transfer logic in reverse."
             },
             {
                 "q": "How does the choice between a 'with-profits' and 'unit-linked' structure reflect different risk-sharing in contract design?",
-                "a": "With-profits pools and smooths risk with the provider retaining more investment risk; unit-linked passes investment risk more directly to the policyholder."
+                "a": "With-profits pools and smooths risk with the provider retaining more investment risk; unit-linked passes investment risk more directly to the policyholder.",
+                "explain": "This is exactly Module 7's closing card on life-product risk allocation, and Module 13's smoothed-valuation discussion, both recalled here as a concrete contract-design choice — worth treating this as a worked example of the whole module's guarantee/flexibility/risk-sharing themes applied to one specific, familiar product pair."
             },
             {
                 "q": "Why might contract design need to consider how the product will be administered in practice?",
-                "a": "Overly complex or bespoke designs can be difficult/costly to administer accurately at scale, undermining the product's commercial viability."
+                "a": "Overly complex or bespoke designs can be difficult/costly to administer accurately at scale, undermining the product's commercial viability.",
+                "explain": "This connects back to the module's opening complexity-cost card, and to Module 22's expense material — administration is itself a source of ongoing renewal expenses, so a design that's expensive or error-prone to administer directly undermines the expense assumptions the product was priced on."
             },
             {
                 "q": "What role does competitor product design play in shaping a new contract's features?",
-                "a": "Providers must remain competitive, so understanding what similar products in the market offer influences the features and pricing of a new design."
+                "a": "Providers must remain competitive, so understanding what similar products in the market offer influences the features and pricing of a new design.",
+                "explain": "This is Module 3's competitor-behaviour PESTLE point applied specifically to product design — echoing Module 5's earlier warning, a design that meets customer needs perfectly but is commercially uncompetitive relative to similar market offerings still risks failing on the viability leg of this module's opening balance."
             },
             {
                 "q": "Why might regulation constrain certain contract design choices?",
-                "a": "Rules on fair treatment of customers, disclosure, or permitted product features can limit what terms a provider may legally offer."
+                "a": "Rules on fair treatment of customers, disclosure, or permitted product features can limit what terms a provider may legally offer.",
+                "explain": "This is Module 4's conduct regulation material applied directly — worth connecting to the complexity card at the start of this module: regulatory fair-treatment rules often push design in the SAME direction as good practice (toward clarity and genuine suitability) would already suggest, rather than being a purely external constraint."
             },
             {
                 "q": "What is 'moral hazard' in contract design, and how might a contract be designed to mitigate it?",
-                "a": "The risk a policyholder behaves differently (more riskily) because they're insured; mitigated via excesses, no-claims discounts, or exclusions."
+                "a": "The risk a policyholder behaves differently (more riskily) because they're insured; mitigated via excesses, no-claims discounts, or exclusions.",
+                "explain": "This is Module 5's and Module 8's moral hazard material recalled directly — worth noting all three mitigation tools mentioned here (excesses, no-claims discounts, exclusions) are specific design features that deliberately keep some risk or cost with the policyholder, exactly the mechanism previously explained for general insurance products."
             },
             {
                 "q": "Why is contract design considered an iterative process, rather than a one-off exercise?",
-                "a": "Products are often refined over time based on sales experience, claims experience, customer feedback, and changes in the external environment."
+                "a": "Products are often refined over time based on sales experience, claims experience, customer feedback, and changes in the external environment.",
+                "explain": "This closing card echoes the ongoing-review theme recurring throughout CP1 (Module 3's environment monitoring, Module 15's strategy review, Module 20's assumption review) — worth recognising this as another instance of the same principle: even a well-designed contract at launch needs to be revisited as real-world experience and conditions evolve."
             }
         ]
     },
@@ -8969,63 +8999,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'equivalence principle' in the context of pricing?",
-                "a": "Setting the price so that, on the assumptions used, the expected present value of income equals the expected present value of outgo (benefits plus expenses, possibly plus a profit margin)."
+                "a": "Setting the price so that, on the assumptions used, the expected present value of income equals the expected present value of outgo (benefits plus expenses, possibly plus a profit margin).",
+                "explain": "This module closes Part 4 of CP1 by bringing together everything built up across Modules 18-23 into a single pricing formula — CM1's present-value machinery, Module 21's mortality/morbidity assumptions, and Module 22's expense assumptions all feed directly into the 'outgo' side of this equation."
             },
             {
                 "q": "Why might a provider price a product below the strict actuarial cost implied by best-estimate assumptions?",
-                "a": "For strategic reasons, e.g. to gain market share, cross-subsidise from other products, or as a loss-leader — though this carries commercial risk."
+                "a": "For strategic reasons, e.g. to gain market share, cross-subsidise from other products, or as a loss-leader — though this carries commercial risk.",
+                "explain": "This directly connects to Module 23's market-based pricing card, and it's worth reading alongside Module 4's excessive-regulation-has-a-downside caution — pure actuarial pricing isn't the only consideration in practice, but deviating from it deliberately is a genuine commercial risk that has to be consciously managed, not an accident."
             },
             {
                 "q": "What is a 'pricing strategy' based on 'cost-plus' pricing?",
-                "a": "Setting price by adding a target margin on top of the estimated cost of providing the product."
+                "a": "Setting price by adding a target margin on top of the estimated cost of providing the product.",
+                "explain": "This is the equivalence principle from the opening card with an explicit profit margin added — worth recognising this as the most directly cost-driven of the two pricing philosophies this module contrasts, in tension with the market-based approach described next."
             },
             {
                 "q": "What is a 'market-based' pricing strategy?",
-                "a": "Setting price primarily with reference to what competitors charge and what the market will bear, rather than purely from underlying cost."
+                "a": "Setting price primarily with reference to what competitors charge and what the market will bear, rather than purely from underlying cost.",
+                "explain": "This is Module 3's competitor-behaviour and Module 23's competitor product-design material applied specifically to price-setting — worth noting this can pull the actual price AWAY from what cost-plus pricing alone would suggest, setting up the balancing act the next card addresses."
             },
             {
                 "q": "Why might a provider need to balance cost-based and market-based pricing considerations?",
-                "a": "Pure cost-based pricing might be uncompetitive; pure market-based pricing might not cover the true cost of the product — a balance protects both viability and competitiveness."
+                "a": "Pure cost-based pricing might be uncompetitive; pure market-based pricing might not cover the true cost of the product — a balance protects both viability and competitiveness.",
+                "explain": "This directly echoes Module 5's and Module 23's recurring tension between customer/market fit and commercial viability — worth recognising this as the SAME underlying balance recurring at the pricing stage that Module 23 already raised at the contract-design stage."
             },
             {
                 "q": "What is 'new business strain'?",
-                "a": "The initial capital cost/loss a provider incurs when writing new business, often because upfront expenses exceed initial premium income."
+                "a": "The initial capital cost/loss a provider incurs when writing new business, often because upfront expenses exceed initial premium income.",
+                "explain": "This is the direct financial consequence of Module 22's initial expenses card — worth remembering this strain occurs even for a policy that will ultimately be genuinely PROFITABLE over its lifetime; the timing mismatch between upfront cost and gradually-emerging profit is what creates the capital drain."
             },
             {
                 "q": "Why does new business strain arise particularly for long-term insurance products?",
-                "a": "High initial expenses (e.g. commission, underwriting) are incurred immediately, while premium income and profit emerge only gradually over the life of the policy."
+                "a": "High initial expenses (e.g. commission, underwriting) are incurred immediately, while premium income and profit emerge only gradually over the life of the policy.",
+                "explain": "This is precisely the timing mismatch flagged in the previous card, now made explicit — worth contrasting with a short-tail general insurance product (Module 8), where the gap between upfront cost and premium recovery is much narrower, making new business strain far less pronounced there than for long-term life products."
             },
             {
                 "q": "How might a provider finance new business strain?",
-                "a": "Using existing free capital/surplus, external financing (e.g. reinsurance financing, debt), or by moderating the pace of new business growth."
+                "a": "Using existing free capital/surplus, external financing (e.g. reinsurance financing, debt), or by moderating the pace of new business growth.",
+                "explain": "This directly previews Module 38's surplus management material, and the reinsurance-financing option gets its own dedicated card next — worth noting the THIRD option (slowing growth) is really a commercial trade-off, giving up growth specifically to avoid needing external financing at all."
             },
             {
                 "q": "What is 'reinsurance financing', as a way to manage new business strain?",
-                "a": "An arrangement where a reinsurer provides upfront financing to the insurer (effectively an advance against future profits), in exchange for a share of future profits/premiums."
+                "a": "An arrangement where a reinsurer provides upfront financing to the insurer (effectively an advance against future profits), in exchange for a share of future profits/premiums.",
+                "explain": "This extends CS2's reinsurance material (traditionally about SEVERITY risk transfer) into a genuinely different use case — here reinsurance functions more like a financing tool addressing a TIMING problem (capital strain) than a traditional risk-transfer tool addressing a severity problem, worth keeping conceptually distinct."
             },
             {
                 "q": "Why might rapid new business growth create a capital strain challenge for a provider, even if each policy is profitably priced?",
-                "a": "Even profitable policies individually cause an initial capital drain; rapid growth means many such policies draining capital simultaneously before profits emerge."
+                "a": "Even profitable policies individually cause an initial capital drain; rapid growth means many such policies draining capital simultaneously before profits emerge.",
+                "explain": "This is exactly Module 22's growing-business expense-distortion point restated in capital terms — worth recognising both as the same underlying phenomenon (a rapidly growing book is dominated by upfront, not-yet-recovered costs) viewed through two different lenses: expense assumptions there, capital strain here."
             },
             {
                 "q": "What does 'profit testing' contribute to setting a pricing strategy?",
-                "a": "Projecting a policy's expected cashflows over its lifetime to assess whether a proposed price achieves the desired profitability target."
+                "a": "Projecting a policy's expected cashflows over its lifetime to assess whether a proposed price achieves the desired profitability target.",
+                "explain": "This is CM1's cashflow projection techniques applied as the practical VERIFICATION step for the equivalence principle — worth recognising profit testing as the way an actuary actually confirms a proposed price achieves its target, rather than just trusting the equivalence-principle formula's output at face value."
             },
             {
                 "q": "Why might a provider set different prices for essentially the same underlying risk across different distribution channels?",
-                "a": "Different channels have different associated costs (e.g. commission) and customer price sensitivity, justifying differentiated pricing."
+                "a": "Different channels have different associated costs (e.g. commission) and customer price sensitivity, justifying differentiated pricing.",
+                "explain": "This is Module 5's distribution-channel material and Module 22's expense-allocation material converging on pricing directly — since different channels genuinely carry different COSTS (commission structures) and reach customers with different price sensitivity, charging different prices for the same underlying risk can be entirely justified, not merely arbitrary."
             },
             {
                 "q": "What is 'cross-subsidy' in pricing, and why might a provider choose to use it?",
-                "a": "Pricing one product/group more favourably than its standalone cost would justify, funded by pricing another product/group less favourably — often for strategic/competitive reasons."
+                "a": "Pricing one product/group more favourably than its standalone cost would justify, funded by pricing another product/group less favourably — often for strategic/competitive reasons.",
+                "explain": "This directly extends the below-cost pricing card from earlier in this module — worth noting cross-subsidy is a deliberate STRATEGIC choice, not an accident of poor pricing, and it's worth being able to identify in a CP1 scenario when one product's pricing only makes commercial sense in the context of the wider product range."
             },
             {
                 "q": "Why is it important to monitor actual experience against pricing assumptions after a product has launched?",
-                "a": "To identify emerging deviations early, allowing timely repricing or other management action before losses accumulate significantly."
+                "a": "To identify emerging deviations early, allowing timely repricing or other management action before losses accumulate significantly.",
+                "explain": "This closes the loop back to Module 20's experience-analysis and Module 22's expense-investigation material, and directly previews Module 39's monitoring material later in CP1 — pricing is never a one-off exercise, and this recurring ongoing-review theme applies just as much here as everywhere else in CP1."
             },
             {
                 "q": "How does a provider's overall financing/capital strategy interact with its new business pricing strategy?",
-                "a": "The capital available to fund new business strain directly constrains how much (and how aggressively-priced) new business a provider can sustainably write."
+                "a": "The capital available to fund new business strain directly constrains how much (and how aggressively-priced) new business a provider can sustainably write.",
+                "explain": "This closing card of Part 4 draws the whole module together and hands off directly to Part 5's capital and risk management material (Modules 25-39) — pricing strategy and capital strategy aren't independent decisions; a provider's capital position genuinely limits its commercially available pricing choices, not just the other way around."
             }
         ]
     },
