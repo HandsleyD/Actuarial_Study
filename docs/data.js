@@ -4379,63 +4379,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'method of moments' for constructing an estimator?",
-                "a": "Setting sample moments equal to the corresponding theoretical population moments, and solving for the unknown parameter(s)."
+                "a": "Setting sample moments equal to the corresponding theoretical population moments, and solving for the unknown parameter(s).",
+                "explain": "This module shifts focus from DESCRIBING sampling distributions (Module 7) to actually CONSTRUCTING good estimators in the first place — method of moments is the simpler of the two main techniques covered, directly using Module 3's moment concept (just matching sample versions to theoretical ones) rather than anything more sophisticated."
             },
             {
                 "q": "What is the 'method of maximum likelihood' for constructing an estimator?",
-                "a": "Choosing the parameter value(s) that maximise the likelihood of observing the actual sample data."
+                "a": "Choosing the parameter value(s) that maximise the likelihood of observing the actual sample data.",
+                "explain": "This is generally the more powerful and more heavily examined of the two methods — the intuition is genuinely simple despite the technical machinery: out of all possible parameter values, pick the one that makes the data you ACTUALLY observed look most probable/plausible."
             },
             {
                 "q": "What does it mean for an estimator to be 'unbiased'?",
-                "a": "$E[\\hat\\theta] = \\theta$ — its expected value equals the true population parameter."
+                "a": "$E[\\hat\\theta] = \\theta$ — its expected value equals the true population parameter.",
+                "explain": "This is one of three key desirable-estimator properties this module covers (alongside efficiency and consistency below) — note it's a statement about the AVERAGE across many hypothetical repeated samples, not a guarantee that any single estimate is exactly right; an unbiased estimator can still be wildly off in any one particular sample."
             },
             {
                 "q": "What is the 'mean square error' (MSE) of an estimator?",
-                "a": "$\\text{MSE}(\\hat\\theta) = E[(\\hat\\theta-\\theta)^2] = \\text{Var}(\\hat\\theta) + \\text{Bias}(\\hat\\theta)^2$"
+                "a": "$\\text{MSE}(\\hat\\theta) = E[(\\hat\\theta-\\theta)^2] = \\text{Var}(\\hat\\theta) + \\text{Bias}(\\hat\\theta)^2$",
+                "explain": "This formula is worth being able to derive (expand $(\\hat\\theta-\\theta)^2$ and take expectations) rather than just quoting — it's the single most useful summary of an estimator's overall quality, since it combines both bias and variance into one number, exactly what the biased-but-lower-MSE card below exploits."
             },
             {
                 "q": "What does it mean for an estimator to be 'efficient'?",
-                "a": "Among a class of estimators, it has the smallest variance."
+                "a": "Among a class of estimators, it has the smallest variance.",
+                "explain": "Note this definition is usually applied specifically among UNBIASED estimators — comparing variance alone only makes sense as a fairness criterion once bias is controlled for, otherwise a heavily biased estimator that always returns the same wrong constant would trivially have zero variance."
             },
             {
                 "q": "What does it mean for an estimator to be 'consistent'?",
-                "a": "As sample size increases, the estimator converges (in probability) to the true parameter value."
+                "a": "As sample size increases, the estimator converges (in probability) to the true parameter value.",
+                "explain": "This is a large-sample (asymptotic) property, distinct from unbiasedness which can hold or fail at any fixed sample size — an estimator can be biased for small $n$ but still consistent (bias vanishing as $n\\to\\infty$), which is exactly the situation with several standard MLEs."
             },
             {
                 "q": "How can an estimator be biased but still have a lower MSE than an unbiased estimator?",
-                "a": "If its variance is sufficiently smaller, the reduction in variance can outweigh the squared bias in the MSE formula."
+                "a": "If its variance is sufficiently smaller, the reduction in variance can outweigh the squared bias in the MSE formula.",
+                "explain": "This is a genuinely important, slightly counterintuitive result directly following from the MSE formula above — it shows why 'unbiased' isn't automatically 'best': a small, deliberate bias can sometimes buy a large enough variance reduction to leave the ESTIMATOR closer to the truth on average, even though it's wrong on average in a narrow technical sense."
             },
             {
                 "q": "What is the 'asymptotic distribution' of a maximum likelihood estimator, for large samples?",
-                "a": "Approximately normal, centred on the true value, with variance given by the inverse of the Fisher information."
+                "a": "Approximately normal, centred on the true value, with variance given by the inverse of the Fisher information.",
+                "explain": "This is another instance of the CLT-style 'approximately normal for large samples' pattern that runs throughout this whole part of the syllabus — the Fisher information measures how much 'information' about the parameter the likelihood function carries, so MORE information gives a SMALLER (more precise) asymptotic variance, an intuitive inverse relationship worth remembering."
             },
             {
                 "q": "Why are maximum likelihood estimators often preferred despite sometimes being biased in small samples?",
-                "a": "They are asymptotically efficient and consistent, with well-understood large-sample properties."
+                "a": "They are asymptotically efficient and consistent, with well-understood large-sample properties.",
+                "explain": "This is the practical justification for why MLE is the default go-to method in most of the syllabus (Module 13's GLMs are fitted by maximum likelihood, for instance) — its small-sample imperfections are outweighed by strong, well-understood large-sample guarantees that method of moments generally can't match."
             },
             {
                 "q": "What is the 'bootstrap method' used for in estimating an estimator's properties?",
-                "a": "Resampling (with replacement) from the observed sample to empirically approximate the sampling distribution of an estimator."
+                "a": "Resampling (with replacement) from the observed sample to empirically approximate the sampling distribution of an estimator.",
+                "explain": "This is a computational alternative to the theoretical sampling-distribution derivations of Module 7 — instead of deriving a formula analytically, you simulate 'many alternate samples' by repeatedly resampling from the one dataset you actually have, useful whenever the true sampling distribution has no clean closed form."
             },
             {
                 "q": "How would you compare two competing estimators of the same parameter?",
-                "a": "Compare their bias, variance, and/or mean square error — the estimator with the smaller MSE is generally preferred."
+                "a": "Compare their bias, variance, and/or mean square error — the estimator with the smaller MSE is generally preferred.",
+                "explain": "This is the module's practical decision rule, drawing together every concept covered above — MSE is usually the deciding criterion precisely because it balances bias and variance together (per the MSE formula card), rather than needing to weigh two separate, potentially conflicting measures."
             },
             {
                 "q": "What is a potential drawback of the method of moments compared to maximum likelihood?",
-                "a": "It can be less statistically efficient (higher variance), especially where moments don't fully capture the information in the data."
+                "a": "It can be less statistically efficient (higher variance), especially where moments don't fully capture the information in the data.",
+                "explain": "This is the direct trade-off for method of moments' simplicity — it only uses a small number of summary statistics (the sample moments), potentially throwing away information present elsewhere in the full likelihood, which is exactly the extra information maximum likelihood exploits."
             },
             {
                 "q": "How would you find the maximum likelihood estimator in practice?",
-                "a": "Write the log-likelihood function, differentiate with respect to the parameter(s), set equal to zero, and solve."
+                "a": "Write the log-likelihood function, differentiate with respect to the parameter(s), set equal to zero, and solve.",
+                "explain": "This is the standard mechanical recipe worth being fluent with: likelihood $\\to$ log-likelihood $\\to$ differentiate $\\to$ set to zero $\\to$ solve — the same four-step process applies whether there's one unknown parameter or several, just with partial derivatives and simultaneous equations in the multi-parameter case."
             },
             {
                 "q": "Why is the log-likelihood function typically used instead of the likelihood function directly when finding MLEs?",
-                "a": "Taking logs turns products into sums, easier to differentiate, with the maximum at the same parameter value."
+                "a": "Taking logs turns products into sums, easier to differentiate, with the maximum at the same parameter value.",
+                "explain": "This directly mirrors Module 3's CGF trick (log of the MGF turning products into sums for independent variables) — likelihoods for independent observations are PRODUCTS of individual densities/probabilities, and logs are exactly what turns that unwieldy product into a much more manageable sum before differentiating."
             },
             {
                 "q": "If an estimator's bias tends to zero as sample size increases, does that guarantee it is consistent?",
-                "a": "Not necessarily alone — consistency also typically requires the variance to shrink appropriately."
+                "a": "Not necessarily alone — consistency also typically requires the variance to shrink appropriately.",
+                "explain": "This is a subtle but genuinely testable point — vanishing bias alone isn't quite the full definition of consistency (convergence in probability to the true value); if the estimator's variance stayed large even as bias vanished, it could still fail to concentrate around the true parameter, so both bias and variance behaviour matter for the full consistency property."
             }
         ]
     },
@@ -4446,63 +4461,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'confidence interval'?",
-                "a": "A range of plausible values for an unknown population parameter, containing the true parameter in a specified proportion of repeated samples."
+                "a": "A range of plausible values for an unknown population parameter, containing the true parameter in a specified proportion of repeated samples.",
+                "explain": "This module is the first genuinely practical PAYOFF of Module 7's sampling distributions — a confidence interval is built by taking a sampling distribution result (e.g. the standardised sample mean's distribution) and algebraically rearranging it into a range around the observed statistic."
             },
             {
                 "q": "What is a 'prediction interval'?",
-                "a": "A range of plausible values for a single future observation, based on a fitted model, rather than for a population parameter."
+                "a": "A range of plausible values for a single future observation, based on a fitted model, rather than for a population parameter.",
+                "explain": "Keep this conceptually distinct from a confidence interval, since they answer different questions — a confidence interval brackets an unknown PARAMETER (a fixed but unknown number, like the true mean); a prediction interval brackets a future INDIVIDUAL OBSERVATION (which has its own randomness on top of the parameter uncertainty), which is exactly why it comes out wider (see the dedicated card below)."
             },
             {
                 "q": "What is the general form of a 95% confidence interval for a normal population mean with known variance?",
-                "a": "$\\bar{x} \\pm 1.96\\frac{\\sigma}{\\sqrt{n}}$"
+                "a": "$\\bar{x} \\pm 1.96\\frac{\\sigma}{\\sqrt{n}}$",
+                "explain": "This is Module 7's exact result $\\bar X\\sim N(\\mu,\\sigma^2/n)$ rearranged directly — since 95% of a normal distribution lies within 1.96 standard deviations of its mean, this interval is constructed to have a 95% chance (across repeated sampling) of containing the true $\\mu$."
             },
             {
                 "q": "How does the confidence interval formula change if the population variance is unknown?",
-                "a": "Replace the normal quantile with a $t$-distribution quantile ($n-1$ df), and use the sample standard deviation in place of $\\sigma$."
+                "a": "Replace the normal quantile with a $t$-distribution quantile ($n-1$ df), and use the sample standard deviation in place of $\\sigma$.",
+                "explain": "This is a direct application of Module 7's $t$-distribution result — since estimating $\\sigma$ from the sample adds extra uncertainty, the wider-tailed $t$ quantile (instead of 1.96) correctly makes the interval a bit wider than the known-variance case, to compensate for that additional source of imprecision."
             },
             {
                 "q": "How would you construct a confidence interval for a binomial proportion using the normal approximation?",
-                "a": "$\\hat{p} \\pm z\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$"
+                "a": "$\\hat{p} \\pm z\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$",
+                "explain": "This leans on Module 6's CLT-justified normal approximation to the binomial — the term under the square root is just the estimated standard error of $\\hat p$, following the same pattern as every interval in this module: point estimate, plus or minus a quantile times a standard error."
             },
             {
                 "q": "How would you construct a confidence interval for a Poisson mean using the normal approximation?",
-                "a": "Using the sample mean's approximate normal sampling distribution, e.g. $\\bar{x} \\pm z\\sqrt{\\bar{x}/n}$"
+                "a": "Using the sample mean's approximate normal sampling distribution, e.g. $\\bar{x} \\pm z\\sqrt{\\bar{x}/n}$",
+                "explain": "Same underlying template again — this time exploiting the Poisson's distinctive property that its variance equals its mean (Module 2), so $\\bar x$ itself is plugged in as the variance estimate under the square root, rather than needing a separately-calculated sample variance."
             },
             {
                 "q": "What is different about a two-sample confidence interval compared with a one-sample interval?",
-                "a": "It's for the difference between two population parameters, requiring the variance of the difference of the two sample statistics."
+                "a": "It's for the difference between two population parameters, requiring the variance of the difference of the two sample statistics.",
+                "explain": "This needs Module 4's variance-of-a-linear-combination formula, specifically the independent case: $\\text{Var}(\\bar X_1-\\bar X_2)=\\text{Var}(\\bar X_1)+\\text{Var}(\\bar X_2)$ (assuming the two samples are independent) — the two individual sampling variances simply add, giving the combined standard error needed for the two-sample interval."
             },
             {
                 "q": "How would you construct a confidence interval for the difference between two means from paired data?",
-                "a": "Treat the paired differences as a single sample, and construct a standard one-sample interval for the mean of the differences."
+                "a": "Treat the paired differences as a single sample, and construct a standard one-sample interval for the mean of the differences.",
+                "explain": "This is a genuinely useful simplification worth recognising: paired data (e.g. before/after measurements on the same subjects) reduces a seemingly two-sample problem back to a ONE-sample problem, by working directly with the differences — this often gives a narrower, more powerful interval than treating the two groups as independent."
             },
             {
                 "q": "How does the bootstrap method construct a confidence interval?",
-                "a": "By resampling from the data many times and using the empirical distribution of the resulting bootstrap statistics (e.g. its percentiles)."
+                "a": "By resampling from the data many times and using the empirical distribution of the resulting bootstrap statistics (e.g. its percentiles).",
+                "explain": "This is Module 8's bootstrap technique applied specifically to interval construction — rather than relying on a known theoretical sampling distribution, you build one empirically from resampled data, then simply read off (for example) the 2.5th and 97.5th percentiles for a 95% interval."
             },
             {
                 "q": "Why is a prediction interval generally wider than a confidence interval for the mean, at the same confidence level?",
-                "a": "It accounts for both the uncertainty in estimating the mean and the additional individual variability of a single future observation."
+                "a": "It accounts for both the uncertainty in estimating the mean and the additional individual variability of a single future observation.",
+                "explain": "This restates the module's earlier confidence/prediction interval distinction with the mechanism made explicit — a prediction interval's variance formula has TWO terms added together (estimation uncertainty in $\\bar X$, plus the individual observation's own variance $\\sigma^2$), while a confidence interval for the mean has only the first, which is exactly why the prediction interval comes out wider."
             },
             {
                 "q": "What happens to the width of a confidence interval as sample size $n$ increases, all else equal?",
-                "a": "It narrows, since the standard error decreases as $n$ increases."
+                "a": "It narrows, since the standard error decreases as $n$ increases.",
+                "explain": "This is Module 7's $\\sigma^2/n$ result driving the practical behaviour of every interval in this module — more data means a smaller standard error, which directly shrinks the 'plus or minus' margin, giving a more precise (narrower) range of plausible parameter values."
             },
             {
                 "q": "What happens to the width of a confidence interval as the confidence level increases?",
-                "a": "It widens, since a higher confidence level requires a larger quantile/multiplier."
+                "a": "It widens, since a higher confidence level requires a larger quantile/multiplier.",
+                "explain": "This is the fundamental trade-off underlying every confidence interval: wanting to be MORE certain of capturing the true parameter (e.g. 99% instead of 95%) necessarily means casting a WIDER net, since a larger quantile (e.g. 2.576 instead of 1.96 for the normal case) is needed to capture more of the distribution's probability."
             },
             {
                 "q": "Why might you use the bootstrap method rather than a standard formula for a confidence interval?",
-                "a": "When the underlying distribution is unknown or complex, or no simple closed-form formula exists."
+                "a": "When the underlying distribution is unknown or complex, or no simple closed-form formula exists.",
+                "explain": "This restates the bootstrap's core motivation from Module 8 in this module's specific context — every OTHER interval technique in this module relies on knowing (or approximating via the CLT) the sampling distribution's shape; the bootstrap is the fallback for when that theoretical shortcut simply isn't available."
             },
             {
                 "q": "What confidence interval formula would you use for the variance of a normal population?",
-                "a": "One based on the chi-square distribution of $\\frac{(n-1)S^2}{\\sigma^2}$."
+                "a": "One based on the chi-square distribution of $\\frac{(n-1)S^2}{\\sigma^2}$.",
+                "explain": "This directly reuses Module 7's chi-square sampling-distribution result — note the resulting interval is NOT symmetric around $S^2$ the way a mean's interval is around $\\bar X$, since the chi-square distribution itself is skewed, a subtlety worth being aware of when constructing or interpreting this specific interval."
             },
             {
                 "q": "Why is it important to interpret a 95% confidence interval correctly?",
-                "a": "The true parameter is fixed (not random); the 95% refers to the long-run proportion of such intervals that would contain the true value."
+                "a": "The true parameter is fixed (not random); the 95% refers to the long-run proportion of such intervals that would contain the true value.",
+                "explain": "This closes the module with its most commonly misunderstood point, worth stating precisely: it is WRONG to say 'there's a 95% probability the true parameter lies in this specific interval' (the parameter isn't random, so it either is or isn't in there) — the correct interpretation is about the PROCEDURE: 95% of intervals constructed this way, across many repeated samples, would contain the true value."
             }
         ]
     },
