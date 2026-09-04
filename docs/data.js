@@ -545,63 +545,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the accumulated value of $C$ invested for $n$ years at effective annual rate $i$ under compound interest?",
-                "a": "$C(1+i)^n$"
+                "a": "$C(1+i)^n$",
+                "explain": "This single formula is the engine behind the entire CM1 syllabus \\u2014 every later function (annuities, assurances, reserves) is ultimately built by summing or integrating pieces of exactly this expression at different terms $n$. Getting completely fluent with it now pays off for the rest of the course."
             },
             {
                 "q": "What is the accumulated value of $C$ invested for $n$ years under simple interest at rate $i$?",
-                "a": "$C(1+in)$"
+                "a": "$C(1+in)$",
+                "explain": "Notice this grows linearly in $n$, unlike compound interest's exponential growth \\u2014 the gap between the two widens as $n$ increases, which is exactly the content of the next card comparing them directly for short periods."
             },
             {
                 "q": "What is the present value of a payment of $C$ due in $n$ years, at effective rate $i$?",
-                "a": "$Cv^n$, where $v=\\frac{1}{1+i}$"
+                "a": "$Cv^n$, where $v=\\frac{1}{1+i}$",
+                "explain": "This is simply the accumulation formula run in reverse (dividing by $(1+i)^n$ instead of multiplying) \\u2014 present valuing and accumulating are inverse operations of each other, a relationship made explicit a few cards below."
             },
             {
                 "q": "How does compound interest differ from simple interest over multiple periods?",
-                "a": "Compound interest earns interest on previously accumulated interest; simple interest only ever earns interest on the original principal."
+                "a": "Compound interest earns interest on previously accumulated interest; simple interest only ever earns interest on the original principal.",
+                "explain": "This is the conceptual 'why' behind the two formulas above \\u2014 compounding is what turns a linear growth process into an exponential one, and it's the reason $(1+i)^n$ eventually overtakes $(1+in)$ even though simple interest can briefly be higher for very short periods (see the next card)."
             },
             {
                 "q": "What is the 'time value of money'?",
-                "a": "The principle that a given sum of money is worth more now than the same sum received in the future, because it can be invested to earn interest."
+                "a": "The principle that a given sum of money is worth more now than the same sum received in the future, because it can be invested to earn interest.",
+                "explain": "This is the plain-English justification for discounting and accumulating existing at all \\u2014 whenever an exam question asks you to 'explain why' a cashflow needs adjusting for timing, this principle is the one-sentence answer to reach for before diving into formulas."
             },
             {
                 "q": "For $n<1$, does simple or compound interest give a higher accumulated value?",
-                "a": "Simple interest gives a slightly higher accumulated value than compound interest for periods less than one year."
+                "a": "Simple interest gives a slightly higher accumulated value than compound interest for periods less than one year.",
+                "explain": "This is a genuinely counterintuitive result worth remembering precisely because it's easy to assume compound interest always wins \\u2014 it's a common short-answer trap. The crossover happens exactly at $n=1$, where both formulas agree exactly (both give $C(1+i)$)."
             },
             {
                 "q": "What is the discount factor $v$?",
-                "a": "$v = \\frac{1}{1+i}$, the present value of $1$ due in one year's time."
+                "a": "$v = \\frac{1}{1+i}$, the present value of $1$ due in one year's time.",
+                "explain": "Once $v$ is defined this way, almost every CM1 formula can be written more compactly in terms of $v^n$ instead of $(1+i)^{-n}$ \\u2014 it's worth treating $v$ as a first-class quantity in its own right, not just shorthand, since annuity and assurance formulas are built directly from it."
             },
             {
                 "q": "If $i = 5\\%$, what is $v$?",
-                "a": "$v = \\frac{1}{1.05} \\approx 0.9524$"
+                "a": "$v = \\frac{1}{1.05} \\approx 0.9524$",
+                "explain": "A quick sanity check worth internalising: $v$ is always slightly less than 1 for positive $i$, and gets smaller as $i$ increases \\u2014 useful for spot-checking that a calculated discount factor is at least in the right ballpark."
             },
             {
                 "q": "Why is discounting the reverse operation of accumulating?",
-                "a": "Accumulating moves a value forward in time by multiplying by $(1+i)^n$; discounting moves it backward by multiplying by $v^n$."
+                "a": "Accumulating moves a value forward in time by multiplying by $(1+i)^n$; discounting moves it backward by multiplying by $v^n$.",
+                "explain": "Since $v = (1+i)^{-1}$, multiplying by $v^n$ is literally dividing by $(1+i)^n$ \\u2014 the two operations are algebraic inverses of each other, which is why you can always check a discounting calculation by accumulating the answer back up and confirming you recover the original amount."
             },
             {
                 "q": "What assumption underlies most CM1 compound interest calculations unless stated otherwise?",
-                "a": "That the effective rate of interest is constant over the period considered."
+                "a": "That the effective rate of interest is constant over the period considered.",
+                "explain": "This 'unless stated otherwise' caveat matters: CM1 does cover time-varying interest (Module 4's force-of-interest integrals), so exam questions sometimes deliberately break this default assumption \\u2014 always check whether a question gives you a single constant $i$ or a function $\\delta(t)$ before reaching for the standard formulas."
             },
             {
                 "q": "What is a 'cashflow'?",
-                "a": "A payment or receipt of money at a specified point (or points) in time."
+                "a": "A payment or receipt of money at a specified point (or points) in time.",
+                "explain": "This simple definition is the basic unit every later CM1 topic manipulates \\u2014 annuities are just a structured series of cashflows, assurance benefits are a single contingent cashflow, and loan schedules are cashflows split into interest and capital components."
             },
             {
                 "q": "Why might an actuary need to compare cashflows occurring at different times?",
-                "a": "Because money at different times isn't directly comparable \\u2014 it must first be accumulated or discounted to a common point in time."
+                "a": "Because money at different times isn't directly comparable \\u2014 it must first be accumulated or discounted to a common point in time.",
+                "explain": "This is the time value of money principle applied specifically to comparison/decision problems \\u2014 it's the justification behind every 'which option is better' question in the syllabus (loan offers, investment choices, project appraisal in Module 9), since you literally cannot compare raw undiscounted amounts due at different dates."
             },
             {
                 "q": "What does it mean for interest to be 'effective'?",
-                "a": "It's the actual amount of interest earned over the full period (e.g. a year), as opposed to a nominal rate that must be converted."
+                "a": "It's the actual amount of interest earned over the full period (e.g. a year), as opposed to a nominal rate that must be converted.",
+                "explain": "This sets up the effective-vs-nominal distinction that Module 2 builds out in full \\u2014 whenever a rate is just quoted as $i$ with no qualification in CM1 notation, it's implicitly the effective annual rate, the single most fundamental rate in the whole syllabus."
             },
             {
                 "q": "True or false: doubling the interest rate $i$ exactly doubles the accumulated value $(1+i)^n$ for $n>1$.",
-                "a": "False \\u2014 because of compounding, the relationship is not linear once $n>1$."
+                "a": "False \\u2014 because of compounding, the relationship is not linear once $n>1$.",
+                "explain": "This is worth testing with actual numbers to build intuition: at $n=10$, $i=5\\%$ gives $(1.05)^{10}\\approx1.629$, while $i=10\\%$ gives $(1.10)^{10}\\approx2.594$ \\u2014 not double 1.629. Only at $n=1$ is the relationship exactly linear in $i$, since $(1+i)^1 = 1+i$."
             },
             {
                 "q": "What single quantity lets you move a cashflow both forwards and backwards in time?",
-                "a": "The effective rate of interest $i$ (equivalently, $v$)."
+                "a": "The effective rate of interest $i$ (equivalently, $v$).",
+                "explain": "This closes out the module by tying every prior card together: $i$ (or $v$) is the one number that fully characterises how to shift value across time, and essentially the entire remaining CM1 syllabus is about applying this one idea to increasingly structured and contingent cashflows."
             }
         ]
     },
@@ -612,63 +627,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the relationship between the effective annual rate $i$ and effective annual discount rate $d$?",
-                "a": "$d = \\frac{i}{1+i}$, or equivalently $1-d = \\frac{1}{1+i} = v$"
+                "a": "$d = \\frac{i}{1+i}$, or equivalently $1-d = \\frac{1}{1+i} = v$",
+                "explain": "$i$ and $d$ answer the same economic question (how much does money grow/shrink over a year) from two different reference points: $i$ is interest as a fraction of the amount at the START of the year, $d$ is discount as a fraction of the amount at the END \\u2014 that's why $d < i$ always, and the identity $1-d=v$ links this module straight back to Module 1's discount factor."
             },
             {
                 "q": "What does $i^{(p)}$ represent?",
-                "a": "The nominal rate of interest per year, convertible (compounded) $p$ times per year."
+                "a": "The nominal rate of interest per year, convertible (compounded) $p$ times per year.",
+                "explain": "The superscript $(p)$ is notation worth burning into memory since it recurs constantly for the rest of CM1 (annuity functions like $a^{(p)}_{\\overline{n}|}$ in Module 5 reuse exactly this convention) \\u2014 $i^{(p)}$ itself is NOT the rate actually earned each sub-period; that's $i^{(p)}/p$, which is where the next card's formula comes from."
             },
             {
                 "q": "How do you convert $i^{(p)}$ to the effective annual rate $i$?",
-                "a": "$1+i = \\left(1+\\frac{i^{(p)}}{p}\\right)^p$"
+                "a": "$1+i = \\left(1+\\frac{i^{(p)}}{p}\\right)^p$",
+                "explain": "This is just Module 1's compounding formula applied over $p$ sub-periods each earning $i^{(p)}/p$ \\u2014 recognising it as the same compound-interest idea, just with $p$ compounding events packed into one year instead of $n$ compounding events over $n$ years, makes it much easier to remember than treating it as a new formula to memorise from scratch."
             },
             {
                 "q": "What is the force of interest $\\delta$?",
-                "a": "The instantaneous, continuously-compounded rate of interest, defined so that $1+i = e^{\\delta}$."
+                "a": "The instantaneous, continuously-compounded rate of interest, defined so that $1+i = e^{\\delta}$.",
+                "explain": "$\\delta$ is what $i^{(p)}$ converges to as compounding becomes infinitely frequent (see the next card) \\u2014 it's the natural rate to use whenever a problem involves continuous cashflows or continuous compounding, since exponentials integrate and differentiate cleanly, unlike the discrete $(1+i)^n$ form."
             },
             {
                 "q": "As $p \\to \\infty$, what does $i^{(p)}$ converge to?",
-                "a": "The force of interest $\\delta$."
+                "a": "The force of interest $\\delta$.",
+                "explain": "This is the limiting case of the compounding-frequency card above: compounding more and more often (daily, then hourly, then continuously) pushes $i^{(p)}$ down toward $\\delta$ from above, while the effective annual rate $i$ itself stays fixed \\u2014 more frequent compounding at a lower nominal rate can still produce the same effective annual growth."
             },
             {
                 "q": "What is $d^{(p)}$?",
-                "a": "The nominal rate of discount per year, convertible $p$ times per year."
+                "a": "The nominal rate of discount per year, convertible $p$ times per year.",
+                "explain": "This is the discount-rate mirror of $i^{(p)}$, following exactly the same $i$-vs-$d$ relationship as the first card of this module, just at nominal (sub-annual) frequency instead of effective annual \\u2014 recognising the parallel structure saves having to memorise it as an unrelated new concept."
             },
             {
                 "q": "Which is larger for the same effective annual rate: $i$, $i^{(p)}$, or $\\delta$ (for $p>1$)?",
-                "a": "$i$ is largest, then $i^{(p)}$ (decreasing as $p$ increases), with $\\delta$ the smallest limiting value."
+                "a": "$i$ is largest, then $i^{(p)}$ (decreasing as $p$ increases), with $\\delta$ the smallest limiting value.",
+                "explain": "This ordering makes sense once you see WHY: more frequent compounding needs a smaller quoted nominal rate to achieve the same effective annual growth (since compounding itself does more of the work), so $i^{(p)}$ falls monotonically as $p$ rises, bottoming out at $\\delta$ for continuous compounding \\u2014 a useful sanity check on any calculated $i^{(p)}$ or $\\delta$ value."
             },
             {
                 "q": "How do you accumulate $C$ for $n$ years at nominal rate $i^{(p)}$ convertible $p$thly?",
-                "a": "$C\\left(1+\\frac{i^{(p)}}{p}\\right)^{pn}$"
+                "a": "$C\\left(1+\\frac{i^{(p)}}{p}\\right)^{pn}$",
+                "explain": "This is the general-purpose formula this whole module builds toward \\u2014 it's Module 1's $C(1+i)^n$ but with $pn$ sub-periods each compounding at rate $i^{(p)}/p$ instead of $n$ periods at rate $i$, so it's worth deriving it mentally from first principles rather than memorising it as a standalone formula."
             },
             {
                 "q": "What is the relationship between $\\delta$ and $d$?",
-                "a": "$\\delta = -\\ln(1-d)$, equivalently $1-d = e^{-\\delta}$"
+                "a": "$\\delta = -\\ln(1-d)$, equivalently $1-d = e^{-\\delta}$",
+                "explain": "Combined with $1+i=e^{\\delta}$ from earlier, this gives a complete picture: $\\delta$ sits as the single 'master rate' from which every other rate in this module ($i$, $d$, $i^{(p)}$, $d^{(p)}$) can be derived, which is why $\\delta$ is often the most convenient variable to work in when a problem mixes several rate types."
             },
             {
                 "q": "If the force of interest is constant, how do you find the present value of $1$ due at time $t$?",
-                "a": "$v^t = e^{-\\delta t}$"
+                "a": "$v^t = e^{-\\delta t}$",
+                "explain": "This is exactly Module 1's discount factor $v^t$, rewritten using $\\delta$ instead of $i$ \\u2014 it's the constant-force special case of Module 4's more general time-varying formula $\\exp(-\\int_0^t \\delta(s)\\,ds)$, which just reduces to $e^{-\\delta t}$ when $\\delta(s)$ doesn't actually depend on $s$."
             },
             {
                 "q": "Why might a bank quote a 'nominal' rather than 'effective' interest rate?",
-                "a": "It's a convention for rates compounded more frequently than annually, and can make quoted rates look lower than the true effective rate."
+                "a": "It's a convention for rates compounded more frequently than annually, and can make quoted rates look lower than the true effective rate.",
+                "explain": "This is a genuinely practical point beyond the exam: since $i^{(p)} < i$ for $p>1$ (per the ordering card above), a nominal rate always looks smaller than the effective rate it implies \\u2014 which is exactly why regulators require lenders to also disclose an APR (Module 8), to stop nominal-rate quoting from being misleading."
             },
             {
                 "q": "What happens to the accumulated value as compounding frequency $p$ increases, holding $i^{(p)}$ fixed?",
-                "a": "The accumulated value increases, approaching continuous compounding (using $\\delta$) in the limit."
+                "a": "The accumulated value increases, approaching continuous compounding (using $\\delta$) in the limit.",
+                "explain": "Note the careful phrasing here \\u2014 this is the OPPOSITE experiment to the 'as $p\\to\\infty$' card above: there, $i$ was held fixed and $i^{(p)}$ fell; here, $i^{(p)}$ is held fixed and the accumulated value (hence effective $i$) rises. Keeping straight which quantity is held constant in each scenario is a common source of exam confusion."
             },
             {
                 "q": "Express $i$ in terms of $d$.",
-                "a": "$i = \\frac{d}{1-d}$"
+                "a": "$i = \\frac{d}{1-d}$",
+                "explain": "This is just the first card's identity $d=\\frac{i}{1+i}$ algebraically rearranged to solve for $i$ instead of $d$ \\u2014 worth being able to do this rearrangement on the fly rather than memorising both directions separately, since exam questions can give you either one and ask for the other."
             },
             {
                 "q": "What is the effective annual rate equivalent to a force of interest of $\\delta = 0.05$?",
-                "a": "$i = e^{0.05} - 1 \\approx 5.13\\%$"
+                "a": "$i = e^{0.05} - 1 \\approx 5.13\\%$",
+                "explain": "Notice $i$ (5.13%) is slightly larger than $\\delta$ (5%), consistent with the ordering established earlier in this module ($\\delta$ is the smallest of $i$, $i^{(p)}$, $i$ itself being the effective annual figure) \\u2014 a quick numerical check like this is a good way to catch an accidental $\\ln$/$\\exp$ mix-up under exam pressure."
             },
             {
                 "q": "Why is $\\delta$ particularly convenient for continuous cashflow calculations?",
-                "a": "Because integrals of continuously paid cashflows discount/accumulate cleanly using $e^{-\\delta t}$ or $e^{\\delta t}$."
+                "a": "Because integrals of continuously paid cashflows discount/accumulate cleanly using $e^{-\\delta t}$ or $e^{\\delta t}$.",
+                "explain": "This is the practical payoff of this whole module for later topics \\u2014 Module 4's continuous cashflow integral $\\int_0^n \\rho(t)e^{-\\delta t}\\,dt$ and the continuously-paid annuity $\\overline{a}_{\\overline{n}|}$ in Module 5 both lean on exactly this convenience, since $e^{-\\delta t}$ is trivial to integrate while $(1+i)^{-t}$ is comparatively awkward."
             }
         ]
     },
@@ -679,63 +709,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the difference between a 'money' rate of interest and a 'real' rate of interest?",
-                "a": "The money rate reflects actual cash growth; the real rate reflects growth in purchasing power after removing the effect of inflation."
+                "a": "The money rate reflects actual cash growth; the real rate reflects growth in purchasing power after removing the effect of inflation.",
+                "explain": "This is a genuinely different kind of distinction from Module 2's rate conversions \\u2014 those were all about compounding frequency for the SAME underlying growth; this is about splitting that growth into a 'real' component and an inflation component, which matters whenever what you can actually buy (not just the cash number) is the relevant question."
             },
             {
                 "q": "What is the formula linking the money rate $i$, real rate $i'$, and inflation rate $e$?",
-                "a": "$1+i = (1+i')(1+e)$"
+                "a": "$1+i = (1+i')(1+e)$",
+                "explain": "Structurally this is exactly like combining two consecutive periods of growth (Module 1's chained accumulation factors) \\u2014 money growth is real growth compounded with inflation growth, which is why it's multiplicative, not additive (see the small-rate approximation card below for when addition is close enough)."
             },
             {
                 "q": "If the money rate is $8\\%$ and inflation is $3\\%$, what is the exact real rate?",
-                "a": "$\\frac{1.08}{1.03}-1 \\approx 4.85\\%$"
+                "a": "$\\frac{1.08}{1.03}-1 \\approx 4.85\\%$",
+                "explain": "Notice this is a bit less than the naive $8\\%-3\\%=5\\%$ 'approximate' answer \\u2014 the exact multiplicative formula always gives a slightly lower real rate than simple subtraction when both rates are positive, which is worth checking against the approximation card below to see how good the shortcut is."
             },
             {
                 "q": "Why might an investor care more about the real rate of return than the money rate?",
-                "a": "The real rate shows how much their purchasing power actually grows, which is what matters for future consumption."
+                "a": "The real rate shows how much their purchasing power actually grows, which is what matters for future consumption.",
+                "explain": "This is the economic justification for the whole module \\u2014 a large money return is meaningless if inflation has eaten it all away (see the 'can the real rate be negative' card below for the extreme case), so real rate is the number that actually answers 'am I better off'."
             },
             {
                 "q": "How would you find the real yield on an index-linked bond?",
-                "a": "Discount the real (inflation-adjusted) cashflows at the real rate of interest, since index-linked payments already move with inflation."
+                "a": "Discount the real (inflation-adjusted) cashflows at the real rate of interest, since index-linked payments already move with inflation.",
+                "explain": "The key insight: an index-linked bond's payments are automatically inflation-proofed (Module 10 covers this in more detail), so you shouldn't discount them at the money rate the way you would a fixed-coupon bond \\u2014 consistently using real cashflows with the real rate (or money cashflows with the money rate) avoids double- or zero-counting inflation."
             },
             {
                 "q": "What happens to the real rate of interest if money interest rates and inflation rise by the same percentage points?",
-                "a": "It stays approximately the same (not exactly, because the relationship is multiplicative not additive)."
+                "a": "It stays approximately the same (not exactly, because the relationship is multiplicative not additive).",
+                "explain": "This tests whether you really understand the multiplicative formula above rather than just an additive rule of thumb \\u2014 a small residual change in the real rate does occur even when $i$ and $e$ rise by 'the same amount', because the exact formula divides $(1+i)$ by $(1+e)$, not subtracts $e$ from $i$."
             },
             {
                 "q": "Can the real rate of interest be negative even if the money rate is positive?",
-                "a": "Yes \\u2014 if inflation exceeds the money rate of interest."
+                "a": "Yes \\u2014 if inflation exceeds the money rate of interest.",
+                "explain": "This is a real-world-relevant scenario (it happened during high-inflation periods) worth being able to picture concretely: cash sitting in a low-interest account can be growing in money terms while actually losing purchasing power every year, which is precisely why real rates matter more than money rates for long-term saving decisions."
             },
             {
                 "q": "In index-linked bond calculations, what typically happens to coupon and redemption payments?",
-                "a": "They are increased in line with a specified inflation index between issue and payment."
+                "a": "They are increased in line with a specified inflation index between issue and payment.",
+                "explain": "This is the mechanism that makes an index-linked bond's REAL cashflows fixed even though its MONEY cashflows aren't \\u2014 it directly explains why the 'real yield on an index-linked bond' card above works the way it does, and this concept reappears in Module 10's fuller bond-pricing treatment."
             },
             {
                 "q": "Why is estimating future inflation important for pricing index-linked bonds?",
-                "a": "Because future coupon/redemption cashflows are uncertain in money terms until the relevant inflation index values are known."
+                "a": "Because future coupon/redemption cashflows are uncertain in money terms until the relevant inflation index values are known.",
+                "explain": "This highlights a subtlety: even though the REAL cashflow is fixed by design, the actual MONEY amount you'll receive depends on inflation between now and each payment date, which is still unknown \\u2014 pricing therefore requires either working entirely in real terms, or making an explicit inflation assumption to project money cashflows."
             },
             {
                 "q": "What does it mean if the real rate of interest is exactly zero?",
-                "a": "Money grows at exactly the rate of inflation \\u2014 no gain or loss in purchasing power."
+                "a": "Money grows at exactly the rate of inflation \\u2014 no gain or loss in purchasing power.",
+                "explain": "This is the knife-edge case between the 'real return' and 'negative real return' scenarios above \\u2014 useful as a quick reference point: whenever $i = e$ (approximately, or check the exact formula), the investor is treading water in real terms, neither gaining nor losing ground."
             },
             {
                 "q": "How is the money rate of interest related to real rate and inflation using a small-rate approximation?",
-                "a": "$i \\approx i' + e$ (ignoring the small cross term $i' \\times e$)."
+                "a": "$i \\approx i' + e$ (ignoring the small cross term $i' \\times e$).",
+                "explain": "This comes from expanding $(1+i')(1+e) = 1+i'+e+i'e$ and dropping the tiny cross-term $i'e$ when both rates are small \\u2014 it's a genuinely useful mental-arithmetic shortcut, but always remember it's an approximation; use the exact multiplicative formula when precision matters (as in the worked example above, where 5% and 4.85% differ enough to matter)."
             },
             {
                 "q": "What data would you need to calculate a realised real rate of return over a past period?",
-                "a": "The money rate of return actually achieved, and the actual inflation rate over that period."
+                "a": "The money rate of return actually achieved, and the actual inflation rate over that period.",
+                "explain": "This is the same formula as always, just applied retrospectively with observed (rather than assumed/forecast) figures \\u2014 worth noting that a realised real return calculation needs BOTH numbers measured over the exact same historical period for the comparison to be meaningful."
             },
             {
                 "q": "Give one reason actual and expected inflation might differ.",
-                "a": "Unexpected economic shocks, changes in monetary policy, or unanticipated supply/demand shifts in the economy."
+                "a": "Unexpected economic shocks, changes in monetary policy, or unanticipated supply/demand shifts in the economy.",
+                "explain": "This connects directly to CB2's macroeconomics content (Modules 10, 15, 19 there) \\u2014 CM1 takes inflation as an input to interest-rate calculations, while CB2 explains what actually drives it; worth remembering both subjects are describing the same real-world phenomenon from different angles."
             },
             {
                 "q": "Why do pension schemes often care about real rates of interest?",
-                "a": "Because future pension liabilities are often linked to (or intended to keep pace with) inflation/salary growth."
+                "a": "Because future pension liabilities are often linked to (or intended to keep pace with) inflation/salary growth.",
+                "explain": "This is a preview of why the whole CM1 syllabus eventually matters professionally: a pension promise to pay a real, inflation-protected income means the scheme's assets need to earn a real (not just nominal) return to meet that promise, tying this module directly to the reserving and valuation work later in the course."
             },
             {
                 "q": "If money rate $i=6\\%$ and real rate $i'=6\\%$, what must inflation be?",
-                "a": "$0\\%$ \\u2014 no inflation."
+                "a": "$0\\%$ \\u2014 no inflation.",
+                "explain": "A direct application of $1+i=(1+i')(1+e)$: if $i=i'$, then $(1+e)$ must equal 1, so $e=0$ \\u2014 a good one-line check to confirm you can manipulate the formula in any direction (solving for $i$, $i'$, or $e$ given the other two), not just the 'find the real rate' direction most examples default to."
             }
         ]
     },
@@ -746,63 +791,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "How do you find the present value of several distinct payments made at different future times?",
-                "a": "Discount each payment to today separately, using the appropriate discount factor for its own timing, then sum."
+                "a": "Discount each payment to today separately, using the appropriate discount factor for its own timing, then sum.",
+                "explain": "This 'discount each piece separately, then add' approach is the master technique that everything else in this module (and later, annuity formulas in Module 5) is just a shortcut for \\u2014 an annuity formula is nothing more than this same summing process done algebraically for a whole regular series of payments at once, instead of one at a time."
             },
             {
                 "q": "What is meant by 'present value' of a cashflow?",
-                "a": "The value today that is equivalent (under a given interest rate) to a cashflow or set of cashflows occurring at other points in time."
+                "a": "The value today that is equivalent (under a given interest rate) to a cashflow or set of cashflows occurring at other points in time.",
+                "explain": "The word 'equivalent' is doing real work here: present value isn't a vague notion of 'worth' \\u2014 it's precisely defined so that the present value amount, invested today at the stated rate, would exactly reproduce the original cashflow(s) when accumulated forward, which is why equations of value (a card below) can equate two different cashflow streams' present values."
             },
             {
                 "q": "How would you find the accumulated value at time $n$ of a set of payments made at various times before $n$?",
-                "a": "Accumulate each payment separately from its own payment date to time $n$, then sum the results."
+                "a": "Accumulate each payment separately from its own payment date to time $n$, then sum the results.",
+                "explain": "This is the mirror-image operation to the present-value card above (accumulating forward instead of discounting backward) \\u2014 note both techniques ultimately answer the same underlying question (what is this set of cashflows worth at one common point in time), just referenced to different dates."
             },
             {
                 "q": "If a rate of interest varies over time, how do you accumulate $1$ from time $0$ to time $n$?",
-                "a": "Multiply together the accumulation factors for each sub-period of constant (or known) interest rate."
+                "a": "Multiply together the accumulation factors for each sub-period of constant (or known) interest rate.",
+                "explain": "This is the discrete-time version of the integral formula two cards below \\u2014 chaining accumulation factors together for each sub-period is exactly how you'd handle, say, a savings account whose rate changes each year: accumulate at year 1's rate, then year 2's rate, and so on, multiplying the factors together."
             },
             {
                 "q": "What is the present value at time 0 of $1$ due at time $t$ using a time-varying force of interest $\\delta(s)$?",
-                "a": "$\\exp\\left(-\\int_0^t \\delta(s)\\,ds\\right)$"
+                "a": "$\\exp\\left(-\\int_0^t \\delta(s)\\,ds\\right)$",
+                "explain": "This generalises Module 2's constant-force formula $v^t=e^{-\\delta t}$ to the case where $\\delta$ itself changes over time \\u2014 the integral $\\int_0^t \\delta(s)\\,ds$ is just 'total accumulated force over the period', which collapses back down to the simple $\\delta t$ when $\\delta$ happens to be constant, confirming the two formulas are consistent."
             },
             {
                 "q": "What is the accumulated value at time $t$ of $1$ invested at time $0$ under a time-varying force of interest?",
-                "a": "$\\exp\\left(\\int_0^t \\delta(s)\\,ds\\right)$"
+                "a": "$\\exp\\left(\\int_0^t \\delta(s)\\,ds\\right)$",
+                "explain": "This is simply the reciprocal of the present-value formula above (positive exponent instead of negative), following the same accumulate/discount inverse relationship established back in Module 1 \\u2014 recognise the pattern rather than memorising each sign separately."
             },
             {
                 "q": "How do you handle a payment that occurs exactly 'now' (time 0) when finding present value?",
-                "a": "It needs no discounting \\u2014 its present value equals its face amount."
+                "a": "It needs no discounting \\u2014 its present value equals its face amount.",
+                "explain": "This sounds trivial but is a genuinely common source of small exam errors, especially in annuity-due setups (Module 5) where the first payment is at time 0 \\u2014 remembering that $v^0=1$ (nothing to discount) is what correctly distinguishes an annuity-due's first term from an annuity-immediate's."
             },
             {
                 "q": "What's the general approach to comparing two different cashflow schedules?",
-                "a": "Discount (or accumulate) both to the same point in time using a common interest rate, then compare the resulting values."
+                "a": "Discount (or accumulate) both to the same point in time using a common interest rate, then compare the resulting values.",
+                "explain": "This is the practical procedure behind every 'which loan/investment option is better' exam question \\u2014 it's worth explicitly stating this two-step process (same valuation date, same rate) in a written answer, since comparing values discounted to different dates or at different rates is a meaningless comparison that examiners specifically probe for."
             },
             {
                 "q": "How would you find the present value of a continuously paid cashflow of rate $\\rho(t)$ per unit time, from 0 to $n$, at constant force of interest $\\delta$?",
-                "a": "$\\int_0^n \\rho(t)e^{-\\delta t}\\,dt$"
+                "a": "$\\int_0^n \\rho(t)e^{-\\delta t}\\,dt$",
+                "explain": "This is the continuous-payment generalisation of the 'sum of discounted payments' idea from the top of this module \\u2014 where discrete payments get summed, a continuous payment STREAM $\\rho(t)$ gets integrated, each instant's payment $\\rho(t)\\,dt$ discounted by $e^{-\\delta t}$ exactly as a lump sum would be."
             },
             {
                 "q": "What does 'equation of value' mean in this context?",
-                "a": "An equation stating that the present value of money received equals the present value of money paid, at a given rate of interest."
+                "a": "An equation stating that the present value of money received equals the present value of money paid, at a given rate of interest.",
+                "explain": "This concept gets a full module to itself (Module 7), but it's really just this section's present-value techniques applied to TWO cashflow streams simultaneously and set equal \\u2014 loan pricing, project appraisal (Module 9) and premium calculations (Module 17) are all specific applications of exactly this one idea."
             },
             {
                 "q": "If interest rates are expected to change in the future, why can't you use one accumulation factor for the whole period?",
-                "a": "Because the accumulation must reflect the actual (or assumed) rate applying in each distinct sub-period."
+                "a": "Because the accumulation must reflect the actual (or assumed) rate applying in each distinct sub-period.",
+                "explain": "This is the same point as the chained-accumulation-factors card above, restated as a 'why not' \\u2014 using a single blended rate for the whole period would silently assume that rate applied throughout, which is wrong whenever the problem explicitly gives you different rates for different sub-periods (e.g. Module 11's term structure)."
             },
             {
                 "q": "Why is choosing a consistent valuation date important when comparing cashflows?",
-                "a": "Because present/accumulated values depend on the timing reference point \\u2014 comparing values discounted to different dates isn't meaningful."
+                "a": "Because present/accumulated values depend on the timing reference point \\u2014 comparing values discounted to different dates isn't meaningful.",
+                "explain": "This restates the comparison-approach card above as an explicit warning \\u2014 examiners sometimes set a trap where two cashflow streams are naturally quoted 'as at' different dates, and the candidate who forgets to bring both to the same date before comparing gets a wrong (and often plausible-looking) answer."
             },
             {
                 "q": "What's the present value of a single payment of $500$ in 3 years at $i=4\\%$?",
-                "a": "$500v^3 = 500(1.04)^{-3} \\approx 444.5$"
+                "a": "$500v^3 = 500(1.04)^{-3} \\approx 444.5$",
+                "explain": "A clean worked example of Module 1's core formula in action \\u2014 useful as a template: identify the payment amount, the term, and the rate, then apply $Cv^n$ directly, which is the building block every more complicated cashflow-schedule question in this module reduces to."
             },
             {
                 "q": "How would a negative cashflow (a payment out) be treated in a present value calculation?",
-                "a": "Included with a negative sign, so it reduces the total present value."
+                "a": "Included with a negative sign, so it reduces the total present value.",
+                "explain": "This sign convention is what makes 'net present value' calculations (Module 9) work cleanly \\u2014 outflows and inflows can simply be summed together with consistent signs rather than tracked as two separate totals, which is both computationally simpler and less error-prone."
             },
             {
                 "q": "Why might actuaries discount cashflows using a different rate for different risk profiles?",
-                "a": "Riskier or less certain cashflows may warrant a different (often higher) discount rate to reflect that risk."
+                "a": "Riskier or less certain cashflows may warrant a different (often higher) discount rate to reflect that risk.",
+                "explain": "This previews the risk discount rate concept used properly in Module 24's profit testing \\u2014 the core idea is that a guaranteed cashflow and an uncertain one of the same expected amount aren't actually worth the same today, and using a higher rate for the riskier stream is one standard way to build that difference into the valuation."
             }
         ]
     },
