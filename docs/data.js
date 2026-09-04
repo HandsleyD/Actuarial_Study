@@ -9081,63 +9081,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'risk governance'?",
-                "a": "The framework of structures, policies, and processes an organisation uses to identify, oversee, and manage the risks it faces."
+                "a": "The framework of structures, policies, and processes an organisation uses to identify, oversee, and manage the risks it faces.",
+                "explain": "This module opens Part 5 of CP1 — worth reading it as the organisational analogue to Module 25's individual advice principles: just as Module 2 asked how an individual actuary should exercise judgement and accountability, this module asks how a whole ORGANISATION structures itself to do the same thing systematically."
             },
             {
                 "q": "What is 'risk appetite'?",
-                "a": "The amount and type of risk an organisation is willing to accept in pursuit of its objectives."
+                "a": "The amount and type of risk an organisation is willing to accept in pursuit of its objectives.",
+                "explain": "This is Module 15's investment-specific risk appetite concept generalised to EVERY risk an organisation faces, not just investment risk — worth recognising the same willing/able distinction from Module 5 still applies here, just at organisational scale."
             },
             {
                 "q": "Why is a clearly defined risk appetite important for effective risk governance?",
-                "a": "It provides a benchmark against which actual risk-taking can be measured and managed, guiding consistent decision-making across the organisation."
+                "a": "It provides a benchmark against which actual risk-taking can be measured and managed, guiding consistent decision-making across the organisation.",
+                "explain": "This directly previews the closing card of this module on cascading risk appetite — a risk appetite that exists only as a vague board-level statement is far less useful than one specific enough to actually guide day-to-day decisions throughout the organisation."
             },
             {
                 "q": "What is 'risk culture'?",
-                "a": "The shared values, attitudes, and behaviours within an organisation that shape how risk is understood and managed in practice, beyond formal policies."
+                "a": "The shared values, attitudes, and behaviours within an organisation that shape how risk is understood and managed in practice, beyond formal policies.",
+                "explain": "Worth holding this in deliberate contrast to the formal risk policy defined later in this module — culture is the INFORMAL layer that determines whether formal policies are genuinely followed in spirit, or just nominally complied with on paper."
             },
             {
                 "q": "Why might a strong risk culture matter as much as formal risk policies?",
-                "a": "Even well-designed policies can fail if the organisational culture doesn't genuinely support risk-aware behaviour and honest escalation of concerns."
+                "a": "Even well-designed policies can fail if the organisational culture doesn't genuinely support risk-aware behaviour and honest escalation of concerns.",
+                "explain": "This directly previews the module's later card on poor governance undermining even technically sound risk models — a perfectly-designed risk policy is worthless if staff feel unable to honestly report a problem, which is exactly the kind of failure mode major real-world organisational collapses are often traced back to."
             },
             {
                 "q": "What is the 'three lines of defence' model of risk governance?",
-                "a": "A framework distinguishing: (1) business functions that own and manage risk day-to-day; (2) risk management/compliance functions providing oversight; (3) internal audit providing independent assurance."
+                "a": "A framework distinguishing: (1) business functions that own and manage risk day-to-day; (2) risk management/compliance functions providing oversight; (3) internal audit providing independent assurance.",
+                "explain": "This is worth treating as this module's central organising structure — it directly answers the independence question raised two cards later: each line has a genuinely distinct role, and the SEPARATION between them (especially line 2's independence from line 1) is exactly what prevents risk oversight from being compromised by the units generating the risk."
             },
             {
                 "q": "What is the typical role of a board of directors in risk governance?",
-                "a": "Setting overall risk appetite/strategy, and holding ultimate responsibility for oversight of the organisation's risk management."
+                "a": "Setting overall risk appetite/strategy, and holding ultimate responsibility for oversight of the organisation's risk management.",
+                "explain": "This sits at the top of the governance structure this module builds — worth connecting to Module 6's earlier point about pension trustees' duty to members: a board's risk oversight responsibility is the corporate parallel to that same fiduciary-style duty, now applied to the organisation's own risk-taking."
             },
             {
                 "q": "What is a 'risk committee'?",
-                "a": "A board or management sub-committee dedicated to overseeing risk management matters in more detail than the full board typically would."
+                "a": "A board or management sub-committee dedicated to overseeing risk management matters in more detail than the full board typically would.",
+                "explain": "This is a practical delegation mechanism, worth reading alongside the CRO role described next — a risk committee gives the board the ability to maintain genuine oversight over technical risk matters without every single board meeting needing to dive into risk detail the full board isn't equipped to review line by line."
             },
             {
                 "q": "What is the role of a Chief Risk Officer (CRO)?",
-                "a": "Senior executive responsible for overseeing the organisation's risk management framework and ensuring risks are appropriately identified and managed."
+                "a": "Senior executive responsible for overseeing the organisation's risk management framework and ensuring risks are appropriately identified and managed.",
+                "explain": "This is the second line of defence's senior leadership role made explicit — worth connecting to the independence card later in this module: a CRO's effectiveness depends heavily on genuine independence from the business units whose risk-taking they're meant to oversee, not just holding the title."
             },
             {
                 "q": "Why might risk governance need to be embedded throughout the organisation, not just at senior/board level?",
-                "a": "Risk decisions are made at all levels of an organisation's day-to-day operations, so effective risk management requires broad ownership, not just top-down policy."
+                "a": "Risk decisions are made at all levels of an organisation's day-to-day operations, so effective risk management requires broad ownership, not just top-down policy.",
+                "explain": "This directly connects to the three-lines-of-defence model's FIRST line — day-to-day risk-taking happens throughout the business, not just in the boardroom, which is exactly why the first line (business functions owning and managing risk directly) exists as a distinct layer rather than leaving everything to central oversight alone."
             },
             {
                 "q": "What is meant by 'independence' of the risk management function from business/operational units?",
-                "a": "The risk function should be able to provide objective oversight/challenge without being unduly influenced by the units generating the risk-taking."
+                "a": "The risk function should be able to provide objective oversight/challenge without being unduly influenced by the units generating the risk-taking.",
+                "explain": "This is the structural principle underlying the whole three-lines-of-defence model — worth recognising this as the SAME underlying logic as Module 4's separation of prudential and conduct regulators: keeping the overseer separate from what's being overseen protects the integrity of the oversight itself."
             },
             {
                 "q": "Why might poor risk governance contribute to major organisational failures, even when individual risk models are technically sound?",
-                "a": "Good models are ineffective if governance fails to ensure their outputs are properly escalated, acted on, and integrated into actual decision-making."
+                "a": "Good models are ineffective if governance fails to ensure their outputs are properly escalated, acted on, and integrated into actual decision-making.",
+                "explain": "This is Module 18's model-risk material given its organisational dimension — worth recognising a genuinely important, often-overlooked point: a technically brilliant model that gets ignored, buried, or overridden by poor governance is functionally no better than no model at all."
             },
             {
                 "q": "What is a 'risk policy'?",
-                "a": "A formal document setting out an organisation's approach, standards, and responsibilities for managing a particular category of risk."
+                "a": "A formal document setting out an organisation's approach, standards, and responsibilities for managing a particular category of risk.",
+                "explain": "This is the formal counterpart to the informal risk culture defined earlier in this module — worth remembering both are necessary and neither is sufficient alone: a written policy without a supportive culture (or vice versa) leaves a genuine gap in effective risk governance."
             },
             {
                 "q": "Why might regulators place significant emphasis on firms' risk governance arrangements, not just their risk models/capital levels?",
-                "a": "Robust governance is seen as essential to ensuring risks are actually managed effectively in practice, not just measured accurately on paper."
+                "a": "Robust governance is seen as essential to ensuring risks are actually managed effectively in practice, not just measured accurately on paper.",
+                "explain": "This directly echoes the earlier card about poor governance undermining sound models — regulators (Module 4) have learned from real-world failures that governance failures, not just measurement failures, are frequently what actually causes a firm to fail, which is exactly why supervisory attention extends well beyond checking capital numbers alone."
             },
             {
                 "q": "How does risk governance relate to the concept of risk appetite being 'cascaded' through an organisation?",
-                "a": "High-level risk appetite set by the board needs to be translated into specific, actionable limits/guidelines relevant to each business area's decisions."
+                "a": "High-level risk appetite set by the board needs to be translated into specific, actionable limits/guidelines relevant to each business area's decisions.",
+                "explain": "This closing card resolves the module's opening question about why a clear risk appetite matters — a board-level statement of risk appetite is only genuinely effective once it's translated into concrete limits each business unit can actually apply, which is exactly the embedding-throughout-the-organisation theme raised earlier in this module."
             }
         ]
     },
@@ -9148,63 +9163,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "Why is risk identification described as the foundational first step of risk management?",
-                "a": "Risks that aren't identified cannot be assessed, managed or monitored — an incomplete risk identification undermines the whole risk management process."
+                "a": "Risks that aren't identified cannot be assessed, managed or monitored — an incomplete risk identification undermines the whole risk management process.",
+                "explain": "This module moves from Module 25's governance STRUCTURE to the practical CONTENT that structure has to process — worth treating risk identification as the input every later risk-management stage (measurement in Module 29, transfer in Module 30) depends on: a risk missed here is invisible everywhere downstream."
             },
             {
                 "q": "What is a 'risk register'?",
-                "a": "A structured record listing an organisation's identified risks, along with information such as their assessed likelihood, impact, and owner."
+                "a": "A structured record listing an organisation's identified risks, along with information such as their assessed likelihood, impact, and owner.",
+                "explain": "This is the practical output document of the identification process — worth noting the 'owner' field connects directly to Module 25's three-lines-of-defence model, since assigning ownership is exactly how identified risks get linked back to the first-line business function responsible for managing them day-to-day."
             },
             {
                 "q": "Give one common technique for identifying risks.",
-                "a": "Brainstorming/workshops with relevant staff, reviewing historical loss events, or systematic checklists based on risk categories."
+                "a": "Brainstorming/workshops with relevant staff, reviewing historical loss events, or systematic checklists based on risk categories.",
+                "explain": "Worth noting these techniques deliberately combine forward-looking judgement (workshops, scenario thinking) with backward-looking evidence (historical loss events) — a purely historical approach alone would miss the emerging risks this module addresses later, which is exactly why several complementary techniques are typically used together."
             },
             {
                 "q": "What is 'market risk'?",
-                "a": "The risk of loss arising from movements in market prices/rates, e.g. interest rates, equity prices, or exchange rates."
+                "a": "The risk of loss arising from movements in market prices/rates, e.g. interest rates, equity prices, or exchange rates.",
+                "explain": "This is the first of several standard risk categories this module catalogues — worth recognising it as CM2 and Module 12's market behaviour material given its formal risk-classification name, directly relevant to the asset-side risks covered in Modules 9-17."
             },
             {
                 "q": "What is 'credit risk'?",
-                "a": "The risk of loss arising from a counterparty failing to meet its financial obligations."
+                "a": "The risk of loss arising from a counterparty failing to meet its financial obligations.",
+                "explain": "This is Module 9's bond credit risk generalised beyond just bonds — worth noting credit risk applies to ANY counterparty relationship, including reinsurance recoverables (Module 30) and derivative counterparties (Module 16), not just directly-held corporate bonds."
             },
             {
                 "q": "What is 'insurance risk' (or underwriting risk)?",
-                "a": "The risk of loss arising from the incidence, timing, or severity of insured events differing from what was assumed in pricing/reserving."
+                "a": "The risk of loss arising from the incidence, timing, or severity of insured events differing from what was assumed in pricing/reserving.",
+                "explain": "This is precisely Module 20's assumption-uncertainty concept and Module 21's mortality/morbidity risk given their formal risk-category name — worth recognising this as the category that most directly connects to the pricing and assumption-setting material developed throughout Part 4."
             },
             {
                 "q": "What is 'operational risk'?",
-                "a": "The risk of loss arising from inadequate or failed internal processes, people, systems, or from external events."
+                "a": "The risk of loss arising from inadequate or failed internal processes, people, systems, or from external events.",
+                "explain": "Worth noting this is a genuinely different KIND of risk from market, credit, and insurance risk above — those three are largely about the OUTCOME of a deliberately-accepted exposure going against you, while operational risk is about things going wrong that shouldn't have been happening at all (errors, failures, fraud)."
             },
             {
                 "q": "What is 'liquidity risk'?",
-                "a": "The risk of being unable to meet cash outflow obligations as they fall due, even if the organisation is solvent overall."
+                "a": "The risk of being unable to meet cash outflow obligations as they fall due, even if the organisation is solvent overall.",
+                "explain": "This is Module 12's market liquidity material and Module 15's liquidity requirements card given their formal risk-category treatment — the 'even if solvent overall' qualifier is worth remembering explicitly, since it's a genuinely important distinction from insolvency: an organisation can have plenty of assets on paper yet still fail because it can't convert them to cash fast enough."
             },
             {
                 "q": "What is 'group risk'?",
-                "a": "Risk arising from an organisation's membership of a wider corporate group, e.g. contagion from problems elsewhere in the group."
+                "a": "Risk arising from an organisation's membership of a wider corporate group, e.g. contagion from problems elsewhere in the group.",
+                "explain": "This is a genuinely important category worth not overlooking — even a well-managed, well-capitalised individual entity can be dragged down by problems elsewhere in its wider corporate group (reputational contagion, intra-group financial support obligations), a risk that exists purely because of organisational structure, not the entity's own risk-taking."
             },
             {
                 "q": "Why might risks be classified into standard categories (market, credit, insurance, operational, etc.)?",
-                "a": "To ensure systematic, comprehensive coverage of risk types and enable consistent measurement, aggregation, and reporting across the organisation."
+                "a": "To ensure systematic, comprehensive coverage of risk types and enable consistent measurement, aggregation, and reporting across the organisation.",
+                "explain": "This closes the loop on why the whole classification exercise above matters — a standard taxonomy is exactly what makes Module 29's risk measurement and Module 34's reporting material tractable, since risks have to be categorised consistently before they can be meaningfully aggregated or compared across the organisation."
             },
             {
                 "q": "What is an 'emerging risk'?",
-                "a": "A risk that is new or evolving, not yet fully understood or reflected in existing risk management frameworks."
+                "a": "A risk that is new or evolving, not yet fully understood or reflected in existing risk management frameworks.",
+                "explain": "This is worth connecting directly to Module 3's technological and environmental PESTLE factors — an emerging risk often originates from exactly the kind of external-environment change that module catalogued, before it's had time to be absorbed into the standard risk categories established earlier in this module."
             },
             {
                 "q": "Why is identifying emerging risks particularly challenging compared to identifying established, well-understood risks?",
-                "a": "By definition, there's limited historical data or experience to draw on, requiring more judgement, scenario thinking, and horizon-scanning."
+                "a": "By definition, there's limited historical data or experience to draw on, requiring more judgement, scenario thinking, and horizon-scanning.",
+                "explain": "This is Module 2's and Module 20's judgement-beyond-statistics theme returning directly — an emerging risk is almost the definition of a situation where CS1/CS2's historical-data-driven statistical methods can't help much, since by construction there isn't enough relevant history yet."
             },
             {
                 "q": "What is 'concentration risk'?",
-                "a": "The risk arising from a lack of diversification, e.g. excessive exposure to a single counterparty, sector, or geography."
+                "a": "The risk arising from a lack of diversification, e.g. excessive exposure to a single counterparty, sector, or geography.",
+                "explain": "This is CM2's portfolio diversification theory viewed from its NEGATIVE side — where Modules 10-14 explained the benefits of diversifying, concentration risk is exactly what accumulates when that diversification principle is violated, whether on the asset side or (per Module 27) the liability side."
             },
             {
                 "q": "Why might risk identification need to be an ongoing, rather than one-off, process?",
-                "a": "New risks emerge and existing risks evolve as the organisation and its external environment change over time."
+                "a": "New risks emerge and existing risks evolve as the organisation and its external environment change over time.",
+                "explain": "This is the recurring ongoing-review theme (Module 3, Module 15, Module 20, Module 24) applied once more, now to risk identification specifically — worth recognising this as yet another instance of the same principle: CP1 treats almost nothing as a one-off, set-and-forget exercise."
             },
             {
                 "q": "How does effective risk identification support the later stages of risk management (measurement, mitigation, monitoring)?",
-                "a": "You can only measure, manage and monitor the risks you've identified — thorough identification ensures nothing significant is inadvertently overlooked."
+                "a": "You can only measure, manage and monitor the risks you've identified — thorough identification ensures nothing significant is inadvertently overlooked.",
+                "explain": "This closing card is the module's explicit hand-off to the rest of Part 5 — everything that follows (Modules 27-31: product risks, accepting risk, measurement, transfer, other controls) presumes the risk in question has ALREADY been identified, making this module's material a genuine prerequisite for everything downstream."
             }
         ]
     },
@@ -9215,63 +9245,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "How can product design itself be a source of risk to the provider?",
-                "a": "Features like guarantees, options, and long-term commitments can create exposures (e.g. investment, longevity risk) beyond simple insurance risk."
+                "a": "Features like guarantees, options, and long-term commitments can create exposures (e.g. investment, longevity risk) beyond simple insurance risk.",
+                "explain": "This module applies Module 26's general risk categories specifically to the products designed in Modules 7-8 and 23 — worth reading this as a direct callback to Module 23's guarantee and option cards, now reframed explicitly through the risk lens this Part of CP1 has been developing."
             },
             {
                 "q": "What is 'anti-selection risk', as it relates to product/scheme design?",
-                "a": "The risk that individuals with higher-than-average risk are disproportionately likely to take up or retain a product, worsening the provider's experience versus assumptions."
+                "a": "The risk that individuals with higher-than-average risk are disproportionately likely to take up or retain a product, worsening the provider's experience versus assumptions.",
+                "explain": "This is Module 21's anti-selection concept given its formal risk-category treatment — worth remembering this is fundamentally an INSURANCE risk (Module 26) that arises specifically from the interaction between customer behaviour and product/underwriting design, not a purely external, uncontrollable risk."
             },
             {
                 "q": "Why might guaranteed annuity options embedded in older life insurance contracts create significant risk for a provider?",
-                "a": "If market annuity rates fall below the guaranteed rate, policyholders are much more likely to exercise the guarantee, creating a costly, anti-selective liability."
+                "a": "If market annuity rates fall below the guaranteed rate, policyholders are much more likely to exercise the guarantee, creating a costly, anti-selective liability.",
+                "explain": "This is Module 7's and Module 23's guaranteed annuity rate example given its full risk-classification treatment — worth recognising it as a genuinely important worked example combining THREE risk categories at once: market risk (falling rates), insurance/longevity risk, and the anti-selection risk defined in the previous card."
             },
             {
                 "q": "What is 'lapse risk'?",
-                "a": "The risk that policyholders discontinue (lapse/surrender) their policies at a different rate than assumed, affecting the provider's expected profitability."
+                "a": "The risk that policyholders discontinue (lapse/surrender) their policies at a different rate than assumed, affecting the provider's expected profitability.",
+                "explain": "This is a genuinely distinct risk from anti-selection above, worth keeping separate — anti-selection is about WHO chooses to take up or keep a policy based on their own risk level, while lapse risk is about the sheer RATE of discontinuation deviating from assumptions, which matters even without any selection effect at all."
             },
             {
                 "q": "Why might lapse risk be particularly significant for products with high initial (acquisition) costs?",
-                "a": "Early lapses mean the provider may not recoup the upfront costs (e.g. commission) before the policy is given up, resulting in a loss on that policy."
+                "a": "Early lapses mean the provider may not recoup the upfront costs (e.g. commission) before the policy is given up, resulting in a loss on that policy.",
+                "explain": "This connects directly to Module 22's initial expenses and Module 24's new business strain material — worth recognising lapse risk and new business strain as closely related: a policy that lapses early is precisely one where the upfront capital drain (Module 24) never gets recovered through the renewal premiums it was counting on."
             },
             {
                 "q": "What risks does a defined benefit pension scheme expose the sponsoring employer to?",
-                "a": "Investment risk, longevity risk, and inflation risk, since the employer bears the cost of funding whatever benefits are ultimately due, regardless of how assets perform."
+                "a": "Investment risk, longevity risk, and inflation risk, since the employer bears the cost of funding whatever benefits are ultimately due, regardless of how assets perform.",
+                "explain": "This is Module 6's earlier point about defined benefit risk-bearing given its full risk-classification treatment — worth noting this combines THREE of Module 26's standard categories (market, insurance/longevity, and an inflation dimension of market risk) all falling on the sponsor rather than the individual member."
             },
             {
                 "q": "Why does a defined contribution pension scheme shift risk differently than a defined benefit scheme?",
-                "a": "Investment and longevity risk are largely borne by the individual member, rather than the employer/scheme sponsor."
+                "a": "Investment and longevity risk are largely borne by the individual member, rather than the employer/scheme sponsor.",
+                "explain": "This is the direct structural contrast to the previous card — worth recognising this as the SAME underlying risks (investment, longevity) simply allocated to a different party depending on scheme design, echoing Module 23's broader theme that contract/scheme design is fundamentally a choice about WHO bears which risk."
             },
             {
                 "q": "What is 'longevity risk'?",
-                "a": "The risk that people live longer than assumed, increasing the cost of providing income for life (e.g. via annuities or pensions)."
+                "a": "The risk that people live longer than assumed, increasing the cost of providing income for life (e.g. via annuities or pensions).",
+                "explain": "This formalises a risk already encountered repeatedly in earlier modules (Module 7's annuity risk, Module 21's mortality improvement uncertainty) — worth recognising longevity risk as arguably the single most consequential risk category for the annuity and defined benefit pension products this Part of CP1 keeps returning to."
             },
             {
                 "q": "How might inflation risk affect a benefit scheme with inflation-linked benefits?",
-                "a": "Higher-than-assumed inflation directly increases the real cost of providing the promised (inflation-linked) benefits."
+                "a": "Higher-than-assumed inflation directly increases the real cost of providing the promised (inflation-linked) benefits.",
+                "explain": "This is Module 9's index-linked bond material viewed from the LIABILITY side rather than the asset side — worth connecting directly to Module 16's ALM material: an inflation-linked liability specifically needs an inflation-linked (or at least inflation-correlated) asset to genuinely hedge this risk."
             },
             {
                 "q": "What is a 'basis risk' that might arise from a mismatch between a scheme's chosen inflation-linked benefit index and its available inflation-hedging assets?",
-                "a": "If the benefit is linked to one inflation measure but hedging assets/derivatives reference a different one, the hedge won't perfectly offset the liability risk."
+                "a": "If the benefit is linked to one inflation measure but hedging assets/derivatives reference a different one, the hedge won't perfectly offset the liability risk.",
+                "explain": "This is precisely Module 16's basis risk concept applied to the specific inflation-mismatch case just described — worth recognising this as a concrete, product-specific instance of the general derivatives-hedging imperfection that module already flagged as a residual risk even after hedging is put in place."
             },
             {
                 "q": "Why might a general insurance product's design create exposure to 'latent' claims risk?",
-                "a": "Some liability exposures (e.g. certain industrial diseases) may not manifest as claims until many years after the underlying insured period, creating long-tail uncertainty."
+                "a": "Some liability exposures (e.g. certain industrial diseases) may not manifest as claims until many years after the underlying insured period, creating long-tail uncertainty.",
+                "explain": "This is exactly Module 8's long-tail liability material given its full risk-classification treatment — worth recognising this as a further instance of the assumption-uncertainty (Module 20) and reserving-difficulty (Module 8) themes converging: latent claims are the extreme end of the long-tail spectrum, where uncertainty persists longest."
             },
             {
                 "q": "What risk arises from offering a product with premiums that cannot be adjusted after inception (guaranteed premiums)?",
-                "a": "The provider bears the full risk that future experience is worse than assumed at outset, with no ability to reprice in response."
+                "a": "The provider bears the full risk that future experience is worse than assumed at outset, with no ability to reprice in response.",
+                "explain": "This is the direct opposite scenario to Module 23's reviewable-premium card — worth reading the two together: a guaranteed-premium design maximises customer certainty at the cost of maximising the provider's exposure to every risk category this module has catalogued, with no later repricing lever available."
             },
             {
                 "q": "How can a scheme/product's benefit structure create risk concentration for the provider?",
-                "a": "E.g. if many policyholders share a common risk factor (same employer, same region), an adverse event affecting that factor could generate many simultaneous claims."
+                "a": "E.g. if many policyholders share a common risk factor (same employer, same region), an adverse event affecting that factor could generate many simultaneous claims.",
+                "explain": "This is Module 26's concentration risk concept applied specifically to product/scheme structure — worth connecting to Module 8's catastrophe risk material: a common risk factor shared across many policyholders breaks the usual independent-claims assumption underlying standard pricing, exactly as a natural catastrophe does for property insurance."
             },
             {
                 "q": "Why is understanding the specific risks generated by a product/scheme's design important before it's launched/established?",
-                "a": "It allows the provider to price, reserve, and capitalise appropriately for the risks being taken on, and to consider risk mitigation at the design stage."
+                "a": "It allows the provider to price, reserve, and capitalise appropriately for the risks being taken on, and to consider risk mitigation at the design stage.",
+                "explain": "This directly connects Module 23's design process, Module 24's pricing material, and Modules 32/37's reserving and capital material later in CP1 — worth recognising risk identification (Module 26) at the DESIGN stage as far cheaper and more effective than discovering a risk exposure only after a product is already in force."
             },
             {
                 "q": "How might a provider redesign a product to reduce a previously identified risk exposure?",
-                "a": "E.g. removing or capping a costly guarantee, introducing reviewable premiums, or adding exclusions/limits to reduce anti-selection potential."
+                "a": "E.g. removing or capping a costly guarantee, introducing reviewable premiums, or adding exclusions/limits to reduce anti-selection potential.",
+                "explain": "This closing card directly recalls Module 23's own closing card on iterative contract design — worth recognising this module and Module 23 as two halves of the same ongoing cycle: design creates risk exposures, this module's classification identifies and names them, and redesign (here) feeds back to reduce them, an iterative loop rather than a one-way process."
             }
         ]
     },
@@ -9282,63 +9327,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'underwriting'?",
-                "a": "The process of assessing and classifying risk before deciding whether, and on what terms, to accept it."
+                "a": "The process of assessing and classifying risk before deciding whether, and on what terms, to accept it.",
+                "explain": "This module turns from Module 27's catalogue of product-generated risk exposures to the practical GATEKEEPING process that decides which individual risks actually get accepted in the first place — worth reading this as Module 7's underwriting card given its full, general risk-management treatment."
             },
             {
                 "q": "Why is underwriting important to an insurer's overall risk management?",
-                "a": "It helps ensure the risk actually accepted matches (or is appropriately priced relative to) the assumptions used in pricing the product."
+                "a": "It helps ensure the risk actually accepted matches (or is appropriately priced relative to) the assumptions used in pricing the product.",
+                "explain": "This is worth connecting directly to Module 24's equivalence principle — pricing is only valid for the POPULATION of risks it was calculated for, and underwriting is the mechanism that ensures the risks actually accepted genuinely resemble that assumed population, closing the loop between Module 20's assumptions and real-world risk acceptance."
             },
             {
                 "q": "What is 'risk classification', as part of underwriting?",
-                "a": "Grouping applicants into categories reflecting similar levels of risk, so appropriate (differentiated) pricing/terms can be applied."
+                "a": "Grouping applicants into categories reflecting similar levels of risk, so appropriate (differentiated) pricing/terms can be applied.",
+                "explain": "This is Module 26's general risk-classification concept applied at the level of an INDIVIDUAL applicant rather than an organisation's whole risk landscape — worth recognising the same underlying logic (systematic categorisation enabling consistent treatment) recurring at both scales."
             },
             {
                 "q": "Why might an insurer decline to accept certain risks, rather than simply charging a very high price?",
-                "a": "Some risks may be so far outside normal experience/pricing models that reliable pricing isn't possible, or the risk conflicts with the insurer's risk appetite."
+                "a": "Some risks may be so far outside normal experience/pricing models that reliable pricing isn't possible, or the risk conflicts with the insurer's risk appetite.",
+                "explain": "This connects directly to Module 20's assumption-uncertainty and Module 25's risk appetite material — worth noting there's a genuine difference between a risk that's merely EXPENSIVE (which a high price can address) and one that's fundamentally UNQUANTIFIABLE with confidence, where no price is really 'correct' and declining may be the more honest response."
             },
             {
                 "q": "What is a 'rating factor', in underwriting?",
-                "a": "A characteristic (e.g. age, occupation, claims history) used to assess and price an individual risk relative to the wider pool."
+                "a": "A characteristic (e.g. age, occupation, claims history) used to assess and price an individual risk relative to the wider pool.",
+                "explain": "This is CS1's regression/GLM rating-factor concept given its underwriting-specific name — worth recognising these as the same statistical inputs used to build pricing models in CS1, now applied at the point of individual risk assessment rather than aggregate portfolio pricing."
             },
             {
                 "q": "Why must rating factors used in underwriting be relevant and (where applicable) permitted by regulation?",
-                "a": "Using irrelevant or prohibited factors (e.g. certain protected characteristics) could be unfair, discriminatory, or unlawful, beyond just being poor risk assessment."
+                "a": "Using irrelevant or prohibited factors (e.g. certain protected characteristics) could be unfair, discriminatory, or unlawful, beyond just being poor risk assessment.",
+                "explain": "This is Module 4's conduct regulation and 'treating customers fairly' material applied directly to rating-factor selection — worth noting this is a case where GOOD statistical practice (using genuinely risk-relevant factors) and GOOD conduct practice (avoiding unfair discrimination) point in the same direction, not opposing constraints."
             },
             {
                 "q": "What is 'accepting risk at standard terms'?",
-                "a": "Offering a risk the same premium/terms as the general pool, on the basis that its risk level is in line with the assumptions underlying standard pricing."
+                "a": "Offering a risk the same premium/terms as the general pool, on the basis that its risk level is in line with the assumptions underlying standard pricing.",
+                "explain": "This is the most common underwriting outcome, and it directly recalls Module 24's equivalence-principle pricing — 'standard terms' means the risk classification process (above) confirmed this applicant genuinely fits the population the standard price was calculated for."
             },
             {
                 "q": "What is 'accepting risk at non-standard (loaded) terms'?",
-                "a": "Offering cover but with adjusted terms (e.g. higher premium, exclusions) reflecting an assessed higher-than-standard risk level."
+                "a": "Offering cover but with adjusted terms (e.g. higher premium, exclusions) reflecting an assessed higher-than-standard risk level.",
+                "explain": "This is the direct alternative to standard terms above, and it echoes Module 7's medical underwriting material — rather than declining a higher-risk applicant outright, loading the terms lets the insurer still accept the business while keeping the pricing consistent with the genuinely higher risk assessed."
             },
             {
                 "q": "Why might an insurer set overall 'underwriting limits' on the amount of risk it will accept from a single source?",
-                "a": "To manage concentration risk and avoid excessive exposure to any single policyholder, event, or risk factor."
+                "a": "To manage concentration risk and avoid excessive exposure to any single policyholder, event, or risk factor.",
+                "explain": "This is Module 26's concentration risk concept applied as a practical underwriting CONTROL — worth recognising underwriting limits as a proactive tool for preventing exactly the kind of concentrated exposure Module 27 warned could build up through a common risk factor shared across many policyholders."
             },
             {
                 "q": "What role does reinsurance play in an insurer's risk acceptance strategy?",
-                "a": "It allows an insurer to accept risks larger than it could otherwise prudently retain alone, by passing on part of the risk to a reinsurer."
+                "a": "It allows an insurer to accept risks larger than it could otherwise prudently retain alone, by passing on part of the risk to a reinsurer.",
+                "explain": "This directly previews Module 30's risk transfer material — worth recognising reinsurance as a tool that WIDENS what an insurer can responsibly accept at the underwriting stage, rather than purely a post-acceptance risk-mitigation afterthought."
             },
             {
                 "q": "Why might automated/algorithmic underwriting be increasingly used for straightforward risks?",
-                "a": "It can process large volumes of standard applications quickly and consistently, reserving more detailed manual underwriting for complex/high-value cases."
+                "a": "It can process large volumes of standard applications quickly and consistently, reserving more detailed manual underwriting for complex/high-value cases.",
+                "explain": "This connects to Module 3's technological PESTLE factor and CS2's machine learning material (Module 21 there) — worth noting the 'consistently' benefit directly addresses the module's closing card on why consistent application of underwriting standards matters, since automation removes a source of human inconsistency for routine cases."
             },
             {
                 "q": "What is 'accumulation risk', relevant to an organisation's overall risk acceptance decisions?",
-                "a": "The risk that many individually accepted risks turn out to be correlated (e.g. same geography, same peril), causing a much larger aggregate loss than expected."
+                "a": "The risk that many individually accepted risks turn out to be correlated (e.g. same geography, same peril), causing a much larger aggregate loss than expected.",
+                "explain": "This is essentially the same concept as concentration risk from earlier in this module, viewed specifically through the lens of AGGREGATE risk acceptance decisions over time — worth recognising this as the reason underwriting limits (discussed above) need to consider the whole existing portfolio, not just each new application in isolation."
             },
             {
                 "q": "Why might an organisation review and update its risk acceptance criteria over time?",
-                "a": "Emerging experience, changes in the external environment, or shifts in risk appetite may mean previous acceptance criteria are no longer appropriate."
+                "a": "Emerging experience, changes in the external environment, or shifts in risk appetite may mean previous acceptance criteria are no longer appropriate.",
+                "explain": "This is the recurring ongoing-review theme once more (Modules 3, 15, 20, 24, 26) — worth recognising underwriting criteria as yet another element of the actuarial control cycle that needs periodic revisiting, not a fixed rulebook set once at product launch."
             },
             {
                 "q": "How does the risk acceptance process connect to the earlier topic of setting assumptions?",
-                "a": "Underwriting is designed to ensure the risks actually accepted are consistent with the population/assumptions the pricing basis was built on."
+                "a": "Underwriting is designed to ensure the risks actually accepted are consistent with the population/assumptions the pricing basis was built on.",
+                "explain": "This closing-adjacent card makes explicit the connection already implicit throughout this module — worth treating it as the direct answer to the second card's question: underwriting exists specifically to keep REALITY (the risks actually accepted) aligned with the THEORY (Module 20's pricing assumptions)."
             },
             {
                 "q": "Why is consistent application of underwriting standards important across an organisation?",
-                "a": "Inconsistent underwriting could lead to unintended risk selection, undermining the overall pricing basis and creating unfair outcomes between customers."
+                "a": "Inconsistent underwriting could lead to unintended risk selection, undermining the overall pricing basis and creating unfair outcomes between customers.",
+                "explain": "This closing card ties together the module's fairness thread (rating factors) and its risk-management thread (matching assumptions) — inconsistent underwriting fails on BOTH fronts simultaneously: it can treat similar customers unfairly AND silently reintroduce the anti-selection risk (Module 27) that consistent standards are meant to prevent."
             }
         ]
     },
