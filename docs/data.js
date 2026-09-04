@@ -6291,63 +6291,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the three broad approaches to forecasting future mortality mentioned in the syllabus?",
-                "a": "Extrapolation, explanation (modelling underlying causes), and expectation (expert judgement)."
+                "a": "Extrapolation, explanation (modelling underlying causes), and expectation (expert judgement).",
+                "explain": "This module shifts the whole subject's focus from ESTIMATING current mortality (Modules 6-11) to FORECASTING how it will change over calendar time — a genuinely different, harder problem, since it requires projecting into a future for which no data exists yet at all."
             },
             {
                 "q": "What is an 'extrapolative' approach to mortality forecasting?",
-                "a": "Projecting observed historical trends in mortality rates forward into the future."
+                "a": "Projecting observed historical trends in mortality rates forward into the future.",
+                "explain": "This is conceptually the simplest of the three approaches, and it's the one the rest of this module focuses on almost entirely (via Lee-Carter) — the working assumption is that whatever pattern of improvement mortality has followed historically will broadly continue, at least in the near term."
             },
             {
                 "q": "Give one advantage of extrapolative mortality forecasting methods.",
-                "a": "Relatively simple, objective, and directly grounded in observed historical data."
+                "a": "Relatively simple, objective, and directly grounded in observed historical data.",
+                "explain": "Unlike the explanation-based approach (which requires understanding and correctly modelling WHY mortality changes), extrapolation sidesteps needing any causal theory at all — it simply asks 'what pattern has the data followed', a genuinely more tractable and less subjective question."
             },
             {
                 "q": "Give one disadvantage of extrapolative mortality forecasting methods.",
-                "a": "They assume past trends continue, which may not hold given structural changes."
+                "a": "They assume past trends continue, which may not hold given structural changes.",
+                "explain": "This is the direct cost of extrapolation's simplicity — a genuinely NEW medical breakthrough, public health crisis, or lifestyle shift can break a historical trend abruptly, and a purely extrapolative method has no way to anticipate such a structural break before it actually shows up in the data."
             },
             {
                 "q": "What is the Lee-Carter model?",
-                "a": "A statistical model decomposing log mortality into an age-specific pattern, a time-varying mortality index, and age-specific sensitivity to that index."
+                "a": "A statistical model decomposing log mortality into an age-specific pattern, a time-varying mortality index, and age-specific sensitivity to that index.",
+                "explain": "This is the module's central worked model, and it's worth reading the decomposition intuitively: $a_x$ captures the FIXED overall age pattern (mortality rising with age, per Module 6's Gompertz-style shape), while $k_t$ captures how mortality LEVELS shift over calendar time, with $b_x$ letting different ages respond to that shift by different amounts."
             },
             {
                 "q": "What is the general structure of the Lee-Carter model?",
-                "a": "$\\ln(m_{x,t}) = a_x + b_x k_t + \\epsilon_{x,t}$"
+                "a": "$\\ln(m_{x,t}) = a_x + b_x k_t + \\epsilon_{x,t}$",
+                "explain": "Taking LOGS here (rather than modelling $m_{x,t}$ directly) is a deliberate choice worth noting — it guarantees the resulting fitted mortality rates stay positive (exactly the same log-link logic as CS1's Poisson GLM, Module 13 there), and it turns a potentially multiplicative relationship into this convenient additive form."
             },
             {
                 "q": "How is the Lee-Carter model typically used for forecasting?",
-                "a": "The time index $k_t$ is projected forward (often via a simple time series model), combined with fixed age effects."
+                "a": "The time index $k_t$ is projected forward (often via a simple time series model), combined with fixed age effects.",
+                "explain": "This is the direct bridge into Modules 13-14's time series content — having fitted $a_x$, $b_x$ and historical $k_t$ values, the model reduces the whole multi-dimensional forecasting problem down to forecasting just ONE single time series ($k_t$ forward), typically using an ARIMA-style model (Module 13), which is a huge simplification."
             },
             {
                 "q": "What is an 'age-period-cohort' model, as an extension beyond Lee-Carter?",
-                "a": "A model that also allows for a cohort (year of birth) effect, capturing generation-specific mortality patterns."
+                "a": "A model that also allows for a cohort (year of birth) effect, capturing generation-specific mortality patterns.",
+                "explain": "This addresses a genuine limitation of plain Lee-Carter — some mortality patterns are best explained by which GENERATION someone belongs to (shared early-life experiences, smoking habits typical of a birth cohort) rather than purely by their current age or the current calendar year, which Lee-Carter alone cannot capture."
             },
             {
                 "q": "What is a '$p$-spline regression model' used for in mortality projection?",
-                "a": "Smoothing and forecasting mortality surfaces using penalized spline techniques."
+                "a": "Smoothing and forecasting mortality surfaces using penalized spline techniques.",
+                "explain": "This connects directly to Module 11's spline-graduation method — a penalized spline extends that idea from smoothing a single age-based curve to smoothing a whole two-dimensional AGE-BY-TIME 'mortality surface', with the penalty term controlling how much flexibility is allowed, echoing the fit-vs-smoothness trade-off from Module 10."
             },
             {
                 "q": "What software-related skill does the syllabus specify for mortality projection models?",
-                "a": "The ability to use an appropriate computer package to apply models like Lee-Carter to a real mortality data set."
+                "a": "The ability to use an appropriate computer package to apply models like Lee-Carter to a real mortality data set.",
+                "explain": "This is a genuinely practical, hands-on syllabus requirement worth being aware of — unlike Module 11's graduation methods (which the syllabus explicitly does NOT require candidates to compute by hand), mortality projection models like Lee-Carter are expected to be applied using statistical software, reflecting how this work is actually done professionally."
             },
             {
                 "q": "What is a major source of error in mortality forecasts?",
-                "a": "Uncertainty in extrapolating trends that may not continue, and unforeseen future shocks or medical advances."
+                "a": "Uncertainty in extrapolating trends that may not continue, and unforeseen future shocks or medical advances.",
+                "explain": "This restates the extrapolative-approach disadvantage from earlier in this module as the module's central risk warning — mortality projections used for pricing/reserving carry genuine, irreducible uncertainty that grows the further into the future you project, a point worth emphasising in any 'discuss the risks' style question."
             },
             {
                 "q": "Why is mortality projection important for pricing and reserving in annuity and pension business?",
-                "a": "Future mortality improvements mean annuitants are expected to live longer, increasing the expected cost."
+                "a": "Future mortality improvements mean annuitants are expected to live longer, increasing the expected cost.",
+                "explain": "This is the module's central professional 'why does this matter' — note the direction of the risk here is the OPPOSITE of ordinary life assurance: for annuities and pensions, UNDER-estimating future mortality improvement (i.e. assuming people won't live as long as they actually do) is the dangerous mistake, since it understates how long benefits must be paid."
             },
             {
                 "q": "What does 'explanation-based' mortality forecasting attempt to do, distinct from extrapolation?",
-                "a": "Model the underlying causes/drivers of mortality change to forecast future rates based on those drivers."
+                "a": "Model the underlying causes/drivers of mortality change to forecast future rates based on those drivers.",
+                "explain": "This restates the second of the module's three broad approaches from the opening card — rather than assuming past patterns continue mechanically, this approach tries to model WHY mortality has been improving (medical advances, smoking reduction, etc.) and forecasts based on how those specific drivers are themselves expected to evolve."
             },
             {
                 "q": "Why might different mortality forecasting approaches give materially different projections?",
-                "a": "They rely on different assumptions, and mortality trends are inherently uncertain over longer horizons."
+                "a": "They rely on different assumptions, and mortality trends are inherently uncertain over longer horizons.",
+                "explain": "This is worth pairing directly with the earlier 'major source of error' card — since extrapolation, explanation, and expert judgement each rest on fundamentally different assumptions about what drives future mortality, it's entirely expected (not a sign of error) that reputable actuaries using different approaches can reach genuinely different, defensible projections."
             },
             {
                 "q": "What would cause an insurer/actuary to revise a Lee-Carter-based mortality forecast?",
-                "a": "New data suggesting a change in the time index trend, or evidence of a structural break."
+                "a": "New data suggesting a change in the time index trend, or evidence of a structural break.",
+                "explain": "This closes the module by connecting back to the model's core structure — since the whole Lee-Carter forecast ultimately reduces to forecasting the single index $k_t$, any evidence that $k_t$'s historical trend is genuinely shifting (not just random year-to-year noise) is exactly the trigger that should prompt a full model revision."
             }
         ]
     },
