@@ -4543,63 +4543,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'null hypothesis'?",
-                "a": "A default or baseline statement (often of 'no effect') that is tested against an alternative hypothesis."
+                "a": "A default or baseline statement (often of 'no effect') that is tested against an alternative hypothesis.",
+                "explain": "This module is the second great practical payoff of Module 7's sampling distributions, alongside Module 9's confidence intervals — in fact confidence intervals and hypothesis tests are two sides of the same coin, and a value falling outside a 95% confidence interval corresponds exactly to rejecting the matching null hypothesis at the 5% significance level."
             },
             {
                 "q": "What is a 'Type I error'?",
-                "a": "Rejecting the null hypothesis when it is actually true (a 'false positive')."
+                "a": "Rejecting the null hypothesis when it is actually true (a 'false positive').",
+                "explain": "A useful mnemonic: Type I is the error of 'crying wolf' — concluding there's an effect/difference when really there isn't one. This is the error the significance level (below) directly controls the probability of."
             },
             {
                 "q": "What is a 'Type II error'?",
                 "a": "Failing to reject the null hypothesis when it is actually false (a 'false negative')."
+                ,"explain": "The mirror-image error to Type I — missing a genuine effect that's really there. Unlike Type I (fixed by the chosen significance level), the Type II error rate depends on the true (unknown) effect size and sample size, which is exactly why 'power' (below) needs its own dedicated concept."
             },
             {
                 "q": "What is the 'significance level' of a test?",
                 "a": "The probability of making a Type I error, chosen in advance (commonly 5% or 1%)."
+                ,"explain": "Choosing this BEFORE seeing the data is a genuinely important methodological point — picking a significance level after peeking at results (to get the answer you want) undermines the whole logic of the test, since the error-rate guarantee only holds for a threshold fixed in advance."
             },
             {
                 "q": "What is the 'power' of a test?",
                 "a": "The probability of correctly rejecting the null hypothesis when it is false."
+                ,"explain": "Power is exactly $1 - P(\\text{Type II error})$ — a high-power test is good at DETECTING real effects when they exist, and power generally increases with sample size (more data makes small true effects easier to distinguish from pure chance), tying this concept directly back to Module 7's sampling-distribution variance shrinking with $n$."
             },
             {
                 "q": "What is a 'p-value'?",
                 "a": "The probability, assuming the null hypothesis is true, of obtaining a test statistic at least as extreme as the one observed."
+                ,"explain": "This precise, conditional definition ('ASSUMING the null is true') is worth memorising exactly, since a p-value is one of the most commonly misinterpreted quantities in statistics — it is NOT the probability the null hypothesis is true, a distinction worth being able to state clearly if asked."
             },
             {
                 "q": "What decision rule is typically used with a p-value?",
                 "a": "Reject the null hypothesis if the p-value is less than the chosen significance level."
+                ,"explain": "This is the practical, everyday version of hypothesis testing most software and papers actually report — a small p-value means the observed data would be quite SURPRISING if the null hypothesis were really true, which is the intuitive justification for rejecting it below the chosen threshold."
             },
             {
                 "q": "What is the 'critical region' of a test?",
                 "a": "The set of values of the test statistic for which the null hypothesis would be rejected."
+                ,"explain": "This is the classical, pre-computer alternative to the p-value approach — rather than calculating an exact probability, you check whether your test statistic falls inside a predetermined rejection zone, calibrated in advance so the Type I error rate equals the chosen significance level; the two approaches (p-value vs critical region) always give the same reject/don't-reject conclusion."
             },
             {
                 "q": "What is the difference between a 'simple' and a 'composite' hypothesis?",
                 "a": "A simple hypothesis fully specifies the distribution; a composite hypothesis allows a range of possible parameter values."
+                ,"explain": "A useful example: 'the mean is exactly 5' is simple; 'the mean is greater than 5' is composite (it doesn't pin down one specific value) — most REAL alternative hypotheses are composite, since you rarely know the exact true parameter value even if you suspect the null is wrong."
             },
             {
                 "q": "What does the 'likelihood ratio' compare, in hypothesis testing?",
                 "a": "The likelihood of the data under the null hypothesis versus under the alternative hypothesis."
+                ,"explain": "This connects directly to Module 8's maximum likelihood machinery — a likelihood ratio test asks 'how much MORE plausible does the data become under the alternative than under the null', and this ratio-based approach underlies the deviance-comparison technique used for GLMs in Module 13."
             },
             {
                 "q": "What are 'sensitivity' and 'specificity' in the context of a diagnostic/statistical test?",
                 "a": "Sensitivity is the probability of correctly identifying a true positive; specificity of correctly identifying a true negative."
+                ,"explain": "These map directly onto the Type I/II error framework: sensitivity is $1-P(\\text{Type II error})$ (equivalent to power), and specificity is $1-P(\\text{Type I error})$ — the same underlying trade-off (catching real effects vs avoiding false alarms) just relabelled in diagnostic-testing language."
             },
             {
                 "q": "What is the chi-square goodness-of-fit test used for?",
                 "a": "Testing whether observed data is consistent with coming from a specified probability distribution."
+                ,"explain": "This directly reuses Module 2's chi-square distribution — the test statistic (roughly, a sum of squared standardised discrepancies between observed and expected counts) is constructed so that, under the null hypothesis of a correct fit, it follows a chi-square distribution, letting you judge whether the observed mismatch is more than chance would explain."
             },
             {
                 "q": "How does the chi-square test's degrees of freedom change if parameters are estimated from the data?",
                 "a": "The degrees of freedom are reduced by one for each parameter estimated from the data."
+                ,"explain": "This is the same 'degrees of freedom get used up by estimation' logic from Module 7's $n-1$ result for sample variance — if you had to estimate, say, a Poisson mean from the same data you're testing the fit against, that estimation step costs one degree of freedom from the resulting chi-square test statistic."
             },
             {
                 "q": "What is a 'contingency table' used for?",
                 "a": "Summarising the joint frequency distribution of two categorical variables, often to test independence using a chi-square test."
+                ,"explain": "This is Module 4's independence concept made testable with real data — rather than checking a theoretical factorisation condition, a chi-square test of independence compares the table's actual observed cell counts against what independence would predict, again using the chi-square goodness-of-fit logic from above."
             },
             {
                 "q": "What is the 'permutation approach' to a non-parametric hypothesis test?",
                 "a": "Comparing the observed test statistic to the distribution obtained by randomly permuting the data labels, without a specific parametric assumption."
+                ,"explain": "This closes the module with a genuinely different philosophy from every other test covered — rather than relying on a KNOWN theoretical sampling distribution (like chi-square, $t$, or normal), permutation tests build their own reference distribution empirically by reshuffling the data itself, useful whenever the standard parametric assumptions feel shaky."
             }
         ]
     },
@@ -4610,63 +4625,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does a Pearson correlation coefficient of $+1$ indicate?",
-                "a": "A perfect positive linear relationship between the two variables."
+                "a": "A perfect positive linear relationship between the two variables.",
+                "explain": "This module returns to Module 1's opening preview of correlation measures, now with the formal statistical machinery (Module 4's covariance, Module 7's sampling distributions) needed for genuine inference on them, not just description."
             },
             {
                 "q": "What does a Pearson correlation coefficient of $0$ indicate?",
-                "a": "No linear relationship between the two variables (though there could still be a non-linear relationship)."
+                "a": "No linear relationship between the two variables (though there could still be a non-linear relationship).",
+                "explain": "This is exactly Module 4's zero-covariance-doesn't-imply-independence point, restated for the standardised correlation coefficient rather than raw covariance — the same $X$-uniform/$Y=X^2$ counterexample from that module applies equally well here."
             },
             {
                 "q": "How is the sample Pearson correlation coefficient calculated?",
-                "a": "The sample covariance of the two variables, divided by the product of their sample standard deviations."
+                "a": "The sample covariance of the two variables, divided by the product of their sample standard deviations.",
+                "explain": "This is the sample-based (data-driven) version of Module 4's theoretical formula $\\rho=\\text{Cov}(X,Y)/\\sqrt{\\text{Var}(X)\\text{Var}(Y)}$ — swap the true covariance/variances for their sample estimates, and you get the sample correlation coefficient actually computed from real data."
             },
             {
                 "q": "How would you test whether a population correlation coefficient is significantly different from zero?",
-                "a": "Using a $t$-test based on the sample correlation coefficient and sample size (assuming bivariate normality)."
+                "a": "Using a $t$-test based on the sample correlation coefficient and sample size (assuming bivariate normality).",
+                "explain": "This is Module 10's hypothesis-testing framework applied specifically to correlation — the null hypothesis is $\\rho=0$ (no linear relationship), and under bivariate normality the appropriately transformed sample correlation follows a known $t$-distribution, letting you formally judge whether an observed non-zero sample correlation is more than chance."
             },
             {
                 "q": "What is Spearman's rank correlation coefficient based on?",
-                "a": "The Pearson correlation coefficient applied to the ranks of the data, rather than the raw values."
+                "a": "The Pearson correlation coefficient applied to the ranks of the data, rather than the raw values.",
+                "explain": "This restates Module 1's introduction with the exact mechanism spelled out — replace each data point with its RANK within its own variable, then run the ordinary Pearson formula on those ranks; this single substitution is what converts a linear-relationship measure into a monotonic-relationship measure."
             },
             {
                 "q": "Why might Spearman's correlation be more robust to outliers than Pearson's?",
-                "a": "Because it uses ranks, an extreme value only affects its rank position, not the magnitude of its influence."
+                "a": "Because it uses ranks, an extreme value only affects its rank position, not the magnitude of its influence.",
+                "explain": "Worth picturing concretely: an outlier that's merely the largest value contributes exactly the same rank (e.g. 'rank 20 out of 20') whether it's slightly larger or a thousand times larger than the next value — Pearson's raw-value calculation, by contrast, would be dragged much further by the more extreme version."
             },
             {
                 "q": "What does Kendall's tau measure conceptually?",
-                "a": "The tendency for pairs of observations to be 'concordant' versus 'discordant'."
+                "a": "The tendency for pairs of observations to be 'concordant' versus 'discordant'.",
+                "explain": "This restates Module 1's introduction — the concordant/discordant framing (defined precisely in the next card) is a genuinely different construction from either Pearson's (linear) or Spearman's (rank-based) approach, built entirely from pairwise orderings rather than the values or ranks themselves."
             },
             {
                 "q": "How is a pair of observations classified as 'concordant' under Kendall's tau?",
-                "a": "If the observation with the higher value of $X$ also has the higher value of $Y$."
+                "a": "If the observation with the higher value of $X$ also has the higher value of $Y$.",
+                "explain": "This is the precise mechanical definition underlying Kendall's tau — with $n$ observations there are $\\binom{n}{2}$ possible pairs to classify, and tau is essentially built from the (concordant count minus discordant count), normalised so it falls between $-1$ and $+1$ like the other two measures."
             },
             {
                 "q": "Can Pearson's correlation be misleading for data with a strong non-linear (but monotonic) relationship?",
-                "a": "Yes — it can understate the strength of association since it only captures the linear component."
+                "a": "Yes — it can understate the strength of association since it only captures the linear component.",
+                "explain": "This is exactly the scenario Spearman's/Kendall's are designed to handle better — a perfectly monotonic but curved relationship (e.g. $Y=X^3$) can score close to 1 on Spearman's/Kendall's while scoring noticeably below 1 on Pearson's, since Pearson's is specifically measuring how well a STRAIGHT LINE fits, not how consistently one variable rises with the other."
             },
             {
                 "q": "What assumption does the standard significance test for Pearson's correlation coefficient typically rely on?",
-                "a": "That the underlying data follows a bivariate normal distribution."
+                "a": "That the underlying data follows a bivariate normal distribution.",
+                "explain": "This is worth flagging as a genuine limitation of the standard $t$-test approach from earlier in this module — if the bivariate normality assumption looks doubtful, Spearman's or Kendall's (or a permutation-based approach, from Module 10) may give more trustworthy significance testing than the standard Pearson $t$-test."
             },
             {
                 "q": "How does sample size affect the significance of an observed correlation coefficient?",
-                "a": "Larger samples make smaller correlation coefficients statistically significant, since the standard error decreases."
+                "a": "Larger samples make smaller correlation coefficients statistically significant, since the standard error decreases.",
+                "explain": "This is a genuinely important practical caution: with a very large sample, even a tiny, practically meaningless correlation (say, 0.03) can come out 'statistically significant' — a useful reminder that statistical significance and practical/economic significance are different questions, and a large sample only answers the first one more sharply."
             },
             {
                 "q": "What could cause two variables to show a high correlation despite having no causal relationship?",
-                "a": "A confounding third variable influencing both, or pure coincidence (spurious correlation)."
+                "a": "A confounding third variable influencing both, or pure coincidence (spurious correlation).",
+                "explain": "This is the single most important caution in the whole correlation topic, worth having ready for any 'interpret this correlation' question — correlation coefficients, whichever of the three you use, measure ASSOCIATION only; establishing causation needs additional evidence (a designed experiment, or careful control for confounders) that correlation alone can never provide."
             },
             {
                 "q": "Why might you calculate Pearson's, Spearman's, and Kendall's correlations all together for the same pair of variables?",
-                "a": "To compare linear versus monotonic association, and check robustness to outliers or non-linearity."
+                "a": "To compare linear versus monotonic association, and check robustness to outliers or non-linearity.",
+                "explain": "This closes the loop on why the syllabus covers all three: a large gap between Pearson's and the other two (as in the final card of this module) is itself diagnostically useful information, flagging non-linearity or outlier sensitivity that a single correlation number alone would hide."
             },
             {
                 "q": "What range of values can any of these three correlation coefficients take?",
-                "a": "Between $-1$ and $+1$ inclusive."
+                "a": "Between $-1$ and $+1$ inclusive.",
+                "explain": "All three measures share this range by deliberate construction (each involves a normalisation step — dividing by standard deviations for Pearson's, or by the total number of pairs for Kendall's) — this shared scale is exactly what makes it meaningful to directly compare their values against each other, as the previous card suggests doing."
             },
             {
                 "q": "How would you interpret a Kendall's tau close to zero, alongside a high Pearson's correlation?",
-                "a": "Unusual and worth investigating, but generally a low Kendall's tau suggests little consistent ordering association despite a linear trend driven by a few points."
+                "a": "Unusual and worth investigating, but generally a low Kendall's tau suggests little consistent ordering association despite a linear trend driven by a few points.",
+                "explain": "This closes the module with a genuinely tricky diagnostic scenario — it suggests the apparent Pearson correlation may be an artefact of a small number of influential points rather than a broad, consistent pattern across the whole dataset, exactly the kind of outlier-sensitivity issue the robust measures earlier in this module are designed to expose."
             }
         ]
     },
