@@ -1385,4 +1385,448 @@ const QUESTIONS = {
       ],
     },
   ],
+  CM2: [
+    {
+      id: "cm2-q1",
+      title: "Market efficiency and an insurance decision under exponential utility",
+      modules: "Modules 1, 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "State the three forms of the Efficient Markets Hypothesis, and which of them is contradicted if a fund manager can consistently earn abnormal returns using only published company accounts.",
+          answer:
+            "The three forms are weak, semi-strong, and strong. Consistently earning abnormal returns from published accounts (public information) would contradict semi-strong form efficiency &mdash; and, since semi-strong form implies weak form, it would also mean weak form claims about technical analysis are not being tested by this evidence either way.",
+          note: "Candidates should recognise that fundamental analysis of public accounts is specifically a semi-strong form question, not a weak form one (which concerns only historical price patterns).",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "An individual's preferences are described by the exponential utility function $u(w) = 1 - e^{-aw}$ with $a=0.1$ (wealth in &pound;'000s). Their current wealth is &pound;50,000, and they face a 20% chance of a &pound;10,000 loss. Calculate their expected utility if they do not insure against this risk.",
+          answer:
+            "$u(50) = 1-e^{-5} = 0.9933$. $u(40) = 1-e^{-4} = 0.9817$. $E[u] = 0.8(0.9933) + 0.2(0.9817) = 0.9909$",
+          note: "Wealth must be substituted in the SAME units as $a$ is calibrated to (here, &pound;'000s) &mdash; mixing units (e.g. using $w=50{,}000$ directly with $a=0.1$) gives a meaningless, saturated result.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "An insurer offers to fully remove this risk for a fixed premium of &pound;2,500. Calculate the individual's expected utility if they buy this insurance, and state whether they should.",
+          answer:
+            "With insurance, wealth is certain at $50-2.5=47.5$ (in &pound;'000s). $E[u] = u(47.5) = 1-e^{-4.75} = 0.9913$. Since $0.9913 > 0.9909$ (the uninsured expected utility from part (ii)), the individual should buy the insurance.",
+          note: "The comparison must be made against the exact value from part (ii), not a rounded approximation &mdash; the two expected utilities are close enough that excessive rounding could flip the conclusion.",
+        },
+        {
+          label: "(iv)",
+          command: "Calculate",
+          marks: 3,
+          question: "Calculate the certainty equivalent wealth of the uninsured position from part (ii), and use it to explain your conclusion in part (iii) without directly comparing utility values.",
+          answer:
+            "$CE = -\\dfrac{1}{a}\\ln(1-E[u]) = -\\dfrac{1}{0.1}\\ln(1-0.9909) = -10\\ln(0.0091) = 47.05$ (&pound;'000s). Since the certainty equivalent (&pound;47,050) is less than the guaranteed wealth after insurance (&pound;47,500), the individual is better off accepting the insurer's guaranteed outcome than facing the risky uninsured prospect, confirming insurance should be bought.",
+          note: "The certainty equivalent is the guaranteed wealth level giving the SAME expected utility as the risky prospect &mdash; comparing it directly to the insured wealth level is a cleaner, more intuitive way to reach the same conclusion as part (iii) without needing to interpret raw utility numbers.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q2",
+      title: "Value at Risk and TailVaR for a portfolio loss distribution",
+      modules: "Module 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define Value at Risk (VaR) and TailVaR (Expected Shortfall) at confidence level $\\alpha$.",
+          answer:
+            "VaR at confidence level $\\alpha$ is the loss amount that will not be exceeded with probability $\\alpha$ over the specified horizon. TailVaR is the expected loss, given that the loss exceeds the VaR threshold &mdash; the average of the losses in the worst $(1-\\alpha)$ tail of the distribution.",
+          note: "Both definitions should reference a specific confidence level explicitly, since part (ii) and (iii) apply them at a stated 95% level.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A portfolio's one-year loss $L$ is assumed to be normally distributed with mean &pound;100,000 and standard deviation &pound;40,000. Calculate the 95% VaR (using $z_{0.95}=1.645$).",
+          answer: "$VaR_{95\\%} = \\mu + z_{0.95}\\,\\sigma = 100{,}000 + 1.645(40{,}000) = \\pounds165{,}800$",
+          note: "This is a direct normal-quantile calculation &mdash; candidates should be comfortable that VaR here is a quantile of the LOSS distribution, not of a return distribution, so no sign-flip is needed.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "Calculate the 95% TailVaR for the same loss distribution, using $TailVaR_\\alpha = \\mu + \\sigma\\,\\dfrac{\\phi(z_\\alpha)}{1-\\alpha}$, where $\\phi$ is the standard normal density function.",
+          answer:
+            "$\\phi(1.645) = \\dfrac{1}{\\sqrt{2\\pi}}e^{-1.645^2/2} = 0.1031$. $TailVaR_{95\\%} = 100{,}000 + 40{,}000\\times\\dfrac{0.1031}{0.05} = 100{,}000+82{,}490 = \\pounds182{,}490$",
+          note: "The division by $(1-\\alpha)=0.05$, not by $\\alpha=0.95$, is the most common slip here &mdash; candidates should double check they've used the correct tail probability.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why TailVaR exceeds VaR in this example, and explain one advantage TailVaR has over VaR for a general insurer's capital-setting purposes.",
+          answer:
+            "TailVaR averages over ALL losses beyond the VaR threshold, including the most extreme ones, while VaR only marks where that tail begins &mdash; since the tail necessarily contains losses larger than the VaR threshold itself, TailVaR must exceed VaR. TailVaR is a coherent risk measure (satisfying sub-additivity, among other properties) and better reflects the severity of losses in the tail, making it more appropriate than VaR for setting capital to withstand genuinely extreme outcomes.",
+          note: "The coherence/sub-additivity point is the key technical advantage worth naming specifically, not just 'TailVaR captures more information' in vague terms.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q3",
+      title: "Two-asset portfolio theory and the minimum variance portfolio",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the formula for the variance of a two-asset portfolio in terms of the asset weights, variances, and covariance.",
+          answer: "$\\sigma_p^2 = w_1^2\\sigma_1^2 + w_2^2\\sigma_2^2 + 2w_1w_2\\,\\text{Cov}(R_1,R_2)$",
+          note: "This is the foundation formula for the whole question &mdash; candidates should have it available without derivation, since parts (ii) and (iii) apply it directly.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "Asset 1 has expected return 8% and standard deviation 20%; Asset 2 has expected return 12% and standard deviation 30%. The correlation between them is $-0.2$. Calculate the expected return and standard deviation of a portfolio with 60% in Asset 1 and 40% in Asset 2.",
+          answer:
+            "Expected return $= 0.6(8\\%)+0.4(12\\%) = 9.6\\%$. $\\text{Cov} = (-0.2)(0.20)(0.30) = -0.012$. $\\sigma_p^2 = 0.6^2(0.20)^2+0.4^2(0.30)^2+2(0.6)(0.4)(-0.012) = 0.0144+0.0144-0.00576=0.02304$. $\\sigma_p = 15.18\\%$",
+          note: "Note the portfolio standard deviation (15.18%) is below the SIMPLE weighted average of the individual standard deviations (0.6(20%)+0.4(30%)=24%) &mdash; this gap is the diversification benefit, worth flagging explicitly.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "Calculate the weights of the minimum variance portfolio for these two assets.",
+          answer:
+            "$w_1^{MV} = \\dfrac{\\sigma_2^2-\\text{Cov}}{\\sigma_1^2+\\sigma_2^2-2\\,\\text{Cov}} = \\dfrac{0.09-(-0.012)}{0.04+0.09-2(-0.012)} = \\dfrac{0.102}{0.154}=0.662$, so $w_2^{MV}=0.338$. This gives $\\sigma_p^{MV}=14.98\\%$.",
+          note: "Candidates should quote the minimum-variance-weight formula explicitly before substituting &mdash; a bare numerical answer with no formula shown risks losing method marks.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why the minimum variance portfolio's standard deviation (14.98%) is lower than that of the 60/40 portfolio (15.18%) found in part (ii), referencing the correlation between the two assets.",
+          answer:
+            "Because the correlation is negative ($\\rho=-0.2$), the two assets' returns tend to partially offset each other, and there exists a SPECIFIC weighting (the minimum variance weights) that maximises this offsetting effect. The 60/40 split in part (ii) is a reasonable but not optimal mix for risk minimisation; the minimum variance weights (66.2%/33.8%) are specifically chosen to minimise portfolio variance, so by construction no other weighting (including 60/40) can achieve a lower variance.",
+          note: "The key insight is that diversification benefit exists across a RANGE of weightings, but is only MAXIMISED at one specific point (the minimum variance portfolio) &mdash; candidates should avoid implying 60/40 was a poor choice, just that it isn't the variance-minimising one.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q4",
+      title: "CAPM and the security market line",
+      modules: "Modules 5, 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the CAPM formula for the expected return on an asset, and define beta.",
+          answer: "$E[R_i]=R_f+\\beta_i(E[R_m]-R_f)$. Beta measures the sensitivity of an asset's excess return to the excess return of the market portfolio.",
+          note: "Both the formula and the definition of beta are needed, since part (ii) requires substituting into the formula and part (iii) requires interpreting the resulting comparison.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question: "A stock has a beta of 1.4. The risk-free rate is 3% and the expected return on the market portfolio is 9%. Calculate the CAPM-required expected return on the stock.",
+          answer: "$E[R_i] = 3\\% + 1.4(9\\%-3\\%) = 3\\%+1.4(6\\%) = 3\\%+8.4\\% = 11.4\\%$",
+          note: "A direct substitution into the CAPM formula &mdash; the market risk premium ($9\\%-3\\%=6\\%$) should be calculated as an intermediate step, not skipped.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 3,
+          question: "Analysts forecast the stock's actual expected return at 11%. State whether the stock plots above or below the security market line, and what this implies.",
+          answer:
+            "Since the forecast return (11%) is below the CAPM-required return (11.4%) from part (ii), the stock plots BELOW the security market line. This implies the stock appears overvalued for its level of systematic risk &mdash; it is not offering sufficient expected return to compensate for its beta, and CAPM would predict its price should fall (raising its expected return) until it is correctly priced on the line.",
+          note: "Candidates commonly reverse this comparison &mdash; below the line means LOWER than required return, implying overvaluation (you're paying too much for too little expected compensation), not the reverse.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how a single-index model's decomposition of the stock's return variance differs from CAPM's central claim about which risk is rewarded.",
+          answer:
+            "The single-index model decomposes total return variance into systematic variance (from the common market factor) plus idiosyncratic variance &mdash; this is a purely statistical, descriptive decomposition. CAPM makes the stronger ECONOMIC claim that only the systematic portion should be compensated with extra expected return, since idiosyncratic risk can be diversified away at no cost; the single-index model alone does not assert this economic conclusion, it merely describes the variance split.",
+          note: "The key distinction is 'descriptive statistical decomposition' (single-index model) versus 'normative economic claim about pricing' (CAPM) &mdash; candidates who treat the two as interchangeable miss this important conceptual difference.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q5",
+      title: "Brownian motion, Ito's Lemma and the log-normal model",
+      modules: "Modules 7, 8, 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the defining properties of standard Brownian motion $W_t$, and explain why it is a martingale.",
+          answer:
+            "$W_0=0$; independent increments; $W_t-W_s\\sim N(0,t-s)$ for $t>s$; continuous paths. It is a martingale because, by independent increments, $E[W_t|\\mathcal{F}_s]=W_s+E[W_t-W_s|\\mathcal{F}_s]=W_s+0=W_s$, i.e. zero expected drift given current information.",
+          note: "The martingale justification should reference independent increments explicitly, not just assert the zero-drift property without derivation.",
+        },
+        {
+          label: "(ii)",
+          command: "State",
+          marks: 2,
+          question: "State the key extra term Ito's Lemma includes compared with the ordinary calculus chain rule, and briefly explain why it is needed.",
+          answer:
+            "The extra term is $\\frac{1}{2}\\frac{\\partial^2 f}{\\partial x^2}\\sigma^2\\,dt$. It is needed because Brownian motion has non-zero quadratic variation (equal to $t$ over $[0,t]$), unlike a smooth, ordinarily differentiable function, so the second-order term that ordinary calculus discards as negligible does not vanish here.",
+          note: "Candidates should connect the extra term specifically to quadratic variation, not just state 'Brownian motion is different' without the precise mathematical reason.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A stock price follows geometric Brownian motion with drift $\\mu=0.08$ and volatility $\\sigma=0.25$. Using the solved form of the GBM SDE, calculate the probability that the stock price after 1 year exceeds its initial value, i.e. $P(S_1>S_0)$.",
+          answer:
+            "$\\ln(S_1/S_0) \\sim N\\left((\\mu-\\tfrac12\\sigma^2)(1),\\ \\sigma^2(1)\\right) = N(0.04875,\\ 0.0625)$, so standard deviation $=0.25$. $P(S_1>S_0)=P(\\ln(S_1/S_0)>0)=P\\left(Z>\\dfrac{-0.04875}{0.25}\\right)=P(Z>-0.195)=\\Phi(0.195)=0.577$",
+          note: "The full method (standardise, use symmetry of the normal distribution) should be shown &mdash; this connects Module 8's solved GBM formula directly to a normal-probability calculation, testing whether candidates can combine the two techniques.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question:
+            "Comment on why this probability (57.7%) is greater than 50% despite the $-\\tfrac12\\sigma^2$ adjustment term reducing the drift in the exponent, and give one piece of empirical evidence that might make this log-normal model an imperfect description of real stock price behaviour.",
+          answer:
+            "The mean of $\\ln(S_1/S_0)$, though reduced by the $-\\tfrac12\\sigma^2$ adjustment (from 0.08 to 0.04875), remains positive, so the balance of probability still favours $S_1>S_0$ &mdash; the drift effect outweighs the variance adjustment here. Empirically, the log-normal model is imperfect because real returns often show fat tails (more extreme moves than normal predicts) and negative skewness (larger, more frequent downward moves), unlike the model's symmetric normal-distribution assumption for log returns.",
+          note: "Both parts of the answer are needed for full marks: the numerical/algebraic explanation for why the probability still exceeds 50%, and a specific named empirical critique (fat tails and/or skewness) from Module 9.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q6",
+      title: "Put-call parity, forward pricing and the Greeks",
+      modules: "Modules 10, 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the no-arbitrage forward price formula for a non-dividend-paying asset, and put-call parity for European options.",
+          answer: "$F_0 = S_0e^{rT}$. Put-call parity: $C-P = S_0-Ke^{-rT}$",
+          note: "Both formulas are used directly in parts (ii) and (iii) &mdash; candidates should have them immediately available.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question: "A non-dividend-paying stock trades at &pound;80. The continuously-compounded risk-free rate is 5% per annum. Calculate the 6-month forward price.",
+          answer: "$F_0 = 80\\,e^{0.05(0.5)} = 80\\,e^{0.025} = \\pounds82.03$",
+          note: "A direct application of the forward price formula &mdash; candidates should use $T=0.5$ years, not 6 (months) directly.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "A 6-month European call option on this stock with strike &pound;75 trades at &pound;9.50. Using put-call parity, calculate the price of the corresponding European put.",
+          answer: "$P = C-S_0+Ke^{-rT} = 9.50-80+75e^{-0.025} = 9.50-80+73.15 = \\pounds2.65$",
+          note: "Candidates should discount $K$, not $S_0$, by $e^{-rT}$ &mdash; a common error is discounting the wrong term in the parity rearrangement.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 4,
+          question:
+            "A trader delta-hedges a short position of 2,000 of these call options, where the call's Delta is 0.65. State how many shares the trader must hold and in what direction, and explain why this hedge will need rebalancing if the stock price moves, referencing Gamma.",
+          answer:
+            "The trader must hold $0.65\\times2{,}000 = 1{,}300$ shares LONG, offsetting the negative Delta exposure created by being short the calls. This hedge will need rebalancing because Delta itself changes as the stock price moves (the rate of change of Delta is Gamma); once the stock price moves, the option's actual Delta will differ from 0.65, so 1,300 shares will no longer exactly offset the position, requiring the share holding to be adjusted (rebalanced) to match the new Delta.",
+          note: "Both the direction (long shares to offset a short call position) and the Gamma-based rebalancing explanation are needed for full marks &mdash; stating only the share count without the rebalancing rationale is an incomplete answer.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q7",
+      title: "Pricing a call option in a one-step binomial model",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the formula for the risk-neutral up-probability $p$ in a one-step binomial model, and the no-arbitrage condition the up and down factors $u,d$ must satisfy.",
+          answer: "$p=\\dfrac{e^{r\\Delta t}-d}{u-d}$, requiring $d<e^{r\\Delta t}<u$ for $p$ to lie strictly between 0 and 1.",
+          note: "Both the formula and the no-arbitrage condition should be stated, since part (ii) requires checking the given $u,d,r$ satisfy this condition implicitly by producing a valid $p\\in(0,1)$.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A stock priced at &pound;100 can move up by 15% or down by 10% over one year. The continuously-compounded risk-free rate is 4% per annum. Calculate the risk-neutral probability of an up-move.",
+          answer: "$u=1.15$, $d=0.90$. $p = \\dfrac{e^{0.04}-0.90}{1.15-0.90} = \\dfrac{1.0408-0.90}{0.25} = \\dfrac{0.1408}{0.25} = 0.563$",
+          note: "$e^{0.04}$ should be evaluated precisely (1.0408), not approximated as $1+0.04$, to avoid a small but avoidable error in the final answer.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "A European call option with strike &pound;100 matures in one year. Calculate its price using risk-neutral valuation.",
+          answer:
+            "$S_u=115$, $S_d=90$. Payoff$_u=\\max(115-100,0)=15$; Payoff$_d=\\max(90-100,0)=0$. Price $= e^{-0.04}[0.563(15)+0.437(0)] = e^{-0.04}(8.45) = 0.9608(8.45) = \\pounds8.12$",
+          note: "The expected payoff must be discounted at the RISK-FREE rate using the risk-neutral probabilities, not the real-world probabilities (which aren't given, and aren't needed).",
+        },
+        {
+          label: "(iv)",
+          command: "Calculate",
+          marks: 3,
+          question: "Calculate the option's Delta implied by this one-step tree, and explain how it would be used to construct a replicating portfolio for the option today.",
+          answer:
+            "$\\Delta = \\dfrac{\\text{Payoff}_u-\\text{Payoff}_d}{S_u-S_d} = \\dfrac{15-0}{115-90} = \\dfrac{15}{25} = 0.60$. The replicating portfolio holds 0.60 shares of the stock, partly financed by borrowing at the risk-free rate, structured so that its value exactly matches the option's payoff (15 or 0) in both the up and down states; today, this portfolio's cost should equal the option price of &pound;8.12 found in part (iii).",
+          note: "Delta here is calculated directly from the tree's payoffs (a discrete slope), not via a formula requiring $N(d_1)$ &mdash; that Black-Scholes-specific version comes later in the syllabus.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q8",
+      title: "The Black-Scholes formula and the 5-step method",
+      modules: "Modules 13, 14",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the Black-Scholes formula for a European call option, and define $d_1$.",
+          answer: "$C=S_0N(d_1)-Ke^{-rT}N(d_2)$, where $d_1=\\dfrac{\\ln(S_0/K)+(r+\\tfrac12\\sigma^2)T}{\\sigma\\sqrt{T}}$",
+          note: "Candidates should also be ready to state $d_2=d_1-\\sigma\\sqrt{T}$, needed for part (ii).",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A non-dividend-paying stock trades at &pound;50. A European call has strike &pound;48, time to maturity 9 months, volatility 25% per annum, and the continuously-compounded risk-free rate is 3% per annum. Calculate the Black-Scholes price of the call.",
+          answer:
+            "$d_1 = \\dfrac{\\ln(50/48)+(0.03+0.03125)(0.75)}{0.25\\sqrt{0.75}} = \\dfrac{0.0408+0.0459}{0.2165} = 0.401$. $d_2 = 0.401-0.2165 = 0.184$. $N(d_1)=0.656$, $N(d_2)=0.573$. $C = 50(0.656) - 48e^{-0.03(0.75)}(0.573) = 32.80 - 46.93(0.573) = 32.80-26.90=\\pounds5.89$",
+          note: "Marks are typically split across the correct calculation of $d_1$, $d_2$, looking up/calculating both normal CDF values, and the final substitution &mdash; showing each intermediate value earns partial credit even if the final figure has a small error.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain what $N(d_2)$ represents, and comment on whether this option is likely to finish in the money.",
+          answer:
+            "$N(d_2)$ is (approximately) the risk-neutral probability that the option finishes in the money. Since $N(d_2)=0.573>0.5$ here, the option is more likely than not to finish in the money under the risk-neutral measure, consistent with the stock price (&pound;50) already exceeding the strike (&pound;48) at the outset.",
+          note: "The word 'approximately' or a similar qualifier is worth including, since $N(d_2)$ is the EXACT risk-neutral in-the-money probability, but it's easy to conflate with $N(d_1)$ (Delta) if not careful.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain, in general terms (no calculation required), how the 5-step method's numeraire choice could simplify pricing an option to exchange one risky asset for another, compared with a standard Black-Scholes-style approach.",
+          answer:
+            "Priced directly in cash terms, an exchange option depends on TWO sources of randomness (the movements of both underlying assets). By choosing one of the two assets itself as the numeraire, that asset's own randomness is effectively absorbed into the reference unit, reducing the problem to depending on only the RELATIVE movement between the two assets &mdash; a simpler, one-dimensional problem that can then often be solved using Black-Scholes-style machinery under the new measure.",
+          note: "This tests conceptual understanding of the numeraire's role, not a memorised exchange-option formula &mdash; a strong answer explains the dimensionality reduction specifically, not just 'it makes it easier' in vague terms.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q9",
+      title: "Term structure models and credit risk",
+      modules: "Modules 15, 16",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the SDE for the short rate under the Vasicek model, and identify its main limitation.",
+          answer: "$dr_t=a(b-r_t)\\,dt+\\sigma\\,dW_t$. Its main limitation is that it allows the short rate to become negative with positive probability.",
+          note: "Candidates should recognise this as an Ornstein-Uhlenbeck process (Module 8) with $r_t$ in place of the general $X_t$.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how the Cox-Ingersoll-Ross (CIR) model addresses this limitation, and how the Hull-White model differs in its own approach to improving on Vasicek.",
+          answer:
+            "CIR replaces the constant diffusion term with $\\sigma\\sqrt{r_t}$, so volatility shrinks toward zero as $r_t$ approaches zero, keeping rates non-negative under suitable conditions. Hull-White instead keeps Vasicek's basic structure but allows the mean-reversion level (and potentially other parameters) to be time-dependent, so the model can be calibrated to exactly fit the current observed yield curve &mdash; a different kind of improvement, addressing yield-curve consistency rather than the negative-rate problem directly.",
+          note: "Both models 'improve on' Vasicek in genuinely different ways &mdash; candidates should not conflate CIR's negative-rate fix with Hull-White's yield-curve-fitting fix, since they address different limitations.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A corporate bond's default risk is modelled using a two-state model with constant default intensity $\\lambda=0.02$ per annum. The exposure is &pound;1,000,000 and the recovery rate on default is 40%. Calculate the probability of default within 5 years, and the resulting expected loss over that period.",
+          answer:
+            "Survival probability to 5 years $=e^{-\\lambda t}=e^{-0.02(5)}=e^{-0.1}=0.9048$. Default probability $=1-0.9048=0.0952$. Expected loss $=0.0952\\times(1-0.40)\\times\\pounds1{,}000{,}000 = 0.0952\\times0.60\\times1{,}000{,}000=\\pounds57{,}098$",
+          note: "Expected loss requires all three factors multiplied together: default probability, loss-given-default (1 minus recovery rate), and exposure &mdash; omitting the $(1-\\text{recovery rate})$ adjustment is a common error.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how the Merton (structural) model would instead assess this firm's default risk, and give one advantage this approach has over the intensity-based calculation in part (iii).",
+          answer:
+            "The Merton model treats the firm's equity as a European call option on the firm's total assets, with strike equal to the face value of its debt; default occurs if asset value falls below the debt's face value at maturity, letting Black-Scholes-style option pricing techniques estimate the default probability from the firm's asset value and volatility. Its advantage over the reduced-form calculation in part (iii) is that it provides an economic EXPLANATION for why default might occur (declining or volatile asset value relative to leverage), rather than simply assuming a constant statistical default intensity with no underlying economic story.",
+          note: "The key contrast to draw out is 'explains why' (structural/Merton) versus 'describes how often, statistically' (reduced-form, as used in part (iii)) &mdash; both are valid, but for different purposes.",
+        },
+      ],
+    },
+    {
+      id: "cm2-q10",
+      title: "Ruin theory and a chain ladder reserve estimate",
+      modules: "Modules 17, 18",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State Lundberg's inequality, defining each symbol used.",
+          answer:
+            "The probability of ultimate ruin $\\psi(u) \\leq e^{-Ru}$, where $u$ is the insurer's initial surplus and $R>0$ is the adjustment coefficient, determined by the premium loading and the claim size distribution.",
+          note: "Candidates should note this is an upper BOUND, not an exact formula for the ruin probability.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "An insurer's claims are exponentially distributed with mean &pound;500, and premiums include a loading of 20% above the pure expected cost (i.e. $\\theta=0.20$). For exponential claims, the adjustment coefficient is $R=\\dfrac{\\theta\\beta}{1+\\theta}$, where $\\beta$ is the reciprocal of the mean claim size. Calculate $R$, and the Lundberg upper bound on the probability of ultimate ruin given an initial surplus of &pound;2,000.",
+          answer:
+            "$\\beta = 1/500 = 0.002$. $R = \\dfrac{0.20(0.002)}{1.20} = 0.000333$. Lundberg bound $= e^{-Ru} = e^{-0.000333(2{,}000)} = e^{-0.667} = 0.513$",
+          note: "This shows the bound (51.3%) is not a tight or reassuring figure on its own &mdash; part (iii) explores what the insurer could do to improve it.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain two distinct ways the insurer could reduce this bound on the probability of ruin, referencing the formula used in part (ii).",
+          answer:
+            "(1) Increase initial surplus $u$: since the bound is $e^{-Ru}$, a larger $u$ directly and exponentially reduces the bound, without needing to change anything about the claims process itself. (2) Increase the premium loading $\\theta$ (e.g. by raising premiums) or purchase reinsurance to reduce claims variability: either raises the adjustment coefficient $R$, which also reduces the bound $e^{-Ru}$, though a higher $\\theta$ may reduce competitiveness and reinsurance carries its own cost.",
+          note: "Both routes (increasing $u$ directly, or increasing $R$ via the premium loading/claims variability) should be identified as genuinely distinct levers, each with a real-world trade-off worth mentioning.",
+        },
+        {
+          label: "(iv)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A run-off triangle shows cumulative claims (&pound;'000s) as follows: Origin year 1: 100, 150, 165 (development years 1, 2, 3). Origin year 2: 120, 175 (development years 1, 2). Origin year 3: 130 (development year 1). Using the basic chain ladder method, calculate the total outstanding claims across origin years 2 and 3.",
+          answer:
+            "Development factor $f_{1\\to2} = \\dfrac{150+175}{100+120} = \\dfrac{325}{220} = 1.477$. Development factor $f_{2\\to3} = \\dfrac{165}{150} = 1.100$. Origin year 2 ultimate $= 175\\times1.100 = 192.50$; outstanding $=192.50-175=17.50$. Origin year 3 projected to dev. year 2 $=130\\times1.477=192.05$; ultimate $=192.05\\times1.100=211.25$; outstanding $=211.25-130=81.25$. Total outstanding $=17.50+81.25=\\pounds98.75$ ('000s), i.e. &pound;98,750.",
+          note: "Origin year 3 needs TWO development factors applied in sequence (dev. year 1 to 2, then 2 to 3) since it only has one data point so far, while origin year 2 only needs one (dev. year 2 to 3) &mdash; applying the wrong number of factors to each origin year is the most common error in this style of question.",
+        },
+      ],
+    },
+  ],
 };
