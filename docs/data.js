@@ -9983,63 +9983,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the general purpose of holding capital, for a financial institution?",
-                "a": "To provide a buffer against adverse experience, supporting solvency and the ability to meet obligations even if things go worse than expected."
+                "a": "To provide a buffer against adverse experience, supporting solvency and the ability to meet obligations even if things go worse than expected.",
+                "explain": "This module directly answers Module 35's closing question — worth reading this as CP1's culmination: everything from Module 20's margin for adverse deviation through Module 33's risk margin has been building toward exactly this concept, capital as the final backstop against the failure scenarios Module 35 described."
             },
             {
                 "q": "What is 'available capital' (or own funds)?",
-                "a": "The actual capital resources an organisation holds, typically assets in excess of liabilities."
+                "a": "The actual capital resources an organisation holds, typically assets in excess of liabilities.",
+                "explain": "This is precisely Module 33's asset-minus-liability solvency comparison given its formal capital-management name — worth recognising this as the ACTUAL, current figure, in contrast to the REQUIRED figure (next card), with the gap between the two being exactly what determines the surplus discussed later in this module."
             },
             {
                 "q": "What is 'required capital'?",
-                "a": "The minimum amount of capital an organisation is required (e.g. by regulation, or its own risk appetite) to hold, given its risk profile."
+                "a": "The minimum amount of capital an organisation is required (e.g. by regulation, or its own risk appetite) to hold, given its risk profile.",
+                "explain": "This directly previews Module 37's whole treatment of HOW this minimum is actually calculated — worth noting the phrase 'or its own risk appetite': required capital can be set by external regulation OR by the organisation's own internal standard, echoing Module 25's risk-appetite material."
             },
             {
                 "q": "What does a 'capital surplus' (available capital exceeding required capital) indicate?",
-                "a": "The organisation holds more capital than the minimum needed, providing an additional margin of financial strength."
+                "a": "The organisation holds more capital than the minimum needed, providing an additional margin of financial strength.",
+                "explain": "This directly previews Module 38's whole treatment of surplus — worth noting this is a DIFFERENT (though related) concept from Module 38's 'surplus' as emerging profit; here it specifically means the excess of available over required capital at a point in time."
             },
             {
                 "q": "What are common sources of capital for an insurer?",
-                "a": "Retained profits, shareholder capital injections (equity), and various forms of debt/subordinated capital."
+                "a": "Retained profits, shareholder capital injections (equity), and various forms of debt/subordinated capital.",
+                "explain": "This connects directly to Module 6's ownership-structure material — worth noting a mutual insurer (Module 6) has access to fewer of these sources (no external shareholders to inject equity), which is exactly why mutuals often rely more heavily on retained profits and debt for capital growth."
             },
             {
                 "q": "Why might an organisation raise capital via debt (e.g. subordinated debt) rather than equity?",
-                "a": "Debt can be cheaper (no dilution of ownership, potential tax deductibility of interest), though it creates a fixed repayment obligation."
+                "a": "Debt can be cheaper (no dilution of ownership, potential tax deductibility of interest), though it creates a fixed repayment obligation.",
+                "explain": "This is a genuine trade-off worth weighing explicitly in a CP1 answer — debt's fixed repayment obligation is itself a form of risk (a liquidity/credit obligation, Module 26), so 'cheaper' capital isn't free of its own downside, echoing the module's later card on balancing security against cost."
             },
             {
                 "q": "What is 'capital fungibility', and why might it matter for a group with multiple subsidiaries?",
-                "a": "Whether capital held in one part of the group can be freely moved to support another part — restrictions (e.g. regulatory, currency) can limit fungibility, reducing the group's effective capital efficiency."
+                "a": "Whether capital held in one part of the group can be freely moved to support another part — restrictions (e.g. regulatory, currency) can limit fungibility, reducing the group's effective capital efficiency.",
+                "explain": "This connects directly to Module 26's group-risk category — worth recognising a genuinely important, easy-to-overlook point: a group's HEADLINE total capital figure can overstate its true resilience if much of that capital is trapped in subsidiaries and can't actually flow to where a problem has emerged."
             },
             {
                 "q": "Why might a well-diversified group of businesses need less total capital than the sum of its individual businesses' standalone requirements?",
-                "a": "Diversification benefits mean the group's risks aren't all likely to materialise simultaneously, reducing aggregate required capital versus treating each business in isolation."
+                "a": "Diversification benefits mean the group's risks aren't all likely to materialise simultaneously, reducing aggregate required capital versus treating each business in isolation.",
+                "explain": "This is Module 29's risk aggregation material and CM2's portfolio theory applied directly at the whole-group level — worth noting this directly previews Module 37's correlation-matrix material, which is exactly the technical mechanism used to quantify this diversification benefit precisely."
             },
             {
                 "q": "What is the role of capital management in supporting an organisation's strategic objectives, beyond just meeting minimum regulatory requirements?",
-                "a": "Sufficient, efficiently deployed capital enables growth, new product development, and resilience, supporting broader business strategy."
+                "a": "Sufficient, efficiently deployed capital enables growth, new product development, and resilience, supporting broader business strategy.",
+                "explain": "This connects to Module 24's pricing/financing material — worth remembering capital isn't just a defensive regulatory box to tick; it's also the resource that funds new business strain (Module 24) and enables the whole growth agenda a firm might pursue."
             },
             {
                 "q": "Why must capital management balance policyholder/creditor security against shareholder return objectives?",
-                "a": "Holding more capital increases security but can reduce shareholder returns (capital is expensive to hold); capital management seeks an appropriate balance."
+                "a": "Holding more capital increases security but can reduce shareholder returns (capital is expensive to hold); capital management seeks an appropriate balance.",
+                "explain": "This is Module 20's over-prudence caution and Module 32's excessive-provision warning both recurring here at the capital level — worth recognising this as the SAME two-sided trade-off appearing for the third time across Part 6: more of a 'safety' measure isn't automatically better once its genuine cost is weighed."
             },
             {
                 "q": "What is a 'dividend policy', and how does it relate to capital management?",
-                "a": "An organisation's approach to how much profit is distributed to shareholders versus retained as capital, directly affecting available capital levels."
+                "a": "An organisation's approach to how much profit is distributed to shareholders versus retained as capital, directly affecting available capital levels.",
+                "explain": "This directly previews Module 38's surplus-distribution material — worth recognising dividend policy as one concrete LEVER within the broader surplus management decision that module develops, specifically the shareholder-facing half of it."
             },
             {
                 "q": "Why might an organisation model its capital position under a range of future scenarios, not just the current position?",
-                "a": "To understand how capital adequacy might evolve under different (including adverse) future conditions, supporting proactive management."
+                "a": "To understand how capital adequacy might evolve under different (including adverse) future conditions, supporting proactive management.",
+                "explain": "This is Module 15's stress testing and Module 18's stochastic modelling material applied specifically to capital projection — worth connecting to Module 29's forward-looking risk reporting: a snapshot of TODAY's capital position tells you far less than understanding how it might evolve under stress."
             },
             {
                 "q": "What is 'capital efficiency'?",
-                "a": "Achieving the organisation's objectives (e.g. required security level) while minimising the amount of (costly) capital tied up to do so."
+                "a": "Achieving the organisation's objectives (e.g. required security level) while minimising the amount of (costly) capital tied up to do so.",
+                "explain": "This is the practical resolution of the security-versus-return balance raised earlier in this module — worth noting risk transfer (the next card) and diversification (raised earlier) are both concrete TOOLS for improving capital efficiency, achieving the same security with less capital tied up."
             },
             {
                 "q": "How might reinsurance or other risk transfer contribute to capital management?",
-                "a": "By reducing retained risk, it can reduce the required capital, freeing up capital for other uses."
+                "a": "By reducing retained risk, it can reduce the required capital, freeing up capital for other uses.",
+                "explain": "This directly echoes Module 30's closing card on risk transfer reducing capital requirements — worth recognising this as the same principle recurring: transferring risk away doesn't just reduce volatility, it mechanically frees up capital that would otherwise need to sit idle as a buffer against that now-transferred risk."
             },
             {
                 "q": "Why is capital management considered a continuous process, not a one-off exercise?",
-                "a": "An organisation's risk profile, business volumes, and the external environment all change over time, requiring ongoing monitoring and adjustment of capital plans."
+                "a": "An organisation's risk profile, business volumes, and the external environment all change over time, requiring ongoing monitoring and adjustment of capital plans.",
+                "explain": "This closes the module with CP1's now-familiar ongoing-review theme, directly previewing Module 39's monitoring material — worth recognising capital management as the final, highest-stakes instance of a pattern recurring throughout CP1 (Modules 3, 15, 20, 24, 26, 28, 31): nothing here is set-and-forget."
             }
         ]
     },
@@ -10050,63 +10065,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'regulatory capital requirement'?",
-                "a": "The minimum amount of capital a regulator requires an organisation to hold, based on prescribed rules/formulas reflecting its risk profile."
+                "a": "The minimum amount of capital a regulator requires an organisation to hold, based on prescribed rules/formulas reflecting its risk profile.",
+                "explain": "This module develops Module 36's 'required capital' concept in full technical depth — worth connecting directly to Module 4's prudential regulation material: this is the concrete, calculated expression of the solvency-protection aim that module established in principle."
             },
             {
                 "q": "What is 'economic capital'?",
-                "a": "An organisation's own internal assessment of the capital needed to cover its risks to a chosen confidence level, which may differ from the regulatory minimum."
+                "a": "An organisation's own internal assessment of the capital needed to cover its risks to a chosen confidence level, which may differ from the regulatory minimum.",
+                "explain": "This is worth reading alongside Module 20's best-estimate-versus-prudent distinction and Module 34's statutory-versus-management reporting split — economic capital is the firm's own INTERNAL view, potentially more precisely calibrated to its actual risk profile than a generic external regulatory formula."
             },
             {
                 "q": "Why might an organisation's economic capital assessment differ from its regulatory capital requirement?",
-                "a": "Regulatory formulas are often standardised/simplified across the industry, while economic capital can reflect the organisation's own specific risk profile and chosen confidence level."
+                "a": "Regulatory formulas are often standardised/simplified across the industry, while economic capital can reflect the organisation's own specific risk profile and chosen confidence level.",
+                "explain": "This directly sets up the standard-formula-versus-internal-model trade-off explored next — worth noting a firm can genuinely believe its true risk is lower (or higher) than the regulatory formula implies, which is exactly the gap an internal model exists to close where regulators permit it."
             },
             {
                 "q": "What is a 'standard formula' approach to calculating regulatory capital?",
-                "a": "A prescribed, standardised calculation method applied to all firms, rather than requiring each firm to build its own bespoke risk model."
+                "a": "A prescribed, standardised calculation method applied to all firms, rather than requiring each firm to build its own bespoke risk model.",
+                "explain": "This is worth connecting to Module 25's regulator-emphasis-on-comparability theme — a standard formula sacrifices some firm-specific accuracy in exchange for consistency and comparability across the whole industry, exactly the trade-off the next two cards weigh explicitly."
             },
             {
                 "q": "What is an 'internal model' approach to calculating regulatory capital?",
-                "a": "A firm-specific model (subject to regulatory approval) used to calculate capital requirements, tailored to the firm's actual risk profile."
+                "a": "A firm-specific model (subject to regulatory approval) used to calculate capital requirements, tailored to the firm's actual risk profile.",
+                "explain": "This is CS1/CS2's whole modelling curriculum and Module 18's model-risk material converging at its highest-stakes regulatory application — worth noting 'subject to regulatory approval' explicitly: an internal model isn't just built and used freely, it has to survive genuine external scrutiny before it can replace the standard formula."
             },
             {
                 "q": "Give one advantage of a standard formula approach over an internal model.",
-                "a": "Simpler, cheaper to implement, and ensures comparability/consistency across the industry."
+                "a": "Simpler, cheaper to implement, and ensures comparability/consistency across the industry.",
+                "explain": "This directly echoes Module 17's passive-management argument (simplicity and lower cost) applied to capital calculation rather than investment management — worth recognising the SAME general principle (a simple, standardised approach trading precision for practicality) recurring in a genuinely different CP1 context."
             },
             {
                 "q": "Give one advantage of an internal model approach over a standard formula.",
-                "a": "Can more accurately reflect the firm's specific risk profile, potentially avoiding over- or under-stating capital needs relative to actual risk."
+                "a": "Can more accurately reflect the firm's specific risk profile, potentially avoiding over- or under-stating capital needs relative to actual risk.",
+                "explain": "This is the direct counter-argument, echoing Module 17's active-management case — worth noting the SAME cost-versus-accuracy trade-off from investment management (Module 17) reappears here in capital calculation, a genuinely recurring pattern in how CP1 frames standardised-versus-bespoke choices."
             },
             {
                 "q": "What confidence level (or similar risk measure) is a common basis for setting regulatory capital requirements (e.g. under many risk-based regimes)?",
-                "a": "A high confidence level (e.g. 99.5% over one year) is a common basis, though the specific approach varies by regulatory regime."
+                "a": "A high confidence level (e.g. 99.5% over one year) is a common basis, though the specific approach varies by regulatory regime.",
+                "explain": "This is CM2's VaR concept (Module 3 there) given its concrete regulatory calibration — worth recognising this figure as directly analogous to Module 29's VaR material: required capital is essentially set at a specific quantile of the loss distribution, chosen to make insolvency genuinely rare, not impossible."
             },
             {
                 "q": "Why might capital requirements be calibrated using a one-year time horizon, even for long-term liabilities?",
-                "a": "It focuses on the risk of the organisation's position deteriorating materially within the near term, on the view that action could be taken (e.g. management intervention, run-off) if that happened."
+                "a": "It focuses on the risk of the organisation's position deteriorating materially within the near term, on the view that action could be taken (e.g. management intervention, run-off) if that happened.",
+                "explain": "This is worth connecting to Module 35's early-intervention material — the one-year horizon reflects a genuinely important practical philosophy: capital doesn't need to cover the FULL lifetime risk of a long-term liability at once, since regulators expect to be able to intervene (via run-off, Module 35, or other action) if deterioration is caught within that year."
             },
             {
                 "q": "What is a 'minimum capital requirement', as distinct from a higher solvency capital requirement?",
-                "a": "An absolute floor below which regulatory intervention becomes especially urgent/severe, typically lower than the main solvency capital target."
+                "a": "An absolute floor below which regulatory intervention becomes especially urgent/severe, typically lower than the main solvency capital target.",
+                "explain": "This is worth connecting directly to Module 35's early-intervention ladder — worth thinking of this as a TWO-TIER warning system: falling below the main solvency target prompts closer scrutiny, while falling below this absolute floor triggers much more severe, urgent regulatory action."
             },
             {
                 "q": "Why might capital requirements need to capture diversification benefits across different risk types (e.g. market, insurance, operational risk)?",
-                "a": "Different risk types aren't perfectly correlated, so the combined capital requirement should generally be less than the simple sum of standalone requirements for each risk."
+                "a": "Different risk types aren't perfectly correlated, so the combined capital requirement should generally be less than the simple sum of standalone requirements for each risk.",
+                "explain": "This is precisely Module 36's group-diversification card and CM2's portfolio theory applied at the individual firm's own RISK-TYPE level (rather than across business units) — worth recognising the same correlation-based logic recurring yet again, now applied within a single firm's own risk categories."
             },
             {
                 "q": "What is a 'correlation matrix' used for in aggregating capital requirements across risk types?",
-                "a": "Specifying the assumed correlation between different risk categories, used to combine individual risk capital charges into an overall (diversified) total requirement."
+                "a": "Specifying the assumed correlation between different risk categories, used to combine individual risk capital charges into an overall (diversified) total requirement.",
+                "explain": "This is CM2's portfolio variance mathematics given its formal regulatory capital-aggregation application — worth connecting to Module 12's crisis-correlation warning: a correlation matrix calibrated on normal conditions could understate true required capital if correlations genuinely rise during real stress, exactly as Module 29 flagged for risk aggregation generally."
             },
             {
                 "q": "Why might regulators require firms to hold capital requirements calculated on a market-consistent valuation basis?",
-                "a": "To ensure the assessment of risk and required capital reflects the organisation's true current financial exposure, rather than a potentially outdated or overly smoothed valuation."
+                "a": "To ensure the assessment of risk and required capital reflects the organisation's true current financial exposure, rather than a potentially outdated or overly smoothed valuation.",
+                "explain": "This is Module 13's and Module 33's market-consistent valuation arguments applied directly to capital calculation — worth recognising this as the SAME objectivity-and-timeliness principle recurring for the third time in Part 6: a smoothed or stale valuation would produce a capital requirement that lags the firm's true current risk."
             },
             {
                 "q": "What is the purpose of 'stress and scenario testing' in relation to capital requirements?",
-                "a": "To assess how capital adequacy would be affected by specific adverse scenarios, complementing the statistical/formulaic capital calculation."
+                "a": "To assess how capital adequacy would be affected by specific adverse scenarios, complementing the statistical/formulaic capital calculation.",
+                "explain": "This is Module 15's and Module 36's stress-testing material given its direct regulatory capital application — worth recognising stress testing as a genuinely important COMPLEMENT to the formula/model-based approach, since even a well-calibrated statistical model can miss scenario-specific vulnerabilities a targeted stress test would reveal."
             },
             {
                 "q": "Why might capital requirements for the same underlying risks differ significantly between different countries' regulatory regimes?",
-                "a": "Different regulators may adopt different risk measures, confidence levels, time horizons, or methodologies, reflecting different regulatory philosophies and priorities."
+                "a": "Different regulators may adopt different risk measures, confidence levels, time horizons, or methodologies, reflecting different regulatory philosophies and priorities.",
+                "explain": "This closing card echoes Module 4's international-coordination material — worth recognising this as exactly why regulatory arbitrage (Module 4) remains a genuine concern: a firm operating across borders can face materially different capital requirements for economically similar risk, purely due to jurisdictional methodology differences."
             }
         ]
     },
@@ -10117,63 +10147,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'surplus', in the actuarial sense?",
-                "a": "The excess of an organisation's assets over its liabilities (and potentially over its required capital), representing available financial strength."
+                "a": "The excess of an organisation's assets over its liabilities (and potentially over its required capital), representing available financial strength.",
+                "explain": "This module develops Module 36's brief capital-surplus card into a full treatment — worth distinguishing this module's focus (surplus EMERGING and being distributed over time) from Module 36's more static, point-in-time available-versus-required capital comparison."
             },
             {
                 "q": "Why does surplus naturally emerge over the life of a portfolio of insurance business, even under a best-estimate valuation basis?",
-                "a": "Prudent margins built into pricing/reserving, combined with favourable variances in actual versus assumed experience, tend to release surplus over time as uncertainty resolves."
+                "a": "Prudent margins built into pricing/reserving, combined with favourable variances in actual versus assumed experience, tend to release surplus over time as uncertainty resolves.",
+                "explain": "This is Module 20's margin for adverse deviation and Module 24's profit-testing material converging directly — worth recognising this as the natural consequence of prudent pricing/reserving: if the built-in caution turns out NOT to be needed, that margin releases as surplus rather than simply vanishing."
             },
             {
                 "q": "What are the main sources from which surplus can arise?",
-                "a": "Favourable investment experience, favourable insurance experience (e.g. lower claims/expenses than assumed), and the release of margins as reserves run off."
+                "a": "Favourable investment experience, favourable insurance experience (e.g. lower claims/expenses than assumed), and the release of margins as reserves run off.",
+                "explain": "This is worth mapping directly onto Module 26's risk categories (market risk, insurance risk) plus the margin-release mechanism from the previous card — surplus is essentially the POSITIVE side of the same risk categories that, if they turned unfavourable instead, would erode capital rather than build it."
             },
             {
                 "q": "What is 'surplus management' (or appropriation)?",
-                "a": "The process of deciding how emerging surplus is used — e.g. distributed to shareholders/policyholders, retained as additional capital, or reinvested in the business."
+                "a": "The process of deciding how emerging surplus is used — e.g. distributed to shareholders/policyholders, retained as additional capital, or reinvested in the business.",
+                "explain": "This directly previews Module 15's original mention of surplus and de-risking, and Module 36's dividend-policy card — worth recognising THREE genuinely distinct uses of surplus named here (distribute, retain as capital, reinvest), each with different strategic implications this module goes on to explore."
             },
             {
                 "q": "Why might a mutual insurer's approach to surplus distribution differ from a proprietary (shareholder-owned) insurer's?",
-                "a": "A mutual typically returns surplus to its policyholder members (e.g. via bonuses), while a proprietary insurer can distribute surplus to external shareholders as dividends."
+                "a": "A mutual typically returns surplus to its policyholder members (e.g. via bonuses), while a proprietary insurer can distribute surplus to external shareholders as dividends.",
+                "explain": "This is Module 6's mutual-versus-proprietary structural distinction now given its full surplus-distribution consequence — worth recognising this as the direct answer to a question implicit since Module 6: WHO gets the surplus a mutual generates, since there are no external shareholders to claim it."
             },
             {
                 "q": "What is a 'bonus' in the context of with-profits life insurance surplus distribution?",
-                "a": "A share of the insurer's distributable surplus allocated to with-profits policyholders, increasing their policy benefits."
+                "a": "A share of the insurer's distributable surplus allocated to with-profits policyholders, increasing their policy benefits.",
+                "explain": "This is Module 7's and Module 23's with-profits smoothing material given its full surplus-mechanics explanation — worth connecting to Module 13's smoothed-valuation card: the bonus mechanism is precisely how smoothed investment performance actually reaches policyholders in practice, spread out via periodic bonus additions."
             },
             {
                 "q": "Why might an insurer retain some emerging surplus rather than distributing all of it immediately?",
-                "a": "To build additional capital strength/buffers, fund future growth, or smooth distributions over time rather than distributing volatile amounts each period."
+                "a": "To build additional capital strength/buffers, fund future growth, or smooth distributions over time rather than distributing volatile amounts each period.",
+                "explain": "This connects directly to Module 36's capital-management and Module 24's new-business-strain material — worth recognising retained surplus as one of the 'common sources of capital' Module 36 named (retained profits), now explained from the surplus side of the same transaction."
             },
             {
                 "q": "What is 'orphan estate' (or inherited estate), in a with-profits fund context?",
-                "a": "Surplus accumulated within a with-profits fund that isn't clearly attributable to specific current policyholders or shareholders, raising questions over its appropriate ownership/use."
+                "a": "Surplus accumulated within a with-profits fund that isn't clearly attributable to specific current policyholders or shareholders, raising questions over its appropriate ownership/use.",
+                "explain": "This is a genuinely interesting, real-world CP1 topic worth remembering as a concrete example — worth connecting to Module 2's multiple-stakeholder tension: an orphan estate is precisely a case where the usual answer to 'who does this surplus belong to' genuinely has no clean, obvious resolution."
             },
             {
                 "q": "Why might the treatment of surplus be a source of tension between shareholders and policyholders in a proprietary insurer with a with-profits fund?",
-                "a": "Both groups may have some claim on how surplus is allocated, and their interests (distribution now versus retained security) may not align."
+                "a": "Both groups may have some claim on how surplus is allocated, and their interests (distribution now versus retained security) may not align.",
+                "explain": "This directly echoes Module 2's earlier point about advice affecting multiple stakeholders with potentially conflicting interests — worth recognising surplus allocation as one of the clearest concrete instances of that abstract tension in CP1, which is exactly why the board/committee oversight described later in this module matters."
             },
             {
                 "q": "How does surplus management interact with an organisation's regulatory capital position?",
-                "a": "Distributing surplus reduces available capital, so surplus decisions must consider whether sufficient capital remains to meet ongoing regulatory requirements."
+                "a": "Distributing surplus reduces available capital, so surplus decisions must consider whether sufficient capital remains to meet ongoing regulatory requirements.",
+                "explain": "This directly connects Module 36's available-capital concept to this module's distribution decision — worth recognising surplus distribution as a genuine BALANCING ACT: giving away too much surplus today could threaten meeting Module 37's capital requirements tomorrow."
             },
             {
                 "q": "Why might surplus distributions be smoothed over time, rather than directly reflecting each year's actual emerging surplus?",
-                "a": "To avoid excessive volatility in what policyholders/shareholders receive, providing more stable and predictable outcomes."
+                "a": "To avoid excessive volatility in what policyholders/shareholders receive, providing more stable and predictable outcomes.",
+                "explain": "This is precisely the with-profits smoothing philosophy from Module 7 and Module 13 applied specifically to distribution timing — worth recognising smoothing as recurring at MULTIPLE levels in a with-profits product: smoothed asset valuation (Module 13) feeding smoothed bonus distributions (this module), both serving the same volatility-reduction purpose."
             },
             {
                 "q": "What role does the board (or with-profits committee, where relevant) play in surplus management decisions?",
-                "a": "Providing oversight and approval of surplus distribution policy, balancing the interests of different stakeholder groups fairly."
+                "a": "Providing oversight and approval of surplus distribution policy, balancing the interests of different stakeholder groups fairly.",
+                "explain": "This is Module 25's board-oversight material applied specifically to the shareholder/policyholder tension raised earlier in this module — worth recognising a with-profits committee as a specialised governance body, analogous to Module 25's risk committee, dedicated to overseeing this particular high-stakes fairness question."
             },
             {
                 "q": "Why might regulators take an interest in how an insurer manages and distributes surplus, not just its minimum capital adequacy?",
-                "a": "Surplus management practices can affect policyholder fairness (e.g. with-profits bonus policy) and the organisation's ongoing financial resilience, both regulatory concerns."
+                "a": "Surplus management practices can affect policyholder fairness (e.g. with-profits bonus policy) and the organisation's ongoing financial resilience, both regulatory concerns.",
+                "explain": "This directly echoes Module 4's TWIN regulatory aims (prudential AND conduct) — worth recognising surplus management as a topic that genuinely spans both categories: fairness of bonus policy is a conduct concern, while whether the firm retains adequate resilience is a prudential one."
             },
             {
                 "q": "How does surplus relate to the concept of 'free assets' or 'free capital'?",
-                "a": "Surplus (assets less liabilities and required capital) broadly represents the organisation's free assets — capital not needed to back existing liabilities/requirements."
+                "a": "Surplus (assets less liabilities and required capital) broadly represents the organisation's free assets — capital not needed to back existing liabilities/requirements.",
+                "explain": "This ties this module's surplus concept back to Module 36's available/required capital distinction explicitly — worth recognising 'free' as the operative word: this is capital genuinely available for discretionary use (distribution, growth, buffer), not already committed to backing existing obligations."
             },
             {
                 "q": "Why is surplus management considered an ongoing strategic decision, rather than a purely mechanical calculation?",
-                "a": "It involves balancing multiple stakeholder interests, strategic priorities, and risk appetite, requiring judgement beyond simply calculating the numerical surplus figure."
+                "a": "It involves balancing multiple stakeholder interests, strategic priorities, and risk appetite, requiring judgement beyond simply calculating the numerical surplus figure.",
+                "explain": "This closing card echoes Module 2's judgement-beyond-calculation theme at Part 6's conclusion — worth recognising this as a fitting summary of CP1's whole approach: even at the most technical, numbers-heavy end of the syllabus, genuine professional judgement (not just arithmetic) remains the decisive skill."
             }
         ]
     },
@@ -10184,63 +10229,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "Why is ongoing monitoring an essential part of the actuarial control cycle?",
-                "a": "It allows actual experience to be compared against assumptions, so models and decisions can be updated/refined as new information emerges."
+                "a": "It allows actual experience to be compared against assumptions, so models and decisions can be updated/refined as new information emerges.",
+                "explain": "This final substantive module names explicitly what has been an implicit, recurring theme across the ENTIRE CP1 syllabus — worth treating this module as CP1's own retrospective: nearly every earlier module (3, 15, 20, 22, 24, 26, 28, 31, 33, 36) flagged some version of 'this needs ongoing review', and this module is where that pattern gets its proper name and treatment."
             },
             {
                 "q": "What is 'experience monitoring'?",
-                "a": "Regularly comparing actual outcomes (e.g. mortality, lapses, expenses, investment returns) against the assumptions used in pricing/reserving."
+                "a": "Regularly comparing actual outcomes (e.g. mortality, lapses, expenses, investment returns) against the assumptions used in pricing/reserving.",
+                "explain": "This is precisely Module 20's experience analysis and Module 22's expense investigation material given its general, formal name — worth recognising this module as gathering together several previously-separate 'compare actual to expected' exercises into one unified concept."
             },
             {
                 "q": "Why might significant deviations between actual and expected experience prompt management action?",
-                "a": "Persistent deviations suggest the assumptions (and hence pricing/reserving) may no longer be appropriate, requiring review and potential correction."
+                "a": "Persistent deviations suggest the assumptions (and hence pricing/reserving) may no longer be appropriate, requiring review and potential correction.",
+                "explain": "This directly connects to Module 24's repricing material and Module 35's early-intervention concept — worth noting the word 'persistent': a single period's deviation might just be noise (CS1's statistical variability), while a SUSTAINED deviation is the genuine signal that assumptions need revisiting."
             },
             {
                 "q": "What is meant by monitoring an organisation's 'solvency position' on an ongoing basis?",
-                "a": "Regularly assessing whether available capital continues to exceed required capital, tracking the organisation's financial resilience over time."
+                "a": "Regularly assessing whether available capital continues to exceed required capital, tracking the organisation's financial resilience over time.",
+                "explain": "This is Module 36's available-versus-required capital comparison given its ongoing, time-series treatment — worth recognising this as the practical mechanism that would actually DETECT the kind of deterioration Module 35's early-intervention material assumes regulators can catch in time."
             },
             {
                 "q": "Why might monitoring need to happen more frequently during periods of market volatility or stress?",
-                "a": "Rapid changes in market conditions can quickly affect asset and liability values, requiring closer, more frequent oversight to catch emerging problems early."
+                "a": "Rapid changes in market conditions can quickly affect asset and liability values, requiring closer, more frequent oversight to catch emerging problems early.",
+                "explain": "This connects directly to Module 12's market behaviour material — worth recognising this as a genuinely practical response to that module's warning about correlations rising and liquidity drying up during a crisis: exactly when things can deteriorate fastest is exactly when monitoring frequency should increase."
             },
             {
                 "q": "What is a 'management information' (MI) report, in the context of ongoing monitoring?",
-                "a": "Regular reporting summarising key metrics/trends to support informed, timely management decision-making."
+                "a": "Regular reporting summarising key metrics/trends to support informed, timely management decision-making.",
+                "explain": "This is Module 29's risk dashboard material given its general monitoring application — worth recognising MI reporting as the delivery mechanism for monitoring results, just as the risk dashboard was the delivery mechanism for risk measurement specifically."
             },
             {
                 "q": "Why is timely monitoring particularly important for identifying emerging risks before they become severe?",
-                "a": "Early identification allows corrective action to be taken while the issue is still manageable, rather than after it has caused significant damage."
+                "a": "Early identification allows corrective action to be taken while the issue is still manageable, rather than after it has caused significant damage.",
+                "explain": "This directly echoes Module 26's emerging-risk material and Module 29's timely-reporting card — worth recognising this as the same early-warning philosophy recurring at its final, most general application: catching a problem early is consistently cheaper and easier than fixing it once it's fully materialised."
             },
             {
                 "q": "What role does monitoring play in validating the actuarial models used for pricing and reserving?",
-                "a": "Comparing actual outcomes to model predictions helps assess whether the model remains a reasonable representation of reality, or needs recalibration."
+                "a": "Comparing actual outcomes to model predictions helps assess whether the model remains a reasonable representation of reality, or needs recalibration.",
+                "explain": "This is Module 18's model-validation card given its ongoing, ROUTINE application — worth recognising validation as not just a one-off check at a model's initial build (Module 18), but a continuous process this module formalises, since a model validated at launch can still drift out of alignment with reality over time."
             },
             {
                 "q": "Why might an organisation set specific tolerance thresholds/triggers as part of its monitoring framework?",
-                "a": "To define in advance what level of deviation from expectations should prompt escalation or action, ensuring a consistent, disciplined response."
+                "a": "To define in advance what level of deviation from expectations should prompt escalation or action, ensuring a consistent, disciplined response.",
+                "explain": "This is Module 25's cascaded risk appetite and Module 31's risk limits material applied specifically to monitoring — worth recognising pre-defined triggers as a way of avoiding ad-hoc, inconsistent reactions to deviations, turning monitoring from a vague 'keep an eye on it' into a disciplined, actionable process."
             },
             {
                 "q": "How does monitoring feed back into the 'setting assumptions' process covered earlier in the course?",
-                "a": "Monitoring results (actual versus expected experience) provide the evidence base used to refine and update future assumptions."
+                "a": "Monitoring results (actual versus expected experience) provide the evidence base used to refine and update future assumptions.",
+                "explain": "This makes explicit the direct link back to Module 20 — worth recognising this as literally the closing of the loop this course's whole Part 4 was implicitly building toward: assumptions are set (Module 20), used, monitored (this module), and then refined based on what that monitoring reveals."
             },
             {
                 "q": "Why is monitoring not just a backward-looking activity, but also relevant to forward-looking risk management?",
-                "a": "Trends identified through monitoring can signal emerging risks or changing conditions that should inform forward-looking projections and risk assessments."
+                "a": "Trends identified through monitoring can signal emerging risks or changing conditions that should inform forward-looking projections and risk assessments.",
+                "explain": "This is Module 29's trend-reporting card recalled directly — worth recognising monitoring's dual nature explicitly: it looks BACKWARD to check past predictions against reality, but the genuinely valuable use of that comparison is FORWARD, informing better future assumptions and risk assessments."
             },
             {
                 "q": "What is the risk of an organisation monitoring its experience infrequently or superficially?",
-                "a": "Problems could go undetected for longer, potentially becoming more severe and harder/costlier to correct by the time they're identified."
+                "a": "Problems could go undetected for longer, potentially becoming more severe and harder/costlier to correct by the time they're identified.",
+                "explain": "This is worth reading as this module's own cautionary counterpart to Module 35's insolvency material — inadequate monitoring is precisely one of the underlying failures that can allow a firm to drift, undetected, toward the kind of serious difficulty that module describes."
             },
             {
                 "q": "Why might different aspects of an organisation's business (e.g. mortality experience versus investment performance) need different monitoring frequencies?",
-                "a": "Different risks evolve at different speeds — investment markets can move daily, while mortality trends typically emerge over years, warranting different monitoring cadences."
+                "a": "Different risks evolve at different speeds — investment markets can move daily, while mortality trends typically emerge over years, warranting different monitoring cadences.",
+                "explain": "This directly echoes Module 21's slow-moving mortality improvement material versus Module 12's fast-moving market behaviour material — worth recognising this as a genuinely practical implication: a one-size-fits-all monitoring schedule would either waste effort checking slow-moving risks too often, or miss fast-moving risks by checking too rarely."
             },
             {
                 "q": "How does effective monitoring support good risk governance, as covered earlier in the course?",
-                "a": "It provides the ongoing information flow that allows a risk governance framework to actually function in practice, rather than being a purely theoretical structure."
+                "a": "It provides the ongoing information flow that allows a risk governance framework to actually function in practice, rather than being a purely theoretical structure.",
+                "explain": "This directly echoes Module 25's warning that poor governance can undermine even technically sound models — worth recognising this as the direct positive counterpart: a governance STRUCTURE (Module 25) without genuine, ongoing monitoring feeding it real information is exactly the kind of governance-in-name-only that module warned against."
             },
             {
                 "q": "Why is monitoring described as completing the 'actuarial control cycle' — linking back to setting assumptions, modelling, and decision-making?",
-                "a": "It closes the loop: results are monitored, informing revised assumptions/models, which inform new decisions, whose outcomes are then monitored again — a continuous, iterative process."
+                "a": "It closes the loop: results are monitored, informing revised assumptions/models, which inform new decisions, whose outcomes are then monitored again — a continuous, iterative process.",
+                "explain": "This closing card is worth treating as CP1's own summary of itself — Modules 18-20 (modelling, data, assumptions) build the tools, Modules 23-24 (design, pricing) apply them to decisions, and this final substantive module closes the cycle by monitoring those decisions' real outcomes, feeding straight back into revised assumptions once more."
             }
         ]
     },
@@ -10251,63 +10311,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'solvency' mean, in an actuarial/regulatory context?",
-                "a": "An organisation's ability to meet its liabilities as they fall due, typically assessed by comparing assets to liabilities (plus any required capital buffer)."
+                "a": "An organisation's ability to meet its liabilities as they fall due, typically assessed by comparing assets to liabilities (plus any required capital buffer).",
+                "explain": "This closing glossary module gathers CP1's most load-bearing terms into one place for final recall — this definition draws together Module 4's regulatory aims, Module 33's asset/liability comparison, and Module 36's capital-buffer concept into a single working definition worth being able to state precisely."
             },
             {
                 "q": "What is a 'policyholder'?",
-                "a": "An individual or entity that holds an insurance policy, entitled to its benefits and bound by its terms."
+                "a": "An individual or entity that holds an insurance policy, entitled to its benefits and bound by its terms.",
+                "explain": "Worth recalling this term's recurring central role across CP1 — as the party underwriting (Module 28) is assessing, the party product design (Module 23) is meant to serve, and the party insolvency (Module 35) most directly threatens to harm."
             },
             {
                 "q": "What is 'underwriting'?",
-                "a": "The process of assessing and classifying risk before deciding whether, and on what terms, to accept it."
+                "a": "The process of assessing and classifying risk before deciding whether, and on what terms, to accept it.",
+                "explain": "This is Module 28's core definition — worth recalling its direct link to Module 24's equivalence principle: underwriting exists specifically to keep the risks actually accepted consistent with the population pricing was calculated for."
             },
             {
                 "q": "What is a 'premium'?",
-                "a": "The amount a policyholder pays to an insurer in exchange for insurance cover."
+                "a": "The amount a policyholder pays to an insurer in exchange for insurance cover.",
+                "explain": "This is Module 24's equivalence-principle output — worth recalling premium as the INCOME side of that pricing equation, set to balance expected outgo (benefits plus expenses) plus any profit margin."
             },
             {
                 "q": "What is a 'claim'?",
-                "a": "A request by a policyholder (or beneficiary) for payment under the terms of an insurance policy, following an insured event."
+                "a": "A request by a policyholder (or beneficiary) for payment under the terms of an insurance policy, following an insured event.",
+                "explain": "Worth recalling claims as the trigger for Module 32's whole provisioning apparatus — a claim already reported becomes a 'claims outstanding' provision, while one that's occurred but not yet reported becomes the harder-to-estimate IBNR provision."
             },
             {
                 "q": "What is 'reinsurance'?",
-                "a": "Insurance purchased by an insurer to transfer part of its own risk to another insurer (the reinsurer)."
+                "a": "Insurance purchased by an insurer to transfer part of its own risk to another insurer (the reinsurer).",
+                "explain": "This is Module 30's core risk-transfer definition — worth recalling its dual role across CP1: pure risk transfer (Module 30) versus financial reinsurance used primarily to manage new business strain (Module 24)."
             },
             {
                 "q": "What is a 'reserve' (or provision)?",
-                "a": "An amount set aside to meet expected future liabilities arising from past events or existing contracts."
+                "a": "An amount set aside to meet expected future liabilities arising from past events or existing contracts.",
+                "explain": "This is Module 32's opening definition — worth recalling its central role as the pipeline's first stage: assumptions (Module 20) feed reserves (here), which feed reported figures (Module 34), which feed capital assessment (Modules 36-37)."
             },
             {
                 "q": "What does 'prudent' mean, as applied to an actuarial assumption or basis?",
-                "a": "Deliberately incorporating a margin of caution, to reduce the risk of understating a liability or overstating available resources."
+                "a": "Deliberately incorporating a margin of caution, to reduce the risk of understating a liability or overstating available resources.",
+                "explain": "This is Module 20's prudent-assumption definition — worth recalling the recurring caution that excessive prudence has its own genuine cost (Modules 20, 32, 36), not just the comforting benefit of extra safety margin."
             },
             {
                 "q": "What is a 'best estimate'?",
-                "a": "An assumption or calculation reflecting the actuary's unbiased, most likely view, without deliberate additional margins."
+                "a": "An assumption or calculation reflecting the actuary's unbiased, most likely view, without deliberate additional margins.",
+                "explain": "This is Module 20's counterpart definition to prudent above — worth recalling both together as the two poles CP1 repeatedly returns to across pricing (Module 24), reserving (Module 32), and reporting (Module 34), each requiring a deliberate choice between them."
             },
             {
                 "q": "What is 'risk appetite'?",
-                "a": "The amount and type of risk an organisation is willing to accept in pursuit of its objectives."
+                "a": "The amount and type of risk an organisation is willing to accept in pursuit of its objectives.",
+                "explain": "This is Module 25's governance concept, also introduced individually in Module 5 — worth recalling its cascading role: set at board level (Module 25), it should translate into concrete limits (Module 31) guiding decisions throughout the organisation."
             },
             {
                 "q": "What is 'diversification'?",
-                "a": "Spreading exposure across a range of different risks/assets so that no single adverse event has a disproportionate impact overall."
+                "a": "Spreading exposure across a range of different risks/assets so that no single adverse event has a disproportionate impact overall.",
+                "explain": "This is CM2's portfolio theory concept recurring throughout CP1 — worth recalling its many applications: across asset classes (Modules 10-14), across reinsurance counterparties (Module 30), and across a group's business lines (Module 36), all the same underlying mathematical principle."
             },
             {
                 "q": "What is a 'with-profits' policy?",
-                "a": "A life insurance policy where the policyholder receives smoothed investment returns via bonuses, reflecting the insurer's overall investment performance."
+                "a": "A life insurance policy where the policyholder receives smoothed investment returns via bonuses, reflecting the insurer's overall investment performance.",
+                "explain": "This is Module 7's product definition — worth recalling its full mechanics developed across the course: smoothed asset valuation (Module 13) feeding smoothed bonus distributions (Module 38), with the insurer retaining more investment risk than an equivalent unit-linked product."
             },
             {
                 "q": "What is 'moral hazard'?",
-                "a": "The tendency for a party to take on more risk (or behave less carefully) once they are insured against the consequences of that risk."
+                "a": "The tendency for a party to take on more risk (or behave less carefully) once they are insured against the consequences of that risk.",
+                "explain": "This is CB2's classic concept recurring throughout CP1 — worth recalling its concrete mitigation tools: excesses and no-claims discounts (Modules 5, 8, 23), and the closely related case for deliberate risk retention rather than full transfer (Module 30)."
             },
             {
                 "q": "What is 'anti-selection' (adverse selection)?",
-                "a": "The tendency for individuals with higher-than-average risk to be more likely to seek insurance, especially where underwriting is limited."
+                "a": "The tendency for individuals with higher-than-average risk to be more likely to seek insurance, especially where underwriting is limited.",
+                "explain": "This is worth distinguishing sharply from moral hazard above (a common exam trap) — anti-selection is about WHO chooses to buy insurance based on their own risk level, while moral hazard is about how insured behaviour CHANGES after cover is already in place; both are covered together across Modules 21, 23, and 27."
             },
             {
                 "q": "What is 'capital', in this context?",
-                "a": "Financial resources held by an organisation in excess of its liabilities, providing a buffer against adverse experience and supporting solvency."
+                "a": "Financial resources held by an organisation in excess of its liabilities, providing a buffer against adverse experience and supporting solvency.",
+                "explain": "This closing definition ties the whole glossary — and the whole of CP1 — back to Module 36's central concept: everything from product design (Part 2) through pricing (Part 4) and risk management (Part 5) ultimately feeds into whether an organisation holds enough of exactly this to remain solvent."
             }
         ]
     }
