@@ -6865,11 +6865,13 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'individual risk model' for total claims?",
-                "a": "A model treating total claims as the sum of a fixed number of individual policies' claim amounts (each possibly zero)."
+                "a": "A model treating total claims as the sum of a fixed number of individual policies' claim amounts (each possibly zero).",
+                "explain": "This module now assembles severity (Module 15's loss distributions) and reinsurance (Module 18) into a full model of an insurer's TOTAL claims — the individual risk model is the more literal of the two frameworks: a known, fixed number $n$ of policies, each contributing its own (possibly zero) claim amount."
             },
             {
                 "q": "What is the 'collective risk model' for total claims?",
-                "a": "A model treating total claims as the sum of a random number of claims, each of random size — a compound distribution."
+                "a": "A model treating total claims as the sum of a random number of claims, each of random size — a compound distribution.",
+                "explain": "This is the more commonly used and mathematically tractable alternative to the individual risk model — rather than tracking each of $n$ policies individually, it just asks 'how many claims occur' and 'how big is each one', which turns out to be both easier to work with and closer to how frequency/severity data is actually collected in practice."
             },
             {
                 "q": "What is a 'compound distribution'?",
@@ -6877,51 +6879,63 @@ const MODULES = {
             },
             {
                 "q": "What is a 'compound Poisson distribution'?",
-                "a": "A compound distribution where the number of claims $N$ follows a Poisson distribution."
+                "a": "A compound distribution where the number of claims $N$ follows a Poisson distribution.",
+                "explain": "The Poisson choice for $N$ links directly back to CS2 Module 3's Poisson process for the two-state Markov model — claims arriving as a Poisson process over time is exactly the assumption that makes the total NUMBER of claims in a fixed period Poisson-distributed, providing the natural frequency half of this compound model."
             },
             {
                 "q": "What key result holds for the sum of independent compound Poisson random variables?",
-                "a": "The sum is itself compound Poisson, with rate parameters and severity distributions combined appropriately."
+                "a": "The sum is itself compound Poisson, with rate parameters and severity distributions combined appropriately.",
+                "explain": "This closure property is exactly why compound Poisson is so useful for combining separate lines of business or risk sources — an insurer can model each line's aggregate claims separately and then simply combine them into one overall compound Poisson model, without needing an entirely new derivation."
             },
             {
                 "q": "How is the mean of a compound distribution $S$ calculated (in terms of $N$ and $X$)?",
-                "a": "$E[S] = E[N]\\cdot E[X]$"
+                "a": "$E[S] = E[N]\\cdot E[X]$",
+                "explain": "This is essentially the law of total expectation applied to a random sum: conditioning on $N=n$ gives $E[S|N=n]=n\\cdot E[X]$, and then averaging over the distribution of $N$ gives $E[N]\\cdot E[X]$ — worth recognising this as the same 'condition then average' technique used throughout probability theory, not a special new formula."
             },
             {
                 "q": "How is the variance of a compound distribution $S$ calculated?",
-                "a": "$\\text{Var}(S) = E[N]\\text{Var}(X) + \\text{Var}(N)(E[X])^2$"
+                "a": "$\\text{Var}(S) = E[N]\\text{Var}(X) + \\text{Var}(N)(E[X])^2$",
+                "explain": "This is the law of total variance applied to the same random sum — the first term reflects variability in claim SEVERITY (weighted by expected claim count), and the second reflects variability in claim FREQUENCY (weighted by squared mean severity); both sources of randomness contribute, which is why aggregate claims are riskier than either frequency or severity variability alone would suggest."
             },
             {
                 "q": "What is the formula for the variance of a compound Poisson distribution, specifically?",
-                "a": "$\\text{Var}(S) = \\lambda E[X^2]$"
+                "a": "$\\text{Var}(S) = \\lambda E[X^2]$",
+                "explain": "This simplifies the general compound-variance formula above using the Poisson's defining property that $E[N]=\\text{Var}(N)=\\lambda$ — substituting into $E[N]\\text{Var}(X)+\\text{Var}(N)(E[X])^2$ and simplifying algebraically collapses neatly to $\\lambda E[X^2]$, one of the reasons compound Poisson is so mathematically convenient (as the later card notes)."
             },
             {
                 "q": "What is the coefficient of skewness used to describe about a compound distribution?",
-                "a": "The asymmetry of the distribution — actuarial claim distributions are typically positively (right) skewed."
+                "a": "The asymmetry of the distribution — actuarial claim distributions are typically positively (right) skewed.",
+                "explain": "This positive skewness is exactly the practical consequence of Module 16's heavy-tailed severity distributions (like the Pareto) feeding into the compound sum — it's also precisely why Module 20's normal approximation to $S$ (which is symmetric by construction) tends to perform poorly, motivating the translated gamma and simulation alternatives developed there."
             },
             {
                 "q": "What are the major simplifying assumptions typically underlying compound distribution models?",
-                "a": "Individual claim amounts are i.i.d. and independent of the number of claims."
+                "a": "Individual claim amounts are i.i.d. and independent of the number of claims.",
+                "explain": "These are the assumptions that make the mean/variance formulas above valid — worth flagging as assumptions to scrutinise in practice: claim SIZES might not be independent of claim COUNT (e.g. a catastrophic event driving both many claims and unusually large ones simultaneously), which is exactly the kind of dependence Module 17's copulas exist to model when it matters."
             },
             {
                 "q": "What is a 'compound binomial' distribution?",
-                "a": "A compound distribution where the number of claims $N$ follows a binomial distribution."
+                "a": "A compound distribution where the number of claims $N$ follows a binomial distribution.",
+                "explain": "This is the natural compound-distribution counterpart to the individual risk model's fixed-$n$-policies setup: if each of $n$ known policies independently has a fixed probability of generating exactly one claim, the total claim COUNT is binomial, giving a middle ground between the fully deterministic individual risk model and the fully random Poisson count of the collective model."
             },
             {
                 "q": "What is a 'compound negative binomial' distribution, and why might it be used instead of compound Poisson?",
-                "a": "$N$ follows a negative binomial; often used to model claim frequency showing overdispersion beyond what Poisson allows."
+                "a": "$N$ follows a negative binomial; often used to model claim frequency showing overdispersion beyond what Poisson allows.",
+                "explain": "This is CS1's overdispersion concern (relevant to Poisson GLMs there too) reapplied to claim counts — for the Poisson, mean and variance are forced to be equal ($E[N]=\\text{Var}(N)=\\lambda$), but real claims data often shows variance exceeding the mean (e.g. because the true claim rate itself varies across policyholders), which the negative binomial's extra parameter can accommodate."
             },
             {
                 "q": "How would excess of loss reinsurance be incorporated into a compound distribution model?",
-                "a": "Apply the reinsurance transformation to the individual claim severity distribution before combining with the claim count distribution."
+                "a": "Apply the reinsurance transformation to the individual claim severity distribution before combining with the claim count distribution.",
+                "explain": "This is exactly the connection previewed at the end of Module 18 — the reinsurance transformation ($\\min(X,M)$ for the insurer's retained amount) is applied to each $X_i$ BEFORE summing, so the insurer's retained compound distribution $S_{\\text{ret}}$ uses the truncated severity distribution while frequency $N$ is typically left unchanged (since reinsurance affects claim SIZE, not how many claims occur)."
             },
             {
                 "q": "Why is the compound Poisson distribution particularly mathematically convenient for actuarial applications?",
-                "a": "Its additive property under independent sums and tractable moment formulas make combining risks/reinsurance easy."
+                "a": "Its additive property under independent sums and tractable moment formulas make combining risks/reinsurance easy.",
+                "explain": "This card summarises exactly why compound Poisson dominates practical use, tying together the two properties already established in this module: the closure-under-summation result (letting separate risks/lines be combined cleanly) and the simple $\\lambda E[X^2]$ variance formula (letting moments be computed directly without needing the full distribution of $S$)."
             },
             {
                 "q": "How would you calculate the probability that aggregate claims $S$ exceed a certain amount, in general?",
-                "a": "Using the (often approximated, e.g. via simulation or recursion) distribution of $S$ derived from frequency and severity."
+                "a": "Using the (often approximated, e.g. via simulation or recursion) distribution of $S$ derived from frequency and severity.",
+                "explain": "This closing card is a deliberate admission that, beyond mean and variance, the EXACT distribution of $S$ is usually intractable analytically — this directly motivates Module 20's whole toolkit of approximation methods (normal approximation, translated gamma, simulation), which exist precisely to answer this kind of tail-probability question in practice."
             }
         ]
     },
@@ -6932,63 +6946,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is one common method for approximating the distribution of aggregate claims $S$ when an exact formula is intractable?",
-                "a": "A normal approximation using the mean and variance of $S$, or simulation."
+                "a": "A normal approximation using the mean and variance of $S$, or simulation.",
+                "explain": "This module opens by directly answering Module 19's closing question — since the exact distribution of $S$ is usually intractable, the normal approximation is the simplest fallback, needing only the mean and variance formulas already derived in Module 19, though (as the next card explains) it's often a poor fit for actuarial data specifically."
             },
             {
                 "q": "Why might a normal approximation be poor for aggregate claims from a small or highly skewed portfolio?",
-                "a": "Aggregate claims are often positively skewed, so a symmetric normal approximation can be inaccurate, especially in the tails."
+                "a": "Aggregate claims are often positively skewed, so a symmetric normal approximation can be inaccurate, especially in the tails.",
+                "explain": "This directly follows from Module 19's card on compound-distribution skewness — a right-skewed true distribution being approximated by a symmetric normal will systematically misjudge the tail, which is precisely the part of the distribution that matters most for setting capital requirements or pricing high-layer reinsurance."
             },
             {
                 "q": "What is a translated gamma approximation used for?",
-                "a": "A more accurate approximation to a skewed aggregate claims distribution than normal, matching the first three moments."
+                "a": "A more accurate approximation to a skewed aggregate claims distribution than normal, matching the first three moments.",
+                "explain": "This directly fixes the shortcoming of the normal approximation identified in the previous card — by matching not just mean and variance but also SKEWNESS (the gamma distribution's natural asymmetry, then shifted/'translated' to match the target mean), it captures the right-skewed shape typical of aggregate claims that a normal approximation structurally cannot."
             },
             {
                 "q": "How would simulation be used to estimate the distribution of aggregate claims?",
-                "a": "Repeatedly simulate claim numbers and sizes, sum to get simulated aggregate claims, and use the empirical distribution."
+                "a": "Repeatedly simulate claim numbers and sizes, sum to get simulated aggregate claims, and use the empirical distribution.",
+                "explain": "This is the most flexible of the three approximation methods in this module, and it directly recreates the compound-distribution definition from Module 19 ($S=X_1+\\dots+X_N$) as a literal random-number-generation procedure — its main advantage is not needing any distributional-shape assumption at all, at the cost of computational effort and simulation (Monte Carlo) error."
             },
             {
                 "q": "How does reinsurance affect the mean and variance of an insurer's retained aggregate claims?",
-                "a": "It typically reduces both, since reinsurance removes some claim amount from the insurer's exposure."
+                "a": "It typically reduces both, since reinsurance removes some claim amount from the insurer's exposure.",
+                "explain": "This brings Module 18's reinsurance transformations back into the aggregate-claims context established in Module 19 — since reinsurance caps or scales down each individual claim severity $X_i$ before the compound sum is formed, both the mean and variance of the resulting retained $S$ shrink correspondingly."
             },
             {
                 "q": "How would you calculate the reinsurer's expected aggregate claims under excess of loss reinsurance with retention $M$?",
-                "a": "Apply $\\max(X-M,0)$ to the individual claim severity distribution, then combine with the claim frequency distribution."
+                "a": "Apply $\\max(X-M,0)$ to the individual claim severity distribution, then combine with the claim frequency distribution.",
+                "explain": "This is exactly Module 19's reinsurance-incorporation technique applied specifically to the REINSURER's side rather than the insurer's — worth noting this is the exact mirror image of the insurer's retained amount $\\min(X,M)$, and the two must always sum back to the original claim $X$, consistent with Module 18's min/max identity."
             },
             {
                 "q": "What effect does increasing the retention level $M$ have on the insurer's retained variance?",
-                "a": "It increases the insurer's retained variance, though it also reduces the reinsurance premium cost."
+                "a": "It increases the insurer's retained variance, though it also reduces the reinsurance premium cost.",
+                "explain": "This is the central actuarial trade-off in setting retention levels — a higher $M$ means the insurer keeps more of the risk (and therefore more of the VARIANCE) itself, but correspondingly pays a smaller reinsurance premium, since the reinsurer is now covering fewer, less-frequent large claims (per Module 18's card on high-retention effects)."
             },
             {
                 "q": "How might an insurer decide on an appropriate retention level for excess of loss reinsurance?",
-                "a": "Balancing reinsurance premium cost against reduced retained risk/capital, informed by risk appetite."
+                "a": "Balancing reinsurance premium cost against reduced retained risk/capital, informed by risk appetite.",
+                "explain": "This directly resolves the trade-off identified in the previous card — since a higher retention means lower reinsurance cost but higher retained variance (and hence a higher required capital buffer, per Module 18's capital-requirement link), the optimal choice depends on how the insurer weighs cost savings against its own risk appetite and available capital."
             },
             {
                 "q": "Why is understanding both frequency and severity distributions separately important, rather than just modelling aggregate claims?",
-                "a": "Different risk mitigation tools act on severity (reinsurance) versus frequency (underwriting)."
+                "a": "Different risk mitigation tools act on severity (reinsurance) versus frequency (underwriting).",
+                "explain": "This is a genuinely important practical distinction — excess of loss reinsurance (Module 18) targets SEVERITY (capping individual claim size), while underwriting decisions (which risks to accept, at what price) primarily influence FREQUENCY (how many claims arise); modelling only the combined aggregate $S$ would obscure which lever actually needs pulling to address a given risk concern."
             },
             {
                 "q": "How would a change in claim frequency affect the aggregate claims distribution, holding severity fixed?",
-                "a": "It shifts the mean and variance of $N$, correspondingly changing the mean and variance of $S$."
+                "a": "It shifts the mean and variance of $N$, correspondingly changing the mean and variance of $S$.",
+                "explain": "This follows directly from Module 19's compound mean/variance formulas ($E[S]=E[N]E[X]$, and the two-term variance formula) — since both formulas involve $N$'s own mean and variance as factors, any change in the frequency distribution propagates mechanically through to $S$, even with the severity distribution completely unchanged."
             },
             {
                 "q": "What role does correlation between different risks/policies play in aggregate portfolio risk?",
-                "a": "Positive correlation (e.g. from a common catastrophic event) increases variance beyond independent-claims assumptions."
+                "a": "Positive correlation (e.g. from a common catastrophic event) increases variance beyond independent-claims assumptions.",
+                "explain": "This is exactly why Module 19's independence assumption matters, and it directly connects to Module 17's copula material — a common shock (e.g. a storm affecting many policies simultaneously) breaks independence and inflates the true portfolio variance above what the naive compound-Poisson formulas (which assume independence) would suggest."
             },
             {
                 "q": "How might copulas be combined with risk models to assess portfolio-level risk?",
-                "a": "By modelling dependence between lines of business, then combining with each line's aggregate claims distribution."
+                "a": "By modelling dependence between lines of business, then combining with each line's aggregate claims distribution.",
+                "explain": "This is the module's most direct cross-reference back to Module 17 — each line of business gets its own compound aggregate claims distribution $S_i$ (as its marginal), and a copula (Gaussian, Clayton, Gumbel, etc.) then captures how those lines' outcomes move together, letting the insurer assess TOTAL portfolio risk honestly rather than under an unrealistic independence assumption."
             },
             {
                 "q": "Why might an insurer calculate risk measures like VaR or TailVaR on the aggregate claims distribution?",
-                "a": "To quantify capital needed to withstand adverse claims experience at a given confidence level."
+                "a": "To quantify capital needed to withstand adverse claims experience at a given confidence level.",
+                "explain": "This is CM2 Module 3's VaR/TailVaR risk measures reapplied here to the aggregate claims distribution $S$ rather than to investment losses — the same formulas apply, just with $S$'s (usually right-skewed) distribution in place of a normal loss distribution, which is exactly why the approximation methods earlier in this module (translated gamma, simulation) matter for getting these tail-based capital figures right."
             },
             {
                 "q": "How does the choice of severity distribution affect the accuracy of a normal approximation to aggregate claims?",
-                "a": "A heavier-tailed severity makes aggregate claims more skewed, worsening the normal approximation."
+                "a": "A heavier-tailed severity makes aggregate claims more skewed, worsening the normal approximation.",
+                "explain": "This ties Module 16's tail-weight concept directly to this module's approximation-accuracy theme — a heavy-tailed severity (like Pareto) contributes disproportionately to $S$'s skewness (via the $E[X^2]$ term in the compound-Poisson variance and higher moments), making the symmetric normal approximation progressively worse the heavier the underlying severity tail is."
             },
             {
                 "q": "Why is risk model theory foundational to general insurance pricing and reserving work?",
-                "a": "It provides the mathematical framework for quantifying claims cost and variability, underlying premiums, reserving and capital."
+                "a": "It provides the mathematical framework for quantifying claims cost and variability, underlying premiums, reserving and capital.",
+                "explain": "This closes Modules 19-20 by stating their overall purpose plainly — everything from setting a fair premium (needs $E[S]$), to holding adequate reserves and capital (needs the tail/variance of $S$, via the approximation methods here), to designing reinsurance programmes (Module 18), ultimately rests on this compound-distribution framework for aggregate claims."
             }
         ]
     },
