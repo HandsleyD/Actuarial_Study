@@ -11169,4 +11169,416 @@ const MODULES = {
         ]
     }
 ],
+  CB1: [
+    {
+        "id": "m01",
+        "title": "Introduction to business finance",
+        "description": "Orients the subject: the role of the finance function within a business, the key stakeholders it serves, and the broad areas of business finance the rest of the course develops.",
+        "cards": [
+            {
+                "q": "What is the primary purpose of the finance function within a business?",
+                "a": "To manage the business's money — raising funds, allocating them to the best uses, and reporting on financial performance and position — in support of the organisation's objectives.",
+                "explain": "This opening card sets up the whole course's structure — the rest of CB1 develops exactly these three activities in turn: understanding financial position and performance (Modules 2-5), raising funds (Modules 8-9), and allocating them (Modules 12-16)."
+            },
+            {
+                "q": "What are the three broad areas of decision-making that business finance is typically organised around?",
+                "a": "The investment decision (what to spend money on), the financing decision (how to raise the money), and the dividend/distribution decision (what to do with any surplus).",
+                "explain": "This three-way split is worth treating as the course's map — it recurs directly as the investment appraisal modules (13-16), the sources-of-finance and cost-of-capital modules (8-11), and the dividend policy module (18) later in this course."
+            },
+            {
+                "q": "Who are the main stakeholders a business's financial decisions and reporting need to serve?",
+                "a": "Shareholders/owners, lenders/creditors, employees, management, customers and suppliers, government/regulators, and the wider public.",
+                "explain": "This is CB2's stakeholder concept applied specifically to financial decision-making — worth previewing the tension this creates: different stakeholders often want genuinely different things from the same set of financial statements or decisions, which the next few cards explore directly."
+            },
+            {
+                "q": "What is commonly assumed to be the primary financial objective of a company run for its shareholders?",
+                "a": "To maximise shareholder wealth, typically represented by maximising the market value of the company's shares.",
+                "explain": "This single objective is what makes investment appraisal (Modules 13-16) and cost of capital (Modules 10-11) tractable as decision-making tools — every technique later in this course is ultimately justified by whether it helps achieve exactly this goal."
+            },
+            {
+                "q": "Why might 'profit maximisation' be a less complete objective for a company than 'shareholder wealth maximisation'?",
+                "a": "Profit maximisation can ignore the timing of returns, the risk taken to achieve them, and cashflow, whereas shareholder wealth (share price) reflects the market's assessment of all three.",
+                "explain": "This is worth remembering as the reason NPV (Module 14) — which explicitly discounts for timing and risk via the discount rate — is preferred over simpler, profit-based appraisal methods like accounting rate of return (Module 12)."
+            },
+            {
+                "q": "What is the 'agency problem' in the context of a company's shareholders and its managers?",
+                "a": "Managers (agents) may pursue their own interests rather than those of shareholders (principals), since ownership and control are separated in most companies of any size.",
+                "explain": "This is a foundational concept worth carrying through the rest of the course — it resurfaces directly when considering why dividend policy (Module 18) and takeover activity (Module 19) can be shaped as much by managerial incentives as by pure shareholder-wealth logic."
+            },
+            {
+                "q": "Give one mechanism companies use to reduce the agency problem between managers and shareholders.",
+                "a": "Linking management remuneration to share price/performance (e.g. share options or bonuses tied to targets), or strengthening board oversight and disclosure requirements.",
+                "explain": "This directly previews Module 20's corporate governance material — worth recognising these mechanisms as the practical toolkit corporate governance frameworks formalise, rather than one-off ad hoc fixes."
+            },
+            {
+                "q": "What is meant by a company's 'stakeholders' as distinct from its 'shareholders'?",
+                "a": "Stakeholders are any party affected by or with an interest in the business (employees, customers, suppliers, government, community), a broader group than just the shareholder-owners.",
+                "explain": "Worth keeping this distinction precise for exam purposes — 'shareholders' is a strict subset of 'stakeholders', and conflating the two terms is a common, easily avoidable error."
+            },
+            {
+                "q": "Why might a company need to balance shareholder wealth maximisation against the interests of other stakeholders in practice?",
+                "a": "Pursuing shareholder returns at the expense of employees, customers, or the wider community can damage the business's reputation, workforce, and long-term sustainability, ultimately harming shareholder value too.",
+                "explain": "This is worth reading as a genuine reconciliation, not a contradiction — treating stakeholders well is often argued to be entirely CONSISTENT with long-run shareholder wealth maximisation, not opposed to it, since reputational and operational damage eventually shows up in share price too."
+            },
+            {
+                "q": "What are the three main financial statements a business produces to report its performance and position?",
+                "a": "The balance sheet (statement of financial position), the income statement (profit and loss account), and the cash flow statement.",
+                "explain": "This directly previews Modules 2-4, each of which develops one of these three statements in full — worth treating this card as the syllabus for the whole of the course's opening technical block."
+            },
+            {
+                "q": "What is the difference between a 'sole trader', a 'partnership', and a 'limited company' as business structures?",
+                "a": "A sole trader is owned and run by one individual with unlimited personal liability; a partnership is owned by two or more people (often also with unlimited liability); a limited company is a separate legal entity whose owners' (shareholders') liability is limited to their investment.",
+                "explain": "This progression (from unlimited personal liability toward a separate legal entity with limited liability) is worth understanding as a genuine trade-off — simpler structures are cheaper and easier to set up, but expose the owner's personal assets, which is exactly the risk the limited company structure exists to remove."
+            },
+            {
+                "q": "What does 'limited liability' mean for a shareholder in a limited company?",
+                "a": "A shareholder's potential loss is limited to the amount they invested in the company's shares — their personal assets beyond that investment are not at risk if the company fails.",
+                "explain": "This directly previews Module 19's insolvency-adjacent material — worth noting the flip side of this protection for shareholders: it's exactly why lenders (who don't enjoy this protection) often require additional security or covenants when lending to a limited company."
+            },
+            {
+                "q": "Why is limited liability considered important for encouraging investment in companies?",
+                "a": "It caps an investor's downside risk at their initial investment, making it more attractive to invest in a business whose full extent of potential liabilities the investor cannot control or fully assess.",
+                "explain": "This is a genuinely important economic justification worth remembering — without this cap, a passive shareholder with no management role could theoretically lose far more than they invested, which would make equity investment in large, complex businesses far less attractive."
+            },
+            {
+                "q": "What is the difference between a 'private' limited company and a 'public' limited company?",
+                "a": "A private limited company cannot offer its shares for sale to the general public; a public limited company can, and its shares may be listed and traded on a stock exchange.",
+                "explain": "This distinction matters directly for Module 8's sources-of-equity-finance material and Module 21's financial markets material — only a public company (specifically, one with a stock exchange listing) can raise equity finance directly from the general investing public via a share issue."
+            },
+            {
+                "q": "Why is business finance a genuinely relevant subject for an actuary, even outside a specialist corporate finance role?",
+                "a": "Actuaries routinely need to understand company accounts, valuations, and financing decisions when assessing an insurer's or pension sponsor's financial strength, valuing investments, or advising on business decisions with financial consequences.",
+                "explain": "This closing card sets the tone for why CB1 sits in the Core Business stage of the curriculum alongside CB2 and CB3 — every actuarial specialism eventually needs to interpret a company's accounts or assess its financial strength, making this course's content genuinely foundational, not a detour from actuarial work."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "The balance sheet",
+        "description": "Covers the balance sheet (statement of financial position) — its structure, the accounting equation underlying it, and how it represents a business's assets, liabilities and equity at a point in time.",
+        "cards": [
+            {
+                "q": "What does a 'balance sheet' (statement of financial position) show?",
+                "a": "A snapshot of what a business owns (assets) and owes (liabilities), and the resulting owners' equity, at a single point in time.",
+                "explain": "This is the first of the three financial statements previewed in Module 1 — worth holding onto the word 'snapshot' specifically, since it's exactly what distinguishes the balance sheet from the income statement (Module 3) and cash flow statement (Module 4), both of which cover a PERIOD rather than an instant."
+            },
+            {
+                "q": "What is the fundamental accounting equation underlying every balance sheet?",
+                "a": "Assets = Liabilities + Equity (what the business owns equals what it owes to lenders plus what it owes to its owners).",
+                "explain": "This equation is worth memorising precisely, since it's the structural backbone this entire module builds on — every other card here is really just elaborating on what belongs in each of these three categories."
+            },
+            {
+                "q": "What is a 'non-current' (fixed) asset?",
+                "a": "An asset held for long-term use in the business (e.g. property, plant, equipment) rather than for resale in the normal course of trade.",
+                "explain": "This directly connects to Module 13's investment appraisal material — a proposed purchase of a non-current asset (e.g. new machinery) is exactly the kind of decision NPV and IRR are used to evaluate."
+            },
+            {
+                "q": "What is a 'current asset'?",
+                "a": "An asset expected to be converted into cash, sold, or used up within the business's normal operating cycle, typically within one year (e.g. inventory, receivables, cash).",
+                "explain": "This directly previews Module 5's liquidity ratios and Module 7's working capital management — current assets are exactly the resources a business relies on to meet its short-term obligations, which is precisely what liquidity ratios are designed to assess."
+            },
+            {
+                "q": "What is a 'current liability'?",
+                "a": "An amount owed by the business that is due to be settled within one year (e.g. trade payables, short-term borrowing).",
+                "explain": "Worth pairing directly with the current asset card above — the current ratio (Module 5) and quick ratio compare exactly these two categories against each other to assess short-term financial health."
+            },
+            {
+                "q": "What is a 'non-current liability'?",
+                "a": "An amount owed by the business that is due to be settled more than one year from the balance sheet date (e.g. long-term loans, bonds issued).",
+                "explain": "This directly previews Module 9's sources of debt finance — a non-current liability is typically the balance sheet trace of exactly the kind of long-term borrowing decision that module discusses."
+            },
+            {
+                "q": "What does 'equity' represent on a company's balance sheet?",
+                "a": "The owners' (shareholders') residual claim on the business's assets after all liabilities have been deducted — effectively, the net assets attributable to shareholders.",
+                "explain": "The word 'residual' is worth taking literally — shareholders are paid only after every other liability has been satisfied, which is exactly why equity is inherently riskier than debt, a theme Module 8 and Module 11's cost-of-capital material both return to."
+            },
+            {
+                "q": "What are 'retained earnings', as a component of equity?",
+                "a": "The cumulative profits the business has earned and kept (not distributed as dividends) over its life, reinvested back into the business.",
+                "explain": "This directly links Module 3's income statement to this module's balance sheet, and previews Module 18's dividend policy material — retained earnings is precisely the accumulated record of every past year's decision to reinvest rather than distribute profit."
+            },
+            {
+                "q": "What is 'share capital', as a component of equity?",
+                "a": "The amount raised by a company from issuing shares to shareholders, representing their direct capital contribution.",
+                "explain": "This directly previews Module 8's equity-finance material — share capital is the balance sheet record of exactly the kind of share issue that module discusses as a source of new finance."
+            },
+            {
+                "q": "Why is inventory (stock) classified as a current asset rather than a non-current asset?",
+                "a": "Inventory is held for sale in the ordinary course of business and is expected to be converted into cash (via sale) within the normal operating cycle, typically well under a year.",
+                "explain": "This directly previews Module 7's working capital management — inventory is one of the three core working capital components (alongside receivables and payables) that module discusses managing efficiently."
+            },
+            {
+                "q": "What is 'trade receivables' (debtors)?",
+                "a": "Amounts owed to the business by its customers for goods or services already delivered but not yet paid for.",
+                "explain": "This connects directly to Module 4's discussion of why profit and cash diverge — revenue from a credit sale is recognised in the income statement immediately, while the cash arrives only later, once the receivable is actually collected."
+            },
+            {
+                "q": "What is 'trade payables' (creditors)?",
+                "a": "Amounts the business owes to its suppliers for goods or services already received but not yet paid for.",
+                "explain": "This is the mirror image of trade receivables from the other side of a transaction — worth noting a business's payables are effectively short-term, interest-free finance provided by its suppliers, a genuine working capital management lever explored further in Module 7."
+            },
+            {
+                "q": "Why must a balance sheet, by construction, always balance?",
+                "a": "Because it's built directly from the accounting equation (Assets = Liabilities + Equity) — every transaction affects at least two elements in a way that preserves this equality, so the two sides are mechanically forced to match.",
+                "explain": "This is worth understanding as a structural GUARANTEE, not just an observed pattern — if a balance sheet doesn't balance, that's proof of an error in how the underlying transactions were recorded, not a valid alternative outcome."
+            },
+            {
+                "q": "What is 'depreciation', and how does it affect a non-current asset's value on the balance sheet over time?",
+                "a": "Depreciation systematically allocates the cost of a non-current asset over its useful life, reducing the asset's carrying (net book) value on the balance sheet each period as it's charged.",
+                "explain": "This directly previews Module 3's income statement and Module 4's cash flow statement — depreciation is charged as an expense in the income statement each period, yet (as Module 4 explains) involves no actual cash outflow when it's charged, only when the asset was originally purchased."
+            },
+            {
+                "q": "Why does a balance sheet only show a business's financial position at a single point in time, rather than its performance over a period?",
+                "a": "It is explicitly a snapshot — to see how the business has performed over a period (income earned, cash generated), you need the income statement and cash flow statement instead, which cover a period rather than an instant.",
+                "explain": "This closing card is the module's direct hand-off to Modules 3 and 4 — worth treating the three financial statements as complementary views of the same underlying business, each answering a genuinely different question (position, performance, cash) that the others cannot."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "The income statement",
+        "description": "Covers the income statement (profit and loss account) — how it measures a business's financial performance over a period, and the distinction between profit and cash.",
+        "cards": [
+            {
+                "q": "What does the 'income statement' (profit and loss account) show?",
+                "a": "A business's financial performance over a period of time — the revenue earned, costs incurred, and resulting profit or loss.",
+                "explain": "This is the second of the three financial statements previewed in Module 1 — worth contrasting directly with Module 2's balance sheet: the balance sheet is a snapshot at an instant, while the income statement covers everything that happened over an entire period."
+            },
+            {
+                "q": "What is 'revenue' (turnover)?",
+                "a": "The total income generated from a business's ordinary trading activities, before deducting any costs.",
+                "explain": "This is the starting figure for the whole income statement, and it's the denominator used throughout Module 5's margin ratios (gross, operating, net profit margin) — every profitability ratio in that module measures something 'as a percentage of revenue'."
+            },
+            {
+                "q": "What is 'cost of sales' (cost of goods sold)?",
+                "a": "The direct costs attributable to producing the goods or services sold during the period, e.g. materials and direct labour.",
+                "explain": "This is the first cost deducted from revenue, and it's worth distinguishing clearly from OPERATING expenses (the next few cards) — cost of sales is specifically tied to the units actually produced/sold, while operating expenses are more general running costs of the business."
+            },
+            {
+                "q": "What is 'gross profit'?",
+                "a": "Revenue minus cost of sales — the profit remaining before deducting other operating expenses.",
+                "explain": "This directly feeds Module 5's gross profit margin ratio — worth noting gross profit specifically isolates trading profitability BEFORE the effect of a company's administrative/overhead cost structure, which is deducted next to reach operating profit."
+            },
+            {
+                "q": "What is 'operating profit'?",
+                "a": "Gross profit minus operating expenses (e.g. administrative and selling costs), before interest and tax — profit from the business's core trading operations.",
+                "explain": "This is the key figure used in Module 5's ROCE calculation — worth noting operating profit deliberately excludes interest and tax, since it's meant to measure the profitability of the business's OPERATIONS, independent of how that business happens to be financed."
+            },
+            {
+                "q": "What is 'profit before tax'?",
+                "a": "Operating profit adjusted for non-operating items such as interest income/expense, arriving at the profit figure before the tax charge is deducted.",
+                "explain": "This is exactly where financing decisions (Modules 8-11) start to show up in the income statement — interest expense on debt directly reduces profit before tax, which is precisely why capital structure (Module 11) affects reported profitability, not just the balance sheet."
+            },
+            {
+                "q": "What is 'profit after tax' (net profit)?",
+                "a": "Profit before tax minus the tax charge for the period — the final profit figure attributable to shareholders.",
+                "explain": "This directly feeds Module 5's net profit margin and return on equity ratios, and Module 3's own earnings-per-share card — it's the bottom-line figure ultimately available to be retained (Module 2) or distributed as dividends (Module 18)."
+            },
+            {
+                "q": "Why is profit not the same thing as cash generated during the period?",
+                "a": "The income statement uses accruals accounting, recognising revenue and costs when they're earned/incurred rather than when cash actually changes hands, so profit can differ substantially from the period's actual cash movement.",
+                "explain": "This is the single most important idea in this module, directly previewing Module 4's whole cash flow statement — worth remembering this distinction explicitly whenever profit and cash figures for the same company appear to disagree."
+            },
+            {
+                "q": "What is the 'accruals' (matching) concept in accounting?",
+                "a": "Revenue and costs are recognised in the period they relate to economically, not necessarily when the cash is received or paid, so that income is matched against the costs incurred to generate it.",
+                "explain": "This is the formal accounting principle underlying the previous card's profit-versus-cash distinction — worth recognising 'matching' as the deliberate goal: pairing revenue with the specific costs incurred to generate it, in the SAME period, regardless of cash timing."
+            },
+            {
+                "q": "Give an example of a cost recognised in the income statement that doesn't involve a cash payment in that period.",
+                "a": "Depreciation of a non-current asset — the cash was paid when the asset was purchased, but the cost is spread across the income statement over the asset's useful life.",
+                "explain": "This is Module 2's depreciation concept recalled directly — worth previewing Module 4's cash flow statement here explicitly: depreciation is exactly the adjustment added BACK to profit when reconciling profit to actual operating cash flow."
+            },
+            {
+                "q": "What are 'exceptional' or 'one-off' items sometimes separately disclosed within the income statement?",
+                "a": "Significant, non-recurring items (e.g. a large restructuring cost or asset disposal gain) separately identified so users can distinguish underlying trading performance from unusual, one-off events.",
+                "explain": "This connects directly to Module 5's point about trends over multiple periods — a one-off item can distort a single period's ratios significantly, which is exactly why analysts often adjust for or separately flag exceptional items when assessing genuine underlying performance."
+            },
+            {
+                "q": "What is 'earnings per share' (EPS)?",
+                "a": "Profit after tax attributable to ordinary shareholders, divided by the number of ordinary shares in issue — a widely used measure of profitability per share.",
+                "explain": "This directly previews Module 17's business valuation material — EPS (and its growth over time) is one of the most commonly used inputs to earnings-based valuation approaches and the price/earnings ratio."
+            },
+            {
+                "q": "Why might two companies with identical operating profit report very different profit after tax?",
+                "a": "Differences in financing structure (interest expense on debt), tax position, or non-operating items can all cause profit after tax to diverge even where underlying trading profitability is the same.",
+                "explain": "This is worth connecting directly to Module 11's capital structure material — two operationally identical companies with different levels of debt will report genuinely different profit after tax purely because of their differing interest expense, which is exactly why comparing companies on operating profit (rather than profit after tax) can sometimes give a fairer like-for-like comparison."
+            },
+            {
+                "q": "How does the income statement relate to the balance sheet's retained earnings?",
+                "a": "The profit after tax for the period (less any dividends paid) increases the retained earnings balance carried forward on the balance sheet, directly linking performance over the period to the year-end financial position.",
+                "explain": "This is the explicit mechanical link between this module and Module 2 — worth recognising the three financial statements as genuinely INTERCONNECTED, not three independent, unrelated documents, since a single period's profit flows directly into the following balance sheet."
+            },
+            {
+                "q": "Why is understanding the income statement important before analysing a company's profitability ratios?",
+                "a": "Profitability ratios (covered later in this course) are built directly from income statement figures (revenue, gross profit, operating profit), so correctly understanding what each line represents is essential to interpreting the ratios calculated from them.",
+                "explain": "This closing card directly hands off to Module 5 — every profitability ratio that module develops (gross margin, operating margin, net margin, ROCE, ROE) is simply a specific combination of figures introduced in this module, so genuine fluency here is a direct prerequisite there."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "The cash flow statement",
+        "description": "Covers the cash flow statement — how it reconciles reported profit to actual cash movement, and its three standard sections: operating, investing and financing activities.",
+        "cards": [
+            {
+                "q": "What does the 'cash flow statement' show?",
+                "a": "The actual cash inflows and outflows of a business over a period, reconciling the change in its cash balance, in contrast to the accruals-based income statement.",
+                "explain": "This is the third and final financial statement previewed in Module 1 — worth treating this module as the direct resolution of Module 3's central warning: since profit isn't the same as cash, this statement exists specifically to show what actually happened to the business's cash."
+            },
+            {
+                "q": "Why is the cash flow statement considered a genuinely important complement to the income statement, not a duplicate of it?",
+                "a": "Because accruals accounting means reported profit can diverge substantially from actual cash generated — a profitable business can still run out of cash, and the cash flow statement reveals that risk directly.",
+                "explain": "This is a genuinely important, sobering point worth remembering precisely — a company can report healthy profit right up until the point it becomes insolvent from a genuine cash shortage, which is exactly the scenario the overtrading card later in this module describes concretely."
+            },
+            {
+                "q": "What are the three standard sections a cash flow statement is divided into?",
+                "a": "Cash flows from operating activities, cash flows from investing activities, and cash flows from financing activities.",
+                "explain": "This three-way split maps directly onto Module 1's three decision areas — operating cash flow relates to day-to-day trading, investing cash flow to the investment decision (Modules 13-16), and financing cash flow to the financing decision (Modules 8-11)."
+            },
+            {
+                "q": "What does 'cash flow from operating activities' represent?",
+                "a": "Cash generated or used by the business's core, day-to-day trading operations.",
+                "explain": "This is the section most directly comparable to the income statement's operating profit — the difference between the two (explored in the next few cards) is exactly the accruals adjustments this module's technique cards develop."
+            },
+            {
+                "q": "What does 'cash flow from investing activities' represent?",
+                "a": "Cash spent on or received from acquiring or disposing of long-term assets, such as purchasing equipment or selling a subsidiary.",
+                "explain": "This is the cash-statement trace of exactly the non-current asset purchases Module 2 introduced and Module 13's investment appraisal material evaluates in detail — a capital project's cash outflow, once actually approved and undertaken, shows up here."
+            },
+            {
+                "q": "What does 'cash flow from financing activities' represent?",
+                "a": "Cash raised from or repaid to providers of finance, such as issuing shares, borrowing, repaying debt, or paying dividends.",
+                "explain": "This directly previews Modules 8-9's sources-of-finance material — every financing decision those modules discuss (issuing shares, taking on debt) shows up concretely in this section of the cash flow statement."
+            },
+            {
+                "q": "How is operating cash flow typically derived from profit under the 'indirect method'?",
+                "a": "Starting from operating profit, non-cash items (e.g. depreciation) are added back, and changes in working capital (inventory, receivables, payables) are adjusted for, to arrive at the actual cash generated from operations.",
+                "explain": "This is the practical, step-by-step recipe that resolves Module 3's profit-versus-cash distinction concretely — worth treating this as the master formula the next several cards each explain one piece of individually."
+            },
+            {
+                "q": "Why is depreciation added back to profit when calculating operating cash flow?",
+                "a": "Depreciation is a non-cash expense that reduced reported profit but involved no actual cash outflow in the period, so it must be added back to reconcile profit to cash generated.",
+                "explain": "This is exactly Module 3's depreciation card resolved in full — the cash was already accounted for when the asset was purchased (appearing in investing cash flow at that time), so charging it again as a cash cost here would double-count it."
+            },
+            {
+                "q": "How does an increase in trade receivables during a period affect operating cash flow, relative to reported profit?",
+                "a": "It reduces operating cash flow relative to profit, since the corresponding revenue has been recognised in profit but the cash hasn't yet actually been collected from customers.",
+                "explain": "This is Module 2's trade receivables concept given its cash flow consequence — a growing receivables balance means the business is 'owed more', which is good for the balance sheet's asset total but bad for actual cash in hand this period."
+            },
+            {
+                "q": "How does an increase in trade payables during a period affect operating cash flow, relative to reported profit?",
+                "a": "It increases operating cash flow relative to profit, since costs have been recognised in profit but the corresponding cash hasn't yet actually been paid out to suppliers.",
+                "explain": "This is the exact mirror image of the receivables card above — worth noting the two together as a genuinely important pattern: a GROWING receivables balance drags cash flow down, while a GROWING payables balance pushes cash flow up, both relative to reported profit."
+            },
+            {
+                "q": "Why might a rapidly growing, profitable business still experience a cash flow crisis?",
+                "a": "Growth often requires increasing investment in working capital (more inventory, more receivables as sales grow) and non-current assets, which can consume cash faster than profitable trading generates it — a phenomenon known as overtrading.",
+                "explain": "This is the real-world, high-stakes consequence of the two cards above combined — a genuinely profitable, fast-growing business can fail purely from cash exhaustion, which is exactly why Module 7's working capital management material matters so much during a period of rapid growth specifically."
+            },
+            {
+                "q": "What is 'free cash flow', broadly speaking?",
+                "a": "Cash generated from operations after deducting the capital expenditure needed to maintain/grow the business, representing cash genuinely available to distribute to providers of finance.",
+                "explain": "This directly previews Module 17's valuation material — free cash flow is precisely the cashflow stream discounted-cashflow-based business valuation methods use, making this concept a direct bridge from this module into later valuation technique."
+            },
+            {
+                "q": "Why might an investor or lender place particular weight on the cash flow statement when assessing a company?",
+                "a": "Ultimately, a business needs cash (not just accounting profit) to pay its debts, interest, and dividends, so cash flow gives a more direct read on genuine financial health and repayment capacity than profit alone.",
+                "explain": "This is worth connecting to Module 9's debt-finance material — a lender's primary concern is whether the business can generate enough CASH to service its debt, which is exactly why cash flow (not just profit) is central to credit assessment."
+            },
+            {
+                "q": "How do the three sections of the cash flow statement together explain the overall change in a company's cash balance?",
+                "a": "Summing the net cash flow from operating, investing, and financing activities gives the total change in cash over the period, reconciling the opening and closing cash balances shown on the balance sheet.",
+                "explain": "This is the explicit mechanical link between this module and Module 2 — worth recognising this as completing the full circle of interconnection between all three financial statements: profit (Module 3) reconciles to cash (this module), which reconciles to the balance sheet's cash figure (Module 2)."
+            },
+            {
+                "q": "Why is understanding the cash flow statement particularly important background for the investment appraisal techniques covered later in this course?",
+                "a": "Investment appraisal (NPV, IRR) is built entirely on projected CASH flows, not accounting profit, so understanding the profit-versus-cash distinction developed in this module is essential preparation for correctly identifying the relevant cashflows in an investment decision.",
+                "explain": "This closing card is a direct, explicit hand-off to Modules 13-16 — every investment appraisal technique in this course discounts CASHFLOWS, never accounting profit, which is exactly why this module's profit-versus-cash distinction is genuinely essential groundwork, not incidental detail."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Financial statement analysis: profitability and liquidity ratios",
+        "description": "Covers ratio analysis techniques for assessing a company's profitability and liquidity from its financial statements.",
+        "cards": [
+            {
+                "q": "What is the general purpose of financial ratio analysis?",
+                "a": "To standardise and interpret figures from the financial statements, enabling meaningful comparison of a company's performance over time or against other companies.",
+                "explain": "This module puts Modules 2-4's financial statements to practical use — worth treating every ratio in this module as a specific, named combination of figures already introduced, now recombined to answer a genuinely useful comparative question."
+            },
+            {
+                "q": "Why is a ratio often more informative than a raw financial statement figure alone?",
+                "a": "A raw figure (e.g. £10m profit) has little meaning without context; expressing it relative to another figure (e.g. as a percentage of revenue or capital employed) allows comparison across companies of different sizes or across different time periods.",
+                "explain": "This is worth remembering as ratio analysis's whole justification — a £10m profit means something very different for a small company than a multinational, and a ratio strips out this scale effect, enabling genuinely fair comparison."
+            },
+            {
+                "q": "What does 'gross profit margin' measure, and how is it calculated?",
+                "a": "The proportion of revenue retained after direct costs of production; calculated as gross profit divided by revenue, expressed as a percentage.",
+                "explain": "This is Module 3's gross profit figure expressed relative to revenue — worth noting this margin specifically reflects pricing power and direct production efficiency, before any of the business's overhead cost structure is even considered."
+            },
+            {
+                "q": "What does 'operating profit margin' measure, and how is it calculated?",
+                "a": "The proportion of revenue retained after both direct and operating costs; calculated as operating profit divided by revenue, expressed as a percentage.",
+                "explain": "This is Module 3's operating profit expressed relative to revenue — comparing this margin to the gross margin above reveals how much of a company's gross profitability is being eaten up by its administrative and overhead cost base."
+            },
+            {
+                "q": "What does 'net profit margin' measure?",
+                "a": "The proportion of revenue that ultimately becomes profit after tax attributable to shareholders, calculated as profit after tax divided by revenue.",
+                "explain": "This is Module 3's profit after tax expressed relative to revenue — worth remembering this margin is affected by financing structure and tax (per Module 3's card on why two similar companies can report different profit after tax), unlike the operating margin above."
+            },
+            {
+                "q": "What is 'return on capital employed' (ROCE), and what does it measure?",
+                "a": "Operating profit divided by capital employed (total assets less current liabilities, or equivalently equity plus non-current liabilities) — it measures how efficiently a company generates profit from the capital invested in it.",
+                "explain": "This directly connects Module 3's operating profit to Module 2's balance sheet — worth previewing Module 10-11's cost-of-capital material here: ROCE is often compared directly against a company's cost of capital to judge whether it's genuinely creating value for its capital providers."
+            },
+            {
+                "q": "Why is ROCE often considered a particularly useful overall measure of business performance?",
+                "a": "It combines both profitability (the numerator) and how much capital was needed to achieve it (the denominator), unlike a margin ratio alone, which says nothing about how much capital was tied up generating that profit.",
+                "explain": "This is worth contrasting directly with the margin ratios above — a business could have a high margin but be highly capital-intensive (needing enormous investment to generate that profit), and ROCE is precisely the ratio that captures this capital-efficiency dimension the margins alone miss."
+            },
+            {
+                "q": "What is 'return on equity' (ROE), and how does it differ from ROCE?",
+                "a": "Profit after tax divided by shareholders' equity — unlike ROCE (which considers total capital employed, including debt), ROE measures the return generated specifically for shareholders on their own investment.",
+                "explain": "This directly previews Module 11's capital structure material — worth noting ROE can be inflated by taking on more debt (a leverage effect), even without genuine improvement in underlying operating performance, which is exactly the nuance that module explores in depth."
+            },
+            {
+                "q": "What does the 'current ratio' measure, and how is it calculated?",
+                "a": "A company's ability to meet its short-term obligations from its short-term assets; calculated as current assets divided by current liabilities.",
+                "explain": "This is Module 2's current assets and current liabilities directly combined — worth recognising this as the headline LIQUIDITY ratio, in contrast to the profitability ratios developed earlier in this module, testing a genuinely different dimension of financial health."
+            },
+            {
+                "q": "What is generally considered a 'healthy' current ratio, and why should this benchmark be applied with caution?",
+                "a": "A ratio comfortably above 1 (often cited around 1.5-2) is often considered healthy, but the appropriate level varies significantly by industry — a supermarket with fast-moving inventory and little credit sales can operate safely with a much lower ratio than a manufacturer with slow-moving stock.",
+                "explain": "This directly previews the industry-comparison card later in this module — worth treating this caveat as genuinely important exam guidance: quoting a generic benchmark without acknowledging its industry-dependence is a common way to give an incomplete answer."
+            },
+            {
+                "q": "What is the 'quick ratio' (acid-test ratio), and how does it differ from the current ratio?",
+                "a": "It excludes inventory from current assets before dividing by current liabilities, since inventory is often the least liquid current asset and may not be readily convertible to cash to meet an immediate obligation.",
+                "explain": "This is a genuinely important refinement of the current ratio above — worth recognising the quick ratio as answering a stricter question: 'could this company meet its short-term obligations WITHOUT having to sell inventory', which matters especially for businesses with slow-moving or hard-to-liquidate stock."
+            },
+            {
+                "q": "Why might a very high current ratio not necessarily be a good sign for a company?",
+                "a": "It could indicate the company is holding excessive cash or inventory inefficiently, rather than deploying capital productively — liquidity strength has to be balanced against the opportunity cost of holding idle current assets.",
+                "explain": "This is worth connecting to CB2's opportunity cost concept — cash sitting idle earns little or no return, so an unnecessarily high current ratio can itself represent a genuine cost to shareholders, not an unambiguous strength."
+            },
+            {
+                "q": "Why is comparing a company's ratios against industry norms generally more meaningful than assessing them in isolation?",
+                "a": "Different industries have structurally different working capital needs, margins, and capital intensity, so a ratio that looks concerning in one industry (e.g. a low current ratio) may be entirely normal and healthy in another.",
+                "explain": "This resolves the earlier card's caution about generic benchmarks explicitly — worth treating industry comparison as the default, expected practice for any genuinely useful ratio interpretation, not an optional extra."
+            },
+            {
+                "q": "Why should ratio analysis typically look at trends over several periods, rather than a single year's figures alone?",
+                "a": "A single period's ratios can be distorted by one-off events or normal year-to-year fluctuation; examining the trend over several years gives a clearer, more reliable picture of genuine underlying performance and direction.",
+                "explain": "This directly echoes Module 3's point about exceptional items distorting a single period's figures — worth recognising trend analysis as a natural extension of that same caution, applied across ratios rather than to a single line item."
+            },
+            {
+                "q": "What is a key limitation of ratio analysis based purely on published financial statements?",
+                "a": "Financial statements reflect historical, accounting-based figures (which can be affected by accounting policy choices) rather than necessarily reflecting current market values or future prospects, limiting how forward-looking ratio analysis alone can be.",
+                "explain": "This closing card is worth previewing against Module 17's valuation material — ratio analysis tells you about PAST accounting performance, while valuation techniques try to capture the market's forward-looking view, and the two can genuinely diverge, especially for a company whose prospects are changing rapidly."
+            }
+        ]
+    }
+],
 };
