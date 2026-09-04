@@ -8507,63 +8507,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the general purpose of an actuarial model?",
-                "a": "To represent a real-world system or process mathematically, in order to understand, project, or make decisions about it."
+                "a": "To represent a real-world system or process mathematically, in order to understand, project, or make decisions about it.",
+                "explain": "This module opens Part 4 of CP1 (modelling, data, assumptions, and pricing) by stepping back from CS1/CS2's specific modelling techniques to the general PRINCIPLES that should govern any actuarial model, regardless of which technique it uses underneath."
             },
             {
                 "q": "What does 'garbage in, garbage out' mean in the context of modelling?",
-                "a": "A model is only as reliable as the data and assumptions feeding into it — poor inputs produce unreliable outputs, however sophisticated the model."
+                "a": "A model is only as reliable as the data and assumptions feeding into it — poor inputs produce unreliable outputs, however sophisticated the model.",
+                "explain": "This directly previews Modules 19-20's data and assumption-setting material — worth treating this as the module's single most important warning: no amount of modelling sophistication (CS1/CS2's statistical machinery) can compensate for poor-quality inputs, which is exactly why the next two modules get their own dedicated treatment."
             },
             {
                 "q": "What is meant by a model's 'purpose', and why must it be defined clearly before building the model?",
-                "a": "The intended use of the model's output — a model built for one purpose may not be appropriate or accurate enough for a different purpose."
+                "a": "The intended use of the model's output — a model built for one purpose may not be appropriate or accurate enough for a different purpose.",
+                "explain": "This connects directly to Module 13's point about different valuation bases suiting different purposes — a model built for, say, best-estimate pricing (Module 20) may need substantial adaptation before it's appropriate for prudent regulatory reserving, since the two purposes have genuinely different requirements."
             },
             {
                 "q": "What is a 'deterministic' model?",
-                "a": "A model that produces a single, fixed output for a given set of inputs, with no explicit representation of randomness."
+                "a": "A model that produces a single, fixed output for a given set of inputs, with no explicit representation of randomness.",
+                "explain": "This is worth contrasting directly with CS2's whole stochastic-process curriculum — a deterministic model is simpler and faster to run and understand, but it can only show ONE possible future path, which is exactly the limitation the next card's stochastic alternative addresses."
             },
             {
                 "q": "What is a 'stochastic' model?",
-                "a": "A model that explicitly incorporates randomness, typically producing a range/distribution of possible outcomes rather than a single figure."
+                "a": "A model that explicitly incorporates randomness, typically producing a range/distribution of possible outcomes rather than a single figure.",
+                "explain": "This is CS2's whole stochastic modelling toolkit (Markov processes, compound distributions, simulation) referenced at the conceptual level — worth remembering CP1 cares about WHEN and WHY to reach for this approach rather than the mathematical machinery itself, which is exactly the proportionality question the next card addresses."
             },
             {
                 "q": "Why might a stochastic model be preferred over a deterministic one for certain actuarial applications?",
-                "a": "It captures the uncertainty/variability inherent in the real system, which is often crucial for risk-based decisions (e.g. capital setting)."
+                "a": "It captures the uncertainty/variability inherent in the real system, which is often crucial for risk-based decisions (e.g. capital setting).",
+                "explain": "This directly connects to Module 15's stress testing and CS2's whole risk-modelling material — capital setting (Modules 36-39 later in CP1) specifically needs to understand the TAIL of possible outcomes, which a single deterministic figure simply cannot represent, however carefully chosen."
             },
             {
                 "q": "What is 'model risk'?",
-                "a": "The risk that a model is wrong or is used inappropriately, leading to incorrect conclusions or decisions."
+                "a": "The risk that a model is wrong or is used inappropriately, leading to incorrect conclusions or decisions.",
+                "explain": "This is a genuinely important category of risk in its own right, worth linking forward to Module 27's product/financial risk classification — it's easy to treat a model's output as objective fact once it's built, but the model itself is a potential SOURCE of risk, not just a tool for measuring other risks."
             },
             {
                 "q": "Give one source of model risk.",
-                "a": "Incorrect model structure/assumptions, coding errors, or applying the model outside the range of conditions it was designed/validated for."
+                "a": "Incorrect model structure/assumptions, coding errors, or applying the model outside the range of conditions it was designed/validated for.",
+                "explain": "The third source here (applying a model outside its validated range) is worth flagging as a particularly easy trap — a model that works well under normal conditions can quietly become unreliable in a stress scenario it was never actually tested against, which is exactly why the sensitivity testing and validation cards later in this module matter."
             },
             {
                 "q": "Why is model validation an essential step in the modelling process?",
-                "a": "To check the model behaves sensibly and produces results consistent with expectations/reality, reducing the risk of undetected errors."
+                "a": "To check the model behaves sensibly and produces results consistent with expectations/reality, reducing the risk of undetected errors.",
+                "explain": "This is Module 2's peer review principle applied specifically to models — worth noting validation isn't a one-off box to tick at build time; a model should be periodically re-validated as it continues to be used, echoing the ongoing-review theme that recurs throughout CP1."
             },
             {
                 "q": "What is meant by 'sensitivity testing' a model?",
-                "a": "Varying individual assumptions/inputs to see how much the model's output changes, helping identify which assumptions matter most."
+                "a": "Varying individual assumptions/inputs to see how much the model's output changes, helping identify which assumptions matter most.",
+                "explain": "This is a direct, practical tool for managing the assumption-uncertainty concern Module 20 develops in full — by systematically varying one input at a time, sensitivity testing tells you WHERE to focus your assumption-setting care and quality control, rather than treating every input as equally important."
             },
             {
                 "q": "Why is documentation important for an actuarial model?",
-                "a": "It allows others (including the original author, later) to understand, check, reproduce, and appropriately rely on the model's results."
+                "a": "It allows others (including the original author, later) to understand, check, reproduce, and appropriately rely on the model's results.",
+                "explain": "This connects directly to Module 2's peer review and reliance concepts — a model that isn't documented can't genuinely be peer-reviewed or relied upon by anyone but its original author, undermining exactly the professional safeguards Module 2 established as essential."
             },
             {
                 "q": "What is meant by the 'balance' between model complexity and practicality?",
-                "a": "A more complex/detailed model may better represent reality but takes longer to build, run, and understand — a proportionate level of complexity should be chosen."
+                "a": "A more complex/detailed model may better represent reality but takes longer to build, run, and understand — a proportionate level of complexity should be chosen.",
+                "explain": "This is Module 2's proportionality principle applied directly to modelling — a highly complex, computationally expensive model isn't automatically better; the right level of complexity should match the materiality and nature of the decision the model is meant to inform, echoed a few cards later in this module's limitations discussion."
             },
             {
                 "q": "Why might an actuary need to communicate a model's limitations clearly to those using its results?",
-                "a": "So that decisions based on the model's output appropriately account for its uncertainties and don't over-rely on it beyond its intended scope."
+                "a": "So that decisions based on the model's output appropriately account for its uncertainties and don't over-rely on it beyond its intended scope.",
+                "explain": "This is Module 2's clear-communication and assumption-transparency principles applied specifically to modelling output — a model's results presented without their limitations invite exactly the kind of over-reliance Module 2 warned against when discussing reliance and the boundaries of professional advice."
             },
             {
                 "q": "What is 'reproducibility' of a model, and why does it matter?",
-                "a": "The ability for the model to be re-run (by the same or another person) and consistently produce the same results, supporting checking and audit."
+                "a": "The ability for the model to be re-run (by the same or another person) and consistently produce the same results, supporting checking and audit.",
+                "explain": "This is a practical precondition for the peer review and validation concepts covered earlier in this module — a model that can't be reliably re-run and checked by someone else effectively can't be properly reviewed at all, undermining the quality-control safeguards this whole module has been building up."
             },
             {
                 "q": "Why is it important to consider a model's outputs 'reasonableness' even after successful validation?",
-                "a": "Validation checks the model behaves as designed, but the output still needs a final sense-check against real-world plausibility before being relied upon."
+                "a": "Validation checks the model behaves as designed, but the output still needs a final sense-check against real-world plausibility before being relied upon.",
+                "explain": "This closing card draws a genuinely important distinction worth remembering — validation confirms the model does what it was BUILT to do, but that's not the same as confirming the RESULT makes real-world sense; a bug-free model can still produce an implausible answer if its underlying assumptions or structure were wrong to begin with."
             }
         ]
     },
@@ -8574,63 +8589,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "Why is data quality fundamental to reliable actuarial analysis?",
-                "a": "Actuarial models and assumptions are ultimately derived from data, so poor quality data directly undermines the reliability of the results."
+                "a": "Actuarial models and assumptions are ultimately derived from data, so poor quality data directly undermines the reliability of the results.",
+                "explain": "This module develops Module 18's 'garbage in, garbage out' warning into a full practical treatment — everything in this module is really elaborating on WHAT makes data 'garbage' or genuinely fit for purpose, starting with the three dimensions of quality named in the next three cards."
             },
             {
                 "q": "What does 'data completeness' refer to?",
-                "a": "Whether all the required data fields/records are present, without significant gaps."
+                "a": "Whether all the required data fields/records are present, without significant gaps.",
+                "explain": "This is the first of three distinct data-quality dimensions this module develops (completeness, accuracy, consistency) — worth keeping them separate in an exam answer, since a data set can be complete but still inaccurate, or accurate but inconsistently recorded, each requiring a different fix."
             },
             {
                 "q": "What does 'data accuracy' refer to?",
-                "a": "Whether the data correctly reflects the real underlying values/events it's meant to represent."
+                "a": "Whether the data correctly reflects the real underlying values/events it's meant to represent.",
+                "explain": "This is a genuinely different concern from completeness above — a fully complete data set (no missing records) can still be riddled with inaccurate individual values, which is exactly why the data check/validation process described later in this module is needed even for seemingly complete data."
             },
             {
                 "q": "What does 'data consistency' refer to?",
-                "a": "Whether data is recorded and defined in the same way across different sources, time periods, or systems."
+                "a": "Whether data is recorded and defined in the same way across different sources, time periods, or systems.",
+                "explain": "This third dimension is often the trickiest to spot, since each individual record might be both complete and accurate on its own terms, yet still inconsistent with records from a DIFFERENT system or time period — exactly the reconciliation problem addressed in the next card."
             },
             {
                 "q": "Why might data from different systems or time periods need reconciliation before use?",
-                "a": "Definitions, formats, or recording practices may have changed, and inconsistencies could distort analysis if not identified and adjusted for."
+                "a": "Definitions, formats, or recording practices may have changed, and inconsistencies could distort analysis if not identified and adjusted for.",
+                "explain": "This is the practical consequence of a consistency failure — worth connecting to CS1's regression and time series material, since combining inconsistently-defined data across periods without reconciliation could introduce a spurious trend or break in a series that's really just an artefact of a definitional change, not a genuine underlying shift."
             },
             {
                 "q": "What is a 'data check' or validation process typically used for?",
-                "a": "Identifying anomalies, errors, or implausible values in a data set before it's used for analysis."
+                "a": "Identifying anomalies, errors, or implausible values in a data set before it's used for analysis.",
+                "explain": "This is Module 18's model-validation concept applied one step earlier, to the DATA feeding the model rather than the model itself — worth thinking of data checking and model validation as two separate quality-control layers, both necessary since a validated model fed bad data still produces bad output."
             },
             {
                 "q": "Why might actuaries need to make adjustments for known data deficiencies rather than simply excluding incomplete records?",
-                "a": "Excluding records could introduce bias if the missing/incomplete data isn't random, so adjustments may better preserve the overall picture."
+                "a": "Excluding records could introduce bias if the missing/incomplete data isn't random, so adjustments may better preserve the overall picture.",
+                "explain": "This is CS1/CS2's missing-data and selection-bias thinking applied in a practical actuarial context — worth recognising this as the same principle as CS2's censoring/truncation adjustments (Module 7 there): simply dropping incomplete observations can silently distort the remaining sample if the incompleteness isn't random."
             },
             {
                 "q": "What is 'external' data, as distinct from an organisation's own internal data?",
-                "a": "Data sourced from outside the organisation, e.g. industry-wide statistics, published mortality tables, or economic data."
+                "a": "Data sourced from outside the organisation, e.g. industry-wide statistics, published mortality tables, or economic data.",
+                "explain": "This sets up a distinction the next two cards explore in both directions — worth previewing Module 20's credibility concept here, since the whole question of HOW MUCH to weight external versus internal data when they're combined is exactly what credibility theory (CS1's Module 9-10 there) formalises."
             },
             {
                 "q": "Why might an actuary use external data even when internal data is available?",
-                "a": "Internal data may be too sparse (e.g. for a small portfolio) to be statistically credible alone, so external data can supplement or validate it."
+                "a": "Internal data may be too sparse (e.g. for a small portfolio) to be statistically credible alone, so external data can supplement or validate it.",
+                "explain": "This is precisely the motivation for credibility theory's existence — a small internal data set alone gives a noisy, unreliable estimate, and blending it with a larger, more stable external data source (weighted by credibility) can improve accuracy, at the cost of the drawback described in the next card."
             },
             {
                 "q": "What is a potential drawback of relying on external, rather than internal, data for an actuarial analysis?",
-                "a": "External data may not accurately reflect the specific characteristics/experience of the organisation's own population or portfolio."
+                "a": "External data may not accurately reflect the specific characteristics/experience of the organisation's own population or portfolio.",
+                "explain": "This is the direct trade-off against the previous card's benefit — external data is more stable/credible in volume but potentially less RELEVANT to the specific population being analysed, which is exactly the tension credibility weighting (previewed above) is designed to balance sensibly."
             },
             {
                 "q": "Why might data protection/privacy regulation affect how actuaries can access and use certain data?",
-                "a": "Legal restrictions on collecting, storing, and using personal data can limit what data is available or how it can be processed."
+                "a": "Legal restrictions on collecting, storing, and using personal data can limit what data is available or how it can be processed.",
+                "explain": "This is Module 4's legal/regulatory PESTLE factor applied specifically to data — worth noting this constraint can genuinely limit the granularity or type of analysis possible, meaning data availability isn't just a technical/quality question but also a legal boundary an actuary must respect."
             },
             {
                 "q": "What is 'data governance'?",
-                "a": "The overall framework of policies, processes, and responsibilities an organisation uses to manage and control the quality/use of its data."
+                "a": "The overall framework of policies, processes, and responsibilities an organisation uses to manage and control the quality/use of its data.",
+                "explain": "This is worth thinking of as the organisational-level counterpart to Module 18's model documentation and validation practices — just as an individual model needs documentation and validation, an organisation's WHOLE data estate needs a governing framework to keep the quality dimensions (completeness, accuracy, consistency) under control at scale."
             },
             {
                 "q": "Why is understanding how data was collected important before using it in an actuarial model?",
-                "a": "The collection method can introduce biases or limitations (e.g. selection bias) that materially affect how the data should be interpreted or adjusted."
+                "a": "The collection method can introduce biases or limitations (e.g. selection bias) that materially affect how the data should be interpreted or adjusted.",
+                "explain": "This is CS1's selection-bias concept (and the underwriting-selection idea previewed in Module 21) applied generally — worth remembering data isn't neutral; HOW it was gathered can shape what conclusions can legitimately be drawn from it, independent of how complete, accurate, or consistent it otherwise is."
             },
             {
                 "q": "How might large, complex ('big') data sets present both opportunities and challenges for actuarial work?",
-                "a": "They can enable more granular/accurate modelling, but also raise challenges around processing capability, data quality control, and privacy."
+                "a": "They can enable more granular/accurate modelling, but also raise challenges around processing capability, data quality control, and privacy.",
+                "explain": "This connects to CS2's machine learning material (Module 21 there) and Module 3's technological PESTLE factor — worth noting the SAME quality dimensions established earlier in this module (completeness, accuracy, consistency) actually get harder to maintain at big-data scale, not easier, even as the modelling opportunities grow."
             },
             {
                 "q": "Why should an actuary document any data limitations and adjustments made, as part of their analysis?",
-                "a": "To ensure transparency and allow others (including reviewers or future users of the analysis) to understand and appropriately rely on the results."
+                "a": "To ensure transparency and allow others (including reviewers or future users of the analysis) to understand and appropriately rely on the results.",
+                "explain": "This closing card directly echoes Module 18's documentation and reliance points, now specifically for the data side of the modelling process — it's worth treating data documentation and model documentation as two halves of the same transparency obligation, both necessary for genuine peer review and appropriate reliance."
             }
         ]
     },
@@ -8641,63 +8671,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'best estimate' assumption?",
-                "a": "An assumption reflecting the actuary's unbiased, most likely view of a future outcome, without deliberate margins for caution."
+                "a": "An assumption reflecting the actuary's unbiased, most likely view of a future outcome, without deliberate margins for caution.",
+                "explain": "This module turns from Module 19's raw data to what's actually DONE with it — a best estimate is the direct output of experience analysis (developed further in this module) applied honestly, without either optimistic or pessimistic bias deliberately built in."
             },
             {
                 "q": "What is a 'prudent' assumption?",
-                "a": "An assumption that deliberately includes a margin of caution, e.g. for reserving purposes, to reduce the risk of understating liabilities."
+                "a": "An assumption that deliberately includes a margin of caution, e.g. for reserving purposes, to reduce the risk of understating liabilities.",
+                "explain": "This is worth contrasting sharply with the best estimate above — prudence is a DELIBERATE choice to bias an assumption in the cautious direction, not a more careful or more accurate best estimate; the two serve genuinely different purposes, as the next card makes explicit."
             },
             {
                 "q": "Why might different purposes (e.g. pricing versus reserving) call for different bases (best estimate versus prudent) for the same assumption?",
-                "a": "Pricing may use a best estimate (possibly with a profit margin) to remain competitive, while reserving may require prudence to protect solvency."
+                "a": "Pricing may use a best estimate (possibly with a profit margin) to remain competitive, while reserving may require prudence to protect solvency.",
+                "explain": "This is Module 13's 'different valuation bases for different purposes' point and Module 18's 'model purpose' card both converging on assumption-setting specifically — the SAME mortality rate, for instance, might legitimately be set differently depending on whether it feeds a competitive pricing calculation or a prudent regulatory reserve."
             },
             {
                 "q": "What sources of information might inform setting a mortality assumption?",
-                "a": "The organisation's own past experience, industry/national mortality tables, and expected future trends (e.g. mortality improvements)."
+                "a": "The organisation's own past experience, industry/national mortality tables, and expected future trends (e.g. mortality improvements).",
+                "explain": "This directly previews Module 21's mortality-specific material and Module 19's internal-versus-external data theme — worth noting these three sources map onto exactly the credibility question (a few cards later in this module) of how to weight sparse own experience against more stable, but less specific, external tables."
             },
             {
                 "q": "Why is 'experience analysis' (comparing actual to expected past experience) important when setting assumptions?",
-                "a": "It helps validate or refine assumptions by checking how well past predictions matched what actually happened."
+                "a": "It helps validate or refine assumptions by checking how well past predictions matched what actually happened.",
+                "explain": "This is CP1's own version of CS1/CS2's model-checking and goodness-of-fit thinking — worth connecting forward to Module 39's monitoring material, since experience analysis isn't a one-off exercise at initial assumption-setting; it's the same comparison repeated on an ongoing basis to keep assumptions current."
             },
             {
                 "q": "What does it mean for assumptions to be set 'consistently' with each other?",
-                "a": "Different assumptions used together in a model shouldn't contradict each other or reflect inconsistent underlying views of the future."
+                "a": "Different assumptions used together in a model shouldn't contradict each other or reflect inconsistent underlying views of the future.",
+                "explain": "This is Module 19's data-consistency dimension applied one level up, to ASSUMPTIONS rather than raw data — the same underlying discipline (making sure different pieces genuinely agree with each other) recurs at every stage of the modelling pipeline this Part of CP1 develops."
             },
             {
                 "q": "Why might economic assumptions (e.g. investment return, inflation) need to be internally consistent?",
-                "a": "E.g. assumed investment returns should be plausible given the assumed inflation and interest rate environment, not set independently without regard to each other."
+                "a": "E.g. assumed investment returns should be plausible given the assumed inflation and interest rate environment, not set independently without regard to each other.",
+                "explain": "This is a concrete example of the consistency principle from the previous card, directly connecting to Module 14's asset-class relationships material — since different economic assumptions are genuinely LINKED in reality (Module 14's correlation and inflation-driver material), setting them independently risks an internally implausible combination."
             },
             {
                 "q": "What is 'assumption uncertainty', and why does it matter?",
-                "a": "The risk that the true future outcome differs from the assumption used, which itself is a source of risk that may need separate consideration (e.g. via sensitivity testing)."
+                "a": "The risk that the true future outcome differs from the assumption used, which itself is a source of risk that may need separate consideration (e.g. via sensitivity testing).",
+                "explain": "This is Module 18's model-risk and sensitivity-testing concepts applied specifically to assumptions — worth recognising assumption uncertainty as a genuine RISK CATEGORY in its own right, directly feeding into Module 27's risk classification material later in CP1, not just a modelling technicality."
             },
             {
                 "q": "Why might an actuary need to exercise judgement, rather than purely relying on statistical analysis, when setting assumptions?",
-                "a": "Historical data may not fully capture future changes (e.g. new trends, regulatory changes, or emerging risks) that judgement can help anticipate."
+                "a": "Historical data may not fully capture future changes (e.g. new trends, regulatory changes, or emerging risks) that judgement can help anticipate.",
+                "explain": "This is Module 2's core theme (judgement as a distinct skill beyond calculation) returning at exactly the point in CP1 where it matters most practically — statistical analysis of PAST experience data can only ever describe the past, and judgement is what bridges the gap to a genuinely forward-looking assumption."
             },
             {
                 "q": "What is 'credibility', in the context of setting assumptions from limited data?",
-                "a": "How much weight to place on an organisation's own (potentially sparse) data versus wider/external data, based on the volume and reliability of the own data."
+                "a": "How much weight to place on an organisation's own (potentially sparse) data versus wider/external data, based on the volume and reliability of the own data.",
+                "explain": "This is CS1's credibility theory (Modules 9-10 there) referenced directly, resolving the internal-versus-external data tension raised in Module 19 — worth remembering the general principle without needing the full Bühlmann mathematics: more own data warrants more weight on it, less own data warrants leaning more on external experience."
             },
             {
                 "q": "Why might assumptions need to be reviewed and updated periodically, rather than set once?",
-                "a": "Actual experience, external conditions, and understanding of future trends evolve over time, so assumptions can become outdated."
+                "a": "Actual experience, external conditions, and understanding of future trends evolve over time, so assumptions can become outdated.",
+                "explain": "This is the same ongoing-review theme recurring for the third time in this Part of CP1 (after Module 3's external-environment monitoring and Module 15's investment strategy review) — worth noticing this pattern as one of CP1's genuinely recurring principles: almost nothing in actuarial practice is a one-off, set-and-forget decision."
             },
             {
                 "q": "What is a 'margin for adverse deviation'?",
-                "a": "An additional buffer built into an assumption (beyond the best estimate) to provide a cushion against the actual outcome being worse than expected."
+                "a": "An additional buffer built into an assumption (beyond the best estimate) to provide a cushion against the actual outcome being worse than expected.",
+                "explain": "This is the specific mechanical TOOL used to convert a best-estimate assumption into a prudent one, as distinguished at the start of this module — worth noting it's a deliberate, quantifiable margin, not just a vaguely 'cautious' feeling about the number."
             },
             {
                 "q": "Why might regulators specify minimum standards or constraints on the assumptions insurers can use for regulatory reporting?",
-                "a": "To ensure a degree of comparability and appropriate prudence across the industry, rather than relying entirely on individual company judgement."
+                "a": "To ensure a degree of comparability and appropriate prudence across the industry, rather than relying entirely on individual company judgement.",
+                "explain": "This is Module 4's prudential regulation material applied directly to assumption-setting — worth noting this constrains but doesn't eliminate the judgement discussed earlier in this module; regulators typically set boundaries or minimum standards within which genuine actuarial judgement is still exercised."
             },
             {
                 "q": "How might setting an assumption too prudently (over-cautiously) create its own problems?",
-                "a": "It could lead to overstated liabilities/understated profits, potentially resulting in uncompetitive pricing or an inaccurate view of true financial position."
+                "a": "It could lead to overstated liabilities/understated profits, potentially resulting in uncompetitive pricing or an inaccurate view of true financial position.",
+                "explain": "This is a genuinely important counter-balance worth holding alongside every earlier card praising prudence — it directly echoes Module 4's 'excessive regulation has a downside' point: more caution isn't automatically better, and excessive prudence has its own real costs, not just a comforting margin of safety."
             },
             {
                 "q": "Why is transparency about the assumptions used important when presenting actuarial results?",
-                "a": "It allows users of the results to understand the basis for the figures and assess whether the assumptions are appropriate for their purposes."
+                "a": "It allows users of the results to understand the basis for the figures and assess whether the assumptions are appropriate for their purposes.",
+                "explain": "This closing card directly echoes Module 2's assumption-disclosure principle and Module 18's limitations-communication card — it's worth recognising as this whole Part of CP1's unifying thread: data, models, and assumptions are only genuinely USEFUL to their eventual audience if their basis and limitations are made transparent, not hidden inside a single final number."
             }
         ]
     },
@@ -8708,63 +8753,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'mortality risk', in general insurance/actuarial terms?",
-                "a": "The risk associated with the timing and incidence of death within a population, relevant to life insurance and annuity business."
+                "a": "The risk associated with the timing and incidence of death within a population, relevant to life insurance and annuity business.",
+                "explain": "This module applies Module 20's general assumption-setting framework to the single most fundamental actuarial risk — worth reading this module as Module 20's principles (best estimate versus prudent, experience analysis, credibility) made concrete for the specific case of mortality, and morbidity alongside it."
             },
             {
                 "q": "What is 'morbidity risk'?",
-                "a": "The risk associated with the incidence and duration of sickness, injury, or disability within a population."
+                "a": "The risk associated with the incidence and duration of sickness, injury, or disability within a population.",
+                "explain": "This directly extends Module 7's critical illness and income protection products into the assumption-setting territory this module develops — worth noting morbidity is genuinely more complex to model than mortality, since it involves BOTH an incidence event and a duration/recovery process, not just a single terminal event."
             },
             {
                 "q": "Why might mortality experience differ significantly between different groups within a population?",
-                "a": "Factors like age, sex, health status, occupation, lifestyle, and socioeconomic status all influence mortality risk."
+                "a": "Factors like age, sex, health status, occupation, lifestyle, and socioeconomic status all influence mortality risk.",
+                "explain": "This is CM1's whole life-table and heterogeneity material given its practical CP1 justification — this heterogeneity is exactly why a single national mortality table isn't automatically appropriate for every population, motivating the selection and anti-selection cards that follow."
             },
             {
                 "q": "What is 'selection', in the context of setting mortality assumptions for a newly underwritten group?",
-                "a": "Recently underwritten lives typically have lighter mortality than the general population, since the underwriting process screens out higher-risk individuals."
+                "a": "Recently underwritten lives typically have lighter mortality than the general population, since the underwriting process screens out higher-risk individuals.",
+                "explain": "This is Module 7's medical underwriting material given its direct mortality-assumption consequence — worth connecting to CS2's censoring/selection material, since select mortality is really a specific case of the general selection-bias phenomenon Module 19 flagged for data more broadly."
             },
             {
                 "q": "Why does mortality typically improve over time (mortality improvement)?",
-                "a": "Ongoing advances in medical treatment, public health, and living standards tend to reduce mortality rates at given ages over successive years."
+                "a": "Ongoing advances in medical treatment, public health, and living standards tend to reduce mortality rates at given ages over successive years.",
+                "explain": "This is CS2's whole mortality projection material (Module 12 there — reduction factors, Lee-Carter style approaches) referenced at the conceptual level — worth remembering CP1 needs the WHY and the practical consequence (the next card), not the projection mathematics itself."
             },
             {
                 "q": "Why is uncertainty in future mortality improvement a significant risk for annuity providers?",
-                "a": "If people live longer than assumed, annuity providers must pay income for longer than priced/reserved for, increasing their costs."
+                "a": "If people live longer than assumed, annuity providers must pay income for longer than priced/reserved for, increasing their costs.",
+                "explain": "This is exactly Module 7's guaranteed annuity rate risk restated in assumption-setting terms — worth recognising longevity risk as one of the clearest, most consequential examples in this whole module of why getting an assumption wrong (here, understating future improvement) can have serious long-run financial consequences."
             },
             {
                 "q": "What is 'anti-selection' (adverse selection) in the context of life/health insurance underwriting?",
-                "a": "Individuals with higher-than-average risk being more likely to seek insurance, especially where underwriting is limited."
+                "a": "Individuals with higher-than-average risk being more likely to seek insurance, especially where underwriting is limited.",
+                "explain": "This is CB2's classic adverse selection concept and the direct opposite of the earlier selection card — worth holding both together: FULL underwriting produces select (lighter) mortality by screening OUT high-risk applicants, while LIMITED underwriting invites anti-selection by high-risk applicants seeking IN, exactly the trade-off Module 7's guaranteed acceptance products navigate."
             },
             {
                 "q": "How might occupation affect a morbidity assumption for income protection insurance?",
-                "a": "Certain occupations carry higher physical/health risks, affecting both the incidence and likely duration of claims."
+                "a": "Certain occupations carry higher physical/health risks, affecting both the incidence and likely duration of claims.",
+                "explain": "This is a concrete example of the heterogeneity principle from earlier in this module, applied to morbidity specifically — worth noting occupation affects BOTH halves of the morbidity picture (incidence rate AND recovery/duration), which is exactly why morbidity assumption-setting is more multi-dimensional than mortality alone."
             },
             {
                 "q": "What is a 'sickness' or 'disability' inception rate?",
-                "a": "The rate at which individuals in a population newly become sick/disabled (start a claim) over a given period."
+                "a": "The rate at which individuals in a population newly become sick/disabled (start a claim) over a given period.",
+                "explain": "This is CS2's Markov jump process material (Module 3-5 there, the multi-state sickness model) given its plain-English CP1 name — the inception rate is precisely the transition intensity from a healthy state to a sick state that CS2's mathematical framework quantifies."
             },
             {
                 "q": "What is a 'recovery' rate, in the context of income protection/morbidity modelling?",
-                "a": "The rate at which individuals who are currently sick/disabled recover and return to health/work."
+                "a": "The rate at which individuals who are currently sick/disabled recover and return to health/work.",
+                "explain": "This is the reverse transition to the inception rate above, again drawing on CS2's multi-state model structure — a genuinely complete morbidity assumption set needs BOTH rates, since incidence alone can't tell you how long (and therefore how costly) an average claim will be."
             },
             {
                 "q": "Why might morbidity assumptions need to vary by duration since the onset of a claim, not just by age?",
-                "a": "The probability of recovery (or continued claim) often depends on how long someone has already been sick, not just their age."
+                "a": "The probability of recovery (or continued claim) often depends on how long someone has already been sick, not just their age.",
+                "explain": "This is exactly CS2's time-inhomogeneous/duration-dependent modelling concern (Module 5 there) applied to morbidity — a simple age-only recovery rate would miss this genuinely important pattern, which is why real income protection models typically use a duration-since-claim-onset dimension alongside age."
             },
             {
                 "q": "How might pandemics or widespread health events affect mortality and morbidity assumptions?",
-                "a": "They can cause significant, correlated deviations in mortality/morbidity across a whole population simultaneously, a risk not well captured by assuming independent individual risks."
+                "a": "They can cause significant, correlated deviations in mortality/morbidity across a whole population simultaneously, a risk not well captured by assuming independent individual risks.",
+                "explain": "This is exactly the same correlated-shock concern raised for general insurance catastrophe risk in Module 8 — the usual actuarial assumption of largely independent individual risks (underlying CS1/CS2's compound distribution models) breaks down for a pandemic, exactly as it does for a natural catastrophe hitting many property policies at once."
             },
             {
                 "q": "Why is understanding both mortality and morbidity important for pricing a critical illness product?",
-                "a": "The product depends on the incidence of specified illnesses (morbidity) as well as potentially competing with the risk of death (mortality) before diagnosis."
+                "a": "The product depends on the incidence of specified illnesses (morbidity) as well as potentially competing with the risk of death (mortality) before diagnosis.",
+                "explain": "This is CS2's competing-risks framing (a policyholder can only experience ONE of several possible outcomes first) applied directly to product pricing — a critical illness benefit is only payable if the illness is diagnosed BEFORE death, so mortality risk isn't irrelevant to this product even though it's nominally a morbidity-driven benefit."
             },
             {
                 "q": "What data sources might be used to set morbidity assumptions, given they are often less standardised than mortality data?",
-                "a": "Industry experience studies, the insurer's own claims experience, and (where available) national health statistics."
+                "a": "Industry experience studies, the insurer's own claims experience, and (where available) national health statistics.",
+                "explain": "This is Module 19's internal-versus-external data and Module 20's credibility material applied specifically to morbidity — the 'less standardised' qualifier is worth noting explicitly, since it means credibility weighting between these sources is often a genuinely harder judgement call for morbidity than for the more standardised mortality tables available."
             },
             {
                 "q": "Why might mortality and morbidity assumptions be particularly significant drivers of profitability for life and health insurance products?",
-                "a": "These products' costs are directly determined by the incidence of the insured events, so misestimating these risks directly affects whether pricing and reserves are adequate."
+                "a": "These products' costs are directly determined by the incidence of the insured events, so misestimating these risks directly affects whether pricing and reserves are adequate.",
+                "explain": "This closing card ties the whole module back to Module 20's assumption-setting stakes — worth contrasting with Module 22's expenses material next: unlike expenses (which a firm has some direct control over), mortality and morbidity are largely EXTERNAL to the firm, making accurate assumption-setting (rather than cost control) the primary lever for managing this risk."
             }
         ]
     },
