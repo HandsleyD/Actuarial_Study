@@ -1611,63 +1611,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does $\\ddot{a}_x$ represent?",
-                "a": "The expected present value of a whole life annuity of $1$ per year, paid annually in advance, to a life currently aged $x$, for as long as they survive."
+                "a": "The expected present value of a whole life annuity of $1$ per year, paid annually in advance, to a life currently aged $x$, for as long as they survive.",
+                "explain": "This is Module 5's level annuity-due $\\ddot{a}_{\\overline{n}|}$ made life-contingent: instead of a certain $n$-year term, payments continue for however long the life happens to survive \\u2014 formally, $\\ddot{a}_x = \\sum_{k=0}^{\\infty} v^k \\cdot {_kp_x}$, weighting each year's discount factor by the probability of still being alive to receive that payment."
             },
             {
                 "q": "What is a 'temporary' (or 'term') life annuity, $\\ddot{a}_{x:\\overline{n}|}$?",
-                "a": "An annuity paid annually in advance to a life aged $x$, for at most $n$ years, ceasing on earlier death."
+                "a": "An annuity paid annually in advance to a life aged $x$, for at most $n$ years, ceasing on earlier death.",
+                "explain": "This is $\\ddot{a}_x$ (whole life) truncated at $n$ years, in exactly the same way Module 13's term assurance was $A_x$ truncated at $n$ years \\u2014 the sum $\\sum_{k=0}^{\\infty} v^k\\cdot{_kp_x}$ simply stops after $k=n-1$ instead of running forever."
             },
             {
                 "q": "What is a 'deferred' life annuity, e.g. $_{m|}\\ddot{a}_x$?",
-                "a": "An annuity that starts paying only after a deferment period of $m$ years, provided the life survives that long, and then continues for life."
+                "a": "An annuity that starts paying only after a deferment period of $m$ years, provided the life survives that long, and then continues for life.",
+                "explain": "Same vertical-bar deferred notation you've now seen for assurances (Module 13) and probabilities (Module 12) \\u2014 note the survival condition baked in: unlike a purely time-based deferred annuity-certain, this one ALSO requires the life to survive the deferment period, or nothing is ever paid at all."
             },
             {
                 "q": "What is a 'guaranteed' annuity?",
-                "a": "An annuity that continues to be paid for a minimum guarantee period regardless of death, and then continues (if the life survives) beyond the guarantee period."
+                "a": "An annuity that continues to be paid for a minimum guarantee period regardless of death, and then continues (if the life survives) beyond the guarantee period.",
+                "explain": "This is a genuinely different structure from temporary/deferred annuities: the guarantee period pays out UNCONDITIONALLY (whether alive or not), which is why the next card values it as two separate pieces \\u2014 a certain annuity (no mortality involved at all) plus a life-contingent piece afterward."
             },
             {
                 "q": "How would you value a whole life annuity guaranteed for the first $n$ years, then continuing for life?",
-                "a": "As a certain annuity for $n$ years, plus a deferred whole life annuity starting after $n$ years contingent on survival."
+                "a": "As a certain annuity for $n$ years, plus a deferred whole life annuity starting after $n$ years contingent on survival.",
+                "explain": "This splits cleanly into $\\ddot{a}_{\\overline{n}|}$ (Module 5's plain annuity-certain, since the guarantee period pays regardless of survival) plus $_{n|}\\ddot{a}_x$ (the deferred life annuity above) \\u2014 a good general technique: whenever a benefit has an unconditional piece and a contingent piece, value each separately and add."
             },
             {
                 "q": "What is the relationship between $\\ddot{a}_x$ and $a_x$ for a life aged $x$?",
-                "a": "$\\ddot{a}_x = 1 + a_x$ (the annuity-due includes an immediate payment at time 0 that the annuity-immediate does not)."
+                "a": "$\\ddot{a}_x = 1 + a_x$ (the annuity-due includes an immediate payment at time 0 that the annuity-immediate does not).",
+                "explain": "Unlike Module 5's certain-annuity relationship $\\ddot{a}_{\\overline{n}|}=(1+i)a_{\\overline{n}|}$, here it's simple ADDITION, not multiplication by $(1+i)$ \\u2014 that's because the time-0 payment under an annuity-due is certain (the life is alive right now, by definition), so it contributes exactly $1$ with no discounting or mortality adjustment needed at all."
             },
             {
                 "q": "What does $\\overline{a}_x$ represent?",
-                "a": "A whole life annuity paid continuously (rather than annually) at rate $1$ per year, to a life aged $x$."
+                "a": "A whole life annuity paid continuously (rather than annually) at rate $1$ per year, to a life aged $x$.",
+                "explain": "Same bar-for-continuous convention from every earlier module \\u2014 $\\overline{a}_x$ sits, as the next card confirms, between the annuity-due and annuity-immediate values, since continuous payment is like an 'average' of paying slightly early (due) and slightly late (immediate) throughout the year."
             },
             {
                 "q": "How do $\\ddot{a}_x$, $\\overline{a}_x$ and $a_x$ typically compare in size, for the same $x$?",
-                "a": "$\\ddot{a}_x > \\overline{a}_x > a_x$, since annuity-due payments are received earliest on average and annuity-immediate latest."
+                "a": "$\\ddot{a}_x > \\overline{a}_x > a_x$, since annuity-due payments are received earliest on average and annuity-immediate latest.",
+                "explain": "This is exactly Module 5's certain-annuity ordering, carried over unchanged to the life-contingent case \\u2014 the mortality contingency scales all three values down together (compared to their certain-annuity counterparts) but doesn't change the RELATIVE ordering between due, continuous and immediate."
             },
             {
                 "q": "What is a common real-world product modelled using $\\ddot{a}_x$?",
-                "a": "A pension annuity, paying a level income for as long as the pensioner survives."
+                "a": "A pension annuity, paying a level income for as long as the pensioner survives.",
+                "explain": "This is the single most direct real-world application in the whole life-contingencies syllabus \\u2014 every pension annuity a retiree buys is, mathematically, exactly this function, priced by an insurer using $\\ddot{a}_x$ (or its more refined variants covered later) to determine how much level income a given purchase price can sustainably buy."
             },
             {
                 "q": "How does temporary annuity value $\\ddot{a}_{x:\\overline{n}|}$ change as $n$ increases?",
-                "a": "It increases, up to the limit of the whole life annuity value $\\ddot{a}_x$ as $n \\to \\infty$."
+                "a": "It increases, up to the limit of the whole life annuity value $\\ddot{a}_x$ as $n \\to \\infty$.",
+                "explain": "Same logic as Module 13's term-assurance-increasing-with-$n$ card \\u2014 more years in the term can only ADD more non-negative terms to the underlying sum, and as $n$ stretches toward infinity, the truncated sum converges up to the full whole-life value."
             },
             {
                 "q": "What is the relationship between a temporary annuity and a deferred annuity using the pure endowment factor $_nE_x$?",
-                "a": "$\\ddot{a}_x = \\ddot{a}_{x:\\overline{n}|} + {_n}E_x \\cdot \\ddot{a}_{x+n}$"
+                "a": "$\\ddot{a}_x = \\ddot{a}_{x:\\overline{n}|} + {_n}E_x \\cdot \\ddot{a}_{x+n}$",
+                "explain": "This splits the whole life annuity into 'the temporary annuity covering the first $n$ years' plus 'the deferred annuity covering everything after year $n$' \\u2014 it's the annuity version of Module 13's endowment-assurance split (term assurance + pure endowment), and it's genuinely useful for building up complex annuity values from simpler pieces."
             },
             {
                 "q": "What is the pure endowment factor $_nE_x$?",
-                "a": "$_nE_x = v^n \\cdot {_np_x}$, the expected present value of $1$ payable in $n$ years if the life aged $x$ survives that long."
+                "a": "$_nE_x = v^n \\cdot {_np_x}$, the expected present value of $1$ payable in $n$ years if the life aged $x$ survives that long.",
+                "explain": "This single factor is arguably the most useful shorthand in the whole life-contingencies syllabus \\u2014 it's just Module 1's discount factor $v^n$ multiplied by Module 12's survival probability $_np_x$, and it appears as a building block in deferred annuities, deferred assurances, and reserving formulas throughout the rest of the course."
             },
             {
                 "q": "How would you express a deferred annuity $_{m|}\\ddot{a}_x$ using $_mE_x$?",
-                "a": "$_{m|}\\ddot{a}_x = {_mE_x} \\cdot \\ddot{a}_{x+m}$"
+                "a": "$_{m|}\\ddot{a}_x = {_mE_x} \\cdot \\ddot{a}_{x+m}$",
+                "explain": "The logic mirrors Module 5's deferred-annuity-certain trick exactly: value the annuity as if it started at age $x+m$ (getting $\\ddot{a}_{x+m}$), then multiply by the factor $_mE_x$ that discounts AND survival-adjusts for the deferment period \\u2014 the only change from the certain-annuity version is that $v^m$ becomes $_mE_x=v^m\\cdot{_mp_x}$, adding the mortality condition."
             },
             {
                 "q": "Why do life annuities typically use annuity-due (in advance) rather than annuity-immediate (in arrears) conventions?",
-                "a": "Pension/annuity payments are conventionally paid at the start of each period covered, avoiding paying for a period after the annuitant may have already died."
+                "a": "Pension/annuity payments are conventionally paid at the start of each period covered, avoiding paying for a period after the annuitant may have already died.",
+                "explain": "This is a genuinely practical, not just notational, reason \\u2014 if a pension paid in arrears and the pensioner died partway through the final period, the insurer would owe a payment for time the pensioner didn't survive to see; paying in advance sidesteps that awkward situation entirely, which is why $\\ddot{a}_x$ (not $a_x$) is the default convention for real pension products."
             },
             {
                 "q": "What is the key difference between valuing an annuity-certain and a life annuity?",
-                "a": "A life annuity multiplies each period's discount factor by the relevant survival probability, since payment is contingent on the annuitant being alive."
+                "a": "A life annuity multiplies each period's discount factor by the relevant survival probability, since payment is contingent on the annuitant being alive.",
+                "explain": "This is the one-sentence summary of everything this module has built: take any Module 5 annuity-certain formula, and wherever you see a bare $v^k$ term, insert a $_kp_x$ survival probability alongside it \\u2014 that single modification is what turns interest-theory annuity mathematics into life-contingent annuity mathematics."
             }
         ]
     },
@@ -1678,63 +1693,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the key equation of value linking a whole life assurance and whole life annuity-due at the same age?",
-                "a": "$A_x = 1 - d\\,\\ddot{a}_x$"
+                "a": "$A_x = 1 - d\\,\\ddot{a}_x$",
+                "explain": "This is arguably the single most useful identity in the whole life-contingencies syllabus \\u2014 it means you never need to calculate BOTH $A_x$ and $\\ddot{a}_x$ from scratch; given either one (plus $d$), you can derive the other directly, which saves substantial work in exam questions covering both a policy's assurance and annuity aspects."
             },
             {
                 "q": "Why does the relationship $A_x = 1 - d\\,\\ddot{a}_x$ hold?",
-                "a": "It follows from a standard identity linking the discounted cashflow of $1$ at outset to the assurance and annuity-due present values."
+                "a": "It follows from a standard identity linking the discounted cashflow of $1$ at outset to the assurance and annuity-due present values.",
+                "explain": "The intuition: imagine investing £1 today and paying interest income of $d\\times$(current fund value) out each year while the life survives, with the remaining fund paid as a death benefit \\u2014 whether the life dies or lives forever, the accounting always balances, which is exactly what this identity captures algebraically."
             },
             {
                 "q": "What is meant by the 'curtate future lifetime' $K_x$?",
-                "a": "The complete number of future years lived by a life aged $x$ before death (the integer number of full years survived)."
+                "a": "The complete number of future years lived by a life aged $x$ before death (the integer number of full years survived).",
+                "explain": "'Curtate' just means 'rounded down to whole years' \\u2014 $K_x$ is the random variable version of the deterministic $l_x$/$q_x$ machinery from Module 12: instead of asking 'what's the probability of dying in year $k$', $K_x$ IS the (random) year of death itself, which is the natural language for the mean/variance calculations this module introduces."
             },
             {
                 "q": "How is the present value of a whole life assurance benefit expressed as a random variable in terms of $K_x$?",
-                "a": "$Z = v^{K_x+1}$, since the benefit is paid at the end of the year of death."
+                "a": "$Z = v^{K_x+1}$, since the benefit is paid at the end of the year of death.",
+                "explain": "The '+1' matters: if the life survives $K_x$ complete years and then dies, the end-of-year-of-death payment falls at time $K_x+1$, not $K_x$ \\u2014 this is a genuinely easy place to lose a mark by forgetting the offset, so it's worth double-checking on every calculation involving $K_x$."
             },
             {
                 "q": "How do you find the variance of the present value of a whole life assurance benefit?",
-                "a": "$\\text{Var}(Z) = E[Z^2] - (E[Z])^2$, where $E[Z] = A_x$ and $E[Z^2]$ is found using $v^2$ in place of $v$."
+                "a": "$\\text{Var}(Z) = E[Z^2] - (E[Z])^2$, where $E[Z] = A_x$ and $E[Z^2]$ is found using $v^2$ in place of $v$.",
+                "explain": "This is just the standard statistical variance formula (variance = second moment minus mean squared) applied to the specific random variable $Z=v^{K_x+1}$ from the card above \\u2014 the genuinely new actuarial content is recognising that $E[Z^2]$ has a clean interpretation as an assurance function at DOUBLE the force of interest, covered next."
             },
             {
                 "q": "What does $^2A_x$ represent?",
-                "a": "The expected present value of a whole life assurance calculated at double the force of interest (using $v^2$ instead of $v$) \\u2014 used to find the second moment for variance calculations."
+                "a": "The expected present value of a whole life assurance calculated at double the force of interest (using $v^2$ instead of $v$) \\u2014 used to find the second moment for variance calculations.",
+                "explain": "This notation (a small superscript 2 before the $A$) is purely a bookkeeping device for the variance formula above \\u2014 it's calculated using EXACTLY the same technique as ordinary $A_x$, just with every $v$ replaced by $v^2$ throughout, which is why the next card explains precisely why that substitution works."
             },
             {
                 "q": "How would you extend $\\ddot{a}_x$ to a monthly-in-advance annuity, $\\ddot{a}_x^{(12)}$?",
-                "a": "Approximate using $\\ddot{a}_x^{(12)} \\approx \\ddot{a}_x - \\frac{11}{24}$, or calculate exactly if the underlying assumptions allow."
+                "a": "Approximate using $\\ddot{a}_x^{(12)} \\approx \\ddot{a}_x - \\frac{11}{24}$, or calculate exactly if the underlying assumptions allow.",
+                "explain": "This is the life-contingent version of Module 5's $a_{\\overline{n}|}^{(p)}=\\frac{i}{i^{(p)}}a_{\\overline{n}|}$ conversion, but note the DIFFERENT form here \\u2014 the standard approximation (sometimes called the Woolhouse approximation) is additive/subtractive rather than a simple ratio, because it also has to account for the mortality risk changing within each sub-year period, not just the payment timing."
             },
             {
                 "q": "What is the general logic for extending annual annuity/assurance functions to more frequent payments?",
-                "a": "Adjust for the fact that payments occur more often, typically via standard approximations linking annual and $p$thly functions."
+                "a": "Adjust for the fact that payments occur more often, typically via standard approximations linking annual and $p$thly functions.",
+                "explain": "This restates the point above at a higher level \\u2014 the exam-relevant takeaway is that 'more frequent payments' in a life-contingent context needs its own dedicated approximation technique (not just Module 5's certain-annuity ratio), precisely because mortality doesn't behave as cleanly across fractional years as compound interest does."
             },
             {
                 "q": "Why do we need both the mean and the variance of the present value of a benefit, not just the mean?",
-                "a": "The mean gives the expected cost (used for pricing); the variance quantifies the uncertainty/risk around that expected cost."
+                "a": "The mean gives the expected cost (used for pricing); the variance quantifies the uncertainty/risk around that expected cost.",
+                "explain": "This is the whole reason the second half of this module exists \\u2014 pricing (Module 17) only needs the MEAN, but understanding how RISKY a portfolio of policies is (how much actual claims could deviate from expected) needs the variance too, which matters for capital requirements and risk management beyond simple premium-setting."
             },
             {
                 "q": "How would you find the mean and variance of the present value of a term assurance benefit?",
-                "a": "Similarly to whole life assurance, but restricting the curtate future lifetime to values within the term, with zero benefit if death occurs after the term."
+                "a": "Similarly to whole life assurance, but restricting the curtate future lifetime to values within the term, with zero benefit if death occurs after the term.",
+                "explain": "This is Module 13's whole-life-to-term-assurance truncation trick, now applied to the RANDOM VARIABLE $Z$ rather than just the expected value \\u2014 $Z$ becomes a mixture: $v^{K_x+1}$ if death occurs within the term, or exactly $0$ if the life survives past the term, and the mean/variance are computed from that modified random variable."
             },
             {
                 "q": "What is the general relationship used to move between 'immediate' and 'due' annuity values, applied to life annuities?",
-                "a": "$\\ddot{a}_x = 1 + a_x$, since the first payment under the due version occurs at time 0 with certainty."
+                "a": "$\\ddot{a}_x = 1 + a_x$, since the first payment under the due version occurs at time 0 with certainty.",
+                "explain": "This restates Module 14's due/immediate identity \\u2014 included again here because this module's mean/variance toolkit can equally be applied to $a_x$ as to $\\ddot{a}_x$, and it's useful to have this conversion at hand when a question mixes the two conventions."
             },
             {
                 "q": "How does discounting at 'twice the force of interest' arise naturally when computing $E[Z^2]$ for an assurance benefit?",
-                "a": "Because $Z = v^{K_x+1}$, so $Z^2 = (v^2)^{K_x+1}$ \\u2014 equivalent to discounting at a rate whose discount factor is $v^2$."
+                "a": "Because $Z = v^{K_x+1}$, so $Z^2 = (v^2)^{K_x+1}$ \\u2014 equivalent to discounting at a rate whose discount factor is $v^2$.",
+                "explain": "This is the algebraic justification behind the $^2A_x$ notation from earlier \\u2014 squaring a present value random variable is the same as squaring its discount factor, and $v^2$ corresponds to a NEW effective rate $j$ where $(1+j)^{-1}=v^2$, i.e. $j=(1+i)^2-1$, which is what '$^2A_x$' is quietly using under the hood."
             },
             {
                 "q": "What does it mean to evaluate assurance/annuity factors 'by table look-up'?",
-                "a": "Using pre-computed values (from standard mortality/interest tables) for common ages and rates, rather than calculating from first principles each time."
+                "a": "Using pre-computed values (from standard mortality/interest tables) for common ages and rates, rather than calculating from first principles each time.",
+                "explain": "In real practice (and in some exam contexts), $A_x$ and $\\ddot{a}_x$ values are provided in reference tables for standard mortality bases and interest rates, rather than derived by summing an infinite series by hand \\u2014 knowing HOW these values are constructed (as covered throughout Modules 12-15) is what lets you use, adapt and sanity-check tabulated values correctly."
             },
             {
                 "q": "How would premiums payable 'for a limited period' (rather than the whole policy term) affect the annuity function used to value them?",
-                "a": "You would use a temporary annuity function covering only the premium-paying period."
+                "a": "You would use a temporary annuity function covering only the premium-paying period.",
+                "explain": "This directly previews Module 17's gross premium calculations \\u2014 a policy might pay benefits over a long term (say, whole life) but only require premiums for a shorter period (say, 20 years); the premium side of the equation of value then needs $\\ddot{a}_{x:\\overline{20}|}$ (Module 14's temporary annuity), not $\\ddot{a}_x$."
             },
             {
                 "q": "Give one reason select mortality might be used when evaluating a newly-issued policy's assurance/annuity factors.",
-                "a": "The policyholder was recently underwritten/selected, so their mortality is expected to be lighter than the general population for the first few years."
+                "a": "The policyholder was recently underwritten/selected, so their mortality is expected to be lighter than the general population for the first few years.",
+                "explain": "This closes the loop back to Module 12's select mortality concept \\u2014 pricing a BRAND NEW policy should reasonably use $A_{[x]}$ or $\\ddot{a}_{[x]}$ (select functions) rather than the ultimate $A_x$/$\\ddot{a}_x$, since the newly-underwritten policyholder genuinely has different (lighter) mortality than a random member of the general population at the same age."
             }
         ]
     },
