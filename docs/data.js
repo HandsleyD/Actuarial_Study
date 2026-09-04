@@ -3991,63 +3991,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'run-off triangle' (or 'delay triangle')?",
-                "a": "A table showing claims data by origin year and development year, used to project how claims for each origin year will develop to their ultimate value."
+                "a": "A table showing claims data by origin year and development year, used to project how claims for each origin year will develop to their ultimate value.",
+                "explain": "This final module shifts CM2 into general insurance RESERVING — a genuinely different, more data-driven flavour than the theoretical investment/derivatives content of Modules 1-17, though it shares the same underlying goal as Module 17's ruin theory: understanding an insurer's true financial position, here by working out how much is still owed on claims already incurred but not yet fully paid."
             },
             {
                 "q": "What is a 'development factor' in the chain ladder method?",
-                "a": "A ratio, estimated from historical data, used to project cumulative claims from one development period to the next."
+                "a": "A ratio, estimated from historical data, used to project cumulative claims from one development period to the next.",
+                "explain": "This is the single building block the whole chain ladder method is constructed from — one development factor per column-to-column transition in the triangle, each capturing 'how much bigger do cumulative claims typically get, going from this development year to the next'."
             },
             {
                 "q": "How is a development factor typically estimated from a run-off triangle?",
-                "a": "As the ratio of the sum of cumulative claims at one development year to the sum at the previous development year, across origin years with data for both."
+                "a": "As the ratio of the sum of cumulative claims at one development year to the sum at the previous development year, across origin years with data for both.",
+                "explain": "Note this uses the SUM across all available origin years, not an average of individual ratios — this weighting gives more influence to origin years with larger claims volumes, which is generally considered the more standard and statistically sensible approach."
             },
             {
                 "q": "What is the basic chain ladder method used for?",
-                "a": "Projecting the future development of a run-off triangle, using development factors, to estimate ultimate claims for each origin year."
+                "a": "Projecting the future development of a run-off triangle, using development factors, to estimate ultimate claims for each origin year.",
+                "explain": "The mechanical process worth having clear: multiply each origin year's latest known cumulative claims figure by the remaining chain of development factors needed to reach the final development year, projecting each partially-developed diagonal forward to its estimated ultimate value."
             },
             {
                 "q": "What key assumption underlies the basic chain ladder method?",
-                "a": "That development patterns are consistent across all origin years."
+                "a": "That development patterns are consistent across all origin years.",
+                "explain": "This is the method's single load-bearing assumption, worth stating explicitly whenever discussing its validity — the whole technique only works if OLDER origin years' development patterns (used to estimate the factors) genuinely predict how NEWER, still-developing origin years will behave, which the closing cards of this module show isn't always safe to assume."
             },
             {
                 "q": "How can the basic chain ladder method be adjusted to allow explicitly for inflation?",
-                "a": "By separating out an assumed inflation index from the development factors, so projected future claims incorporate an explicit inflation assumption."
+                "a": "By separating out an assumed inflation index from the development factors, so projected future claims incorporate an explicit inflation assumption.",
+                "explain": "This addresses a genuine weakness in the plain method — ordinary development factors implicitly blend together TWO effects (claims naturally maturing/developing, and general claims inflation over calendar time), and separating them out lets you apply a more considered, explicit inflation assumption rather than just extrapolating historical inflation blindly forward."
             },
             {
                 "q": "What is the 'average cost per claim' method for estimating outstanding claims?",
-                "a": "Estimating outstanding claims as the projected number of outstanding claims multiplied by an assumed average cost per claim."
+                "a": "Estimating outstanding claims as the projected number of outstanding claims multiplied by an assumed average cost per claim.",
+                "explain": "This is a genuinely different technique from the chain ladder's pure amounts-based approach — it explicitly separates the FREQUENCY question (how many claims are still outstanding) from the SEVERITY question (how much does each cost on average), which can be more informative when frequency and severity trends are moving differently."
             },
             {
                 "q": "What is the 'Bornhuetter-Ferguson' method used for?",
-                "a": "Estimating outstanding claims by combining a prior estimate of ultimate claims with the chain-ladder-implied proportion of claims still to emerge."
+                "a": "Estimating outstanding claims by combining a prior estimate of ultimate claims with the chain-ladder-implied proportion of claims still to emerge.",
+                "explain": "This is genuinely worth connecting to CS1's Bayesian credibility theory (Modules 14-16 there) — Bornhuetter-Ferguson is structurally a credibility-weighted blend, just like the credibility premium formula, combining an independent PRIOR view of ultimate claims with what the DATA (the chain ladder pattern) suggests."
             },
             {
                 "q": "How does the Bornhuetter-Ferguson method differ in philosophy from the pure chain ladder method?",
-                "a": "It blends an independent prior view of ultimate claims with the observed data pattern, rather than relying entirely on the chain ladder projection."
+                "a": "It blends an independent prior view of ultimate claims with the observed data pattern, rather than relying entirely on the chain ladder projection.",
+                "explain": "This restates the credibility-theory parallel from the card above explicitly — pure chain ladder is like setting the credibility factor $Z=1$ (100% weight on the data alone), while Bornhuetter-Ferguson deliberately keeps some weight on prior/external information, exactly the kind of blending CS1's credibility theory formalises."
             },
             {
                 "q": "Why might Bornhuetter-Ferguson be preferred over pure chain ladder for the most recent origin year?",
-                "a": "The most recent year has little data, so a pure chain ladder projection can be very sensitive to random fluctuation — blending stabilises the estimate."
+                "a": "The most recent year has little data, so a pure chain ladder projection can be very sensitive to random fluctuation — blending stabilises the estimate.",
+                "explain": "This is exactly CS1's credibility-theory logic again — sparse individual data (here, a very immature, recently-started origin year) should be given LESS weight relative to the more stable, external prior estimate, precisely the same 'more data increases $Z$' principle covered for insurance pricing credibility."
             },
             {
                 "q": "What is a 'statistical model' underlying run-off triangle methods generally used for?",
-                "a": "To provide a probabilistic framework justifying and generalising the deterministic chain-ladder-type calculations, and allowing uncertainty to be quantified."
+                "a": "To provide a probabilistic framework justifying and generalising the deterministic chain-ladder-type calculations, and allowing uncertainty to be quantified.",
+                "explain": "This connects the whole reserving topic back to CS1's regression/GLM framework (Modules 12-13 there) — a statistical model version of chain ladder can be fitted much like a GLM, which crucially also delivers a measure of ESTIMATION UNCERTAINTY around the reserve figure, something the purely deterministic factor-based calculation cannot provide on its own."
             },
             {
                 "q": "Name one assumption underlying the basic chain ladder method (beyond consistent development patterns).",
-                "a": "That there are no changes in the claims process (legal environment, claims handling) over time that would invalidate using historical patterns."
+                "a": "That there are no changes in the claims process (legal environment, claims handling) over time that would invalidate using historical patterns.",
+                "explain": "This is a second, equally important assumption worth naming alongside 'consistent development patterns' — even if development patterns WERE historically consistent, a change partway through (new claims-handling software, a legal ruling affecting settlement amounts) can break that consistency going forward, exactly the scenario the next card asks you to reason about."
             },
             {
                 "q": "How would a change in claims handling processes partway through the historical data affect chain ladder projections?",
-                "a": "It could distort the development pattern, potentially requiring an adjustment or a different approach for affected years."
+                "a": "It could distort the development pattern, potentially requiring an adjustment or a different approach for affected years.",
+                "explain": "This is the practical consequence of the assumption-violation card above — a good reserving actuary doesn't just mechanically apply chain ladder formulas; they investigate WHY a triangle's pattern looks unusual, and a known process change is exactly the kind of finding that should prompt adjusting the method rather than trusting the raw historical factors blindly."
             },
             {
                 "q": "What is 'delay' (development) year, in the context of a run-off triangle?",
-                "a": "The number of years (or periods) since the origin (accident/underwriting) year, tracking how claims for that origin year have developed."
+                "a": "The number of years (or periods) since the origin (accident/underwriting) year, tracking how claims for that origin year have developed.",
+                "explain": "This is the triangle's SECOND axis (alongside origin year), and it's worth being completely clear about the distinction — origin year identifies WHEN the underlying claims-generating event happened, while development year identifies HOW LONG AFTER that event a given claims figure is being measured."
             },
             {
                 "q": "Why is estimating outstanding claims important for a general insurer?",
-                "a": "To hold adequate reserves for claims that have occurred but are not yet fully paid/settled, ensuring it can meet future obligations."
+                "a": "To hold adequate reserves for claims that have occurred but are not yet fully paid/settled, ensuring it can meet future obligations.",
+                "explain": "This closes both the module and the whole CM2 syllabus with the same fundamental theme running through Module 17's ruin theory — an insurer's solvency depends on correctly recognising what it TRULY owes, and unpaid, unsettled claims are every bit as real a liability as claims already paid, even though (unlike Module 17's stochastic surplus process) this module's methods are the practical, data-driven tools used to actually estimate that liability in real reserving work."
             }
         ]
     }
