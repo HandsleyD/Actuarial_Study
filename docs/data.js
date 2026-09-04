@@ -873,63 +873,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does $a_{\\overline{n}|}$ represent?",
-                "a": "The present value of an annuity of $1$ per year, paid annually in arrears for $n$ years."
+                "a": "The present value of an annuity of $1$ per year, paid annually in arrears for $n$ years.",
+                "explain": "This one symbol will appear in almost every remaining CM1 module, from loan repayments (Module 8) to premium equations (Module 17) to profit testing (Module 24) \\u2014 'arrears' (end of year) is the default annuity-immediate convention, worth contrasting immediately with the annuity-due version in the next card."
             },
             {
                 "q": "What is the formula for $a_{\\overline{n}|}$ in terms of $v$ and $i$?",
-                "a": "$a_{\\overline{n}|} = \\frac{1-v^n}{i}$"
+                "a": "$a_{\\overline{n}|} = \\frac{1-v^n}{i}$",
+                "explain": "This isn't a formula to just memorise \\u2014 it falls straight out of Module 4's 'sum of discounted payments' approach applied to a geometric series ($v+v^2+\\dots+v^n$), and being able to re-derive it from the geometric series sum formula is a reliable way to recover it if memory fails under exam pressure."
             },
             {
                 "q": "What does $\\ddot{a}_{\\overline{n}|}$ represent?",
-                "a": "The present value of an annuity of $1$ per year, paid annually in advance for $n$ years."
+                "a": "The present value of an annuity of $1$ per year, paid annually in advance for $n$ years.",
+                "explain": "The dots over the $a$ signal 'in advance' throughout CM1 notation \\u2014 this annuity-due convention is the default one for LIFE annuities specifically (Module 14 explains why: it avoids paying for a period after someone may have died), so get comfortable with the dotted notation early."
             },
             {
                 "q": "How is $\\ddot{a}_{\\overline{n}|}$ related to $a_{\\overline{n}|}$?",
-                "a": "$\\ddot{a}_{\\overline{n}|} = (1+i)\\,a_{\\overline{n}|} = \\frac{1-v^n}{d}$"
+                "a": "$\\ddot{a}_{\\overline{n}|} = (1+i)\\,a_{\\overline{n}|} = \\frac{1-v^n}{d}$",
+                "explain": "The $(1+i)$ multiplier makes intuitive sense: an annuity-due is literally the same set of payments as an annuity-immediate, just shifted one year earlier, so its present value is the immediate annuity's value accumulated forward by one year \\u2014 and swapping $i$ for $d$ in the denominator is exactly Module 2's $i$-to-$d$ conversion at work."
             },
             {
                 "q": "What does $s_{\\overline{n}|}$ represent?",
-                "a": "The accumulated value at time $n$ of an annuity of $1$ per year paid annually in arrears for $n$ years."
+                "a": "The accumulated value at time $n$ of an annuity of $1$ per year paid annually in arrears for $n$ years.",
+                "explain": "This is the same annuity as $a_{\\overline{n}|}$, just valued at the END of the term instead of the start \\u2014 $s$ for 'accumulated', $a$ for 'present value', a naming convention that carries through every annuity variant in this module."
             },
             {
                 "q": "What is the formula for $s_{\\overline{n}|}$?",
-                "a": "$s_{\\overline{n}|} = \\frac{(1+i)^n-1}{i}$"
+                "a": "$s_{\\overline{n}|} = \\frac{(1+i)^n-1}{i}$",
+                "explain": "You can get this directly from $a_{\\overline{n}|}$ by multiplying by $(1+i)^n$ (accumulating the present value forward to time $n$) \\u2014 recognising $s_{\\overline{n}|} = (1+i)^n a_{\\overline{n}|}$ means you only really need to remember ONE annuity formula and derive the rest via these accumulation relationships."
             },
             {
                 "q": "What does $\\ddot{s}_{\\overline{n}|}$ represent, and how does it relate to $s_{\\overline{n}|}$?",
-                "a": "The accumulated value at time $n$ of an annuity-due; $\\ddot{s}_{\\overline{n}|} = (1+i)\\,s_{\\overline{n}|}$"
+                "a": "The accumulated value at time $n$ of an annuity-due; $\\ddot{s}_{\\overline{n}|} = (1+i)\\,s_{\\overline{n}|}$",
+                "explain": "Same $(1+i)$ relationship as the present-value pair above, just applied to the accumulated versions \\u2014 by this point in the module there are really only two independent facts to know (the $a_{\\overline{n}|}$ formula, and the $(1+i)$ due/immediate and $(1+i)^n$ present/accumulated relationships); everything else follows mechanically."
             },
             {
                 "q": "What is a 'perpetuity', and what is the present value of a level perpetuity of $1$ per year in arrears?",
-                "a": "An annuity with no end date; its present value is $a_{\\overline{\\infty}|} = \\frac{1}{i}$"
+                "a": "An annuity with no end date; its present value is $a_{\\overline{\\infty}|} = \\frac{1}{i}$",
+                "explain": "This falls out of $a_{\\overline{n}|}=\\frac{1-v^n}{i}$ by letting $n\\to\\infty$: since $0<v<1$, $v^n\\to0$, leaving $\\frac1i$ \\u2014 a useful sanity check is that a perpetuity's value must be finite despite infinite payments, precisely because each payment is discounted by an ever-shrinking factor."
             },
             {
                 "q": "What does $_{m|}a_{\\overline{n}|}$ represent?",
-                "a": "A deferred annuity \\u2014 an annuity of $1$ per year in arrears, for $n$ years, starting $m$ years from now."
+                "a": "A deferred annuity \\u2014 an annuity of $1$ per year in arrears, for $n$ years, starting $m$ years from now.",
+                "explain": "This is the annuity version of the 'payment isn't due until later' idea \\u2014 the same deferment concept reappears constantly in the life contingencies modules (Module 14's deferred life annuities), so it's worth mastering the plain interest-only version here first."
             },
             {
                 "q": "How do you calculate $_{m|}a_{\\overline{n}|}$ in terms of standard annuity functions?",
-                "a": "$_{m|}a_{\\overline{n}|} = v^m \\, a_{\\overline{n}|}$"
+                "a": "$_{m|}a_{\\overline{n}|} = v^m \\, a_{\\overline{n}|}$",
+                "explain": "The logic: value the $n$-year annuity as if it started today (getting $a_{\\overline{n}|}$), then discount that whole present value back by $m$ more years since it doesn't actually start until then \\u2014 this 'value it as if it started now, then discount the deferment period' technique is a general trick worth reusing throughout the syllabus."
             },
             {
                 "q": "If payments are made $p$ times per year, what symbol is used for the present value of the annuity-immediate?",
-                "a": "$a_{\\overline{n}|}^{(p)}$"
+                "a": "$a_{\\overline{n}|}^{(p)}$",
+                "explain": "This links Module 2's compounding-frequency notation directly into the annuity world \\u2014 the same superscript $(p)$ that meant 'convertible $p$ times a year' for interest rates now means 'paid $p$ times a year' for annuities, a deliberate notational parallel worth recognising rather than treating as coincidence."
             },
             {
                 "q": "What is the relationship between $a_{\\overline{n}|}^{(p)}$ and $a_{\\overline{n}|}$ (in terms of $i$ and $i^{(p)}$)?",
-                "a": "$a_{\\overline{n}|}^{(p)} = \\frac{i}{i^{(p)}}\\,a_{\\overline{n}|}$"
+                "a": "$a_{\\overline{n}|}^{(p)} = \\frac{i}{i^{(p)}}\\,a_{\\overline{n}|}$",
+                "explain": "The ratio $\\frac{i}{i^{(p)}}$ is always slightly greater than 1 (since $i^{(p)}<i$ from Module 2), which makes sense: paying the same total amount per year in smaller, more frequent instalments means receiving money slightly sooner on average, so it's worth slightly more \\u2014 confirms $a_{\\overline{n}|}^{(p)} > a_{\\overline{n}|}$ for $p>1$."
             },
             {
                 "q": "What is the present value of a continuously paid level annuity of $1$ per year for $n$ years, $\\overline{a}_{\\overline{n}|}$?",
-                "a": "$\\overline{a}_{\\overline{n}|} = \\frac{1-v^n}{\\delta}$"
+                "a": "$\\overline{a}_{\\overline{n}|} = \\frac{1-v^n}{\\delta}$",
+                "explain": "This is the $p\\to\\infty$ limit of $a_{\\overline{n}|}^{(p)}$ \\u2014 exactly as $i^{(p)}\\to\\delta$ in Module 2, here the payment frequency becomes continuous and $i^{(p)}$ in the denominator is replaced by $\\delta$, giving the cleanest of all the annuity formulas thanks to $\\delta$'s exponential-friendly properties."
             },
             {
                 "q": "Why is $\\ddot{a}_{\\overline{n}|}$ always greater than $a_{\\overline{n}|}$ for $i>0$?",
-                "a": "Because each payment under the annuity-due is received one period earlier, so it's worth more in present value terms."
+                "a": "Because each payment under the annuity-due is received one period earlier, so it's worth more in present value terms.",
+                "explain": "This is the same 'sooner is worth more' logic underlying every present-value comparison in CM1 \\u2014 it's worth being able to state this intuition in words, not just quote the $(1+i)$ formula, since 'explain why' questions specifically want the reasoning, not just the algebra."
             },
             {
                 "q": "What is the present value of an annuity-immediate of $1$ per year for 10 years, if $i = 5\\%$?",
-                "a": "$a_{\\overline{10}|} = \\frac{1-1.05^{-10}}{0.05} \\approx 7.722$"
+                "a": "$a_{\\overline{10}|} = \\frac{1-1.05^{-10}}{0.05} \\approx 7.722$",
+                "explain": "A good number to keep as a mental benchmark: roughly 7.7 years' worth of value from 10 years of £1 payments, illustrating how discounting meaningfully shrinks the value of an annuity below its simple undiscounted total (£10) even at a modest 5% rate \\u2014 useful for spot-checking whether a calculated annuity value is in a sensible range."
             }
         ]
     },
@@ -940,63 +955,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does $(Ia)_{\\overline{n}|}$ represent?",
-                "a": "The present value of an annuity paid annually in arrears for $n$ years, where the payment is $1$ in year 1, $2$ in year 2, ..., $n$ in year $n$."
+                "a": "The present value of an annuity paid annually in arrears for $n$ years, where the payment is $1$ in year 1, $2$ in year 2, ..., $n$ in year $n$.",
+                "explain": "The capital $I$ prefix signals 'increasing' throughout this module's notation \\u2014 note this is arithmetically increasing (by a constant amount each year), which is a fundamentally different (and much more common in this syllabus) structure from geometric growth, flagged explicitly in a card near the end of this module."
             },
             {
                 "q": "What is the formula for $(Ia)_{\\overline{n}|}$?",
-                "a": "$(Ia)_{\\overline{n}|} = \\frac{\\ddot{a}_{\\overline{n}|} - nv^n}{i}$"
+                "a": "$(Ia)_{\\overline{n}|} = \\frac{\\ddot{a}_{\\overline{n}|} - nv^n}{i}$",
+                "explain": "This formula is usually derived (not memorised) using the 'sum of level annuities' trick: an increasing annuity paying $1,2,3,\\dots,n$ can be seen as $n$ overlapping level annuities layered on top of each other \\u2014 knowing this derivation trick is more valuable than rote memorisation, since it lets you rebuild the formula if you forget it."
             },
             {
                 "q": "What does $(I\\ddot{a})_{\\overline{n}|}$ represent, and how does it relate to $(Ia)_{\\overline{n}|}$?",
-                "a": "The increasing annuity-due equivalent; $(I\\ddot{a})_{\\overline{n}|} = (1+i)(Ia)_{\\overline{n}|}$"
+                "a": "The increasing annuity-due equivalent; $(I\\ddot{a})_{\\overline{n}|} = (1+i)(Ia)_{\\overline{n}|}$",
+                "explain": "Same due/immediate $(1+i)$ relationship you already know from Module 5's level annuities \\u2014 the dot goes on the $a$ exactly as before, and the increasing structure doesn't change how the due/immediate conversion works at all."
             },
             {
                 "q": "What does $(Da)_{\\overline{n}|}$ represent?",
-                "a": "A decreasing annuity: payments of $n$ in year 1, $n-1$ in year 2, ..., down to $1$ in year $n$, paid in arrears."
+                "a": "A decreasing annuity: payments of $n$ in year 1, $n-1$ in year 2, ..., down to $1$ in year $n$, paid in arrears.",
+                "explain": "Notice the decreasing annuity's payments are the increasing annuity's payments read backwards (reversed order) \\u2014 this mirror-image relationship is exactly what produces the elegant identity in the next card, linking $(Ia)$ and $(Da)$ together."
             },
             {
                 "q": "What is the formula for $(Da)_{\\overline{n}|}$?",
-                "a": "$(Da)_{\\overline{n}|} = \\frac{n - a_{\\overline{n}|}}{i}$"
+                "a": "$(Da)_{\\overline{n}|} = \\frac{n - a_{\\overline{n}|}}{i}$",
+                "explain": "There's a clean identity worth knowing alongside this: $(Ia)_{\\overline{n}|} + (Da)_{\\overline{n}|} = (n+1)a_{\\overline{n}|}$, since adding the increasing and decreasing payment streams together at each year gives a constant $(n+1)$ every year \\u2014 a useful cross-check on both formulas at once."
             },
             {
                 "q": "What does $(I\\overline{a})_{\\overline{n}|}$ represent?",
-                "a": "A continuously-increasing, continuously-paid annuity, where the payment rate at time $t$ is $t$ per year."
+                "a": "A continuously-increasing, continuously-paid annuity, where the payment rate at time $t$ is $t$ per year.",
+                "explain": "The bar (continuous payment) and the capital $I$ (increasing) combine here exactly as you'd expect from the notation conventions built up in Modules 2 and 5 \\u2014 this is the continuous-time limit of the discrete increasing annuity, valued by integrating $t\\cdot e^{-\\delta t}$ rather than summing."
             },
             {
                 "q": "What is a common real-world use for increasing annuity functions?",
-                "a": "Modelling salary-linked or inflation-linked cashflows that step up by a fixed monetary amount each year, such as certain pension or loan structures."
+                "a": "Modelling salary-linked or inflation-linked cashflows that step up by a fixed monetary amount each year, such as certain pension or loan structures.",
+                "explain": "This is the practical payoff of the whole module \\u2014 CM1's increasing annuities reappear later valuing increasing sums assured (Module 13) and salary-related benefits, so the algebra learned here directly supports real product features rather than being an abstract exercise."
             },
             {
                 "q": "What is $(I\\ddot{a})_{\\overline{\\infty}|}$, the present value of a perpetuity increasing by $1$ each year, paid in advance?",
-                "a": "$(I\\ddot{a})_{\\overline{\\infty}|} = \\frac{1}{d^2}$"
+                "a": "$(I\\ddot{a})_{\\overline{\\infty}|} = \\frac{1}{d^2}$",
+                "explain": "This is the increasing-annuity analogue of Module 5's level perpetuity ($a_{\\overline{\\infty}|}=\\frac1i$) \\u2014 letting $n\\to\\infty$ in the increasing-annuity-due formula and simplifying (the $nv^n$ term vanishes, same reasoning as the level perpetuity case) produces this clean $\\frac{1}{d^2}$ result."
             },
             {
                 "q": "How would you value an annuity that increases by a constant monetary amount each year, but is paid continuously?",
-                "a": "Using the continuously-increasing, continuously-paid annuity function, integrating the increasing payment rate against the discount factor."
+                "a": "Using the continuously-increasing, continuously-paid annuity function, integrating the increasing payment rate against the discount factor.",
+                "explain": "Watch for a common trap in mixed-payment-style questions: 'increases every year' but 'paid continuously' means the payment RATE is a step function that jumps once a year while being paid continuously within each year \\u2014 this is subtly different from $(I\\overline{a})_{\\overline{n}|}$'s smoothly increasing rate, and needs its own careful setup."
             },
             {
                 "q": "What is the accumulated value equivalent of $(Ia)_{\\overline{n}|}$, denoted $(Is)_{\\overline{n}|}$?",
-                "a": "$(Is)_{\\overline{n}|} = (1+i)^n (Ia)_{\\overline{n}|}$"
+                "a": "$(Is)_{\\overline{n}|} = (1+i)^n (Ia)_{\\overline{n}|}$",
+                "explain": "Same present-to-accumulated relationship as everywhere else in this module and Module 5 \\u2014 multiply by $(1+i)^n$ to move from a value at time 0 to a value at time $n$, regardless of how complicated the underlying payment pattern is."
             },
             {
                 "q": "Why can't you just multiply the level annuity value by the average payment to value an increasing annuity?",
-                "a": "Because each payment is discounted differently depending on when it occurs, so timing and magnitude interact \\u2014 a simple average ignores this."
+                "a": "Because each payment is discounted differently depending on when it occurs, so timing and magnitude interact \\u2014 a simple average ignores this.",
+                "explain": "This is worth internalising as a general principle, not just for increasing annuities: present value is NOT linear in a simple averaging sense across time, because later (larger) payments here also happen to be more heavily discounted \\u2014 which is exactly why the correct formula needs the $nv^n$ correction term, not just $n\\times$(average payment)$\\times a_{\\overline{n}|}/n$."
             },
             {
                 "q": "If payments increase geometrically rather than arithmetically, can you still use $(Ia)_{\\overline{n}|}$?",
-                "a": "No \\u2014 a geometrically increasing annuity needs a different approach (effectively discounting at a modified net rate), not the arithmetic increasing annuity formula."
+                "a": "No \\u2014 a geometrically increasing annuity needs a different approach (effectively discounting at a modified net rate), not the arithmetic increasing annuity formula.",
+                "explain": "This is a genuinely important distinction to flag for yourself: a geometrically growing payment stream (growing by a fixed PERCENTAGE each year, like inflation-linked increases) can instead be valued as a level annuity at an adjusted ('net of growth') discount rate \\u2014 a completely different technique from the $(Ia)$ family covered in this module."
             },
             {
                 "q": "What does $n$ represent in $(Ia)_{\\overline{n}|} = \\frac{\\ddot{a}_{\\overline{n}|}-nv^n}{i}$?",
-                "a": "Both the number of years the annuity runs for, and the final (largest) payment amount."
+                "a": "Both the number of years the annuity runs for, and the final (largest) payment amount.",
+                "explain": "This double role of $n$ is a common source of confusion when adapting the formula to a scaled example (like the £100/£200/£300 card below) \\u2014 always double check whether the question's payment pattern actually reaches exactly $n$ in the final year of an $n$-year term before applying the formula directly."
             },
             {
                 "q": "How would you value a decreasing annuity that pays continuously and decreases continuously?",
-                "a": "Using $(D\\overline{a})_{\\overline{n}|}$, the continuous decreasing annuity function, found by integration."
+                "a": "Using $(D\\overline{a})_{\\overline{n}|}$, the continuous decreasing annuity function, found by integration.",
+                "explain": "This closes out the full family of notation built up in this module: combine any of {increasing $I$, decreasing $D$} with any of {discrete arrears, discrete advance (dot), continuous (bar)} and you get one of these functions \\u2014 recognising the systematic notation pattern is far more useful than memorising each combination individually."
             },
             {
                 "q": "What is the present value of an annuity paying 100 in year 1, 200 in year 2, and 300 in year 3 (arrears), at rate $i$?",
-                "a": "$100\\,(Ia)_{\\overline{3}|}$ at rate $i$"
+                "a": "$100\\,(Ia)_{\\overline{3}|}$ at rate $i$",
+                "explain": "This is a good template for recognising increasing-annuity questions in disguise: whenever payments step up by a CONSTANT amount each year (here, £100 each time), factor out that constant to reveal a standard $(Ia)_{\\overline{n}|}$ underneath \\u2014 100, 200, 300 is just $100\\times(1,2,3)$, the exact pattern $(Ia)_{\\overline{3}|}$ was built for."
             }
         ]
     },
@@ -1007,63 +1037,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is an 'equation of value'?",
-                "a": "An equation setting the present value of a series of payments (or receipts) equal to the present value of another series, at an unknown or specified rate of interest."
+                "a": "An equation setting the present value of a series of payments (or receipts) equal to the present value of another series, at an unknown or specified rate of interest.",
+                "explain": "This formalises the concept first previewed in Module 4 \\u2014 note the phrase 'unknown OR specified': sometimes you're given $i$ and asked to check the equation balances (e.g. verifying a bond price), and sometimes $i$ itself is the unknown you're solving for (e.g. finding a yield), which is the harder and more heavily examined case this module focuses on."
             },
             {
                 "q": "What two conditions are typically required for an equation of value to have a unique solution for $i$?",
-                "a": "Payments in and payments out must each occur at least once, and the net cashflow's sign should change only once over time."
+                "a": "Payments in and payments out must each occur at least once, and the net cashflow's sign should change only once over time.",
+                "explain": "Both conditions matter for different reasons: without at least one payment each way there's no meaningful 'rate of exchange' to solve for at all, and without a single sign change the underlying present-value function can cross zero more than once, breaking uniqueness \\u2014 see the very next card for what happens when that second condition fails."
             },
             {
                 "q": "What might happen if an equation of value has multiple sign changes in the net cashflow?",
-                "a": "There could be more than one mathematically valid solution for the interest rate (multiple roots), making the answer ambiguous."
+                "a": "There could be more than one mathematically valid solution for the interest rate (multiple roots), making the answer ambiguous.",
+                "explain": "This is a genuinely important practical warning, not just a theoretical curiosity \\u2014 it directly explains the 'give one weakness of using IRR' card in Module 9's project appraisal content: a project with cashflows that switch sign more than once (e.g. outflow, then inflow, then a further outflow) can have two or more valid IRRs, none of which is uniquely 'the' answer."
             },
             {
                 "q": "How is an equation of value typically solved when it can't be solved algebraically?",
-                "a": "By numerical/iterative methods, such as linear interpolation between two trial rates."
+                "a": "By numerical/iterative methods, such as linear interpolation between two trial rates.",
+                "explain": "Most real equations of value (more than one or two cashflows) have no clean algebraic solution for $i$ \\u2014 accept that iteration is the normal, expected method here, not a fallback for when you 'can't do the algebra'; linear interpolation (detailed in the cards below) is the standard exam technique for this."
             },
             {
                 "q": "What does it mean for a project or loan to have an 'exact' solution for the equation of value?",
-                "a": "There's a single, well-defined rate of interest at which the present value of inflows equals the present value of outflows."
+                "a": "There's a single, well-defined rate of interest at which the present value of inflows equals the present value of outflows.",
+                "explain": "This is just restating the uniqueness condition from earlier in different words \\u2014 worth noting that 'exact' here refers to the solution being unique and well-defined, not to whether it can be found algebraically in closed form (which, per the card above, it usually can't)."
             },
             {
                 "q": "Why might a loan have both an initial payment received and periodic repayments made?",
-                "a": "The lender pays out the loan amount up front (a receipt from the borrower's perspective) and receives repayments afterwards."
+                "a": "The lender pays out the loan amount up front (a receipt from the borrower's perspective) and receives repayments afterwards.",
+                "explain": "This is a concrete illustration of exactly the two-way cashflow structure needed for a meaningful equation of value \\u2014 note the deliberate perspective-flip in the answer (a payment OUT for the lender is a receipt IN for the borrower); always fix whose perspective you're valuing from before setting up the equation."
             },
             {
                 "q": "If a project has 'one change of sign' in its net cashflow, what does that tell you about solving its equation of value?",
-                "a": "A single, well-defined internal rate of return (root) is guaranteed to exist under standard conditions."
+                "a": "A single, well-defined internal rate of return (root) is guaranteed to exist under standard conditions.",
+                "explain": "This restates the uniqueness condition as a positive guarantee rather than a warning \\u2014 most textbook loan and simple investment examples are deliberately built with exactly one sign change (money out once, then money in repeatedly, or vice versa) specifically so this guarantee applies cleanly."
             },
             {
                 "q": "What's the general approach to setting up an equation of value for a loan repaid by instalments?",
-                "a": "Set the loan amount (present value at outset) equal to the present value of all the repayment instalments, at the loan's interest rate."
+                "a": "Set the loan amount (present value at outset) equal to the present value of all the repayment instalments, at the loan's interest rate.",
+                "explain": "This is precisely the formula behind Module 8's $X=\\frac{L}{a_{\\overline{n}|}}$ for finding a level instalment amount \\u2014 that formula is nothing more than this general equation-of-value setup, rearranged to solve for the unknown instalment $X$ instead of the unknown rate $i$."
             },
             {
                 "q": "Give an example of 'payment is uncertain' in an equation of value context.",
-                "a": "A cashflow that depends on a future event, e.g. a payment only made if someone survives to a certain age."
+                "a": "A cashflow that depends on a future event, e.g. a payment only made if someone survives to a certain age.",
+                "explain": "This is the bridge from pure interest theory (Modules 1-11) into the life contingencies half of CM1 (Modules 12 onward) \\u2014 every life assurance and annuity function later in the course is really an equation of value where the 'uncertain payment' card here has been made precise using life-table probabilities."
             },
             {
                 "q": "What is linear interpolation used for when solving an equation of value?",
-                "a": "Approximating the root (interest rate) by assuming the net present value function is approximately linear between two trial rates."
+                "a": "Approximating the root (interest rate) by assuming the net present value function is approximately linear between two trial rates.",
+                "explain": "The approximation is only as good as the assumption that NPV is roughly a straight line between your two trial rates \\u2014 choosing trial rates reasonably close to the true root (so the curve doesn't bend much between them) gives a more accurate estimate than picking two widely spaced rates."
             },
             {
                 "q": "Why is it useful to check the sign pattern of a cashflow before solving for a yield?",
-                "a": "To ensure a unique and meaningful solution exists, avoiding a misleading or ambiguous result."
+                "a": "To ensure a unique and meaningful solution exists, avoiding a misleading or ambiguous result.",
+                "explain": "This is good exam practice worth adopting as a habit: before diving into interpolation arithmetic, a quick glance at whether the net cashflow changes sign exactly once confirms you're not about to chase one of potentially several roots without realising it."
             },
             {
                 "q": "In an equation of value with payment or receipt 'certain', what does 'certain' mean?",
-                "a": "The amount and timing of the payment are known with certainty, not contingent on any future uncertain event."
+                "a": "The amount and timing of the payment are known with certainty, not contingent on any future uncertain event.",
+                "explain": "This is the direct contrast to the 'uncertain payment' card above \\u2014 everything in Modules 1-11 deals with certain cashflows; the moment a cashflow becomes contingent on survival/death, you're doing the life-contingent version of exactly the same equation-of-value idea, covered from Module 12 onward."
             },
             {
                 "q": "What's a practical example of an equation of value used to find an unknown interest rate?",
-                "a": "Finding the annual percentage rate (APR) implied by a loan's fixed repayment schedule."
+                "a": "Finding the annual percentage rate (APR) implied by a loan's fixed repayment schedule.",
+                "explain": "This directly previews Module 8's APR card \\u2014 the APR IS the solved-for $i$ in an equation of value where the amount lent equals the present value of all scheduled repayments, exactly the technique this whole module has been building toward."
             },
             {
                 "q": "If two trial rates give present values of $+50$ and $-30$, roughly how would linear interpolation estimate the root?",
                 "a": "Weight the two trial rates in proportion to the sizes of $50$ and $30$ (closer to the trial rate giving the smaller absolute present value)."
+                ,"explain": "Concretely: estimated root $\\approx i_1 + (i_2-i_1)\\times\\frac{50}{50+30}$, where $i_1$ gave $+50$ and $i_2$ gave $-30$ \\u2014 note the root sits closer to $i_2$ (the smaller NPV magnitude, $30$), not further from it, since a smaller present value means that trial rate was already closer to making NPV exactly zero."
             },
             {
                 "q": "Can an equation of value be used with more than two parties/cashflow streams?",
-                "a": "Yes \\u2014 any number of cashflow streams can be combined into a single equation of value, as long as they're all expressed at a common valuation date and rate."
+                "a": "Yes \\u2014 any number of cashflow streams can be combined into a single equation of value, as long as they're all expressed at a common valuation date and rate.",
+                "explain": "This closes the loop back to Module 4's comparison-approach card ('discount both to the same point in time using a common rate') \\u2014 nothing about equations of value is limited to exactly two streams; complex multi-party transactions (e.g. syndicated arrangements) reduce to the same technique, just with more terms summed on each side."
             }
         ]
     },
@@ -1074,63 +1119,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "In a loan repayment schedule, what two components does each instalment split into?",
-                "a": "Interest (on the outstanding balance) and capital repayment (reducing the outstanding balance)."
+                "a": "Interest (on the outstanding balance) and capital repayment (reducing the outstanding balance).",
+                "explain": "This split is what the whole module is about \\u2014 it's worth noting this is exactly Module 7's equation of value viewed year by year rather than in one lump present-value equation: the loan amount is still the present value of all future instalments, but this module unpacks HOW each individual instalment contributes to paying that down."
             },
             {
                 "q": "How is the interest portion of an instalment calculated?",
-                "a": "The outstanding loan balance at the start of the period, multiplied by the interest rate for that period."
+                "a": "The outstanding loan balance at the start of the period, multiplied by the interest rate for that period.",
+                "explain": "This is why interest is always calculated on the OPENING balance for the period, never the closing balance \\u2014 a common error is discounting an instalment using the wrong balance, which then throws off the capital/interest split for that period and every period after it."
             },
             {
                 "q": "How is the capital portion of a level instalment found, once the interest portion is known?",
-                "a": "Capital repaid = total instalment \\u2212 interest due for that period."
+                "a": "Capital repaid = total instalment \\u2212 interest due for that period.",
+                "explain": "This is simply an application of the total-instalment identity from the first card \\u2014 once you know the (fixed) instalment amount and can calculate interest due, capital repaid is just the leftover, which is the standard mechanical process for building a full loan schedule row by row."
             },
             {
                 "q": "What happens to the split between interest and capital over the life of a level-instalment loan?",
-                "a": "The interest portion decreases and the capital portion increases over time, as the outstanding balance falls."
+                "a": "The interest portion decreases and the capital portion increases over time, as the outstanding balance falls.",
+                "explain": "This is the well-known 'front-loaded interest' pattern of a standard repayment mortgage \\u2014 since interest is charged on a shrinking balance (per the card above) but the total instalment stays level, an ever-larger share of each payment must go toward capital as the loan matures."
             },
             {
                 "q": "How would you find the outstanding loan balance after the $t$-th instalment, using the 'prospective' method?",
-                "a": "As the present value of all remaining future instalments, discounted at the loan rate."
+                "a": "As the present value of all remaining future instalments, discounted at the loan rate.",
+                "explain": "'Prospective' literally means 'looking forward' \\u2014 this is Module 7's equation of value applied at time $t$ instead of time 0: the remaining balance must still equal the present value of everything left to repay, by the same equivalence-principle logic used to set the loan up in the first place."
             },
             {
                 "q": "How would you find the outstanding loan balance after the $t$-th instalment, using the 'retrospective' method?",
-                "a": "As the accumulated original loan amount, less the accumulated value of instalments paid so far."
+                "a": "As the accumulated original loan amount, less the accumulated value of instalments paid so far.",
+                "explain": "'Retrospective' means 'looking backward' \\u2014 rather than valuing what's left to pay, this accumulates what's already happened (the original loan growing with interest, offset by instalments paid) forward to today, giving an alternative route to the same balance."
             },
             {
                 "q": "Do the prospective and retrospective methods give the same outstanding balance?",
-                "a": "Yes, provided the same interest rate is used for both accumulating and discounting throughout."
+                "a": "Yes, provided the same interest rate is used for both accumulating and discounting throughout.",
+                "explain": "This equivalence isn't a coincidence \\u2014 it follows directly from the original equation of value (present value of instalments = loan amount) holding at outset; splitting that single equation at time $t$ into a 'past' piece and a 'future' piece necessarily gives two routes to the same answer, as long as the rate used is consistent throughout."
             },
             {
                 "q": "What is the total 'capital repaid', summed over the whole loan term, equal to?",
-                "a": "The original loan amount (the total capital borrowed)."
+                "a": "The original loan amount (the total capital borrowed).",
+                "explain": "A useful full-schedule sanity check: however the interest/capital split varies instalment by instalment, the capital column must sum to exactly the original loan \\u2014 if it doesn't, there's an arithmetic error somewhere in the schedule."
             },
             {
                 "q": "How is the level instalment amount $X$ found for a loan of $L$ repaid over $n$ years at rate $i$?",
-                "a": "$X = \\frac{L}{a_{\\overline{n}|}}$"
+                "a": "$X = \\frac{L}{a_{\\overline{n}|}}$",
+                "explain": "This is Module 7's equation of value directly solved for the unknown instalment: $L = X\\cdot a_{\\overline{n}|}$ rearranged \\u2014 it's the single most common calculation in this module, and everything else (the interest/capital split, prospective/retrospective balances) builds on knowing $X$ first."
             },
             {
                 "q": "What is the annual percentage rate (APR) of a loan?",
-                "a": "The effective annual rate of interest implied by the loan's actual cashflows (amount lent vs. repayments), which may differ from the quoted nominal rate."
+                "a": "The effective annual rate of interest implied by the loan's actual cashflows (amount lent vs. repayments), which may differ from the quoted nominal rate.",
+                "explain": "This is Module 7's 'solve an equation of value for the unknown rate' technique applied specifically to a loan's real cashflows \\u2014 it's the regulatory answer to the 'nominal rates can look artificially low' problem flagged back in Module 2, forcing lenders to disclose the true effective cost of borrowing."
             },
             {
                 "q": "Why might a loan's APR differ from its stated nominal interest rate?",
-                "a": "Because of fees or charges, or the compounding frequency used, which the APR calculation accounts for but a simple nominal rate doesn't."
+                "a": "Because of fees or charges, or the compounding frequency used, which the APR calculation accounts for but a simple nominal rate doesn't.",
+                "explain": "Both listed causes connect back to earlier material: compounding frequency is exactly Module 2's $i$ vs $i^{(p)}$ gap, while fees are an extra upfront or ongoing cashflow that effectively reduces what the borrower nets from the loan relative to what they must repay \\u2014 both push the true APR above the quoted headline rate."
             },
             {
                 "q": "If a borrower makes an extra lump-sum repayment partway through a loan, how does this affect future instalments (if the term stays fixed)?",
-                "a": "It reduces the outstanding balance, so subsequent level instalments can be recalculated to be smaller for the same remaining term."
+                "a": "It reduces the outstanding balance, so subsequent level instalments can be recalculated to be smaller for the same remaining term.",
+                "explain": "This is a direct application of the prospective-method logic above: after the lump sum, simply re-solve $X_{\\text{new}} = \\frac{\\text{new outstanding balance}}{a_{\\overline{n-t}|}}$ for the remaining term \\u2014 the same core formula, just re-applied at a later starting point with a smaller balance."
             },
             {
                 "q": "How would you construct a full loan schedule table?",
-                "a": "For each period, show the opening balance, interest due, instalment paid, capital repaid, and closing balance, working forward period by period."
+                "a": "For each period, show the opening balance, interest due, instalment paid, capital repaid, and closing balance, working forward period by period.",
+                "explain": "This is the mechanical, row-by-row assembly of every concept in this module: opening balance feeds the interest calculation, interest and the (fixed) instalment give capital repaid, and opening balance minus capital repaid gives the closing balance that becomes next period's opening balance \\u2014 a repeating five-column cycle."
             },
             {
                 "q": "If the interest rate changes partway through a loan's term, which method is more natural for finding the new outstanding balance?",
-                "a": "Prospective \\u2014 discount all remaining future instalments at the new rate(s) applying going forward."
+                "a": "Prospective \\u2014 discount all remaining future instalments at the new rate(s) applying going forward.",
+                "explain": "This is exactly why the two methods, while equal under a CONSTANT rate (per the earlier equivalence card), can diverge once rates change mid-term \\u2014 retrospective would need to track exactly which rate applied to which past period, while prospective only needs the (simpler) new rate applying from now on."
             },
             {
                 "q": "What does it mean if the capital repaid in the final instalment exactly clears the outstanding balance?",
-                "a": "The loan is fully repaid (amortised) by that instalment, with zero balance remaining."
+                "a": "The loan is fully repaid (amortised) by that instalment, with zero balance remaining.",
+                "explain": "This is the built-in check that a correctly-constructed loan schedule must satisfy \\u2014 if the level instalment $X$ was calculated correctly using $X=\\frac{L}{a_{\\overline{n}|}}$, the closing balance after the final year's row should come out to exactly zero (allowing for rounding), confirming the whole schedule is internally consistent."
             }
         ]
     },
