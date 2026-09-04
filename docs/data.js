@@ -4871,63 +4871,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is Bayes' theorem, in terms of a parameter $\\theta$ and data $x$?",
-                "a": "$f(\\theta|x) \\propto f(x|\\theta)\\,f(\\theta)$ — posterior is proportional to likelihood times prior."
+                "a": "$f(\\theta|x) \\propto f(x|\\theta)\\,f(\\theta)$ — posterior is proportional to likelihood times prior.",
+                "explain": "This module introduces a genuinely different PHILOSOPHY of inference from Modules 7-10's classical (frequentist) approach — rather than treating the parameter as a fixed unknown constant, Bayesian statistics treats it as itself having a probability distribution, updated by data via exactly this formula."
             },
             {
                 "q": "What is the 'prior distribution'?",
-                "a": "A probability distribution representing beliefs about a parameter before observing the data."
+                "a": "A probability distribution representing beliefs about a parameter before observing the data.",
+                "explain": "This is the single most distinctive feature of the Bayesian approach, and the source of most classical-statistics objections to it — the prior is necessarily somewhat subjective (a judgement call before seeing data), which is precisely the trade-off for gaining the ability to formally incorporate existing knowledge or expert judgement into the analysis."
             },
             {
                 "q": "What is the 'posterior distribution'?",
-                "a": "The updated distribution of the parameter after combining the prior with the observed data via Bayes' theorem."
+                "a": "The updated distribution of the parameter after combining the prior with the observed data via Bayes' theorem.",
+                "explain": "This is the end product every Bayesian analysis is working toward — everything downstream in this module (point estimates, credible intervals) is derived FROM the posterior distribution, so correctly computing it (prior times likelihood, appropriately normalised) is the central technical task."
             },
             {
                 "q": "What is a 'conjugate prior'?",
-                "a": "A prior that, when combined with a given likelihood, produces a posterior from the same family as the prior."
+                "a": "A prior that, when combined with a given likelihood, produces a posterior from the same family as the prior.",
+                "explain": "This is a hugely convenient special case worth appreciating — without conjugacy, computing a posterior distribution can require difficult numerical integration; with a conjugate prior, the posterior's FAMILY is already known, and updating just means recalculating a couple of that family's parameters using simple formulas."
             },
             {
                 "q": "Give an example of a conjugate prior/likelihood pair commonly used in actuarial applications.",
-                "a": "A Gamma prior for a Poisson mean (giving a Gamma posterior), or a Beta prior for a binomial probability (giving a Beta posterior)."
+                "a": "A Gamma prior for a Poisson mean (giving a Gamma posterior), or a Beta prior for a binomial probability (giving a Beta posterior).",
+                "explain": "Both pairings connect directly back to Module 2's distribution catalogue — the Beta distribution's natural home on $[0,1]$ makes it the obvious prior for a probability parameter, and the Gamma's flexibility for positive values makes it the natural prior for a Poisson rate; these two pairings are the most heavily examined conjugate cases in the syllabus."
             },
             {
                 "q": "How is a Bayesian point estimate typically derived from the posterior distribution?",
-                "a": "By minimising the expected value of a chosen loss function under the posterior — e.g. the posterior mean minimises squared-error loss."
+                "a": "By minimising the expected value of a chosen loss function under the posterior — e.g. the posterior mean minimises squared-error loss.",
+                "explain": "This is a genuinely different way of justifying a point estimate than classical statistics' bias/efficiency criteria (Module 8) — rather than asking 'which estimator behaves well across hypothetical repeated samples', Bayesian decision theory asks 'given what I now believe about $\\theta$ (the posterior), which single number minimises my expected loss if I'm wrong'."
             },
             {
                 "q": "What loss function leads to the posterior median as the optimal Bayesian point estimate?",
-                "a": "Absolute error loss."
+                "a": "Absolute error loss.",
+                "explain": "Worth noting the parallel to classical descriptive statistics: squared-error loss favours the mean (penalising large errors disproportionately), while absolute-error loss favours the median (penalising all errors proportionally to their size) — the SAME mean-vs-median trade-off that shows up whenever you're deciding how to summarise a skewed distribution."
             },
             {
                 "q": "What loss function leads to the posterior mode as the optimal Bayesian point estimate?",
-                "a": "The 'zero-one' (all-or-nothing) loss function."
+                "a": "The 'zero-one' (all-or-nothing) loss function.",
+                "explain": "This is the most extreme loss function of the three — 'zero-one' means you're only penalised if your estimate is WRONG at all (any deviation, however small, counts as a full loss), so the optimal strategy is to bet everything on the single most probable value, which is exactly the definition of the mode."
             },
             {
                 "q": "What is a 'credible interval'?",
-                "a": "A Bayesian interval, derived from the posterior distribution, within which the parameter lies with a specified posterior probability."
+                "a": "A Bayesian interval, derived from the posterior distribution, within which the parameter lies with a specified posterior probability.",
+                "explain": "This is the Bayesian analogue of Module 9's confidence interval, but constructed completely differently — rather than relying on a sampling distribution across hypothetical repeated samples, a credible interval is simply read directly off the posterior distribution (e.g. its 2.5th and 97.5th percentiles for a 95% interval)."
             },
             {
                 "q": "How does a credible interval's interpretation differ from a classical confidence interval's?",
-                "a": "A credible interval directly states 'the probability the parameter lies here is X%', unlike a confidence interval's long-run frequency interpretation."
+                "a": "A credible interval directly states 'the probability the parameter lies here is X%', unlike a confidence interval's long-run frequency interpretation.",
+                "explain": "This is exactly the intuitive statement Module 9 warned you NOT to make about a confidence interval — a credible interval genuinely earns that more natural-sounding interpretation, precisely because Bayesian statistics treats the parameter itself as having a probability distribution, unlike the classical framework where the parameter is a fixed (non-random) unknown."
             },
             {
                 "q": "What is the 'credibility premium formula'?",
-                "a": "$\\text{Premium} = Z \\times (\\text{own experience}) + (1-Z) \\times (\\text{prior mean})$"
+                "a": "$\\text{Premium} = Z \\times (\\text{own experience}) + (1-Z) \\times (\\text{prior mean})$",
+                "explain": "This is where the whole Bayesian apparatus of this module lands its main actuarial application — it's a weighted average between what the RISK'S OWN DATA suggests and what the PRIOR (collective/portfolio) belief suggests, with $Z$ (developed fully in Module 15) controlling exactly how much weight each side gets."
             },
             {
                 "q": "What role does the credibility factor $Z$ play?",
-                "a": "It determines how much weight is given to the individual risk's own data versus the wider prior/collective information."
+                "a": "It determines how much weight is given to the individual risk's own data versus the wider prior/collective information.",
+                "explain": "Note $Z=0$ recovers pure reliance on the prior (ignoring individual data entirely) and $Z=1$ recovers pure reliance on individual experience (ignoring the prior entirely) — the credibility formula elegantly interpolates between these two extremes, which is exactly why it's such a natural and widely-used actuarial pricing tool."
             },
             {
                 "q": "How does the Bayesian approach to credibility theory derive the credibility premium?",
-                "a": "As the posterior mean, combining a prior distribution for the risk parameter with the observed individual experience."
+                "a": "As the posterior mean, combining a prior distribution for the risk parameter with the observed individual experience.",
+                "explain": "This ties the credibility premium formula directly back to the posterior-mean point-estimate card earlier in this module — for conjugate prior/likelihood pairs specifically, the posterior mean turns out to take EXACTLY the linear credibility-weighted form, which is the 'exact credibility' result explored further in Module 15."
             },
             {
                 "q": "What happens to the credibility factor $Z$ as the amount of individual data increases?",
-                "a": "It increases towards 1, giving more weight to the individual's own experience."
+                "a": "It increases towards 1, giving more weight to the individual's own experience.",
+                "explain": "This makes intuitive sense given Module 7's sampling-distribution results — more individual data makes the individual's own experience a more PRECISE (lower-variance) estimate of their own risk, so it becomes increasingly informative relative to the prior, earning it progressively more weight in the blended premium."
             },
             {
                 "q": "Why is Bayesian credibility theory particularly relevant to actuarial pricing?",
-                "a": "It provides a principled way to blend an individual risk's own experience with wider portfolio experience, especially when individual data is sparse."
+                "a": "It provides a principled way to blend an individual risk's own experience with wider portfolio experience, especially when individual data is sparse.",
+                "explain": "This closes the module with its central practical justification, directly previewing Modules 15-16 — a genuinely new or small commercial policyholder has very little claims history of their own, and rather than ignoring that thin data (or over-relying on it), credibility theory gives a mathematically principled way to combine it sensibly with the much larger, more stable portfolio-wide experience."
             }
         ]
     },
