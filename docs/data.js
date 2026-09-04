@@ -3581,63 +3581,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the Black-Scholes formula for a European call option price?",
-                "a": "$C = S_0 N(d_1) - Ke^{-rT}N(d_2)$, where $N(\\cdot)$ is the standard normal CDF."
+                "a": "$C = S_0 N(d_1) - Ke^{-rT}N(d_2)$, where $N(\\cdot)$ is the standard normal CDF.",
+                "explain": "This is the module's centrepiece result, and it's worth reading as a story, not just memorising: it's the continuous-time, exact version of the risk-neutral discounted-expected-payoff idea from Module 12, applied to GBM (Module 8) — $S_0N(d_1)$ can be read as the present value of receiving the stock conditional on exercise, minus $Ke^{-rT}N(d_2)$, the present value of paying the strike conditional on exercise."
             },
             {
                 "q": "What are $d_1$ and $d_2$ in the Black-Scholes formula?",
-                "a": "$d_1 = \\frac{\\ln(S_0/K) + (r+\\tfrac12\\sigma^2)T}{\\sigma\\sqrt{T}}$, and $d_2 = d_1 - \\sigma\\sqrt{T}$"
+                "a": "$d_1 = \\frac{\\ln(S_0/K) + (r+\\tfrac12\\sigma^2)T}{\\sigma\\sqrt{T}}$, and $d_2 = d_1 - \\sigma\\sqrt{T}$",
+                "explain": "$d_2$ specifically has a clean interpretation worth remembering: it's (up to sign convention) the standardised distance between $\\ln S_T$'s risk-neutral mean and $\\ln K$, so $N(d_2)$ is literally the risk-neutral PROBABILITY the option finishes in the money — directly connecting to Module 11's card about Delta and in-the-money probability."
             },
             {
                 "q": "What is the Black-Scholes partial differential equation?",
-                "a": "$\\frac{\\partial V}{\\partial t} + rS\\frac{\\partial V}{\\partial S} + \\tfrac12\\sigma^2 S^2\\frac{\\partial^2 V}{\\partial S^2} = rV$"
+                "a": "$\\frac{\\partial V}{\\partial t} + rS\\frac{\\partial V}{\\partial S} + \\tfrac12\\sigma^2 S^2\\frac{\\partial^2 V}{\\partial S^2} = rV$",
+                "explain": "This PDE is derived by applying Ito's Lemma (Module 8) to a delta-hedged portfolio and invoking no-arbitrage (Module 10) — note it holds for ANY derivative on the underlying stock, not just a call or put specifically; the option-specific formula from the card above is simply this general PDE solved subject to a call option's particular boundary/payoff condition."
             },
             {
                 "q": "What is the 'Garman-Kohlhagen' form of the Black-Scholes model used for?",
-                "a": "Pricing options on foreign currencies, adjusting for a continuous dividend-like yield equal to the foreign risk-free rate."
+                "a": "Pricing options on foreign currencies, adjusting for a continuous dividend-like yield equal to the foreign risk-free rate.",
+                "explain": "This is Module 10's dividend-yield forward-pricing adjustment ($F_0=S_0e^{(r-q)T}$) applied directly to Black-Scholes — holding foreign currency naturally earns the FOREIGN risk-free rate, which plays exactly the same mathematical role in the formula as a continuous dividend yield does for a stock."
             },
             {
                 "q": "What is the 'martingale approach' to derivative pricing?",
-                "a": "Pricing a derivative as the discounted expected payoff under the risk-neutral measure, since discounted asset prices are martingales under that measure."
+                "a": "Pricing a derivative as the discounted expected payoff under the risk-neutral measure, since discounted asset prices are martingales under that measure.",
+                "explain": "This is the continuous-time generalisation of Module 12's binomial risk-neutral valuation — same fundamental idea (discount expected payoff under a specially-constructed measure), just now applied to GBM's continuous price paths rather than a discrete tree, and it's this approach (not solving the PDE directly) that most directly derives the Black-Scholes formula in the card above."
             },
             {
                 "q": "List two key assumptions underlying the basic Black-Scholes model.",
-                "a": "Constant volatility and constant risk-free rate (also: no dividends, frictionless markets, continuous trading, log-normal price dynamics)."
+                "a": "Constant volatility and constant risk-free rate (also: no dividends, frictionless markets, continuous trading, log-normal price dynamics).",
+                "explain": "Worth having this full list ready as a checklist, since it's exactly the list of assumptions Module 9's empirical evidence (fat tails, volatility clustering) and Module 15's more sophisticated interest-rate models are built to relax — every 'extension beyond basic Black-Scholes' in this syllabus is really about dropping one specific item from this list."
             },
             {
                 "q": "Why is the assumption of constant volatility considered unrealistic in practice?",
-                "a": "Observed volatility varies over time and differs by strike/maturity (the volatility smile/skew), unlike the model's single constant parameter."
+                "a": "Observed volatility varies over time and differs by strike/maturity (the volatility smile/skew), unlike the model's single constant parameter.",
+                "explain": "This is Module 9's volatility-clustering critique landing directly on the Black-Scholes formula — the 'volatility smile' is the standard, heavily-documented empirical finding that market-implied volatility (backed out from real option prices) varies systematically by strike, which a model assuming one single constant $\\sigma$ simply cannot reproduce."
             },
             {
                 "q": "How would you use the Black-Scholes model to hedge a written call option?",
-                "a": "Continuously hold Delta shares of the underlying asset (delta-hedging), financed at the risk-free rate, rebalancing as Delta changes."
+                "a": "Continuously hold Delta shares of the underlying asset (delta-hedging), financed at the risk-free rate, rebalancing as Delta changes.",
+                "explain": "This is Module 11's delta-hedging concept, now made fully rigorous — in the idealised Black-Scholes world (continuous trading, no transaction costs), continuously rebalancing exactly to $\\Delta=N(d_1)$ shares PERFECTLY replicates the option's payoff, which is precisely the theoretical argument that justifies the formula's price as the unique no-arbitrage value."
             },
             {
                 "q": "What does it mean for a market to be 'frictionless' in the Black-Scholes assumptions?",
-                "a": "No transaction costs, no taxes, and assets are infinitely divisible and can be traded continuously."
+                "a": "No transaction costs, no taxes, and assets are infinitely divisible and can be traded continuously.",
+                "explain": "This assumption is what makes the CONTINUOUS delta-hedging story above actually work in the model's idealised world — real markets have transaction costs and discrete trading, so real-world delta-hedging is necessarily an imperfect APPROXIMATION to the model's theoretically perfect, frictionless replication."
             },
             {
                 "q": "How does the Black-Scholes formula for a put option relate to the call formula?",
-                "a": "Via put-call parity: $P = Ke^{-rT}N(-d_2) - S_0N(-d_1)$"
+                "a": "Via put-call parity: $P = Ke^{-rT}N(-d_2) - S_0N(-d_1)$",
+                "explain": "This is Module 10's model-independent put-call parity identity applied directly — rather than solving the Black-Scholes PDE separately for a put, simply substitute the call formula into $P=C-S_0+Ke^{-rT}$ and simplify (using $N(x)+N(-x)=1$) to get this result, showing put-call parity and Black-Scholes are fully consistent with each other."
             },
             {
                 "q": "What does the martingale representation theorem provide, conceptually?",
-                "a": "A justification that, under the risk-neutral measure, any attainable payoff can be replicated by a self-financing trading strategy."
+                "a": "A justification that, under the risk-neutral measure, any attainable payoff can be replicated by a self-financing trading strategy.",
+                "explain": "This is the deep theoretical justification for Module 10's market-completeness concept, made rigorous for the continuous-time GBM setting — it's what guarantees the delta-hedging replication strategy above genuinely works for ANY payoff, not just the specific call/put payoffs this module happens to focus on."
             },
             {
                 "q": "What happens to a European call's Black-Scholes price as time to maturity $T$ approaches zero?",
-                "a": "It converges to the option's intrinsic value, $\\max(S_0 - K, 0)$."
+                "a": "It converges to the option's intrinsic value, $\\max(S_0 - K, 0)$.",
+                "explain": "This is a sensible boundary-condition check worth verifying mentally — with no time left, there's no more scope for the stock to move further (Module 11's Vega correctly predicts this converges toward zero too), so all that remains is the payoff you'd get from exercising (or not) right now, exactly matching Module 10's call payoff formula."
             },
             {
                 "q": "How does the Black-Scholes formula need to be adjusted for an underlying paying a continuous dividend yield $q$?",
-                "a": "Replace $S_0$ with $S_0e^{-qT}$ in the formula (and correspondingly in $d_1$)."
+                "a": "Replace $S_0$ with $S_0e^{-qT}$ in the formula (and correspondingly in $d_1$).",
+                "explain": "This is exactly the same $r-q$ adjustment pattern from Module 10's dividend-adjusted forward price and this module's own Garman-Kohlhagen currency-option card — recognising this as ONE recurring adjustment applied in three different contexts (forwards, FX options, dividend-paying stock options) is far more efficient than memorising three separate formulas."
             },
             {
                 "q": "Why is validity of the Black-Scholes assumptions important to consider when applying the model in practice?",
-                "a": "If assumptions like constant volatility or frictionless markets are significantly violated, the model's prices/hedges can be materially inaccurate."
+                "a": "If assumptions like constant volatility or frictionless markets are significantly violated, the model's prices/hedges can be materially inaccurate.",
+                "explain": "This closes the module's assumptions thread with the practical bottom line — the formula gives an exact, elegant answer WITHIN its idealised assumptions, but a practitioner must always ask whether those assumptions (especially constant volatility, given the well-documented smile from earlier in this module) are close enough to reality for the specific option being priced."
             },
             {
                 "q": "What connects the Black-Scholes PDE approach and the martingale (risk-neutral expectation) approach?",
-                "a": "The Feynman-Kac theorem — the PDE's solution can be represented as a discounted risk-neutral expectation."
+                "a": "The Feynman-Kac theorem — the PDE's solution can be represented as a discounted risk-neutral expectation.",
+                "explain": "This closes the module by formally tying together its two parallel threads — the PDE approach (differential equation from no-arbitrage/hedging arguments) and the martingale approach (discounted risk-neutral expectation) look like completely different techniques, but the Feynman-Kac theorem proves they're mathematically guaranteed to give the SAME answer, which is why either route derives the identical Black-Scholes formula."
             }
         ]
     },
