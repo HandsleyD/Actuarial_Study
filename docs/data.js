@@ -6127,63 +6127,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'graduation' of mortality estimates?",
-                "a": "The process of smoothing crude (statistically noisy) estimates of mortality/transition rates."
+                "a": "The process of smoothing crude (statistically noisy) estimates of mortality/transition rates.",
+                "explain": "This module picks up directly where Module 9 leaves off — Module 9 gave you the tools to estimate a CRUDE rate for each individual age/class; this module addresses the fact that those crude estimates, taken one age at a time, will bounce around noisily due to sampling variation, and graduation is the systematic process of smoothing that noise out."
             },
             {
                 "q": "Why is graduation performed, rather than just using crude estimates directly?",
-                "a": "Crude estimates from limited data are noisy; graduation produces smoother, more stable and plausible estimates."
+                "a": "Crude estimates from limited data are noisy; graduation produces smoother, more stable and plausible estimates.",
+                "explain": "This is worth connecting to CS1's bias-variance framing (Module 8/Module 21 there) — a crude rate at each single age is roughly UNBIASED but has high variance (based on relatively few observations at that exact age); graduation deliberately introduces a small amount of bias (smoothing) in exchange for a large reduction in variance, generally improving overall accuracy."
             },
             {
                 "q": "What does a chi-square test for 'overall fit' of graduated rates to crude data test?",
-                "a": "Whether differences between crude and graduated rates are consistent with random sampling variation."
+                "a": "Whether differences between crude and graduated rates are consistent with random sampling variation.",
+                "explain": "This is CS1's chi-square goodness-of-fit test (Module 10 there) applied directly to graduated mortality rates — the null hypothesis is that the SMOOTHED (graduated) curve is a genuinely good description of the underlying true rates, with the observed crude-vs-graduated differences being just random noise around it."
             },
             {
                 "q": "What does a 'test for the presence of consistent bias' (e.g. the signs test) check?",
-                "a": "Whether graduated rates are systematically too high or too low compared to the crude data."
+                "a": "Whether graduated rates are systematically too high or too low compared to the crude data.",
+                "explain": "This is a genuinely different kind of check from the overall-fit test above — even if the OVERALL chi-square statistic looks fine, a graduation could still be systematically biased in one direction (e.g. slightly too high at every age), and this test specifically targets that failure mode which an aggregate fit statistic might miss."
             },
             {
                 "q": "What is the 'signs test' used for?",
-                "a": "Testing whether there's an unusually large or small number of positive/negative deviations, as a check for bias."
+                "a": "Testing whether there's an unusually large or small number of positive/negative deviations, as a check for bias.",
+                "explain": "This is CS1's non-parametric hypothesis-testing spirit (Module 10's permutation approach there) applied here — under the null hypothesis of no systematic bias, positive and negative deviations should each occur roughly 50% of the time (like independent coin flips), and this test checks whether the observed split is consistent with that."
             },
             {
                 "q": "What does a 'test for individual ages where the fit is poor' check?",
-                "a": "Whether any specific ages show a standardised deviation large enough to suggest a poor fit at that age."
+                "a": "Whether any specific ages show a standardised deviation large enough to suggest a poor fit at that age.",
+                "explain": "This is a LOCALISED check, distinct from the overall and bias tests above — a graduation could fit beautifully on average and show no systematic bias, yet still fit badly at one or two SPECIFIC ages (perhaps due to a genuine anomaly in the underlying population there), and this test is designed to catch exactly that."
             },
             {
                 "q": "What does the 'cumulative deviations test' check?",
-                "a": "Whether deviations tend to accumulate in one direction rather than fluctuating randomly around zero."
+                "a": "Whether deviations tend to accumulate in one direction rather than fluctuating randomly around zero.",
+                "explain": "This is a genuinely different flavour of bias check from the signs test above — rather than counting how many deviations are positive vs negative, it tracks the RUNNING SUM of deviations, which can catch a bias pattern (e.g. small positive deviations gradually accumulating) that a simple sign-count might miss."
             },
             {
                 "q": "What does the 'grouping of signs test' (runs test) check?",
-                "a": "Whether the pattern of positive/negative deviations shows too few or too many 'runs.'"
+                "a": "Whether the pattern of positive/negative deviations shows too few or too many 'runs.'",
+                "explain": "A 'run' is a consecutive sequence of same-signed deviations — too FEW runs (long unbroken streaks) suggests the graduation isn't tracking genuine local trends in the data closely enough; too MANY runs (rapid alternation) can suggest over-fitting to noise, making this test a genuinely useful complement to the other bias checks."
             },
             {
                 "q": "What does 'the consistency of the shape' of crude estimates and a standard table refer to?",
-                "a": "Whether the graduated curve follows the same overall pattern with age as the crude data, not just matching on average."
+                "a": "Whether the graduated curve follows the same overall pattern with age as the crude data, not just matching on average.",
+                "explain": "This connects the whole set of tests back to the goal from the top of this module — passing every statistical test above still isn't sufficient if the graduated curve's overall SHAPE (e.g. where it rises steeply vs plateaus) genuinely diverges from what the underlying crude data suggests, which is exactly the qualitative check this criterion targets."
             },
             {
                 "q": "What is a 'desirable property' of a set of graduated estimates, beyond just fitting the data well?",
-                "a": "Smoothness — the rates should progress steadily with age, without implausible jumps."
+                "a": "Smoothness — the rates should progress steadily with age, without implausible jumps.",
+                "explain": "This is genuinely the OTHER HALF of the fit-vs-smoothness trade-off that defines graduation as a whole — a graduation that fits the crude data perfectly (essentially reproducing every noisy bump) wouldn't be smooth at all, so a good graduation deliberately sacrifices a little fit for a lot more smoothness, echoing the bias-variance trade-off from earlier in this module."
             },
             {
                 "q": "How would you test for 'smoothness' of a set of graduated estimates?",
-                "a": "Examine higher-order differences of the graduated rates — a smooth progression should show small, steadily varying differences."
+                "a": "Examine higher-order differences of the graduated rates — a smooth progression should show small, steadily varying differences.",
+                "explain": "The intuition: for a genuinely smooth curve, THIRD differences (differences of differences of differences) should be small and gently varying, without erratic jumps — a large or wildly fluctuating third difference at some age is a red flag that the graduation isn't as smooth as it should be there."
             },
             {
                 "q": "How should tests for fit be amended when comparing crude estimates to a graduation of the same data?",
-                "a": "Adjust degrees of freedom to account for the number of parameters used in the graduation."
+                "a": "Adjust degrees of freedom to account for the number of parameters used in the graduation.",
+                "explain": "This is exactly CS1's chi-square degrees-of-freedom-reduction rule (Module 10 there: 'reduce by one per estimated parameter') applied directly here — a graduation with more free parameters can fit the crude data more closely almost by construction, so the degrees of freedom must be reduced correspondingly, or the test would unfairly favour more flexible graduations."
             },
             {
                 "q": "How should statistical tests be adjusted to allow for the presence of duplicate policies in the data?",
-                "a": "Inflate the variance of the test statistic to reflect the reduced effective sample size."
+                "a": "Inflate the variance of the test statistic to reflect the reduced effective sample size.",
+                "explain": "This addresses a genuine data-quality issue worth knowing exists — if the same individual accidentally appears multiple times in a mortality investigation (duplicate policies), the data isn't as informative as the raw record count suggests, so naively treating each record as independent would understate the true variance and overstate confidence in the graduation."
             },
             {
                 "q": "Why is a hypothesis test's distribution important to specify correctly for these graduation tests?",
-                "a": "An incorrect distributional assumption gives an inaccurate critical value/p-value, leading to wrong conclusions."
+                "a": "An incorrect distributional assumption gives an inaccurate critical value/p-value, leading to wrong conclusions.",
+                "explain": "This is CS1's general hypothesis-testing caution (Module 10 there) restated in this specific context — every test in this module (chi-square, signs, cumulative deviations, runs) relies on a correctly-specified reference distribution under the null hypothesis, and getting that distribution wrong (e.g. ignoring duplicate-policy effects from the card above) undermines the whole test's validity."
             },
             {
                 "q": "Why would an actuary compare crude estimates against both a standard table and a graduated version?",
-                "a": "To assess both how well an in-house smoothed model fits and how the population compares to an external benchmark."
+                "a": "To assess both how well an in-house smoothed model fits and how the population compares to an external benchmark.",
+                "explain": "This closes the module by connecting its two natural comparison targets — comparing against a STANDARD TABLE answers 'how does this population differ from a recognised external benchmark' (useful context and sanity-checking), while comparing against one's OWN graduation answers 'did the smoothing process itself do a good job', two genuinely different and complementary questions."
             }
         ]
     },
