@@ -3417,63 +3417,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'Delta' ($\\Delta$) measure?",
-                "a": "The sensitivity of an option's price to a small change in the price of the underlying asset: $\\Delta = \\frac{\\partial V}{\\partial S}$"
+                "a": "The sensitivity of an option's price to a small change in the price of the underlying asset: $\\Delta = \\frac{\\partial V}{\\partial S}$",
+                "explain": "This module takes the 'factors that affect option prices' list from Module 10 and gives each factor its own precise sensitivity measure — Delta specifically answers 'how much does the option's price move for a small move in the underlying', making it the most fundamental and most heavily used Greek in practice."
             },
             {
                 "q": "What does 'Gamma' ($\\Gamma$) measure?",
-                "a": "The rate of change of Delta with respect to the underlying asset price: $\\Gamma = \\frac{\\partial^2 V}{\\partial S^2}$"
+                "a": "The rate of change of Delta with respect to the underlying asset price: $\\Gamma = \\frac{\\partial^2 V}{\\partial S^2}$",
+                "explain": "Gamma is Delta's OWN sensitivity — it's a second derivative, exactly analogous to how acceleration is the rate of change of velocity in physics: Delta tells you the option's current 'speed' of price change, Gamma tells you how quickly that speed itself is changing as the underlying moves."
             },
             {
                 "q": "What does 'Vega' measure?",
-                "a": "The sensitivity of an option's price to a small change in the volatility of the underlying asset."
+                "a": "The sensitivity of an option's price to a small change in the volatility of the underlying asset.",
+                "explain": "This directly answers Module 10's 'higher volatility increases both call and put prices' card, but with a precise sensitivity NUMBER rather than just a direction — Vega tells you exactly how much value changes per unit change in $\\sigma$, which matters enormously since (per Module 9) real-world volatility isn't actually constant the way Black-Scholes assumes."
             },
             {
                 "q": "What does 'Theta' ($\\Theta$) measure?",
-                "a": "The sensitivity of an option's price to the passage of time (time decay), holding other factors constant."
+                "a": "The sensitivity of an option's price to the passage of time (time decay), holding other factors constant.",
+                "explain": "Theta answers 'how does the option lose value simply from time passing, with nothing else changing' — this is worth distinguishing carefully from a change in the underlying price itself, since Theta isolates the pure erosion of TIME VALUE alone."
             },
             {
                 "q": "What does 'Rho' ($\\rho$) measure?",
-                "a": "The sensitivity of an option's price to a small change in the risk-free interest rate."
+                "a": "The sensitivity of an option's price to a small change in the risk-free interest rate.",
+                "explain": "Rho is typically the LEAST important Greek for short-dated options in practice, since interest-rate moves are usually small relative to underlying-price moves over short horizons — but it becomes genuinely significant for long-dated options, where the discounting effect from Module 10's forward-price formula compounds over a much longer time."
             },
             {
                 "q": "What is the range of Delta for a European call option?",
-                "a": "Between 0 and 1."
+                "a": "Between 0 and 1.",
+                "explain": "The boundaries are worth understanding directly: a deep out-of-the-money call barely moves as the stock moves (Delta near 0, since exercise looks unlikely regardless), while a deep in-the-money call moves almost one-for-one with the stock (Delta near 1, since it behaves almost like owning the stock outright)."
             },
             {
                 "q": "What is the range of Delta for a European put option?",
-                "a": "Between -1 and 0."
+                "a": "Between -1 and 0.",
+                "explain": "The negative sign makes sense given the put's payoff shape from Module 10 ($\\max(K-S_T,0)$, decreasing in $S$) — as the stock price RISES, a put's value FALLS, so its price sensitivity to the underlying is naturally negative, the mirror image of the call's positive Delta."
             },
             {
                 "q": "Why is Theta typically negative for a long option position?",
-                "a": "As time passes, there's less time for the underlying to move favourably, so the option's time value erodes."
+                "a": "As time passes, there's less time for the underlying to move favourably, so the option's time value erodes.",
+                "explain": "This 'time decay' is one of the most practically important facts for any option holder to internalise — an option is a wasting asset, and even if the underlying price doesn't move at all, a long option position steadily loses value simply from the clock ticking down, which is exactly why option sellers can profit from time decay alone."
             },
             {
                 "q": "What does it mean to 'delta-hedge' a derivative position?",
-                "a": "Holding an offsetting position in the underlying asset (equal to Delta) so the combined portfolio is insensitive to small moves in the underlying."
+                "a": "Holding an offsetting position in the underlying asset (equal to Delta) so the combined portfolio is insensitive to small moves in the underlying.",
+                "explain": "This is the practical, risk-management payoff of the whole Greeks framework — by holding exactly $-\\Delta$ shares of the underlying against a long option position (or $+\\Delta$ against a short one), small moves in the stock price no longer affect the combined portfolio's value at all, at least locally."
             },
             {
                 "q": "Why does a delta-hedged position need to be rebalanced over time?",
-                "a": "Delta itself changes as the underlying price and time to maturity change (this rate is Gamma), needing periodic adjustment."
+                "a": "Delta itself changes as the underlying price and time to maturity change (this rate is Gamma), needing periodic adjustment.",
+                "explain": "This is exactly why Gamma matters so much in practice — a delta-hedge is only PERFECT for an infinitesimally small move; once the underlying actually moves, Delta shifts (governed by Gamma), so the hedge ratio that was correct a moment ago is now slightly wrong, requiring rebalancing to stay properly hedged."
             },
             {
                 "q": "Why is Gamma particularly important for assessing hedging risk?",
-                "a": "High Gamma means Delta can change rapidly, so a delta-hedge can quickly become outdated, requiring more frequent rebalancing."
+                "a": "High Gamma means Delta can change rapidly, so a delta-hedge can quickly become outdated, requiring more frequent rebalancing.",
+                "explain": "This restates the rebalancing card above from the trader's practical risk-management perspective — a high-Gamma position (typically options near the money, close to expiry) needs almost continuous rebalancing to stay properly hedged, incurring real transaction costs, while a low-Gamma position can be rebalanced much less frequently at lower cost."
             },
             {
                 "q": "For a European call option (no dividends), how does Delta relate to the risk-neutral probability the option finishes in the money?",
-                "a": "They're closely related — in the Black-Scholes model, call Delta equals $N(d_1)$."
+                "a": "They're closely related — in the Black-Scholes model, call Delta equals $N(d_1)$.",
+                "explain": "This is a direct preview of Module 13's Black-Scholes formula — note the subtlety worth remembering: $N(d_1)$ (Delta) is closely related to but NOT exactly the same as $N(d_2)$ (the actual risk-neutral probability the call finishes in the money) — the two coincide in interpretation but differ in the precise quantity, a common point of confusion worth being precise about."
             },
             {
                 "q": "How does an option's Vega typically behave as the option approaches maturity?",
-                "a": "It tends to decrease towards zero — there's less time remaining for volatility to have an effect."
+                "a": "It tends to decrease towards zero — there's less time remaining for volatility to have an effect.",
+                "explain": "This makes intuitive sense: volatility matters because it measures how much the underlying MIGHT move before expiry — with very little time left, there's very little scope left for volatility to make a meaningful difference to the outcome, so the option's sensitivity to volatility naturally shrinks toward zero."
             },
             {
                 "q": "What second-order derivative measures the sensitivity of Vega to changes in volatility?",
-                "a": "'Vomma' (or volga) — a more advanced Greek beyond the basic set."
+                "a": "'Vomma' (or volga) — a more advanced Greek beyond the basic set.",
+                "explain": "This is exactly analogous to Gamma being Delta's own sensitivity — Vomma is Vega's own sensitivity, a 'Greek of a Greek' in the same pattern, worth recognising the structural analogy rather than treating it as a completely separate new concept to memorise from scratch."
             },
             {
                 "q": "Why might a trader want a portfolio that is both 'delta-neutral' and 'gamma-neutral'?",
-                "a": "To be protected against both small and larger moves in the underlying price, reducing the need for frequent rebalancing."
+                "a": "To be protected against both small and larger moves in the underlying price, reducing the need for frequent rebalancing.",
+                "explain": "This closes the module by combining everything covered — delta-neutral alone only protects against INFINITESIMALLY small moves (since Delta itself shifts as the price moves, per the rebalancing cards above); adding gamma-neutrality protects the hedge's accuracy over a WIDER range of price moves too, which is exactly why sophisticated hedging books target both simultaneously."
             }
         ]
     },
