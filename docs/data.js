@@ -1447,63 +1447,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does $l_x$ represent in a life table?",
-                "a": "The expected number of survivors to exact age $x$, out of an initial (radix) cohort."
+                "a": "The expected number of survivors to exact age $x$, out of an initial (radix) cohort.",
+                "explain": "$l_x$ is the single foundation every other symbol in this module (and every life-contingent function for the rest of CM1) is built from \\u2014 the 'radix' is just the arbitrary starting cohort size (often 100,000) chosen for the table; the actual value of $l_x$ itself has no meaning in isolation, only RATIOS of $l$ values (giving probabilities) matter."
             },
             {
                 "q": "What does $d_x$ represent?",
-                "a": "The expected number of deaths between exact ages $x$ and $x+1$: $d_x = l_x - l_{x+1}$"
+                "a": "The expected number of deaths between exact ages $x$ and $x+1$: $d_x = l_x - l_{x+1}$",
+                "explain": "This is simply the DIFFERENCE between consecutive survivor counts \\u2014 note $l_x$, $d_x$ share units (number of lives, out of the radix), which is different from $p_x$/$q_x$ below (probabilities), a distinction worth keeping straight when reading a life table."
             },
             {
                 "q": "What does $p_x$ represent?",
-                "a": "The probability that a life aged exactly $x$ survives to age $x+1$: $p_x = \\frac{l_{x+1}}{l_x}$"
+                "a": "The probability that a life aged exactly $x$ survives to age $x+1$: $p_x = \\frac{l_{x+1}}{l_x}$",
+                "explain": "Converting from $l$ values (counts) to $p_x$ (a probability) is just taking a ratio \\u2014 this same 'ratio of $l$ values' pattern is how EVERY survival/death probability in this module is derived, from the simple one-year $p_x$ here up to the multi-year and deferred versions below."
             },
             {
                 "q": "What does $q_x$ represent?",
-                "a": "The probability that a life aged exactly $x$ dies before reaching age $x+1$: $q_x = \\frac{d_x}{l_x} = 1-p_x$"
+                "a": "The probability that a life aged exactly $x$ dies before reaching age $x+1$: $q_x = \\frac{d_x}{l_x} = 1-p_x$",
+                "explain": "The two equivalent formulas here are worth noting: $\\frac{d_x}{l_x}$ (deaths over starting population) is the direct probabilistic definition, while $1-p_x$ follows since survival and death are complementary events over the same one-year period \\u2014 use whichever form suits the given data."
             },
             {
                 "q": "What does $_np_x$ represent?",
-                "a": "The probability that a life aged $x$ survives at least $n$ further years, to age $x+n$: $_np_x = \\frac{l_{x+n}}{l_x}$"
+                "a": "The probability that a life aged $x$ survives at least $n$ further years, to age $x+n$: $_np_x = \\frac{l_{x+n}}{l_x}$",
+                "explain": "This is just $p_x$ generalised from one year to $n$ years \\u2014 note it is NOT generally equal to $(p_x)^n$ unless mortality happens to be constant across all those ages, since each year's survival probability can differ; the correct multi-year formula always goes back to the ratio of $l$ values directly."
             },
             {
                 "q": "What does $_nq_x$ represent?",
-                "a": "The probability that a life aged $x$ dies within the next $n$ years: $_nq_x = 1 - {_np_x}$"
+                "a": "The probability that a life aged $x$ dies within the next $n$ years: $_nq_x = 1 - {_np_x}$",
+                "explain": "Same complementary-events logic as the one-year $q_x$/$p_x$ pair above, just extended to $n$ years \\u2014 die-within-$n$-years and survive-at-least-$n$-years are the only two possible outcomes, so their probabilities must sum to 1."
             },
             {
                 "q": "What does $_{n|m}q_x$ represent?",
-                "a": "The probability that a life aged $x$ survives $n$ years and then dies within the following $m$ years."
+                "a": "The probability that a life aged $x$ survives $n$ years and then dies within the following $m$ years.",
+                "explain": "The vertical bar notation ($n|m$) signals a DEFERRED probability \\u2014 read it as 'wait $n$ years, THEN look at the next $m$ years' \\u2014 this exact same bar convention reappears for deferred annuities (Module 14) and deferred assurances (Module 13), so getting comfortable with it here pays off repeatedly."
             },
             {
                 "q": "How do you express $_{n|m}q_x$ in terms of $l$ values?",
-                "a": "$_{n|m}q_x = \\frac{l_{x+n} - l_{x+n+m}}{l_x}$"
+                "a": "$_{n|m}q_x = \\frac{l_{x+n} - l_{x+n+m}}{l_x}$",
+                "explain": "The numerator is just $d$-style logic (survivors at the start of the window minus survivors at the end of the window = deaths during the window), and the denominator brings it back to a probability relative to the ORIGINAL age $x$, not age $x+n$ \\u2014 a common error is dividing by $l_{x+n}$ instead of $l_x$, which would instead give a CONDITIONAL probability given survival to age $x+n$."
             },
             {
                 "q": "What does 'select' mortality mean, as in $l_{[x]+r}$?",
-                "a": "Mortality that depends not just on current age but also on how long ago the life was selected (e.g. underwritten) \\u2014 recently selected lives typically have lighter mortality."
+                "a": "Mortality that depends not just on current age but also on how long ago the life was selected (e.g. underwritten) \\u2014 recently selected lives typically have lighter mortality.",
+                "explain": "This is a genuinely important real-world refinement: a life who just passed a medical underwriting exam is (on average) healthier than a random person of the same age who wasn't recently checked \\u2014 select mortality tables capture this by tracking BOTH age at selection and time since selection, not just current age alone."
             },
             {
                 "q": "What does $l_{[x]}$ represent, as distinct from $l_x$?",
-                "a": "The number of survivors to age $x$ among lives who were selected (e.g. underwritten) at exactly age $x$, as opposed to $l_x$ which doesn't track selection."
+                "a": "The number of survivors to age $x$ among lives who were selected (e.g. underwritten) at exactly age $x$, as opposed to $l_x$ which doesn't track selection.",
+                "explain": "The square brackets are the notation to watch for: $l_{[x]}$ means 'just selected at age $x$' (lightest mortality), $l_{[x]+r}$ means 'selected at age $x$, now $r$ years later' (mortality gradually rising back toward normal), and plain $l_{x+r}$ (no brackets) means the general ULTIMATE population at that attained age, with no memory of selection at all."
             },
             {
                 "q": "Why does select mortality typically converge to 'ultimate' mortality after a few years?",
-                "a": "The effect of underwriting/selection wears off over time, so mortality experience converges to that of the general population of the same attained age."
+                "a": "The effect of underwriting/selection wears off over time, so mortality experience converges to that of the general population of the same attained age.",
+                "explain": "This is precisely why select mortality tables have a limited 'select period' (often 2-5 years) before merging into the ultimate table \\u2014 the underwriting advantage genuinely fades as unmeasured health changes accumulate, so it wouldn't be realistic (or prudent) to assume a permanent mortality advantage from a one-off medical check years ago."
             },
             {
                 "q": "What assumption is commonly used for deaths occurring between integer ages, when needed for calculations?",
-                "a": "The uniform distribution of deaths (UDD) assumption, or otherwise the constant force of mortality assumption."
+                "a": "The uniform distribution of deaths (UDD) assumption, or otherwise the constant force of mortality assumption.",
+                "explain": "A life table only directly gives you probabilities at WHOLE-year intervals \\u2014 whenever a calculation needs a fractional-year probability (e.g. dying within the next 6 months), one of these two standard smoothing assumptions is needed to interpolate between the integer-age values the table actually provides."
             },
             {
                 "q": "Under the constant force of mortality assumption between integer ages, how is $\\mu$ related to $q_x$?",
-                "a": "$\\mu = -\\ln(1-q_x) = -\\ln p_x$, constant over the year of age."
+                "a": "$\\mu = -\\ln(1-q_x) = -\\ln p_x$, constant over the year of age.",
+                "explain": "This is exactly analogous to Module 2's force of interest $\\delta$ derived from $i$ via $\\delta=\\ln(1+i)$, just applied to mortality instead of interest \\u2014 recognising this parallel (a 'force' as the continuous-time version of a discrete annual rate) makes the formula far easier to remember than treating it as an unrelated new idea."
             },
             {
                 "q": "If $l_{60} = 9{,}000{,}000$ and $l_{61} = 8{,}910{,}000$, what is $q_{60}$?",
-                "a": "$q_{60} = \\frac{9{,}000{,}000 - 8{,}910{,}000}{9{,}000{,}000} = 0.01$"
+                "a": "$q_{60} = \\frac{9{,}000{,}000 - 8{,}910{,}000}{9{,}000{,}000} = 0.01$",
+                "explain": "A clean worked example of the $q_x$ formula from earlier in this module \\u2014 useful as a template: subtract to get deaths ($d_{60}=90{,}000$), then divide by the STARTING population ($l_{60}$), never the ending one, to get a one-year mortality rate of exactly 1%."
             },
             {
                 "q": "Why is the life table considered the building block for pricing life insurance and annuity products?",
-                "a": "Because every assurance/annuity valuation requires the probability of survival or death at each future age, which the life table directly provides."
+                "a": "Because every assurance/annuity valuation requires the probability of survival or death at each future age, which the life table directly provides.",
+                "explain": "This closes out the module by previewing the rest of the life-contingencies syllabus: Modules 13-25 all combine THIS module's survival/death probabilities with Modules 1-11's discounting techniques \\u2014 an assurance or annuity 'expected present value' is nothing more than a probability-weighted sum of discounted cashflows, using exactly the $p_x$/$q_x$ values built here."
             }
         ]
     },
@@ -1514,63 +1529,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does $A_x$ represent?",
-                "a": "The expected present value of a whole life assurance of $1$, payable at the end of the year of death of a life currently aged $x$."
+                "a": "The expected present value of a whole life assurance of $1$, payable at the end of the year of death of a life currently aged $x$.",
+                "explain": "This is Module 12's mortality probabilities combined with Module 1's discounting, in one number \\u2014 conceptually, $A_x = \\sum_{k=0}^{\\infty} v^{k+1}\\cdot {_{k|}q_x}$: for each possible year of death $k+1$, multiply the probability of dying in exactly that year by the discounted value of £1 paid then, and sum over every possible year."
             },
             {
                 "q": "What is a 'term assurance'?",
-                "a": "A policy paying a benefit only if the life dies within a specified term; nothing is paid if the life survives the term."
+                "a": "A policy paying a benefit only if the life dies within a specified term; nothing is paid if the life survives the term.",
+                "explain": "Think of this as $A_x$ (whole life) but with the sum CUT OFF after $n$ years \\u2014 all the death-in-year-$k$ terms beyond year $n$ are simply dropped from the sum, since no benefit is paid for a death outside the term."
             },
             {
                 "q": "What symbol is commonly used for a term assurance of $1$ for $n$ years, and what does the superscript mean?",
-                "a": "$A^1_{x:\\overline{n}|}$ \\u2014 the superscript '1' over the $x$ indicates the benefit is contingent on death of the life aged $x$ within the term."
+                "a": "$A^1_{x:\\overline{n}|}$ \\u2014 the superscript '1' over the $x$ indicates the benefit is contingent on death of the life aged $x$ within the term.",
+                "explain": "This '1 over the trigger life' notation convention is worth mastering now since it reappears constantly: it marks EXACTLY which event triggers the benefit when a symbol could otherwise be ambiguous, and the same convention extends to two-life contingent benefits in Module 20 ($A^1_{xy}$ meaning 'benefit on $(x)$'s death before $(y)$'s')."
             },
             {
                 "q": "What is a 'pure endowment'?",
-                "a": "A policy paying a benefit only if the life survives to the end of a specified term; nothing is paid on earlier death."
+                "a": "A policy paying a benefit only if the life survives to the end of a specified term; nothing is paid on earlier death.",
+                "explain": "This is the mirror image of term assurance: term assurance pays ONLY on death within the term, pure endowment pays ONLY on survival TO the end of the term \\u2014 together they cover every possible outcome, which is exactly why summing them (next card) gives you a policy that always pays out one way or another."
             },
             {
                 "q": "What is an 'endowment assurance'?",
-                "a": "A policy that pays a benefit on death within the term, or on survival to the end of the term, whichever occurs first."
+                "a": "A policy that pays a benefit on death within the term, or on survival to the end of the term, whichever occurs first.",
+                "explain": "This is literally 'term assurance OR pure endowment, whichever event actually happens' \\u2014 since death-within-term and survival-to-term-end are mutually exclusive and exhaustive outcomes, an endowment assurance is guaranteed to pay out exactly once, which is the intuition behind the additive formula in the next card."
             },
             {
                 "q": "How does the endowment assurance function $A_{x:\\overline{n}|}$ relate to term assurance and pure endowment?",
-                "a": "$A_{x:\\overline{n}|} = A^1_{x:\\overline{n}|} + A_{x:\\overline{n}|}^{\\ 1}$ (term assurance plus pure endowment)."
+                "a": "$A_{x:\\overline{n}|} = A^1_{x:\\overline{n}|} + A_{x:\\overline{n}|}^{\\ 1}$ (term assurance plus pure endowment).",
+                "explain": "Notice where the '1' sits in each term: over the $x$ means 'benefit on death'; over the $n$ means 'benefit on survival' \\u2014 this is a genuinely elegant piece of notation once you see the pattern, since it lets you build an endowment assurance's formula purely by combining the two simpler building blocks you already know."
             },
             {
                 "q": "What does it mean for a death benefit to be 'payable immediately on death' rather than 'at the end of year of death'?",
-                "a": "The benefit is paid as soon as death occurs, rather than being delayed until the policy anniversary following death."
+                "a": "The benefit is paid as soon as death occurs, rather than being delayed until the policy anniversary following death.",
+                "explain": "This is more realistic (real insurers don't literally wait until the policy anniversary to pay a claim) but mathematically trickier, since it requires knowing exactly WHEN within the year death occurs, not just which year \\u2014 this is precisely where the UDD/constant-force-of-mortality assumptions from Module 12 get put to use."
             },
             {
                 "q": "What notation typically distinguishes an immediate-death-benefit assurance from an end-of-year one?",
-                "a": "A bar over the $A$, e.g. $\\overline{A}_x$, denotes the benefit payable immediately on death."
+                "a": "A bar over the $A$, e.g. $\\overline{A}_x$, denotes the benefit payable immediately on death.",
+                "explain": "This is exactly the same bar convention as continuous annuities in Module 5 ($\\overline{a}_{\\overline{n}|}$ for continuous payment) \\u2014 the bar consistently signals 'continuous/immediate' throughout CM1 notation, whether applied to payments or, as here, to a benefit trigger."
             },
             {
                 "q": "What is a 'deferred' assurance benefit?",
-                "a": "A benefit that only starts to apply after a deferment period \\u2014 e.g. death benefit only payable if death occurs after a certain number of years."
+                "a": "A benefit that only starts to apply after a deferment period \\u2014 e.g. death benefit only payable if death occurs after a certain number of years.",
+                "explain": "Same deferred-benefit logic as Module 5's annuities and Module 12's $_{n|m}q_x$ \\u2014 the vertical bar notation from those earlier modules carries over here too, so a deferred assurance is written and reasoned about using exactly the same 'wait, then apply' pattern you've already seen twice."
             },
             {
                 "q": "What does 'return of premiums' annuity/assurance mean?",
-                "a": "On death (or another trigger event), the benefit paid is linked to the premiums paid so far, rather than a fixed sum assured."
+                "a": "On death (or another trigger event), the benefit paid is linked to the premiums paid so far, rather than a fixed sum assured.",
+                "explain": "This is a genuinely different STRUCTURE from the fixed-sum-assured products covered elsewhere in this module \\u2014 the benefit amount itself is a running total that grows as premiums are paid, which typically requires combining assurance functions with increasing-annuity-style techniques (Module 6) rather than a simple $A_x$-type formula."
             },
             {
                 "q": "How would you describe the cashflow timing of a whole life assurance versus a term assurance?",
-                "a": "Whole life assurance guarantees eventual payment (on death, whenever it occurs); term assurance only pays if death occurs within the specified period."
+                "a": "Whole life assurance guarantees eventual payment (on death, whenever it occurs); term assurance only pays if death occurs within the specified period.",
+                "explain": "This is the plain-English version of the mathematical relationship established at the top of this module \\u2014 whole life assurance is a term assurance with the term stretched out to infinity (or, in practice, to the oldest age the life table covers), which is why $A_x > A^1_{x:\\overline{n}|}$ always."
             },
             {
                 "q": "Why would a pure endowment alone be an unusual product to sell on its own?",
-                "a": "It provides no benefit at all if the policyholder dies before the term ends, so it's usually combined with a term assurance to form an endowment assurance."
+                "a": "It provides no benefit at all if the policyholder dies before the term ends, so it's usually combined with a term assurance to form an endowment assurance.",
+                "explain": "This is a genuine commercial point, not just a mathematical one: a policyholder who dies during the term gets NOTHING back under a pure pure-endowment (their premiums are simply lost), which is a hard product to sell \\u2014 bundling it with term assurance (to give an endowment assurance) is what makes the product commercially viable."
             },
             {
                 "q": "What does 'joint life' mean in the context of assurance contracts?",
-                "a": "The contract's benefit depends on the death (or survival) status of two (or more) lives, rather than just one."
+                "a": "The contract's benefit depends on the death (or survival) status of two (or more) lives, rather than just one.",
+                "explain": "This is a preview of Module 19's whole topic \\u2014 for now, just note that everything in this module (assurance functions, the term/pure-endowment split, deferred benefits) has a direct two-life analogue later in the course, using subscripts like $xy$ instead of just $x$."
             },
             {
                 "q": "For a term assurance, what happens to $A^1_{x:\\overline{n}|}$ as $n$ increases (with $x$ fixed)?",
-                "a": "It increases, since a longer term gives more opportunity for the death benefit to become payable."
+                "a": "It increases, since a longer term gives more opportunity for the death benefit to become payable.",
+                "explain": "This is worth confirming makes sense from the summation view at the top of this module: a longer term simply adds MORE non-negative terms to the sum (more years in which death could trigger the benefit), so the total can only stay the same or grow \\u2014 and as $n\\to\\infty$, this term assurance value converges up to the whole life value $A_x$."
             },
             {
                 "q": "How do variable death benefits (increasing/decreasing sums assured) generally get valued?",
-                "a": "Combine the varying sum assured with the corresponding annual mortality/discounting terms, similar in spirit to increasing annuity techniques."
+                "a": "Combine the varying sum assured with the corresponding annual mortality/discounting terms, similar in spirit to increasing annuity techniques.",
+                "explain": "This is Module 6's increasing/decreasing annuity technique cross-applied to assurances \\u2014 instead of summing (probability of death in year $k$) $\\times$ (discount factor), you sum (probability of death in year $k$) $\\times$ (discount factor) $\\times$ (the sum assured in that particular year), which changes year by year for a varying benefit."
             }
         ]
     },
