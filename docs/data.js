@@ -1775,63 +1775,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'conventional with-profits' policy?",
-                "a": "A policy with a basic guaranteed sum assured, to which bonuses are added over time (funded by the insurer's profits), increasing the eventual benefit paid."
+                "a": "A policy with a basic guaranteed sum assured, to which bonuses are added over time (funded by the insurer's profits), increasing the eventual benefit paid.",
+                "explain": "This module shifts from the FIXED benefits of Modules 13-15 (a single sum assured $A_x$) to benefits whose amount is itself uncertain \\u2014 conventional with-profits is the traditional way of doing this: start from a guaranteed base, then layer discretionary bonuses on top, covered in the next few cards."
             },
             {
                 "q": "What is a 'reversionary bonus'?",
-                "a": "A bonus added to a with-profits policy's sum assured during the policy term, which \\u2014 once added \\u2014 is guaranteed and cannot be taken away."
+                "a": "A bonus added to a with-profits policy's sum assured during the policy term, which \\u2014 once added \\u2014 is guaranteed and cannot be taken away.",
+                "explain": "The 'once added, can't be taken away' feature is the key exam point \\u2014 a reversionary bonus PERMANENTLY increases the guaranteed sum assured, ratcheting the guarantee upward year by year, which is fundamentally different from the terminal bonus in the next card, which is never guaranteed until the actual claim."
             },
             {
                 "q": "What is a 'terminal bonus'?",
-                "a": "An additional bonus paid only at the point the policy becomes a claim (death or maturity), not guaranteed in advance."
+                "a": "An additional bonus paid only at the point the policy becomes a claim (death or maturity), not guaranteed in advance.",
+                "explain": "This is the DISCRETIONARY counterpart to the reversionary bonus's guaranteed ratchet \\u2014 it lets the insurer reflect actual investment performance right up to the moment of claim, without having to lock in a permanent guarantee years in advance, which is precisely why insurers use both types together (see the smoothing card below)."
             },
             {
                 "q": "Why do insurers use reversionary bonuses rather than just paying a single large terminal bonus?",
-                "a": "Reversionary bonuses smooth policyholder returns over time and build in guaranteed increases, helping manage expectations and smooth investment performance."
+                "a": "Reversionary bonuses smooth policyholder returns over time and build in guaranteed increases, helping manage expectations and smooth investment performance.",
+                "explain": "This is the design rationale connecting the two bonus types above: reversionary bonuses give policyholders visible, guaranteed progress they can trust year to year, while the terminal bonus remains flexible enough to absorb whatever investment performance actually turns out to be \\u2014 a deliberate split between certainty and flexibility."
             },
             {
                 "q": "What is a 'unit-linked' contract?",
-                "a": "A contract where the policyholder's premiums (net of charges) buy units in an investment fund, and benefits are linked to the value of those units."
+                "a": "A contract where the policyholder's premiums (net of charges) buy units in an investment fund, and benefits are linked to the value of those units.",
+                "explain": "This is a completely different design philosophy from with-profits: instead of smoothed, discretionary bonuses, the benefit tracks a transparent, market-based unit price directly \\u2014 the policyholder bears essentially all the investment risk/reward, in contrast to with-profits where the insurer absorbs and smooths some of that volatility."
             },
             {
                 "q": "How is the death benefit often structured under a unit-linked contract?",
-                "a": "As a combination of a fixed (absolute) amount and an amount relative to the value of the unit fund (e.g. the higher of the two)."
+                "a": "As a combination of a fixed (absolute) amount and an amount relative to the value of the unit fund (e.g. the higher of the two).",
+                "explain": "This 'higher of a fixed floor or the fund value' structure gives the policyholder some downside protection even though the fund itself can fall in value \\u2014 it's a genuine INSURANCE element layered on top of what's otherwise mostly an investment product, and it's what generates the 'sum at risk' concept covered fully in Module 23."
             },
             {
                 "q": "What is an 'accumulating with-profits' contract?",
-                "a": "A contract where the policyholder's benefit is expressed as an accumulating fund of premiums, increased by regular bonus additions."
+                "a": "A contract where the policyholder's benefit is expressed as an accumulating fund of premiums, increased by regular bonus additions.",
+                "explain": "Think of this as a hybrid: it accumulates like a unit-linked fund (a running total that grows over time), but grows via SMOOTHED bonus additions like conventional with-profits, rather than directly tracking a volatile market-based unit price \\u2014 the next card makes this contrast explicit."
             },
             {
                 "q": "What is the key difference between accumulating with-profits and unit-linked structures?",
-                "a": "Accumulating with-profits funds grow via smoothed bonus additions with no explicit unit price; unit-linked funds fluctuate directly with a market-based unit price."
+                "a": "Accumulating with-profits funds grow via smoothed bonus additions with no explicit unit price; unit-linked funds fluctuate directly with a market-based unit price.",
+                "explain": "This is the module's central distinction to keep straight: 'smoothed bonus growth' vs 'direct market-price tracking' \\u2014 both can look superficially similar (a growing fund value on a statement), but the underlying mechanism, and who bears short-term volatility, is fundamentally different."
             },
             {
                 "q": "What are 'unitised with-profits' contracts?",
-                "a": "A hybrid structure \\u2014 benefits are expressed as a unit fund like unit-linked contracts, but the fund grows via smoothed bonus additions rather than direct market-value-linked unit prices."
+                "a": "A hybrid structure \\u2014 benefits are expressed as a unit fund like unit-linked contracts, but the fund grows via smoothed bonus additions rather than direct market-value-linked unit prices.",
+                "explain": "This is essentially the same idea as accumulating with-profits above, but deliberately dressed up in unit-linked LANGUAGE (unit prices, unit holdings) for marketing/administrative consistency with genuinely unit-linked products \\u2014 worth noting the underlying economics (smoothed bonuses) is what actually matters, not the unit terminology."
             },
             {
                 "q": "What does 'explicit charges' mean in the context of unit-linked contracts?",
-                "a": "Charges are deducted transparently and separately from the fund, rather than being implicitly built into bonus rates."
+                "a": "Charges are deducted transparently and separately from the fund, rather than being implicitly built into bonus rates.",
+                "explain": "This transparency is a defining feature that distinguishes unit-linked products from with-profits ones \\u2014 a with-profits policyholder can't easily see how much of their smoothed bonus was 'really' investment return versus expense recovery, while a unit-linked policyholder can see charges deducted as a distinct, visible line item, covered in full in Module 23."
             },
             {
                 "q": "Why might terminal bonuses vary significantly between one claim and another?",
-                "a": "They reflect the insurer's actual investment performance and profits over the specific period the policy was in force, which varies by cohort/timing."
+                "a": "They reflect the insurer's actual investment performance and profits over the specific period the policy was in force, which varies by cohort/timing.",
+                "explain": "This is the direct consequence of the terminal bonus being discretionary and performance-linked (from earlier in this module) \\u2014 two otherwise-identical policies that happened to mature in different years (one after a strong market, one after a weak one) can receive quite different terminal bonuses, purely due to timing."
             },
             {
                 "q": "What risk does an insurer bear differently under conventional with-profits versus unit-linked contracts?",
-                "a": "With conventional with-profits, the insurer bears more investment risk (guarantees + smoothing); under unit-linked, more risk passes directly to the policyholder."
+                "a": "With conventional with-profits, the insurer bears more investment risk (guarantees + smoothing); under unit-linked, more risk passes directly to the policyholder.",
+                "explain": "This is the module's overarching theme stated explicitly \\u2014 every card in this module ultimately traces back to this one risk-allocation question: how much investment risk does the INSURER retain (via guarantees and smoothing) versus pass through directly to the POLICYHOLDER, and conventional with-profits and unit-linked sit at opposite ends of that spectrum."
             },
             {
                 "q": "How might a 'guaranteed level annuity' fit within the variable benefits topic?",
-                "a": "It provides a fixed, non-varying income, in contrast to with-profits or unit-linked products where the benefit level can vary with investment performance."
+                "a": "It provides a fixed, non-varying income, in contrast to with-profits or unit-linked products where the benefit level can vary with investment performance.",
+                "explain": "This card is included as a deliberate contrast/anchor point \\u2014 it's the plain-vanilla, Module 14-style annuity you already know, included here specifically so you can see clearly what 'variable' benefits are being contrasted AGAINST: a benchmark product where none of this module's variability applies at all."
             },
             {
                 "q": "Why is smoothing important to policyholders in with-profits products?",
-                "a": "It reduces the impact of short-term market volatility on the benefits they eventually receive, giving more stable, predictable growth."
+                "a": "It reduces the impact of short-term market volatility on the benefits they eventually receive, giving more stable, predictable growth.",
+                "explain": "This is the policyholder-facing benefit that justifies the whole conventional with-profits design \\u2014 someone who's uncomfortable with unit-linked-style direct market exposure can accept a somewhat lower expected return in exchange for the insurer absorbing (and smoothing out) the worst of the year-to-year volatility on their behalf."
             },
             {
                 "q": "In an accumulating with-profits contract with a fund 'defined in monetary terms,' how are bonuses typically added?",
-                "a": "As regular guaranteed and bonus interest payments credited directly to the monetary fund value, plus a terminal bonus at claim."
+                "a": "As regular guaranteed and bonus interest payments credited directly to the monetary fund value, plus a terminal bonus at claim.",
+                "explain": "This closes the module by tying accumulating with-profits back to the reversionary/terminal bonus split from its opening cards \\u2014 the same two-tier structure (a regular, guaranteed-ish addition plus a final discretionary top-up) recurs here, just expressed as monetary fund growth rather than an increasing sum assured."
             }
         ]
     },
@@ -1842,63 +1857,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'equivalence principle' used to calculate gross premiums?",
-                "a": "The premium is set so that, at the outset, the expected present value of premium income equals the expected present value of benefit outgo plus expenses."
+                "a": "The premium is set so that, at the outset, the expected present value of premium income equals the expected present value of benefit outgo plus expenses.",
+                "explain": "This is Module 7's equation of value, now with the premium $P$ as the unknown and the WHOLE machinery of Modules 12-16 (mortality-weighted benefits) sitting on the other side \\u2014 every technique built up across the life-contingencies modules so far exists to feed into exactly this one equation."
             },
             {
                 "q": "What is the difference between a 'net premium' and a 'gross premium'?",
-                "a": "A gross premium includes an allowance for expenses (and often profit); a net premium only covers the expected cost of benefits."
+                "a": "A gross premium includes an allowance for expenses (and often profit); a net premium only covers the expected cost of benefits.",
+                "explain": "Net premium is the simpler, more theoretical quantity (pure cost of benefits only); gross premium is what's actually charged in practice \\u2014 this distinction resurfaces in Module 18's reserving material, where net premium reserves are used as a simplified, more conservative alternative to gross premium reserves."
             },
             {
                 "q": "Give two types of expense typically allowed for in gross premium calculations.",
-                "a": "Initial expenses (incurred at the start of the policy) and renewal expenses (incurred regularly throughout the policy)."
+                "a": "Initial expenses (incurred at the start of the policy) and renewal expenses (incurred regularly throughout the policy).",
+                "explain": "The TIMING distinction matters for how each is valued: initial expenses are a single lump sum at time 0 needing no discounting at all, while renewal expenses need their own annuity function (often the same $\\ddot{a}_x$ used for premiums) to value the whole recurring stream."
             },
             {
                 "q": "How does a single premium contract's gross premium calculation differ from a regular premium contract's?",
-                "a": "A single premium is set equal to the present value of benefits plus expenses; a regular premium's annual amount is found by dividing that total by the relevant premium annuity factor."
+                "a": "A single premium is set equal to the present value of benefits plus expenses; a regular premium's annual amount is found by dividing that total by the relevant premium annuity factor.",
+                "explain": "This is exactly Module 8's loan-instalment logic ($X=\\frac{L}{a_{\\overline{n}|}}$) reapplied here: a single premium skips the annuity step entirely (no need to spread cost over time), while a regular premium divides the same total cost by an annuity factor, just now a life-contingent one like $\\ddot{a}_x$ instead of a certain-term one."
             },
             {
                 "q": "How would you calculate a level annual gross premium $P$ for a whole life assurance, allowing for expenses?",
-                "a": "Set $P \\cdot \\ddot{a}_x = (\\text{sum assured}) A_x + (\\text{PV of expenses})$, then solve for $P$."
+                "a": "Set $P \\cdot \\ddot{a}_x = (\\text{sum assured}) A_x + (\\text{PV of expenses})$, then solve for $P$.",
+                "explain": "This is the module's central worked template \\u2014 the equivalence principle from the top of this module, made fully concrete: premium income (left side) must equal benefit cost plus expenses (right side), and every other premium calculation in this module is a variation on this same structure with different assurance/annuity functions swapped in."
             },
             {
                 "q": "What does it mean for death benefits to 'increase by a constant compound rate'?",
-                "a": "The sum assured paid on death grows by a fixed percentage each policy year (e.g. increasing with assumed inflation)."
+                "a": "The sum assured paid on death grows by a fixed percentage each policy year (e.g. increasing with assumed inflation).",
+                "explain": "This is the GEOMETRIC growth case flagged back in Module 6 as needing a different technique from the arithmetic $(Ia)$ family \\u2014 a compound-growing sum assured is typically valued by effectively discounting at a modified 'net of growth' rate, similar in spirit to the Gordon growth model from Module 10."
             },
             {
                 "q": "How would you handle a death benefit payable 'immediately on death' rather than 'at the end of year of death' in a premium calculation?",
-                "a": "Use the corresponding 'immediate' assurance function (e.g. $\\overline{A}_x$ instead of $A_x$) in the equation of value."
+                "a": "Use the corresponding 'immediate' assurance function (e.g. $\\overline{A}_x$ instead of $A_x$) in the equation of value.",
+                "explain": "This is a direct, mechanical swap using Module 13's bar notation \\u2014 nothing else about the equivalence-principle setup changes, you're simply substituting a more realistic (immediate-payment) assurance function in place of the simpler end-of-year one."
             },
             {
                 "q": "What does it mean for survival benefits to be 'payable at defined intervals other than at maturity'?",
-                "a": "The policy pays out at multiple points during the term if the policyholder survives to each of those points, not just a single benefit at the end."
+                "a": "The policy pays out at multiple points during the term if the policyholder survives to each of those points, not just a single benefit at the end.",
+                "explain": "This describes a structure like a series of pure endowments at different durations, rather than one lump-sum pure endowment at the very end \\u2014 valuing it means summing several $_nE_x$-style pure endowment factors (Module 14) at different values of $n$, one for each survival payment date."
             },
             {
                 "q": "Why might renewal expenses be expressed 'per premium' rather than as a fixed amount?",
-                "a": "Because some renewal costs (e.g. commission) are often set as a percentage of each premium collected."
+                "a": "Because some renewal costs (e.g. commission) are often set as a percentage of each premium collected.",
+                "explain": "This creates a genuine algebraic subtlety worth watching for: if renewal expenses are a percentage OF the premium $P$ itself, then $P$ appears on BOTH sides of the equivalence-principle equation (once as income, once embedded in the expense term), so solving for $P$ requires collecting terms rather than simple division."
             },
             {
                 "q": "What's the effect of higher assumed initial expenses on the calculated gross premium, all else equal?",
-                "a": "The gross premium increases, since more expense needs to be recovered from the same premium income."
+                "a": "The gross premium increases, since more expense needs to be recovered from the same premium income.",
+                "explain": "This is a direct consequence of the equivalence principle: the right-hand side of the equation (benefits plus expenses) has grown, so for the equation to still balance, the premium on the left-hand side must grow too \\u2014 a useful intuition check whenever a question changes an expense assumption and asks how the premium responds."
             },
             {
                 "q": "Why must the equivalence principle use expected present values rather than just nominal totals?",
-                "a": "Because both premiums and benefits are contingent on survival/death and paid at different points in time, so must be discounted and probability-weighted consistently."
+                "a": "Because both premiums and benefits are contingent on survival/death and paid at different points in time, so must be discounted and probability-weighted consistently.",
+                "explain": "This is the same 'why discount cashflows at all' justification from Module 1, now compounded with Module 12's mortality weighting \\u2014 without BOTH adjustments (timing AND probability), premiums and benefits occurring at different future dates, with different chances of actually happening, simply couldn't be meaningfully compared or equated."
             },
             {
                 "q": "What does 'regular premiums payable annually or more frequently' affect in the premium equation?",
-                "a": "The choice of annuity function used for premiums \\u2014 e.g. $\\ddot{a}_x^{(12)}$ for monthly premiums instead of $\\ddot{a}_x$ for annual."
+                "a": "The choice of annuity function used for premiums \\u2014 e.g. $\\ddot{a}_x^{(12)}$ for monthly premiums instead of $\\ddot{a}_x$ for annual.",
+                "explain": "This is Module 15's frequency-conversion approximation put to direct use \\u2014 the equivalence principle's structure doesn't change at all, only which specific annuity function ($\\ddot{a}_x$ vs $\\ddot{a}_x^{(12)}$ vs others) represents the premium income stream on the left-hand side."
             },
             {
                 "q": "How would a policy allowing 'only a single premium' simplify the gross premium equation?",
-                "a": "There's no premium annuity term \\u2014 the single premium itself directly equals the present value of benefits plus expenses."
+                "a": "There's no premium annuity term \\u2014 the single premium itself directly equals the present value of benefits plus expenses.",
+                "explain": "Restates the single-vs-regular distinction from earlier in this module \\u2014 worth remembering as the SIMPLEST possible version of the equivalence principle in this whole module, useful as a sanity-check baseline before tackling more complex regular-premium, expense-laden variants."
             },
             {
                 "q": "Give one reason an insurer would want to allow for expenses when setting premiums, beyond just covering benefit cost.",
-                "a": "To ensure the policy is profitable / commercially viable, since running the business has real costs beyond the benefits themselves."
+                "a": "To ensure the policy is profitable / commercially viable, since running the business has real costs beyond the benefits themselves.",
+                "explain": "This is the commercial justification for why gross (not just net) premiums matter in practice \\u2014 an insurer charging only the net premium (pure cost of benefits) would go out of business, since it would never recover its administration, sales, and overhead costs, however accurately it priced the mortality risk itself."
             },
             {
                 "q": "How would combined death and survival benefits (an endowment assurance) be reflected in a gross premium equation?",
-                "a": "The benefit side would use the endowment assurance function (sum of term assurance and pure endowment components)."
+                "a": "The benefit side would use the endowment assurance function (sum of term assurance and pure endowment components).",
+                "explain": "This is Module 13's $A_{x:\\overline{n}|}=A^1_{x:\\overline{n}|}+A^{\\ 1}_{x:\\overline{n}|}$ identity plugged directly into this module's equivalence-principle template \\u2014 the premium calculation technique itself never changes; only the specific assurance function representing the benefit side of the equation does."
             }
         ]
     },
