@@ -2281,4 +2281,568 @@ const QUESTIONS = {
       ],
     },
   ],
+  CP1: [
+    {
+      id: "cp1-q1",
+      title: "Advising a new entrant into a regulated insurance market",
+      modules: "Modules 1, 2, 3, 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A technology company with no prior insurance experience is considering entering the market by launching a simple travel insurance product, and has asked an actuary for advice. Explain what the actuary should establish about the company's objectives before beginning any technical analysis, and why this matters.",
+          answer:
+            "The actuary should establish who the client actually is (the company's board, a specific division, etc.), the company's commercial objectives (market share, profitability targets, timescale), its risk appetite, and its understanding of the regulatory environment it is entering. This matters because technically sound advice that doesn't address the client's actual objectives has limited practical value &mdash; e.g. a product designed for maximum profitability may not suit a company whose stated goal is rapid market entry to build a customer base.",
+          note: "Candidates should resist jumping straight to technical product/pricing analysis &mdash; the command word 'explain' here specifically targets the advice-process principle (understanding the client) that must precede any technical work.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Using a PESTLE-style framework, discuss two external environment factors (other than regulation) the company should consider before launching this travel insurance product.",
+          answer:
+            "Economic: exchange rates and global economic conditions affect both claims costs (e.g. medical treatment costs abroad) and demand for travel (and hence travel insurance) itself. Technological: the company's existing technology strength could be a genuine competitive advantage (e.g. app-based instant claims, dynamic pricing using real-time travel data), but also means underwriting/claims processes must be built essentially from scratch, unlike an established insurer. Other valid factors include social (changing travel/risk attitudes) or environmental (climate-driven disruption to travel patterns).",
+          note: "Any two genuinely distinct PESTLE categories (excluding legal/regulatory, covered in part (iii)) should be accepted if well-justified and specific to this scenario, not generic statements.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the difference between prudential and conduct regulation, and identify which is likely to be the company's more immediate practical concern when designing and launching this new product.",
+          answer:
+            "Prudential regulation ensures firms are financially sound and able to meet obligations (e.g. capital/solvency requirements); conduct regulation governs how firms treat customers (fair treatment, disclosure, appropriate product design/sale). As a genuinely new insurer with limited scale initially, conduct regulation is likely the more immediate practical concern at product launch, since getting product design, disclosure and sales practices right for this specific customer base (potentially first-time insurance buyers via an app) is central to a technology-first entrant, though prudential requirements (e.g. minimum capital to be authorised at all) must also be met before writing any business.",
+          note: "A strong answer acknowledges both matter, while still making and justifying a genuine judgement about relative immediate priority for this specific scenario, rather than refusing to choose.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the actuary's advice should identify genuine alternative approaches to entering this market, rather than simply validating the company's proposed travel insurance product.",
+          answer:
+            "Providing balanced advice that considers real alternatives (e.g. entering via a different product line, partnering with an established insurer, or a phased regional launch) helps the client make a genuinely informed decision, rather than the actuary simply rubber-stamping a predetermined plan &mdash; this is part of the actuary's professional duty to give substantively useful advice, not merely technically correct validation of an already-chosen course of action.",
+          note: "This connects directly to the advice-process principle that good advice weighs genuine alternatives, not just the option presented by the client.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q2",
+      title: "Designing a combined protection and savings product",
+      modules: "Modules 5, 6, 7, 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question:
+            "A life insurer is designing a new combined protection-and-savings product for customers in their 30s and 40s. Define the three broad categories of customer financial need such a product might address, and state which combination this product is targeting.",
+          answer:
+            "The three broad categories are protection against risk (e.g. death, illness), saving/investment for the future, and income provision (e.g. in retirement). This product is deliberately targeting the first two &mdash; protection and saving &mdash; combined in a single contract.",
+          note: "Candidates should name all three categories even though only two are relevant to this product, to demonstrate the full framework before applying it.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss one advantage and one disadvantage of bundling protection and savings into a single product, compared with offering two separate, simpler products.",
+          answer:
+            "Advantage: bundling can be more convenient and potentially more cost-effective for the customer than administering and paying for two separate contracts, and may also help the insurer cross-sell and retain the customer relationship. Disadvantage: the combined product is more complex, which can reduce customer understanding of what they're actually paying for and receiving, increase administration costs, and create greater mis-selling or dispute risk &mdash; a customer may not clearly understand how much of their premium funds protection versus savings.",
+          note: "A strong answer explicitly weighs both sides rather than only listing benefits &mdash; the complexity-versus-customer-need trade-off is a recurring CP1 theme.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "The insurer is deciding whether to structure the savings element as unit-linked or with-profits. Explain the key difference in risk-sharing between these two structures.",
+          answer:
+            "In a unit-linked structure, the policyholder's benefits are directly linked to the value of units in an underlying investment fund, so investment risk is passed largely to the policyholder. In a with-profits structure, the policyholder receives smoothed investment returns via bonuses reflecting the insurer's overall investment performance, meaning the insurer retains more investment risk (and administers smoothing) on the policyholder's behalf.",
+          note: "The key distinguishing concept is WHO bears the investment risk and volatility &mdash; unit-linked passes it through directly, with-profits smooths and partially retains it.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "The insurer is also considering offering group versions of this product through employers, alongside the personal (individually purchased) version. Explain one advantage of the employer-provided route for the policyholder, and one risk it creates for them.",
+          answer:
+            "Advantage: employer-provided cover is often cheaper and more accessible than equivalent personal cover, since group purchasing power and employer subsidy can reduce cost, and typically involves less individual underwriting. Risk: benefits secured through an employer may be lost or reduced if the employee changes employer, or if the employer becomes insolvent (depending on how the benefits are secured), creating a continuity risk that a personally-owned policy wouldn't carry.",
+          note: "Candidates should identify a genuine trade-off (cost/access advantage versus continuity risk), not just list one-sided advantages of the employer route.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q3",
+      title: "Building a diversified investment portfolio",
+      modules: "Modules 9, 10, 11, 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why bonds and equities are both commonly held within an institutional investment portfolio, despite their very different risk/return characteristics.",
+          answer:
+            "Bonds offer relatively predictable cashflows and lower volatility, well-suited to matching predictable liabilities and preserving capital, while equities offer higher expected long-term returns in exchange for greater volatility. Holding both allows a portfolio to be positioned along the risk/return spectrum appropriate to the investor's objectives and liabilities, and because bond and equity returns are not perfectly correlated, combining them can also reduce overall portfolio risk for a given expected return relative to holding either asset class alone.",
+          note: "A full answer covers both the individual risk/return rationale AND the diversification/correlation rationale for holding both asset classes together.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A portfolio holds 60% in equities (expected return 8%, standard deviation 18%) and 40% in bonds (expected return 4%, standard deviation 8%), with a correlation of &minus;0.1 between the two. Calculate the portfolio's expected return and standard deviation.",
+          answer:
+            "Expected return $= 0.6(8\\%) + 0.4(4\\%) = 6.4\\%$. Covariance $= -0.1(0.18)(0.08) = -0.00144$. Portfolio variance $= 0.6^2(0.18)^2 + 0.4^2(0.08)^2 + 2(0.6)(0.4)(-0.00144) = 0.011664 + 0.001024 - 0.000691 = 0.011997$. Portfolio standard deviation $= \\sqrt{0.011997} = 10.95\\%$.",
+          note: "The negative correlation term REDUCES the portfolio variance below what a simple weighted average of the two standard deviations would suggest &mdash; this is the diversification effect referenced in part (i), now shown numerically.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the portfolio's standard deviation calculated in part (ii) is lower than the weighted average of the two individual standard deviations (12.8%).",
+          answer:
+            "This is precisely the diversification benefit of combining assets with less-than-perfect (here, negative) correlation: because equities and bonds don't move in perfect lockstep, some of each asset's individual volatility is offset by the other, reducing the combined portfolio's volatility below what a simple weighted average would suggest.",
+          note: "Candidates should connect this explicitly back to the correlation figure used in part (ii), not describe diversification only in the abstract.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why the correlation used in part (ii) might not reliably hold during a period of severe market stress.",
+          answer:
+            "Correlations between asset classes are not fixed constants and can rise sharply during a financial crisis ('correlations go to one'), as many asset classes fall together under widespread risk-averse selling and reduced liquidity &mdash; meaning the diversification benefit calculated using a historical or normal-conditions correlation may largely disappear during exactly the periods when protection is needed most.",
+          note: "This is a well-known and important limitation of diversification-based risk reduction, worth flagging explicitly whenever a portfolio risk calculation is presented as a reliable indicator of stressed-period behaviour.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q4",
+      title: "Duration matching for a pension scheme's bond portfolio",
+      modules: "Modules 13, 14, 15, 16, 17",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain what it means to match assets and liabilities by duration, as opposed to by exact cashflow.",
+          answer:
+            "Duration matching means choosing assets with a similar overall interest-rate sensitivity (duration) to the liabilities, protecting against small parallel interest rate movements, even if the individual asset and liability cashflows aren't matched exactly date-for-date and amount-for-amount as cashflow matching would require.",
+          note: "Candidates should be clear this is a looser, more achievable form of matching than exact cashflow matching, which is often impractical given the assets actually available in the market.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A pension scheme has a liability with duration 12 years and present value &pound;50m. Two bonds are available: Bond A with duration 8 years, and Bond B with duration 20 years. Calculate the amount that should be invested in each bond so that the combined bond portfolio's duration matches the liability's duration.",
+          answer:
+            "Let $w_A$ be the proportion in Bond A. $w_A(8) + (1-w_A)(20) = 12 \\Rightarrow 8w_A + 20 - 20w_A = 12 \\Rightarrow -12w_A = -8 \\Rightarrow w_A = 0.6667$. So $w_B = 0.3333$. Amount in Bond A $= 0.6667 \\times \\pounds50\\text{m} = \\pounds33.33\\text{m}$; amount in Bond B $= 0.3333 \\times \\pounds50\\text{m} = \\pounds16.67\\text{m}$.",
+          note: "This is a standard two-asset duration-matching (immunisation-style) calculation &mdash; candidates should check their weights sum to 1 and that the resulting weighted-average duration equals 12 as a sanity check.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why duration matching alone only protects the scheme against small changes in interest rates, and name the additional Redington immunisation condition needed for stronger protection.",
+          answer:
+            "Duration matching equalises the FIRST-order (linear) sensitivity of assets and liabilities to interest rate changes, which is a good approximation only for small rate movements. For larger movements, the CURVATURE of how present values respond to rate changes (convexity) also matters; full Redington immunisation additionally requires the asset portfolio's convexity to be at least as great as the liability's convexity, to protect against larger interest rate shifts as well.",
+          note: "Candidates should name convexity explicitly as the additional condition, not just say 'more precise matching is needed' vaguely.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why the scheme might choose to deliberately depart from full duration matching, accepting some mismatch risk.",
+          answer:
+            "Full matching (via bonds alone) typically limits the portfolio to the lower expected returns of fixed-interest assets; deliberately retaining some mismatch (e.g. holding growth assets like equities) allows the scheme to pursue higher expected returns, which could reduce required contributions from the sponsor over time, in exchange for accepting the investment risk that comes with a less-than-fully-matched position.",
+          note: "This is the same risk-appetite-versus-matching trade-off that recurs throughout the investment strategy material &mdash; there is no universally 'correct' answer, only a justified trade-off.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q5",
+      title: "Setting assumptions and validating a new pricing model",
+      modules: "Modules 18, 19, 20",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An insurer's pricing team has built a new deterministic pricing model for a health insurance product. Explain what 'model validation' involves, and why it is an essential step before the model's output is relied upon.",
+          answer:
+            "Model validation involves checking the model behaves sensibly and produces results consistent with expectations/reality, e.g. by testing it against known cases, checking outputs against independent benchmarks, and reviewing the model's logic and code. It is essential because a model is only as reliable as its correct construction and use &mdash; validation reduces the risk of undetected errors (in structure, coding, or application beyond the range the model was designed for) materially affecting decisions based on its output.",
+          note: "A strong answer distinguishes validation (does the model work as intended) from the separate question of whether its underlying assumptions are themselves reasonable, addressed in part (iii).",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why a deterministic model may be less appropriate than a stochastic model for assessing the capital this health insurer needs to hold against this product.",
+          answer:
+            "A deterministic model produces a single, fixed output for a given set of inputs, showing only one possible future path, whereas capital-setting specifically needs to understand the TAIL of possible adverse outcomes (e.g. a 1-in-200 year adverse scenario). A stochastic model, which explicitly incorporates randomness and produces a range/distribution of outcomes, is much better suited to quantifying this kind of tail risk, which a single deterministic figure cannot represent.",
+          note: "Candidates should connect this explicitly to the CAPITAL-setting use case specified in the question, not give a generic deterministic-versus-stochastic answer.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "The pricing team has only two years of the insurer's own claims data for this new product, alongside a larger industry-wide dataset. Explain how the concept of credibility would be used to combine these two data sources when setting the morbidity assumption.",
+          answer:
+            "Credibility theory determines how much weight to place on the insurer's own (sparse, only two years') data versus the wider, more stable industry data, based on the volume and reliability of the insurer's own experience. With only two years of own data, credibility would typically be low, so the assumption would place substantial weight on the industry data, with the own-experience weighting increasing as more of the insurer's own claims data accumulates over time.",
+          note: "Candidates don't need the Bühlmann credibility formula itself for CP1 &mdash; the general principle (more own data warrants more weight on it) is what's being tested here.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question:
+            "Comment on why the pricing team should document the assumptions and limitations underlying this model clearly, rather than presenting only the final premium rates to senior management.",
+          answer:
+            "Clear documentation of assumptions and limitations allows senior management (and any future reviewer) to understand the basis for the figures and assess whether the assumptions remain appropriate, particularly given the limited own-data credibility discussed in part (iii). Presenting only headline premium rates without this context risks over-reliance on the model beyond its genuine reliability, and undermines the transparency needed for genuine peer review and informed decision-making.",
+          note: "This connects the module's documentation/transparency principle directly to the specific data-limitation context established earlier in the question.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q6",
+      title: "Mortality assumptions and expense allocation for a new annuity book",
+      modules: "Modules 21, 22",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An insurer is launching a new annuity product. Explain why uncertainty in future mortality improvement is a particularly significant risk for this product, more so than for a term assurance product.",
+          answer:
+            "For an annuity, the insurer pays income for as long as the annuitant lives, so if mortality improves faster than assumed (people living longer than priced/reserved for), the insurer's costs increase because payments continue for longer than expected. This is the opposite exposure to term assurance, where the insurer's risk is people dying SOONER than assumed (triggering an earlier-than-expected payout) &mdash; making mortality improvement uncertainty a direct, ongoing cost risk for annuities but a comparatively minor consideration for term assurance.",
+          note: "Candidates should explicitly contrast the DIRECTION of mortality risk between annuities and term assurance, not just assert annuities are 'riskier'.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "The insurer's total annual expenses for this new annuity book are &pound;2,400,000, covering 20,000 in-force policies. &pound;600,000 of this is a fixed cost allocated per policy in force; the remaining &pound;1,800,000 is allocated in proportion to total premium income, which is &pound;10,000,000. Calculate the per-policy expense assumption and the variable expense rate (as a percentage of premium) implied by this allocation.",
+          answer:
+            "Per-policy fixed expense $= \\pounds600{,}000 / 20{,}000 = \\pounds30$ per policy. Variable expense rate $= \\pounds1{,}800{,}000 / \\pounds10{,}000{,}000 = 18\\%$ of premium. (Check: $\\pounds600{,}000 + \\pounds1{,}800{,}000 = \\pounds2{,}400{,}000$, matching the total.)",
+          note: "This is a straightforward two-part allocation calculation &mdash; candidates should keep the FIXED (per-policy) and VARIABLE (per-premium) components clearly separate rather than blending them into a single average.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why this expense allocation, calculated from a new and rapidly growing book, might not be a reliable guide to the book's future steady-state expense level.",
+          answer:
+            "In a rapidly growing book, initial (acquisition) expenses tend to dominate relative to the (still small) in-force policy count, potentially overstating the ongoing, steady-state per-policy expense level that will apply once the book matures and its expense base becomes dominated by renewal/maintenance costs instead.",
+          note: "This is a genuinely important and commonly tested trap: growth-period expense experience is not directly comparable to a mature book's expense experience."
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on why underestimating expenses in this product's pricing could undermine profitability, even if the mortality assumption in part (i) turns out to be accurate.",
+          answer:
+            "Pricing under the equivalence principle must cover benefits, expenses, and any profit margin; if expenses are understated, the actual cost of writing and servicing the business will exceed what premiums were designed to cover, eroding or eliminating profitability regardless of how accurately other assumptions (like mortality) were set &mdash; a single mis-set assumption can undermine an otherwise sound pricing exercise.",
+          note: "The key point is that ALL major assumptions must be accurate for a product to be genuinely well-priced; accuracy in one area doesn't compensate for inaccuracy in another."
+        },
+      ],
+    },
+    {
+      id: "cp1-q7",
+      title: "Contract design, pricing and new business strain for a critical illness product",
+      modules: "Modules 23, 24",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An insurer is designing a new critical illness product and considering whether to offer reviewable or guaranteed premiums. Explain the trade-off this choice creates between the insurer and the policyholder.",
+          answer:
+            "Reviewable premiums let the insurer adjust rates if future experience (e.g. claims incidence) diverges from original pricing assumptions, managing the insurer's risk over a long contract term, but this introduces uncertainty for the policyholder, who cannot be fully certain of their future costs. Guaranteed premiums give the policyholder full certainty but mean the insurer bears the full risk that future experience is worse than assumed, with no ability to reprice in response.",
+          note: "A complete answer names the risk transfer explicitly in BOTH directions, not just one side of the trade-off.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "For a single-premium version of this product, the present value of expected benefit and expense outgo is &pound;9,000. The insurer requires a profit margin equal to 5% of the premium charged. Using the equivalence principle, calculate the premium the insurer should charge.",
+          answer:
+            "Under the equivalence principle, $P = PV(\\text{outgo}) + 0.05P \\Rightarrow P(1 - 0.05) = 9{,}000 \\Rightarrow P = 9{,}000 / 0.95 = \\pounds9{,}473.68$.",
+          note: "Since the profit margin is expressed as a percentage of the PREMIUM (not of the outgo), it must be solved for algebraically rather than simply added on top of the &pound;9,000 &mdash; a common error is to compute $9{,}000 \\times 1.05$ instead.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what 'new business strain' means, and why it is likely to arise when this product is sold, even though the pricing in part (ii) is profitable overall.",
+          answer:
+            "New business strain is the initial capital cost/loss an insurer incurs when writing new business, typically because upfront expenses (e.g. commission, underwriting costs) are incurred immediately, while premium income and profit emerge only gradually. Even though the policy is profitable over its full lifetime (as confirmed by the pricing in part (ii)), the timing mismatch between the immediate upfront cost and the gradually-emerging profit still creates an initial capital drain.",
+          note: "The key insight is that lifetime profitability and new business strain are not contradictory &mdash; strain is fundamentally a TIMING issue, not a profitability issue.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss one way the insurer could finance the new business strain identified in part (iii) if it plans to sell this product at a rapidly growing volume.",
+          answer:
+            "The insurer could use reinsurance financing, where a reinsurer provides upfront financing (effectively an advance against future profits) in exchange for a share of future profits/premiums, allowing the insurer to write the new business at scale without needing to fund the full strain from its own existing capital. Alternative valid answers include using existing free capital/surplus, or moderating the pace of new business growth to match available capital.",
+          note: "Any one genuine financing option, clearly explained and linked to the rapid-growth context of the question, should be credited.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q8",
+      title: "Risk governance and underwriting for a new general insurer",
+      modules: "Modules 25, 26, 27, 28",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A newly authorised general insurer is setting up its risk management framework. Explain the 'three lines of defence' model it should adopt, and identify which line the underwriting function itself belongs to.",
+          answer:
+            "The three lines are: (1) business functions that own and manage risk day-to-day; (2) risk management/compliance functions providing independent oversight; (3) internal audit providing independent assurance. The underwriting function belongs to the FIRST line, since it is a business function directly taking on and managing insurance risk as part of day-to-day operations, subject to oversight from the second-line risk function.",
+          note: "Candidates should correctly place underwriting in the first line, not the second &mdash; a common error is to think of any risk-related function as automatically 'the risk function' (second line).",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why 'concentration risk' and 'accumulation risk' are particularly important considerations for this new insurer to identify and manage as it builds its book of business.",
+          answer:
+            "Concentration risk (excessive exposure to a single counterparty, sector, or geography) and accumulation risk (many individually accepted risks turning out to be correlated, e.g. same peril or geography) both undermine the usual assumption of largely independent claims underlying standard pricing. For a new insurer building its book from scratch, there's a genuine risk of inadvertently writing a geographically or sectorally concentrated portfolio (e.g. if early growth comes disproportionately from one region or broker), which could expose it to a much larger-than-expected aggregate loss from a single event than its capital is prepared for.",
+          note: "A strong answer explains WHY these risks specifically matter for a NEW insurer building a book (as opposed to an established, already-diversified one), not just define the terms generically.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain how the underwriting process helps ensure the risks the insurer actually accepts remain consistent with the assumptions underlying its pricing.",
+          answer:
+            "Underwriting assesses and classifies each risk before deciding whether, and on what terms, to accept it &mdash; using rating factors to group applicants into categories of similar risk level, so that a given premium is only charged to applicants whose risk genuinely matches the assumptions that premium was calculated on. Risks assessed as higher than standard can be accepted at loaded (adjusted) terms, or declined, rather than being accepted at a standard price that wouldn't reflect their true risk, preventing a mismatch between actual accepted risk and the population the pricing basis assumed.",
+          note: "This connects the underwriting process directly back to the pricing/assumption-setting material &mdash; underwriting is the practical mechanism keeping the two consistent.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question:
+            "The insurer is considering using automated/algorithmic underwriting for straightforward, low-value policies. Comment on the advantages and a key risk of this approach.",
+          answer:
+            "Automated underwriting can process large volumes of standard applications quickly and consistently, reserving more detailed manual underwriting resource for complex or high-value cases, and reduces the risk of inconsistent human underwriting decisions undermining the pricing basis. A key risk is that the automated model itself is a source of model risk (Module 18) &mdash; if its underlying logic or rating factors are flawed, or it's applied outside the range of risks it was designed/validated for, it could systematically mis-classify risk at scale before the error is detected, unlike a single human underwriter's isolated error.",
+          note: "The strongest answers recognise automation doesn't eliminate underwriting risk, it changes its NATURE &mdash; from scattered individual errors to a potentially systematic, large-scale error if the model itself is flawed.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q9",
+      title: "Measuring and transferring risk for a general insurance portfolio",
+      modules: "Modules 29, 30, 31",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "An insurer's annual aggregate claims for a portfolio are assumed to be normally distributed with mean &pound;5,000,000 and standard deviation &pound;1,200,000. Calculate the 99.5% Value at Risk (VaR) for this portfolio, and the capital required in excess of the best estimate (mean) liability, using $z_{0.995}=2.576$.",
+          answer:
+            "$VaR_{99.5\\%} = \\mu + z_{0.995}\\sigma = 5{,}000{,}000 + 2.576(1{,}200{,}000) = \\pounds8{,}091{,}200$. Capital required in excess of the best estimate $= VaR_{99.5\\%} - \\mu = 2.576(1{,}200{,}000) = \\pounds3{,}091{,}200$.",
+          note: "The best estimate (mean) is already assumed to be reserved for separately &mdash; the CAPITAL requirement is specifically the additional buffer above that best estimate, not the full VaR figure itself.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain one limitation of using VaR alone (as calculated in part (i)) to assess this portfolio's risk.",
+          answer:
+            "VaR indicates only the loss threshold that won't be exceeded with the given confidence level &mdash; it doesn't indicate the potential severity of losses BEYOND that threshold. Two portfolios could share an identical VaR figure yet have very different tail severity beyond it, a distinction VaR alone cannot reveal; TailVaR (Expected Shortfall) addresses this by measuring the expected loss given that the VaR threshold is exceeded.",
+          note: "Candidates should name TailVaR/Expected Shortfall as the measure that addresses this specific limitation, not just describe the limitation in isolation.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "The insurer is considering purchasing excess of loss reinsurance to reduce the capital requirement calculated in part (i). Discuss how this would affect the calculation, and one cost the insurer must weigh against the resulting capital saving.",
+          answer:
+            "Excess of loss reinsurance caps the insurer's exposure to individual large claims above a chosen retention, which reduces the variance (and hence the standard deviation) of the insurer's RETAINED aggregate claims relative to the gross figures used in part (i), directly reducing both the retained VaR and the required capital. The cost to weigh against this saving is the reinsurance premium itself: risk transfer isn't free, so the insurer must judge whether the price charged by the reinsurer for taking on this risk is worth the resulting reduction in retained risk and capital.",
+          note: "A complete answer identifies BOTH the mechanism (reduced retained variance lowering VaR/capital) AND the genuine cost trade-off (reinsurance premium), not just one side.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why the insurer should use multiple reinsurers for this programme, rather than placing the whole reinsurance arrangement with a single reinsurer.",
+          answer:
+            "Using multiple reinsurers diversifies counterparty risk &mdash; the risk that the party to whom risk was transferred fails to honour its obligations when called upon &mdash; so the financial failure of a single reinsurer counterparty doesn't undermine the whole risk transfer programme (and leave the insurer suddenly exposed to losses it believed were reinsured). This is the same concentration risk principle discussed in part (iii) of a related question, now applied specifically to the reinsurance counterparties themselves rather than the underlying insured risks.",
+          note: "Candidates should recognise that risk transfer itself introduces a NEW risk (counterparty/credit risk) that must be separately managed, ideally via diversification across several reinsurers.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q10",
+      title: "Reserving for claims and valuing liabilities on a general insurance book",
+      modules: "Modules 32, 33",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "A run-off triangle shows cumulative claims (&pound;'000s) as follows: Origin year 1: 200, 260, 280 (development years 1, 2, 3). Origin year 2: 210, 270 (development years 1, 2). Origin year 3: 220 (development year 1). Using the basic chain ladder method, calculate the total outstanding claims (IBNR plus claims development) across origin years 2 and 3.",
+          answer:
+            "Development factor $f_{1\\to2} = \\dfrac{260+270}{200+210} = \\dfrac{530}{410} = 1.293$. Development factor $f_{2\\to3} = \\dfrac{280}{260} = 1.077$. Origin year 2 ultimate $= 270 \\times 1.077 = 290.77$; outstanding $= 290.77 - 270 = 20.77$. Origin year 3 projected to dev. year 2 $= 220 \\times 1.293 = 284.39$; ultimate $= 284.39 \\times 1.077 = 306.27$; outstanding $= 306.27 - 220 = 86.27$. Total outstanding $= 20.77 + 86.27 = 107.04$ ('000s), i.e. &pound;107,040.",
+          note: "Origin year 3 needs TWO development factors applied in sequence (dev. year 1 to 2, then 2 to 3), while origin year 2 only needs one (dev. year 2 to 3) &mdash; applying the wrong number of factors to each origin year is the most common error in this style of question.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain why the outstanding claims calculated in part (i) are subject to considerably more uncertainty than a 'claims outstanding' provision for claims already reported and being processed.",
+          answer:
+            "The figures in part (i) include an allowance for claims incurred but not yet reported (IBNR), for which the insurer has no direct record at all, so the estimate relies entirely on statistical patterns inferred from historical development. A claims outstanding provision, by contrast, covers claims that are already known and reported, even if the final settlement amount remains somewhat uncertain, making it generally more reliably estimable than the genuinely unknown IBNR component.",
+          note: "The key distinction is between claims that are KNOWN to exist (reported, awaiting settlement) versus claims that are entirely UNKNOWN to the insurer (not yet reported at all).",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why the discount rate used to value these outstanding claims as a liability could be a particularly sensitive assumption.",
+          answer:
+            "For longer-tail claims (which take longer to fully develop and settle), a small change in the discount rate can have a large effect on the present value of the liability cashflows, since the compounding effect of discounting grows with the time horizon over which cashflows are expected to emerge &mdash; making the discount rate choice especially significant for exactly the kind of long-tail, slow-developing claims this triangle exhibits.",
+          note: "This connects the general discount-rate-sensitivity principle to the SPECIFIC long-tail characteristics evident in the run-off triangle from part (i).",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain why this liability might need to be valued on more than one basis (e.g. a best estimate basis and a regulatory solvency basis).",
+          answer:
+            "Different purposes require different levels of prudence or prescribed methodologies: a best estimate basis reflects the actuary's unbiased, most-likely view for internal management purposes, while a regulatory solvency basis may prescribe additional margins or specific methodologies to ensure a degree of comparability and appropriate prudence across the industry for solvency assessment purposes.",
+          note: "Candidates should name the genuinely different PURPOSES driving the need for multiple bases, not just assert that 'different bases exist'.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q11",
+      title: "Reported results and a run-off scenario for a struggling insurer",
+      modules: "Modules 34, 35",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An insurer's board is reviewing reported results that show declining profit despite the underlying book of business remaining broadly stable. Explain how a change in reserving assumptions alone (with no change in the underlying business) could produce this effect.",
+          answer:
+            "Liabilities (largely actuarially calculated reserves) are a major component of the balance sheet, and changes in reserve assumptions directly affect reported profit through the income statement &mdash; strengthening reserves (e.g. adopting more prudent mortality or claims assumptions) increases the liability figure, which reduces reported profit in that period even though nothing about the underlying policies or claims experience has actually changed.",
+          note: "This tests whether candidates understand that reported profit is not a pure measure of underlying business performance &mdash; it is also shaped by assumption and methodology choices.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why transparency about the assumptions underlying these reported results is particularly important for the board in this scenario.",
+          answer:
+            "Without transparency about what changed, the board risks misinterpreting a genuine assumption-driven change in reported profit as a sign of deteriorating underlying business performance (or vice versa), leading to poorly-targeted management action. Clear disclosure of the assumptions and methods used allows the board to understand and appropriately interpret the reported results, rather than taking the headline profit figure at face value without the context needed to judge what's actually driving it.",
+          note: "The strongest answers link transparency directly to avoiding a specific, plausible MISINTERPRETATION risk in this scenario, not just asserting transparency is 'good practice' generically.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Suppose the insurer's financial position continues to weaken and the regulator becomes concerned. Explain why the regulator might intervene before the insurer reaches formal insolvency, and give one example of an early intervention measure.",
+          answer:
+            "Early intervention (e.g. restricting new business, requiring a recovery plan, or requiring updated realistic valuations of assets and liabilities) may prevent full insolvency and better protect policyholders than waiting until the insurer is already unable to meet its liabilities, since problems caught and corrected earlier are generally more manageable than after they've caused significant damage.",
+          note: "Any genuine, specific early intervention measure (restricting new business, recovery plan, enhanced reporting requirements) should be credited if clearly explained.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "If the insurer ultimately becomes insolvent, comment on why policyholders might receive less than their full contractual entitlement, and how a policyholder protection scheme might mitigate this.",
+          answer:
+            "If the insurer's assets are insufficient to cover all liabilities in full, policyholders (effectively acting as creditors) may only receive a proportionate share of their entitlement, since assets have to be distributed according to a priority order rather than paying every claim in full. A policyholder protection scheme (often government or industry-backed) can provide some additional compensation to affected policyholders in this situation, though typically not a full guarantee of every contractual entitlement.",
+          note: "Candidates should recognise the protection scheme as a partial mitigation, not a complete guarantee that policyholders will always be made whole after an insolvency.",
+        },
+      ],
+    },
+    {
+      id: "cp1-q12",
+      title: "Capital requirements, diversification and surplus for a composite insurer",
+      modules: "Modules 36, 37, 38, 39",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A composite insurer calculates standalone capital requirements of &pound;40m for market risk, &pound;30m for insurance risk, and &pound;10m for operational risk. The correlation between market and insurance risk is assumed to be 0.25; operational risk is added on top without diversification benefit. Calculate the insurer's total diversified capital requirement, and the diversification benefit relative to simply summing the three standalone figures.",
+          answer:
+            "Combined market and insurance requirement $= \\sqrt{40^2 + 30^2 + 2(0.25)(40)(30)} = \\sqrt{1{,}600 + 900 + 600} = \\sqrt{3{,}100} = \\pounds55.68\\text{m}$. Total diversified requirement $= 55.68 + 10 = \\pounds65.68\\text{m}$ (operational risk added linearly). Sum of standalone requirements $= 40 + 30 + 10 = \\pounds80\\text{m}$. Diversification benefit $= 80 - 65.68 = \\pounds14.32\\text{m}$.",
+          note: "This mirrors CM2's two-asset portfolio variance formula applied to capital charges rather than asset returns &mdash; only market and insurance risk are combined using the correlation; operational risk is added on afterwards without a diversification adjustment, as specified in the question.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain why the diversification benefit calculated in part (i) exists, in terms of the underlying risks.",
+          answer:
+            "Because market risk and insurance risk are not perfectly correlated (correlation of 0.25, well below 1), the two risk types are not likely to produce their worst outcomes simultaneously, so the combined capital needed to cover both to the required confidence level is less than simply adding the two standalone requirements together &mdash; the same diversification logic that reduces portfolio risk when combining imperfectly correlated assets.",
+          note: "Candidates should connect this explicitly to the correlation figure used in the calculation, not describe diversification only in the abstract.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the insurer might choose to use an internal model rather than a regulatory standard formula to calculate its capital requirement, and one disadvantage of doing so.",
+          answer:
+            "An internal model can more accurately reflect the insurer's own specific risk profile (e.g. its genuine diversification benefits and risk correlations, as calculated in part (i)), potentially avoiding over- or under-stating capital needs relative to its actual risk, unlike a standardised formula applied uniformly across the industry. A key disadvantage is that internal models are more complex and costly to build, maintain, and validate, and require regulatory approval before they can be used to replace the standard formula, unlike the standard formula's comparative simplicity and industry-wide comparability.",
+          note: "A complete answer weighs both the accuracy advantage AND the cost/approval-burden disadvantage, not just one side of the trade-off.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "The insurer's available capital currently exceeds its required capital, generating a surplus. Comment on why ongoing monitoring of this surplus position is essential, rather than treating the current healthy position as a fixed, permanent state.",
+          answer:
+            "The insurer's risk profile, business volumes, and the external environment all change over time, so a surplus position that is currently healthy could erode as conditions change (e.g. adverse claims experience, market movements, or business growth increasing required capital) &mdash; ongoing monitoring allows the insurer to compare actual experience against expectations and take timely management action (e.g. adjusting surplus distribution or risk transfer) before any deterioration becomes severe, closing the actuarial control cycle back into revised assumptions and decisions.",
+          note: "This closing comment should reflect CP1's recurring ongoing-review theme &mdash; capital and surplus management is a continuous process, not a one-off calculation to be checked once and forgotten.",
+        },
+      ],
+    },
+  ],
 };
