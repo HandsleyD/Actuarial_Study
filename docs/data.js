@@ -5035,63 +5035,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the key difference between the (fully) Bayesian and empirical Bayes approaches to credibility theory?",
-                "a": "Empirical Bayes estimates the prior's parameters from the observed data itself, rather than assuming a fully specified prior in advance."
+                "a": "Empirical Bayes estimates the prior's parameters from the observed data itself, rather than assuming a fully specified prior in advance.",
+                "explain": "This is the final resolution of a tension that's run through both this and the previous two modules — Module 14's full Bayesian approach needs a prior specified in advance (potentially subjective), while this module's empirical Bayes approach removes that subjectivity by letting the portfolio's OWN data determine the prior's parameters."
             },
             {
                 "q": "What does 'Empirical Bayes Credibility Theory Model 1' typically assume about the risks in a portfolio?",
-                "a": "Each risk has the same number of years of data/exposure (a balanced data structure)."
+                "a": "Each risk has the same number of years of data/exposure (a balanced data structure).",
+                "explain": "This 'balanced' simplification makes the variance-component estimation (covered below) considerably cleaner algebraically — with every risk contributing the same amount of data, the within-risk and between-risk variance formulas don't need to weight different risks differently, unlike the more general Model 2 covered next."
             },
             {
                 "q": "What does 'Empirical Bayes Credibility Theory Model 2' allow for, that Model 1 does not?",
-                "a": "Different risks having different (unequal) amounts of exposure/data."
+                "a": "Different risks having different (unequal) amounts of exposure/data.",
+                "explain": "This is the realistic generalisation most real insurance portfolios actually need — a portfolio of commercial policies naturally has some clients with long histories and others newly onboarded, and Model 2's more complex formulas correctly give more informative (longer-history) risks proportionally more influence on the estimated variance components."
             },
             {
                 "q": "How are the within-risk and between-risk variance components estimated in empirical Bayes credibility theory?",
-                "a": "Using sample variance-type estimators calculated directly from the observed claims data across the risks."
+                "a": "Using sample variance-type estimators calculated directly from the observed claims data across the risks.",
+                "explain": "This is Module 8's point-estimation ideas (unbiasedness in particular) applied specifically to the two variance components from Module 5's law of total variance — rather than being told or assuming these variances, empirical Bayes constructs specific formulas (analogous to a sample variance) to estimate them directly from the portfolio's claims history."
             },
             {
                 "q": "Why is it called 'empirical' Bayes?",
-                "a": "Because the prior's parameters are estimated empirically from the data, rather than specified from external judgement or theory."
+                "a": "Because the prior's parameters are estimated empirically from the data, rather than specified from external judgement or theory.",
+                "explain": "This restates the module's opening distinction as a plain naming explanation — 'empirical' signals the departure from Module 14's fully-specified-in-advance prior, replacing subjective judgement with objective, data-driven estimation of the same underlying quantities."
             },
             {
                 "q": "What is a practical advantage of the empirical Bayes approach over the full Bayesian approach?",
-                "a": "It doesn't require specifying a full prior distribution in advance — the observed portfolio data determines the credibility weighting."
+                "a": "It doesn't require specifying a full prior distribution in advance — the observed portfolio data determines the credibility weighting.",
+                "explain": "This is the module's central selling point for actuarial practice — a working actuary often has ample PORTFOLIO data (many similar risks) but no natural, agreed-upon prior distribution to assume; empirical Bayes sidesteps that problem entirely by letting the portfolio effectively construct its own prior."
             },
             {
                 "q": "What data structure issue does 'Model 2' specifically address that 'Model 1' cannot handle well?",
-                "a": "Risks with differing volumes of exposure, since the credibility factor formula needs to reflect each risk's different information."
+                "a": "Risks with differing volumes of exposure, since the credibility factor formula needs to reflect each risk's different information.",
+                "explain": "Restates the Model 1 vs Model 2 distinction from earlier in this module as a diagnostic question — before applying either model to a real dataset, checking whether exposure is genuinely balanced across risks is the deciding factor for which of the two to use."
             },
             {
                 "q": "How does the credibility factor formula typically depend on exposure/data volume in empirical Bayes models?",
-                "a": "It increases with an individual risk's exposure/data volume relative to the estimated variance components."
+                "a": "It increases with an individual risk's exposure/data volume relative to the estimated variance components.",
+                "explain": "This is Module 15's 'more data increases $Z$' result, now made concrete with the estimated (rather than assumed) variance components from earlier in this module plugged into the formula — the underlying logic is unchanged, only the SOURCE of the variance estimates has shifted from assumption to direct estimation."
             },
             {
                 "q": "Why might estimating variance components from limited data be a practical challenge in empirical Bayes credibility theory?",
-                "a": "With few risks or little data per risk, the estimated variances can themselves be noisy/unreliable."
+                "a": "With few risks or little data per risk, the estimated variances can themselves be noisy/unreliable.",
+                "explain": "This is a genuine, important limitation worth flagging — empirical Bayes trades away the subjectivity of a specified prior (Module 14) for a new form of uncertainty: the ESTIMATED variance components are themselves subject to sampling error, and with a small portfolio that estimation error can meaningfully undermine the resulting credibility factors."
             },
             {
                 "q": "What assumption is generally made about the risk parameters of different risks within a portfolio?",
-                "a": "That they are drawn independently from some common (but not fully specified) underlying distribution across the portfolio."
+                "a": "That they are drawn independently from some common (but not fully specified) underlying distribution across the portfolio.",
+                "explain": "This is the key structural assumption that makes 'estimating the prior from data' a coherent idea at all — treating each risk's true underlying parameter as an independent draw from a shared portfolio-wide distribution is what lets you pool information across DIFFERENT risks to estimate that shared distribution's properties."
             },
             {
                 "q": "How does empirical Bayes credibility theory relate to conditional expectation and the law of total variance?",
-                "a": "It applies the same within/between variance decomposition, but estimates those components directly from data."
+                "a": "It applies the same within/between variance decomposition, but estimates those components directly from data.",
+                "explain": "This closes the loop all the way back to Module 5 one final time — every credibility module in this trio (14, 15, 16) is really the same core idea (the law of total variance's two components) approached from a different angle: fully Bayesian, classical/theoretical, and now empirically estimated from data."
             },
             {
                 "q": "What would you check before applying 'Model 1' (equal exposure) rather than 'Model 2' to a data set?",
-                "a": "Whether all the risks genuinely have the same amount of exposure — if not, Model 2's unequal-exposure approach is more appropriate."
+                "a": "Whether all the risks genuinely have the same amount of exposure — if not, Model 2's unequal-exposure approach is more appropriate.",
+                "explain": "Worth treating this as a mandatory first check before running any empirical Bayes calculation — using Model 1's simpler formulas on genuinely unbalanced data would give a biased or misleading result, since the simplifying 'equal exposure' assumption underlying Model 1 wouldn't actually hold."
             },
             {
                 "q": "Why is empirical Bayes credibility theory particularly useful in general insurance ratemaking?",
-                "a": "Real portfolios often have many risks with varying claims histories and no natural, fully specified prior — empirical Bayes lets data calibrate the weighting."
+                "a": "Real portfolios often have many risks with varying claims histories and no natural, fully specified prior — empirical Bayes lets data calibrate the weighting.",
+                "explain": "This closes the module (and the whole credibility trio) with the practical bottom line — a general insurer typically has exactly the ingredients empirical Bayes needs (many risks, no obvious prior) and exactly the problem it solves (blending sparse individual experience with the wider book sensibly), making it one of the most directly applicable techniques in the entire CS1 syllabus."
             },
             {
                 "q": "What happens to the empirical Bayes credibility factor for a risk with an unusually large amount of exposure?",
-                "a": "It tends to be higher, giving that risk's own experience more relative weight in its premium estimate."
+                "a": "It tends to be higher, giving that risk's own experience more relative weight in its premium estimate.",
+                "explain": "A direct, concrete instance of the earlier 'Z increases with exposure' card — a large commercial fleet policy with years of substantial claims history would typically earn a high $Z$, close to relying almost entirely on its own experience, unlike a small, newly-written policy which would lean much more heavily on the collective portfolio average."
             },
             {
                 "q": "How would you interpret an estimated between-risk variance of (approximately) zero in an empirical Bayes analysis?",
-                "a": "Risks in the portfolio are quite homogeneous, so credibility factors would tend to be low, favouring the collective mean."
+                "a": "Risks in the portfolio are quite homogeneous, so credibility factors would tend to be low, favouring the collective mean.",
+                "explain": "This closes the module with a genuinely intuitive final result — if the ESTIMATED between-risk variance comes out near zero, it's telling you the portfolio's risks don't actually differ much from each other underneath the noise, so there's little genuine signal in any individual risk's own experience worth weighting heavily against the stable, shared collective average."
             }
         ]
     }
