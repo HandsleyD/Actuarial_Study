@@ -1939,63 +1939,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "Why does an insurance company set up reserves for its policies?",
-                "a": "To ensure it holds enough assets to meet future liabilities under existing policies, since premiums received to date may not yet cover the expected cost of future benefits/expenses."
+                "a": "To ensure it holds enough assets to meet future liabilities under existing policies, since premiums received to date may not yet cover the expected cost of future benefits/expenses.",
+                "explain": "This is a direct consequence of level premiums (Module 17) combined with rising mortality risk over a lifetime \\u2014 early premiums are deliberately set higher than the pure cost of risk in those early years (to keep the premium level for the whole term), and reserving is how the insurer holds onto that early 'overpayment' to fund the higher risk cost in later years."
             },
             {
                 "q": "What is the 'prospective' gross premium reserve?",
-                "a": "The expected present value of future benefits and expenses, minus the expected present value of future premiums, calculated at a given valuation date."
+                "a": "The expected present value of future benefits and expenses, minus the expected present value of future premiums, calculated at a given valuation date.",
+                "explain": "This is precisely Module 8's prospective loan-balance method, applied to an insurance policy instead of a loan \\u2014 'what's left to be paid out in the future' minus 'what's left to be received in the future' at today's valuation date, using exactly the same forward-looking equation of value logic."
             },
             {
                 "q": "What is the 'retrospective' gross premium reserve?",
-                "a": "The accumulated value of past premiums received, minus the accumulated value of past benefits and expenses paid, up to the valuation date (per surviving policyholder)."
+                "a": "The accumulated value of past premiums received, minus the accumulated value of past benefits and expenses paid, up to the valuation date (per surviving policyholder).",
+                "explain": "This mirrors Module 8's retrospective loan-balance method equally directly \\u2014 the 'per surviving policyholder' qualifier is the genuinely new life-contingent twist: unlike a loan, some of the original cohort of policyholders will have died along the way, so past cashflows must be accumulated per SURVIVOR, not per original policy sold."
             },
             {
                 "q": "Under what conditions are the prospective and retrospective reserves equal?",
-                "a": "When the same mortality, interest and expense assumptions are used throughout (at issue and at the valuation date) as were used to set the original premium."
+                "a": "When the same mortality, interest and expense assumptions are used throughout (at issue and at the valuation date) as were used to set the original premium.",
+                "explain": "This is Module 8's equivalence condition, generalised to require ALL THREE assumption types (not just interest) to stay consistent \\u2014 in practice, insurers often deliberately use different (more prudent) assumptions for reserving than for original pricing, which is exactly why the two methods can genuinely diverge in real-world reserving, unlike the simple loan case."
             },
             {
                 "q": "What is the 'future loss random variable' for a policy?",
-                "a": "The present value of future benefits and expenses minus the present value of future premiums, viewed as a random variable at a given point in time."
+                "a": "The present value of future benefits and expenses minus the present value of future premiums, viewed as a random variable at a given point in time.",
+                "explain": "This is Module 15's mean/variance toolkit (built around the random variable $Z=v^{K_x+1}$) extended to a full policy including premiums and expenses, not just the death benefit alone \\u2014 the prospective reserve, as the next card shows, is simply this random variable's EXPECTED value."
             },
             {
                 "q": "How does the gross premium reserve relate to the expected future loss random variable?",
-                "a": "The reserve equals the expected value of the future loss random variable (the prospective reserve)."
+                "a": "The reserve equals the expected value of the future loss random variable (the prospective reserve).",
+                "explain": "This ties the previous card directly back to the prospective reserve definition \\u2014 reserving isn't a separate new calculation from Module 15's mean-and-variance work, it's simply taking the EXPECTATION (mean) of that same future-loss random variable, evaluated at a later point in the policy's life than time zero."
             },
             {
                 "q": "What is the recursive relationship between successive annual gross premium reserves (in words)?",
-                "a": "The reserve at the start of a year, plus that year's premium, less expenses, accumulated with interest, less the expected cost of death claims during the year, gives the reserve at the end of the year (per survivor)."
+                "a": "The reserve at the start of a year, plus that year's premium, less expenses, accumulated with interest, less the expected cost of death claims during the year, gives the reserve at the end of the year (per survivor).",
+                "explain": "This is genuinely one of the most useful practical formulas in CM1 \\u2014 it's the actuarial equivalent of Module 8's loan schedule (opening balance, interest, payment, closing balance), letting reserves be rolled forward mechanically year by year rather than recalculated from a full prospective/retrospective formula each time."
             },
             {
                 "q": "Why is the recursive reserve relationship useful in practice?",
-                "a": "It allows reserves to be rolled forward year by year using only the previous year's reserve and that year's assumptions, rather than recalculating from scratch."
+                "a": "It allows reserves to be rolled forward year by year using only the previous year's reserve and that year's assumptions, rather than recalculating from scratch.",
+                "explain": "This is exactly why real insurers maintain reserves this way operationally \\u2014 recalculating a full prospective reserve for every policy every year from first principles would be far more computationally expensive than simply rolling last year's held reserve forward one step using the recursive formula."
             },
             {
                 "q": "What does the recursive relationship let you derive about a year's mortality profit?",
-                "a": "The relationship's 'release' or 'strain' from actual versus expected deaths during the year effectively gives the mortality profit or loss for that year."
+                "a": "The relationship's 'release' or 'strain' from actual versus expected deaths during the year effectively gives the mortality profit or loss for that year.",
+                "explain": "This is the direct bridge into Module 21's mortality profit topic \\u2014 the recursive formula already has an 'expected cost of death claims' term built in; comparing that EXPECTED figure to what ACTUALLY happened during the year is precisely the expected-vs-actual death strain comparison Module 21 formalises."
             },
             {
                 "q": "What is a 'net premium' reserve, and how does it differ from a gross premium reserve?",
-                "a": "A net premium reserve uses only the net premium (no expense loading), ignoring both future and past expenses \\u2014 a simplified, historically more conservative reserving approach."
+                "a": "A net premium reserve uses only the net premium (no expense loading), ignoring both future and past expenses \\u2014 a simplified, historically more conservative reserving approach.",
+                "explain": "This deliberately reuses Module 17's net-vs-gross premium distinction, now applied to reserving rather than pricing \\u2014 net premium reserving is a historically important simplification (still sometimes used for statutory minimum reserving) that sidesteps needing reliable expense assumptions at all."
             },
             {
                 "q": "How do net premiums relate to gross premiums in reserving?",
-                "a": "The net premium is calculated using the equivalence principle applied only to benefits; the net premium reserve uses this net premium, not the actual gross premium charged."
+                "a": "The net premium is calculated using the equivalence principle applied only to benefits; the net premium reserve uses this net premium, not the actual gross premium charged.",
+                "explain": "This is a subtle but important point: the net premium reserve does NOT simply strip expenses out of the ACTUAL gross premium charged \\u2014 it recalculates an entirely separate, hypothetical 'net premium' from scratch via its own equivalence principle equation (benefits only), then reserves using THAT theoretical figure."
             },
             {
                 "q": "Why might a net premium reserving approach be considered more prudent than a gross premium approach?",
-                "a": "It ignores the (potentially unreliable) expense loading in premiums, giving a more cautious reserve, less sensitive to expense assumption changes."
+                "a": "It ignores the (potentially unreliable) expense loading in premiums, giving a more cautious reserve, less sensitive to expense assumption changes.",
+                "explain": "The logic: gross premium reserving implicitly assumes the insurer will correctly recover its expenses as planned in every future year \\u2014 if future expenses turn out higher than assumed, a gross premium reserve could understate what's really needed, whereas net premium reserving sidesteps that risk entirely by not relying on expense assumptions being right."
             },
             {
                 "q": "What happens to a policy's reserve over its term for a typical whole life or endowment assurance?",
-                "a": "It generally increases over time, as the policy moves closer to the eventual claim."
+                "a": "It generally increases over time, as the policy moves closer to the eventual claim.",
+                "explain": "This connects to the reserving rationale from the top of this module \\u2014 as time passes, the 'overpayment' built up in early years (per the level-premium logic) keeps accumulating, and the remaining PV of future benefits (relative to remaining future premiums) grows as a proportion of the total, both pushing the reserve upward."
             },
             {
                 "q": "Why is understanding equivalence between prospective and retrospective reserves useful for exam calculations?",
-                "a": "It lets you choose whichever method is computationally easier for a given problem, knowing both give the same answer under consistent assumptions."
+                "a": "It lets you choose whichever method is computationally easier for a given problem, knowing both give the same answer under consistent assumptions.",
+                "explain": "This is a genuinely practical exam-technique tip, not just theory \\u2014 for a policy early in its term, retrospective might involve fewer past cashflows to accumulate; late in its term, prospective might involve fewer future cashflows to discount \\u2014 pick whichever direction has less to compute."
             },
             {
                 "q": "How would allowing for expenses generally affect the size of the gross premium reserve compared to a net premium reserve?",
-                "a": "It can increase or decrease the reserve depending on the expense pattern \\u2014 high initial expenses can reduce early reserves relative to net premium reserves."
+                "a": "It can increase or decrease the reserve depending on the expense pattern \\u2014 high initial expenses can reduce early reserves relative to net premium reserves.",
+                "explain": "This is a genuinely counterintuitive result worth understanding: you might expect 'allowing for expenses' to always mean a HIGHER reserve, but if most expenses are front-loaded (heavy initial costs, light renewal costs), the gross premium's expense loading is mostly already 'spent' early on, which can actually make gross premium reserves LOWER than net premium reserves in the policy's early years."
             }
         ]
     },
@@ -2006,63 +2021,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does $\\ddot{a}_{xy}$ represent?",
-                "a": "The expected present value of an annuity of $1$ per year, paid annually in advance, while both lives $x$ and $y$ are alive (a 'joint life' annuity, ceasing on first death)."
+                "a": "The expected present value of an annuity of $1$ per year, paid annually in advance, while both lives $x$ and $y$ are alive (a 'joint life' annuity, ceasing on first death).",
+                "explain": "This module extends every single-life function from Modules 12-15 to TWO lives at once \\u2014 the subscript $xy$ (no separator) is the notation for 'both alive', and it's worth thinking of this as Module 14's $\\ddot{a}_x$ but with a stricter survival condition: BOTH lives must be alive, not just one."
             },
             {
                 "q": "What does $A_{xy}$ represent?",
-                "a": "The expected present value of a benefit of $1$ payable at the end of the year in which the first of the two lives $(x)$ and $(y)$ dies."
+                "a": "The expected present value of a benefit of $1$ payable at the end of the year in which the first of the two lives $(x)$ and $(y)$ dies.",
+                "explain": "The joint-life ASSURANCE pays on the FIRST death, exactly mirroring how the joint-life ANNUITY above stops at the first death \\u2014 both functions are governed by the same underlying event (whichever life dies first), just triggering opposite actions (annuity stops paying; assurance starts paying)."
             },
             {
                 "q": "What is a 'last survivor' annuity, $\\ddot{a}_{\\overline{xy}}$?",
-                "a": "An annuity that continues to be paid as long as at least one of the two lives is still alive, ceasing only on the second (later) death."
+                "a": "An annuity that continues to be paid as long as at least one of the two lives is still alive, ceasing only on the second (later) death.",
+                "explain": "The bar over $xy$ signals 'last survivor' throughout this module's notation, in direct contrast to the un-barred joint-life ($xy$) functions above \\u2014 note this is a MUCH more generous annuity than the joint-life version, since it keeps paying through the whole period after the first death too."
             },
             {
                 "q": "What is the key identity linking joint life and last survivor functions?",
-                "a": "$\\ddot{a}_x + \\ddot{a}_y = \\ddot{a}_{xy} + \\ddot{a}_{\\overline{xy}}$ (and similarly for assurance functions)."
+                "a": "$\\ddot{a}_x + \\ddot{a}_y = \\ddot{a}_{xy} + \\ddot{a}_{\\overline{xy}}$ (and similarly for assurance functions).",
+                "explain": "This identity is genuinely elegant and worth deriving intuitively: adding the two SEPARATE single-life annuities double-counts the period while BOTH are alive and misses nothing else, while adding joint-life-annuity plus last-survivor-annuity ALSO covers 'both alive' once (via joint life) plus 'exactly one alive' once (via the extra last-survivor period) \\u2014 both sides account for the same total payment pattern, just split differently."
             },
             {
                 "q": "Under the common assumption of independent future lifetimes, how do you calculate the joint survival probability $_tp_{xy}$?",
-                "a": "$_tp_{xy} = {_tp_x} \\times {_tp_y}$ \\u2014 the product of the individual survival probabilities."
+                "a": "$_tp_{xy} = {_tp_x} \\times {_tp_y}$ \\u2014 the product of the individual survival probabilities.",
+                "explain": "This is basic independent-events probability (Module 12's survival probabilities multiplied together) \\u2014 note the word 'independent' is doing real work: in reality, spouses' lifetimes are often somewhat correlated (shared lifestyle, environment), but the standard CM1 approach assumes independence unless a question explicitly says otherwise, purely for tractability."
             },
             {
                 "q": "What does $_tq_{xy}$ represent?",
-                "a": "The probability that at least one of the two lives $(x)$ and $(y)$ has died within $t$ years: $_tq_{xy} = 1 - {_tp_{xy}}$"
+                "a": "The probability that at least one of the two lives $(x)$ and $(y)$ has died within $t$ years: $_tq_{xy} = 1 - {_tp_{xy}}$",
+                "explain": "Careful with the wording here \\u2014 the subscript $xy$ (no bar) keeps meaning 'joint life' throughout, so $_tq_{xy}$ is the complement of BOTH surviving, i.e. AT LEAST ONE has died; it's easy to misread this as 'both have died', which is actually a different, smaller probability."
             },
             {
                 "q": "What does the last survivor assurance function $A_{\\overline{xy}}$ represent?",
-                "a": "The expected present value of $1$ payable at the end of the year of the second (later) death of the two lives."
+                "a": "The expected present value of $1$ payable at the end of the year of the second (later) death of the two lives.",
+                "explain": "This is the assurance-side counterpart to the last-survivor annuity above \\u2014 note both $A_{\\overline{xy}}$ and $\\ddot{a}_{\\overline{xy}}$ care about the SECOND (later) death, in contrast to $A_{xy}$ and $\\ddot{a}_{xy}$, which both care about the FIRST death; keeping the bar/no-bar distinction straight is the single most important notational skill in this module."
             },
             {
                 "q": "How would you find $_tp_{\\overline{xy}}$, the probability that at least one life survives $t$ years?",
-                "a": "$_tp_{\\overline{xy}} = {_tp_x} + {_tp_y} - {_tp_{xy}}$"
+                "a": "$_tp_{\\overline{xy}} = {_tp_x} + {_tp_y} - {_tp_{xy}}$",
+                "explain": "This is the classic inclusion-exclusion formula from basic probability (P(A or B) = P(A) + P(B) \\u2212 P(A and B)), applied to survival \\u2014 subtracting $_tp_{xy}$ avoids double-counting the scenario where BOTH lives survive, which would otherwise be counted twice (once in $_tp_x$, once in $_tp_y$)."
             },
             {
                 "q": "Why is a 'joint life last survivor' annuity a common real-world product?",
-                "a": "It's often used for a married couple's pension, continuing payments until both spouses have died, providing income security to the surviving spouse."
+                "a": "It's often used for a married couple's pension, continuing payments until both spouses have died, providing income security to the surviving spouse.",
+                "explain": "This is the practical, professional payoff of the whole module \\u2014 a standard couple's pension is precisely $\\ddot{a}_{\\overline{xy}}$ (possibly with a reduced amount after the first death, which Module 20's reversionary annuities refine further), ensuring the surviving spouse isn't left with no income just because their partner died first."
             },
             {
                 "q": "What assumption is typically made about the two lives' future lifetimes unless stated otherwise?",
-                "a": "That they are independent \\u2014 the death or survival of one life doesn't affect the probability distribution of the other's future lifetime."
+                "a": "That they are independent \\u2014 the death or survival of one life doesn't affect the probability distribution of the other's future lifetime.",
+                "explain": "Restates the independence assumption flagged earlier in this module as the module's DEFAULT baseline \\u2014 worth remembering this is a simplifying assumption, not a fact about the world, since it's what makes the clean multiplicative formulas throughout this module possible."
             },
             {
                 "q": "How would you extend joint life functions to three or more lives?",
-                "a": "The same multiplicative independence logic extends \\u2014 e.g. $_tp_{xyz} = {_tp_x}\\cdot{_tp_y}\\cdot{_tp_z}$ for the probability all three survive."
+                "a": "The same multiplicative independence logic extends \\u2014 e.g. $_tp_{xyz} = {_tp_x}\\cdot{_tp_y}\\cdot{_tp_z}$ for the probability all three survive.",
+                "explain": "This confirms the two-life techniques in this module aren't a special case limited to exactly two lives \\u2014 the same independence-multiplication trick scales to any number of lives, useful for e.g. a family trust or a multi-life scheme with more than a simple couple involved."
             },
             {
                 "q": "What does 'contingent' mean in the phrase 'contingent and reversionary benefits'?",
-                "a": "A benefit that is payable only if a specified life dies before (or after) another specified life \\u2014 payment is contingent on the order of deaths."
+                "a": "A benefit that is payable only if a specified life dies before (or after) another specified life \\u2014 payment is contingent on the order of deaths.",
+                "explain": "This previews Module 20's whole topic \\u2014 note the key difference from THIS module's joint-life/last-survivor functions: those only cared about WHETHER a death had happened (first or second); contingent benefits additionally care about WHICH specific life died first, a genuinely harder question covered next."
             },
             {
                 "q": "How would a term assurance on the first death of two lives, $A^1_{xy:\\overline{n}|}$, be interpreted?",
-                "a": "The expected present value of $1$ payable at the end of the year of the first death of $(x)$ and $(y)$, provided that first death occurs within $n$ years."
+                "a": "The expected present value of $1$ payable at the end of the year of the first death of $(x)$ and $(y)$, provided that first death occurs within $n$ years.",
+                "explain": "This combines THREE notational conventions you now know: the '1 over the joint subscript' meaning 'triggered by first death' (echoing Module 13's superscript-1 convention), the term $\\overline{n}|$ truncating to $n$ years (Module 13's term assurance), and the $xy$ joint-life subscript from earlier in this module."
             },
             {
                 "q": "Why is the 'first death' (joint life) function always smaller than either individual single-life annuity function?",
-                "a": "Because the annuity ceases as soon as either life dies, which happens no later than either individual's own death \\u2014 so payments are expected to stop sooner."
+                "a": "Because the annuity ceases as soon as either life dies, which happens no later than either individual's own death \\u2014 so payments are expected to stop sooner.",
+                "explain": "This gives you a quick sanity check for any calculated $\\ddot{a}_{xy}$ value: it must be SMALLER than both $\\ddot{a}_x$ and $\\ddot{a}_y$ individually \\u2014 if your answer comes out larger than either single-life value, something has gone wrong in the calculation."
             },
             {
                 "q": "Why is the 'last survivor' annuity always at least as large as the larger of the two individual single-life annuities?",
-                "a": "Because it continues paying until the later of the two deaths, which is at least as late as either individual life's own death."
+                "a": "Because it continues paying until the later of the two deaths, which is at least as late as either individual life's own death.",
+                "explain": "The mirror-image sanity check to the joint-life card above: $\\ddot{a}_{\\overline{xy}}$ must be AT LEAST as large as $\\max(\\ddot{a}_x,\\ddot{a}_y)$ \\u2014 together, these two bounding checks (joint life is the smallest of the three related annuities, last survivor is the largest) are a quick way to catch a bar/no-bar notation mix-up in your own working."
             }
         ]
     },
