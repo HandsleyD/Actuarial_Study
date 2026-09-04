@@ -3171,63 +3171,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'stochastic differential equation' (SDE)?",
-                "a": "An equation describing how a process evolves over time, involving a deterministic (drift) term and a random (diffusion) term driven by Brownian motion."
+                "a": "An equation describing how a process evolves over time, involving a deterministic (drift) term and a random (diffusion) term driven by Brownian motion.",
+                "explain": "This is Module 7's Brownian motion put to direct use as a modelling BUILDING BLOCK, rather than studied for its own sake — an SDE describes any process as 'ordinary, predictable change PLUS Brownian-motion-driven randomness', which is the template every specific model in this module (GBM, Ornstein-Uhlenbeck) follows."
             },
             {
                 "q": "What is the general form of an Ito process SDE?",
-                "a": "$dX_t = \\mu(X_t,t)\\,dt + \\sigma(X_t,t)\\,dW_t$"
+                "a": "$dX_t = \\mu(X_t,t)\\,dt + \\sigma(X_t,t)\\,dW_t$",
+                "explain": "Note both $\\mu$ and $\\sigma$ can depend on the CURRENT value $X_t$ and time $t$ — this generality is what makes an Ito process flexible enough to describe very different behaviours (constant proportional growth for GBM, pull-back-to-a-mean for Ornstein-Uhlenbeck) just by choosing different functional forms for these two terms."
             },
             {
                 "q": "What does the 'drift' term in an SDE represent?",
-                "a": "The deterministic (expected, per unit time) rate of change of the process."
+                "a": "The deterministic (expected, per unit time) rate of change of the process.",
+                "explain": "This is the part of the SDE that would be there even WITHOUT any randomness — set $\\sigma=0$ and you're left with an ordinary differential equation describing the process's average trajectory, which is a useful way to build intuition for what the drift term alone is doing before adding the noise back in."
             },
             {
                 "q": "What does the 'diffusion' term in an SDE represent?",
-                "a": "The magnitude/scale of the random fluctuations driven by Brownian motion."
+                "a": "The magnitude/scale of the random fluctuations driven by Brownian motion.",
+                "explain": "This is where Module 7's Brownian motion enters directly — the $\\sigma\\,dW_t$ term scales the random 'noise' $dW_t$ by whatever $\\sigma$ is at that point, which is exactly why GBM's diffusion term $\\sigma S_t$ makes fluctuations proportionally larger for a higher stock price, while Ornstein-Uhlenbeck's constant $\\sigma$ keeps fluctuation size fixed regardless of level."
             },
             {
                 "q": "What is Ito's Lemma used for?",
-                "a": "Finding the SDE satisfied by a (twice-differentiable) function of an Ito process — the stochastic calculus analogue of the chain rule."
+                "a": "Finding the SDE satisfied by a (twice-differentiable) function of an Ito process — the stochastic calculus analogue of the chain rule.",
+                "explain": "This is genuinely the single most important tool in this module — it's what lets you derive, for instance, the SDE that $\\ln S_t$ satisfies GIVEN the SDE that $S_t$ itself satisfies, which is exactly the technique behind solving GBM explicitly (see the solved-form card below)."
             },
             {
                 "q": "What is the key extra term in Ito's Lemma compared with the ordinary chain rule?",
-                "a": "A second-order term $\\frac{1}{2}\\frac{\\partial^2 f}{\\partial x^2}\\sigma^2\\,dt$, arising from the non-zero quadratic variation of Brownian motion."
+                "a": "A second-order term $\\frac{1}{2}\\frac{\\partial^2 f}{\\partial x^2}\\sigma^2\\,dt$, arising from the non-zero quadratic variation of Brownian motion.",
+                "explain": "This is precisely Module 7's quadratic-variation property earning its keep — an ordinary function's chain rule only needs the FIRST derivative, but because Brownian motion's $(dW_t)^2$ effectively behaves like $dt$ (non-zero quadratic variation) rather than vanishing like it would for a smooth process, a second-order correction term survives that ordinary calculus would drop as negligible."
             },
             {
                 "q": "What is the SDE for geometric Brownian motion (GBM)?",
-                "a": "$dS_t = \\mu S_t\\,dt + \\sigma S_t\\,dW_t$"
+                "a": "$dS_t = \\mu S_t\\,dt + \\sigma S_t\\,dW_t$",
+                "explain": "This is the Ito process from earlier in this module with a specific choice: both drift and diffusion are PROPORTIONAL to the current price $S_t$ — this proportionality is exactly what guarantees prices stay positive (a zero price can't generate further percentage moves) and gives log returns constant volatility, the two features the next card highlights."
             },
             {
                 "q": "Why is GBM commonly used to model security prices?",
-                "a": "It ensures prices stay positive and gives log-normally distributed prices, broadly consistent with observed return behaviour."
+                "a": "It ensures prices stay positive and gives log-normally distributed prices, broadly consistent with observed return behaviour.",
+                "explain": "This is the direct bridge into Module 9's whole topic — the log-normal model of security prices is EXACTLY GBM, just examined from the price-distribution angle rather than the SDE angle; the two modules describe precisely the same underlying model."
             },
             {
                 "q": "What is a 'mean-reverting' process?",
-                "a": "A process whose drift pulls it back towards a long-run mean level whenever it deviates from that level."
+                "a": "A process whose drift pulls it back towards a long-run mean level whenever it deviates from that level.",
+                "explain": "This is a fundamentally different BEHAVIOUR from GBM — GBM has no 'home' level it's drawn back to (it can drift arbitrarily far in either direction over the long run), while a mean-reverting process is specifically constructed to resist drifting too far, which is exactly why it suits variables like interest rates (see the closing card of this module)."
             },
             {
                 "q": "What is the SDE for the Ornstein-Uhlenbeck process?",
-                "a": "$dX_t = \\alpha(\\mu - X_t)\\,dt + \\sigma\\,dW_t$, where the drift pulls $X_t$ back towards the long-run mean $\\mu$."
+                "a": "$dX_t = \\alpha(\\mu - X_t)\\,dt + \\sigma\\,dW_t$, where the drift pulls $X_t$ back towards the long-run mean $\\mu$.",
+                "explain": "Look at the drift term's sign logic: when $X_t>\\mu$ (above the long-run mean), $(\\mu-X_t)$ is negative, so the drift pulls DOWNWARD; when $X_t<\\mu$, the drift pulls UPWARD — this self-correcting mechanism is precisely what 'mean-reverting' means mathematically, and it's this exact SDE that resurfaces as the Vasicek short-rate model in Module 15."
             },
             {
                 "q": "What does the parameter $\\alpha$ represent in the Ornstein-Uhlenbeck process?",
-                "a": "The speed of mean reversion — how quickly the process is pulled back towards its long-run mean."
+                "a": "The speed of mean reversion — how quickly the process is pulled back towards its long-run mean.",
+                "explain": "A large $\\alpha$ means a strong, fast pull back toward $\\mu$ (the process rarely strays far); a small $\\alpha$ means a weak, slow pull (the process can wander further before being reined in) — this single parameter controls how 'sticky' the mean-reversion behaviour actually is."
             },
             {
                 "q": "What is the 'Ito integral'?",
-                "a": "A way of defining integrals with respect to Brownian motion (e.g. $\\int_0^t \\sigma_s\\,dW_s$), needed since Brownian motion isn't differentiable in the ordinary sense."
+                "a": "A way of defining integrals with respect to Brownian motion (e.g. $\\int_0^t \\sigma_s\\,dW_s$), needed since Brownian motion isn't differentiable in the ordinary sense.",
+                "explain": "This is the rigorous mathematical machinery underlying an SDE's compact notation — 'writing $dX_t=\\mu\\,dt+\\sigma\\,dW_t$' is really shorthand for an integral equation involving exactly this Ito integral, needed precisely because Module 7 established that $dW_t$ can't be handled with ordinary (Riemann) integration."
             },
             {
                 "q": "Solve the GBM SDE to express $S_t$ in terms of $S_0$.",
-                "a": "$S_t = S_0 \\exp\\left[\\left(\\mu - \\tfrac{1}{2}\\sigma^2\\right)t + \\sigma W_t\\right]$"
+                "a": "$S_t = S_0 \\exp\\left[\\left(\\mu - \\tfrac{1}{2}\\sigma^2\\right)t + \\sigma W_t\\right]$",
+                "explain": "This is Ito's Lemma applied directly (to $f(S_t)=\\ln S_t$), and it's the single most-used result from this whole module — every later card involving GBM's exact solution, including the log-normal distribution of prices in Module 9, is built from this formula."
             },
             {
                 "q": "Why does GBM's solution feature a $-\\frac{1}{2}\\sigma^2 t$ adjustment relative to the naive exponential of the drift?",
-                "a": "It arises from applying Ito's Lemma to $\\ln S_t$, correcting for the extra second-order term in stochastic calculus."
+                "a": "It arises from applying Ito's Lemma to $\\ln S_t$, correcting for the extra second-order term in stochastic calculus.",
+                "explain": "This is exactly Ito's Lemma's extra second-order term from earlier in this module, appearing concretely for the first time — a naive (ordinary-calculus) guess would predict $S_t=S_0e^{\\mu t+\\sigma W_t}$, but Ito's correction subtracts $\\frac12\\sigma^2 t$ from the exponent, a genuinely surprising result that trips up anyone applying ordinary calculus intuition to a stochastic process."
             },
             {
                 "q": "Why might a mean-reverting process (like Ornstein-Uhlenbeck) be more appropriate than GBM for modelling short-term interest rates?",
-                "a": "Interest rates fluctuate around a long-run economic equilibrium rather than drifting indefinitely, which mean reversion captures but GBM does not."
+                "a": "Interest rates fluctuate around a long-run economic equilibrium rather than drifting indefinitely, which mean reversion captures but GBM does not.",
+                "explain": "This closes the module with the practical justification for WHY two different process types exist at all — a stock price genuinely can (and does) drift to arbitrarily high or low levels over decades, which GBM captures well, but an interest rate is economically anchored (central bank policy, inflation expectations) and tends to hover in a range, which is exactly what mean reversion is built to represent, foreshadowing Module 15's short-rate models."
             }
         ]
     },
