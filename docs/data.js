@@ -5717,63 +5717,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'time-inhomogeneous' mean for a Markov jump process?",
-                "a": "The transition intensities can depend on the current time (e.g. age), not just the states involved."
+                "a": "The transition intensities can depend on the current time (e.g. age), not just the states involved.",
+                "explain": "This module is precisely the relaxation of Module 4's time-homogeneous assumption flagged as unrealistic at the end of that module — everything about the STATE-SPACE structure (Kolmogorov equations, exit rates) carries over, only now every intensity can genuinely change as time/age progresses."
             },
             {
                 "q": "How do the Kolmogorov equations change for a time-inhomogeneous process?",
-                "a": "The transition intensities $\\mu_{ij}(t)$ become functions of time $t$, giving differential equations with time-varying coefficients."
+                "a": "The transition intensities $\\mu_{ij}(t)$ become functions of time $t$, giving differential equations with time-varying coefficients.",
+                "explain": "This is a direct, minimal-looking notational change to Module 4's forward equations (each $\\mu_{ij}$ simply gains a $(t)$), but it has a substantial mathematical consequence flagged in a later card: constant-coefficient differential equations generally have clean closed-form solutions, while time-varying-coefficient ones usually don't."
             },
             {
                 "q": "Why is a time-inhomogeneous model more realistic for modelling human mortality across ages?",
-                "a": "Mortality rates genuinely vary systematically with age, which a constant-intensity model cannot capture."
+                "a": "Mortality rates genuinely vary systematically with age, which a constant-intensity model cannot capture.",
+                "explain": "This directly resolves Module 4's closing critique — a time-inhomogeneous force of mortality $\\mu_x$ that genuinely increases with age (following, say, CM1's Gompertz or Makeham laws) is exactly what's needed to properly represent real human mortality across a full lifespan, rather than pretending it's constant."
             },
             {
                 "q": "What is a 'duration-dependent' Markov process?",
-                "a": "A process where transition intensities depend on how long the individual has already spent in their current state, not just age/time."
+                "a": "A process where transition intensities depend on how long the individual has already spent in their current state, not just age/time.",
+                "explain": "This is a genuinely DIFFERENT kind of dependence from time-inhomogeneity — 'time-inhomogeneous' means intensities depend on CALENDAR time/age (the same for everyone at that age), while 'duration-dependent' means they depend on how long THIS SPECIFIC INDIVIDUAL has been in their current state, which can differ between two people of the same age."
             },
             {
                 "q": "Give an example of a real-world scenario where duration dependence matters.",
-                "a": "A sickness model, where recovery probability might depend on how long someone has already been sick."
+                "a": "A sickness model, where recovery probability might depend on how long someone has already been sick.",
+                "explain": "This is the module's central worked application — someone who's been sick for one week has a genuinely different (usually higher) recovery chance than someone who's been sick for a year, a pattern age alone cannot capture, which is exactly why this needs duration as a SEPARATE dimension from age."
             },
             {
                 "q": "How can duration dependence be incorporated into a Markov model while retaining a Markov structure?",
-                "a": "By expanding the state space to include duration as part of the state, restoring the Markov property."
+                "a": "By expanding the state space to include duration as part of the state, restoring the Markov property.",
+                "explain": "This is a genuinely clever technical trick worth understanding — rather than abandoning the Markov property (which would break the whole framework), you redefine what counts as a 'state' to include BOTH the health status AND the elapsed duration, so that 'current state' alone (in this expanded sense) again fully determines future behaviour."
             },
             {
                 "q": "What is a 'marriage model,' as an example of a Markov process application?",
-                "a": "A model tracking transitions between single, married, widowed, and divorced states, used e.g. in pension valuations."
+                "a": "A model tracking transitions between single, married, widowed, and divorced states, used e.g. in pension valuations.",
+                "explain": "This is a genuinely important real actuarial application worth remembering by name — pension schemes often need to value spouse's/dependant's benefits (echoing CM1 Module 20's reversionary annuities), and a marriage model provides the multi-state machinery for estimating the probability a member has an eligible spouse at each future age."
             },
             {
                 "q": "How would you write the Kolmogorov equations for a model where intensities depend on both age and duration?",
-                "a": "Include both age $t$ and duration $z$ as arguments, e.g. $\\mu_{ij}(t,z)$, within the differential equation framework."
+                "a": "Include both age $t$ and duration $z$ as arguments, e.g. $\\mu_{ij}(t,z)$, within the differential equation framework.",
+                "explain": "This is the fully general notation combining both extensions from this module — $t$ tracks calendar-time/age dependence, $z$ tracks duration-in-state dependence, and both can operate simultaneously, exactly the expanded state space described in the card above made mathematically explicit."
             },
             {
                 "q": "Why might sickness models need duration-dependent intensities specifically for the 'recovery' transition?",
-                "a": "Recovery chance often changes systematically the longer someone has already been ill."
+                "a": "Recovery chance often changes systematically the longer someone has already been ill.",
+                "explain": "This restates the sickness example above as a specific, testable claim worth having ready for exam scenarios — typically recovery probability is HIGHEST shortly after falling sick and declines the longer illness persists (a pattern real income-protection claims data consistently shows), which is precisely why duration matters most for THIS particular transition."
             },
             {
                 "q": "How would you simulate a time-inhomogeneous Markov jump process?",
-                "a": "Simulate holding times using the time-varying intensities applicable at each point, since exact exponential holding times only apply under time-homogeneity."
+                "a": "Simulate holding times using the time-varying intensities applicable at each point, since exact exponential holding times only apply under time-homogeneity.",
+                "explain": "This is a genuine complication compared with Module 4's simulation recipe — since intensities keep changing as time passes, you can no longer draw ONE clean exponential holding time for the whole stay in a state; instead, the simulation must repeatedly re-evaluate the CURRENT intensities as time moves forward within that stay."
             },
             {
                 "q": "What complicates solving the Kolmogorov equations for time-inhomogeneous models?",
-                "a": "The equations no longer have simple constant-coefficient closed-form solutions in general, often requiring numerical methods."
+                "a": "The equations no longer have simple constant-coefficient closed-form solutions in general, often requiring numerical methods.",
+                "explain": "This is the direct mathematical cost of the flexibility this module introduces — Module 4's constant-intensity equations often solve neatly by hand; once intensities become functions of time, numerical integration (or simulation, per the card above) usually becomes the only practical route to actual numbers."
             },
             {
                 "q": "How does mortality projection relate to time-inhomogeneous Markov modelling?",
-                "a": "Mortality projection explicitly models how mortality intensities change over calendar time, an application of time-inhomogeneous ideas."
+                "a": "Mortality projection explicitly models how mortality intensities change over calendar time, an application of time-inhomogeneous ideas.",
+                "explain": "This directly previews Module 12's whole topic — mortality projection specifically studies how $\\mu_x(t)$ changes not just with AGE but with CALENDAR YEAR (mortality improvement over time), which is a further, genuinely distinct layer of time-dependence beyond even what this module introduces."
             },
             {
                 "q": "What data challenge arises when estimating duration-dependent transition intensities?",
-                "a": "You need data broken down by both age/time and duration in state, requiring more granular (and often sparser) data."
+                "a": "You need data broken down by both age/time and duration in state, requiring more granular (and often sparser) data.",
+                "explain": "This is the direct practical cost of the expanded-state-space trick from earlier in this module — splitting data by TWO dimensions (age and duration) instead of one inevitably means fewer observations in each individual cell, which is exactly the kind of data-sparsity challenge Module 9's exposed-to-risk material and CS1's estimation theory both warn about."
             },
             {
                 "q": "Why is understanding age- and duration-dependence important for health/income protection insurance?",
-                "a": "Both age and time already spent claiming genuinely affect recovery probability, affecting reserving and pricing."
+                "a": "Both age and time already spent claiming genuinely affect recovery probability, affecting reserving and pricing.",
+                "explain": "This closes the module with its central practical justification — an income protection insurer genuinely needs BOTH dimensions to reserve accurately: an older claimant recovers differently from a younger one (age effect), and someone who's been claiming for years recovers differently from someone in their first month (duration effect), and ignoring either would materially mis-price or under-reserve the product."
             },
             {
                 "q": "How would a Markov jump process model be simulated as a tool for modelling more generally?",
-                "a": "By repeatedly simulating individual paths according to the model's intensities, and aggregating results across many simulated paths."
+                "a": "By repeatedly simulating individual paths according to the model's intensities, and aggregating results across many simulated paths.",
+                "explain": "This closes the module by generalising the simulation technique to its broadest actuarial use — rather than solving Kolmogorov equations analytically (often impossible for realistic time- and duration-dependent models), simulating thousands of individual member/policyholder paths and averaging the results is the standard practical approach used in real pension and health insurance modelling work."
             }
         ]
     },
