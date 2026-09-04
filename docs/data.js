@@ -3499,63 +3499,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the basic structure of a one-step binomial model?",
-                "a": "The underlying asset price can move to one of two possible values (up or down) over one time step, from a known starting price."
+                "a": "The underlying asset price can move to one of two possible values (up or down) over one time step, from a known starting price.",
+                "explain": "This module deliberately simplifies Module 9's continuous-time log-normal model down to the simplest possible discrete setting — just two outcomes, one time step — precisely so that every idea from Module 10's no-arbitrage principles can be made completely concrete and calculable, before scaling up to the full continuous-time machinery in Module 13."
             },
             {
                 "q": "What is the 'risk-neutral probability' in a binomial model?",
-                "a": "The (hypothetical) probability of an up-move under which the discounted expected value of the asset (and any derivative) equals its current price."
+                "a": "The (hypothetical) probability of an up-move under which the discounted expected value of the asset (and any derivative) equals its current price.",
+                "explain": "This is Module 7's martingale concept made fully concrete for the first time — the risk-neutral probability $p$ is defined SPECIFICALLY and ONLY to make the discounted stock price a martingale under it, which is exactly the property risk-neutral pricing throughout Modules 12-14 depends on."
             },
             {
                 "q": "How is the risk-neutral up-probability $p$ derived in a simple one-step binomial model?",
-                "a": "$p = \\frac{e^{r\\Delta t} - d}{u - d}$, from the no-arbitrage condition that the stock's expected return under $p$ equals the risk-free rate."
+                "a": "$p = \\frac{e^{r\\Delta t} - d}{u - d}$, from the no-arbitrage condition that the stock's expected return under $p$ equals the risk-free rate.",
+                "explain": "This formula falls directly out of setting $E^p[S_{\\Delta t}]/S_0 = e^{r\\Delta t}$ (the martingale condition from the card above) and solving for $p$ — it's worth deriving this once from first principles rather than memorising it, since the same logic (find $p$ that makes discounted expected value equal current price) generalises to every other risk-neutral pricing problem in this module list."
             },
             {
                 "q": "How is a derivative's price found using risk-neutral valuation in the binomial model?",
-                "a": "Discount the expected payoff of the derivative, calculated using the risk-neutral probabilities, at the risk-free rate."
+                "a": "Discount the expected payoff of the derivative, calculated using the risk-neutral probabilities, at the risk-free rate.",
+                "explain": "This is the module's central payoff — having found $p$ purely from the STOCK's no-arbitrage condition, that same $p$ is then applied to price ANY derivative on that stock, which is exactly what makes risk-neutral valuation so powerful: one probability measure prices every derivative on the same underlying consistently."
             },
             {
                 "q": "Why is the risk-neutral measure described as 'a computational tool' rather than the real-world probability?",
-                "a": "It doesn't represent investors' actual beliefs — it's a mathematical device making discounted prices martingales, simplifying valuation."
+                "a": "It doesn't represent investors' actual beliefs — it's a mathematical device making discounted prices martingales, simplifying valuation.",
+                "explain": "This is a genuinely important conceptual point worth being precise about — $p$ is NOT asking 'how likely do investors think an up-move actually is'; a genuinely risk-averse investor might think the up-move is much less likely than $p$ suggests, yet the derivative still prices correctly using $p$, precisely because risk preferences are already implicitly baked into the STOCK's observed current price."
             },
             {
                 "q": "What is the key advantage of using risk-neutral valuation?",
-                "a": "It allows derivatives to be priced without needing to know investors' risk preferences or the real-world probability of price movements."
+                "a": "It allows derivatives to be priced without needing to know investors' risk preferences or the real-world probability of price movements.",
+                "explain": "This is the direct practical payoff of the conceptual point above — instead of needing to somehow measure real-world subjective probabilities and every investor's risk aversion (Module 2's utility functions), you only need the OBSERVABLE stock price, $u$, $d$, and $r$, all directly measurable quantities."
             },
             {
                 "q": "How does a multi-step binomial 'lattice' extend the one-step model?",
-                "a": "By chaining together many one-step up/down moves over successive time intervals, building a tree of possible price paths to expiry."
+                "a": "By chaining together many one-step up/down moves over successive time intervals, building a tree of possible price paths to expiry.",
+                "explain": "This is exactly Module 7's random-walk-to-Brownian-motion story, run in the OPPOSITE direction — rather than taking a limit to continuous time, the lattice deliberately KEEPS the discrete structure but chains many small steps together, and (per a card below) it's precisely this chaining, taken to its limit, that converges back to the continuous-time GBM model of Module 8."
             },
             {
                 "q": "What is a 'state-price deflator'?",
-                "a": "A stochastic process used to convert real-world expected payoffs into current prices by discounting with state-dependent factors."
+                "a": "A stochastic process used to convert real-world expected payoffs into current prices by discounting with state-dependent factors.",
+                "explain": "This is an alternative route to exactly the same destination as risk-neutral valuation — rather than adjusting the PROBABILITIES (risk-neutral approach) to make expected discounted value work out, the deflator approach keeps the REAL-WORLD probabilities but adjusts the DISCOUNT FACTOR itself, state by state, to achieve the same result."
             },
             {
                 "q": "How does the state-price deflator approach relate to the risk-neutral approach?",
-                "a": "They are equivalent — the deflator re-weights real-world probabilities in exactly the way the risk-neutral measure does, giving the same prices."
+                "a": "They are equivalent — the deflator re-weights real-world probabilities in exactly the way the risk-neutral measure does, giving the same prices.",
+                "explain": "This is worth appreciating as a genuine 'two routes, one destination' result — whether you adjust probabilities (risk-neutral measure) or adjust discount factors (state-price deflator), you arrive at IDENTICAL derivative prices, since mathematically the deflator IS just the risk-neutral probabilities divided by the real-world probabilities, appropriately discounted."
             },
             {
                 "q": "What no-arbitrage condition must the up and down factors ($u, d$) satisfy relative to the risk-free rate?",
-                "a": "$d < e^{r\\Delta t} < u$, for the risk-neutral probability to lie strictly between 0 and 1."
+                "a": "$d < e^{r\\Delta t} < u$, for the risk-neutral probability to lie strictly between 0 and 1.",
+                "explain": "This condition makes intuitive sense: if $e^{r\\Delta t}\\geq u$ (the risk-free return beats even the BEST possible stock outcome), everyone would sell the stock and invest risk-free, an arbitrage; if $e^{r\\Delta t}\\leq d$ (risk-free return is worse than even the WORST stock outcome), everyone would borrow risk-free to buy the stock, also an arbitrage — the condition rules out both degenerate cases."
             },
             {
                 "q": "How would you value an American option within a binomial tree?",
-                "a": "Work backwards through the tree, at each node taking the greater of the discounted continuation value and the immediate exercise value."
+                "a": "Work backwards through the tree, at each node taking the greater of the discounted continuation value and the immediate exercise value.",
+                "explain": "This is a direct extension of the multi-step lattice, and it's genuinely the most natural way to handle Module 10's American-option early-exercise question numerically — since the tree explicitly represents every possible future state, you can literally check at each node whether exercising now beats waiting, which a continuous-time closed-form formula (like Black-Scholes) generally cannot do as directly."
             },
             {
                 "q": "Why does increasing the number of steps in a binomial tree improve pricing accuracy?",
-                "a": "It better approximates continuous-time price movements, converging towards continuous-time models like Black-Scholes."
+                "a": "It better approximates continuous-time price movements, converging towards continuous-time models like Black-Scholes.",
+                "explain": "This is the precise mathematical link between this module and Module 13 — as the number of steps $\\to\\infty$ (and each step's size shrinks correspondingly), the discrete binomial tree converges to exactly the continuous-time GBM process from Module 8, and correspondingly binomial option prices converge to the Black-Scholes formula."
             },
             {
                 "q": "What determines a security's price under the state-price deflator approach?",
-                "a": "The expected value, under the real-world measure, of the state-price deflator multiplied by the security's future payoff."
+                "a": "The expected value, under the real-world measure, of the state-price deflator multiplied by the security's future payoff.",
+                "explain": "This restates the deflator concept from earlier in this module in its full pricing-formula form — note it uses the REAL-WORLD probabilities (unlike risk-neutral valuation), with all the risk-adjustment instead folded into the deflator itself, which is precisely why the two approaches, despite looking structurally different, give identical prices."
             },
             {
                 "q": "How is delta hedging naturally derived from a one-step binomial model?",
-                "a": "By solving for the number of shares (combined with risk-free borrowing/lending) needed to exactly replicate the derivative's payoff in both states."
+                "a": "By solving for the number of shares (combined with risk-free borrowing/lending) needed to exactly replicate the derivative's payoff in both states.",
+                "explain": "This is Module 11's Delta concept derived from FIRST PRINCIPLES for the first time, rather than just defined as a partial derivative — with only two possible future states, you can solve two simultaneous equations (matching the hedge portfolio's value to the derivative's payoff in the up-state and the down-state) directly for the exact replicating share count."
             },
             {
                 "q": "Why is the binomial model considered pedagogically useful, despite being an approximation?",
-                "a": "It illustrates no-arbitrage pricing, risk-neutral valuation and replication in a simple, discrete setting that generalises to continuous-time models."
+                "a": "It illustrates no-arbitrage pricing, risk-neutral valuation and replication in a simple, discrete setting that generalises to continuous-time models.",
+                "explain": "This closes the module by explaining its role in the whole CM2 syllabus — every core idea used in the more mathematically demanding Black-Scholes derivation (Module 13) — replication, no-arbitrage, risk-neutral probabilities, delta hedging — appears here first in a setting simple enough to work through by hand, which is exactly why this module comes before, not after, Black-Scholes."
             }
         ]
     },
