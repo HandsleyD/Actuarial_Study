@@ -3745,63 +3745,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does a 'model of the term structure of interest rates' attempt to describe?",
-                "a": "How interest rates (or bond prices/yields) of different maturities are related and evolve over time, typically via a short-rate model."
+                "a": "How interest rates (or bond prices/yields) of different maturities are related and evolve over time, typically via a short-rate model.",
+                "explain": "This module applies the SDE/Ito-process machinery from Modules 7-8 to a genuinely different underlying variable — instead of modelling a STOCK price with GBM, these models describe the INTEREST RATE itself as a stochastic process, from which a whole yield curve of bond prices can then be derived."
             },
             {
                 "q": "Give one desirable characteristic of a good term structure model.",
-                "a": "Non-negative interest rates, mean reversion, and analytical tractability for bond/derivative pricing."
+                "a": "Non-negative interest rates, mean reversion, and analytical tractability for bond/derivative pricing.",
+                "explain": "This is a genuinely useful checklist for comparing the three named models in this module — as the cards below show, EACH of Vasicek, CIR, and Hull-White satisfies some but not necessarily all of these properties, and understanding the trade-offs between them is exactly what this module tests."
             },
             {
                 "q": "What is the 'risk-neutral approach' to pricing a zero-coupon bond?",
-                "a": "The bond price equals the risk-neutral expectation of the discounted (at the stochastic short rate) payoff of $1$ at maturity."
+                "a": "The bond price equals the risk-neutral expectation of the discounted (at the stochastic short rate) payoff of $1$ at maturity.",
+                "explain": "This is Module 12's risk-neutral valuation principle applied to a bond instead of a stock option — the genuinely new complication is that the DISCOUNT RATE itself is now random (since the short rate $r_t$ is stochastic), so you must take an expectation over the whole random discounting path, not just the random payoff."
             },
             {
                 "q": "What is the SDE for the short rate under the Vasicek model?",
-                "a": "$dr_t = a(b - r_t)\\,dt + \\sigma\\,dW_t$ — an Ornstein-Uhlenbeck (mean-reverting) process."
+                "a": "$dr_t = a(b - r_t)\\,dt + \\sigma\\,dW_t$ — an Ornstein-Uhlenbeck (mean-reverting) process.",
+                "explain": "This is literally Module 8's Ornstein-Uhlenbeck process, renamed and reapplied — recognising this instantly (rather than treating it as a new formula) means you already know its key behaviour: mean reversion toward $b$ at speed $a$, exactly as covered when Ornstein-Uhlenbeck was first introduced."
             },
             {
                 "q": "What is a key limitation of the Vasicek model?",
-                "a": "It allows the short rate to become negative with positive probability."
+                "a": "It allows the short rate to become negative with positive probability.",
+                "explain": "This is a direct consequence of the model's CONSTANT diffusion term $\\sigma$ — since the random component doesn't shrink as $r_t$ approaches zero, there's always some chance of the process being pushed below zero, which was historically considered unrealistic (though less so since real-world negative rates occurred, per a card below)."
             },
             {
                 "q": "What is the SDE for the short rate under the Cox-Ingersoll-Ross (CIR) model?",
-                "a": "$dr_t = a(b - r_t)\\,dt + \\sigma\\sqrt{r_t}\\,dW_t$ — mean-reverting, with volatility proportional to $\\sqrt{r_t}$."
+                "a": "$dr_t = a(b - r_t)\\,dt + \\sigma\\sqrt{r_t}\\,dW_t$ — mean-reverting, with volatility proportional to $\\sqrt{r_t}$.",
+                "explain": "Notice the drift term is IDENTICAL to Vasicek's — CIR keeps exactly the same mean-reversion structure, and only modifies the diffusion term, replacing the constant $\\sigma$ with $\\sigma\\sqrt{r_t}$; this single, targeted change is precisely what fixes Vasicek's negative-rate problem, as the next card explains."
             },
             {
                 "q": "How does the CIR model address the Vasicek model's main limitation?",
-                "a": "The $\\sqrt{r_t}$ term means volatility shrinks to zero as rates approach zero, keeping rates non-negative under suitable conditions."
+                "a": "The $\\sqrt{r_t}$ term means volatility shrinks to zero as rates approach zero, keeping rates non-negative under suitable conditions.",
+                "explain": "The intuition: as $r_t\\to0$, the diffusion term $\\sigma\\sqrt{r_t}\\to0$ too, so the random 'push' that could otherwise drive rates negative weakens exactly when rates get close to zero — combined with the (still-present) mean-reverting drift pulling back toward $b>0$, this keeps the process non-negative under suitable parameter conditions."
             },
             {
                 "q": "What distinguishes the Hull-White model from the Vasicek model?",
-                "a": "Hull-White allows the mean-reversion level (and potentially other parameters) to be time-dependent, exactly fitting the current yield curve."
+                "a": "Hull-White allows the mean-reversion level (and potentially other parameters) to be time-dependent, exactly fitting the current yield curve.",
+                "explain": "This is a genuinely different kind of improvement from CIR's fix — rather than changing the diffusion term's FORM, Hull-White keeps Vasicek's basic structure but lets the parameters vary with time, specifically so the model can be calibrated to match TODAY's actual observed yield curve exactly, which plain Vasicek generally cannot do."
             },
             {
                 "q": "Why is exactly fitting the current yield curve (as Hull-White allows) often desirable in practice?",
-                "a": "It ensures the model's bond prices match observed market prices today, important for consistent pricing and hedging."
+                "a": "It ensures the model's bond prices match observed market prices today, important for consistent pricing and hedging.",
+                "explain": "This connects to Module 1's EMH and market-efficiency themes — if a model's own bond prices don't match today's observable market prices, you'd have an immediate, embarrassing arbitrage-style inconsistency between the model and reality; Hull-White's time-dependent calibration is specifically designed to rule this out by construction."
             },
             {
                 "q": "What is a 'one-factor' model of the term structure?",
-                "a": "A model where all interest rates of different maturities are driven by a single source of randomness (typically the short rate)."
+                "a": "A model where all interest rates of different maturities are driven by a single source of randomness (typically the short rate).",
+                "explain": "This is Module 7's Brownian motion $W_t$ playing exactly one role, driving every maturity's rate simultaneously — all three named models (Vasicek, CIR, Hull-White) are one-factor models in this sense, sharing the limitation covered in the very next card."
             },
             {
                 "q": "What is a limitation of one-factor short-rate models generally?",
-                "a": "They imply all points on the yield curve are perfectly (or near-perfectly) correlated, unlike real yield curve movements."
+                "a": "They imply all points on the yield curve are perfectly (or near-perfectly) correlated, unlike real yield curve movements.",
+                "explain": "This restates the one-factor structure's cost explicitly — real yield curves genuinely can twist and change SHAPE (short rates rising while long rates fall, say), a pattern a single common source of randomness structurally cannot produce; capturing this would need a genuinely multi-factor model, an extension beyond this module's scope."
             },
             {
                 "q": "How would you use a term structure model to price an interest-rate derivative?",
-                "a": "Use the risk-neutral dynamics of the short rate to compute the discounted expected payoff of the derivative."
+                "a": "Use the risk-neutral dynamics of the short rate to compute the discounted expected payoff of the derivative.",
+                "explain": "This is exactly Module 13's Black-Scholes logic (risk-neutral expected discounted payoff), just with the short-rate SDE (Vasicek, CIR, or Hull-White) standing in for GBM as the underlying stochastic driver — the general PRINCIPLE of risk-neutral pricing doesn't change between asset classes, only the specific process being modelled."
             },
             {
                 "q": "What are 'principal concepts and terms' typically covered when introducing term structure models?",
-                "a": "Concepts such as the short rate, the yield curve, forward rates, and the risk-neutral valuation framework linking them."
+                "a": "Concepts such as the short rate, the yield curve, forward rates, and the risk-neutral valuation framework linking them.",
+                "explain": "This directly connects back to CM1's Module 11 (spot rates, forward rates, yield curve shape) — CM1 introduced these concepts in a purely deterministic, interest-theory setting, while this module adds genuine RANDOMNESS to the short rate, requiring the stochastic-process machinery this whole second half of CM2 has built up."
             },
             {
                 "q": "Why might the Vasicek model still be used in practice despite allowing negative rates?",
-                "a": "It's analytically tractable (closed-form bond prices), and negative rates became less of a concern once real rates occasionally went negative."
+                "a": "It's analytically tractable (closed-form bond prices), and negative rates became less of a concern once real rates occasionally went negative.",
+                "explain": "This is the same 'tractability trumps realism' theme running through the whole CM2 syllabus (mean-variance theory, CAPM, log-normal pricing) — Vasicek's simplicity yields clean, closed-form bond price formulas that CIR's more realistic square-root diffusion complicates significantly, a genuine trade-off worth weighing rather than assuming the 'more realistic' model is automatically the better practical choice."
             },
             {
                 "q": "What role does mean reversion play in all three models (Vasicek, CIR, Hull-White)?",
-                "a": "It reflects the empirical observation that rates fluctuate around a long-run level rather than drifting off indefinitely."
+                "a": "It reflects the empirical observation that rates fluctuate around a long-run level rather than drifting off indefinitely.",
+                "explain": "This closes the module by tying all three models back to Module 8's original justification for mean reversion (interest rates fluctuate around an economic equilibrium, unlike stock prices) — despite their differences in diffusion structure and time-dependence, all three share this one core economically-motivated feature, which is precisely why it's worth treating as the module's unifying theme."
             }
         ]
     },
