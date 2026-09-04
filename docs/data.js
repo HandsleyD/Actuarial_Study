@@ -3827,63 +3827,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'credit event'?",
-                "a": "An event (default, bankruptcy, failure to pay) that triggers a loss or change in status for a debt obligation."
+                "a": "An event (default, bankruptcy, failure to pay) that triggers a loss or change in status for a debt obligation.",
+                "explain": "This module adds a genuinely new dimension of risk beyond everything covered so far — Modules 7-15 assumed away the possibility that the bond/counterparty itself might simply fail to pay; credit risk is specifically about modelling THAT possibility, on top of ordinary market-price risk."
             },
             {
                 "q": "What is the 'recovery rate'?",
-                "a": "The proportion of a debt's face value that is recovered by creditors following a credit event (default)."
+                "a": "The proportion of a debt's face value that is recovered by creditors following a credit event (default).",
+                "explain": "Default doesn't usually mean a total loss — creditors typically recover SOMETHING through bankruptcy proceedings, asset sales, or restructuring, and the recovery rate is exactly the fraction that survives; a higher recovery rate directly softens the financial impact of any given default, as a later card makes explicit."
             },
             {
                 "q": "What are the two broad approaches to modelling credit risk?",
-                "a": "Structural models (based on the firm's asset value) and reduced-form (intensity-based) models (based on a statistical default intensity)."
+                "a": "Structural models (based on the firm's asset value) and reduced-form (intensity-based) models (based on a statistical default intensity).",
+                "explain": "This is the module's organising split, and every remaining card falls into one camp or the other — structural models try to explain WHY default happens (an economic story about the firm), while reduced-form models simply describe HOW OFTEN it happens statistically, without needing an underlying economic story at all."
             },
             {
                 "q": "What is the core idea of the Merton (structural) model?",
-                "a": "A firm defaults if the value of its assets falls below the face value of its debt at maturity; equity is modelled as a call option on the firm's assets."
+                "a": "A firm defaults if the value of its assets falls below the face value of its debt at maturity; equity is modelled as a call option on the firm's assets.",
+                "explain": "This is a genuinely elegant reuse of Module 13's whole option-pricing toolkit — rather than inventing new mathematics for credit risk, Merton recognised that a leveraged firm's equity holders behave exactly like call-option holders on the firm's total assets, letting Black-Scholes-style machinery price credit risk directly."
             },
             {
                 "q": "In the Merton model, what financial instrument is a firm's equity analogous to?",
-                "a": "A European call option on the firm's assets, with strike price equal to the face value of the debt."
+                "a": "A European call option on the firm's assets, with strike price equal to the face value of the debt.",
+                "explain": "The intuition: if the firm's assets are worth more than the debt at maturity, shareholders keep the excess after paying off debtholders (exactly a call option's payoff, $\\max(V_A-K,0)$ with $K$ the debt); if assets are worth LESS than the debt, shareholders walk away with nothing (limited liability) rather than making up the shortfall — again exactly matching a call option's floor at zero."
             },
             {
                 "q": "What does the Merton model imply about the firm's debt value?",
-                "a": "It's equivalent to a risk-free bond minus a put option on the firm's assets."
+                "a": "It's equivalent to a risk-free bond minus a put option on the firm's assets.",
+                "explain": "This follows directly from Module 10's put-call parity, applied to the firm's whole capital structure — total firm value (assets) splits into equity (a call) plus debt, and since assets themselves are the 'underlying', debt must be whatever's left over, which works out to a risk-free bond minus a put (the put representing the risk that shareholders default and hand over less than the debt's full value)."
             },
             {
                 "q": "What is a key input needed to apply the Merton model?",
-                "a": "The current value and volatility of the firm's assets (often estimated indirectly from observable equity value and volatility)."
+                "a": "The current value and volatility of the firm's assets (often estimated indirectly from observable equity value and volatility).",
+                "explain": "This is a genuine practical challenge worth understanding — a firm's TOTAL asset value and volatility aren't directly observable in the market (only its equity, the tradeable shares, is) — practitioners typically have to back these out indirectly, using the equity-as-a-call-option relationship from above run in reverse."
             },
             {
                 "q": "What is a 'reduced-form' (intensity-based) credit risk model?",
-                "a": "A model where default occurs according to a statistical hazard rate/intensity process, without explicitly modelling the firm's asset value."
+                "a": "A model where default occurs according to a statistical hazard rate/intensity process, without explicitly modelling the firm's asset value.",
+                "explain": "This is a completely different philosophy from Merton's structural approach — rather than asking WHY a firm defaults (asset value falling below debt), it simply models default as a random EVENT occurring at some rate, exactly analogous to CS1's survival-analysis-style hazard rate concept, applied here to corporate default instead of mortality."
             },
             {
                 "q": "What is the 'two-state model' for credit rating with constant transition intensity?",
-                "a": "A simple model where a bond/issuer is in one of two states (non-default or default), moving to default at a constant intensity $\\lambda$."
+                "a": "A simple model where a bond/issuer is in one of two states (non-default or default), moving to default at a constant intensity $\\lambda$.",
+                "explain": "This is genuinely the simplest possible reduced-form model — just two states and one constant transition rate — and it's structurally identical to CM1 Module 12's constant-force-of-mortality idea, just relabelled: 'default' plays the role of 'death', and $\\lambda$ plays the role of the mortality force $\\mu$."
             },
             {
                 "q": "Under the two-state model with constant intensity $\\lambda$, what is the probability of surviving (no default) to time $t$?",
-                "a": "$e^{-\\lambda t}$"
+                "a": "$e^{-\\lambda t}$",
+                "explain": "This is exactly the same exponential-survival formula from Modules 12 and 17 (ruin theory's Poisson process) — a constant intensity/hazard rate always produces this same $e^{-\\lambda t}$ survival shape, a mathematical pattern worth recognising as recurring across mortality, ruin theory, and credit risk alike."
             },
             {
                 "q": "What is one advantage of reduced-form models over structural models?",
-                "a": "They don't require modelling the firm's underlying asset value, and can be calibrated directly to observed credit spreads/bond prices."
+                "a": "They don't require modelling the firm's underlying asset value, and can be calibrated directly to observed credit spreads/bond prices.",
+                "explain": "This directly addresses the practical challenge flagged in the Merton-model-inputs card above — since reduced-form models skip modelling asset value entirely, they sidestep the whole 'how do I estimate unobservable asset value and volatility' problem, instead calibrating $\\lambda$ directly to whatever credit spread the market is already charging."
             },
             {
                 "q": "What is one advantage of structural models over reduced-form models?",
-                "a": "They provide an economic explanation for why default occurs, giving more intuitive insight into default drivers."
+                "a": "They provide an economic explanation for why default occurs, giving more intuitive insight into default drivers.",
+                "explain": "This is the direct trade-off against the reduced-form advantage above — a reduced-form model can fit observed spreads beautifully while telling you nothing about WHY a firm might default (rising leverage? falling asset value? industry downturn?), whereas Merton's structural story gives genuine, interpretable economic insight into the default mechanism itself."
             },
             {
                 "q": "How does a higher recovery rate affect the expected loss from a credit event, all else equal?",
-                "a": "It reduces the expected loss, since a larger fraction of the debt's value is recovered."
+                "a": "It reduces the expected loss, since a larger fraction of the debt's value is recovered.",
+                "explain": "This restates the recovery-rate concept from earlier in this module as a direct calculation input — expected loss is typically computed as (probability of default) $\\times$ (1 $-$ recovery rate) $\\times$ (exposure), so recovery rate and expected loss move in strictly opposite directions holding everything else fixed."
             },
             {
                 "q": "Why might credit spreads on corporate bonds be higher than what expected default losses alone would suggest?",
-                "a": "Additional compensation for illiquidity, uncertainty in recovery rates, and risk premia demanded by investors."
+                "a": "Additional compensation for illiquidity, uncertainty in recovery rates, and risk premia demanded by investors.",
+                "explain": "This is a genuinely important real-world observation worth remembering — the observed credit spread isn't PURELY compensation for expected default loss; it also bundles in compensation for the uncertainty AROUND that loss estimate and for how easily the bond can be traded, which is why naive expected-loss calculations often underpredict actual market spreads."
             },
             {
                 "q": "How could the two-state constant-intensity model be extended to reflect changing credit quality over time?",
-                "a": "By using a multi-state model with several credit rating states and transition intensities between them."
+                "a": "By using a multi-state model with several credit rating states and transition intensities between them.",
+                "explain": "This closes the module by connecting directly back to CM1 Module 22's multiple-state/multiple-decrement framework — rather than a single jump from 'fine' to 'default', a multi-state credit model can track gradual credit deterioration (AAA to AA to A, etc.) before default, using exactly the same multi-state machinery introduced for mortality and pension decrements in CM1."
             }
         ]
     },
