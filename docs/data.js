@@ -8097,63 +8097,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'market value', as a basis for valuing an investment?",
-                "a": "The price at which the asset could currently be bought or sold in the open market."
+                "a": "The price at which the asset could currently be bought or sold in the open market.",
+                "explain": "This module makes explicit a question that's been lurking under Modules 9-12 throughout — every asset discussed so far needs a VALUE placed on it, and market value is the natural default whenever a genuine, liquid market exists to observe a price from."
             },
             {
                 "q": "Why is market value often considered the most objective valuation basis for listed assets?",
-                "a": "It reflects an actual, observable price agreed between willing buyers and sellers, rather than a theoretical/model-based estimate."
+                "a": "It reflects an actual, observable price agreed between willing buyers and sellers, rather than a theoretical/model-based estimate.",
+                "explain": "This objectivity is precisely why market value is regulators' preferred basis for solvency purposes, as the module's closing card explains — it can't be quietly manipulated or smoothed by the firm holding the asset, since it's set independently by the market itself."
             },
             {
                 "q": "What challenge arises in obtaining a 'market value' for an illiquid or unlisted asset?",
-                "a": "There's no frequent, observable market price, so valuation must rely on models, comparable transactions, or professional judgement instead."
+                "a": "There's no frequent, observable market price, so valuation must rely on models, comparable transactions, or professional judgement instead.",
+                "explain": "This is exactly the problem flagged for private equity and infrastructure in Module 11 — without a genuine market price to observe, valuation has to fall back on the discounted cashflow approach described next, reintroducing the model-based judgement that market value was praised for avoiding."
             },
             {
                 "q": "What is a 'discounted cashflow' valuation approach?",
-                "a": "Valuing an asset as the present value of its expected future cashflows, discounted at an appropriate rate."
+                "a": "Valuing an asset as the present value of its expected future cashflows, discounted at an appropriate rate.",
+                "explain": "This is CM1's whole present-value machinery applied directly as a valuation TECHNIQUE — worth recognising as the fallback approach reached for whenever market value (the previous card) isn't available, and as the underlying logic behind the bond and dividend discount models described later in this module."
             },
             {
                 "q": "What discount rate considerations arise when using a discounted cashflow valuation?",
-                "a": "The rate should reflect the riskiness and timing of the cashflows, often incorporating a risk premium above the risk-free rate."
+                "a": "The rate should reflect the riskiness and timing of the cashflows, often incorporating a risk premium above the risk-free rate.",
+                "explain": "This is Module 14's risk premium concept applied specifically to the discount rate choice — a riskier, less certain cashflow stream needs a HIGHER discount rate to reflect that uncertainty, which is exactly why an equity's expected dividends are discounted at a higher rate than a government bond's contractual coupons."
             },
             {
                 "q": "Why might different valuation bases give different answers for the same asset?",
-                "a": "Each basis reflects different assumptions/purposes (e.g. market value reflects current trading conditions; a discounted cashflow reflects an investor's own return requirements and forecasts)."
+                "a": "Each basis reflects different assumptions/purposes (e.g. market value reflects current trading conditions; a discounted cashflow reflects an investor's own return requirements and forecasts).",
+                "explain": "This is worth remembering as a genuine feature, not a flaw — the 'right' valuation basis depends on the PURPOSE of the valuation, which is exactly why Module 32's provisions and Module 33's liability valuation material later in CP1 spend real effort discussing which basis is appropriate for which regulatory or reporting purpose."
             },
             {
                 "q": "What is 'fair value', as commonly used in financial reporting?",
-                "a": "An estimate of the price at which an asset could be exchanged between knowledgeable, willing parties in an arm's length transaction."
+                "a": "An estimate of the price at which an asset could be exchanged between knowledgeable, willing parties in an arm's length transaction.",
+                "explain": "This is worth reading as a bridge concept between market value and discounted cashflow — for listed assets it converges on market value directly, but for illiquid assets it's really the discounted cashflow (or comparable-transaction) estimate dressed in market-value language, since a genuine market price simply isn't observable."
             },
             {
                 "q": "Why might a valuation need to distinguish between an asset's value 'in use' versus its value if sold?",
-                "a": "An asset might be worth more to its current owner through continued use than its resale value would suggest, or vice versa."
+                "a": "An asset might be worth more to its current owner through continued use than its resale value would suggest, or vice versa.",
+                "explain": "This distinction matters most for assets that generate ongoing, specific value to their current holder (e.g. an insurer's own book of matched assets) — it's a reminder that 'value' isn't a single universal number but depends on WHO is asking and for WHAT purpose, echoing the different-bases-different-purposes point from earlier in this module."
             },
             {
                 "q": "What is a 'dividend discount model', as applied to equity valuation?",
-                "a": "Valuing a share as the present value of its expected future dividend payments."
+                "a": "Valuing a share as the present value of its expected future dividend payments.",
+                "explain": "This is the discounted cashflow approach from earlier in this module applied specifically to equities, using Module 10's dividend concept as the cashflow stream — worth noting it requires forecasting genuinely uncertain future dividends, unlike a bond's contractually fixed coupons, making the resulting valuation inherently more model-dependent."
             },
             {
                 "q": "How might bonds typically be valued?",
-                "a": "As the present value of their future coupon and redemption cashflows, discounted at a market-consistent yield."
+                "a": "As the present value of their future coupon and redemption cashflows, discounted at a market-consistent yield.",
+                "explain": "This is CM1's bond-pricing formula stated directly, and it's the most straightforward application of discounted cashflow valuation in this whole module — since coupon and redemption cashflows are contractually fixed (Module 9), the only real judgement is the discount rate/yield used."
             },
             {
                 "q": "Why is the choice of valuation basis particularly important for actuarial work involving both assets and liabilities?",
-                "a": "Using inconsistent bases for assets and liabilities could give a misleading picture of a firm's true financial position."
+                "a": "Using inconsistent bases for assets and liabilities could give a misleading picture of a firm's true financial position.",
+                "explain": "This directly previews Module 33's liability valuation material — a firm whose ASSETS are marked to market but whose LIABILITIES are valued on some outdated or overly conservative basis would show a distorted surplus/deficit figure that doesn't reflect its genuine financial position, exactly the mismatch this card warns against."
             },
             {
                 "q": "What is meant by valuing assets on a 'smoothed' or 'averaged' basis?",
-                "a": "Using an average of recent market values (rather than a single point-in-time value) to reduce short-term volatility in reported figures."
+                "a": "Using an average of recent market values (rather than a single point-in-time value) to reduce short-term volatility in reported figures.",
+                "explain": "This is a deliberate policy choice to trade off the objectivity praised earlier in this module against stability — it's directly related to Module 7's with-profits smoothed bonuses, since smoothing asset values is one of the mechanisms that allows an insurer to smooth what it passes on to with-profits policyholders."
             },
             {
                 "q": "Give one advantage of smoothed asset valuation.",
-                "a": "It reduces artificial short-term volatility in reported financial results, which might not reflect genuine underlying changes."
+                "a": "It reduces artificial short-term volatility in reported financial results, which might not reflect genuine underlying changes.",
+                "explain": "This is worth weighing directly against the next card's disadvantage — smoothing can genuinely help avoid over-reacting to short-term market noise (Module 12's behavioural finance material), but only if the smoothing doesn't also delay recognising a real, sustained change in value."
             },
             {
                 "q": "Give one disadvantage of smoothed asset valuation.",
-                "a": "It can obscure the true current financial position, potentially delaying recognition of genuine, sustained changes in asset value."
+                "a": "It can obscure the true current financial position, potentially delaying recognition of genuine, sustained changes in asset value.",
+                "explain": "This is the direct counterpoint to smoothing's advantage, and it's exactly why the module's closing card favours market-consistent valuation for solvency purposes specifically — a regulator needs to see a firm's TRUE current position promptly, not a smoothed figure that could mask a genuine, worsening deterioration."
             },
             {
                 "q": "Why might regulators generally prefer market-consistent valuation over smoothed or historical-cost valuation for solvency purposes?",
-                "a": "Market-consistent values better reflect the actual current financial position, giving a more accurate and timely assessment of solvency."
+                "a": "Market-consistent values better reflect the actual current financial position, giving a more accurate and timely assessment of solvency.",
+                "explain": "This closing card resolves the smoothing trade-off from the previous two cards firmly in favour of transparency for regulatory purposes — it directly connects to Module 4's prudential regulation aims, since accurately assessing CURRENT solvency (not a smoothed or historical approximation of it) is exactly what a regulator needs to protect policyholders effectively."
             }
         ]
     },
@@ -8164,63 +8179,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'correlation' measure, in the context of asset class returns?",
-                "a": "The degree to which the returns of two asset classes move together (positively or negatively)."
+                "a": "The degree to which the returns of two asset classes move together (positively or negatively).",
+                "explain": "This module takes CM2's portfolio-theory correlation concept, already used informally in Modules 10-12 to explain diversification and crisis-correlation breakdown, and gives it a dedicated, systematic treatment across all the asset classes covered so far."
             },
             {
                 "q": "Why is correlation between asset classes important for portfolio construction?",
-                "a": "Combining assets with low or negative correlation can reduce overall portfolio risk for a given expected return (diversification)."
+                "a": "Combining assets with low or negative correlation can reduce overall portfolio risk for a given expected return (diversification).",
+                "explain": "This is precisely CM2's two-asset portfolio variance formula in words — the mathematics behind it (covariance terms partially cancelling out overall portfolio variance) is exactly why low or negative correlation reduces risk more than simply averaging two assets' individual risk levels would suggest."
             },
             {
                 "q": "What would a correlation of +1 between two asset classes imply?",
-                "a": "Their returns move perfectly in the same direction together, offering no diversification benefit when combined."
+                "a": "Their returns move perfectly in the same direction together, offering no diversification benefit when combined.",
+                "explain": "This is the theoretical worst case for diversification, worth holding as a benchmark — at correlation +1, a portfolio's risk is simply the weighted average of the two assets' individual risks, with none of the risk-reduction benefit that imperfect correlation provides."
             },
             {
                 "q": "What would a correlation of -1 between two asset classes imply?",
-                "a": "Their returns move perfectly in opposite directions, offering maximum diversification benefit when combined."
+                "a": "Their returns move perfectly in opposite directions, offering maximum diversification benefit when combined.",
+                "explain": "This is the theoretical best case, directly recalling CM2's minimum-variance portfolio construction — at correlation -1, it's possible in principle to combine the two assets in a specific ratio to eliminate portfolio variance almost entirely, though real asset pairs essentially never achieve this extreme in practice."
             },
             {
                 "q": "Why do equities and bonds often (though not always) show relatively low or negative correlation?",
-                "a": "They can respond differently to changes in economic conditions and interest rates, e.g. a 'flight to safety' into bonds during equity market stress."
+                "a": "They can respond differently to changes in economic conditions and interest rates, e.g. a 'flight to safety' into bonds during equity market stress.",
+                "explain": "This 'flight to safety' behaviour is a concrete real-world example of Module 12's behavioural finance material — investors actively reallocating from equities into bonds during stress is precisely the herding-adjacent mechanism that can push the two asset classes' returns in opposite directions during a downturn."
             },
             {
                 "q": "Why might correlations between asset classes be unstable over time, rather than fixed constants?",
-                "a": "Correlations depend on prevailing economic conditions and market dynamics, which change, especially in periods of stress."
+                "a": "Correlations depend on prevailing economic conditions and market dynamics, which change, especially in periods of stress.",
+                "explain": "This directly restates and generalises Module 12's warning about correlations rising during a financial crisis — the key practical implication for portfolio construction is that a diversification benefit calculated from a historical average correlation is an approximation that can break down exactly when protection is needed most."
             },
             {
                 "q": "What is the relationship between an asset's risk premium and its expected correlation with 'growth' assets like equities?",
-                "a": "Assets whose returns are more closely tied to overall economic growth (e.g. equities, property, corporate bonds) tend to be positively correlated, and typically demand a higher risk premium."
+                "a": "Assets whose returns are more closely tied to overall economic growth (e.g. equities, property, corporate bonds) tend to be positively correlated, and typically demand a higher risk premium.",
+                "explain": "This connects Module 9's corporate bond credit spread and Module 10's equity risk premium into one unified pattern — assets whose fortunes rise and fall with the broader economy can't offer diversification against a general economic downturn, which is exactly why they need to compensate investors with a higher expected return."
             },
             {
                 "q": "Why might government bonds sometimes act as a 'safe haven' relative to riskier asset classes?",
-                "a": "Investors often shift towards perceived safer assets like government bonds during periods of market stress, pushing bond prices up (yields down) as equities fall."
+                "a": "Investors often shift towards perceived safer assets like government bonds during periods of market stress, pushing bond prices up (yields down) as equities fall.",
+                "explain": "This is the mechanism underlying the equity-bond negative correlation card earlier in this module made explicit — worth noting this safe-haven behaviour is a genuinely useful property for asset-liability management (Module 16), since it can partially offset the fall in a firm's growth assets exactly when its overall financial position is under stress."
             },
             {
                 "q": "How does the relationship between asset returns inform the construction of a diversified multi-asset portfolio?",
-                "a": "By combining assets that don't all move together, a portfolio can achieve a smoother, more consistent overall return path than any single asset class alone."
+                "a": "By combining assets that don't all move together, a portfolio can achieve a smoother, more consistent overall return path than any single asset class alone.",
+                "explain": "This is the practical culmination of every correlation concept in this module — it directly previews Module 15's investment strategy material, where this diversification logic becomes one of several factors (alongside risk appetite, time horizon, and liabilities) shaping the actual asset mix chosen."
             },
             {
                 "q": "Why is understanding the relationship between returns on different asset classes important for asset-liability management?",
-                "a": "It helps assess how a mix of assets is likely to perform relative to liabilities under different economic scenarios."
+                "a": "It helps assess how a mix of assets is likely to perform relative to liabilities under different economic scenarios.",
+                "explain": "This directly previews Module 16 — ALM isn't just about matching assets to liabilities in isolation, it's about understanding how the WHOLE asset portfolio (with its internal correlations) behaves relative to the liability under different economic conditions, which requires exactly this module's correlation material."
             },
             {
                 "q": "What is a 'risk premium'?",
-                "a": "The additional expected return investors require for holding a riskier asset compared to a risk-free alternative."
+                "a": "The additional expected return investors require for holding a riskier asset compared to a risk-free alternative.",
+                "explain": "This formalises a concept already used informally throughout Modules 9-13 (the corporate bond spread, the equity risk premium) — worth recognising it as the SAME underlying compensation-for-risk logic recurring across every asset class, just with a different magnitude depending on how much genuine risk each asset carries."
             },
             {
                 "q": "Why might the equity risk premium vary over time and across markets?",
-                "a": "It reflects changing investor risk aversion, economic outlook, and market conditions, which are not constant."
+                "a": "It reflects changing investor risk aversion, economic outlook, and market conditions, which are not constant.",
+                "explain": "This connects to Module 12's behavioural finance material — risk aversion isn't a fixed constant across all investors and times, so the compensation the market demands for bearing equity risk can genuinely shift with sentiment, not just with changes in the underlying fundamental riskiness of equities themselves."
             },
             {
                 "q": "How might inflation link the returns of different asset classes together?",
-                "a": "Unexpected inflation can simultaneously affect bond yields, equity valuations, and property/rental income, creating a common driver of correlated movements."
+                "a": "Unexpected inflation can simultaneously affect bond yields, equity valuations, and property/rental income, creating a common driver of correlated movements.",
+                "explain": "This is worth flagging as a source of correlation that CUTS ACROSS the usual equity/bond diversification story — because inflation affects nearly every asset class through a shared channel (Module 9's real-versus-nominal returns), a genuine inflation shock can push otherwise-diversifying assets in the same direction simultaneously."
             },
             {
                 "q": "Why might historical correlations between asset classes not be a reliable guide to future correlations?",
-                "a": "Economic structures and relationships between markets evolve, so past correlation patterns may not persist unchanged into the future."
+                "a": "Economic structures and relationships between markets evolve, so past correlation patterns may not persist unchanged into the future.",
+                "explain": "This closes the loop on the instability point raised earlier in this module — it's a genuinely important caution for exam scenarios: a well-diversified STRATEGIC allocation built on historical correlation data is a reasonable starting point, but shouldn't be treated as a guarantee of future diversification benefit."
             },
             {
                 "q": "How might an actuary use knowledge of asset return relationships in setting investment strategy for a pension scheme?",
-                "a": "To select a mix of assets expected to deliver required returns while managing overall portfolio risk relative to the scheme's liabilities."
+                "a": "To select a mix of assets expected to deliver required returns while managing overall portfolio risk relative to the scheme's liabilities.",
+                "explain": "This closing card is the module's direct hand-off to Module 15's investment strategy material — everything built up here (correlation, diversification, risk premia) becomes an INPUT to the broader strategy-selection process, which also has to weigh risk appetite, time horizon, and liquidity needs alongside these purely asset-return considerations."
             }
         ]
     },
@@ -8231,63 +8261,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the primary purpose of an investment strategy in an actuarial context?",
-                "a": "To select and manage a portfolio of assets that appropriately meets the investor's objectives, given their liabilities, risk appetite and constraints."
+                "a": "To select and manage a portfolio of assets that appropriately meets the investor's objectives, given their liabilities, risk appetite and constraints.",
+                "explain": "This module is the natural synthesis point for Modules 9-14 — every asset class characteristic, valuation principle, and correlation relationship covered so far becomes an input to the single practical decision this module addresses: what mix of assets should actually be held, and why."
             },
             {
                 "q": "What does 'matching' assets to liabilities mean?",
-                "a": "Selecting assets whose cashflows/value movements closely mirror those of the liabilities they're intended to back, reducing mismatch risk."
+                "a": "Selecting assets whose cashflows/value movements closely mirror those of the liabilities they're intended to back, reducing mismatch risk.",
+                "explain": "This directly previews Module 16's asset-liability management material in full — worth treating this card as the headline principle that Module 16 then develops with real technical depth (cashflow matching, duration matching, immunisation)."
             },
             {
                 "q": "Why might a pension scheme with long-term liabilities adopt a different investment strategy than a general insurer with short-tail liabilities?",
-                "a": "The pension scheme's long horizon can better tolerate short-term volatility for higher expected returns, while the insurer needs more liquid, closely-matched assets."
+                "a": "The pension scheme's long horizon can better tolerate short-term volatility for higher expected returns, while the insurer needs more liquid, closely-matched assets.",
+                "explain": "This is a direct application of Module 10's time-horizon logic and Module 8's short-tail/long-tail distinction to two contrasting real institutions — worth using as a template for CP1 exam scenarios generally: always start by asking what the LIABILITY looks like (duration, certainty, liquidity need) before reasoning about the appropriate asset strategy."
             },
             {
                 "q": "What is 'risk appetite', in the context of choosing an investment strategy?",
-                "a": "The amount and type of investment risk an investor (or their governing body) is willing to accept in pursuit of their objectives."
+                "a": "The amount and type of investment risk an investor (or their governing body) is willing to accept in pursuit of their objectives.",
+                "explain": "This is Module 5's individual customer risk appetite concept scaled up to an institutional level — the same willing/able distinction from Module 5 applies here too, and it's exactly why the governance considerations later in this module (who actually makes the decision) matter so much."
             },
             {
                 "q": "Why is time horizon an important factor in choosing an investment strategy?",
-                "a": "Longer time horizons generally allow greater tolerance for short-term volatility, since there's more time to recover from downturns."
+                "a": "Longer time horizons generally allow greater tolerance for short-term volatility, since there's more time to recover from downturns.",
+                "explain": "This restates Module 10's closing point about equities' higher volatility being tolerable over a sufficiently long horizon, now placed explicitly within the strategy-selection framework this whole module builds — time horizon is one of the handful of factors that, together, determine an appropriate strategy."
             },
             {
                 "q": "What are 'liquidity requirements', and why do they constrain investment strategy?",
-                "a": "The need to hold sufficient readily-realisable assets to meet expected (and unexpected) cash outflows, limiting allocation to illiquid assets."
+                "a": "The need to hold sufficient readily-realisable assets to meet expected (and unexpected) cash outflows, limiting allocation to illiquid assets.",
+                "explain": "This connects directly to Module 11's discussion of illiquid alternative assets (private equity, infrastructure) — the more UNPREDICTABLE and near-term an investor's cash outflow needs are, the less room there is for illiquid assets, regardless of how attractive their expected return might otherwise be."
             },
             {
                 "q": "How might regulatory requirements constrain an investment strategy?",
-                "a": "Regulation may restrict permissible asset types, concentration limits, or impose capital charges that make certain strategies less attractive."
+                "a": "Regulation may restrict permissible asset types, concentration limits, or impose capital charges that make certain strategies less attractive.",
+                "explain": "This is Module 4's prudential regulation material reapplied directly to portfolio construction — worth noting capital charges are a particularly direct mechanism: if riskier assets require MORE capital to be held against them, that directly changes the risk-adjusted attractiveness of a strategy, not just its raw expected return."
             },
             {
                 "q": "What is a 'strategic asset allocation'?",
-                "a": "The long-term target mix of asset classes chosen to meet an investor's objectives, before shorter-term tactical adjustments."
+                "a": "The long-term target mix of asset classes chosen to meet an investor's objectives, before shorter-term tactical adjustments.",
+                "explain": "This is the output of everything this module has built up so far (liabilities, risk appetite, horizon, liquidity, regulation, all weighed together) — worth thinking of it as the 'strategic' baseline that Module 17's active/passive management material and the tactical adjustments described in the next card then operate around."
             },
             {
                 "q": "What is 'tactical asset allocation'?",
-                "a": "Shorter-term deviations from the strategic asset allocation, made in response to changing market views/conditions."
+                "a": "Shorter-term deviations from the strategic asset allocation, made in response to changing market views/conditions.",
+                "explain": "This is worth distinguishing sharply from the strategic allocation above — tactical moves are deliberate, temporary departures from the long-term plan, exactly the kind of active decision-making that Module 17's discussion of active versus passive management is really about."
             },
             {
                 "q": "Why might an investment strategy need periodic review, rather than being set once and left unchanged?",
-                "a": "Circumstances (liabilities, risk appetite, market conditions, regulation) change over time, so a strategy that was once appropriate may become unsuitable."
+                "a": "Circumstances (liabilities, risk appetite, market conditions, regulation) change over time, so a strategy that was once appropriate may become unsuitable.",
+                "explain": "This echoes Module 5's product-review point and Module 3's ongoing-monitoring theme, now applied to investment strategy specifically — it directly previews Module 39's monitoring material, since a strategy that's never revisited can silently drift into unsuitability as every one of its underlying inputs evolves."
             },
             {
                 "q": "How does the size of an investor's surplus (assets minus liabilities) affect the investment risk they can tolerate?",
-                "a": "A larger surplus provides a bigger buffer to absorb adverse investment experience without threatening solvency, allowing more investment risk."
+                "a": "A larger surplus provides a bigger buffer to absorb adverse investment experience without threatening solvency, allowing more investment risk.",
+                "explain": "This directly previews Module 38's surplus management material — surplus is worth thinking of as the institutional analogue of Module 5's individual 'capacity to bear risk' (the ABLE half of risk appetite), a genuine financial buffer rather than just a psychological preference for risk-taking."
             },
             {
                 "q": "Why might governance/decision-making structure (e.g. trustee board) be relevant to choosing an investment strategy?",
-                "a": "The strategy must be one that the actual decision-makers understand, agree with, and can implement/monitor effectively."
+                "a": "The strategy must be one that the actual decision-makers understand, agree with, and can implement/monitor effectively.",
+                "explain": "This connects back to Module 2's point about tailoring advice to the recipient's ability to understand it — a technically optimal strategy that the governing body can't genuinely understand or monitor is a poor practical choice, echoing CP1's recurring theme that good advice must be actionable, not just theoretically correct."
             },
             {
                 "q": "What is meant by 'de-risking' an investment strategy over time, e.g. for a maturing pension scheme?",
-                "a": "Gradually shifting from higher-risk, higher-return assets (e.g. equities) towards more liability-matching assets (e.g. bonds) as the scheme matures."
+                "a": "Gradually shifting from higher-risk, higher-return assets (e.g. equities) towards more liability-matching assets (e.g. bonds) as the scheme matures.",
+                "explain": "This is a direct, dynamic application of the time-horizon logic from earlier in this module — as a pension scheme matures, its effective remaining time horizon shortens (members approach and enter retirement), so the case for tolerating equity volatility weakens and matching (Module 16) becomes progressively more important."
             },
             {
                 "q": "Why might an insurer's investment strategy be more constrained than a typical unconstrained investor's?",
-                "a": "Regulatory solvency requirements and the need to closely match specific insurance liabilities limit the freedom to pursue purely return-maximising strategies."
+                "a": "Regulatory solvency requirements and the need to closely match specific insurance liabilities limit the freedom to pursue purely return-maximising strategies.",
+                "explain": "This draws together the regulatory and matching constraints from earlier in this module into a single institutional example — worth contrasting with the pension scheme example above: an insurer's liabilities are typically more precisely defined and closer-dated, leaving genuinely less room for return-seeking, higher-risk strategies."
             },
             {
                 "q": "What role does stress testing play in validating a chosen investment strategy?",
-                "a": "It assesses how the strategy would perform under adverse scenarios, helping confirm it remains appropriate even in less favourable conditions."
+                "a": "It assesses how the strategy would perform under adverse scenarios, helping confirm it remains appropriate even in less favourable conditions.",
+                "explain": "This directly previews Module 29's risk measurement and reporting material — stress testing is worth recognising as the practical check on everything else in this module: a strategy that looks appropriate under central, expected conditions might reveal serious vulnerabilities once tested against a genuine adverse scenario."
             }
         ]
     },
@@ -8298,63 +8343,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'asset-liability management' (ALM)?",
-                "a": "The practice of managing an organisation's investment strategy in conjunction with its liabilities, to control the risk arising from mismatches between them."
+                "a": "The practice of managing an organisation's investment strategy in conjunction with its liabilities, to control the risk arising from mismatches between them.",
+                "explain": "This module develops Module 15's matching principle into a full technical toolkit — worth treating everything that follows as answering one practical question in increasing depth: given a specific liability, what assets genuinely offset the risk it creates, and how precisely can that offsetting be achieved?"
             },
             {
                 "q": "What is 'mismatching risk'?",
-                "a": "The risk that changes in market conditions (e.g. interest rates) affect the value of assets and liabilities differently, harming the investor's financial position."
+                "a": "The risk that changes in market conditions (e.g. interest rates) affect the value of assets and liabilities differently, harming the investor's financial position.",
+                "explain": "This is exactly Module 3's external-environment card about rising interest rates and a life insurer's balance sheet, now given its formal name — the whole rest of this module is a systematic treatment of techniques to reduce exactly this risk."
             },
             {
                 "q": "What does it mean to 'match' assets and liabilities by cashflow?",
-                "a": "Selecting assets whose cashflows occur at the same times and amounts as the liability cashflows they're intended to fund."
+                "a": "Selecting assets whose cashflows occur at the same times and amounts as the liability cashflows they're intended to fund.",
+                "explain": "This is the most precise, literal form of matching, and it directly recalls Module 9's point that bonds' predictable cashflows make them well-suited to this — worth noting this is often the theoretical ideal but, as a later card in this module explains, isn't always achievable in practice."
             },
             {
                 "q": "What does it mean to match assets and liabilities by 'duration'?",
-                "a": "Choosing assets with a similar overall interest-rate sensitivity (duration) to the liabilities, even if individual cashflows aren't matched exactly."
+                "a": "Choosing assets with a similar overall interest-rate sensitivity (duration) to the liabilities, even if individual cashflows aren't matched exactly.",
+                "explain": "This is CM1's duration concept (already introduced for bonds in Module 9) applied to the whole asset-liability relationship — it's a looser, more achievable form of matching than exact cashflow matching, protecting against interest rate risk specifically even without replicating every individual cashflow."
             },
             {
                 "q": "What is 'immunisation', in the Redington sense, applied here?",
-                "a": "Structuring a portfolio so its value is protected (to a first approximation) against small changes in interest rates, by matching present value and duration (and appropriate convexity) with the liabilities."
+                "a": "Structuring a portfolio so its value is protected (to a first approximation) against small changes in interest rates, by matching present value and duration (and appropriate convexity) with the liabilities.",
+                "explain": "This is CM1's Redington immunisation theorem stated in full, now given its practical CP1 application — worth remembering the 'first approximation' and 'small changes' qualifiers explicitly: immunisation via matched duration protects against small rate moves, but convexity mismatches can still cause problems for larger shifts."
             },
             {
                 "q": "Why might perfect cashflow matching be difficult to achieve in practice?",
-                "a": "Suitable assets with exactly matching cashflows may not exist or be available in sufficient quantity, or may not offer an attractive return."
+                "a": "Suitable assets with exactly matching cashflows may not exist or be available in sufficient quantity, or may not offer an attractive return.",
+                "explain": "This is exactly why duration matching (the previous card) exists as a practical fallback — a real bond market simply doesn't offer a bond for every conceivable liability cashflow date and amount, so genuinely precise cashflow matching is often more of a theoretical ideal than an achievable strategy."
             },
             {
                 "q": "What is 'currency matching' in asset-liability management?",
-                "a": "Holding assets denominated in the same currency as the liabilities, to avoid unwanted currency risk."
+                "a": "Holding assets denominated in the same currency as the liabilities, to avoid unwanted currency risk.",
+                "explain": "This is Module 11's currency risk material applied specifically to the ALM context — worth recognising as a distinct dimension of matching alongside cashflow and duration matching: even a perfectly cashflow-matched asset in the WRONG currency reintroduces exactly the exchange-rate risk that matching is meant to eliminate."
             },
             {
                 "q": "Why might an organisation choose to deliberately mismatch assets and liabilities to some extent?",
-                "a": "To pursue higher expected returns by taking on some investment risk, accepting the associated mismatch risk in return."
+                "a": "To pursue higher expected returns by taking on some investment risk, accepting the associated mismatch risk in return.",
+                "explain": "This is Module 15's whole risk-appetite and de-risking discussion condensed into a single card — a fully matched portfolio essentially eliminates mismatch risk but also gives up the higher expected returns from growth assets, so real institutions often choose a deliberate, calibrated degree of mismatch rather than either extreme."
             },
             {
                 "q": "How does uncertainty in the liabilities themselves (e.g. from mortality or lapse risk) complicate asset-liability management?",
-                "a": "If the liability cashflows are uncertain, it's harder to construct assets that reliably match them, adding another layer of risk beyond pure market risk."
+                "a": "If the liability cashflows are uncertain, it's harder to construct assets that reliably match them, adding another layer of risk beyond pure market risk.",
+                "explain": "This is a genuinely important qualification worth carrying forward into Module 27's risk classification material — everything discussed so far in this module assumes the LIABILITY cashflows are known with certainty; in reality (as CM1's life contingencies and CS2's survival models both stress), they're often genuinely uncertain too, compounding the matching challenge."
             },
             {
                 "q": "What is a 'liability-driven investment' (LDI) strategy?",
-                "a": "An investment approach explicitly designed around meeting a specific set of liabilities, prioritising matching over pure return maximisation."
+                "a": "An investment approach explicitly designed around meeting a specific set of liabilities, prioritising matching over pure return maximisation.",
+                "explain": "This names the general philosophy underlying everything in this module explicitly — worth contrasting with a purely return-maximising strategy (which Module 15's diversification and risk-premium material might otherwise suggest): LDI deliberately subordinates return-seeking to the matching objective this whole module has developed."
             },
             {
                 "q": "Why is asset-liability management particularly important for defined benefit pension schemes?",
-                "a": "Their liabilities are long-term, interest-rate sensitive, and the sponsor bears the risk of any deficit, making mismatch risk especially consequential."
+                "a": "Their liabilities are long-term, interest-rate sensitive, and the sponsor bears the risk of any deficit, making mismatch risk especially consequential.",
+                "explain": "This connects to Module 6's earlier point about trustees' duty to members and Module 15's de-risking material — worth noting the SPONSOR bearing deficit risk is what makes this different from a defined contribution arrangement, where investment risk sits with the individual member rather than requiring institutional ALM at all."
             },
             {
                 "q": "What role do interest rate and inflation derivatives (e.g. swaps) play in some ALM strategies?",
-                "a": "They can be used to hedge interest rate or inflation exposure more precisely/efficiently than only using physical bonds."
+                "a": "They can be used to hedge interest rate or inflation exposure more precisely/efficiently than only using physical bonds.",
+                "explain": "This is Module 11's derivatives-for-hedging card applied specifically to ALM — derivatives can achieve a precision of matching that physical bond holdings alone often can't (given the practical availability constraints noted earlier in this module), though this introduces its own basis risk, discussed two cards later."
             },
             {
                 "q": "Why might ALM strategies need to be revisited as a pension scheme matures (liabilities become shorter-term)?",
-                "a": "The appropriate matching assets and risk tolerance change as the profile and timing of liability cashflows shifts over time."
+                "a": "The appropriate matching assets and risk tolerance change as the profile and timing of liability cashflows shifts over time.",
+                "explain": "This is Module 15's de-risking concept restated in ALM's own vocabulary — a maturing scheme's shortening liability duration means the duration-matching target itself shifts over time, requiring the ALM strategy to be actively rebalanced rather than set once and left static."
             },
             {
                 "q": "What is 'basis risk' in the context of hedging liabilities with derivatives?",
-                "a": "The risk that the hedge instrument doesn't move in perfect alignment with the liability being hedged, due to differences in the underlying reference or terms."
+                "a": "The risk that the hedge instrument doesn't move in perfect alignment with the liability being hedged, due to differences in the underlying reference or terms.",
+                "explain": "This is a genuinely important qualifier on the derivatives-hedging card above — a derivative referencing a standard market index or rate is rarely a PERFECT proxy for a firm's own specific, idiosyncratic liability cashflows, so some residual mismatch risk typically remains even after hedging."
             },
             {
                 "q": "How does effective asset-liability management support an organisation's solvency position?",
-                "a": "By reducing the volatility of the surplus (assets minus liabilities) arising from market movements, making the organisation's solvency more stable and predictable."
+                "a": "By reducing the volatility of the surplus (assets minus liabilities) arising from market movements, making the organisation's solvency more stable and predictable.",
+                "explain": "This closing card connects the whole module back to Module 4's prudential regulation aims — good ALM doesn't just protect returns, it directly supports the solvency objective regulation exists to ensure, which is exactly why regulators often pay close attention to how well a firm's ALM practices are implemented."
             }
         ]
     },
@@ -8365,63 +8425,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'active' investment management?",
-                "a": "An approach where the manager seeks to outperform a benchmark by selecting specific investments based on research and judgement."
+                "a": "An approach where the manager seeks to outperform a benchmark by selecting specific investments based on research and judgement.",
+                "explain": "This closing module of CP1's investments part turns from WHAT strategy to choose (Modules 15-16) to HOW that strategy is actually implemented day-to-day — active management is the practical embodiment of the tactical asset allocation and inefficiency-exploiting ideas raised in Module 15."
             },
             {
                 "q": "What is 'passive' investment management?",
-                "a": "An approach that seeks to replicate the performance of a benchmark index, rather than trying to outperform it."
+                "a": "An approach that seeks to replicate the performance of a benchmark index, rather than trying to outperform it.",
+                "explain": "This is worth grounding directly in CM2/Module 12's market efficiency material — passive management is essentially the practical, implementable conclusion drawn from taking the Efficient Markets Hypothesis seriously: if prices already reflect available information, there's little to gain from trying to beat the market."
             },
             {
                 "q": "What is a key argument in favour of passive management?",
-                "a": "Lower costs, and the difficulty (supported by market efficiency arguments) of consistently outperforming the market after fees."
+                "a": "Lower costs, and the difficulty (supported by market efficiency arguments) of consistently outperforming the market after fees.",
+                "explain": "This connects the EMH argument from the previous card to a very concrete practical point made explicit in this module's closing card — even a manager who genuinely can identify mispricing needs to outperform by MORE than their fees cost, a higher bar than simply 'beating the market' before costs."
             },
             {
                 "q": "What is a key argument in favour of active management?",
-                "a": "The potential to outperform the benchmark, exploit market inefficiencies, and manage risk more flexibly than a fixed index replication."
+                "a": "The potential to outperform the benchmark, exploit market inefficiencies, and manage risk more flexibly than a fixed index replication.",
+                "explain": "This is the direct counter-argument, implicitly leaning on Module 12's behavioural finance material — if markets aren't fully efficient (herding, bubbles, momentum), there's genuine room for skilled active managers to add value beyond what passive replication alone could achieve."
             },
             {
                 "q": "What is an 'investment mandate'?",
-                "a": "A formal agreement setting out the objectives, constraints, and permitted asset classes/strategies for an investment manager."
+                "a": "A formal agreement setting out the objectives, constraints, and permitted asset classes/strategies for an investment manager.",
+                "explain": "This is the practical mechanism that translates Module 15's chosen strategic asset allocation into an instruction an external manager can actually follow — worth thinking of it as a contract that operationalises everything decided in the strategy-setting process into concrete, enforceable constraints."
             },
             {
                 "q": "Why is a clear investment mandate important when appointing an investment manager?",
-                "a": "It ensures the manager's actions align with the investor's objectives and risk tolerance, and provides a basis for monitoring performance."
+                "a": "It ensures the manager's actions align with the investor's objectives and risk tolerance, and provides a basis for monitoring performance.",
+                "explain": "This connects to Module 2's reliance concept — once a manager is appointed to act on the investor's behalf, a clear mandate is exactly what lets the investor later verify the manager acted appropriately, which is precisely the monitoring function the benchmark and tracking error concepts below formalise."
             },
             {
                 "q": "What is a 'benchmark', in investment management?",
-                "a": "A reference index or target used to measure and evaluate an investment manager's performance."
+                "a": "A reference index or target used to measure and evaluate an investment manager's performance.",
+                "explain": "This is the practical yardstick both active and passive management are defined relative to — active management aims to beat it, passive management aims to replicate it, making the benchmark choice itself an important, non-trivial part of the mandate discussed above."
             },
             {
                 "q": "What is 'tracking error'?",
-                "a": "A measure of how much an actively (or passively) managed portfolio's returns deviate from its benchmark."
+                "a": "A measure of how much an actively (or passively) managed portfolio's returns deviate from its benchmark.",
+                "explain": "This is CS1's standard-deviation-of-differences concept applied specifically to manager performance — worth noting it's genuinely informative for BOTH management styles: a passive manager wants tracking error near zero, while an active manager's tracking error indicates how much genuine active risk they're taking relative to the benchmark."
             },
             {
                 "q": "Why might an investor use multiple investment managers rather than a single manager?",
-                "a": "To diversify manager-specific risk (e.g. key person risk, style risk) and access different areas of expertise."
+                "a": "To diversify manager-specific risk (e.g. key person risk, style risk) and access different areas of expertise.",
+                "explain": "This is Module 14's diversification logic applied to MANAGER selection rather than asset selection — the underlying principle is identical: relying on a single source of risk (here, one manager's judgement and organisational stability) concentrates risk that spreading across several managers can reduce."
             },
             {
                 "q": "What is 'manager selection', and what factors might it consider?",
-                "a": "The process of choosing an investment manager, considering track record, investment process, fees, and organisational stability."
+                "a": "The process of choosing an investment manager, considering track record, investment process, fees, and organisational stability.",
+                "explain": "This is worth reading alongside Module 2's advice principles — selecting a manager well requires the same kind of judgement (weighing multiple imperfect indicators, not relying on one number alone) that CP1 emphasises throughout its treatment of professional decision-making."
             },
             {
                 "q": "Why is past performance alone not a reliable basis for selecting an investment manager?",
-                "a": "Past performance may reflect luck or a particular market environment, and isn't a guaranteed indicator of future results."
+                "a": "Past performance may reflect luck or a particular market environment, and isn't a guaranteed indicator of future results.",
+                "explain": "This is a genuinely important caution that echoes CS1's statistical thinking — a manager's past outperformance could easily be one favourable draw from a distribution of outcomes rather than genuine, repeatable skill, which is exactly why manager selection (the previous card) looks at process and organisational quality alongside track record, not track record alone."
             },
             {
                 "q": "What is a 'fund of funds' structure?",
-                "a": "An investment vehicle that invests in a range of other underlying funds, rather than directly in individual securities."
+                "a": "An investment vehicle that invests in a range of other underlying funds, rather than directly in individual securities.",
+                "explain": "This is a practical implementation of the multiple-managers diversification idea from earlier in this module, packaged into a single accessible vehicle — worth noting it typically adds an extra layer of fees on top of the underlying funds' own charges, directly relevant to the fee-erosion point closing this module."
             },
             {
                 "q": "What is 'environmental, social and governance' (ESG) investing?",
-                "a": "An approach to investment management that explicitly incorporates environmental, social and governance factors into investment decisions."
+                "a": "An approach to investment management that explicitly incorporates environmental, social and governance factors into investment decisions.",
+                "explain": "This connects directly back to Module 3's environmental PESTLE factor — worth recognising ESG investing as that same environmental (and social/governance) consideration now integrated directly into the investment PROCESS itself, rather than treated as a separate, external risk to merely monitor."
             },
             {
                 "q": "Why might institutional investors increasingly incorporate ESG considerations into their investment management approach?",
-                "a": "Growing recognition that ESG factors can be financially material to long-term risk/return, alongside stakeholder and regulatory pressure."
+                "a": "Growing recognition that ESG factors can be financially material to long-term risk/return, alongside stakeholder and regulatory pressure.",
+                "explain": "This is worth reading as TWO distinct motivations, not one — a genuine belief that ESG factors are financially material (a risk/return argument) versus responding to external stakeholder and regulatory pressure (a compliance/reputational argument), both legitimate but analytically different reasons for the same behaviour."
             },
             {
                 "q": "How might investment management fees affect the net return delivered to the underlying investor/beneficiary?",
-                "a": "Fees directly reduce net returns, so higher-cost active strategies need to outperform sufficiently to justify their additional cost over passive alternatives."
+                "a": "Fees directly reduce net returns, so higher-cost active strategies need to outperform sufficiently to justify their additional cost over passive alternatives.",
+                "explain": "This closing card ties the whole module back to the active-versus-passive debate at its start — it's the concrete, quantitative version of the passive-management argument: a genuinely skilled active manager's outperformance must exceed their fee premium over passive, not just exceed the benchmark before costs, or the investor is worse off net."
             }
         ]
     },
