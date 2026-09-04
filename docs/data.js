@@ -6875,7 +6875,8 @@ const MODULES = {
             },
             {
                 "q": "What is a 'compound distribution'?",
-                "a": "The distribution of $S = X_1 + X_2 + \\dots + X_N$, where $N$ (claim count) and each $X_i$ (claim size) are random, typically independent."
+                "a": "The distribution of $S = X_1 + X_2 + \\dots + X_N$, where $N$ (claim count) and each $X_i$ (claim size) are random, typically independent.",
+                "explain": "This is the precise mathematical formalisation of the collective risk model just introduced — a RANDOM SUM, where both the number of terms ($N$) and each term's value ($X_i$) are themselves random, distinguishing it from an ordinary sum of a fixed number of random variables and requiring the specialised mean/variance formulas developed in the cards that follow."
             },
             {
                 "q": "What is a 'compound Poisson distribution'?",
@@ -7028,63 +7029,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'bias-variance trade-off'?",
-                "a": "The tension between a model's bias and variance — increasing complexity typically reduces bias but increases variance."
+                "a": "The tension between a model's bias and variance — increasing complexity typically reduces bias but increases variance.",
+                "explain": "This closing module steps back from specific actuarial models (survival, time series, loss distributions) to the general statistical-learning principles underlying all of them — the bias-variance trade-off is the same tension already implicit in Module 10's graduation smoothing (too rigid a graduation is biased, too flexible one is noisy) and Module 16's EVT threshold choice, now named and generalised explicitly."
             },
             {
                 "q": "How does model complexity typically relate to overfitting?",
-                "a": "More complex/flexible models are more prone to overfitting — fitting noise rather than the true underlying pattern."
+                "a": "More complex/flexible models are more prone to overfitting — fitting noise rather than the true underlying pattern.",
+                "explain": "This is the practical symptom of the high-variance end of the bias-variance trade-off above — an overfitted model captures random idiosyncrasies of the specific training data (e.g. a graduation with too little smoothing, or an over-parameterised time series model from Module 13-14) rather than the genuine underlying pattern, and so performs poorly on new data."
             },
             {
                 "q": "What is 'cross-validation' used for?",
-                "a": "Evaluating a model's performance on unseen data (and tuning hyperparameters) by repeatedly splitting into training/validation sets."
+                "a": "Evaluating a model's performance on unseen data (and tuning hyperparameters) by repeatedly splitting into training/validation sets.",
+                "explain": "This is the practical antidote to the overfitting risk described above — by holding back some data purely for VALIDATION rather than fitting, cross-validation gives an honest estimate of how a model performs on data it hasn't seen, directly analogous to how Module 10's statistical graduation tests check a graduated table against the raw data it wasn't smoothed to match exactly."
             },
             {
                 "q": "How does k-fold cross-validation work?",
-                "a": "Split into $k$ parts; train on $k-1$, validate on the remaining one, repeated $k$ times, then average results."
+                "a": "Split into $k$ parts; train on $k-1$, validate on the remaining one, repeated $k$ times, then average results.",
+                "explain": "This is the standard practical implementation of the cross-validation idea above — repeating the train/validate split $k$ times (each time holding out a different fold) and averaging makes efficient use of all the data for both training and validation, rather than wasting a large chunk of data on a single validation split."
             },
             {
                 "q": "What is 'regularisation' used for?",
-                "a": "Reducing overfitting in highly parameterised models by penalising model complexity within the fitting process."
+                "a": "Reducing overfitting in highly parameterised models by penalising model complexity within the fitting process.",
+                "explain": "This offers a direct alternative (or complement) to cross-validation for managing the overfitting risk — rather than just MEASURING overfitting after the fact via a validation set, regularisation builds a complexity PENALTY directly into the fitting objective, nudging the model itself away from unnecessarily complex, noise-fitting solutions."
             },
             {
                 "q": "Give two common types of regularisation.",
-                "a": "Ridge regression (L2 penalty) and Lasso (L1 penalty, which can shrink some coefficients to exactly zero)."
+                "a": "Ridge regression (L2 penalty) and Lasso (L1 penalty, which can shrink some coefficients to exactly zero).",
+                "explain": "This extends CS1's regression material (Modules 11-13 there) with two specific complexity-penalty techniques — worth remembering the key practical distinction: ridge shrinks all coefficients smoothly toward zero without eliminating any, while Lasso's L1 penalty can force some coefficients to exactly zero, effectively performing automatic variable selection alongside the shrinkage."
             },
             {
                 "q": "What is 'supervised learning'?",
-                "a": "Machine learning where models are trained on data with known outcomes (labels), to predict outcomes for new data."
+                "a": "Machine learning where models are trained on data with known outcomes (labels), to predict outcomes for new data.",
+                "explain": "Worth recognising that almost everything covered elsewhere in CS1 and CS2 is a form of supervised learning under this broader umbrella — GLMs (CS1), survival models (Module 6), and time series forecasting (Modules 13-14) all train on data with a known outcome to predict new cases, just using more classical statistical machinery than typical machine-learning algorithms."
             },
             {
                 "q": "What is 'unsupervised learning'?",
-                "a": "Machine learning where models find structure/patterns in data without pre-labelled outcomes, e.g. clustering."
+                "a": "Machine learning where models find structure/patterns in data without pre-labelled outcomes, e.g. clustering.",
+                "explain": "This is the natural counterpart to supervised learning above, and it directly connects to CS1's PCA (Module 14 there) — both PCA and clustering search for structure or patterns WITHIN the data itself, with no target outcome variable to predict, unlike every regression or survival model built elsewhere in the curriculum."
             },
             {
                 "q": "What is 'precision' in evaluating a binary classifier?",
-                "a": "Of the cases predicted positive, the proportion that are actually positive."
+                "a": "Of the cases predicted positive, the proportion that are actually positive.",
+                "explain": "This and the next few cards develop classifier-evaluation metrics that generalise CS1's hypothesis-testing error-rate concepts (Type I/II errors) into a more flexible vocabulary — precision specifically answers 'when the model says yes, how often is it right', which is the natural business question when a false positive is costly (e.g. flagging a genuine claim as fraudulent)."
             },
             {
                 "q": "What is 'recall' (sensitivity) in evaluating a binary classifier?",
-                "a": "Of the actual positive cases, the proportion correctly predicted as positive."
+                "a": "Of the actual positive cases, the proportion correctly predicted as positive.",
+                "explain": "This is precision's natural counterpart, and it maps directly onto CS1's Type II error / statistical power concept — recall answers 'of all the genuinely positive cases, how many did the model actually catch', which matters most when a MISSED positive is costly (e.g. failing to flag a genuinely fraudulent claim)."
             },
             {
                 "q": "What is the '$F_1$ score'?",
-                "a": "The harmonic mean of precision and recall, providing a single combined measure."
+                "a": "The harmonic mean of precision and recall, providing a single combined measure.",
+                "explain": "Since precision and recall above typically trade off against each other (a model that flags everything as positive gets perfect recall but poor precision, and vice versa), the $F_1$ score condenses both into one number — the harmonic mean specifically penalises a large imbalance between the two more heavily than a simple average would."
             },
             {
                 "q": "What is a 'ROC curve' used for?",
-                "a": "Visualising a classifier's performance across thresholds, plotting true positive rate against false positive rate."
+                "a": "Visualising a classifier's performance across thresholds, plotting true positive rate against false positive rate.",
+                "explain": "This generalises the precision/recall trade-off above across every possible classification threshold at once, rather than fixing one threshold and computing a single precision/recall pair — the area under the ROC curve gives a threshold-independent summary of a classifier's overall discriminatory power."
             },
             {
                 "q": "What is a 'confusion matrix'?",
-                "a": "A table summarising a classifier's predictions versus actual outcomes."
+                "a": "A table summarising a classifier's predictions versus actual outcomes.",
+                "explain": "This is the raw data underlying every metric introduced above — precision, recall and $F_1$ are all just different ratios computed from the four cells of a confusion matrix (true positives, false positives, true negatives, false negatives), so it's worth thinking of it as the single source from which all those summary statistics are derived."
             },
             {
                 "q": "What is 'K-means clustering'?",
-                "a": "An unsupervised technique partitioning data into $K$ groups by minimising within-cluster variation."
+                "a": "An unsupervised technique partitioning data into $K$ groups by minimising within-cluster variation.",
+                "explain": "This is a concrete example of the unsupervised learning category introduced earlier in this module — an actuarial use case worth keeping in mind is segmenting policyholders into risk groups based on multiple behavioural or claims variables simultaneously, without needing to pre-specify what defines a 'good' or 'bad' risk group in advance."
             },
             {
                 "q": "How does principal component analysis (PCA) relate to its earlier mention in Data Analysis (CS1)?",
-                "a": "Same underlying technique — reducing dimensionality by finding uncorrelated components — applied here for identifying latent structure or anomalies."
+                "a": "Same underlying technique — reducing dimensionality by finding uncorrelated components — applied here for identifying latent structure or anomalies.",
+                "explain": "This closes the whole of CS2 by explicitly tying its final card back to CS1, making the point that machine learning as a subject isn't a wholly separate toolkit — many of its techniques (PCA, regression-based supervised learning, cross-validation as an extension of ordinary model validation) are direct extensions or relabellings of statistical tools already built across CS1 and the rest of CS2."
             }
         ]
     }
