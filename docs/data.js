@@ -4215,63 +4215,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does the Central Limit Theorem (CLT) state?",
-                "a": "For i.i.d. random variables with finite mean and variance, the standardised sample mean converges in distribution to standard normal as sample size increases."
+                "a": "For i.i.d. random variables with finite mean and variance, the standardised sample mean converges in distribution to standard normal as sample size increases.",
+                "explain": "This module is arguably the hinge of the whole CS1 syllabus — everything before it (Modules 2-5) builds probability machinery, and almost everything after it (Modules 7-13, inference and regression) leans on this one remarkable result to justify treating sample means/estimators as approximately normal, regardless of what the underlying data actually looks like."
             },
             {
                 "q": "What is the approximate distribution of the sample mean $\\bar{X}$ for large $n$?",
-                "a": "Approximately $N(\\mu, \\sigma^2/n)$"
+                "a": "Approximately $N(\\mu, \\sigma^2/n)$",
+                "explain": "The mean $\\mu$ matches the underlying population exactly (no surprise there), but note the variance shrinks with $n$ — this single fact (variance $\\sigma^2/n$, not $\\sigma^2$) is what drives confidence intervals narrowing and hypothesis tests becoming more powerful as sample size grows, throughout the rest of the syllabus."
             },
             {
                 "q": "Does the CLT require the underlying distribution to be normal?",
-                "a": "No — it applies to almost any distribution with finite mean and variance."
+                "a": "No — it applies to almost any distribution with finite mean and variance.",
+                "explain": "This is genuinely the whole point of the theorem, and worth stating explicitly since it's easy to misread — the CLT doesn't ASSUME normality, it PRODUCES approximate normality (for the mean specifically) out of almost any starting distribution, which is precisely why it's such a powerful, general-purpose tool."
             },
             {
                 "q": "How does the accuracy of the normal approximation from the CLT typically depend on sample size?",
-                "a": "It generally improves as sample size increases; smaller samples need the underlying distribution closer to normal for a good approximation."
+                "a": "It generally improves as sample size increases; smaller samples need the underlying distribution closer to normal for a good approximation.",
+                "explain": "This is a genuinely important practical caveat to the theorem's power — the CLT is a statement about the LIMIT as $n\\to\\infty$, so for any finite, real sample size, how good the approximation actually is depends on how far the underlying distribution is from normal to begin with (see the skewness card next)."
             },
             {
                 "q": "Why might the CLT approximation be poor for small samples from a highly skewed distribution?",
-                "a": "Skewness takes a larger sample size to 'average out' via the CLT, so small samples can still show noticeable skewness."
+                "a": "Skewness takes a larger sample size to 'average out' via the CLT, so small samples can still show noticeable skewness.",
+                "explain": "A useful rule of thumb worth having: a roughly symmetric underlying distribution needs a relatively small $n$ for the normal approximation to look good, while a heavily skewed one (e.g. many actuarial claim-size distributions) may need a much larger $n$ before the sample mean's own distribution looks convincingly normal."
             },
             {
                 "q": "How is the CLT used to justify approximating a Binomial distribution with a Normal distribution?",
-                "a": "A binomial is a sum of many independent Bernoulli trials, so for large $n$ the CLT justifies a normal approximation with matching mean and variance."
+                "a": "A binomial is a sum of many independent Bernoulli trials, so for large $n$ the CLT justifies a normal approximation with matching mean and variance.",
+                "explain": "This is a direct, concrete application connecting back to Module 2's binomial distribution — recognising a Binomial($n,p$) as literally a SUM of $n$ i.i.d. Bernoulli($p$) trials is what lets the CLT (a statement about sums/means) apply to it at all."
             },
             {
                 "q": "What continuity correction is often applied when approximating a discrete distribution with a normal distribution?",
-                "a": "Adjusting the boundary by $0.5$ to account for the discrete-to-continuous approximation."
+                "a": "Adjusting the boundary by $0.5$ to account for the discrete-to-continuous approximation.",
+                "explain": "This fixes a genuine mismatch: a discrete distribution puts probability mass only on integer values, while the normal distribution spreads probability continuously — the $\\pm0.5$ adjustment (e.g. approximating $P(X\\le k)$ with the normal CDF at $k+0.5$) accounts for this by treating each integer as if it occupies a unit-width interval."
             },
             {
                 "q": "How would you use simulation to check the CLT's accuracy for a given sample size and distribution?",
-                "a": "Simulate many samples, compute the sample mean for each, and compare the empirical distribution to the theoretical normal approximation."
+                "a": "Simulate many samples, compute the sample mean for each, and compare the empirical distribution to the theoretical normal approximation.",
+                "explain": "This uses Module 2's simulation techniques (inverse transform method, etc.) as a practical verification tool — rather than trusting the theorem blindly for a specific (possibly small or unusual) sample size, simulation lets you empirically check whether the normal approximation is actually trustworthy in your specific situation."
             },
             {
                 "q": "Why is the CLT considered foundational for much of classical statistical inference?",
-                "a": "Many inference procedures rely on the approximate normality of sample means/estimators, which the CLT justifies even when the underlying data isn't normal."
+                "a": "Many inference procedures rely on the approximate normality of sample means/estimators, which the CLT justifies even when the underlying data isn't normal.",
+                "explain": "This is the module's central 'why does this matter' answer — Module 9's confidence intervals and Module 10's hypothesis tests both routinely assume approximate normality of a statistic, and the CLT is precisely what makes that assumption reasonable even when you know almost nothing about the shape of the original population."
             },
             {
                 "q": "What happens to the variance of the sample mean as sample size $n$ increases?",
-                "a": "It decreases, proportionally to $1/n$."
+                "a": "It decreases, proportionally to $1/n$.",
+                "explain": "Restates the $\\sigma^2/n$ result from earlier in this module as a standalone fact worth its own card — the $1/n$ (not, say, $1/\\sqrt{n}$) rate for VARIANCE is exactly why the STANDARD DEVIATION of the sample mean shrinks at the slower rate $1/\\sqrt{n}$, a distinction that trips candidates up when converting between the two."
             },
             {
                 "q": "Does the CLT say anything about the distribution of individual observations, or only about sums/means?",
-                "a": "Only about sums/means (and similar aggregated statistics) — individual observations retain their original distribution."
+                "a": "Only about sums/means (and similar aggregated statistics) — individual observations retain their original distribution.",
+                "explain": "This is a common and important misconception to guard against — the CLT says nothing at all about a SINGLE observation's distribution, which can be as skewed or unusual as the population itself; it's specifically the process of averaging many observations together that produces the approximate normality."
             },
             {
                 "q": "How does the CLT apply to the distribution of a sum (rather than a mean) of i.i.d. random variables?",
-                "a": "The sum is also approximately normal for large $n$, with mean $n\\mu$ and variance $n\\sigma^2$."
+                "a": "The sum is also approximately normal for large $n$, with mean $n\\mu$ and variance $n\\sigma^2$.",
+                "explain": "This is really the same theorem stated in different units — a sum is just $n$ times the mean, so if $\\bar X \\approx N(\\mu,\\sigma^2/n)$ then $n\\bar X$ (the sum) is approximately $N(n\\mu, n^2\\cdot\\sigma^2/n)=N(n\\mu,n\\sigma^2)$, exactly matching this card's stated result."
             },
             {
                 "q": "What condition on the underlying distribution is required for the CLT to apply?",
-                "a": "The distribution must have a finite mean and finite variance."
+                "a": "The distribution must have a finite mean and finite variance.",
+                "explain": "This is the ONE genuine restriction on an otherwise extremely general theorem — no assumption of normality, no assumption of a particular shape, just these two finiteness conditions, which is exactly why the exception in the next card (infinite variance) is worth knowing specifically."
             },
             {
                 "q": "Give an example of a distribution for which the CLT would not apply in its standard form.",
-                "a": "A distribution with infinite variance, such as a Cauchy distribution."
+                "a": "A distribution with infinite variance, such as a Cauchy distribution.",
+                "explain": "The Cauchy distribution is the standard textbook counterexample precisely because its variance is genuinely infinite (its tails are so heavy the defining integral diverges) — averaging more Cauchy-distributed observations together doesn't concentrate around the mean the way the CLT would predict for a finite-variance distribution."
             },
             {
                 "q": "Why is comparing simulated sample means to the normal distribution a useful practical check?",
-                "a": "It helps assess how large a sample size is actually needed in practice for the normal approximation to be adequate."
+                "a": "It helps assess how large a sample size is actually needed in practice for the normal approximation to be adequate.",
+                "explain": "This closes the module by restating the simulation card's purpose as a general principle — since the theorem itself gives no guarantee about HOW LARGE $n$ needs to be for a given underlying distribution, empirical simulation is often the most practical way to answer that question for any specific real-world application."
             }
         ]
     },
@@ -4282,63 +4297,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'random sample'?",
-                "a": "A set of observations drawn such that each is independent and identically distributed according to the population distribution."
+                "a": "A set of observations drawn such that each is independent and identically distributed according to the population distribution.",
+                "explain": "The 'i.i.d.' assumption embedded in this definition is exactly the condition the CLT (Module 6) needs to apply — this module is where that theoretical machinery gets put to direct use, building the specific sampling distributions that underpin confidence intervals and hypothesis tests."
             },
             {
                 "q": "What is a 'sampling distribution'?",
-                "a": "The probability distribution of a statistic (e.g. the sample mean), across all possible samples of a given size from the population."
+                "a": "The probability distribution of a statistic (e.g. the sample mean), across all possible samples of a given size from the population.",
+                "explain": "This is a genuinely important conceptual shift worth pausing on: the RAW DATA has a distribution (the population distribution), but a STATISTIC calculated from a sample (like $\\bar X$) has its OWN, different distribution — one that's typically much less variable than the original data, since averaging smooths out individual randomness."
             },
             {
                 "q": "What is the mean of the sampling distribution of the sample mean $\\bar{X}$?",
-                "a": "Equal to the population mean $\\mu$."
+                "a": "Equal to the population mean $\\mu$.",
+                "explain": "This confirms $\\bar X$ is an unbiased estimator of $\\mu$ (a concept formalised fully in Module 8) — on average, across many hypothetical repeated samples, the sample mean neither systematically over- nor under-estimates the true population mean."
             },
             {
                 "q": "What is the variance of the sampling distribution of the sample mean $\\bar{X}$, for a sample of size $n$?",
-                "a": "$\\sigma^2/n$, where $\\sigma^2$ is the population variance."
+                "a": "$\\sigma^2/n$, where $\\sigma^2$ is the population variance.",
+                "explain": "This is exactly the CLT's variance result from Module 6, restated here as the starting building block for this whole module — every sampling-distribution result for the mean, from the exact normal case below to the $t$-distribution case, builds on this same $\\sigma^2/n$ figure."
             },
             {
                 "q": "What is the mean of the sampling distribution of the sample variance $S^2$?",
-                "a": "Equal to the population variance $\\sigma^2$."
+                "a": "Equal to the population variance $\\sigma^2$.",
+                "explain": "This confirms $S^2$ (using the $n-1$ divisor, not $n$) is an unbiased estimator of $\\sigma^2$ — this is precisely WHY the sample variance formula divides by $n-1$ rather than the seemingly more natural $n$, a choice that's often just asserted without explanation elsewhere but is directly justified by this unbiasedness property."
             },
             {
                 "q": "For a random sample from a Normal distribution, what is the exact distribution of the sample mean $\\bar{X}$?",
-                "a": "Exactly normal, $N(\\mu, \\sigma^2/n)$ — not just approximately."
+                "a": "Exactly normal, $N(\\mu, \\sigma^2/n)$ — not just approximately.",
+                "explain": "This is a genuinely important upgrade from the CLT's APPROXIMATE result to an EXACT one — when the underlying population is itself normal, there's no need to invoke a large-sample approximation at all, since sums of normal random variables are exactly normal for any sample size, even $n=2$."
             },
             {
                 "q": "For a random sample of size $n$ from $N(\\mu,\\sigma^2)$, what is the distribution of $\\frac{(n-1)S^2}{\\sigma^2}$?",
-                "a": "Chi-square with $n-1$ degrees of freedom."
+                "a": "Chi-square with $n-1$ degrees of freedom.",
+                "explain": "This connects directly back to Module 2's chi-square construction (sum of squared standard normals) — this specific result is the foundation for constructing confidence intervals for a variance (Module 9) and is one of the two building blocks (alongside the exact-normal $\\bar X$ result above) needed for the $t$-distribution result in the next card."
             },
             {
                 "q": "For a random sample from a normal distribution with unknown variance, what distribution does the standardised sample mean follow?",
-                "a": "The $t$-distribution with $n-1$ degrees of freedom."
+                "a": "The $t$-distribution with $n-1$ degrees of freedom.",
+                "explain": "This is genuinely the single most-used sampling-distribution result in this module for practical inference (Modules 9-10), since real-world problems almost never have a known population variance — the $t$-distribution is constructed by combining the exact-normal $\\bar X$ result with the chi-square $S^2$ result above, which is why its degrees of freedom match the chi-square's ($n-1$)."
             },
             {
                 "q": "Why is the $t$-distribution used instead of the normal distribution when the population variance is unknown?",
-                "a": "Estimating the variance from the sample introduces extra uncertainty, which the heavier-tailed $t$-distribution accounts for."
+                "a": "Estimating the variance from the sample introduces extra uncertainty, which the heavier-tailed $t$-distribution accounts for.",
+                "explain": "This is the intuitive justification for the previous card's technical result — using an ESTIMATED variance ($S^2$) instead of the true $\\sigma^2$ adds an extra layer of randomness on top of the sample mean's own variability, and the $t$-distribution's heavier tails (compared to normal) correctly widen confidence intervals/critical values to reflect that extra uncertainty."
             },
             {
                 "q": "What happens to the $t$-distribution as the degrees of freedom increase?",
-                "a": "It converges to the standard normal distribution."
+                "a": "It converges to the standard normal distribution.",
+                "explain": "This makes intuitive sense given the reasoning above: with a very large sample, the estimated variance $S^2$ becomes an extremely precise estimate of $\\sigma^2$, so the 'extra uncertainty' the $t$-distribution accounts for shrinks toward nothing, and the $t$-distribution converges to the normal distribution it approximates."
             },
             {
                 "q": "What is the $F$-distribution used for, in terms of two independent samples?",
-                "a": "Comparing the ratio of two independent sample variances, used e.g. to test equality of variances."
+                "a": "Comparing the ratio of two independent sample variances, used e.g. to test equality of variances.",
+                "explain": "This is built from TWO independent chi-square distributions (one from each sample's variance, per the chi-square card above) — an F-distributed ratio is what lets you formally test whether two groups have genuinely different variability, not just different means."
             },
             {
                 "q": "Are the sample mean and sample variance independent for a random sample from a normal distribution?",
-                "a": "Yes — a special property that holds for normal samples."
+                "a": "Yes — a special property that holds for normal samples.",
+                "explain": "This is a genuinely surprising and important result worth flagging as SPECIAL to the normal case — it's precisely what allows the $t$-distribution construction above to be valid (combining $\\bar X$ and $S^2$ cleanly requires their independence), and it does NOT generally hold for samples from other distributions."
             },
             {
                 "q": "What is meant by 'degrees of freedom' for the sample variance's chi-square distribution?",
-                "a": "$n-1$ — one degree of freedom is 'used up' estimating the mean from the same sample."
+                "a": "$n-1$ — one degree of freedom is 'used up' estimating the mean from the same sample.",
+                "explain": "This is the intuitive explanation for why it's $n-1$ and not $n$: since $S^2$ is calculated using the SAMPLE mean $\\bar X$ (not the unknown true $\\mu$), one piece of information from the data has already been 'spent' estimating $\\bar X$, leaving only $n-1$ independent pieces of information to estimate the spread."
             },
             {
                 "q": "Why is understanding the sampling distribution of a statistic essential for statistical inference?",
-                "a": "It tells us how much a statistic varies from sample to sample, underpinning confidence intervals and hypothesis tests."
+                "a": "It tells us how much a statistic varies from sample to sample, underpinning confidence intervals and hypothesis tests.",
+                "explain": "This is the module's central justification for existing — every confidence interval (Module 9) and every hypothesis test (Module 10) is built by asking 'given what we know about how this statistic varies from sample to sample, what range of true parameter values is consistent with what we actually observed?', which requires exactly the sampling distributions this module derives."
             },
             {
                 "q": "If you take repeated samples of the same size and calculate the sample mean each time, what pattern would you expect?",
-                "a": "The sample means would vary, following the sampling distribution of the mean (approximately normal, centred on the population mean)."
+                "a": "The sample means would vary, following the sampling distribution of the mean (approximately normal, centred on the population mean).",
+                "explain": "This closes the module with a concrete, intuitive picture worth holding onto throughout the rest of CS1 — every abstract sampling-distribution formula in this module describes exactly this thought experiment: imagine repeating your study many times, and ask how the resulting statistic would scatter across those hypothetical repetitions."
             }
         ]
     },
