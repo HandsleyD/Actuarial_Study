@@ -5963,63 +5963,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the general form of the Cox proportional hazards model?",
-                "a": "$h_i(t) = h_0(t)\\exp(\\beta^T z_i)$, where $h_0(t)$ is the baseline hazard and $z_i$ are covariates."
+                "a": "$h_i(t) = h_0(t)\\exp(\\beta^T z_i)$, where $h_0(t)$ is the baseline hazard and $z_i$ are covariates.",
+                "explain": "This is CS1's GLM framework (Module 13 there) reused in a survival-analysis context — the $\\exp(\\beta^Tz_i)$ multiplier is exactly a log-link linear predictor, ensuring the covariate adjustment is always positive, just as the Poisson GLM's log link guaranteed positive predicted counts."
             },
             {
                 "q": "What does 'proportional hazards' mean?",
-                "a": "The ratio of hazards between any two individuals with different covariates is constant over time."
+                "a": "The ratio of hazards between any two individuals with different covariates is constant over time.",
+                "explain": "This is worth verifying directly from the formula: the ratio $h_i(t)/h_j(t) = \\exp(\\beta^T(z_i-z_j))$ has the baseline hazard $h_0(t)$ CANCEL OUT completely, leaving a constant that doesn't depend on $t$ at all — this cancellation is precisely what 'proportional' means, and it's also exactly the property partial likelihood exploits."
             },
             {
                 "q": "Why is the Cox model described as 'semi-parametric'?",
-                "a": "Covariate effects are modelled parametrically, but the baseline hazard $h_0(t)$ is left unspecified."
+                "a": "Covariate effects are modelled parametrically, but the baseline hazard $h_0(t)$ is left unspecified.",
+                "explain": "This positions the Cox model precisely BETWEEN Module 6's fully parametric approach (Gompertz/Makeham, a specific formula for the whole hazard) and Module 7's fully non-parametric approach (Kaplan-Meier, no formula at all) — it takes a parametric form for covariate EFFECTS while keeping the baseline shape completely flexible."
             },
             {
                 "q": "What is the 'partial likelihood' in the Cox model?",
-                "a": "A likelihood based only on the order of events (and who was at risk), allowing estimation of $\\beta$ without specifying $h_0(t)$."
+                "a": "A likelihood based only on the order of events (and who was at risk), allowing estimation of $\\beta$ without specifying $h_0(t)$.",
+                "explain": "This is precisely the trick previewed at the end of Module 7 — because $h_0(t)$ cancels out of the hazard RATIO (per the proportional-hazards card above), a likelihood built purely from 'who failed first, among who was still at risk' never needs to know what $h_0(t)$ actually looks like."
             },
             {
                 "q": "What are 'ties' in the context of the Cox model's partial likelihood?",
-                "a": "When two or more individuals experience the event at exactly the same observed time."
+                "a": "When two or more individuals experience the event at exactly the same observed time.",
+                "explain": "Ties are a genuine practical complication for partial likelihood, since the clean 'who failed FIRST' ordering logic breaks down when two failures are recorded simultaneously — various approximation methods exist to handle this in practice, a detail worth knowing exists even without memorising each specific method."
             },
             {
                 "q": "What is the asymptotic distribution of the Cox model's partial likelihood estimator $\\hat\\beta$?",
-                "a": "Approximately normal, for large samples, allowing standard hypothesis tests and confidence intervals."
+                "a": "Approximately normal, for large samples, allowing standard hypothesis tests and confidence intervals.",
+                "explain": "This is CS1's general MLE asymptotic-normality result (Module 8 there) applied to partial likelihood specifically — even though partial likelihood isn't a FULL likelihood, it behaves like one asymptotically, which is exactly why standard $z$-tests and confidence intervals for $\\hat\\beta$ remain valid."
             },
             {
                 "q": "How would you interpret a positive coefficient $\\beta_j$ for a covariate in the Cox model?",
-                "a": "An increase in that covariate is associated with a higher hazard, holding other covariates constant."
+                "a": "An increase in that covariate is associated with a higher hazard, holding other covariates constant.",
+                "explain": "This is the same 'holding other covariates constant' interpretation used throughout CS1's regression content (Module 12 there) — a positive $\\beta_j$ means, all else equal, higher values of that covariate are associated with a WORSE (higher-hazard, shorter-survival) outcome."
             },
             {
                 "q": "How would you interpret $e^{\\beta_j}$ in the Cox model?",
-                "a": "The 'hazard ratio' — the multiplicative change in hazard for a one-unit increase in $z_j$."
+                "a": "The 'hazard ratio' — the multiplicative change in hazard for a one-unit increase in $z_j$.",
+                "explain": "This is directly analogous to CS1's GLM 'relative risk' interpretation for a Poisson model's exponentiated coefficient — a hazard ratio of, say, 1.5 for smoking status means a smoker's hazard is 50% higher than a non-smoker's at every point in time, a genuinely intuitive way to communicate a covariate's effect."
             },
             {
                 "q": "What is a key assumption of the Cox model that should be checked in practice?",
-                "a": "That the proportional hazards assumption actually holds — covariate effects don't change over time."
+                "a": "That the proportional hazards assumption actually holds — covariate effects don't change over time.",
+                "explain": "This is worth treating as a genuine, checkable model assumption, not just taken on faith — just as CS1's linear regression needs residual diagnostics (Module 12 there), the Cox model's proportionality assumption can and should be tested against the data before trusting the fitted hazard ratios."
             },
             {
                 "q": "How could a time-varying covariate effect be incorporated into an extended Cox model?",
-                "a": "By including a time-dependent covariate or interaction term (covariate times a function of time)."
+                "a": "By including a time-dependent covariate or interaction term (covariate times a function of time).",
+                "explain": "This is the direct fix for the proportional-hazards assumption failing — if a covariate's effect genuinely strengthens or weakens over time (e.g. a treatment's benefit fading), allowing $\\beta$ itself to depend on $t$ (via an interaction term) relaxes the strict proportionality this module otherwise assumes."
             },
             {
                 "q": "What is the role of covariates in a proportional hazards model, compared with the basic survival model?",
-                "a": "They allow the hazard to vary by individual characteristics, rather than assuming everyone shares the same survival distribution."
+                "a": "They allow the hazard to vary by individual characteristics, rather than assuming everyone shares the same survival distribution.",
+                "explain": "This restates the module's core upgrade over Module 6/7's single-population survival curves — real populations are heterogeneous (smokers vs non-smokers, different policy types), and the Cox model lets that heterogeneity be modelled explicitly rather than averaged away into one curve."
             },
             {
                 "q": "Why might the Cox model be preferred over fitting a fully parametric survival model with covariates?",
-                "a": "It avoids needing to correctly specify the baseline hazard's functional form."
+                "a": "It avoids needing to correctly specify the baseline hazard's functional form.",
+                "explain": "This restates the semi-parametric advantage from earlier in this module as a practical justification — if you're not confident the baseline hazard follows a clean Gompertz/Makeham-style shape (Module 6), the Cox model sidesteps that risk entirely by never requiring you to specify it."
             },
             {
                 "q": "What data would you need to fit a Cox proportional hazards model?",
-                "a": "Event/censoring times, censoring indicators, and covariate values for each individual."
+                "a": "Event/censoring times, censoring indicators, and covariate values for each individual.",
+                "explain": "This is exactly Module 7's censored-data requirements (event/censoring times, censoring indicators) with covariate values added on top — the Cox model doesn't need NEW kinds of data collection, just the same survival data PLUS whatever risk factors you want to model."
             },
             {
                 "q": "How does the Cox model use 'risk sets' in its partial likelihood construction?",
-                "a": "At each event time, the risk set is used to compute the probability that the specific individual who failed did so, given everyone at risk."
+                "a": "At each event time, the risk set is used to compute the probability that the specific individual who failed did so, given everyone at risk.",
+                "explain": "This is exactly Kaplan-Meier's risk-set concept ($n_i$ from Module 7) reused here — at each observed event, the partial likelihood asks 'given this whole risk set, what's the probability THIS particular individual (rather than any other) was the one who failed', weighted by each individual's relative hazard from their covariates."
             },
             {
                 "q": "Why is understanding proportional hazards models valuable for pricing life or health insurance?",
-                "a": "They allow risk factors to be incorporated directly into mortality/morbidity risk assessment, improving pricing accuracy."
+                "a": "They allow risk factors to be incorporated directly into mortality/morbidity risk assessment, improving pricing accuracy.",
+                "explain": "This closes the module with its clear professional payoff — rather than pricing every policyholder off one generic mortality table (Module 6), a Cox model lets an insurer directly quantify how much EXTRA (or reduced) risk specific factors (smoking, occupation, medical history) genuinely represent, informing risk-adjusted premiums."
             }
         ]
     },
