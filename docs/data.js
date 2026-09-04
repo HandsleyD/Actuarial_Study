@@ -11969,6 +11969,356 @@ const MODULES = {
                 "explain": "This closing card ties both estimation methods covered in this module back to the same underlying economic principle — however the cost of equity is actually calculated, it should always increase with the genuine riskiness of the company's shares, which is a useful sense-check on any calculated figure."
             }
         ]
+    },
+    {
+        "id": "m11",
+        "title": "Capital structure",
+        "description": "Covers how a company's mix of debt and equity finance affects its overall cost of capital (WACC), including Modigliani-Miller theory and practical considerations in choosing an appropriate capital structure.",
+        "cards": [
+            {
+                "q": "What is the 'weighted average cost of capital' (WACC)?",
+                "a": "A company's overall cost of capital, combining its cost of equity and cost of debt, each weighted by their proportion in the company's total financing.",
+                "explain": "This directly resolves Module 10's closing card — WACC is exactly the single figure formed by combining cost of equity (Module 10) with cost of debt, and it's the discount rate used throughout Modules 13-16's investment appraisal material."
+            },
+            {
+                "q": "What is the formula for WACC, in terms of the cost and proportion of equity and debt?",
+                "a": "$WACC = \\dfrac{E}{E+D}k_e + \\dfrac{D}{E+D}k_d(1-t)$, where $E$ and $D$ are the market values of equity and debt, $k_e$ and $k_d$ are their respective costs, and $t$ is the corporate tax rate.",
+                "explain": "The $(1-t)$ adjustment on the cost of debt is worth remembering precisely — it reflects the tax deductibility of interest flagged in Module 9, meaning the company's genuine, after-tax cost of debt is lower than the interest rate it actually pays."
+            },
+            {
+                "q": "Why is WACC calculated using the market values of equity and debt, rather than their book (balance sheet) values?",
+                "a": "Market values reflect what investors would actually require today for the risk they're bearing, whereas book values are historical accounting figures that may bear little relation to current economic value.",
+                "explain": "This is exactly Module 13's market-value valuation argument (from the balance sheet material) applied to capital structure — worth remembering WACC is fundamentally a forward-looking, market-based figure, not a backward-looking accounting one."
+            },
+            {
+                "q": "Why is a company's WACC typically used as the discount rate in investment appraisal?",
+                "a": "It represents the minimum return required by the company's providers of finance overall, so a project earning at least the WACC is expected to satisfy those providers and create value for shareholders.",
+                "explain": "This directly previews Module 13's NPV material — worth recognising WACC as the natural 'hurdle rate' precisely because it reflects what the company's OWN capital genuinely costs, making it the appropriate benchmark a new project's return must clear."
+            },
+            {
+                "q": "What does the traditional view of capital structure suggest about the relationship between gearing and WACC?",
+                "a": "WACC initially falls as gearing increases (since cheaper debt is substituted for more expensive equity), reaches a minimum at an optimal gearing level, then rises again as financial risk becomes excessive.",
+                "explain": "This directly connects to Module 6's financial risk material — worth recognising this as a genuine trade-off theory: debt is cheaper (lowering WACC), but too much debt raises financial risk enough that both debt and equity holders demand higher returns, eventually reversing the initial benefit."
+            },
+            {
+                "q": "What does the Modigliani-Miller (MM) 'irrelevance proposition' state, in a world with no taxes?",
+                "a": "In a perfect capital market with no taxes, a company's overall value (and WACC) is independent of its capital structure — how a company is financed doesn't affect its total value.",
+                "explain": "This is a deliberately counter-intuitive theoretical starting point worth understanding as a BASELINE — MM's own later refinement (the next card) shows exactly what real-world factor (tax) breaks this irrelevance result, which is precisely why capital structure matters in practice."
+            },
+            {
+                "q": "How does introducing corporate tax change the Modigliani-Miller conclusion about capital structure?",
+                "a": "With corporate tax, the tax deductibility of interest creates a genuine 'tax shield' benefit to debt, meaning company value increases (and WACC falls) as gearing increases, at least up to a point.",
+                "explain": "This is precisely the tax-shield benefit flagged in Module 9's advantage-of-debt card, now given its formal theoretical grounding — worth recognising MM-with-tax as the theoretical justification for the traditional view's initial downward-sloping WACC region."
+            },
+            {
+                "q": "Why does MM's tax-adjusted theory suggest an optimal capital structure isn't simply '100% debt'?",
+                "a": "In practice, very high gearing introduces significant costs of financial distress (increased risk of default, higher borrowing costs, potential bankruptcy costs), which eventually outweigh the tax benefit of additional debt.",
+                "explain": "This directly connects to the traditional view's rising WACC region at high gearing — worth recognising financial distress costs as the practical, real-world factor that stops companies pursuing debt finance indefinitely, even though the pure tax shield benefit alone would seem to favour ever more debt."
+            },
+            {
+                "q": "What is 'pecking order theory', as an alternative perspective on capital structure decisions?",
+                "a": "The theory that companies prefer to finance new investment first from retained earnings, then debt, and only turn to new equity issuance as a last resort, rather than targeting a specific optimal gearing ratio.",
+                "explain": "This is worth contrasting directly with the trade-off theory (traditional view/MM-with-tax) — pecking order theory suggests companies aren't actively targeting an 'optimal' gearing level at all, but instead follow a preference ORDER driven by relative cost and information asymmetry considerations."
+            },
+            {
+                "q": "Why might retained earnings be the most preferred source of finance under pecking order theory?",
+                "a": "It avoids the issue costs, dilution, and negative signalling effects (discussed next) associated with raising external finance, making it the most convenient and least costly option where sufficient retained profit is available.",
+                "explain": "This directly recalls Module 8's point about retained earnings' convenience — worth recognising pecking order theory as essentially formalising that earlier intuition into a complete, ranked financing preference order."
+            },
+            {
+                "q": "Why might issuing new equity be interpreted negatively by the market, according to pecking order theory?",
+                "a": "Managers are assumed to have better information about the company's true prospects than outside investors; choosing to issue new equity rather than debt can signal that managers believe the shares are currently overvalued, causing the share price to fall on announcement.",
+                "explain": "This is a genuinely important information-asymmetry argument worth remembering explicitly — it's precisely why pecking order theory places new equity issuance LAST in the preference order, behind both retained earnings and debt."
+            },
+            {
+                "q": "What practical factors might a company consider when deciding on its target capital structure, beyond pure theory?",
+                "a": "Industry norms and comparable companies' gearing levels, the stability and predictability of its cashflows, the availability and cost of different financing sources, and the views of lenders/credit rating agencies.",
+                "explain": "This directly echoes Module 6's industry-comparison caution — worth recognising that real capital structure decisions blend theoretical principles (trade-off theory, pecking order) with these practical, company-specific and industry-specific considerations."
+            },
+            {
+                "q": "Why might a company with highly volatile, unpredictable cashflows generally maintain lower gearing than a company with stable, predictable cashflows?",
+                "a": "Volatile cashflows increase the risk of being unable to meet fixed interest obligations in a bad period, so lower gearing provides a more prudent buffer against this financial risk, consistent with Module 6's interest cover material.",
+                "explain": "This is a direct, practical application of Module 6's interest cover and financial risk concepts — worth using this reasoning explicitly whenever asked to assess whether a specific company's gearing level appears appropriate given the nature of its business."
+            },
+            {
+                "q": "How does the choice of capital structure ultimately connect back to the investment appraisal techniques covered in the next few modules?",
+                "a": "The company's capital structure directly determines its WACC, which is the discount rate typically used to appraise potential investment projects — a change in capital structure can therefore change which projects appear worthwhile.",
+                "explain": "This closing card is the module's direct hand-off to Modules 13-16 — worth recognising WACC as the genuine link between this module and everything that follows: an investment decision (Module 13's NPV) can't be properly evaluated without first having a genuine discount rate, which capital structure decisions ultimately determine."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Investment appraisal: payback and accounting rate of return",
+        "description": "Covers two simple, widely-used investment appraisal techniques — payback period and accounting rate of return — along with their decision rules and key limitations.",
+        "cards": [
+            {
+                "q": "What does the 'payback period' method measure?",
+                "a": "How long it takes for a project's cumulative cash inflows to equal (pay back) the initial investment outlay.",
+                "explain": "This is the simplest of all investment appraisal techniques, and it's worth treating this module as establishing a baseline against which Module 13's NPV (a much more theoretically sound method) will later be compared."
+            },
+            {
+                "q": "What is the typical decision rule under the payback period method?",
+                "a": "Accept the project if its payback period is shorter than a specified target/maximum period set by the company; when comparing mutually exclusive projects, prefer the one with the shorter payback.",
+                "explain": "Worth noting the target period itself is a somewhat arbitrary, company-chosen benchmark — unlike NPV's zero threshold (Module 13), which is theoretically grounded in whether value is created at all, payback's cut-off is really just a policy choice reflecting the company's own risk appetite."
+            },
+            {
+                "q": "Give one advantage of the payback period method.",
+                "a": "It is simple to calculate and understand, and it provides a rough measure of a project's liquidity risk by favouring projects that recover their investment quickly.",
+                "explain": "This liquidity-focused advantage is worth connecting to Module 4's cash flow material — a shorter payback period means the company's cash is tied up for less time, which can matter genuinely for a company with its own working capital or liquidity constraints (Module 7)."
+            },
+            {
+                "q": "Give one key limitation of the payback period method.",
+                "a": "It ignores the time value of money (cashflows in different years are simply added together without discounting) and ignores all cashflows occurring after the payback period, however large they might be.",
+                "explain": "This is the method's most serious theoretical flaw, worth stating precisely — a project could have a very short payback but a poor total return, or a longer payback with an excellent total return, and payback alone cannot distinguish between these two very different situations."
+            },
+            {
+                "q": "What is 'discounted payback period', and how does it address one of payback's limitations?",
+                "a": "A variant of payback that discounts the cashflows to present value before calculating how long it takes to recover the initial investment, addressing the standard method's failure to account for the time value of money.",
+                "explain": "This directly previews Module 13's discounting technique — worth noting discounted payback still shares the ordinary payback method's other limitation (ignoring cashflows after the payback point), so it's only a partial fix, not a complete solution."
+            },
+            {
+                "q": "What does the 'accounting rate of return' (ARR) method measure?",
+                "a": "A project's average annual accounting profit expressed as a percentage of the investment required, typically calculated as average annual profit divided by average (or initial) investment.",
+                "explain": "This is worth contrasting sharply with every other method in this and later modules — ARR is the only investment appraisal technique built on accounting PROFIT rather than cashflow, reintroducing exactly the profit-versus-cash distinction Module 3 and Module 4 warned about."
+            },
+            {
+                "q": "What is the typical decision rule under the ARR method?",
+                "a": "Accept the project if its ARR exceeds a specified target rate of return set by the company; when comparing mutually exclusive projects, prefer the one with the higher ARR.",
+                "explain": "As with payback's target period, this benchmark rate is a company-set policy choice rather than a theoretically-grounded threshold — worth contrasting directly with Module 14's IRR, which also produces a percentage but is compared against the company's actual cost of capital (WACC), a genuinely economically meaningful figure."
+            },
+            {
+                "q": "Give one advantage of the ARR method.",
+                "a": "It is relatively simple to calculate, uses familiar accounting profit figures, and produces a percentage return that's easy to compare against a target rate or against other investment opportunities.",
+                "explain": "The familiarity of accounting profit is worth noting as a genuine, if double-edged, advantage — managers and boards are often more comfortable interpreting a profit-based percentage return than a discounted cashflow figure, even though (as the next card explains) this familiarity comes at a real theoretical cost."
+            },
+            {
+                "q": "Give one key limitation of the ARR method.",
+                "a": "It is based on accounting profit rather than cashflow (subject to the accruals distortions discussed in Module 3), and it ignores the time value of money entirely, treating profit earned in year 1 the same as profit earned in year 10.",
+                "explain": "Worth noting this is a genuinely more serious flaw than payback's limitations — ARR combines BOTH of payback's problems (no discounting) with an entirely new one (using profit rather than cash), making it arguably the weakest of the appraisal techniques covered across this course."
+            },
+            {
+                "q": "Why might different reasonable definitions of 'investment' (average versus initial) in the ARR formula produce different results for the same project?",
+                "a": "Average investment (typically the mean of initial cost and residual value) gives a different denominator than using the initial investment cost alone, so the choice of definition directly affects the calculated ARR and must be applied consistently.",
+                "explain": "This is a genuinely important exam-technique point worth remembering explicitly — always state which definition of investment is being used when quoting an ARR figure, since the average-investment basis roughly doubles the resulting percentage compared with the initial-investment basis for a typical project with zero residual value."
+            },
+            {
+                "q": "Why do payback and ARR remain widely used in practice, despite their theoretical limitations relative to NPV?",
+                "a": "They are simple to calculate and communicate to non-technical managers, and can provide a useful quick screen or complement to more sophisticated techniques like NPV, even if they shouldn't be relied upon as the sole basis for a major investment decision.",
+                "explain": "This is worth remembering as balanced, practical guidance rather than dismissing these methods entirely — a genuinely good answer acknowledges their continued practical value as a QUICK, easy-to-communicate check, used alongside (not instead of) NPV for significant decisions."
+            },
+            {
+                "q": "Why might a company use payback as an initial screening tool before applying more rigorous techniques like NPV to a shortlist of projects?",
+                "a": "Payback quickly filters out projects that would tie up cash for an unacceptably long period, avoiding the effort of a full NPV analysis on projects unlikely to be pursued anyway for liquidity reasons.",
+                "explain": "This is worth recognising as a genuinely sensible two-stage process — a cheap, fast filter (payback) narrows a large set of possible projects down to a manageable shortlist, before the more effortful, theoretically superior technique (NPV, Module 13) is applied to the survivors."
+            },
+            {
+                "q": "How does the shared weakness of ignoring the time value of money link payback and ARR together, in contrast to the techniques covered in the next two modules?",
+                "a": "Both methods add or compare cashflows/profits from different time periods without discounting, treating money received in different years as equally valuable — a flaw directly corrected by NPV (Module 13) and IRR (Module 14), both of which explicitly discount future cashflows.",
+                "explain": "This closing card sets up the direct contrast with Modules 13-14 — worth treating this whole module as establishing exactly what's WRONG with simple appraisal methods, motivating why NPV and IRR (which fix these specific flaws) are generally preferred for significant investment decisions."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Investment appraisal: net present value",
+        "description": "Covers the net present value (NPV) method of investment appraisal — its calculation, decision rule, and why it's considered the theoretically superior appraisal technique.",
+        "cards": [
+            {
+                "q": "What does 'net present value' (NPV) measure?",
+                "a": "The present value of a project's expected future cash inflows minus the present value of its cash outflows (including the initial investment), discounted at an appropriate rate reflecting the project's risk.",
+                "explain": "This is CM1's whole present-value discounting machinery applied directly to a business investment decision — worth recognising NPV as fundamentally the same technique used throughout the actuarial curriculum, just applied here to evaluating a company project."
+            },
+            {
+                "q": "What is the NPV decision rule for a single, independent project?",
+                "a": "Accept the project if its NPV is positive (it's expected to increase shareholder wealth); reject it if NPV is negative.",
+                "explain": "Unlike Module 12's payback and ARR decision rules, this threshold (zero) isn't an arbitrary company policy choice — it's theoretically grounded: a zero NPV means the project exactly earns its required return, so anything below that genuinely destroys value relative to the alternative uses of that capital."
+            },
+            {
+                "q": "Why does a positive NPV indicate that a project is expected to increase shareholder wealth?",
+                "a": "A positive NPV means the project's discounted cash inflows exceed its cost, generating a return greater than what was required (the discount rate) — this genuine surplus value accrues to shareholders.",
+                "explain": "This directly connects to Module 1's shareholder-wealth-maximisation objective — worth recognising NPV as the technique most directly aligned with that stated objective, which is precisely why it's considered theoretically superior to payback and ARR (Module 12)."
+            },
+            {
+                "q": "What discount rate is typically used to calculate a project's NPV?",
+                "a": "The company's weighted average cost of capital (WACC), or a project-specific risk-adjusted rate if the project's risk differs materially from the company's average risk.",
+                "explain": "This directly recalls Module 11's WACC material — worth previewing Module 15's risk-adjustment material here: using the company's average WACC for an unusually risky or safe project would be a mismatch, which that later module addresses directly."
+            },
+            {
+                "q": "How should mutually exclusive projects be ranked using NPV?",
+                "a": "Select the project with the highest positive NPV, since this represents the greatest addition to shareholder wealth among the available alternatives.",
+                "explain": "Worth previewing Module 14 here explicitly — this simple ranking rule is exactly where NPV and IRR can disagree for mutually exclusive projects, and that module explains precisely why NPV's ranking should be trusted over IRR's whenever the two methods conflict."
+            },
+            {
+                "q": "Why is NPV generally considered theoretically superior to both payback and ARR?",
+                "a": "NPV explicitly accounts for the time value of money (unlike both alternatives) and is based on cashflow rather than accounting profit (unlike ARR), and it directly measures the project's expected contribution to shareholder wealth.",
+                "explain": "This is worth treating as the module's central claim, directly resolving Module 12's closing card — NPV fixes both of the specific flaws identified there simultaneously, which is exactly why it's the benchmark technique this whole course builds toward."
+            },
+            {
+                "q": "What does the 'additivity' property of NPV mean, and why is it useful?",
+                "a": "The NPVs of independent projects can simply be summed to give the combined NPV of undertaking them together, since present values in the same currency and time basis are directly comparable and combinable.",
+                "explain": "This is a genuinely useful practical property — it means a company can evaluate a whole PORTFOLIO of independent projects by simply summing their individual NPVs, without needing any special combined calculation."
+            },
+            {
+                "q": "How does NPV analysis typically treat the initial investment outlay?",
+                "a": "As a cash outflow occurring at time 0 (today), which is not discounted (since it's already at present value) and is deducted from the present value of subsequent inflows.",
+                "explain": "Worth remembering this explicitly as a common source of a small but easy-to-avoid error — discounting the time-0 outflow by mistake (rather than leaving it undiscounted) would understate the true cost of the project and overstate its NPV."
+            },
+            {
+                "q": "Why must only relevant, incremental cashflows be included in an NPV calculation?",
+                "a": "Only cashflows that genuinely change as a direct result of the investment decision should be included — irrelevant costs (e.g. sunk costs already incurred, or costs that would be incurred regardless of the decision) would distort the appraisal if wrongly included.",
+                "explain": "Worth flagging this principle as one of the most commonly tested sources of error in NPV exam questions: including a cost that shouldn't genuinely be attributed to the decision at hand, discussed further in the sunk-cost card that follows."
+            },
+            {
+                "q": "What is a 'sunk cost', and why should it be excluded from an NPV calculation?",
+                "a": "A cost that has already been incurred and cannot be recovered regardless of the current decision; it should be excluded because it doesn't change based on whether the project proceeds or not, so it's irrelevant to the decision.",
+                "explain": "This is worth remembering as CB2's opportunity cost concept viewed from its opposite side — a sunk cost has NO opportunity cost associated with the current decision, precisely because it's already gone regardless of what's decided now."
+            },
+            {
+                "q": "What is a key practical limitation of NPV, despite its theoretical superiority?",
+                "a": "It requires forecasting future cashflows and an appropriate discount rate, both of which involve genuine uncertainty and judgement — an NPV calculation is only as reliable as the assumptions feeding it.",
+                "explain": "This directly echoes CP1's 'garbage in, garbage out' modelling principle — worth remembering NPV's theoretical elegance doesn't remove the genuine forecasting uncertainty inherent in projecting a project's future cashflows years into the future."
+            },
+            {
+                "q": "Why might NPV be less intuitive to communicate to a non-technical manager than payback or ARR?",
+                "a": "NPV produces an absolute monetary figure derived through discounting, which can be less immediately intuitive than a simple time period (payback) or percentage return (ARR/IRR), even though it's the more theoretically robust measure.",
+                "explain": "This is worth connecting to CP2's communication material — even the theoretically best technique still needs to be explained clearly to whoever is making the final decision, which is exactly why IRR (Module 14), expressed as a percentage, often accompanies NPV in practice despite NPV's technical superiority."
+            },
+            {
+                "q": "How does the NPV method connect directly back to the cost of capital techniques covered in Modules 10-11?",
+                "a": "NPV calculations require a discount rate, and that rate is typically the company's WACC (Module 11), which is itself built from the cost of equity (Module 10) and cost of debt (Module 9) — making NPV the point where all of this course's financing material feeds directly into investment decision-making.",
+                "explain": "This closing card makes explicit the dependency running through this whole course — worth recognising Modules 8-11 (financing) and Modules 12-16 (investing) as genuinely connected, not two separate topics: the OUTPUT of the financing modules (WACC) is a direct INPUT to the investment appraisal modules."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Investment appraisal: internal rate of return",
+        "description": "Covers the internal rate of return (IRR) method of investment appraisal, its decision rule, and the circumstances in which IRR and NPV can give conflicting recommendations.",
+        "cards": [
+            {
+                "q": "What does the 'internal rate of return' (IRR) measure?",
+                "a": "The discount rate at which a project's NPV equals exactly zero — the break-even rate of return the project is expected to generate.",
+                "explain": "This is worth recognising as using EXACTLY the same discounting mechanics as Module 13's NPV, just solving for the discount rate that makes NPV zero, rather than calculating NPV at a pre-specified rate."
+            },
+            {
+                "q": "What is the IRR decision rule for a single, independent project?",
+                "a": "Accept the project if its IRR exceeds the company's required rate of return (typically its WACC); reject it if IRR is below that required rate.",
+                "explain": "This is worth comparing directly with Module 13's NPV decision rule — a project with IRR above WACC will always have a positive NPV at the WACC discount rate, and vice versa, since both tests are really asking the same underlying question in different units (a rate versus a monetary amount)."
+            },
+            {
+                "q": "How is IRR typically calculated when an exact formula isn't available?",
+                "a": "By calculating NPV at two different discount rates (one giving a positive NPV, one giving a negative NPV) and interpolating linearly between them to estimate the rate at which NPV would equal zero.",
+                "explain": "Worth remembering this interpolation is only an APPROXIMATION, since the true NPV-versus-discount-rate relationship is curved, not a straight line — the closer together the two chosen rates are, the more accurate the linear interpolation estimate becomes."
+            },
+            {
+                "q": "Why is IRR often considered more intuitive to communicate than NPV, despite NPV's theoretical superiority?",
+                "a": "IRR is expressed as a simple percentage return, which is often easier for non-technical stakeholders to interpret and compare against other rates of return (e.g. a company's cost of capital or alternative investment opportunities) than an absolute monetary NPV figure.",
+                "explain": "This directly echoes Module 13's communication card — worth recognising this as precisely why IRR remains widely used in practice alongside NPV, despite the technical problems (developed in the rest of this module) that can make it an unreliable decision-making tool on its own."
+            },
+            {
+                "q": "Why can NPV and IRR give conflicting rankings when choosing between two mutually exclusive projects?",
+                "a": "The two methods can rank projects differently when the projects have different cashflow patterns or scales, because IRR measures a RATE of return while NPV measures an absolute VALUE created, and a smaller project can have a higher IRR but a lower NPV than a larger one.",
+                "explain": "This is worth remembering as the single most important limitation of IRR — it's genuinely possible for two methods considered together to disagree, in which case NPV should generally be preferred, since it directly measures shareholder wealth creation (Module 13), which is the ultimate objective."
+            },
+            {
+                "q": "When NPV and IRR give conflicting rankings for mutually exclusive projects, which method's recommendation should generally be followed, and why?",
+                "a": "NPV, because it directly measures the absolute increase in shareholder wealth, which is the company's stated financial objective (Module 1) — a higher IRR on a smaller project doesn't necessarily create more genuine value than a lower IRR on a larger one.",
+                "explain": "This resolves the conflict raised in the previous card explicitly — worth remembering this as a definitive exam answer: when the two methods disagree for mutually exclusive projects, NPV wins, precisely because Module 1 established shareholder wealth (not rate of return) as the actual objective being pursued."
+            },
+            {
+                "q": "What is the 'multiple IRR' problem, and when can it arise?",
+                "a": "A project with unconventional cashflows (e.g. an initial outflow, followed by inflows, followed by a further large outflow) can have more than one discount rate at which NPV equals zero, making IRR ambiguous or meaningless as a single figure.",
+                "explain": "This is a genuinely important technical limitation worth being able to recognise — it typically arises when a project's cashflow signs change more than once over its life (e.g. a project requiring a significant decommissioning cost at the end), unlike the simple 'one outflow then several inflows' pattern most textbook examples assume."
+            },
+            {
+                "q": "What assumption does IRR implicitly make about the rate at which interim cashflows can be reinvested?",
+                "a": "IRR implicitly assumes interim cashflows can be reinvested at the IRR itself, which can be an unrealistic assumption, especially for a project with a very high calculated IRR.",
+                "explain": "This is worth contrasting directly with NPV's more realistic assumption — NPV implicitly assumes reinvestment at the discount rate used (typically WACC), which is generally a far more defensible, achievable rate than an unusually high project-specific IRR."
+            },
+            {
+                "q": "Why might a project with no conventional single IRR (due to the multiple IRR problem) still be evaluated using NPV without difficulty?",
+                "a": "NPV doesn't require solving for a break-even rate at all — it simply calculates the project's value at the company's chosen discount rate directly, so unconventional cashflow patterns that break IRR don't cause any equivalent problem for NPV.",
+                "explain": "This is worth remembering as a further point in NPV's favour — the multiple IRR problem is entirely an artefact of HOW IRR is defined (solving an equation that can have multiple roots), not a genuine ambiguity about the project's actual value, which NPV calculates directly and unambiguously."
+            },
+            {
+                "q": "Why might a company still calculate and report IRR alongside NPV for a project, despite IRR's limitations?",
+                "a": "IRR provides useful supplementary information (e.g. a margin of safety showing how much the discount rate could rise before the project became unattractive) and is often more familiar and intuitive to non-technical stakeholders reviewing the appraisal.",
+                "explain": "This 'margin of safety' interpretation is worth remembering as a genuinely useful, distinct use of IRR — the GAP between a project's IRR and the company's WACC indicates how much cushion there is before rising interest rates or a higher required return would flip the investment decision."
+            },
+            {
+                "q": "How does the choice between NPV and IRR ultimately reflect a broader theme running throughout this course about communicating technical results?",
+                "a": "The theoretically superior method (NPV) and the more intuitively communicable method (IRR) aren't always the same, echoing the recurring tension between technical rigour and clear communication that appears throughout business finance and actuarial practice more broadly.",
+                "explain": "This closing card connects directly to CP2's report-writing material — worth recognising this NPV-versus-IRR tension as a specific instance of a genuinely general theme: the most technically correct answer isn't always the easiest one to communicate persuasively to a non-technical decision-maker."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Investment appraisal: risk, inflation and taxation",
+        "description": "Covers how investment appraisal techniques need to be adapted to account for project risk, inflation, and taxation, extending the basic NPV and IRR methods from earlier modules.",
+        "cards": [
+            {
+                "q": "Why might using a company's overall WACC be inappropriate for appraising a project whose risk differs materially from the company's average risk?",
+                "a": "WACC reflects the company's AVERAGE risk across all its existing activities; applying it to a materially riskier or safer project would misprice that project's genuine risk, potentially accepting projects that are too risky or rejecting ones that are appropriately safe.",
+                "explain": "This directly resolves the risk-adjustment point flagged in Module 13 — worth recognising this as CM2's whole risk-adjusted discount rate logic applied to corporate investment decisions, not just financial asset pricing."
+            },
+            {
+                "q": "What is a 'risk-adjusted discount rate', in the context of investment appraisal?",
+                "a": "A discount rate adjusted upward (for higher-risk projects) or downward (for lower-risk projects) from the company's WACC, to reflect the specific risk of the project being appraised rather than the company's average risk.",
+                "explain": "This is CM2's CAPM logic (a higher beta/risk demanding a higher required return) applied at the individual PROJECT level rather than the whole-company level Module 10 used it for."
+            },
+            {
+                "q": "What is 'sensitivity analysis', as applied to investment appraisal?",
+                "a": "Testing how a project's NPV changes in response to changes in individual assumptions (e.g. sales volume, costs, discount rate), to identify which assumptions the result is most sensitive to.",
+                "explain": "This is precisely CP2's sensitivity analysis material applied specifically to investment appraisal — worth recognising this as the same general technique (vary one input, observe the effect) recurring across both subjects."
+            },
+            {
+                "q": "Why is identifying which assumption a project's NPV is most sensitive to particularly useful for decision-makers?",
+                "a": "It highlights where forecasting accuracy and ongoing monitoring matter most, and can prompt further investigation or risk mitigation specifically targeted at the assumption(s) the decision is most exposed to.",
+                "explain": "This directly echoes CP1's assumption-materiality material — worth recognising sensitivity analysis's practical value as focusing limited analytical effort on the FEW assumptions that genuinely matter most, rather than treating every input as equally important."
+            },
+            {
+                "q": "What is the difference between a 'real' cashflow/discount rate and a 'money' (nominal) cashflow/discount rate?",
+                "a": "A real cashflow/rate is expressed in constant (today's) purchasing power terms, excluding the effect of general inflation; a money (nominal) cashflow/rate includes the actual expected effect of inflation.",
+                "explain": "This is CM1's real-versus-nominal interest rate distinction applied directly to investment appraisal — worth remembering this as the exact same concept already introduced there, just relabelled for this course's context."
+            },
+            {
+                "q": "What is the Fisher equation relating real and money (nominal) interest rates?",
+                "a": "$(1 + \\text{money rate}) = (1 + \\text{real rate})(1 + \\text{inflation rate})$.",
+                "explain": "This is precisely CM1's Fisher equation recalled directly — worth remembering the multiplicative (not simply additive) relationship, since approximating it as money rate ≈ real rate + inflation is only an approximation, not exact."
+            },
+            {
+                "q": "Why must real cashflows be discounted at a real discount rate, and money cashflows at a money discount rate, rather than mixing the two?",
+                "a": "Mixing a real cashflow with a money discount rate (or vice versa) would inconsistently double-count or omit the effect of inflation, distorting the resulting NPV — the cashflows and discount rate must be consistently on the same (either both real or both money) basis.",
+                "explain": "This is a genuinely important, commonly tested consistency principle — worth treating this as one of the most frequent sources of error in this topic: always checking that cashflows and the discount rate are expressed on the SAME inflation basis before discounting."
+            },
+            {
+                "q": "How does corporation tax typically affect the cashflows used in an NPV calculation?",
+                "a": "Post-tax cashflows (rather than pre-tax cashflows) should generally be used, deducting the tax payable on the project's taxable profit, since tax is a genuine cash outflow the company must pay.",
+                "explain": "This directly echoes Module 11's tax-shield material — worth recognising tax as a genuinely relevant cashflow (not to be ignored), consistent with the earlier principle that only cashflows genuinely affected by the decision should be included."
+            },
+            {
+                "q": "What are 'capital allowances', and why are they relevant to appraising an investment involving a new asset purchase?",
+                "a": "Tax relief given on the cost of qualifying capital expenditure (broadly analogous to depreciation, but calculated under tax rules rather than accounting rules), reducing the company's taxable profit and hence its tax payable.",
+                "explain": "This directly connects to Module 3's depreciation material and Module 2's non-current assets — worth recognising capital allowances as the TAX equivalent of accounting depreciation, similarly reducing taxable profit (and hence cash tax paid) even though the underlying asset purchase was itself a one-off cash outflow at the start."
+            },
+            {
+                "q": "Why does the timing of a tax cashflow (e.g. tax paid one year after profit is earned) matter for an NPV calculation?",
+                "a": "Since NPV explicitly accounts for the time value of money, a tax payment delayed by a year is worth less in present value terms than an equivalent payment made immediately, so the exact timing assumption used for tax cashflows can materially affect the calculated NPV.",
+                "explain": "This is CM1's discounting principle applied specifically to tax timing — worth remembering that even a genuinely correctly-sized cashflow, placed in the WRONG year, will produce an incorrect NPV, since discounting is highly sensitive to timing as well as amount."
+            },
+            {
+                "q": "Why might a company incorporate a scenario analysis (testing several assumptions together) alongside single-variable sensitivity analysis for a major investment decision?",
+                "a": "Sensitivity analysis varies one assumption at a time and can miss the combined effect of several assumptions moving together in a coherent way (e.g. a recession affecting both sales volume and costs simultaneously), which scenario analysis captures directly.",
+                "explain": "This directly echoes CP1's and CP2's distinction between sensitivity and scenario analysis — worth recognising this as exactly the same technique-pairing recurring across the whole curriculum, here applied specifically to a single investment decision rather than a whole company's risk profile."
+            },
+            {
+                "q": "How does this module's treatment of risk, inflation and taxation ultimately refine, rather than replace, the basic NPV technique from Module 13?",
+                "a": "The core NPV mechanism (discounting expected cashflows at an appropriate rate) remains unchanged — this module simply develops how to identify the RIGHT discount rate (risk-adjusted) and the RIGHT cashflows (post-tax, consistently real or money) to feed into that same fundamental calculation.",
+                "explain": "This closing card ties Modules 13-15 together explicitly — worth recognising that nothing in this module changes the underlying NPV formula itself; it only refines the INPUTS (cashflows and discount rate) to make the resulting NPV a more accurate, realistic reflection of a genuine investment decision."
+            }
+        ]
     }
 ],
 };
