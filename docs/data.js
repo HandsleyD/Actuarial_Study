@@ -6455,63 +6455,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'identification' mean in the Box-Jenkins approach to time series modelling?",
-                "a": "Selecting an appropriate model structure based on the observed data's characteristics."
+                "a": "Selecting an appropriate model structure based on the observed data's characteristics.",
+                "explain": "This module takes Module 13's model FAMILY (AR, MA, ARMA, ARIMA) and develops the practical, three-stage PROCESS for actually fitting one to real data — identification is the crucial first step, using tools like the autocorrelation structure of the data to decide which specific model (and how many AR/MA terms) is appropriate before any fitting happens."
             },
             {
                 "q": "What does 'estimation' mean in this context?",
-                "a": "Fitting the chosen model's parameters to the observed data, typically via maximum likelihood or least squares."
+                "a": "Fitting the chosen model's parameters to the observed data, typically via maximum likelihood or least squares.",
+                "explain": "This is CS1's MLE machinery (Module 8 there) reapplied once again — having IDENTIFIED a candidate model structure, estimation is simply the standard parameter-fitting step, no different in spirit from fitting any other statistical model once its form has been chosen."
             },
             {
                 "q": "What does 'diagnosis' (diagnostic checking) mean in this context?",
-                "a": "Checking whether the fitted model's residuals behave like white noise, validating model adequacy."
+                "a": "Checking whether the fitted model's residuals behave like white noise, validating model adequacy.",
+                "explain": "This is CS1's regression-residual-checking philosophy (Module 12 there) applied to time series — if the fitted model has genuinely captured all the predictable structure in the data, what's LEFT OVER (the residuals) should look like pure random noise with no remaining pattern, exactly analogous to checking a regression's residual plot for hidden structure."
             },
             {
                 "q": "What criteria might be used to choose between candidate time series models?",
-                "a": "Information criteria (AIC, BIC), goodness of fit, and parsimony."
+                "a": "Information criteria (AIC, BIC), goodness of fit, and parsimony.",
+                "explain": "This is CS1's model-selection toolkit (from both the regression and GLM modules there) reused directly — the same fit-versus-complexity trade-off runs throughout this whole syllabus, whether choosing regression predictors, GLM terms, or here, the number of AR/MA terms in a time series model."
             },
             {
                 "q": "What diagnostic tests might be applied to the residuals of a fitted time series model?",
-                "a": "Tests for autocorrelation in the residuals, e.g. the Ljung-Box test."
+                "a": "Tests for autocorrelation in the residuals, e.g. the Ljung-Box test.",
+                "explain": "This is the concrete, formal version of the diagnosis step above — rather than just eyeballing whether residuals 'look random', the Ljung-Box test formally checks whether the residuals' own autocorrelations are consistent with pure white noise, giving an objective statistical basis for accepting or rejecting the fitted model."
             },
             {
                 "q": "Give an example of a 'non-stationary, non-linear' time series model beyond the standard ARIMA family.",
-                "a": "A GARCH model, allowing time-varying volatility, or a threshold/regime-switching model."
+                "a": "A GARCH model, allowing time-varying volatility, or a threshold/regime-switching model.",
+                "explain": "GARCH is genuinely worth knowing by name — it directly addresses CM2 Module 9's 'volatility clustering' critique of GBM, letting VOLATILITY itself (not just the level) follow its own time-varying process, a genuinely important extension beyond the constant-parameter ARIMA family this module otherwise focuses on."
             },
             {
                 "q": "How would a random walk model be applied to security prices?",
-                "a": "Modelling the log price as a random walk, consistent with weak-form market efficiency."
+                "a": "Modelling the log price as a random walk, consistent with weak-form market efficiency.",
+                "explain": "This directly connects Module 13's random walk concept to CM2 Module 1's EMH — 'log prices follow a random walk' is precisely the time-series-modelling statement of weak-form efficiency: if past prices contained exploitable information, the price series wouldn't behave like a pure random walk at all."
             },
             {
                 "q": "How would an autoregressive model be applied to an economic variable like inflation?",
-                "a": "Modelling current inflation as depending on its own recent past values, capturing persistence."
+                "a": "Modelling current inflation as depending on its own recent past values, capturing persistence.",
+                "explain": "This is a genuinely realistic modelling choice worth understanding why — inflation tends to be 'sticky' or persistent (high inflation this quarter tends to be followed by still-elevated, if gradually falling, inflation next quarter), which is exactly the kind of self-dependence an AR model is built to capture."
             },
             {
                 "q": "What is a 'deterministic forecast' using simple extrapolation?",
-                "a": "A forecast projecting an identified pattern forward without incorporating the model's inherent random uncertainty."
+                "a": "A forecast projecting an identified pattern forward without incorporating the model's inherent random uncertainty.",
+                "explain": "This is worth contrasting with a proper STOCHASTIC (probabilistic) forecast from a fitted ARIMA-type model — a deterministic extrapolation gives you a single central-estimate path, while the fully-specified model can also give you a genuine confidence interval around that path, reflecting the real uncertainty a pure extrapolation ignores."
             },
             {
                 "q": "What is a 'moving average' forecasting/smoothing technique, distinct from the MA model?",
-                "a": "Averaging recent observations to smooth out short-term fluctuations and estimate an underlying trend."
+                "a": "Averaging recent observations to smooth out short-term fluctuations and estimate an underlying trend.",
+                "explain": "This is a genuinely important naming clash worth being alert to, flagged explicitly by the question itself — a 'moving average' as a SMOOTHING technique (averaging recent raw observations) is a completely different concept from an 'MA model' (Module 13's model of unobserved error terms), despite sharing almost identical names."
             },
             {
                 "q": "What is 'seasonal adjustment,' and why might it be applied before analysis?",
-                "a": "Removing a regular repeating seasonal pattern, so underlying trend/cyclical behaviour can be seen more clearly."
+                "a": "Removing a regular repeating seasonal pattern, so underlying trend/cyclical behaviour can be seen more clearly.",
+                "explain": "This is a genuinely practical preprocessing step worth knowing exists — many real series (retail sales, certain claim types) have strong, predictable within-year seasonal patterns that can obscure the more interesting underlying TREND or CYCLE; stripping the seasonal component out first makes the remaining signal much easier to model and interpret."
             },
             {
                 "q": "How would you check whether a cointegrated model is appropriate for two economic time series?",
-                "a": "Test each series for non-stationarity, then test whether a linear combination of them is stationary."
+                "a": "Test each series for non-stationarity, then test whether a linear combination of them is stationary.",
+                "explain": "This is a direct two-step procedure applying Module 13's cointegration definition — first confirm both series ARE individually non-stationary (otherwise cointegration isn't even the relevant question), then test whether some specific combination of them achieves the stationarity neither series has alone."
             },
             {
                 "q": "Why might cointegrated models be useful for modelling pairs of related economic/financial series?",
-                "a": "They capture a stable long-run equilibrium relationship even though each series individually wanders."
+                "a": "They capture a stable long-run equilibrium relationship even though each series individually wanders.",
+                "explain": "This restates Module 13's cointegration motivation directly in this module's applied context — for genuinely related series (like a company's costs and revenues, or a currency pair under a managed peg), a cointegrated model can meaningfully forecast their RELATIONSHIP even when forecasting either series alone would be hopeless."
             },
             {
                 "q": "How might a univariate time series with the Markov property be rearranged as a multivariate Markov model?",
-                "a": "By including enough lagged values as additional 'state' variables."
+                "a": "By including enough lagged values as additional 'state' variables.",
+                "explain": "This connects directly back to CS2 Module 1's Markov-property framework — an AR($p$) model isn't Markov in the usual one-lag sense (it depends on $p$ past values, not just the most recent one), but bundling the last $p$ values together into a single VECTOR 'state' restores the Markov property, exactly the same expanded-state-space trick Module 5 used for duration dependence."
             },
             {
                 "q": "Why is diagnostic checking an essential final step in the time series modelling process?",
-                "a": "A model with structured (non-white-noise) residuals suggests genuine patterns weren't captured, undermining forecasts."
+                "a": "A model with structured (non-white-noise) residuals suggests genuine patterns weren't captured, undermining forecasts.",
+                "explain": "This closes the module by restating the identification-estimation-diagnosis cycle's purpose — if diagnostic checking reveals the residuals AREN'T white noise, that's a signal to go back and revise the identification step (perhaps adding more AR or MA terms), making this three-stage process genuinely iterative rather than strictly linear."
             }
         ]
     },
