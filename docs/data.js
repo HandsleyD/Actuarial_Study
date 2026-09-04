@@ -7441,63 +7441,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the fundamental purpose of a financial product?",
-                "a": "To help a customer manage financial risk, save for the future, or meet a specific financial need (e.g. borrowing, protection, income)."
+                "a": "To help a customer manage financial risk, save for the future, or meet a specific financial need (e.g. borrowing, protection, income).",
+                "explain": "This module opens Part 2 of CP1 (financial products) by starting from the customer's genuine needs, before any product detail — a deliberate ordering worth noting, since Module 2's suitability principle only makes sense once you can name what specific need a product is meant to satisfy in the first place."
             },
             {
                 "q": "Give three broad categories of customer financial need that products might address.",
-                "a": "Protection against risk (e.g. death, illness), saving/investment for the future, and income provision (e.g. in retirement)."
+                "a": "Protection against risk (e.g. death, illness), saving/investment for the future, and income provision (e.g. in retirement).",
+                "explain": "This three-way split is worth holding onto as a lens for the whole of Modules 6-8 — Module 7's life products map almost directly onto it (protection products like term assurance, savings products like endowments, income products like annuities), and Module 8's general insurance products are almost entirely in the protection category."
             },
             {
                 "q": "What is 'protection' insurance designed to do?",
-                "a": "Provide a financial payout if a specified adverse event occurs, protecting the policyholder or their dependants from financial loss."
+                "a": "Provide a financial payout if a specified adverse event occurs, protecting the policyholder or their dependants from financial loss.",
+                "explain": "This is CB2's risk-pooling idea made concrete at the individual product level — the insurer takes on a risk the individual would otherwise bear alone, in exchange for a premium, which is exactly the mechanism underlying every product covered in Modules 7 and 8."
             },
             {
                 "q": "What is a 'savings' product designed to do?",
-                "a": "Help a customer accumulate funds over time, typically for a specific future goal."
+                "a": "Help a customer accumulate funds over time, typically for a specific future goal.",
+                "explain": "This is the customer-need side of what CM1's compound interest and accumulation machinery formalises mathematically — a savings product is, at heart, a vehicle for the time-value-of-money accumulation process CM1 teaches, wrapped in whatever specific structure (unit-linked, with-profits) Module 7 goes on to describe."
             },
             {
                 "q": "Why might a single financial product bundle both protection and savings elements?",
-                "a": "To meet multiple customer needs simultaneously in one product, which can be more convenient or cost-effective than separate products."
+                "a": "To meet multiple customer needs simultaneously in one product, which can be more convenient or cost-effective than separate products.",
+                "explain": "This directly previews Module 7's endowment and with-profits products, both of which are exactly this kind of hybrid — the trade-off worth remembering is that bundling can be more convenient for the customer but also make the product's true cost and risk profile harder to see clearly than two separate, simpler products would be."
             },
             {
                 "q": "What is meant by a customer's 'risk appetite' when considering product design?",
-                "a": "How much investment or financial risk a customer is willing and able to bear, which should inform suitable product recommendations."
+                "a": "How much investment or financial risk a customer is willing and able to bear, which should inform suitable product recommendations.",
+                "explain": "Worth noting the two distinct halves of this definition: WILLING (psychological/preference-based) and ABLE (a genuine financial capacity to absorb losses) can diverge — a customer might be comfortable with high risk in principle but simply not have the financial buffer to bear it, and suitable advice (Module 2) has to account for both."
             },
             {
                 "q": "Why is understanding the customer's time horizon important in product design/selection?",
-                "a": "Products with different liquidity, risk, and return profiles suit different time horizons — e.g. long-term pension saving versus short-term protection needs."
+                "a": "Products with different liquidity, risk, and return profiles suit different time horizons — e.g. long-term pension saving versus short-term protection needs.",
+                "explain": "This connects directly to CM2's asset-liability matching logic, just applied at the individual customer level rather than an insurer's balance sheet — a short time horizon calls for liquid, low-volatility products, while a long horizon can typically tolerate more volatility in exchange for higher expected long-run returns."
             },
             {
                 "q": "What does 'suitability' mean in the context of recommending a financial product?",
-                "a": "That the product genuinely matches the customer's needs, circumstances, and risk profile."
+                "a": "That the product genuinely matches the customer's needs, circumstances, and risk profile.",
+                "explain": "This is Module 2's professional advice standard and Module 4's conduct-regulation requirement converging on the same practical test — a recommendation can be suitable only once the needs (this module's opening cards), risk appetite, and time horizon are all genuinely understood, which is exactly why this module builds those concepts up first."
             },
             {
                 "q": "How might a customer's life stage affect their financial product needs?",
-                "a": "Younger customers may prioritise protection/saving for the future; those near retirement may prioritise income and capital preservation."
+                "a": "Younger customers may prioritise protection/saving for the future; those near retirement may prioritise income and capital preservation.",
+                "explain": "This maps neatly onto the three needs identified earlier in this module across a single customer's lifetime — protection and saving dominate earlier in life, while income provision (Module 7's annuities) and capital preservation become the priority as retirement approaches, which is exactly the shift pension products are designed around."
             },
             {
                 "q": "Why might demand for certain financial products change over an economic cycle?",
-                "a": "Risk appetite, disposable income, and confidence in the future all vary with economic conditions, affecting demand for saving versus protection products."
+                "a": "Risk appetite, disposable income, and confidence in the future all vary with economic conditions, affecting demand for saving versus protection products.",
+                "explain": "This is Module 3's economic-environment factor reapplied specifically to product demand — worth noting the effect can cut in different directions: a downturn might reduce disposable income available for saving products, while simultaneously increasing demand for protection against job loss or health risk."
             },
             {
                 "q": "What is 'financial inclusion', and why might it be relevant to product design?",
-                "a": "Ensuring financial products are accessible and appropriate for a broad range of customers, including those often underserved by mainstream products."
+                "a": "Ensuring financial products are accessible and appropriate for a broad range of customers, including those often underserved by mainstream products.",
+                "explain": "This connects to Module 4's information-asymmetry and consumer-protection themes from a different angle — rather than protecting customers who already have access to products, financial inclusion is about the customers who are priced out or excluded entirely, which is a genuine design and commercial-viability tension explored further later in this module."
             },
             {
                 "q": "How does the concept of 'moral hazard' relate to designing protection products?",
-                "a": "Overly generous or poorly structured benefits could reduce a policyholder's incentive to avoid the insured event, requiring careful product design to mitigate."
+                "a": "Overly generous or poorly structured benefits could reduce a policyholder's incentive to avoid the insured event, requiring careful product design to mitigate.",
+                "explain": "This is CB2's classic moral hazard concept applied directly to product design — Module 8's no-claims discount and excess/deductible features are concrete design tools that exist specifically to counteract this effect, by keeping some cost or consequence with the policyholder even after cover is purchased."
             },
             {
                 "q": "Why might a provider need to balance customer needs against commercial viability when designing a product?",
-                "a": "A product that perfectly meets customer needs but isn't profitable/sustainable for the provider won't remain available in the market."
+                "a": "A product that perfectly meets customer needs but isn't profitable/sustainable for the provider won't remain available in the market.",
+                "explain": "This is a genuinely important tension to hold in an exam answer rather than resolve too easily in either direction — it echoes Module 4's regulation-versus-cost trade-off, and it's precisely the tension Module 24's pricing and financing strategies material exists to help actuaries navigate."
             },
             {
                 "q": "What role does distribution channel (e.g. direct, adviser, broker) play in matching products to customer needs?",
-                "a": "Different channels reach different customer segments and provide different levels of guidance, affecting which products are appropriate to offer through them."
+                "a": "Different channels reach different customer segments and provide different levels of guidance, affecting which products are appropriate to offer through them.",
+                "explain": "Worth connecting to Module 2's point about tailoring advice to the recipient — a complex product bought with no adviser guidance (direct channel) needs to be far more self-explanatory and simply designed than the same product sold through a channel where professional advice is available to bridge any gaps in the customer's understanding."
             },
             {
                 "q": "Why is ongoing product review important after a financial product has been designed and launched?",
-                "a": "Customer needs, the external environment, and regulation can change, potentially making a previously suitable product design outdated or unsuitable."
+                "a": "Customer needs, the external environment, and regulation can change, potentially making a previously suitable product design outdated or unsuitable.",
+                "explain": "This closing card directly echoes Module 3's point about ongoing environmental monitoring and Module 39's later treatment of monitoring more broadly — a product design decision isn't a one-off event, and 'suitable at launch' doesn't guarantee 'suitable indefinitely' as conditions around it evolve."
             }
         ]
     },
@@ -7508,63 +7523,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the three broad sources of financial benefits available to an individual?",
-                "a": "The state, an employer, and personal (individually purchased) arrangements."
+                "a": "The state, an employer, and personal (individually purchased) arrangements.",
+                "explain": "This three-way split of PROVIDERS is a natural companion to Module 5's three-way split of customer NEEDS — the same protection/saving/income need can, in principle, be met by any of these three sources, and much of this module is about the trade-offs between them."
             },
             {
                 "q": "What is a 'state benefit'?",
-                "a": "A benefit provided by the government, typically funded through taxation or social insurance contributions."
+                "a": "A benefit provided by the government, typically funded through taxation or social insurance contributions.",
+                "explain": "This is the baseline layer of provision that Module 5's earlier card on demand-shifting referenced — state benefit generosity (which itself is shaped by Module 3's political factors) directly affects how much private protection, saving, or income provision individuals feel they need to arrange for themselves."
             },
             {
                 "q": "What is an 'employer-provided' (occupational) benefit?",
-                "a": "A benefit provided by an employer to employees, such as a pension scheme or group life/health insurance."
+                "a": "A benefit provided by an employer to employees, such as a pension scheme or group life/health insurance.",
+                "explain": "This sits between the other two sources in a genuinely useful way — it shares some of the state's collective, pooled character (group purchasing, no individual underwriting) while remaining a private commercial arrangement, which is exactly why the next two cards explore its advantages from both the employee's and employer's perspective separately."
             },
             {
                 "q": "What is a 'personal' (individually purchased) benefit?",
-                "a": "A financial product bought directly by an individual to meet their own needs, independent of state or employer provision."
+                "a": "A financial product bought directly by an individual to meet their own needs, independent of state or employer provision.",
+                "explain": "This is the source closest to the individually-tailored suitability process described in Module 5 — without an employer's group pooling or the state's universal coverage, personal products are typically priced and underwritten more precisely to the individual, for better or worse."
             },
             {
                 "q": "Why might the level of state benefit provision affect demand for personal/employer benefits?",
-                "a": "If state provision is generous, individuals may have less need to supplement it privately, and vice versa."
+                "a": "If state provision is generous, individuals may have less need to supplement it privately, and vice versa.",
+                "explain": "This directly answers the question raised by the opening cards of this module — it's worth linking to Module 3's political-factor card, since a government's welfare policy stance directly shapes the commercial opportunity (or lack of it) for the private employer and personal provision this module goes on to describe."
             },
             {
                 "q": "What is a key advantage of employer-provided benefits, from the employee's perspective?",
-                "a": "Often cheaper (group purchasing power, employer subsidy) and more accessible (less individual underwriting) than equivalent personal cover."
+                "a": "Often cheaper (group purchasing power, employer subsidy) and more accessible (less individual underwriting) than equivalent personal cover.",
+                "explain": "The 'less individual underwriting' point connects directly back to Module 5's moral-hazard and Module 7's medical-underwriting material — group cover pools risk across many employees simultaneously, which is precisely what allows it to sidestep some of the individual risk assessment that personal cover requires."
             },
             {
                 "q": "What is a key advantage of employer-provided benefits, from the employer's perspective?",
-                "a": "Helps attract and retain employees, and can improve productivity/wellbeing, though it comes at a cost to the employer."
+                "a": "Helps attract and retain employees, and can improve productivity/wellbeing, though it comes at a cost to the employer.",
+                "explain": "This is worth reading alongside the previous card as two sides of the same transaction — the employer bears a genuine commercial cost (foreshadowing Module 24's financing strategies material) in exchange for a workforce benefit that's ultimately about competitiveness in the labour market, not altruism alone."
             },
             {
                 "q": "What type of organisation typically provides personal insurance and investment products?",
-                "a": "Insurance companies and investment/asset management firms."
+                "a": "Insurance companies and investment/asset management firms.",
+                "explain": "This is a simple factual anchor before the module goes on to distinguish DIFFERENT ownership structures these organisations can take — the next few cards (mutual versus proprietary) matter precisely because they affect how the surplus these providers generate is ultimately used."
             },
             {
                 "q": "What is a 'mutual' organisation, as a provider of benefits?",
-                "a": "An organisation owned by its members (e.g. policyholders) rather than external shareholders, run for members' collective benefit."
+                "a": "An organisation owned by its members (e.g. policyholders) rather than external shareholders, run for members' collective benefit.",
+                "explain": "This structural distinction resurfaces later in CP1's risk and capital material (Modules 36-38) — a mutual's lack of external shareholders changes where capital ultimately comes from and who bears the cost of building it, since there's no shareholder base to raise new capital from the way a proprietary insurer can."
             },
             {
                 "q": "How does a mutual insurer's structure differ from a proprietary (shareholder-owned) insurer's?",
-                "a": "A mutual has no external shareholders to pay profits to — surplus is typically returned to members, whereas a proprietary insurer distributes profit to shareholders."
+                "a": "A mutual has no external shareholders to pay profits to — surplus is typically returned to members, whereas a proprietary insurer distributes profit to shareholders.",
+                "explain": "This is the practical consequence of the previous card's definition, and it connects forward to Module 38's surplus management material — the fundamental QUESTION of what to do with generated surplus is common to both structures, but the answer (return it to members versus distribute it to shareholders) differs by ownership form."
             },
             {
                 "q": "What role do trustees typically play as 'providers' of benefits in an occupational pension scheme?",
-                "a": "They hold assets and administer benefits on behalf of scheme members, with a duty to act in members' interests."
+                "a": "They hold assets and administer benefits on behalf of scheme members, with a duty to act in members' interests.",
+                "explain": "This duty of trustees to act in members' interests is a direct pension-scheme parallel to Module 2's actuarial advice principles and Module 4's conduct regulation — worth noting trustees, like actuaries, can face genuine tension between different stakeholders (e.g. the sponsoring employer's interests versus members'), which SP4's specialist material develops much further."
             },
             {
                 "q": "Why might government social insurance schemes be described as operating on a 'pay-as-you-go' basis?",
-                "a": "Current contributions/taxes are used to pay current benefits, rather than being pre-funded from accumulated assets."
+                "a": "Current contributions/taxes are used to pay current benefits, rather than being pre-funded from accumulated assets.",
+                "explain": "This is a genuinely important contrast with the funded, asset-backed approach typical of employer pension schemes and personal products (which Modules 9-17's investment material assumes) — a pay-as-you-go scheme's sustainability depends on the ongoing balance between current contributors and current beneficiaries, exactly the demographic concern Module 3 flagged with an ageing population."
             },
             {
                 "q": "What is a key risk consideration for an individual relying heavily on employer-provided benefits?",
-                "a": "Benefits may be lost or reduced if they change employer, or if the employer becomes insolvent (depending on how benefits are secured)."
+                "a": "Benefits may be lost or reduced if they change employer, or if the employer becomes insolvent (depending on how benefits are secured).",
+                "explain": "This is the natural downside to weigh against the earlier card's employee-perspective advantages — it foreshadows Module 35's insolvency and closure material, since what actually happens to an employee's benefit promise when the sponsoring employer fails depends heavily on how (and how well) that promise was secured in advance."
             },
             {
                 "q": "Why might governments regulate or incentivise (e.g. via tax relief) employer and personal benefit provision?",
-                "a": "To encourage adequate private provision, reducing reliance on state benefits and improving overall financial security."
+                "a": "To encourage adequate private provision, reducing reliance on state benefits and improving overall financial security.",
+                "explain": "This connects Module 4's regulation material to this module's three-source framework directly — tax incentives are a policy lever precisely because the state has an interest in shifting the balance between the three provision sources (state, employer, personal) toward more sustainable private provision, especially given pay-as-you-go's demographic sensitivity noted above."
             },
             {
                 "q": "How might the balance between state, employer, and personal benefit provision differ between countries?",
-                "a": "Different countries have different social/political traditions and fiscal capacity, leading to varying reliance on each of the three sources."
+                "a": "Different countries have different social/political traditions and fiscal capacity, leading to varying reliance on each of the three sources.",
+                "explain": "This closing card is a direct application of Module 3's political and social PESTLE factors to the specific question of benefit provision — it's worth remembering as a caution against assuming any one country's mix of state/employer/personal provision is the 'natural' or only sensible arrangement, since it genuinely varies by national context."
             }
         ]
     },
@@ -7575,63 +7605,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'term assurance'?",
-                "a": "A life insurance product paying a benefit only if the policyholder dies within a specified term."
+                "a": "A life insurance product paying a benefit only if the policyholder dies within a specified term.",
+                "explain": "This is the purest example of Module 5's 'protection' need category — no savings element at all, just a payout conditional on an adverse event within a defined window, making it the simplest life product to price using CM1's life contingencies machinery (a term-dependent probability of death)."
             },
             {
                 "q": "What is 'whole of life' assurance?",
-                "a": "A life insurance product paying a benefit whenever the policyholder dies, with no fixed term."
+                "a": "A life insurance product paying a benefit whenever the policyholder dies, with no fixed term.",
+                "explain": "Since death is certain eventually, this product differs from term assurance in a fundamental way: the insurer WILL pay out with certainty at some point, so pricing is really about the timing/discounting of an eventual certain payment rather than about the probability of payment occurring at all."
             },
             {
                 "q": "What is an 'endowment' policy?",
-                "a": "A savings-linked life insurance product paying a benefit on survival to the end of a specified term, or on earlier death."
+                "a": "A savings-linked life insurance product paying a benefit on survival to the end of a specified term, or on earlier death.",
+                "explain": "This is a direct concrete example of Module 5's 'bundled protection and savings' concept — the survival benefit is the savings/accumulation element (CM1's compound interest machinery) and the early-death benefit is a protection element, both wrapped into a single contract."
             },
             {
                 "q": "What is a 'unit-linked' life insurance product?",
-                "a": "A product where the policyholder's benefits are directly linked to the value of units in an underlying investment fund."
+                "a": "A product where the policyholder's benefits are directly linked to the value of units in an underlying investment fund.",
+                "explain": "This is worth flagging as the product type that transfers the MOST investment risk to the policyholder — it directly foreshadows the closing card of this module, which explicitly ranks life products by how much investment risk the insurer retains versus passes on."
             },
             {
                 "q": "What is a 'with-profits' life insurance product?",
-                "a": "A product where the policyholder receives smoothed investment returns via bonuses added to their policy, reflecting the insurer's overall investment performance."
+                "a": "A product where the policyholder receives smoothed investment returns via bonuses added to their policy, reflecting the insurer's overall investment performance.",
+                "explain": "The 'smoothed' returns here are the key distinguishing feature from unit-linked — the insurer absorbs some year-to-year investment volatility itself before passing returns on via bonuses, which is exactly why this module's closing card places with-profits toward the insurer-retains-more-risk end of the spectrum."
             },
             {
                 "q": "What is an 'annuity'?",
-                "a": "A product paying a regular income, typically for the rest of the annuitant's life, in exchange for an initial lump sum."
+                "a": "A product paying a regular income, typically for the rest of the annuitant's life, in exchange for an initial lump sum.",
+                "explain": "This is Module 5's 'income provision' need in its purest product form, and it directly reverses term assurance's risk direction — where a term assurance insurer worries about the policyholder dying too SOON, an annuity insurer worries about them living too LONG (longevity risk), which is exactly the mortality-improvement concern Module 21 develops further."
             },
             {
                 "q": "What is a 'critical illness' insurance product?",
-                "a": "A product paying a lump sum on diagnosis of a specified serious illness, rather than on death."
+                "a": "A product paying a lump sum on diagnosis of a specified serious illness, rather than on death.",
+                "explain": "This extends Module 5's protection concept from mortality risk to morbidity risk — worth noting this shifts the underlying actuarial modelling problem from CM1's life-table framework toward the illness/recovery multi-state modelling that CS2's Markov jump process material (Modules 4-5 there) is built to handle."
             },
             {
                 "q": "What is 'income protection' (or permanent health) insurance?",
-                "a": "A product paying a regular income if the policyholder is unable to work due to illness or disability."
+                "a": "A product paying a regular income if the policyholder is unable to work due to illness or disability.",
+                "explain": "This is a further morbidity-risk product, but structurally closer to an annuity than critical illness cover — it pays an ongoing INCOME (contingent on remaining unable to work) rather than a one-off lump sum, so its valuation depends on both incidence and recovery/duration probabilities, not just a single diagnosis event."
             },
             {
                 "q": "Why might an individual purchase term assurance rather than whole of life cover?",
-                "a": "It's typically cheaper, and suits a temporary protection need (e.g. covering a mortgage term) rather than lifelong cover."
+                "a": "It's typically cheaper, and suits a temporary protection need (e.g. covering a mortgage term) rather than lifelong cover.",
+                "explain": "This directly applies Module 5's suitability and time-horizon concepts to the specific choice between these two products — a temporary financial obligation (like a mortgage) calls for a temporary protection product, and paying for lifelong cover to protect a temporary need would be a suitability mismatch."
             },
             {
                 "q": "What is 'guaranteed insurability', as a product feature?",
-                "a": "An option allowing the policyholder to increase cover in the future without further medical underwriting, e.g. at specified life events."
+                "a": "An option allowing the policyholder to increase cover in the future without further medical underwriting, e.g. at specified life events.",
+                "explain": "This is a genuinely valuable option for the policyholder precisely because it removes future underwriting risk — worth recognising it as a form of embedded option the insurer is granting for free or at a fixed cost, which (like CM2's option-pricing material) has a real economic value the insurer must account for in its overall pricing."
             },
             {
                 "q": "How does a 'decreasing term assurance' differ from a level term assurance?",
-                "a": "The sum assured reduces over the policy term, often used to match a reducing liability like a repayment mortgage."
+                "a": "The sum assured reduces over the policy term, often used to match a reducing liability like a repayment mortgage.",
+                "explain": "This is a direct example of CM2's asset-liability matching logic applied to individual product design — the insured amount is deliberately shaped to track a specific declining liability, so the customer isn't paying for (or under-covered against) a mismatch between the sum assured and their actual outstanding need."
             },
             {
                 "q": "What is the purpose of medical underwriting when a life insurance policy is purchased?",
-                "a": "To assess the applicant's health-related risk, ensuring premiums appropriately reflect their individual mortality/morbidity risk."
+                "a": "To assess the applicant's health-related risk, ensuring premiums appropriately reflect their individual mortality/morbidity risk.",
+                "explain": "This is CB2's information-asymmetry problem addressed head-on at the point of sale — without underwriting, an insurer would face adverse selection (higher-risk individuals disproportionately buying cover), which is exactly why Module 6's group employer-provided cover (which typically waives much of this) needs the risk-pooling scale to compensate."
             },
             {
                 "q": "Why might insurers offer 'guaranteed acceptance' products with limited or no underwriting?",
-                "a": "To reach customers who might not pass full underwriting, though this typically comes with more restrictive terms or higher relative pricing."
+                "a": "To reach customers who might not pass full underwriting, though this typically comes with more restrictive terms or higher relative pricing.",
+                "explain": "This is a direct trade-off against the underwriting purpose described in the previous card — removing underwriting reopens the adverse-selection problem, so insurers compensate through more restrictive terms (e.g. capped benefits, exclusion periods) or higher pricing that reflects the higher AVERAGE risk of the pool that self-selects into such a product."
             },
             {
                 "q": "What is a key risk to the insurer of offering long-term guarantees (e.g. guaranteed annuity rates) within a life product?",
-                "a": "Future economic conditions (e.g. falling interest rates, improving longevity) could make honouring the guarantee much more costly than originally priced for."
+                "a": "Future economic conditions (e.g. falling interest rates, improving longevity) could make honouring the guarantee much more costly than originally priced for.",
+                "explain": "This is a genuinely famous real-world risk (guaranteed annuity rate options caused serious problems for some insurers historically when rates fell and longevity improved) and it directly previews Module 27's financial product risks and Module 30's risk transfer material — a guarantee, once given, transfers the risk of future adverse conditions from the customer onto the insurer's own balance sheet."
             },
             {
                 "q": "How do life insurance products typically differ in the balance between insurance risk (mortality/morbidity) and investment risk they transfer to the insurer?",
-                "a": "Protection products (term, critical illness) are mainly insurance risk; unit-linked savings products pass most investment risk to the policyholder; with-profits and annuities involve more investment risk retained by the insurer."
+                "a": "Protection products (term, critical illness) are mainly insurance risk; unit-linked savings products pass most investment risk to the policyholder; with-profits and annuities involve more investment risk retained by the insurer.",
+                "explain": "This closing card is the module's organising framework made explicit — it's worth building a small mental table of every product covered in this module against these two risk types (insurance risk versus investment risk), since this exact distinction reappears directly in Module 27's product-risk classification and throughout the risk management modules that follow."
             }
         ]
     },
@@ -7642,63 +7687,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What distinguishes 'general insurance' from 'life insurance'?",
-                "a": "General insurance covers short-term, typically non-life risks (e.g. property, motor, liability), usually renewed annually, as opposed to long-term life-contingent products."
+                "a": "General insurance covers short-term, typically non-life risks (e.g. property, motor, liability), usually renewed annually, as opposed to long-term life-contingent products.",
+                "explain": "This short-term versus long-term distinction has a real modelling consequence worth carrying forward — general insurance leans much more heavily on CS2's compound Poisson risk models (Modules 19-20 there) for frequency/severity of claims within a policy year, while life insurance leans on CM1's life-contingent, long-duration cashflow framework."
             },
             {
                 "q": "What is 'motor insurance' typically designed to cover?",
-                "a": "Damage to the policyholder's vehicle, and liability for injury/damage caused to third parties in an accident."
+                "a": "Damage to the policyholder's vehicle, and liability for injury/damage caused to third parties in an accident.",
+                "explain": "Worth noting this single product actually bundles TWO different covers with different risk characteristics: damage to the policyholder's own vehicle is typically short-tail (settled quickly), while third-party injury liability can be much longer-tail, foreshadowing the short-tail/long-tail distinction developed later in this module."
             },
             {
                 "q": "What is 'property' (household/buildings) insurance designed to cover?",
-                "a": "Damage to buildings and/or contents from specified perils (e.g. fire, flood, theft)."
+                "a": "Damage to buildings and/or contents from specified perils (e.g. fire, flood, theft).",
+                "explain": "This is a largely short-tail product (most claims settle relatively quickly) but with genuine exposure to the catastrophe risk this module later develops — a single event like a flood or storm can trigger many simultaneous property claims across a whole geographic area at once."
             },
             {
                 "q": "What is 'liability' insurance designed to cover?",
-                "a": "The policyholder's legal liability to pay compensation to third parties for injury or damage they've caused."
+                "a": "The policyholder's legal liability to pay compensation to third parties for injury or damage they've caused.",
+                "explain": "This is general insurance's classic LONG-TAIL product category, directly previewing the short-tail/long-tail cards later in this module — the time between a harmful event occurring and a claim actually being made and settled can be years or even decades (e.g. for latent industrial disease), making reserving for it genuinely difficult."
             },
             {
                 "q": "What is 'business interruption' insurance?",
-                "a": "Insurance covering a business's lost income/profit resulting from a disruption to normal operations, e.g. following an insured property damage event."
+                "a": "Insurance covering a business's lost income/profit resulting from a disruption to normal operations, e.g. following an insured property damage event.",
+                "explain": "This is worth noting as a product that's typically CONTINGENT on another insured event (usually property damage) rather than standing alone — it protects a knock-on financial consequence (lost profit) rather than the direct physical loss itself, which is a genuinely different kind of risk to quantify."
             },
             {
                 "q": "What is a 'short-tail' general insurance claim?",
-                "a": "A claim that is typically reported and settled relatively quickly after the insured event (e.g. most property damage claims)."
+                "a": "A claim that is typically reported and settled relatively quickly after the insured event (e.g. most property damage claims).",
+                "explain": "This formalises the timing distinction already hinted at in the motor and property cards above — short-tail business is generally easier to reserve for accurately, since there's less time for uncertainty to accumulate between the event and its final settled cost."
             },
             {
                 "q": "What is a 'long-tail' general insurance claim?",
-                "a": "A claim that may take many years to be reported and/or settled after the insured event (e.g. many liability claims, especially latent disease claims)."
+                "a": "A claim that may take many years to be reported and/or settled after the insured event (e.g. many liability claims, especially latent disease claims).",
+                "explain": "This is exactly the liability-insurance characteristic flagged two cards above, now named explicitly — long-tail business is where CS2's run-off triangle and chain ladder reserving techniques (developed in the CS2 loss-reserving material) genuinely earn their keep, since the ultimate claims cost is only known with real confidence many years after the event."
             },
             {
                 "q": "Why is the distinction between short-tail and long-tail business important for reserving?",
-                "a": "Long-tail business carries much greater uncertainty in reserving, since claims can emerge and develop over a much longer period."
+                "a": "Long-tail business carries much greater uncertainty in reserving, since claims can emerge and develop over a much longer period.",
+                "explain": "This directly connects to Module 32's provisions material later in CP1 — the LONGER the tail, the more the eventual reserve estimate depends on assumptions about future claims development (inflation, legal environment, emerging patterns) rather than known, already-reported information, which is exactly why long-tail reserving carries more genuine estimation risk."
             },
             {
                 "q": "What is 'catastrophe' risk in general insurance?",
-                "a": "The risk of an extreme event (e.g. a natural disaster) causing a very large number of claims simultaneously."
+                "a": "The risk of an extreme event (e.g. a natural disaster) causing a very large number of claims simultaneously.",
+                "explain": "This is CS2's extreme value theory and Module 3's environmental PESTLE factor converging on a single practical concern — catastrophe risk is precisely why an insurer's claims aren't well-modelled as fully independent across policies, since a single event can trigger correlated losses across an entire portfolio at once."
             },
             {
                 "q": "How might an insurer manage catastrophe risk?",
-                "a": "Through reinsurance, careful geographic diversification/accumulation control, and holding sufficient capital."
+                "a": "Through reinsurance, careful geographic diversification/accumulation control, and holding sufficient capital.",
+                "explain": "This directly previews Module 30's risk transfer material — reinsurance here plays exactly the role CS2's reinsurance module describes (transferring the tail of a loss distribution to another party), while geographic diversification is a direct application of not concentrating correlated exposures in one place."
             },
             {
                 "q": "What is a 'claims-made' basis of cover, as opposed to a 'losses-occurring' basis?",
-                "a": "Claims-made covers claims reported during the policy period (regardless of when the event occurred); losses-occurring covers events occurring during the policy period (regardless of when reported)."
+                "a": "Claims-made covers claims reported during the policy period (regardless of when the event occurred); losses-occurring covers events occurring during the policy period (regardless of when reported).",
+                "explain": "This distinction is worth pinning to the short-tail/long-tail material earlier in this module — losses-occurring cover is the natural fit for short-tail business (event and report happen close together anyway), while claims-made cover exists specifically to give insurers a defined, bounded exposure window for the kind of long-tail liability risk discussed above."
             },
             {
                 "q": "Why might liability insurance often be written on a claims-made basis?",
-                "a": "Because the underlying event causing harm can occur long before a claim is actually made/reported, so claims-made limits the insurer's exposure to a defined period."
+                "a": "Because the underlying event causing harm can occur long before a claim is actually made/reported, so claims-made limits the insurer's exposure to a defined period.",
+                "explain": "This is the direct practical response to liability insurance's long-tail character established earlier in this module — by defining the insurer's exposure around WHEN a claim is reported rather than when the underlying event occurred, claims-made cover gives the insurer a much more bounded, predictable window of liability."
             },
             {
                 "q": "What is 'excess' (or 'deductible') in a general insurance policy?",
-                "a": "The amount the policyholder must bear themselves before the insurer's cover responds."
+                "a": "The amount the policyholder must bear themselves before the insurer's cover responds.",
+                "explain": "This is the general insurance version of Module 5's moral-hazard mitigation tool — by keeping the policyholder exposed to the first slice of any loss, an excess preserves some incentive to avoid or minimise losses, exactly the concern that card raised about overly generous protection benefits."
             },
             {
                 "q": "Why might a general insurer offer a no-claims discount/bonus to policyholders?",
-                "a": "To reward and incentivise low-risk behaviour, and to reflect that policyholders with a claims-free history tend to have lower expected future claims."
+                "a": "To reward and incentivise low-risk behaviour, and to reflect that policyholders with a claims-free history tend to have lower expected future claims.",
+                "explain": "This is a second, complementary moral-hazard tool alongside the excess — where an excess keeps some cost with the policyholder AFTER a claim, a no-claims discount rewards them BEFORE any claim by pricing future cover on the basis of a demonstrated track record, both nudging behaviour in the same risk-reducing direction."
             },
             {
                 "q": "How does general insurance pricing typically need to respond more frequently than life insurance pricing?",
-                "a": "General insurance risks (e.g. weather, claims inflation, legal environment) can change quickly year to year, requiring more frequent repricing at each renewal."
+                "a": "General insurance risks (e.g. weather, claims inflation, legal environment) can change quickly year to year, requiring more frequent repricing at each renewal.",
+                "explain": "This closing card connects back to this module's opening distinction between general and life insurance's typical contract duration — a life insurer prices a decades-long guarantee once (accepting the risk described in Module 7's closing cards), while a general insurer gets to reprice annually, trading away long-term guarantee risk for much more frequent, responsive repricing exposure to Module 3's external environment."
             }
         ]
     },
