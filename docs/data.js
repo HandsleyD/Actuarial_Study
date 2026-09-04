@@ -3909,63 +3909,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'ruin' mean in ruin theory?",
-                "a": "The insurer's surplus (assets minus liabilities, broadly) falling below zero at some point."
+                "a": "The insurer's surplus (assets minus liabilities, broadly) falling below zero at some point.",
+                "explain": "This module pivots CM2 from investment/derivatives theory to a genuinely insurance-specific application — it's the natural quantitative sequel to Module 3's insurance-risk-pooling discussion, now modelling the insurer's whole financial position as a stochastic process over time and asking how likely it is to fail."
             },
             {
                 "q": "What is the 'aggregate claim process'?",
-                "a": "The cumulative total of claim amounts paid by an insurer up to time $t$, as a stochastic process."
+                "a": "The cumulative total of claim amounts paid by an insurer up to time $t$, as a stochastic process.",
+                "explain": "This is the key random INPUT driving the whole module — the insurer's surplus at any time is (initial surplus) plus (premiums collected so far) minus (this aggregate claim process), so everything in this module ultimately comes down to understanding how this one process behaves."
             },
             {
                 "q": "What is a Poisson process used to model in this context?",
-                "a": "The number of claim events occurring over time, assuming events occur independently at a constant average rate."
+                "a": "The number of claim events occurring over time, assuming events occur independently at a constant average rate.",
+                "explain": "This is exactly the same Poisson process concept CS1 introduced (Module 2 there) and CM1's mortality/decrement modules echo — here it specifically counts CLAIM EVENTS arriving over time, providing the 'how many claims' half of the aggregate claim process, with claim SIZE (the next card's compound-process idea) providing the other half."
             },
             {
                 "q": "What is the distribution of the number of events of a Poisson process with rate $\\lambda$ in an interval of length $t$?",
-                "a": "Poisson with mean $\\lambda t$."
+                "a": "Poisson with mean $\\lambda t$.",
+                "explain": "This restates CS1's Poisson-process-to-Poisson-distribution link directly in the ruin-theory context — worth having automatic recall of, since it's the starting point for computing expected claim numbers, and ultimately expected aggregate claims, over any period of interest."
             },
             {
                 "q": "What is the distribution of the waiting time between events in a Poisson process?",
-                "a": "Exponential with rate $\\lambda$ (mean $1/\\lambda$)."
+                "a": "Exponential with rate $\\lambda$ (mean $1/\\lambda$).",
+                "explain": "This is CS1's memoryless-exponential-distribution concept applied to claim ARRIVAL TIMES specifically — a genuinely useful mental model: claims arrive completely unpredictably, with no 'building up' toward the next claim, exactly matching the memorylessness property from CS1 Module 2."
             },
             {
                 "q": "What is a 'compound Poisson process,' as used to model aggregate claims?",
-                "a": "A process where the number of claims follows a Poisson process, and each claim has a random size, giving a total that's the sum of a Poisson-distributed number of claim sizes."
+                "a": "A process where the number of claims follows a Poisson process, and each claim has a random size, giving a total that's the sum of a Poisson-distributed number of claim sizes.",
+                "explain": "This is CS1's conditional-expectation/compound-distribution technique (Module 5 there: 'condition on the number of claims $N$, then take the expectation over $N$') made fully concrete as the module's central model — the AGGREGATE claim process is exactly this compound Poisson construction, running continuously through time."
             },
             {
                 "q": "What is the 'probability of ruin'?",
-                "a": "The probability that the insurer's surplus falls below zero at some point, either within a finite time horizon or ever (infinite time)."
+                "a": "The probability that the insurer's surplus falls below zero at some point, either within a finite time horizon or ever (infinite time).",
+                "explain": "This is the module's central quantity of interest, and note the two versions (finite vs infinite time) are genuinely different questions worth keeping distinct — the next card gives the precise relationship between them."
             },
             {
                 "q": "How does the probability of ruin in finite time relate to the probability of ruin in infinite time?",
-                "a": "The infinite-time ruin probability is always at least as large as the probability within any finite time horizon."
+                "a": "The infinite-time ruin probability is always at least as large as the probability within any finite time horizon.",
+                "explain": "This makes logical sense once stated plainly: 'ruin ever happens' is a WEAKER (easier to satisfy) condition than 'ruin happens within the next 10 years specifically' — every path that causes ruin within a finite horizon also counts toward ruin happening eventually, but not vice versa, so the infinite-time probability can only be larger or equal."
             },
             {
                 "q": "What is the 'adjustment coefficient' (Lundberg's coefficient)?",
-                "a": "A parameter $R>0$ appearing in bounds/approximations for the probability of ruin, determined by the premium loading and claim size distribution."
+                "a": "A parameter $R>0$ appearing in bounds/approximations for the probability of ruin, determined by the premium loading and claim size distribution.",
+                "explain": "This single parameter is worth thinking of as a compact summary of 'how safe' the insurer's overall risk position is — it's derived from balancing the insurer's premium income advantage (the loading above pure expected cost) against how variable/heavy-tailed the claim size distribution is, and it drives the key inequality in the next card."
             },
             {
                 "q": "What does Lundberg's inequality state?",
-                "a": "The probability of ultimate ruin is bounded above by $e^{-Ru}$, where $u$ is the initial surplus and $R$ is the adjustment coefficient."
+                "a": "The probability of ultimate ruin is bounded above by $e^{-Ru}$, where $u$ is the initial surplus and $R$ is the adjustment coefficient.",
+                "explain": "This is the module's headline theoretical result — worth noting it's a BOUND, not an exact formula (the true ruin probability is generally hard to compute exactly), giving a guaranteed worst-case ceiling on ruin risk that's much easier to calculate than the exact probability itself."
             },
             {
                 "q": "How does increasing initial surplus $u$ affect the (Lundberg) bound on the probability of ruin?",
-                "a": "It decreases the bound, since $e^{-Ru}$ falls as $u$ increases."
+                "a": "It decreases the bound, since $e^{-Ru}$ falls as $u$ increases.",
+                "explain": "This matches obvious intuition (more starting capital should mean safer), but Lundberg's inequality makes it PRECISE — the ruin-probability bound falls off EXPONENTIALLY in $u$, meaning even modest increases in held surplus can produce a dramatic reduction in the worst-case ruin risk."
             },
             {
                 "q": "How does proportional reinsurance typically affect the adjustment coefficient (and hence the probability of ruin)?",
-                "a": "It can increase the adjustment coefficient (reducing ruin probability) by reducing retained claims variability, though it also reduces retained premium income."
+                "a": "It can increase the adjustment coefficient (reducing ruin probability) by reducing retained claims variability, though it also reduces retained premium income.",
+                "explain": "This is a genuine trade-off worth understanding both directions of — reinsurance reduces the insurer's exposure to large/variable claims (helping $R$ and lowering ruin risk), but it also means ceding away a share of premium income to the reinsurer (hurting the insurer's own premium loading), so more reinsurance isn't automatically better without limit."
             },
             {
                 "q": "How can the probability of ruin be estimated when no closed-form solution is available?",
-                "a": "By simulation — repeatedly simulating the claims and premium process and estimating the proportion of paths resulting in ruin."
+                "a": "By simulation — repeatedly simulating the claims and premium process and estimating the proportion of paths resulting in ruin.",
+                "explain": "This is worth recognising as the same general fallback technique used throughout actuarial modelling whenever exact formulas become intractable — much like Module 9's simulation-based testing of the log-normal model, or CS1's bootstrap method, when the maths gets too hard to solve in closed form, simulating many possible paths and counting outcomes empirically is the standard practical alternative."
             },
             {
                 "q": "What is the effect of excess of loss reinsurance on an insurer's aggregate claims variability?",
-                "a": "It caps exposure to very large individual claims, reducing the variability (and tail risk) of retained aggregate claims."
+                "a": "It caps exposure to very large individual claims, reducing the variability (and tail risk) of retained aggregate claims.",
+                "explain": "This is a genuinely different reinsurance structure from the proportional reinsurance card above, worth keeping distinct — proportional reinsurance shares EVERY claim in a fixed proportion, while excess of loss only kicks in for the LARGEST claims above a threshold, making it a more targeted tool specifically for controlling tail risk rather than overall claim size."
             },
             {
                 "q": "Why might an insurer choose a level of reinsurance that maximises the adjustment coefficient?",
-                "a": "A higher adjustment coefficient corresponds to a lower bound on the probability of ruin, a natural way to manage solvency risk against reinsurance cost."
+                "a": "A higher adjustment coefficient corresponds to a lower bound on the probability of ruin, a natural way to manage solvency risk against reinsurance cost.",
+                "explain": "This closes the module by tying every reinsurance decision back to Lundberg's inequality from earlier — maximising $R$ gives the tightest (lowest) possible bound on ruin probability for a given premium/reinsurance structure, providing a single, well-defined optimisation target for balancing solvency protection against the real cost of buying reinsurance."
             }
         ]
     },
