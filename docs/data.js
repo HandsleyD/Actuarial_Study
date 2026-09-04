@@ -5389,63 +5389,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'stochastic process'?",
-                "a": "A collection of random variables indexed by time (or another parameter), representing how a system evolves under uncertainty."
+                "a": "A collection of random variables indexed by time (or another parameter), representing how a system evolves under uncertainty.",
+                "explain": "This module lays the conceptual groundwork for the ENTIRE first third of CS2 — every model in Modules 2-14 (Markov chains, Markov jump processes, survival models, time series) is a specific TYPE of stochastic process, classified along exactly the two dimensions (state space and time) this module introduces."
             },
             {
                 "q": "What is a 'counting process'?",
-                "a": "A stochastic process that counts the number of events that have occurred by time $t$, non-decreasing and integer-valued."
+                "a": "A stochastic process that counts the number of events that have occurred by time $t$, non-decreasing and integer-valued.",
+                "explain": "This is a specific, important example worth recognising immediately when it recurs — CM2's Poisson process (Module 7 there, and Module 17's ruin theory) is precisely a counting process, and Module 3's Poisson model in THIS subject reuses exactly the same idea for claim/event arrivals."
             },
             {
                 "q": "What does it mean for a process to have a 'discrete state space'?",
-                "a": "The process can only take values from a countable set of possible states."
+                "a": "The process can only take values from a countable set of possible states.",
+                "explain": "This is the property that makes Markov CHAINS (Module 2) and Markov JUMP PROCESSES (Modules 4-5) tractable — a discrete state space means you can describe the whole process using a finite (or countable) list of transition probabilities/intensities between named states, rather than needing a continuum of possible values."
             },
             {
                 "q": "What does it mean for a process to have a 'continuous state space'?",
-                "a": "The process can take any value within a continuous range."
+                "a": "The process can take any value within a continuous range.",
+                "explain": "This is the CM2 side of the classification — GBM (CM2 Module 8) and interest-rate models (CM2 Module 15) both have continuous state spaces, since a stock price or interest rate can take any real value, not just discrete named states."
             },
             {
                 "q": "What does it mean for a process to operate in 'discrete time'?",
-                "a": "The process is only observed/defined at a countable sequence of time points."
+                "a": "The process is only observed/defined at a countable sequence of time points.",
+                "explain": "Module 2's Markov chains are the canonical discrete-time example — a policyholder's no-claims-discount category is only meaningfully updated once a year, not continuously, making annual time steps the natural unit."
             },
             {
                 "q": "What does it mean for a process to operate in 'continuous time'?",
-                "a": "The process is defined at every point in time within an interval."
+                "a": "The process is defined at every point in time within an interval.",
+                "explain": "Modules 3-5's Markov jump processes are the continuous-time analogue of Module 2's Markov chains — a health state (say) can genuinely change at ANY instant, not just at predetermined annual checkpoints, which needs the continuous-time machinery those modules develop."
             },
             {
                 "q": "What is a 'mixed type' process, in terms of state space and time?",
-                "a": "A process combining aspects of discrete and continuous state spaces or time (e.g. continuous time but a discrete state space)."
+                "a": "A process combining aspects of discrete and continuous state spaces or time (e.g. continuous time but a discrete state space).",
+                "explain": "This is precisely the category Markov JUMP processes fall into (Modules 3-5) — continuous TIME (transitions can happen at any instant) combined with a discrete STATE SPACE (a finite list of named states like alive/dead, or healthy/sick/dead), which is exactly the classification this whole module's two-dimensional framework is designed to capture."
             },
             {
                 "q": "What is the 'Markov property'?",
-                "a": "The future evolution of the process, given its present state, is independent of its past history."
+                "a": "The future evolution of the process, given its present state, is independent of its past history.",
+                "explain": "This is the single most important simplifying assumption running through this whole first third of CS2 — it's the direct generalisation of CS1's independence concept (Module 4 there) and CM1's mortality-modelling assumption (constant force between integer ages) to a fully dynamic, evolving-over-time setting."
             },
             {
                 "q": "How is the Markov property expressed in terms of a filtration $\\mathcal{F}_t$?",
-                "a": "$P(X_{t+s} = j \\mid \\mathcal{F}_t) = P(X_{t+s} = j \\mid X_t)$"
+                "a": "$P(X_{t+s} = j \\mid \\mathcal{F}_t) = P(X_{t+s} = j \\mid X_t)$",
+                "explain": "This is CM2 Module 7's filtration concept reused directly — the equation says precisely that conditioning on the FULL history $\\mathcal{F}_t$ gives exactly the same answer as conditioning on just the CURRENT state $X_t$ alone; everything else in the history is provably irrelevant once you know where you are right now."
             },
             {
                 "q": "Give an example of a discrete-time, discrete-state stochastic process.",
-                "a": "A Markov chain, e.g. modelling a policyholder's no-claims-discount category year by year."
+                "a": "A Markov chain, e.g. modelling a policyholder's no-claims-discount category year by year.",
+                "explain": "This directly previews Module 2's central worked example — worth having this concrete NCD illustration ready whenever a question asks for an example of this specific classification, since it's the standard actuarial application examiners return to repeatedly."
             },
             {
                 "q": "Give an example of a continuous-time, discrete-state stochastic process.",
-                "a": "A Markov jump process, e.g. modelling an individual's health state over continuous time."
+                "a": "A Markov jump process, e.g. modelling an individual's health state over continuous time.",
+                "explain": "This directly previews Modules 3-5's central topic — the health-state example (healthy/sick/dead) recurs throughout those modules as the standard illustration of why continuous-time transitions between discrete states matter for realistic sickness/income-protection modelling."
             },
             {
                 "q": "Why is the Markov property a useful simplifying assumption in actuarial modelling?",
-                "a": "It greatly simplifies calculations, since only the current state (not the full history) is needed to determine future probabilities."
+                "a": "It greatly simplifies calculations, since only the current state (not the full history) is needed to determine future probabilities.",
+                "explain": "This is the practical payoff that justifies assuming Markov behaviour even when it's not perfectly realistic — without it, you'd need to track and condition on an ever-growing history for every individual, which becomes computationally and mathematically intractable at any real scale."
             },
             {
                 "q": "What is a 'filtration'?",
-                "a": "An increasing sequence of information sets over time, representing everything known/observable up to each point in time."
+                "a": "An increasing sequence of information sets over time, representing everything known/observable up to each point in time.",
+                "explain": "This is exactly the same filtration concept CM2 Module 7 introduced for Brownian motion — recognising it as the SAME underlying idea (just applied here to discrete-state processes rather than continuous ones) saves re-learning it as something new."
             },
             {
                 "q": "Give an example of a real-world process that is NOT well-approximated by the Markov property.",
-                "a": "A no-claims-discount system with memory of multiple past years, or a process where recent trend affects future behaviour."
+                "a": "A no-claims-discount system with memory of multiple past years, or a process where recent trend affects future behaviour.",
+                "explain": "This is a genuinely important counter-example worth remembering, since it's the direct set-up for Module 5's duration-dependent extension — real NCD systems and sickness recovery rates often DO depend on more than just the current state, which is exactly why an expanded, duration-including state space (Module 5) is sometimes needed to restore Markov behaviour."
             },
             {
                 "q": "Why might insurance/actuarial models often use 'mixed type' processes?",
                 "a": "Real-world events (e.g. claims) often occur at random continuous times, but affect a discrete state (e.g. a claims category)."
+                ,"explain": "This closes the module by tying the mixed-type classification directly to real insurance mechanics — a claim can happen at any instant (continuous time), but it moves a policyholder between a finite set of NCD categories (discrete state space), which is exactly the mixed structure this module flags as common in practice."
             }
         ]
     },
@@ -5456,63 +5471,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'transition matrix' for a Markov chain?",
-                "a": "A matrix whose $(i,j)$ entry gives the probability of moving from state $i$ to state $j$ in one time step."
+                "a": "A matrix whose $(i,j)$ entry gives the probability of moving from state $i$ to state $j$ in one time step.",
+                "explain": "This is the single object that fully characterises a time-homogeneous Markov chain — since the Markov property (Module 1) means only the CURRENT state matters, and transition probabilities don't change over time, one matrix captures everything needed to describe every future probability, as the Chapman-Kolmogorov equations below make explicit."
             },
             {
                 "q": "What must each row of a transition matrix sum to?",
-                "a": "1, since the chain must move to some state, including possibly staying in the same state."
+                "a": "1, since the chain must move to some state, including possibly staying in the same state.",
+                "explain": "This is a genuinely useful arithmetic check worth running on any transition matrix you construct or are given — if a row doesn't sum to exactly 1, either a transition probability is missing, or one has been double-counted, and the matrix can't represent a valid Markov chain."
             },
             {
                 "q": "What are the Chapman-Kolmogorov equations?",
-                "a": "Equations expressing $n$-step transition probabilities as the matrix product of one-step transition probabilities: $P^{(n)} = P^n$"
+                "a": "Equations expressing $n$-step transition probabilities as the matrix product of one-step transition probabilities: $P^{(n)} = P^n$",
+                "explain": "This elegant result follows directly from the Markov property applied repeatedly — moving $n$ steps is just moving 1 step, $n$ times in a row, and each step's transition depends only on the current state (not how you got there), which is exactly what allows the probabilities to simply multiply together as matrices."
             },
             {
                 "q": "What is a 'stationary distribution' of a Markov chain?",
-                "a": "A probability distribution $\\pi$ over the states such that $\\pi P = \\pi$."
+                "a": "A probability distribution $\\pi$ over the states such that $\\pi P = \\pi$.",
+                "explain": "This is the chain's long-run 'equilibrium' — if the distribution of states is ALREADY $\\pi$, applying the transition matrix leaves it unchanged, meaning the proportion of the population in each state stabilises over time even though INDIVIDUALS keep moving between states."
             },
             {
                 "q": "Under what condition does a Markov chain have a unique stationary distribution that it converges to?",
-                "a": "If the chain is irreducible and aperiodic (with a finite state space)."
+                "a": "If the chain is irreducible and aperiodic (with a finite state space).",
+                "explain": "Both conditions matter and are worth understanding why — irreducibility (below) ensures there's genuinely ONE connected system to converge within, not several disconnected sub-systems each with their own equilibrium; aperiodicity (below) ensures the chain doesn't cycle forever without settling."
             },
             {
                 "q": "What does it mean for a Markov chain to be 'irreducible'?",
-                "a": "Every state can be reached from every other state with positive probability."
+                "a": "Every state can be reached from every other state with positive probability.",
+                "explain": "Without this, the chain could get permanently trapped in a subset of states depending on where it started, meaning there'd be no SINGLE stationary distribution the whole chain converges to regardless of starting point — different starting states could lead to genuinely different long-run behaviours."
             },
             {
                 "q": "What does it mean for a state in a Markov chain to be 'periodic'?",
-                "a": "The chain can only return to that state at multiples of some period greater than 1."
+                "a": "The chain can only return to that state at multiples of some period greater than 1.",
+                "explain": "A simple example worth picturing: a chain that alternates strictly between two states (A, B, A, B, ...) has period 2 — it can only return to state A at even time steps, never settling into a stable single distribution even though it's perfectly predictable, which is exactly why periodicity blocks convergence to a stationary distribution."
             },
             {
                 "q": "How would you calculate the stationary distribution of a Markov chain in a simple case?",
-                "a": "Solve $\\pi P = \\pi$ together with the constraint that the probabilities in $\\pi$ sum to 1."
+                "a": "Solve $\\pi P = \\pi$ together with the constraint that the probabilities in $\\pi$ sum to 1.",
+                "explain": "Note the sum-to-1 constraint is essential, not optional — $\\pi P=\\pi$ alone is a system of linear equations with infinitely many solutions (any scalar multiple of a valid $\\pi$ also satisfies it), and it's the normalisation constraint that pins down the unique, genuine probability distribution."
             },
             {
                 "q": "What is a 'no-claims-discount' (NCD) system, modelled as a Markov chain?",
-                "a": "A system where a policyholder's premium discount category changes each year based on claims, following fixed transition probabilities."
+                "a": "A system where a policyholder's premium discount category changes each year based on claims, following fixed transition probabilities.",
+                "explain": "This is the module's central real-world application, already previewed in Module 1 — a driver's NCD category (e.g. 0%, 20%, 40%, 60% discount) is the STATE, a year is the TIME STEP, and whether/how many claims occur that year determines the TRANSITION, making this a natural, heavily-examined worked example throughout this module."
             },
             {
                 "q": "How would frequency-based experience rating be modelled using a Markov chain?",
-                "a": "Each policyholder's rating category is a state, and claims experience each period determines transition probabilities between categories."
+                "a": "Each policyholder's rating category is a state, and claims experience each period determines transition probabilities between categories.",
+                "explain": "This generalises the NCD example above to any experience-rating system, not just motor insurance discounts — the same Markov-chain machinery (transition matrix, stationary distribution, Chapman-Kolmogorov) applies wherever a policyholder moves between discrete pricing tiers based on periodic claims experience."
             },
             {
                 "q": "What is a 'time-inhomogeneous' Markov chain?",
-                "a": "A Markov chain where the transition probabilities can change over time, not just depend on the current state."
+                "a": "A Markov chain where the transition probabilities can change over time, not just depend on the current state.",
+                "explain": "This directly previews the time-homogeneous vs time-inhomogeneous distinction that Modules 4-5 develop fully for the continuous-time case — the SAME underlying idea (allowing rates/probabilities to vary with calendar time or age) applies equally in discrete time here."
             },
             {
                 "q": "How would you simulate a Markov chain?",
-                "a": "At each step, generate a random number to determine the next state according to the probabilities in the current state's row of the transition matrix."
+                "a": "At each step, generate a random number to determine the next state according to the probabilities in the current state's row of the transition matrix.",
+                "explain": "This is CS1's inverse transform method (Module 2 there) applied directly to a discrete distribution — at each step you're simply drawing from the categorical distribution given by the current state's row, using a uniform random number to pick which 'slice' of cumulative probability you land in."
             },
             {
                 "q": "What information is lost when only the one-step transition matrix is retained?",
-                "a": "Any information about how the chain arrived at its current state, which is irrelevant to future transitions under the Markov property."
+                "a": "Any information about how the chain arrived at its current state, which is irrelevant to future transitions under the Markov property.",
+                "explain": "This is worth appreciating as a genuine FEATURE of the Markov property, not a limitation — precisely BECAUSE the past is irrelevant to the future given the present state, the one-step matrix genuinely does capture everything needed, with no loss of predictive power despite discarding the full history."
             },
             {
                 "q": "How would the $n$-step transition matrix be used to find the probability of being in state $j$ after $n$ steps, starting in state $i$?",
-                "a": "Take the $(i,j)$ entry of the matrix $P^n$."
+                "a": "Take the $(i,j)$ entry of the matrix $P^n$.",
+                "explain": "This is a direct application of the Chapman-Kolmogorov equations from earlier in this module — computing $P^n$ once (via repeated matrix multiplication) lets you read off the probability of ANY starting-state-to-ending-state transition over $n$ steps, all from a single matrix power calculation."
             },
             {
                 "q": "Why might an actuary use a Markov chain model for a no-claims-discount system rather than tracking full claims history?",
-                "a": "It's a tractable simplification that captures the essential dynamics without needing the full history."
+                "a": "It's a tractable simplification that captures the essential dynamics without needing the full history.",
+                "explain": "This closes the module by restating its overall justification — the Markov chain deliberately trades away some realism (real NCD outcomes might genuinely depend on more than just the current discount category) for enormous mathematical tractability, a trade-off worth weighing consciously rather than assuming automatically the right one."
             }
         ]
     },
