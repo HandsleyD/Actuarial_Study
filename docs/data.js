@@ -5799,63 +5799,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the survival function $_tp_x$ for a life aged $x$?",
-                "a": "The probability that the life survives at least $t$ further years."
+                "a": "The probability that the life survives at least $t$ further years.",
+                "explain": "This module returns to CM1's life-table world (Module 12 there), but rebuilds it from first principles as a formal RANDOM VARIABLE framework — the same $_tp_x$ notation you already know, now developed with full mathematical rigour (survival functions, hazard rates, expectation/variance) rather than just the life-table ratios CM1 used."
             },
             {
                 "q": "What is the force of mortality $\\mu_x$?",
-                "a": "The instantaneous rate of mortality at exact age $x$, defined so that $\\mu_x = -\\frac{d}{dx}\\ln S(x)$."
+                "a": "The instantaneous rate of mortality at exact age $x$, defined so that $\\mu_x = -\\frac{d}{dx}\\ln S(x)$.",
+                "explain": "This is exactly the two-state model's transition intensity from Module 3, restated in survival-function language — the formula shows precisely HOW $\\mu_x$ relates to the survival function $S(x)$: it's the (negative) logarithmic derivative, capturing the instantaneous proportional rate of decline in survival probability at each age."
             },
             {
                 "q": "How is the survival function related to the force of mortality via an integral?",
-                "a": "$_tp_x = \\exp\\left(-\\int_0^t \\mu_{x+s}\\,ds\\right)$"
+                "a": "$_tp_x = \\exp\\left(-\\int_0^t \\mu_{x+s}\\,ds\\right)$",
+                "explain": "This is the integrated version of the force-of-mortality definition above, and it's exactly Module 5's time-inhomogeneous survival formula applied to age-dependent mortality specifically — worth recognising it collapses to Module 3's simple $e^{-\\mu t}$ exactly when $\\mu$ happens to be constant across the whole interval."
             },
             {
                 "q": "What is the 'consistency condition' for random lifetime models across different starting ages?",
-                "a": "$_{t+s}p_x = {_tp_x}\\cdot{_sp_{x+t}}$"
+                "a": "$_{t+s}p_x = {_tp_x}\\cdot{_sp_{x+t}}$",
+                "explain": "This is precisely the Chapman-Kolmogorov equations from Module 2, restated for the two-state survival model — surviving $t+s$ years from age $x$ is equivalent to surviving $t$ years to age $x+t$, THEN surviving a further $s$ years from there, and the Markov property is exactly what guarantees these two routes multiply together consistently."
             },
             {
                 "q": "What does Gompertz's law of mortality state?",
-                "a": "The force of mortality increases exponentially with age: $\\mu_x = Bc^x$"
+                "a": "The force of mortality increases exponentially with age: $\\mu_x = Bc^x$",
+                "explain": "This is a specific, testable functional form for $\\mu_x$ worth remembering exactly — it's a parametric model with just two parameters ($B$, $c$) capturing the empirical observation that mortality rises roughly exponentially through middle and old age, and it directly previews Module 11's parametric-formula graduation method."
             },
             {
                 "q": "What does Makeham's law of mortality state?",
-                "a": "$\\mu_x = A + Bc^x$ — a constant background component plus an exponentially increasing component."
+                "a": "$\\mu_x = A + Bc^x$ — a constant background component plus an exponentially increasing component.",
+                "explain": "This is Gompertz's law with one extra parameter ($A$) added — the closing card of this module explains exactly why that addition matters: it lets the model represent a genuine background hazard (accidents, non-age-related causes) that doesn't vanish even at young ages, where pure Gompertz tends to fit poorly."
             },
             {
                 "q": "What is the 'curtate future lifetime' $K_x$?",
-                "a": "The integer number of complete future years lived by a life aged $x$ before death."
+                "a": "The integer number of complete future years lived by a life aged $x$ before death.",
+                "explain": "This is exactly CM1 Module 15's $K_x$ random variable, rebuilt here with the full probability-function and expectation/variance machinery CS2 develops — recognising it as the same object studied in CM1 means the intuition (it's what makes $Z=v^{K_x+1}$ meaningful for assurance pricing) carries straight across."
             },
             {
                 "q": "What is the probability function of the curtate future lifetime $K_x$?",
-                "a": "$P(K_x = k) = {_kp_x}\\cdot q_{x+k}$"
+                "a": "$P(K_x = k) = {_kp_x}\\cdot q_{x+k}$",
+                "explain": "This says precisely: to have $K_x=k$, the life must survive $k$ full years (probability $_kp_x$) and then die within the following year (probability $q_{x+k}$) — the product of these two events, since they must both happen for $K_x$ to take exactly that value."
             },
             {
                 "q": "What does $e_x$ (the 'curtate expectation of life') represent?",
-                "a": "The expected number of complete future years lived by a life aged $x$."
+                "a": "The expected number of complete future years lived by a life aged $x$.",
+                "explain": "This is simply $E[K_x]$, computed from the probability function above using the standard expectation formula $\\sum_k k\\cdot P(K_x=k)$ — a direct application of CS1's expectation machinery to this specific discrete random variable."
             },
             {
                 "q": "What does $\\overset{\\circ}{e}_x$ (the 'complete expectation of life') represent?",
-                "a": "The expected complete future lifetime (not restricted to whole years) of a life aged $x$."
+                "a": "The expected complete future lifetime (not restricted to whole years) of a life aged $x$.",
+                "explain": "This is the CONTINUOUS analogue of $e_x$ — while $K_x$ only counts whole completed years, the true future lifetime $T_x$ can end at any fractional point within a year, and $\\overset{\\circ}{e}_x=E[T_x]$ captures that finer-grained expectation, which is naturally somewhat larger than $e_x$, per the next card."
             },
             {
                 "q": "What is the approximate relationship between $e_x$ and $\\overset{\\circ}{e}_x$?",
-                "a": "$\\overset{\\circ}{e}_x \\approx e_x + 0.5$"
+                "a": "$\\overset{\\circ}{e}_x \\approx e_x + 0.5$",
+                "explain": "The intuition: $K_x$ always rounds DOWN the true (continuous) future lifetime to a whole number of completed years, systematically understating it — assuming deaths are spread roughly uniformly through each year of age (a UDD-style assumption, echoing CM1 Module 12), the average 'lost' fraction from rounding down is about half a year."
             },
             {
                 "q": "What is the 'two-state model of a single decrement', and how does it compare to the random lifetime model?",
-                "a": "A continuous-time Markov model with 'alive' and 'dead' states, mathematically equivalent to the random future lifetime model."
+                "a": "A continuous-time Markov model with 'alive' and 'dead' states, mathematically equivalent to the random future lifetime model.",
+                "explain": "This closes the loop back to Module 3 explicitly — this whole module has been building the SAME survival-probability machinery from a random-variable perspective that Module 3 built from a Markov-process perspective, and this card confirms the two are mathematically interchangeable, just different lenses on identical content."
             },
             {
                 "q": "How would you derive the variance of the curtate future lifetime $K_x$?",
-                "a": "$\\text{Var}(K_x) = E[K_x^2] - (E[K_x])^2$, calculated from the probability function of $K_x$."
+                "a": "$\\text{Var}(K_x) = E[K_x^2] - (E[K_x])^2$, calculated from the probability function of $K_x$.",
+                "explain": "This is CS1's standard variance formula (Module 2 there) applied directly here — you need $E[K_x^2]=\\sum_k k^2\\cdot P(K_x=k)$ computed from the same probability function used to find $e_x=E[K_x]$ above, then combined via this standard identity."
             },
             {
                 "q": "Why is the force of mortality a more fundamental quantity than $q_x$ for continuous-time modelling?",
-                "a": "It's defined instantaneously and directly links to the survival function via integration."
+                "a": "It's defined instantaneously and directly links to the survival function via integration.",
+                "explain": "This is worth appreciating as a genuine hierarchy: $q_x$ (a one-year discrete probability) can always be DERIVED from $\\mu_x$ via integration (per the formula earlier in this module), but the reverse generally requires an extra distributional assumption (like UDD) to interpolate — $\\mu_x$ carries strictly more information, which is exactly why continuous-time models (this whole subject) build from it directly."
             },
             {
                 "q": "What advantage does Makeham's law have over Gompertz's law?",
-                "a": "The added constant term $A$ better captures a background level of mortality risk, improving fit especially at younger ages."
+                "a": "The added constant term $A$ better captures a background level of mortality risk, improving fit especially at younger ages.",
+                "explain": "This closes the module by explaining precisely WHY Makeham added that one extra parameter — pure Gompertz ($\\mu_x=Bc^x$) predicts mortality shrinking toward zero at very young ages, which is unrealistic (accidents and other non-senescent causes create a real floor), and Makeham's constant $A$ fixes exactly this by never letting $\\mu_x$ fall below $A$, however small the exponential term becomes."
             }
         ]
     },
