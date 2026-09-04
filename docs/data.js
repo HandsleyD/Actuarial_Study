@@ -5881,63 +5881,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'censoring' in survival data?",
-                "a": "When the exact event time is not observed for some individuals, only that it occurred after (or before) a certain point."
+                "a": "When the exact event time is not observed for some individuals, only that it occurred after (or before) a certain point.",
+                "explain": "This module tackles a genuinely practical problem Module 6's theoretical framework glossed over — real mortality studies rarely observe every individual's death; many are still alive when the study ends, or leave for unrelated reasons, and this module's whole toolkit exists to estimate survival correctly despite this incomplete information."
             },
             {
                 "q": "What is 'right censoring'?",
-                "a": "When an individual is known to have survived to a certain point, but their exact time of death beyond that is unknown."
+                "a": "When an individual is known to have survived to a certain point, but their exact time of death beyond that is unknown.",
+                "explain": "This is by far the most common censoring type in actuarial mortality studies — someone still alive when a study concludes, or who withdraws from an investigation, contributes KNOWN information (they survived at least this long) even though their exact death time remains unobserved, and simply ignoring them would waste this partial information."
             },
             {
                 "q": "Why can't the empirical survival function simply be estimated by the proportion still alive, when censoring is present?",
-                "a": "Censored individuals' true event times are unknown, so excluding or misclassifying them would bias the estimate."
+                "a": "Censored individuals' true event times are unknown, so excluding or misclassifying them would bias the estimate.",
+                "explain": "This is the module's central motivating problem — naively excluding censored individuals throws away real information they DID contribute (surviving up to their censoring point), while naively treating them as 'still alive forever' or 'died at censoring' both introduce systematic bias, which is exactly why the Kaplan-Meier estimator's more careful construction is needed."
             },
             {
                 "q": "What is the Kaplan-Meier (product-limit) estimator used for?",
-                "a": "Estimating the survival function non-parametrically from censored data."
+                "a": "Estimating the survival function non-parametrically from censored data.",
+                "explain": "'Non-parametric' is the key word — unlike Module 6's Gompertz/Makeham laws (which assume a specific functional form), Kaplan-Meier makes no assumption about the SHAPE of the survival curve at all, estimating it directly and flexibly from the observed data, censoring properly accounted for."
             },
             {
                 "q": "What is the general form of the Kaplan-Meier estimator?",
-                "a": "$\\hat{S}(t) = \\prod_{t_i \\le t} \\left(1 - \\frac{d_i}{n_i}\\right)$"
+                "a": "$\\hat{S}(t) = \\prod_{t_i \\le t} \\left(1 - \\frac{d_i}{n_i}\\right)$",
+                "explain": "The intuition worth holding onto: this is a PRODUCT of one-step survival factors, one for each observed death time up to $t$ — it's exactly the consistency-condition idea from Module 6 ($_{t+s}p_x={_tp_x}\\cdot{_sp_{x+t}}$) applied empirically, chaining together small observed survival probabilities rather than assuming a smooth formula."
             },
             {
                 "q": "What does $d_i$ represent in the Kaplan-Meier formula?",
-                "a": "The number of deaths observed at time $t_i$."
+                "a": "The number of deaths observed at time $t_i$.",
+                "explain": "This is exactly the same $d_x$ concept from CM1's life table (Module 12 there), just tracked at each OBSERVED death time in the actual sample rather than at fixed integer ages in a published table."
             },
             {
                 "q": "What does $n_i$ represent in the Kaplan-Meier formula?",
-                "a": "The number of individuals still 'at risk' just before time $t_i$."
+                "a": "The number of individuals still 'at risk' just before time $t_i$.",
+                "explain": "This is the crucial quantity that correctly accounts for censoring — $n_i$ shrinks not only from deaths but also from earlier censoring events, so individuals who were censored before $t_i$ are correctly EXCLUDED from the risk set at $t_i$, having already contributed their information up to their own censoring point."
             },
             {
                 "q": "What is the Nelson-Aalen estimator used for?",
-                "a": "Estimating the cumulative hazard function non-parametrically from censored data."
+                "a": "Estimating the cumulative hazard function non-parametrically from censored data.",
+                "explain": "This is a close cousin of Kaplan-Meier, targeting a slightly different quantity — rather than estimating survival probability directly, it estimates the CUMULATIVE HAZARD $H(t)$ (roughly, $\\int_0^t\\mu_s\\,ds$ from Module 6), and the next two cards show precisely how the two estimators relate."
             },
             {
                 "q": "What is the general form of the Nelson-Aalen estimator?",
-                "a": "$\\hat{H}(t) = \\sum_{t_i \\le t} \\frac{d_i}{n_i}$"
+                "a": "$\\hat{H}(t) = \\sum_{t_i \\le t} \\frac{d_i}{n_i}$",
+                "explain": "Compare this directly to Kaplan-Meier above — same $d_i/n_i$ building block at each death time, but SUMMED here rather than combined as $(1-d_i/n_i)$ and multiplied, reflecting that cumulative hazard adds up additively while survival probability compounds multiplicatively."
             },
             {
                 "q": "How is the Nelson-Aalen estimator related to an alternative survival function estimate?",
-                "a": "$\\hat{S}(t) = e^{-\\hat{H}(t)}$"
+                "a": "$\\hat{S}(t) = e^{-\\hat{H}(t)}$",
+                "explain": "This is exactly Module 6's formula $_tp_x=\\exp(-\\int_0^t\\mu_{x+s}\\,ds)$, with the Nelson-Aalen cumulative hazard estimate plugged in for the integral — this gives a SECOND, slightly different way to estimate the survival function from the same censored data, worth comparing against Kaplan-Meier's direct product formula."
             },
             {
                 "q": "How is the variance of the Kaplan-Meier estimator typically estimated?",
-                "a": "Using Greenwood's formula, summing contributions from each observed death time."
+                "a": "Using Greenwood's formula, summing contributions from each observed death time.",
+                "explain": "This is worth connecting to CS1's estimator-variance concepts (Module 8 there) — Greenwood's formula gives a way to construct confidence intervals AROUND the Kaplan-Meier survival curve, not just a single point estimate, letting you express genuine statistical uncertainty about the estimated survival probabilities."
             },
             {
                 "q": "What happens to confidence in the Kaplan-Meier estimate as time increases beyond the range of most of the data?",
-                "a": "It becomes less reliable (wider confidence intervals), since fewer individuals remain at risk."
+                "a": "It becomes less reliable (wider confidence intervals), since fewer individuals remain at risk.",
+                "explain": "This directly follows from Greenwood's formula above — as $n_i$ (the risk set) shrinks toward the tail of the study (fewer people still being followed, more having died or been censored already), each remaining term contributes more uncertainty, widening the confidence interval exactly where the estimate is least trustworthy."
             },
             {
                 "q": "What do 'proportional hazards models' (like the Cox model) add beyond Kaplan-Meier/Nelson-Aalen?",
-                "a": "They allow the hazard to depend on covariates, rather than just estimating a single overall survival curve."
+                "a": "They allow the hazard to depend on covariates, rather than just estimating a single overall survival curve.",
+                "explain": "This directly previews Module 8's whole topic — Kaplan-Meier and Nelson-Aalen give you ONE survival curve for the whole sample (or one per group if you split it manually); the Cox model instead lets covariates (age, smoking status, policy type, etc.) continuously adjust the hazard, a genuinely richer modelling framework."
             },
             {
                 "q": "What is the Cox proportional hazards model's key structural assumption?",
-                "a": "The hazard is the baseline hazard multiplied by a factor depending on covariates, constant (proportional) over time."
+                "a": "The hazard is the baseline hazard multiplied by a factor depending on covariates, constant (proportional) over time.",
+                "explain": "This is worth previewing carefully since Module 8 develops it fully — 'proportional' is the crucial word: whatever the SHAPE of the baseline hazard over time (left completely unspecified, non-parametric like this module's estimators), covariates only scale it up or down by a constant factor, never changing its shape."
             },
             {
                 "q": "Why is partial likelihood used to estimate the Cox model's coefficients, rather than full likelihood?",
-                "a": "It allows estimation of covariate effects without needing to specify the unknown baseline hazard function."
+                "a": "It allows estimation of covariate effects without needing to specify the unknown baseline hazard function.",
+                "explain": "This closes the module by explaining the genuinely clever trick behind the Cox model's practicality — a full likelihood would require modelling the baseline hazard's exact shape (defeating the whole 'non-parametric flexibility' point of this module's approach), while partial likelihood cleverly sidesteps that by only using the ORDER of events, letting the baseline hazard cancel out of the maths entirely."
             }
         ]
     },
