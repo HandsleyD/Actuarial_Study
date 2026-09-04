@@ -4051,63 +4051,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'marginal distribution'?",
-                "a": "The probability distribution of one variable from a joint distribution, obtained by summing/integrating out the other variable(s)."
+                "a": "The probability distribution of one variable from a joint distribution, obtained by summing/integrating out the other variable(s).",
+                "explain": "This module moves from single-variable distributions (Module 2) to describing how TWO variables behave together — the marginal distribution is what you get if you 'ignore' the other variable entirely, recovering the single-variable view as a special case buried inside the fuller joint picture."
             },
             {
                 "q": "What is a 'conditional distribution'?",
-                "a": "The probability distribution of one variable given a specific (fixed) value of another variable."
+                "a": "The probability distribution of one variable given a specific (fixed) value of another variable.",
+                "explain": "This is the direct bridge into Module 5's whole topic — conditional distributions here are a snapshot at one fixed value of the conditioning variable, while Module 5's conditional expectation treats the conditioning variable as still random, building a function of it rather than a single number."
             },
             {
                 "q": "What condition must hold for two random variables $X$ and $Y$ to be independent?",
-                "a": "$f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all $x,y$ — the joint function factorises as the product of marginals."
+                "a": "$f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all $x,y$ — the joint function factorises as the product of marginals.",
+                "explain": "This factorisation condition is the formal, precise version of the everyday idea 'knowing X tells you nothing about Y' — it must hold for EVERY pair of values $(x,y)$, not just on average, which is a stronger requirement than the zero-covariance condition covered later in this module."
             },
             {
                 "q": "How is the covariance of two random variables defined?",
-                "a": "$\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$"
+                "a": "$\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$",
+                "explain": "This formula is worth deriving intuitively: it measures whether $X$ and $Y$ tend to be simultaneously above (or simultaneously below) their own means — if they do, $E[XY]$ tends to exceed $E[X]E[Y]$, giving positive covariance; if one tends to be above its mean when the other is below, covariance is negative."
             },
             {
                 "q": "How is the correlation coefficient related to covariance?",
-                "a": "$\\rho = \\frac{\\text{Cov}(X,Y)}{\\sqrt{\\text{Var}(X)\\text{Var}(Y)}}$, a standardised (unit-free) version of covariance."
+                "a": "$\\rho = \\frac{\\text{Cov}(X,Y)}{\\sqrt{\\text{Var}(X)\\text{Var}(Y)}}$, a standardised (unit-free) version of covariance.",
+                "explain": "Dividing by the standard deviations rescales covariance into a fixed range (between $-1$ and $+1$, per Module 11), which is what makes correlation comparable ACROSS different pairs of variables measured in different units — raw covariance alone can't be compared this way, since its size depends on the variables' own scales."
             },
             {
                 "q": "If $X$ and $Y$ are independent, what is $\\text{Cov}(X,Y)$?",
-                "a": "Zero."
+                "a": "Zero.",
+                "explain": "This follows directly from the independence factorisation above: independence gives $E[XY]=E[X]E[Y]$ (a standard result for independent variables), which makes the covariance formula's two terms cancel exactly to zero."
             },
             {
                 "q": "Does zero covariance imply independence?",
-                "a": "No — zero covariance means no linear relationship, but there could still be non-linear dependence."
+                "a": "No — zero covariance means no linear relationship, but there could still be non-linear dependence.",
+                "explain": "This is one of the most important 'gotchas' in the whole syllabus, worth being able to state confidently: independence is a STRONGER condition than zero covariance — independence implies zero covariance (previous card), but the reverse implication fails, exactly as the worked counterexample later in this module demonstrates."
             },
             {
                 "q": "What is the formula for the variance of a linear combination $aX+bY$?",
-                "a": "$\\text{Var}(aX+bY) = a^2\\text{Var}(X) + b^2\\text{Var}(Y) + 2ab\\,\\text{Cov}(X,Y)$"
+                "a": "$\\text{Var}(aX+bY) = a^2\\text{Var}(X) + b^2\\text{Var}(Y) + 2ab\\,\\text{Cov}(X,Y)$",
+                "explain": "This is one of the single most-used formulas in the whole CS1/CS2 syllabus — it's worth being able to derive it (expand $\\text{Var}(aX+bY)=E[(aX+bY)^2]-(E[aX+bY])^2$ and simplify) rather than just memorising it, since variants of it reappear constantly in portfolio/aggregate-risk calculations."
             },
             {
                 "q": "How does the formula for $\\text{Var}(aX+bY)$ simplify if $X$ and $Y$ are independent?",
-                "a": "The covariance term drops out: $\\text{Var}(aX+bY) = a^2\\text{Var}(X) + b^2\\text{Var}(Y)$"
+                "a": "The covariance term drops out: $\\text{Var}(aX+bY) = a^2\\text{Var}(X) + b^2\\text{Var}(Y)$",
+                "explain": "This is the special case examiners test most often, since it directly justifies 'variance of a sum of independent risks equals the sum of their variances' (with $a=b=1$) — an assumption that underlies a huge amount of aggregate-risk and portfolio-diversification reasoning throughout actuarial work."
             },
             {
                 "q": "How would you find the marginal distribution of $X$ from a joint discrete distribution?",
-                "a": "Sum the joint probabilities over all values of $Y$, for each value of $X$."
+                "a": "Sum the joint probabilities over all values of $Y$, for each value of $X$.",
+                "explain": "This is the discrete-case mechanics behind the marginal-distribution definition at the top of this module — for continuous joint distributions the same idea applies with an integral instead of a sum, integrating the joint density over all values of $Y$ at each fixed $x$."
             },
             {
                 "q": "How would you find the conditional probability function of $Y$ given $X=x$?",
-                "a": "$f_{Y|X}(y|x) = \\frac{f_{X,Y}(x,y)}{f_X(x)}$"
+                "a": "$f_{Y|X}(y|x) = \\frac{f_{X,Y}(x,y)}{f_X(x)}$",
+                "explain": "This is the everyday conditional-probability formula $P(A|B)=P(A\\cap B)/P(B)$ translated into distribution notation — the marginal $f_X(x)$ in the denominator is exactly what the earlier marginal-distribution card teaches you to compute, so these two cards feed directly into each other."
             },
             {
                 "q": "What is $E[XY]$ used for in calculating covariance?",
-                "a": "It's the expected value of the product of the two random variables, needed alongside the means to compute covariance."
+                "a": "It's the expected value of the product of the two random variables, needed alongside the means to compute covariance.",
+                "explain": "Calculating $E[XY]$ itself requires the joint distribution (summing/integrating $xy$ weighted by the joint probability/density) — this is precisely why covariance is a genuinely JOINT-distribution quantity, not something derivable from the two marginal distributions alone."
             },
             {
                 "q": "Give an example of two random variables that are dependent but have zero correlation.",
-                "a": "$X$ uniform on $[-1,1]$ and $Y=X^2$ — dependent, but correlation is zero due to the symmetric, non-linear relationship."
+                "a": "$X$ uniform on $[-1,1]$ and $Y=X^2$ — dependent, but correlation is zero due to the symmetric, non-linear relationship.",
+                "explain": "This is the concrete worked counterexample for the 'zero covariance doesn't imply independence' card above — $Y$ is completely DETERMINED by $X$ (about as dependent as two variables can be), yet the symmetric U-shaped relationship means positive and negative values of $X$ contribute cancelling terms to the covariance, driving it to exactly zero."
             },
             {
                 "q": "How is the expected value of a function of two jointly distributed random variables calculated?",
-                "a": "By summing/integrating the function's value at each point, weighted by the joint probability/density."
+                "a": "By summing/integrating the function's value at each point, weighted by the joint probability/density.",
+                "explain": "This is the general 'law of the unconscious statistician' extended to two variables — it's the same principle used to derive $E[XY]$ above, just stated for an arbitrary function $g(X,Y)$ rather than specifically the product function, making it the general template every joint-distribution expectation calculation follows."
             },
             {
                 "q": "Why is understanding joint distributions important for actuarial applications like reinsurance or portfolio risk?",
-                "a": "Many real quantities depend on the joint behaviour of several random variables, not just their individual behaviour."
+                "a": "Many real quantities depend on the joint behaviour of several random variables, not just their individual behaviour.",
+                "explain": "This closes the module with its practical justification — a reinsurer's total exposure across several policies, or a portfolio's overall risk, depends critically on whether the underlying risks move together (positive covariance, compounding risk) or independently/oppositely (diversification benefit), which is exactly what this module's tools are built to quantify."
             }
         ]
     },
@@ -4118,63 +4133,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is $E[Y|X=x]$?",
-                "a": "The expected value of $Y$, calculated using the conditional distribution of $Y$ given that $X$ takes the specific value $x$."
+                "a": "The expected value of $Y$, calculated using the conditional distribution of $Y$ given that $X$ takes the specific value $x$.",
+                "explain": "This is Module 4's conditional distribution taken one step further — instead of describing the whole shape of $Y$ given $X=x$, this collapses it down to a single summary number (its mean), giving you one value of $E[Y|X=x]$ for each possible value of $x$."
             },
             {
                 "q": "What is the 'tower property' (law of total expectation)?",
-                "a": "$E[Y] = E[E[Y|X]]$ — the overall mean equals the expectation, over $X$, of the conditional mean of $Y$ given $X$."
+                "a": "$E[Y] = E[E[Y|X]]$ — the overall mean equals the expectation, over $X$, of the conditional mean of $Y$ given $X$.",
+                "explain": "This is arguably the single most useful identity introduced in this whole module — read the inner $E[Y|X]$ as 'the conditional mean, viewed as a function of the random $X$' (see the dedicated card on this below), then the outer $E[\\cdot]$ averages that function over $X$'s own distribution, recovering the plain unconditional mean of $Y$."
             },
             {
                 "q": "What is the 'law of total variance' (conditional variance formula)?",
-                "a": "$\\text{Var}(Y) = E[\\text{Var}(Y|X)] + \\text{Var}(E[Y|X])$"
+                "a": "$\\text{Var}(Y) = E[\\text{Var}(Y|X)] + \\text{Var}(E[Y|X])$",
+                "explain": "This is the variance-level counterpart to the tower property above, and it's the single most important formula for credibility theory later in the syllabus (Modules 15-16) — the two cards immediately below unpack exactly what each of its two terms means."
             },
             {
                 "q": "What does the first term, $E[\\text{Var}(Y|X)]$, in the law of total variance represent?",
-                "a": "The average 'within-group' variance — variability in $Y$ remaining after accounting for $X$."
+                "a": "The average 'within-group' variance — variability in $Y$ remaining after accounting for $X$.",
+                "explain": "Picture $X$ as identifying which 'group' or 'risk' you're looking at — this term averages the leftover randomness WITHIN each group (e.g. how much an individual policyholder's claims vary year to year, even once you know exactly which policyholder they are)."
             },
             {
                 "q": "What does the second term, $\\text{Var}(E[Y|X])$, in the law of total variance represent?",
-                "a": "The 'between-group' variance — variability in the conditional means as $X$ varies."
+                "a": "The 'between-group' variance — variability in the conditional means as $X$ varies.",
+                "explain": "This term instead measures how much the GROUP AVERAGES themselves differ from each other (e.g. how much different policyholders' typical claim levels vary from one policyholder to the next) — together with the within-group term above, these two pieces are exactly what credibility theory weighs against each other."
             },
             {
                 "q": "Why is the law of total variance useful in actuarial applications like credibility theory?",
-                "a": "It decomposes total variability into within-risk and between-risk components, central to how credibility weights are derived."
+                "a": "It decomposes total variability into within-risk and between-risk components, central to how credibility weights are derived.",
+                "explain": "This is the direct link forward to Modules 15-16 — the credibility factor $Z$ is built from exactly the ratio of these two variance components: high between-risk variance (relative to within-risk) means individual experience is highly informative, pushing $Z$ toward 1, and vice versa."
             },
             {
                 "q": "If $Y$ and $X$ are independent, what does $E[Y|X=x]$ equal?",
-                "a": "$E[Y]$ — the conditional mean doesn't depend on $x$."
+                "a": "$E[Y]$ — the conditional mean doesn't depend on $x$.",
+                "explain": "This makes intuitive sense given Module 4's independence definition — if knowing $X$'s value tells you nothing about $Y$'s distribution at all, then the conditional mean must be the SAME number regardless of which value $x$ you condition on, i.e. it collapses back to the plain unconditional mean."
             },
             {
                 "q": "How would you use conditioning to find the unconditional mean of a compound distribution?",
-                "a": "Condition on the number of claims $N$, find the expected total given $N$, then take the expectation over $N$ using the tower property."
+                "a": "Condition on the number of claims $N$, find the expected total given $N$, then take the expectation over $N$ using the tower property.",
+                "explain": "This is the standard actuarial technique for aggregate claims: total claims $S = X_1+\\dots+X_N$ is hard to analyse directly since even the NUMBER of terms is random — conditioning on $N$ first (giving $E[S|N]=N\\cdot E[X]$ for i.i.d. claim sizes) turns it into a manageable two-step calculation via the tower property."
             },
             {
                 "q": "What is $E[Y|X]$ as a random variable (rather than $E[Y|X=x]$ as a number)?",
-                "a": "A function of the random variable $X$ itself — its value depends on the (random) outcome of $X$."
+                "a": "A function of the random variable $X$ itself — its value depends on the (random) outcome of $X$.",
+                "explain": "This distinction is genuinely subtle and worth sitting with: $E[Y|X=x]$ is a NUMBER once $x$ is fixed, but $E[Y|X]$ (no equals sign, no fixed value) is a RANDOM VARIABLE — it takes whatever value $E[Y|X=x]$ would be, for whichever $x$ actually gets realised, which is exactly why it can itself have an expectation and variance, as the tower property and law of total variance use."
             },
             {
                 "q": "Give an example of a practical actuarial scenario where conditional expectation would naturally be used.",
-                "a": "Finding the expected total claim amount for a risk, conditioning on an unknown/random underlying claim frequency or severity parameter."
+                "a": "Finding the expected total claim amount for a risk, conditioning on an unknown/random underlying claim frequency or severity parameter.",
+                "explain": "This is exactly the Bayesian credibility setup from Module 14 previewed here — the 'true' claim frequency or severity parameter for a given risk is itself treated as uncertain (random), and conditional expectation is the tool for combining that parameter uncertainty with the claims process it governs."
             },
             {
                 "q": "How does the tower property help simplify calculating $E[XY]$?",
-                "a": "You can write $E[XY] = E[X \\cdot E[Y|X]]$, replacing $Y$ with its conditional mean given $X$."
+                "a": "You can write $E[XY] = E[X \\cdot E[Y|X]]$, replacing $Y$ with its conditional mean given $X$.",
+                "explain": "This is a genuinely useful computational shortcut: since $X$ is already known/fixed once you're conditioning on it, it can be pulled outside the inner conditional expectation ($E[XY|X]=X\\cdot E[Y|X]$), then the tower property finishes the job by averaging over $X$ — often much easier than working with the full joint distribution directly."
             },
             {
                 "q": "Why might conditioning on a variable simplify an otherwise complex expectation calculation?",
-                "a": "Breaking a calculation into simpler conditional pieces can be much easier than working with the full joint distribution directly."
+                "a": "Breaking a calculation into simpler conditional pieces can be much easier than working with the full joint distribution directly.",
+                "explain": "This is the general design philosophy behind every technique in this module — rather than tackling a hard joint-distribution problem head-on, 'condition first, then average' repeatedly turns two-variable problems into a sequence of one-variable problems, each individually more tractable."
             },
             {
                 "q": "What is meant by 'iterated expectation'?",
-                "a": "Another name for the tower property — taking an expectation of a conditional expectation gives back the overall (unconditional) expectation."
+                "a": "Another name for the tower property — taking an expectation of a conditional expectation gives back the overall (unconditional) expectation.",
+                "explain": "Just a naming note worth having ready — 'tower property', 'law of total expectation' and 'iterated expectation' all refer to the exact same identity ($E[Y]=E[E[Y|X]]$), so don't be thrown if a question uses a different one of these three names."
             },
             {
                 "q": "How would you verify the law of total variance using a simple two-group example?",
-                "a": "Calculate the overall variance directly, then separately the within-group and between-group variance of the group means, and check they sum correctly."
+                "a": "Calculate the overall variance directly, then separately the within-group and between-group variance of the group means, and check they sum correctly.",
+                "explain": "This is a genuinely good self-check exercise: pick two small groups with different means and variances, compute the pooled overall variance by brute force, then compute it again via the two-term decomposition — confirming they match builds real confidence in the formula beyond just memorising it."
             },
             {
                 "q": "Why is conditional expectation described as itself a random variable when written as $E[Y|X]$?",
-                "a": "Because its value changes depending on the (random) value that $X$ takes, so it inherits randomness from $X$."
+                "a": "Because its value changes depending on the (random) value that $X$ takes, so it inherits randomness from $X$.",
+                "explain": "This closes the module by restating its most conceptually tricky point one more time — internalising that $E[Y|X]$ is random (not a fixed number) is the single biggest conceptual hurdle in this module, and it's exactly what makes expressions like $\\text{Var}(E[Y|X])$ in the law of total variance meaningful in the first place (you can't take the variance of a plain number)."
             }
         ]
     },
