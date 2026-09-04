@@ -3089,63 +3089,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the defining properties of standard Brownian motion $W_t$?",
-                "a": "$W_0 = 0$; independent increments; increments $W_t - W_s \\sim N(0, t-s)$ for $t>s$; and continuous paths."
+                "a": "$W_0 = 0$; independent increments; increments $W_t - W_s \\sim N(0, t-s)$ for $t>s$; and continuous paths.",
+                "explain": "This module marks a genuine gear-change in CM2 — from Modules 1-6's largely single-period, algebraic finance (utility, portfolios, CAPM) into continuous-TIME stochastic processes, which is the mathematical machinery Modules 8-14 need to price derivatives properly. These four properties are the axioms everything later builds from."
             },
             {
                 "q": "What is the distribution of $W_t$ for a standard Brownian motion?",
-                "a": "$W_t \\sim N(0, t)$"
+                "a": "$W_t \\sim N(0, t)$",
+                "explain": "This follows directly from the defining properties above: since $W_0=0$, the value at time $t$ is just the single increment $W_t-W_0$, which by definition is $N(0,t-0)=N(0,t)$ — worth noting the VARIANCE grows linearly with time, so the process spreads out (gets less predictable) the further into the future you look."
             },
             {
                 "q": "What does it mean for Brownian motion to have 'independent increments'?",
-                "a": "The change in the process over any time interval is independent of the change over any other non-overlapping time interval."
+                "a": "The change in the process over any time interval is independent of the change over any other non-overlapping time interval.",
+                "explain": "This is the direct continuous-time analogue of CS1's i.i.d. sampling assumption (Module 7 there) — it's precisely what makes Brownian motion 'memoryless' in a movement sense: knowing how the process moved yesterday tells you nothing about how it will move tomorrow, which is the mathematical embodiment of Module 1's weak-form market efficiency."
             },
             {
                 "q": "Why are the paths of Brownian motion described as continuous but 'nowhere differentiable'?",
-                "a": "The process moves continuously (no jumps) but is so erratic at every point that it has no well-defined instantaneous slope."
+                "a": "The process moves continuously (no jumps) but is so erratic at every point that it has no well-defined instantaneous slope.",
+                "explain": "This is a genuinely strange and important property worth sitting with — 'continuous' just means no sudden jumps, but 'nowhere differentiable' means the path is so jagged that ZOOMING IN at any point never reveals a smooth, straight-line-like slope, however far you magnify; this single fact is exactly why ordinary calculus breaks down and Ito calculus (Module 8) is needed instead."
             },
             {
                 "q": "What is a 'martingale'?",
-                "a": "A stochastic process where the expected future value, given all information up to now, equals the current value: $E[X_t \\mid \\mathcal{F}_s] = X_s$ for $t>s$."
+                "a": "A stochastic process where the expected future value, given all information up to now, equals the current value: $E[X_t \\mid \\mathcal{F}_s] = X_s$ for $t>s$.",
+                "explain": "This is the formal, precise version of a 'fair game' — no matter what's happened so far, your best guess for the future is always simply 'wherever you are right now', with no predictable drift up or down, which is exactly why it's the natural mathematical description of an efficient market's discounted prices."
             },
             {
                 "q": "Is standard Brownian motion a martingale?",
-                "a": "Yes — its expected future value, given current information, equals its current value (zero drift)."
+                "a": "Yes — its expected future value, given current information, equals its current value (zero drift).",
+                "explain": "This follows immediately from the independent-increments property: $E[W_t|\\mathcal{F}_s] = W_s + E[W_t-W_s|\\mathcal{F}_s] = W_s + 0$, since the future increment is independent of the past (hence its conditional mean is just its unconditional mean, zero) — Brownian motion is, in a sense, the SIMPLEST possible martingale."
             },
             {
                 "q": "What role does the martingale property play in 'fair game' pricing intuition?",
-                "a": "A martingale reflects no predictable drift, consistent with discounted asset prices not being systematically predictable under the risk-neutral measure."
+                "a": "A martingale reflects no predictable drift, consistent with discounted asset prices not being systematically predictable under the risk-neutral measure.",
+                "explain": "This is the deep connection between this module and the whole derivatives-pricing framework of Modules 12-14 — the entire risk-neutral valuation approach is built on the requirement that DISCOUNTED asset prices be martingales under the risk-neutral measure, which is precisely why this module's abstract definition matters so much later."
             },
             {
                 "q": "What is meant by a 'filtration' $\\mathcal{F}_t$ in this context?",
-                "a": "The information available up to time $t$, representing the history of the process observed so far."
+                "a": "The information available up to time $t$, representing the history of the process observed so far.",
+                "explain": "This is the formal notation for 'everything you know so far' that appears in the martingale definition above — it's worth reading $E[X_t|\\mathcal{F}_s]$ literally as 'the expected value of $X_t$, given everything observable up to time $s$', which is exactly the conditional expectation concept from CS1 Module 5, just applied to an entire evolving history rather than a single random variable."
             },
             {
                 "q": "What is the variance of the increment $W_t - W_s$ for standard Brownian motion?",
-                "a": "$t - s$"
+                "a": "$t - s$",
+                "explain": "This is exactly the defining property restated — worth noting it depends ONLY on the LENGTH of the time interval ($t-s$), not on where that interval sits in time or what happened before it, a 'stationary increments' property that combines with independence to make Brownian motion remarkably tractable mathematically."
             },
             {
                 "q": "How does Brownian motion relate to a random walk?",
-                "a": "Brownian motion is the limit of a discrete-time random walk as time steps become infinitesimally small and numerous, appropriately scaled."
+                "a": "Brownian motion is the limit of a discrete-time random walk as time steps become infinitesimally small and numerous, appropriately scaled.",
+                "explain": "This is genuinely CS1's Central Limit Theorem (Module 6 there) at work in a continuous-time setting — a random walk is a sum of many small independent steps, and just as the CLT shows sums of i.i.d. variables become normal, Brownian motion emerges as what a random walk looks like when you let the step size shrink to zero while the number of steps grows to infinity."
             },
             {
                 "q": "What is a key reason Brownian motion is used to model asset price randomness?",
-                "a": "Its independent, normally-distributed increments provide a tractable way to model continuous, unpredictable price movements."
+                "a": "Its independent, normally-distributed increments provide a tractable way to model continuous, unpredictable price movements.",
+                "explain": "'Tractable' is the operative word — Brownian motion isn't chosen because it's a perfect description of real markets (Module 9 covers evidence against exact log-normality), but because its clean mathematical properties (Gaussian increments, the martingale property, well-developed calculus tools) make derivative pricing problems genuinely solvable."
             },
             {
                 "q": "Give one property that would disqualify a process from being a martingale.",
-                "a": "Having a non-zero expected drift given current information, i.e. $E[X_t \\mid \\mathcal{F}_s] \\neq X_s$."
+                "a": "Having a non-zero expected drift given current information, i.e. $E[X_t \\mid \\mathcal{F}_s] \\neq X_s$.",
+                "explain": "This is worth connecting directly to Module 8's Ito processes — a general Ito process $dX_t=\\mu\\,dt+\\sigma\\,dW_t$ has a non-zero drift term $\\mu$ (unless $\\mu=0$), and it's exactly that drift which prevents it from being a martingale in general; only the driving Brownian motion piece itself, or a process specifically engineered to have zero drift, qualifies."
             },
             {
                 "q": "What does 'quadratic variation' of Brownian motion over $[0,t]$ equal?",
                 "a": "$t$ — a distinctive feature exploited in stochastic calculus (e.g. Ito's Lemma)."
+                ,"explain": "This is the deep mathematical fact underlying why Ito's Lemma (Module 8) needs an extra term beyond the ordinary chain rule — for a normal, smooth function, quadratic variation would be exactly zero; the fact that Brownian motion's quadratic variation is non-zero (and in fact accumulates at rate exactly 1 per unit time) is the mathematical signature of its nowhere-differentiable, infinitely jagged paths."
             },
             {
                 "q": "Why can't standard calculus techniques be applied directly to functions of Brownian motion?",
-                "a": "Because Brownian motion is nowhere differentiable and has non-zero quadratic variation — stochastic (Ito) calculus is needed instead."
+                "a": "Because Brownian motion is nowhere differentiable and has non-zero quadratic variation — stochastic (Ito) calculus is needed instead.",
+                "explain": "This closes the loop between the two properties emphasised throughout this module (nowhere differentiable, non-zero quadratic variation) and directly motivates the entire next module — Module 8's Ito's Lemma exists specifically to handle functions of a process with exactly these two awkward features, which ordinary calculus was never designed for."
             },
             {
                 "q": "What is the covariance $\\text{Cov}(W_s, W_t)$ for standard Brownian motion, with $s<t$?",
-                "a": "$\\min(s,t) = s$"
+                "a": "$\\min(s,t) = s$",
+                "explain": "This closes the module with a useful derivable fact, not one to simply memorise — write $W_t=W_s+(W_t-W_s)$, note the two pieces are independent (increments property), so $\\text{Cov}(W_s,W_t)=\\text{Cov}(W_s,W_s)+\\text{Cov}(W_s,W_t-W_s)=\\text{Var}(W_s)+0=s$, confirming the min$(s,t)$ result directly from the module's opening axioms."
             }
         ]
     },
