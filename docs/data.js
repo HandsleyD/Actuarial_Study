@@ -4707,63 +4707,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the simple linear regression model?",
-                "a": "$Y_i = \\alpha + \\beta x_i + \\epsilon_i$, with independent error terms usually assumed $N(0,\\sigma^2)$."
+                "a": "$Y_i = \\alpha + \\beta x_i + \\epsilon_i$, with independent error terms usually assumed $N(0,\\sigma^2)$.",
+                "explain": "This module turns Module 11's correlation (a symmetric measure of association) into a genuinely predictive/explanatory model — regression singles out one variable as the RESPONSE and treats the other as an EXPLANATORY variable, letting you predict/explain $Y$ from $x$, which correlation alone never claimed to do."
             },
             {
                 "q": "What method is typically used to estimate the slope and intercept in linear regression?",
-                "a": "Least squares — minimising the sum of squared residuals."
+                "a": "Least squares — minimising the sum of squared residuals.",
+                "explain": "The 'squared' is deliberate, not incidental — squaring makes the optimisation mathematically tractable (differentiable everywhere, with a unique closed-form minimum) and penalises large errors disproportionately more than small ones, which is exactly the intuition behind the slope formula in the next card."
             },
             {
                 "q": "What is the least squares estimate of the slope $\\beta$ in simple linear regression?",
-                "a": "$\\hat\\beta = \\frac{\\sum(x_i-\\bar{x})(y_i-\\bar{y})}{\\sum(x_i-\\bar{x})^2}$"
+                "a": "$\\hat\\beta = \\frac{\\sum(x_i-\\bar{x})(y_i-\\bar{y})}{\\sum(x_i-\\bar{x})^2}$",
+                "explain": "Notice the numerator is essentially the sample covariance between $x$ and $y$ (Module 4), and the denominator is the sample variance of $x$ — the regression slope is literally 'how much $Y$ and $X$ move together, scaled by how much $X$ itself varies', which is a genuinely useful way to remember this formula rather than memorising it as a standalone fact."
             },
             {
                 "q": "What is $R^2$ (the coefficient of determination) a measure of?",
-                "a": "The proportion of the total variability in the response explained by the fitted regression model."
+                "a": "The proportion of the total variability in the response explained by the fitted regression model.",
+                "explain": "For simple linear regression, $R^2$ is exactly the SQUARE of the Pearson correlation coefficient from Module 11 — this is a genuinely useful identity to know, since it directly connects this module's goodness-of-fit measure back to the correlation concept the whole regression topic builds on."
             },
             {
                 "q": "How would you perform statistical inference on the slope parameter $\\beta$?",
-                "a": "Using a $t$-test (or confidence interval) based on the estimated slope, its standard error, and the $t$-distribution with $n-2$ df."
+                "a": "Using a $t$-test (or confidence interval) based on the estimated slope, its standard error, and the $t$-distribution with $n-2$ df.",
+                "explain": "This is Module 9/10's inference machinery reapplied to a regression coefficient — the $n-2$ degrees of freedom (rather than $n-1$) reflects that estimating TWO parameters (both slope and intercept) from the same data 'uses up' two degrees of freedom, one more than the single-mean case from Module 7."
             },
             {
                 "q": "What is a 'residual' in regression?",
-                "a": "The difference between an observed value and the value predicted by the model, $e_i = y_i - \\hat{y}_i$"
+                "a": "The difference between an observed value and the value predicted by the model, $e_i = y_i - \\hat{y}_i$",
+                "explain": "Residuals are the SAMPLE, observable stand-in for the model's unobservable true error terms $\\epsilon_i$ — since you can never see the true errors directly, checking whether the residuals behave the way $\\epsilon_i\\sim N(0,\\sigma^2)$ predicts (constant spread, no pattern, roughly normal) is the practical way to assess whether the model's assumptions actually hold."
             },
             {
                 "q": "How can residuals be used to check the validity of a linear regression model?",
-                "a": "By plotting them against fitted values or explanatory variables to check for patterns violating model assumptions."
+                "a": "By plotting them against fitted values or explanatory variables to check for patterns violating model assumptions.",
+                "explain": "This is the module's central diagnostic technique, and it's worth having a clear mental image: a GOOD residual plot looks like a random, structureless scatter around zero; any visible pattern (a curve, a funnel shape, a trend) signals a specific assumption violation, exactly as the next card demonstrates for one common pattern."
             },
             {
                 "q": "What pattern in a residual plot would suggest non-constant error variance (heteroscedasticity)?",
-                "a": "A 'funnel' or fan shape, where the spread of residuals changes systematically with the fitted values."
+                "a": "A 'funnel' or fan shape, where the spread of residuals changes systematically with the fitted values.",
+                "explain": "This directly violates the model's assumed constant $\\sigma^2$ across all observations — a classic real-world example is spending data, where high-income households' spending varies far more in absolute terms than low-income households', producing exactly this widening 'funnel' shape in a residual plot."
             },
             {
                 "q": "What is the difference between a confidence interval for a 'mean response' and a prediction interval for an 'individual response'?",
-                "a": "The mean response interval only reflects estimation uncertainty; the prediction interval also includes individual variability, so it's wider."
+                "a": "The mean response interval only reflects estimation uncertainty; the prediction interval also includes individual variability, so it's wider.",
+                "explain": "This is Module 9's confidence-vs-prediction-interval distinction reapplied here — a mean-response interval brackets where the AVERAGE $Y$ sits for a given $x$ (only parameter-estimation uncertainty), while a prediction interval brackets where one NEW individual observation might land (adding the model's own residual variance $\\sigma^2$ on top)."
             },
             {
                 "q": "How does multiple linear regression differ from simple linear regression?",
-                "a": "It includes more than one explanatory variable, modelling the response as a linear combination of several predictors."
+                "a": "It includes more than one explanatory variable, modelling the response as a linear combination of several predictors.",
+                "explain": "The underlying least-squares fitting principle doesn't change at all — what changes is that you're now finding the best-fitting hyperplane through a higher-dimensional space rather than the best-fitting line through a 2D scatter, which introduces the multicollinearity concern covered in the next card."
             },
             {
                 "q": "What issue can arise in multiple regression if explanatory variables are highly correlated with each other?",
-                "a": "Multicollinearity, which can make individual coefficient estimates unstable and hard to interpret."
+                "a": "Multicollinearity, which can make individual coefficient estimates unstable and hard to interpret.",
+                "explain": "This connects directly back to Module 1's PCA card — if two explanatory variables are highly correlated, the model struggles to disentangle which one is 'really' driving the response, producing unstable, hard-to-interpret coefficients; PCA (reducing correlated predictors to uncorrelated components first) is one standard fix for exactly this problem."
             },
             {
                 "q": "What is an 'interaction term' in a regression model?",
-                "a": "A term (typically the product of two explanatory variables) allowing one variable's effect to depend on the level of another."
+                "a": "A term (typically the product of two explanatory variables) allowing one variable's effect to depend on the level of another.",
+                "explain": "Without an interaction term, a regression model assumes each predictor's effect is the same regardless of the other predictors' values (a genuinely strong, often unrealistic assumption) — an interaction term relaxes this, letting (for example) the effect of age on claim cost differ depending on whether the policyholder is male or female."
             },
             {
                 "q": "How would you use measures of model fit to select an appropriate set of explanatory variables?",
-                "a": "Compare models using criteria like adjusted $R^2$, AIC, or significance tests, favouring good fit without unnecessary complexity."
+                "a": "Compare models using criteria like adjusted $R^2$, AIC, or significance tests, favouring good fit without unnecessary complexity.",
+                "explain": "The word 'adjusted' matters — plain $R^2$ can only ever increase as you add more variables (even useless ones), so adjusted $R^2$ and AIC both explicitly penalise model complexity, addressing the same overfitting concern flagged in Module 1's PCA card and echoed again in Module 13's GLM model-selection material."
             },
             {
                 "q": "What does it mean for an explanatory variable to be a 'factor' (as opposed to continuous)?",
-                "a": "It takes categorical values, typically represented using indicator/dummy variables for each level."
+                "a": "It takes categorical values, typically represented using indicator/dummy variables for each level.",
+                "explain": "This is worth understanding mechanically: a categorical variable with, say, three levels (e.g. region: North/South/East) gets converted into two 0/1 indicator variables before it can enter a linear regression equation at all, since the raw category labels themselves have no meaningful numeric scale to multiply by a coefficient."
             },
             {
                 "q": "Why is checking residuals important even if $R^2$ is high?",
-                "a": "A high $R^2$ doesn't guarantee the model's assumptions are valid — residual analysis can reveal issues a summary statistic would miss."
+                "a": "A high $R^2$ doesn't guarantee the model's assumptions are valid — residual analysis can reveal issues a summary statistic would miss.",
+                "explain": "This closes the module with a genuinely important caution, sometimes illustrated with 'Anscombe's quartet' (four wildly different-looking datasets sharing nearly identical summary statistics, including $R^2$) — a single number can never substitute for actually looking at the data and its residuals, which is exactly why this module pairs numerical fit measures with visual residual diagnostics."
             }
         ]
     },
