@@ -9409,63 +9409,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "Why is risk measurement necessary, beyond simply identifying risks?",
-                "a": "Quantifying risk allows it to be compared, prioritised, and managed against a defined risk appetite, rather than remaining a purely qualitative concern."
+                "a": "Quantifying risk allows it to be compared, prioritised, and managed against a defined risk appetite, rather than remaining a purely qualitative concern.",
+                "explain": "This module turns from Module 26's WHAT (identifying and classifying risks) to HOW MUCH — worth reading this as the direct link back to Module 25's risk appetite: appetite is only a genuinely usable benchmark once actual risk levels can be measured in comparable terms against it."
             },
             {
                 "q": "What is 'Value at Risk' (VaR), as a risk measure?",
-                "a": "The loss amount that will not be exceeded with a given confidence level over a specified time horizon."
+                "a": "The loss amount that will not be exceeded with a given confidence level over a specified time horizon.",
+                "explain": "This is CM2's VaR concept (Module 3 there) recalled directly in its general risk-management application — worth remembering CP1 wants the practical INTERPRETATION and use of this measure, not the calculation mechanics CM2 already covered in depth."
             },
             {
                 "q": "What is a limitation of VaR as a sole risk measure?",
-                "a": "It doesn't indicate the potential severity of losses beyond the VaR threshold."
+                "a": "It doesn't indicate the potential severity of losses beyond the VaR threshold.",
+                "explain": "This is exactly CM2's own critique of VaR restated here — worth noting CP1 expects you to recognise this limitation practically: two risks could have identical VaR figures yet very different tail severity beyond that threshold, a distinction VaR alone cannot reveal."
             },
             {
                 "q": "What is 'TailVaR' (Expected Shortfall), and how does it address VaR's limitation?",
-                "a": "The expected loss given that the loss exceeds the VaR threshold — it captures information about the severity of tail losses that VaR alone misses."
+                "a": "The expected loss given that the loss exceeds the VaR threshold — it captures information about the severity of tail losses that VaR alone misses.",
+                "explain": "This is CM2's TailVaR/coherent risk measure material recalled directly — worth remembering the same coherence/sub-additivity advantage highlighted there also applies here: TailVaR aggregates more sensibly across combined risks than VaR does, directly relevant to the risk aggregation card later in this module."
             },
             {
                 "q": "Why might qualitative risk assessment (e.g. a risk matrix of likelihood versus impact) be used alongside quantitative measures?",
-                "a": "Some risks (e.g. reputational, some operational risks) are difficult to quantify precisely but still need to be assessed and prioritised."
+                "a": "Some risks (e.g. reputational, some operational risks) are difficult to quantify precisely but still need to be assessed and prioritised.",
+                "explain": "This directly connects to Module 26's operational risk category and the data-scarcity challenge flagged later in this module — worth recognising qualitative assessment not as an inferior substitute for VaR/TailVaR, but as the genuinely appropriate tool for risk types that simply don't have the data or stable structure quantitative measures need."
             },
             {
                 "q": "What is a 'risk dashboard' or risk report typically used for?",
-                "a": "Summarising key risk information concisely for senior management/the board, supporting oversight and decision-making."
+                "a": "Summarising key risk information concisely for senior management/the board, supporting oversight and decision-making.",
+                "explain": "This connects directly to Module 25's board-oversight material — a risk dashboard is the practical DELIVERY MECHANISM that lets a board actually exercise the risk oversight responsibility Module 25 assigned to it, translating detailed measurement into something genuinely usable at that level."
             },
             {
                 "q": "Why is timely risk reporting important?",
-                "a": "Delayed reporting could mean risks aren't escalated and acted upon quickly enough to prevent or limit adverse outcomes."
+                "a": "Delayed reporting could mean risks aren't escalated and acted upon quickly enough to prevent or limit adverse outcomes.",
+                "explain": "This echoes Module 25's three-lines-of-defence escalation logic — a risk identified and measured accurately but reported too slowly effectively fails at the same point poor governance does (Module 25's card on models being ineffective if their output isn't acted on in time)."
             },
             {
                 "q": "What does it mean for risk reporting to be tailored to its audience?",
-                "a": "Different levels of detail/technicality are appropriate for a board summary versus a detailed technical risk report for a specialist committee."
+                "a": "Different levels of detail/technicality are appropriate for a board summary versus a detailed technical risk report for a specialist committee.",
+                "explain": "This is Module 2's clear-communication principle applied directly to risk reporting — worth recognising this as the same 'tailor advice to the recipient' idea recurring throughout CP1 (Module 5's customer communication, Module 15's governance-suitability card), now applied to internal risk communication specifically."
             },
             {
                 "q": "Why might an organisation use risk measures relative to a defined risk appetite/limit, rather than just absolute figures?",
-                "a": "It provides immediate context on whether current risk levels are within acceptable bounds, supporting clearer decision-making."
+                "a": "It provides immediate context on whether current risk levels are within acceptable bounds, supporting clearer decision-making.",
+                "explain": "This directly resolves the module's opening question — an absolute VaR figure alone doesn't tell a board whether to be concerned; only comparing it against Module 25's risk appetite/limits gives that number genuine decision-relevant meaning."
             },
             {
                 "q": "What is 'aggregation' of risk, in the context of risk measurement?",
-                "a": "Combining the measurement of multiple individual risks into an overall assessment of total organisational risk, accounting for diversification/correlation between them."
+                "a": "Combining the measurement of multiple individual risks into an overall assessment of total organisational risk, accounting for diversification/correlation between them.",
+                "explain": "This is CM2's portfolio theory and Module 14's asset-correlation material generalised beyond just investment risk to EVERY risk category Module 26 catalogued — worth recognising the same underlying mathematics (combining imperfectly-correlated exposures) recurring here at the whole-organisation level."
             },
             {
                 "q": "Why is risk aggregation more complex than simply summing individual risk measures?",
-                "a": "Risks are often not perfectly correlated, so naively summing individual measures can overstate the true combined risk (ignoring diversification benefits)."
+                "a": "Risks are often not perfectly correlated, so naively summing individual measures can overstate the true combined risk (ignoring diversification benefits).",
+                "explain": "This is precisely CM2's two-asset portfolio variance logic (Module 4 there) restated for general risk aggregation — worth also recalling Module 12's crisis-correlation warning here: aggregation benefits calculated from normal-condition correlations can overstate the TRUE diversification available during genuine stress."
             },
             {
                 "q": "What is 'key risk indicator' (KRI) reporting?",
-                "a": "Monitoring specific measurable indicators that provide early warning signals of a risk materialising or increasing."
+                "a": "Monitoring specific measurable indicators that provide early warning signals of a risk materialising or increasing.",
+                "explain": "This is a practical, forward-looking complement to the trend-reporting card that follows — worth connecting to Module 26's emerging-risk material: a well-chosen KRI can flag a risk moving in a concerning direction well before it fully materialises into an actual loss."
             },
             {
                 "q": "Why might trends in risk measures over time be as important to report as a single point-in-time snapshot?",
-                "a": "Trends can reveal a risk that is steadily worsening, prompting earlier action than waiting for it to breach an absolute limit."
+                "a": "Trends can reveal a risk that is steadily worsening, prompting earlier action than waiting for it to breach an absolute limit.",
+                "explain": "This directly complements the KRI concept above — a single snapshot within limits could still be masking a worrying trajectory, so trend reporting is what actually enables the forward-looking, early-action approach this module's closing card advocates."
             },
             {
                 "q": "What challenge arises in measuring risks (like operational or reputational risk) that lack extensive historical loss data?",
-                "a": "Statistical measurement is harder without sufficient data, often requiring more judgement-based or scenario-based approaches instead."
+                "a": "Statistical measurement is harder without sufficient data, often requiring more judgement-based or scenario-based approaches instead.",
+                "explain": "This is Module 20's assumption-uncertainty and judgement themes, and Module 26's emerging-risk difficulty, both recurring here specifically for measurement — worth recognising the qualitative risk-matrix approach from earlier in this module as the practical response to exactly this data-scarcity problem."
             },
             {
                 "q": "Why is it important for risk reporting to flag not just current risk levels, but also emerging or forward-looking risk concerns?",
-                "a": "Effective risk management should be forward-looking, allowing action to be taken before a risk fully materialises into a loss."
+                "a": "Effective risk management should be forward-looking, allowing action to be taken before a risk fully materialises into a loss.",
+                "explain": "This closing card ties the whole module together — KRIs, trend reporting, and forward-looking commentary all serve the SAME purpose: shifting risk management from a purely reactive, after-the-fact exercise toward the proactive, early-warning approach that makes Module 31's risk controls genuinely effective rather than reactive damage control."
             }
         ]
     },
@@ -9476,63 +9491,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'risk transfer'?",
-                "a": "Shifting some or all of a risk's financial consequences to another party, in exchange for a payment or other consideration."
+                "a": "Shifting some or all of a risk's financial consequences to another party, in exchange for a payment or other consideration.",
+                "explain": "This module develops Module 28's reinsurance preview and Module 16's hedging-derivatives material into a full, general treatment of risk transfer as ONE of the response options Module 31 will place alongside avoidance, mitigation, and retention."
             },
             {
                 "q": "What is 'reinsurance'?",
-                "a": "A form of risk transfer where an insurer (the cedant) transfers part of its insurance risk to another insurer (the reinsurer)."
+                "a": "A form of risk transfer where an insurer (the cedant) transfers part of its insurance risk to another insurer (the reinsurer).",
+                "explain": "This is CS2 and CM2's whole reinsurance curriculum recalled at the conceptual level — worth remembering CP1 wants the STRATEGIC why (the next card) rather than CS2's mathematical transformation formulas for retained/ceded claims."
             },
             {
                 "q": "Why might an insurer use reinsurance rather than simply retaining all risk itself?",
-                "a": "To reduce volatility, limit exposure to large losses, free up capital, and access reinsurer expertise/capacity for risks it couldn't otherwise write."
+                "a": "To reduce volatility, limit exposure to large losses, free up capital, and access reinsurer expertise/capacity for risks it couldn't otherwise write.",
+                "explain": "This directly echoes Module 28's card on reinsurance widening what an insurer can responsibly underwrite, and previews the capital-requirement card later in this module — worth noting these are genuinely FOUR distinct benefits, not one, each potentially relevant to different CP1 scenario questions."
             },
             {
                 "q": "What is 'proportional' reinsurance, in brief?",
-                "a": "An arrangement where the reinsurer takes a fixed proportion of both premium and claims on the ceded business."
+                "a": "An arrangement where the reinsurer takes a fixed proportion of both premium and claims on the ceded business.",
+                "explain": "This is CS2 Module 18's proportional reinsurance recalled at the summary level appropriate for CP1's scenario-based exam style, rather than the transformation mathematics that subject develops in depth."
             },
             {
                 "q": "What is 'non-proportional' (excess of loss) reinsurance, in brief?",
-                "a": "An arrangement where the reinsurer pays claims exceeding a specified retention level, rather than sharing all claims proportionally."
+                "a": "An arrangement where the reinsurer pays claims exceeding a specified retention level, rather than sharing all claims proportionally.",
+                "explain": "This is the direct counterpart to proportional reinsurance above, and it's worth recalling CS2's key distinction: excess of loss specifically targets the TAIL of the severity distribution, while proportional reinsurance shares every claim uniformly regardless of size."
             },
             {
                 "q": "What is 'financial reinsurance'?",
-                "a": "A reinsurance arrangement primarily structured to achieve a financial/capital management effect (e.g. financing new business strain), rather than pure risk transfer."
+                "a": "A reinsurance arrangement primarily structured to achieve a financial/capital management effect (e.g. financing new business strain), rather than pure risk transfer.",
+                "explain": "This is precisely Module 24's reinsurance financing card, now placed in this module's broader risk-transfer classification — worth keeping this distinct from ordinary risk transfer in an exam answer: the PRIMARY purpose here is timing/capital, not shifting genuine insurance risk."
             },
             {
                 "q": "What is 'securitisation' of insurance risk?",
-                "a": "Transferring risk to capital markets investors by issuing securities (e.g. catastrophe bonds) whose payouts are linked to specified insurance loss events."
+                "a": "Transferring risk to capital markets investors by issuing securities (e.g. catastrophe bonds) whose payouts are linked to specified insurance loss events.",
+                "explain": "This is worth recognising as a fundamentally different COUNTERPARTY from traditional reinsurance — rather than transferring risk to another (re)insurer, securitisation reaches the much larger and more diverse capital markets, directly relevant to the diversifying-counterparties card later in this module."
             },
             {
                 "q": "Why might an insurer use securitisation in addition to (or instead of) traditional reinsurance?",
-                "a": "It can access a wider pool of capital (capital markets investors), potentially at competitive terms, and diversify sources of risk transfer capacity."
+                "a": "It can access a wider pool of capital (capital markets investors), potentially at competitive terms, and diversify sources of risk transfer capacity.",
+                "explain": "This directly connects to Module 26's concentration risk material — relying solely on a small number of traditional reinsurers concentrates counterparty exposure, so securitisation is partly a diversification tool for the risk TRANSFER programme itself, not just the underlying risks."
             },
             {
                 "q": "What is a 'catastrophe bond'?",
-                "a": "A security whose principal/interest payments are reduced or forfeited if a specified catastrophic event occurs, effectively transferring that risk to bond investors."
+                "a": "A security whose principal/interest payments are reduced or forfeited if a specified catastrophic event occurs, effectively transferring that risk to bond investors.",
+                "explain": "This is CS2 and Module 8's catastrophe risk material given its capital-markets solution — worth noting the elegant mechanism: bond investors accept reduced/forfeited payments specifically in the catastrophe scenario, effectively acting as a reinsurer without needing to be a licensed (re)insurance company at all."
             },
             {
                 "q": "What is 'hedging', as a form of risk transfer for market risks?",
-                "a": "Using financial instruments (e.g. derivatives) to offset exposure to a specific risk, such as interest rate or currency movements."
+                "a": "Using financial instruments (e.g. derivatives) to offset exposure to a specific risk, such as interest rate or currency movements.",
+                "explain": "This is Module 11's and Module 16's derivatives-hedging material recalled directly, now placed within this module's general risk-transfer framework — worth recognising hedging as reinsurance's counterpart specifically for MARKET risk (Module 26), rather than insurance/underwriting risk."
             },
             {
                 "q": "Why might an organisation only partially, rather than fully, transfer a given risk?",
-                "a": "Full transfer can be costly, and retaining some risk keeps the organisation's incentives aligned with careful risk management (avoiding pure moral hazard)."
+                "a": "Full transfer can be costly, and retaining some risk keeps the organisation's incentives aligned with careful risk management (avoiding pure moral hazard).",
+                "explain": "This is a genuinely important point worth connecting to Module 5's and Module 23's moral hazard material from the OTHER side of the transaction — just as excesses keep a policyholder incentivised to avoid loss, an insurer retaining some risk itself stays incentivised to underwrite and manage that risk carefully, rather than passing everything on and losing that discipline."
             },
             {
                 "q": "What is 'counterparty risk' introduced by risk transfer arrangements themselves?",
-                "a": "The risk that the party to whom risk was transferred (e.g. a reinsurer) fails to honour its obligations when called upon."
+                "a": "The risk that the party to whom risk was transferred (e.g. a reinsurer) fails to honour its obligations when called upon.",
+                "explain": "This is Module 26's credit risk category applied specifically to risk transfer arrangements — worth recognising the genuinely important irony here: the very mechanism used to REDUCE one risk (insurance/market risk) introduces a NEW risk (credit/counterparty risk) that has to be separately managed."
             },
             {
                 "q": "Why is diversifying risk transfer counterparties (e.g. using multiple reinsurers) often considered good practice?",
-                "a": "It reduces concentration/counterparty risk, so the failure of a single counterparty doesn't undermine the whole risk transfer programme."
+                "a": "It reduces concentration/counterparty risk, so the failure of a single counterparty doesn't undermine the whole risk transfer programme.",
+                "explain": "This is Module 26's concentration risk and Module 17's multiple-investment-managers diversification logic both applied directly to the counterparty risk just introduced — worth recognising this as the SAME diversification principle recurring for the fourth or fifth time across CP1, now specifically protecting the risk transfer programme itself."
             },
             {
                 "q": "How does risk transfer interact with an organisation's overall capital requirements?",
-                "a": "Effective risk transfer typically reduces the retained risk, which can correspondingly reduce the regulatory/economic capital the organisation needs to hold."
+                "a": "Effective risk transfer typically reduces the retained risk, which can correspondingly reduce the regulatory/economic capital the organisation needs to hold.",
+                "explain": "This directly previews Module 37's capital requirements material — worth connecting to Module 4's risk-based capital principle: since capital exists to buffer RETAINED risk (Module 20's margin for adverse deviation logic scaled up), transferring risk away mechanically reduces how much of that buffer is needed."
             },
             {
                 "q": "Why might the cost of risk transfer (e.g. reinsurance premium) itself need to be weighed carefully against the risk reduction achieved?",
-                "a": "Risk transfer isn't free — the organisation must judge whether the price charged for taking on the risk is worth the reduction in retained risk/volatility."
+                "a": "Risk transfer isn't free — the organisation must judge whether the price charged for taking on the risk is worth the reduction in retained risk/volatility.",
+                "explain": "This closing card echoes Module 5's and Module 23's recurring 'nothing is free' theme — worth recognising this as the same cost-benefit judgement recurring throughout CP1 (guarantees have a cost, options have a cost, and here, risk transfer has a cost too), always requiring a genuine weighing rather than treating risk reduction as automatically worth any price."
             }
         ]
     },
@@ -9543,63 +9573,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'risk avoidance'?",
-                "a": "Choosing not to undertake an activity at all, in order to avoid the risk associated with it entirely."
+                "a": "Choosing not to undertake an activity at all, in order to avoid the risk associated with it entirely.",
+                "explain": "This module completes Part 5's risk-response toolkit by placing avoidance, mitigation, and retention alongside Module 30's risk transfer — worth treating this opening card as the most extreme response: rather than managing a risk in any way, simply don't take it on, echoing Module 28's card on declining risks that are fundamentally unquantifiable."
             },
             {
                 "q": "What is 'risk mitigation' (or reduction)?",
-                "a": "Taking action to reduce the likelihood and/or impact of a risk, without transferring it or avoiding the activity entirely."
+                "a": "Taking action to reduce the likelihood and/or impact of a risk, without transferring it or avoiding the activity entirely.",
+                "explain": "This is worth distinguishing sharply from risk transfer (Module 30) — mitigation reduces the risk ITSELF (its probability or severity), while transfer leaves the underlying risk unchanged and instead moves who bears its financial consequences; both can be used together, as this module's later card on layered controls explains."
             },
             {
                 "q": "What is 'risk retention'?",
-                "a": "Deliberately choosing to bear a risk (or part of it) within the organisation, rather than transferring or avoiding it."
+                "a": "Deliberately choosing to bear a risk (or part of it) within the organisation, rather than transferring or avoiding it.",
+                "explain": "This is the fourth and final response category in this module's framework (alongside avoidance, mitigation, transfer) — worth connecting directly to Module 30's moral-hazard card: some deliberate retention is often GOOD practice, not merely a fallback when other options are unavailable."
             },
             {
                 "q": "Why might an organisation deliberately retain some risk rather than transfer or mitigate it fully?",
-                "a": "Some risk retention may be cost-effective (e.g. for small, predictable risks) or unavoidable, and full transfer/mitigation is rarely costless."
+                "a": "Some risk retention may be cost-effective (e.g. for small, predictable risks) or unavoidable, and full transfer/mitigation is rarely costless.",
+                "explain": "This directly extends Module 30's closing card on risk transfer cost — worth recognising the FULL response framework this module builds (avoidance, mitigation, transfer, retention) as fundamentally a cost-benefit exercise across all four options, not a hierarchy where transfer or mitigation is always preferred over retention."
             },
             {
                 "q": "Give an example of an operational risk control.",
-                "a": "Segregation of duties, staff training, or system access controls, aimed at reducing the likelihood of operational errors or fraud."
+                "a": "Segregation of duties, staff training, or system access controls, aimed at reducing the likelihood of operational errors or fraud.",
+                "explain": "This is Module 26's operational risk category given its concrete mitigation examples — worth noting these are all internal, process-based controls, in clear contrast to Module 30's market-facing risk transfer tools, which is exactly why operational risk generally needs a different management approach than market or insurance risk."
             },
             {
                 "q": "What is 'diversification' as a risk control technique?",
-                "a": "Spreading exposure across a range of different risks/assets so that no single adverse event has a disproportionate impact on the whole organisation."
+                "a": "Spreading exposure across a range of different risks/assets so that no single adverse event has a disproportionate impact on the whole organisation.",
+                "explain": "This is CM2's portfolio diversification and Module 29's risk aggregation material given its formal classification as a MITIGATION technique — worth recognising diversification's genuinely distinct role from avoidance, transfer, or retention: it doesn't remove or shift risk, it changes the SHAPE of aggregate exposure across many sources."
             },
             {
                 "q": "Why is diversification generally more effective against idiosyncratic risk than systematic risk?",
-                "a": "Idiosyncratic risks are (largely) independent across exposures and average out with diversification; systematic risks affect all exposures simultaneously and don't diversify away."
+                "a": "Idiosyncratic risks are (largely) independent across exposures and average out with diversification; systematic risks affect all exposures simultaneously and don't diversify away.",
+                "explain": "This is precisely Module 10's idiosyncratic-versus-market property risk distinction and Module 12's correlations-go-to-one-in-a-crisis warning, both now formalised as this module's key limitation on diversification — worth carrying this caveat into every diversification-based answer: it manages one type of risk far better than the other."
             },
             {
                 "q": "What is a 'contingency plan' or 'business continuity plan', as a risk control?",
-                "a": "A predetermined plan for how the organisation will respond to and recover from a significant adverse event, limiting its impact."
+                "a": "A predetermined plan for how the organisation will respond to and recover from a significant adverse event, limiting its impact.",
+                "explain": "Worth noting this is a genuinely different KIND of control from the preventive ones (segregation of duties, limits) elsewhere in this module — a contingency plan doesn't reduce the PROBABILITY of an adverse event at all, it reduces the IMPACT once one has already occurred, a distinction worth being explicit about."
             },
             {
                 "q": "Why might internal controls (e.g. approval limits, checks) be considered a key risk control for operational risk?",
-                "a": "They reduce the likelihood of errors, fraud, or unauthorised actions going undetected, limiting potential losses."
+                "a": "They reduce the likelihood of errors, fraud, or unauthorised actions going undetected, limiting potential losses.",
+                "explain": "This connects directly to Module 25's three-lines-of-defence model — internal controls are precisely the FIRST-line, day-to-day mechanisms that (alongside second-line oversight and third-line audit) implement operational risk mitigation in practice."
             },
             {
                 "q": "What is meant by a 'risk limit' or 'exposure limit'?",
-                "a": "A predefined maximum level of exposure to a particular risk that the organisation will accept, used to keep risk-taking within appetite."
+                "a": "A predefined maximum level of exposure to a particular risk that the organisation will accept, used to keep risk-taking within appetite.",
+                "explain": "This is Module 25's cascaded-risk-appetite concept and Module 28's underwriting limits both given a general treatment here — worth recognising limits as the mechanism that translates an abstract risk appetite statement into something concretely enforceable at the point a specific risk decision is made."
             },
             {
                 "q": "Why might setting risk limits be considered a form of risk control, even though it doesn't reduce the underlying risk itself?",
-                "a": "It constrains the organisation's exposure, preventing risk-taking from growing beyond what the organisation can safely bear."
+                "a": "It constrains the organisation's exposure, preventing risk-taking from growing beyond what the organisation can safely bear.",
+                "explain": "This is worth reading alongside the mitigation-versus-transfer distinction from earlier in this module — a limit is neither mitigation nor transfer, it's closer to a boundary on RETENTION: it doesn't change the nature of the risk, just caps how much of it the organisation is willing to carry."
             },
             {
                 "q": "What is 'risk-based capital', in relation to risk control?",
-                "a": "Holding capital proportional to the level of risk taken, providing a financial buffer against retained risks that aren't otherwise mitigated or transferred."
+                "a": "Holding capital proportional to the level of risk taken, providing a financial buffer against retained risks that aren't otherwise mitigated or transferred.",
+                "explain": "This directly previews Module 37's capital requirements material — worth recognising capital as the residual backstop specifically for whatever risk remains RETAINED after avoidance, mitigation, and transfer have already been applied, closing the loop on this module's full risk-response framework."
             },
             {
                 "q": "Why might an organisation combine several different risk control techniques for a single significant risk, rather than relying on just one?",
-                "a": "A layered ('defence in depth') approach provides more robust protection, since no single control technique is likely to be perfectly effective on its own."
+                "a": "A layered ('defence in depth') approach provides more robust protection, since no single control technique is likely to be perfectly effective on its own.",
+                "explain": "This is worth connecting to Module 25's three lines of defence — 'defence in depth' is really the same layered-redundancy philosophy applied to risk CONTROLS specifically, recognising that any single technique (however well-designed) can fail, so genuine robustness comes from multiple independent layers."
             },
             {
                 "q": "How does the appropriate mix of avoidance, mitigation, transfer, and retention typically depend on the specific risk being managed?",
-                "a": "It depends on factors like the risk's likelihood, potential severity, correlation with other risks, and the cost of each risk management option relative to its benefit."
+                "a": "It depends on factors like the risk's likelihood, potential severity, correlation with other risks, and the cost of each risk management option relative to its benefit.",
+                "explain": "This closing-adjacent card is worth treating as the module's central practical takeaway — there's no universally 'best' response category; a good CP1 answer for a specific scenario should weigh these four factors explicitly against the specific risk described, rather than defaulting to one favoured technique."
             },
             {
                 "q": "Why is monitoring the ongoing effectiveness of risk controls important, rather than just implementing them once?",
-                "a": "Controls can become less effective over time (e.g. as circumstances change or controls are circumvented), so ongoing review helps ensure they remain fit for purpose."
+                "a": "Controls can become less effective over time (e.g. as circumstances change or controls are circumvented), so ongoing review helps ensure they remain fit for purpose.",
+                "explain": "This closes Part 5 with CP1's now-familiar ongoing-review theme (Modules 3, 15, 20, 24, 26, 28) applied to risk controls specifically — worth recognising this as the direct link to Module 39's monitoring material later in CP1, since controls, like assumptions and strategies, need active maintenance rather than a set-and-forget approach."
             }
         ]
     },
