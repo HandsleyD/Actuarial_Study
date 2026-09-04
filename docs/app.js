@@ -120,6 +120,21 @@ function renderMath(el) {
   }
 }
 
+// Explanation panel: only ever rendered once the answer is revealed, so a
+// card with no explanation looks identical to today, and a card with one
+// can never leak it before the user has actually attempted the answer.
+function explainPanelHtml(card, revealed) {
+  if (!revealed || !card.explain) return "";
+  return `<details class="explain-panel" open>
+    <summary>Context &amp; theory</summary>
+    <div class="explain-body">${card.explain}</div>
+  </details>`;
+}
+
+function flashcardLayoutClass(card, revealed) {
+  return revealed && card.explain ? "flashcard-layout has-explain" : "flashcard-layout";
+}
+
 function statusClass(status) {
   const s = status.toLowerCase();
   if (s === "done") return "done";
@@ -502,20 +517,23 @@ function renderFlashView(code, moduleId) {
       ${flashState.mode === "session" ? `<button class="btn shuffle-btn" id="shuffleBtn">&#128256; New session</button>` : ""}
     </div>
     <div class="card-dots">${dots}</div>
-    <div class="flashcard ${isMastered ? "is-mastered" : ""}">
-      ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
-      <div class="flashcard-label">Card ${pos + 1} of ${seq.length}</div>
-      <div class="flashcard-question">${card.q}</div>
-      ${
-        !flashState.revealed
-          ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${flashState.typed}</textarea>
-             <button class="btn primary" id="revealBtn">Reveal answer</button>`
-          : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
-             <div class="flash-score-row">
-               <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
-               <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
-             </div>`
-      }
+    <div class="${flashcardLayoutClass(card, flashState.revealed)}">
+      <div class="flashcard ${isMastered ? "is-mastered" : ""}">
+        ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
+        <div class="flashcard-label">Card ${pos + 1} of ${seq.length}</div>
+        <div class="flashcard-question">${card.q}</div>
+        ${
+          !flashState.revealed
+            ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${flashState.typed}</textarea>
+               <button class="btn primary" id="revealBtn">Reveal answer</button>`
+            : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               <div class="flash-score-row">
+                 <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
+                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
+               </div>`
+        }
+      </div>
+      ${explainPanelHtml(card, flashState.revealed)}
     </div>
     <div class="flash-nav">
       <button class="btn" id="prevCard" ${pos === 0 ? "disabled" : ""}>&larr; Prev</button>
@@ -646,21 +664,24 @@ function renderMixedView(code) {
       <button class="btn shuffle-btn" id="shuffleMixedBtn">&#128256; New session</button>
     </div>
     <div class="card-dots">${dots}</div>
-    <div class="flashcard ${isMastered ? "is-mastered" : ""}">
-      ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
-      <a class="flashcard-source" href="#/${code}/${entry.moduleId}">${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
-      <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length}</div>
-      <div class="flashcard-question">${card.q}</div>
-      ${
-        !mixedState.revealed
-          ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${mixedState.typed}</textarea>
-             <button class="btn primary" id="revealBtn">Reveal answer</button>`
-          : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
-             <div class="flash-score-row">
-               <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
-               <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
-             </div>`
-      }
+    <div class="${flashcardLayoutClass(card, mixedState.revealed)}">
+      <div class="flashcard ${isMastered ? "is-mastered" : ""}">
+        ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
+        <a class="flashcard-source" href="#/${code}/${entry.moduleId}">${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
+        <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length}</div>
+        <div class="flashcard-question">${card.q}</div>
+        ${
+          !mixedState.revealed
+            ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${mixedState.typed}</textarea>
+               <button class="btn primary" id="revealBtn">Reveal answer</button>`
+            : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               <div class="flash-score-row">
+                 <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
+                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
+               </div>`
+        }
+      </div>
+      ${explainPanelHtml(card, mixedState.revealed)}
     </div>
     <div class="flash-nav">
       <button class="btn" id="prevCard" ${pos === 0 ? "disabled" : ""}>&larr; Prev</button>

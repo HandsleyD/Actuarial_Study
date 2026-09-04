@@ -760,3 +760,62 @@ main {
   color: var(--text-muted);
 }
 
+/* ---------- explanation panel (flashcards + question bank) ---------- */
+/* Mobile-first: a full-width section under the card/question by default.
+   Only promoted to a right-hand column once there's room for both at a
+   readable width (roughly tablet-landscape and up). */
+
+.flashcard-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+}
+
+@media (min-width: 860px) {
+  .flashcard-layout.has-explain {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 980px;
+  }
+  .flashcard-layout.has-explain > .flashcard {
+    flex: 1 1 560px;
+    min-width: 0;
+  }
+  .flashcard-layout.has-explain > .explain-panel {
+    flex: 1 1 340px;
+    max-width: 360px;
+    align-self: stretch;
+  }
+}
+
+.explain-panel {
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.explain-panel summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+  list-style: none;
+  user-select: none;
+}
+
+.explain-panel summary::-webkit-details-marker { display: none; }
+.explain-panel summary::before { content: "\25b8\a0"; }
+.explain-panel[open] summary::before { content: "\25be\a0"; }
+
+.explain-body {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.explain-body p { margin: 0 0 10px; }
+.explain-body p:last-child { margin-bottom: 0; }
+
