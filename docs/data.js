@@ -11579,6 +11579,396 @@ const MODULES = {
                 "explain": "This closing card is worth previewing against Module 17's valuation material — ratio analysis tells you about PAST accounting performance, while valuation techniques try to capture the market's forward-looking view, and the two can genuinely diverge, especially for a company whose prospects are changing rapidly."
             }
         ]
+    },
+    {
+        "id": "m06",
+        "title": "Financial statement analysis: efficiency and gearing ratios",
+        "description": "Covers ratio analysis techniques for assessing how efficiently a company manages its working capital and assets, and how heavily it relies on debt finance.",
+        "cards": [
+            {
+                "q": "What does 'inventory turnover' measure, and how is it commonly calculated?",
+                "a": "How many times a company sells and replaces its inventory over a period; commonly calculated as cost of sales divided by average inventory.",
+                "explain": "This is worth reading alongside the 'inventory days' figure in the next card — turnover and days are two ways of expressing the same underlying efficiency, and both feed directly into Module 7's working capital cycle calculation."
+            },
+            {
+                "q": "What does 'inventory days' (days inventory outstanding) measure?",
+                "a": "The average number of days inventory is held before being sold, calculated as (average inventory / cost of sales) × 365.",
+                "explain": "A LOWER figure generally indicates more efficient inventory management, but worth remembering the caveat from Module 5's healthy-benchmark card — the appropriate level varies enormously by industry, since a fashion retailer and a wine merchant have structurally different inventory holding needs."
+            },
+            {
+                "q": "What does 'receivables days' (days sales outstanding) measure?",
+                "a": "The average number of days it takes a company to collect payment from its credit customers, calculated as (average trade receivables / revenue) × 365.",
+                "explain": "This directly quantifies exactly the timing gap Module 4 described between recognising revenue and actually collecting the cash — a rising receivables days figure over time is often an early warning sign worth investigating, since it suggests customers are taking longer to pay."
+            },
+            {
+                "q": "What does 'payables days' (days purchases outstanding) measure?",
+                "a": "The average number of days a company takes to pay its suppliers, calculated as (average trade payables / cost of sales) × 365.",
+                "explain": "This is the mirror image of receivables days from the supplier's perspective — a longer payables period effectively means the company is using supplier credit as a source of short-term, interest-free finance, directly relevant to Module 7's working capital management."
+            },
+            {
+                "q": "How do inventory days, receivables days and payables days combine to form the 'working capital cycle' (cash conversion cycle)?",
+                "a": "Working capital cycle = inventory days + receivables days − payables days — the number of days between paying cash out for inputs and receiving cash in from customers.",
+                "explain": "This directly previews Module 7's working capital management — worth noting a LONGER cycle means more cash is tied up in the business for longer, which is exactly the vulnerability described in Module 4's overtrading card."
+            },
+            {
+                "q": "What does 'asset turnover' measure, and how is it calculated?",
+                "a": "How efficiently a company uses its assets to generate revenue; calculated as revenue divided by total assets (or capital employed).",
+                "explain": "This is worth connecting to Module 5's ROCE — ROCE can actually be decomposed into operating profit margin multiplied by asset turnover, showing that a company can achieve a strong ROCE either through high margins or through efficient asset use (high turnover), or some combination of both."
+            },
+            {
+                "q": "What is the 'gearing ratio' (leverage ratio), and how is it commonly calculated?",
+                "a": "A measure of how much a company relies on debt relative to equity finance; commonly calculated as debt divided by (debt plus equity), or sometimes debt divided by equity alone.",
+                "explain": "This directly previews Module 11's capital structure material — gearing is the single most important ratio for assessing a company's financing mix, and it's worth being comfortable with both common formula variants, since exam questions may specify either."
+            },
+            {
+                "q": "Why is a highly geared company generally considered riskier than a lowly geared one, from a shareholder's perspective?",
+                "a": "Interest on debt must be paid regardless of how the business performs, so higher gearing means a greater proportion of profit is committed to fixed interest payments, amplifying the volatility of what's left over for shareholders (a magnifying effect known as financial risk).",
+                "explain": "This 'magnifying' effect is worth picturing concretely — if operating profit falls, fixed interest still has to be paid in full, so a much larger proportion of the (now smaller) remaining profit swing hits shareholders, exactly the mechanism Module 11's capital structure material develops as financial gearing risk."
+            },
+            {
+                "q": "What is 'interest cover', and what does it measure?",
+                "a": "A measure of how comfortably a company can meet its interest obligations from operating profit; calculated as operating profit divided by interest expense.",
+                "explain": "This is worth reading as gearing's practical, income-statement-based companion — gearing measures the STRUCTURAL reliance on debt from the balance sheet, while interest cover measures whether current PROFIT is actually sufficient to service that debt comfortably."
+            },
+            {
+                "q": "Why might a lender place particular weight on a company's interest cover ratio when assessing a loan application?",
+                "a": "A low interest cover indicates the company has little buffer if profit falls before it would struggle to meet its interest payments, directly signalling default risk to a prospective lender.",
+                "explain": "This connects directly to Module 9's debt-finance material — a lender's whole assessment of creditworthiness centres on exactly this kind of ratio, since their primary concern is being repaid, not sharing in the company's upside."
+            },
+            {
+                "q": "Why might a company with strong profitability ratios (Module 5) still be considered financially risky overall?",
+                "a": "Profitability ratios say nothing about how that profit is financed — a highly geared company could show strong ROE (partly inflated by leverage) while carrying substantial financial risk that profitability ratios alone wouldn't reveal.",
+                "explain": "This is worth remembering as a genuinely important exam point — a full assessment of a company's financial health requires looking across profitability, liquidity, efficiency AND gearing ratios together, since each reveals a different, non-overlapping dimension of risk."
+            },
+            {
+                "q": "Why might a company choose to increase its gearing deliberately, despite the added financial risk?",
+                "a": "Debt is often cheaper than equity (Module 10-11) and interest payments are typically tax-deductible, so moderate gearing can reduce a company's overall cost of capital and boost returns to shareholders, provided the added risk is judged acceptable.",
+                "explain": "This directly previews Module 11's capital structure theory — worth recognising gearing as a genuine trade-off (cheaper finance and a tax shield, against higher financial risk), not simply something to be minimised at all costs."
+            },
+            {
+                "q": "How might efficiency ratios (inventory, receivables, payables days) help explain a change in a company's liquidity ratios (Module 5) over time?",
+                "a": "A lengthening working capital cycle (e.g. slower receivables collection or rising inventory days) directly consumes cash, which can explain a deteriorating current or quick ratio even if reported profit remains stable.",
+                "explain": "This connects this module directly back to Module 5's liquidity ratios and Module 4's cash flow material — a genuinely thorough ratio analysis traces WHY a liquidity ratio has changed, not just that it has, and efficiency ratios are often exactly where that explanation is found."
+            },
+            {
+                "q": "Why should gearing be assessed relative to industry norms, similar to the liquidity ratio caution in Module 5?",
+                "a": "Capital-intensive industries with stable, predictable cashflows (e.g. utilities) can typically sustain much higher gearing safely than industries with volatile earnings (e.g. technology start-ups), so an appropriate gearing level genuinely depends on the nature of the business.",
+                "explain": "This is exactly the same industry-comparison caution Module 5 raised for the current ratio, now applied to gearing — worth remembering both ratios share this limitation: a benchmark that ignores industry context risks flagging a perfectly normal, safe company as concerning, or vice versa."
+            },
+            {
+                "q": "How do efficiency and gearing ratios together complete the overall picture of financial statement analysis developed across this course?",
+                "a": "Combined with Module 5's profitability and liquidity ratios, they give a genuinely rounded assessment covering how profitable a company is, how efficiently it operates, how easily it can meet short-term obligations, and how much financial risk it carries through its financing structure.",
+                "explain": "This closing card ties Module 5 and this module together explicitly — worth treating profitability, liquidity, efficiency and gearing as four genuinely distinct, complementary lenses, all needed together for a complete financial statement analysis rather than any single category alone."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Working capital management",
+        "description": "Covers the practical management of a business's short-term assets and liabilities — inventory, receivables, payables and cash — to balance liquidity against profitability.",
+        "cards": [
+            {
+                "q": "What is 'working capital'?",
+                "a": "The capital tied up in a business's short-term operating cycle, typically defined as current assets minus current liabilities.",
+                "explain": "This is precisely Module 5's current ratio numerator and denominator combined into a single monetary figure rather than a ratio — worth recognising working capital as the pound amount, and the current ratio as the equivalent expressed relatively."
+            },
+            {
+                "q": "Why does working capital management involve a genuine trade-off between liquidity and profitability?",
+                "a": "Holding more working capital (e.g. more inventory or cash, or offering generous customer credit terms) improves liquidity and reduces the risk of running short of cash, but ties up capital that could otherwise earn a return elsewhere, reducing overall profitability.",
+                "explain": "This is CB2's opportunity cost concept applied directly to working capital — every pound tied up in excess inventory or receivables is a pound not earning a return in some more productive use, which is exactly the tension this whole module explores."
+            },
+            {
+                "q": "What is 'overtrading', and why is it a genuine risk for a growing business?",
+                "a": "A situation where a business expands sales rapidly without a corresponding increase in working capital finance, running out of cash despite being profitable on paper.",
+                "explain": "This is Module 4's overtrading card developed in full — worth remembering the mechanism precisely: growth increases the cash tied up in inventory and receivables faster than profit generates new cash, exactly the trap this module's management techniques exist to avoid."
+            },
+            {
+                "q": "What is 'overcapitalisation', as the opposite problem to overtrading?",
+                "a": "A situation where a business holds excessive working capital relative to its needs, tying up capital unproductively and reducing overall returns to shareholders.",
+                "explain": "This directly echoes Module 5's high-current-ratio caution — worth recognising overcapitalisation and overtrading as the two opposite failure modes this whole module is trying to help a business avoid, sitting on either side of an appropriate working capital level."
+            },
+            {
+                "q": "What techniques might a business use to manage inventory more efficiently?",
+                "a": "Just-in-time ordering, better demand forecasting, and periodic stock reviews to identify and reduce slow-moving or obsolete inventory.",
+                "explain": "Each of these techniques targets Module 6's inventory days ratio directly — worth treating this card as the practical toolkit behind that ratio: better forecasting and JIT reduce how much stock is held at all, while stock reviews clear out inventory that's silently inflating the ratio without genuine business need."
+            },
+            {
+                "q": "What is 'just-in-time' (JIT) inventory management?",
+                "a": "An approach where inventory is ordered and received only as needed for production/sale, minimising the amount of inventory held at any time.",
+                "explain": "This directly targets Module 6's inventory days ratio — successfully implemented JIT should show up as a materially lower inventory days figure, though it also introduces a genuine risk: less buffer against supply disruption."
+            },
+            {
+                "q": "What techniques might a business use to manage trade receivables more efficiently?",
+                "a": "Setting clear credit terms and credit limits, offering early payment discounts, and actively chasing overdue accounts (credit control).",
+                "explain": "These techniques all target Module 6's receivables days ratio directly — worth grouping them into two types: PREVENTIVE controls set before a sale (credit terms, credit limits) and ACTIVE recovery after the sale (chasing overdue accounts, or discounts to encourage early payment)."
+            },
+            {
+                "q": "Why might offering a discount for early payment be worthwhile for a business, despite receiving a smaller amount from the customer?",
+                "a": "Collecting cash sooner reduces the working capital tied up in receivables and the associated risk of bad debts, which can outweigh the cost of the discount if the business has a genuine need for faster cash generation.",
+                "explain": "This is CB2's opportunity cost logic applied directly to a pricing decision — the discount has a genuine cost, but so does leaving cash tied up in receivables for longer, and this card's judgement call is really about which cost is larger for this specific business."
+            },
+            {
+                "q": "What is 'factoring', as a technique for managing receivables?",
+                "a": "Selling trade receivables to a third party (a factor) at a discount, in exchange for receiving cash immediately rather than waiting for customers to pay.",
+                "explain": "This directly previews Module 9's sources-of-finance material — factoring is effectively a form of short-term financing secured against receivables, trading away some profit margin (the discount) for immediate cash and reduced collection risk."
+            },
+            {
+                "q": "How might a business manage its trade payables as part of working capital management?",
+                "a": "Taking the full credit period offered by suppliers before paying (without breaching agreed terms), effectively using supplier credit as a free source of short-term finance.",
+                "explain": "This directly targets Module 6's payables days ratio — worth noting the careful qualifier 'without breaching agreed terms', since the next card explores exactly what goes wrong if a business pushes this tactic too far, beyond what suppliers have genuinely agreed to."
+            },
+            {
+                "q": "Why should a business be cautious about deliberately delaying payment to suppliers beyond agreed terms as a working capital tactic?",
+                "a": "It can damage supplier relationships, risk losing favourable credit terms or discounts, and harm the business's reputation and ability to negotiate good terms in future.",
+                "explain": "This is worth reading as a caution against taking the payables-days logic (Module 6) too far — there's a genuine difference between efficiently using AGREED credit terms and damagingly abusing supplier goodwill by paying late."
+            },
+            {
+                "q": "Why does cash itself need to be actively managed as part of working capital, rather than simply held?",
+                "a": "Holding cash has an opportunity cost (it earns little or no return), so cash management involves balancing holding enough for operational needs and unexpected requirements against investing surplus cash productively.",
+                "explain": "This is CB2's opportunity cost concept recurring for the second time in this module — cash is the most liquid current asset, but that liquidity comes at the price of forgone return, exactly the same trade-off this module's opening card raised for working capital generally."
+            },
+            {
+                "q": "What is a 'cash budget', and how does it support working capital management?",
+                "a": "A forecast of a business's expected cash inflows and outflows over a future period, used to identify likely cash surpluses or shortfalls in advance.",
+                "explain": "This is a genuinely practical, forward-looking tool worth connecting to Module 4's cash flow statement — where the cash flow statement reports what already happened, a cash budget projects what's expected to happen, giving management time to arrange finance or investment before a shortfall or surplus actually arises."
+            },
+            {
+                "q": "How does effective working capital management directly support the liquidity ratios covered in Module 5?",
+                "a": "By managing inventory, receivables and payables to an appropriate level (avoiding both overtrading and overcapitalisation), a business maintains a genuinely healthy current and quick ratio, rather than the ratios simply being outcomes to observe after the fact.",
+                "explain": "This closing card ties this module directly back to Module 5 and Module 6 — working capital management is really the practical, hands-on ACTIVITY that determines what those earlier modules' ratios end up measuring, not a separate, unrelated topic."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Sources of finance: equity",
+        "description": "Covers how companies raise equity finance — ordinary and preference shares, retained earnings, and the mechanisms (IPOs, rights issues) used to issue new shares.",
+        "cards": [
+            {
+                "q": "What is 'ordinary share' (common stock) finance?",
+                "a": "Capital raised by issuing shares that give holders ownership rights, including voting rights and a residual claim on profits (via dividends) and assets.",
+                "explain": "This is Module 2's equity/share capital concept given its full financing treatment — ordinary shareholders are the ultimate risk-bearers described in that module's 'residual claim' card, paid only after every other claim on the business has been satisfied."
+            },
+            {
+                "q": "What are 'preference shares', and how do they differ from ordinary shares?",
+                "a": "Shares that typically receive a fixed dividend rate and rank ahead of ordinary shares for dividends and on liquidation, but usually carry no voting rights.",
+                "explain": "Worth thinking of preference shares as sitting BETWEEN debt and ordinary equity in terms of risk and priority — a fixed, priority dividend feels debt-like, but (unlike debt) that dividend generally isn't a contractual obligation the company must legally pay in a bad year."
+            },
+            {
+                "q": "Why might a preference dividend not being paid in a particular year not constitute a default, unlike a missed interest payment on debt?",
+                "a": "Preference dividends (unless specifically stated as 'cumulative' and enforceable) are generally at the company's discretion, similar to ordinary dividends, whereas interest on debt is a contractual obligation that must be paid regardless of profitability.",
+                "explain": "This is a genuinely important distinction worth remembering precisely for exam purposes — it's exactly why preference shares are classified as equity (not debt) for most purposes, despite their fixed, debt-like dividend rate."
+            },
+            {
+                "q": "What are 'retained earnings' as a source of finance, and why are they often considered the most convenient source?",
+                "a": "Profit the company has generated and chosen to reinvest rather than distribute as dividends; they're convenient because they involve no issue costs, no dilution of existing ownership, and no need for external approval.",
+                "explain": "This directly recalls Module 2's retained earnings concept and previews Module 18's dividend policy material — the decision to retain rather than distribute profit is precisely the dividend policy decision that module examines in depth."
+            },
+            {
+                "q": "What is an 'initial public offering' (IPO)?",
+                "a": "The process by which a private company first offers its shares for sale to the public, typically becoming listed on a stock exchange in the process.",
+                "explain": "This directly connects to Module 1's private-versus-public company distinction — an IPO is precisely the event that converts a company from private to public, opening up access to the much larger pool of public equity capital."
+            },
+            {
+                "q": "What is a 'rights issue'?",
+                "a": "An offer of new shares to existing shareholders, in proportion to their current shareholding, typically at a discount to the current market price.",
+                "explain": "Worth noting this is specifically designed to protect existing shareholders' proportional ownership (their 'right' to maintain their stake) — a shareholder who takes up their full entitlement suffers no dilution of their percentage ownership, unlike a share issue offered to new, external investors."
+            },
+            {
+                "q": "Why is a rights issue typically priced at a discount to the current market share price?",
+                "a": "The discount makes the offer attractive enough to encourage existing shareholders to take up their entitlement (providing new capital), while the proportional nature of the issue protects them from being diluted if they do so.",
+                "explain": "Worth noting the discount itself doesn't genuinely disadvantage a shareholder who takes up their full entitlement — since they're buying MORE shares at the lower price in proportion to their existing stake, the theoretical ex-rights price (next card) ensures their overall wealth is unaffected either way."
+            },
+            {
+                "q": "What happens to a company's share price, in theory, immediately after a rights issue is announced and completed?",
+                "a": "The share price is expected to fall to a theoretical ex-rights price, reflecting the dilution effect of issuing new shares at a discount, blended with the existing shares' prior price.",
+                "explain": "This is a straightforward weighted-average calculation — the new (lower) theoretical price is simply the value of the combined old and new shares divided by the new total share count, and it's worth being comfortable calculating this figure directly given a rights issue's terms."
+            },
+            {
+                "q": "What is 'venture capital', as a source of equity finance?",
+                "a": "Equity finance provided by specialist investors to early-stage or high-growth-potential private companies, typically in exchange for a significant ownership stake and often board involvement.",
+                "explain": "This is a genuinely important source specifically for companies too young or risky to access public equity markets (an IPO) or conventional bank debt — venture capital investors accept higher risk in exchange for a higher expected return and active involvement in the business."
+            },
+            {
+                "q": "What is a key advantage of equity finance over debt finance, from the company's perspective?",
+                "a": "Equity carries no obligatory fixed payment — dividends are discretionary — reducing financial risk (Module 6) compared with debt's contractual interest obligations, and equity has no fixed repayment date.",
+                "explain": "This directly connects to Module 6's financial risk/gearing material — the absence of a fixed, mandatory payment is exactly what makes equity a genuine SHOCK ABSORBER for a business, unlike debt, which keeps demanding its interest payment even in a genuinely bad year."
+            },
+            {
+                "q": "What is a key disadvantage of equity finance compared with debt finance, from an existing shareholder's perspective?",
+                "a": "Issuing new equity dilutes existing shareholders' proportional ownership and control (unless a rights issue is used), and equity is generally more expensive than debt (Module 10-11), since equity investors demand a higher return for bearing more risk.",
+                "explain": "This is the direct trade-off against the advantage in the previous card — worth remembering both together, since a strong exam answer on financing choice should weigh the reduced financial risk of equity against its dilution and cost disadvantages, not present equity as a one-sided improvement over debt."
+            },
+            {
+                "q": "Why do equity investors generally require a higher expected return than debt investors in the same company?",
+                "a": "Equity holders bear more risk than debt holders — they're paid only after debt obligations are met, have no guaranteed return, and no fixed repayment date — so they require greater compensation for this additional risk.",
+                "explain": "This directly previews Module 10's cost of equity material — this risk-based intuition is precisely what the dividend growth model and CAPM formalise mathematically into an actual, quantified cost of equity figure."
+            },
+            {
+                "q": "Why might a company's choice between issuing equity, using retained earnings, or borrowing depend on prevailing market conditions?",
+                "a": "Share prices, investor sentiment, and interest rates all affect the relative cost and feasibility of each financing route at a given time — e.g. a depressed share price makes new equity issuance relatively unattractive, favouring debt or retained earnings instead.",
+                "explain": "This connects to Module 3's PESTLE-style external environment thinking from CB2 — financing decisions aren't made in a vacuum; the same company might rationally choose a completely different financing route at different points in the economic cycle, purely because market conditions have changed."
+            },
+            {
+                "q": "How does the choice between equity sources of finance ultimately connect to the capital structure decision covered later in this course?",
+                "a": "Each equity financing decision (retain profit, issue new shares, use preference shares) incrementally shapes the company's overall mix of equity and debt, which is precisely the capital structure question Module 11 examines directly.",
+                "explain": "This closing card hands off directly to Module 11 — worth recognising that every individual financing decision covered in this and the next module cumulatively determines the company's overall gearing (Module 6), rather than capital structure being a separate, abstract topic."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Sources of finance: debt and other instruments",
+        "description": "Covers how companies raise debt finance — bank loans, bonds, leasing and trade credit — and the key features that distinguish different debt instruments.",
+        "cards": [
+            {
+                "q": "What is 'debt finance', in general terms?",
+                "a": "Capital borrowed by a company, typically requiring contractual interest payments and eventual repayment of the principal, without giving the lender an ownership stake.",
+                "explain": "This is worth contrasting directly with Module 8's equity finance — debt holders have no ownership or voting rights, but their interest and principal claims rank AHEAD of equity holders' claims, exactly the priority difference Module 2's residual-claim concept described."
+            },
+            {
+                "q": "What is a 'bank loan', as a source of business finance?",
+                "a": "Finance provided directly by a bank, typically with a set repayment schedule, interest rate, and often specific conditions (covenants) the borrower must adhere to.",
+                "explain": "This is the most common, straightforward form of debt finance for most businesses — worth noting the covenants mentioned here get their own dedicated treatment in the next card, since they're a genuinely important feature distinguishing debt finance from equity's lack of comparable restrictions."
+            },
+            {
+                "q": "What is a 'loan covenant'?",
+                "a": "A condition attached to a loan agreement, restricting the borrower's actions (e.g. limiting further borrowing) or requiring certain financial ratios to be maintained, protecting the lender's position.",
+                "explain": "This is worth connecting directly to Module 6's gearing and interest cover ratios — a covenant very commonly specifies a minimum interest cover or maximum gearing level, giving the lender an early trigger to intervene if the borrower's financial position starts to deteriorate."
+            },
+            {
+                "q": "What is a 'bond' (debenture), as a source of debt finance?",
+                "a": "A tradeable debt security issued by a company, promising to pay the holder periodic interest (coupon) payments and to repay the principal at a specified maturity date.",
+                "explain": "This is worth connecting to CM1's fixed-interest bond material — a corporate bond is structurally identical to the government bonds studied there, just issued by a company rather than a government, and priced with a credit spread reflecting the company's default risk."
+            },
+            {
+                "q": "What is the difference between 'secured' and 'unsecured' debt?",
+                "a": "Secured debt is backed by specific collateral (assets the lender can claim if the borrower defaults); unsecured debt has no specific asset backing, relying only on the borrower's general creditworthiness.",
+                "explain": "This is worth connecting to Module 2's non-current assets — property, plant and equipment are exactly the kind of assets commonly pledged as collateral, since they retain a resale value the lender can realise if the borrower defaults."
+            },
+            {
+                "q": "Why does secured debt typically carry a lower interest rate than unsecured debt from the same borrower?",
+                "a": "The collateral reduces the lender's risk of loss in the event of default (since they have a specific asset claim to fall back on), so lenders require less compensation (a lower interest rate) for bearing less risk.",
+                "explain": "This is exactly the same risk-versus-return principle recurring throughout this course — a lower-risk lending position (backed by collateral) commands a lower required return, the debt-market analogue of Module 8's point that riskier equity investors require higher returns."
+            },
+            {
+                "q": "What is 'leasing', as a source of business finance for acquiring an asset?",
+                "a": "An arrangement where a business pays regular rentals to use an asset owned by another party (the lessor), rather than purchasing it outright.",
+                "explain": "This is worth thinking of as an alternative route to Module 2's non-current assets — rather than an outright purchase (typically financed by cash, equity or a loan), leasing lets a business access and use an asset without the large upfront capital outlay a purchase would require."
+            },
+            {
+                "q": "What is the difference between an 'operating lease' and a 'finance lease'?",
+                "a": "An operating lease is essentially a short-term rental, with the lessor retaining most of the asset's risks and rewards; a finance lease transfers substantially all the risks and rewards of ownership to the lessee, economically resembling a purchase financed by debt.",
+                "explain": "This distinction matters directly for Module 6's gearing ratio — a finance lease is economically closer to debt-financed ownership and is typically reflected as such on the balance sheet, while an operating lease has historically been treated more like an ordinary running cost, with different implications for reported gearing."
+            },
+            {
+                "q": "What is 'trade credit', as an implicit source of short-term finance?",
+                "a": "Credit extended by suppliers, allowing a business to pay for goods/services some time after receiving them — effectively a short-term, often interest-free source of working capital finance.",
+                "explain": "This is exactly Module 2's trade payables and Module 7's payables-management material recalled directly — trade credit is worth recognising as a genuine, if informal, source of finance, distinct from a formal bank loan or bond issue."
+            },
+            {
+                "q": "What is a 'convertible bond'?",
+                "a": "A bond that gives the holder the option to convert it into a specified number of the issuing company's ordinary shares, instead of receiving cash repayment at maturity.",
+                "explain": "This is worth recognising as a hybrid instrument, combining features of both debt (fixed coupons, priority claim) and equity (the conversion option) — its embedded option typically lets the company offer a lower coupon rate than an equivalent plain bond, since investors value the conversion right."
+            },
+            {
+                "q": "Why might a company choose to issue convertible debt rather than straight debt or straight equity?",
+                "a": "It can typically be issued at a lower interest cost than straight debt (since investors value the conversion option), while avoiding immediate dilution of existing shareholders, which only occurs later if and when the bonds are actually converted.",
+                "explain": "This closes the loop on the hybrid-instrument idea from the previous card — worth recognising convertible debt as offering a genuine middle path between Module 8's equity (immediate dilution, no fixed obligation) and straight debt (higher cost, no dilution), deferring the dilution question until conversion actually happens, if it ever does."
+            },
+            {
+                "q": "What is a key advantage of debt finance over equity finance, from the company's perspective?",
+                "a": "Debt is typically cheaper than equity (lenders require a lower return than shareholders, given their lower risk and higher priority), and interest payments are usually tax-deductible, further reducing the effective cost.",
+                "explain": "This directly previews Module 11's capital structure material — the tax deductibility of interest ('the tax shield') is one of the central reasons that module gives for why moderate gearing can genuinely reduce a company's overall cost of capital, not just a minor side benefit."
+            },
+            {
+                "q": "What is a key disadvantage of debt finance compared with equity finance, from the company's perspective?",
+                "a": "Interest and principal repayments are contractual obligations that must be met regardless of the company's profitability, increasing financial risk (Module 6) and potentially leading to default if cashflow is insufficient.",
+                "explain": "This is the direct trade-off against the advantage above, and it's the same financial-risk theme raised throughout Module 6 — worth remembering both cards together whenever asked to compare debt and equity, since presenting cheaper cost without this genuine risk downside would be an incomplete answer."
+            },
+            {
+                "q": "Why might a company diversify its sources of debt finance (e.g. combining bank loans and bonds), rather than relying on a single lender?",
+                "a": "It reduces dependence on any single lender or instrument, provides flexibility, and can access different pools of capital with potentially different terms suited to different needs.",
+                "explain": "This echoes the diversification-of-counterparty logic seen elsewhere in actuarial practice — relying on a single source of finance concentrates a company's exposure to that lender's own willingness and ability to continue providing funds."
+            },
+            {
+                "q": "How does the choice between the debt instruments covered in this module, combined with Module 8's equity sources, ultimately determine a company's overall capital structure?",
+                "a": "Every individual financing decision made across both modules cumulatively shapes the company's overall mix of debt and equity, which directly determines its gearing (Module 6) and is the central question Module 11's capital structure theory examines.",
+                "explain": "This closing card completes the hand-off to Module 11 begun in Module 8 — worth treating Modules 8 and 9 together as the full menu of financing options a company chooses from, with Module 11 addressing how that overall mix should be decided."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Cost of capital: cost of equity",
+        "description": "Covers how to estimate a company's cost of equity — the return shareholders require — using the dividend growth model and the Capital Asset Pricing Model (CAPM).",
+        "cards": [
+            {
+                "q": "What is meant by the 'cost of equity'?",
+                "a": "The return shareholders require for investing in a company's shares, given the risk they're bearing — the minimum return the company must offer to attract and retain equity investment.",
+                "explain": "This directly formalises the intuition from Module 8's closing cards — equity investors require a higher return than debt investors because they bear more risk, and cost of equity is precisely the quantified figure representing that required return."
+            },
+            {
+                "q": "What is the 'dividend growth model' (Gordon growth model) used to estimate?",
+                "a": "The cost of equity, based on the idea that a share's value equals the present value of its expected future dividends, assumed to grow at a constant rate.",
+                "explain": "This is CM1's perpetuity-with-growth valuation formula applied directly to share valuation — worth recognising the model's logic as fundamentally the same present-value machinery used throughout actuarial work, just applied to a specific cashflow stream (dividends)."
+            },
+            {
+                "q": "What is the dividend growth model formula for the cost of equity, and what does each symbol represent?",
+                "a": "$k_e = \\dfrac{D_0(1+g)}{P_0} + g$, where $D_0$ is the current dividend, $g$ is the assumed constant dividend growth rate, and $P_0$ is the current share price.",
+                "explain": "Worth being careful to use $D_0(1+g)$ (next year's expected dividend), not $D_0$ itself, in the numerator — using the wrong dividend figure is one of the most common errors in applying this formula."
+            },
+            {
+                "q": "What is a key limitation of the dividend growth model as a way of estimating cost of equity?",
+                "a": "It assumes dividends grow at a constant rate indefinitely, which is a strong simplifying assumption, and it cannot be applied to companies that pay no dividend at all.",
+                "explain": "This is worth remembering as a genuine practical constraint — many growth companies deliberately pay no dividend, retaining all profit for reinvestment, making this model entirely inapplicable to them despite their shares clearly having value."
+            },
+            {
+                "q": "How might the dividend growth rate 'g' be estimated in practice?",
+                "a": "From the historical average growth rate of the company's past dividends, or estimated as the product of the company's retention ratio and its return on equity (the 'sustainable growth rate').",
+                "explain": "The 'sustainable growth rate' formula is worth connecting directly to Module 5's ROE — it captures a genuinely intuitive idea: a company can only grow its dividends as fast as it grows its underlying equity base, which happens exactly through retained (reinvested) profit earning the company's own ROE."
+            },
+            {
+                "q": "What does the 'Capital Asset Pricing Model' (CAPM) estimate, and what is its basic formula?",
+                "a": "The required return on an investment (here, cost of equity); $k_e = r_f + \\beta(r_m - r_f)$, where $r_f$ is the risk-free rate, $r_m$ is the expected return on the market, and $\\beta$ is the investment's systematic risk relative to the market.",
+                "explain": "This is CM2's CAPM formula recalled directly, applied here specifically to estimating a company's cost of equity — worth remembering the same formula and interpretation transfer completely between the two subjects."
+            },
+            {
+                "q": "What does a company's 'beta' represent in the CAPM?",
+                "a": "A measure of how sensitive the company's share returns are to movements in the overall market — a beta greater than 1 indicates more volatility than the market, less than 1 indicates less.",
+                "explain": "This is exactly CM2's beta concept recalled directly — worth remembering it captures specifically SYSTEMATIC risk (the portion tied to overall market movements), not the company's total risk, which is exactly why CAPM's cost of equity depends on beta rather than on the share's own standalone volatility."
+            },
+            {
+                "q": "What is the 'equity risk premium' (market risk premium) in the CAPM formula?",
+                "a": "$r_m - r_f$, the extra return investors require for holding the risky market portfolio rather than a risk-free asset.",
+                "explain": "This is worth reading alongside Module 8's closing cards on why equity investors demand higher returns than debt investors — the equity risk premium is precisely that extra required compensation, quantified and applied consistently across every company via the CAPM formula."
+            },
+            {
+                "q": "Why might CAPM be preferred over the dividend growth model for estimating cost of equity in some situations?",
+                "a": "CAPM can be applied to companies that don't pay dividends (since it doesn't rely on a dividend stream), and it explicitly links the required return to a formal measure of risk (beta) rather than relying on an assumed constant growth rate.",
+                "explain": "This directly resolves the dividend growth model's own limitation card from earlier in this module — a young, high-growth company retaining all its profit (no dividends at all) simply cannot be valued using the dividend growth model, making CAPM the only viable option of the two."
+            },
+            {
+                "q": "What is a key practical challenge in applying CAPM to estimate a specific company's cost of equity?",
+                "a": "Beta, the risk-free rate, and the equity risk premium all need to be estimated, and different reasonable estimation choices (e.g. which historical period, which market index) can produce meaningfully different cost of equity figures.",
+                "explain": "This is worth remembering as a genuine practical limitation, mirroring the dividend growth model's own estimation challenges (estimating 'g') — CAPM isn't a magic formula that removes judgement from the process, it just relocates WHERE that judgement is needed."
+            },
+            {
+                "q": "Why might the dividend growth model and CAPM give different estimates of the cost of equity for the same company?",
+                "a": "They rely on different underlying assumptions and data (historical dividend growth versus market risk and beta), so in practice the two methods will rarely agree exactly, and judgement is needed in choosing or reconciling between them.",
+                "explain": "This is worth treating as a genuinely realistic exam scenario — rather than mechanically picking one method, a strong answer might calculate both, comment on why they differ, and use judgement (perhaps averaging, or favouring whichever model's assumptions better fit the specific company) to reach a final view."
+            },
+            {
+                "q": "Why is cost of equity considered a component of, rather than the whole of, a company's overall cost of capital?",
+                "a": "Most companies are financed by a mix of equity and debt, so the overall cost of capital needs to combine the cost of equity with the cost of debt (Module 11), weighted by their respective proportions in the company's financing.",
+                "explain": "This directly previews Module 11's WACC material — worth recognising cost of equity as one of exactly two inputs (alongside cost of debt) that combine into a single overall discount rate used throughout Modules 13-16's investment appraisal material."
+            },
+            {
+                "q": "Why does a higher-risk company generally have a higher cost of equity than a lower-risk one?",
+                "a": "Both the dividend growth model (implicitly, via the market's required return reflected in share price) and CAPM (explicitly, via beta) capture the principle that investors demand greater compensation for bearing greater risk.",
+                "explain": "This closing card ties both estimation methods covered in this module back to the same underlying economic principle — however the cost of equity is actually calculated, it should always increase with the genuine riskiness of the company's shares, which is a useful sense-check on any calculated figure."
+            }
+        ]
     }
 ],
 };
