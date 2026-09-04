@@ -1,5 +1,5 @@
 :root {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   --bg: #f7f8fb;
   --card-bg: #ffffff;
@@ -35,8 +35,12 @@
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+/* Dark palette applies when the OS/browser prefers dark AND the user hasn't
+   explicitly picked light via the toggle, OR when the user has explicitly
+   picked dark -- see the inline theme-resolving script in index.html, which
+   sets data-theme on <html> before first paint to avoid a flash. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #0a0c11;
     --card-bg: #12151c;
     --text: #eef1f6;
@@ -62,6 +66,33 @@
     --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5), 0 6px 14px rgba(0, 0, 0, 0.35);
     --shadow: var(--shadow-sm);
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0a0c11;
+  --card-bg: #12151c;
+  --text: #eef1f6;
+  --text-muted: #8b93a3;
+  --border: #242938;
+  --border-soft: #1b1f2a;
+  --accent: #a78bfa;
+  --accent-2: #c084fc;
+  --accent-soft: #201a3a;
+  --accent-contrast: #12151c;
+  --done: #3ecf8e;
+  --done-bg: #0f2c22;
+  --progress: #e3a53f;
+  --progress-bg: #33270f;
+  --not-started: #8b93a3;
+  --not-started-bg: #1a1e29;
+  --star: #f2c14e;
+  --star-bg: #332711;
+  --studying: #a78bfa;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5), 0 6px 14px rgba(0, 0, 0, 0.35);
+  --shadow: var(--shadow-sm);
 }
 
 * { box-sizing: border-box; }

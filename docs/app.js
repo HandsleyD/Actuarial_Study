@@ -1079,10 +1079,41 @@ function initAuthUI() {
   Store.onSyncChange(renderSyncStatus);
 }
 
+/* ---------- theme toggle ---------- */
+
+function currentTheme() {
+  const stored = document.documentElement.getAttribute("data-theme");
+  if (stored === "light" || stored === "dark") return stored;
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function renderThemeToggleBtn() {
+  const btn = document.getElementById("themeToggleBtn");
+  const isDark = currentTheme() === "dark";
+  // Icon shows the theme a click would switch TO, matching common toggle conventions.
+  btn.textContent = isDark ? "☀️" : "\u{1F319}";
+  btn.title = isDark ? "Switch to light theme" : "Switch to dark theme";
+}
+
+function initThemeToggle() {
+  renderThemeToggleBtn();
+  document.getElementById("themeToggleBtn").addEventListener("click", () => {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch (e) {
+      /* localStorage unavailable -- theme still applies for this page load */
+    }
+    renderThemeToggleBtn();
+  });
+}
+
 /* ---------- init ---------- */
 
 buildExamGrid();
 initAuthUI();
+initThemeToggle();
 window.addEventListener("hashchange", renderRoute);
 renderRoute();
 
