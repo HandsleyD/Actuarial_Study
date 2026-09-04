@@ -3663,63 +3663,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the general purpose of the '5-step method'?",
-                "a": "To provide a systematic procedure for pricing a derivative by risk-neutral valuation, choosing a convenient numeraire and change of measure."
+                "a": "To provide a systematic procedure for pricing a derivative by risk-neutral valuation, choosing a convenient numeraire and change of measure.",
+                "explain": "This module generalises Module 13's Black-Scholes approach (which implicitly always used cash/the money-market account as its reference point) into a fully flexible framework — the genuinely new idea is that the CHOICE of reference asset (numeraire) is itself a modelling decision that can dramatically simplify an otherwise hard pricing problem."
             },
             {
                 "q": "What is a 'numeraire'?",
-                "a": "A reference asset used to express the prices of all other assets in relative terms — chosen so the pricing calculation becomes simpler."
+                "a": "A reference asset used to express the prices of all other assets in relative terms — chosen so the pricing calculation becomes simpler.",
+                "explain": "Every price you've seen so far in CM2 has implicitly been expressed 'in cash terms' (pounds, dollars) — a numeraire is simply a deliberate choice to instead measure value relative to some OTHER asset (e.g. 'how many units of asset B is asset A worth'), which turns out to be a genuinely useful trick for certain payoffs."
             },
             {
                 "q": "Why might a different numeraire (rather than the cash/money-market account) sometimes simplify a pricing problem?",
-                "a": "Expressing payoffs relative to a well-chosen numeraire can turn a complex expectation into a much simpler one."
+                "a": "Expressing payoffs relative to a well-chosen numeraire can turn a complex expectation into a much simpler one.",
+                "explain": "The concrete example worth remembering is the exchange-option card below — a payoff that depends on the DIFFERENCE or RATIO between two risky assets can become a much simpler one-dimensional problem once you express everything in units of one of those assets, effectively eliminating that asset's own randomness from the calculation."
             },
             {
                 "q": "What is the first general step in the 5-step method (in broad terms)?",
-                "a": "Express the derivative's payoff in terms of the chosen numeraire."
+                "a": "Express the derivative's payoff in terms of the chosen numeraire.",
+                "explain": "This is the deliberate, upfront choice that determines how much easier (or harder) the rest of the calculation will be — choosing well here is genuinely the 'art' of applying this method, since a poorly chosen numeraire leaves you no better off than the standard cash-numeraire approach from Module 13."
             },
             {
                 "q": "What does 'changing measure' (via Girsanov's theorem, conceptually) achieve in this method?",
-                "a": "It adjusts the probability measure so that asset prices expressed in the new numeraire become martingales."
+                "a": "It adjusts the probability measure so that asset prices expressed in the new numeraire become martingales.",
+                "explain": "This is Module 12's risk-neutral-measure idea generalised — just as the standard risk-neutral measure was defined SPECIFICALLY to make cash-denominated discounted prices martingales, each new numeraire choice here needs its OWN corresponding measure, chosen precisely so that numeraire-denominated prices become martingales under it."
             },
             {
                 "q": "Why is the risk-neutral measure associated with the money-market account often the most common numeraire choice?",
-                "a": "It's a natural, intuitive default, directly giving the standard discounted-expected-payoff pricing formula."
+                "a": "It's a natural, intuitive default, directly giving the standard discounted-expected-payoff pricing formula.",
+                "explain": "This is the reassuring special case that connects this whole module back to everything already familiar — choosing the money-market account (cash) as the numeraire recovers EXACTLY Module 13's standard Black-Scholes-style formula, confirming this module's general framework doesn't replace what you already know, it contains it as one particular choice."
             },
             {
                 "q": "What must be true of the process for an asset price expressed in units of the chosen numeraire?",
-                "a": "It must be a martingale, under the corresponding measure."
+                "a": "It must be a martingale, under the corresponding measure.",
+                "explain": "This is the module's core technical requirement, restating the changing-measure card above as a precise condition — the whole point of the 5-step procedure is to engineer a measure under which THIS martingale property holds for the numeraire-denominated price, since that's exactly what makes discounted-expectation pricing valid."
             },
             {
                 "q": "How does the 5-step method relate to the standard risk-neutral pricing formula used with the money-market account?",
-                "a": "The standard formula is a special case of the 5-step method, using the money-market account as the numeraire."
+                "a": "The standard formula is a special case of the 5-step method, using the money-market account as the numeraire.",
+                "explain": "This restates the earlier 'common default' card as an explicit hierarchy — Module 13's whole approach is not a separate, different technique from this module's; it's literally ONE instance of the general 5-step procedure, with the numeraire choice fixed in advance to cash rather than left open."
             },
             {
                 "q": "Give an example of an alternative numeraire that might be useful for pricing an exchange option.",
-                "a": "Using one of the two underlying assets itself as the numeraire, rather than cash."
+                "a": "Using one of the two underlying assets itself as the numeraire, rather than cash.",
+                "explain": "An exchange option (the right to swap one risky asset for another) genuinely depends on TWO sources of randomness when priced in cash terms — but expressed in units of one of the two assets, the problem often collapses to depending on just ONE random quantity (their relative ratio), a genuine simplification this technique enables that Module 13's cash-only approach cannot achieve as directly."
             },
             {
                 "q": "What is the final step of the 5-step method typically concerned with?",
-                "a": "Evaluating the resulting expectation (often reducing to a standard distributional calculation) to obtain the price."
+                "a": "Evaluating the resulting expectation (often reducing to a standard distributional calculation) to obtain the price.",
+                "explain": "This closes the procedure by returning to concrete numbers — after the clever measure-and-numeraire setup, the actual final calculation often reduces to something recognisable, like a normal-distribution-based expectation similar in spirit to evaluating $N(d_1)$ and $N(d_2)$ in Black-Scholes."
             },
             {
                 "q": "Why can choosing a well-suited numeraire reduce the dimensionality or complexity of a pricing problem?",
-                "a": "It can eliminate one source of randomness, simplifying the remaining expectation."
+                "a": "It can eliminate one source of randomness, simplifying the remaining expectation.",
+                "explain": "This is the precise mechanical reason the exchange-option trick above works — by re-denominating in units of one risky asset, that asset's OWN randomness is effectively absorbed into the numeraire itself, leaving only the (simpler) randomness of how the OTHER asset behaves relative to it."
             },
             {
                 "q": "What mathematical tool underlies the change of numeraire/measure technique?",
-                "a": "The Radon-Nikodym derivative, which relates probabilities under one measure to probabilities under another."
+                "a": "The Radon-Nikodym derivative, which relates probabilities under one measure to probabilities under another.",
+                "explain": "This is the precise mathematical machinery behind the 'changing measure' card earlier in this module — it's the formal tool that lets you rigorously convert an expectation calculated under one probability measure into an equivalent expectation under a different one, which is exactly what switching numeraires requires under the hood."
             },
             {
                 "q": "Why is the 5-step method described as a general procedure rather than a single formula?",
-                "a": "It's a systematic approach applicable to a wide range of payoffs and numeraire choices, not a single closed-form result like Black-Scholes."
+                "a": "It's a systematic approach applicable to a wide range of payoffs and numeraire choices, not a single closed-form result like Black-Scholes.",
+                "explain": "This is the key contrast with Module 13 worth holding onto — Black-Scholes is ONE formula for ONE specific type of payoff (a plain vanilla call/put); the 5-step method is a reusable PROCESS you apply fresh to each new, potentially unfamiliar payoff structure, choosing whatever numeraire best suits that particular problem."
             },
             {
                 "q": "How does the 5-step method help when a derivative's payoff depends on more than one underlying asset?",
-                "a": "By choosing a numeraire that simplifies the relationship between the assets, reducing a multi-asset problem to a simpler one."
+                "a": "By choosing a numeraire that simplifies the relationship between the assets, reducing a multi-asset problem to a simpler one.",
+                "explain": "This restates the exchange-option example as a general principle — multi-asset payoffs are exactly where Module 13's single-asset Black-Scholes framework runs out of road, and exactly where this module's numeraire flexibility earns its keep."
             },
             {
                 "q": "Why is understanding the 5-step method valuable beyond just memorising the Black-Scholes formula?",
-                "a": "It provides a flexible, general framework applicable to a much wider range of derivative pricing problems."
+                "a": "It provides a flexible, general framework applicable to a much wider range of derivative pricing problems.",
+                "explain": "This closes the module with its overarching justification — real derivatives markets contain far more exotic payoff structures than plain calls and puts, and this general procedure (rather than a growing list of memorised special-case formulas) is what equips you to approach a genuinely novel pricing problem systematically."
             }
         ]
     },
