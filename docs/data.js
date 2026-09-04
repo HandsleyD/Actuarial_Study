@@ -9655,63 +9655,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'provision' (or reserve), in an actuarial/accounting context?",
-                "a": "An amount set aside to meet expected future liabilities/obligations arising from past events or existing contracts."
+                "a": "An amount set aside to meet expected future liabilities/obligations arising from past events or existing contracts.",
+                "explain": "This module opens Part 6 of CP1 (financial reporting and capital) by formalising CM1's whole present-value liability concept into its accounting/regulatory role — worth reading Modules 32-39 as a coherent arc: provisions here, liability valuation more broadly in Module 33, how they feed reporting in Module 34, and ultimately capital in Modules 36-39."
             },
             {
                 "q": "Why do organisations need to hold provisions rather than just pay liabilities as they fall due from current income?",
-                "a": "To ensure sufficient assets are set aside now to meet liabilities that will crystallise later, protecting solvency and giving an accurate picture of financial position."
+                "a": "To ensure sufficient assets are set aside now to meet liabilities that will crystallise later, protecting solvency and giving an accurate picture of financial position.",
+                "explain": "This directly echoes Module 6's pay-as-you-go versus funded distinction — worth recognising provisions as the FUNDED approach applied at the level of an individual firm's obligations, precisely the discipline that pay-as-you-go arrangements deliberately forgo."
             },
             {
                 "q": "What is a 'best estimate' provision?",
-                "a": "A provision calculated using unbiased, most-likely assumptions about future experience, without deliberate additional margins."
+                "a": "A provision calculated using unbiased, most-likely assumptions about future experience, without deliberate additional margins.",
+                "explain": "This is Module 20's best-estimate assumption concept applied directly to the whole liability calculation, not just a single assumption — worth recognising as the same principle scaled up: no deliberate optimism or pessimism, just the actuary's genuine most-likely view."
             },
             {
                 "q": "What is a 'risk margin' (or margin for prudence), added to a best estimate provision?",
-                "a": "An additional amount added to the best estimate to allow for the uncertainty inherent in the estimate, providing a buffer against adverse deviation."
+                "a": "An additional amount added to the best estimate to allow for the uncertainty inherent in the estimate, providing a buffer against adverse deviation.",
+                "explain": "This is Module 20's margin for adverse deviation given its specific application to provisions — worth previewing Module 33's later, more formal treatment of a risk margin as representing the cost of TRANSFERRING the liability's uncertainty to another party, a subtly more precise definition than a simple margin of caution."
             },
             {
                 "q": "Why might a 'prospective' method be used to calculate a provision?",
-                "a": "It directly represents the provision as the present value of expected future outgo less expected future income, matching the definition of what the provision should cover."
+                "a": "It directly represents the provision as the present value of expected future outgo less expected future income, matching the definition of what the provision should cover.",
+                "explain": "This is CM1's present-value cashflow projection applied directly — worth recognising this as the CONCEPTUALLY correct method (it directly matches the definition of what a provision should represent), with the retrospective method next serving mainly as a cross-check rather than an equally valid alternative definition."
             },
             {
                 "q": "Why might a 'retrospective' method sometimes be used or cross-checked against a prospective calculation?",
-                "a": "It can provide a consistency check, calculating the provision as accumulated past income less accumulated past outgo, which should match the prospective figure under consistent assumptions."
+                "a": "It can provide a consistency check, calculating the provision as accumulated past income less accumulated past outgo, which should match the prospective figure under consistent assumptions.",
+                "explain": "This is worth thinking of as a genuine mathematical identity (accumulated past cashflows should equal the prospective present value, under consistent assumptions), similar to CM1's prospective/retrospective reserve equivalence — a mismatch between the two would flag either a calculation error or an inconsistency in assumptions applied over time."
             },
             {
                 "q": "What is 'IBNR' (incurred but not reported) provision, in general insurance?",
-                "a": "A reserve for claims that have already occurred but have not yet been reported to the insurer."
+                "a": "A reserve for claims that have already occurred but have not yet been reported to the insurer.",
+                "explain": "This is CS2's run-off triangle and chain ladder material given its formal provisioning name — worth connecting directly to Module 8's long-tail business material: the longer a business line's typical reporting lag, the larger and more uncertain its IBNR provision tends to be."
             },
             {
                 "q": "Why is IBNR reserving particularly challenging?",
-                "a": "By definition, the insurer has no direct record of these claims yet, so the reserve must be estimated using statistical/actuarial techniques applied to historical patterns."
+                "a": "By definition, the insurer has no direct record of these claims yet, so the reserve must be estimated using statistical/actuarial techniques applied to historical patterns.",
+                "explain": "This is exactly why CS2's whole chain-ladder and stochastic reserving toolkit exists — worth recognising IBNR as perhaps the clearest example in all of CP1 of needing to estimate something that, by construction, has no direct current evidence at all, relying entirely on inferred historical development patterns."
             },
             {
                 "q": "What is a 'claims outstanding' provision?",
-                "a": "A reserve for claims that have been reported but not yet fully settled/paid."
+                "a": "A reserve for claims that have been reported but not yet fully settled/paid.",
+                "explain": "This is worth distinguishing sharply from IBNR above — claims outstanding are at least KNOWN to exist (reported), even if their final settlement amount is still uncertain, making them generally more reliably estimable than the genuinely unknown IBNR claims."
             },
             {
                 "q": "Why might provisions need to be calculated differently for regulatory reporting versus internal management purposes?",
-                "a": "Different purposes may call for different levels of prudence or different prescribed methodologies (e.g. regulatory solvency rules versus best-estimate internal management view)."
+                "a": "Different purposes may call for different levels of prudence or different prescribed methodologies (e.g. regulatory solvency rules versus best-estimate internal management view).",
+                "explain": "This is Module 13's and Module 20's different-basis-different-purpose principle applied specifically to provisions — worth directly previewing Module 34's reporting material, since this is exactly why a firm's regulatory reported figures can genuinely differ from its own internal, best-estimate management view of the same liabilities."
             },
             {
                 "q": "What is a 'discount rate', and why is it relevant to calculating provisions?",
-                "a": "The rate used to convert future expected cashflows into a present value; the choice of discount rate can materially affect the size of the resulting provision."
+                "a": "The rate used to convert future expected cashflows into a present value; the choice of discount rate can materially affect the size of the resulting provision.",
+                "explain": "This is CM1's discounting machinery at the heart of every provision calculation this module discusses — worth previewing Module 33's card on discount-rate sensitivity, since this single assumption choice can move a long-duration provision's value more than almost any other single input."
             },
             {
                 "q": "Why might holding an inadequate provision be a serious concern for an insurer?",
-                "a": "It could mean the insurer doesn't hold sufficient assets to meet its actual future obligations, threatening its ability to pay claims and its solvency."
+                "a": "It could mean the insurer doesn't hold sufficient assets to meet its actual future obligations, threatening its ability to pay claims and its solvency.",
+                "explain": "This directly previews Module 35's insolvency material — an inadequate provision is precisely the failure mode that eventually manifests as the inability to meet liabilities Module 35 discusses, making accurate provisioning a genuinely central defence against insolvency, not just an accounting technicality."
             },
             {
                 "q": "Why might holding an excessively prudent provision also be undesirable, despite appearing 'safe'?",
-                "a": "It ties up capital unnecessarily, can distort reported profitability, and may not give an accurate/transparent view of the organisation's true financial position."
+                "a": "It ties up capital unnecessarily, can distort reported profitability, and may not give an accurate/transparent view of the organisation's true financial position.",
+                "explain": "This is Module 20's over-prudence caution restated for provisions specifically — worth holding this alongside the previous card as the same two-sided balance recurring throughout CP1's treatment of prudence: too little is dangerous, too much has its own genuine costs."
             },
             {
                 "q": "How does the choice of assumptions (e.g. mortality, expenses, lapses) directly affect the calculated provision?",
-                "a": "Provisions are calculated by projecting future cashflows using these assumptions, so different assumption choices produce materially different provision amounts."
+                "a": "Provisions are calculated by projecting future cashflows using these assumptions, so different assumption choices produce materially different provision amounts.",
+                "explain": "This ties together Modules 20-24's whole assumption-setting material (mortality/morbidity, expenses, lapse rates implicit in Module 27) as the direct INPUTS feeding this module's prospective calculation — worth recognising provisions as the point where all those separate assumption-setting exercises finally combine into one figure."
             },
             {
                 "q": "Why must provisions be reviewed and updated regularly, rather than calculated once at policy inception?",
-                "a": "Experience, assumptions, and the remaining term of liabilities all change over time, requiring the provision to be recalculated to remain appropriate."
+                "a": "Experience, assumptions, and the remaining term of liabilities all change over time, requiring the provision to be recalculated to remain appropriate.",
+                "explain": "This closing card is CP1's recurring ongoing-review theme applied to provisions specifically — worth recognising this as a direct extension of Module 20's periodic assumption review and Module 24's post-launch experience monitoring, now applied to the liability figure those assumptions ultimately produce."
             }
         ]
     },
@@ -9722,63 +9737,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is meant by 'valuing' a liability?",
-                "a": "Placing a monetary figure on the expected cost of meeting a future obligation, typically as a present value of expected future cashflows."
+                "a": "Placing a monetary figure on the expected cost of meeting a future obligation, typically as a present value of expected future cashflows.",
+                "explain": "This module broadens Module 32's provisioning material into the general principles of liability valuation across every context (not just insurance reserves) — worth reading this as Module 13's asset-valuation material given its direct liability-side counterpart."
             },
             {
                 "q": "Why might liabilities be valued on more than one basis (e.g. regulatory versus best estimate)?",
-                "a": "Different purposes (solvency assessment, pricing, internal management, financial reporting) may require different levels of prudence or different prescribed methodologies."
+                "a": "Different purposes (solvency assessment, pricing, internal management, financial reporting) may require different levels of prudence or different prescribed methodologies.",
+                "explain": "This is Module 32's different-purpose card restated at the general liability level — worth recognising this recurring pattern (Module 13 for assets, Module 20 for assumptions, Module 32 for provisions, here for liabilities generally) as one of CP1's most consistently repeated principles."
             },
             {
                 "q": "What is a 'market-consistent' valuation of liabilities?",
-                "a": "A valuation approach using assumptions (e.g. discount rates) derived from, and consistent with, current observable market prices/conditions."
+                "a": "A valuation approach using assumptions (e.g. discount rates) derived from, and consistent with, current observable market prices/conditions.",
+                "explain": "This is Module 13's market-value principle for ASSETS applied directly to liabilities — worth recognising this as the liability-side analogue of the same objectivity argument Module 13 made: anchoring to observable market data rather than internal judgement wherever genuinely possible."
             },
             {
                 "q": "Why might a market-consistent approach be considered more objective than a valuation based on an organisation's own chosen assumptions?",
-                "a": "It anchors key assumptions to observable, verifiable market data rather than relying purely on internal judgement, improving comparability and reducing scope for manipulation."
+                "a": "It anchors key assumptions to observable, verifiable market data rather than relying purely on internal judgement, improving comparability and reducing scope for manipulation.",
+                "explain": "This is exactly Module 13's argument for preferring market value over smoothed/model-based valuation, now applied to the liability side — worth connecting to Module 34's true-and-fair-view principle: objectivity here directly serves the goal of trustworthy, comparable financial reporting."
             },
             {
                 "q": "What challenge arises in applying market-consistent valuation to liabilities that have no direct market equivalent (e.g. long-term insurance liabilities)?",
-                "a": "There's no directly observable market price for the liability itself, so techniques must proxy/replicate a market-consistent value using available market data on related instruments."
+                "a": "There's no directly observable market price for the liability itself, so techniques must proxy/replicate a market-consistent value using available market data on related instruments.",
+                "explain": "This is exactly Module 13's illiquid-asset valuation challenge restated for liabilities — worth recognising this as a genuinely important limitation: unlike a listed equity, an insurance liability has literally no secondary market to observe a price from, forcing a synthetic, model-based approximation of what a market-consistent value WOULD be."
             },
             {
                 "q": "What is the relationship between the valuation of assets and liabilities in assessing an organisation's solvency?",
-                "a": "Solvency is typically assessed by comparing the value of assets to the value of liabilities — using inconsistent bases for each could give a misleading picture."
+                "a": "Solvency is typically assessed by comparing the value of assets to the value of liabilities — using inconsistent bases for each could give a misleading picture.",
+                "explain": "This is precisely Module 13's closing card restated from the liability side, and it directly previews Module 36's available-capital definition (assets minus liabilities) — worth recognising consistency between asset and liability valuation bases as foundational to every capital and solvency concept that follows in this Part."
             },
             {
                 "q": "Why might the discount rate used to value liabilities be a particularly significant/sensitive assumption?",
-                "a": "Small changes in the discount rate can have a large effect on the present value of long-term liability cashflows, especially for long-duration liabilities."
+                "a": "Small changes in the discount rate can have a large effect on the present value of long-term liability cashflows, especially for long-duration liabilities.",
+                "explain": "This is CM1's duration concept (also central to Module 16's ALM material) explaining exactly WHY discount-rate risk matters so much for long-term liabilities — the longer the duration, the more a liability's present value amplifies any given change in the discount rate, precisely the mechanism Module 16's matching techniques exist to manage."
             },
             {
                 "q": "What is an 'options and guarantees' allowance within a liability valuation?",
-                "a": "An additional value placed on embedded financial options/guarantees within the liability, reflecting their potential cost to the provider under different future scenarios."
+                "a": "An additional value placed on embedded financial options/guarantees within the liability, reflecting their potential cost to the provider under different future scenarios.",
+                "explain": "This is Module 23's and Module 27's guarantee/option material given its formal valuation treatment — worth recognising this as the direct quantification of the risk those earlier modules described qualitatively: a guarantee genuinely adds to the liability's VALUE, not just its conceptual risk profile."
             },
             {
                 "q": "Why might a simple deterministic (single-scenario) valuation understate the true cost of embedded options and guarantees?",
-                "a": "Options/guarantees are typically more valuable (costly to the provider) in adverse scenarios, so their true expected cost requires averaging across a range of scenarios (e.g. stochastically), not just a central estimate."
+                "a": "Options/guarantees are typically more valuable (costly to the provider) in adverse scenarios, so their true expected cost requires averaging across a range of scenarios (e.g. stochastically), not just a central estimate.",
+                "explain": "This is precisely Module 18's deterministic-versus-stochastic modelling distinction applied to its most consequential CP1 use case — because a guarantee's cost is ASYMMETRIC (it bites hardest in bad scenarios and does nothing in good ones), a single central-estimate scenario systematically misses most of its true expected cost, exactly as CM2's option-pricing theory would predict."
             },
             {
                 "q": "What is a 'risk margin', in the context of valuing liabilities for solvency purposes?",
-                "a": "An additional amount added to the best estimate liability value, intended to represent the cost of transferring the liability (with its inherent uncertainty) to another party."
+                "a": "An additional amount added to the best estimate liability value, intended to represent the cost of transferring the liability (with its inherent uncertainty) to another party.",
+                "explain": "This refines Module 32's simpler 'margin for caution' framing into a more precise definition — worth noting the subtle but important shift: rather than just 'being cautious', this risk margin specifically represents what a THIRD PARTY (like a reinsurer) would charge to take on the liability's uncertainty, echoing Module 30's risk transfer cost material."
             },
             {
                 "q": "Why is consistency in the valuation approach important when comparing an organisation's financial position over time?",
-                "a": "Changing valuation methodology/assumptions between periods could create the appearance of a change in financial position that doesn't reflect genuine underlying change."
+                "a": "Changing valuation methodology/assumptions between periods could create the appearance of a change in financial position that doesn't reflect genuine underlying change.",
+                "explain": "This directly previews Module 34's comparability principle — worth connecting to Module 20's assumption-consistency material: a firm that quietly changes its valuation basis between reporting periods could mask a genuine deterioration (or fabricate an improvement) that has nothing to do with its actual underlying risk."
             },
             {
                 "q": "How does liability valuation differ conceptually between a life insurer's long-term liabilities and a general insurer's shorter-term liabilities?",
-                "a": "Life liabilities typically require long-term projection of mortality/persistency/investment assumptions; general insurance liabilities focus more on claims development patterns over a (usually) shorter horizon."
+                "a": "Life liabilities typically require long-term projection of mortality/persistency/investment assumptions; general insurance liabilities focus more on claims development patterns over a (usually) shorter horizon.",
+                "explain": "This directly echoes Module 8's short-tail/long-tail distinction — worth recognising the practical technique split it implies: life valuation leans heavily on CM1's long-term projection machinery, while general insurance valuation leans on CS2's chain-ladder/run-off triangle development-pattern techniques."
             },
             {
                 "q": "Why might an actuary need to exercise significant judgement in valuing liabilities, even within a market-consistent framework?",
-                "a": "Market data for hedging/replicating certain long-term or complex liability features may be limited or unavailable, requiring judgement to extrapolate/approximate."
+                "a": "Market data for hedging/replicating certain long-term or complex liability features may be limited or unavailable, requiring judgement to extrapolate/approximate.",
+                "explain": "This is Module 2's judgement-versus-calculation theme returning at one of its most consequential applications — even the theoretically 'objective' market-consistent approach still requires genuine actuarial judgement wherever the market itself simply doesn't provide data far enough into the future to fully replicate a long-term liability."
             },
             {
                 "q": "What is the role of sensitivity analysis in liability valuation?",
-                "a": "Assessing how the valuation changes under different assumption scenarios, helping to understand which assumptions are most material to the result."
+                "a": "Assessing how the valuation changes under different assumption scenarios, helping to understand which assumptions are most material to the result.",
+                "explain": "This is Module 18's sensitivity-testing principle applied directly to liability valuation — worth connecting to the discount-rate-sensitivity card earlier in this module: sensitivity analysis is precisely how an actuary would DISCOVER that the discount rate (or any other assumption) is unusually material, rather than assuming it in advance."
             },
             {
                 "q": "Why is accurate valuation of liabilities fundamental to nearly every other area of actuarial practice covered in CP1?",
-                "a": "Pricing, reserving, capital management, and risk assessment all depend on a reliable understanding of the value/cost of the organisation's obligations."
+                "a": "Pricing, reserving, capital management, and risk assessment all depend on a reliable understanding of the value/cost of the organisation's obligations.",
+                "explain": "This closing card makes explicit what's been implicit throughout much of CP1 — Module 24's pricing, Module 32's provisions, and Modules 36-39's capital material all ultimately rest on the SAME underlying liability valuation this module has developed, making it a genuine load-bearing pillar for the rest of CP1's Part 6."
             }
         ]
     },
@@ -9789,63 +9819,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the general purpose of an organisation's financial reporting?",
-                "a": "To communicate its financial position and performance to stakeholders (e.g. shareholders, regulators, policyholders) in a clear, reliable way."
+                "a": "To communicate its financial position and performance to stakeholders (e.g. shareholders, regulators, policyholders) in a clear, reliable way.",
+                "explain": "This module takes Module 32-33's provisions and liability valuations and asks how they get COMMUNICATED — worth reading this as Module 2's clear-communication principle applied at the whole-organisation level, echoing this module's own later card on transparency."
             },
             {
                 "q": "Why might different stakeholders want different information from financial reporting?",
-                "a": "Shareholders may focus on profitability/growth; regulators on solvency; policyholders on security of benefits — each has different information needs."
+                "a": "Shareholders may focus on profitability/growth; regulators on solvency; policyholders on security of benefits — each has different information needs.",
+                "explain": "This directly echoes Module 2's multiple-stakeholders tension and Module 13's different-bases-different-purposes principle — worth recognising this as exactly why the statutory-versus-management reporting distinction later in this module exists: no single report perfectly serves every stakeholder's genuinely different needs."
             },
             {
                 "q": "What is the difference between a 'balance sheet' and an 'income statement'?",
-                "a": "A balance sheet shows the financial position (assets, liabilities, and equity/surplus) at a point in time; an income statement shows performance (income and expenses) over a period."
+                "a": "A balance sheet shows the financial position (assets, liabilities, and equity/surplus) at a point in time; an income statement shows performance (income and expenses) over a period.",
+                "explain": "Worth connecting the balance sheet directly to Module 33's asset-minus-liability solvency comparison, and the income statement to Module 34's own profit-emergence card next — these are the two fundamental financial statement TYPES that everything else in this module ultimately feeds into."
             },
             {
                 "q": "Why do actuarial calculations (e.g. reserves) directly feed into an insurer's reported financial statements?",
-                "a": "Liabilities (largely actuarially calculated) are a major component of the balance sheet, and changes in reserves directly affect reported profit."
+                "a": "Liabilities (largely actuarially calculated) are a major component of the balance sheet, and changes in reserves directly affect reported profit.",
+                "explain": "This is the direct link back to Module 32's provisions — worth recognising that a change in reserving ASSUMPTIONS alone (with no change in the underlying business) can move reported profit materially, which is exactly why transparency about assumptions (a later card) matters so much for genuinely interpreting these figures."
             },
             {
                 "q": "What is 'profit emergence', in the context of long-term insurance business?",
-                "a": "The pattern over time in which profit from a policy is recognised in the financial statements, which can differ from when cash is actually received/paid."
+                "a": "The pattern over time in which profit from a policy is recognised in the financial statements, which can differ from when cash is actually received/paid.",
+                "explain": "This is worth connecting directly to Module 24's new business strain — the SAME timing mismatch between cash and recognised profit that creates capital strain at the front end also shapes how profit gets reported across a policy's whole lifetime, not just at inception."
             },
             {
                 "q": "Why might different accounting/valuation bases lead to different patterns of profit emergence for the same underlying business?",
-                "a": "The timing of when reserves recognise expected future profit varies by basis, shifting how much profit is reported in earlier versus later years."
+                "a": "The timing of when reserves recognise expected future profit varies by basis, shifting how much profit is reported in earlier versus later years.",
+                "explain": "This is Module 33's different-valuation-bases material applied specifically to the TIMING of reported profit — worth recognising this as a genuinely important distinction from Module 24's pricing: the total lifetime profit is (broadly) the same regardless of basis, only WHEN it's recognised as reported profit differs."
             },
             {
                 "q": "What is a 'true and fair view', as a principle of financial reporting?",
-                "a": "Financial statements should accurately and honestly represent the organisation's actual financial position and performance, without material misstatement."
+                "a": "Financial statements should accurately and honestly represent the organisation's actual financial position and performance, without material misstatement.",
+                "explain": "This is worth reading alongside Module 13's market-value objectivity argument and Module 2's professional integrity principles — a true and fair view is the accounting-specific expression of the same honesty and accuracy standard CP1 applies to actuarial advice generally."
             },
             {
                 "q": "Why is comparability of financial reporting across different organisations/time periods considered important?",
-                "a": "It allows stakeholders to meaningfully compare performance/position between companies or over time, supporting informed decision-making."
+                "a": "It allows stakeholders to meaningfully compare performance/position between companies or over time, supporting informed decision-making.",
+                "explain": "This directly echoes Module 33's consistency card — worth recognising comparability ACROSS firms as an extension of the same principle Module 33 raised for consistency WITHIN one firm over time: both exist to prevent reported figures from being distorted by methodology choices rather than genuine underlying differences."
             },
             {
                 "q": "What role does an external auditor play in relation to financial reporting?",
-                "a": "Providing independent assurance that the financial statements give a true and fair view and comply with relevant accounting standards."
+                "a": "Providing independent assurance that the financial statements give a true and fair view and comply with relevant accounting standards.",
+                "explain": "This is Module 2's peer review principle and Module 25's three-lines-of-defence independent-assurance concept both converging at the external, statutory level — worth recognising an external auditor as an INDEPENDENT check analogous to (but external to) the internal audit function Module 25 described."
             },
             {
                 "q": "Why might an actuary's calculations be subject to particular scrutiny within the financial reporting/audit process?",
-                "a": "They often involve significant judgement and materially affect reported figures (e.g. insurance liabilities), warranting careful independent review."
+                "a": "They often involve significant judgement and materially affect reported figures (e.g. insurance liabilities), warranting careful independent review.",
+                "explain": "This directly connects Module 33's judgement-in-valuation card to the audit process — since actuarial liability figures are both highly JUDGEMENTAL (Module 33) and highly MATERIAL to the balance sheet (this module's earlier card), they naturally attract more auditor attention than more mechanical, less judgement-dependent line items."
             },
             {
                 "q": "What is the difference between statutory (regulatory) reporting and management reporting?",
-                "a": "Statutory reporting follows prescribed external rules/standards for external stakeholders; management reporting is more flexible, tailored to internal decision-making needs."
+                "a": "Statutory reporting follows prescribed external rules/standards for external stakeholders; management reporting is more flexible, tailored to internal decision-making needs.",
+                "explain": "This directly resolves the module's opening card about differing stakeholder needs — worth connecting to Module 20's best-estimate-versus-prudent distinction: management reporting often leans toward best-estimate internal insight, while statutory reporting follows prescribed, often more prudent, external rules."
             },
             {
                 "q": "Why might an organisation's reported results under one basis (e.g. regulatory) differ materially from another (e.g. internal economic) basis?",
-                "a": "Different bases can use different assumptions, prudence margins, or recognition timing, leading to genuinely different reported figures for the same underlying business."
+                "a": "Different bases can use different assumptions, prudence margins, or recognition timing, leading to genuinely different reported figures for the same underlying business.",
+                "explain": "This is worth treating as the module's central practical warning — a CP1 scenario showing seemingly inconsistent figures from the same organisation isn't necessarily an error; it may simply reflect legitimate differences between the bases this whole module (and Module 33 before it) has been explaining."
             },
             {
                 "q": "How might reported financial results influence external stakeholders' perceptions of an organisation, beyond its actual underlying position?",
-                "a": "Reported figures (e.g. profit, solvency ratio) are often used as a proxy for underlying health, so reporting choices (within permitted rules) can influence market/stakeholder perception."
+                "a": "Reported figures (e.g. profit, solvency ratio) are often used as a proxy for underlying health, so reporting choices (within permitted rules) can influence market/stakeholder perception.",
+                "explain": "This connects to Module 12's behavioural finance material from a corporate-reporting angle — worth noting stakeholders often react to the REPORTED number, not necessarily the deeper reality behind it, which is precisely why the true-and-fair-view and transparency principles in this module matter so much: perception genuinely follows disclosure."
             },
             {
                 "q": "Why is transparency about the assumptions and methods underlying reported actuarial figures important?",
-                "a": "It allows stakeholders to understand and appropriately interpret the reported results, rather than taking headline figures at face value without context."
+                "a": "It allows stakeholders to understand and appropriately interpret the reported results, rather than taking headline figures at face value without context.",
+                "explain": "This closes the loop on Module 2's, Module 18's, and Module 20's recurring transparency theme — worth recognising this as the same principle applied at its highest-stakes point in CP1: external financial reporting is where an actuary's assumption and method choices become most publicly visible and consequential."
             },
             {
                 "q": "How does reporting results connect back to the earlier topics of provisions and liability valuation?",
-                "a": "The provisions/liability valuations calculated using actuarial methods directly determine key figures presented within the organisation's financial reports."
+                "a": "The provisions/liability valuations calculated using actuarial methods directly determine key figures presented within the organisation's financial reports.",
+                "explain": "This closing card makes explicit the whole module's dependency on Modules 32-33 — worth recognising this Part of CP1 as one continuous pipeline: assumptions (Module 20) feed provisions (Module 32) and liability valuations (Module 33), which feed the reported figures this module has now fully explained."
             }
         ]
     },
@@ -9856,63 +9901,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'insolvency' mean for a financial institution?",
-                "a": "Being unable to meet its liabilities as they fall due, or having liabilities that exceed its assets."
+                "a": "Being unable to meet its liabilities as they fall due, or having liabilities that exceed its assets.",
+                "explain": "This module confronts the failure scenario every earlier Part 6 module has been implicitly guarding against — worth reading this as the direct consequence of Module 32's inadequate-provision warning finally materialising: the very outcome accurate reserving and reporting exist to prevent."
             },
             {
                 "q": "Why is insolvency of particular concern for insurers and pension schemes, beyond the immediate organisation itself?",
-                "a": "Their failure can directly harm policyholders/members who are relying on future promised benefits, not just shareholders/creditors."
+                "a": "Their failure can directly harm policyholders/members who are relying on future promised benefits, not just shareholders/creditors.",
+                "explain": "This is Module 4's consumer-protection regulatory aim restated at its most consequential — worth connecting to Module 1's point about actuaries' public-interest duty: this is precisely WHY that duty exists, since ordinary policyholders/members bear real harm from a failure they had no real power to prevent or foresee."
             },
             {
                 "q": "What is a 'run-off', in the context of an insurer or fund that has stopped writing new business?",
-                "a": "Continuing to administer and pay claims/benefits on existing (in-force) business, without accepting new policies."
+                "a": "Continuing to administer and pay claims/benefits on existing (in-force) business, without accepting new policies.",
+                "explain": "Worth noting this is NOT the same as insolvency — a run-off can be entirely orderly and solvent, simply winding down existing obligations without taking on new ones, as the next card's voluntary-run-off scenario makes explicit."
             },
             {
                 "q": "Why might an insurer choose to enter voluntary run-off, even if not insolvent?",
-                "a": "Strategic reasons, e.g. exiting an unprofitable line of business or focusing resources elsewhere, while still honouring existing obligations."
+                "a": "Strategic reasons, e.g. exiting an unprofitable line of business or focusing resources elsewhere, while still honouring existing obligations.",
+                "explain": "This directly connects to Module 24's pricing-strategy material — worth recognising this as a genuine commercial decision, not a failure: if a line of business can't be priced (Module 24) or reserved (Module 32) sustainably, orderly voluntary run-off can be a responsible exit rather than continuing to write increasingly risky new business."
             },
             {
                 "q": "What is a 'policyholder protection scheme' (or compensation scheme)?",
-                "a": "A scheme (often government or industry-backed) providing some protection/compensation to policyholders if their insurer becomes insolvent."
+                "a": "A scheme (often government or industry-backed) providing some protection/compensation to policyholders if their insurer becomes insolvent.",
+                "explain": "This is a direct structural response to the consumer-protection concern raised earlier in this module — worth noting this is a LAST-RESORT safety net, sitting behind everything else in Part 6 (adequate provisions, capital, regulatory oversight); it doesn't replace the need for those, it just softens the impact when they've already failed."
             },
             {
                 "q": "Why might regulators intervene early with a financially weakening insurer, rather than waiting until formal insolvency?",
-                "a": "Early intervention (e.g. restricting new business, requiring a recovery plan) may prevent full insolvency and better protect policyholders."
+                "a": "Early intervention (e.g. restricting new business, requiring a recovery plan) may prevent full insolvency and better protect policyholders.",
+                "explain": "This is Module 4's prudential regulation and Module 29's forward-looking/early-warning risk reporting material converging directly on insolvency prevention — worth recognising this as the practical payoff of Module 29's KRI and trend-reporting material: catching deterioration early is exactly what allows intervention before full insolvency, rather than after."
             },
             {
                 "q": "What actuarial input might be needed when an insurer is approaching insolvency?",
-                "a": "Updated, realistic valuations of assets and liabilities to assess the true financial position and inform regulatory/management decisions."
+                "a": "Updated, realistic valuations of assets and liabilities to assess the true financial position and inform regulatory/management decisions.",
+                "explain": "This is Module 33's liability valuation material at its most urgent and consequential application — worth noting the word 'realistic' specifically: an insurer in genuine difficulty needs an honest, current assessment, not a smoothed or overly optimistic figure, echoing Module 13's warning about smoothed valuation delaying recognition of genuine deterioration."
             },
             {
                 "q": "What is a 'scheme of arrangement' or portfolio transfer, in the context of an insurer in difficulty?",
-                "a": "A formal mechanism to transfer some or all of an insurer's policies/liabilities to another (financially sound) insurer."
+                "a": "A formal mechanism to transfer some or all of an insurer's policies/liabilities to another (financially sound) insurer.",
+                "explain": "This is worth thinking of as a structural alternative to outright insolvency — rather than the insurer failing and policyholders relying on the protection scheme above, this mechanism proactively moves the liabilities to a sound counterparty, ideally BEFORE things deteriorate to the point of formal insolvency."
             },
             {
                 "q": "Why might policyholders receive less than their full contractual entitlement if an insurer becomes insolvent?",
-                "a": "If the insurer's assets are insufficient to cover all liabilities in full, policyholders (as creditors) may only receive a proportionate share, subject to any protection scheme."
+                "a": "If the insurer's assets are insufficient to cover all liabilities in full, policyholders (as creditors) may only receive a proportionate share, subject to any protection scheme.",
+                "explain": "This is the direct, painful consequence of an inadequate provision (Module 32) finally being exposed — worth recognising policyholders as effectively CREDITORS at this point, a status that connects directly to the priority-ranking cards later in this module determining exactly how much of any shortfall they bear."
             },
             {
                 "q": "What is the role of an independent actuary in assessing a proposed transfer of insurance business between companies?",
-                "a": "To provide an independent opinion on whether the transfer is fair to the affected policyholders (both transferring and remaining)."
+                "a": "To provide an independent opinion on whether the transfer is fair to the affected policyholders (both transferring and remaining).",
+                "explain": "This is Module 2's peer review and independence principles applied at one of the highest-stakes actuarial roles in the whole syllabus — worth recognising the 'both transferring and remaining' phrase specifically: a transfer could unfairly favour one group of policyholders over another, which is exactly what this independent scrutiny exists to catch."
             },
             {
                 "q": "How might a pension scheme's assets be distributed if the scheme is wound up?",
-                "a": "Typically according to a priority order set out in legislation/scheme rules, which may mean not all promised benefits are met in full if the scheme is underfunded."
+                "a": "Typically according to a priority order set out in legislation/scheme rules, which may mean not all promised benefits are met in full if the scheme is underfunded.",
+                "explain": "This is the pension-scheme equivalent of the insurance insolvency material earlier in this module — worth connecting to Module 6's trustee-duty material: the priority order exists precisely because, in an underfunded wind-up, not every member's promised benefit can be honoured in full, and someone has to decide the order of protection."
             },
             {
                 "q": "Why is understanding the 'wind-up' or 'buy-out' cost of a pension scheme's liabilities relevant to its sponsor and trustees?",
-                "a": "It indicates the cost of fully securing member benefits with an insurer, an important reference point for funding and risk management decisions, especially if the sponsor is at risk of insolvency."
+                "a": "It indicates the cost of fully securing member benefits with an insurer, an important reference point for funding and risk management decisions, especially if the sponsor is at risk of insolvency.",
+                "explain": "This is Module 33's liability valuation material given a specific, market-consistent reference point — worth recognising buy-out cost as effectively 'what would it cost to transfer this liability to an insurer via an annuity purchase', a genuinely useful benchmark distinct from the scheme's own (potentially less prudent) ongoing funding basis."
             },
             {
                 "q": "What is the purpose of a 'recovery plan' for an underfunded pension scheme?",
-                "a": "A plan agreed between the sponsor and trustees setting out how the scheme's funding shortfall will be addressed over time."
+                "a": "A plan agreed between the sponsor and trustees setting out how the scheme's funding shortfall will be addressed over time.",
+                "explain": "This is the pension equivalent of the early regulatory intervention discussed earlier in this module — worth connecting to Module 6's sponsor-covenant material: a recovery plan's credibility depends heavily on the sponsor's ongoing financial strength to actually deliver the promised additional contributions over time."
             },
             {
                 "q": "Why might the order in which different creditors/policyholders are paid matter significantly in an insolvency?",
-                "a": "Assets are typically insufficient to pay everyone in full, so priority ranking determines who bears the greatest share of any shortfall."
+                "a": "Assets are typically insufficient to pay everyone in full, so priority ranking determines who bears the greatest share of any shortfall.",
+                "explain": "This closes the loop on the policyholder-as-creditor card from earlier in this module — worth recognising priority ranking as the mechanism that decides EXACTLY who bears loss first when assets fall short, directly shaping how much protection scheme intervention (discussed earlier) is actually needed for lower-priority claimants."
             },
             {
                 "q": "How does understanding insolvency and closure processes reinforce the importance of the capital management topics covered elsewhere in CP1?",
-                "a": "Adequate capital management is precisely what's intended to reduce the likelihood of an organisation ever reaching insolvency in the first place."
+                "a": "Adequate capital management is precisely what's intended to reduce the likelihood of an organisation ever reaching insolvency in the first place.",
+                "explain": "This closing card is the module's direct hand-off to Modules 36-39 — worth reading this whole module as a deliberate, sobering motivation for what follows: capital management isn't an abstract regulatory exercise, it's the practical defence against every consequence this module has just catalogued."
             }
         ]
     },
