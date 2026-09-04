@@ -6701,63 +6701,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'copula'?",
-                "a": "A multivariate distribution function on $[0,1]^n$ that captures the dependence structure between random variables, separate from their marginals."
+                "a": "A multivariate distribution function on $[0,1]^n$ that captures the dependence structure between random variables, separate from their marginals.",
+                "explain": "This module addresses a gap left open by everything before it — Modules 15-16 developed rich tools for modelling a SINGLE loss distribution's shape and tail, but real insurers hold many correlated risks simultaneously, and a copula is the tool for capturing HOW those risks move together, independently of what each individual risk's own distribution looks like."
             },
             {
                 "q": "What does Sklar's theorem state (conceptually)?",
-                "a": "Any multivariate joint distribution can be decomposed into its marginal distributions and a copula describing dependence between them."
+                "a": "Any multivariate joint distribution can be decomposed into its marginal distributions and a copula describing dependence between them.",
+                "explain": "This is the theoretical foundation that makes copulas useful in the first place — it guarantees that ANY joint distribution, however complex, can always be split cleanly into 'what each variable looks like on its own' (the marginals, e.g. fitted with Module 15's severity distributions) and 'how they move together' (the copula), with no loss of generality."
             },
             {
                 "q": "Why is it useful to model dependence via a copula, separately from the marginals?",
-                "a": "It allows flexible combination of any chosen marginals with any chosen dependence structure."
+                "a": "It allows flexible combination of any chosen marginals with any chosen dependence structure.",
+                "explain": "This is the direct practical payoff of Sklar's theorem above — an actuary can fit a Pareto to one line of business's losses (Module 16) and a lognormal to another, then bolt on a SEPARATELY-chosen copula to model their joint dependence, rather than being forced to find one exotic bivariate distribution that does both jobs at once."
             },
             {
                 "q": "What is 'concordance' between two random variables, loosely speaking?",
-                "a": "A tendency for large values of one variable to be associated with large values of the other."
+                "a": "A tendency for large values of one variable to be associated with large values of the other.",
+                "explain": "This is a more general notion of 'moving together' than ordinary linear correlation — worth noting copulas are often summarised using rank-based concordance measures (like Kendall's tau or Spearman's rho) rather than Pearson correlation, precisely because concordance depends only on the dependence structure, not on the (arbitrary) marginal distributions."
             },
             {
                 "q": "What is 'tail dependence'?",
-                "a": "The tendency for extreme values of two variables to occur together, more or less than average dependence would suggest."
+                "a": "The tendency for extreme values of two variables to occur together, more or less than average dependence would suggest.",
+                "explain": "This connects directly back to Module 16's extreme value theory — just as that module asked 'how likely are extreme values for ONE risk', this asks 'how likely are extreme values for TWO risks AT THE SAME TIME', which is exactly the aggregate-risk question that matters for solvency under stress."
             },
             {
                 "q": "What is 'upper tail dependence'?",
-                "a": "The tendency for both variables to take extremely high values simultaneously."
+                "a": "The tendency for both variables to take extremely high values simultaneously.",
+                "explain": "For insurance losses (where 'high' means 'bad'), UPPER tail dependence is usually the direction actuaries worry about most — it captures whether a catastrophic loss on one risk tends to coincide with a catastrophic loss on another, which is exactly the correlated-tail-risk scenario a naive independence assumption would miss."
             },
             {
                 "q": "What is 'lower tail dependence'?",
-                "a": "The tendency for both variables to take extremely low values simultaneously."
+                "a": "The tendency for both variables to take extremely low values simultaneously.",
+                "explain": "This is the mirror image of upper tail dependence, for the LOW-value end of each distribution — less central to loss modelling specifically, but it completes the general concept and matters more directly in contexts like asset returns (CM2's territory), where a simultaneous market crash is a lower-tail event."
             },
             {
                 "q": "Why is tail dependence particularly important for actuarial risk modelling?",
-                "a": "It captures whether extreme losses in different risks tend to occur together, critical for aggregate risk under stress."
+                "a": "It captures whether extreme losses in different risks tend to occur together, critical for aggregate risk under stress.",
+                "explain": "This is the module's central practical point, echoing Module 16's own warning about tail weight — an insurer that assumes independence (or uses a copula with weak tail dependence, like Gaussian below) when the true risks share a common trigger could badly understate its capital requirement for the exact stress scenario that threatens solvency."
             },
             {
                 "q": "What is the Gaussian copula?",
-                "a": "A copula derived from the multivariate normal distribution, characterised by a correlation matrix, with zero tail dependence."
+                "a": "A copula derived from the multivariate normal distribution, characterised by a correlation matrix, with zero tail dependence.",
+                "explain": "Worth being precise about what 'zero tail dependence' means here: even with a HIGH overall correlation coefficient, the Gaussian copula still implies that jointly extreme events become vanishingly unlikely relative to what's typically observed in real financial/insurance data — a subtle but important limitation, explored in the next card."
             },
             {
                 "q": "What is a key limitation of the Gaussian copula for modelling financial/insurance risk?",
-                "a": "Its lack of tail dependence can understate simultaneous extreme events, implicated in the 2008 financial crisis."
+                "a": "Its lack of tail dependence can understate simultaneous extreme events, implicated in the 2008 financial crisis.",
+                "explain": "This is a well-known real-world cautionary tale worth remembering as a concrete anchor for the abstract theory — the Gaussian copula was widely used to price correlated mortgage default risk (CDOs) before 2008, and its zero tail dependence meant the models badly understated the true probability of MANY mortgages defaulting simultaneously in a systemic downturn."
             },
             {
                 "q": "What is the 'Archimedean' family of copulas?",
-                "a": "A class constructed from a generator function, including the Gumbel, Clayton, and Frank copulas, with varying tail dependence."
+                "a": "A class constructed from a generator function, including the Gumbel, Clayton, and Frank copulas, with varying tail dependence.",
+                "explain": "These provide the flexibility the Gaussian copula lacks — by choosing a different generator function, an actuary can select a copula whose tail dependence properties genuinely match the risk being modelled, rather than being stuck with the Gaussian's structurally zero tail dependence regardless of the correlation parameter chosen."
             },
             {
                 "q": "How does the Clayton copula typically behave in terms of tail dependence?",
-                "a": "It exhibits lower tail dependence but no upper tail dependence."
+                "a": "It exhibits lower tail dependence but no upper tail dependence.",
+                "explain": "This makes the Clayton copula a poor default choice for modelling jointly catastrophic INSURANCE losses (which is an upper-tail concern), but a natural fit wherever the risk of concern is a simultaneous DOWNSIDE, such as jointly poor asset returns — worth contrasting directly with the Gumbel copula in the next card, which has the opposite asymmetry."
             },
             {
                 "q": "How does the Gumbel copula typically behave in terms of tail dependence?",
-                "a": "It exhibits upper tail dependence but no lower tail dependence."
+                "a": "It exhibits upper tail dependence but no lower tail dependence.",
+                "explain": "This is the mirror image of the Clayton copula above, and it's the more natural choice for modelling jointly EXTREME insurance losses (an upper-tail phenomenon) — the two copulas' complementary asymmetries illustrate why the choice of copula family, not just its correlation parameter, materially changes what kind of joint extreme behaviour a model can capture."
             },
             {
                 "q": "How would you select a copula suitable for modelling a particular pair of risks?",
-                "a": "Consider the type of tail dependence expected, and choose a family whose properties match that expectation."
+                "a": "Consider the type of tail dependence expected, and choose a family whose properties match that expectation.",
+                "explain": "This card ties together the whole module — having established that different copula families imply structurally different tail behaviour (Gaussian: none; Clayton: lower only; Gumbel: upper only), the practical modelling task is to match the CHOSEN copula's tail properties to the actual risk being represented, informed by data and by understanding the underlying causal drivers of joint extreme events."
             },
             {
                 "q": "Why might an insurer model the dependence between two lines of business using a copula?",
-                "a": "Losses across lines are often correlated (e.g. a common event), and independence would understate aggregate risk."
+                "a": "Losses across lines are often correlated (e.g. a common event), and independence would understate aggregate risk.",
+                "explain": "This closes the module on its central practical motivation — property and business-interruption losses from the same storm, for instance, are far from independent, and modelling them with an independence assumption (rather than an appropriately tail-dependent copula) would systematically understate the insurer's true aggregate exposure to a single large event."
             }
         ]
     },
@@ -6768,63 +6783,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'reinsurance'?",
-                "a": "Insurance purchased by an insurer to transfer part of its risk to another party (the reinsurer)."
+                "a": "Insurance purchased by an insurer to transfer part of its risk to another party (the reinsurer).",
+                "explain": "This module formalises and extends the reinsurance concepts already introduced in passing in Module 15 (excess of loss) and used to motivate Module 17's copulas (dependence between lines of business) — it's worth seeing this as the natural next step: 'insurance for insurers', with the SAME risk-transfer logic as ordinary insurance, just one layer up."
             },
             {
                 "q": "What is 'proportional reinsurance'?",
-                "a": "An arrangement where the reinsurer receives a fixed proportion of premium and pays the same proportion of every claim."
+                "a": "An arrangement where the reinsurer receives a fixed proportion of premium and pays the same proportion of every claim.",
+                "explain": "This is the same definition already given in Module 15 and referenced in CM2 Module 17 — worth noting here that this module now develops TWO specific varieties of it (quota share and surplus, next two cards), rather than treating 'proportional reinsurance' as a single monolithic concept."
             },
             {
                 "q": "What is 'quota share' reinsurance?",
-                "a": "A form of proportional reinsurance where the same fixed proportion applies to every policy in a defined portfolio."
+                "a": "A form of proportional reinsurance where the same fixed proportion applies to every policy in a defined portfolio.",
+                "explain": "This is the simplest possible proportional arrangement — a single fixed percentage $\\alpha$ applied uniformly across an entire portfolio, regardless of any individual policy's size or risk characteristics, which is straightforward to administer but doesn't let the insurer fine-tune protection by risk size the way surplus reinsurance (next card) can."
             },
             {
                 "q": "What is 'surplus' reinsurance?",
-                "a": "A form of proportional reinsurance where the proportion ceded varies by policy, often based on risk size relative to the insurer's retention."
+                "a": "A form of proportional reinsurance where the proportion ceded varies by policy, often based on risk size relative to the insurer's retention.",
+                "explain": "This refines quota share by letting the ceded proportion vary policy-by-policy — typically the insurer sets a fixed monetary retention line per policy and cedes whatever proportion of THAT policy's sum insured lies above it, so large, risky policies get proportionally more reinsurance protection than small ones."
             },
             {
                 "q": "What is 'excess of loss' (non-proportional) reinsurance?",
-                "a": "An arrangement where the reinsurer pays the amount by which a claim exceeds a specified retention level."
+                "a": "An arrangement where the reinsurer pays the amount by which a claim exceeds a specified retention level.",
+                "explain": "This is the same excess of loss concept from Module 15 and CM2 Module 17, now placed alongside proportional reinsurance as the second of the two fundamental reinsurance categories — the key contrast to hold onto: proportional shares EVERY claim by a fixed ratio, while excess of loss only responds to the LARGEST claims, above the retention."
             },
             {
                 "q": "What is 'aggregate excess of loss' reinsurance?",
-                "a": "A form of excess of loss reinsurance where the retention applies to total aggregate claims over a period."
+                "a": "A form of excess of loss reinsurance where the retention applies to total aggregate claims over a period.",
+                "explain": "This shifts the threshold from an INDIVIDUAL claim (as in ordinary excess of loss) to the TOTAL of all claims over a period — connecting directly to Module 19's compound distribution $S$, since aggregate excess of loss effectively caps the insurer's exposure to the whole random variable $S$, not just to any single large claim within it."
             },
             {
                 "q": "How does excess of loss reinsurance affect the insurer's retained claim amount for a claim of size $X$, with retention $M$?",
-                "a": "The insurer retains $\\min(X,M)$; the reinsurer pays $\\max(X-M,0)$."
+                "a": "The insurer retains $\\min(X,M)$; the reinsurer pays $\\max(X-M,0)$.",
+                "explain": "This is precisely Module 15's excess-of-loss transformation restated with explicit min/max notation — worth noting $\\min(X,M)+\\max(X-M,0)=X$ always, confirming the split is exhaustive: whatever the reinsurer doesn't pay, the insurer retains, and the two amounts always sum back to the original claim."
             },
             {
                 "q": "How does proportional reinsurance (retained proportion $\\alpha$) affect the insurer's retained claim amount?",
-                "a": "The insurer retains $\\alpha X$; the reinsurer pays $(1-\\alpha)X$."
+                "a": "The insurer retains $\\alpha X$; the reinsurer pays $(1-\\alpha)X$.",
+                "explain": "This is the proportional analogue of the min/max split in the previous card — much simpler algebraically, since it's just a linear scaling of $X$ rather than a piecewise function, which is exactly why proportional reinsurance's effect on moments (mean, variance) is so much easier to compute than excess of loss's."
             },
             {
                 "q": "What is the effect of excess of loss reinsurance on the skewness of the insurer's retained aggregate claims?",
-                "a": "It reduces skewness (and variance), removing the largest, most extreme individual claims."
+                "a": "It reduces skewness (and variance), removing the largest, most extreme individual claims.",
+                "explain": "This is exactly the mechanism Module 16's extreme value theory was built to characterise — by capping every individual claim at $M$, excess of loss reinsurance directly truncates the RIGHT TAIL of the severity distribution feeding into the compound aggregate claims model (Module 19), which mechanically pulls in the extreme upper values driving both variance and (especially) skewness."
             },
             {
                 "q": "Why might an insurer choose excess of loss reinsurance over proportional reinsurance?",
-                "a": "To specifically protect against large individual claims (tail risk), while retaining more premium/profit from smaller claims."
+                "a": "To specifically protect against large individual claims (tail risk), while retaining more premium/profit from smaller claims.",
+                "explain": "This is the key strategic trade-off between the two reinsurance categories — proportional reinsurance shares profit and risk uniformly on EVERY claim (small and large alike), while excess of loss lets the insurer keep the (usually profitable) bulk of small claims entirely, paying reinsurance premium only for protection against the rare, large claims that actually threaten solvency."
             },
             {
                 "q": "How would you calculate the moments of claims paid by the insurer versus the reinsurer?",
-                "a": "Apply the reinsurance transformation to the underlying claim distribution, and calculate the relevant moments."
+                "a": "Apply the reinsurance transformation to the underlying claim distribution, and calculate the relevant moments.",
+                "explain": "This is a direct, general statement of the technique implicit in the two transformation cards above ($\\min(X,M)$/$\\max(X-M,0)$ for excess of loss, $\\alpha X$/$(1-\\alpha)X$ for proportional) — once you have the transformed random variable, ordinary moment calculations (mean, variance) proceed exactly as for any other transformed distribution."
             },
             {
                 "q": "How does excess of loss reinsurance interact with a compound distribution model of aggregate claims?",
-                "a": "It's applied at the individual claim severity level before aggregating, changing the severity feeding into the compound model."
+                "a": "It's applied at the individual claim severity level before aggregating, changing the severity feeding into the compound model.",
+                "explain": "This directly previews Module 19's compound distribution framework $S=X_1+\\dots+X_N$ — reinsurance modifies each individual $X_i$ BEFORE the sum is formed, so the insurer's retained aggregate claims become a compound distribution built from the TRUNCATED severity $\\min(X_i,M)$, not the original ground-up severity."
             },
             {
                 "q": "What is the effect on the reinsurer's claims of a very high retention level $M$?",
-                "a": "Fewer claims exceed the retention, so the reinsurer pays out less frequently."
+                "a": "Fewer claims exceed the retention, so the reinsurer pays out less frequently.",
+                "explain": "This is intuitive from the $\\max(X-M,0)$ formula above — as $M$ grows, fewer individual claims $X$ exceed it at all, so the reinsurer's claim FREQUENCY falls even as, conditional on a claim occurring, its size (whatever exceeds the now-higher $M$) may still be large — a frequency/severity trade-off worth being explicit about."
             },
             {
                 "q": "Why might an insurer use a combination of both proportional and excess of loss reinsurance?",
-                "a": "To get proportional risk/profit sharing plus specific protection against very large individual claims."
+                "a": "To get proportional risk/profit sharing plus specific protection against very large individual claims.",
+                "explain": "This closes the loop between the two reinsurance categories developed in this module — layering excess of loss ON TOP of a quota share arrangement, say, lets an insurer share ordinary claims volatility broadly with the reinsurer (via the proportional layer) while still buying targeted catastrophe protection against extreme individual losses (via the excess of loss layer), combining both cards' benefits."
             },
             {
                 "q": "How does reinsurance reduce an insurer's regulatory capital requirements, broadly speaking?",
-                "a": "By transferring some of the variability/tail risk of claims, reducing the capital needed to support retained risk."
+                "a": "By transferring some of the variability/tail risk of claims, reducing the capital needed to support retained risk.",
+                "explain": "This closes the module by connecting reinsurance to the risk-based capital theme that will recur through Module 19's aggregate claims variance and Module 20's ruin theory — since capital requirements are typically set to cover claims variability at some confidence level, and reinsurance mechanically reduces that variability (shown two cards up), it directly reduces the capital an insurer needs to hold against its retained risk."
             }
         ]
     },
