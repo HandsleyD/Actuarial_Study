@@ -1201,63 +1201,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the Net Present Value (NPV) of a project?",
-                "a": "The present value of all its cash inflows minus the present value of all its cash outflows, at a chosen discount rate."
+                "a": "The present value of all its cash inflows minus the present value of all its cash outflows, at a chosen discount rate.",
+                "explain": "This is Module 4's negative-cashflow-sign convention applied specifically to investment decisions \\u2014 NPV is nothing more than the equation-of-value machinery from Modules 4 and 7, just given a decision-focused name and a clear accept/reject rule attached (see the next card)."
             },
             {
                 "q": "What decision rule follows from a project's NPV?",
-                "a": "Accept the project if NPV is positive (at the company's required rate of return); reject if negative."
+                "a": "Accept the project if NPV is positive (at the company's required rate of return); reject if negative.",
+                "explain": "The 'required rate of return' matters as much as the sign rule \\u2014 a positive NPV specifically means the project earns MORE than that required rate, so the rule is really comparing the project's return against the company's minimum acceptable return, not against zero growth."
             },
             {
                 "q": "What is the Internal Rate of Return (IRR) of a project?",
-                "a": "The discount rate at which the project's NPV equals zero."
+                "a": "The discount rate at which the project's NPV equals zero.",
+                "explain": "This is precisely Module 7's 'solve the equation of value for an unknown rate' technique, applied to a project's cashflows \\u2014 and everything Module 7 warned about (uniqueness needing a single sign change, otherwise multiple roots) applies directly here, which is exactly the weakness flagged in a card below."
             },
             {
                 "q": "What is the 'payback period' of a project?",
-                "a": "The length of time until the cumulative (undiscounted) net cashflow becomes positive \\u2014 i.e. the initial investment is recouped."
+                "a": "The length of time until the cumulative (undiscounted) net cashflow becomes positive \\u2014 i.e. the initial investment is recouped.",
+                "explain": "Note the word 'undiscounted' \\u2014 this measure deliberately ignores the time value of money entirely, which is both its main appeal (very easy to calculate and explain) and its main weakness (see the dedicated card below), unlike every other measure in this module."
             },
             {
                 "q": "What is the 'discounted payback period'?",
-                "a": "Like payback period, but using discounted cashflows \\u2014 the time until cumulative discounted net cashflow becomes positive."
+                "a": "Like payback period, but using discounted cashflows \\u2014 the time until cumulative discounted net cashflow becomes positive.",
+                "explain": "This is a direct patch to payback period's biggest flaw: swap in discounted cashflows (Module 4's technique) and the measure now at least respects the time value of money, though it still shares the OTHER weakness of ignoring everything that happens after the payback point."
             },
             {
                 "q": "Give one weakness of using payback period alone to assess a project.",
-                "a": "It ignores the time value of money and ignores all cashflows occurring after the payback point."
+                "a": "It ignores the time value of money and ignores all cashflows occurring after the payback point.",
+                "explain": "Two distinct weaknesses bundled here, and it's worth being able to name both separately in an exam answer \\u2014 discounted payback period (above) fixes only the first; NEITHER version of payback period fixes the second, which is why a project with huge cashflows arriving just after the payback point can still look unfairly unattractive under this measure."
             },
             {
                 "q": "Give one weakness of using IRR to compare two mutually exclusive projects.",
-                "a": "IRR ignores the scale of the project, and can have multiple solutions if cashflows change sign more than once."
+                "a": "IRR ignores the scale of the project, and can have multiple solutions if cashflows change sign more than once.",
+                "explain": "The scale problem is easy to underrate: a tiny project with a 50% IRR can create far less absolute value than a huge project with a 12% IRR, yet IRR alone would rank the tiny project 'better' \\u2014 this is exactly why NPV is generally preferred for comparing differently-sized mutually exclusive projects (see the card below)."
             },
             {
                 "q": "When comparing two mutually exclusive projects of different sizes, which measure is usually preferred: NPV or IRR?",
-                "a": "NPV, because it reflects the absolute value created and doesn't have the scale/multiple-root issues of IRR."
+                "a": "NPV, because it reflects the absolute value created and doesn't have the scale/multiple-root issues of IRR.",
+                "explain": "This is the module's central takeaway, and the reasoning is worth stating in full for a 'discuss' style question: NPV directly measures the pound (or dollar) value added at the company's required rate, which is what actually matters for shareholder wealth, whereas IRR is a percentage that can favour a small, high-return project over a large, still-profitable one."
             },
             {
                 "q": "What does 'accumulated profit' of a project mean?",
-                "a": "The accumulated value (rather than present value) of the project's net cashflows, evaluated at a given interest rate, typically at the end of the project."
+                "a": "The accumulated value (rather than present value) of the project's net cashflows, evaluated at a given interest rate, typically at the end of the project.",
+                "explain": "This is just NPV's accumulated-value sibling, using exactly the same present/accumulated relationship from Module 1 \\u2014 multiplying NPV by $(1+i)^n$ (where $n$ is the project length) converts a value-today measure into a value-at-project-end measure, useful when 'how much richer are we at completion' is the more natural question."
             },
             {
                 "q": "If a project's IRR exceeds the company's cost of capital, what does that suggest?",
-                "a": "The project is expected to be worthwhile \\u2014 it earns a higher return than the minimum required."
+                "a": "The project is expected to be worthwhile \\u2014 it earns a higher return than the minimum required.",
+                "explain": "This is the IRR-based mirror of the NPV decision rule above, and under the 'single sign change' condition from Module 7 the two rules agree perfectly \\u2014 IRR exceeding the required rate and NPV (calculated at the required rate) being positive are two ways of saying exactly the same thing."
             },
             {
                 "q": "Why might discounted payback period be considered better than simple payback period?",
-                "a": "It accounts for the time value of money, giving a more economically meaningful measure of how quickly the investment is recovered."
+                "a": "It accounts for the time value of money, giving a more economically meaningful measure of how quickly the investment is recovered.",
+                "explain": "Restates the fix already flagged above \\u2014 worth remembering that 'better' here is limited: it fixes only ONE of payback period's two weaknesses, and still shares the other (ignoring post-payback cashflows) with the simple version."
             },
             {
                 "q": "What is a 'mutually exclusive' set of projects?",
-                "a": "A set of projects where choosing one means the others cannot also be undertaken (e.g. limited capital or resources)."
+                "a": "A set of projects where choosing one means the others cannot also be undertaken (e.g. limited capital or resources).",
+                "explain": "This is precisely the scenario where the NPV-vs-IRR comparison problem (above) actually bites \\u2014 for a single standalone project evaluated on its own, NPV and IRR usually agree on accept/reject; it's specifically when RANKING competing alternatives against each other that IRR's scale-blindness becomes a genuine problem."
             },
             {
                 "q": "How would you calculate a project's NPV at a rate of $10\\%$ given a series of net cashflows?",
-                "a": "Discount each year's net cashflow by $(1.10)^{-t}$ and sum the results."
+                "a": "Discount each year's net cashflow by $(1.10)^{-t}$ and sum the results.",
+                "explain": "A direct, worked-example restatement of the module's opening definition \\u2014 this is exactly Module 4's 'discount each payment separately, then sum' technique, with net cashflows (inflows minus outflows in each year) playing the role of the individual payments being summed."
             },
             {
                 "q": "Why is choosing the 'right' discount rate important for NPV-based decisions?",
-                "a": "A different discount rate can change whether NPV is positive or negative, and hence the accept/reject decision."
+                "a": "A different discount rate can change whether NPV is positive or negative, and hence the accept/reject decision.",
+                "explain": "This is the practical reason picking a sensible required rate of return matters so much in real corporate finance \\u2014 a project that looks attractive at an 8% cost of capital can look unattractive at 12%, so the accept/reject conclusion is only as reliable as the discount-rate assumption feeding into it."
             },
             {
                 "q": "If a project's net cashflows change sign more than once, what problem can arise when calculating IRR?",
-                "a": "There may be multiple internal rates of return, making the IRR measure ambiguous or unreliable."
+                "a": "There may be multiple internal rates of return, making the IRR measure ambiguous or unreliable.",
+                "explain": "This is Module 7's multiple-sign-change warning landing directly in this module's central weakness of IRR \\u2014 a real-world example is a project with a large decommissioning cost at the end (outflow, then inflows, then a final outflow), which is exactly the kind of pattern that can produce more than one mathematically valid IRR."
             }
         ]
     },
@@ -1268,63 +1283,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'coupon' on a fixed-interest bond?",
-                "a": "The regular (usually annual or semi-annual) interest payment made to the bondholder, typically a fixed percentage of the nominal (face) value."
+                "a": "The regular (usually annual or semi-annual) interest payment made to the bondholder, typically a fixed percentage of the nominal (face) value.",
+                "explain": "A bond's cashflows are just a level annuity (the coupons, valued with Module 5's $a_{\\overline{n}|}$ machinery) plus a single lump sum at the end (the redemption payment) \\u2014 recognising this structure means bond pricing is really a straightforward application of tools you already have, not a new topic."
             },
             {
                 "q": "What is the 'redemption value' of a bond?",
-                "a": "The amount repaid to the bondholder at maturity, often (but not always) equal to the nominal value."
+                "a": "The amount repaid to the bondholder at maturity, often (but not always) equal to the nominal value.",
+                "explain": "The 'often but not always' matters: a bond redeemable ABOVE nominal (at a premium) or BELOW nominal (at a discount) changes the pricing calculation's final lump sum but not the underlying technique \\u2014 always check the redemption terms rather than assuming redemption at par."
             },
             {
                 "q": "How do you find the price of a bond given a required yield $i$?",
-                "a": "The price equals the present value of all future coupon payments plus the present value of the redemption payment, discounted at $i$."
+                "a": "The price equals the present value of all future coupon payments plus the present value of the redemption payment, discounted at $i$.",
+                "explain": "This is precisely Module 7's equation of value, with the bond's PRICE as the unknown on one side and the coupon-annuity-plus-redemption-lump-sum as the known cashflows on the other \\u2014 in formula terms: Price $= C\\cdot a_{\\overline{n}|} + Rv^n$, where $C$ is the coupon and $R$ the redemption amount."
             },
             {
                 "q": "What is the 'running yield' (or 'flat yield') on a bond?",
-                "a": "The annual coupon payment divided by the current price of the bond, ignoring capital gain/loss at redemption."
+                "a": "The annual coupon payment divided by the current price of the bond, ignoring capital gain/loss at redemption.",
+                "explain": "This is a deliberately crude, partial measure \\u2014 it only looks at income return and completely ignores whether you'll gain or lose on the capital when the bond is redeemed, which is exactly the gap the redemption yield below is designed to close."
             },
             {
                 "q": "What is the 'redemption yield' on a bond?",
-                "a": "The effective rate of interest that equates the bond's current price to the present value of all its future cashflows (coupons and redemption)."
+                "a": "The effective rate of interest that equates the bond's current price to the present value of all its future cashflows (coupons and redemption).",
+                "explain": "This is Module 7's 'solve the equation of value for the unknown rate' technique again, now with the bond's known market PRICE plugged in and the yield $i$ as the unknown \\u2014 unlike running yield, this properly captures the full economic return, including any capital gain or loss at redemption."
             },
             {
                 "q": "How does income tax on coupon payments affect the price an investor is willing to pay for a bond, other things equal?",
-                "a": "It reduces the value of the coupons received net of tax, so reduces the price the investor is willing to pay for a given yield."
+                "a": "It reduces the value of the coupons received net of tax, so reduces the price the investor is willing to pay for a given yield.",
+                "explain": "The technique here is simple: replace the gross coupon $C$ in the pricing equation with the after-tax coupon $C(1-t)$, where $t$ is the investor's tax rate \\u2014 the underlying formula is unchanged, only the cashflow being discounted shrinks."
             },
             {
                 "q": "How does capital gains tax affect bond pricing, if the redemption value exceeds the purchase price?",
-                "a": "It reduces the effective (net) redemption proceeds, since tax is paid on the capital gain, reducing the price for a given required net yield."
+                "a": "It reduces the effective (net) redemption proceeds, since tax is paid on the capital gain, reducing the price for a given required net yield.",
+                "explain": "This is trickier than the income-tax adjustment above because the capital gain (and hence the tax owed) depends on the PRICE PAID, which is itself what you're trying to solve for \\u2014 this circularity is exactly why capital-gains-tax bond pricing questions often need to be solved algebraically or iteratively rather than by simple substitution."
             },
             {
                 "q": "When a bond is 'optionally redeemable' within a range of dates at the borrower's choice, how do you find price bounds?",
-                "a": "Calculate the price assuming redemption at each extreme of the range, and use the more cautious (from the investor's viewpoint) of the two results."
+                "a": "Calculate the price assuming redemption at each extreme of the range, and use the more cautious (from the investor's viewpoint) of the two results.",
+                "explain": "The logic: the borrower will choose whichever redemption date is WORST for the investor (since it's their option to exercise, not the investor's), so a prudent investor should price the bond assuming the least favourable outcome for themselves \\u2014 the next card gives a shortcut for spotting which extreme that is."
             },
             {
                 "q": "What general rule helps decide which redemption date to test when a bond's redemption date is at the borrower's option?",
-                "a": "Compare coupon rate to the required net yield: if coupon exceeds yield the borrower favours later redemption from the investor's perspective (and vice versa) \\u2014 but always check both extremes explicitly."
+                "a": "Compare coupon rate to the required net yield: if coupon exceeds yield the borrower favours later redemption from the investor's perspective (and vice versa) \\u2014 but always check both extremes explicitly.",
+                "explain": "The intuition: if the coupon rate is generous relative to the yield the investor requires, the investor is happy holding the bond longer (delaying redemption is good for them, so the borrower will do the opposite and redeem early) \\u2014 but this rule is a useful guide, not a substitute for the explicit both-extremes check the previous card describes, since edge cases and the exam's own conventions can differ."
             },
             {
                 "q": "How would you value an index-linked bond's cashflows?",
-                "a": "Increase each coupon and the redemption payment in line with the relevant inflation index between issue and payment date, then discount at the required money (or real) yield."
+                "a": "Increase each coupon and the redemption payment in line with the relevant inflation index between issue and payment date, then discount at the required money (or real) yield.",
+                "explain": "This is Module 3's index-linked bond concept made fully concrete \\u2014 note the consistency rule from that module still applies here: either inflate the cashflows to money terms and discount at the money yield, or keep cashflows in real terms and discount at the real yield, but never mix the two."
             },
             {
                 "q": "How is the price of an ordinary share (equity) typically valued using dividend discounting?",
-                "a": "As the present value of expected future dividends, discounted at the investor's required rate of return."
+                "a": "As the present value of expected future dividends, discounted at the investor's required rate of return.",
+                "explain": "The structural technique (discount future cashflows at a required rate) is identical to bond pricing \\u2014 what's genuinely different is that dividends are uncertain and typically assumed to grow, unlike a bond's fixed coupons, which is exactly why the Gordon growth model below is needed as a specialised tool."
             },
             {
                 "q": "What is the Gordon growth model used for?",
-                "a": "Valuing a share (or property) whose dividends/rents grow at a constant rate $g$ forever: price $= \\frac{D_1}{i-g}$"
+                "a": "Valuing a share (or property) whose dividends/rents grow at a constant rate $g$ forever: price $= \\frac{D_1}{i-g}$",
+                "explain": "This can be derived as a geometrically-growing perpetuity \\u2014 it's Module 5's simple perpetuity $\\frac1i$ generalised to allow the payment itself to grow at rate $g$ each year, which effectively reduces the discount rate from $i$ down to a 'net of growth' rate of $i-g$ (note this REQUIRES $g<i$, or the perpetuity's value would be infinite)."
             },
             {
                 "q": "What is a key difference between valuing a bond and valuing an equity?",
-                "a": "A bond's cashflows are usually known/fixed; an equity's future dividends are uncertain and often assumed to grow."
+                "a": "A bond's cashflows are usually known/fixed; an equity's future dividends are uncertain and often assumed to grow.",
+                "explain": "This single distinction explains why bond pricing (earlier in this module) is a mechanical present-value calculation, while equity pricing (Gordon growth model above) needs an extra assumption (the growth rate $g$) layered on top \\u2014 uncertainty about that growth assumption is a major source of disagreement in real-world share valuations that a bond price simply doesn't face."
             },
             {
                 "q": "How might property be valued similarly to equities in CM1?",
-                "a": "By discounting expected future rental income (and possibly a terminal sale value) at a required rate of return, similarly to dividend discounting."
+                "a": "By discounting expected future rental income (and possibly a terminal sale value) at a required rate of return, similarly to dividend discounting.",
+                "explain": "This closes the loop on the module's three asset classes: bonds have fixed coupons plus a fixed redemption, equities have growing (uncertain) dividends with no fixed end, and property sits somewhere in between \\u2014 growing (uncertain) rental income PLUS an eventual (uncertain) sale value, borrowing techniques from both of the other two."
             },
             {
                 "q": "Why does a bond's price fall when the required yield rises?",
-                "a": "Because future cashflows are discounted more heavily at a higher rate, reducing their present value."
+                "a": "Because future cashflows are discounted more heavily at a higher rate, reducing their present value.",
+                "explain": "This is the same inverse price/yield relationship first flagged back in Module 2 ('what happens to bond prices when interest rates rise'), now derived properly from the bond pricing formula itself \\u2014 it's also the seed idea behind Module 11's duration and immunisation material, which quantifies precisely HOW sensitive that price fall is."
             }
         ]
     },
@@ -1335,63 +1365,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'spot rate' of interest?",
-                "a": "The annualised rate of return on a zero-coupon investment made now and maturing at a specific future date."
+                "a": "The annualised rate of return on a zero-coupon investment made now and maturing at a specific future date.",
+                "explain": "'Zero-coupon' is the key word: a spot rate is the clean, single-cashflow rate for one specific term, uncontaminated by any intermediate coupon payments \\u2014 this makes it the fundamental building block of the whole term structure, since any coupon-paying bond can conceptually be broken into a series of zero-coupon cashflows, each valued at its own spot rate."
             },
             {
                 "q": "What is a 'forward rate' of interest?",
-                "a": "The rate of interest agreed now for a loan/investment to be made over a specified future period."
+                "a": "The rate of interest agreed now for a loan/investment to be made over a specified future period.",
+                "explain": "The crucial distinction from a spot rate: a forward rate applies to a FUTURE period (e.g. year 2 to year 3), agreed today, whereas a spot rate applies from NOW until some future date \\u2014 the next card shows precisely how the two are linked."
             },
             {
                 "q": "How are discrete spot rates and forward rates related for consecutive periods?",
-                "a": "$(1+y_2)^2 = (1+y_1)(1+f_{1,2})$, where $y_1, y_2$ are spot rates and $f_{1,2}$ is the forward rate from time 1 to time 2."
+                "a": "$(1+y_2)^2 = (1+y_1)(1+f_{1,2})$, where $y_1, y_2$ are spot rates and $f_{1,2}$ is the forward rate from time 1 to time 2.",
+                "explain": "The intuition: investing for 2 years at the 2-year spot rate must give the SAME result as investing for 1 year at the 1-year spot rate, then reinvesting for another year at whatever the market's forward rate for that second year turns out to be \\u2014 if it didn't, there'd be a risk-free arbitrage opportunity, which is why this no-arbitrage relationship holds."
             },
             {
                 "q": "What is the 'yield to maturity' of a bond?",
-                "a": "The single, constant rate of interest that equates the present value of a bond's cashflows to its current price (its redemption yield)."
+                "a": "The single, constant rate of interest that equates the present value of a bond's cashflows to its current price (its redemption yield).",
+                "explain": "This is exactly Module 10's redemption yield, renamed here to emphasise the term-structure angle \\u2014 note it's a single BLENDED rate, effectively averaging across all the different spot rates that actually apply to the bond's various cashflow dates, which is why two bonds with different coupon structures can have different yields to maturity even off the same underlying term structure."
             },
             {
                 "q": "What does the 'par yield' represent?",
-                "a": "The coupon rate at which a bond would be priced exactly at par (price equals nominal value), given the current term structure."
+                "a": "The coupon rate at which a bond would be priced exactly at par (price equals nominal value), given the current term structure.",
+                "explain": "This is a useful reference point precisely because it strips out the complication of premium/discount pricing \\u2014 the par yield answers 'what coupon rate would make this bond trade at exactly its face value right now', letting you compare bonds of different coupon rates on a common, price-neutral basis."
             },
             {
                 "q": "What does an upward-sloping term structure (yield curve) typically mean?",
-                "a": "Longer-term spot rates are higher than shorter-term spot rates."
+                "a": "Longer-term spot rates are higher than shorter-term spot rates.",
+                "explain": "This is the same yield curve concept from CB2's Module 15, now given a precise, formal definition using spot rates specifically \\u2014 worth remembering both framings: CB2 treats it as a macro/market indicator, CM1 treats it as the raw input data that all bond and cashflow valuations here are built from."
             },
             {
                 "q": "Name one factor that can influence the shape of the term structure of interest rates.",
-                "a": "Expectations of future interest rate/inflation changes, liquidity preference, or supply/demand for bonds of different maturities."
+                "a": "Expectations of future interest rate/inflation changes, liquidity preference, or supply/demand for bonds of different maturities.",
+                "explain": "These are worth knowing as the standard named theories: the expectations theory (long rates reflect expected future short rates \\u2014 directly related to the spot/forward relationship above), liquidity preference theory (investors demand a premium for locking up money longer), and market segmentation (supply/demand imbalances specific to each maturity band)."
             },
             {
                 "q": "What is (Macaulay) duration of a cashflow sequence?",
-                "a": "The weighted average time until cashflows are received, weighted by the present value of each cashflow."
+                "a": "The weighted average time until cashflows are received, weighted by the present value of each cashflow.",
+                "explain": "Think of duration as the cashflow sequence's 'centre of gravity' in time \\u2014 a bond with most of its value concentrated in a large final redemption payment has a duration close to its full term, while one with substantial early coupons has a duration noticeably shorter than its term."
             },
             {
                 "q": "What is the formula concept for duration?",
-                "a": "$\\text{Duration} = \\frac{\\sum_t t \\cdot v^t C_t}{\\sum_t v^t C_t}$, the present-value-weighted average payment time."
+                "a": "$\\text{Duration} = \\frac{\\sum_t t \\cdot v^t C_t}{\\sum_t v^t C_t}$, the present-value-weighted average payment time.",
+                "explain": "The denominator is just the ordinary present value of all the cashflows (Module 4's technique); the numerator does the same sum but weights each term by its own timing $t$ \\u2014 dividing the two gives a present-value-weighted AVERAGE time, exactly analogous to how you'd compute any other weighted average."
             },
             {
                 "q": "What is 'convexity' of a cashflow sequence used for?",
-                "a": "Measuring the curvature of how a cashflow sequence's present value changes with interest rates \\u2014 a refinement beyond duration for larger rate changes."
+                "a": "Measuring the curvature of how a cashflow sequence's present value changes with interest rates \\u2014 a refinement beyond duration for larger rate changes.",
+                "explain": "Duration alone only captures a LINEAR (first-order) approximation of how price responds to a rate change \\u2014 for larger rate moves, the true relationship curves away from that straight-line approximation, and convexity measures exactly how much, which is why Redington's third condition (below) specifically needs convexity, not just duration."
             },
             {
                 "q": "What does duration tell you about a cashflow sequence's sensitivity to interest rate changes?",
-                "a": "A higher duration means the present value is more sensitive (changes by a larger percentage) to a given change in interest rates."
+                "a": "A higher duration means the present value is more sensitive (changes by a larger percentage) to a given change in interest rates.",
+                "explain": "This follows naturally from duration being a weighted-average TIME to payment \\u2014 cashflows further in the future are discounted more heavily by a rate change (since $v^t$ for large $t$ moves more than $v^t$ for small $t$ given the same shift in $i$), so a cashflow sequence weighted toward later payments is inherently more rate-sensitive."
             },
             {
                 "q": "What is 'immunisation' of a portfolio of liabilities?",
-                "a": "Structuring assets so that the portfolio's value is protected (to a first approximation) against small changes in the rate of interest."
+                "a": "Structuring assets so that the portfolio's value is protected (to a first approximation) against small changes in the rate of interest.",
+                "explain": "This is the practical payoff of duration and convexity combined \\u2014 rather than trying to predict which way rates will move (impossible to do reliably), immunisation sidesteps the problem by matching assets and liabilities so that a SMALL rate change affects both sides roughly equally, leaving the surplus protected either way."
             },
             {
                 "q": "What are Redington's three conditions for immunisation?",
-                "a": "(1) PV of assets equals PV of liabilities; (2) duration of assets equals duration of liabilities; (3) convexity of assets exceeds convexity of liabilities."
+                "a": "(1) PV of assets equals PV of liabilities; (2) duration of assets equals duration of liabilities; (3) convexity of assets exceeds convexity of liabilities.",
+                "explain": "These three conditions are worth memorising in exact order, since they build on each other: (1) alone just means the fund is currently solvent; (1)+(2) means a SMALL rate change moves assets and liabilities by (approximately) the same percentage, keeping surplus roughly constant; (3) then ensures that residual (second-order) effect actually favours the fund, not against it."
             },
             {
                 "q": "Why is condition 3 (asset convexity exceeding liability convexity) needed in Redington's theory?",
-                "a": "It ensures that for both small rises and small falls in interest rates, asset value doesn't fall below liability value \\u2014 a second-order protection beyond duration matching."
+                "a": "It ensures that for both small rises and small falls in interest rates, asset value doesn't fall below liability value \\u2014 a second-order protection beyond duration matching.",
+                "explain": "Duration matching alone (condition 2) only guarantees the FIRST-order (linear) effects cancel; without convexity also being favourable, a genuinely small rate change could still leave the fund with a shortfall due to the curvature difference the linear approximation misses \\u2014 condition 3 is what turns 'roughly protected' into 'protected on both sides, to second order'."
             },
             {
                 "q": "If spot rates are constant across all terms, what is the relationship between spot rates and forward rates?",
-                "a": "They are all equal \\u2014 the forward rate over any period equals the (constant) spot rate."
+                "a": "They are all equal \\u2014 the forward rate over any period equals the (constant) spot rate.",
+                "explain": "This is the flat-yield-curve special case of the spot/forward relationship earlier in this module \\u2014 a useful sanity check: if $y_1=y_2=y$, the formula $(1+y_2)^2=(1+y_1)(1+f_{1,2})$ simplifies directly to $f_{1,2}=y$, confirming there's nothing 'extra' happening in the second year beyond the same constant rate."
             }
         ]
     },
