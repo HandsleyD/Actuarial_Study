@@ -937,4 +937,452 @@ const QUESTIONS = {
       ],
     },
   ],
+  CS1: [
+    {
+      id: "cs1-q1",
+      title: "Generating functions for a Poisson claim count",
+      modules: "Modules 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the moment generating function (MGF) of a random variable $X$, and state how $E[X]$ can be obtained from it.",
+          answer: "$M_X(t) = E[e^{tX}]$. The mean is obtained as $E[X] = M_X'(0)$, the first derivative of the MGF evaluated at $t=0$.",
+          note: "Both the definition and the derivative rule are needed for full marks &mdash; the rest of this question depends on being able to apply this mechanically.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question: "The MGF of a Poisson($\\lambda$) distribution is $M(t)=\\exp[\\lambda(e^t-1)]$. Find $M'(t)$ and hence confirm that $E[X]=\\lambda$.",
+          answer: "$M'(t) = \\lambda e^t \\exp[\\lambda(e^t-1)] = \\lambda e^t M(t)$. At $t=0$: $M'(0) = \\lambda(1)(1) = \\lambda$, confirming $E[X]=\\lambda$.",
+          note: "Candidates should apply the chain rule correctly (differentiating the exponent $\\lambda(e^t-1)$ gives $\\lambda e^t$, multiplied by $M(t)$ itself) rather than attempting to expand the exponential as a series.",
+        },
+        {
+          label: "(iii)",
+          command: "Derive",
+          marks: 4,
+          question:
+            "Find the cumulant generating function (CGF) $K(t)$ of the Poisson($\\lambda$) distribution, and use it to derive $\\text{Var}(X)=\\lambda$ directly. Comment on why this route is more direct than working via the MGF.",
+          answer:
+            "$K(t) = \\ln M(t) = \\lambda(e^t-1)$. $K'(t) = \\lambda e^t$, so $K'(0)=\\lambda$ (confirming the mean again). $K''(t) = \\lambda e^t$, so $K''(0) = \\lambda = \\text{Var}(X)$. This is more direct than the MGF route because the CGF's second derivative gives the variance in a single step, without needing to separately compute $E[X^2]=M''(0)$ and then subtract $(E[X])^2$.",
+          note: "Full marks require both the correct CGF derivation and the explicit comparison to the MGF route &mdash; simply stating the variance without the 'why more direct' comparison loses the final mark.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Two independent portfolios have annual claim counts $N_1\\sim\\text{Poisson}(30)$ and $N_2\\sim\\text{Poisson}(45)$. Using generating functions, state the distribution of the combined claim count $N_1+N_2$, and briefly justify your answer.",
+          answer:
+            "The MGF of the sum of independent random variables is the product of their individual MGFs: $M_{N_1+N_2}(t) = \\exp[30(e^t-1)]\\times\\exp[45(e^t-1)] = \\exp[75(e^t-1)]$, which is exactly the MGF of a Poisson(75) distribution. Since two random variables sharing the same MGF must have the same distribution, $N_1+N_2 \\sim \\text{Poisson}(75)$.",
+          note: "The justification must explicitly invoke the MGF-uniqueness property, not just assert the result &mdash; recognising the product as matching a known Poisson MGF is the key step examiners look for.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q2",
+      title: "A joint distribution: covariance and conditional expectation",
+      modules: "Modules 4, 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "Two discrete random variables $X,Y \\in \\{1,2\\}$ have joint probabilities $f(1,1)=0.1$, $f(1,2)=0.3$, $f(2,1)=0.3$, $f(2,2)=0.3$. Determine the marginal distributions of $X$ and $Y$, and state, with justification, whether $X$ and $Y$ are independent.",
+          answer:
+            "$P(X=1)=0.1+0.3=0.4$, $P(X=2)=0.3+0.3=0.6$. $P(Y=1)=0.1+0.3=0.4$, $P(Y=2)=0.3+0.3=0.6$. $X$ and $Y$ are NOT independent: if they were, $f(1,1)$ would equal $P(X=1)P(Y=1) = 0.4\\times0.4 = 0.16$, but the actual value is $f(1,1)=0.1 \\neq 0.16$.",
+          note: "Checking independence requires testing the factorisation condition at (at least) one specific point and finding it fails &mdash; simply asserting dependence without a numerical check loses marks.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question: "Calculate $\\text{Cov}(X,Y)$ for the joint distribution given in part (i).",
+          answer:
+            "$E[X] = 1(0.4)+2(0.6) = 1.6$. $E[Y]=1.6$ (by the symmetry of the marginals). $E[XY] = (1)(1)(0.1)+(1)(2)(0.3)+(2)(1)(0.3)+(2)(2)(0.3) = 0.1+0.6+0.6+1.2 = 2.5$. $\\text{Cov}(X,Y) = E[XY]-E[X]E[Y] = 2.5 - (1.6)(1.6) = -0.06$.",
+          note: "Marks are typically split across correctly finding $E[X]$, $E[Y]$, $E[XY]$ and the final subtraction &mdash; an arithmetic slip in any one component should still earn partial credit if the method is shown.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "Calculate $E[Y|X=1]$ and $E[Y|X=2]$, and use these to verify the tower property $E[Y]=E[E[Y|X]]$.",
+          answer:
+            "$f_{Y|X}(y|1) = f(1,y)/P(X=1)$: $f(1|1)=0.1/0.4=0.25$, $f(2|1)=0.3/0.4=0.75$, so $E[Y|X=1]=1(0.25)+2(0.75)=1.75$. Similarly $E[Y|X=2] = 1(0.5)+2(0.5)=1.5$. Tower property: $E[E[Y|X]] = P(X=1)(1.75)+P(X=2)(1.5) = 0.4(1.75)+0.6(1.5) = 0.7+0.9 = 1.6 = E[Y]$, confirming the identity.",
+          note: "The explicit numerical verification at the end (showing the weighted average of the two conditional means equals $E[Y]$ from part (ii)) is what the command word is testing &mdash; stopping after calculating the two conditional means loses the verification mark.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on what the negative covariance found in part (ii), combined with the dependence found in part (i), suggests about the relationship between $X$ and $Y$.",
+          answer:
+            "The correlation coefficient is $\\rho = -0.06/\\sqrt{0.24\\times0.24} = -0.25$ (using $\\text{Var}(X)=\\text{Var}(Y)=0.24$), indicating a weak negative linear association: $X$ and $Y$ have a mild tendency to move in opposite directions, consistent with the dependence detected in part (i), but the relationship is not strong.",
+          note: "A strong answer converts the raw covariance into the more interpretable correlation coefficient before commenting on strength, rather than trying to judge -0.06 in isolation without a sense of scale.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q3",
+      title: "The Central Limit Theorem and a confidence interval for claim size",
+      modules: "Modules 6, 7, 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the Central Limit Theorem for a sequence of i.i.d. random variables.",
+          answer:
+            "For i.i.d. random variables with finite mean $\\mu$ and finite variance $\\sigma^2$, the standardised sample mean $\\frac{\\bar{X}-\\mu}{\\sigma/\\sqrt{n}}$ converges in distribution to the standard normal distribution as the sample size $n$ increases.",
+          note: "Candidates should state the finite mean/variance condition explicitly, since part (iii) later tests whether they understand when this approximation is exact rather than needed at all.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "Individual claim amounts on a portfolio have population mean &pound;800 and population standard deviation &pound;250. For a random sample of 100 claims, use the CLT to calculate the approximate probability that the sample mean claim amount exceeds &pound;850.",
+          answer:
+            "By the CLT, $\\bar{X} \\approx N(800, 250^2/100) = N(800, 625)$, so the standard error is $250/\\sqrt{100}=25$. $z = \\frac{850-800}{25} = 2.0$. $P(\\bar{X}>850) = P(Z>2.0) = 1-0.9772 = 0.0228$.",
+          note: "The standard error must use $\\sigma/\\sqrt{n}$ (25), not $\\sigma$ itself (250) &mdash; using the raw population standard deviation instead of the sample mean's standard error is a common and significant error here.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what would change about your approach in part (ii) if you were instead told that individual claim amounts are known to be exactly normally distributed, rather than of unspecified shape.",
+          answer:
+            "The numerical answer would be unchanged, since with $n=100$ the CLT approximation is already very accurate. However, the calculation would no longer be an APPROXIMATION at all: if the underlying claim amounts are exactly normal, the sample mean's distribution is exactly $N(\\mu,\\sigma^2/n)$ for any sample size, not just approximately so for large $n$.",
+          note: "The key distinction examiners want is 'exact vs approximate', not just 'the answer would be the same' &mdash; candidates should explicitly reference Module 7's exact-normality result for samples from a normal population.",
+        },
+        {
+          label: "(iv)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "The insurer instead wants a 95% confidence interval for the true mean claim amount, based on a sample of 100 claims with sample mean &pound;820 and sample standard deviation &pound;240 (population variance unknown). Calculate the interval.",
+          answer:
+            "With $n=100$ large, the $t$-distribution with 99 df is very close to standard normal, so $z\\approx1.96$ is used. Standard error $= 240/\\sqrt{100}=24$. Margin $=1.96\\times24=47.04$. 95% CI $= 820 \\pm 47.04 = [\\pounds772.96, \\pounds867.04]$.",
+          note: "Candidates should note WHY the normal quantile is an acceptable substitute for the $t$ quantile here specifically (large $n$, so $t_{99}\\approx z$) rather than using it without justification.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q4",
+      title: "Method of moments and maximum likelihood for exponential waiting times",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the method of moments estimator in general terms, and state how it relates to the MLE for an exponential distribution.",
+          answer:
+            "The method of moments estimator is found by setting sample moments equal to the corresponding theoretical population moments and solving for the unknown parameter. For the exponential distribution, the method of moments estimator and the maximum likelihood estimator coincide exactly.",
+          note: "The coincidence for the exponential case is a useful fact to flag explicitly, since part (iii) derives the same numerical answer via a completely different route (differentiating the log-likelihood).",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question: "A sample of 8 policy waiting times (assumed exponential($\\lambda$)) has a total sum of 40. Calculate the method of moments estimate of $\\lambda$.",
+          answer: "$\\bar{x} = 40/8 = 5$. For the exponential distribution, $E[X]=1/\\lambda$, so setting $\\bar{x}=1/\\hat\\lambda$ gives $\\hat\\lambda = 1/\\bar{x} = 1/5 = 0.2$.",
+          note: "Candidates must correctly invert the mean-parameter relationship ($E[X]=1/\\lambda$, not $\\lambda$) &mdash; a common error is stating $\\hat\\lambda=\\bar{x}$ directly.",
+        },
+        {
+          label: "(iii)",
+          command: "Derive",
+          marks: 4,
+          question: "Derive the maximum likelihood estimator of $\\lambda$ for a random sample of size $n$ from an exponential($\\lambda$) distribution, from first principles, and confirm it matches part (ii).",
+          answer:
+            "Likelihood: $L(\\lambda)=\\lambda^n e^{-\\lambda\\sum x_i}$. Log-likelihood: $\\ell(\\lambda)=n\\ln\\lambda - \\lambda\\sum x_i$. Differentiating: $\\ell'(\\lambda) = \\frac{n}{\\lambda}-\\sum x_i = 0 \\Rightarrow \\hat\\lambda_{MLE} = \\frac{n}{\\sum x_i} = \\frac{1}{\\bar{x}}$. With $n=8$, $\\sum x_i=40$: $\\hat\\lambda_{MLE}=8/40=0.2$, matching part (ii).",
+          note: "The full four-step recipe (likelihood, log-likelihood, differentiate, solve) should be shown explicitly for full marks &mdash; jumping straight to the answer without the differentiation step loses the method marks even if the final number is correct.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "State whether this MLE is unbiased for $\\lambda$ in finite samples, and comment briefly on its large-sample properties.",
+          answer:
+            "The MLE $\\hat\\lambda=1/\\bar{X}$ is biased for finite $n$ (its expectation is slightly above the true $\\lambda$, since $E[1/\\bar X]\\neq 1/E[\\bar X]$ in general). However, it is asymptotically unbiased and consistent, converging to the true $\\lambda$ as $n\\to\\infty$, and it is asymptotically normally distributed, consistent with the general large-sample properties of MLEs.",
+          note: "This tests whether candidates understand that 'MLE' does not automatically mean 'unbiased' &mdash; the reciprocal-of-a-mean structure here is a classic case where finite-sample bias exists despite excellent large-sample behaviour.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q5",
+      title: "A chi-square goodness-of-fit test",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the null and alternative hypotheses for a chi-square goodness-of-fit test in general terms.",
+          answer: "$H_0$: the data come from the specified probability distribution. $H_1$: the data do not come from the specified distribution.",
+          note: "Both hypotheses should be stated relative to a specific claimed distribution, not just 'there is a difference' in vague terms.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "Observed frequencies across 5 categories are 18, 22, 25, 20, 15, against expected frequencies of 20 in each category under $H_0$. Calculate the chi-square test statistic.",
+          answer:
+            "$\\chi^2 = \\sum\\frac{(O-E)^2}{E} = \\frac{(18-20)^2}{20}+\\frac{(22-20)^2}{20}+\\frac{(25-20)^2}{20}+\\frac{(20-20)^2}{20}+\\frac{(15-20)^2}{20} = \\frac{4+4+25+0+25}{20} = \\frac{58}{20} = 2.90$",
+          note: "Each of the five terms should be shown individually before summing &mdash; a bare final answer with no working shown risks losing marks even if correct, since this is a 'calculate' question with several components.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "State the degrees of freedom for this test, compare the statistic to the 5% critical value of 9.488, and state your conclusion.",
+          answer:
+            "Degrees of freedom $= 5-1 = 4$ (5 categories, no parameters estimated from the data). Since $\\chi^2=2.90 < 9.488$, there is insufficient evidence to reject $H_0$ at the 5% level &mdash; the data are consistent with the specified distribution.",
+          note: "The conclusion must be phrased as 'insufficient evidence to reject' rather than 'accept $H_0$' &mdash; a hypothesis test never proves the null hypothesis true, only that the data don't contradict it.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain how the degrees of freedom in part (iii) would change if the expected frequencies had instead been calculated using a Poisson distribution whose mean was estimated from the same data, and why.",
+          answer:
+            "The degrees of freedom would reduce to $5-1-1=3$. This is because estimating the Poisson mean from the same data being tested uses up one additional degree of freedom &mdash; the general rule is that the degrees of freedom reduce by one for each parameter estimated from the data, on top of the usual '$k-1$' baseline for $k$ categories.",
+          note: "This connects directly to the same 'degrees of freedom get used up by estimation' logic as the $n-1$ divisor for sample variance &mdash; candidates who can draw that parallel demonstrate a deeper understanding than one who just quotes the rule.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q6",
+      title: "Correlation between claims experience and a rating factor",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the sample Pearson correlation coefficient $r$ in terms of sample covariance and sample standard deviations.",
+          answer: "$r = \\dfrac{S_{xy}}{\\sqrt{S_{xx}S_{yy}}}$, where $S_{xy}=\\sum(x_i-\\bar{x})(y_i-\\bar{y})$, $S_{xx}=\\sum(x_i-\\bar{x})^2$, and $S_{yy}=\\sum(y_i-\\bar{y})^2$.",
+          note: "This is the sample-data version of Module 4's theoretical correlation formula &mdash; candidates should recognise the parallel rather than treating it as an unrelated new formula.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question: "Paired data are: $x = (2,4,6,8,10,12)$, $y=(3,5,4,9,8,11)$. Calculate the sample correlation coefficient $r$.",
+          answer:
+            "$\\bar{x}=7$, $\\bar{y}=6.667$. $S_{xy}=54$, $S_{xx}=70$, $S_{yy}=49.33$. $r = \\dfrac{54}{\\sqrt{70\\times49.33}} = \\dfrac{54}{58.77} = 0.919$",
+          note: "Candidates should show the intermediate sums ($S_{xy}$, $S_{xx}$, $S_{yy}$) rather than jumping to the final ratio, both for method marks and to make an arithmetic error easier to spot and partially credit.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "Test, at the 5% significance level, whether the population correlation coefficient is significantly different from zero.",
+          answer:
+            "$H_0: \\rho=0$ vs $H_1: \\rho\\neq0$. Test statistic: $t = r\\sqrt{\\frac{n-2}{1-r^2}} = 0.919\\sqrt{\\frac{4}{1-0.845}} = 4.66$, with $n-2=4$ degrees of freedom. Since $|4.66| > 2.776$ (the 5% two-sided critical value for $t_4$), reject $H_0$: there is significant evidence of a non-zero population correlation.",
+          note: "Both hypotheses and the explicit comparison to the critical value are needed for full marks &mdash; quoting only the $t$-statistic without a stated conclusion against the critical value is an incomplete answer.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "The data appear to follow a consistently increasing but slightly curved (not perfectly straight-line) pattern. Explain how you would check whether Spearman's rank correlation supports the same conclusion, and what result you would expect if the relationship is strongly monotonic despite the curve.",
+          answer:
+            "Recalculate the correlation using the RANKS of $x$ and $y$ in place of their raw values (Spearman's is exactly Pearson's formula applied to ranks). Since a strongly monotonic relationship preserves the ordering of observations almost perfectly even when curved, Spearman's rank correlation would be expected to come out very high &mdash; likely even higher than the Pearson value found in part (ii), since rank correlation isn't penalised by the curvature the way Pearson's linear measure is.",
+          note: "The key insight examiners want is the specific prediction (Spearman's $\\geq$ Pearson's here) with a stated reason (rank correlation is insensitive to curvature as long as monotonicity holds), not just 'calculate Spearman's too'.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q7",
+      title: "Fitting a simple linear regression model",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the simple linear regression model, and the criterion used to estimate its parameters.",
+          answer: "$Y_i = \\alpha+\\beta x_i+\\epsilon_i$, with $\\epsilon_i$ independent, usually assumed $N(0,\\sigma^2)$. Parameters are estimated by least squares: minimising the sum of squared residuals $\\sum(y_i-\\hat{y}_i)^2$.",
+          note: "Both the model equation and the fitting criterion should be stated for full marks &mdash; the criterion is what part (ii) directly applies.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question: "Data are: $x=(1,2,3,4,5)$, $y=(3,5,4,6,8)$. Calculate the least squares estimates of the slope $\\hat\\beta$ and intercept $\\hat\\alpha$.",
+          answer: "$\\bar{x}=3$, $\\bar{y}=5.2$. $S_{xy}=11$, $S_{xx}=10$. $\\hat\\beta = 11/10 = 1.1$. $\\hat\\alpha = \\bar{y}-\\hat\\beta\\bar{x} = 5.2-(1.1)(3) = 1.9$.",
+          note: "The intercept must be found using the fitted slope and the sample means (the fitted line always passes through $(\\bar x,\\bar y)$) &mdash; attempting to derive it independently is unnecessary extra work.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question: "Calculate $R^2$ for the fitted model, and interpret its value.",
+          answer:
+            "Fitted values: 3.0, 4.1, 5.2, 6.3, 7.4. $SS_{res}=\\sum(y_i-\\hat y_i)^2 = 2.70$. $SS_{tot}=\\sum(y_i-\\bar y)^2=14.80$. $R^2 = 1-\\frac{2.70}{14.80} = 0.818$. This means approximately 81.8% of the variability in $y$ is explained by the fitted linear relationship with $x$.",
+          note: "The interpretation sentence (what the number actually MEANS, not just its value) is what the 'interpret' instruction is asking for &mdash; a bare numerical answer without interpretation loses part of the available credit.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Use the fitted model to predict the response at $x=6$, and comment on a limitation of using the model for this prediction.",
+          answer:
+            "$\\hat{y} = 1.9+1.1(6) = 8.5$. This is an extrapolation: $x=6$ lies outside the range of the observed data (1 to 5) used to fit the model, so there is no evidence the linear relationship continues to hold there &mdash; predictions outside the observed range carry additional risk beyond the model's stated precision.",
+          note: "Recognising and naming the extrapolation issue specifically (not just 'the model might be wrong') is the key point being tested &mdash; this is a standard, frequently-examined limitation of regression prediction.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q8",
+      title: "A Poisson GLM for claim counts",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define a generalised linear model in terms of the response distribution, linear predictor and link function.",
+          answer:
+            "A GLM assumes the response follows a distribution from the exponential family, with its mean $\\mu$ related to a linear predictor $\\eta$ (a linear combination of explanatory variables) via a link function $g$, such that $g(\\mu)=\\eta$.",
+          note: "All three components (exponential family response, linear predictor, link function) should be named explicitly for full marks.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An actuary models annual claim counts using a Poisson GLM with a log link, with a single explanatory factor 'driver age band' (3 levels). Write down the general form of the linear predictor, and explain what the log link ensures about the model's predicted claim counts.",
+          answer:
+            "Linear predictor: $\\eta = \\beta_0 + \\beta_1 I_1 + \\beta_2 I_2$, where $I_1, I_2$ are indicator variables for two of the three age bands (the third is the baseline). Since the log link gives $\\mu=e^\\eta$, and $e^\\eta$ is positive for any real value of $\\eta$, the log link guarantees the model's predicted mean claim count is always positive, regardless of the fitted coefficients.",
+          note: "The indicator-variable structure for a 3-level factor (2 indicators, one baseline level) connects to Module 12's factor-variable card &mdash; candidates should recognise this rather than trying to include a separate indicator for all 3 levels, which would be over-parameterised.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "Model A (age band only) has deviance 340 on 296 degrees of freedom. Model B (age band plus vehicle type, adding 2 further parameters) has deviance 322 on 294 degrees of freedom. Test whether vehicle type significantly improves the fit.",
+          answer:
+            "Deviance difference $=340-322=18$, on $296-294=2$ degrees of freedom. Comparing to the chi-square critical value $\\chi^2_{0.05,2}=5.991$: since $18 > 5.991$, the improvement in fit from adding vehicle type is statistically significant at the 5% level, so vehicle type should be retained in the model.",
+          note: "Candidates must correctly identify the degrees of freedom for the comparison as the DIFFERENCE in parameters (2), not either model's own degrees of freedom, and state a clear retain/reject conclusion.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 3,
+          question: "Explain one practical reason an actuary might still choose not to include vehicle type in the final pricing model, despite the statistically significant result in part (iii).",
+          answer:
+            "Some vehicle-type categories may have very few observations (sparse data), making the estimated coefficients for those levels unstable or unreliable despite the overall test being significant &mdash; alternatively, vehicle type might be highly correlated with another factor already in the model (e.g. engine size), causing multicollinearity concerns, or there may be regulatory or commercial constraints on using that particular rating factor.",
+          note: "Any one well-explained practical concern (data sparsity, multicollinearity, or regulatory/commercial constraints) earns full marks &mdash; the point is recognising that statistical significance alone doesn't automatically settle a real pricing-model decision.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q9",
+      title: "Bayesian updating and exact credibility for a Gamma-Poisson model",
+      modules: "Modules 14, 15",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State Bayes' theorem in the form 'posterior is proportional to likelihood times prior', and state why the Gamma distribution is a conjugate prior for a Poisson mean.",
+          answer:
+            "$f(\\theta|x) \\propto f(x|\\theta)f(\\theta)$. The Gamma distribution is conjugate for a Poisson mean because combining a Gamma prior with Poisson-distributed data always produces a posterior that is itself a Gamma distribution, just with updated parameters.",
+          note: "Naming the specific conjugate pairing (Gamma/Poisson) rather than describing conjugacy only in the abstract is what part (ii) then directly applies.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "An insurer assumes a Gamma(shape $=4$, rate $=2$) prior for a risk's claim frequency $\\lambda$. Given 10 years of data with total observed claims $=38$, derive the posterior distribution of $\\lambda$ and its mean.",
+          answer:
+            "For a Gamma(shape $\\alpha_0$, rate $\\beta_0$) prior and Poisson likelihood with $n$ years of data and total claims $S$, the posterior is Gamma($\\alpha_0+S$, $\\beta_0+n$). Here: Gamma($4+38$, $2+10$) $=$ Gamma($42$, $12$). Posterior mean $= 42/12 = 3.5$.",
+          note: "The updating rule (add total claims to shape, add years of exposure to rate) should be stated explicitly, not just the final numbers &mdash; this is the standard conjugate-update formula worth memorising exactly.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "Calculate the Bühlmann-style credibility factor $Z=\\frac{n}{n+\\beta_0}$ for this prior, and the resulting credibility premium, confirming it matches the posterior mean found in part (ii).",
+          answer:
+            "$Z = \\dfrac{10}{10+2} = 0.8333$. Sample mean $=38/10=3.8$. Prior mean $=4/2=2.0$. Credibility premium $= 0.8333(3.8)+0.1667(2.0) = 3.167+0.333 = 3.5$, exactly matching the posterior mean from part (ii).",
+          note: "The explicit numerical confirmation that both routes give 3.5 is the point of this part &mdash; simply computing $Z$ without completing the credibility-weighted average and comparing it to part (ii) leaves the question incomplete.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why this exact match between the Bayesian posterior mean and the linear credibility formula is a special property of this particular prior/likelihood pairing, rather than a general result.",
+          answer:
+            "This is the 'exact credibility' property specific to conjugate prior/likelihood pairs such as Gamma/Poisson (and Beta/Binomial) &mdash; for these particular families, the posterior mean happens to reduce algebraically to exactly the linear credibility-weighted form. For other, non-conjugate prior/likelihood combinations, the true Bayesian posterior mean generally does NOT simplify to a simple linear formula, and a classical credibility premium would then only be an approximation to the full Bayesian answer, not an exact match.",
+          note: "The key distinction examiners want is 'special to conjugate pairs, not universal' &mdash; a common error is implying the Bayesian and classical credibility approaches always agree exactly, which is only true for these specific conjugate cases.",
+        },
+      ],
+    },
+    {
+      id: "cs1-q10",
+      title: "Empirical Bayes Credibility Theory Model 1",
+      modules: "Module 16",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "State",
+          marks: 2,
+          question: "State the key assumption 'Empirical Bayes Credibility Theory Model 1' makes about the risks in a portfolio.",
+          answer: "Model 1 assumes each risk in the portfolio has the same number of years of data/exposure (a balanced data structure).",
+          note: "This assumption should be explicitly checked against any given data before applying Model 1's formulas, as the next parts require.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "Three risks each have 4 years of claims data: Risk 1: 10, 14, 8, 12. Risk 2: 20, 18, 22, 24. Risk 3: 15, 13, 17, 11. Calculate the estimate of the process (within-risk) variance, $s^2$.",
+          answer:
+            "Risk means: $\\bar X_1=11$, $\\bar X_2=21$, $\\bar X_3=14$. Sum of squared within-risk deviations: Risk 1: $1+9+9+1=20$; Risk 2: $1+9+1+9=20$; Risk 3: $1+1+9+9=20$; total $=60$. $s^2 = \\dfrac{60}{r(n-1)} = \\dfrac{60}{3(3)} = 6.667$",
+          note: "The divisor is $r(n-1)$ &mdash; number of risks times (years per risk minus 1) &mdash; not simply the total number of observations; each risk's own mean is used to measure that risk's own within-risk deviations.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 4,
+          question: "Calculate the estimate of the variance of hypothetical means (between-risk variance), and hence the credibility factor $Z$ (common to all risks under Model 1).",
+          answer:
+            "Overall mean $= (11+21+14)/3 = 15.333$. Sum of squared deviations of risk means from overall mean: $(11-15.333)^2+(21-15.333)^2+(14-15.333)^2 = 18.78+32.11+1.78 = 52.67$. $\\hat{a} = \\dfrac{52.67}{r-1} - \\dfrac{s^2}{n} = \\dfrac{52.67}{2}-\\dfrac{6.667}{4} = 26.33-1.67=24.67$. $K = s^2/\\hat{a} = 6.667/24.67 = 0.270$. $Z = \\dfrac{n}{n+K} = \\dfrac{4}{4+0.270} = 0.937$",
+          note: "The between-risk variance formula subtracts $s^2/n$ from the raw between-risk sum of squares &mdash; omitting this correction term is a common error that overstates the between-risk variance and hence $Z$.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question: "Calculate the credibility premium for Risk 1 (own mean 11), and comment on why it is close to that risk's own observed mean.",
+          answer:
+            "Credibility premium $= Z\\bar X_1 + (1-Z)\\bar X = 0.937(11)+0.063(15.333) = 10.31+0.97 = 11.27$. This is close to Risk 1's own mean of 11 because $Z$ is very high (0.937): the estimated between-risk variance is large relative to the process variance, meaning risks in this portfolio genuinely differ a lot from one another, so each risk's own experience is treated as highly informative and given correspondingly heavy weight.",
+          note: "The comment should connect the numerical closeness to the underlying reason (high $Z$ because between-risk variance dominates process variance), not just restate that the numbers happen to be close.",
+        },
+      ],
+    },
+  ],
 };
