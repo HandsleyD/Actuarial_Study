@@ -2845,4 +2845,454 @@ const QUESTIONS = {
       ],
     },
   ],
+  CP2: [
+    {
+      id: "cp2-q1",
+      title: "Understanding the brief for a new modelling exercise",
+      modules: "Module 1",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A junior actuary has been given a brief to build a spreadsheet model projecting a pension scheme's cashflows, but the brief doesn't specify exactly how granular the projection should be. Explain how the junior actuary should approach this ambiguity.",
+          answer:
+            "Rather than treating the ambiguity as a blocker, the junior actuary should exercise judgement to make a reasonable, proportionate choice about the level of granularity (e.g. annual rather than monthly projection, given the scheme's purpose), clearly document that choice and the reasoning behind it, and confirm it with whoever commissioned the work if there's genuine doubt or the choice is highly consequential.",
+          note: "This is precisely CP2's test of judgement under an under-specified brief &mdash; the answer should show a reasonable, documented choice being made, not a refusal to proceed without further instruction.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what it means for a model to be 'fit for purpose', and why a more sophisticated model is not automatically a better one.",
+          answer:
+            "A model is fit for purpose when it does what the brief actually requires, to an appropriate level of accuracy and complexity, within the time and resources available. A more sophisticated model than necessary takes longer to build and check, increases the risk of introducing an error, and can make the model harder for others to understand and rely on &mdash; proportionality, not maximum sophistication, is the actual goal.",
+          note: "Candidates should explicitly reject the idea that 'more complex = better' &mdash; this is a commonly tested misconception in CP2.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why spreadsheets remain the dominant medium for actuarial models, despite the existence of more specialised statistical or programming software.",
+          answer:
+            "Spreadsheets are flexible, widely available without specialist licensing, and &mdash; critically &mdash; transparent: their formulas are visible and traceable cell-by-cell, allowing a non-technical stakeholder or reviewer to inspect and understand the logic directly, unlike a black-box statistical model. This transparency directly supports the auditability and communication needs central to actuarial modelling work.",
+          note: "The strongest answers name transparency/auditability specifically as the key advantage, not just 'spreadsheets are easy to use'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why time management is itself considered a genuine modelling skill within a time-pressured exercise like this one.",
+          answer:
+            "Building a correct, well-documented, checked model within a fixed time limit requires deliberately balancing thoroughness against the practical reality of limited time &mdash; spending disproportionate time on one aspect (e.g. formatting) at the expense of another (e.g. checking core logic) risks losing marks on both; sensible time allocation across the whole task is itself part of the skill being assessed.",
+          note: "This connects the abstract principle of proportionality to a very concrete, practical exam-technique point.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q2",
+      title: "Designing the structure of a new pricing model",
+      modules: "Module 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An actuary is starting to build a new spreadsheet model to price a general insurance product. Explain the three broad areas the model's structure should separate, and why this separation matters.",
+          answer:
+            "The model should separate inputs (assumptions/data), calculations (the model's working logic), and outputs (results/summary) into clearly distinct areas. This separation means changing an assumption requires updating only one cell rather than hunting through scattered formulas, makes the calculation flow easier to follow and check, and makes clear which cells represent final results versus working detail.",
+          note: "This is CP2's single most fundamental design principle &mdash; a strong answer names all three areas and explains the benefit of the separation, not just the areas themselves.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what 'hard-coding' means in this context, and why the actuary should avoid it when entering the product's assumed loss ratio into the model.",
+          answer:
+            "Hard-coding means typing a fixed numeric value directly into a formula rather than referencing a labelled input cell. If the loss ratio assumption is hard-coded into every formula that uses it, updating the assumption later would require finding and editing every one of those formulas individually, risking an inconsistent, partially-updated model if any occurrence is missed.",
+          note: "A strong answer explains the CONSEQUENCE of hard-coding (inconsistent updates), not just defines the term.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why consistent cell formatting (e.g. colour-coding inputs versus formulas) is considered good design practice, beyond simple visual tidiness.",
+          answer:
+            "Consistent formatting lets a reader immediately distinguish, at a glance, which cells are assumptions that can be safely changed versus which are calculated results that shouldn't be manually overwritten &mdash; this directly supports the input/calculation/output separation from part (i), making that structural distinction visually obvious rather than something a reviewer has to work out by inspecting each cell individually.",
+          note: "The key point is that formatting serves a functional purpose (communicating structure), not just aesthetic tidiness.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why planning the model's overall structure before building it is likely to save time overall, even though it delays starting the actual calculations.",
+          answer:
+            "Planning the input area, calculation flow, and output layout upfront reduces the risk of needing a disruptive, error-prone restructure partway through once the model has already grown complex &mdash; under exam time pressure, a few minutes spent planning can save far more time than it costs by avoiding a costly rebuild later.",
+          note: "This is genuinely practical exam-technique advice, not just an abstract principle &mdash; candidates should frame the answer around the time trade-off explicitly.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q3",
+      title: "Building formulas to value a set of expected cashflows",
+      modules: "Module 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A model projects expected cashflows of &pound;10,000, &pound;12,000 and &pound;15,000 at the end of years 1, 2 and 3 respectively, discounted at 5% per annum. Using the approach a SUMPRODUCT formula would implement, calculate the present value of these cashflows.",
+          answer:
+            "Discount factors: year 1 $= 1/1.05 = 0.952381$; year 2 $= 1/1.05^2 = 0.907029$; year 3 $= 1/1.05^3 = 0.863838$. Present value $= 10{,}000(0.952381) + 12{,}000(0.907029) + 15{,}000(0.863838) = 9{,}523.81 + 10{,}884.35 + 12{,}957.57 = \\pounds33{,}365.73$.",
+          note: "This is exactly the calculation a SUMPRODUCT formula performs in one step (multiplying a cashflow array by a discount-factor array and summing) &mdash; candidates should show the individual products before summing, to demonstrate the underlying logic clearly.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why a single SUMPRODUCT formula might be preferred over three separate multiplication cells summed together, and one reason it might NOT be preferred.",
+          answer:
+            "A SUMPRODUCT formula is more compact and scales easily if the number of cashflow periods changes, without needing to add or remove individual multiplication cells. However, it can be less transparent to a reviewer than seeing each year's discounted cashflow calculated in its own visible, clearly labelled cell, making the calculation harder to check step-by-step.",
+          note: "A complete answer weighs both sides &mdash; compactness/scalability versus transparency/auditability &mdash; rather than presenting SUMPRODUCT as an unambiguous improvement.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain the difference between a relative and an absolute cell reference, and why this distinction matters when copying a discount factor formula down a column of years.",
+          answer:
+            "A relative reference (e.g. A1) shifts automatically when a formula is copied to another cell, while an absolute reference (e.g. $A$1) stays fixed regardless of where it's copied. If the discount rate is held in one fixed input cell, that reference must be made absolute before copying the formula down the column of years, otherwise the reference would shift to point at the wrong (likely empty or incorrect) cell in each new row.",
+          note: "This is one of the most commonly tested CP2 formula-technique points &mdash; candidates should give a concrete, specific example of what would go wrong if the reference type were mismatched.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on why it's good practice to test a new formula on a simple, hand-checkable case before applying it across the whole model.",
+          answer:
+            "Testing on a simple, known case (where the correct answer can be verified independently) gives confidence the formula's underlying logic is structurally correct before it's relied upon and copied across many rows or columns of real data, making it far more efficient to catch a structural error early rather than after it has propagated throughout the model.",
+          note: "This connects directly to Module 7's checking material &mdash; validating a formula's logic early is cheaper than discovering the same error only after the model is complete.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q4",
+      title: "Documenting and version-controlling a model in ongoing use",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question: "A pricing model has been in use for two years, with several actuaries making small adjustments to it over that time. Explain why this history creates a genuine documentation risk.",
+          answer:
+            "Incremental changes made by different people over time, without a corresponding rebuild or update of the model's original documentation, can leave the documentation out of step with the model's actual current logic &mdash; and documentation that no longer matches the model is arguably worse than no documentation at all, since a reviewer would trust it without realising it's stale.",
+          note: "The key insight is that OUTDATED documentation is actively misleading, not merely unhelpful &mdash; a reviewer has no way to know it's stale just from reading it.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what a 'change log' is, and why maintaining one is considered essential good practice for this model.",
+          answer:
+            "A change log is a record of who changed the model, when, and why, for each significant edit. It provides an audit trail explaining why the model's current state differs from an earlier version, supporting both internal review and any later investigation into an unexpected change in the model's results.",
+          note: "A strong answer connects the change log directly to the ability to investigate an unexpected result later, not just describe it as a generic record-keeping habit.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss the risk of saving multiple, informally-named copies of the model (e.g. 'pricing_final', 'pricing_final_v2', 'pricing_final_v2_USE_THIS') instead of using a disciplined version control approach.",
+          answer:
+            "It becomes genuinely unclear which copy is the authoritative, current version, risking that outdated or incorrect results are used, or that a fix applied to one copy isn't reflected in others still in circulation &mdash; a clear naming convention or centralised change log avoids this ambiguity by making the current, correct version unambiguous.",
+          note: "This is a very common, easily recognisable real-world failure mode worth describing concretely rather than abstractly.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why documentation is described as something that should be updated whenever the model changes, rather than written once at initial build and left alone.",
+          answer:
+            "A model's logic evolves as it's adjusted over its two years of use, so documentation frozen at the original build date will increasingly diverge from what the model actually does &mdash; keeping documentation current alongside every change is what preserves its usefulness as a genuinely accurate guide for future reviewers.",
+          note: "This closing comment should tie back explicitly to the risk identified in part (i) &mdash; documentation discipline is an ongoing commitment, not a one-off task.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q5",
+      title: "Testing a product's sensitivity to the lapse rate assumption",
+      modules: "Module 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A model projects renewal premium income for a book of 1,000 policies, each with an annual premium of &pound;500. Calculate the total renewal premium income received if the lapse rate is 10%, 15%, and 20% respectively.",
+          answer:
+            "At 10% lapse: $1{,}000 \\times (1-0.10) \\times \\pounds500 = 900 \\times \\pounds500 = \\pounds450{,}000$. At 15% lapse: $1{,}000 \\times 0.85 \\times \\pounds500 = 850 \\times \\pounds500 = \\pounds425{,}000$. At 20% lapse: $1{,}000 \\times 0.80 \\times \\pounds500 = 800 \\times \\pounds500 = \\pounds400{,}000$.",
+          note: "This is exactly the kind of calculation an Excel data table would automate across a range of lapse rate inputs &mdash; candidates should show each of the three cases clearly rather than only the final figures.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what a 'data table' is in Excel, and why using one is more reliable than manually changing the lapse rate input and re-recording the result three times.",
+          answer:
+            "A data table is a built-in Excel feature that automatically recalculates a model's output across a range of values for one or two selected input cells, without the user needing to manually change and re-record the input each time. Manual repetition is slower and more prone to error &mdash; e.g. forgetting to reset a previous change, or mis-recording a result &mdash; whereas a data table performs the recalculation and recording automatically and consistently.",
+          note: "The key distinction is reliability of the SENSITIVITY-TESTING PROCESS itself, separate from whether the underlying model is correct.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on why the &pound;50,000 spread between the best and worst case in part (i) is a useful finding in its own right, beyond the three individual figures.",
+          answer:
+            "The spread quantifies exactly how much renewal income is genuinely at risk from lapse rate uncertainty, giving a decision-maker a clear sense of the assumption's materiality to this result &mdash; a single best-estimate figure alone would convey no information about this underlying sensitivity.",
+          note: "This connects to CP1's assumption-uncertainty material &mdash; presenting a range, not just a point estimate, communicates genuine uncertainty honestly.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why testing lapse rate alone, one assumption at a time, might not fully capture the risk to this product's overall profitability.",
+          answer:
+            "A one-way sensitivity analysis doesn't capture the effect of multiple assumptions moving together (e.g. lapse rate and claims experience both worsening in a recession, which may reinforce each other) &mdash; a scenario analysis varying several related assumptions together would better represent a coherent adverse future than testing lapse rate in isolation.",
+          note: "This distinguishes sensitivity analysis (one assumption at a time) from scenario analysis (several assumptions varied together in a coherent way).",
+        },
+      ],
+    },
+    {
+      id: "cp2-q6",
+      title: "Governance and control over a business-critical model",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question: "A reserving model's output directly feeds an insurer's published financial statements. Explain why this model's governance should be more rigorous than a model used only for a quick internal estimate.",
+          answer:
+            "The level of control/review applied to a model should reasonably vary with how material or critical its results are &mdash; a model whose output directly affects published financial statements carries far greater consequences if wrong than a low-stakes internal estimate, so proportionality means this model warrants a materially higher standard of review, sign-off, and ongoing validation.",
+          note: "This is the proportionality principle applied specifically to model governance intensity, not model complexity.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how the 'three lines of defence' model applies to governance of this reserving model, identifying which line the model's day-to-day builder/user belongs to.",
+          answer:
+            "The model's builder/user is the FIRST line, responsible for building and using the model correctly day-to-day; a separate risk or actuarial oversight function acts as the SECOND line, providing independent review/challenge; internal audit forms the THIRD line, periodically assessing the overall control environment around the model's use.",
+          note: "Candidates should correctly place the model's day-to-day user in the first line, not mistake them for 'the risk function' simply because the topic is risk-related.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why independent peer review of this model is a valuable control, even though its builder is an experienced, careful actuary confident it's correct.",
+          answer:
+            "A model's own author can become blind to their own errors through over-familiarity with the model's logic, since they naturally see what they expect to see rather than testing it fresh; an independent reviewer approaches the model without that familiarity, genuinely testing its logic rather than confirming the author's existing expectations &mdash; confidence in one's own work is not the same as verified correctness.",
+          note: "The strongest answers explicitly separate CONFIDENCE from VERIFICATION &mdash; these are not the same thing, however experienced the model's builder is.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why the insurer might require periodic re-validation of this model, rather than relying on its original sign-off indefinitely.",
+          answer:
+            "Assumptions, business context, and the model's own accumulated changes over time can all mean a model validated as fit for purpose at one point no longer remains so &mdash; periodic re-validation confirms the model's continued fitness for purpose on an ongoing basis, rather than treating a single historical sign-off as permanent, unconditional assurance.",
+          note: "This connects to the recurring ongoing-review theme found throughout both CP1 and CP2 &mdash; validation, like assumptions, is not a one-off exercise.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q7",
+      title: "Checking a fund accumulation calculation",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A model calculates the accumulated value of a &pound;20,000 investment growing at 6% per annum over 4 years, using a single compound interest formula. As an independent check, recalculate the accumulated value year by year, and confirm it matches the single-formula result of &pound;25,249.54.",
+          answer:
+            "Year 1: $20{,}000 \\times 1.06 = \\pounds21{,}200.00$. Year 2: $21{,}200 \\times 1.06 = \\pounds22{,}472.00$. Year 3: $22{,}472 \\times 1.06 = \\pounds23{,}820.32$. Year 4: $23{,}820.32 \\times 1.06 = \\pounds25{,}249.54$. This matches the single-formula result of $20{,}000 \\times 1.06^4 = \\pounds25{,}249.54$, confirming the formula is correct.",
+          note: "This is a genuine independent recalculation using a DIFFERENT method (year-by-year multiplication versus a single exponent formula) &mdash; both should agree if the model's logic is structurally sound.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why this kind of independent recalculation is a more rigorous check than simply re-reading the original formula a second time.",
+          answer:
+            "Re-reading the same formula again risks simply confirming the same (possibly flawed) logic a second time, since the reviewer's attention follows the same reasoning path as before. Recalculating via a genuinely different method is far more likely to catch an underlying error, since the two approaches don't share the same potential blind spot.",
+          note: "The key distinction is between merely REVIEWING existing logic versus genuinely INDEPENDENTLY verifying the result via a different route.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why a checker should also test the model with an edge-case input, such as a 0% growth rate, rather than only typical inputs like the 6% used above.",
+          answer:
+            "A formula that behaves correctly for typical, mid-range inputs can still fail or behave unexpectedly at an edge case (e.g. a formula that implicitly assumes growth is always positive), which testing only with a 'normal' 6% rate wouldn't reveal &mdash; edge-case testing can expose a hidden fragility that wouldn't otherwise surface until an unusual real scenario occurs.",
+          note: "This tests whether candidates understand checking should go beyond confirming the 'happy path' result alone.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on why the checker should document that this specific check was performed, rather than simply performing it and moving on.",
+          answer:
+            "Documenting the check provides evidence to a reviewer or later user that appropriate checking has genuinely taken place, and specifies exactly what was and wasn't tested &mdash; an unrecorded assumption that 'this must have been checked' is itself a source of risk, since it can't be verified or relied upon later.",
+          note: "This connects checking (this module) directly to documentation (Module 4) and sign-off (Module 6) &mdash; a documented check is what a sign-off decision should genuinely be based on.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q8",
+      title: "Deciding whether to automate a repetitive modelling task",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An actuary needs to run a pricing model across 50 different scenarios and collate the results into a summary table. Explain why this is a reasonable candidate task for VBA/macro automation.",
+          answer:
+            "Running the model 50 times and collating results manually would be extremely tedious and error-prone (e.g. forgetting to reset an input, or mis-transcribing a result), whereas this kind of repetitive, mechanical task is exactly where automation adds genuine value &mdash; freeing the actuary from manual repetition while reducing the risk of a transcription error.",
+          note: "The key justification is that this is a REPETITIVE, MECHANICAL task, in contrast to core calculation logic that's often better left as transparent, auditable formulas.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why the resulting macro's code should be commented clearly, and why VBA code is generally considered harder to audit than an equivalent spreadsheet formula.",
+          answer:
+            "VBA code is hidden behind the spreadsheet interface in a separate code editor, requiring a reviewer to actively open and read it and understand programming logic rather than visible, clickable spreadsheet formulas &mdash; clear code comments explain what each section does and why, serving the same purpose code comments serve for spreadsheet documentation, without which the macro becomes a genuine black box even to a technically capable reviewer.",
+          note: "A complete answer covers both the AUDIT DIFFICULTY of VBA generally and the specific role comments play in mitigating it.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain one risk specific to a macro that pastes calculated values directly over formula cells as part of its automated process.",
+          answer:
+            "This can silently destroy the underlying formula logic in those cells, replacing a traceable, live calculation with a static, hard-coded value &mdash; exactly the hard-coding problem flagged as poor practice in Module 2, now potentially happening invisibly via automated code rather than a manual edit, and possibly not immediately obvious just from looking at the spreadsheet afterward.",
+          note: "This connects VBA-specific risk directly back to Module 2's general hard-coding warning, showing the same underlying risk can arise through a new, less visible mechanism.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why the actuary should still test this macro's output using the checking techniques covered elsewhere in this course, rather than trusting it simply because it's automated.",
+          answer:
+            "Automation doesn't exempt a model from needing genuine verification &mdash; code is just as capable of containing a logical error as a formula is, and VBA's reduced visibility arguably makes thorough checking even more important, not less, since an error hidden inside unreviewed code is harder to spot than one visible in a spreadsheet formula.",
+          note: "The key misconception to correct is that 'automated' implies 'more reliable' &mdash; automation changes HOW a task is performed, not whether its output still needs to be checked.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q9",
+      title: "Cleaning and validating a claims data extract",
+      modules: "Module 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question: "A claims data extract used to set a pricing assumption contains a small number of records with obviously implausible values (e.g. a negative claim amount). Explain a reasonable approach to handling these records.",
+          answer:
+            "The obviously erroneous records should be investigated where practical to understand their cause, and the treatment applied (e.g. correcting, excluding, or flagging them) should be clearly documented &mdash; silently ignoring or including clearly erroneous records without any record of the decision undermines the resulting assumption's reliability and transparency.",
+          note: "The key point is that the DECISION about how to handle outliers matters and should be documented, not simply that outliers exist and should be removed.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why simply excluding all records with any missing field, without further investigation, could introduce bias into the resulting assumption.",
+          answer:
+            "If the missingness isn't random (e.g. certain policy types or claim circumstances are systematically more likely to have an incomplete record), excluding those records entirely could skew the remaining data set away from being representative of the true underlying population, biasing any assumption derived from it.",
+          note: "This directly echoes CP1's point about missing data adjustments &mdash; exclusion is only safe if the missingness is genuinely random, which shouldn't simply be assumed.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why raw imported claims data should be kept on a separate sheet from the model's working calculations, rather than cleaned and used in place.",
+          answer:
+            "Keeping raw data distinct preserves an unaltered record of the original source data, makes clear which cells are genuinely sourced externally versus derived/cleaned within the model, and allows the cleaning steps themselves to be inspected and re-run if needed &mdash; directly supporting the input/calculation/output structural separation that underpins good model design generally.",
+          note: "This connects Module 2's structural design principle specifically to data handling &mdash; raw data is effectively another category of 'input' deserving the same clear, protected treatment.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why an unexpectedly extreme result from a sensitivity analysis on this model might actually indicate a data quality issue, rather than a genuine finding about the underlying risk.",
+          answer:
+            "An implausible or extreme sensitivity result can sometimes be traced back to a data error (e.g. one erroneous record with an extreme value skewing an assumption) rather than a genuine feature of the underlying risk exposure &mdash; sensitivity testing can therefore double as a useful data-quality check, not just a way of exploring genuine risk sensitivity.",
+          note: "This connects Module 5's sensitivity analysis material to Module 9's data-quality material, showing the two are genuinely complementary techniques.",
+        },
+      ],
+    },
+    {
+      id: "cp2-q10",
+      title: "Writing a report explaining model results to a non-technical client",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An actuary has built a model projecting the financial impact of a proposed change to a pension scheme's benefits, and must now write a report for the scheme's trustees, who have no actuarial training. Explain why the report should avoid unexplained actuarial jargon.",
+          answer:
+            "A reader without actuarial training won't understand specialist terms without explanation, and unexplained jargon undermines the whole purpose of the report &mdash; communicating results clearly enough that the trustees can genuinely understand the findings and use them to make an informed decision about the proposed change.",
+          note: "This directly echoes CP1's principle of tailoring communication to the recipient's ability to understand it.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss how the report's structure should be organised to serve these trustees effectively, given they may not read the full document in detail.",
+          answer:
+            "The report should typically open with a clear, concise summary of the key findings and conclusions, before (or separately from) more detailed supporting explanation &mdash; allowing a busy trustee who only reads the opening summary to still grasp the genuinely important message, with fuller detail available for anyone who wants to go further.",
+          note: "This connects to the model's own dashboard/summary-sheet design principle (Module 2) &mdash; the same audience-first logic applies to report structure.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why the report should state the limitations of the underlying model clearly, rather than presenting the projected financial impact as a single, certain figure.",
+          answer:
+            "Presenting results without their genuine limitations could mislead the trustees about how much confidence to place in them, misrepresenting an inherently uncertain, assumption-based projection as if it were a precise, guaranteed figure &mdash; giving false confidence in a figure is a genuine failure of the actuary's professional duty to give honest, useful advice, not merely a stylistic choice.",
+          note: "This is a professional obligation, not just good practice &mdash; a strong answer frames it in exactly those terms.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why building the model with a non-technical reader's eventual report in mind can improve the quality of the model itself, not just the report.",
+          answer:
+            "Knowing the model's results will need to be explained clearly to a non-technical audience encourages the actuary to keep the model's structure, assumptions, and logic genuinely clear and well-organised from the outset, rather than allowing avoidable complexity to creep in &mdash; anticipating the need to explain a model to someone else is a strong forcing function for keeping the model itself clear and well-structured.",
+          note: "This closing comment ties the whole subject together &mdash; the discipline of communication (CP2.2) reinforces good practice in model-building (CP2.1), rather than the two being unrelated skills.",
+        },
+      ],
+    },
+  ],
 };
