@@ -819,3 +819,92 @@ main {
 .explain-body p { margin: 0 0 10px; }
 .explain-body p:last-child { margin-bottom: 0; }
 
+/* ---------- practice exam question bank ---------- */
+
+.qbank-btn {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.qbank-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.qbank-note a {
+  color: var(--accent);
+}
+
+.question-card {
+  padding: 24px;
+}
+
+.question-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.question-title {
+  margin: 0 0 18px;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.question-part {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.question-part:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.part-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.part-label {
+  font-weight: 700;
+}
+
+.part-marks {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.part-question {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.part-answer {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.qbank-reveal-row {
+  margin-top: 4px;
+}
+
+.qbank-done-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+

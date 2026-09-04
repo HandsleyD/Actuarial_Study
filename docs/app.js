@@ -66,6 +66,121 @@ function currentSequence(code, moduleId, def) {
 
 const mixedState = { code: null, cardIndex: 0, revealed: false, typed: "", entries: [], _lastKey: "" };
 
+/* ---------- practice exam question bank ---------- */
+
+const qbankState = { code: null, qIndex: 0, revealed: false, _lastKey: "" };
+
+function renderQuestionsView(code) {
+  const el = document.getElementById("questionsView");
+  const questions = QUESTIONS[code] || [];
+  const info = SUBJECTS[code] || { name: code };
+
+  if (!questions.length) {
+    el.innerHTML = `
+      <button class="back-link" id="backToSubjectQ">&larr; ${code}</button>
+      <div class="flash-empty">
+        <h2>Practice exam questions</h2>
+        <p>No practice questions for ${code} yet.</p>
+      </div>`;
+    document.getElementById("backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
+    return;
+  }
+
+  if (qbankState.qIndex >= questions.length) qbankState.qIndex = 0;
+  const idx = qbankState.qIndex;
+  const q = questions[idx];
+  const revealed = qbankState.revealed;
+
+  const dots = questions
+    .map((qq, i) => `<button class="card-dot ${i === idx ? "active" : ""}" data-idx="${i}" title="Q${i + 1}: ${qq.title}">${i + 1}</button>`)
+    .join("");
+
+  const partsHtml = q.parts
+    .map(
+      (p) => `
+    <div class="question-part">
+      <div class="part-head">
+        <span class="part-label">${p.label} ${p.command ? `<em>${p.command}</em>` : ""}</span>
+        <span class="part-marks">[${p.marks} mark${p.marks === 1 ? "" : "s"}]</span>
+      </div>
+      <div class="part-question">${p.question}</div>
+      ${revealed ? `<div class="part-answer"><strong>Model answer:</strong> ${p.answer}</div>` : ""}
+    </div>`
+    )
+    .join("");
+
+  // Reuse the flashcard explain-panel mechanism: fake a "card" whose
+  // .explain is every part's examiner note stitched together, so a marker's-
+  // eye view of the whole question appears in the same reveal-gated panel
+  // flashcards use, once the model answers are shown.
+  const explainCard = {
+    explain: q.parts
+      .filter((p) => p.note)
+      .map((p) => `<p><strong>${p.label}</strong> ${p.note}</p>`)
+      .join(""),
+  };
+
+  el.innerHTML = `
+    <button class="back-link" id="backToSubjectQ">&larr; ${code}</button>
+    <div class="flash-head">
+      <div class="flash-title-row">
+        <h2>Practice exam questions &mdash; ${info.name}</h2>
+        <span class="flash-progress">Q${idx + 1} of ${questions.length}</span>
+      </div>
+    </div>
+    <p class="qbank-note">Original questions written in the IFoA style and command-verb format — not reproduced from real papers. For the genuine article, see past ${code} papers and examiners' reports on the <a href="${IFOA_PAST_PAPERS_URL}" target="_blank" rel="noopener">IFoA's VLE</a> (student/member login required).</p>
+    <div class="card-dots">${dots}</div>
+    <div class="${flashcardLayoutClass(explainCard, revealed)}">
+      <div class="flashcard question-card">
+        <div class="question-meta">${q.modules} &middot; ${q.marks} marks total</div>
+        <h3 class="question-title">${q.title}</h3>
+        ${partsHtml}
+        ${
+          !revealed
+            ? `<div class="qbank-reveal-row"><button class="btn primary" id="revealQBtn">Reveal model answers</button></div>`
+            : `<p class="qbank-done-note">Compare your working against the model answers above, then move to the next question.</p>`
+        }
+      </div>
+      ${explainPanelHtml(explainCard, revealed, "Examiner&rsquo;s insight")}
+    </div>
+    <div class="flash-nav">
+      <button class="btn" id="prevQ" ${idx === 0 ? "disabled" : ""}>&larr; Prev</button>
+      <button class="btn" id="nextQ" ${idx === questions.length - 1 ? "disabled" : ""}>Next &rarr;</button>
+    </div>
+  `;
+
+  document.getElementById("backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
+
+  el.querySelectorAll(".card-dot").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      qbankState.qIndex = Number(btn.dataset.idx);
+      qbankState.revealed = false;
+      renderQuestionsView(code);
+    });
+  });
+
+  const revealBtn = document.getElementById("revealQBtn");
+  if (revealBtn) {
+    revealBtn.addEventListener("click", () => {
+      qbankState.revealed = true;
+      renderQuestionsView(code);
+    });
+  }
+
+  document.getElementById("prevQ").addEventListener("click", () => {
+    qbankState.qIndex = Math.max(0, idx - 1);
+    qbankState.revealed = false;
+    renderQuestionsView(code);
+  });
+  document.getElementById("nextQ").addEventListener("click", () => {
+    qbankState.qIndex = Math.min(questions.length - 1, idx + 1);
+    qbankState.revealed = false;
+    renderQuestionsView(code);
+  });
+
+  renderMath(el);
+}
+
 function subjectMasteryTotals(code) {
   const modules = MODULES[code] || [];
   const fd = flashData[code];
@@ -123,10 +238,10 @@ function renderMath(el) {
 // Explanation panel: only ever rendered once the answer is revealed, so a
 // card with no explanation looks identical to today, and a card with one
 // can never leak it before the user has actually attempted the answer.
-function explainPanelHtml(card, revealed) {
+function explainPanelHtml(card, revealed, label) {
   if (!revealed || !card.explain) return "";
   return `<details class="explain-panel" open>
-    <summary>Context &amp; theory</summary>
+    <summary>${label || "Context &amp; theory"}</summary>
     <div class="explain-body">${card.explain}</div>
   </details>`;
 }
@@ -427,6 +542,7 @@ function renderSubjectView(code) {
   }
 
   const totalCards = modDefs.reduce((s, m) => s + m.cards.length, 0);
+  const totalQuestions = (QUESTIONS[code] || []).length;
 
   el.innerHTML = `
     <button class="back-link" id="backToHome">&larr; All subjects</button>
@@ -439,6 +555,11 @@ function renderSubjectView(code) {
           ? `<button class="btn primary mixed-session-btn" id="startMixed">&#128256; Mixed session &mdash; 10 random cards across all of ${code}</button>`
           : ""
       }
+      ${
+        totalQuestions > 0
+          ? `<button class="btn qbank-btn" id="startQbank">&#128220; Practice exam questions &mdash; ${totalQuestions} original question${totalQuestions === 1 ? "" : "s"} in the IFoA style</button>`
+          : ""
+      }
     </div>
     ${modulesHtml}
   `;
@@ -448,6 +569,11 @@ function renderSubjectView(code) {
   const mixedBtn = document.getElementById("startMixed");
   if (mixedBtn) {
     mixedBtn.addEventListener("click", () => navigate(`#/${code}/mixed`));
+  }
+
+  const qbankBtn = document.getElementById("startQbank");
+  if (qbankBtn) {
+    qbankBtn.addEventListener("click", () => navigate(`#/${code}/questions`));
   }
 
   el.querySelectorAll(".status-badge").forEach((btn) => {
@@ -764,6 +890,7 @@ function parseHash() {
   const parts = h.split("/").filter(Boolean);
   if (parts.length === 1) return { view: "subject", exam: parts[0].toUpperCase() };
   if (parts[1].toLowerCase() === "mixed") return { view: "mixed", exam: parts[0].toUpperCase() };
+  if (parts[1].toLowerCase() === "questions") return { view: "questions", exam: parts[0].toUpperCase() };
   return { view: "flash", exam: parts[0].toUpperCase(), module: parts[1].toLowerCase() };
 }
 
@@ -777,6 +904,7 @@ function renderRoute() {
   document.getElementById("subjectView").hidden = r.view !== "subject";
   document.getElementById("flashView").hidden = r.view !== "flash";
   document.getElementById("mixedView").hidden = r.view !== "mixed";
+  document.getElementById("questionsView").hidden = r.view !== "questions";
   window.scrollTo(0, 0);
 
   if (r.view === "home") {
@@ -805,6 +933,14 @@ function renderRoute() {
       mixedState._lastKey = key;
     }
     renderMixedView(r.exam);
+  } else if (r.view === "questions") {
+    const key = `questions:${r.exam}`;
+    if (qbankState._lastKey !== key) {
+      qbankState.qIndex = 0;
+      qbankState.revealed = false;
+      qbankState._lastKey = key;
+    }
+    renderQuestionsView(r.exam);
   }
 }
 
