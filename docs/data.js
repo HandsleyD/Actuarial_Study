@@ -3253,63 +3253,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does the continuous-time log-normal model assume about security prices?",
-                "a": "That prices follow geometric Brownian motion, so log returns over any period are normally distributed."
+                "a": "That prices follow geometric Brownian motion, so log returns over any period are normally distributed.",
+                "explain": "This module is Module 8's GBM viewed from the price-distribution angle rather than the SDE angle — same underlying model, examined here for what it implies about the actual DISTRIBUTION of future prices, and then tested against real market data."
             },
             {
                 "q": "If $S_t$ follows the log-normal model, what is the distribution of $\\ln(S_t/S_0)$?",
-                "a": "Normal, with mean $(\\mu - \\tfrac12\\sigma^2)t$ and variance $\\sigma^2 t$."
+                "a": "Normal, with mean $(\\mu - \\tfrac12\\sigma^2)t$ and variance $\\sigma^2 t$.",
+                "explain": "This is a direct restatement of Module 8's solved GBM formula — taking logs of $S_t=S_0\\exp[(\\mu-\\tfrac12\\sigma^2)t+\\sigma W_t]$ and rearranging gives exactly this, since $\\sigma W_t$ is normal with mean 0 and variance $\\sigma^2t$ (Module 7's $W_t\\sim N(0,t)$ scaled by $\\sigma$)."
             },
             {
                 "q": "What does the log-normal model imply about the possible range of future prices?",
-                "a": "Prices remain strictly positive (can never go negative), consistent with limited liability of shares."
+                "a": "Prices remain strictly positive (can never go negative), consistent with limited liability of shares.",
+                "explain": "This is a genuine modelling virtue worth appreciating — since $S_t=S_0\\exp[\\cdot]$ is an exponential of a normal random variable, it's mathematically guaranteed to stay positive regardless of how extreme the exponent gets, which correctly matches the real-world fact that a shareholder can never owe more than they invested (limited liability)."
             },
             {
                 "q": "Give one piece of empirical evidence against the log-normal model.",
-                "a": "Observed asset returns often show 'fat tails' (more extreme moves than a normal distribution predicts) and negative skewness."
+                "a": "Observed asset returns often show 'fat tails' (more extreme moves than a normal distribution predicts) and negative skewness.",
+                "explain": "This opens the module's second half — a run of cards testing the theoretical model from Module 8 against real data — worth remembering 'fat tails' and 'negative skewness' as the two specific, named empirical departures that recur throughout, rather than just a vague 'the model isn't perfect'."
             },
             {
                 "q": "What is 'volatility clustering,' and how does it challenge the log-normal model?",
-                "a": "Periods of high volatility tend to cluster together; the simple log-normal model assumes constant volatility, which doesn't capture this."
+                "a": "Periods of high volatility tend to cluster together; the simple log-normal model assumes constant volatility, which doesn't capture this.",
+                "explain": "This directly challenges the CONSTANT $\\sigma$ assumption baked into GBM's SDE (Module 8) — real markets show calm periods and turbulent periods that persist for a while, not the uniform, unchanging volatility GBM assumes throughout, which is exactly the gap stochastic-volatility models (mentioned later in this module) are built to fill."
             },
             {
                 "q": "What does 'skewness' in observed return distributions typically show, compared to the log-normal model assumption?",
-                "a": "Many equity return distributions show negative skewness (large downward moves more common/severe), unlike the symmetric assumption."
+                "a": "Many equity return distributions show negative skewness (large downward moves more common/severe), unlike the symmetric assumption.",
+                "explain": "This is a genuinely important asymmetry worth internalising: markets tend to fall fast (crashes) but rise more gradually, giving real returns a longer, heavier LEFT tail — the log-normal model's underlying normal distribution for log returns is perfectly symmetric, missing this real-world pattern entirely."
             },
             {
                 "q": "What is 'kurtosis,' and why is it relevant when testing the log-normal model?",
-                "a": "A measure of the 'fatness' of a distribution's tails; observed returns typically have higher kurtosis than the normal distribution predicts."
+                "a": "A measure of the 'fatness' of a distribution's tails; observed returns typically have higher kurtosis than the normal distribution predicts.",
+                "explain": "This is CS1's fourth-moment concept (Module 3 there, via generating functions) put to direct empirical use — higher-than-normal kurtosis means extreme moves (both up and down) happen more often in real markets than a normal distribution would predict, which directly undermines risk measures calculated assuming normality."
             },
             {
                 "q": "Why might the log-normal model still be widely used despite its known limitations?",
-                "a": "It is mathematically tractable, provides a reasonable first approximation, and underlies foundational results such as Black-Scholes."
+                "a": "It is mathematically tractable, provides a reasonable first approximation, and underlies foundational results such as Black-Scholes.",
+                "explain": "This is the same trade-off theme running through the whole CM2 syllabus (mean-variance theory in Module 4, CAPM in Module 6) — a model doesn't need to be perfectly realistic to be useful; it needs to be tractable enough to actually compute with, and 'good enough' as a first approximation, which the log-normal model clearly is given how much of derivatives theory (Module 13) is built on it."
             },
             {
                 "q": "What alternative models have been proposed to address fat tails not captured by the log-normal model?",
-                "a": "Models incorporating jumps (jump-diffusion models) or stochastic volatility."
+                "a": "Models incorporating jumps (jump-diffusion models) or stochastic volatility.",
+                "explain": "Jump-diffusion models add sudden discontinuous price moves on top of GBM's continuous diffusion (directly addressing fat tails from sudden news/shocks), while stochastic volatility models let $\\sigma$ itself be random rather than constant (directly addressing the volatility-clustering card above) — two different, complementary fixes for two different observed gaps."
             },
             {
                 "q": "How would you test whether historical returns are consistent with the log-normal model?",
-                "a": "Statistically test whether log returns are normally distributed (e.g. skewness/kurtosis tests), and check for constant volatility over time."
+                "a": "Statistically test whether log returns are normally distributed (e.g. skewness/kurtosis tests), and check for constant volatility over time.",
+                "explain": "This is CS1's hypothesis-testing framework (Module 10 there) applied directly to this specific question — the two checks named here map exactly onto the two empirical critiques raised earlier in this module: a skewness/kurtosis test targets the shape assumption, and checking for constant volatility over time targets the volatility-clustering assumption."
             },
             {
                 "q": "What does the log-normal model assume about the independence of returns over non-overlapping periods?",
-                "a": "That they are independent (and identically distributed), consistent with the independent increments of the underlying Brownian motion."
+                "a": "That they are independent (and identically distributed), consistent with the independent increments of the underlying Brownian motion.",
+                "explain": "This is Module 7's independent-increments property carried through directly — and it's precisely the assumption that Module 1's EMH (weak form specifically) is philosophically claiming holds in real markets: if past returns don't predict future returns, then successive returns really should behave independently, as this model assumes."
             },
             {
                 "q": "Why is independence of returns a strong (and often violated) assumption?",
-                "a": "Empirical evidence shows some serial correlation and volatility clustering in real markets."
+                "a": "Empirical evidence shows some serial correlation and volatility clustering in real markets.",
+                "explain": "This is the empirical counterpart to Module 1's evidence AGAINST weak-form efficiency (momentum/mean-reversion patterns) — both modules are pointing at the same underlying finding from different angles: real returns show some predictability from their own past, contradicting the clean independence this model assumes."
             },
             {
                 "q": "What would 'excess kurtosis' of zero indicate about a return distribution?",
-                "a": "The distribution's tails match those of a normal distribution."
+                "a": "The distribution's tails match those of a normal distribution.",
+                "explain": "'Excess' kurtosis is measured relative to the normal distribution's own kurtosis (conventionally set as the zero baseline) — a positive excess kurtosis is exactly the 'fat tails' finding from earlier in this module, so zero excess kurtosis would mean, for once, the log-normal model's tail behaviour actually matches reality."
             },
             {
                 "q": "Why is the log-normal model considered a 'continuous-time' model?",
-                "a": "Prices are modelled as evolving continuously through time (via a diffusion process), rather than only at discrete intervals."
+                "a": "Prices are modelled as evolving continuously through time (via a diffusion process), rather than only at discrete intervals.",
+                "explain": "This distinguishes it from discrete-time models (like the binomial model, Module 12) which only specify prices at a finite set of time points — GBM (Module 8) describes the price at EVERY instant, a genuinely different mathematical object even though the binomial model converges to it as the number of steps grows (Module 12's closing card)."
             },
             {
                 "q": "What is one practical consequence of using the log-normal model when real markets exhibit fat tails?",
-                "a": "Risk measures (e.g. VaR) based on the log-normal assumption can understate the true probability/severity of extreme losses."
+                "a": "Risk measures (e.g. VaR) based on the log-normal assumption can understate the true probability/severity of extreme losses.",
+                "explain": "This closes the module by connecting directly back to Module 3's risk measures — this is a genuinely important practical warning: a VaR figure calculated under a normal/log-normal assumption will systematically UNDERSTATE how often extreme losses really occur, precisely because real markets have fatter tails than the model assumes, a gap that mattered greatly in real financial crises."
             }
         ]
     },
