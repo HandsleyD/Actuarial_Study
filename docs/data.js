@@ -5635,63 +5635,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'Markov jump process'?",
-                "a": "A continuous-time stochastic process that moves between a discrete set of states, with the Markov property, changing state at random jump times."
+                "a": "A continuous-time stochastic process that moves between a discrete set of states, with the Markov property, changing state at random jump times.",
+                "explain": "This module generalises Module 3's two-state model to ANY number of states — the two-state alive/dead model is exactly a Markov jump process with the state space restricted to 2 states and only one possible transition, and everything developed here applies to that special case too."
             },
             {
                 "q": "What does 'time-homogeneous' mean for a Markov jump process?",
-                "a": "The transition intensities between states don't depend on the current time — only on the states involved."
+                "a": "The transition intensities between states don't depend on the current time — only on the states involved.",
+                "explain": "This is the same simplifying assumption Module 3 made for the two-state model, now stated as a general property this module's whole framework relies on — Module 5's entire purpose is relaxing exactly this assumption, so recognising it clearly here sets up that contrast."
             },
             {
                 "q": "What is the 'transition intensity' $\\mu_{ij}$ between states $i$ and $j$?",
-                "a": "The instantaneous rate of transitioning directly from state $i$ to state $j$, given currently in state $i$."
+                "a": "The instantaneous rate of transitioning directly from state $i$ to state $j$, given currently in state $i$.",
+                "explain": "This generalises Module 3's single intensity $\\mu$ (alive to dead only) into a whole MATRIX of intensities, one for every possible pair of states — a 3-state sickness model (healthy/sick/dead, per a card below) needs several such $\\mu_{ij}$ values to fully specify all the possible transitions."
             },
             {
                 "q": "What are the (forward) Kolmogorov equations used for?",
-                "a": "Describing how the transition probabilities of a Markov jump process evolve over time via a system of differential equations."
+                "a": "Describing how the transition probabilities of a Markov jump process evolve over time via a system of differential equations.",
+                "explain": "This is the multi-state generalisation of Module 3's simple exponential survival formula $e^{-\\mu t}$ — with more than two states, there's no single clean closed-form formula for every transition probability in general, so a system of differential equations (solved directly or numerically) is needed instead."
             },
             {
                 "q": "What is the general form of the Kolmogorov forward equations?",
-                "a": "$\\frac{d}{dt}p_{ij}(t) = \\sum_{k \\neq j} p_{ik}(t)\\mu_{kj} - p_{ij}(t)\\mu_j$, where $\\mu_j$ is the total rate of leaving state $j$."
+                "a": "$\\frac{d}{dt}p_{ij}(t) = \\sum_{k \\neq j} p_{ik}(t)\\mu_{kj} - p_{ij}(t)\\mu_j$, where $\\mu_j$ is the total rate of leaving state $j$.",
+                "explain": "Read this as a rate-of-change balance: the probability of being in state $j$ at time $t$ increases from FLOWS IN (the first term, arriving from every other state $k$) and decreases from FLOWS OUT (the second term, leaving state $j$ at its total exit rate) — a genuinely intuitive 'inflow minus outflow' structure once you see it this way."
             },
             {
                 "q": "How would you use the Kolmogorov equations in a simple case?",
-                "a": "Set up and solve the system of differential equations directly, or use known closed-form solutions for standard small models."
+                "a": "Set up and solve the system of differential equations directly, or use known closed-form solutions for standard small models.",
+                "explain": "For small state spaces (2 or 3 states) with simple structures, these differential equations often DO have clean closed-form solutions worth memorising for standard exam scenarios — but for anything more complex, numerical solution is the practical fallback, foreshadowing the simulation techniques covered later in this module."
             },
             {
                 "q": "What does it mean for transition intensities to be 'time-independent' in this context?",
-                "a": "They remain constant regardless of elapsed or calendar time, depending only on current/destination state."
+                "a": "They remain constant regardless of elapsed or calendar time, depending only on current/destination state.",
+                "explain": "This restates the time-homogeneous definition from earlier in this module, emphasising the specific PHRASING worth using precisely — 'time-independent' means the intensities don't change with calendar time OR with how long someone has been in their current state, both conditions Module 5 will separately relax."
             },
             {
                 "q": "Give an example of a multi-state model that could be a time-homogeneous Markov jump process.",
-                "a": "A simple sickness model with 'healthy,' 'sick,' and 'dead' states, with constant transition rates between them."
+                "a": "A simple sickness model with 'healthy,' 'sick,' and 'dead' states, with constant transition rates between them.",
+                "explain": "This is the standard worked example throughout this module and the next — worth noting it has genuinely richer structure than Module 3's two-state model: it allows RECOVERY (sick back to healthy), a transition direction the pure mortality model doesn't have, making it a proper multi-state (not just multi-decrement) illustration."
             },
             {
                 "q": "How would you simulate a Markov jump process?",
-                "a": "Simulate an exponential holding time (using the total exit rate) before jumping, then choose the destination state proportional to each transition intensity."
+                "a": "Simulate an exponential holding time (using the total exit rate) before jumping, then choose the destination state proportional to each transition intensity.",
+                "explain": "This two-step recipe is worth understanding precisely: first, WHEN does the next jump happen (an exponential draw using the total exit rate, per the holding-time card below); second, WHERE does it jump to (a categorical draw where each destination's probability is proportional to its own intensity relative to the total) — this is the standard 'Gillespie algorithm' style simulation approach."
             },
             {
                 "q": "What is the total 'exit rate' from a state $i$ in a Markov jump process?",
-                "a": "The sum of all transition intensities out of state $i$ to every other reachable state."
+                "a": "The sum of all transition intensities out of state $i$ to every other reachable state.",
+                "explain": "This single number ($\\mu_i=\\sum_{j\\neq i}\\mu_{ij}$) is exactly the $\\mu_j$ appearing in the Kolmogorov equations above, and it's precisely the rate parameter used for the exponential holding-time simulation step described in the card above."
             },
             {
                 "q": "How is the holding time in a given state distributed, under time-homogeneous intensities?",
-                "a": "Exponentially distributed, with rate equal to the total exit rate from that state."
+                "a": "Exponentially distributed, with rate equal to the total exit rate from that state.",
+                "explain": "This directly generalises Module 3's alive-to-dead holding time (exponential with rate $\\mu$) to a multi-state setting — the holding time in ANY given state is exponential with rate equal to that state's TOTAL exit rate, summing all the ways of leaving, not just one single destination."
             },
             {
                 "q": "Why is the exponential holding time a natural consequence of the Markov property?",
-                "a": "The memoryless property of the exponential distribution matches the requirement that future transitions don't depend on elapsed time in the current state."
+                "a": "The memoryless property of the exponential distribution matches the requirement that future transitions don't depend on elapsed time in the current state.",
+                "explain": "This is a genuinely deep connection worth appreciating — the Markov property (future depends only on current state, not how long you've been there) and the exponential distribution's memorylessness (CS1 Module 2) are really the SAME statement in two different mathematical languages; a time-homogeneous Markov jump process is FORCED to have exponential holding times precisely because of this equivalence."
             },
             {
                 "q": "What data would you need to estimate the transition intensities of a time-homogeneous Markov jump process?",
-                "a": "The number of observed transitions between each pair of states, and the total waiting time individuals spent exposed in each state."
+                "a": "The number of observed transitions between each pair of states, and the total waiting time individuals spent exposed in each state.",
+                "explain": "This directly previews Module 9's 'exposed to risk' topic, extending Module 3's simple two-state MLE formula to the multi-state case — each intensity $\\mu_{ij}$ gets its own MLE, using the observed count of $i\\to j$ transitions divided by total time individuals spent exposed while in state $i$."
             },
             {
                 "q": "How does a time-homogeneous multi-state model generalise the simple two-state (alive/dead) model?",
-                "a": "It allows more than two states and more complex transition patterns (e.g. recovery, multiple causes of exit)."
+                "a": "It allows more than two states and more complex transition patterns (e.g. recovery, multiple causes of exit).",
+                "explain": "This restates the module's relationship to Module 3 explicitly — everything from that simpler module (exponential holding times, MLE via exposure, the Poisson-process connection) carries over unchanged in spirit, just applied to a richer web of possible states and transitions rather than a single alive-to-dead decrement."
             },
             {
                 "q": "Why might 'time-homogeneous' be an unrealistic assumption for modelling mortality across a wide age range?",
-                "a": "Mortality rates genuinely change with age, so a constant intensity would poorly approximate this."
+                "a": "Mortality rates genuinely change with age, so a constant intensity would poorly approximate this.",
+                "explain": "This closes the module by directly motivating Module 5 — a time-homogeneous model might be a reasonable approximation over a NARROW age band, but stretched across a wide range it clashes with CM1's own life-table evidence that mortality changes substantially and systematically with age, exactly the gap Module 5's time-inhomogeneous framework exists to close."
             }
         ]
     },
