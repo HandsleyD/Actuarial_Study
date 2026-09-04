@@ -6373,63 +6373,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does it mean for a time series to be 'stationary'?",
-                "a": "Its statistical properties (mean, variance, autocovariance structure) don't change over time."
+                "a": "Its statistical properties (mean, variance, autocovariance structure) don't change over time.",
+                "explain": "This module shifts CS2 into a genuinely different toolkit — Modules 1-12 modelled how individuals/populations move between states or die; this module and the next model how a single numerical SERIES (an interest rate, an inflation index, a mortality time index like Module 12's $k_t$) evolves over time, and stationarity is the foundational property that makes almost every technique here work."
             },
             {
                 "q": "What is meant by a series being '$I(0)$'?",
-                "a": "The series is already stationary (integrated of order zero)."
+                "a": "The series is already stationary (integrated of order zero).",
+                "explain": "The 'integrated of order $d$' notation is worth understanding as 'needs differencing $d$ times to become stationary' — $I(0)$ means zero differencing needed, i.e. the series is already well-behaved and ready for ARMA-style modelling without any preprocessing."
             },
             {
                 "q": "What is meant by a series being '$I(1)$'?",
-                "a": "The series becomes stationary after taking first differences."
+                "a": "The series becomes stationary after taking first differences.",
+                "explain": "This is the single most common case for real economic/financial series — a stock price or interest rate LEVEL is typically non-stationary (it can drift arbitrarily far over time, echoing CM2's random walk discussion), but its period-to-period CHANGE often behaves much more like a stable, stationary series."
             },
             {
                 "q": "What is the 'backwards shift operator' $B$?",
-                "a": "An operator such that $BX_t = X_{t-1}$, shifting the series back by one period."
+                "a": "An operator such that $BX_t = X_{t-1}$, shifting the series back by one period.",
+                "explain": "This is purely a notational convenience worth getting comfortable with quickly, since it makes writing and manipulating time series models far more compact — an AR model, for instance, can be written cleanly as a polynomial in $B$ acting on $X_t$, rather than a long explicit sum of lagged terms."
             },
             {
                 "q": "What is the 'backwards difference operator'?",
-                "a": "$\\nabla X_t = X_t - X_{t-1} = (1-B)X_t$"
+                "a": "$\\nabla X_t = X_t - X_{t-1} = (1-B)X_t$",
+                "explain": "This is precisely the operation that converts an $I(1)$ series into an $I(0)$ one — applying $\\nabla$ once corresponds to 'differencing once', and the notation $(1-B)X_t$ shows exactly how the difference operator is built directly from the backward shift operator above."
             },
             {
                 "q": "What is an autoregressive (AR) model?",
-                "a": "A model expressing the current value as a linear function of its own past values, plus a random error term."
+                "a": "A model expressing the current value as a linear function of its own past values, plus a random error term.",
+                "explain": "This is genuinely the time-series analogue of CS1's linear regression (Module 12 there) — instead of regressing $Y$ on separate explanatory variables $X$, an AR model regresses the series on ITS OWN past values, capturing the idea that recent history predicts the near future (a form of persistence or momentum)."
             },
             {
                 "q": "What is a moving average (MA) model?",
-                "a": "A model expressing the current value as a linear function of current and past random error (white noise) terms."
+                "a": "A model expressing the current value as a linear function of current and past random error (white noise) terms.",
+                "explain": "Despite the similar name, this is NOT the same as the simple 'moving average smoothing' technique from Module 14 — an MA MODEL expresses the series as a weighted combination of unobserved random SHOCKS (not raw past observations), capturing how a single shock's effect can linger and gradually fade over subsequent periods."
             },
             {
                 "q": "What is an ARMA model?",
-                "a": "A model combining both autoregressive and moving average components to describe a stationary time series."
+                "a": "A model combining both autoregressive and moving average components to describe a stationary time series.",
+                "explain": "This is simply the AR and MA cards above combined into one model — worth noting it's specifically for STATIONARY series; a non-stationary series needs differencing first (the $I(1)$ card above) before ARMA can be applied, which is exactly what the next card's ARIMA extension handles automatically."
             },
             {
                 "q": "What is an ARIMA model?",
-                "a": "An ARMA model applied to a differenced series, used to model non-stationary series that become stationary after differencing."
+                "a": "An ARMA model applied to a differenced series, used to model non-stationary series that become stationary after differencing.",
+                "explain": "The 'I' stands for 'integrated', directly referencing the $I(0)$/$I(1)$ notation from earlier in this module — an ARIMA(p,d,q) model is simply 'difference $d$ times to achieve stationarity, then fit an ARMA(p,q) model', unifying the differencing and ARMA-fitting steps into one combined framework."
             },
             {
                 "q": "What are the 'roots of the characteristic equation' used for in time series analysis?",
-                "a": "Determining whether an AR (or ARMA) process is stationary — stationary if all roots lie outside the unit circle."
+                "a": "Determining whether an AR (or ARMA) process is stationary — stationary if all roots lie outside the unit circle.",
+                "explain": "This is the precise mathematical TEST for stationarity, worth connecting to the random-walk card below as a worked example — a random walk's characteristic equation has a root exactly ON the unit circle (a 'unit root'), which is precisely why it sits right on the boundary between stationary and non-stationary, and indeed is non-stationary."
             },
             {
                 "q": "What is a 'random walk'?",
-                "a": "A time series where each value equals the previous value plus a random error term: $X_t = X_{t-1} + \\epsilon_t$"
+                "a": "A time series where each value equals the previous value plus a random error term: $X_t = X_{t-1} + \\epsilon_t$",
+                "explain": "This is exactly CM2's discrete-time analogue of Brownian motion (Module 7 there) — it's the simplest possible AR(1) model with its coefficient set to exactly 1, which is precisely the 'unit root' case flagged in the card above, and it's the standard model for a weak-form-efficient asset price (CM2 Module 1)."
             },
             {
                 "q": "What is a 'random walk with drift'?",
-                "a": "A random walk with an added constant term, giving a systematic trend: $X_t = X_{t-1} + c + \\epsilon_t$"
+                "a": "A random walk with an added constant term, giving a systematic trend: $X_t = X_{t-1} + c + \\epsilon_t$",
+                "explain": "This is the random walk above with one small but important addition — the constant $c$ gives the series a genuine systematic direction (upward if $c>0$) on top of its purely random fluctuations, which is a more realistic model for, say, a stock index expected to grow on average over the long run."
             },
             {
                 "q": "Is a random walk stationary?",
-                "a": "No — its variance grows over time, though its first differences are stationary."
+                "a": "No — its variance grows over time, though its first differences are stationary.",
+                "explain": "This confirms directly why a random walk is exactly the $I(1)$ example from earlier in this module — its own level isn't stationary (variance $=t\\sigma^2$ growing without bound, exactly like Brownian motion's variance in CM2), but its first difference $X_t-X_{t-1}=\\epsilon_t$ is just white noise, perfectly stationary by construction."
             },
             {
                 "q": "What is a 'multivariate autoregressive model'?",
-                "a": "An extension of the AR model to several time series simultaneously, where each depends on past values of itself and the others."
+                "a": "An extension of the AR model to several time series simultaneously, where each depends on past values of itself and the others.",
+                "explain": "This is worth connecting to CS2 Module 1's classification framework — a multivariate AR model is genuinely just a single (vector-valued) Markov process in disguise, where the 'state' at each time step is the whole vector of current series values, and the Markov property lets you predict the next vector from just the current one."
             },
             {
                 "q": "What does it mean for two (or more) time series to be 'cointegrated'?",
-                "a": "Each is individually non-stationary, but a particular linear combination of them is stationary."
+                "a": "Each is individually non-stationary, but a particular linear combination of them is stationary.",
+                "explain": "This closes the module with a genuinely subtle and important idea worth sitting with — think of two related but individually wandering series (say, a company's revenue and its costs) that stay roughly proportional to each other over time; NEITHER series alone is stationary, but their DIFFERENCE (or another specific combination) can be, capturing a stable long-run equilibrium relationship between two individually unpredictable series."
             }
         ]
     },
