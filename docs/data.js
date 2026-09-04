@@ -2267,63 +2267,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'multiple state model'?",
-                "a": "A model describing how a life can move between different states (e.g. healthy, sick, dead) over time, with transition probabilities/forces between states."
+                "a": "A model describing how a life can move between different states (e.g. healthy, sick, dead) over time, with transition probabilities/forces between states.",
+                "explain": "This module generalises EVERYTHING you've learned since Module 12 \\u2014 the simple life table is really just a two-state model (alive, dead) with one possible transition; a multiple state model allows any number of states and any pattern of transitions between them, of which the simple life table is the special case you already know."
             },
             {
                 "q": "What is a 'multiple decrement' model?",
-                "a": "A special case of a multi-state model with one starting ('active') state and several possible ways of leaving it, with no return to the active state."
+                "a": "A special case of a multi-state model with one starting ('active') state and several possible ways of leaving it, with no return to the active state.",
+                "explain": "This sits between the simple two-state life table and the full generality of multi-state models \\u2014 it adds MULTIPLE exit routes (e.g. death, withdrawal, retirement) but keeps the 'no return' restriction, unlike a genuine multi-state model (e.g. sickness insurance) where recovery back to the active state is possible."
             },
             {
                 "q": "What is a 'dependent probability' of decrement in a multiple decrement context?",
-                "a": "The probability of leaving the active state via a specific decrement, allowing for the fact that other decrements are also competing to remove the life from the active state first."
+                "a": "The probability of leaving the active state via a specific decrement, allowing for the fact that other decrements are also competing to remove the life from the active state first.",
+                "explain": "'Dependent' here means dependent on the OTHER decrements' presence \\u2014 this is the REALISTIC, observable quantity: if you watch a real population and count how many actually leave via death this year, that number is naturally reduced by the fact some people already left via withdrawal or retirement first, before death had a chance to act on them."
             },
             {
                 "q": "What is an 'independent' rate of decrement, as distinct from a 'dependent' probability?",
-                "a": "The rate of decrement that would apply if that decrement were the only one operating, ignoring competition from other decrements."
+                "a": "The rate of decrement that would apply if that decrement were the only one operating, ignoring competition from other decrements.",
+                "explain": "This is a HYPOTHETICAL, theoretical quantity \\u2014 it's the same underlying mortality/withdrawal/retirement force in isolation, as if the OTHER decrements simply didn't exist, useful as a clean underlying parameter to build the whole multiple decrement table from (since a person's genuine risk of death doesn't actually depend on whether withdrawal exists as a competing risk)."
             },
             {
                 "q": "Why are dependent probabilities of decrement generally lower than the corresponding independent rates?",
-                "a": "Because other decrements can remove the life from the active state first, so there's less exposure remaining for any single decrement to act on."
+                "a": "Because other decrements can remove the life from the active state first, so there's less exposure remaining for any single decrement to act on.",
+                "explain": "This is the key relationship between the two concepts above \\u2014 if some people who WOULD have died this year instead withdrew first (removed from the pool by a competing decrement), the OBSERVED (dependent) death rate necessarily comes out lower than the TRUE underlying (independent) mortality rate, since fewer people remained exposed to the risk of dying."
             },
             {
                 "q": "What does it mean for forces of transition to be 'constant over single years of age' in this context?",
-                "a": "A simplifying assumption used to convert between dependent probabilities and underlying forces of decrement within a given year."
+                "a": "A simplifying assumption used to convert between dependent probabilities and underlying forces of decrement within a given year.",
+                "explain": "This is exactly Module 12's constant-force-of-mortality assumption, generalised to MULTIPLE simultaneous forces (one per decrement) instead of just one \\u2014 it's what makes the independent-vs-dependent conversion cards above mathematically tractable, since combining several constant forces is much simpler than combining forces that vary continuously within the year."
             },
             {
                 "q": "How would you construct a multiple decrement table?",
-                "a": "Track, for each age, the number in the active state, and the number leaving via each separate decrement, analogous to a life table but with multiple causes of exit."
+                "a": "Track, for each age, the number in the active state, and the number leaving via each separate decrement, analogous to a life table but with multiple causes of exit.",
+                "explain": "This is Module 12's $l_x$/$d_x$ life table structure directly extended \\u2014 instead of one $d_x$ column (deaths), you now have several columns ($d_x^{(\\text{death})}$, $d_x^{(\\text{withdrawal})}$, etc.), one for each decrement, all subtracting from the same active-state population $l_x$."
             },
             {
                 "q": "How does a multiple decrement model relate to health/sickness insurance premium and benefit structures?",
-                "a": "It can model transitions between healthy and sick states (and death), allowing premiums and sickness benefits to be valued based on the probability of being in each state at each future time."
+                "a": "It can model transitions between healthy and sick states (and death), allowing premiums and sickness benefits to be valued based on the probability of being in each state at each future time.",
+                "explain": "This actually goes BEYOND a pure multiple decrement model (since recovery from sick back to healthy is possible) into full multi-state territory \\u2014 it's included here as the natural next step once you understand the multiple-exit-routes concept, even though it technically breaks the 'no return' restriction that defines a multiple decrement model specifically."
             },
             {
                 "q": "What does it mean for a cashflow to be 'contingent upon multiple transition events'?",
-                "a": "The cashflow's payment depends on the life having undergone a specific sequence or combination of state transitions."
+                "a": "The cashflow's payment depends on the life having undergone a specific sequence or combination of state transitions.",
+                "explain": "This generalises Module 20's contingent-benefit idea (which specific life died first) to a MUCH wider range of possible triggering event sequences \\u2014 e.g. a benefit that only pays if someone becomes sick, THEN recovers, THEN later dies, which needs the full state-transition machinery of this module to value properly."
             },
             {
                 "q": "How is the expected present value of a benefit calculated under a multi-state model, in general terms?",
-                "a": "Sum (or integrate) over all relevant future times and states, the probability of being in (or transitioning into) the triggering state, multiplied by the discounted benefit amount."
+                "a": "Sum (or integrate) over all relevant future times and states, the probability of being in (or transitioning into) the triggering state, multiplied by the discounted benefit amount.",
+                "explain": "This is the same 'probability times discount factor, summed over time' template used for EVERY life-contingent function since Module 13 ($A_x$, $\\ddot{a}_x$, joint-life functions, contingent benefits) \\u2014 multi-state models don't need a fundamentally new technique, just a richer set of probabilities (transition probabilities between states) plugged into the same underlying structure."
             },
             {
                 "q": "What is the relationship between forces of transition and dependent probabilities when forces are assumed constant over a year?",
-                "a": "The dependent probability of a specific decrement over the year can be derived from the constant forces of all decrements operating simultaneously."
+                "a": "The dependent probability of a specific decrement over the year can be derived from the constant forces of all decrements operating simultaneously.",
+                "explain": "This restates the constant-force assumption card above with the calculation direction made explicit: given the (hypothetical) independent forces for each decrement, you can derive the (realistic, observable) dependent probabilities \\u2014 the reverse direction (dependent probabilities to independent forces) is covered in a card below and is generally the harder direction."
             },
             {
                 "q": "Why might a pension scheme use a multiple decrement model?",
-                "a": "To allow for the several ways a member can leave active service \\u2014 death, withdrawal, ill-health retirement, and normal retirement \\u2014 each with different associated benefits."
+                "a": "To allow for the several ways a member can leave active service \\u2014 death, withdrawal, ill-health retirement, and normal retirement \\u2014 each with different associated benefits.",
+                "explain": "This is the module's central real-world application, and it's worth noting each exit route typically triggers a DIFFERENT benefit (a death-in-service lump sum, a withdrawal benefit, an ill-health pension, a normal retirement pension) \\u2014 valuing the scheme's total liability means correctly weighting each possible exit route by its own dependent probability."
             },
             {
                 "q": "How would you determine independent decrement forces given dependent (observed) probabilities?",
-                "a": "Using the assumed relationship between forces and dependent probabilities, solving the equations linking them, typically requiring the dependent probabilities of all competing decrements simultaneously."
+                "a": "Using the assumed relationship between forces and dependent probabilities, solving the equations linking them, typically requiring the dependent probabilities of all competing decrements simultaneously.",
+                "explain": "This is the HARDER, reverse direction of the calculation flagged above \\u2014 real-world data naturally gives you dependent (observed) probabilities, but pricing/reserving calculations often need the underlying independent forces, so this 'un-mixing' step (needing ALL the competing decrements' data at once, not just one) is a genuinely important practical technique."
             },
             {
                 "q": "Why is a multiple decrement model described as 'a special case of a multi-state Markov model'?",
-                "a": "Because it has a single starting state with several absorbing (exit) states and no transitions back into the active state."
+                "a": "Because it has a single starting state with several absorbing (exit) states and no transitions back into the active state.",
+                "explain": "'Absorbing' is the technical term worth knowing: once a life has transitioned into an exit state (dead, withdrawn, retired), it stays there forever \\u2014 this restriction is what makes multiple decrement models simpler to analyse than general multi-state models like the sickness example above, where movement back into the active state is possible."
             },
             {
                 "q": "Give one example of a health insurance benefit structure that would need a multi-state (rather than simple two-state) model.",
-                "a": "An income protection / permanent health insurance policy, which needs to model transitions between healthy, sick, and dead states (and possibly recovery)."
+                "a": "An income protection / permanent health insurance policy, which needs to model transitions between healthy, sick, and dead states (and possibly recovery).",
+                "explain": "This closes the module by circling back to the healthy/sick/dead example raised earlier \\u2014 note this genuinely needs the FULL multi-state framework (not just the simpler multiple-decrement special case), since recovery from sick back to healthy breaks the 'no return' restriction that defines a pure multiple decrement model."
             }
         ]
     },
@@ -2334,63 +2349,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'unit fund' in a unit-linked contract?",
-                "a": "The notional pool of units purchased with (net) premiums, whose value grows or falls in line with the performance of the underlying investments."
+                "a": "The notional pool of units purchased with (net) premiums, whose value grows or falls in line with the performance of the underlying investments.",
+                "explain": "This module puts concrete numbers behind Module 16's unit-linked concept \\u2014 the unit fund is what the POLICYHOLDER effectively owns; everything else in this module (the non-unit fund, charges, sum at risk) is about the INSURER's own separate financial position running alongside it."
             },
             {
                 "q": "What is a 'bid-offer spread' in a unit-linked contract?",
-                "a": "The difference between the price at which units are bought (offer price) and sold (bid price), a source of income/charge for the insurer."
+                "a": "The difference between the price at which units are bought (offer price) and sold (bid price), a source of income/charge for the insurer.",
+                "explain": "This is one of several distinct charging mechanisms this module introduces \\u2014 worth keeping a mental list: bid-offer spread (this card), management charges (below), and mortality charges (for the sum at risk, below) are all separate ways an insurer extracts value from a unit-linked policy, each modelled slightly differently in a cashflow projection."
             },
             {
                 "q": "What is the 'non-unit fund' (or 'sterling fund') in a unit-linked contract?",
-                "a": "The part of the insurer's cashflows not related to the unit fund \\u2014 covering charges collected, expenses paid, and non-unit-linked benefits."
+                "a": "The part of the insurer's cashflows not related to the unit fund \\u2014 covering charges collected, expenses paid, and non-unit-linked benefits.",
+                "explain": "This is the genuinely crucial conceptual split for the whole module: unit fund = policyholder's money; non-unit fund = insurer's OWN money \\u2014 the insurer's actual profit or loss on the contract emerges entirely from the non-unit side, which is exactly why Module 24's profit testing needs to track it separately."
             },
             {
                 "q": "Why might an insurer need to hold 'non-unit reserves'?",
-                "a": "To cover situations where future non-unit cashflows are expected to be negative, even if the overall contract is profitable."
+                "a": "To cover situations where future non-unit cashflows are expected to be negative, even if the overall contract is profitable.",
+                "explain": "This is Module 18's general reserving rationale (holding assets against future liabilities), applied SPECIFICALLY to the non-unit fund \\u2014 a unit-linked contract can be profitable OVERALL across its whole life while still having individual future YEARS where charges collected don't cover that year's costs, and a reserve is needed to bridge exactly those gap years."
             },
             {
                 "q": "What does it mean to 'zeroise' future negative cashflows in this context?",
-                "a": "Setting up a non-unit reserve specifically to eliminate (offset) any future years' projected negative cashflows."
+                "a": "Setting up a non-unit reserve specifically to eliminate (offset) any future years' projected negative cashflows.",
+                "explain": "This is the specific technique addressing the problem in the card above \\u2014 rather than letting a future year's cashflow actually go negative (which regulators/prudent practice generally don't allow), the insurer holds enough reserve NOW to guarantee every future year's cashflow comes out at zero or positive."
             },
             {
                 "q": "How do management charges typically affect the unit fund?",
-                "a": "They are deducted regularly (e.g. as a percentage of fund value) from the unit fund, reducing its growth compared to the raw investment return."
+                "a": "They are deducted regularly (e.g. as a percentage of fund value) from the unit fund, reducing its growth compared to the raw investment return.",
+                "explain": "This is the SECOND charging mechanism flagged earlier (alongside bid-offer spread) \\u2014 note it flows in the OPPOSITE direction from the policyholder's perspective compared to bid-offer spread: management charges continuously erode the unit fund's growth rate, while bid-offer spread is a one-off cost at the point of buying/selling units."
             },
             {
                 "q": "What are 'unallocated premiums' in a unit-linked contract?",
-                "a": "The portion of a premium not used to purchase units for the policyholder, effectively retained by the insurer."
+                "a": "The portion of a premium not used to purchase units for the policyholder, effectively retained by the insurer.",
+                "explain": "This is a THIRD distinct way value moves from policyholder to insurer, alongside bid-offer spread and management charges \\u2014 rather than deducting a charge from the unit fund after the fact, this simply withholds part of the premium from ever becoming units in the first place, straight into the non-unit fund."
             },
             {
                 "q": "How does an 'accumulating with-profits' fund differ operationally from a standard unit-linked fund?",
-                "a": "Its value grows through regular guaranteed and bonus interest additions (smoothed), rather than fluctuating directly with a market-based unit price."
+                "a": "Its value grows through regular guaranteed and bonus interest additions (smoothed), rather than fluctuating directly with a market-based unit price.",
+                "explain": "This restates Module 16's accumulating-with-profits-vs-unit-linked distinction \\u2014 included again here because this module's CASHFLOW MODELLING techniques (charges, reserves, projections) apply similarly to both structures, just with a smoothed bonus-crediting process substituted for a directly market-linked unit price."
             },
             {
                 "q": "Why is cashflow projection important for pricing and reserving unit-linked contracts?",
-                "a": "Because the insurer's own (non-unit) profit emerges as the difference between charges collected and expenses/benefits paid over time, needing year-by-year projection."
+                "a": "Because the insurer's own (non-unit) profit emerges as the difference between charges collected and expenses/benefits paid over time, needing year-by-year projection.",
+                "explain": "This is the module's central justification for WHY the equation-of-value techniques from Modules 17-18 aren't sufficient here \\u2014 a unit-linked contract's profitability depends on multiple interacting streams (charge income, expense outgo, mortality cost) evolving over time, which genuinely needs the year-by-year cashflow PROJECTION technique that Module 24 formalises fully."
             },
             {
                 "q": "What might cause unit fund growth to differ from gross investment return?",
-                "a": "Deduction of management charges and other fund-based charges reduces the net growth credited to the policyholder's units."
+                "a": "Deduction of management charges and other fund-based charges reduces the net growth credited to the policyholder's units.",
+                "explain": "This directly restates the management-charge mechanism above from the policyholder's point of view \\u2014 whatever the underlying investments actually earn (gross return), the policyholder only sees that return MINUS whatever charges were deducted along the way, which is exactly why unit fund growth and gross investment performance diverge."
             },
             {
                 "q": "How would extra life cover (death benefit above the unit fund value) be funded in a unit-linked contract?",
-                "a": "Through a specific mortality charge deducted from the fund, covering the 'sum at risk' (the extra amount above the fund value payable on death)."
+                "a": "Through a specific mortality charge deducted from the fund, covering the 'sum at risk' (the extra amount above the fund value payable on death).",
+                "explain": "This is the FOURTH charging mechanism, specifically funding the insurance element of the contract \\u2014 recall Module 16's card on death benefit structure ('higher of a fixed amount or the fund value'): this mortality charge is precisely what pays for that extra guaranteed floor above the fund's own value."
             },
             {
                 "q": "What does 'sum at risk' mean for unit-linked death benefits?",
-                "a": "The excess of the guaranteed minimum death benefit over the current unit fund value."
+                "a": "The excess of the guaranteed minimum death benefit over the current unit fund value.",
+                "explain": "This is genuinely analogous to Module 21's death strain at risk concept, just applied to a unit-linked structure specifically \\u2014 both measure 'how much EXTRA the insurer must pay beyond what's already set aside (the reserve, or here, the unit fund)', and both shrink as the fund/reserve grows relative to the fixed benefit."
             },
             {
                 "q": "Why might insurers separate unit and non-unit cashflows when modelling a unit-linked contract?",
-                "a": "Because the unit fund cashflows belong to the policyholder, while the non-unit cashflows determine the insurer's own profit/loss and reserving needs."
+                "a": "Because the unit fund cashflows belong to the policyholder, while the non-unit cashflows determine the insurer's own profit/loss and reserving needs.",
+                "explain": "This restates the module's opening conceptual split as an explicit modelling justification \\u2014 mixing the two together would obscure the actual question a profit test (Module 24) needs to answer: how profitable is this contract FOR THE INSURER, which is purely a non-unit-fund question, independent of how the policyholder's own unit fund happens to perform."
             },
             {
                 "q": "How does a fall in investment markets typically affect a unit-linked insurer's non-unit fund position?",
-                "a": "It can increase the sum at risk (if death benefits have a fixed minimum) and reduce charge income if charges are based on fund value."
+                "a": "It can increase the sum at risk (if death benefits have a fixed minimum) and reduce charge income if charges are based on fund value.",
+                "explain": "This is a genuinely important risk insight worth internalising: a market downturn hurts the insurer TWICE over on a unit-linked book with guaranteed minimum death benefits \\u2014 the sum at risk (extra cost on death) rises as fund value falls, at the exact same time as charge income (often a percentage of that same falling fund value) also declines."
             },
             {
                 "q": "Why is profit testing especially important for unit-linked products compared to simple non-profit assurances?",
-                "a": "Because unit-linked profitability depends on the interaction of charges, expenses, and investment performance over time, not captured by a simple equation of value."
+                "a": "Because unit-linked profitability depends on the interaction of charges, expenses, and investment performance over time, not captured by a simple equation of value.",
+                "explain": "This closes the module by directly justifying the transition into Module 24 \\u2014 a simple non-profit assurance's profitability can largely be checked via Module 17's single equation of value (premium vs benefit/expense present values), but a unit-linked contract's MULTIPLE interacting cashflow streams genuinely need the fuller year-by-year projection technique covered next."
             }
         ]
     },
