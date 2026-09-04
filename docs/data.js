@@ -6045,63 +6045,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'central exposed to risk'?",
-                "a": "The total time individuals in a study were observed while in a particular state, used as the denominator in estimating transition rates."
+                "a": "The total time individuals in a study were observed while in a particular state, used as the denominator in estimating transition rates.",
+                "explain": "This module develops in full detail the estimation technique Modules 3-5 kept previewing — central exposed to risk is exactly the 'total waiting time observed' that appeared in every MLE formula for a transition intensity throughout this subject, now given its own dedicated, practical treatment."
             },
             {
                 "q": "How is the maximum likelihood estimator of a constant transition intensity $\\mu$ calculated?",
-                "a": "$\\hat\\mu = \\frac{\\text{observed number of transitions}}{\\text{total central exposed to risk}}$"
+                "a": "$\\hat\\mu = \\frac{\\text{observed number of transitions}}{\\text{total central exposed to risk}}$",
+                "explain": "This is exactly the formula from Module 3 (and generalised in Module 4), restated as this module's central result — worth recognising this as the SAME Poisson-process-style MLE seen repeatedly across CS1, CM1 and CS2: count the events, divide by the total exposure time, and you have the maximum likelihood rate estimate."
             },
             {
                 "q": "What is the 'principle of correspondence'?",
                 "a": "The requirement that the definition of exposure (denominator) must exactly match the definition of the events being counted (numerator)."
+                ,"explain": "This is the module's single most important conceptual rule, worth being able to state and apply precisely — it's a subtle but critical requirement: if you're counting deaths defined by 'age nearest birthday', your exposure denominator must ALSO be measured on an 'age nearest birthday' basis, not 'age last birthday', or the resulting rate is silently biased."
             },
             {
                 "q": "Why is the principle of correspondence fundamentally important in exposed-to-risk calculations?",
                 "a": "Mismatches between exposure and event definitions lead to systematically biased estimates."
+                ,"explain": "This restates the principle above as a direct warning about consequences — a mismatch doesn't just add random noise, it introduces a SYSTEMATIC bias in a predictable direction, which is exactly why exam questions on this topic often present a scenario with a subtle definitional mismatch and ask you to spot it."
             },
             {
                 "q": "What is meant by 'dividing the data into homogeneous classes'?",
-                "a": "Splitting the population into groups (e.g. by age, sex) believed to have similar transition intensities."
+                "a": "Splitting the population into groups (e.g. by age, sex) believed to have similar transition intensities.",
+                "explain": "This is exactly Module 4's time-homogeneous assumption applied practically — since a SINGLE constant intensity is only realistic within a genuinely similar sub-group, real investigations split the whole population into classes narrow enough that assuming constant $\\mu$ within each class is a reasonable approximation."
             },
             {
                 "q": "What is the 'rate interval'?",
-                "a": "The interval of time (typically one year) over which the transition intensity is assumed constant."
+                "a": "The interval of time (typically one year) over which the transition intensity is assumed constant.",
+                "explain": "This is the TIME-axis counterpart to the homogeneous-classes idea above — rather than assuming $\\mu$ is constant across ALL ages (unrealistic, per Module 5), it's assumed constant just within one narrow rate interval (usually a single year of age), a much more defensible approximation."
             },
             {
                 "q": "What is the 'census approximation' method of estimating exposed to risk?",
-                "a": "Approximating central exposed to risk using snapshot counts of the population at specific census points."
+                "a": "Approximating central exposed to risk using snapshot counts of the population at specific census points.",
+                "explain": "This is a genuinely practical compromise worth understanding — exact entry/exit dates (the next card's ideal) aren't always available, so this method instead uses periodic headcounts (e.g. at each year-end) and interpolates, trading some precision for much simpler, cheaper data collection."
             },
             {
                 "q": "What assumptions underlie the census approximation of waiting times?",
-                "a": "That entries and exits are, on average, spread evenly over the period."
+                "a": "That entries and exits are, on average, spread evenly over the period.",
+                "explain": "This is the same 'uniform distribution' style assumption as CM1's UDD (Module 12 there) applied to entries/exits into observation rather than deaths — if the assumption is violated (e.g. entries cluster at the start of a policy year), the census approximation can introduce a systematic bias worth being alert to."
             },
             {
                 "q": "How would you calculate a central exposed to risk given exact entry and exit dates?",
-                "a": "Sum, for each individual, the exact amount of time they were observed within the relevant age/state band."
+                "a": "Sum, for each individual, the exact amount of time they were observed within the relevant age/state band.",
+                "explain": "This is the gold-standard, most precise method, worth contrasting directly with the census approximation above — given exact dates, no approximating assumption about how entries/exits are spread is needed at all, since each individual's true contribution to the exposure can be calculated directly."
             },
             {
                 "q": "What is the difference between 'exact age' and 'age nearest/last birthday' in exposure calculations?",
-                "a": "Exact age uses precise age at any moment; age nearest/last birthday groups individuals into whole-year bands by convention."
+                "a": "Exact age uses precise age at any moment; age nearest/last birthday groups individuals into whole-year bands by convention.",
+                "explain": "This distinction is precisely what the principle of correspondence, from earlier in this module, is guarding against getting mismatched — whichever age convention is used for the numerator (counting deaths), the exposure denominator must use the exact SAME convention, or the resulting rate estimate is biased."
             },
             {
                 "q": "What is the asymptotic distribution of the maximum likelihood estimator of a transition intensity?",
-                "a": "Approximately normal, with variance approximately inversely proportional to the total exposure."
+                "a": "Approximately normal, with variance approximately inversely proportional to the total exposure.",
+                "explain": "This is CS1's general MLE asymptotic normality (Module 8 there) applied to this specific estimator, and it directly justifies the next card's practical claim — since variance shrinks as exposure grows, larger central exposed to risk figures translate directly into more statistically reliable rate estimates."
             },
             {
                 "q": "How does the amount of central exposed to risk affect the precision of an estimated transition intensity?",
-                "a": "More exposure gives a more precise (lower variance) estimate."
+                "a": "More exposure gives a more precise (lower variance) estimate.",
+                "explain": "This restates the asymptotic-distribution card above as a plain-English practical takeaway — it's precisely why insurers seek LARGE mortality investigations rather than small ones, since more accumulated exposure time directly translates into a more statistically trustworthy estimated rate."
             },
             {
                 "q": "Why might subdividing data by age and sex reduce bias in transition intensity estimates?",
-                "a": "Rates genuinely vary by age and sex, so pooling without subdivision distorts estimates for individual subgroups."
+                "a": "Rates genuinely vary by age and sex, so pooling without subdivision distorts estimates for individual subgroups.",
+                "explain": "This is the same homogeneous-classes logic from earlier in this module, restated with the specific consequence of NOT subdividing made explicit — pooling a young and old cohort together and estimating one shared rate would produce a rate too high for the young group and too low for the old group, a genuine bias, not just imprecision."
             },
             {
                 "q": "What data would be needed to calculate an exact central exposed to risk for a mortality investigation?",
-                "a": "Exact dates of entry into and exit from observation (and reason for exit) for each individual."
+                "a": "Exact dates of entry into and exit from observation (and reason for exit) for each individual.",
+                "explain": "This restates the exact-calculation card's data requirements explicitly — note 'reason for exit' matters too (death vs withdrawal vs study end), since it directly determines whether that individual contributes to the NUMERATOR (an observed transition) as well as the denominator (exposure)."
             },
             {
                 "q": "Why is the 'waiting time' statistic important in the maximum likelihood framework for Markov jump processes?",
-                "a": "It directly forms the denominator (central exposed to risk) in the maximum likelihood estimator of a transition intensity."
+                "a": "It directly forms the denominator (central exposed to risk) in the maximum likelihood estimator of a transition intensity.",
+                "explain": "This closes the module by tying everything back to Module 4's original MLE formula one final time — 'waiting time' and 'central exposed to risk' are simply two names for the same underlying quantity, confirming this whole module has been a detailed practical treatment of one piece of a formula introduced much earlier in the subject."
             }
         ]
     },
