@@ -4789,63 +4789,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'generalised linear model' (GLM)?",
-                "a": "A regression model where the response follows an exponential family distribution, related to a linear predictor via a link function."
+                "a": "A regression model where the response follows an exponential family distribution, related to a linear predictor via a link function.",
+                "explain": "This module is Module 12's linear regression GENERALISED (hence the name) to handle response types ordinary linear regression can't — claim counts (non-negative integers), binary outcomes (yes/no), and skewed positive amounts (claim sizes) all violate the plain normal-errors assumption, and GLMs extend the framework to handle them properly."
             },
             {
                 "q": "What is the 'linear predictor' in a GLM?",
-                "a": "The linear combination of explanatory variables and coefficients that, via the link function, determines the mean of the response."
+                "a": "The linear combination of explanatory variables and coefficients that, via the link function, determines the mean of the response.",
+                "explain": "This is exactly the $\\alpha+\\beta x$ (or its multi-variable extension) from Module 12's linear regression, carried over unchanged — the genuinely new idea in a GLM is that this linear combination no longer directly EQUALS the mean of $Y$; instead it's connected to it through a link function, covered next."
             },
             {
                 "q": "What is the 'link function'?",
-                "a": "A function relating the mean of the response distribution to the linear predictor: $g(\\mu) = \\eta$"
+                "a": "A function relating the mean of the response distribution to the linear predictor: $g(\\mu) = \\eta$",
+                "explain": "This is the single idea that makes GLMs work: rather than forcing $\\mu$ (the mean, which might be constrained, e.g. always positive for a Poisson) to equal an unconstrained linear predictor directly, the link function $g$ sits between them, letting $\\eta$ range freely over all real numbers while $g^{-1}(\\eta)=\\mu$ stays within its natural constraints."
             },
             {
                 "q": "What is the 'canonical link function'?",
-                "a": "The link function naturally associated with a given exponential family distribution (e.g. log link for Poisson, logit for binomial)."
+                "a": "The link function naturally associated with a given exponential family distribution (e.g. log link for Poisson, logit for binomial).",
+                "explain": "The log link for Poisson is worth understanding concretely: since $\\log(\\mu)=\\eta$ means $\\mu=e^\\eta$, and $e^\\eta$ is ALWAYS positive regardless of what real-number value $\\eta$ takes, this link automatically guarantees a sensible (positive) predicted count — exactly why it's the natural default pairing for Poisson-distributed claim counts."
             },
             {
                 "q": "Give two distributions that are members of the exponential family, used as GLM response distributions.",
-                "a": "Binomial and Poisson (also: exponential, gamma, and normal)."
+                "a": "Binomial and Poisson (also: exponential, gamma, and normal).",
+                "explain": "Note ordinary linear regression's normal-errors model is actually a SPECIAL CASE of a GLM (normal distribution, identity link) — this is a useful way to see the whole framework: Module 12 wasn't a separate topic from this one, it was always the simplest possible member of this broader GLM family."
             },
             {
                 "q": "What is the 'variance function' in a GLM?",
-                "a": "A function describing how the variance of the response depends on its mean, specific to the chosen distribution."
+                "a": "A function describing how the variance of the response depends on its mean, specific to the chosen distribution.",
+                "explain": "This directly reflects each distribution's own mean-variance relationship from Module 2 — for a Poisson, variance equals the mean exactly (so the variance function is just $V(\\mu)=\\mu$); for a normal, variance is constant regardless of the mean (a flat variance function), and this distribution-specific relationship feeds directly into how the model estimates uncertainty."
             },
             {
                 "q": "What is 'deviance' in a GLM?",
-                "a": "A measure of discrepancy between the fitted model and a 'saturated' model, used to assess goodness of fit."
+                "a": "A measure of discrepancy between the fitted model and a 'saturated' model, used to assess goodness of fit.",
+                "explain": "A 'saturated' model is the (unrealistic, over-fitted) model that predicts each observation perfectly — deviance measures how much WORSE your actual, more parsimonious fitted model does compared to that impossible ideal, playing a very similar role to the residual sum of squares in ordinary linear regression."
             },
             {
                 "q": "What is 'scaled deviance'?",
-                "a": "The deviance divided by the dispersion (scale) parameter, used in significance testing and model comparison."
+                "a": "The deviance divided by the dispersion (scale) parameter, used in significance testing and model comparison.",
+                "explain": "This adjustment matters because some GLM distributions (like the normal or gamma) have a separate dispersion parameter controlling spread beyond just the mean, while others (like the Poisson, where variance always equals the mean exactly) don't — scaling puts deviance onto a comparable footing for the chi-square-based tests covered in the next card."
             },
             {
                 "q": "How is deviance used to compare two nested GLMs?",
-                "a": "The difference in (scaled) deviance approximately follows a chi-square distribution, testing whether extra terms significantly improve fit."
+                "a": "The difference in (scaled) deviance approximately follows a chi-square distribution, testing whether extra terms significantly improve fit.",
+                "explain": "This is Module 10's likelihood-ratio-test idea made concrete for GLMs specifically — 'nested' means one model is a simplified special case of the other (fewer explanatory variables), and the deviance difference between them is exactly a likelihood ratio in disguise, hence the chi-square reference distribution."
             },
             {
                 "q": "What are 'Pearson residuals' in a GLM?",
-                "a": "Residuals standardised by the estimated standard deviation implied by the model's variance function."
+                "a": "Residuals standardised by the estimated standard deviation implied by the model's variance function.",
+                "explain": "This adapts Module 12's residual concept to the GLM setting, where (unlike ordinary linear regression) the variance ISN'T constant across observations — dividing each raw residual by its own predicted standard deviation (from the variance function above) puts residuals for high-mean and low-mean predictions on a comparable, standardised scale."
             },
             {
                 "q": "What are 'deviance residuals'?",
-                "a": "Residuals based on each observation's individual contribution to the total deviance."
+                "a": "Residuals based on each observation's individual contribution to the total deviance.",
+                "explain": "This is an alternative to Pearson residuals, built directly from the deviance concept rather than the variance function — since total deviance is a sum of individual contributions (much like a sum of squared residuals), each observation's own piece of that sum, appropriately signed, gives its deviance residual."
             },
             {
                 "q": "What is the purpose of the 'likelihood-ratio test' in the context of GLMs?",
-                "a": "To formally test whether adding/removing explanatory variables significantly improves fit, based on the change in deviance."
+                "a": "To formally test whether adding/removing explanatory variables significantly improves fit, based on the change in deviance.",
+                "explain": "This restates the nested-model comparison card above in more general hypothesis-testing language — it's the GLM-specific instance of the general likelihood-ratio testing concept introduced back in Module 10, applied here via the deviance-difference chi-square approximation."
             },
             {
                 "q": "How would you fit a Poisson GLM with a log link function, conceptually?",
-                "a": "Model the log of the expected count as a linear function of the explanatory variables, estimating coefficients via maximum likelihood."
+                "a": "Model the log of the expected count as a linear function of the explanatory variables, estimating coefficients via maximum likelihood.",
+                "explain": "This is Module 8's maximum likelihood technique reapplied here — rather than a closed-form least-squares solution (as in ordinary linear regression), GLM coefficients are generally found by maximising the likelihood numerically/iteratively, exploiting the exponential-family structure to make that optimisation efficient."
             },
             {
                 "q": "Why might a Poisson GLM be a natural choice for modelling claim counts in general insurance?",
-                "a": "Claim counts are non-negative integers, and a log-link Poisson model naturally ensures positive predicted means."
+                "a": "Claim counts are non-negative integers, and a log-link Poisson model naturally ensures positive predicted means.",
+                "explain": "This is the module's headline real-world application, connecting directly back to Module 2's original Poisson card — GLMs are what let an insurer move beyond a single overall claim-frequency assumption to one that varies systematically by policyholder characteristics (age, location, vehicle type, etc.), which is the practical foundation of modern general insurance pricing."
             },
             {
                 "q": "How would you use an analysis of deviance to choose a suitable GLM?",
-                "a": "Compare the reduction in deviance from adding each variable against its degrees of freedom, retaining significant improvements."
+                "a": "Compare the reduction in deviance from adding each variable against its degrees of freedom, retaining significant improvements.",
+                "explain": "This closes the module by restating its model-selection logic in the same spirit as Module 12's adjusted-$R^2$/AIC discussion — the goal throughout is the same balance between fit and complexity, just measured via deviance reduction rather than $R^2$ increase, since deviance (not $R^2$) is the natural fit measure for a GLM."
             }
         ]
     },
