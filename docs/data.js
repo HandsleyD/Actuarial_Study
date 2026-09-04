@@ -7769,63 +7769,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'bond'?",
-                "a": "A debt instrument where the issuer promises to pay the holder specified interest (coupon) payments and repay the principal (redemption value) at maturity."
+                "a": "A debt instrument where the issuer promises to pay the holder specified interest (coupon) payments and repay the principal (redemption value) at maturity.",
+                "explain": "This module opens Part 3 of CP1 (investments), and the very definition here is exactly CM1's fixed-interest cashflow structure recast as an asset class — everything CM1 taught about discounting a defined future cashflow stream applies directly to valuing the bond described in this card."
             },
             {
                 "q": "What is a 'money market instrument'?",
-                "a": "A short-term, highly liquid debt instrument (e.g. Treasury bills, commercial paper), typically with maturity under a year."
+                "a": "A short-term, highly liquid debt instrument (e.g. Treasury bills, commercial paper), typically with maturity under a year.",
+                "explain": "Worth thinking of this as a bond at the extreme short-duration end of the spectrum — the short maturity is precisely what drives the low interest-rate and credit risk described a few cards later, since there's little time for either rates or the issuer's creditworthiness to move materially before repayment."
             },
             {
                 "q": "What is the key difference between a government bond and a corporate bond?",
-                "a": "A government bond is issued by a national government; a corporate bond is issued by a company, and typically carries higher credit risk."
+                "a": "A government bond is issued by a national government; a corporate bond is issued by a company, and typically carries higher credit risk.",
+                "explain": "This distinction sets up the credit-risk theme that runs through the rest of this module — government bonds (in stable economies) are often treated as close to the risk-free asset that CM2's asset pricing models reference, making corporate bonds' extra risk and yield most naturally understood as a spread ABOVE that baseline."
             },
             {
                 "q": "What is 'credit risk' in the context of bonds?",
-                "a": "The risk that the bond issuer fails to make the promised interest and/or principal payments."
+                "a": "The risk that the bond issuer fails to make the promised interest and/or principal payments.",
+                "explain": "This is CM2's credit risk module (structural and reduced-form default models) given its plain-English definition here — worth remembering CP1 won't expect the mathematical machinery CM2 built for this, just the practical judgement of how it should shape investment selection and the credit rating tool described two cards on."
             },
             {
                 "q": "What is an 'index-linked' bond?",
-                "a": "A bond whose coupon and/or redemption payments are adjusted in line with a specified inflation index."
+                "a": "A bond whose coupon and/or redemption payments are adjusted in line with a specified inflation index.",
+                "explain": "This directly connects to CM1's real versus money (nominal) interest rate distinction — an index-linked bond is specifically engineered to deliver a predictable REAL return regardless of inflation outcomes, unlike a conventional fixed-interest bond whose real value is eroded unpredictably by whatever inflation actually occurs."
             },
             {
                 "q": "Why might an investor hold index-linked bonds rather than fixed-interest bonds?",
-                "a": "To protect the real value of their investment against inflation, which fixed-interest bonds don't provide."
+                "a": "To protect the real value of their investment against inflation, which fixed-interest bonds don't provide.",
+                "explain": "This is especially relevant for the pension liabilities discussed in Module 6, since many pension promises are themselves inflation-linked — holding index-linked bonds is a direct application of CM2's asset-liability matching principle, backing an inflation-linked liability with an asset that moves the same way."
             },
             {
                 "q": "What is 'duration', as a measure relevant to bonds?",
-                "a": "A measure of the weighted-average time to receipt of a bond's cashflows, indicating its sensitivity to interest rate changes."
+                "a": "A measure of the weighted-average time to receipt of a bond's cashflows, indicating its sensitivity to interest rate changes.",
+                "explain": "This is precisely CM1's duration/discounted mean term concept, central to Module 16's asset-liability management material later in CP1 — a longer duration means greater sensitivity to interest rate moves, which is exactly why matching asset and liability duration is the core technique for managing interest rate risk."
             },
             {
                 "q": "How does bond price typically respond to a rise in market interest rates?",
-                "a": "The bond's price falls, since its fixed future cashflows are now discounted at a higher rate."
+                "a": "The bond's price falls, since its fixed future cashflows are now discounted at a higher rate.",
+                "explain": "This is CM1's discounting mechanics in its most direct application — a bond's fixed coupon and redemption cashflows don't change, but the RATE used to discount them to present value rises, mechanically reducing the present value (price) of those same cashflows."
             },
             {
                 "q": "What is 'credit rating', and what is it used for?",
-                "a": "An assessment (by a ratings agency) of an issuer's creditworthiness, helping investors gauge the risk of default."
+                "a": "An assessment (by a ratings agency) of an issuer's creditworthiness, helping investors gauge the risk of default.",
+                "explain": "This is the practical, market-facing proxy for the credit risk concept defined earlier in this module — worth noting it's a simplified, external assessment rather than the investor's own detailed credit modelling, useful for quick comparison but not a substitute for genuine due diligence on a material holding."
             },
             {
                 "q": "Why are money market instruments generally considered very low risk?",
-                "a": "Their short maturity limits exposure to interest rate and credit risk, and they're often issued by highly creditworthy borrowers (e.g. governments, large banks)."
+                "a": "Their short maturity limits exposure to interest rate and credit risk, and they're often issued by highly creditworthy borrowers (e.g. governments, large banks).",
+                "explain": "This draws together the duration and credit risk concepts from earlier in this module — both major bond risks (rate sensitivity, which scales with duration, and credit deterioration, which needs time to develop) are structurally limited by money market instruments' short time horizon alone."
             },
             {
                 "q": "What role do money market instruments typically play in an investment portfolio?",
-                "a": "Providing liquidity and capital preservation, often used for short-term cash management rather than long-term return generation."
+                "a": "Providing liquidity and capital preservation, often used for short-term cash management rather than long-term return generation.",
+                "explain": "This previews Module 15's investment strategy material — every portfolio construction decision involves trading off risk, return, and liquidity, and money market instruments are the tool reached for specifically when the liquidity leg of that trade-off dominates (e.g. holding funds needed for near-term payments)."
             },
             {
                 "q": "What is the 'yield' on a bond?",
-                "a": "The return an investor receives, accounting for coupon payments and any capital gain/loss to redemption, expressed as an annualised rate."
+                "a": "The return an investor receives, accounting for coupon payments and any capital gain/loss to redemption, expressed as an annualised rate.",
+                "explain": "This is worth linking to CM1's internal rate of return concept — a bond's yield is essentially the single discount rate that equates the bond's current market price to the present value of all its future coupon and redemption cashflows, the same IRR logic CM1 applies to any cashflow stream."
             },
             {
                 "q": "Why might corporate bonds offer a higher yield than equivalent-maturity government bonds?",
-                "a": "To compensate investors for the additional credit risk of the corporate issuer relative to the (typically safer) government."
+                "a": "To compensate investors for the additional credit risk of the corporate issuer relative to the (typically safer) government.",
+                "explain": "This is the credit risk concept from earlier in this module made concrete as a PRICE — the extra yield (the 'credit spread') is the market's compensation for bearing the possibility of default, and it should widen or narrow as the market's assessment of that issuer's creditworthiness changes."
             },
             {
                 "q": "What is a 'callable' bond?",
-                "a": "A bond that gives the issuer the right to redeem it early, before the stated maturity date, usually under specified conditions."
+                "a": "A bond that gives the issuer the right to redeem it early, before the stated maturity date, usually under specified conditions.",
+                "explain": "This is worth recognising as an embedded option in the same sense as Module 7's guaranteed insurability feature — the issuer holds a valuable right (to refinance cheaply if rates fall), and the investor is compensated for granting it, typically through a higher coupon than an otherwise-identical non-callable bond."
             },
             {
                 "q": "Why might bonds be an attractive asset class for insurers backing predictable liabilities?",
-                "a": "Their relatively predictable cashflows make them well-suited to matching against similarly predictable insurance/pension liabilities."
+                "a": "Their relatively predictable cashflows make them well-suited to matching against similarly predictable insurance/pension liabilities.",
+                "explain": "This closing card is the module's direct hand-off to Module 16's asset-liability management material — bonds' defining feature (fixed, known future cashflows) is exactly what makes CM2's matching techniques so tractable to apply, in sharp contrast to the more variable, less predictable cashflows of the equity and property assets covered next."
             }
         ]
     },
@@ -7836,63 +7851,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is an 'equity' (ordinary share)?",
-                "a": "A unit of ownership in a company, entitling the holder to a share of profits (via dividends) and voting rights, with no fixed maturity or guaranteed return."
+                "a": "A unit of ownership in a company, entitling the holder to a share of profits (via dividends) and voting rights, with no fixed maturity or guaranteed return.",
+                "explain": "The 'no fixed maturity or guaranteed return' phrase is the key structural contrast with Module 9's bonds — where a bond's cashflows are contractually promised, an equity's returns are inherently uncertain and dependent on the company's performance, which is exactly why the next card frames equities as riskier but higher-expected-return."
             },
             {
                 "q": "How does the risk/return profile of equities typically compare with bonds?",
-                "a": "Equities typically offer higher expected long-term returns but with greater volatility/risk than bonds."
+                "a": "Equities typically offer higher expected long-term returns but with greater volatility/risk than bonds.",
+                "explain": "This is CM2's equity risk premium concept stated in plain terms — the extra expected return exists specifically to compensate investors for bearing equities' greater uncertainty relative to a bond's contractually fixed cashflows, mirroring the credit-spread logic from Module 9 but for a fundamentally riskier claim."
             },
             {
                 "q": "What is a 'dividend'?",
-                "a": "A distribution of a company's profits to its shareholders, typically paid periodically but not guaranteed."
+                "a": "A distribution of a company's profits to its shareholders, typically paid periodically but not guaranteed.",
+                "explain": "Worth contrasting directly with a bond coupon: a coupon is a contractual promise (subject only to default risk), while a dividend is entirely at the company's discretion — it can be cut or omitted even by a perfectly solvent company, which is a genuinely different kind of uncertainty from credit risk."
             },
             {
                 "q": "Why is equity considered a 'residual' claim on a company's assets/profits?",
-                "a": "Shareholders are paid only after all other obligations (e.g. debt holders, creditors) have been satisfied."
+                "a": "Shareholders are paid only after all other obligations (e.g. debt holders, creditors) have been satisfied.",
+                "explain": "This is the structural reason equity is riskier than debt in the same company — bondholders sit ahead of shareholders in the priority order, so equity absorbs the FIRST losses if things go wrong but also captures ALL the upside beyond what's needed to pay fixed obligations, explaining both its higher risk and higher expected return."
             },
             {
                 "q": "What is 'capital growth', as a component of equity return?",
-                "a": "The increase in the market value/price of the shares themselves, separate from dividend income."
+                "a": "The increase in the market value/price of the shares themselves, separate from dividend income.",
+                "explain": "Total equity return is this component PLUS dividends, and it's worth noting capital growth alone can be volatile and even negative in a given year even when the underlying company remains fundamentally sound — a distinction that matters for the market-behaviour material in Module 12."
             },
             {
                 "q": "What is 'property' as an investment asset class?",
-                "a": "Physical real estate (e.g. commercial or residential) held for rental income and/or capital growth."
+                "a": "Physical real estate (e.g. commercial or residential) held for rental income and/or capital growth.",
+                "explain": "This return structure (income plus capital growth) directly parallels equity's dividend-plus-capital-growth split from the cards above — property is worth thinking of as sharing equity's basic return DECOMPOSITION while differing sharply in liquidity and valuation frequency, as the next few cards explore."
             },
             {
                 "q": "What is a key characteristic of property that distinguishes it from equities and bonds as an investment?",
-                "a": "Illiquidity — property typically takes much longer and costs more to buy or sell than listed securities."
+                "a": "Illiquidity — property typically takes much longer and costs more to buy or sell than listed securities.",
+                "explain": "This illiquidity has a genuinely important knock-on consequence explored two cards later: because property isn't traded continuously, its measured volatility looks artificially LOW compared to equities, an effect worth distinguishing carefully from property genuinely being a lower-risk asset."
             },
             {
                 "q": "Why might property returns show some correlation with, but also differ from, equity market returns?",
-                "a": "Both are affected by the general economy, but property is also driven by local supply/demand and rental market conditions specific to real estate."
+                "a": "Both are affected by the general economy, but property is also driven by local supply/demand and rental market conditions specific to real estate.",
+                "explain": "This partial, imperfect correlation is exactly the CM2 portfolio-theory condition needed for genuine diversification benefit (explored two cards on) — if property and equities moved in perfect lockstep, adding property to an equity portfolio would do nothing to reduce overall risk."
             },
             {
                 "q": "What is 'rental yield'?",
-                "a": "The annual rental income from a property, expressed as a percentage of the property's value."
+                "a": "The annual rental income from a property, expressed as a percentage of the property's value.",
+                "explain": "This is property's income-return equivalent of a bond's coupon yield or an equity's dividend yield — a useful comparison metric across asset classes, though it's worth remembering rental income (like dividends, unlike a bond coupon) isn't contractually guaranteed and depends on maintaining a paying tenant."
             },
             {
                 "q": "Why might diversification benefits arise from including property alongside equities and bonds in a portfolio?",
-                "a": "Property returns aren't perfectly correlated with equities or bonds, so adding it can reduce overall portfolio risk for a given return."
+                "a": "Property returns aren't perfectly correlated with equities or bonds, so adding it can reduce overall portfolio risk for a given return.",
+                "explain": "This is CM2's portfolio theory (Module 4 there) applied directly — the mathematics of combining imperfectly-correlated assets to reduce overall portfolio variance is exactly what justifies including property in a diversified institutional portfolio, not just its own risk/return profile in isolation."
             },
             {
                 "q": "What is a 'real estate investment trust' (REIT)?",
-                "a": "A listed vehicle that holds property assets, offering investors more liquid, tradeable exposure to property than direct ownership."
+                "a": "A listed vehicle that holds property assets, offering investors more liquid, tradeable exposure to property than direct ownership.",
+                "explain": "This is a direct structural solution to the illiquidity problem flagged earlier in this module — by pooling many properties into a single listed, tradeable vehicle, a REIT trades away some of property's diversification-from-equities benefit (since it now trades more like a listed security) in exchange for genuine liquidity."
             },
             {
                 "q": "How does the volatility of listed equity prices compare with the volatility of (infrequently valued) direct property?",
-                "a": "Listed equity prices appear more volatile partly because they're valued continuously by the market, whereas property valuations are updated infrequently, smoothing apparent volatility."
+                "a": "Listed equity prices appear more volatile partly because they're valued continuously by the market, whereas property valuations are updated infrequently, smoothing apparent volatility.",
+                "explain": "This is the important caveat flagged when illiquidity was first introduced — it's a genuinely common trap in CP1-style scenario questions to treat property's lower MEASURED volatility as proof it's a genuinely lower-risk asset, when much of the difference is a valuation-frequency artefact rather than a real difference in underlying economic risk."
             },
             {
                 "q": "Why might an investor accept equities' higher volatility in exchange for their higher expected return?",
-                "a": "Over a sufficiently long time horizon, the equity risk premium is expected to compensate for the additional short-term volatility risk."
+                "a": "Over a sufficiently long time horizon, the equity risk premium is expected to compensate for the additional short-term volatility risk.",
+                "explain": "This connects directly to Module 5's time-horizon material and previews Module 15's investment strategy — the key word is 'sufficiently long': an investor with a short horizon may not have time to ride out volatility before needing to realise the investment, which is exactly why suitable investment strategy depends so heavily on horizon."
             },
             {
                 "q": "What is a key risk specific to property investment beyond general market risk?",
-                "a": "Risks like void periods (no tenant), maintenance costs, and the illiquidity of individual property assets."
+                "a": "Risks like void periods (no tenant), maintenance costs, and the illiquidity of individual property assets.",
+                "explain": "These are worth thinking of as IDIOSYNCRATIC risks specific to holding a single property, distinct from the broader market risk shared across the whole property asset class — a large, diversified portfolio of many properties reduces this idiosyncratic risk (another CM2 portfolio-theory application) even though market-wide property risk remains."
             },
             {
                 "q": "Why might pension funds with long-term liabilities hold a significant allocation to equities and property, despite their volatility?",
-                "a": "Their long investment horizon allows them to ride out short-term volatility while benefiting from the higher expected long-term returns."
+                "a": "Their long investment horizon allows them to ride out short-term volatility while benefiting from the higher expected long-term returns.",
+                "explain": "This closing card directly applies the horizon logic from earlier in this module to a concrete institutional investor — it's worth contrasting with Module 9's closing card on why insurers with predictable liabilities favour bonds: the SAME asset-liability matching principle (Module 16) can point toward either bonds or growth assets, depending entirely on the nature and horizon of the liability being backed."
             }
         ]
     },
@@ -7903,63 +7933,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'cash' as an asset class, in an investment context?",
-                "a": "Bank deposits or highly liquid short-term instruments, offering capital security and liquidity but typically low returns."
+                "a": "Bank deposits or highly liquid short-term instruments, offering capital security and liquidity but typically low returns.",
+                "explain": "This sits at the safest, most liquid end of the spectrum this module surveys — worth reading this module overall as extending the traditional three-asset-class picture from Modules 9-10 (bonds, equities, property) outward in every direction: safer and more liquid (cash), riskier and more complex (derivatives, hedge funds), or less liquid and more specialised (private equity, infrastructure)."
             },
             {
                 "q": "What is a 'derivative'?",
-                "a": "A financial instrument whose value is derived from an underlying asset, index, or rate (e.g. options, futures, swaps)."
+                "a": "A financial instrument whose value is derived from an underlying asset, index, or rate (e.g. options, futures, swaps).",
+                "explain": "This is CM2's whole derivatives curriculum (forwards, options, Black-Scholes) referenced here at a purely conceptual level — CP1 won't ask for the pricing mathematics, but understanding WHAT a derivative is and why an institution might use one (the next card) is directly relevant to investment strategy discussions."
             },
             {
                 "q": "Why might an investor use derivatives, rather than investing directly in the underlying asset?",
-                "a": "To hedge existing risk, gain leveraged exposure, or achieve a specific payoff profile more efficiently than direct investment."
+                "a": "To hedge existing risk, gain leveraged exposure, or achieve a specific payoff profile more efficiently than direct investment.",
+                "explain": "The hedging use case connects directly to Module 16's asset-liability management — a pension scheme worried about falling interest rates, for instance, can use interest rate derivatives to adjust its effective exposure without needing to physically buy or sell large quantities of the underlying bonds themselves."
             },
             {
                 "q": "What is 'private equity'?",
-                "a": "Investment in companies not listed on a public stock exchange, often involving active management influence and a longer investment horizon."
+                "a": "Investment in companies not listed on a public stock exchange, often involving active management influence and a longer investment horizon.",
+                "explain": "This shares listed equity's basic residual-claim, profit-sharing character from Module 10, but trades away liquidity (much like property versus REITs) for potentially higher returns and active influence over how value is created within the company."
             },
             {
                 "q": "What is 'infrastructure' as an investment asset class?",
-                "a": "Investment in large-scale physical assets (e.g. toll roads, utilities, renewable energy) often providing stable, long-term, inflation-linked cashflows."
+                "a": "Investment in large-scale physical assets (e.g. toll roads, utilities, renewable energy) often providing stable, long-term, inflation-linked cashflows.",
+                "explain": "This return profile (stable, long-term, inflation-linked) makes infrastructure a close cousin of Module 9's index-linked bonds in terms of the LIABILITY-matching role it can play, despite being structurally a very different kind of physical asset — exactly the connection the next card draws out explicitly."
             },
             {
                 "q": "Why might infrastructure investments be attractive to pension funds and insurers?",
-                "a": "Their long-term, relatively predictable and often inflation-linked cashflows can suit matching long-term liabilities."
+                "a": "Their long-term, relatively predictable and often inflation-linked cashflows can suit matching long-term liabilities.",
+                "explain": "This is Module 16's asset-liability matching principle applied to a genuinely alternative asset class — the point worth generalising is that matching isn't limited to bonds; ANY asset whose cashflow pattern resembles the liability being backed (in timing and inflation-sensitivity) can serve a similar matching role."
             },
             {
                 "q": "What is a 'hedge fund'?",
-                "a": "An actively managed investment fund often using a wide range of strategies (including leverage and derivatives) to pursue absolute returns, typically less regulated than traditional funds."
+                "a": "An actively managed investment fund often using a wide range of strategies (including leverage and derivatives) to pursue absolute returns, typically less regulated than traditional funds.",
+                "explain": "The lighter regulation here connects back to Module 4's retail-versus-wholesale regulatory distinction — hedge funds are typically only accessible to sophisticated institutional or high-net-worth investors, precisely the counterparties Module 4 identified as needing less protective regulation."
             },
             {
                 "q": "What is 'overseas' (international) investment, and why might an investor hold it?",
-                "a": "Investment in assets outside the investor's home market, providing diversification and access to different economic growth/opportunities."
+                "a": "Investment in assets outside the investor's home market, providing diversification and access to different economic growth/opportunities.",
+                "explain": "This is CM2's portfolio theory diversification logic applied geographically rather than across asset classes — different economies' growth cycles aren't perfectly correlated with each other, so international exposure can reduce portfolio risk in the same way combining domestic bonds, equities, and property does."
             },
             {
                 "q": "What additional risk does overseas investment introduce, beyond the risk of the underlying asset itself?",
-                "a": "Currency risk — the value of the investment in the investor's home currency can be affected by exchange rate movements."
+                "a": "Currency risk — the value of the investment in the investor's home currency can be affected by exchange rate movements.",
+                "explain": "This is a genuinely important qualifier on the diversification benefit just described — currency movements can either amplify or offset the underlying asset's local-currency return, adding a whole extra layer of risk that has to be deliberately managed (the next card) rather than simply accepted as part of the diversification trade-off."
             },
             {
                 "q": "What is 'currency hedging'?",
-                "a": "Using financial instruments (e.g. forward contracts) to reduce or eliminate the impact of exchange rate movements on an overseas investment's value."
+                "a": "Using financial instruments (e.g. forward contracts) to reduce or eliminate the impact of exchange rate movements on an overseas investment's value.",
+                "explain": "This is a specific, targeted application of the derivatives-for-hedging idea introduced earlier in this module — by using forward contracts, an investor can isolate and neutralise JUST the currency risk from an overseas investment, keeping exposure to the underlying asset's own risk/return characteristics."
             },
             {
                 "q": "Why might private equity investments require a longer investment horizon than listed equities?",
-                "a": "They are illiquid, and value creation (e.g. through operational improvements) often takes years to be realised and exited."
+                "a": "They are illiquid, and value creation (e.g. through operational improvements) often takes years to be realised and exited.",
+                "explain": "This directly echoes Module 10's property illiquidity discussion — the same underlying principle (illiquid assets require patience and a matching long investment horizon) applies across every alternative asset class in this module, not just property specifically."
             },
             {
                 "q": "What is 'commodities' as an asset class?",
-                "a": "Physical goods (e.g. oil, gold, agricultural products) or instruments tracking their prices, often used for diversification or inflation protection."
+                "a": "Physical goods (e.g. oil, gold, agricultural products) or instruments tracking their prices, often used for diversification or inflation protection.",
+                "explain": "Commodities are worth noting as fundamentally different from every other asset class covered so far — unlike bonds, equities, or property, commodities generate no ongoing income (no coupon, dividend, or rent) at all, so their entire expected return has to come from price appreciation or a risk premium embedded in derivative pricing."
             },
             {
                 "q": "Why might commodities provide diversification benefits within a broader portfolio?",
-                "a": "Their returns are often driven by different (e.g. supply/demand, geopolitical) factors than traditional financial assets, giving low correlation."
+                "a": "Their returns are often driven by different (e.g. supply/demand, geopolitical) factors than traditional financial assets, giving low correlation.",
+                "explain": "This is the same low-correlation diversification logic used throughout this module (property, overseas investment) applied once more — worth noting commodities' drivers (physical supply/demand shocks, geopolitical events) are genuinely distinct from the corporate-earnings and interest-rate drivers behind equity and bond returns, which is exactly why the correlation tends to be low."
             },
             {
                 "q": "What is a key challenge in valuing illiquid alternative assets like private equity or infrastructure?",
-                "a": "Without frequent market transactions, valuations rely more heavily on models/judgement, introducing valuation uncertainty."
+                "a": "Without frequent market transactions, valuations rely more heavily on models/judgement, introducing valuation uncertainty.",
+                "explain": "This directly previews Module 13's valuation-of-investments material and echoes the property valuation-smoothing issue from Module 10 — the less frequently an asset trades, the more its 'value' is really a model-based estimate rather than an observed market price, a distinction that matters enormously for how confidently that value can be relied upon."
             },
             {
                 "q": "Why might a sophisticated institutional investor include a wider range of alternative asset classes than a typical retail investor?",
-                "a": "Greater resources for due diligence, longer investment horizons, and higher risk tolerance/capacity to bear illiquidity."
+                "a": "Greater resources for due diligence, longer investment horizons, and higher risk tolerance/capacity to bear illiquidity.",
+                "explain": "This closing card directly echoes Module 4's retail-versus-wholesale regulatory distinction and Module 5's suitability principle — the SAME underlying factors (sophistication, capacity to bear risk and illiquidity) that justify lighter regulation for institutional investors also justify them holding a genuinely different, more complex investment universe than an individual retail investor typically should."
             }
         ]
     },
@@ -7970,63 +8015,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What does 'market efficiency' broadly mean?",
-                "a": "The degree to which asset prices reflect all available relevant information."
+                "a": "The degree to which asset prices reflect all available relevant information.",
+                "explain": "This is CM2's Efficient Markets Hypothesis (Module 1 there, with its weak/semi-strong/strong forms) brought back into CP1's practical advisory context — the technical definitions there transfer directly here, but this module's real focus is what happens when markets DON'T behave efficiently, which the rest of this module explores."
             },
             {
                 "q": "What factors are widely believed to drive long-term equity returns?",
-                "a": "Economic growth, corporate earnings growth, and the required risk premium investors demand for holding equities."
+                "a": "Economic growth, corporate earnings growth, and the required risk premium investors demand for holding equities.",
+                "explain": "This is worth reading as the FUNDAMENTALS-based, efficient-market view of long-run returns — it's deliberately contrasted with the next card's short-term drivers, setting up this module's central theme that short-run price behaviour can diverge substantially from what fundamentals alone would predict."
             },
             {
                 "q": "What factors influence short-term market price movements, beyond fundamentals?",
-                "a": "Investor sentiment, news flow, liquidity conditions, and short-term supply/demand imbalances."
+                "a": "Investor sentiment, news flow, liquidity conditions, and short-term supply/demand imbalances.",
+                "explain": "This is precisely why Module 10 warned that equity's short-term volatility shouldn't be mistaken for a stable read on its true long-run risk — much of that short-term noise comes from these transient factors rather than genuine shifts in the fundamental drivers named in the previous card."
             },
             {
                 "q": "What is 'behavioural finance' concerned with?",
-                "a": "How psychological biases and irrational behaviour can cause real investor decisions/market prices to deviate from purely rational models."
+                "a": "How psychological biases and irrational behaviour can cause real investor decisions/market prices to deviate from purely rational models.",
+                "explain": "This is a direct challenge to the efficient-markets assumption underlying much of CM2's theoretical asset pricing — worth holding both views in mind together for CP1 purposes: the EMH is a useful simplifying baseline, but behavioural finance explains systematic, real-world deviations from it that matter for practical advice."
             },
             {
                 "q": "Give an example of a behavioural bias relevant to investment decisions.",
-                "a": "Overconfidence, herding behaviour, or loss aversion (weighting losses more heavily than equivalent gains)."
+                "a": "Overconfidence, herding behaviour, or loss aversion (weighting losses more heavily than equivalent gains).",
+                "explain": "Loss aversion is worth connecting back to Module 5's risk appetite discussion — a customer's genuine, psychologically-real aversion to losses (weighting them more heavily than equivalent gains) can differ meaningfully from what a purely rational risk-tolerance assessment would suggest, complicating suitability judgements."
             },
             {
                 "q": "What is 'herding' behaviour in financial markets?",
-                "a": "Investors following the actions of others rather than their own independent analysis, which can amplify price trends/bubbles."
+                "a": "Investors following the actions of others rather than their own independent analysis, which can amplify price trends/bubbles.",
+                "explain": "This is one specific, well-documented behavioural bias, and it's the direct mechanism behind the asset price bubble described in the next two cards — herding is precisely how a price move that starts from genuine fundamentals can become self-reinforcing and detached from those fundamentals."
             },
             {
                 "q": "What is an 'asset price bubble'?",
-                "a": "A situation where an asset's price rises well above levels justified by underlying fundamentals, often driven by speculation and expectation of further price rises."
+                "a": "A situation where an asset's price rises well above levels justified by underlying fundamentals, often driven by speculation and expectation of further price rises.",
+                "explain": "This is the herding behaviour from the previous card, scaled up to a market-wide phenomenon — worth noting a bubble is, almost by definition, a case where market efficiency (prices reflecting fundamentals) has broken down, at least temporarily, which is exactly the kind of real-world deviation behavioural finance exists to explain."
             },
             {
                 "q": "What typically happens after an asset price bubble 'bursts'?",
-                "a": "Prices fall sharply, often overshooting back below fundamental value, as sentiment reverses."
+                "a": "Prices fall sharply, often overshooting back below fundamental value, as sentiment reverses.",
+                "explain": "The 'overshooting below' detail is worth noting carefully — herding doesn't just stop working in reverse, it can actively amplify the downward move too, which is exactly why market corrections often feel more dramatic and sudden than the gradual build-up that preceded them."
             },
             {
                 "q": "How might interest rate changes affect equity and bond markets?",
-                "a": "Rising rates typically reduce bond prices (higher discounting) and can also pressure equity valuations (higher discount rates on future earnings)."
+                "a": "Rising rates typically reduce bond prices (higher discounting) and can also pressure equity valuations (higher discount rates on future earnings).",
+                "explain": "The bond effect here is exactly Module 9's discounting mechanics restated; the equity effect extends the SAME logic (CM1's present-value discounting) to a stream of expected future earnings/dividends rather than a bond's contractually fixed cashflows, showing both asset classes share this common interest-rate sensitivity."
             },
             {
                 "q": "Why might markets react strongly to unexpected news, even if the underlying fundamentals haven't materially changed?",
-                "a": "Prices reflect expectations; unexpected news forces a rapid reassessment of those expectations, causing sharp price adjustments."
+                "a": "Prices reflect expectations; unexpected news forces a rapid reassessment of those expectations, causing sharp price adjustments.",
+                "explain": "This is a genuinely important nuance of the efficient markets idea worth getting right — an efficient market reacting sharply to surprising news isn't evidence of INefficiency; quite the opposite, rapid repricing to reflect genuinely new information is exactly what an efficient market is supposed to do."
             },
             {
                 "q": "What is 'market liquidity', and why does it matter for price behaviour?",
-                "a": "The ease of buying/selling an asset without materially affecting its price; low liquidity can amplify price volatility, especially in stressed conditions."
+                "a": "The ease of buying/selling an asset without materially affecting its price; low liquidity can amplify price volatility, especially in stressed conditions.",
+                "explain": "This connects directly to Module 10's property illiquidity discussion, now generalised — even normally liquid assets like listed equities can see liquidity dry up during a genuine market crisis, which is exactly the mechanism behind the next card's observation about correlations rising during stress."
             },
             {
                 "q": "How might correlations between different asset classes change during a financial crisis?",
-                "a": "Correlations often increase ('correlations go to one'), reducing the diversification benefit investors expected during exactly the periods they need it most."
+                "a": "Correlations often increase ('correlations go to one'), reducing the diversification benefit investors expected during exactly the periods they need it most.",
+                "explain": "This is a genuinely important, sobering qualification of CM2's portfolio-theory diversification story from Modules 10-11 — the diversification benefit calculated from historical average correlations can quietly disappear exactly when it's needed most, during a systemic crisis when many asset classes fall together."
             },
             {
                 "q": "Why is understanding market behaviour important for setting actuarial investment assumptions?",
-                "a": "Assumptions about future returns/volatility should be informed by a realistic understanding of how markets actually behave, not just theoretical models."
+                "a": "Assumptions about future returns/volatility should be informed by a realistic understanding of how markets actually behave, not just theoretical models.",
+                "explain": "This directly previews Module 20's setting-assumptions material — a model calibrated purely on theoretical efficient-market assumptions could understate real-world risks like bubbles, correlation breakdown in a crisis, and the liquidity effects this module has just catalogued, all genuine features of how markets actually behave."
             },
             {
                 "q": "What is 'momentum' in financial markets?",
-                "a": "The tendency for assets that have recently performed well (or poorly) to continue doing so in the near term, contrary to simple efficient market predictions."
+                "a": "The tendency for assets that have recently performed well (or poorly) to continue doing so in the near term, contrary to simple efficient market predictions.",
+                "explain": "This is worth contrasting directly with weak-form market efficiency (CM2 Module 1) — under weak-form efficiency, past price patterns shouldn't predict future returns at all, so momentum's persistent empirical existence is one of the most cited real-world anomalies challenging that theoretical prediction."
             },
             {
                 "q": "Why might understanding behavioural biases help an actuary advising on investment strategy?",
-                "a": "It helps anticipate how clients/trustees might react emotionally to market movements, informing communication and potentially guarding against poorly-timed decisions."
+                "a": "It helps anticipate how clients/trustees might react emotionally to market movements, informing communication and potentially guarding against poorly-timed decisions.",
+                "explain": "This closing card brings the module full circle back to Module 2's advice principles — technically sound investment strategy advice can still fail in practice if a client panics and sells at the worst possible moment during a downturn, so anticipating and managing that behavioural risk is itself part of giving genuinely effective actuarial advice."
             }
         ]
     },
