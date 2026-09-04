@@ -6,8 +6,23 @@
 <title>Actuarial Study Progress</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<script>
+// Resolve and apply the theme BEFORE first paint (and before style.css even
+// loads) to avoid a flash of the wrong theme. No stored preference means
+// "follow the system setting" -- style.css's prefers-color-scheme block
+// handles that case; this only needs to act when the user has explicitly
+// picked a theme via the toggle in app.js.
+(function () {
+  try {
+    var stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") {
+      document.documentElement.setAttribute("data-theme", stored);
+    }
+  } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
+})();
+</script>
+<link rel="stylesheet" href="style.css?v=9">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -16,6 +31,7 @@
     <h1>Actuarial Study Progress</h1>
     <div class="topbar-right">
       <span id="syncStatus" class="sync-status" hidden></span>
+      <button id="themeToggleBtn" class="icon-btn" title="Toggle light/dark theme">&#9728;&#65039;</button>
       <button id="settingsBtn" class="icon-btn" title="Account">&#9881;</button>
     </div>
   </div>
@@ -107,6 +123,6 @@
 <script src="store.js"></script>
 <script src="data.js?v=11"></script>
 <script src="questions.js?v=2"></script>
-<script src="app.js?v=9"></script>
+<script src="app.js?v=10"></script>
 </body>
 </html>
