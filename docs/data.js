@@ -3805,63 +3805,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the three main aims of a data analysis?",
-                "a": "Descriptive (summarising data), inferential (drawing conclusions about a population), and predictive (forecasting future/unseen outcomes)."
+                "a": "Descriptive (summarising data), inferential (drawing conclusions about a population), and predictive (forecasting future/unseen outcomes).",
+                "explain": "This three-way split is a useful lens for the whole of CS1: Modules 2-6 build the probability toolkit, Modules 7-11 are squarely inferential (estimation, testing), and Modules 12-16 (regression, GLMs, credibility) lean predictive — recognising which aim a technique serves helps place it within the syllabus."
             },
             {
                 "q": "What is 'reproducible research'?",
-                "a": "Research where the analysis can be independently repeated and verified by others, given the same data and code/methods."
+                "a": "Research where the analysis can be independently repeated and verified by others, given the same data and code/methods.",
+                "explain": "This matters professionally, not just academically — an actuarial reserving or pricing analysis often needs to be defensible and repeatable years later (e.g. under audit or regulatory review), so reproducibility is a working requirement, not an abstract ideal."
             },
             {
                 "q": "Name one element required to ensure a data analysis is reproducible.",
-                "a": "Documented, shareable code/scripts, and access to the same data and software versions."
+                "a": "Documented, shareable code/scripts, and access to the same data and software versions.",
+                "explain": "Worth noting all three pieces matter together — sharing code without the exact data (or vice versa) still leaves a result that can't genuinely be verified, and even the same code/data can behave differently across software versions with different default settings or bug fixes."
             },
             {
                 "q": "What does 'Pearson's correlation coefficient' measure?",
-                "a": "The strength and direction of the linear relationship between two variables."
+                "a": "The strength and direction of the linear relationship between two variables.",
+                "explain": "This is introduced here as a data-exploration tool but gets a full module to itself later (Module 11), including formal inference on it — for now, the key limitation to remember is 'linear' specifically, which sets up the contrast with Spearman's and Kendall's below."
             },
             {
                 "q": "What does 'Spearman's rank correlation' measure, and how does it differ from Pearson's?",
-                "a": "The strength of a monotonic (not necessarily linear) relationship, calculated using the ranks of the data rather than raw values."
+                "a": "The strength of a monotonic (not necessarily linear) relationship, calculated using the ranks of the data rather than raw values.",
+                "explain": "'Monotonic' is the key upgrade over Pearson's 'linear' — a relationship that consistently increases but curves (rather than forming a straight line) can score highly on Spearman's while understating on Pearson's, since converting to ranks strips away the specific shape and just asks 'does higher X consistently mean higher Y'."
             },
             {
                 "q": "What does 'Kendall's tau' measure?",
-                "a": "The association between two variables based on the number of concordant versus discordant pairs of observations."
+                "a": "The association between two variables based on the number of concordant versus discordant pairs of observations.",
+                "explain": "This is a third, differently-constructed way of capturing the same broad idea as Spearman's (monotonic association) — worth knowing it's built directly from pairwise comparisons rather than ranks, which is why it can behave differently from Spearman's on the same data even though both are non-parametric alternatives to Pearson's."
             },
             {
                 "q": "Why might Spearman's or Kendall's correlation be preferred over Pearson's for some data sets?",
-                "a": "They don't assume a linear relationship and are less sensitive to outliers, since they use ranks rather than raw values."
+                "a": "They don't assume a linear relationship and are less sensitive to outliers, since they use ranks rather than raw values.",
+                "explain": "The outlier-robustness point is worth understanding mechanically: a single extreme value can only ever become the highest or lowest RANK (a bounded effect), whereas in Pearson's raw-value calculation an extreme value can dominate the covariance term arbitrarily, giving it outsized influence."
             },
             {
                 "q": "What is 'principal components analysis' (PCA) used for?",
-                "a": "Reducing the dimensionality of a complex data set by finding a smaller number of uncorrelated components that capture most of the variation."
+                "a": "Reducing the dimensionality of a complex data set by finding a smaller number of uncorrelated components that capture most of the variation.",
+                "explain": "PCA is worth connecting to Module 4's covariance concept — it works by analysing the covariance structure between variables and finding new axes (linear combinations of the originals) along which the data varies the most, which is exactly what lets it compress many correlated variables into fewer, uncorrelated ones."
             },
             {
                 "q": "What are 'extremely large data sets' likely to present as a data source challenge?",
-                "a": "Issues of storage, processing power, and potentially messier/less structured data requiring more preprocessing."
+                "a": "Issues of storage, processing power, and potentially messier/less structured data requiring more preprocessing.",
+                "explain": "This is a genuinely practical, professional concern rather than a purely statistical one — modern actuarial work increasingly involves large claims/policy datasets, and CS1 flags these operational challenges early since they affect every technique covered later in the syllabus, not just this module."
             },
             {
                 "q": "Give one example of an appropriate data visualisation for exploring a single continuous variable.",
-                "a": "A histogram or box plot."
+                "a": "A histogram or box plot.",
+                "explain": "Worth having a mental map of visualisation-to-variable-type: histograms/box plots for one continuous variable, bar charts for one categorical variable, and scatter plots for two continuous variables (previewing the correlation/regression modules) — matching the right plot to the data type is itself an examinable skill."
             },
             {
                 "q": "What summary statistics might you calculate as part of exploratory data analysis?",
-                "a": "Measures of central tendency (mean, median) and spread (variance, standard deviation, interquartile range)."
+                "a": "Measures of central tendency (mean, median) and spread (variance, standard deviation, interquartile range).",
+                "explain": "Note the pairing: every measure of CENTRE (mean, median) is naturally paired with a measure of SPREAD (variance/sd, IQR) — reporting one without the other gives an incomplete picture, since two datasets can share the same mean while having very different variability."
             },
             {
                 "q": "Why is exploratory data analysis typically performed before formal statistical modelling?",
-                "a": "To understand the data's structure, spot anomalies/outliers, and inform appropriate modelling choices."
+                "a": "To understand the data's structure, spot anomalies/outliers, and inform appropriate modelling choices.",
+                "explain": "This is the module's central justification for existing before the more formal inference modules (7 onward) — fitting a sophisticated model to data you haven't first looked at risks building elaborate conclusions on top of an undetected data problem (miscoded values, a skewed distribution the model doesn't suit, etc.)."
             },
             {
                 "q": "What might cause you to question the reliability of a data source?",
-                "a": "Inconsistent recording methods, missing data, known biases in collection, or an unclear/undocumented provenance."
+                "a": "Inconsistent recording methods, missing data, known biases in collection, or an unclear/undocumented provenance.",
+                "explain": "Worth treating this as a checklist to run through before trusting any dataset — 'undocumented provenance' in particular connects directly back to the reproducibility card at the top of this module, since data you can't trace back to its source can't be independently verified either."
             },
             {
                 "q": "How can principal components analysis help before fitting a predictive model?",
-                "a": "By reducing many correlated explanatory variables to a smaller set of uncorrelated components, simplifying the model and reducing overfitting risk."
+                "a": "By reducing many correlated explanatory variables to a smaller set of uncorrelated components, simplifying the model and reducing overfitting risk.",
+                "explain": "This previews the multicollinearity problem flagged later in Module 12's regression content — PCA is one standard fix for having too many correlated predictors, since it replaces them with a smaller set of genuinely independent (uncorrelated) components before the predictive model is even fitted."
             },
             {
                 "q": "What is the difference between descriptive and inferential data analysis aims?",
-                "a": "Descriptive analysis summarises the data itself; inferential analysis uses the data to draw conclusions about a broader population."
+                "a": "Descriptive analysis summarises the data itself; inferential analysis uses the data to draw conclusions about a broader population.",
+                "explain": "This closes the module by returning to its opening three-way split — descriptive analysis stays entirely within the sample you have; inferential analysis (the subject of Modules 7-10) makes a claim about something BEYOND the sample, which is a fundamentally bigger and more assumption-laden step."
             }
         ]
     },
@@ -3872,63 +3887,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the probability function of a Binomial($n,p$) distribution?",
-                "a": "$P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}$ for $k=0,1,\\dots,n$"
+                "a": "$P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}$ for $k=0,1,\\dots,n$",
+                "explain": "This module is a reference catalogue of distributions used throughout CS1 and beyond — the binomial is the natural starting point since it's built from the simplest possible random process (n independent yes/no trials), and every other discrete distribution here is a variation or limiting case of this same idea."
             },
             {
                 "q": "What is the mean and variance of a Poisson($\\lambda$) distribution?",
-                "a": "Mean $=\\lambda$, variance $=\\lambda$"
+                "a": "Mean $=\\lambda$, variance $=\\lambda$",
+                "explain": "The mean exactly equalling the variance is the Poisson's defining fingerprint — it's why real claim-count data with variance noticeably larger than its mean ('overdispersion') is a signal that a plain Poisson model doesn't fit well, motivating the negative binomial alternative in the next couple of cards."
             },
             {
                 "q": "What is the relationship between the Poisson process and the Poisson distribution?",
-                "a": "The number of events of a Poisson process in a fixed time interval follows a Poisson distribution with mean equal to the rate times the interval length."
+                "a": "The number of events of a Poisson process in a fixed time interval follows a Poisson distribution with mean equal to the rate times the interval length.",
+                "explain": "This connects a CONTINUOUS-TIME process (events happening at random moments) to a DISCRETE distribution (a count) — it's the standard actuarial model for claim arrivals, and this exact relationship is what justifies using a Poisson distribution to model 'how many claims in a year' given an assumed claims rate."
             },
             {
                 "q": "What is a 'negative binomial' distribution typically used to model?",
-                "a": "The number of failures before a fixed number of successes in a sequence of independent trials (or an over-dispersed alternative to the Poisson)."
+                "a": "The number of failures before a fixed number of successes in a sequence of independent trials (or an over-dispersed alternative to the Poisson).",
+                "explain": "The 'or' here signals two genuinely different uses worth keeping separate — the classical failures-before-successes interpretation, and its very common actuarial role as a Poisson replacement whenever real claims data shows more variance than a Poisson (mean=variance) can accommodate."
             },
             {
                 "q": "What is the key difference between the binomial and hypergeometric distributions?",
-                "a": "The binomial assumes sampling with replacement; the hypergeometric assumes sampling without replacement from a finite population."
+                "a": "The binomial assumes sampling with replacement; the hypergeometric assumes sampling without replacement from a finite population.",
+                "explain": "This distinction matters for whether trials stay independent — with replacement, each draw is identical and independent (binomial); without replacement, each draw changes the remaining population slightly, making trials dependent (hypergeometric), though the two converge when the population is very large relative to the sample."
             },
             {
                 "q": "What distribution results from summing the squares of $k$ independent standard normal random variables?",
-                "a": "The chi-square distribution with $k$ degrees of freedom."
+                "a": "The chi-square distribution with $k$ degrees of freedom.",
+                "explain": "This construction is worth remembering directly, since it's exactly what shows up later in Module 7's sampling-distribution results (e.g. $(n-1)S^2/\\sigma^2$ being chi-square) and in Module 10's chi-square tests — the chi-square distribution isn't an arbitrary addition to the syllabus, it emerges naturally from squared normal variables."
             },
             {
                 "q": "What is the relationship between the normal and log-normal distributions?",
-                "a": "If $X$ is normally distributed, then $Y = e^X$ is log-normally distributed."
+                "a": "If $X$ is normally distributed, then $Y = e^X$ is log-normally distributed.",
+                "explain": "This is a genuinely useful modelling trick worth internalising: whenever a positive-only quantity (like an asset price or a claim amount) is naturally modelled as growing multiplicatively rather than additively, taking logs turns it back into something normally distributed, letting you reuse the whole normal-distribution toolkit."
             },
             {
                 "q": "What is the 'inverse transform method' used for?",
-                "a": "Generating a random sample from a distribution by applying the inverse of its CDF to a uniform(0,1) random variable."
+                "a": "Generating a random sample from a distribution by applying the inverse of its CDF to a uniform(0,1) random variable.",
+                "explain": "The logic: a CDF maps any value to a probability between 0 and 1; running that map BACKWARDS from a random uniform(0,1) number recovers a value distributed exactly according to the original CDF — this is the standard general-purpose recipe for simulating from almost any distribution whose inverse CDF can be found or approximated."
             },
             {
                 "q": "What is the $t$-distribution typically used for?",
-                "a": "Inference about a normal population's mean when the population variance is unknown and estimated from the sample."
+                "a": "Inference about a normal population's mean when the population variance is unknown and estimated from the sample.",
+                "explain": "This is only a preview here — the full justification (why estimating variance from the same sample requires a heavier-tailed distribution than normal) is developed properly in Module 7, but it's worth flagging now as one of the 'inference-focused' distributions this module introduces alongside the more general-purpose ones."
             },
             {
                 "q": "What is the $F$-distribution typically used for?",
-                "a": "Comparing the ratio of two sample variances from independent normal samples."
+                "a": "Comparing the ratio of two sample variances from independent normal samples.",
+                "explain": "Like the $t$-distribution, this gets its full treatment in Module 7 — worth noting now that it's built from a RATIO of two chi-square distributions (each themselves built from squared normals, per the earlier card), which is why comparing two variances naturally leads to an F-distributed test statistic."
             },
             {
                 "q": "Why is the exponential distribution described as 'memoryless'?",
-                "a": "The probability of waiting an additional time $t$ given no event has occurred yet is the same as waiting $t$ from the start."
+                "a": "The probability of waiting an additional time $t$ given no event has occurred yet is the same as waiting $t$ from the start.",
+                "explain": "This is a genuinely distinctive, almost counterintuitive property — worth testing your understanding with a concrete example: if claims arrive with exponentially-distributed waiting times, having already waited 5 years with no claim gives you NO extra information about how much longer you'll wait, which is a strong (and not always realistic) modelling assumption worth being aware of."
             },
             {
                 "q": "How would you generate a sample from an exponential distribution using the inverse transform method?",
-                "a": "$x = -\\frac{1}{\\lambda}\\ln(1-u)$, setting $u$ equal to the CDF and solving for $x$."
+                "a": "$x = -\\frac{1}{\\lambda}\\ln(1-u)$, setting $u$ equal to the CDF and solving for $x$.",
+                "explain": "This is a direct worked application of the inverse transform method described earlier in this module — the exponential's CDF, $F(x)=1-e^{-\\lambda x}$, is one of the few with a clean, easily-invertible closed form, which is exactly why it's the standard textbook example for teaching the technique."
             },
             {
                 "q": "What is the beta distribution commonly used to model?",
-                "a": "A random variable restricted to the interval $[0,1]$, such as a probability or proportion."
+                "a": "A random variable restricted to the interval $[0,1]$, such as a probability or proportion.",
+                "explain": "This bounded-support property is what makes the beta distribution the natural conjugate prior for a binomial probability in Bayesian statistics (Module 14) — since a probability itself must lie in $[0,1]$, a distribution that's ALSO naturally confined to that interval is the obvious choice for representing uncertainty about it."
             },
             {
                 "q": "What is the gamma distribution, and what is one common actuarial use?",
-                "a": "A flexible continuous distribution for positive values, often used to model claim sizes or waiting times; generalises the exponential and chi-square."
+                "a": "A flexible continuous distribution for positive values, often used to model claim sizes or waiting times; generalises the exponential and chi-square.",
+                "explain": "'Generalises' is the key word — both the exponential (a special case with one shape parameter fixed) and the chi-square (another special case) are gamma distributions in disguise, which is why the gamma is worth thinking of as a flexible family rather than yet another unrelated distribution to memorise separately."
             },
             {
                 "q": "How would statistical software typically be used to generate samples from these distributions?",
-                "a": "Using built-in random number generator functions for each distribution, implementing efficient/exact sampling algorithms internally."
+                "a": "Using built-in random number generator functions for each distribution, implementing efficient/exact sampling algorithms internally.",
+                "explain": "This closes the module with a practical note: while the inverse transform method (covered above) is the general PRINCIPLE, real software often uses more specialised, computationally efficient algorithms for common distributions — worth knowing the underlying principle exists even though you'd rarely hand-code it in practice."
             }
         ]
     },
@@ -3939,63 +3969,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the moment generating function (MGF) of a random variable $X$?",
-                "a": "$M_X(t) = E[e^{tX}]$"
+                "a": "$M_X(t) = E[e^{tX}]$",
+                "explain": "Think of the MGF as a single function that packages up EVERY moment of a distribution ($E[X]$, $E[X^2]$, $E[X^3]$, ...) at once — the payoff for this slightly abstract-looking definition comes in the next few cards, where differentiating it becomes a mechanical way to extract any moment you want."
             },
             {
                 "q": "How do you find the mean of $X$ from its MGF?",
-                "a": "$E[X] = M_X'(0)$, the first derivative of the MGF evaluated at $t=0$."
+                "a": "$E[X] = M_X'(0)$, the first derivative of the MGF evaluated at $t=0$.",
+                "explain": "This works because differentiating $E[e^{tX}]$ with respect to $t$ (and swapping the order of differentiation and expectation) brings down a factor of $X$ each time, so the first derivative evaluated at $t=0$ isolates exactly $E[X]$ — this is the mechanical trick that makes the whole MGF approach useful."
             },
             {
                 "q": "How do you find $E[X^2]$ from the MGF?",
-                "a": "$E[X^2] = M_X''(0)$, the second derivative of the MGF evaluated at $t=0$."
+                "a": "$E[X^2] = M_X''(0)$, the second derivative of the MGF evaluated at $t=0$.",
+                "explain": "Same trick as the mean, one more derivative deep — each additional derivative brings down another factor of $X$, so the $n$-th derivative at $t=0$ gives $E[X^n]$ in general, which is exactly the pattern the series-expansion card later in this module makes fully explicit."
             },
             {
                 "q": "What is the cumulant generating function (CGF)?",
-                "a": "$K_X(t) = \\ln M_X(t)$, the natural log of the moment generating function."
+                "a": "$K_X(t) = \\ln M_X(t)$, the natural log of the moment generating function.",
+                "explain": "Taking a log might look like an arbitrary extra step, but it has a genuinely useful payoff: it converts the MGF's PRODUCT property for independent sums (below) into a SUM property, which is generally easier to work with, and its derivatives give variance directly rather than needing a separate mean-squared correction."
             },
             {
                 "q": "How is the variance of $X$ obtained from the CGF?",
-                "a": "$\\text{Var}(X) = K_X''(0)$, the second derivative of the CGF evaluated at $t=0$."
+                "a": "$\\text{Var}(X) = K_X''(0)$, the second derivative of the CGF evaluated at $t=0$.",
+                "explain": "This is the CGF's headline advantage over the MGF: getting variance from the MGF needs TWO derivatives plus a subtraction ($M_X''(0)-[M_X'(0)]^2$), while the CGF gets there in one step — the log transform has effectively pre-done that subtraction for you."
             },
             {
                 "q": "What is a key property of MGFs for sums of independent random variables?",
-                "a": "The MGF of a sum of independent random variables equals the product of their individual MGFs."
+                "a": "The MGF of a sum of independent random variables equals the product of their individual MGFs.",
+                "explain": "This follows directly from independence: $E[e^{t(X+Y)}]=E[e^{tX}e^{tY}]=E[e^{tX}]E[e^{tY}]$ (the last step using independence to split the expectation of a product) — this single property is what makes MGFs such a powerful tool for combining independent risks, as the Poisson-sum card below demonstrates."
             },
             {
                 "q": "What is the corresponding property of CGFs for sums of independent random variables?",
-                "a": "The CGF of a sum of independent random variables equals the sum of their individual CGFs."
+                "a": "The CGF of a sum of independent random variables equals the sum of their individual CGFs.",
+                "explain": "This is just the MGF's product property from the card above, translated through the CGF's log transform ($\\ln$ of a product is a sum of logs) — it's precisely why the CGF is often more convenient for problems involving sums of several independent risks."
             },
             {
                 "q": "What is the MGF of a Poisson($\\lambda$) distribution?",
-                "a": "$M_X(t) = \\exp[\\lambda(e^t-1)]$"
+                "a": "$M_X(t) = \\exp[\\lambda(e^t-1)]$",
+                "explain": "Worth having this exact form memorised, since it's used directly in the 'sum of independent Poissons' card below — note it's already in the form $\\exp[\\text{something}]$, so its CGF (the log of this) is simply $\\lambda(e^t-1)$, a clean linear-in-$\\lambda$ expression."
             },
             {
                 "q": "How can generating functions help identify a distribution?",
-                "a": "If two random variables have the same MGF (where it exists), they have the same distribution."
+                "a": "If two random variables have the same MGF (where it exists), they have the same distribution.",
+                "explain": "This 'uniqueness' property is what makes the Poisson-sum trick below work as a genuine PROOF, not just a plausibility argument — showing a sum's MGF matches a known Poisson MGF is enough to conclude the sum IS Poisson-distributed, without needing to derive its distribution any other way."
             },
             {
                 "q": "How would you find moments of a distribution using a series expansion of the MGF?",
-                "a": "Expand $M_X(t)$ as a power series in $t$; the coefficient of $\\frac{t^n}{n!}$ gives $E[X^n]$."
+                "a": "Expand $M_X(t)$ as a power series in $t$; the coefficient of $\\frac{t^n}{n!}$ gives $E[X^n]$.",
+                "explain": "This generalises the derivative-based cards earlier in this module into a single unified statement — $M_X(t)=\\sum_{n=0}^\\infty E[X^n]\\frac{t^n}{n!}$, so reading off the coefficient of each power of $t$ hands you every moment at once, without differentiating term by term."
             },
             {
                 "q": "Why might the CGF be more convenient than the MGF for finding variance?",
-                "a": "Its second derivative directly gives the variance, without separately computing and combining the first and second moments."
+                "a": "Its second derivative directly gives the variance, without separately computing and combining the first and second moments.",
+                "explain": "Restates the module's earlier variance card as a general design principle — the CGF was specifically constructed (via the log transform) so that its low-order derivatives give CUMULANTS directly (mean, then variance, then a skewness-related quantity), each already 'centred', unlike the MGF's raw moments which need extra combination."
             },
             {
                 "q": "What does it mean if a distribution's MGF doesn't exist for any $t\\neq 0$?",
-                "a": "The distribution's moments may not all be finite (e.g. heavy-tailed distributions), so the MGF approach can't be used."
+                "a": "The distribution's moments may not all be finite (e.g. heavy-tailed distributions), so the MGF approach can't be used.",
+                "explain": "This is a genuine limitation worth knowing, not just a technicality — some real-world claim-severity distributions have such heavy tails that even the mean can be infinite (let alone higher moments), and for those, generating-function techniques simply aren't available; other tools (e.g. direct integration, or working with the characteristic function instead) are needed."
             },
             {
                 "q": "How can generating functions derive the distribution of a sum of independent Poisson random variables?",
-                "a": "Multiply their MGFs (or add their CGFs); the result matches a Poisson MGF/CGF with the summed rate."
+                "a": "Multiply their MGFs (or add their CGFs); the result matches a Poisson MGF/CGF with the summed rate.",
+                "explain": "A concrete worked instance of the whole module's machinery: multiplying $\\exp[\\lambda_1(e^t-1)]\\times\\exp[\\lambda_2(e^t-1)]=\\exp[(\\lambda_1+\\lambda_2)(e^t-1)]$ — recognisable as the MGF of a Poisson($\\lambda_1+\\lambda_2$) — which by the uniqueness property above proves the sum of independent Poissons is itself Poisson."
             },
             {
                 "q": "What is the third derivative of the CGF at zero related to?",
-                "a": "The third central moment (related to skewness) of the distribution."
+                "a": "The third central moment (related to skewness) of the distribution.",
+                "explain": "This continues the pattern established by the mean (first derivative) and variance (second derivative) cards — cumulants keep going: the third cumulant relates to skewness, the fourth to kurtosis, giving a systematic way to characterise a distribution's shape well beyond just its centre and spread."
             },
             {
                 "q": "Why are generating functions particularly useful in actuarial applications like aggregate claims modelling?",
-                "a": "They provide a convenient way to combine distributions and extract moments without complex direct integration/summation."
+                "a": "They provide a convenient way to combine distributions and extract moments without complex direct integration/summation.",
+                "explain": "This closes the module with its central practical payoff — aggregate claims (total claims from many individual policies) are naturally a SUM of many random variables, and the product/sum properties for independent MGFs/CGFs turn what would otherwise be a genuinely hard convolution problem into straightforward algebra."
             }
         ]
     },
