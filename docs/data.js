@@ -2597,63 +2597,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the three forms of the Efficient Markets Hypothesis?",
-                "a": "Weak form, semi-strong form, and strong form."
+                "a": "Weak form, semi-strong form, and strong form.",
+                "explain": "These three forms are nested, each a strictly stronger claim than the last — think of them as concentric circles: strong form implies semi-strong form implies weak form (but not the reverse), since each adds a wider category of information that prices must already reflect."
             },
             {
                 "q": "What does the weak form of EMH state?",
-                "a": "Current prices reflect all information contained in the historical price series — technical analysis cannot generate abnormal returns."
+                "a": "Current prices reflect all information contained in the historical price series — technical analysis cannot generate abnormal returns.",
+                "explain": "This is the narrowest, most defensible form of the hypothesis — it only rules out ONE specific strategy (technical analysis based on past prices), leaving open the possibility that fundamental analysis or inside information could still beat the market, which is exactly what the stronger forms address."
             },
             {
                 "q": "What does the semi-strong form of EMH state?",
-                "a": "Current prices reflect all publicly available information, not just historical prices — fundamental analysis of public information cannot generate abnormal returns."
+                "a": "Current prices reflect all publicly available information, not just historical prices — fundamental analysis of public information cannot generate abnormal returns.",
+                "explain": "This is the version most often tested empirically and most relevant to everyday investing — it directly rules out beating the market using company accounts, news, economic data, or any other information a member of the public could access."
             },
             {
                 "q": "What does the strong form of EMH state?",
-                "a": "Current prices reflect all information, public and private (inside) — even insider information cannot generate abnormal returns."
+                "a": "Current prices reflect all information, public and private (inside) — even insider information cannot generate abnormal returns.",
+                "explain": "This is the most extreme, least empirically supported form — the existence of insider trading laws (and the fact regulators actively prosecute it) is itself informal evidence that markets are generally NOT strong-form efficient, since insiders genuinely can and do profit from private information."
             },
             {
                 "q": "If markets are semi-strong form efficient, can an investor profit from insider information?",
-                "a": "Yes — semi-strong form only covers publicly available information, so private/inside information could still generate abnormal returns."
+                "a": "Yes — semi-strong form only covers publicly available information, so private/inside information could still generate abnormal returns.",
+                "explain": "This tests whether you understand the nesting structure from the opening card precisely — semi-strong form is a WEAKER claim than strong form, so it explicitly leaves room for exactly this possibility; only strong-form efficiency would rule out profiting from inside information."
             },
             {
                 "q": "What is one piece of evidence often cited against weak form efficiency?",
-                "a": "Momentum or mean-reversion patterns found in some studies of historical stock returns."
+                "a": "Momentum or mean-reversion patterns found in some studies of historical stock returns.",
+                "explain": "If historical price patterns genuinely predict future returns (even weakly), that directly contradicts weak-form efficiency's claim that past prices carry no exploitable information — worth noting these findings remain debated and don't necessarily survive transaction costs."
             },
             {
                 "q": "What is one piece of evidence often cited against semi-strong form efficiency?",
-                "a": "Anomalies such as the small-firm effect or post-earnings-announcement drift, where returns following public announcements are partly predictable."
+                "a": "Anomalies such as the small-firm effect or post-earnings-announcement drift, where returns following public announcements are partly predictable.",
+                "explain": "'Post-earnings-announcement drift' is a particularly striking anomaly worth remembering by name — if prices were truly semi-strong efficient, they'd jump to the new correct level immediately on an earnings announcement, not continue drifting in the same direction for weeks afterward as observed."
             },
             {
                 "q": "What is the 'rational expectations' hypothesis?",
-                "a": "The idea that market participants form expectations optimally, using all available information, without systematic bias."
+                "a": "The idea that market participants form expectations optimally, using all available information, without systematic bias.",
+                "explain": "This is a closely related but distinct idea from EMH itself — rational expectations is about HOW individuals form beliefs (unbiased, using all information), while EMH is a claim about the resulting PRICES; EMH is often built on rational-expectations-style reasoning about investor behaviour."
             },
             {
                 "q": "What is 'technical analysis'?",
-                "a": "Using patterns in historical prices/volumes to try to predict future price movements."
+                "a": "Using patterns in historical prices/volumes to try to predict future price movements.",
+                "explain": "This is precisely the strategy weak-form efficiency claims is futile — recognising this direct link (weak form specifically addresses technical analysis) is worth having automatic, since it's the most commonly tested pairing in this module."
             },
             {
                 "q": "What is 'fundamental analysis'?",
-                "a": "Using publicly available information (accounts, economic data, etc.) to estimate an asset's intrinsic value."
+                "a": "Using publicly available information (accounts, economic data, etc.) to estimate an asset's intrinsic value.",
+                "explain": "This is the strategy semi-strong form efficiency claims is futile — the direct pairing to remember is: weak form rules out technical analysis, semi-strong form additionally rules out fundamental analysis, strong form additionally rules out even inside information."
             },
             {
                 "q": "Why is testing for strong form efficiency inherently difficult?",
-                "a": "It requires observing outcomes from genuine inside information, which is hard to identify and often illegal to trade on."
+                "a": "It requires observing outcomes from genuine inside information, which is hard to identify and often illegal to trade on.",
+                "explain": "This is a genuinely practical research problem, not just a theoretical one — you'd need to find cases where someone traded on verified private information and measure whether they profited, but such trading is illegal and deliberately concealed, making clean empirical evidence scarce."
             },
             {
                 "q": "What does the 'joint hypothesis problem' refer to in testing market efficiency?",
-                "a": "Any test of market efficiency is also a test of the asset pricing model used to define 'abnormal' returns, so a rejection could mean either is wrong."
+                "a": "Any test of market efficiency is also a test of the asset pricing model used to define 'abnormal' returns, so a rejection could mean either is wrong.",
+                "explain": "This is a genuinely subtle and important methodological point worth understanding carefully — you can never test EMH in complete isolation, because 'abnormal return' only has meaning relative to SOME model of expected return (like CAPM, Module 6); if a study finds abnormal returns, it's ambiguous whether markets are inefficient or the pricing model used to judge 'normal' was simply wrong."
             },
             {
                 "q": "If a market is EMH-efficient, what happens to prices when new information arrives?",
-                "a": "Prices adjust quickly and accurately to reflect the new information."
+                "a": "Prices adjust quickly and accurately to reflect the new information.",
+                "explain": "This is the intuitive, mechanistic picture behind all three forms of the hypothesis — efficiency isn't really about prices being 'correct' at any instant so much as about them incorporating new information rapidly, with no persistent lag or systematic mispricing left to exploit."
             },
             {
                 "q": "Give one implication of weak form efficiency for investment strategy.",
-                "a": "There's no value in trying to predict future prices purely from past price patterns (technical analysis is futile)."
+                "a": "There's no value in trying to predict future prices purely from past price patterns (technical analysis is futile).",
+                "explain": "This restates the technical-analysis link from earlier in this module as a direct practical takeaway — worth having ready as a one-line answer to 'what does this mean for an investor', since exam questions often ask for the PRACTICAL implication, not just the bookwork definition."
             },
             {
                 "q": "Why is understanding EMH important for actuaries pricing financial guarantees?",
-                "a": "It underpins assumptions about how quickly and accurately markets price risk, which affects valuation and hedging assumptions."
+                "a": "It underpins assumptions about how quickly and accurately markets price risk, which affects valuation and hedging assumptions.",
+                "explain": "This closes the module with the professional 'why does this matter' — the whole risk-neutral pricing framework covered later in this module list (Modules 12-14) implicitly assumes markets are efficient enough that no-arbitrage arguments hold, so EMH is the philosophical foundation the rest of the derivatives-pricing syllabus quietly rests on."
             }
         ]
     },
@@ -2664,63 +2679,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'utility function'?",
-                "a": "A mathematical function representing an investor's preferences over different levels of wealth or outcomes."
+                "a": "A mathematical function representing an investor's preferences over different levels of wealth or outcomes.",
+                "explain": "This module gives formal mathematical shape to the informal 'risk-averse investor pays for insurance' intuition — everything in this module (concavity, the Arrow-Pratt measures, specific functional forms) exists to make that everyday intuition precise and calculable."
             },
             {
                 "q": "What is the expected utility theorem?",
-                "a": "Under certain axioms of rational choice, an investor's preferences over uncertain outcomes can be represented by maximising expected utility."
+                "a": "Under certain axioms of rational choice, an investor's preferences over uncertain outcomes can be represented by maximising expected utility.",
+                "explain": "This is the theoretical justification for why 'maximise expected utility' is a sensible decision rule at all — rather than just assuming it, the theorem shows that a small set of intuitively reasonable axioms about rational preference (transitivity, continuity, independence) together IMPLY that behaviour must take this expected-utility-maximising form."
             },
             {
                 "q": "What does 'non-satiation' mean for a utility function?",
-                "a": "More wealth is always preferred to less — the utility function is increasing (positive marginal utility)."
+                "a": "More wealth is always preferred to less — the utility function is increasing (positive marginal utility).",
+                "explain": "This is a minimal, almost universally assumed condition (few investors genuinely prefer less money) — note it says nothing about risk attitude at all, which is entirely determined by the function's CURVATURE, covered in the very next cards."
             },
             {
                 "q": "How is risk aversion characterised in terms of a utility function's shape?",
-                "a": "A risk-averse investor has a concave utility function (diminishing marginal utility of wealth)."
+                "a": "A risk-averse investor has a concave utility function (diminishing marginal utility of wealth).",
+                "explain": "The intuition: if each extra pound of wealth adds progressively LESS satisfaction (concavity/diminishing marginal utility), then the pain of losing a pound outweighs the pleasure of gaining one — which is exactly why a risk-averse investor prefers a certain outcome over a risky one with the same expected value."
             },
             {
                 "q": "What distinguishes risk aversion, risk neutrality, and risk seeking in terms of utility function curvature?",
-                "a": "Risk aversion is concave, risk neutrality is linear, and risk seeking is convex."
+                "a": "Risk aversion is concave, risk neutrality is linear, and risk seeking is convex.",
+                "explain": "This three-way classification is worth being able to sketch instantly — a linear (risk-neutral) utility function means an investor cares only about EXPECTED wealth, indifferent to risk entirely, while convex (risk-seeking) is the mirror image of concave, actually preferring the riskier gamble over a certain amount of the same expected value."
             },
             {
                 "q": "What does it mean for an investor to display 'declining absolute risk aversion'?",
-                "a": "They become less risk-averse (in absolute monetary terms) as their wealth increases."
+                "a": "They become less risk-averse (in absolute monetary terms) as their wealth increases.",
+                "explain": "This matches common intuition well: a billionaire is less troubled by the prospect of losing a fixed £1,000 than someone with modest savings, even though both might have the SAME relative (proportional) risk aversion — this distinction between absolute and relative risk aversion is exactly what the next two cards formalise."
             },
             {
                 "q": "How is the Arrow-Pratt measure of absolute risk aversion defined?",
-                "a": "$A(w) = -\\frac{u''(w)}{u'(w)}$"
+                "a": "$A(w) = -\\frac{u''(w)}{u'(w)}$",
+                "explain": "The intuition behind this specific ratio: $u''(w)$ (negative for a risk-averse concave function) captures the DEGREE of concavity, while dividing by $u'(w)$ removes the effect of simply rescaling the utility function (multiplying $u$ by a constant doesn't change an investor's actual preferences, but it would change $u''$ alone) — the negative sign makes $A(w)$ come out positive for risk-averse investors."
             },
             {
                 "q": "How is relative risk aversion defined?",
-                "a": "$R(w) = -\\frac{w\\,u''(w)}{u'(w)} = w\\,A(w)$"
+                "a": "$R(w) = -\\frac{w\\,u''(w)}{u'(w)} = w\\,A(w)$",
+                "explain": "This is simply absolute risk aversion scaled by wealth itself — relative risk aversion measures sensitivity to PROPORTIONAL changes in wealth (e.g. losing 10% of wealth) rather than fixed monetary amounts, which is often the more stable, realistic way to describe how risk attitude changes as someone gets richer."
             },
             {
                 "q": "What is a 'state-dependent' utility function?",
-                "a": "A utility function that depends not just on wealth but also on which state of the world has occurred."
+                "a": "A utility function that depends not just on wealth but also on which state of the world has occurred.",
+                "explain": "This relaxes the usual simplifying assumption that only the NUMBER (wealth level) matters — a realistic example: £10,000 might be worth more to you in a state where you're also badly injured (needing care) than in an otherwise-identical state where you're healthy, even at the same wealth level."
             },
             {
                 "q": "Give one commonly used utility function with constant relative risk aversion.",
-                "a": "The power utility function (isoelastic utility)."
+                "a": "The power utility function (isoelastic utility).",
+                "explain": "'Isoelastic' signals exactly what 'constant relative risk aversion' means mathematically — the elasticity of marginal utility with respect to wealth stays constant, which is why $R(w)$ works out to a fixed number rather than varying with $w$, unlike the general case."
             },
             {
                 "q": "Give one commonly used utility function with constant absolute risk aversion.",
-                "a": "The exponential utility function."
+                "a": "The exponential utility function.",
+                "explain": "Constant absolute risk aversion (CARA) is a genuinely strong assumption — it implies an investor would pay exactly the same absolute risk premium to avoid a given gamble regardless of whether they're already rich or poor, which is why exponential utility, despite its mathematical convenience, is often seen as less realistic than power utility for describing real investors."
             },
             {
                 "q": "How can utility theory be used to analyse a simple insurance problem?",
-                "a": "By comparing the expected utility of wealth with and without insurance, to see whether purchasing insurance increases expected utility."
+                "a": "By comparing the expected utility of wealth with and without insurance, to see whether purchasing insurance increases expected utility.",
+                "explain": "This is the module's central practical application — the technique is always the same: compute $E[u(\\text{wealth without insurance})]$ against $E[u(\\text{wealth with insurance, net of premium})]$, and a risk-averse investor should buy insurance whenever the latter is higher, even though insurance costs MORE than the expected claim on average."
             },
             {
                 "q": "Why might a risk-averse individual pay a premium for insurance greater than the expected loss?",
-                "a": "The certainty of a smaller, known loss gives higher expected utility than an uncertain, potentially large loss, even at a premium above the expected claim cost."
+                "a": "The certainty of a smaller, known loss gives higher expected utility than an uncertain, potentially large loss, even at a premium above the expected claim cost.",
+                "explain": "This is the concave-utility-function intuition from earlier in this module made fully concrete — it's precisely WHY insurance is a mutually beneficial trade at all: the insurer (large, diversified, closer to risk-neutral by pooling many risks) can profitably charge more than the expected loss, while the individual policyholder (concave utility, exposed to the FULL risk alone) is still genuinely better off paying it."
             },
             {
                 "q": "What is quadratic utility, and what is one criticism of it?",
-                "a": "$u(w) = w - bw^2$; it implies increasing absolute risk aversion and has a maximum, beyond which more wealth reduces utility — unrealistic."
+                "a": "$u(w) = w - bw^2$; it implies increasing absolute risk aversion and has a maximum, beyond which more wealth reduces utility — unrealistic.",
+                "explain": "'Increasing absolute risk aversion' directly contradicts the declining-absolute-risk-aversion intuition from earlier in this module (getting richer makes you MORE risk-averse under quadratic utility, the opposite of common sense) — despite this and the even stranger 'more wealth is bad beyond some point' property, quadratic utility remains popular because it connects neatly to mean-variance portfolio theory (Module 4)."
             },
             {
                 "q": "How does log utility ($u(w) = \\ln w$) behave in terms of risk aversion?",
-                "a": "It displays constant relative risk aversion equal to 1, a special case of the power utility family."
+                "a": "It displays constant relative risk aversion equal to 1, a special case of the power utility family.",
+                "explain": "This closes the module by tying log utility back to the power/isoelastic family from earlier — worth verifying directly: $u'(w)=1/w$, $u''(w)=-1/w^2$, so $R(w)=-w\\cdot(-1/w^2)/(1/w)=1$, a clean constant, confirming log utility is exactly the isoelastic family's special case where the constant relative risk aversion parameter equals 1."
             }
         ]
     },
@@ -2731,63 +2761,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the 'variance of return' as a risk measure?",
-                "a": "The expected squared deviation of the return from its mean, treating upside and downside deviations symmetrically."
+                "a": "The expected squared deviation of the return from its mean, treating upside and downside deviations symmetrically.",
+                "explain": "This module surveys alternatives to variance precisely because 'symmetric' is often the wrong assumption — Module 2's utility theory shows investors are fundamentally concerned with DOWNSIDE outcomes, so a risk measure that penalises a lucky upside surprise exactly as much as an equally-sized loss doesn't really match how risk-averse investors actually think."
             },
             {
                 "q": "What is 'downside semi-variance'?",
-                "a": "A risk measure only counting deviations below the mean (or a target return), ignoring upside variability."
+                "a": "A risk measure only counting deviations below the mean (or a target return), ignoring upside variability.",
+                "explain": "This is the direct fix for variance's symmetry problem flagged above — by construction it can never exceed ordinary variance, and it's arguably a more honest reflection of what a risk-averse investor actually dislikes: falling short, not doing better than expected."
             },
             {
                 "q": "What is a 'shortfall probability'?",
-                "a": "The probability that returns fall below some specified target or threshold level."
+                "a": "The probability that returns fall below some specified target or threshold level.",
+                "explain": "This is an even simpler downside-focused measure than semi-variance — it only asks 'how LIKELY is a bad outcome', saying nothing about how severe that bad outcome might be, which is precisely the gap VaR and TailVaR (below) are designed to address in different ways."
             },
             {
                 "q": "What is 'Value at Risk' (VaR)?",
-                "a": "The loss amount that will not be exceeded with a given confidence level over a specified time horizon."
+                "a": "The loss amount that will not be exceeded with a given confidence level over a specified time horizon.",
+                "explain": "VaR answers a specific, practical question: 'how bad could things get, 95% (or 99%) of the time' — but note it says nothing about the OTHER 5%, which is exactly the weakness the next couple of cards raise, and which TailVaR is built to fix."
             },
             {
                 "q": "What is 'TailVaR' (also called Expected Shortfall)?",
-                "a": "The expected loss, given that the loss exceeds the VaR threshold — the average of the losses in the worst tail of the distribution."
+                "a": "The expected loss, given that the loss exceeds the VaR threshold — the average of the losses in the worst tail of the distribution.",
+                "explain": "This directly answers VaR's blind spot: rather than just marking WHERE the bad 5% tail begins, TailVaR averages over what actually happens WITHIN that tail — two portfolios can share an identical VaR while having very different TailVaR, if one has a much longer, fatter tail of extreme losses beyond the threshold."
             },
             {
                 "q": "Give one criticism of VaR as a risk measure.",
-                "a": "It doesn't indicate how large losses could be beyond the threshold, and it isn't always sub-additive across a diversified portfolio."
+                "a": "It doesn't indicate how large losses could be beyond the threshold, and it isn't always sub-additive across a diversified portfolio.",
+                "explain": "The sub-additivity point is worth understanding concretely: a genuinely sensible risk measure should never say a COMBINED portfolio is riskier than the sum of its parts (diversification should help, or at worst do nothing) — but VaR can occasionally violate this, giving a perverse incentive to split up a portfolio rather than diversify it."
             },
             {
                 "q": "Why is TailVaR generally considered a better risk measure than VaR?",
-                "a": "It captures the severity of losses in the tail beyond the threshold, and satisfies coherent risk measure properties including sub-additivity."
+                "a": "It captures the severity of losses in the tail beyond the threshold, and satisfies coherent risk measure properties including sub-additivity.",
+                "explain": "'Coherent' is a specific technical term worth knowing — a coherent risk measure satisfies a short list of sensible mathematical axioms (including sub-additivity from the card above), and TailVaR is coherent while VaR generally is not, which is the formal version of 'TailVaR behaves better'."
             },
             {
                 "q": "How does the choice of risk measure relate to an investor's utility function?",
-                "a": "Risk measures implicitly assume something about what an investor cares about, which should be consistent with the shape of their utility function."
+                "a": "Risk measures implicitly assume something about what an investor cares about, which should be consistent with the shape of their utility function.",
+                "explain": "This connects the whole module back to Module 2 — variance implicitly assumes a quadratic-utility-style symmetric concern for risk, while semi-variance/shortfall-probability/VaR/TailVaR each implicitly assume a more asymmetric, downside-focused concern, closer to how most concave utility functions actually behave."
             },
             {
                 "q": "Why might variance be a poor risk measure for a skewed return distribution?",
-                "a": "It treats upside and downside deviations symmetrically, but investors typically care more about downside risk for skewed distributions."
+                "a": "It treats upside and downside deviations symmetrically, but investors typically care more about downside risk for skewed distributions.",
+                "explain": "This restates the module's opening motivation with 'skewed' made explicit — for a SYMMETRIC distribution, variance and semi-variance actually rank risks fairly similarly (semi-variance is roughly half of variance either way), but for a skewed distribution the two measures can disagree meaningfully, exactly when the distinction matters most."
             },
             {
                 "q": "How does the thickness of a return distribution's tails affect risk assessment?",
-                "a": "Fat-tailed distributions have a higher chance of extreme outcomes than the normal distribution suggests, understating true tail risk if ignored."
+                "a": "Fat-tailed distributions have a higher chance of extreme outcomes than the normal distribution suggests, understating true tail risk if ignored.",
+                "explain": "This is a direct preview of Module 9's empirical evidence against the log-normal model (fat tails, excess kurtosis) — a risk measure calculated assuming normality can meaningfully understate real tail risk, which is exactly why understanding a distribution's actual tail behaviour matters before trusting any risk measure derived from it."
             },
             {
                 "q": "How can insurance companies help reduce or remove risk for policyholders?",
-                "a": "By pooling many independent risks, diversifying away idiosyncratic risk, and charging a premium to cover expected cost plus a margin."
+                "a": "By pooling many independent risks, diversifying away idiosyncratic risk, and charging a premium to cover expected cost plus a margin.",
+                "explain": "This is Module 5's diversifiable/systematic risk distinction previewed in an insurance context — pooling works precisely because individual policyholders' claim risks are largely independent (idiosyncratic), so the LAW OF LARGE NUMBERS shrinks the insurer's relative uncertainty about the total, even though each individual policyholder's own risk remains fully undiversified."
             },
             {
                 "q": "What is 'moral hazard'?",
-                "a": "The tendency for a party to take on more risk (or behave less carefully) once they are insured against the consequences of that risk."
+                "a": "The tendency for a party to take on more risk (or behave less carefully) once they are insured against the consequences of that risk.",
+                "explain": "This is a genuine practical limitation of the insurance-pooling story above — insurance changes BEHAVIOUR, not just who bears a fixed risk, and insurers must price and design contracts (excesses, no-claims discounts) to manage this incentive problem rather than assuming risk stays constant once cover is in place."
             },
             {
                 "q": "What is 'adverse selection'?",
-                "a": "The tendency for those most likely to claim (highest risk) to be more likely to seek insurance, if the insurer cannot fully distinguish risk levels."
+                "a": "The tendency for those most likely to claim (highest risk) to be more likely to seek insurance, if the insurer cannot fully distinguish risk levels.",
+                "explain": "This is a genuinely different problem from moral hazard, worth keeping distinct — moral hazard is about behaviour changing AFTER buying insurance; adverse selection is about WHO chooses to buy insurance in the first place, driven by asymmetric information the insurer doesn't have but the applicant does."
             },
             {
                 "q": "How might an insurer mitigate adverse selection?",
-                "a": "Through underwriting (using available information to price risk accurately) or by requiring evidence of insurability."
+                "a": "Through underwriting (using available information to price risk accurately) or by requiring evidence of insurability.",
+                "explain": "This is the direct practical fix for the information asymmetry underlying adverse selection above — the more accurately an insurer can classify applicants by their true risk (via underwriting questions, medical evidence, etc.), the less scope there is for high-risk applicants to hide among a pool priced for average risk."
             },
             {
                 "q": "How would you compare two investment opportunities using multiple risk measures at once?",
-                "a": "Calculate each measure for both opportunities and compare — different measures can give different rankings."
+                "a": "Calculate each measure for both opportunities and compare — different measures can give different rankings.",
+                "explain": "This closes the module with a genuinely important practical caution — since every risk measure covered here implicitly emphasises a different aspect of risk (symmetric spread, downside-only, tail severity), two investments can rank differently depending which measure you use, so a robust comparison should check several, not rely on just one."
             }
         ]
     },
