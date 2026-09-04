@@ -2431,63 +2431,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is a 'profit vector' in profit testing?",
-                "a": "The sequence of expected end-of-year profits (per policy in force at the start of each year) projected over the policy's term."
+                "a": "The sequence of expected end-of-year profits (per policy in force at the start of each year) projected over the policy's term.",
+                "explain": "This module is where every earlier CM1 technique finally comes together into one practical tool \\u2014 the profit vector is built year by year using exactly the cashflow items listed in a card below (premiums, investment income, expenses, benefit cost, reserve movements), all concepts you've already met individually since Module 17."
             },
             {
                 "q": "What is a 'profit signature'?",
-                "a": "The profit vector adjusted to allow for the probability of the policy still being in force at each duration \\u2014 profit per policy originally issued."
+                "a": "The profit vector adjusted to allow for the probability of the policy still being in force at each duration \\u2014 profit per policy originally issued.",
+                "explain": "This is the crucial distinction from the raw profit vector: the vector's figures are 'per policy IN FORCE that year' (a shrinking group as people die/lapse), while the signature restates everything 'per policy ORIGINALLY SOLD' \\u2014 you need the signature, not the vector, to get a true picture of total portfolio profitability."
             },
             {
                 "q": "How do you convert a profit vector into a profit signature?",
-                "a": "Multiply each year's profit (per policy in force at the start of that year) by the probability of being in force at the start of that year."
+                "a": "Multiply each year's profit (per policy in force at the start of that year) by the probability of being in force at the start of that year.",
+                "explain": "This is Module 12's survival probability machinery ($_tp_x$) applied directly to policy persistency \\u2014 the same 'weight by probability of still being there' logic used throughout the whole life-contingencies syllabus, just applied to a cashflow projection instead of a single lump-sum benefit."
             },
             {
                 "q": "What is the Net Present Value (NPV) of a policy, in the profit testing context?",
-                "a": "The present value of the profit signature, discounted at the insurer's chosen risk discount rate."
+                "a": "The present value of the profit signature, discounted at the insurer's chosen risk discount rate.",
+                "explain": "This is Module 9's NPV concept, reapplied here to a stream of yearly PROFITS rather than raw project cashflows \\u2014 discount each year's profit signature figure back to today using Module 4's technique, then sum, exactly the same present-value-of-a-cashflow-series approach used throughout the whole course."
             },
             {
                 "q": "What is the 'profit margin' of a policy?",
-                "a": "The NPV of the profit signature expressed as a percentage of the present value of premium income (or another chosen base)."
+                "a": "The NPV of the profit signature expressed as a percentage of the present value of premium income (or another chosen base).",
+                "explain": "This turns an absolute pound figure (NPV) into a relative, comparable percentage \\u2014 useful because a large policy and a small policy might have similar profit MARGINS even though their absolute NPVs differ hugely, making margin the more natural metric for comparing profitability across products of different sizes."
             },
             {
                 "q": "What cashflows are typically included when profit testing a policy for a given year?",
-                "a": "Premium income, investment income on reserves/assets, expenses, cost of any benefit, and the increase in reserve required."
+                "a": "Premium income, investment income on reserves/assets, expenses, cost of any benefit, and the increase in reserve required.",
+                "explain": "This list is worth memorising as the standard five-item recipe for building a profit vector row by row \\u2014 note it's essentially Module 18's recursive reserve relationship rearranged: instead of solving for the closing reserve, you're now solving for the leftover PROFIT after that year's reserve requirement has been funded."
             },
             {
                 "q": "How is profit testing used to determine an appropriate premium?",
-                "a": "The premium can be varied until the resulting NPV (or profit margin) meets a target set by the insurer, rather than relying solely on the equivalence principle."
+                "a": "The premium can be varied until the resulting NPV (or profit margin) meets a target set by the insurer, rather than relying solely on the equivalence principle.",
+                "explain": "This is a genuinely different philosophy from Module 17's equivalence principle (premium = present value of costs, giving exactly zero expected profit by construction) \\u2014 profit testing instead lets the insurer set a POSITIVE profit target and solve for whatever premium achieves it, which is closer to how premiums are actually set commercially."
             },
             {
                 "q": "What is the 'risk discount rate' used in profit testing?",
-                "a": "The rate used to discount the profit signature to present value, often set higher than the risk-free rate to reflect the riskiness of the profit cashflows."
+                "a": "The rate used to discount the profit signature to present value, often set higher than the risk-free rate to reflect the riskiness of the profit cashflows.",
+                "explain": "This is Module 4's 'discount riskier cashflows at a higher rate' idea, now given a specific name and a specific application \\u2014 profit cashflows are inherently uncertain (they depend on actual mortality, lapses, expenses all matching assumptions), so a prudent insurer discounts them more heavily than a genuinely risk-free cashflow."
             },
             {
                 "q": "Why might profit testing use a different (higher) discount rate than the interest rate assumed for reserving?",
-                "a": "To build in a margin for risk/uncertainty in the profit projections, reflecting that actual experience may differ from assumptions."
+                "a": "To build in a margin for risk/uncertainty in the profit projections, reflecting that actual experience may differ from assumptions.",
+                "explain": "This highlights a subtlety worth keeping straight: the reserving basis and the profit-testing (risk) discount rate serve DIFFERENT purposes and can legitimately differ \\u2014 reserving assumptions aim for prudent liability valuation, while the risk discount rate specifically prices in the uncertainty of the PROFIT stream itself."
             },
             {
                 "q": "How does profit testing show the effect of setting up reserves each year?",
-                "a": "The increase in reserve required each year (funded from that year's cashflows) reduces that year's profit."
+                "a": "The increase in reserve required each year (funded from that year's cashflows) reduces that year's profit.",
+                "explain": "This is exactly why a policy can show a first-year LOSS despite being profitable overall (see the card below) \\u2014 building up a reserve isn't really a 'cost', it's setting money aside for later, but it still shows up as reducing THAT YEAR's profit figure, even though it reappears as later years' profit when the reserve is eventually released."
             },
             {
                 "q": "How could an insurer use profit testing to compare two different premium bases for the same product?",
-                "a": "Run the profit test under each premium basis and compare the resulting NPV/profit margin, choosing the basis that best meets profitability targets."
+                "a": "Run the profit test under each premium basis and compare the resulting NPV/profit margin, choosing the basis that best meets profitability targets.",
+                "explain": "This is a direct, practical application of the 'vary the premium until NPV meets a target' technique from earlier in this module \\u2014 rather than a single premium calculation, profit testing lets an insurer efficiently compare multiple candidate premium structures side by side before choosing which to actually launch."
             },
             {
                 "q": "What does it mean if a policy's profit vector shows a loss in its first year but profits in later years?",
-                "a": "This is common where initial expenses exceed first-year premium income, but the policy becomes profitable later as expenses fall and margins are earned."
+                "a": "This is common where initial expenses exceed first-year premium income, but the policy becomes profitable later as expenses fall and margins are earned.",
+                "explain": "This is a genuinely common, realistic pattern worth recognising \\u2014 it connects directly to Module 17's initial-vs-renewal expense split: heavy upfront costs (underwriting, commission, admin setup) often exceed what one year's premium alone can cover, requiring the policy to run for several years before cumulative profit turns positive."
             },
             {
                 "q": "Why is the probability of a policy remaining in force important to profit testing (via the profit signature)?",
-                "a": "Because expected total profit depends on how many of the original policies are still generating profit cashflows each year."
+                "a": "Because expected total profit depends on how many of the original policies are still generating profit cashflows each year.",
+                "explain": "This restates why the profit VECTOR alone is misleading, and the SIGNATURE (weighted by persistency probability) is what actually matters \\u2014 a policy showing huge per-policy profit in year 20 is much less valuable to the insurer's bottom line if very few of the original cohort are still in force by then."
             },
             {
                 "q": "What could cause profit testing results to change even if the premium and product design stay the same?",
-                "a": "A change in assumptions (e.g. mortality, expenses, lapses, investment returns) used for the projection."
+                "a": "A change in assumptions (e.g. mortality, expenses, lapses, investment returns) used for the projection.",
+                "explain": "This is the profit-testing analogue of Module 21's mortality profit concept \\u2014 the PROJECTED profit test result is only ever as good as its assumptions; actual experience diverging from those assumptions is exactly what generates real profit/loss relative to what was originally projected at pricing."
             },
             {
                 "q": "How would profit testing be adapted for a unit-linked contract, compared to a conventional contract?",
-                "a": "It would separately project unit fund growth and non-unit fund cashflows, summing the non-unit profit signature much as for a conventional contract."
+                "a": "It would separately project unit fund growth and non-unit fund cashflows, summing the non-unit profit signature much as for a conventional contract.",
+                "explain": "This is Module 23's unit/non-unit split feeding directly into this module's projection technique \\u2014 the profit vector for a unit-linked contract is built almost entirely from the NON-UNIT fund's cashflows (charges collected minus expenses/benefit costs), since the unit fund itself belongs to the policyholder and isn't insurer profit at all."
             }
         ]
     },
@@ -2498,63 +2513,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "How can gross premium reserves be computed using a cashflow projection model, rather than the standard prospective formula?",
-                "a": "By projecting expected future cashflows year by year and finding the reserve needed at each duration so that, with future premiums, it exactly covers future benefits and expenses."
+                "a": "By projecting expected future cashflows year by year and finding the reserve needed at each duration so that, with future premiums, it exactly covers future benefits and expenses.",
+                "explain": "This module closes the loop back to Module 18: the prospective reserve formula and this cashflow-projection approach answer the SAME question ('what reserve is needed at this point') using two different techniques \\u2014 a closed-form equation of value versus a year-by-year projected build-up, which the validation card below confirms should agree."
             },
             {
                 "q": "Why might an insurer calculate reserves via profit testing rather than the standard prospective/retrospective formulas?",
-                "a": "It naturally extends to complex products (e.g. unit-linked, multiple decrements) where a simple closed-form reserve formula may not exist."
+                "a": "It naturally extends to complex products (e.g. unit-linked, multiple decrements) where a simple closed-form reserve formula may not exist.",
+                "explain": "This is the module's core motivation \\u2014 Module 18's clean $A_x$/$\\ddot{a}_x$-based formulas work beautifully for simple conventional products, but for something like a unit-linked contract (Module 23) with interacting charges and investment performance, there's often no tidy closed-form expression, so the flexible year-by-year projection approach becomes essential rather than optional."
             },
             {
                 "q": "How does including reserves in a profit test change the year-by-year profit signature compared to ignoring reserves?",
-                "a": "It smooths profit emergence \\u2014 reserves capture money that would otherwise appear as an early profit, releasing it as the policy progresses."
+                "a": "It smooths profit emergence \\u2014 reserves capture money that would otherwise appear as an early profit, releasing it as the policy progresses.",
+                "explain": "This directly connects to Module 24's 'reduces first-year profit' point \\u2014 without reserving, all the early premium 'surplus' (before mortality risk really bites) would show up as a large early profit spike; reserving smooths that spike out into a more level pattern of profit emergence over the policy's life, more realistically reflecting when risk is actually being carried."
             },
             {
                 "q": "What is the effect on first-year profit of holding a reserve at the end of the first year (compared to holding none)?",
-                "a": "First-year profit is reduced, since the increase in reserve is deducted from that year's cashflow."
+                "a": "First-year profit is reduced, since the increase in reserve is deducted from that year's cashflow.",
+                "explain": "This restates Module 24's profit-vector construction rule ('increase in reserve required' is one of the five standard cashflow items) \\u2014 worth remembering as a genuinely mechanical, formulaic effect: whatever reserve increase you choose to hold, it comes STRAIGHT out of that year's profit figure, pound for pound."
             },
             {
                 "q": "How would 'zeroising' affect a unit-linked policy's projected profit signature?",
-                "a": "It removes any projected negative cashflows in later years (by holding a sufficient non-unit reserve upfront), though it reduces earlier profit to fund the reserve."
+                "a": "It removes any projected negative cashflows in later years (by holding a sufficient non-unit reserve upfront), though it reduces earlier profit to fund the reserve.",
+                "explain": "This is Module 23's zeroising concept fully worked through as a profit-signature effect \\u2014 note the genuine trade-off: eliminating a future problem (negative cashflows) always costs something NOW (lower earlier profit to fund the pre-emptive reserve), never a free lunch."
             },
             {
                 "q": "Why is zeroising particularly relevant to unit-linked products?",
-                "a": "Because unit-linked non-unit cashflows can naturally be negative in some future years, which a reserve can pre-fund to avoid future losses."
+                "a": "Because unit-linked non-unit cashflows can naturally be negative in some future years, which a reserve can pre-fund to avoid future losses.",
+                "explain": "This restates Module 23's point about market downturns increasing sum-at-risk while reducing charge income \\u2014 conventional products rarely swing into genuinely negative yearly cashflow the way a unit-linked non-unit fund can, which is exactly why zeroising is a distinctively unit-linked reserving technique rather than a universal one."
             },
             {
                 "q": "What information do you need to determine the required non-unit reserve at a given duration to zeroise future cashflows?",
-                "a": "The projected non-unit cashflows in all future years, discounted appropriately, identifying the reserve needed so no future year's cashflow is negative."
+                "a": "The projected non-unit cashflows in all future years, discounted appropriately, identifying the reserve needed so no future year's cashflow is negative.",
+                "explain": "In practice this means finding the WORST (most negative) discounted cumulative future cashflow position across all future years, and reserving enough today to cover exactly that worst point \\u2014 a genuinely different calculation from a standard prospective reserve, which just needs one overall net present value, not a year-by-year worst-case scan."
             },
             {
                 "q": "How does the reserving basis differ from the pricing/profit-testing basis, potentially?",
-                "a": "The reserving basis is often chosen more prudently (e.g. more cautious mortality, lower interest) than the best-estimate assumptions used for profit testing."
+                "a": "The reserving basis is often chosen more prudently (e.g. more cautious mortality, lower interest) than the best-estimate assumptions used for profit testing.",
+                "explain": "This restates Module 18's net-premium-reserve prudence rationale in the profit-testing context \\u2014 pricing/profit testing typically wants realistic, BEST-ESTIMATE assumptions (to see genuine expected profitability), while reserving deliberately wants CAUTIOUS assumptions (to ensure sufficient assets are held even if experience is worse than expected)."
             },
             {
                 "q": "Why might a reserve calculated via cashflow projection differ from one calculated via the standard prospective formula, even for a simple product?",
-                "a": "If different (e.g. more prudent) assumptions are used for reserving than for the profit-testing projection, the resulting reserve figures would differ."
+                "a": "If different (e.g. more prudent) assumptions are used for reserving than for the profit-testing projection, the resulting reserve figures would differ.",
+                "explain": "This is the resolution to an apparent puzzle: shouldn't the two methods always agree, per the very first card of this module? They only agree when using the SAME assumptions throughout (exactly Module 18's equivalence condition) \\u2014 use different assumptions for the two calculations, and they will genuinely diverge, which is precisely what happens in practice when reserving and pricing bases differ."
             },
             {
                 "q": "What role does the recursive reserve relationship play in profit testing calculations?",
-                "a": "It's effectively the mechanism by which reserve movements (increase in reserve, release on death) are built into each year's profit cashflow in the projection."
+                "a": "It's effectively the mechanism by which reserve movements (increase in reserve, release on death) are built into each year's profit cashflow in the projection.",
+                "explain": "This makes explicit a connection implicit throughout this module and Module 24 \\u2014 Module 18's recursive reserve formula and Module 24's profit-vector construction are really the SAME underlying year-by-year bookkeeping equation, just solved for different unknowns (the closing reserve, versus the leftover profit after that reserve is funded)."
             },
             {
                 "q": "How would gross premium reserves computed via profit testing be validated against a formula-based reserve?",
-                "a": "By checking that, under the same reserving assumptions, the reserve implied by the projected cashflows matches the standard prospective reserve formula result."
+                "a": "By checking that, under the same reserving assumptions, the reserve implied by the projected cashflows matches the standard prospective reserve formula result.",
+                "explain": "This is a genuinely useful exam and practical technique \\u2014 for a simple product where BOTH methods apply, calculating the reserve both ways and confirming they match is an excellent way to sanity-check a cashflow projection model before trusting it for a more complex product where the formula-based check isn't available."
             },
             {
                 "q": "What happens to the profit signature of a policy if reserves are set higher than the minimum needed to avoid future losses?",
-                "a": "Earlier profit is further reduced, and later profit correspondingly increases as the excess reserve is released."
+                "a": "Earlier profit is further reduced, and later profit correspondingly increases as the excess reserve is released.",
+                "explain": "This generalises the 'first-year profit reduced by reserve increase' card from earlier in this module \\u2014 the total profit over the WHOLE policy term is unaffected by how much extra reserve is held (it's just moved between years), which is a useful invariant: reserving choices reshuffle WHEN profit emerges, not the total AMOUNT of profit."
             },
             {
                 "q": "Why is it important for reserves derived via profit testing to be non-negative at each duration for a unit-linked contract?",
-                "a": "A negative non-unit reserve would imply the insurer expects to extract more value than it has set aside, leaving it unable to cover a future shortfall."
+                "a": "A negative non-unit reserve would imply the insurer expects to extract more value than it has set aside, leaving it unable to cover a future shortfall.",
+                "explain": "This is precisely the problem zeroising (earlier in this module) exists to solve \\u2014 a negative reserve is effectively a promise to pay out of money you don't have yet, which is imprudent and typically not permitted; zeroising is the standard fix, pre-funding today whatever is needed to keep every future reserve at or above zero."
             },
             {
                 "q": "How does the choice of risk discount rate in profit testing interact with reserve calculations?",
-                "a": "The risk discount rate values the emerging profit signature (after reserving), but the reserving calculation itself typically uses separate, often more prudent, assumptions."
+                "a": "The risk discount rate values the emerging profit signature (after reserving), but the reserving calculation itself typically uses separate, often more prudent, assumptions.",
+                "explain": "This closes the loop on the two-different-bases theme running through this module \\u2014 worth keeping the two calculations conceptually separate: FIRST decide reserves using a prudent reserving basis, THEN value the resulting (post-reserving) profit stream using the risk discount rate, two distinct steps that shouldn't be conflated."
             },
             {
                 "q": "What's the overall link between profit testing and reserving aspects of profit testing?",
-                "a": "Profit testing introduces the cashflow projection technique itself; reserving aspects apply and extend that same technique specifically to derive and validate reserves, including zeroising for unit-linked contracts."
+                "a": "Profit testing introduces the cashflow projection technique itself; reserving aspects apply and extend that same technique specifically to derive and validate reserves, including zeroising for unit-linked contracts.",
+                "explain": "This closes out not just this module but the ENTIRE CM1 syllabus \\u2014 Modules 1-11 built the interest-theory toolkit, Modules 12-21 built the life-contingent probability toolkit, and Modules 22-25 show how both combine into the practical, real-world techniques (multi-state models, cashflow projection, profit testing, reserving) that actuaries actually use day to day."
             }
         ]
     }
