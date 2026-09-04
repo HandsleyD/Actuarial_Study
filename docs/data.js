@@ -5553,63 +5553,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What are the two states in the basic two-state Markov model of mortality?",
-                "a": "'Alive' and 'Dead.'"
+                "a": "'Alive' and 'Dead.'",
+                "explain": "This module is the bridge between Module 2's discrete-time chains and Modules 4-5's general continuous-time jump processes — the two-state model is the SIMPLEST possible continuous-time Markov jump process, with just one absorbing transition, making it the natural place to introduce continuous-time ideas before generalising."
             },
             {
                 "q": "What is the transition intensity $\\mu$ in the two-state model?",
-                "a": "The instantaneous rate (force of mortality) of transitioning from alive to dead."
+                "a": "The instantaneous rate (force of mortality) of transitioning from alive to dead.",
+                "explain": "This is exactly CM1's force of mortality $\\mu_x$ (Module 12 there) renamed and reframed in continuous-time Markov language — recognising them as the same underlying quantity, just viewed through two different conceptual lenses (deterministic survival model vs stochastic process), is genuinely useful for both subjects."
             },
             {
                 "q": "How does the two-state Markov model relate to the random lifetime model?",
-                "a": "It's an alternative formulation giving equivalent results for a single decrement — mortality only, no competing risks."
+                "a": "It's an alternative formulation giving equivalent results for a single decrement — mortality only, no competing risks.",
+                "explain": "This is worth appreciating as a genuine 'same destination, different route' result — CM1's survival-function approach and this module's Markov-process approach produce IDENTICAL numerical answers for simple single-decrement mortality, but the Markov framework generalises far more naturally to multiple states and competing risks (Modules 4-5), which is exactly why CS2 introduces this alternative formulation."
             },
             {
                 "q": "What is the probability of remaining in the 'alive' state for $t$ years, under a constant transition intensity $\\mu$?",
-                "a": "$e^{-\\mu t}$"
+                "a": "$e^{-\\mu t}$",
+                "explain": "This is exactly CM1's $_tp_x=\\exp(-\\int_0^t\\mu_{x+s}ds)$ collapsed to the constant-intensity special case, and it's precisely the same $e^{-\\lambda t}$ survival formula that recurs throughout CS2 (Poisson processes below, and CM2's ruin theory/credit risk) — a single mathematical pattern appearing across every 'constant hazard' context."
             },
             {
                 "q": "What is a 'Poisson process'?",
-                "a": "A counting process where events occur independently over time at a constant average rate $\\lambda$, with the number of events in any interval Poisson distributed."
+                "a": "A counting process where events occur independently over time at a constant average rate $\\lambda$, with the number of events in any interval Poisson distributed.",
+                "explain": "This is precisely CM2 Module 7's Poisson process, reused here — worth recognising it as the SAME construction studied from two angles: CM2 uses it to model claim arrivals for ruin theory, while this module connects it directly to the two-state mortality model, as the very next few cards make explicit."
             },
             {
                 "q": "What is the distribution of the number of events of a Poisson process in an interval of length $t$?",
-                "a": "Poisson with mean $\\lambda t$."
+                "a": "Poisson with mean $\\lambda t$.",
+                "explain": "This restates CS1 Module 2's Poisson-process-to-Poisson-distribution link directly in this module's context — the same relationship recurs across CS1, CM2 and CS2 precisely because the Poisson process is one of the most universally useful building blocks in actuarial modelling."
             },
             {
                 "q": "What is the distribution of the time between consecutive events (inter-event times) of a Poisson process?",
-                "a": "Exponential with rate $\\lambda$."
+                "a": "Exponential with rate $\\lambda$.",
+                "explain": "This is the SAME exponential-holding-time result that underlies the two-state model's constant-intensity survival formula above — a Poisson process's inter-event gaps and a two-state model's time until the alive-to-dead transition are mathematically identical objects, both exponentially distributed with rate equal to the constant intensity."
             },
             {
                 "q": "What is the distribution of the waiting time until the $k$-th event of a Poisson process?",
-                "a": "Gamma (Erlang) distribution with shape $k$ and rate $\\lambda$."
+                "a": "Gamma (Erlang) distribution with shape $k$ and rate $\\lambda$.",
+                "explain": "This connects directly to CS1 Module 2's gamma distribution card, which specifically flagged the gamma as 'generalising the exponential' — waiting for the FIRST event is exponential (per the card above), and waiting for the $k$-th event is exactly $k$ independent exponential waits summed together, which is precisely what a gamma distribution with integer shape $k$ represents."
             },
             {
                 "q": "What key property do the increments of a Poisson process have?",
-                "a": "Independent increments — the number of events in non-overlapping intervals are independent of each other."
+                "a": "Independent increments — the number of events in non-overlapping intervals are independent of each other.",
+                "explain": "This is exactly the same independent-increments property that defines Brownian motion in CM2 Module 7 — both are 'independent increment processes', just one counts discrete events (Poisson) and the other models continuous fluctuation (Brownian motion), a useful structural parallel across the two subjects."
             },
             {
                 "q": "How is the Poisson process related to the Poisson model of mortality?",
-                "a": "Deaths under a constant-intensity two-state model can be viewed as a Poisson process with rate equal to the transition intensity."
+                "a": "Deaths under a constant-intensity two-state model can be viewed as a Poisson process with rate equal to the transition intensity.",
+                "explain": "This makes the connection flagged throughout this module fully explicit — for a GROUP of lives each transitioning alive-to-dead at the same constant intensity $\\mu$, the resulting stream of death events across the group behaves exactly like a Poisson process with rate related to $\\mu$ and the group size, unifying the individual-level survival model and the group-level event-counting model."
             },
             {
                 "q": "What is the key assumption of 'constant transition intensity' in these simple models?",
-                "a": "The rate of transitioning between states doesn't change over time (or age), giving exponential holding times."
+                "a": "The rate of transitioning between states doesn't change over time (or age), giving exponential holding times.",
+                "explain": "This is the module's headline simplifying assumption, worth flagging as the DIRECT SET-UP for Module 5's whole existence — real mortality genuinely varies with age (a point CM1 makes repeatedly), so this constant-intensity assumption is a deliberate first approximation that Module 5's time-inhomogeneous extension exists specifically to relax."
             },
             {
                 "q": "How would you derive the maximum likelihood estimator of $\\mu$ in the two-state model?",
-                "a": "$\\hat\\mu = \\frac{\\text{number of deaths observed}}{\\text{total waiting time (central exposed to risk) observed}}$"
+                "a": "$\\hat\\mu = \\frac{\\text{number of deaths observed}}{\\text{total waiting time (central exposed to risk) observed}}$",
+                "explain": "This is exactly CM1's mortality estimation formula (from the earlier CM1 study material) derived here from first principles via the Poisson-process likelihood — it directly previews Module 9's 'exposed to risk' topic, which develops this exact estimator (and its underlying principle of correspondence) in much greater depth."
             },
             {
                 "q": "What is the asymptotic distribution of the maximum likelihood estimator of a constant transition intensity?",
-                "a": "Approximately normal, with variance related to the inverse of the total exposure/information observed."
+                "a": "Approximately normal, with variance related to the inverse of the total exposure/information observed.",
+                "explain": "This is CS1 Module 8's general MLE large-sample-normality result, applied specifically to this transition-intensity estimator — more exposure (more waiting time observed) gives a more precise estimate, exactly the same 'more data reduces variance' pattern seen throughout CS1's estimation theory."
             },
             {
                 "q": "Why is the two-state model considered a special/simple case of the general Markov jump process framework?",
-                "a": "It has only two states and a single constant intensity, whereas general Markov jump processes can have many states and time-varying intensities."
+                "a": "It has only two states and a single constant intensity, whereas general Markov jump processes can have many states and time-varying intensities.",
+                "explain": "This closes the module by explicitly positioning it within the bigger CS2 picture — everything covered here (the two-state model, its survival formula, its MLE) is a special case of Module 4's general time-homogeneous framework, with the number of states set to 2 and only one possible transition direction (alive to dead, no return)."
             },
             {
                 "q": "How would the Poisson process be used to model claim arrivals in general insurance?",
-                "a": "Treating each claim as an event of a Poisson process with a given claim frequency rate."
+                "a": "Treating each claim as an event of a Poisson process with a given claim frequency rate.",
+                "explain": "This closes the module with the direct link forward to Module 19's compound Poisson risk models, and back to CM2 Module 17's ruin theory — the SAME Poisson-process claim-arrival assumption underlies both this module's mortality application and the general-insurance risk-modelling topics later in this subject."
             }
         ]
     },
