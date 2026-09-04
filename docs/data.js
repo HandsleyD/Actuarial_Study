@@ -6209,63 +6209,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'graduation by parametric formula'?",
-                "a": "Fitting a mathematical formula (e.g. Gompertz or Makeham) with a small number of parameters to the crude data."
+                "a": "Fitting a mathematical formula (e.g. Gompertz or Makeham) with a small number of parameters to the crude data.",
+                "explain": "This module surveys the practical METHODS for producing the smoothed curve Module 10's tests then check — parametric formula graduation directly reuses Module 6's Gompertz/Makeham laws, now fitted to a specific investigation's crude data rather than assumed as a theoretical model."
             },
             {
                 "q": "Give one advantage of graduation by parametric formula.",
-                "a": "A smooth, compact representation requiring few parameters, extrapolable beyond the data range."
+                "a": "A smooth, compact representation requiring few parameters, extrapolable beyond the data range.",
+                "explain": "The 'few parameters' point connects directly to Module 10's degrees-of-freedom card — a 2-3 parameter formula (like Makeham's $A,B,c$) 'costs' very little in terms of degrees of freedom lost from subsequent fit tests, unlike more flexible methods covered later in this module."
             },
             {
                 "q": "Give one disadvantage of graduation by parametric formula.",
-                "a": "It might not be flexible enough to capture the true pattern across all ages."
+                "a": "It might not be flexible enough to capture the true pattern across all ages.",
+                "explain": "This is the direct trade-off against the compactness advantage above — a rigid, low-parameter formula simply CANNOT bend to match unusual local features in the data (e.g. a genuine bump in mortality at a specific age range), however good its overall fit looks."
             },
             {
                 "q": "What is 'graduation by reference to a standard table'?",
-                "a": "Adjusting a recognised standard mortality table (e.g. by a multiplicative factor) to fit the crude data."
+                "a": "Adjusting a recognised standard mortality table (e.g. by a multiplicative factor) to fit the crude data.",
+                "explain": "This is a genuinely different philosophy from the parametric-formula approach above — rather than fitting an abstract mathematical function, you borrow an ALREADY-smooth, externally-published table's shape and just rescale it (e.g. multiply every rate by a constant factor) to match your population's overall level."
             },
             {
                 "q": "Give one advantage of graduation by reference to a standard table.",
-                "a": "It leverages a well-established, smooth external table, requiring less data to calibrate."
+                "a": "It leverages a well-established, smooth external table, requiring less data to calibrate.",
+                "explain": "Since you only need to estimate a small adjustment (e.g. a single multiplicative factor) rather than a whole curve's shape from scratch, this method can work reasonably well even with a SMALLER investigation than the other two methods would need, borrowing the standard table's smoothness for free."
             },
             {
                 "q": "Give one disadvantage of graduation by reference to a standard table.",
-                "a": "The standard table's shape may not match the true pattern of the population being studied."
+                "a": "The standard table's shape may not match the true pattern of the population being studied.",
+                "explain": "This is the direct cost of borrowing an external shape — if your population's mortality genuinely rises FASTER or SLOWER with age than the standard table (not just at a different overall level), a simple multiplicative adjustment can't correct for that mismatched shape, however well-calibrated the overall level is."
             },
             {
                 "q": "What is 'graduation using spline functions'?",
-                "a": "Fitting piecewise polynomial functions, smoothly joined together, to the crude data."
+                "a": "Fitting piecewise polynomial functions, smoothly joined together, to the crude data.",
+                "explain": "This is CS1's spline concept (touched on in the regression/GLM modules there) applied to mortality graduation — 'piecewise' is the key word: rather than one single formula covering every age (parametric formula) or one borrowed external shape (standard table), splines stitch together several local polynomial pieces, each free to bend to its own local region of the data."
             },
             {
                 "q": "Give one advantage of graduation by spline functions.",
-                "a": "More flexibility to capture the true shape of the data than a single global formula."
+                "a": "More flexibility to capture the true shape of the data than a single global formula.",
+                "explain": "This is the direct answer to parametric formula's main weakness above — because each piece only needs to fit its own local region, splines can capture genuine local irregularities in the true underlying pattern that a single rigid global formula (like Makeham's law) simply cannot bend to accommodate."
             },
             {
                 "q": "Give one disadvantage of graduation by spline functions.",
-                "a": "More complex, requiring more parameters, and may extrapolate poorly beyond the data range."
+                "a": "More complex, requiring more parameters, and may extrapolate poorly beyond the data range.",
+                "explain": "This is exactly the flexibility-vs-parsimony trade-off from Module 10 landing on this specific method — more parameters means more degrees of freedom lost from fit tests (per Module 10's adjustment rule), and a curve fitted purely to match local data patterns often has no sensible behaviour once you step outside the range that data actually covers."
             },
             {
                 "q": "Are candidates typically required to carry out a full graduation calculation in the exam?",
-                "a": "No — the syllabus notes candidates are not required to carry out a graduation, but should understand the methods."
+                "a": "No — the syllabus notes candidates are not required to carry out a graduation, but should understand the methods.",
+                "explain": "This is a genuinely useful piece of practical exam guidance worth remembering directly — the syllabus expects CONCEPTUAL understanding (advantages, disadvantages, when to use which method) rather than the ability to mechanically execute a full graduation calculation by hand, which shapes how deeply to study this module."
             },
             {
                 "q": "How would you choose between these three graduation methods for a given data set?",
-                "a": "Consider data volume/quality, whether a suitable standard table exists, and the robustness-vs-flexibility trade-off."
+                "a": "Consider data volume/quality, whether a suitable standard table exists, and the robustness-vs-flexibility trade-off.",
+                "explain": "This is the module's central practical decision framework, worth having as a mental checklist — little data and a well-matched existing standard table favours the standard-table method; abundant, well-behaved data with a genuinely smooth expected shape favours a parametric formula; genuinely irregular local patterns favour splines."
             },
             {
                 "q": "Why might combining approaches (e.g. standard table plus a smooth adjustment) sometimes be used?",
-                "a": "To get robustness from the standard table while still reflecting genuine differences in the specific population."
+                "a": "To get robustness from the standard table while still reflecting genuine differences in the specific population.",
+                "explain": "This is a genuinely practical hybrid worth knowing exists — rather than choosing purely one method, blending a standard table's overall shape with a smaller adjustment (perhaps itself graduated by a simple formula or spline) can combine the robustness of borrowing an established shape with enough flexibility to reflect real population-specific differences."
             },
             {
                 "q": "How does the number of parameters used in a graduation method affect subsequent statistical tests?",
-                "a": "More parameters typically reduces the effective degrees of freedom in goodness-of-fit tests."
+                "a": "More parameters typically reduces the effective degrees of freedom in goodness-of-fit tests.",
+                "explain": "This restates Module 10's degrees-of-freedom adjustment rule as a direct consequence of the METHOD chosen here — parametric formula (few parameters) costs little in degrees of freedom; splines (many parameters) cost much more, which needs to be correctly accounted for before trusting any subsequent fit test's p-value."
             },
             {
                 "q": "Why might an actuary prefer a graduation method with fewer parameters, all else equal?",
-                "a": "Less prone to overfitting the noise in the crude data, and more parsimonious/interpretable."
+                "a": "Less prone to overfitting the noise in the crude data, and more parsimonious/interpretable.",
+                "explain": "This is precisely the bias-variance principle from Module 10 stated as a general preference — a simpler graduation is less likely to mistake random noise in the crude data for a genuine pattern, and it's also easier to explain, communicate, and justify to a non-technical audience or regulator."
             },
             {
                 "q": "How does the balance between 'smoothness' and 'fit to the data' inform the choice of graduation method?",
-                "a": "Too flexible risks overfitting noise; too rigid risks poor fit — the method should balance both."
+                "a": "Too flexible risks overfitting noise; too rigid risks poor fit — the method should balance both.",
+                "explain": "This closes the module by restating its central tension, running through parametric formula (rigid), standard table (borrowed rigidity), and splines (flexible) — no single method is universally 'best'; the right choice always depends on where a specific dataset and situation should sit on this fit-versus-smoothness spectrum."
             }
         ]
     },
