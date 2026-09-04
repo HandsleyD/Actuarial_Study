@@ -4953,63 +4953,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the fundamental idea behind credibility theory?",
-                "a": "Combining an individual risk's own claims experience with wider (collective) experience, weighted by how credible/reliable the individual data is."
+                "a": "Combining an individual risk's own claims experience with wider (collective) experience, weighted by how credible/reliable the individual data is.",
+                "explain": "This module gives full formal treatment to the idea Module 14 previewed via the Bayesian route — the SAME underlying goal (blend individual and collective information) can be approached either through full Bayesian machinery (Module 14) or through the more direct 'classical' variance-component approach this module develops, and the two often agree exactly for conjugate cases."
             },
             {
                 "q": "What is the 'credibility factor' $Z$ constrained to?",
-                "a": "A value between 0 and 1."
+                "a": "A value between 0 and 1.",
+                "explain": "This bounded range is what makes $Z$ interpretable as a genuine WEIGHT in a weighted average — the credibility premium formula from Module 14 only makes sense as a sensible blend if $Z$ stays within $[0,1]$, since anything outside that range would mean over- or under-weighting one source relative to a simple average."
             },
             {
                 "q": "What happens to the estimated premium if $Z=0$?",
-                "a": "The premium equals the collective (prior/overall) mean entirely, ignoring the individual's own experience."
+                "a": "The premium equals the collective (prior/overall) mean entirely, ignoring the individual's own experience.",
+                "explain": "This is the extreme case where a risk's individual data is judged completely uninformative (e.g. essentially no claims history at all) — the credibility formula gracefully degrades to 'just use the portfolio average', which is exactly the sensible default when there's nothing else reliable to go on."
             },
             {
                 "q": "What happens to the estimated premium if $Z=1$?",
-                "a": "The premium equals the individual's own observed experience entirely, ignoring the wider collective information."
+                "a": "The premium equals the individual's own observed experience entirely, ignoring the wider collective information.",
+                "explain": "This is the opposite extreme, appropriate only when a risk's own data is judged fully sufficient on its own — in practice $Z=1$ is rare, since even substantial individual claims history usually still benefits from at least some smoothing toward the collective mean to guard against random noise."
             },
             {
                 "q": "What factors typically increase the credibility factor $Z$ for a given risk?",
-                "a": "More individual data, and lower variability in the individual's own claims relative to variability between different risks."
+                "a": "More individual data, and lower variability in the individual's own claims relative to variability between different risks.",
+                "explain": "Both factors trace back to Module 5's law of total variance — more data reduces the SAMPLING variance of the individual's own experience (Module 7's $\\sigma^2/n$ shrinking), and a favourable within/between variance ratio means the individual genuinely differs meaningfully from the average, both pushing more weight toward the individual's own experience."
             },
             {
                 "q": "How does 'between-risk' variance affect the credibility factor, relative to 'within-risk' variance?",
-                "a": "Higher between-risk variance increases $Z$, since individual experience is then more informative relative to the average."
+                "a": "Higher between-risk variance increases $Z$, since individual experience is then more informative relative to the average.",
+                "explain": "This is exactly Module 5's law of total variance terms put to direct use — if risks genuinely differ a lot from one another (high between-risk variance), an individual risk's own data tells you a lot about where THEY specifically sit; if all risks are quite similar (low between-risk variance), individual data adds little beyond what the collective average already tells you."
             },
             {
                 "q": "How does the Bayesian approach to credibility theory determine $Z$?",
-                "a": "Implicitly, through the shape of the posterior distribution derived from the prior and likelihood of the observed data."
+                "a": "Implicitly, through the shape of the posterior distribution derived from the prior and likelihood of the observed data.",
+                "explain": "This is the direct contrast with the classical approach in this module — Module 14's Bayesian route never explicitly SOLVES for a $Z$ value; a specific credibility weight only emerges as a BY-PRODUCT once you compute the posterior mean for a specific conjugate prior/likelihood pair, which is exactly what the 'exact credibility' card below describes."
             },
             {
                 "q": "What does it mean for the Bayesian credibility premium to be 'exact' in certain cases?",
-                "a": "For specific conjugate prior/likelihood pairs, the posterior mean takes exactly the linear credibility-weighted form."
+                "a": "For specific conjugate prior/likelihood pairs, the posterior mean takes exactly the linear credibility-weighted form.",
+                "explain": "This is the reassuring result that ties Module 14's Bayesian approach and this module's classical approach together — for the standard conjugate pairs (Gamma/Poisson, Beta/Binomial), the two genuinely different derivation ROUTES arrive at the identical final formula, confirming credibility theory isn't just a convenient approximation but a mathematically well-justified result."
             },
             {
                 "q": "Why is credibility theory particularly useful for pricing risks with limited individual claims history?",
-                "a": "It avoids over-relying on sparse, noisy individual data by blending it with more stable collective experience."
+                "a": "It avoids over-relying on sparse, noisy individual data by blending it with more stable collective experience.",
+                "explain": "This restates the module's central motivation directly — pricing purely off a small commercial policyholder's own thin claims history would be dangerously noisy (a single unlucky year could swing the estimate wildly), while credibility theory's blending mechanism automatically tempers that noise using the far more stable collective data."
             },
             {
                 "q": "What is a practical example of using credibility theory in insurance pricing?",
-                "a": "Setting a commercial policyholder's renewal premium by blending their own claims history with the insurer's overall experience."
+                "a": "Setting a commercial policyholder's renewal premium by blending their own claims history with the insurer's overall experience.",
+                "explain": "This is the standard textbook illustration worth having ready — a commercial fleet or business policy typically has enough individual history to be somewhat informative (unlike, say, a single new personal motor policy), making it a natural candidate for a genuinely intermediate credibility factor rather than either extreme."
             },
             {
                 "q": "How does credibility theory relate to the law of total variance covered under conditional expectation?",
-                "a": "The within-risk and between-risk variance components directly determine the credibility factor in classical credibility theory."
+                "a": "The within-risk and between-risk variance components directly determine the credibility factor in classical credibility theory.",
+                "explain": "This closes the loop explicitly back to Module 5 — everything in this module's credibility-factor formulas is really just the law of total variance's two components (within-risk and between-risk) combined into a specific ratio, confirming Module 5 wasn't abstract probability theory for its own sake but the direct mathematical foundation for this module."
             },
             {
                 "q": "What would happen to premiums across a portfolio if $Z$ were set too high for all risks?",
-                "a": "Premiums would be too heavily influenced by random fluctuations in individual experience, becoming more volatile than appropriate."
+                "a": "Premiums would be too heavily influenced by random fluctuations in individual experience, becoming more volatile than appropriate.",
+                "explain": "This is the practical risk of over-trusting noisy individual data — a policyholder who happened to have one unusually bad (or good) year would see their premium swing dramatically, even if that year was mostly just random chance rather than a genuine change in their underlying risk."
             },
             {
                 "q": "What would happen to premiums across a portfolio if $Z$ were set too low for all risks?",
-                "a": "Premiums would fail to reflect genuine differences between risks, becoming too similar across dissimilar policyholders."
+                "a": "Premiums would fail to reflect genuine differences between risks, becoming too similar across dissimilar policyholders.",
+                "explain": "This is the opposite failure mode — genuinely different risks (a careful driver vs a risky one, say) would end up paying nearly the same premium, which isn't just inaccurate but can create adverse-selection problems (low-risk customers overpaying relative to their true risk may leave for a competitor who prices more accurately)."
             },
             {
                 "q": "How does increasing the volume of individual exposure/data typically affect $Z$ in classical credibility formulas?",
-                "a": "It increases $Z$, since $Z$ is typically an increasing function of the amount of individual data/exposure."
+                "a": "It increases $Z$, since $Z$ is typically an increasing function of the amount of individual data/exposure.",
+                "explain": "This restates the earlier 'more data increases Z' card as a formula-level fact — in the standard classical credibility formulas, $Z$ is typically written as something like $\\frac{n}{n+k}$ for exposure $n$ and a constant $k$, which explicitly increases toward 1 as $n$ grows, directly matching this intuition."
             },
             {
                 "q": "Why might an actuary need to justify their choice of credibility approach for a given pricing problem?",
-                "a": "The methods rest on different assumptions and can give different results, so the choice should suit the data and context available."
+                "a": "The methods rest on different assumptions and can give different results, so the choice should suit the data and context available.",
+                "explain": "This closes the module with a genuinely important professional point — credibility theory isn't a single formula but a family of related techniques (full Bayesian, classical, and empirical Bayes in Module 16), each with different data requirements and assumptions, so choosing (and being able to defend) the appropriate one for the situation at hand is itself part of the actuarial judgement being tested."
             }
         ]
     },
