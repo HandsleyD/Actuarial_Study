@@ -6537,63 +6537,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What properties make a distribution suitable for modelling individual insurance losses?",
-                "a": "Non-negative support, and typically a right-skewed shape — e.g. lognormal, gamma, or Pareto."
+                "a": "Non-negative support, and typically a right-skewed shape — e.g. lognormal, gamma, or Pareto.",
+                "explain": "This module marks a genuine shift into general insurance modelling — after 14 modules on stochastic processes, mortality and time series, this and the remaining modules (16-20) build the classical actuarial toolkit for pricing and reserving general insurance risk, starting with the individual claim SEVERITY distribution."
             },
             {
                 "q": "What is an 'excess' (or 'deductible')?",
-                "a": "An amount the policyholder bears themselves before the insurer pays anything on a claim."
+                "a": "An amount the policyholder bears themselves before the insurer pays anything on a claim.",
+                "explain": "This is the policyholder-facing version of a retention — worth noting it changes what the INSURER actually observes and pays, which is exactly the source of the truncation/estimation complications developed later in this module."
             },
             {
                 "q": "What is a 'retention limit'?",
-                "a": "The maximum amount an insurer (or reinsurer) retains/pays, with any excess passed on."
+                "a": "The maximum amount an insurer (or reinsurer) retains/pays, with any excess passed on.",
+                "explain": "This is precisely the same concept as an excess, just applied one layer further up the risk chain (insurer retaining vs reinsurer paying, rather than policyholder retaining vs insurer paying) — recognising both as the SAME mathematical structure (a threshold splitting a loss into two pieces) makes the whole reinsurance material in this and later modules far more tractable."
             },
             {
                 "q": "How does an excess of $d$ affect the distribution of amounts actually paid by the insurer?",
-                "a": "The insurer pays the loss amount minus $d$, so the paid amount is truncated/shifted, conditional on the loss exceeding $d$."
+                "a": "The insurer pays the loss amount minus $d$, so the paid amount is truncated/shifted, conditional on the loss exceeding $d$.",
+                "explain": "This is worth picturing precisely: for a loss $X<d$, the insurer pays nothing (and typically never even hears about it); for $X>d$, the insurer pays $X-d$ — this SHIFT-and-TRUNCATE transformation of the underlying ground-up loss distribution is exactly what makes estimating the true parameters from observed insurer-level data non-trivial, as later cards explore."
             },
             {
                 "q": "What is 'proportional reinsurance'?",
-                "a": "A reinsurance arrangement where the reinsurer pays a fixed proportion of every claim, and receives the same proportion of premium."
+                "a": "A reinsurance arrangement where the reinsurer pays a fixed proportion of every claim, and receives the same proportion of premium.",
+                "explain": "This is exactly CM2 Module 17's proportional reinsurance concept reused here — recognising it as the same idea across both subjects saves re-deriving it: EVERY claim (large or small) is shared in the same fixed ratio, unlike excess of loss below, which only kicks in above a threshold."
             },
             {
                 "q": "What is 'excess of loss reinsurance'?",
-                "a": "A reinsurance arrangement where the reinsurer pays the amount of any claim exceeding a specified retention level."
+                "a": "A reinsurance arrangement where the reinsurer pays the amount of any claim exceeding a specified retention level.",
+                "explain": "This is exactly CM2 Module 17's excess of loss concept, and it's structurally IDENTICAL to the policyholder excess described earlier in this module, just with the insurer and reinsurer playing the roles the policyholder and insurer played there."
             },
             {
                 "q": "How would you calculate the distribution of claim amounts paid by the insurer under excess of loss reinsurance with retention $M$?",
-                "a": "The insurer pays $\\min(X, M)$ for each claim of size $X$."
+                "a": "The insurer pays $\\min(X, M)$ for each claim of size $X$.",
+                "explain": "This is the direct mirror image of the excess formula above ($X-d$ for the insurer paying above an excess) — here the INSURER is the one being capped, retaining the smaller of the actual loss or the retention limit, while the reinsurer picks up whatever exceeds $M$."
             },
             {
                 "q": "How would you estimate parameters of a loss distribution using maximum likelihood, when data is incomplete (censored/truncated)?",
-                "a": "Adjust the likelihood function to reflect the actual observation scheme, then maximise as usual."
+                "a": "Adjust the likelihood function to reflect the actual observation scheme, then maximise as usual.",
+                "explain": "This is CS2 Module 7's censoring/truncation adjustment (developed for survival data) applied here to loss severity data — the general principle is identical: the likelihood contribution for each observation must correctly reflect exactly WHAT was actually observed (e.g. a truncated loss above an excess), not the full ground-up distribution as if nothing were missing."
             },
             {
                 "q": "What is the 'method of moments' applied to loss distribution parameter estimation?",
-                "a": "Equating sample moments of the observed losses to theoretical moments of the assumed distribution, solving for parameters."
+                "a": "Equating sample moments of the observed losses to theoretical moments of the assumed distribution, solving for parameters.",
+                "explain": "This is CS1's method of moments (Module 8 there) applied directly to loss severity data — worth remembering CS1's caution alongside this: method of moments is simpler than MLE but can be less statistically efficient, a trade-off that applies just as much here as in any other estimation context."
             },
             {
                 "q": "How would you assess 'goodness of fit' of a fitted loss distribution to a data set?",
-                "a": "Using tests like chi-square goodness of fit, or graphical methods (comparing empirical and fitted CDFs)."
+                "a": "Using tests like chi-square goodness of fit, or graphical methods (comparing empirical and fitted CDFs).",
+                "explain": "This is CS1's goodness-of-fit toolkit (Module 10 there) reapplied to loss distributions specifically — worth noting the graphical route (comparing fitted vs empirical CDFs, or a Q-Q plot style comparison) is often especially informative for loss data, since it visually reveals WHERE the fit is poor (e.g. in the tail), not just whether an overall test statistic is significant."
             },
             {
                 "q": "Why might the choice of loss distribution matter significantly for reinsurance pricing?",
-                "a": "Reinsurance often covers the tail, so assumed tail behaviour strongly affects the reinsurer's required premium."
+                "a": "Reinsurance often covers the tail, so assumed tail behaviour strongly affects the reinsurer's required premium.",
+                "explain": "This is the module's central practical warning, directly previewing Module 16's extreme value theory — since excess of loss reinsurance specifically covers the EXTREME upper tail of the loss distribution, two distributions that look almost identical in their bulk (near the mean) can imply wildly different reinsurance prices if their tail behaviour genuinely differs."
             },
             {
                 "q": "What is 'left truncation' of loss data, in the context of an excess?",
-                "a": "Only losses exceeding the excess are recorded/observed at all, truncating the observable data from below."
+                "a": "Only losses exceeding the excess are recorded/observed at all, truncating the observable data from below.",
+                "explain": "This is a genuinely important distinction from ordinary censoring (Module 7) worth being precise about — a CENSORED observation is still recorded, just with incomplete information (e.g. 'this life survived at least to here'); a TRUNCATED observation isn't recorded AT ALL if it falls below the threshold, which is exactly the situation for losses below an excess that the insurer never even learns about."
             },
             {
                 "q": "How does the presence of an excess complicate estimating the parameters of the ground-up loss distribution?",
-                "a": "Only losses above the excess are observed, so estimation must account for truncation to recover the true parameters."
+                "a": "Only losses above the excess are observed, so estimation must account for truncation to recover the true parameters.",
+                "explain": "This restates the left-truncation concept above as its direct estimation consequence — naively fitting a distribution to the OBSERVED (already-truncated) losses, ignoring that smaller losses below the excess exist but are simply invisible, would give systematically biased parameter estimates for the true, full ground-up distribution."
             },
             {
                 "q": "What is the effect of applying both an excess and a reinsurance retention limit to a claim?",
-                "a": "The insurer pays the claim amount between the excess and the retention limit."
+                "a": "The insurer pays the claim amount between the excess and the retention limit.",
+                "explain": "This combines the two transformations from earlier in this module into one: the policyholder bears everything up to the excess $d$; the insurer bears the layer BETWEEN $d$ and the retention $M$; and the reinsurer bears everything above $M$ — a three-way split of the same underlying loss, worth being able to draw as a simple diagram."
             },
             {
                 "q": "Why might an actuary calculate both mean and variance of insurer/reinsurer loss distributions under a reinsurance arrangement?",
-                "a": "To understand not just expected cost, but also variability/risk each party bears, informing pricing."
+                "a": "To understand not just expected cost, but also variability/risk each party bears, informing pricing.",
+                "explain": "This closes the module by connecting back to CM2 Module 3's risk-measures theme — the MEAN alone tells you the expected cost each party bears, but the VARIANCE (and higher moments, developed further in Modules 19-20) tells you how RISKY each party's position genuinely is, which matters just as much for setting an appropriate reinsurance price as the expected cost does."
             }
         ]
     },
@@ -6604,63 +6619,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is 'extreme value theory' (EVT) used for in an actuarial context?",
-                "a": "Modelling the behaviour of extreme (very large) losses in the tail of a distribution."
+                "a": "Modelling the behaviour of extreme (very large) losses in the tail of a distribution.",
+                "explain": "This module directly answers Module 15's closing warning — that reinsurance pricing depends heavily on TAIL behaviour — by providing the specialised statistical machinery for modelling exactly that tail, rather than trying to force a single distribution to fit both the everyday bulk of losses and their rare extremes equally well."
             },
             {
                 "q": "What is the 'generalised extreme value' (GEV) distribution?",
-                "a": "A family of distributions describing the limiting distribution of the maximum of a large number of i.i.d. random variables."
+                "a": "A family of distributions describing the limiting distribution of the maximum of a large number of i.i.d. random variables.",
+                "explain": "This is EVT's analogue of the Central Limit Theorem — just as the CLT (CS1 Module 4) says sums of i.i.d. variables converge to a normal distribution regardless of the underlying distribution, the Fisher-Tippett theorem underlying GEV says MAXIMA of i.i.d. variables converge to one of only three possible shapes, giving a similarly universal justification for using GEV to model extremes."
             },
             {
                 "q": "What is the 'generalised Pareto distribution' (GPD) used for in EVT?",
-                "a": "Modelling the distribution of exceedances over a high threshold — the 'peaks over threshold' approach."
+                "a": "Modelling the distribution of exceedances over a high threshold — the 'peaks over threshold' approach.",
+                "explain": "This is EVT's second major tool, complementing GEV — where GEV models the maximum of BLOCKS of data (e.g. the worst loss each year), GPD instead models every individual EXCEEDANCE above a threshold, generally using the data more efficiently since it doesn't discard all-but-one observation per block."
             },
             {
                 "q": "What are the three types (domains of attraction) within the GEV family?",
-                "a": "Gumbel, Fréchet, and (reversed) Weibull, corresponding to light-tailed, heavy-tailed, and bounded-tailed distributions."
+                "a": "Gumbel, Fréchet, and (reversed) Weibull, corresponding to light-tailed, heavy-tailed, and bounded-tailed distributions.",
+                "explain": "Worth anchoring each to a familiar parent distribution: Gumbel is the limit for light-tailed distributions like the normal or exponential; Fréchet is the limit for heavy-tailed distributions like the Pareto (the actuarially important case, covered next); and the reversed Weibull is the limit for distributions with a finite upper endpoint (like the uniform)."
             },
             {
                 "q": "What is meant by a 'heavy-tailed' distribution?",
-                "a": "A distribution where extreme values are relatively more likely compared to a light-tailed distribution."
+                "a": "A distribution where extreme values are relatively more likely compared to a light-tailed distribution.",
+                "explain": "This informal definition is made precise by the rest of this module's cards — a heavy tail can be characterised rigorously via a DECREASING hazard rate, via the ratio of higher to lower moments, or via membership in the Fréchet domain of attraction above; the various measures are different lenses on the same underlying phenomenon."
             },
             {
                 "q": "Give an example of a heavy-tailed distribution commonly used for modelling large losses.",
-                "a": "The Pareto distribution."
+                "a": "The Pareto distribution.",
+                "explain": "The Pareto distribution recurs constantly in general insurance precisely because its POWER-LAW tail decays slowly enough to realistically capture the possibility of catastrophic losses, unlike the exponential or normal (whose tails decay exponentially/faster and would badly understate extreme-event risk)."
             },
             {
                 "q": "What is a common measure of 'tail weight' used to compare distributions?",
-                "a": "The ratio of higher to lower moments, or examining the hazard rate's behaviour as $x \\to \\infty$."
+                "a": "The ratio of higher to lower moments, or examining the hazard rate's behaviour as $x \\to \\infty$.",
+                "explain": "The hazard rate here is CS2 Module 6's force of mortality concept ($\\mu_x$), reused as a general 'failure rate' idea outside a mortality context — for loss distributions it answers 'given a loss has already exceeded $x$, how likely is an immediate further increase', and its long-run trend as $x\\to\\infty$ is exactly what separates light- from heavy-tailed behaviour."
             },
             {
                 "q": "How does a decreasing hazard rate (as $x$ increases) relate to tail weight?",
-                "a": "Associated with a heavier tail — large values remain relatively likely."
+                "a": "Associated with a heavier tail — large values remain relatively likely.",
+                "explain": "Intuitively, a decreasing hazard rate means that the FURTHER into the tail you already are, the less additional 'resistance' there is to going even further — this self-reinforcing behaviour is exactly what produces the slowly-decaying power-law tails characteristic of the Pareto distribution above."
             },
             {
                 "q": "How does an increasing hazard rate (as $x$ increases) relate to tail weight?",
-                "a": "Associated with a lighter tail — extreme values become rarer more quickly."
+                "a": "Associated with a lighter tail — extreme values become rarer more quickly.",
+                "explain": "This is the direct opposite of the decreasing-hazard-rate case above, and it's the pattern typical of the normal or gamma distributions — extreme values become progressively harder to exceed the further out you go, which is exactly why these distributions are poor choices for modelling catastrophic losses."
             },
             {
                 "q": "Why is comparing tail weight important when choosing a distribution for reinsurance pricing?",
-                "a": "Underestimating tail weight could significantly understate the true risk for high-layer reinsurance."
+                "a": "Underestimating tail weight could significantly understate the true risk for high-layer reinsurance.",
+                "explain": "This directly restates Module 15's closing warning in this module's own vocabulary — excess of loss reinsurance at a high retention $M$ (Module 15) is priced almost entirely off the distribution's tail behaviour, so getting the tail weight wrong (e.g. fitting a light-tailed distribution to genuinely heavy-tailed data) could leave the reinsurer dangerously under-priced for exactly the losses it's meant to cover."
             },
             {
                 "q": "What is the 'peaks over threshold' approach in extreme value theory?",
-                "a": "Modelling only exceedances above a chosen high threshold using the generalised Pareto distribution."
+                "a": "Modelling only exceedances above a chosen high threshold using the generalised Pareto distribution.",
+                "explain": "This is the practical, data-driven counterpart to the GPD definition given earlier — worth noting the direct structural parallel with Module 15's excess-of-loss framework: both involve conditioning on 'the loss exceeded a threshold $d$' and modelling only the excess above it, just for different purposes (reinsurance pricing there, tail-shape estimation here)."
             },
             {
                 "q": "What practical challenge arises from having limited historical data on extreme events?",
-                "a": "Extreme events are rare, so little data is available to reliably estimate tail behaviour, leading to estimation uncertainty."
+                "a": "Extreme events are rare, so little data is available to reliably estimate tail behaviour, leading to estimation uncertainty.",
+                "explain": "This is the fundamental tension EVT exists to manage: by definition, the events actuaries most need to understand (catastrophic losses) are the ones with the fewest historical observations, so EVT's theoretical justification (the limiting GEV/GPD results) has to substitute for the empirical data that simply isn't available in sufficient quantity."
             },
             {
                 "q": "How might you use extreme value theory to estimate a high quantile beyond the range of observed data?",
-                "a": "Fit an appropriate extreme value distribution to the tail, then extrapolate using the fitted model."
+                "a": "Fit an appropriate extreme value distribution to the tail, then extrapolate using the fitted model.",
+                "explain": "This is EVT's key practical payoff — rather than extrapolating blindly beyond the observed data range (which the empirical distribution simply cannot do), fitting a GEV or GPD to the OBSERVED tail behaviour gives a theoretically-grounded way to estimate quantiles or return periods for losses more extreme than anything actually seen yet."
             },
             {
                 "q": "Why is extreme value theory particularly relevant for catastrophe risk modelling?",
-                "a": "Catastrophic losses are by nature in the extreme tail, critical for solvency and reinsurance decisions."
+                "a": "Catastrophic losses are by nature in the extreme tail, critical for solvency and reinsurance decisions.",
+                "explain": "This connects the whole module back to real-world practice: catastrophe models (for events like hurricanes or earthquakes) are exactly the domain where EVT's quantile-extrapolation trick from the previous card is indispensable, since regulators and reinsurers need estimates of losses at return periods (e.g. 1-in-200-year events) far beyond the length of any available historical record."
             },
             {
                 "q": "How does the choice of threshold in the peaks-over-threshold approach affect the resulting model?",
-                "a": "Too low violates the theoretical justification; too high leaves too little data — a bias-variance trade-off."
+                "a": "Too low violates the theoretical justification; too high leaves too little data — a bias-variance trade-off.",
+                "explain": "This is a specific instance of a bias-variance trade-off recurring throughout the whole curriculum (compare Module 15's excess/truncation choices, or the graduation smoothing trade-offs of Module 10) — too low a threshold includes data that isn't genuinely 'extreme' (violating the asymptotic theory the GPD relies on, i.e. bias), while too high a threshold leaves so few exceedances that the fitted parameters become highly unstable (i.e. variance)."
             }
         ]
     },
