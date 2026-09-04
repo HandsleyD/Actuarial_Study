@@ -3007,63 +3007,78 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the Capital Asset Pricing Model (CAPM) used for?",
-                "a": "To determine the expected/required return on an asset, given its systematic risk (beta) relative to the market portfolio."
+                "a": "To determine the expected/required return on an asset, given its systematic risk (beta) relative to the market portfolio.",
+                "explain": "This module is the single-index model (Module 5) taken one step further, from DESCRIBING how returns move together to PRESCRIBING what expected return an asset ought to offer — CAPM is really the equilibrium theory that explains why beta (a purely statistical quantity in Module 5) should matter economically at all."
             },
             {
                 "q": "What is the CAPM formula for expected return?",
-                "a": "$E[R_i] = R_f + \\beta_i\\,(E[R_m]-R_f)$"
+                "a": "$E[R_i] = R_f + \\beta_i\\,(E[R_m]-R_f)$",
+                "explain": "Worth reading this formula as a story: start from the risk-free rate (baseline compensation for time), then add a risk premium equal to beta TIMES the market's own risk premium — an asset's required extra return scales exactly with how much systematic (market) risk it carries, and nothing else."
             },
             {
                 "q": "What does beta ($\\beta_i$) measure in the CAPM?",
-                "a": "The sensitivity of an asset's excess return to the excess return of the market portfolio."
+                "a": "The sensitivity of an asset's excess return to the excess return of the market portfolio.",
+                "explain": "This is precisely the same beta introduced in Module 5's single-index model — CAPM doesn't invent a new quantity, it takes that existing statistical sensitivity measure and gives it an economic justification: it's the ONLY thing that should determine an asset's required return, according to the theory."
             },
             {
                 "q": "Name one key assumption of the basic CAPM.",
-                "a": "All investors have homogeneous expectations about returns, risk and correlations; investors can borrow/lend unlimited amounts at a risk-free rate."
+                "a": "All investors have homogeneous expectations about returns, risk and correlations; investors can borrow/lend unlimited amounts at a risk-free rate.",
+                "explain": "These assumptions are worth having ready as a checklist, since the limitations card below and real-world critiques of CAPM are essentially about which of these assumptions breaks down in practice — homogeneous expectations in particular is a strong claim, since real investors clearly disagree about future returns."
             },
             {
                 "q": "What is the 'market portfolio' in CAPM?",
-                "a": "A portfolio containing all risky assets in the market, weighted by their market values."
+                "a": "A portfolio containing all risky assets in the market, weighted by their market values.",
+                "explain": "This is a theoretical ideal that's genuinely hard to observe in practice (see the estimation-issues card below) — 'all risky assets' technically means every stock, bond, property, and even human capital worldwide, which is why real applications substitute a broad stock index as an imperfect proxy."
             },
             {
                 "q": "What is the 'security market line' (SML)?",
-                "a": "A graphical representation of the CAPM, plotting expected return against beta — all correctly priced assets should lie on this line."
+                "a": "A graphical representation of the CAPM, plotting expected return against beta — all correctly priced assets should lie on this line.",
+                "explain": "This is CAPM's formula from earlier in this module drawn as a straight line: the y-intercept is the risk-free rate, and the slope is the market risk premium $(E[R_m]-R_f)$ — any asset plotting exactly on this line is priced consistently with CAPM, and any deviation (see the next card) signals apparent mispricing."
             },
             {
                 "q": "What does it mean for an asset to plot above the security market line?",
-                "a": "It's offering a higher expected return than CAPM predicts for its level of systematic risk — it appears undervalued."
+                "a": "It's offering a higher expected return than CAPM predicts for its level of systematic risk — it appears undervalued.",
+                "explain": "This is worth connecting to Module 1's EMH material — under a truly efficient market with CAPM holding exactly, no asset should persistently plot off the line at all; a genuine, sustained deviation would represent exactly the kind of abnormal-return opportunity EMH claims shouldn't exist, tying these two modules together."
             },
             {
                 "q": "Give one limitation of the basic CAPM.",
-                "a": "Its assumptions are unrealistic, and empirical tests often find beta alone doesn't fully explain observed returns."
+                "a": "Its assumptions are unrealistic, and empirical tests often find beta alone doesn't fully explain observed returns.",
+                "explain": "This is the module's central honest self-critique — real data consistently shows that factors BEYOND beta (size, value, momentum) have historically helped explain returns, which is precisely the empirical gap that motivated the multifactor extensions covered in the next card."
             },
             {
                 "q": "How have researchers tried to extend/develop CAPM to address its limitations?",
-                "a": "By relaxing assumptions, or developing multifactor extensions like the Arbitrage Pricing Theory (APT)."
+                "a": "By relaxing assumptions, or developing multifactor extensions like the Arbitrage Pricing Theory (APT).",
+                "explain": "This closes the loop back to Module 5's multifactor models — APT generalises CAPM's single-factor (beta-only) story into a framework allowing SEVERAL priced risk factors, addressing the 'beta alone doesn't fully explain returns' critique directly, at the cost of needing to identify which factors actually matter."
             },
             {
                 "q": "What is a major issue in estimating parameters for CAPM in practice?",
-                "a": "Identifying and measuring the true 'market portfolio', and estimating beta reliably from limited historical data."
+                "a": "Identifying and measuring the true 'market portfolio', and estimating beta reliably from limited historical data.",
+                "explain": "This is the practical bite of the market-portfolio card above — since the TRUE market portfolio (all assets worldwide) can't actually be observed, every empirical CAPM test is really testing a JOINT hypothesis (CAPM plus 'this index is a good market proxy'), an issue closely related to EMH's joint-hypothesis problem from Module 1."
             },
             {
                 "q": "According to CAPM, should investors be compensated for holding idiosyncratic (diversifiable) risk?",
-                "a": "No — only systematic risk (beta) is rewarded, since idiosyncratic risk can be diversified away at no cost."
+                "a": "No — only systematic risk (beta) is rewarded, since idiosyncratic risk can be diversified away at no cost.",
+                "explain": "This is CAPM's core economic argument, drawing directly on Module 5's diversifiable/systematic split — since a rational investor CAN eliminate idiosyncratic risk for free simply by diversifying, the market has no reason to compensate anyone for bearing it; only the risk that can't be diversified away (systematic risk, measured by beta) deserves a reward."
             },
             {
                 "q": "What is the risk-free rate's role in the CAPM formula?",
-                "a": "It represents the baseline return available with no risk, against which the market risk premium (scaled by beta) is added."
+                "a": "It represents the baseline return available with no risk, against which the market risk premium (scaled by beta) is added.",
+                "explain": "This is the same risk-free-rate concept threading through the whole CM2 syllabus (it also anchors the forward-pricing and derivatives formulas in Modules 10-14) — here it's simply the floor: any asset, however low its systematic risk, should offer at least this much, since taking on zero risk still requires forgoing the time value of money."
             },
             {
                 "q": "If an asset has a beta of zero, what does CAPM predict its expected return should be?",
-                "a": "Equal to the risk-free rate, since it has no systematic risk exposure."
+                "a": "Equal to the risk-free rate, since it has no systematic risk exposure.",
+                "explain": "This is a direct substitution into the CAPM formula ($\\beta=0$ makes the whole risk-premium term vanish) — worth using as a quick sanity check on the formula: even an asset with SOME variance can have zero systematic risk if that variance is entirely idiosyncratic, and CAPM says it should still only earn the risk-free rate."
             },
             {
                 "q": "If an asset has a beta greater than 1, what does that imply?",
-                "a": "The asset's returns are more volatile than (amplify) the market's returns — more systematic risk than the market portfolio."
+                "a": "The asset's returns are more volatile than (amplify) the market's returns — more systematic risk than the market portfolio.",
+                "explain": "A useful mental benchmark: the market PORTFOLIO ITSELF has beta exactly 1 by definition (it's perfectly correlated with itself, scaled 1:1) — an individual asset with beta above 1 is a 'high-beta' or aggressive asset, amplifying market moves in both directions, while beta below 1 is a defensive asset that dampens them."
             },
             {
                 "q": "How is beta typically estimated in practice?",
-                "a": "By regressing an asset's historical excess returns against the market portfolio's historical excess returns; the slope is the estimated beta."
+                "a": "By regressing an asset's historical excess returns against the market portfolio's historical excess returns; the slope is the estimated beta.",
+                "explain": "This closes the module by making the theoretical parameter fully concrete — it's CS1's simple linear regression (Module 12 there) directly applied: market excess return as the explanatory variable, asset excess return as the response, and the fitted slope $\\hat\\beta$ is exactly the beta this whole module's formula depends on."
             }
         ]
     },
