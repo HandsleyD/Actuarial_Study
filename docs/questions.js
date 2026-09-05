@@ -9678,4 +9678,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP8: [
+    {
+      id: "sp8-q1",
+      title: "Premium components and gross premium calculation",
+      modules: "Module 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A rating actuary estimates a pure risk premium of £320 for a given risk. The rating basis includes an expense loading of 20% of gross premium and a profit margin loading of 8% of gross premium. Calculate the required gross premium.",
+          answer:
+            "Setting gross premium P such that P &times; (1 &minus; 0.20 &minus; 0.08) = £320 gives P = £320 / 0.72 = £444.44 (to the nearest penny).",
+          note: "Verified: 320/(1-0.20-0.08)=444.44 (Node-verified). Full marks require setting up the equation explicitly, not just stating the final figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the pure risk premium must genuinely be calculated before the expense and profit margin loadings can meaningfully be added.",
+          answer:
+            "The pure risk premium represents the genuine expected cost of claims alone; since expenses and profit margin are typically expressed as loadings ON TOP of this underlying risk cost, the pure risk premium must genuinely be estimated first as the foundational building block the rest of the premium structure is built upon.",
+          note: "A strong answer explains the foundational/sequential relationship, not just names the components.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why an insurer might reasonably allow for investment income when setting this rating basis, and how this could affect the calculation in part (i).",
+          answer:
+            "Since premiums are typically genuinely received before claims are eventually paid, the insurer earns genuine investment income on this float in the intervening period, so a fully sound rating basis may reasonably allow for this genuine investment income as an offset reducing the required premium loading — in this case, potentially reducing the profit margin loading needed below 8%, since some of the required return would already come from investment income on the premium float.",
+          note: "A strong answer explains the genuine mechanism (investment income on premium float) and how it could offset the calculated loading.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the pure risk premium calculation should genuinely combine claim frequency and severity, rather than being estimated as a single aggregate figure.",
+          answer:
+            "The basic rating methodology genuinely estimates expected claims cost as the product of claim frequency (the expected number of claims) and claim severity (the expected average cost per claim), since these two components can be driven by genuinely different underlying factors and understanding them separately provides more actionable insight than a single combined figure.",
+          note: "This connects directly to the frequency-times-severity decomposition theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q2",
+      title: "The burning cost approach",
+      modules: "Module 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A large commercial risk had total historical claims of £2,400,000 over a period with total exposure of 12,000 exposure units. An inflation/trend factor of 1.05 is assumed to project this experience forward to the future policy period. Using the burning cost approach, calculate the historical burning cost rate and the projected burning cost rate.",
+          answer:
+            "Historical burning cost = £2,400,000 / 12,000 = £200.00 per exposure unit. Projected burning cost = £200.00 &times; 1.05 = £210.00 per exposure unit.",
+          note: "Verified: 2,400,000/12,000=200.00; 200.00×1.05=210.00 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the burning cost approach might be genuinely well-suited to rating this large commercial risk, given its limited own claims history.",
+          answer:
+            "For a large commercial risk with genuinely limited own claims data, a simple, aggregated burning cost ratio (rather than attempting a more granular, data-intensive frequency-severity decomposition the limited data cannot reliably support) can provide a genuinely practical, defensible starting point for rating.",
+          note: "A strong answer connects burning cost's simplicity directly to the genuine data limitation this specific risk presents.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss how credibility theory might genuinely be used to refine the projected burning cost rate calculated in part (i).",
+          answer:
+            "Credibility theory would genuinely blend this risk's own limited burning cost experience with a broader, more statistically stable external benchmark (e.g. an industry-wide or portfolio-wide rate for similar risks), weighting the own experience by a genuine credibility factor reflecting how statistically reliable the own experience actually is, producing a more robust final rate than the burning cost figure alone.",
+          note: "A strong answer explicitly connects burning cost's own-experience-only limitation to credibility theory's blending solution.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the burning cost approach does not explicitly decompose experience into frequency and severity components.",
+          answer:
+            "The burning cost approach genuinely calculates historical claims experience as a simple ratio of claims to exposure over a past period, projecting this historical ratio forward WITHOUT explicitly decomposing it into separate frequency and severity components, trading some analytical insight for genuine calculation simplicity.",
+          note: "This connects directly to the burning-cost-as-simpler-alternative theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q3",
+      title: "Frequency-severity models and GLMs",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what a frequency-severity model is, and how it develops the basic frequency-times-severity decomposition into a more sophisticated statistical framework.",
+          answer:
+            "A frequency-severity model genuinely fits separate statistical distributions to claim frequency (e.g. a Poisson or negative binomial distribution) and claim severity (e.g. a gamma or lognormal distribution), allowing rating factors to be estimated for each component separately using appropriate statistical technique.",
+          note: "A strong answer names genuine example distributions for both frequency and severity, not just describes the general concept.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why assessing rating factors one at a time (univariate analysis) can produce systematically misleading results, and how a GLM addresses this.",
+          answer:
+            "If two rating factors are genuinely correlated with each other, a univariate analysis of either factor alone would genuinely confound that factor's own true effect with the correlated factor's effect, while a multivariate GLM can genuinely isolate each factor's own distinct, independent contribution, controlling for the other correlated factors simultaneously.",
+          note: "A strong answer explicitly names the confounding mechanism, not just asserts that GLMs are 'more accurate'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss what an original loss curve technique is, and why it might be genuinely useful for pricing different limit or excess structures for the same underlying risk.",
+          answer:
+            "An original loss curve describes the genuine relationship between a policy's limit of indemnity (or excess/retention level) and the expected proportion of ground-up losses that a given limit would cover, allowing an actuary to genuinely price different limit or excess structures for the same underlying risk using a single, calibrated curve, rather than requiring entirely separate pricing exercises for each different limit structure considered.",
+          note: "A strong answer explains both what the curve represents AND why it enables efficient pricing across multiple structures.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on the genuine trade-off between using machine learning techniques and traditional GLMs for general insurance pricing.",
+          answer:
+            "Machine learning techniques can genuinely capture more complex, non-linear relationships and interactions between rating factors than a standard GLM's typically more constrained functional form allows, potentially improving genuine predictive accuracy, though often at some cost to the interpretability that GLMs typically offer more readily when needing to explain and justify the resulting rates.",
+          note: "This connects directly to the accuracy-versus-interpretability trade-off theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q4",
+      title: "General insurance products, direct and reinsurance business",
+      modules: "Module 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a rating actuary must genuinely understand a product's core features before applying rating technique to it.",
+          answer:
+            "Different products carry genuinely different claim frequency, severity, and development characteristics, so the specific rating factors, data requirements, and appropriate technique choice genuinely depend on the specific product being priced, meaning product understanding is a genuine precursor to sound rating, not a separate, unrelated topic.",
+          note: "A strong answer explains WHY product understanding is necessary, not just that it is.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why pricing a reinsurance product genuinely requires different considerations from pricing the underlying direct insurance product it sits above.",
+          answer:
+            "A reinsurance treaty's genuine payoff depends on whether aggregate or individual underlying claims exceed a specified attachment point, requiring the reinsurance pricing actuary to understand the full severity distribution of the underlying direct business, a genuinely more complex pricing problem than pricing the direct policies themselves.",
+          note: "This connects directly to the reinsurance-requires-severity-distribution theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a rating actuary must genuinely understand an insurer's aggregate portfolio-level exposure, beyond simply calculating adequate premiums for each individual policy.",
+          answer:
+            "Individually well-priced policies can still genuinely aggregate into concerning concentration risk, since many policies might all be genuinely exposed to the same underlying peril or geographic concentration (e.g. many property policies all exposed to the same flood plain). Understanding the insurer's genuine portfolio-level exposure, not just individual policy adequacy, is essential for sound overall pricing and risk management strategy, connecting directly to reinsurance purchasing and capital adequacy decisions.",
+          note: "A strong answer explicitly explains WHY individual adequacy doesn't guarantee aggregate soundness, giving a concrete example.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why customer requirements must genuinely be considered alongside technical claim cost drivers when setting a premium.",
+          answer:
+            "Since a premium must genuinely be commercially viable (customers willing to pay it) as well as technically adequate (covering expected costs), understanding what customers genuinely value directly shapes both product design and the acceptable range within which a technically-derived rate must genuinely fall to remain commercially competitive.",
+          note: "This connects directly to the dual technical-and-commercial-perspective theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q5",
+      title: "External factors affecting pricing",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why claims inflation requires genuinely different treatment in pricing compared with its treatment in reserving.",
+          answer:
+            "While reserving addresses claims inflation's effect on already-incurred claims still developing, pricing must genuinely project claims inflation forward across the future policy period being priced, requiring a genuinely forward-looking inflation assumption distinct from (though informed by) the historical inflation experience reserving analysis reveals.",
+          note: "A strong answer explains the direction of the assumption (forward-looking for pricing versus backward-informed) explicitly.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the two genuinely distinct channels through which regulatory and legal developments can affect general insurance pricing.",
+          answer:
+            "Regulatory and legal changes can genuinely alter the underlying claims cost itself (e.g. changing court awards for bodily injury, or new consumer protection requirements affecting claims handling costs), directly affecting the genuine pure risk premium calculation, AND they can constrain which rating factors an insurer is permitted to use, affecting how that premium can genuinely be differentiated across customers.",
+          note: "A strong answer identifies both distinct channels, not just one.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why climate change has become a genuinely important pricing consideration for general insurers, and why historical weather data alone may no longer be a reliable guide.",
+          answer:
+            "Climate change can genuinely alter the frequency and severity of weather-related perils, directly affecting the catastrophe risk assumptions underlying pricing for exposed property and other lines. This requires genuinely forward-looking climate-adjusted assumptions because relying purely on historical weather patterns may no longer reliably represent genuine future risk, since the underlying climate conditions driving those historical patterns are themselves genuinely changing over time.",
+          note: "A strong answer explains WHY historical reliance specifically breaks down, not just that climate change 'matters'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why social and technological trends can affect both claim frequency and severity, sometimes in opposite directions.",
+          answer:
+            "Social trends can genuinely affect claim frequency (e.g. changing driving behaviours) or severity (e.g. changing attitudes toward litigation), while technological developments can genuinely affect both frequency (e.g. autonomous vehicle safety features reducing accidents) and severity (e.g. more expensive vehicle repair costs from advanced sensor technology), requiring pricing assumptions to genuinely evolve alongside these ongoing external trends.",
+          note: "This connects directly to the PESTLE-style external-factor theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q6",
+      title: "Pricing uncertainty and data quality",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between process, parameter and model uncertainty in general insurance pricing, with a brief example of each.",
+          answer:
+            "Process uncertainty is genuine random variation in actual future claims experience even given perfectly correct assumptions (e.g. the natural year-to-year variability in claim counts). Parameter uncertainty is genuine imprecision in estimating the rating model's own parameters from limited historical data (e.g. an imprecisely estimated frequency rate from a small sample). Model uncertainty is the genuine risk that the chosen rating approach itself is inappropriate (e.g. using a burning cost approach when a more granular frequency-severity model would be more suitable).",
+          note: "A complete answer distinguishes all three types AND gives a genuine, distinct example of each.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why pricing uncertainty is genuinely greater for a new or unusual risk with limited own historical experience.",
+          answer:
+            "Without substantial own experience data, pricing must rely more heavily on external data, comparable risks, and genuine actuarial judgement, introducing genuinely greater parameter and model uncertainty than pricing a well-established, high-volume risk with abundant own historical data supporting more statistically reliable estimation.",
+          note: "This connects directly to the new-risk-limited-data-uncertainty theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why a rating actuary must genuinely assess data quality, not just data availability, before relying on data for pricing.",
+          answer:
+            "Since every rating technique depends directly on the genuine accuracy and completeness of underlying data, poor-quality data (e.g. inconsistent rating factor recording, incomplete exposure records) can silently undermine even the most technically sophisticated rating model, making genuine data quality assessment an essential precondition for sound pricing, not merely confirming that data exists in sufficient volume.",
+          note: "A strong answer distinguishes availability from quality explicitly, not treating them as the same thing.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why data quality issues might be particularly acute for a newly-introduced rating factor.",
+          answer:
+            "A newly-introduced rating factor typically has genuinely less historical data available, meaning statistical estimation of that factor's genuine effect is inherently based on a smaller, potentially less reliable dataset than more long-established rating factors with genuinely deeper historical records.",
+          note: "This connects directly to the new-rating-factor-data-limitation theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q7",
+      title: "Actuarial investigations of pricing results",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a rating actuary must genuinely monitor actual experience against pricing assumptions after a rate has been implemented.",
+          answer:
+            "Comparing actual claims experience against the assumptions used in setting a rate reveals whether those pricing assumptions remain genuinely appropriate, allowing timely correction before mispriced business accumulates to a materially damaging scale.",
+          note: "This connects directly to the experience-monitoring-purpose theme developed elsewhere in this course.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a rating actuary should genuinely investigate whether an observed pricing variance reflects random fluctuation or a persistent trend, before revising rates.",
+          answer:
+            "A single period's adverse variance could reflect genuine random noise or a genuine one-off event, so investigating the underlying cause before revising rates avoids both over-reacting to noise (unnecessarily disrupting competitive positioning) and under-reacting to a genuinely important emerging trend requiring genuine rate correction.",
+          note: "A strong answer explains both risks of premature action (over-reacting and under-reacting).",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why investigating pricing results at a granular level (by rating factor or segment), rather than only at the aggregate level, might reveal genuinely important information.",
+          answer:
+            "An aggregate loss ratio genuinely consistent with expectations could still mask offsetting variances across different segments (e.g. one segment performing better than expected while another performs worse, netting out to an apparently unremarkable aggregate figure), so granular investigation by segment or rating factor is genuinely necessary to reveal these individually important, offsetting patterns that would otherwise go undetected.",
+          note: "A strong answer gives a concrete example of how offsetting variances could hide at the aggregate level.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how the results of a pricing investigation should feed back into the GLM rating model.",
+          answer:
+            "Where a genuine, persistent variance is identified for a specific rating factor or segment, this should genuinely inform a revision to that factor's estimated effect within the pricing GLM, closing the actuarial control cycle loop between investigation and model refinement, rather than treating pricing investigation as a standalone, disconnected activity.",
+          note: "This connects directly to the investigation-feeds-back-into-model theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q8",
+      title: "The collective risk model and aggregate claims",
+      modules: "Module 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A portfolio's claim count follows a Poisson-like distribution with expected value 400. Claim severity has mean £1,500 and variance £900,000. For a compound distribution, the aggregate claims variance is given by $\\text{Var}(S) = E[N] \\times E[X^2]$, where $E[X^2] = \\text{Var}(X) + (E[X])^2$. Calculate the mean aggregate claims, and the aggregate claims standard deviation.",
+          answer:
+            "Mean aggregate claims = $E[N] \\times E[X] = 400 \\times £1,500 = £600,000$. $E[X^2] = 900,000 + 1,500^2 = 900,000 + 2,250,000 = 3,150,000$. Variance of aggregate claims = $400 \\times 3,150,000 = 1,260,000,000$. Standard deviation = $\\sqrt{1,260,000,000} \\approx £35,496$ (to the nearest pound).",
+          note: "Verified: meanAggregate=600,000; varAggregate=1,260,000,000; sdAggregate≈35,496.48 (Node-verified). Marks are typically split across the mean, the E[X²] calculation, and the final standard deviation.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why deriving the exact aggregate claims distribution analytically is often genuinely difficult, and why stochastic simulation provides a practical alternative.",
+          answer:
+            "Combining a genuinely realistic frequency distribution with a genuinely realistic severity distribution typically does not produce a mathematically tractable, closed-form aggregate claims distribution. Stochastic simulation genuinely repeats a two-step process many thousands of times — simulating a random claim count, then simulating that many random claim severities and summing them — building up a genuine, empirical distribution of simulated aggregate claims outcomes.",
+          note: "A strong answer explains both the genuine analytical difficulty AND how simulation practically addresses it.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why a rating actuary might genuinely value having the full simulated aggregate claims distribution, rather than just the mean calculated in part (i).",
+          answer:
+            "The full distribution reveals genuine information about the spread and tail risk of possible aggregate outcomes, informing capital requirements or reinsurance purchasing decisions, insight a single mean figure (the pure risk premium alone) cannot provide.",
+          note: "This connects the numeric mean calculation directly to the broader value of the full distribution.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how the collective risk model genuinely differs from a simpler individual-risk-model approach.",
+          answer:
+            "The collective risk model genuinely represents total aggregate claims as the sum of a random number of individual claims, rather than a simpler individual-risk-model approach summing a fixed number of individual policy outcomes, providing a genuinely more flexible framework better suited to lines where claim count itself is uncertain.",
+          note: "This connects directly to the collective-risk-model-versus-individual-risk-model theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q9",
+      title: "Credibility theory",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A risk has 850 own claims, against a full credibility standard of 1,082 claims. Using classical credibility with $Z = \\sqrt{n / n_{full}}$, calculate the credibility factor Z. The own experience indicates a loss ratio of 62%, while the external/portfolio benchmark loss ratio is 55%. Calculate the credibility-weighted loss ratio.",
+          answer:
+            "$Z = \\sqrt{850/1082} = \\sqrt{0.7856} = 0.8863$. Credibility-weighted loss ratio = $(0.8863 \\times 62\\%) + ((1-0.8863) \\times 55\\%) = 54.95\\% + 6.25\\% = 61.20\\%$ (to 2 decimal places).",
+          note: "Verified: Z=0.8863; credibilityWeightedRate=0.6120 (61.20%) (Node-verified). Marks are typically split across the Z calculation and the final weighted rate.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why classical credibility is genuinely described as a 'threshold-based' approach, and how this differs from Bayesian credibility's approach to setting Z.",
+          answer:
+            "Classical credibility genuinely sets a credibility factor based on whether the own data has reached a specified minimum volume considered sufficient to limit random fluctuation to an acceptable level, applying full credibility once this threshold is reached and partial credibility below it. Bayesian credibility instead genuinely derives the credibility weighting from formal Bayesian statistical principles, updating a prior belief with observed data, with the weighting emerging from the relative statistical precision of the prior and data, rather than a fixed volume threshold.",
+          note: "A strong answer explicitly contrasts the threshold mechanism against the Bayesian precision-based mechanism.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why Bayesian credibility might be considered genuinely more theoretically elegant than classical credibility, despite classical credibility's practical simplicity.",
+          answer:
+            "Bayesian credibility genuinely derives its credibility weighting directly from the underlying statistical properties of the prior and data, rather than an essentially arbitrary volume threshold, providing a more theoretically justified blending weight, though classical credibility's genuine simplicity and ease of practical application can make it a reasonable, pragmatic choice in many real-world pricing contexts.",
+          note: "A strong answer acknowledges both the theoretical advantage AND the practical trade-off, not just one side.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why credibility theory is genuinely useful for pricing a genuinely new rating factor with limited own data.",
+          answer:
+            "Credibility theory allows a rating actuary to genuinely blend a new rating factor's limited own data with broader portfolio or market benchmark experience, producing a genuinely more statistically robust rate than relying on either the limited own data alone or an entirely generic market rate ignoring the factor's own genuine, specific experience.",
+          note: "This connects directly to the credibility-for-limited-data theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp8-q10",
+      title: "Reinsurance pricing and catastrophe modelling",
+      modules: "Modules 11, 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why pricing a non-proportional reinsurance treaty is genuinely more complex than pricing a proportional treaty.",
+          answer:
+            "A proportional treaty's premium and claims genuinely scale directly with the underlying direct business, so pricing largely involves agreeing the appropriate ceding commission and any risk margin, while a non-proportional treaty's pricing genuinely requires understanding the full severity distribution of underlying claims to price the specific layer being reinsured, a materially more complex exercise.",
+          note: "A strong answer explains WHY the non-proportional case requires distributional information, not just that it is 'more complex'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a reinsurer's pricing margin might genuinely need to reflect a higher risk-adjusted return than a direct insurer's margin for economically similar business.",
+          answer:
+            "A reinsurer often takes on genuinely more concentrated, correlated risk (e.g. providing catastrophe cover across many direct insurers' exposures to the same peril), requiring a genuinely higher risk-adjusted margin to compensate for this concentrated risk exposure, compared with a direct insurer's typically more diversified, individual-policy-level risk pool.",
+          note: "This connects directly to the risk-adjusted-margin theme developed elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why catastrophe model output must genuinely be incorporated alongside, not instead of, traditional frequency-severity rating technique when pricing a catastrophe-exposed property risk.",
+          answer:
+            "Catastrophe model output specifically addresses the catastrophe peril component of a property risk's total expected cost, while frequency-severity technique remains genuinely necessary for pricing the non-catastrophe (attritional) claims that risk also generates, meaning a complete pricing approach genuinely combines both catastrophe model output and traditional frequency-severity technique, addressing genuinely different components of the same risk's total cost. Ignoring either component would leave a genuine gap in the overall pricing approach.",
+          note: "A strong answer explains that the two techniques address genuinely DIFFERENT components of total cost, not competing approaches to the same problem.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a rating actuary should genuinely acknowledge catastrophe model uncertainty rather than treating a single model's output as unquestionably precise.",
+          answer:
+            "Different catastrophe models or model versions can produce genuinely different loss estimates for the same portfolio, so a rating actuary should genuinely acknowledge this model uncertainty, for example by comparing multiple models or applying genuine judgement-based adjustment, rather than treating a single model's output as unquestionably precise.",
+          note: "This connects directly to the critical-model-awareness theme developed throughout this course.",
+        },
+      ],
+    },
+  ],
 };
