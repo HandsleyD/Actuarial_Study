@@ -4858,4 +4858,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SA2: [
+    {
+      id: "sa2-q1",
+      title: "Pricing a term assurance product",
+      modules: "Modules 1, 2, 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A life insurer is pricing a one-year renewable term assurance policy with a sum insured of &pound;100,000. The assumed annual mortality rate is 0.003, and expenses are assumed to be 8% of the gross premium, with no discounting within the one-year term. Using the equivalence principle, calculate the required annual premium.",
+          answer:
+            "Expected cost of benefits = 0.003 &times; &pound;100,000 = &pound;300. Setting gross premium P such that P &times; (1 &minus; 0.08) = &pound;300 gives P = &pound;300 / 0.92 = &pound;326.09 (to the nearest penny).",
+          note: "Verified: 0.003 × 100000 = 300; 300 / 0.92 = 326.09 (Node-verified). Full marks require setting up the equivalence-principle equation explicitly.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer's mortality assumption should reflect projected future mortality improvement, not just current mortality rates, if pricing a longer-term version of this product.",
+          answer:
+            "A multi-year term assurance contract's cost depends on mortality rates throughout the whole term, and mortality has historically improved over time, so pricing using only current, unprojected mortality rates could materially overstate the product's true expected cost over a longer term.",
+          note: "This connects directly to CS2's mortality-projection material applied to a genuine pricing context.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why this insurer might offer a convertible term assurance option, and why it should price this option explicitly rather than folding its cost into the base premium's general margin.",
+          answer:
+            "A convertible option gives valuable protection against future health deterioration making later cover difficult to obtain, but since policyholders are more likely to exercise it when financially advantageous (health has genuinely worsened), it carries a genuine anti-selective cost that should be priced explicitly, rather than assumed to be self-funding within a generic margin.",
+          note: "A strong answer explicitly names the anti-selection mechanism, not just asserts that options 'have a cost'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why profit testing should be carried out before finalising this product's pricing, beyond the equivalence-principle calculation in part (i).",
+          answer:
+            "Profit testing projects the product's expected cashflows over its full lifetime (including expenses, lapses, and any embedded options) to confirm the pricing genuinely achieves the insurer's target profitability, which a single equivalence-principle calculation covering only expected mortality cost and expenses does not fully verify.",
+          note: "This connects profit testing as a verification step distinct from, and following on from, the initial pricing calculation.",
+        },
+      ],
+    },
+    {
+      id: "sa2-q2",
+      title: "With-profits bonus philosophy and pricing",
+      modules: "Modules 3, 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the role of smoothing in a with-profits fund's bonus mechanism, and why it requires genuine actuarial judgement rather than a mechanical formula.",
+          answer:
+            "Smoothing deliberately dampens the volatility a policyholder would otherwise experience from directly-invested returns by combining regular and final bonuses; setting bonus rates requires balancing fair treatment of policyholders (reflecting the fund's actual experience over time) against smoothing volatility and maintaining solvency, a genuine judgement call with no single mechanically correct answer.",
+          note: "A strong answer names both sides of the balance (fairness versus smoothing/solvency), not just one.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why with-profits bonus-setting raises a genuine inter-generational fairness issue that most other life insurance pricing decisions do not.",
+          answer:
+            "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. overly generous bonuses now could disadvantage future policyholders' claims), requiring the insurer to genuinely balance fairness across the whole fund over time, not just between the insurer and a single policyholder as in most other pricing decisions.",
+          note: "Candidates should explicitly identify the MULTI-GENERATION aspect as the distinguishing feature, not just restate that fairness matters generally.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a guaranteed annuity option (GAO) embedded in an older with-profits pension policy could become severely costly to the insurer decades after the policy was sold.",
+          answer:
+            "A GAO guarantees conversion of the fund into an annuity at a specified rate; if market annuity rates fall well below the guaranteed rate (driven by falling interest rates and improving longevity), the guarantee becomes deeply valuable to policyholders and correspondingly costly to the insurer, even though it may have looked unlikely to bite when originally priced.",
+          note: "A strong answer explains WHY the option's cost can crystallise decades later, not just that GAOs exist.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why conduct regulation for with-profits business specifically emphasises transparent governance of bonus-setting discretion.",
+          answer:
+            "Since with-profits bonus-setting inherently involves genuine insurer discretion affecting different generations of policyholders differently, conduct regulation requires clear governance and disclosure of how that discretion is exercised, addressing a genuinely specific risk not present in products with no comparable discretionary element.",
+          note: "This connects directly to the inter-generational fairness theme raised in part (ii).",
+        },
+      ],
+    },
+    {
+      id: "sa2-q3",
+      title: "Annuity pricing and the guaranteed annuity option",
+      modules: "Modules 4, 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A pension policy with an accumulated fund of &pound;100,000 carries a guaranteed annuity option offering a guaranteed annuity rate of 10% per annum. Current market annuity rates for an equivalent annuity would provide only 6.5% per annum. Calculate the guaranteed annual income, the market-rate annual income, and the extra annual cost to the insurer of honouring the guarantee.",
+          answer:
+            "Guaranteed income = 10% &times; &pound;100,000 = &pound;10,000 per annum. Market-rate income = 6.5% &times; &pound;100,000 = &pound;6,500 per annum. Extra annual cost = &pound;10,000 &minus; &pound;6,500 = &pound;3,500 per annum, payable for as long as the annuitant survives.",
+          note: "Verified: 100000×0.10=10,000; 100000×0.065=6,500; difference=3,500 (Node-verified). Marks are typically split across the three sub-calculations.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why annuity pricing requires the opposite mortality improvement sensitivity to term assurance pricing.",
+          answer:
+            "Since an annuity's cost increases the longer the annuitant survives, understating future mortality improvement would understate the annuity's true cost, exactly the opposite pricing risk to a protection product where understating improvement would overstate cost &mdash; the insurer's risk exposure is inverted between the two product types.",
+          note: "A strong answer explicitly names this inversion, connecting it to CS2's mortality-improvement material.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the Solvency II matching adjustment is particularly relevant to this insurer's annuity book, and one condition it must satisfy to use it.",
+          answer:
+            "The matching adjustment allows discounting long-term, predictable annuity liabilities using a higher rate reflecting the return on assets held to back them, recognising the illiquidity premium available on a held-to-maturity matched portfolio; to use it, the insurer must demonstrate genuinely strict cashflow matching between assets and liabilities, since inappropriate use could materially overstate financial strength.",
+          note: "A strong answer explains both why it's relevant AND the strict matching condition required to use it, not just one or the other.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this insurer might combine reinsurance with the matching adjustment to manage its annuity book's risk, rather than relying on a single technique.",
+          answer:
+            "Reinsurance transfers longevity risk to a specialist counterparty, while the matching adjustment addresses interest rate risk through genuine asset-liability matching; each technique addresses a genuinely different risk driver, so combining them can achieve more efficient, diversified risk management than either alone.",
+          note: "This connects directly to the best-practice theme of combining complementary risk management tools rather than relying on a single approach.",
+        },
+      ],
+    },
+    {
+      id: "sa2-q4",
+      title: "Unit-linked charging and embedded guarantees",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why setting a unit-linked policy's annual management charge requires genuine equivalence-principle-style analysis, even though it appears to be a simple percentage fee.",
+          answer:
+            "The charge must be set so the expected present value of charge income covers the expected present value of expenses and required profit margin over the policy's expected lifetime, exactly the same underlying pricing logic as a traditional premium calculation, just expressed as an ongoing deduction rather than an upfront premium.",
+          note: "A strong answer explicitly connects charge-setting to genuine pricing logic, not just describes it as an administrative fee.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why higher-than-assumed early lapses are particularly damaging to a unit-linked product's profitability, compared with a product priced with a larger upfront margin.",
+          answer:
+            "Since unit-linked profit largely derives from ongoing charges rather than an upfront margin, higher-than-assumed early lapses directly reduce the insurer's opportunity to recoup initial expenses and earn its intended margin, potentially turning an expected-profitable policy into a loss-making one.",
+          note: "Candidates should connect this directly to new-business-strain and expense-recovery themes developed elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "This insurer is considering adding a guaranteed minimum death benefit to its unit-linked product. Discuss why pricing this guarantee requires materially more complex techniques than pricing the base unit-linked charges alone.",
+          answer:
+            "The guarantee only bites if the fund value falls below the guaranteed level at the point of claim, so pricing it requires modelling the genuine, path-dependent probability and cost of this scenario across many possible future market outcomes &mdash; a stochastic, option-pricing-style exercise, unlike the base charges which can be priced using simpler expected-cashflow analysis.",
+          note: "A strong answer explicitly connects this to embedded-option pricing techniques (e.g. stochastic modelling), not just asserts the guarantee 'adds complexity'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the insurer might use derivatives to hedge the cost of this guarantee, rather than relying purely on the charges collected to fund it.",
+          answer:
+            "Derivatives (e.g. equity put options) can efficiently and directly offset the guarantee's payoff pattern under adverse market scenarios, providing a more targeted and reliable risk management tool than simply hoping collected charges are sufficient to cover the guarantee's genuinely uncertain, path-dependent cost.",
+          note: "This connects directly to CM2's derivative-hedging material applied to a genuine embedded-guarantee context.",
+        },
+      ],
+    },
+    {
+      id: "sa2-q5",
+      title: "Taxation and the regulatory environment",
+      modules: "Module 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the tax treatment of a with-profits fund's investment returns must be reflected in the fund's bonus-setting philosophy.",
+          answer:
+            "Tax charged on the fund's investment income and gains directly reduces the returns available to support bonuses, so bonus-setting must genuinely account for the fund's after-tax investment performance, not its gross returns, or bonuses could be set at an unsustainable level relative to what is genuinely available to distribute.",
+          note: "A strong answer explicitly distinguishes gross from after-tax performance, not just asserts that 'tax matters'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an insurer's own corporate tax position must be incorporated into profit testing, beyond the policyholder-level tax treatment of premiums and benefits.",
+          answer:
+            "Tax payable on the insurer's own profits reduces the genuine after-tax return achieved from a given pre-tax margin, so profit testing conducted on a pre-tax basis alone could materially overstate a product's genuine economic attractiveness to the insurer.",
+          note: "This connects directly to CB1's after-tax cost-of-capital material applied to life insurance profit testing.",
+        },
+        {
+          label: "(iii)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between prudential and conduct regulation, and explain why with-profits business raises a conduct-regulation concern that most other life insurance products do not.",
+          answer:
+            "Prudential regulation focuses on an insurer's financial soundness and ability to meet obligations, while conduct regulation focuses on how insurers treat customers, including fair and transparent treatment. With-profits business raises a genuinely distinct conduct concern because bonus-setting inherently involves insurer discretion affecting different policyholder generations differently, requiring specific governance and disclosure not needed for products with fixed, contractually-determined benefits.",
+          note: "A strong answer gives precise definitions of both regulatory types before correctly identifying the with-profits-specific conduct concern.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an independent regulatory body, rather than a government department directly, typically oversees life insurance regulation.",
+          answer:
+            "An independent regulator can apply technical expertise and maintain consistency of approach somewhat insulated from short-term political pressures, though it typically still operates within a legal framework set by government, balancing technical independence against democratic accountability.",
+          note: "A strong answer acknowledges both the benefit (technical independence) and the constraint (remaining accountable within a legal framework).",
+        },
+      ],
+    },
+    {
+      id: "sa2-q6",
+      title: "Solvency II capital requirements for a life insurer",
+      modules: "Modules 10, 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A life insurer's annuity book has a best estimate liability (BEL) of &pound;20,000,000. The risk margin is assessed as 5% of BEL. The Solvency Capital Requirement (SCR) is assessed as 12% of BEL, and the Minimum Capital Requirement (MCR) is 25% of the SCR. Calculate (a) the total technical provisions, (b) the SCR, and (c) the MCR.",
+          answer:
+            "(a) Risk margin = 5% &times; &pound;20,000,000 = &pound;1,000,000, so total technical provisions = &pound;20,000,000 + &pound;1,000,000 = &pound;21,000,000. (b) SCR = 12% &times; &pound;20,000,000 = &pound;2,400,000. (c) MCR = 25% &times; &pound;2,400,000 = &pound;600,000.",
+          note: "Verified: 0.05×20,000,000=1,000,000; TP=21,000,000; 0.12×20,000,000=2,400,000; 0.25×2,400,000=600,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why longevity risk and mortality risk are modelled as genuinely distinct, and potentially offsetting, risk modules under Solvency II for an insurer writing both annuity and protection business.",
+          answer:
+            "Longevity risk (annuitants living longer than expected) and mortality risk (policyholders dying sooner than expected) move in opposite directions for the insurer's balance sheet, so an insurer with both business types has some natural diversification benefit that a pure single-product insurer would not have, which Solvency II's capital calculation should reflect.",
+          note: "A strong answer explicitly explains the inverted relationship, not just names both risk types.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss one reason this insurer might develop an internal model to calculate its SCR for this annuity book, rather than using the standard formula.",
+          answer:
+            "An internal model can better reflect the insurer's own genuine policyholder behaviour and mortality experience (e.g. specific to its annuitant population) than a generic standard formula calibrated across the industry, potentially producing a more risk-sensitive capital requirement, though this requires regulatory approval and significant development investment.",
+          note: "Any one genuinely valid, well-explained reason should be accepted.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this insurer's ORSA should consider combined, correlated stress scenarios (e.g. falling interest rates alongside worsening lapse experience), rather than assessing each risk module in isolation.",
+          answer:
+            "These risks can interact in genuinely important ways under stress, so a forward-looking assessment of overall solvency needs must consider combined, correlated scenarios relevant to the insurer's specific risk profile, not just each standard formula risk module's standalone impact.",
+          note: "This connects the numeric SCR/MCR calculation directly to the ORSA's genuinely forward-looking, combined-scenario purpose.",
+        },
+      ],
+    },
+    {
+      id: "sa2-q7",
+      title: "Profit and value reporting for a diversified life insurer",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A life insurer's protection business has net assets of &pound;4,000,000 and is expected to generate future profits of &pound;1,500,000, &pound;1,800,000 and &pound;2,100,000 in the next three years respectively. Using a risk discount rate of 7% per annum, calculate the present value of future profits (PVFP) and the resulting embedded value.",
+          answer:
+            "PVFP = &pound;1,500,000/1.07 + &pound;1,800,000/1.07&sup2; + &pound;2,100,000/1.07&sup3; = &pound;1,401,869 + &pound;1,572,301 + &pound;1,714,114 = &pound;4,688,284 (to the nearest pound). Embedded value = net assets + PVFP = &pound;4,000,000 + &pound;4,688,284 = &pound;8,688,284.",
+          note: "Verified: PVFP=4,688,284.41; EV=8,688,284.41 (Node-verified, rounded to nearest pound in the model answer). Marks are typically split between the PVFP calculation and the final embedded value figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer's statutory reported profit for this protection business might appear materially lower than the embedded value calculated in part (i) would suggest, particularly in the years immediately following a period of strong new business growth.",
+          answer:
+            "Statutory reporting requires prudent reserves to be set up at the point of sale (new business strain), depressing reported early profit even though embedded value, capturing the full expected future profit stream in present-value terms, may already be genuinely positive from inception.",
+          note: "A strong answer explains this as consistent, not contradictory, results from two genuinely different reporting bases.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the contractual service margin (CSM) under IFRS 17 is likely to be a more significant reporting concept for this insurer's annuity business than for its protection business.",
+          answer:
+            "The CSM represents unearned future profit released gradually as service is provided, directly shaping how a product's total expected profit is spread across future reporting periods; since annuity business typically has a genuinely much longer duration than protection business, its total expected profit is spread across many more future periods, making the CSM's role in shaping the reported profit PATTERN correspondingly more significant.",
+          note: "A strong answer explicitly connects the CSM's significance to product DURATION, not just names the CSM generically.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an analysis of embedded value movement broken down by product line (protection, with-profits, annuity) is more useful to this insurer's management than a single combined total.",
+          answer:
+            "Decomposing the year-on-year embedded value change by product line reveals which specific parts of a diversified book are genuinely driving value creation or destruction, more actionable for management decision-making than a single aggregated whole-company figure that could mask offsetting movements between product lines.",
+          note: "This connects directly to the surplus-analysis decomposition theme developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa2-q8",
+      title: "Analysis of experience and surplus",
+      modules: "Module 15",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A life insurer's protection book of 1,000 policies had an assumed annual lapse rate of 8%, but actually experienced a lapse rate of 9.5% over the year. Calculate the expected number of lapses, the actual number of lapses, and the resulting experience variance in the number of lapses.",
+          answer:
+            "Expected lapses = 1,000 &times; 8% = 80. Actual lapses = 1,000 &times; 9.5% = 95. The variance is 95 &minus; 80 = 15 additional lapses above the assumed level, an adverse variance given the new-business-strain implications of higher-than-expected early lapses.",
+          note: "Verified: 1000×0.08=80; 1000×0.095=95; difference=15 (Node-verified). Marks are typically split across the expected figure, actual figure, and correctly labelling the variance.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the insurer should investigate whether this lapse variance reflects genuine random fluctuation or a persistent trend before revising its lapse assumption.",
+          answer:
+            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts that should inform revised pricing and reserving assumptions.",
+          note: "A strong answer frames this explicitly as a statistical-significance judgement, not simply 'more data is needed'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the insurer's overall surplus analysis should separately identify the 'expected' release of margins from the lapse experience variance calculated in part (i).",
+          answer:
+            "The expected component reflects prudent margins built into original pricing/reserving assumptions that are expected to emerge as profit purely through the passage of time, forming a predictable baseline; separately identifying the lapse experience variance reveals a genuinely unexpected deviation from that baseline, which is what actually informs sound management action, rather than conflating planned and unplanned sources of surplus movement.",
+          note: "A strong answer explicitly explains why conflating expected release and experience variance would reduce the analysis's diagnostic value.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this lapse experience finding should feed back into both the insurer's pricing and reserving assumptions, not just one of the two.",
+          answer:
+            "The same underlying experience (higher-than-assumed lapses) affects both the pricing of new business going forward and the adequacy of reserves already held for existing business, so a genuinely complete response to this finding must consider both applications together.",
+          note: "This connects directly to the theme that experience analysis is a genuinely central activity feeding into multiple other technical areas.",
+        },
+      ],
+    },
+    {
+      id: "sa2-q9",
+      title: "Strategic decision: entering the bulk annuity market",
+      modules: "Modules 13, 16",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A life insurer with strong protection business but no prior annuity experience is considering entering the bulk annuity market (taking on pension schemes' liabilities). Discuss two factors the insurer should consider when assessing this strategic option.",
+          answer:
+            "First, capital impact: bulk annuity business is materially more capital-intensive than protection business (given its long-duration longevity and interest rate risk), so the insurer must assess whether it has, or can raise, sufficient capital. Second, risk profile fit: bulk annuities introduce genuinely new longevity and interest rate risk drivers the insurer has no existing experience managing, unlike its established, shorter-tail protection risk, so the insurer must assess whether it has or can build the necessary pricing, ALM and reserving expertise.",
+          note: "Any two genuinely distinct, well-justified factors should be accepted, provided they are assessed against this insurer's SPECIFIC circumstances.",
+        },
+        {
+          label: "(ii)",
+          command: "Recommend",
+          marks: 4,
+          question:
+            "Assuming the insurer has adequate capital headroom but limited in-house annuity and ALM expertise, recommend a course of action for entering this market, with justification.",
+          answer:
+            "A phased entry supported by longevity reinsurance is recommended: partnering with a reinsurer experienced in longevity risk provides access to pricing expertise and risk transfer the insurer currently lacks, while a phased rollout (starting with smaller bulk transactions before larger ones) limits exposure while the insurer builds its own ALM and pricing capability, rather than writing large transactions immediately based on borrowed expertise alone.",
+          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the stated capability gap.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question:
+            "Explain one genuine implication of this recommended reinsurance-supported entry for the insurer's reported profit pattern.",
+          answer:
+            "Ceding a share of longevity risk to the reinsurance partner typically also cedes a share of expected profit, so the insurer's own reported profit from this new bulk annuity business will likely be lower and less volatile than if it retained the risk entirely itself &mdash; a genuine trade-off between reduced volatility/risk and reduced expected retained profit.",
+          note: "A strong answer explicitly traces the capital/reinsurance decision through to its concrete effect on reported financial results.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this recommendation should specify how its success will be monitored going forward, rather than treating the decision as final once implemented.",
+          answer:
+            "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics for the new bulk annuity book) shows the recommendation is genuinely designed to be verified and adjusted over time, rather than a one-off, unchecked decision.",
+          note: "This connects directly to this course's recurring ongoing-monitoring theme, applied specifically to strategic decision-making.",
+        },
+      ],
+    },
+    {
+      id: "sa2-q10",
+      title: "International comparison and complex problem-solving",
+      modules: "Modules 17, 18",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why identifying best practice in with-profits fund governance requires genuine judgement about context, rather than assuming one market's approach transfers directly to another.",
+          answer:
+            "An approach that works well in one market's specific regulatory, cultural, and product-design context may not transfer straightforwardly to a genuinely different context, so identifying best practice requires assessing WHY an approach works in its original context, not just copying it directly &mdash; 'best practice' genuinely means best-for-context, not a single universal standard.",
+          note: "A strong answer explicitly explains why context-blind copying is risky, not just asserts that context 'matters'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a life insurer operating outside the Solvency II framework might still be subject to a broadly similar risk-based capital regime.",
+          answer:
+            "Different jurisdictions have developed their own risk-based capital frameworks (e.g. risk-based capital, RBC, systems used elsewhere) that share Solvency II's broad goal of ensuring adequate capital relative to risk, but differ in technical detail, calibration, and structure, reflecting genuinely different regulatory traditions pursuing a similar underlying objective.",
+          note: "A strong answer recognises Solvency II as one example of a risk-based capital regime, not the only possible approach.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A life insurer must decide whether to close its with-profits fund to new business while managing existing policyholders' fair treatment. Discuss why this represents a genuinely complex issue requiring integrated judgement.",
+          answer:
+            "This decision genuinely involves competing considerations across multiple topic areas at once &mdash; conduct obligations to existing policyholders (requiring continued fair bonus-setting despite a shrinking fund), capital implications of an ageing, closed fund with no new business to dilute legacy guarantee costs, and strategic implications for the insurer's wider business and reputation &mdash; requiring integrated judgement across conduct, capital and strategy rather than a single-dimension analysis.",
+          note: "A strong answer explicitly draws on multiple topic areas together (conduct, capital, strategy), not just one in isolation, reflecting the genuinely integrated nature of complex real-world issues.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why solving a genuinely complex issue like this typically requires drawing on multiple SA2 topic areas simultaneously, rather than a single technique in isolation.",
+          answer:
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on conduct regulation, capital management, and strategic assessment together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
+          note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA2 syllabus.",
+        },
+      ],
+    },
+  ],
 };
