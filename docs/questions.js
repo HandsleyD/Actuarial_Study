@@ -7268,4 +7268,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP2: [
+    {
+      id: "sp2-q1",
+      title: "Life insurance products and the operating environment",
+      modules: "Modules 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 3,
+          question:
+            "Define the three broad benefit triggers used to categorise life insurance products, and the four product bases named in the official SP2 syllabus.",
+          answer:
+            "Benefit triggers: on death, on survival to a specified point in time, or on continued survival. Product bases: conventional without-profits, with-profits, unit-linked, and index-linked.",
+          note: "A complete answer names all three triggers and all four bases precisely, not a partial list.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why understanding a life insurance product requires seeing it from both the consumer's needs and the insurer's risks simultaneously, rather than describing the product purely from the customer's perspective.",
+          answer:
+            "A genuinely complete understanding of any product requires seeing it from both sides at once — what genuine need it meets for the customer, and what genuine risk exposure it creates for the insurer — since these two perspectives directly shape appropriate design, pricing and risk management decisions.",
+          note: "A strong answer explicitly frames this as a DUAL perspective requirement, not just describes the product's customer-facing features.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss two operating-environment factors (from the official syllabus's list) that could genuinely affect the success of a new with-profits savings product launched in an unfamiliar market.",
+          answer:
+            "Local culture: if the target market has limited cultural familiarity with pooled, discretionary-bonus savings products, take-up could be genuinely lower than in a market with an established with-profits tradition, regardless of the product's technical merits. Remuneration of sales channels: if the local distribution market's commission structures do not adequately reward the genuine effort involved in explaining a with-profits product's smoothing mechanism, distributors may be incentivised to favour simpler, easier-to-sell alternatives instead.",
+          note: "Any two genuinely distinct, well-justified operating-environment factors should be accepted, provided they are applied to this specific with-profits scenario.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why professional guidance is listed as a distinct environmental influence from the regulatory environment.",
+          answer:
+            "Professional guidance sets expected standards of actuarial practice that complement, but are genuinely distinct from, statutory regulation — an actuary must comply with both the legal regulatory framework and the profession's own guidance, which can sometimes set a higher or more specific bar than regulation alone requires.",
+          note: "This connects directly to the professional-standards-as-distinct-layer theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q2",
+      title: "Product design and asset shares for a with-profits contract",
+      modules: "Modules 4, 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A with-profits policy has a starting asset share of &pound;0. Each year, a premium of &pound;2,000 is received. Expenses of &pound;300 are deducted in year 1 and &pound;100 in year 2 (deducted before applying investment return). The fund achieves an investment return of 6% per annum. Using the recursive formula AS(t) = (AS(t-1) + premium - expenses) &times; (1 + investment return), calculate the asset share at the end of year 1 and at the end of year 2.",
+          answer:
+            "AS(1) = (&pound;0 + &pound;2,000 &minus; &pound;300) &times; 1.06 = &pound;1,700 &times; 1.06 = &pound;1,802.00. AS(2) = (&pound;1,802.00 + &pound;2,000 &minus; &pound;100) &times; 1.06 = &pound;3,702.00 &times; 1.06 = &pound;3,924.12.",
+          note: "Verified: AS(1)=1,802.00; AS(2)=3,924.12 (Node-verified). Marks are typically split across correctly applying the recursion for each year.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the asset share calculated in part (i) does not automatically determine the exact bonus this policyholder receives.",
+          answer:
+            "Bonus-setting must genuinely balance paying a fair reflection of the policy's own asset share against smoothing volatility across different years and maintaining fund solvency for remaining policyholders, so the insurer exercises genuine discretion rather than mechanically paying out the calculated asset share figure precisely.",
+          note: "A strong answer explicitly names the genuine discretion involved, not just restates that asset shares are 'used' for bonus-setting.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why bonus-setting for this with-profits fund raises a genuine inter-generational fairness issue.",
+          answer:
+            "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. overly generous bonuses now could disadvantage future policyholders' claims), requiring the insurer to genuinely balance fairness across the whole fund over time.",
+          note: "This connects directly to the inter-generational fairness theme developed in this course.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this product's premium, benefit, and charge structure should be designed together as an integrated whole, rather than each element decided independently.",
+          answer:
+            "The premium a customer is willing to pay, the benefit genuinely delivered, and any charges levied are all interconnected — a benefit-rich design typically requires a correspondingly higher premium or charge structure to remain commercially viable, so these elements cannot be soundly decided in isolation from each other.",
+          note: "This connects directly to the integrated-design theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q3",
+      title: "Unit pricing and discontinuance terms",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why unit pricing for an internal unit-linked fund must be applied consistently and fairly across policyholders, and why a bid-offer spread might be used.",
+          answer:
+            "Unit pricing must ensure that policyholders buying or selling units at any given time receive a genuinely fair price reflecting the fund's true current value, protecting both entering and existing policyholders from unfair dilution or advantage. A bid-offer spread reflects genuine dealing costs incurred when the fund manager buys or sells underlying assets to accommodate transacting policyholders, ensuring those causing the dealing activity bear its genuine cost rather than spreading it unfairly across all fund policyholders.",
+          note: "A strong answer addresses both the fairness principle AND the specific bid-offer spread mechanism.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why discontinuance terms for a without-profits contract must genuinely reflect the insurer's changed financial position on early exit, rather than simply returning premiums paid.",
+          answer:
+            "Discontinuing early genuinely changes the insurer's expected future cashflows and expense recovery (since expenses are typically front-loaded relative to premium income), so discontinuance terms must be set using genuine, defensible principles that fairly reflect this change, not simply return premiums paid regardless of the insurer's actual altered position.",
+          note: "This connects directly to CB1's expense-recovery material applied to a genuine discontinuance context.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why discontinuance terms should be set with genuine care to avoid creating an incentive for anti-selective early discontinuance.",
+          answer:
+            "If surrender terms are genuinely more generous than the policy's true remaining value, healthier or lower-risk policyholders might be incentivised to surrender and re-purchase more advantageous new cover elsewhere, leaving the insurer with a genuinely worse-than-average remaining book. This requires the insurer to set surrender values genuinely reflecting the policy's true remaining economic value (e.g. via reserves or equating policy values) rather than an overly generous formula that could be exploited by policyholders whose own circumstances have genuinely changed.",
+          note: "A strong answer explains the genuine anti-selection MECHANISM, not just asserts that terms should be 'fair'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the syllabus requires discussing the extent to which discontinuance calculation methods meet their underlying principles, rather than simply describing the methods.",
+          answer:
+            "This tests a genuinely higher-order skill — critically evaluating whether a specific calculation method actually achieves the underlying fairness and defensibility principles it is meant to serve, not merely being able to perform the calculation mechanically without judging its adequacy.",
+          note: "This connects directly to SP2's higher-order skill requirement.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q4",
+      title: "Identifying sources of risk in life insurance",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List six genuine sources of risk to a life insurance company named in the official syllabus, other than mortality rates and investment performance.",
+          answer:
+            "Any six of: policy and other data, expenses (including the effect of inflation), persistency, mix of new business, volume of new business, guarantees and options, competition, actions of the board of directors, actions of distributors, failure of appropriate management systems and controls, counterparties, legal/regulatory/tax developments, fraud, aggregation and concentration of risk, climate risks.",
+          note: "A complete answer names six genuinely distinct sources from the official list.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why mortality rate risk points in genuinely opposite directions for a life insurer's protection business and its annuity business.",
+          answer:
+            "Mortality improving faster than assumed reduces protection-business cost (fewer deaths than priced for) but increases annuity-business cost (annuitants living longer than priced for), meaning the same underlying mortality trend risk can be a genuine tailwind for one product line and a headwind for the other within the same insurer.",
+          note: "A strong answer explicitly explains the inverted relationship, not just names both product lines.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why climate risks have become an explicitly named risk source for life insurers, and how they might affect the insurer through two genuinely different channels.",
+          answer:
+            "Climate risk reflects the actuarial profession's genuinely evolving understanding of emerging risk categories. It can affect a life insurer through physical risk (e.g. climate change affecting mortality via extreme weather or heat-related illness, directly affecting the liability side) and transition risk (e.g. affecting the value of the insurer's own investment portfolio as economies shift away from carbon-intensive activities, affecting the asset side), two genuinely distinct channels through which the same underlying climate trend can reach the insurer's balance sheet.",
+          note: "A strong answer identifies both channels (physical and transition risk) explicitly, not just asserts that climate change 'matters'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why 'failure of appropriate management systems and controls' is a genuinely distinct risk source from 'actions of the board of directors'.",
+          answer:
+            "Board actions concern genuine strategic or governance decisions, while failure of management systems and controls concerns a genuinely different, more operational risk — the insurer's internal processes failing to detect or prevent problems, even where board-level strategic decisions were themselves entirely sound.",
+          note: "This connects directly to the strategic-versus-operational risk distinction developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q5",
+      title: "Reinsurance and underwriting for a new protection product",
+      modules: "Modules 8, 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "A life insurer writes &pound;3,000,000 of gross premium on a new term assurance account and retains 70% under a quota share reinsurance treaty. Calculate the retained premium and the ceded premium.",
+          answer:
+            "Retained premium = &pound;3,000,000 &times; 70% = &pound;2,100,000. Ceded premium = &pound;3,000,000 &minus; &pound;2,100,000 = &pound;900,000.",
+          note: "Verified: 3,000,000×0.70=2,100,000; ceded=900,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer, having limited own experience with this new product, might particularly value reinsurance beyond its risk-transfer purpose.",
+          answer:
+            "Reinsurers often hold significant mortality pricing expertise and data pooled across many insurers' experience, making them a genuinely valuable partner for pricing this new or unusual mortality risk, not merely a pure risk-transfer counterparty, given the insurer's own limited experience with this specific product.",
+          note: "This connects directly to the reinsurer-as-expertise-source theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss the genuine factors this insurer should consider when determining its underwriting approach for this new term assurance product.",
+          answer:
+            "The genuine cost of underwriting relative to the sum insured being assessed, the size and duration of the policy (a longer-duration commitment warrants more rigorous underwriting since mispricing cannot easily be corrected through repricing), the insurer's own risk appetite and pricing confidence given its limited own experience, and the competitive/distribution implications of a more or less rigorous underwriting process on genuine customer take-up.",
+          note: "A strong answer addresses multiple genuine factors together, not just one in isolation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a guaranteed acceptance version of this product would typically carry a lower sum insured than a fully-underwritten equivalent.",
+          answer:
+            "Without individual underwriting, the insurer faces genuine anti-selection risk from applicants who know they have poor health choosing this product specifically, so limiting the sum insured reduces the insurer's genuine financial exposure to this anti-selection risk while still offering broadly accessible cover.",
+          note: "This connects directly to the guaranteed-acceptance anti-selection theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q6",
+      title: "Asset-liability matching for a mixed life insurance book",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an insurer with both annuity business and unit-linked business should categorise its liabilities into different types before setting an asset-liability matching strategy.",
+          answer:
+            "Different liability types have genuinely different duration, cashflow certainty, and risk-bearing characteristics — annuity liabilities are long-duration and insurer-borne, while unit-linked liabilities pass investment risk directly to the policyholder — so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually.",
+          note: "A strong answer explicitly explains WHY categorisation is necessary before matching, not just states that liabilities should be categorised.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the unit-linked book requires a genuinely different ALM approach from the annuity book.",
+          answer:
+            "Since unit-linked investment risk and return pass directly to the policyholder, the insurer's own ALM concern is largely limited to managing charges, expenses, and any embedded guarantees, rather than managing a large pool of insurer-owned assets against insurer-owned liabilities, unlike the annuity book where the insurer itself genuinely bears the long-duration interest rate risk.",
+          note: "A strong answer explicitly contrasts the two books' risk-bearing structures.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss two further ways (beyond reinsurance, underwriting, and asset-liability matching) this insurer could manage the risks it faces.",
+          answer:
+            "Choice of with-profits bonus method: for any with-profits business, the bonus-setting approach itself is a genuine risk management lever affecting both member fairness and fund solvency. Policy retention activity: proactive retention activity directly manages persistency risk, since higher-than-assumed lapses can genuinely damage profitability given typically front-loaded expenses relative to premium income.",
+          note: "Any two genuinely distinct, well-explained further risk management approaches should be accepted from the official syllabus list.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the genuine principles of investment for this insurer should balance security against return, rather than simply maximising expected return.",
+          answer:
+            "Investment strategy should genuinely reflect the nature, term and currency of the insurer's liabilities, balancing security against return and providing sufficient liquidity to meet claims and expenses as they fall due, since maximising expected return alone could expose the insurer to genuine solvency risk if asset and liability values move unfavourably out of step.",
+          note: "This connects directly to CM2's core matching principle.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q7",
+      title: "Pricing and modelling a term assurance product",
+      modules: "Modules 11, 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A life insurer is pricing a one-year renewable term assurance policy with a sum insured of &pound;150,000. The assumed annual mortality rate is 0.0025, and expenses are assumed to be 9% of the gross premium, with no discounting within the one-year term. Using the equation of value, calculate the required annual premium.",
+          answer:
+            "Expected cost of benefits = 0.0025 &times; &pound;150,000 = &pound;375. Setting gross premium P such that P &times; (1 &minus; 0.09) = &pound;375 gives P = &pound;375 / 0.91 = &pound;412.09 (to the nearest penny).",
+          note: "Verified: 0.0025×150000=375; 375/0.91=412.09 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer might use stochastic simulation, rather than the deterministic calculation in part (i), if this product included a guaranteed minimum investment-linked benefit.",
+          answer:
+            "An investment guarantee only genuinely bites under certain, adverse future market outcomes, so its true cost depends on the full probability-weighted range of possible future market paths, which stochastic simulation and option-pricing techniques are specifically designed to capture, unlike the single deterministic calculation used for the fixed-benefit product in part (i).",
+          note: "This connects directly to CM2's option-pricing material applied to a genuine guarantee-costing context.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why sensitivity analysis should be carried out alongside the pricing calculation in part (i).",
+          answer:
+            "Sensitivity analysis reveals how much the calculated premium genuinely changes when key assumptions (e.g. the mortality rate or expense loading) are varied, showing which assumptions the result is most exposed to — without this, a single-point premium could give false confidence, since the premium is only as reliable as the assumptions used to calculate it.",
+          note: "A strong answer explicitly connects sensitivity analysis to the genuine uncertainty in underlying assumptions.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this same underlying model might need genuinely different assumptions if used to calculate embedded value rather than to price this product.",
+          answer:
+            "Pricing typically uses best-estimate or lightly-margined assumptions (including a profit requirement) to determine a competitive, sustainable premium, while embedded value calculation requires genuinely realistic, best-estimate assumptions reflecting the true expected value of in-force business, so the same model structure can require different assumption inputs depending on its specific purpose.",
+          note: "This connects the numeric pricing calculation directly to the assumption-purpose material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q8",
+      title: "Supervisory reserves and solvency capital",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A life insurer's best estimate reserve for a block of business is &pound;25,000,000, with an assumed standard deviation of outcomes of 6% of the reserve. Using a Value at Risk approach with a 99.5% confidence level (z-score of 2.576), calculate the solvency capital requirement.",
+          answer:
+            "Standard deviation = 6% &times; &pound;25,000,000 = &pound;1,500,000. Solvency capital requirement = &pound;1,500,000 &times; 2.576 = &pound;3,864,000.",
+          note: "Verified: 25,000,000×0.06=1,500,000; 1,500,000×2.576=3,864,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what a 'non-unit reserve' is, and why this concept is genuinely specific to unit-linked business.",
+          answer:
+            "A non-unit reserve is an additional reserve held for a unit-linked contract's non-unit-linked elements (e.g. mortality risk cover, or the risk that future charges won't cover future expenses), needed because the unit-linked fund value itself only covers the investment-linked element of the contract, not these additional non-investment risk elements.",
+          note: "A strong answer explicitly explains WHY the unit fund alone is insufficient, not just names the term.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why the strength of this insurer's reserving basis and the level of solvency capital required genuinely interact, rather than being determined in complete isolation from each other.",
+          answer:
+            "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital genuinely depends on how prudent the reserving basis already is.",
+          note: "This directly tests the official syllabus's explicit interplay objective.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why stochastic simulation combined with option pricing techniques might be used to determine the cost of an investment guarantee embedded in this insurer's reserving basis.",
+          answer:
+            "An investment guarantee's true cost depends on the full probability-weighted range of possible future market paths, which stochastic simulation and option-pricing techniques are specifically designed to capture, providing a more reliable basis for the reserve than a single deterministic scenario.",
+          note: "This connects the numeric capital calculation directly to the guarantee-costing material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q9",
+      title: "Setting assumptions for pricing, reserving and embedded value",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between the genuine purpose of assumptions used for pricing, for determining liabilities, and for determining embedded value, for the same underlying life insurance mortality risk.",
+          answer:
+            "Pricing assumptions must recover the insurer's cost of capital and target margin to be commercially sustainable, so they typically include an explicit profit requirement. Liability (reserving) assumptions are typically set with genuine prudence to protect policyholders, reflecting what the insurer genuinely expects to pay out plus a margin. Embedded value assumptions should be genuinely realistic, best-estimate expectations of future experience, since embedded value aims to capture the true expected economic value of in-force business, which prudent reserving assumptions would understate.",
+          note: "A complete answer distinguishes all three purposes clearly.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why mortality assumption-setting for a life insurer's annuity book requires genuinely opposite caution to its protection book.",
+          answer:
+            "Since annuity cost increases the longer annuitants survive, understating future mortality improvement would understate annuity cost, exactly the opposite pricing risk to a protection product where understating improvement would overstate cost — the direction of assumption-setting caution genuinely inverts between the two product lines.",
+          note: "This connects directly to the inverted-mortality-improvement theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why an actuary should be able to justify their assumption choices with genuine, documented reasoning, rather than simply asserting a figure.",
+          answer:
+            "Since assumption-setting genuinely involves judgement rather than purely mechanical calculation, transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work and helping ensure the assumption is genuinely sound rather than arbitrary.",
+          note: "A strong answer connects documentation to genuine professional accountability.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why supervisory reserve assumptions may genuinely differ from pricing assumptions for the same product.",
+          answer:
+            "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the same underlying risk can genuinely warrant a more cautious figure for reserving than for pricing.",
+          note: "This connects directly to the reserving-versus-pricing-purpose distinction developed in this module.",
+        },
+      ],
+    },
+    {
+      id: "sp2-q10",
+      title: "Monitoring experience and analysis of surplus",
+      modules: "Module 14",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A life insurer's total surplus for the year was &pound;950,000, against an expected surplus of &pound;800,000 under its original assumptions. Of the total variance, &pound;60,000 is attributed to a deliberate assumption change made during the year. Calculate the total variance and the resulting experience variance.",
+          answer:
+            "Total variance = &pound;950,000 &minus; &pound;800,000 = &pound;150,000. Experience variance = &pound;150,000 &minus; &pound;60,000 (assumption change) = &pound;90,000.",
+          note: "Verified: 950,000-800,000=150,000; 150,000-60,000=90,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the &pound;800,000 expected surplus typically represents the largest, most predictable component of a surplus analysis.",
+          answer:
+            "Prudent pricing and reserving assumptions build in margins that are expected to emerge as surplus over time purely through the passage of time and survival of the assumptions, forming a genuinely predictable baseline against which actual variances can be meaningfully compared.",
+          note: "A strong answer connects the expected component to prudent margins built into the original assumptions.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the &pound;60,000 assumption change and the &pound;90,000 experience variance should be reported as genuinely distinct components, rather than a single combined 'unexpected' figure.",
+          answer:
+            "An experience variance reflects a single period's actual outcome differing from assumption (which may or may not persist), while an assumption change reflects a genuine, deliberate revision to future expectations — conflating them would obscure whether the total unexpected movement is a one-off or a persistent, forward-looking change, reducing the analysis's diagnostic value for management.",
+          note: "A strong answer explicitly explains why conflating these two components would reduce the analysis's usefulness.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how the results of this surplus analysis could genuinely be used by the insurer's management.",
+          answer:
+            "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business genuinely requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
+          note: "This connects the numeric decomposition directly to its genuine, practical management value.",
+        },
+      ],
+    },
+  ],
 };
