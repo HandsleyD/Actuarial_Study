@@ -18331,6 +18331,117 @@ const MODULES = {
                 "explain": "This closing card ties this module back to Module 6 explicitly — worth recognising member options and investment strategy as PRACTICAL TOOLS for managing the risk categories that module identified, not separate, unrelated topics."
             }
         ]
+    },
+    {
+        "id": "m09",
+        "title": "Actuarial models for decision-making",
+        "description": "Covers the objectives and features of actuarial models used in the financial management of benefit provision, and the use of sensitivity analysis, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine objectives and requirements does the official syllabus (objective 4.1) require candidates to understand for a model used in the financial management of benefit provision?",
+                "a": "The model should genuinely represent the specific benefit arrangement's cashflows and risks, be built to a level of detail appropriate to its intended decision-making purpose, and produce output that is genuinely useful and interpretable by the stakeholders relying on it.",
+                "explain": "Worth recognising these objectives as directly echoing SP1's and SP2's identical model-purpose material — a model is only genuinely useful if it fits its intended purpose and audience, not built for complexity's own sake."
+            },
+            {
+                "q": "What are the basic features of a model for projecting income and outgo for a benefit arrangement, per the official syllabus objective 4.1?",
+                "a": "The model should project genuine future contribution income and benefit outgo cashflows over time, incorporating assumptions about membership movements (new entrants, leavers, retirements, deaths) and financial assumptions (investment returns, salary growth, inflation) that together determine the arrangement's projected financial position at future points in time.",
+                "explain": "Worth recognising this as directly analogous to SP1's and SP2's health/life insurance model-building material — the same underlying projection logic, just applied to pension scheme membership and benefit cashflows specifically."
+            },
+            {
+                "q": "How might this projection model genuinely be used for setting contributions, targeting benefit levels, and assessing return on assets, per the official syllabus objective 4.1?",
+                "a": "The SAME underlying projection model can be run with different objectives in mind — solving for the contribution rate needed to achieve a target funding level, solving for the benefit level achievable given a fixed contribution rate, or assessing whether a given investment strategy's assumed return is likely to deliver the scheme's funding objectives.",
+                "explain": "Worth recognising this as a genuine, practical example of SP1's/SP2's 'multiple decision-making purposes from one model' principle — the same model structure, re-purposed for genuinely different questions depending on which variable is being solved for."
+            },
+            {
+                "q": "Why is sensitivity analysis a genuinely essential companion to any pension scheme financial model, per the official syllabus objective 4.1?",
+                "a": "Sensitivity analysis reveals how much a model's projected outcome genuinely changes when key assumptions (e.g. investment return, salary growth, mortality) are varied, showing which assumptions the result is most exposed to — without this, a single-point projection could give false confidence, since a model is only as reliable as its assumptions.",
+                "explain": "This directly recalls SP1's and SP2's identical sensitivity-analysis material — worth recognising this as a genuinely universal actuarial-modelling discipline applying equally across pensions, life, and health and care insurance."
+            },
+            {
+                "q": "Why might a pension scheme financial model's genuine reliability depend heavily on the quality of its underlying membership data?",
+                "a": "Since the model's projections depend directly on genuine, accurate current membership details (ages, salaries, service, dependants), poor-quality or incomplete data can produce genuinely misleading projections regardless of how sophisticated the model's own structure and assumptions otherwise are.",
+                "explain": "This directly recalls SP1's data-as-foundational-risk material — worth recognising data quality as the genuine FOUNDATION every pension scheme model ultimately depends upon, echoing this same principle across every SP subject."
+            },
+            {
+                "q": "How does this module's model-building material connect forward to Module 10's funding-method material?",
+                "a": "This module established the genuine STRUCTURE and OBJECTIVES a pension scheme financial model needs; Module 10 will show how a SPECIFIC funding method and set of assumptions are actually chosen and applied within that model structure to produce a genuine funding valuation.",
+                "explain": "This closing card ties this module directly to Module 10 — worth recognising this module's general modelling principles as the FOUNDATION Module 10's specific funding-method material builds directly upon."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Funding method, valuation method and assumptions",
+        "description": "Covers the principles underlying the determination of a funding method, valuation method and assumptions used to value benefits and contributions, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine information sources does the official syllabus (objective 4.2) require candidates to consider when determining assumptions and methods for a funding valuation?",
+                "a": "The scheme's own past experience data (where genuinely credible), external benchmark data and industry-wide experience studies, and current market data (e.g. bond yields informing discount rate assumptions) — a genuinely diverse range of information sources feeding into sound assumption-setting.",
+                "explain": "This directly recalls CS1's credibility theory and SP1's/SP2's assumption-setting material — worth recognising this same principle of blending own experience with external data applying identically to pension funding valuations."
+            },
+            {
+                "q": "What are the genuine 'requirements for prudence' in setting funding valuation assumptions, per the official syllabus objective 4.2?",
+                "a": "Assumptions should genuinely build in a reasonable margin protecting against the risk that actual future experience proves worse than expected, reflecting the scheme's own specific risk tolerance and the genuine consequences of a shortfall (e.g. member benefit security, sponsor covenant strength) rather than relying purely on best-estimate assumptions.",
+                "explain": "This directly recalls SP1's and SP2's supervisory-reserve-prudence material — worth recognising this same prudence principle applying to pension funding valuations, echoing the identical underlying logic across every insurance and pensions valuation context."
+            },
+            {
+                "q": "Why must the 'objectives of stakeholders' (per the official syllabus objective 4.2) genuinely inform the choice of funding method and assumptions, rather than assumptions being set on purely technical grounds alone?",
+                "a": "Different stakeholders (trustees prioritising member security, sponsors prioritising affordability) can genuinely have different preferences for how prudent or aggressive assumptions should be, so the actuary must genuinely understand and balance these stakeholder objectives when recommending assumptions, not treat assumption-setting as a purely mechanical, objectives-independent technical exercise.",
+                "explain": "This directly recalls Module 3's member-security-versus-sponsor-affordability material — worth recognising this same fundamental tension recurring here specifically in the ASSUMPTION-SETTING context, not just overall scheme design."
+            },
+            {
+                "q": "Why might different funding methods (e.g. projected unit method versus attained age method) genuinely produce different contribution rate patterns for the SAME underlying benefit promise?",
+                "a": "Different funding methods spread the cost of accruing benefits across time in genuinely different patterns (e.g. some methods produce a rising contribution rate as the scheme matures, others aim for a more level rate over time), so the CHOICE of funding method itself is a genuine, deliberate decision with real consequences for contribution timing, not merely a technical calculation detail.",
+                "explain": "Worth recognising funding METHOD choice as a genuinely consequential, deliberate decision affecting contribution TIMING PATTERNS, not simply an arbitrary technical choice with no real-world impact."
+            },
+            {
+                "q": "Why might a scheme's chosen valuation method need to remain broadly consistent from one valuation to the next, rather than changing method whenever convenient?",
+                "a": "Consistency allows genuine, meaningful comparison of the scheme's funding position over successive valuations, revealing genuine trends in experience and assumptions rather than changes purely attributable to switching methodology, though a genuine, well-justified case for changing method (e.g. reflecting a genuinely changed scheme circumstance) can still be appropriate.",
+                "explain": "This directly recalls SP1's and SP2's assumption-consistency-supports-monitoring material — worth recognising consistency as directly supporting the experience-monitoring discipline covered later in this course."
+            },
+            {
+                "q": "Why must an actuary be able to justify their choice of funding method and assumptions with genuine, documented reasoning, echoing SP1's and SP2's identical material?",
+                "a": "Since funding method and assumption choices genuinely involve judgement balancing prudence, stakeholder objectives, and technical considerations, transparent, well-documented reasoning allows these choices to be reviewed, challenged, and understood by trustees, sponsors, and regulators, supporting the professional accountability expected of actuarial work.",
+                "explain": "This directly recalls SP1's and SP2's documented-justification material — worth recognising this as a genuinely universal professional discipline recurring across every SP subject."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Valuing assets, benefits and contribution requirements",
+        "description": "Covers determining values for assets, past and future benefits, and future contribution requirements, including data requirements and valuing guarantees and options, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine data requirements does the official syllabus (objective 4.3) name for valuing assets, past and future benefits, and contribution requirements?",
+                "a": "Accurate membership data (ages, salaries, service, dependant details), accurate scheme rules and benefit specifications, and accurate current asset values and characteristics — together forming the genuine foundational inputs any funding valuation calculation depends upon.",
+                "explain": "This directly recalls Module 9's data-as-foundational-risk material — worth recognising this same principle applying specifically to the calculation stage: no valuation technique, however sound, can overcome genuinely poor underlying data."
+            },
+            {
+                "q": "Why might 'reasons why assumptions and methods used may differ' (per the official syllabus objective 4.3) between different pension schemes genuinely matter, rather than every scheme using an identical, standardised approach?",
+                "a": "Different schemes genuinely have different membership profiles, sponsor covenant strength, investment strategies, and stakeholder risk preferences, so assumptions and methods appropriate for one scheme may not be genuinely appropriate for another, even where both schemes provide broadly similar benefit types.",
+                "explain": "This directly recalls Module 5's context-specific-design material — worth recognising this same principle applying to VALUATION assumptions and methods, not just to initial scheme design decisions."
+            },
+            {
+                "q": "Why must the valuation basis genuinely 'reflect investment/risk management strategy' (per the official syllabus objective 4.3), rather than being set independently of how the scheme's assets are actually invested?",
+                "a": "The genuine expected return on the scheme's actual investment strategy directly informs an appropriate discount rate assumption, so a valuation basis set without reference to the scheme's real investment strategy could produce a genuinely inconsistent or misleading funding target relative to what the scheme's assets are actually expected to earn.",
+                "explain": "This directly recalls Module 10's assumption-information-sources material — worth recognising the discount rate specifically as needing genuine, direct consistency with the scheme's actual chosen investment strategy, not set in isolation from it."
+            },
+            {
+                "q": "How might guarantees and options embedded in a pension scheme's benefits (e.g. a guaranteed minimum pension, or a member's option to commute pension for cash) genuinely be valued, per the official syllabus objective 4.3?",
+                "a": "Guarantees and options can be valued using techniques ranging from simple, deterministic best-estimate assumptions about likely exercise behaviour, through to more sophisticated stochastic modelling capturing the genuine range of possible future scenarios under which a guarantee might bite or an option might be exercised, echoing this course's earlier options-and-guarantees material.",
+                "explain": "This directly recalls Module 6's insurance-mitigation and this course's earlier guarantee-costing material — worth recognising pension scheme guarantees and options as requiring the SAME genuine valuation care as insurance-product embedded options."
+            },
+            {
+                "q": "Why does the official syllabus explicitly require 'sensitivity analysis and reasonableness checking' (objective 4.3) as a genuine final step in any valuation calculation, beyond simply performing the calculation correctly?",
+                "a": "Sensitivity analysis reveals how exposed the valuation result is to key assumptions, while reasonableness checking (e.g. comparing the result against the previous valuation, adjusted for known changes) provides a genuine, practical sanity check catching potential calculation or data errors that a technically correct but unchecked calculation might otherwise miss.",
+                "explain": "This directly recalls Module 9's sensitivity-analysis material — worth recognising reasonableness checking specifically as a genuinely important, additional PRACTICAL SAFEGUARD beyond sensitivity analysis alone, catching genuine errors rather than just assumption uncertainty."
+            },
+            {
+                "q": "How does this module's valuation material connect back to Module 10's funding-method material?",
+                "a": "Module 10 established the genuine PRINCIPLES for choosing a funding method and assumptions; this module develops the practical CALCULATION of asset, benefit, and contribution values using that chosen method and those assumptions, showing how Module 10's principles are actually applied to produce genuine, checkable numerical results.",
+                "explain": "This closing card ties this module back to Module 10 explicitly — worth recognising this module as the PRACTICAL APPLICATION of Module 10's principles, not a separate, unrelated valuation topic."
+            }
+        ]
     }
     ]
 };
