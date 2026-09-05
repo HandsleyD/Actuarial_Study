@@ -17963,6 +17963,80 @@ const MODULES = {
                 "explain": "This directly recalls SP1's identical reserve-capital-interplay material — worth recognising this interplay as a genuinely universal prudential principle, not specific to health and care insurance alone."
             }
         ]
+    },
+    {
+        "id": "m13",
+        "title": "Setting assumptions",
+        "description": "Covers the principles of setting assumptions for pricing, reserving and embedded value in life insurance, and why these assumptions may genuinely differ across purposes, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine purposes does the official syllabus (objective 5.1) require assumption-setting principles to be understood for, in life insurance?",
+                "a": "Pricing life insurance contracts (including profit requirements), determining liabilities, and determining embedded value — three genuinely distinct purposes, each potentially warranting a genuinely different assumption basis even for the same underlying mortality or lapse risk.",
+                "explain": "This directly recalls SP1's identical three-purpose material — worth recognising this same assumption-setting framework applying equally to life insurance, just with mortality/persistency as the primary risk drivers instead of morbidity."
+            },
+            {
+                "q": "Why might pricing assumptions genuinely include an explicit profit requirement, while liability-determination assumptions typically do not?",
+                "a": "Pricing must recover the insurer's cost of capital and target margin to be commercially sustainable, so profit requirements are a genuine, deliberate input to the pricing assumption set, while reserves are meant to reflect the genuine expected cost of meeting obligations (plus prudence), not to embed a forward-looking profit margin.",
+                "explain": "This directly recalls SP1's identical material — worth recognising this as a genuinely universal distinction in assumption PURPOSE, applying to both life and health and care insurance pricing and reserving."
+            },
+            {
+                "q": "Why might assumptions used for supervisory reserves genuinely differ from those used in pricing for a life insurer, per the official syllabus objective 5.1.3?",
+                "a": "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the SAME underlying risk (e.g. mortality rate) can genuinely warrant a more cautious figure for reserving than for pricing.",
+                "explain": "This directly recalls Module 12's supervisory-reserve-purpose material and SP1's parallel material — worth recognising this as the direct assumption-level consequence of reserves and pricing serving genuinely different underlying purposes."
+            },
+            {
+                "q": "What genuine principles apply to setting assumptions for determining embedded value for a life insurer, per the official syllabus objective 5.1.4?",
+                "a": "Embedded value assumptions should genuinely reflect realistic, best-estimate expectations of future experience (not deliberately prudent reserving assumptions), since embedded value aims to capture the true expected economic value of in-force business, which prudent, margin-laden assumptions would understate.",
+                "explain": "This directly recalls SA2's and SP1's embedded-value-assumption material — worth recognising embedded value assumptions as needing to be genuinely realistic/best-estimate, in contrast to reserving's deliberate prudence, even though both use broadly similar underlying risk drivers."
+            },
+            {
+                "q": "Why might setting mortality assumptions for a life insurer's annuity book require genuinely different sensitivity than setting mortality assumptions for its protection book, echoing SA2's material?",
+                "a": "Since annuity cost increases the longer annuitants survive, understating future mortality improvement would understate annuity cost, exactly the opposite pricing risk to a protection product where understating improvement would overstate cost — the direction of assumption-setting caution genuinely inverts between the two product lines.",
+                "explain": "This directly recalls SA2's inverted-mortality-improvement material — worth recognising this genuinely important asymmetry as examinable even at SP2's foundational level."
+            },
+            {
+                "q": "Why must an actuary setting life insurance assumptions for any of these three purposes be able to justify their choice with genuine, documented reasoning, rather than simply asserting a figure?",
+                "a": "Since assumption-setting genuinely involves judgement (not purely mechanical calculation), transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work.",
+                "explain": "This directly recalls SP1's identical documented-justification material — worth recognising this as a genuinely universal professional discipline recurring across every subject where assumption-setting is examined."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Monitoring experience and analysis of surplus",
+        "description": "Covers why experience monitoring matters to a life insurer, how experience should be monitored, and the reasons for and uses of an analysis of surplus and embedded value profit, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why is it genuinely important for a life insurance company to monitor its own experience, per the official syllabus objective 5.2.1?",
+                "a": "Comparing actual experience against the assumptions used in pricing and reserving (Module 13's material) reveals whether those assumptions remain genuinely appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
+                "explain": "This directly recalls SP1's identical experience-monitoring-purpose material — worth recognising experience monitoring as the genuine VERIFICATION step confirming whether Module 13's assumptions actually held up against real-world outcomes."
+            },
+            {
+                "q": "What genuine experience categories does the official syllabus (objective 5.2.2) require candidates to understand how to monitor for a life insurer?",
+                "a": "Mortality, persistency, expense, and investment experience — a genuinely narrower list than SP1's health-and-care equivalent, since life insurance lacks the morbidity/claims-amount dimension health and care products carry.",
+                "explain": "Worth recognising this list as slightly shorter than SP1's equivalent list — life insurance's core experience drivers are mortality-, persistency-, expense- and investment-focused, without the additional claims-amount/morbidity dimension health and care products require."
+            },
+            {
+                "q": "Why might a life insurer's annuity book require monitoring mortality experience separately by socioeconomic group or geographic region, rather than a single aggregate longevity trend?",
+                "a": "Different subgroups of annuitants can experience genuinely different mortality improvement trends (e.g. driven by differential access to medical advances or lifestyle factors), so an aggregated single trend could mask offsetting or diverging patterns that separate analysis would reveal.",
+                "explain": "This directly recalls SA2's granular-longevity-monitoring material — worth recognising the same principle applying to life insurance experience monitoring: analysing at too aggregated a level can hide genuinely important subgroup-specific trends."
+            },
+            {
+                "q": "What are the genuine reasons for undertaking an analysis of surplus and an analysis of embedded value profit for a life insurer, per the official syllabus objective 5.3.1?",
+                "a": "These analyses decompose the overall change in an insurer's financial position (surplus) or embedded value into its underlying causes (e.g. expected release of margins, experience variances, assumption changes), revealing genuinely WHY results moved as they did, not just confirming THAT they moved.",
+                "explain": "This directly recalls SP1's identical WHY-versus-THAT material — worth recognising this as the single most important insight of this closing module, applying identically to life insurance surplus analysis."
+            },
+            {
+                "q": "Why does distinguishing 'experience variances' from 'assumption changes' matter within a life insurer's surplus analysis, echoing SP1's identical material?",
+                "a": "An experience variance reflects a single period's actual outcome differing from assumption (which may or may not persist), while an assumption change reflects a genuine, deliberate revision to future expectations — conflating them would obscure whether a variance is a one-off or a persistent, forward-looking change requiring genuine pricing or reserving revision.",
+                "explain": "This directly recalls SP1's identical material — worth recognising this distinction as equally essential for life insurance surplus analysis as for health and care."
+            },
+            {
+                "q": "What genuine ways can the results of a life insurer's surplus or embedded value profit analysis be used, per the official syllabus objective 5.3.2?",
+                "a": "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business genuinely requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
+                "explain": "This directly recalls SP1's identical results-usage material — worth recognising these results as feeding directly back into essentially every earlier module in this course, closing this whole subject's actuarial control cycle."
+            }
+        ]
     }
     ]
 };
