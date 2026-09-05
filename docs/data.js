@@ -16347,6 +16347,203 @@ const MODULES = {
                 "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to pension funding valuations, typically required at set intervals by both good practice and regulatory requirement."
             }
         ]
+    },
+    {
+        "id": "m11",
+        "title": "Investment strategy for pension schemes",
+        "description": "Covers how DB and DC pension schemes set investment strategy, including matching, growth allocation, and de-risking as a scheme matures.",
+        "cards": [
+            {
+                "q": "Why might a DB scheme's investment strategy need to balance matching-style assets (e.g. bonds) against growth assets (e.g. equities), echoing SA2's with-profits material?",
+                "a": "Matching assets reduce funding volatility by tracking liability movements (e.g. from interest rate changes), while growth assets offer higher expected returns that can help close a funding shortfall over time, creating a genuine trade-off between reducing risk and pursuing return, closely echoing SA2's with-profits ALM tension.",
+                "explain": "This directly recalls SA2's with-profits-ALM-tension material — worth recognising DB pension investment strategy as facing genuinely the SAME safety-versus-growth trade-off SA2 identifies for with-profits funds, just applied to a trustee-sponsor rather than insurer-policyholder relationship."
+            },
+            {
+                "q": "Why might a maturing DB scheme (with a growing proportion of pensioners relative to active members) typically 'de-risk' its investment strategy over time?",
+                "a": "As a scheme matures, its investment time horizon shortens (benefits need to be paid sooner) and its tolerance for short-term volatility genuinely reduces, so shifting toward more matching, lower-volatility assets reduces the risk of a poorly-timed market downturn coinciding with when the scheme most needs to pay benefits.",
+                "explain": "This directly recalls Module 3's DC-glide-path material — worth recognising this as the SAME underlying de-risking principle applied at the WHOLE-SCHEME level for DB, rather than at the individual member level for DC."
+            },
+            {
+                "q": "Why might a DC scheme's default investment strategy need a genuine 'glide path' reducing investment risk as members approach retirement, echoing Module 3's material?",
+                "a": "Since members bear their own investment risk, and a market downturn shortly before retirement gives far less time to recover (sequencing risk, per Module 3), a glide path gradually shifting from growth assets toward more stable assets as retirement approaches directly manages this risk for a typical member.",
+                "explain": "This directly recalls Module 3's sequencing-risk material — worth recognising the glide path as the PRACTICAL INVESTMENT STRATEGY response to the sequencing risk concept introduced earlier in this course."
+            },
+            {
+                "q": "Why might a pension scheme use derivatives (e.g. interest rate and inflation swaps) as part of a liability-driven investment (LDI) strategy, echoing CM2's and SA2's material?",
+                "a": "Derivatives can efficiently adjust the scheme's sensitivity to interest rate and inflation movements without needing to buy or sell large quantities of underlying bonds directly, providing a genuinely flexible, capital-efficient tool for closely matching the scheme's specific liability profile.",
+                "explain": "This directly recalls CM2's derivative-hedging material and SA2's ALM-derivative material — worth recognising LDI as a genuinely important, real-world pension application of the same hedging techniques developed generally in CM2."
+            },
+            {
+                "q": "Why might trustees need to consider genuine liquidity requirements when setting investment strategy, even for a scheme with a long-term investment horizon?",
+                "a": "Even a long-horizon scheme has near-term cashflow needs (benefit payments, expenses, and potentially collateral calls on derivative positions), so genuine liquidity risk management requires holding sufficient liquid assets to meet these without being forced to sell less liquid assets at a potentially unfavourable time.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's liquidity-risk material — worth recognising this same principle applying to pension scheme investment strategy specifically, including the genuinely distinctive collateral-call liquidity need created by derivative-based LDI strategies."
+            },
+            {
+                "q": "Why might a sponsor's own risk appetite and covenant strength directly influence the pension scheme's appropriate investment strategy, echoing Module 5's and Module 10's material?",
+                "a": "A scheme backed by a strong sponsor covenant can reasonably tolerate more investment risk (since the sponsor can support a temporary funding shortfall through additional contributions if needed), while a scheme with a weaker covenant may need a genuinely more cautious, closely-matched investment strategy to avoid relying on sponsor support that may not be reliably available.",
+                "explain": "This directly recalls Module 5's and Module 10's sponsor-covenant material — worth recognising investment strategy as directly connected to covenant strength, not decided purely on financial-market grounds in isolation."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Risk management for pension schemes",
+        "description": "Covers the key risks facing a DB pension scheme and its sponsor, including covenant, longevity, market and inflation risk, and how these can be managed.",
+        "cards": [
+            {
+                "q": "What are the main categories of risk a DB pension scheme and its sponsor face, drawing together this course's earlier modules?",
+                "a": "Sponsor covenant risk (Module 5), longevity risk (Module 9), market and interest rate risk (Module 11), and inflation risk (affecting both benefit increases and asset values), together forming the genuine risk landscape trustees and sponsors must manage jointly.",
+                "explain": "Worth treating this as a genuine checklist drawing together material from across this whole course — a strong exam answer discussing pension scheme risk should demonstrate awareness of ALL these categories, not focus on just one in isolation."
+            },
+            {
+                "q": "Why might a scheme use a longevity swap or buy-in (previewing this course's later winding-up module) to manage longevity risk specifically, rather than relying purely on investment strategy?",
+                "a": "Investment strategy (Module 11) can manage market and interest rate risk, but does little to address genuine uncertainty in HOW LONG members will live; a longevity swap or buy-in directly transfers this specific risk to a reinsurer or insurer, addressing a risk driver investment strategy alone cannot manage.",
+                "explain": "This directly recalls SA2's longevity-reinsurance material — worth recognising that DIFFERENT risk drivers genuinely require different management tools; investment strategy and longevity risk transfer are complementary, not substitute, techniques."
+            },
+            {
+                "q": "Why might a pension scheme's genuine risk management strategy need to consider how different risks interact, rather than managing each risk in isolation?",
+                "a": "Risks can interact in genuinely important ways (e.g. a weakening sponsor covenant combined with a market downturn creating a genuinely more severe combined threat to member security than either risk alone), so a holistic, integrated risk assessment reveals dangers a risk-by-risk analysis might miss.",
+                "explain": "This directly recalls SA1's and SA2's combined-stress-scenario material — worth recognising integrated risk assessment as more valuable than assessing covenant, longevity, and market risk purely as separate, unconnected exercises."
+            },
+            {
+                "q": "Why might trustees develop an 'integrated risk management' (IRM) framework explicitly linking funding, investment, and covenant strategy together?",
+                "a": "Since these three areas are genuinely interdependent (e.g. a stronger covenant can support a riskier investment strategy, which affects the funding target), managing them through a single, integrated framework helps ensure decisions in one area appropriately reflect the current position in the other two, rather than being set independently.",
+                "explain": "This directly recalls this module's risk-interaction material — worth recognising IRM as the PRACTICAL GOVERNANCE STRUCTURE through which trustees can genuinely manage the interconnected nature of scheme risk, not a separate additional risk category itself."
+            },
+            {
+                "q": "Why might a scheme's risk management strategy need periodic review as its funding position, membership profile, and sponsor covenant evolve over time, echoing this course's recurring theme?",
+                "a": "As these factors change, a risk management strategy set for a past position may no longer be genuinely appropriate for the scheme's current circumstances, so ongoing review ensures the strategy remains aligned with the scheme's actual, current risk profile.",
+                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to pension scheme risk management specifically, echoing the identical discipline covered across every SA subject."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Financial management, monitoring and experience analysis",
+        "description": "Covers how pension schemes monitor actual experience against funding valuation assumptions, and the financial management of the scheme's ongoing position.",
+        "cards": [
+            {
+                "q": "Why does a DB scheme need to regularly analyse actual mortality, investment, and inflation experience against its funding valuation assumptions, echoing SA1's and SA2's material?",
+                "a": "Comparing actual experience against assumptions reveals whether the funding valuation's assumptions remain genuinely appropriate, allowing timely correction (e.g. through a revised funding target or recovery plan) before a mismatch accumulates to a materially damaging scale.",
+                "explain": "This directly recalls SA1's and SA2's experience-monitoring material — worth recognising this as a universal actuarial discipline applying identically to pension schemes as to insurance company books."
+            },
+            {
+                "q": "Why might a scheme's investment experience need to be monitored against its intended strategy (Module 11's material), not just against a generic market benchmark?",
+                "a": "The scheme's specific investment strategy (e.g. a particular matching-versus-growth split, or LDI hedge ratio) has its own genuinely appropriate performance expectations, so monitoring against the scheme's OWN intended strategy reveals whether the strategy is being implemented as designed, which a generic market benchmark comparison would not show.",
+                "explain": "This directly recalls Module 11's investment-strategy material — worth recognising monitoring as needing to assess IMPLEMENTATION FIDELITY to the chosen strategy, not just whether markets performed well or badly in general."
+            },
+            {
+                "q": "Why might monitoring a scheme's funding position between full valuations (e.g. through interim funding updates) be genuinely valuable, echoing SA1's ORSA-style ongoing-monitoring material?",
+                "a": "A scheme's funding position can move materially between full valuations (typically conducted every three years) due to market movements or changing assumptions, so interim monitoring helps trustees and the sponsor identify and respond to significant changes earlier than waiting for the next full valuation would allow.",
+                "explain": "This directly recalls SA1's and SA2's ORSA-style forward-looking-monitoring material — worth recognising interim funding monitoring as the pensions equivalent of this same ongoing-vigilance principle."
+            },
+            {
+                "q": "Why might a scheme's financial management need to explicitly monitor the sponsor's covenant strength on an ongoing basis, not just at the point of each formal funding valuation?",
+                "a": "Sponsor financial health can change materially between valuations (e.g. due to a change in the sponsor's own business circumstances), so ongoing covenant monitoring helps trustees identify a genuinely weakening covenant early enough to adjust funding or investment strategy before the sponsor's ability to support the scheme deteriorates further.",
+                "explain": "This directly recalls Module 5's and Module 12's sponsor-covenant material — worth recognising covenant monitoring as needing the SAME ongoing vigilance as funding and investment monitoring, not a one-off assessment made only at valuation dates."
+            },
+            {
+                "q": "Why might trustees need to distinguish between experience variances reflecting genuine, persistent trends and those reflecting one-off random fluctuation, echoing SA1's material?",
+                "a": "A single period's adverse experience could be genuine random noise around an unchanged underlying assumption, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts that should inform a revised funding valuation.",
+                "explain": "This directly recalls SA1's statistical-significance-judgement material — worth recognising this same principle applying to pension scheme experience monitoring, echoing the identical discipline covered for insurance experience analysis."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Winding up, buy-out, buy-in and scheme transfers",
+        "description": "Covers the process and considerations for winding up a DB scheme, insurance buy-out and buy-in transactions, and individual member transfers.",
+        "cards": [
+            {
+                "q": "What is a pension scheme 'buy-in', and how does it differ from a 'buy-out', echoing SA2's bulk-annuity material?",
+                "a": "A buy-in involves the scheme purchasing an insurance policy matching a specified group of members' benefits, with the policy held as a scheme asset while the scheme itself remains responsible for paying members; a buy-out goes further, fully transferring the legal liability for those members' benefits to the insurer, typically as a step toward winding up the scheme entirely.",
+                "explain": "This directly recalls SA2's bulk-annuity material — worth recognising buy-in and buy-out as the SAME underlying bulk annuity transaction SA2 develops from the insurer's perspective, now viewed from the pension scheme's side of the transaction."
+            },
+            {
+                "q": "Why might a scheme pursue a phased approach (e.g. buying in tranches of membership over time) rather than a single, full buy-out transaction immediately?",
+                "a": "A phased approach can allow the scheme to secure the most straightforward or best-priced tranches first while continuing to manage remaining risk and improve funding for the rest of the membership, spreading the transaction cost and capacity demand on the insurance market over time rather than requiring full funding for a complete buy-out immediately.",
+                "explain": "This directly recalls SA2's phased-bulk-annuity-entry material (from the insurer's side) — worth recognising the SAME phased-approach logic applying symmetrically from the pension scheme's perspective."
+            },
+            {
+                "q": "Why might winding up a pension scheme require careful, sequenced administrative and actuarial work, rather than being a single, instantaneous event?",
+                "a": "Winding up genuinely requires securing all members' benefits (e.g. via buy-out or individual transfers), resolving any outstanding funding shortfall, and formally discharging the trustees' and sponsor's ongoing obligations, a multi-step process that must be carried out carefully to ensure no member's benefit security is genuinely compromised along the way.",
+                "explain": "Worth recognising winding up as a genuinely COMPLEX, MULTI-STEP PROCESS, not a single administrative action — a strong exam answer should reflect this genuine sequencing rather than treating wind-up as instantaneous."
+            },
+            {
+                "q": "Why might legislation requiring independent financial advice before a large DB-to-DC transfer (Module 8's material) be particularly important in the context of this module's transfer-value discussion?",
+                "a": "Giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a DC transfer value is a genuinely significant, often irreversible decision shifting investment and longevity risk onto the member, so independent advice helps ensure members genuinely understand this consequence before deciding.",
+                "explain": "This directly recalls Module 8's transfer-advice-legislation material — worth recognising this legislative protection as directly addressing the genuinely serious, hard-to-reverse consequences a transfer decision carries for member security."
+            },
+            {
+                "q": "Why might a scheme facing sponsor insolvency (Module 5's material) need to consider entry into a statutory pension protection arrangement, rather than proceeding with a standard buy-out?",
+                "a": "If the scheme is insufficiently funded and the sponsor cannot provide additional contributions due to insolvency, a standard buy-out (requiring full funding to purchase members' benefits) may not be achievable, making a statutory protection arrangement (providing a safety-net level of benefit, potentially lower than originally promised) the genuinely necessary alternative.",
+                "explain": "This directly recalls Module 5's sponsor-insolvency material — worth recognising this as the most severe, real-world realisation of sponsor covenant risk, where member benefits may genuinely be reduced from their original promised level."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Mergers, restructuring and international comparison",
+        "description": "Covers how corporate mergers and restructuring affect pension schemes, and comparing pension approaches and regulatory regimes across different jurisdictions.",
+        "cards": [
+            {
+                "q": "Why might a corporate merger or acquisition directly affect a target company's DB pension scheme's sponsor covenant, echoing Module 5's and CB1's material?",
+                "a": "The acquiring company's own financial strength and strategic priorities become the scheme's new effective covenant support, which could genuinely strengthen or weaken the scheme's security depending on the acquirer's own financial position and willingness to support the acquired scheme going forward.",
+                "explain": "This directly recalls Module 5's sponsor-covenant material and CB1's M&A material — worth recognising M&A due diligence as needing to explicitly assess the GENUINE CHANGE in covenant strength the transaction would create, not just the target's own standalone financial position."
+            },
+            {
+                "q": "Why might trustees need to be actively involved in merger and acquisition negotiations affecting their scheme's sponsor, rather than simply being informed after the transaction completes?",
+                "a": "Since trustees have a genuine fiduciary duty to protect member interests, and a merger can materially affect covenant strength, trustees typically need the opportunity to negotiate protections (e.g. additional contributions, security, or guarantees) as part of the transaction itself, rather than accepting whatever covenant position results after the deal is already complete.",
+                "explain": "This directly recalls Module 7's trustee-fiduciary-duty material — worth recognising proactive trustee involvement in M&A negotiations as a direct expression of their fiduciary responsibility to members, not an optional extra step."
+            },
+            {
+                "q": "Why might comparing pension scheme regulatory approaches across different jurisdictions reveal genuinely transferable insight, echoing SA1's material?",
+                "a": "Observing how other jurisdictions have addressed similar challenges (e.g. sponsor covenant protection, or funding standard design) can surface approaches not obvious from studying a single market in isolation, informing genuinely better regulatory or scheme-management practice.",
+                "explain": "This directly recalls SA1's national-systems-comparison material — worth recognising the same analytical value applying to comparing pension systems specifically, not just health and care or life insurance regulatory systems."
+            },
+            {
+                "q": "Why might different jurisdictions genuinely vary in how much of pension provision relies on DB versus DC arrangements, echoing this course's demographic and economic risk material?",
+                "a": "Differences in demographic trends, historical labour market structures, tax policy, and regulatory approach to sponsor risk can all shape whether a jurisdiction's pension system has historically favoured DB or DC provision, meaning the appropriate balance genuinely varies by market rather than one model being universally superior.",
+                "explain": "This directly recalls Module 2's and Module 3's DB-versus-DC risk-allocation material — worth recognising DB-versus-DC PREVALENCE as itself a genuinely interesting comparative question, not simply a technical scheme-design choice made independently of the wider national context."
+            },
+            {
+                "q": "Why might identifying best practice in pension scheme risk management be considered an ongoing, evolving exercise rather than a fixed body of knowledge, echoing this course's recurring theme?",
+                "a": "As regulation, demographic trends, and market conditions evolve, what counts as best practice genuinely evolves too, meaning best-practice knowledge itself requires periodic review rather than being treated as permanently fixed.",
+                "explain": "This directly recalls SA1's ongoing-review theme applied to best practice specifically — worth recognising this as a universal closing principle recurring across every SA subject's best-practice material."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Solving complex issues and glossary",
+        "description": "Covers applying the full range of SA4 knowledge and skills to genuinely complex, multi-dimensional pensions problems, and consolidates key syllabus terminology.",
+        "cards": [
+            {
+                "q": "Why does SA4 include a dedicated focus on solving complex issues, drawing on every earlier module, echoing SA1's material?",
+                "a": "Real strategic and technical problems in pensions rarely fall neatly into a single topic area; a genuinely complex issue typically requires drawing on scheme design, funding, investment, risk management, and strategic judgement simultaneously.",
+                "explain": "This directly recalls SA1's complex-issue-integration material — worth recognising this module as this course's deliberate integration point, combining skills the earlier modules mostly developed in isolation."
+            },
+            {
+                "q": "A DB scheme's sponsor is being acquired, and the scheme is significantly underfunded. Discuss why this represents a genuinely complex issue for the trustees.",
+                "a": "This decision genuinely involves competing considerations across multiple topic areas at once — assessing the acquirer's covenant strength (Module 15), negotiating appropriate funding or security protections as part of the transaction (Modules 9-10, 15), and considering longer-term strategic options like accelerated de-risking or eventual buy-out (Modules 11, 14) — requiring integrated judgement across covenant, funding, investment and strategic areas.",
+                "explain": "This directly recalls this module's integration theme — worth recognising that resolving this specific issue genuinely requires drawing on covenant, funding, investment, and strategic material together, not any single module in isolation."
+            },
+            {
+                "q": "What is a 'sponsor covenant', as a precise, glossary-style restatement of Module 5's material?",
+                "a": "The sponsoring employer's financial ability and willingness to support a pension scheme (e.g. through ongoing contributions) over time, a genuinely distinctive pension-specific risk not present in a standalone insurance product, where member security depends directly on a third party's ongoing financial health.",
+                "explain": "This directly recalls Module 5's sponsor-covenant material — worth treating this as the precise definition to reach for whenever an exam question involves sponsor financial strength or its effect on scheme security."
+            },
+            {
+                "q": "What is a 'buy-in', as a precise, glossary-style restatement of Module 14's material?",
+                "a": "A transaction where a pension scheme purchases an insurance policy matching a specified group of members' benefits, held as a scheme asset while the scheme itself remains responsible for paying those members, distinct from a buy-out which fully transfers the legal liability to the insurer.",
+                "explain": "This directly recalls Module 14's buy-in/buy-out material — worth treating this as the precise definition to use if asked to distinguish these risk-transfer transactions directly."
+            },
+            {
+                "q": "Why does this closing glossary module deliberately draw its content from across every earlier module, rather than introducing wholly new material, echoing SA1's approach?",
+                "a": "This module's purpose is genuinely consolidative and integrative, bringing together precise terminology and complex, multi-topic problem-solving practice using material already developed throughout the course, supporting confident, accurate application in the actual exam.",
+                "explain": "This closing card confirms this module completes SA4's 16-module structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
+            }
+        ]
     }
     ]
 };
