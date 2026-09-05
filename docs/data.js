@@ -20597,6 +20597,164 @@ const MODULES = {
                 "explain": "This directly recalls this course's recurring ongoing-review theme (developed across SP1, SP2, SP4 and SP7) — worth recognising this same principle applying to the ERM process as a whole: monitoring closes the loop, making the whole process genuinely cyclical rather than linear."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "Risk categories, identification and risk appetite",
+        "description": "Covers the genuine range of risk categories an organisation faces, techniques for identifying risks, and risk appetite, capacity and tolerance, per the official syllabus's third topic area.",
+        "cards": [
+            {
+                "q": "What genuine, broad CATEGORIES of risk does an organisation typically need to consider under ERM, beyond purely financial risks?",
+                "a": "Market risk, credit/counterparty risk, liquidity risk, insurance/underwriting risk, and operational risk form the genuinely 'core' financial and operational categories, but a genuinely COMPLETE ERM view also considers strategic risk, reputational risk, legal and regulatory risk, political risk, environmental risk, and demographic risk — reflecting ERM's genuinely broader, whole-organisation scope beyond narrowly financial risk types.",
+                "explain": "Worth recognising this genuinely BROAD list as distinguishing ERM from narrower financial risk management — a genuinely complete risk inventory must span well beyond market, credit and insurance risk alone."
+            },
+            {
+                "q": "What is 'operational risk', and why might it be genuinely HARDER to identify and quantify than market or credit risk?",
+                "a": "Operational risk is the genuine risk of loss from inadequate or failed internal processes, people, and systems, or from external events (e.g. fraud, IT failure, human error); it is genuinely harder to quantify than market or credit risk because it lacks the genuinely rich historical market-price or default data available for financial risks, and its causes are genuinely more varied and organisation-specific.",
+                "explain": "This directly recalls SA1's and SP7's operational-risk-data-scarcity material — worth recognising operational risk's genuine DATA-QUALITY challenge as a recurring theme distinguishing it from more readily-quantifiable financial risk categories."
+            },
+            {
+                "q": "What is 'reputational risk', and why might it genuinely be considered a CONSEQUENCE of other risk categories materialising poorly, rather than an entirely independent risk category?",
+                "a": "Reputational risk is the genuine risk of damage to an organisation's standing with customers, regulators or the public; it often arises as a genuine KNOCK-ON CONSEQUENCE of other risks crystallising badly (e.g. a poorly-handled operational failure or a mis-selling scandal), meaning genuinely effective management of the UNDERLYING risk categories is often the most effective way to manage reputational risk, rather than managing reputation in isolation.",
+                "explain": "Worth recognising reputational risk's genuinely DERIVATIVE nature — it frequently amplifies the consequences of failures elsewhere, rather than arising as a wholly separate, independent risk source."
+            },
+            {
+                "q": "What genuine practical techniques might an organisation use to IDENTIFY its material risks, echoing SA1's risk-identification material?",
+                "a": "Techniques genuinely include workshops and brainstorming sessions with staff across different functions, reviewing genuine historical loss data and near-miss incidents, benchmarking against genuine industry peer experience, scenario analysis, and structured checklists or risk taxonomies ensuring genuinely systematic coverage across all relevant risk categories.",
+                "explain": "This directly recalls SA1's risk-identification-technique material — worth recognising these same practical techniques (workshops, historical data review, benchmarking, scenario analysis) recurring here specifically in the ERM context."
+            },
+            {
+                "q": "What is 'risk appetite', and how does it genuinely differ from 'risk capacity'?",
+                "a": "Risk appetite is the genuine AMOUNT and TYPE of risk an organisation is WILLING to accept in pursuit of its objectives (a genuine strategic CHOICE, reflecting organisational preference); risk capacity is the maximum risk an organisation is genuinely ABLE to bear given its financial resources (a genuine CONSTRAINT, reflecting objective capability) — appetite should always genuinely sit within capacity, but the two concepts are genuinely distinct.",
+                "explain": "Worth drawing this genuine CHOICE-versus-CONSTRAINT distinction carefully — appetite reflects what an organisation WANTS to accept, capacity reflects what it CAN survive; conflating the two is a common, genuine error."
+            },
+            {
+                "q": "What is 'risk tolerance', and how does it genuinely relate to risk appetite as a more granular, operational concept?",
+                "a": "Risk tolerance genuinely translates the organisation's high-level risk appetite into more granular, specific, and typically measurable limits or thresholds for particular risk categories or business units (e.g. a specific VaR limit for a trading desk), providing genuinely OPERATIONAL boundaries that give practical effect to the broader, more strategic risk appetite statement.",
+                "explain": "Worth recognising tolerance as genuinely OPERATIONALISING appetite — appetite sets the genuine high-level, strategic DIRECTION, while tolerance sets specific, measurable, day-to-day LIMITS giving that direction practical effect."
+            },
+            {
+                "q": "Why must an organisation's risk appetite genuinely be SET and APPROVED by the board, rather than determined purely by operational management, echoing this course's recurring governance-oversight theme?",
+                "a": "Since risk appetite genuinely reflects a fundamental strategic choice about how much risk the organisation should accept in pursuit of its objectives, and materially affects stakeholders' interests (shareholders, policyholders, members), genuine board-level ownership ensures this choice receives appropriately senior, accountable oversight, rather than being set unilaterally by management closer to day-to-day operations.",
+                "explain": "This directly recalls CP1's and SA1's board-governance-oversight material — worth recognising risk appetite as a genuinely BOARD-LEVEL strategic decision, not an operational or purely technical determination."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Heat maps, risk limits and emerging risk",
+        "description": "Covers heat maps and the four Ts of risk response, setting and cascading risk limits, and emerging, concentration and strategic risk, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is a genuine 'risk heat map', and how does it visually combine likelihood and impact, connecting back to Module 4's assessment-stage material?",
+                "a": "A heat map genuinely plots identified risks on a two-dimensional grid, typically with LIKELIHOOD on one axis and IMPACT on the other, using colour-coding (e.g. green/amber/red) to visually highlight which risks are genuinely highest priority (high likelihood AND high impact) versus lower priority, providing a genuinely intuitive, visual summary of an organisation's overall risk profile.",
+                "explain": "This directly recalls Module 4's likelihood-and-impact assessment material — worth recognising the heat map as the genuinely PRACTICAL, VISUAL tool putting that two-dimensional assessment logic into an easily-communicated form for senior management and the board."
+            },
+            {
+                "q": "What are the genuine 'four Ts' of risk response, and how does each represent a genuinely distinct strategic choice?",
+                "a": "TOLERATE (genuinely accept the risk as within appetite, taking no further action); TREAT (genuinely take action to reduce likelihood or impact, e.g. via controls or mitigation); TRANSFER (genuinely pass the risk to a third party, e.g. via insurance or reinsurance); and TERMINATE (genuinely stop the activity giving rise to the risk entirely) — together spanning the full genuine range of strategic responses available once a risk has been identified and assessed.",
+                "explain": "Worth memorising these four Ts directly as a genuinely EXHAUSTIVE, standard classification of risk response — this directly previews this course's later, more detailed risk-management-tools-and-techniques material, which develops TREAT and TRANSFER in much greater depth."
+            },
+            {
+                "q": "Why might a genuinely LOW-likelihood, HIGH-impact risk (e.g. sitting in the heat map's upper-left) still warrant serious management attention, despite its low likelihood?",
+                "a": "Since a genuinely catastrophic impact could threaten the organisation's continued existence even if it occurs rarely, genuinely low-likelihood, high-impact risks often warrant DISPROPORTIONATE attention relative to their likelihood alone — echoing this course's earlier VaR-versus-tail-risk material, where genuinely rare but severe outcomes can matter more than their low probability alone might suggest.",
+                "explain": "This directly recalls SA1's and SP7's tail-risk-materiality material — worth recognising that heat-map PRIORITISATION must weigh genuine SEVERITY alongside likelihood, not treat likelihood as the dominant factor alone."
+            },
+            {
+                "q": "What does it genuinely mean to 'cascade' risk limits through an organisation, connecting back to Module 5's appetite-versus-tolerance distinction?",
+                "a": "Cascading genuinely means translating the board's high-level risk appetite into progressively more granular, specific limits and tolerances at each successive organisational level (e.g. divisional limits, then business-unit limits, then individual trading-desk limits), ensuring genuine CONSISTENCY between day-to-day operational decision-making and the organisation's overall, board-approved risk appetite.",
+                "explain": "This directly recalls Module 5's appetite-versus-tolerance material — worth recognising cascading as the genuine, practical MECHANISM by which high-level appetite is translated into specific, operational tolerance limits at every level of the organisation."
+            },
+            {
+                "q": "What is 'concentration risk', and why might it genuinely arise even when an organisation believes it holds a well-DIVERSIFIED portfolio of exposures?",
+                "a": "Concentration risk is the genuine risk of excessive exposure to a single counterparty, sector, geography, or risk factor; it can arise even in an apparently diversified portfolio if genuinely HIDDEN correlations exist between exposures that appear independent on the surface (e.g. multiple counterparties all genuinely exposed to the same underlying economic driver), echoing this course's recurring hidden-correlation theme.",
+                "explain": "This directly recalls SA1's and SP7's hidden-correlation-and-diversification-benefit-overstatement material — worth recognising concentration risk as often SURPRISING precisely because superficial diversification can mask genuinely shared, underlying risk drivers."
+            },
+            {
+                "q": "What is 'emerging risk', and why does it genuinely pose a distinctive challenge for the standard risk identification techniques covered in Module 5?",
+                "a": "Emerging risk is a genuinely NEW or evolving risk (e.g. climate change, cyber risk, pandemic risk) not yet fully understood or reflected in historical data, meaning Module 5's standard identification techniques (historical loss data review, benchmarking against past peer experience) are genuinely LESS EFFECTIVE for emerging risks, requiring instead more forward-looking techniques like horizon-scanning, expert judgement, and scenario analysis.",
+                "explain": "This directly recalls Module 5's identification-technique material — worth recognising emerging risk as specifically exposing the LIMITS of historically-grounded identification techniques, requiring genuinely more forward-looking, judgement-based approaches instead."
+            },
+            {
+                "q": "How does this module's heat-map, limit-cascading and emerging-risk material connect back to Modules 4 and 5, completing SP9's third syllabus topic area?",
+                "a": "Modules 4 and 5 established the genuine PROCESS (identify, assess) and the genuine CATEGORIES and APPETITE/TOLERANCE concepts underlying risk management; this module shows how that process is made genuinely PRACTICAL and OPERATIONAL through visual prioritisation (heat maps), structured response choices (the four Ts), and cascaded limits, together completing SP9's 'Risk categories and identification' topic area.",
+                "explain": "This closing card ties Modules 4-6 together explicitly — worth recognising these three modules as together addressing SP9's third syllabus topic area, moving from abstract PROCESS through to genuinely PRACTICAL, OPERATIONAL risk management tools."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Risk modelling: correlation, dependence and copulas",
+        "description": "Covers risk modelling and aggregation of risks, including correlation, dependence structures, and copulas, per the official syllabus's fourth topic area.",
+        "cards": [
+            {
+                "q": "Why can a genuinely NAIVE aggregation of individual risk measures (e.g. simply summing each risk's individual VaR) genuinely OVERSTATE an organisation's true combined risk, echoing SP7's diversification-benefit material?",
+                "a": "Since different risks are genuinely rarely PERFECTLY correlated (i.e. rarely all materialise simultaneously at their worst), simply summing individual risk measures genuinely ignores the DIVERSIFICATION BENEFIT arising from imperfect correlation, meaning a properly-modelled AGGREGATE risk measure is typically genuinely LOWER than the naive sum of individual risk measures.",
+                "explain": "This directly recalls SP7's diversification-benefit material — worth recognising this same genuine principle (aggregate risk is usually less than the sum of individual risks) recurring here at the whole-ENTERPRISE level, not just within a single insurer's reserving risk."
+            },
+            {
+                "q": "What is 'correlation', and why might relying SOLELY on linear (Pearson) correlation genuinely UNDERSTATE genuine dependence between risks in extreme, tail scenarios?",
+                "a": "Correlation genuinely measures the LINEAR association between two risks; however, many genuine risk pairs exhibit 'tail dependence' — a tendency to become genuinely MORE correlated specifically in extreme, tail scenarios (e.g. a market crash triggering simultaneous credit defaults) — which simple linear correlation, calculated primarily from typical, non-extreme historical data, can genuinely fail to capture.",
+                "explain": "This directly recalls SA1's tail-dependence material — worth recognising this genuine LIMITATION of linear correlation as a key motivation for the more sophisticated COPULA modelling this same card set develops next."
+            },
+            {
+                "q": "What is a genuine 'copula', and what distinctive modelling problem does it solve, addressing correlation's tail-dependence limitation directly?",
+                "a": "A copula is a genuine mathematical function that separately models the DEPENDENCE STRUCTURE between two or more risks from their individual (marginal) probability distributions, allowing genuinely FLEXIBLE modelling of how risks interact — including genuine tail dependence — beyond what simple linear correlation alone can capture.",
+                "explain": "Worth recognising the copula's genuine, distinctive VALUE PROPOSITION: it separates 'how bad can each risk individually be' (the marginals) from 'how do they move together, especially in extremes' (the dependence structure), addressing linear correlation's genuine tail-dependence limitation directly."
+            },
+            {
+                "q": "What is a 'Gaussian copula', and why might it be genuinely CRITICISED for underestimating tail dependence, despite its common practical use?",
+                "a": "A Gaussian copula genuinely models dependence using the multivariate normal distribution's correlation structure; it has been genuinely criticised (notably following the 2008 financial crisis) for underestimating GENUINE tail dependence, since the normal distribution's tails are genuinely 'thin', meaning it can understate the true likelihood of multiple risks materialising simultaneously in extreme scenarios.",
+                "explain": "This directly recalls SA7's and SP5's fat-tails-versus-normal-distribution material — worth recognising the Gaussian copula's genuine practical popularity (mathematically tractable) alongside its genuine, well-documented WEAKNESS in extreme tail scenarios specifically."
+            },
+            {
+                "q": "What genuine alternative to the Gaussian copula might better capture tail dependence, and why?",
+                "a": "A 't-copula' (based on the multivariate Student's t-distribution) genuinely has FATTER TAILS than the Gaussian copula, meaning it can better capture genuine tail dependence — the tendency for risks to become more strongly correlated specifically in extreme scenarios — at the cost of requiring an additional parameter (degrees of freedom) to be genuinely estimated or judgementally set.",
+                "explain": "This directly recalls SA7's fat-tailed-distribution material — worth recognising the genuine trade-off: better tail-dependence capture requires additional model complexity and parameter estimation, echoing this course's recurring complexity-versus-tractability theme."
+            },
+            {
+                "q": "Why might an actuary need to exercise genuine, careful JUDGEMENT when selecting a copula and its parameters, rather than relying purely on historical data-fitting, echoing this course's recurring model-risk theme?",
+                "a": "Since genuinely extreme, tail-dependence scenarios are by definition RARE, historical data alone is genuinely insufficient to reliably estimate tail-dependence parameters with confidence, meaning genuine expert judgement, stress testing, and sensitivity analysis around the chosen copula and parameters are essential, rather than treating any single fitted copula as definitively 'correct'.",
+                "explain": "This directly recalls SA1's and SP7's model-risk-and-data-scarcity-in-tails material — worth recognising copula selection as a genuinely JUDGEMENT-LADEN exercise, not a purely mechanical statistical fitting procedure."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Extreme value theory, stress testing and reverse stress testing",
+        "description": "Covers extreme value theory and stress and reverse stress testing as tools for understanding genuinely extreme risk outcomes, completing the official syllabus's risk modelling and aggregation topic area.",
+        "cards": [
+            {
+                "q": "What is 'Extreme Value Theory' (EVT), and why does it genuinely focus specifically on the TAIL of a distribution rather than fitting a single distribution to the WHOLE dataset?",
+                "a": "EVT is a genuine branch of statistics specifically focused on modelling the behaviour of EXTREME, tail observations, on the basis that a single distribution fitted to capture an ENTIRE dataset's typical, central behaviour may genuinely fit the tail poorly, whereas EVT-specific distributions (e.g. the Generalised Pareto Distribution for exceedances above a threshold) are genuinely designed to fit tail behaviour more accurately.",
+                "explain": "This directly recalls SA7's fat-tails material — worth recognising EVT's genuine, distinctive approach: rather than compromising a single whole-distribution fit between central and tail accuracy, EVT genuinely specialises in modelling the tail alone, on its own terms."
+            },
+            {
+                "q": "Why might EVT still face genuine DATA LIMITATIONS despite its specialised tail-focused approach, echoing this course's recurring extreme-event-data-scarcity theme?",
+                "a": "Since EVT is genuinely modelling EXTREME, rare observations by definition, even a long historical dataset will typically contain relatively FEW genuinely extreme observations to calibrate the tail model against, meaning EVT parameter estimates often carry genuine, material uncertainty, and genuine judgement remains essential even when using this more specialised technique.",
+                "explain": "This directly recalls SA1's and Module 7's extreme-scenario-data-scarcity material — worth recognising that EVT's genuine SPECIALISATION in tail modelling does not eliminate the fundamental data-scarcity challenge inherent to studying rare, extreme events."
+            },
+            {
+                "q": "What is 'stress testing', and how does it genuinely differ from probabilistic risk measures like VaR, previewing this course's later risk-measurement material?",
+                "a": "Stress testing genuinely assesses the impact of a SPECIFIC, predefined adverse scenario (e.g. a severe market crash or pandemic) on the organisation's financial position, WITHOUT necessarily attaching a genuine PROBABILITY to that scenario — genuinely complementing probabilistic measures like VaR by providing insight into genuinely SPECIFIC, plausible adverse outcomes rather than a probability-weighted summary statistic.",
+                "explain": "This directly previews this course's later VaR/TVaR risk-measurement material — worth recognising stress testing's genuinely DIFFERENT purpose: illuminating SPECIFIC plausible scenarios in concrete detail, rather than summarising the whole loss distribution probabilistically."
+            },
+            {
+                "q": "What is 'reverse stress testing', and how does its genuine STARTING POINT differ fundamentally from ordinary stress testing?",
+                "a": "Reverse stress testing genuinely starts from a DEFINED, severe OUTCOME (e.g. the organisation's failure or breach of a critical threshold) and works BACKWARDS to identify what genuine COMBINATION of circumstances could plausibly cause that outcome, rather than ordinary stress testing's forward approach of starting from a SPECIFIED scenario and calculating its consequences.",
+                "explain": "Worth drawing this genuine DIRECTIONAL distinction carefully: ordinary stress testing goes SCENARIO → OUTCOME, while reverse stress testing genuinely goes OUTCOME → SCENARIO(S), each providing genuinely different, complementary risk insight."
+            },
+            {
+                "q": "Why might reverse stress testing be particularly valuable for uncovering GENUINELY UNANTICIPATED risk combinations that ordinary, forward-looking stress testing might miss?",
+                "a": "Since ordinary stress testing genuinely requires the risk manager to first IMAGINE a plausible adverse scenario before testing it, it can genuinely miss risk combinations that were never considered in the first place; reverse stress testing's backwards approach can genuinely reveal SURPRISING, previously-unconsidered combinations of circumstances capable of causing severe outcomes, precisely because it works back from the outcome rather than requiring the scenario to be imagined upfront.",
+                "explain": "This directly recalls SA1's unknown-unknowns material — worth recognising reverse stress testing's genuinely DISTINCTIVE value: it can surface risk combinations that conventional, forward scenario-imagination would never have generated in the first place."
+            },
+            {
+                "q": "How does this module's EVT and stress-testing material connect back to Module 7's copula material, completing SP9's fourth syllabus topic area?",
+                "a": "Module 7 established genuinely how risks AGGREGATE and interact via correlation and copula modelling under relatively 'normal' conditions; this module shows how EVT and stress/reverse stress testing extend that understanding specifically into GENUINELY EXTREME, tail scenarios where copula-based aggregation itself carries the greatest genuine model-risk and data-scarcity uncertainty, together completing SP9's 'Risk modelling and aggregation of risks' topic area.",
+                "explain": "This closing card ties Modules 7-8 together explicitly — worth recognising these two modules as together addressing SP9's fourth syllabus topic area: genuine everyday AGGREGATION (Module 7) and its genuine EXTENSION into extreme, tail scenarios (Module 8)."
+            }
+        ]
     }
 
   ]
