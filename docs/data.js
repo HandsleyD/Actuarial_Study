@@ -20886,6 +20886,90 @@ const MODULES = {
                 "explain": "This closing card ties Modules 10-11 together explicitly, echoing Module 1's topic-weighting material — worth recognising these two modules as together addressing SP9's single LARGEST syllabus topic area, reflecting its genuinely central importance to the whole ERM discipline."
             }
         ]
+    },
+    {
+        "id": "m12",
+        "title": "Economic capital, diversification benefit and capital allocation",
+        "description": "Covers economic capital, the diversification benefit arising from risk aggregation, and capital allocation techniques including the Euler principle, per the official syllabus's seventh and final topic area.",
+        "cards": [
+            {
+                "q": "What is genuine 'economic capital', and how does it genuinely differ from REGULATORY capital, echoing SP7's material?",
+                "a": "Economic capital is the genuine amount of capital an organisation's OWN internal risk assessment determines is needed to remain solvent at a chosen confidence level, reflecting the organisation's genuinely OWN view of its risk profile; regulatory capital is the amount PRESCRIBED by a regulator (e.g. via a standard formula or approved internal model), which may genuinely differ from the organisation's own internal economic capital view if the regulatory calibration doesn't fully reflect the organisation's specific risk profile.",
+                "explain": "This directly recalls SP7's internal-model-versus-standard-formula material — worth recognising economic capital as the genuinely internally-DRIVEN measure, while regulatory capital is the genuinely EXTERNALLY-PRESCRIBED measure — the two can diverge even for the same organisation."
+            },
+            {
+                "q": "How is the genuine 'diversification benefit' at the whole-organisation level typically CALCULATED, connecting back to Module 7's aggregation material?",
+                "a": "The diversification benefit is genuinely calculated as the difference between the SUM of each individual risk's stand-alone capital requirement and the organisation's AGGREGATE capital requirement (properly modelled to reflect genuine correlation and dependence between risks, per Module 7's copula material): $\\text{Diversification benefit} = \\sum_i C_i - C_{\\text{agg}}$, where $C_i$ is risk $i$'s stand-alone capital and $C_{\\text{agg}}$ is the aggregate capital requirement.",
+                "explain": "This directly recalls Module 7's aggregation material and SP7's diversification-benefit formula — worth recognising this same genuine SUM-MINUS-AGGREGATE calculation recurring here at the whole-ERM level, using the same underlying logic SP7 developed for insurance capital specifically."
+            },
+            {
+                "q": "What genuine PROBLEM does 'capital allocation' solve, given that the diversification benefit means the aggregate capital requirement is LESS than the sum of individual risks' stand-alone capital?",
+                "a": "Since the organisation's aggregate capital requirement is genuinely LESS than the sum of individual business units' or risk categories' stand-alone capital, capital allocation genuinely addresses HOW to fairly divide the (smaller) aggregate capital amount BACK across individual business units or risk categories — a genuinely non-trivial problem, since there is no single, uniquely 'correct' way to share out a diversification benefit that arose only from the risks' COMBINED interaction.",
+                "explain": "Worth recognising capital allocation's genuine, distinctive CHALLENGE: fairly dividing a benefit (diversification) that mathematically only exists at the COMBINED, aggregate level, not attributable to any single business unit in isolation."
+            },
+            {
+                "q": "What is the genuine 'Euler allocation principle', and why is it considered a genuinely theoretically ATTRACTIVE method for capital allocation?",
+                "a": "The Euler principle genuinely allocates capital to business unit $i$ as its marginal contribution to the TOTAL aggregate risk measure, formally $C_i = \\frac{\\partial C_{\\text{agg}}}{\\partial w_i} \\times w_i$ (the partial derivative of aggregate capital with respect to unit $i$'s exposure, scaled by that exposure); it is genuinely attractive because, for risk measures satisfying certain mathematical properties (positive homogeneity), the Euler allocations genuinely SUM EXACTLY to the total aggregate capital, with no residual left over or double-counted.",
+                "explain": "Worth recognising the Euler principle's genuine key PROPERTY: it is 'full allocation' — the individually-allocated amounts genuinely add up EXACTLY to the total, avoiding the awkward under- or over-allocation that cruder, non-marginal allocation methods can produce."
+            },
+            {
+                "q": "Why might a business unit's genuine Euler-allocated capital be LOWER than its stand-alone capital requirement, and what does this genuinely reward?",
+                "a": "A business unit's Euler allocation genuinely reflects its MARGINAL contribution to aggregate risk, which is typically lower than its stand-alone capital if the unit's risks are imperfectly correlated with the rest of the organisation's risk (i.e. the unit genuinely contributes to overall diversification); this genuinely REWARDS business units that diversify the organisation's overall risk profile, giving them a genuinely lower allocated capital charge than they would face operating in isolation.",
+                "explain": "This directly recalls SA1's and SP7's diversification-reward material — worth recognising the Euler principle as genuinely INCENTIVISING business units toward risk profiles that diversify well with the rest of the organisation, not merely a neutral, mechanical accounting exercise."
+            },
+            {
+                "q": "What genuine practical DIFFICULTY might arise in applying the Euler principle in practice, despite its attractive full-allocation theoretical property?",
+                "a": "Calculating the genuine marginal contribution (the partial derivative) typically requires a fully-specified, GRANULAR aggregate risk model capturing how each business unit's risk genuinely correlates with every other (Module 7's copula-modelling challenge), meaning the Euler principle's practical application inherits all of aggregate risk modelling's genuine data, correlation-estimation, and computational challenges, rather than being a simple, purely mechanical formula to apply.",
+                "explain": "This directly recalls Module 7's copula-modelling-judgement material — worth recognising that the Euler principle's elegant THEORETICAL formula still depends entirely on the genuine QUALITY of the underlying aggregate risk model feeding into it."
+            },
+            {
+                "q": "Why might an organisation choose a SIMPLER, non-Euler allocation method (e.g. pro-rata allocation based on stand-alone capital) despite the Euler principle's superior theoretical properties, echoing this course's recurring practicality-versus-theoretical-purity theme?",
+                "a": "A simpler, pro-rata method is genuinely easier to calculate, explain to business unit managers, and apply consistently, even though it lacks the Euler principle's precise marginal-contribution interpretation; an organisation might genuinely judge that this practical SIMPLICITY and TRANSPARENCY outweighs the more theoretically 'correct' but more complex and less easily-communicated Euler approach for its own specific internal management purposes.",
+                "explain": "This directly recalls Module 9's VaR-versus-TVaR regulatory-practicality material — worth recognising this same, recurring PRACTICALITY-versus-THEORETICAL-PURITY trade-off appearing yet again here specifically in the capital-allocation context."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "RAROC, EVA and the regulatory landscape for ERM",
+        "description": "Covers risk-adjusted performance measures (RAROC, EVA) and the regulatory frameworks shaping ERM practice, including Solvency II, Basel and ORSA, completing the official syllabus's seventh and final topic area.",
+        "cards": [
+            {
+                "q": "What is 'RAROC' (Risk-Adjusted Return on Capital), and why does it genuinely provide a FAIRER basis for comparing business units' performance than a simple, unadjusted return on capital?",
+                "a": "RAROC is genuinely calculated as $\\text{RAROC} = \\frac{\\text{Risk-adjusted return}}{\\text{Economic capital allocated}}$, dividing a business unit's return by the genuine ECONOMIC CAPITAL allocated to it (e.g. via the Euler principle); this provides a genuinely FAIRER comparison across business units than raw return alone, since a unit generating high returns purely by taking on genuinely disproportionate RISK is appropriately penalised by its correspondingly higher allocated capital in the denominator.",
+                "explain": "This directly recalls SA1's and SP5's risk-adjusted-performance-measure material — worth recognising RAROC's genuine PURPOSE: preventing business units from appearing artificially attractive purely by taking on more risk, which a purely return-based comparison would fail to penalise."
+            },
+            {
+                "q": "What is 'Economic Value Added' (EVA), and how does its genuine calculation differ conceptually from RAROC's RATIO-based approach?",
+                "a": "EVA is genuinely calculated as a monetary AMOUNT — $\\text{EVA} = \\text{Return} - (\\text{Cost of capital rate} \\times \\text{Economic capital allocated})$ — measuring the genuine monetary VALUE a business unit creates above and beyond its cost of capital, whereas RAROC produces a RATIO (a percentage return figure); EVA's genuine advantage is that it directly reflects the genuine monetary SCALE of value creation, which RAROC's pure ratio can obscure (a small unit with a high RAROC percentage may create less genuine absolute value than a larger unit with a lower percentage).",
+                "explain": "Worth drawing this genuine RATIO-versus-ABSOLUTE-AMOUNT distinction carefully — RAROC and EVA can genuinely give DIFFERENT rankings of business units, since a high percentage return on a small capital base may represent less genuine absolute value creation than a lower percentage return on a much larger capital base."
+            },
+            {
+                "q": "Why might using RAROC or EVA to guide capital allocation and business-unit incentives genuinely REINFORCE the diversification-rewarding behaviour Module 12's Euler principle already encourages?",
+                "a": "Since RAROC and EVA both genuinely use ECONOMIC CAPITAL (potentially Euler-allocated) in their calculation, a business unit that genuinely diversifies the organisation's overall risk profile receives a genuinely LOWER capital allocation (Module 12's material), which mechanically produces a genuinely HIGHER RAROC or EVA for the same underlying return — meaning these performance measures genuinely REINFORCE, rather than work against, the diversification-rewarding incentive Module 12 already established.",
+                "explain": "This directly recalls Module 12's Euler-allocation-diversification-reward material — worth recognising these performance measures as genuinely COMPLETING the incentive chain: Euler allocation rewards diversifying business units with lower capital, which then mechanically flows through into genuinely BETTER-looking RAROC/EVA performance figures for those same units."
+            },
+            {
+                "q": "What is 'Solvency II', and how does its genuine THREE-PILLAR structure connect to this whole module's ERM material, echoing SA1's material?",
+                "a": "Solvency II is the genuine EU (and UK, via its retained/onshored form) insurance regulatory regime, structured around three pillars: Pillar 1 (genuinely QUANTITATIVE capital requirements, e.g. the SCR, connecting to Module 9's risk-measure and Module 12's capital-allocation material), Pillar 2 (genuine GOVERNANCE and risk management requirements, including the ORSA, connecting to Modules 2-3's governance material), and Pillar 3 (genuine DISCLOSURE and reporting requirements to regulators and the market).",
+                "explain": "This directly recalls SA1's Solvency-II-three-pillar material — worth recognising Solvency II's whole three-pillar structure as genuinely MIRRORING this entire SP9 module's scope: quantitative measurement (Pillar 1), governance and process (Pillar 2), and transparency (Pillar 3)."
+            },
+            {
+                "q": "What is the 'ORSA' (Own Risk and Solvency Assessment), and why does it genuinely embody the 'use test' principle Module 3 introduced?",
+                "a": "The ORSA is a genuine, regular, forward-looking internal assessment an insurer must conduct of its OWN overall solvency needs, considering its own specific risk profile (not merely the regulatory standard formula's generic calibration); it genuinely embodies Module 3's use-test principle because it explicitly requires the organisation to genuinely USE its own risk assessment and models in a real governance process, rather than relying purely on a mechanically-applied regulatory capital formula.",
+                "explain": "This directly recalls Module 3's use-test material — worth recognising the ORSA as a genuinely CONCRETE, REGULATORY EMBODIMENT of the use-test principle: a regulator explicitly requiring genuine evidence that risk management is actually integrated into real organisational decision-making, not merely a compliance formality."
+            },
+            {
+                "q": "What is the 'Basel' framework, and how does its genuine APPLICATION differ from Solvency II's, despite both sharing a broadly similar three-pillar structure?",
+                "a": "Basel (currently Basel III/IV) is the genuine international regulatory framework for BANKS, sharing Solvency II's broad three-pillar structure (capital requirements, supervisory review, market discipline/disclosure) but genuinely calibrated to BANKING-specific risks (e.g. credit risk from loan portfolios, and genuinely short-term LIQUIDITY risk from deposit withdrawals) rather than insurance-specific risks (e.g. long-term underwriting and reserving risk), reflecting each sector's genuinely different risk profile.",
+                "explain": "Worth recognising Basel and Solvency II as sharing a genuinely SIMILAR REGULATORY ARCHITECTURE (both three-pillar frameworks) while being genuinely CALIBRATED DIFFERENTLY to their respective sectors' distinct risk profiles — the structure generalises across ERM more broadly, even where the specific risk content differs by sector."
+            },
+            {
+                "q": "How does this module's RAROC, EVA and regulatory material connect back to Module 12, and how does the whole of Modules 12-13 connect back to SP9's OPENING modules, completing the whole subject's coherent arc?",
+                "a": "Module 12 established HOW capital is allocated (Euler principle); this module shows how that ALLOCATED capital feeds into genuine PERFORMANCE MEASUREMENT (RAROC, EVA) and sits within the wider REGULATORY landscape (Solvency II, Basel, ORSA) — and this regulatory material's governance and use-test themes explicitly loop back to Modules 2-3's opening ERM-framework-and-governance material, completing SP9's full arc from foundational CONCEPTS through PROCESS, IDENTIFICATION, MODELLING, MEASUREMENT and TOOLS, to this final CAPITAL MANAGEMENT topic area.",
+                "explain": "This closing card ties the whole of SP9 together explicitly, echoing Module 1's topic-sequence material — worth recognising SP9's full thirteen-module arc as a genuinely COHERENT, CYCLICAL whole: governance and use-test themes introduced at the start (Modules 2-3) return here, at the very end, embodied concretely in real regulatory requirements like the ORSA."
+            }
+        ]
     }
 
   ]
