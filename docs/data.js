@@ -19267,6 +19267,90 @@ const MODULES = {
                 "explain": "This closing card ties this module back to Module 3's foundational no-arbitrage material — worth recognising the whole sophisticated Black-Scholes apparatus as ultimately resting on the SAME simple no-arbitrage logic this subject introduced right at the start, just requiring genuinely more advanced mathematics to apply it in continuous time."
             }
         ]
+    },
+    {
+        "id": "m08",
+        "title": "Advanced application of the Black-Scholes model",
+        "description": "Covers pricing foreign-exchange and dividend-paying index options, deriving the Black-Scholes-Merton PDE, the market price of risk, and the role of volatility including implied volatility and the smile effect, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why must the standard Black-Scholes formula be genuinely adapted to price foreign-exchange options, rather than applied directly using the domestic risk-free rate alone?",
+                "a": "An FX option's underlying (a foreign currency) genuinely earns its OWN foreign risk-free rate of interest, similar to a dividend-paying stock earning dividends, so the martingale approach must be adapted to reflect this genuine 'carry' return the underlying currency itself earns, adjusting the standard formula's drift term accordingly.",
+                "explain": "Worth recognising the foreign interest rate as playing a genuinely ANALOGOUS role to a dividend yield — both represent a return the underlying itself earns that must be accounted for separately from the option's own discounting."
+            },
+            {
+                "q": "Why does pricing an option on a dividend-paying stock index require adapting the Black-Scholes formula similarly to the FX-option adaptation just described?",
+                "a": "A continuously dividend-paying index genuinely reduces the option holder's benefit from holding the underlying directly (since the option holder does not receive the dividends the index itself pays out), requiring the martingale approach to be adapted to reflect this continuous dividend yield, exactly paralleling the foreign-interest-rate adaptation for FX options.",
+                "explain": "This directly recalls this module's FX-option-adaptation material — worth recognising both adaptations (FX and dividend-paying index) as applying the SAME underlying principle: adjusting for a continuous 'yield' the underlying earns that the option holder does not directly receive."
+            },
+            {
+                "q": "What is the Black-Scholes-Merton partial differential equation (PDE), and what genuine role does it play alongside the closed-form Black-Scholes formula?",
+                "a": "The Black-Scholes-Merton PDE is the genuine differential equation that any derivative's price (as a function of the underlying's price and time) must satisfy under the no-arbitrage, replication argument; the closed-form Black-Scholes formula is one specific SOLUTION to this PDE for a European call option, while other derivatives with different payoff structures satisfy the same PDE but require different boundary conditions and potentially different (or no closed-form) solutions.",
+                "explain": "Worth recognising the PDE as the genuinely more FUNDAMENTAL result — the closed-form Black-Scholes formula is just one particular solution (for a standard European call) to this more general governing equation, which other derivatives must also satisfy."
+            },
+            {
+                "q": "What is the 'market price of risk', and what genuine role does it play in the transfer between real-world and risk-neutral probability measures, per the official syllabus objective 3.4.3?",
+                "a": "The market price of risk quantifies the genuine extra expected return investors require per unit of risk taken in the real world; it appears explicitly in the mathematical relationship connecting the real-world probability measure to the risk-neutral measure, even though the risk-neutral pricing formula itself does not require KNOWING this real-world risk premium directly to price the derivative.",
+                "explain": "Worth recognising a genuinely subtle but important point — the market price of risk EXPLAINS the mathematical relationship between the two measures, even though the whole elegance of risk-neutral pricing is that you don't need to actually ESTIMATE it to price a derivative correctly."
+            },
+            {
+                "q": "What is 'implied volatility', and why is it genuinely calculated by working BACKWARDS from an observed market option price, per the official syllabus objective 3.4.4?",
+                "a": "Implied volatility is the volatility figure that, when substituted into the Black-Scholes formula, produces a theoretical price exactly matching an option's genuinely OBSERVED market price; since volatility cannot be directly observed in the market the way a stock price can, implied volatility genuinely INVERTS the pricing formula, extracting the market's own collective volatility assessment from the price it has actually set.",
+                "explain": "Worth recognising implied volatility as the genuine REVERSE of standard option pricing — instead of using an assumed volatility to calculate a theoretical price, you use the market's ACTUAL price to back out what volatility assumption is implicitly consistent with it."
+            },
+            {
+                "q": "What is the 'volatility smile' effect, and why does it genuinely challenge the Black-Scholes model's core assumption of constant volatility?",
+                "a": "The volatility smile describes the genuine empirical pattern where implied volatility varies systematically across different strike prices for options on the SAME underlying and expiry (often higher for deep in- or out-of-the-money options than for at-the-money options), directly contradicting Black-Scholes's assumption that volatility is a single, constant parameter applicable across all strikes.",
+                "explain": "This directly recalls Module 5's empirical-characteristics-of-asset-prices material from SP5 — worth recognising the volatility smile as a genuine, well-documented real-world DEVIATION from the Black-Scholes model's simplifying assumptions, not a theoretical curiosity."
+            },
+            {
+                "q": "Why might approaches to valuing options on discrete dividend-paying securities need to genuinely differ from the continuous-dividend adaptation covered earlier in this module, per the official syllabus objective 3.4.5?",
+                "a": "A stock paying discrete, lumpy dividends at specific known dates creates a genuinely different mathematical problem from a continuously and smoothly dividend-paying index, typically requiring the stock price to be adjusted downward by the present value of known future discrete dividends before applying the standard formula, rather than the smooth, continuous-yield adjustment used for continuously dividend-paying underlyings.",
+                "explain": "Worth recognising discrete and continuous dividend treatment as genuinely DIFFERENT technical approaches, even though both address the same underlying economic reality (dividends reduce the value available to the option holder) — the specific MECHANICS of the adjustment genuinely differ."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Numerical methods for derivative pricing",
+        "description": "Covers alternative numerical methods for determining derivative prices and hedging strategies, including trees, Monte Carlo techniques, finite difference methods, and pricing American options, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why might a genuine derivative pricing problem require numerical methods, rather than relying on a closed-form formula like Black-Scholes, per the official syllabus objective 3.5?",
+                "a": "Many genuinely realistic derivatives (e.g. those with path-dependent payoffs, early-exercise features, or complex multi-factor underlyings) do not have a simple, closed-form pricing solution, requiring numerical techniques to approximate their fair value where an exact formula is unavailable or impractical to derive.",
+                "explain": "Worth recognising numerical methods as addressing a genuine, practical GAP — closed-form formulas like Black-Scholes exist only for a relatively limited set of simpler derivative structures, while numerical methods can genuinely handle far more complex, realistic instruments."
+            },
+            {
+                "q": "What are 'binomial and trinomial trees' as numerical pricing methods, and how do they genuinely extend the single-step binomial model covered in Module 6?",
+                "a": "Binomial and trinomial trees extend the binomial model's single-step replication logic across MANY genuine discrete time steps (with each node branching into two or three possible outcomes respectively), building up a genuinely more refined approximation of continuous-time price movement as the number of steps increases and each step's time interval shrinks.",
+                "explain": "This directly recalls Module 6's single-step binomial model material — worth recognising trees as the genuine PRACTICAL EXTENSION of that single-step logic into a multi-step numerical pricing tool, converging toward the continuous-time Black-Scholes result as the number of steps grows large."
+            },
+            {
+                "q": "What are 'Monte Carlo techniques' for derivative pricing, and why are they particularly well-suited to genuinely complex, path-dependent derivatives like the Asian and barrier options covered in Module 5?",
+                "a": "Monte Carlo techniques simulate a genuinely large number of possible random future price paths for the underlying asset, calculate the derivative's payoff along each simulated path, and average these payoffs (discounted to present value) to estimate the derivative's fair price; this approach naturally handles path-dependent payoffs (like Asian or barrier options) since each simulation genuinely tracks a full price path, not just a final value.",
+                "explain": "This directly recalls Module 5's path-dependent-derivative material — worth recognising Monte Carlo's genuine SUITABILITY for path-dependent instruments as a key practical advantage over methods (like the standard Black-Scholes formula) that only consider the underlying's price at a single point in time."
+            },
+            {
+                "q": "What are 'finite difference methods' for derivative pricing, and how do they genuinely relate to the Black-Scholes-Merton PDE covered in Module 8?",
+                "a": "Finite difference methods numerically solve the Black-Scholes-Merton PDE directly, by discretising the underlying's price and time into a genuine grid and approximating the PDE's derivatives using differences between adjacent grid points, providing a numerical solution where a closed-form analytical solution is unavailable.",
+                "explain": "This directly recalls Module 8's Black-Scholes-Merton PDE material — worth recognising finite difference methods as directly solving that same governing PDE NUMERICALLY, for derivatives whose specific boundary conditions don't admit the closed-form Black-Scholes formula solution."
+            },
+            {
+                "q": "Why does pricing an American option genuinely require a fundamentally different numerical approach from pricing an equivalent European option, echoing Module 3's exercise-flexibility material?",
+                "a": "Since an American option can genuinely be exercised at ANY time before expiry, its numerical pricing method must, at each point, determine whether IMMEDIATE exercise is more valuable than continuing to hold the option, a genuinely more complex 'optimal stopping' problem that standard forward-simulation Monte Carlo (which only evaluates payoffs at final maturity) cannot directly handle.",
+                "explain": "This directly recalls Module 3's American-versus-European exercise-flexibility material — worth recognising the American option's early-exercise feature as creating a genuinely distinct OPTIMAL STOPPING problem, requiring specialised numerical technique beyond simple path simulation."
+            },
+            {
+                "q": "What is the Longstaff-Schwartz least-squares approach, and how does it genuinely adapt Monte Carlo simulation to handle American options' early-exercise feature, per the official syllabus objective 3.5.2?",
+                "a": "The Longstaff-Schwartz approach uses regression (least-squares) at each simulated time step to estimate the genuine expected value of CONTINUING to hold the option, comparing this against the value of exercising IMMEDIATELY at that point, allowing a genuinely informed, backward-looking optimal exercise decision to be estimated within an otherwise forward-simulating Monte Carlo framework.",
+                "explain": "This directly recalls this module's American-option-challenge material — worth recognising Longstaff-Schwartz as the genuine, practical SOLUTION making Monte Carlo simulation usable for American options, adding a regression-based continuation-value estimate at each step to handle the early-exercise decision."
+            },
+            {
+                "q": "How do binomial/trinomial trees, Monte Carlo simulation, and finite difference methods genuinely differ in their suitability for different derivative pricing problems?",
+                "a": "Trees are genuinely intuitive and handle American-style early exercise naturally through backward induction; Monte Carlo excels at high-dimensional and path-dependent problems but historically struggled with early exercise (until adaptations like Longstaff-Schwartz); finite difference methods directly solve the governing PDE and handle certain boundary conditions well but can become genuinely computationally expensive in high dimensions — so the CHOICE of numerical method should genuinely reflect the specific derivative's structural features.",
+                "explain": "This closing card ties this module's three numerical methods together — worth recognising that no single numerical method is universally best; a genuinely sound choice depends on the SPECIFIC derivative's features (path-dependency, early exercise, dimensionality) being priced."
+            }
+        ]
     }
     ]
 };
