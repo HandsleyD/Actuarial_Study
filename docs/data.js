@@ -17523,4 +17523,188 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP2: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP2 all about?",
+        "description": "An orientation chapter explaining SP2's role as the Specialist Principles subject introducing actuarial management and control techniques for life insurance, and how it feeds into SA2.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SP2, according to its official syllabus?",
+                "a": "To understand in detail the main principles that are relevant to the provision of life insurance business, including the main products that are sold, the methods of valuation, and the main methods of actuarial management and control.",
+                "explain": "This is the genuine, official IFoA syllabus wording — worth noting the syllabus's explicit note that life insurance products covered by SP2 EXCLUDE those covered by the Health and Care Principles (SP1) subject, so CI, IP and LTC are not SP2's concern."
+            },
+            {
+                "q": "Which subject does SP2 build directly on, and which subject does it feed into, according to its official links?",
+                "a": "SP2 builds on CP1 (Actuarial Practice), which provides fundamental background on different types of risk from an actuarial perspective and how those risks can be managed; SP2 itself feeds directly into SA2 (Life Insurance Advanced).",
+                "explain": "Worth recognising SP2's link structure as genuinely simpler than SP1's — it names only CP1 explicitly, though SP2's quantitative content clearly also draws on CM1/CM2-level techniques even without those being named as formal prerequisite links."
+            },
+            {
+                "q": "What are the five official syllabus topic areas of SP2, and their approximate topic weightings?",
+                "a": "Life insurance products and general business environment (15%); Product design and specific features (25%); Risks and risk management (30%); Models and valuation (15%); and Monitoring experience and setting assumptions (15%).",
+                "explain": "Worth recognising this as an EXACT structural match to SP1's five topic areas and weightings — the two subjects share a common template, applied to life insurance instead of health and care."
+            },
+            {
+                "q": "Why might SP1 and SP2 sharing an almost identical topic structure be genuinely useful for a candidate studying both subjects?",
+                "a": "Recognising the shared underlying skeleton (products → design → risk → models → monitoring) allows genuine transfer of understanding between the two subjects — many of the same underlying principles (e.g. reinsurance purposes, underwriting approaches, asset-liability matching logic) apply with only the specific product and risk details needing to change.",
+                "explain": "Worth treating SP1 and SP2 as genuinely parallel courses sharing a common analytical template — much of what was learned studying SP1's risk-management modules transfers directly, needing only product-specific adaptation."
+            },
+            {
+                "q": "What genuine differences would you expect between SP1's and SP2's 'Risks and risk management' topic area, despite sharing the same 30% weighting and broad structure?",
+                "a": "While both cover similar risk CATEGORIES (data, claim experience, investment, expenses, persistency, guarantees/options, counterparties, etc.), the specific risk DRIVERS genuinely differ — SP2 must address mortality and longevity risk and with-profits bonus-setting risk specifically, where SP1 addresses morbidity/incidence risk and health-specific underwriting concerns instead.",
+                "explain": "Worth recognising that shared STRUCTURE does not mean shared CONTENT — the underlying risk categories are genuinely analogous, but the specific technical risk drivers within each product sector are genuinely distinct."
+            },
+            {
+                "q": "Why does SP2 explicitly exclude health and care products from its scope, given some life insurers also sell critical illness or income protection cover?",
+                "a": "The IFoA's curriculum deliberately separates health and care principles (SP1) from life insurance principles (SP2) to keep each subject's syllabus focused and manageable, even though in practice many life insurers genuinely do sell both product categories — a genuine curriculum design choice, not a claim that these products are unrelated in the real world.",
+                "explain": "Worth recognising this exclusion as a genuinely deliberate curriculum boundary, not a claim that health and care and life insurance products are managed by entirely separate companies in practice — SA2's own material does reference interaction with health and care products sold alongside core life cover."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Life insurance products",
+        "description": "Covers the main types of life insurance products, their benefit triggers, product bases, and typical guarantees and options, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What three broad benefit triggers does the official SP2 syllabus (objective 1.1.1) use to categorise the main types of life insurance products?",
+                "a": "Products providing benefits on death, on survival to a specified point in time, or on continued survival — the three fundamentally different ways a life insurance benefit can be triggered.",
+                "explain": "Worth recognising this trigger-based categorisation as more fundamental than naming specific product labels (term assurance, endowment, annuity) — every specific product ultimately reduces to one (or a combination) of these three trigger types."
+            },
+            {
+                "q": "What four 'product bases' does the official syllabus (objective 1.1.2) name for life insurance products?",
+                "a": "Conventional without-profits, with-profits, unit-linked, and index-linked — four genuinely distinct structural bases on which a life insurance product's benefit can be built, cutting across the benefit-trigger categorisation in Module 2's first card.",
+                "explain": "Worth recognising these product BASES as a genuinely separate classification dimension from benefit TRIGGERS — a with-profits product basis could underlie either a death-benefit or survival-benefit product, for instance."
+            },
+            {
+                "q": "What is a 'conventional without-profits' product base, and how does it differ from 'with-profits'?",
+                "a": "A without-profits product pays a fixed, pre-determined benefit with no participation in the insurer's investment performance or profits, while a with-profits product shares in the insurer's with-profits fund performance through bonuses added to the policy value over time.",
+                "explain": "Worth recognising WITHOUT-profits as the simpler, fully-guaranteed baseline against which the more complex with-profits, unit-linked, and index-linked bases can each be compared."
+            },
+            {
+                "q": "What is an 'index-linked' product base, and how does it differ genuinely from a 'unit-linked' base?",
+                "a": "An index-linked product's benefit is directly tied to the performance of a specified external index (e.g. a stock market index), while a unit-linked product's benefit is tied to the performance of notional units in one or more actively-selected investment funds — index-linking ties value to a passive, external reference rather than actively-managed fund performance.",
+                "explain": "Worth recognising this as a genuinely distinct product base from unit-linked, even though both DIRECTLY pass investment performance through to the policyholder — the underlying investment REFERENCE (passive index versus actively-selected fund) differs."
+            },
+            {
+                "q": "What genuine guarantees and options might typically be offered on life insurance products, per the official syllabus objective 1.1.3?",
+                "a": "Guaranteed minimum benefits (e.g. a guaranteed minimum death benefit on a unit-linked contract), guaranteed insurability options (allowing further cover without additional underwriting), and guaranteed annuity options (guaranteeing a minimum annuity conversion rate) are among the typical guarantees and options embedded in life insurance products.",
+                "explain": "Worth recognising these guarantees as directly previewing this course's later options-and-guarantees risk material — each represents a genuine embedded option carrying anti-selective cost the insurer must account for."
+            },
+            {
+                "q": "Why must understanding a product's genuine benefit TRIGGER, product BASIS, and any embedded GUARANTEES or OPTIONS all be combined to fully characterise a specific life insurance product?",
+                "a": "These three dimensions are genuinely independent — a single specific product (e.g. a unit-linked endowment with a guaranteed minimum maturity value) combines a survival-based trigger, a unit-linked basis, AND an embedded guarantee, so fully understanding any real product requires characterising it along all three dimensions together, not just one in isolation.",
+                "explain": "This closing card ties this module's three classification dimensions together — worth recognising that a genuinely complete product description requires all three, not any single dimension alone."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Product-consumer-insurer risk linkage and the operating environment",
+        "description": "Covers the link between product types and consumer needs and insurer risks, and the wider operating environment in which life insurance business is sold, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What does the official syllabus (objective 1.2) require candidates to understand about the link between main product types and consumer needs?",
+                "a": "The link between main types of life insurance products and the needs of consumers, the key risks for the insured, and the purpose and key risks for the insurer — a genuinely three-part understanding covering the consumer's need, the consumer's own risk, and the insurer's risk together.",
+                "explain": "Worth recognising this as a deliberately DUAL-PERSPECTIVE requirement, directly echoing SP1's equivalent objective — genuine product understanding requires seeing both the customer's and the insurer's side simultaneously."
+            },
+            {
+                "q": "What operating-environment factors does the official syllabus (objective 1.3) explicitly require candidates to understand as affecting life insurance business management?",
+                "a": "The propensity of consumers to purchase products, local culture, methods of sale, remuneration of sales channels, types of expenses and commissions (including the influence of inflation), the economic environment, the legal environment, the regulatory environment, the taxation regime, and professional guidance.",
+                "explain": "Worth memorising this exact, extensive list (objective 1.3) — it defines the genuine environmental scope SP2 expects, notably more granular than SP1's equivalent four-category list."
+            },
+            {
+                "q": "Why might 'local culture' and 'propensity of consumers to purchase products' be listed as genuinely distinct environmental factors from the more familiar regulatory/economic/legal categories?",
+                "a": "These recognise that genuine demand for life insurance products can vary for reasons beyond formal rules or economic conditions alone — cultural attitudes toward saving, risk, and discussing death, and a population's general propensity to purchase insurance products at all, are genuinely important, less formally measurable influences on a product's real-world success.",
+                "explain": "Worth recognising these 'softer' cultural and behavioural factors as genuinely important alongside the more familiar 'harder' regulatory/economic/legal categories — a technically excellent product can still fail if it doesn't fit local cultural attitudes toward life insurance."
+            },
+            {
+                "q": "Why might the remuneration structure of a sales channel (e.g. commission-based versus fee-based) genuinely affect which products actually get sold to consumers, beyond simply affecting the insurer's expense assumptions?",
+                "a": "A commission structure that rewards higher upfront commission for certain product types could genuinely incentivise distributors to favour those products over others that might better suit a given customer's actual needs, creating a genuine potential conduct risk alongside its more obvious expense-assumption implications.",
+                "explain": "Worth recognising remuneration structure as having BOTH a technical expense-assumption dimension AND a genuine conduct-risk dimension — this course's later risk-management material will develop 'actions of distributors' as an explicit named risk source."
+            },
+            {
+                "q": "Why might the taxation regime for life insurance genuinely differ in its practical significance from the taxation regime for a shorter-term general insurance product?",
+                "a": "Life insurance products often involve genuinely long-term savings and investment elements (with-profits, unit-linked), so favourable or unfavourable tax treatment of investment growth and maturity benefits can materially affect a product's genuine attractiveness over a multi-decade holding period, a consideration with much less relevance to a one-year general insurance policy.",
+                "explain": "Worth recognising life insurance's characteristically longer product duration as amplifying the genuine practical significance of taxation treatment, compared with shorter-duration insurance products."
+            },
+            {
+                "q": "Why does professional guidance appear alongside regulation and legislation as a distinct environmental influence, rather than being subsumed within 'regulatory environment'?",
+                "a": "Professional guidance (issued by actuarial professional bodies) sets expected standards of actuarial practice that complement, but are genuinely distinct from, statutory regulation — an actuary must comply with both the LEGAL regulatory framework AND the PROFESSION's own guidance, which can sometimes set a higher or more specific bar than regulation alone requires.",
+                "explain": "Worth recognising professional guidance as a genuinely separate layer of expected practice, operating alongside rather than as part of formal regulation — a theme this course returns to when discussing professional standards and ethics."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Product design principles",
+        "description": "Covers the factors relevant to determining a suitable life insurance product design in terms of premiums, benefits and charges, and comparing the relative merits of different designs, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What three specific product-design skills does the official SP2 syllabus (objective 2.1) explicitly require?",
+                "a": "Determining the factors to consider when determining a suitable design in terms of premiums, benefits and charges for a life insurance product; determining a suitable design for a product in a given situation; and determining the relative merits of different product designs.",
+                "explain": "Worth recognising this as structurally identical to SP1's equivalent objective (2.1) — moving from FACTORS (understanding) to DETERMINING A DESIGN (application) to COMPARING DESIGNS (higher-order judgement)."
+            },
+            {
+                "q": "Why must a life insurance product's premium, benefit, and charge structure genuinely be designed together as an integrated whole, echoing SP1's equivalent card?",
+                "a": "The premium a customer is willing to pay, the benefit genuinely delivered, and any charges levied are all interconnected — a benefit-rich design (e.g. generous guarantees) typically requires a correspondingly higher premium or charge structure to remain commercially viable, so these elements cannot be soundly decided in isolation from each other.",
+                "explain": "This directly recalls SP1's identical design-integration principle — worth recognising this as a genuinely universal product-design theme applying identically across life and health and care insurance."
+            },
+            {
+                "q": "Why might determining a 'suitable design' for a life insurance product genuinely depend on the specific market and customer segment it targets, rather than following one universally best template?",
+                "a": "The same underlying product concept could be genuinely well-suited to a market with sophisticated adviser-based distribution and long-term savings culture, and poorly suited to a market needing simple, accessible, low-commitment protection cover, so design decisions must be anchored in the specific target situation given.",
+                "explain": "This directly recalls SP1's context-specific-design material — worth recognising this same principle applying identically to life insurance product design."
+            },
+            {
+                "q": "Why might comparing the relative merits of a with-profits design against a unit-linked design for the same underlying savings need require weighing genuinely different trade-offs, rather than declaring one design objectively superior?",
+                "a": "With-profits offers smoothing and reduced day-to-day volatility at the cost of complexity and insurer discretion, while unit-linked offers transparency and direct investment participation at the cost of the customer bearing full investment volatility directly — a genuinely balanced comparison must weigh these trade-offs against the specific customer's risk tolerance and preference for simplicity versus smoothing, not assume one design dominates universally.",
+                "explain": "This directly previews Module 5's with-profits material — worth recognising design comparison as requiring genuine trade-off analysis, a higher-order skill distinct from simply describing each design's features."
+            },
+            {
+                "q": "Why might a genuinely thorough product design process need to consider how a design will perform under adverse, not just expected, future conditions?",
+                "a": "A design that appears attractive and profitable under expected assumptions could still expose the insurer to unacceptable risk (e.g. from embedded guarantees becoming costly) under adverse conditions, so genuinely sound design assessment should consider resilience across a range of plausible future scenarios, not just the most likely one.",
+                "explain": "This directly previews this course's later options-and-guarantees risk material — worth recognising that product design decisions have genuine, lasting downstream risk-management consequences that should be considered at the design stage itself, not only after the product is already sold."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "With-profits business management",
+        "description": "Covers the methods of distributing profits to with-profits policyholders, and the use of asset shares built up using a recursive formula, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine methods might a life insurer use to distribute profits to with-profits policyholders, per the official syllabus objective 2.2.1?",
+                "a": "Regular (reversionary) bonuses added periodically to the policy's guaranteed benefit, and a final (terminal) bonus paid on claim reflecting the fund's actual accumulated performance up to that point — the combination smoothing investment returns relative to the fund's genuine underlying experience over time.",
+                "explain": "This directly recalls SA2's with-profits-bonus-mechanism material — worth recognising 'smoothing' as the defining genuine feature of with-profits distribution, deliberately dampening the volatility a policyholder would otherwise experience from directly-invested returns."
+            },
+            {
+                "q": "What is an 'asset share', and why is it genuinely central to with-profits bonus-setting, per the official syllabus objective 2.2.2?",
+                "a": "An asset share represents the accumulated value of a with-profits policy's own genuine share of the fund's premiums, investment returns, and deducted expenses/charges over time, providing the insurer's best genuine estimate of what that specific policy has actually earned within the fund, informing fair bonus-setting decisions.",
+                "explain": "Worth recognising the asset share as the genuine TECHNICAL FOUNDATION underlying with-profits bonus-setting — bonuses should genuinely reflect what the policy's own asset share has actually earned, not be set arbitrarily."
+            },
+            {
+                "q": "How is an asset share genuinely built up 'using a recursive formula', per the official syllabus objective 2.2.2?",
+                "a": "Each year's asset share is calculated by taking the previous year's asset share, adding that year's premium (net of expenses and charges), applying the fund's actual investment return for the year, and deducting any benefit payments — a step-by-step, year-on-year recursive build-up reflecting the policy's genuine accumulated experience.",
+                "explain": "Worth recognising this recursive structure as directly analogous to CM1's compound accumulation techniques, just incorporating genuine, actual (not assumed) investment returns and expenses each year rather than a single fixed assumed rate throughout."
+            },
+            {
+                "q": "Why might a with-profits fund's bonus-setting decision genuinely diverge from simply paying out exactly the calculated asset share each year?",
+                "a": "Bonus-setting must genuinely balance paying a fair reflection of the policy's own asset share against smoothing volatility across different years and maintaining fund solvency for remaining policyholders, so the insurer exercises genuine discretion rather than mechanically paying out the calculated asset share figure precisely.",
+                "explain": "This directly recalls SA2's bonus-setting-requires-genuine-judgement material — worth recognising asset share as an important INPUT to bonus decisions, not a figure automatically and mechanically translated into the bonus paid."
+            },
+            {
+                "q": "Why might bonus-setting for a with-profits fund raise a genuine inter-generational fairness issue, given the recursive, individual-policy nature of asset shares?",
+                "a": "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. overly generous bonuses now could disadvantage future policyholders' claims), requiring the insurer to genuinely balance fairness across the whole fund over time, not just accurately calculate each individual policy's own asset share in isolation.",
+                "explain": "This directly recalls SA2's inter-generational-fairness material — worth recognising this as a genuinely distinctive with-profits challenge examinable even at SP2's more foundational level, not exclusively an SA2-level concept."
+            },
+            {
+                "q": "Why might understanding asset shares be genuinely important not just for setting current bonuses, but also for assessing a with-profits fund's overall solvency position?",
+                "a": "Since asset shares represent the genuine accumulated value policyholders are broadly entitled to receive, comparing the fund's total assets against the sum of policyholders' asset shares (plus any additional guarantee costs) provides genuine insight into whether the fund holds sufficient assets to meet its realistic future obligations, previewing this course's later reserving and solvency material.",
+                "explain": "This directly previews this course's later supervisory reserves material — worth recognising asset shares as feeding into BOTH bonus-setting AND solvency assessment, not serving a single, narrow purpose."
+            }
+        ]
+    }
+
+    ]
 };
