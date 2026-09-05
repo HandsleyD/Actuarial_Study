@@ -16546,4 +16546,173 @@ const MODULES = {
         ]
     }
     ]
+,
+  SA7: [
+    {
+        "id": "m01",
+        "title": "What is Subject SA7 all about?",
+        "description": "An orientation chapter explaining SA7's role as the Specialist Advanced subject applying core actuarial techniques to complex investment management scenarios, and how it builds on SP5.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SA7, according to its official syllabus?",
+                "a": "To develop a candidate's expertise to a level that allows critical analysis across all major areas of investment practice, building on SP5 and earlier subjects, equipping candidates with the skills and broad working understanding of financial and investment markets to the level that may be required of a Chief Investment Officer (CIO).",
+                "explain": "This is the genuine, official IFoA syllabus wording — worth reading closely: naming the CIO level explicitly signals a genuinely senior, strategic decision-making standard, not just technical investment analysis."
+            },
+            {
+                "q": "How does SA7 relate to Subject SP5 (Investment and Finance Specialist Principles)?",
+                "a": "SP5 introduces the main principles and knowledge required in investment and finance and how they apply in simple scenarios; SA7 builds on those same skills and knowledge, applied to much more complex, senior-level investment management scenarios.",
+                "explain": "This directly mirrors SA1's, SA2's, SA3's and SA4's relationship to their respective SP subjects — worth treating SP5 as the assumed technical foundation SA7 does not re-teach."
+            },
+            {
+                "q": "What are the three main syllabus topic areas of SA7, and their approximate topic weightings, according to the official syllabus?",
+                "a": "The framework for investment management (30%); meeting investor requirements (35%); and management and risk control for an investment manager (35%).",
+                "explain": "Worth memorising these weightings directly — unlike some other SA subjects with four or five topic areas, SA7 concentrates its whole syllabus into just three genuinely broad, roughly equally-weighted areas."
+            },
+            {
+                "q": "What skills, beyond technical knowledge, does the SA7 syllabus expect candidates to demonstrate, echoing every other SA subject's shared structure?",
+                "a": "Candidates must analyse a scenario, assess the implications of relevant factors, evaluate results critically in a wider context, and propose solutions or courses of action — the same analyse/assess/evaluate/propose progression used across every SA subject.",
+                "explain": "This directly recalls SA1's, SA2's, SA3's and SA4's skill-progression material — worth memorising this four-stage structure as a genuine answer-writing template applicable across all Specialist Advanced subjects."
+            },
+            {
+                "q": "Why might a SA7 exam question present an unfamiliar investment mandate or fictional investor scenario, rather than only a well-known real-world fund or market?",
+                "a": "This tests whether candidates can apply the underlying principles and skills developed throughout the course to any given set of facts, rather than simply recalling memorised knowledge about one specific, familiar real-world investment manager or market.",
+                "explain": "This directly recalls SA1's fictional-scenario exam-format material — worth recognising this as a deliberate, shared SA-subject design choice testing transferable judgement, not market-specific memorisation."
+            },
+            {
+                "q": "Why does SA7 build directly on subjects like CM1, CM2, CP1 and CP2, even though it does not re-teach their content explicitly?",
+                "a": "SA7's asset allocation, risk management, and performance measurement material all depend on the general financial mathematics, derivative pricing, and modelling techniques developed in those earlier subjects, applied specifically to the investment management context.",
+                "explain": "This directly recalls SA1's, SA2's, SA3's and SA4's equivalent cards — worth treating this whole course as CM1/CM2's and CP1/CP2's technical toolkit, specifically specialised to investment management practice."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "The investment management industry structure",
+        "description": "Covers the structure of the investment management industry, including asset managers, custodians, consultants and other key participants.",
+        "cards": [
+            {
+                "q": "What is the core role of an asset management firm, distinct from the investors whose money it manages?",
+                "a": "An asset manager makes investment decisions on behalf of clients (e.g. pension schemes, insurers, individuals) according to an agreed mandate, typically earning fees based on assets under management or performance, without itself bearing the investment risk of the underlying portfolio.",
+                "explain": "Worth recognising this AGENCY relationship (manager acting on behalf of, but not bearing the risk of, the client) as the defining structural feature shaping much of this course's later governance and conduct material."
+            },
+            {
+                "q": "Why might a pension scheme or insurer use an independent custodian to hold its investment assets, rather than the asset manager holding them directly?",
+                "a": "Separating asset management (decision-making) from custody (safekeeping) reduces the risk of a single party having both control over investment decisions AND physical/legal control of the assets, providing a genuine safeguard against fraud or error.",
+                "explain": "This directly recalls CP1's segregation-of-duties material — worth recognising custody separation as a genuinely important governance safeguard, not merely an administrative convenience."
+            },
+            {
+                "q": "What role does an investment consultant typically play for a pension scheme or other institutional investor?",
+                "a": "An investment consultant provides independent advice on investment strategy, manager selection, and monitoring, helping trustees or other governing bodies make genuinely informed decisions without needing to develop the same level of in-house investment expertise themselves.",
+                "explain": "This directly recalls SA4's trustee-fiduciary-duty material — worth recognising the consultant as providing genuinely important EXPERTISE SUPPORT to governing bodies whose members may not themselves be investment specialists."
+            },
+            {
+                "q": "Why might potential conflicts of interest arise within the investment management industry's structure, given the various parties involved?",
+                "a": "An asset manager's fee structure, a consultant's relationships with multiple asset managers, or a custodian offering additional services could all create genuine incentives that may not perfectly align with the underlying investor's best interests, requiring active management and disclosure of such conflicts.",
+                "explain": "This directly recalls CP1's conflict-of-interest material — worth recognising the multi-party structure of investment management as creating genuinely more opportunities for conflicts than a simpler, single-party relationship."
+            },
+            {
+                "q": "Why might regulation of the investment management industry need to address each of these different participant types (managers, custodians, consultants) somewhat differently, rather than applying a single uniform rulebook?",
+                "a": "Each participant type plays a genuinely different role and poses different risks to investors (e.g. a custodian's key risk is safekeeping failure, while a manager's key risk is poor or self-interested investment decisions), so regulation tailored to each role's specific risks is more effective than a one-size-fits-all approach.",
+                "explain": "This directly previews this course's regulation module — worth recognising that PROPORTIONATE, ROLE-SPECIFIC regulation is more effective than uniform rules applied regardless of each participant's genuinely different function and risk profile."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Investment mandates and governance",
+        "description": "Covers how investment mandates are structured, the role of governance in overseeing investment management, and how mandates translate investor objectives into practice.",
+        "cards": [
+            {
+                "q": "What is an 'investment mandate', and why must it be genuinely clear and specific rather than a vague statement of intent?",
+                "a": "An investment mandate sets out the specific objectives, constraints (e.g. permitted asset classes, risk limits), and benchmark against which an asset manager's performance will be judged; a vague mandate risks the manager pursuing an approach genuinely misaligned with what the investor actually needs.",
+                "explain": "This directly recalls CP1's clear-instructions-from-client material — worth recognising a well-specified mandate as the essential mechanism ensuring the manager's genuine agency relationship (Module 2's material) actually serves the investor's true interests."
+            },
+            {
+                "q": "Why might an investment mandate need to specify a genuinely appropriate benchmark, rather than allowing the manager to select or change its own performance comparison after the fact?",
+                "a": "A benchmark set independently and in advance provides an objective, unbiased basis for assessing whether the manager has genuinely added value, whereas a benchmark chosen or changed by the manager itself after seeing results could be selected specifically to flatter poor performance.",
+                "explain": "This directly recalls CP1's independent-assessment material — worth recognising benchmark selection as a genuine GOVERNANCE safeguard against a manager's own potential incentive to present its performance more favourably than it genuinely deserves."
+            },
+            {
+                "q": "Why does investment governance (e.g. a pension scheme's investment committee) need genuine, ongoing oversight of the mandate, rather than setting it once and leaving the manager entirely unmonitored?",
+                "a": "Market conditions, the investor's own circumstances, and the manager's actual performance can all change over time, so ongoing oversight allows the governing body to identify whether the mandate remains genuinely appropriate and whether the manager is delivering against it, rather than discovering a serious problem only much later.",
+                "explain": "This directly recalls this course's recurring ongoing-review theme (echoing SA1's material) — worth recognising mandate oversight as needing the same ongoing vigilance discipline as any other actuarial monitoring process."
+            },
+            {
+                "q": "Why might a governing body delegate day-to-day investment decisions to a manager while retaining responsibility for setting the overall strategic asset allocation itself?",
+                "a": "Strategic asset allocation decisions (e.g. the overall split between growth and matching assets) directly reflect the investor's own risk appetite and objectives, which the governing body itself is best placed to determine, while day-to-day security selection within that framework benefits from the manager's specialist expertise and market access.",
+                "explain": "This directly recalls SA4's trustee-versus-manager-role material — worth recognising this DIVISION OF RESPONSIBILITY as a genuine, deliberate governance structure, not an arbitrary split of tasks."
+            },
+            {
+                "q": "Why might governance arrangements for investment management need to differ genuinely between a well-resourced institutional investor and a smaller pension scheme with limited in-house expertise?",
+                "a": "A smaller scheme with limited resources may need to rely more heavily on external consultants and simpler, more standardised mandates, while a larger, well-resourced investor may be able to support more sophisticated in-house governance and more bespoke mandate structures, echoing this course's recurring proportionality theme.",
+                "explain": "This directly recalls SA1's proportionality material — worth recognising that GOVERNANCE SOPHISTICATION should genuinely scale with the investor's own resources and complexity, not be applied uniformly regardless of context."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "The investment process and decision-making frameworks",
+        "description": "Covers how investment managers structure their decision-making process, including research, portfolio construction, and implementation.",
+        "cards": [
+            {
+                "q": "Why might an investment manager's process typically distinguish between 'research' (forming views on assets or markets) and 'portfolio construction' (translating those views into an actual portfolio)?",
+                "a": "Separating these stages allows genuine specialisation (research analysts focusing on generating insight, portfolio managers focusing on implementation and risk management) and provides a check that a compelling research view is actually translated into a genuinely appropriate, risk-controlled portfolio position, rather than an unconstrained bet.",
+                "explain": "Worth recognising this separation as a genuine internal governance safeguard, similar in spirit to Module 2's custody-versus-management separation, just applied within the investment process itself."
+            },
+            {
+                "q": "Why might a systematic, rules-based investment process (e.g. a quantitative model) have genuine advantages over a purely discretionary, judgement-based process, and one genuine limitation?",
+                "a": "A systematic process can apply its rules consistently across a large universe of assets without emotional bias, but its genuine limitation is that a fixed model calibrated on historical data may fail to anticipate genuinely novel market conditions not represented in that historical data, a form of model risk.",
+                "explain": "This directly recalls SA1's and SA3's model-limitation-awareness material — worth recognising this as the SAME model-risk principle applying to investment decision-making processes specifically."
+            },
+            {
+                "q": "Why might a discretionary investment process require genuinely robust internal challenge (e.g. an investment committee reviewing individual managers' decisions), rather than relying purely on individual manager judgement?",
+                "a": "Individual judgement, however skilled, can be subject to genuine behavioural biases (e.g. overconfidence, anchoring), so internal challenge and review processes provide a check against these biases, improving the overall quality and consistency of investment decisions.",
+                "explain": "This directly recalls CP1's judgement-needs-challenge material — worth recognising internal challenge as a genuine QUALITY CONTROL mechanism for discretionary decision-making, addressing behavioural risks a systematic process is less exposed to."
+            },
+            {
+                "q": "Why might the implementation stage of the investment process (actually executing trades) introduce genuine costs and risks beyond the investment decision itself?",
+                "a": "Trading costs (bid-offer spreads, market impact) and execution risk (the price moving unfavourably between deciding to trade and completing the trade) can genuinely erode the value of an otherwise sound investment decision, so efficient implementation is itself a genuinely important skill, not a mechanical afterthought.",
+                "explain": "This directly previews this course's later performance-attribution module — worth recognising that a GOOD DECISION poorly implemented can still produce a disappointing outcome, making implementation quality a genuinely distinct skill from decision-making quality."
+            },
+            {
+                "q": "Why might an investment process need to be documented and consistently followed, rather than varying informally from decision to decision?",
+                "a": "A documented, consistently-applied process supports genuine accountability (allowing decisions to be reviewed against the stated process), helps identify when and why deviations occur, and supports the governance oversight (Module 3's material) that investors and regulators genuinely rely upon.",
+                "explain": "This directly recalls Module 3's governance-oversight material — worth recognising documented process consistency as the PRACTICAL FOUNDATION that meaningful governance oversight actually depends upon."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Types of investors and their objectives",
+        "description": "Covers the different types of institutional and individual investors, and how their genuinely different objectives and constraints shape appropriate investment strategy.",
+        "cards": [
+            {
+                "q": "Why might a DB pension scheme's investment objectives differ genuinely from a DC pension scheme's, echoing SA4's material?",
+                "a": "A DB scheme invests to meet a defined set of promised liabilities, so its objectives centre on funding adequacy relative to those specific liabilities, while a DC scheme's objectives centre on maximising genuinely appropriate risk-adjusted returns for individual members' own accumulating pots, a fundamentally different investment problem.",
+                "explain": "This directly recalls SA4's DB-versus-DC risk-allocation material — worth recognising that WHO bears the investment risk (sponsor for DB, member for DC) directly shapes what the INVESTMENT OBJECTIVE genuinely should be."
+            },
+            {
+                "q": "Why might a life insurer's investment objectives, echoing SA2's material, differ genuinely from a general insurer's, echoing SA3's material?",
+                "a": "A life insurer (particularly for annuity business) typically has genuinely long-duration, interest-rate-sensitive liabilities favouring long-dated matching assets, while a general insurer's typically shorter-tail, more liquidity-sensitive liabilities favour a different balance emphasising liquidity and capital preservation over long-duration matching.",
+                "explain": "This directly recalls SA2's and SA3's ALM-duration material — worth recognising that INVESTOR TYPE (life versus general insurer) directly determines appropriate investment strategy, echoing this course's broader theme that objectives must be understood before strategy can be set."
+            },
+            {
+                "q": "Why might an individual investor's own investment objectives and risk tolerance require genuinely different consideration from an institutional investor's, even for a similarly-sized pool of assets?",
+                "a": "An individual investor typically has a genuinely more concentrated, personal set of goals (e.g. their own retirement, a specific purchase) and may have less capacity to bear risk or absorb losses than a large institution with diversified objectives and a longer collective time horizon, requiring genuinely more personalised, risk-tolerance-sensitive advice.",
+                "explain": "This directly recalls CP1's client-specific-advice material — worth recognising individual investors as requiring a genuinely more PERSONALISED approach than the more standardised frameworks often applicable to institutional investors."
+            },
+            {
+                "q": "Why might a sovereign wealth fund's investment objectives genuinely differ from a typical pension scheme's, despite both being long-term institutional investors?",
+                "a": "A sovereign wealth fund often has a genuinely longer investment horizon (potentially perpetual, without a fixed set of member liabilities to meet) and may have broader national economic or strategic objectives beyond pure risk-adjusted return, allowing a genuinely different risk tolerance and asset allocation approach than a pension scheme funding specific member benefits.",
+                "explain": "Worth recognising sovereign wealth funds as a genuinely distinct investor TYPE with objectives that can extend beyond the risk-return optimisation framework common to most other institutional investors covered in this module."
+            },
+            {
+                "q": "Why must an investment manager genuinely understand an investor's specific objectives and constraints before proposing an investment strategy, echoing Module 3's mandate material?",
+                "a": "The same asset allocation or strategy could be genuinely excellent for one investor type and genuinely unsuitable for another, depending entirely on their specific liabilities, risk tolerance, and objectives, so a sound strategy proposal must be anchored in the SPECIFIC investor's circumstances, not a generic 'best practice' template.",
+                "explain": "This directly recalls SA1's context-specific-assessment material — worth recognising this principle as identical across every SA subject: strong investment advice is always anchored in the SPECIFIC investor's circumstances, not applied generically."
+            }
+        ]
+    }
+
+    ]
 };
