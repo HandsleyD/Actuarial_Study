@@ -15358,4 +15358,173 @@ const MODULES = {
         ]
     }
     ]
+,
+  SA3: [
+    {
+        "id": "m01",
+        "title": "What is Subject SA3 all about?",
+        "description": "An orientation chapter explaining SA3's role as the Specialist Advanced subject applying core actuarial techniques to complex general insurance scenarios, and how it builds on SP7 and SP8.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SA3, according to its official syllabus?",
+                "a": "To instil in successful candidates the ability to apply knowledge of the general insurance environment (in the United Kingdom and other jurisdictions) and the principles of actuarial practice to providers of general insurance in complex situations.",
+                "explain": "This is the genuine, official IFoA syllabus wording — worth reading closely: 'complex situations' signals the same applied-judgement exam philosophy running through every SA subject, now specifically for general (non-life) insurers."
+            },
+            {
+                "q": "What four competences does the SA3 syllabus state a successful candidate should be able to demonstrate?",
+                "a": "Understand the more complex aspects of actuarial practice within general insurance companies; apply the principles of actuarial practice to the management of general insurance under complex scenarios; compare the approaches by which the principles are applied in practice across different jurisdictions; and recommend coherent solutions and courses of action in relation to overall financial management.",
+                "explain": "These four competences map directly onto this course's own structure — worth treating them as a genuine checklist for what a strong SA3 answer must ultimately demonstrate, not just accurate technical content."
+            },
+            {
+                "q": "Which two Specialist Principles subjects does SA3 build directly on, according to its official links?",
+                "a": "SP7 (General Insurance Reserving and Capital Modelling Principles) and SP8 (General Insurance Pricing Principles) — SA3 assumes the technical foundation from both and applies it to genuinely complex, integrated management scenarios.",
+                "explain": "Worth treating SP7 and SP8 as the assumed technical toolkit SA3 does not re-teach from scratch — SA3's job is to apply that reserving/capital/pricing foundation to realistic, complex business situations."
+            },
+            {
+                "q": "What are the four main syllabus topic areas of SA3, and their approximate topic weightings, according to the official syllabus?",
+                "a": "General insurance products and general business environment (35%); regulatory, legislative and taxation environment (10%); reserving, ALM and reinsurance (30%); and financial management, monitoring and strategies (25%).",
+                "explain": "Worth memorising these weightings directly — the two largest areas (products/environment at 35%, and reserving/ALM/reinsurance at 30%) together make up almost two-thirds of the whole exam's marks."
+            },
+            {
+                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SA subjects like SA3?",
+                "a": "Approximately 20% knowledge (detailed understanding of the topic), 50% application (applying principles within a given context), and 30% higher-order skills (deeper analysis, judgement, comparing situations, and proposing solutions).",
+                "explain": "Worth taking as direct, practical revision guidance — the majority of marks (80%) require genuinely APPLYING and ANALYSING, not simply reciting knowledge, so revision should prioritise practising realistic scenario questions over pure memorisation."
+            },
+            {
+                "q": "Why does the official SA3 syllabus include a final 'Solving problems' topic area, distinct from the four main weighted topics?",
+                "a": "It explicitly tests the ability to analyse complex problems in terms of actuarial, economic and financial factors, assess and integrate the implications of such factors, evaluate results critically in a wider context, and propose solutions or actions based on that evaluation.",
+                "explain": "This directly previews this course's own closing complex-issues module — worth recognising this four-stage analyse/assess/evaluate/propose structure as a genuine answer-writing template for any complex, multi-topic SA3 question."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "General insurance markets and products",
+        "description": "Covers the main features of general insurance markets and products, drawing on the official syllabus's products and business environment topic area.",
+        "cards": [
+            {
+                "q": "What are the main features that distinguish general insurance markets from life insurance markets, echoing CB2's material?",
+                "a": "General insurance typically involves shorter-tail, more frequent, and more variable claims (e.g. motor, property) compared with life insurance's longer-duration, less frequent claims, and general insurance premiums are typically reviewed and reset annually rather than fixed for a long contract term.",
+                "explain": "This directly recalls CB2's general-versus-life-insurance material — worth recognising the shorter tail and annual repricing as the two structural features that most shape everything else in this course, from pricing to reserving to capital."
+            },
+            {
+                "q": "Why might general insurance products span a genuinely wide range of claim 'tail' lengths, from short-tail (e.g. motor damage) to very long-tail (e.g. asbestos-related disease claims)?",
+                "a": "Different perils and coverages have genuinely different reporting and settlement patterns — some claims are reported and settled within months, while others (e.g. latent disease or liability claims) may not even be reported until years or decades after the triggering event, requiring genuinely different reserving techniques for each.",
+                "explain": "This directly previews this course's later latent-claims-reserving module — worth recognising claim tail length as the single most important classifying feature of a general insurance product for actuarial purposes."
+            },
+            {
+                "q": "Why might commercial general insurance lines (e.g. large commercial property or liability risks) require genuinely different underwriting and pricing approaches than personal lines (e.g. motor, household)?",
+                "a": "Commercial risks are typically fewer in number, larger and more heterogeneous in size and exposure, meaning standard statistical rating techniques reliant on large, homogeneous portfolios are less directly applicable, requiring more bespoke, judgement-based rating approaches.",
+                "explain": "This directly previews this course's large-commercial-risk-pricing module — worth recognising portfolio SIZE and HOMOGENEITY, not just product type, as the key driver of which pricing techniques are genuinely appropriate."
+            },
+            {
+                "q": "Why might a general insurer's product mix directly shape its exposure to catastrophe risk, echoing SA1's and CP1's material?",
+                "a": "Property and liability lines concentrated in catastrophe-exposed regions (e.g. windstorm, flood, earthquake zones) carry genuinely correlated risk across many policies simultaneously, unlike lines with more independent, idiosyncratic claim triggers, directly shaping the insurer's need for catastrophe modelling and reinsurance.",
+                "explain": "This directly previews this course's catastrophe-modelling modules — worth recognising catastrophe exposure as fundamentally a PRODUCT MIX and GEOGRAPHIC CONCENTRATION issue, not an unavoidable feature of general insurance as a whole."
+            },
+            {
+                "q": "Why might distribution channel choice (e.g. broker-intermediated versus direct) matter particularly for commercial general insurance lines?",
+                "a": "Complex, bespoke commercial risks often genuinely benefit from broker expertise in structuring appropriate cover and negotiating terms, while simpler, more standardised personal lines can be reasonably sold through direct or price-comparison channels without needing this same specialist intermediation.",
+                "explain": "This directly recalls CB1's and SA1's product-complexity-versus-distribution-channel material — worth recognising the same underlying principle applying here: channel suitability tracks product complexity, not general insurance versus other insurance sectors as such."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "The Lloyd's market",
+        "description": "Covers the key features and regulatory regime of the Lloyd's insurance market, drawing directly on the official syllabus's dedicated Lloyd's objectives.",
+        "cards": [
+            {
+                "q": "What is the Lloyd's market, and how does its underlying structure differ from a conventional general insurance company?",
+                "a": "Lloyd's is a marketplace where syndicates of underwriting members (historically individuals, now predominantly corporate capital providers) come together to underwrite insurance risk, rather than a single company underwriting risk on its own balance sheet.",
+                "explain": "Worth treating this MARKETPLACE structure as the single most important distinguishing feature of Lloyd's — it is genuinely not a single insurance company, which has direct knock-on implications for capital, regulation and reporting covered in the cards below."
+            },
+            {
+                "q": "Why might a syndicate at Lloyd's require its own distinct capital assessment, separate from any single member's own overall financial position?",
+                "a": "Since capital backing a syndicate's underwriting can come from many different members (each potentially also participating in other syndicates), Lloyd's and its regulators need syndicate-level and member-level capital assessments that together ensure genuine overall adequacy across this more complex, layered capital structure.",
+                "explain": "This directly previews Module 7's Solvency II material — worth recognising Lloyd's capital assessment as genuinely more layered than a conventional insurer's, given the marketplace structure just described."
+            },
+            {
+                "q": "Why does Lloyd's operate under a regulatory regime that combines its own internal oversight (the Council of Lloyd's) with external prudential regulation?",
+                "a": "Lloyd's internal oversight can apply market-specific rules and standards tailored to its unique syndicate structure, while external regulation (e.g. under Solvency II in the UK) ensures Lloyd's overall meets the same genuine prudential standards expected of any other insurance market participant.",
+                "explain": "This directly previews Module 8's Lloyd's-regulatory-regime material — worth recognising this dual-layer oversight as a direct structural consequence of Lloyd's being a marketplace rather than a single regulated company."
+            },
+            {
+                "q": "Why might Lloyd's syndicates and their members face genuinely distinct taxation considerations compared with a conventional general insurance company and its shareholders?",
+                "a": "Since underwriting profits and losses flow through to individual or corporate members according to their specific participation in each syndicate, the tax treatment must reflect this genuinely different profit-flow structure, rather than the more straightforward corporate taxation applicable to a conventional insurer's shareholders.",
+                "explain": "This directly previews Module 10's taxation material — worth recognising Lloyd's distinctive capital and profit-flow structure as creating genuinely distinct tax questions, not just a variation on standard corporate insurance taxation."
+            },
+            {
+                "q": "Why might Lloyd's continue to be an attractive market structure for underwriting complex or unusual commercial and specialty risks, despite its more complex capital and regulatory structure?",
+                "a": "The marketplace structure allows genuine specialisation and risk-sharing across many syndicates with different expertise, and its long-established reputation and broker network can provide access to complex, bespoke risks that might be harder for a single conventional insurer to source and underwrite independently.",
+                "explain": "This directly recalls Module 2's large-commercial-risk material — worth recognising Lloyd's marketplace structure as genuinely well-suited to exactly the kind of bespoke, heterogeneous commercial risk this course's earlier module identified as needing specialist underwriting approaches."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Pricing large commercial risks",
+        "description": "Covers the particular pricing considerations for large commercial risks, including alternative rating approaches and incorporating the cost of capital, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why does pricing a large commercial risk require genuinely different considerations from pricing a standard, high-volume personal lines policy, echoing Module 2's material?",
+                "a": "Large commercial risks are typically few in number, heterogeneous, and individually significant, meaning standard statistical rating relying on the law of large numbers across a homogeneous portfolio is less directly applicable, requiring more bespoke, judgement-informed rating approaches.",
+                "explain": "This directly recalls Module 2's commercial-versus-personal-lines material — worth recognising this as the foundational reason every other card in this module matters: LOW VOLUME and HETEROGENEITY are what genuinely distinguish large commercial pricing."
+            },
+            {
+                "q": "What alternative approaches might an actuary use to rate a large commercial risk where the insurer's own historical experience is too limited to be statistically credible, echoing CS1's material?",
+                "a": "Approaches include using industry-wide or market benchmark data, exposure-based rating (assessing risk from the underlying exposure characteristics rather than historical claims alone), and blending limited own experience with external data using credibility-theory-style weighting.",
+                "explain": "This directly recalls CS1's credibility theory material — worth recognising large commercial rating as one of the clearest real-world applications of blending limited own data with external sources, a recurring theme across this whole curriculum."
+            },
+            {
+                "q": "Why might a large commercial risk's premium rate need to explicitly incorporate the insurer's cost of capital, rather than relying purely on expected claims cost plus a standard margin?",
+                "a": "Large, heterogeneous risks can carry genuinely significant capital requirements (e.g. due to concentration or volatility), so pricing that ignored the specific capital cost of writing that risk could understate its true economic cost to the insurer, echoing CB1's risk-adjusted-return material.",
+                "explain": "This directly recalls CB1's cost-of-capital material — worth recognising this as the same underlying principle: a genuinely capital-intensive risk warrants a correspondingly higher required return, reflected explicitly in its premium rate."
+            },
+            {
+                "q": "Why might catastrophe modelling be a particularly important input specifically when pricing large commercial property risks, previewing this course's next two modules?",
+                "a": "Large commercial property risks are often concentrated in specific locations exposed to correlated catastrophe perils (e.g. windstorm, flood), so traditional actuarial rating based on historical average claims experience alone may not adequately capture the genuine tail risk a catastrophe model is specifically designed to quantify.",
+                "explain": "This directly previews Modules 5-6's catastrophe-modelling material — worth recognising large commercial property pricing as one of the clearest points of contact between this module's rating techniques and the catastrophe-modelling techniques covered next."
+            },
+            {
+                "q": "Why might pricing a large commercial risk require genuine actuarial judgement in a way that pricing a standard personal lines policy typically does not, echoing CP1's material?",
+                "a": "Given the limited own data, heterogeneity, and bespoke risk features of large commercial risks, no single mechanical formula can fully determine an appropriate rate, so genuine, well-reasoned professional judgement — blending statistical technique, benchmark data, and underwriting insight — is a genuinely necessary part of the pricing process.",
+                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising large commercial pricing as one of the clearest, most exam-relevant real-world examples of this principle across the whole actuarial curriculum."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Catastrophe modelling (1): structure and perils",
+        "description": "Covers the generic structure of catastrophe models, the key perils they model, and how catastrophe modelling differs from traditional actuarial rating methods, per the official syllabus.",
+        "cards": [
+            {
+                "q": "How does catastrophe modelling differ fundamentally from traditional actuarial rating methods, per the official syllabus objective?",
+                "a": "Traditional actuarial rating typically relies on statistical analysis of an insurer's own historical claims experience, while catastrophe modelling simulates a very large number of hypothetical events using scientific and engineering data, allowing estimation of extreme, rare losses that historical claims data alone (often too sparse for genuinely rare events) cannot reliably capture.",
+                "explain": "This directly recalls CS2's extreme-value and tail-risk material — worth recognising catastrophe modelling as addressing exactly the kind of rare, severe tail risk that standard historical-experience-based rating is genuinely poorly suited to quantify."
+            },
+            {
+                "q": "What is the generic structure of a catastrophe model, in terms of its main components?",
+                "a": "A hazard module (modelling the physical characteristics and probability of the peril itself, e.g. windspeed or ground shaking), a vulnerability module (modelling how exposed assets are damaged by a given hazard intensity), and a financial module (translating physical damage into insured financial loss, reflecting policy terms and conditions).",
+                "explain": "Worth memorising this three-part structure directly — hazard, vulnerability, and financial modules — as it is the standard way catastrophe models are described and is directly examinable."
+            },
+            {
+                "q": "What are the key perils typically modelled by catastrophe models, per the official syllabus objective?",
+                "a": "Natural perils such as windstorm (hurricanes, typhoons), earthquake, flood, and wildfire are among the most commonly modelled perils, reflecting the perils that pose the most significant correlated, catastrophic loss potential to insurers' property portfolios.",
+                "explain": "Worth recognising these as the perils that most directly threaten the kind of correlated, catastrophic loss accumulation this course's earlier module (large commercial property pricing) identified as a genuine pricing and capital concern."
+            },
+            {
+                "q": "Why might a catastrophe model's vulnerability module require genuinely detailed, location-specific building and construction data to produce reliable loss estimates?",
+                "a": "Damage from a given hazard intensity depends heavily on genuinely specific factors like construction material, building age, and local building codes, so a model relying only on generic, non-specific exposure data would produce far less reliable loss estimates than one incorporating detailed, location-specific vulnerability data.",
+                "explain": "This directly recalls SA1's data-quality-and-limitations material — worth recognising catastrophe model output quality as directly dependent on the quality of exposure data fed into it, a genuine practical limitation covered further in the next module."
+            },
+            {
+                "q": "Why might insurers use catastrophe models to estimate losses at very high return periods (e.g. a 1-in-200-year event), rather than relying solely on historical claims experience?",
+                "a": "Very severe, rare events may have occurred rarely or never within the insurer's own historical claims data, so a catastrophe model's simulation-based approach can estimate the genuine likelihood and severity of such extreme events even without direct historical precedent within the insurer's own experience.",
+                "explain": "This directly recalls CS2's extreme-value-theory material — worth recognising the 1-in-200-year return period specifically as a commonly used benchmark directly linked to Solvency II's SCR calibration (previewing Module 7's material)."
+            }
+        ]
+    }
+
+    ]
 };
