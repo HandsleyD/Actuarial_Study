@@ -20355,6 +20355,102 @@ const MODULES = {
                 "explain": "This closing card ties this module back to Module 4 explicitly — worth recognising this module as SCALING UP Module 4's individual rating-factor GLM technique to a genuinely PORTFOLIO-LEVEL aggregate claims perspective, not a separate, unrelated statistical topic."
             }
         ]
+    },
+    {
+        "id": "m10",
+        "title": "Credibility theory and its pricing applications",
+        "description": "Covers classical and Bayesian credibility approaches, and their genuine application to general insurance pricing, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is 'credibility theory', and why does it genuinely matter for pricing a risk with LIMITED own historical data, echoing CS1's material?",
+                "a": "Credibility theory genuinely blends a risk's OWN limited historical experience with a broader, more statistically stable EXTERNAL benchmark (e.g. industry-wide or portfolio-wide experience), weighting the own experience by a genuine 'credibility factor' reflecting how statistically RELIABLE that own experience actually is, rather than relying purely on either own experience alone (too noisy for small risks) or external data alone (ignoring genuinely relevant own information).",
+                "explain": "This directly recalls CS1's credibility theory material — worth recognising credibility as the genuine, direct SOLUTION to Module 3's earlier burning-cost-for-low-data-risks material: a more statistically rigorous way of blending own and external data than an informal burning cost approach alone."
+            },
+            {
+                "q": "What is 'classical' (limited fluctuation) credibility, and how does it genuinely determine an appropriate credibility factor?",
+                "a": "Classical credibility genuinely sets a credibility factor based on whether the OWN data has reached a specified minimum VOLUME (e.g. a minimum number of claims) considered sufficient to limit random fluctuation to an acceptable level, applying FULL credibility once this threshold is reached and PARTIAL credibility (scaled down) below it.",
+                "explain": "Worth recognising classical credibility's genuine, defining feature as a THRESHOLD-BASED approach — credibility is determined by whether own data volume crosses a specified minimum standard, a genuinely more mechanical rule than the Bayesian approach covered next."
+            },
+            {
+                "q": "What is 'Bayesian' credibility, and how does it genuinely differ in philosophy from classical credibility?",
+                "a": "Bayesian credibility genuinely derives the credibility factor from formal Bayesian statistical principles, updating a PRIOR belief about the risk (based on external/portfolio-wide information) with OBSERVED own data to produce a genuine POSTERIOR estimate, with the credibility weighting emerging naturally from the relative statistical PRECISION of the prior and the observed data, rather than a fixed volume threshold.",
+                "explain": "This directly recalls CS1's Bayesian statistics material — worth recognising Bayesian credibility as grounding the SAME blending intuition classical credibility uses in a genuinely more formal, statistically coherent PRIOR-TO-POSTERIOR updating framework."
+            },
+            {
+                "q": "Why might Bayesian credibility be considered genuinely more theoretically elegant than classical credibility, despite classical credibility's genuine practical simplicity?",
+                "a": "Bayesian credibility genuinely derives its credibility weighting directly from the underlying statistical properties of the prior and data (rather than an essentially arbitrary volume threshold), providing a more theoretically JUSTIFIED blending weight, though classical credibility's genuine simplicity and ease of practical application can make it a reasonable, pragmatic choice in many real-world pricing contexts.",
+                "explain": "Worth recognising this as a genuine, important trade-off — Bayesian credibility's greater theoretical rigour against classical credibility's genuine practical simplicity, echoing this course's recurring theme of balancing sophistication against practical usability."
+            },
+            {
+                "q": "How might credibility theory genuinely be applied to pricing a specific large commercial risk or a genuinely new rating factor, connecting Module 7's data-quality material?",
+                "a": "Credibility theory allows a rating actuary to genuinely blend a large commercial risk's own limited claims history (or a new rating factor's limited own data) with broader portfolio or market benchmark experience, producing a genuinely more statistically robust rate than relying on either the limited own data alone or an entirely generic market rate ignoring the risk's own genuine, specific experience.",
+                "explain": "This directly recalls Module 7's limited-own-data-for-new-risks-and-factors material — worth recognising credibility theory as the genuine, formal STATISTICAL SOLUTION to exactly the data-limitation challenge that module identified."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Direct versus reinsurance pricing",
+        "description": "Covers the genuine distinctions between pricing direct and reinsurance business, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why might pricing reinsurance business genuinely require a fundamentally different DATA perspective from pricing direct business, echoing Module 5's material?",
+                "a": "A reinsurer typically has genuinely LESS direct visibility into individual policy-level underwriting detail than the CEDING insurer itself, often relying on SUMMARISED information about the underlying direct book (e.g. aggregate exposure and historical loss experience) rather than full individual-policy-level data, requiring genuinely different data-handling and rating techniques adapted to this more limited, aggregated information.",
+                "explain": "This directly recalls Module 5's direct-versus-reinsurance-product-features material — worth recognising this DATA VISIBILITY GAP as a genuinely important, practical consequence of reinsurance sitting one step removed from the underlying individual risks."
+            },
+            {
+                "q": "Why might a reinsurer's own PRICING MARGIN need to reflect genuinely different considerations from a direct insurer's margin, echoing SA1's and SA3's material?",
+                "a": "A reinsurer often takes on genuinely more CONCENTRATED, correlated risk (e.g. providing catastrophe cover across many direct insurers' exposures to the same peril), requiring a genuinely higher risk-adjusted margin to compensate for this concentrated risk exposure, compared with a direct insurer's typically more diversified, individual-policy-level risk pool.",
+                "explain": "This directly recalls SA1's and SA3's risk-adjusted-margin material — worth recognising reinsurer margin-setting as needing to reflect its genuinely DIFFERENT, more concentrated risk profile compared with the direct insurers it reinsures."
+            },
+            {
+                "q": "Why might pricing a PROPORTIONAL reinsurance treaty (e.g. quota share) be genuinely more straightforward than pricing a NON-PROPORTIONAL treaty, echoing SP7's material?",
+                "a": "A proportional treaty's premium and claims genuinely scale directly with the underlying direct business (a fixed percentage of both), so pricing largely involves agreeing the appropriate CEDING COMMISSION and any risk margin, while a non-proportional treaty's pricing genuinely requires understanding the full SEVERITY DISTRIBUTION of underlying claims to price the specific layer being reinsured, a materially more complex exercise.",
+                "explain": "This directly recalls SP7's proportional-versus-non-proportional-modelling material — worth recognising this same complexity distinction applying to the initial PRICING of reinsurance treaties, not just to modelling their recoveries for reserving purposes."
+            },
+            {
+                "q": "Why might a reinsurer genuinely need to price for its own AGGREGATE exposure across MULTIPLE ceding insurers, rather than pricing each individual treaty in complete isolation?",
+                "a": "Since a reinsurer's overall risk depends on genuine AGGREGATE exposure across ALL the treaties it writes (particularly for correlated perils like catastrophe risk affecting many ceding insurers simultaneously), sound reinsurance pricing must genuinely consider how EACH treaty contributes to the reinsurer's OWN overall portfolio risk, not simply price each treaty as an independent, standalone transaction.",
+                "explain": "This directly recalls SP7's aggregation-and-diversification material — worth recognising reinsurer pricing as needing the SAME portfolio-level, aggregate risk perspective this course develops for capital modelling, now applied specifically to the reinsurer's own pricing decisions."
+            },
+            {
+                "q": "How does this module's direct-versus-reinsurance pricing material connect back to Module 5's product-and-environment material?",
+                "a": "Module 5 established the genuine STRUCTURAL differences between direct and reinsurance products; this module develops the direct PRICING CONSEQUENCES of those structural differences (data visibility, margin considerations, complexity, aggregate portfolio perspective), showing how product-level differences translate into genuinely distinct pricing approaches.",
+                "explain": "This closing card ties this module back to Module 5 explicitly — worth recognising this module as the genuine PRICING APPLICATION of Module 5's earlier product-structure understanding."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Catastrophe modelling fundamentals in pricing",
+        "description": "Covers the fundamentals of catastrophe modelling as applied to general insurance pricing, echoing SA3's material at SP8's foundational level.",
+        "cards": [
+            {
+                "q": "Why does catastrophe modelling genuinely differ from traditional frequency-severity rating technique (Module 4's material) for catastrophe-exposed property risks, echoing SA3's material?",
+                "a": "Traditional actuarial rating typically relies on genuine statistical analysis of an insurer's own historical claims experience, while catastrophe modelling simulates a genuinely large number of hypothetical events using scientific and engineering data, allowing estimation of extreme, rare losses that historical claims data alone (often too sparse for genuinely rare events) cannot reliably capture.",
+                "explain": "This directly recalls SA3's catastrophe-modelling-versus-traditional-rating material — worth recognising this same principle as examinable at SP8's foundational level, not exclusively an SA3-level concept."
+            },
+            {
+                "q": "What is the genuine three-part structure of a catastrophe model, echoing SA3's material?",
+                "a": "A hazard module (modelling the physical characteristics and probability of the peril itself), a vulnerability module (modelling how exposed assets are damaged by a given hazard intensity), and a financial module (translating physical damage into insured financial loss, reflecting policy terms and conditions).",
+                "explain": "This directly recalls SA3's identical hazard-vulnerability-financial structure — worth memorising this three-part structure precisely, as it is the standard way catastrophe models are described and directly examinable."
+            },
+            {
+                "q": "Why must catastrophe model output be incorporated ALONGSIDE, not instead of, the frequency-severity rating techniques covered in Module 4, when pricing a catastrophe-exposed property risk?",
+                "a": "Catastrophe model output specifically addresses the CATASTROPHE peril component of a property risk's total expected cost, while Module 4's frequency-severity technique remains genuinely necessary for pricing the NON-CATASTROPHE (attritional) claims that risk also generates, meaning a complete pricing approach genuinely COMBINES both catastrophe model output and traditional frequency-severity technique, addressing genuinely different components of the same risk's total cost.",
+                "explain": "This directly recalls Module 4's and Module 9's frequency-severity material — worth recognising catastrophe modelling as ADDRESSING A SPECIFIC COMPONENT of total risk cost, not replacing the broader rating framework this whole course develops."
+            },
+            {
+                "q": "Why might a rating actuary need to genuinely acknowledge catastrophe MODEL UNCERTAINTY when incorporating catastrophe model output into a final rate, echoing SA3's material?",
+                "a": "Different catastrophe models or model versions can produce genuinely different loss estimates for the same portfolio, so a rating actuary should genuinely acknowledge this model uncertainty (e.g. by comparing multiple models, or applying genuine judgement-based adjustment) rather than treating a single model's output as unquestionably precise, echoing this course's recurring critical-model-awareness theme.",
+                "explain": "This directly recalls SA3's catastrophe-model-uncertainty material and this course's recurring model-limitation-awareness theme — worth recognising this genuine caution as applying identically to catastrophe modelling within pricing as it does within capital modelling."
+            },
+            {
+                "q": "How does this module's catastrophe modelling material, alongside Modules 10-11's credibility and reinsurance material, complete SP8's final topic area, connecting back to Module 1's topic-weighting material?",
+                "a": "Module 10 established how to blend limited own data with external information (credibility); Module 11 developed reinsurance-specific pricing considerations; this module completes the topic area with catastrophe modelling technique for extreme, correlated risks — together addressing SP8's 'Credibility, reinsurance and catastrophe modelling' topic area's full 15% weighting, and closing this whole course's journey from foundational rating technique through to these more specialised, advanced pricing tools.",
+                "explain": "This closing card ties Modules 10-12 together explicitly, echoing Module 1's topic-weighting material — worth recognising these three modules as together addressing SP8's final syllabus topic area, completing this course's full coverage."
+            }
+        ]
     }
     ]
 };
