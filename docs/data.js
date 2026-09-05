@@ -16872,6 +16872,134 @@ const MODULES = {
                 "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to investment risk measurement, echoing the identical discipline covered across every SA subject."
             }
         ]
+    },
+    {
+        "id": "m11",
+        "title": "Performance measurement and attribution",
+        "description": "Covers how investment performance is measured and decomposed to explain the genuine sources of a portfolio's return relative to its benchmark.",
+        "cards": [
+            {
+                "q": "Why is comparing a portfolio's absolute return alone genuinely insufficient to assess an investment manager's skill, echoing Module 3's benchmark material?",
+                "a": "A high absolute return could simply reflect a generally strong market environment rather than genuine manager skill, so performance must be assessed RELATIVE to an appropriate benchmark to isolate the manager's genuine contribution from broader market movements.",
+                "explain": "This directly recalls Module 3's benchmark-setting material — worth recognising relative, benchmark-adjusted performance as the genuinely meaningful measure of manager skill, not absolute return viewed in isolation."
+            },
+            {
+                "q": "What is 'performance attribution', and why is it genuinely more informative to trustees or clients than a single relative-return figure alone?",
+                "a": "Performance attribution decomposes a portfolio's return relative to its benchmark into specific components (e.g. asset allocation decisions versus individual security selection), revealing genuinely WHY the manager outperformed or underperformed, rather than just confirming THAT they did.",
+                "explain": "This directly recalls SA1's and SA2's surplus-analysis-decomposition material — worth recognising performance attribution as the SAME underlying decomposition principle (explaining WHY, not just WHAT) applied specifically to investment performance."
+            },
+            {
+                "q": "Why might decomposing performance into asset allocation and security selection components help a governing body assess whether a manager's mandate remains appropriate?",
+                "a": "If genuine outperformance has come primarily from asset allocation decisions the manager wasn't specifically mandated to make (rather than from security selection within the agreed asset classes), this could reveal the manager is taking risks or making decisions beyond its intended mandate, prompting a genuine mandate review.",
+                "explain": "This directly recalls Module 3's mandate-scope material — worth recognising attribution analysis as a genuine TOOL for verifying a manager is operating within, not silently exceeding, its agreed mandate."
+            },
+            {
+                "q": "Why might performance measurement need to consider risk-adjusted returns (e.g. comparing return relative to volatility or tracking error taken), rather than return alone?",
+                "a": "A manager achieving a higher return by simply taking on genuinely more risk than the mandate intended has not necessarily demonstrated genuine skill, so risk-adjusted measures help distinguish returns earned through skilful decision-making from returns earned simply by accepting more risk.",
+                "explain": "This directly recalls Module 10's tracking-error material — worth recognising risk-adjusted performance measurement as directly connecting this module's attribution material to the risk measurement techniques covered in the previous module."
+            },
+            {
+                "q": "Why might performance measurement need to be assessed over a genuinely appropriate time horizon, rather than judging a manager purely on very recent, short-term results?",
+                "a": "Short-term performance can be heavily influenced by genuine random market fluctuation rather than manager skill, so assessing performance over a longer, more statistically meaningful period (while still monitoring for genuinely concerning short-term issues) gives a more reliable picture of a manager's true, sustained skill.",
+                "explain": "This directly recalls CS1's statistical-significance material — worth recognising this same principle (distinguishing genuine skill/trend from short-term random noise) applying to investment performance assessment specifically."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Regulation of investment management",
+        "description": "Covers the objectives and approaches to regulating investment managers, including conduct regulation and the treatment of client assets.",
+        "cards": [
+            {
+                "q": "Why does regulation of investment management typically emphasise conduct requirements particularly heavily, given the agency relationship (Module 2's material) between manager and client?",
+                "a": "Since the manager acts on behalf of, but does not itself bear the risk of, the client's assets, conduct regulation aims to ensure the manager genuinely acts in the client's best interests despite this separation of decision-making from risk-bearing, addressing the genuine potential for misaligned incentives this agency structure creates.",
+                "explain": "This directly recalls Module 2's agency-relationship material and CP1's conduct-regulation material — worth recognising conduct regulation's emphasis here as a direct RESPONSE to the specific agency-relationship risk this whole subject's structure creates."
+            },
+            {
+                "q": "Why might regulation require strict segregation of client assets from an investment manager's own assets, echoing Module 2's custody material?",
+                "a": "Segregation ensures that if the investment manager itself fails financially, client assets remain genuinely protected and are not treated as part of the manager's own insolvent estate, a fundamental client-protection safeguard distinct from investment performance regulation.",
+                "explain": "This directly recalls Module 2's custody-separation material — worth recognising asset segregation as addressing a genuinely DIFFERENT risk (manager insolvency) from conduct regulation's focus on fair treatment in investment decision-making itself."
+            },
+            {
+                "q": "Why might regulation of investment management need genuinely different approaches for retail (individual) clients compared with institutional clients, echoing SA1's proportionality material?",
+                "a": "Retail clients typically have genuinely less investment expertise and bargaining power than sophisticated institutional investors, so regulation often applies additional protections (e.g. more detailed disclosure requirements) for retail clients while allowing institutional clients, who can better assess and negotiate terms themselves, somewhat greater flexibility.",
+                "explain": "This directly recalls SA1's proportionality material — worth recognising this same principle applying to investment management regulation: protection should genuinely scale with the client's own capacity to assess and protect their interests."
+            },
+            {
+                "q": "Why might regulation increasingly require investment managers to disclose their approach to ESG and responsible investment, echoing Module 9's material?",
+                "a": "Genuine, standardised disclosure allows clients and other stakeholders to compare managers' actual ESG practices consistently, addressing the risk that vague or inconsistent claims about responsible investment ('greenwashing') could mislead clients about a manager's genuine approach.",
+                "explain": "This directly recalls Module 9's ESG-consistency material — worth recognising disclosure regulation as a direct RESPONSE to the genuine risk of inconsistent or exaggerated ESG claims identified in that earlier module."
+            },
+            {
+                "q": "Why might investment management regulation need to evolve as new asset classes and investment techniques (e.g. increasingly complex alternative assets or algorithmic trading) develop over time, echoing this course's recurring theme?",
+                "a": "Regulation designed for traditional listed assets and human decision-making may not adequately address the genuinely different risks new asset classes or automated techniques introduce, so regulatory frameworks require periodic review and updating to remain genuinely fit for purpose.",
+                "explain": "This directly recalls SA1's ongoing-review theme and SA1's regulatory-evolution material — worth recognising this same principle applying to investment management regulation specifically."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Operational risk and governance for investment managers",
+        "description": "Covers the operational risks facing an investment management firm, and the internal governance structures used to manage them.",
+        "cards": [
+            {
+                "q": "What is 'operational risk' in the context of an investment management firm, and why is it genuinely distinct from investment (market) risk?",
+                "a": "Operational risk arises from failures in internal processes, systems, or people (e.g. a settlement error, a cyber-security breach, or a key-person departure) rather than from adverse market movements, meaning it can cause genuine losses or client harm even when the firm's actual investment decisions were entirely sound.",
+                "explain": "Worth recognising operational risk as a genuinely DIFFERENT risk category from investment risk — a manager could make excellent investment decisions and still suffer serious client harm through an operational failure unrelated to those decisions."
+            },
+            {
+                "q": "Why might key-person risk (over-reliance on a single star portfolio manager) be a genuinely significant operational risk for an investment management firm?",
+                "a": "If a firm's investment process and client relationships depend heavily on one individual's expertise or judgement, that individual's departure, illness, or error could cause genuinely significant disruption, making succession planning and process documentation (Module 4's material) important mitigants.",
+                "explain": "This directly recalls Module 4's documented-process material — worth recognising well-documented, genuinely repeatable processes as a direct MITIGANT against key-person risk, not just a governance nicety."
+            },
+            {
+                "q": "Why might cyber-security represent a genuinely significant and growing operational risk for investment management firms specifically?",
+                "a": "Investment managers hold and process genuinely sensitive client data and control significant client assets, making them an attractive target for cyber-attacks that could result in financial loss, data breaches, or disruption to critical trading and settlement systems, a risk that has grown as reliance on digital systems has increased.",
+                "explain": "Worth recognising cyber risk as a genuinely CONTEMPORARY and growing operational risk category, reflecting the increasing digitisation of investment management processes over time."
+            },
+            {
+                "q": "Why might an investment management firm's governance structure need a genuinely independent risk management function, separate from the portfolio management teams generating investment decisions?",
+                "a": "An independent risk function can objectively monitor and challenge portfolio managers' risk-taking against agreed limits without the same incentive to prioritise short-term performance that portfolio managers themselves might have, providing a genuine check-and-balance within the firm's internal governance.",
+                "explain": "This directly recalls CP1's independent-challenge material and Module 4's internal-challenge material — worth recognising an independent risk function as this same principle applied specifically to the investment manager's own internal firm structure."
+            },
+            {
+                "q": "Why might operational risk management need to be an ongoing, evolving discipline rather than a fixed set of controls established once, echoing this course's recurring theme?",
+                "a": "New operational risks (e.g. emerging cyber threats, or risks from new technology adoption) continue to develop over time, so a firm's operational risk controls must be periodically reviewed and updated to remain genuinely effective against the current risk landscape, not assumed to remain adequate indefinitely.",
+                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to operational risk management specifically, echoing the identical discipline covered across every SA subject."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Solving complex issues and glossary",
+        "description": "Covers applying the full range of SA7 knowledge and skills to genuinely complex, multi-dimensional investment management problems, and consolidates key syllabus terminology.",
+        "cards": [
+            {
+                "q": "Why does SA7 include a dedicated focus on solving complex issues, drawing on every earlier module, echoing SA1's material?",
+                "a": "Real strategic and technical problems in investment management rarely fall neatly into a single topic area; a genuinely complex issue typically requires drawing on investor objectives, asset allocation, risk measurement, governance, and regulatory considerations simultaneously.",
+                "explain": "This directly recalls SA1's complex-issue-integration material — worth recognising this module as this course's deliberate integration point, combining skills the earlier modules mostly developed in isolation."
+            },
+            {
+                "q": "A DB pension scheme's investment manager has significantly outperformed its benchmark, but attribution reveals this came primarily from unauthorised asset allocation deviations. Discuss why this represents a genuinely complex issue for the scheme's governing body.",
+                "a": "This situation genuinely involves competing considerations across multiple topic areas at once — the manager has delivered a strong outcome, but attribution analysis reveals a mandate compliance failure, raising genuine governance and regulatory conduct questions about whether the manager can be trusted to operate within agreed limits going forward, even though the specific outcome this time was favourable.",
+                "explain": "This directly recalls Module 3's mandate material and Module 11's attribution material — worth recognising that resolving this specific issue genuinely requires drawing on performance attribution, mandate governance, and conduct/trust considerations together, not simply celebrating the favourable outcome."
+            },
+            {
+                "q": "What is 'liability-driven investing' (LDI), as a precise, glossary-style restatement of Module 6's material?",
+                "a": "An investment approach that sets strategy explicitly to match the behaviour of a specific set of liabilities (e.g. interest rate and inflation sensitivity), directly relevant for investors like DB pension schemes and annuity-writing insurers whose objective is meeting defined future obligations.",
+                "explain": "This directly recalls Module 6's LDI material — worth treating this as the precise definition to reach for if an exam question asks you to explain or apply LDI directly."
+            },
+            {
+                "q": "What is 'tracking error', as a precise, glossary-style restatement of Module 10's material?",
+                "a": "The volatility of a portfolio's return relative to its benchmark, directly measuring how much an actively-managed portfolio has genuinely deviated from its mandate's specified benchmark, a mandate-relevant risk measure distinct from absolute volatility.",
+                "explain": "This directly recalls Module 10's tracking-error material — worth treating this as the precise definition to use if asked to explain why tracking error matters for an actively-managed mandate specifically."
+            },
+            {
+                "q": "Why does this closing glossary module deliberately draw its content from across every earlier module, rather than introducing wholly new material, echoing SA1's approach?",
+                "a": "This module's purpose is genuinely consolidative and integrative, bringing together precise terminology and complex, multi-topic problem-solving practice using material already developed throughout the course, supporting confident, accurate application in the actual exam.",
+                "explain": "This closing card confirms this module completes SA7's 14-module structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
+            }
+        ]
     }
     ]
 };
