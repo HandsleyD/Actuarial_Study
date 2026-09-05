@@ -6786,4 +6786,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP1: [
+    {
+      id: "sp1-q1",
+      title: "Health and care products and the operating environment",
+      modules: "Modules 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 3,
+          question:
+            "Define 'deferred period' in the context of income protection insurance, and state which two other named health and care products in the SP1 syllabus most closely resemble income protection in requiring genuinely long-term incidence assumptions.",
+          answer:
+            "The deferred period is the waiting period between the start of incapacity and when IP benefit payments begin, during which no benefit is paid. Critical illness insurance and long term care insurance most closely resemble income protection in requiring genuinely long-term incidence assumptions.",
+          note: "A complete answer states the definition precisely and correctly names both comparable long-term products.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the genuine scope and generosity of State healthcare provision directly shapes what a private health and care insurer's products need to achieve in a given market.",
+          answer:
+            "Where the State provides comprehensive baseline provision, private products typically need to be marketed as supplementary (speed, choice, comfort), while in markets with minimal State provision, private products must be positioned as primary, comprehensive cover — the same private product concept can have a genuinely different real-world role depending on the State backdrop.",
+          note: "A strong answer explicitly connects State provision to concrete product positioning, not just states that 'the State matters'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss two operating-environment factors (other than the role of the State) that could genuinely affect whether a new critical illness product succeeds in a given market.",
+          answer:
+            "Distribution channels: if the market lacks advisers experienced in explaining CI's condition-specific definitions, direct/online distribution may lead to poor customer understanding and higher complaint or non-disclosure rates. Regulatory and taxation regime: if benefits are not tax-favoured or regulation imposes onerous disclosure/underwriting requirements, the product's effective cost and complexity could reduce its genuine attractiveness relative to alternative uses of a customer's money.",
+          note: "Any two genuinely distinct, well-justified operating-environment factors should be accepted, provided they are applied to this specific CI product scenario, not stated generically.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why economic and political influences might be genuinely harder for an insurer to anticipate than regulatory or taxation changes.",
+          answer:
+            "Regulatory and tax rules are typically published and change through a known, formal process, while economic conditions and political shifts can move less predictably and with less formal advance notice, requiring genuine ongoing vigilance rather than a one-off compliance check.",
+          note: "This connects directly to the procedural-predictability distinction developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q2",
+      title: "Product design for a new long term care product",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "An insurer is designing a new long term care insurance product. Explain why policyholders, distributors, the insurer, and shareholders might genuinely have different interests in how this product is designed.",
+          answer:
+            "Policyholders want genuine value and appropriate cover for their care needs, distributors want a product that is straightforward to sell and adequately remunerated, the insurer wants a product that is profitable and manageable from a risk perspective given LTC's genuinely long-term, compounding risk, and shareholders want an adequate return on the capital this capital-intensive product requires.",
+          note: "A strong answer names all four stakeholder groups and their genuinely distinct interests, not just one or two.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why determining a 'suitable design' for this LTC product genuinely depends on the specific market it will be sold in, rather than following one universally best template.",
+          answer:
+            "The same underlying product concept could be genuinely well-suited to one market (e.g. a fully-underwritten product in a market with sophisticated advice-based distribution and high care-cost awareness) and poorly suited to another (e.g. that same design in a market needing simpler, more accessible cover with less individual underwriting), so the design decision must be anchored in the specific market's distribution capability, customer sophistication, and State-provision backdrop.",
+          note: "A strong answer explicitly connects design suitability to at least two specific market characteristics, not just asserts that context 'matters' in the abstract.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss the relative merits of a guaranteed-premium design versus a reviewable-premium design for this LTC product.",
+          answer:
+            "A guaranteed premium gives policyholders certainty over their long-term cost, supporting persistency and customer trust, but exposes the insurer to genuine, open-ended risk if incidence or cost assumptions prove too optimistic over LTC's very long duration. A reviewable premium lets the insurer adjust rates if experience diverges from assumptions, managing insurer risk over this long contract term, but introduces genuine premium uncertainty for policyholders that could damage persistency or trust.",
+          note: "A strong answer identifies the genuine trade-off (insurer risk management versus policyholder certainty) for both design options, not just describes one option favourably.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this product's premium, benefit, and charge structure should be designed together as an integrated whole, rather than each element decided independently.",
+          answer:
+            "The premium a customer is willing to pay, the benefits genuinely delivered, and any charges levied are all interconnected — a benefit-rich design typically requires a correspondingly higher premium or charge structure to remain viable, so these elements must be designed coherently together rather than in isolation.",
+          note: "This connects directly to the integrated-design-and-pricing theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q3",
+      title: "Identifying sources of risk",
+      modules: "Module 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List six genuine sources of risk to a health and care insurance company named in the official syllabus, other than claim rates and claim amounts.",
+          answer:
+            "Any six of: data, investment performance, expenses and inflation, persistency, mix of new business, volume of new business, guarantees and options, competition, actions of management, actions of distributors, counterparties, legal/regulatory/tax developments, reputation, internal audit failures/fraud, physical risks, aggregation and concentration of risk, catastrophes, non-disclosure and anti-selection.",
+          note: "A complete answer names six genuinely distinct sources from the official list, not vague restatements of the same underlying idea.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why 'aggregation and concentration of risk' and 'catastrophes' are genuinely distinct risk sources, despite both relating to correlated, large-scale losses.",
+          answer:
+            "Aggregation/concentration risk concerns the insurer's own portfolio structure (e.g. too much business concentrated in one region or risk type, creating vulnerability even without any single triggering event), while catastrophe risk concerns a specific, discrete event (e.g. a pandemic) capable of triggering correlated claims across that concentrated exposure — the underlying structural vulnerability and the triggering event are genuinely separate concepts.",
+          note: "A strong answer explicitly distinguishes the underlying structural vulnerability from the triggering event, not just describes both as 'big risks'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why 'non-disclosure and anti-selection' is a genuinely distinct risk source from 'data' quality, and one way each risk might be managed differently.",
+          answer:
+            "Data quality risk concerns unintentional errors, gaps or inaccuracies in the insurer's own records, managed through data governance and quality checks. Non-disclosure and anti-selection concern a genuinely different mechanism — applicants deliberately withholding or misrepresenting information because they have a financial incentive to do so, a behavioural risk managed through underwriting rigour and pricing safeguards rather than data governance alone.",
+          note: "A strong answer explains both the conceptual distinction AND names a genuinely different management response for each.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why 'actions of management' and 'actions of distributors' are included as risk sources alongside more technical, statistically-modellable risks like claim rates.",
+          answer:
+            "These recognise that genuine risk can arise from human decisions by parties within or connected to the insurer (e.g. management pursuing an overly aggressive growth strategy, or a distributor mis-selling products), not only from external, statistically-modellable factors, broadening risk assessment to include genuine governance and conduct risks.",
+          note: "This connects directly to the governance-and-conduct-risk theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q4",
+      title: "Reinsurance and underwriting as risk management",
+      modules: "Modules 6, 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "A health and care insurer writes &pound;2,000,000 of gross premium on a critical illness account and retains 65% under a quota share reinsurance treaty. Calculate the retained premium and the ceded premium.",
+          answer:
+            "Retained premium = &pound;2,000,000 &times; 65% = &pound;1,300,000. Ceded premium = &pound;2,000,000 &minus; &pound;1,300,000 = &pound;700,000.",
+          note: "Verified: 2,000,000×0.65=1,300,000; ceded=700,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer might prefer quota share reinsurance across its whole CI book rather than surplus reinsurance.",
+          answer:
+            "Quota share provides straightforward, proportional risk and capital relief across the whole book by ceding a fixed proportion of every policy's risk and premium, valuable for broad-based support across an entire portfolio, whereas surplus reinsurance is better suited to portfolios with widely varying individual policy sizes where retention should vary by risk size.",
+          note: "A strong answer distinguishes quota share's uniform proportional structure from surplus reinsurance's size-based retention.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss the genuine factors this insurer should consider when determining its underwriting approach for this CI product.",
+          answer:
+            "The genuine cost of underwriting relative to the risk being assessed, the size and duration of the policy (a long-duration CI product warrants more rigorous underwriting than a short one-year product, since mispricing cannot easily be corrected through repricing), the insurer's own risk appetite and pricing confidence without full underwriting, and the competitive/distribution implications of a more or less rigorous underwriting process (more rigorous underwriting can deter time-pressed applicants).",
+          note: "A strong answer addresses multiple genuine factors (cost, policy characteristics, risk appetite, distribution implications), not just one in isolation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why underwriting and reinsurance are genuinely complementary, rather than substitute, risk management techniques.",
+          answer:
+            "Underwriting manages risk at the point of individual policy selection (deciding who to insure and at what price), while reinsurance manages risk after that selection has been made (transferring some of the resulting portfolio risk to a third party) — together they address different stages of the risk management process, not the same underlying problem twice.",
+          note: "This connects directly to the complementary-techniques theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q5",
+      title: "Asset-liability matching for a mixed health and care book",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an insurer with both a PMI book and a long term care book should categorise its liabilities into different types before setting an asset-liability matching strategy.",
+          answer:
+            "Different liability types (short-tail PMI claims versus long-tail LTC benefit payments) have genuinely different duration and cashflow certainty characteristics, so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually — categorisation is the essential precursor to sound matching strategy.",
+          note: "A strong answer explicitly explains WHY categorisation is necessary before matching, not just states that liabilities should be categorised.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the PMI book's matching strategy should genuinely differ from the LTC book's.",
+          answer:
+            "PMI's short claim tail and annual repricing mean its liabilities are far less interest-rate sensitive over a long horizon, so its matching strategy can reasonably prioritise liquidity for near-term claims payment, while LTC's long-duration liabilities require genuine long-duration matching (e.g. long-dated bonds) to protect against interest rate risk over a much longer horizon.",
+          note: "A strong answer explicitly contrasts the two books' duration characteristics and resulting strategy implications.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss two further ways (beyond reinsurance, underwriting, and asset-liability matching) this insurer could manage the risks it faces across its mixed book.",
+          answer:
+            "Claims management: sound claims handling processes (e.g. rigorous validation of claimed conditions against policy definitions) can genuinely reduce the risk of overpayment or fraud. Data checks: robust data quality controls reduce the genuine foundational risk that poor data undermines pricing, reserving, and experience monitoring across the whole book. Product design itself (e.g. Module 4's material) is also a genuine risk management tool, shaping the risk the insurer takes on before it is even written.",
+          note: "Any two genuinely distinct, well-explained further risk management approaches should be accepted from the official syllabus list.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the genuine principles of investment for this insurer should balance security against return, rather than simply maximising expected return.",
+          answer:
+            "Investment strategy should genuinely reflect the nature, term and currency of the insurer's liabilities, balancing security against return and providing sufficient liquidity to meet claims and expenses as they fall due, since maximising expected return alone (ignoring liability matching) could expose the insurer to genuine solvency risk if asset values and liability values move unfavourably out of step.",
+          note: "This connects directly to CM2's core matching-versus-return-maximisation principle.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q6",
+      title: "Modelling and pricing an income protection product",
+      modules: "Modules 9, 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "An insurer is pricing a one-year renewable income protection rider with an annual benefit of &pound;20,000 payable on claim. The assumed annual claim incidence rate is 0.006, and expenses are assumed to be 12% of the gross premium, with no discounting within the one-year term. Using the equation of value, calculate the required annual premium.",
+          answer:
+            "Expected cost of benefits = 0.006 &times; &pound;20,000 = &pound;120. Setting gross premium P such that P &times; (1 &minus; 0.12) = &pound;120 gives P = &pound;120 / 0.88 = &pound;136.36 (to the nearest penny).",
+          note: "Verified: 0.006×20000=120; 120/0.88=136.36 (Node-verified). Full marks require setting up the equation of value explicitly.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a multi-state model, rather than a single formula-based equation of value, would be needed to price a longer-term version of this IP product with duration-dependent recovery rates.",
+          answer:
+            "A multi-state model represents a policyholder as moving between distinct states (e.g. healthy, claiming, recovered) with defined transition probabilities that can genuinely vary by duration since claim onset, capturing this complexity in a way a simple, closed-form equation of value cannot, since IP claims genuinely involve multiple possible states and transitions, not a single binary trigger.",
+          note: "This connects directly to CS2's multi-state modelling material applied to a genuine IP pricing context.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why sensitivity analysis should be carried out alongside the pricing calculation in part (i), rather than treating the calculated premium as a single, fixed answer.",
+          answer:
+            "Sensitivity analysis reveals how much the calculated premium genuinely changes when key assumptions (e.g. the incidence rate or expense loading) are varied, showing which assumptions the result is most exposed to — without this, a single-point premium could give false confidence, since the premium is only as reliable as the assumptions used to calculate it.",
+          note: "A strong answer explicitly connects sensitivity analysis to the genuine uncertainty in the underlying assumptions, not just asserts it is 'good practice'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this same underlying model might need genuinely different assumptions if it were being used to project solvency rather than to price this product.",
+          answer:
+            "Pricing typically uses best-estimate or lightly-margined assumptions to determine a competitive, sustainable premium, while solvency projection typically requires more prudent assumptions reflecting genuine concern for policyholder protection under adverse conditions, so the same model structure can require different assumption inputs depending on its specific purpose.",
+          note: "This connects the numeric pricing calculation directly to the assumption-purpose material developed later in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q7",
+      title: "Supervisory reserves and solvency capital",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A health and care insurer's best estimate reserve for a block of business is &pound;15,000,000, with an assumed standard deviation of outcomes of 8% of the reserve. Using a Value at Risk approach with a 99.5% confidence level (z-score of 2.576), calculate the solvency capital requirement.",
+          answer:
+            "Standard deviation = 8% &times; &pound;15,000,000 = &pound;1,200,000. Solvency capital requirement = &pound;1,200,000 &times; 2.576 = &pound;3,091,200 (to the nearest &pound;100).",
+          note: "Verified: 15,000,000×0.08=1,200,000; 1,200,000×2.576=3,091,200 (Node-verified). Marks are typically split across identifying the standard deviation and the final VaR-based capital figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the difference between the purpose of the &pound;15,000,000 best estimate reserve and the &pound;3,091,200 solvency capital requirement calculated in part (i).",
+          answer:
+            "The reserve ensures the insurer holds sufficient assets to meet its genuine expected liabilities, while the solvency capital requirement provides an additional buffer protecting against the genuine risk that actual experience diverges adversely from that expectation — the two figures address genuinely different levels of protection.",
+          note: "A strong answer explicitly distinguishes the EXPECTED liability cover from the ADDITIONAL buffer against adverse deviation.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why the strength of this insurer's reserving basis and the level of solvency capital required genuinely interact, rather than being determined in complete isolation from each other.",
+          answer:
+            "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital genuinely depends on how prudent the reserving basis already is — the two figures interact rather than being determined independently.",
+          note: "This directly tests the official syllabus's explicit interplay objective.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on the difference between a 'passive' and an 'active' valuation approach in the context of determining this insurer's reserves.",
+          answer:
+            "A passive valuation approach applies a fixed, prescribed set of rules or assumptions consistently regardless of the insurer's own specific circumstances, while an active approach allows the insurer's own genuine judgement and specific experience to inform the valuation basis, within any regulatory constraints that apply.",
+          note: "This connects directly to the standard-formula-versus-internal-model distinction developed further at SA1 level.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q8",
+      title: "Setting assumptions for pricing, reserving and embedded value",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between the genuine purpose of assumptions used for pricing, for determining liabilities, and for determining embedded value, for the same underlying health and care risk.",
+          answer:
+            "Pricing assumptions must recover the insurer's cost of capital and target margin to be commercially sustainable, so they typically include an explicit profit requirement. Liability (reserving) assumptions are typically set with genuine prudence to protect policyholders, reflecting what the insurer genuinely expects to pay out plus a margin. Embedded value assumptions should be genuinely realistic, best-estimate expectations of future experience, since embedded value aims to capture the true expected economic value of in-force business, which prudent reserving assumptions would understate.",
+          note: "A complete answer distinguishes all three purposes clearly (profit-inclusive, prudent, and best-estimate respectively), not just contrasts two of the three.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why setting assumptions for a genuinely new health and care product with limited own claims experience requires particular judgement.",
+          answer:
+            "Without substantial own experience data, assumption-setting must rely more heavily on external data, comparable products, and genuine actuarial judgement, blending limited own information with external sources according to credibility-theory principles rather than relying on a purely statistical, own-experience-based estimate.",
+          note: "This connects directly to CS1's credibility theory material applied to a genuine assumption-setting context.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why an actuary should be able to justify their assumption choices with genuine, documented reasoning, rather than simply asserting a figure.",
+          answer:
+            "Since assumption-setting genuinely involves judgement rather than purely mechanical calculation, transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work and helping ensure the assumption is genuinely sound rather than arbitrary.",
+          note: "A strong answer connects documentation to genuine professional accountability, not just describes it as good administrative practice.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why reserving assumptions for a health and care insurer may be different from those used in pricing for the same product.",
+          answer:
+            "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the same underlying risk can genuinely warrant a more cautious figure for reserving than for pricing.",
+          note: "This connects directly to the reserving-versus-pricing-purpose distinction developed in this module.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q9",
+      title: "Monitoring experience for a critical illness account",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why it is genuinely important for a health and care insurer to monitor its actual claims experience against its pricing and reserving assumptions.",
+          answer:
+            "Comparing actual experience against the assumptions used in pricing and reserving reveals whether those assumptions remain genuinely appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
+          note: "This directly recalls the assumption-verification purpose of experience monitoring.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer's experience monitoring should track incidence rates separately for each covered CI condition, rather than a single combined incidence rate.",
+          answer:
+            "Different conditions can experience genuinely different trends (e.g. medical advances improving cancer survival while other conditions remain stable), so a single combined rate could mask offsetting movements that each individually warrant distinct assumption review.",
+          note: "A strong answer explains WHY aggregation can mislead, not just asserts that granular monitoring is 'better'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why this insurer should investigate whether an observed adverse incidence variance reflects genuine random fluctuation or a persistent trend, before deciding whether to revise its pricing assumption.",
+          answer:
+            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts — revising the assumption based on noise alone could introduce unnecessary pricing change, while ignoring a genuine trend could leave the insurer mispriced going forward. This requires genuine statistical judgement about the significance of the observed variance relative to what random fluctuation alone would typically produce.",
+          note: "A strong answer explicitly frames this as a statistical-significance judgement, connecting to CS1's hypothesis-testing material.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why poor data quality could undermine this whole experience monitoring exercise.",
+          answer:
+            "Since experience monitoring's conclusions depend entirely on the underlying exposure and claims data, poor data quality can produce genuinely misleading conclusions about whether assumptions need revision, regardless of how sound the statistical analysis technique applied to that data actually is.",
+          note: "This connects directly to data as the foundational risk source identified elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp1-q10",
+      title: "Analysis of surplus for a health and care insurer",
+      modules: "Module 14",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A health and care insurer's total surplus for the year was &pound;620,000, against an expected surplus of &pound;500,000 under its original assumptions. Of the total variance, &pound;80,000 is attributed to a deliberate assumption change made during the year. Calculate the total variance and the resulting experience variance.",
+          answer:
+            "Total variance = &pound;620,000 &minus; &pound;500,000 = &pound;120,000. Experience variance = &pound;120,000 &minus; &pound;80,000 (assumption change) = &pound;40,000.",
+          note: "Verified: 620,000-500,000=120,000; 120,000-80,000=40,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the &pound;500,000 expected surplus in part (i) typically represents the largest, most predictable component of a surplus analysis.",
+          answer:
+            "Prudent pricing and reserving assumptions build in margins that are expected to emerge as surplus over time purely through the passage of time and survival of the assumptions, forming a genuinely predictable baseline against which actual variances can be meaningfully compared.",
+          note: "A strong answer connects the expected component to prudent margins built into the original assumptions.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the &pound;80,000 assumption change and the &pound;40,000 experience variance calculated in part (i) should be reported as genuinely distinct components, rather than a single combined 'unexpected' figure.",
+          answer:
+            "An experience variance reflects a single period's actual outcome differing from assumption (which may or may not persist), while an assumption change reflects a genuine, deliberate revision to future expectations — conflating them would obscure whether the total unexpected movement is a one-off (experience variance) or a persistent, forward-looking change (assumption change), reducing the analysis's diagnostic value for management.",
+          note: "A strong answer explicitly explains why conflating these two components would reduce the analysis's usefulness, not just states they should be kept separate.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how the results of this surplus analysis could genuinely be used by the insurer's management.",
+          answer:
+            "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business genuinely requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
+          note: "This connects the numeric decomposition directly to its genuine, practical management value.",
+        },
+      ],
+    },
+  ],
 };
