@@ -22,7 +22,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=10">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -39,17 +39,6 @@
 
 <main>
   <div id="homeView">
-    <section class="overview" id="overview">
-      <div class="overview-stat">
-        <div class="overview-number" id="overallPct">&mdash;</div>
-        <div class="overview-label">modules complete</div>
-      </div>
-      <div class="overview-bar-wrap">
-        <div class="overview-bar"><div class="overview-bar-fill" id="overallBarFill"></div></div>
-        <div class="overview-sub" id="overallSub">Loading progress&hellip;</div>
-      </div>
-    </section>
-
     <section class="game-bar" id="gameBar">
       <div class="game-stat">
         <span class="game-stat-icon">&#11088;</span>
@@ -58,8 +47,8 @@
       </div>
       <div class="game-stat">
         <span class="game-stat-icon">&#127942;</span>
-        <span class="game-stat-value" id="rankLabel">Trainee Actuary</span>
-        <span class="game-stat-label" id="rankSub">Rank</span>
+        <span class="game-stat-value" id="rankLabel">Aspiring Actuary</span>
+        <span class="game-stat-label" id="rankSub">Loading&hellip;</span>
       </div>
       <div class="game-stat">
         <span class="game-stat-icon">&#128293;</span>
@@ -121,8 +110,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
 <script src="store.js"></script>
-<script src="data.js?v=27"></script>
+<script src="data.js?v=28"></script>
 <script src="questions.js?v=18"></script>
-<script src="app.js?v=11"></script>
+<script src="app.js?v=12"></script>
 </body>
 </html>
