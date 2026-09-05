@@ -18997,4 +18997,151 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP6: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP6 all about?",
+        "description": "An orientation chapter explaining SP6's role as the Specialist Principles subject developing derivative understanding beyond CM2's level, and how it complements SP5 and feeds into SA7.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SP6, according to its official syllabus?",
+                "a": "To instil in successful candidates the ability, at a higher level of detail and ability than in CM2, to understand different types of financial derivatives and their uses, the markets in which they are traded, methods of valuation of financial derivatives, and the assessment and management of risks associated with a portfolio of derivatives.",
+                "explain": "This is the genuine, official IFoA syllabus wording — worth reading closely: 'higher level of detail and ability than in CM2' explicitly signals SP6 as building directly on, and materially deepening, CM2's derivative-pricing foundation."
+            },
+            {
+                "q": "Which two subjects does SP6 build directly on, according to its official links?",
+                "a": "CM2 (Financial Engineering and Loss Reserving), which provides the foundational derivative-pricing and stochastic-modelling technique, and CP1 (Actuarial Practice), which provides general risk-management and practice principles.",
+                "explain": "Worth recognising CM2 as SP6's genuine TECHNICAL FOUNDATION — SP6 does not re-teach Itô calculus or the binomial model from scratch, it develops CM2's own material to materially greater depth and sophistication."
+            },
+            {
+                "q": "What are the four official syllabus topic areas of SP6, and their approximate topic weightings?",
+                "a": "Derivative markets (5%); Derivative types and uses (20%); Derivative pricing and valuation methods, including interest rate models (50%); and Management of derivatives (25%).",
+                "explain": "Worth memorising these weightings directly — 'Derivative pricing and valuation methods' at fully 50% is genuinely the dominant topic area, meaning this subject is overwhelmingly focused on the mathematical and modelling technique of VALUING derivatives, more so than any other SP subject's single topic weighting."
+            },
+            {
+                "q": "How does SP6 fit alongside SP5 (Investment and Finance Principles) and SA7 (Investment and Finance Advanced) as a genuine 'trio' of subjects, echoing SP5's own material?",
+                "a": "SP5 develops broad investment management concepts applied to meeting different investor needs; SP6 focuses in detail on the technical aspects of derivatives and their use, at a genuinely deeper mathematical level than SP5 covers; SA7 develops both sets of concepts further via more complex 'real world' problems at Specialist Advanced level.",
+                "explain": "This directly recalls SP5's trio-structure material — worth recognising SP6 as the genuinely TECHNICAL, mathematically-deep counterpart within this trio, distinct from SP5's broader, more principles-based investment management coverage."
+            },
+            {
+                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP6?",
+                "a": "Approximately 25% knowledge, 50% application, and 25% higher order — the same standard SP-subject split shared with SP1, SP2 and SP4, despite SP6's genuinely more mathematical, technique-heavy subject matter.",
+                "explain": "Worth recognising that even a genuinely mathematical subject like SP6 still places the MAJORITY of its assessment weight on APPLICATION (using techniques in context) rather than pure knowledge recall — worth prioritising practice applying formulas to scenarios over memorising derivations alone."
+            },
+            {
+                "q": "Why might SP6's heavy weighting toward 'Derivative pricing and valuation methods' (50%) make genuine, repeated practice with the underlying mathematical techniques especially important for exam success?",
+                "a": "Since half of the entire exam's marks concentrate on this single topic area, genuine fluency with techniques like the binomial model, Black-Scholes, and interest rate derivative pricing is essential — a candidate who understands these topics only superficially would be at a severe, genuinely structural disadvantage compared with a candidate who has practised these techniques extensively.",
+                "explain": "Worth treating this weighting as direct, practical revision guidance — Modules covering derivative pricing and valuation (this course's largest module block) deserve proportionately the greatest revision time and practice."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Derivative markets",
+        "description": "Covers the basic characteristics of derivatives markets, exchange-traded versus over-the-counter contracts, and the operation of central counterparty clearing houses, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine characteristics of exchange-traded contracts versus over-the-counter (OTC) contracts, per the official syllabus objective 1.2?",
+                "a": "Exchange-traded contracts offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC contracts offer genuinely greater flexibility to tailor contract terms to specific needs, at the cost of typically greater counterparty risk and reduced price transparency.",
+                "explain": "This directly recalls SA7's and SP5's exchange-versus-OTC material — worth recognising this as a genuinely important, recurring foundational distinction examined at every level of the investment/derivatives curriculum."
+            },
+            {
+                "q": "What are the three genuine types of derivative market participant named in the official syllabus (objective 1.3), and how does each use forwards, futures and options differently?",
+                "a": "Hedgers use derivatives to genuinely reduce an existing risk exposure; speculators use derivatives to take on genuine new exposure in the hope of profiting from an anticipated market movement; arbitrageurs use derivatives to exploit genuine, temporary pricing discrepancies between related instruments, aiming for a risk-free profit.",
+                "explain": "Worth memorising these three participant types precisely — each represents a genuinely DIFFERENT motivation for trading the SAME instrument, a distinction that recurs throughout this whole subject's later pricing and risk material."
+            },
+            {
+                "q": "Why might understanding 'how futures and options markets work' (per the official syllabus objective 1.4) require genuine knowledge of margining and settlement processes, not just contract payoff structures?",
+                "a": "Exchange-traded futures typically require posting and maintaining margin (collateral) that is marked-to-market daily, with genuine cashflow implications for the holder distinct from the contract's eventual payoff at expiry, so understanding market MECHANICS is genuinely separate from understanding the contract's theoretical payoff.",
+                "explain": "Worth recognising a genuine distinction between a derivative's THEORETICAL PAYOFF STRUCTURE (covered in later modules) and its PRACTICAL MARKET MECHANICS (margining, settlement) — both are genuinely necessary for complete understanding, not interchangeable."
+            },
+            {
+                "q": "What is a 'central counterparty clearing house' (CCP), and why does its operation genuinely reduce counterparty risk in exchange-traded derivative markets, per the official syllabus objective 1.5?",
+                "a": "A CCP interposes itself between the two original parties to a trade, becoming the genuine buyer to every seller and seller to every buyer, so each party's counterparty risk is against the CCP itself (typically very well-capitalised and margined) rather than against the original, potentially less creditworthy counterparty directly.",
+                "explain": "Worth recognising the CCP mechanism as directly addressing exchange-traded derivatives' genuine counterparty-risk ADVANTAGE over OTC contracts — this module's central card explaining WHY exchange trading is typically safer."
+            },
+            {
+                "q": "Why might the regulatory environment surrounding CCPs be particularly important, given how much counterparty risk genuinely concentrates within a single CCP?",
+                "a": "Since a CCP absorbs the counterparty risk of essentially the whole exchange-traded market it clears, its own genuine financial soundness and risk management practices become systemically important, meaning CCPs are typically subject to particularly close regulatory oversight to ensure they can genuinely honour their central role even under severely stressed market conditions.",
+                "explain": "This directly recalls SA3's and SA7's systemic-risk-concentration material — worth recognising the CCP as a genuine example of risk CONCENTRATION requiring correspondingly intensive regulatory oversight, precisely because so much of the market's counterparty risk now flows through this single entity."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Derivative payoffs and forward/futures pricing",
+        "description": "Covers the payoffs of forwards, futures, calls and puts, forward and futures pricing, and how futures contracts are used for hedging, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the payoff of a forward or futures contract at maturity, for the long position, echoing CM2's material?",
+                "a": "The payoff is $S_T - K$, where $S_T$ is the underlying asset's price at maturity and $K$ is the agreed forward/futures price — a genuinely linear, symmetric payoff exposing the holder to both unlimited upside and unlimited downside.",
+                "explain": "This directly recalls CM2's forward-payoff material — worth recognising the LINEAR, SYMMETRIC nature of this payoff as the key distinguishing feature versus an option's asymmetric payoff, covered next."
+            },
+            {
+                "q": "What are the payoffs of European call and put options at expiry, for the holder, echoing CM2's material?",
+                "a": "A European call option's payoff is $\\max(S_T - K, 0)$, and a European put option's payoff is $\\max(K - S_T, 0)$ — both genuinely ASYMMETRIC payoffs, capping the holder's downside at the premium paid while retaining upside potential.",
+                "explain": "This directly recalls CM2's option-payoff material — worth recognising the $\\max(\\cdot, 0)$ structure as the defining mathematical feature of an option's payoff, genuinely distinguishing it from a forward or future's unbounded, symmetric exposure."
+            },
+            {
+                "q": "How does an American option's payoff structure genuinely differ from a European option's, per the official syllabus objective 2.1?",
+                "a": "A European option can only be exercised at its specified expiry date, while an American option can be exercised at ANY time up to and including expiry, giving the holder genuinely greater flexibility, which correspondingly means an American option's value must be at least as great as an equivalent European option's value.",
+                "explain": "Worth recognising this GREATER FLEXIBILITY as the genuine source of any American option's additional value over an equivalent European option — a theme this course's numerical-methods module develops in more valuation detail."
+            },
+            {
+                "q": "How is the fair forward price of an asset genuinely determined under the no-arbitrage principle, echoing CM2's material?",
+                "a": "The forward price is set such that $F = S_0 e^{rT}$ (for a non-dividend-paying asset), reflecting the genuine cost of carrying the underlying asset to maturity (financed at the risk-free rate); any forward price genuinely deviating from this would allow a risk-free arbitrage profit through buying/selling the underlying and simultaneously entering an offsetting forward position.",
+                "explain": "This directly recalls CM2's no-arbitrage forward-pricing material — worth recognising this as the genuine FOUNDATIONAL application of the arbitrage-free pricing principle this whole subject repeatedly relies upon."
+            },
+            {
+                "q": "Why might a genuine difference between forward and futures prices arise in practice, despite both theoretically pricing the same underlying exposure?",
+                "a": "Futures require daily marking-to-market and margin settlement, while forwards typically settle only at maturity, so if interest rates are genuinely correlated with the underlying asset's price movements, this difference in cashflow timing can create a small but genuine difference between otherwise theoretically equivalent forward and futures prices.",
+                "explain": "Worth recognising this as a genuinely subtle but real distinction — in most simplified exam contexts forward and futures prices are treated as equal, but genuine practical differences can arise from the margining mechanism covered in Module 2."
+            },
+            {
+                "q": "How might an investor use a futures contract to hedge an existing long position in the underlying asset, per the official syllabus objective 2.3?",
+                "a": "Selling (going short) a futures contract on the same underlying asset creates a genuinely offsetting position — if the underlying asset's price falls, the loss on the physical holding is offset by the genuine gain on the short futures position, effectively locking in the asset's current value regardless of subsequent price movements.",
+                "explain": "This directly recalls this course's later hedging material — worth recognising this as the genuine, foundational example of a HEDGE: an offsetting derivative position specifically designed to reduce, not increase, overall risk exposure."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Traded derivative contracts and interest rate derivatives",
+        "description": "Covers stock, currency and index options, warrants, convertibles, property derivatives, and the range of interest rates and interest rate derivatives, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine traded derivative contracts does the official syllabus (objective 2.4) require candidates to describe, beyond basic calls and puts?",
+                "a": "Stock options, currency options, index options, options on futures, warrants, and convertibles — six genuinely distinct instrument types, each applying the general option concept to a different underlying or embedding it within a different structure.",
+                "explain": "Worth memorising this exact list — note 'options on futures' as a genuinely distinct concept: an option whose UNDERLYING is itself a futures contract, not the physical asset directly."
+            },
+            {
+                "q": "What is a 'warrant', and how does it genuinely differ from an exchange-traded call option on the same underlying stock?",
+                "a": "A warrant is typically issued directly BY the company itself (rather than traded independently between third parties), and exercising a warrant genuinely creates new shares (diluting existing shareholders), unlike an exchange-traded call option which settles by transferring already-existing shares between the option's counterparties.",
+                "explain": "Worth recognising the genuine DILUTION effect as the key distinguishing feature of a warrant — exercising a warrant genuinely changes the company's own share count, unlike a standard option's settlement between two third parties."
+            },
+            {
+                "q": "What is a 'convertible' bond, and why does it genuinely combine features of both debt and equity derivatives?",
+                "a": "A convertible bond pays regular coupon interest like a standard bond, but genuinely embeds the holder's option to convert the bond into a specified number of the issuer's shares, combining a fixed-income instrument with an embedded equity call option, giving the holder genuine downside protection (bond floor) alongside equity upside potential.",
+                "explain": "Worth recognising convertibles as a genuinely HYBRID instrument — understanding their value requires combining bond valuation technique with option valuation technique, a recurring theme this whole subject develops."
+            },
+            {
+                "q": "What genuine interest rates and interest rate derivatives does the official syllabus (objective 2.6) require candidates to describe?",
+                "a": "Treasury rates, LIBOR rates, repo rates, zero rates, forward rates, forward rate agreements, interest rate futures, Treasury bond futures, interest rate swaps, European swap options (swaptions), caps and caplets, floors and floorlets, and Bermudan swaptions.",
+                "explain": "Worth memorising this exact, extensive list — it defines the genuine breadth of interest-rate-derivative instrument knowledge SP6 expects, spanning basic rate definitions through to genuinely complex swaption structures."
+            },
+            {
+                "q": "What is an 'interest rate cap', and how does it genuinely function as a portfolio of simpler options, echoing this course's later Black-model material?",
+                "a": "An interest rate cap protects the holder against rising interest rates by paying out if a reference rate exceeds a specified strike level at each of a series of future dates; a cap can genuinely be decomposed into a portfolio of individual 'caplets', each a simple interest-rate call option applying to a single future period, allowing the whole cap to be valued by summing the value of its individual caplet components.",
+                "explain": "This directly previews this course's Black-model-for-caps-and-floors material — worth recognising the cap-as-portfolio-of-caplets decomposition as the genuine KEY INSIGHT making cap valuation tractable, reducing a complex multi-period instrument to a sum of simpler, individually-valuable components."
+            },
+            {
+                "q": "What is a 'Bermudan swaption', and why does it genuinely sit between a European and an American swaption in terms of exercise flexibility?",
+                "a": "A Bermudan swaption can be exercised on any of a specified, discrete set of dates (rather than only at a single expiry date, as European, or continuously, as American), giving the holder genuinely intermediate exercise flexibility between these two extremes, with a genuinely intermediate valuation complexity to match.",
+                "explain": "Worth recognising 'Bermudan' exercise style as a genuinely distinct THIRD category, named for sitting geographically 'between' Europe and America — a memorable way to recall its genuinely intermediate exercise flexibility."
+            }
+        ]
+    }
+
+    ]
 };
