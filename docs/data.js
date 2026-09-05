@@ -20755,6 +20755,53 @@ const MODULES = {
                 "explain": "This closing card ties Modules 7-8 together explicitly — worth recognising these two modules as together addressing SP9's fourth syllabus topic area: genuine everyday AGGREGATION (Module 7) and its genuine EXTENSION into extreme, tail scenarios (Module 8)."
             }
         ]
+    },
+    {
+        "id": "m09",
+        "title": "Risk measures: VaR, TVaR, coherence and simulation-based capital models",
+        "description": "Covers Value at Risk, Tail Value at Risk, coherent risk measures, and stochastic and nested simulation approaches to capital modelling, per the official syllabus's fifth topic area.",
+        "cards": [
+            {
+                "q": "What is 'Value at Risk' (VaR), and how is it formally defined at a given confidence level $\\alpha$?",
+                "a": "VaR at confidence level $\\alpha$ is the loss $L$ such that the probability of losses exceeding $L$ is genuinely no more than $1-\\alpha$: $\\text{VaR}_\\alpha = \\inf\\{ l : P(L > l) \\le 1-\\alpha \\}$, i.e. genuinely the $\\alpha$-quantile of the loss distribution.",
+                "explain": "This directly recalls SP7's and SA1's VaR-quantile material — worth recognising VaR as genuinely just a specific PERCENTILE of the loss distribution, expressed formally here in the standard actuarial notation."
+            },
+            {
+                "q": "What is the key genuine LIMITATION of VaR as a risk measure, specifically regarding what it says about losses BEYOND the VaR threshold itself?",
+                "a": "VaR genuinely says NOTHING about the SEVERITY of losses beyond the threshold itself — two distributions could genuinely share an identical VaR at a given confidence level while having very different tail severity beyond that point (one with a modest excess, one with a catastrophic excess), meaning VaR alone can genuinely understate true tail risk.",
+                "explain": "This directly recalls SP7's VaR-versus-TVaR material — worth recognising this genuine BLIND-SPOT-BEYOND-THE-THRESHOLD limitation as VaR's single most important weakness, motivating TVaR's development as a genuine improvement."
+            },
+            {
+                "q": "What is 'Tail Value at Risk' (TVaR, also called Expected Shortfall or CTE), and how does its formula genuinely address VaR's blind-spot-beyond-threshold limitation?",
+                "a": "TVaR at confidence level $\\alpha$ is the genuine AVERAGE loss, GIVEN that the loss exceeds the VaR threshold: $\\text{TVaR}_\\alpha = E[L \\mid L > \\text{VaR}_\\alpha]$, meaning it genuinely incorporates information about the SEVERITY of losses beyond the threshold (unlike VaR, which only marks the threshold itself), directly addressing VaR's key limitation.",
+                "explain": "This directly recalls SP7's TVaR material — worth recognising the conditional-expectation formula as the genuine mathematical mechanism by which TVaR captures tail severity that VaR alone misses entirely."
+            },
+            {
+                "q": "What are the four genuine axioms defining a 'coherent' risk measure, and why does this genuinely matter for choosing between VaR and TVaR?",
+                "a": "A coherent risk measure genuinely satisfies: MONOTONICITY (higher losses imply higher risk measure), SUBADDITIVITY (the risk measure of a combined portfolio is genuinely no greater than the sum of its parts' individual risk measures, reflecting genuine diversification benefit), POSITIVE HOMOGENEITY (scaling a position scales the risk measure proportionally), and TRANSLATION INVARIANCE (adding a certain amount of cash reduces risk by exactly that amount); VaR genuinely FAILS subadditivity in some cases, while TVaR genuinely satisfies all four axioms.",
+                "explain": "This directly recalls SP7's coherent-risk-measure material — worth recognising VaR's genuine subadditivity FAILURE as a serious theoretical weakness (it can understate diversified portfolios' true combined risk), while TVaR's full coherence makes it the generally PREFERRED risk measure academically, despite VaR's continued widespread regulatory use (e.g. Solvency II's SCR)."
+            },
+            {
+                "q": "Why might VaR genuinely remain the DOMINANT risk measure in regulatory practice (e.g. Solvency II's SCR calibration) despite TVaR's superior theoretical coherence properties?",
+                "a": "VaR is genuinely simpler to calculate, communicate, and calibrate consistently across firms than TVaR (which requires genuinely modelling the FULL tail beyond the threshold, not just the threshold itself), and regulators have generally judged VaR's practical, communicative advantages to outweigh its theoretical subadditivity weakness for genuine regulatory capital-setting purposes.",
+                "explain": "This directly recalls SP7's regulatory-VaR-preference material — worth recognising this as a genuine, recurring PRACTICALITY-versus-THEORETICAL-PURITY trade-off, echoing this course's broader complexity-versus-tractability theme."
+            },
+            {
+                "q": "What is a genuine 'stochastic simulation' approach to capital modelling, and why does it typically require simulating a very large number of scenarios?",
+                "a": "Stochastic simulation genuinely models an organisation's future financial position by simulating a large number (often tens or hundreds of thousands) of random future economic and risk scenarios, deriving the organisation's loss DISTRIBUTION empirically from the simulated outcomes; a genuinely large number of simulations is needed to obtain sufficiently STABLE estimates of tail risk measures like VaR and TVaR, which depend specifically on the (relatively sparse) EXTREME tail of the simulated distribution.",
+                "explain": "This directly recalls SA1's and SP7's Monte-Carlo-simulation material — worth recognising that TAIL risk measures specifically demand a genuinely LARGER number of simulations than measures of central tendency, since relatively few simulated scenarios fall in the extreme tail region being measured."
+            },
+            {
+                "q": "What is a genuine 'nested simulation', and why is it computationally MUCH more demanding than a single-level stochastic simulation?",
+                "a": "Nested simulation genuinely runs an OUTER set of simulated scenarios (representing possible future states of the world at a future valuation date), and then WITHIN each outer scenario, runs a further INNER set of simulations to value the organisation's assets and liabilities AS AT that future date — meaning the total number of simulations required is genuinely the OUTER count MULTIPLIED by the INNER count, making nested simulation computationally far more demanding than a single-level approach.",
+                "explain": "This directly recalls SA7's and SP5's nested-stochastic-model computational-burden material — worth recognising the genuine MULTIPLICATIVE (not additive) growth in computation as nested simulation's defining, practically limiting characteristic."
+            },
+            {
+                "q": "What genuine practical techniques might reduce nested simulation's substantial computational burden, echoing this course's recurring proxy-model theme?",
+                "a": "Genuine techniques include using PROXY MODELS or CURVE-FITTING (e.g. least-squares Monte Carlo, or replicating portfolios) to approximate the inner-simulation valuation without running full inner simulations at every outer scenario, and variance reduction techniques (e.g. importance sampling) to reduce the number of simulations needed for a given level of statistical precision.",
+                "explain": "This directly recalls SA7's replicating-portfolio and proxy-model material — worth recognising these same computational-shortcut techniques recurring here specifically in the ERM capital-modelling context, not merely coincidentally similar to earlier subjects' material."
+            }
+        ]
     }
 
   ]
