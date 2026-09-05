@@ -19521,4 +19521,141 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP7: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP7 all about?",
+        "description": "An orientation chapter explaining SP7's role as the Specialist Principles subject introducing general insurance reserving and capital modelling technique, and how it feeds into SA3.",
+        "cards": [
+            {
+                "q": "What is the genuine aim of Subject SP7, echoing the SP-subject template established across this whole curriculum?",
+                "a": "To instil in successful candidates the ability to apply, in simple situations, the main principles and techniques of reserving and capital modelling that are relevant to general insurance business, building directly on the reserving and capital foundation developed in CS2.",
+                "explain": "Worth recognising this as the genuine, standard SP-subject aim structure — SP7 applies core reserving/capital PRINCIPLES to simple situations, with SA3 (which this course feeds into) applying that same underlying knowledge to genuinely complex scenarios."
+            },
+            {
+                "q": "Which subject does SP7 build directly on, given its heavy quantitative reserving and capital modelling content?",
+                "a": "CS2 (Risk Modelling and Survival Analysis), which provides the foundational stochastic reserving, generalised linear modelling, and simulation technique that SP7 develops specifically for general insurance reserving and capital modelling contexts.",
+                "explain": "Worth recognising CS2 as SP7's genuine TECHNICAL FOUNDATION — SP7 does not re-teach stochastic modelling technique from scratch, it applies and extends CS2's own methods specifically to general insurance reserving and capital problems."
+            },
+            {
+                "q": "What are the five official syllabus topic areas of SP7, and their approximate topic weightings?",
+                "a": "General insurance products and general business environment (20%); Risk, uncertainty and regulation (15%); Reserving (30%); Capital modelling (17.5%); and Data, investigations, reinsurance and investment (17.5%).",
+                "explain": "Worth memorising these weightings directly — 'Reserving' at 30% is genuinely the single largest topic area, meaning fluency with reserving methods (chain ladder, Bornhuetter-Ferguson, stochastic approaches) deserves the greatest concentrated revision effort."
+            },
+            {
+                "q": "How does SP7 genuinely relate to SP8 (General Insurance Pricing Principles) as a pair of subjects covering general insurance actuarial technique?",
+                "a": "SP7 focuses on the BACKWARD-LOOKING and CAPITAL-FOCUSED side of general insurance actuarial work — reserving for claims already incurred and modelling the capital needed to withstand adverse outcomes — while SP8 focuses on the FORWARD-LOOKING side — pricing future business appropriately; together they cover the two genuinely complementary technical pillars underlying general insurance actuarial practice.",
+                "explain": "Worth recognising SP7 and SP8 as genuinely COMPLEMENTARY, not overlapping subjects — SP7's backward-looking reserving/capital focus and SP8's forward-looking pricing focus together span the full technical scope SA3 later applies to complex, integrated scenarios."
+            },
+            {
+                "q": "Why might SP7's heavy weighting toward 'Reserving' (30%) genuinely reflect general insurance's distinctive actuarial challenge compared with other insurance sectors, echoing SA3's material?",
+                "a": "General insurance claims (particularly longer-tail lines) can take years or decades to fully develop and settle, with genuine uncertainty about both the number and eventual size of claims, making sound reserving technique a genuinely central, high-stakes actuarial skill for this sector specifically, more so than for shorter-duration or more predictable insurance products.",
+                "explain": "This directly recalls SA3's greater-reserving-uncertainty material — worth recognising SP7's heavy reserving weighting as a direct, structural reflection of this genuine, sector-specific actuarial challenge."
+            },
+            {
+                "q": "According to the official SP-subject template, what is the approximate split of assessment across knowledge, application, and higher-order skills for SP7?",
+                "a": "Approximately 25% knowledge, 50% application, and 25% higher order — the same standard split shared across SP1, SP2, SP4 and SP6, despite SP7's genuinely technical, calculation-heavy subject matter.",
+                "explain": "Worth recognising that even SP7's genuinely calculation-intensive reserving and capital content still places the MAJORITY of assessment weight on APPLICATION — practising genuine reserving calculations in realistic scenarios matters more than memorising formulas alone."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "General insurance products, classes of business and the underwriting cycle",
+        "description": "Covers general insurance products and classes of business, and the genuine phenomenon of the underwriting cycle, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why does understanding the genuine range of general insurance products and classes of business matter as a genuine foundation for sound reserving, echoing SA3's material?",
+                "a": "Different classes of business (e.g. motor, property, liability) carry genuinely different claim frequency, severity, and development characteristics, so a reserving actuary must understand these product-specific differences before selecting appropriate reserving methods and assumptions for each class.",
+                "explain": "This directly recalls SA3's product-classification material — worth recognising product/class understanding as the essential PRECURSOR to sound reserving, not a separate, unrelated topic from the reserving technique covered later in this course."
+            },
+            {
+                "q": "What is the 'underwriting cycle', and why does it genuinely matter for interpreting a general insurer's historical claims and premium experience?",
+                "a": "The underwriting cycle describes the genuine, recurring pattern of insurance market conditions moving between 'soft' phases (intense competition, lower premium rates, looser terms) and 'hard' phases (reduced competition, higher premium rates, tighter terms), meaning historical claims experience must genuinely be interpreted in light of WHICH cycle phase it was written in, not treated as a uniform, comparable series across time.",
+                "explain": "Worth recognising the underwriting cycle as a genuinely important CONTEXTUAL factor when interpreting historical data for reserving — the same nominal premium or loss ratio can mean genuinely different things depending on the market cycle phase it reflects."
+            },
+            {
+                "q": "Why might the underwriting cycle genuinely affect the RELIABILITY of reserving methods that implicitly assume stable, consistent underlying conditions over the historical period being analysed?",
+                "a": "Reserving methods like the chain ladder (covered later in this course) implicitly assume genuinely consistent claims development patterns across accident years; if underwriting conditions have genuinely shifted materially between years (e.g. tighter underwriting terms in a hard market reducing claim frequency), this consistency assumption may be violated, requiring the reserving actuary to genuinely adjust for or investigate these cycle-driven shifts.",
+                "explain": "This directly previews this course's later chain-ladder-assumption material — worth recognising the underwriting cycle as a genuine, practical THREAT to standard reserving methods' core assumptions, not merely abstract market commentary."
+            },
+            {
+                "q": "Why might genuine competitive pressure during a 'soft' market phase create particular reserving risk for an insurer, beyond simply reduced premium income?",
+                "a": "Competitive pressure during a soft market can genuinely lead to looser underwriting standards or broader policy terms being accepted to retain market share, potentially creating genuinely worse-than-historical claims experience on business written during that period, a risk that may not become fully apparent until claims from that period mature years later.",
+                "explain": "Worth recognising soft-market business as carrying a genuine, DELAYED reserving risk — the true cost of looser underwriting standards accepted during a soft phase may not be fully visible until that business's claims have had time to fully develop."
+            },
+            {
+                "q": "Why might different classes of general insurance business (e.g. motor versus liability) experience the underwriting cycle with genuinely different intensity or timing?",
+                "a": "Different classes have genuinely different competitive dynamics, capital requirements, and claims characteristics, so market-wide cyclical pressures can genuinely manifest with different intensity and timing across classes, meaning a reserving actuary should assess cycle effects at the CLASS level, not assume a single, uniform cycle applies identically across an insurer's whole book.",
+                "explain": "Worth recognising the underwriting cycle as requiring genuinely CLASS-SPECIFIC assessment, echoing this course's recurring theme that reserving and risk assessment should be conducted at an appropriately granular level, not aggregated too broadly."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Long-tail versus short-tail business, and the wider commercial environment",
+        "description": "Covers the distinction between long-tail and short-tail business, occurrence versus claims-made policy wordings, latent claims, and the wider commercial environment shaping reserving, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine distinction between 'short-tail' and 'long-tail' general insurance business, echoing SA3's material?",
+                "a": "Short-tail business (e.g. motor damage, property) typically has claims reported and settled relatively quickly after the triggering event, while long-tail business (e.g. liability, some latent disease claims) can have claims reported and settled many years, even decades, after the triggering event, creating genuinely greater reserving uncertainty for long-tail lines.",
+                "explain": "This directly recalls SA3's short-tail-versus-long-tail material — worth recognising claim TAIL LENGTH as the single most important classifying feature of a general insurance product for reserving purposes."
+            },
+            {
+                "q": "What is the genuine difference between an 'occurrence' policy wording and a 'claims-made' policy wording, and why does this distinction directly affect reserving?",
+                "a": "An occurrence policy covers claims arising from an event that OCCURRED during the policy period, regardless of when the claim is eventually reported (potentially years later), while a claims-made policy covers claims REPORTED during the policy period, regardless of when the underlying event occurred; this genuinely affects which policy period bears responsibility for a given claim, directly shaping how reserves should be allocated across accident/underwriting years.",
+                "explain": "Worth recognising this distinction as directly determining WHICH policy year's reserves a given claim should be attributed to — a genuinely important, easily-overlooked technical point with direct reserving consequences."
+            },
+            {
+                "q": "Why might claims-made wordings genuinely reduce an insurer's exposure to 'long-tail' reserving uncertainty compared with occurrence wordings for the same underlying risk, echoing Module 2's material?",
+                "a": "Since a claims-made policy only covers claims REPORTED during its own policy period, the insurer's exposure for that policy year is genuinely capped once the policy period (plus any extended reporting period) ends, unlike occurrence wordings where claims from events occurring in a given year could genuinely still emerge decades later, creating open-ended, long-tail reserving exposure for that same accident year.",
+                "explain": "This directly recalls Module 2's long-tail-reserving-risk material — worth recognising claims-made wordings as a genuine, deliberate RISK MANAGEMENT tool an insurer can use to limit its own long-tail reserving exposure, not merely an alternative administrative convention."
+            },
+            {
+                "q": "What is a 'latent claim', and why does it represent one of the genuinely most challenging reserving problems in general insurance, echoing SA3's material?",
+                "a": "A latent claim arises from an event or exposure that may not be reported as a claim until many years or decades later (e.g. certain industrial disease claims), meaning standard reserving techniques relying on a reasonably short, observable reporting pattern are poorly suited to estimating these claims' eventual number and cost, requiring genuinely different, more judgement-based reserving approaches.",
+                "explain": "This directly recalls SA3's latent-claims-reserving-challenge material — worth recognising latent claims as the most extreme, genuinely difficult example of the long-tail reserving challenge this whole subject addresses."
+            },
+            {
+                "q": "Why must a reserving actuary genuinely understand the 'wider commercial environment' shaping their insurer's business, rather than treating reserving as a purely technical, self-contained exercise?",
+                "a": "Genuine commercial factors — competitive pressures (Module 2's underwriting cycle material), regulatory and legal developments, economic conditions, and emerging risk trends — can all directly affect the genuine reliability of historical claims patterns as a guide to future development, so sound reserving requires genuine awareness of this wider context, not purely mechanical application of standard techniques to historical data.",
+                "explain": "This directly recalls Module 2's underwriting-cycle-context material — worth recognising commercial-environment awareness as a genuinely essential COMPLEMENT to the technical reserving methods covered later in this course, not a separate, disconnected topic."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Reserving uncertainty, and model and parameter risk",
+        "description": "Covers systematic and independent reserving uncertainty, and model and parameter risk, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine distinction between 'systematic' and 'independent' reserving uncertainty?",
+                "a": "Systematic uncertainty reflects genuine, correlated sources of error affecting an insurer's WHOLE reserving estimate simultaneously (e.g. a genuinely wrong assumption about future claims inflation affecting all accident years together), while independent uncertainty reflects genuine, uncorrelated random variation specific to individual claims or accident years that would genuinely average out to some degree across a larger, more diversified book.",
+                "explain": "Worth recognising this distinction as directly analogous to CS2's and CS1's systematic-versus-diversifiable-risk material — systematic uncertainty cannot be diversified away by simply having more claims or accident years, while independent uncertainty genuinely can be, at least partially."
+            },
+            {
+                "q": "Why might systematic reserving uncertainty be genuinely MORE concerning to an insurer's overall solvency than independent uncertainty of a similar apparent magnitude?",
+                "a": "Since systematic uncertainty affects the WHOLE reserve estimate in a correlated way, it cannot be diversified away across a larger book of business, meaning it directly translates into genuine, undiluted risk to the insurer's overall reserve adequacy, unlike independent uncertainty which genuinely reduces in relative significance as the book of business grows larger.",
+                "explain": "This directly recalls CS1's and CS2's diversification-benefit material — worth recognising systematic uncertainty as posing a genuinely more structural threat to reserve adequacy, a key reason capital modelling (covered later in this course) must explicitly capture this distinction."
+            },
+            {
+                "q": "What is 'model risk' in the context of general insurance reserving, and how does it genuinely differ from 'parameter risk'?",
+                "a": "Model risk is the genuine risk that the CHOSEN reserving METHOD (e.g. chain ladder versus Bornhuetter-Ferguson) is itself inappropriate for the specific data or situation, while parameter risk is the genuine risk that the SPECIFIC PARAMETER VALUES used within an otherwise appropriately-chosen method (e.g. the development factors within a correctly-chosen chain ladder approach) are estimated inaccurately.",
+                "explain": "Worth recognising this as a genuinely important two-level distinction — a reserving estimate can be wrong because the WRONG METHOD was chosen (model risk), or because the RIGHT METHOD was chosen but its INPUTS were estimated poorly (parameter risk), requiring genuinely different diagnostic and mitigation approaches."
+            },
+            {
+                "q": "Why might genuine model validation and back-testing be essential practices for managing both model risk and parameter risk together?",
+                "a": "Validation (checking a model's genuine appropriateness for the specific data and situation) and back-testing (checking how well a model's PAST predictions would have matched SUBSEQUENT actual experience) together provide genuine, practical evidence about whether both the chosen method (model risk) and its calibrated parameters (parameter risk) are producing reliable results, rather than relying purely on theoretical model appropriateness.",
+                "explain": "Worth recognising validation and back-testing as the genuine, PRACTICAL SAFEGUARDS against both model and parameter risk simultaneously — theoretical model selection alone cannot substitute for genuinely checking how well a model's predictions have held up against real, subsequent experience."
+            },
+            {
+                "q": "Why might a genuinely sound reserving process require setting an explicit 'risk appetite' for reserving uncertainty, rather than simply aiming to minimise uncertainty as much as possible?",
+                "a": "Since reserving uncertainty (both systematic and independent) can never genuinely be eliminated entirely, a sound reserving process requires an explicit, deliberate decision about how much residual uncertainty and what level of prudence is genuinely acceptable, balancing the cost of excessive prudence (tying up capital unnecessarily) against the risk of inadequate reserves, rather than treating uncertainty minimisation as an unlimited, unconstrained objective.",
+                "explain": "This directly recalls SA1's and SA3's risk-appetite material — worth recognising risk appetite as requiring a genuine, deliberate BALANCE, not simply pursuing minimum uncertainty as an end in itself regardless of the genuine cost of achieving it."
+            }
+        ]
+    }
+
+    ]
 };
