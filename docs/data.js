@@ -13225,4 +13225,329 @@ const MODULES = {
         ]
     }
 ],
+  SA1: [
+    {
+        "id": "m01",
+        "title": "What is Subject SA1 all about?",
+        "description": "An orientation chapter explaining SA1's role as the Specialist Advanced subject applying core actuarial techniques to complex health and care insurance scenarios, and how it builds on SP1.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SA1?",
+                "a": "To apply the main principles relevant to the provision of health and care benefits to complex scenarios concerning the management of health and care insurance companies, taking into account regulatory, legislative and professional requirements and the business environment.",
+                "explain": "This is worth reading closely word by word — 'complex scenarios' and 'management of health and care insurance companies' signal that SA1 tests applying judgement to messy, realistic situations, not reciting bookwork, echoing CP1's whole exam philosophy but now applied to one specific specialism."
+            },
+            {
+                "q": "How does SA1 relate to Subject SP1 (Health and Care Specialist Principles)?",
+                "a": "SP1 provides an introduction to the main principles and knowledge required in health and care insurance and how they apply in simple scenarios; SA1 builds on those same skills and knowledge, applied to much more complex scenarios and in greater depth.",
+                "explain": "Worth treating SP1 as the technical foundation SA1 assumes is already solid — SA1 doesn't re-teach basic health and care product knowledge from scratch, it develops the judgement to apply that knowledge to harder, more realistic company-management situations."
+            },
+            {
+                "q": "What are the five broad syllabus topic areas of SA1, and their approximate topic weightings?",
+                "a": "Health insurance products and general business environment (30%), regulatory/legislative/taxation environment (10%), rating/pricing/underwriting (20%), valuation/ALM/reinsurance (20%), and monitoring and strategy (20%).",
+                "explain": "These weightings are worth treating as a genuine revision priority guide — worth roughly matching study time and exam preparation effort to these percentages, since they indicate how marks are typically distributed across the exam paper."
+            },
+            {
+                "q": "What specific additional dimensions does SA1 add to SP1's coverage of health and care insurance, according to its own stated scope?",
+                "a": "Health and care markets, regulation, legislation, taxation, financial management, monitoring and strategies, and State health and care benefit provision, in much greater depth than SP1 covers them.",
+                "explain": "This directly previews this course's later modules — regulation (Modules 10-13), taxation (Module 9), financial management (Modules 14, 16, 20), monitoring/strategy (Modules 19, 21-23), and State provision (Module 24) are all named here explicitly as SA1's distinguishing additional depth beyond SP1."
+            },
+            {
+                "q": "What skills, beyond pure technical knowledge, does the SA1 syllabus explicitly expect candidates to demonstrate?",
+                "a": "Analysing complex problems using actuarial, economic and financial factors; assessing the implications and relevance of those factors; evaluating results critically in a wider context; and proposing solutions and actions based on that evaluation.",
+                "explain": "This four-stage skill progression (analyse, assess, evaluate, propose) is worth memorising as a genuine answer-structuring template — a strong SA1 answer typically works through exactly this sequence rather than jumping straight to a recommendation without the analytical steps behind it."
+            },
+            {
+                "q": "Why might a SA1 exam question present an unfamiliar country or fictional regulatory regime, rather than only the candidate's home market?",
+                "a": "It tests whether candidates can genuinely apply underlying actuarial principles to a new context using the facts given, rather than simply recalling memorised facts about one specific familiar market.",
+                "explain": "This is worth remembering as a direct extension of CP1's own exam-technique point about unfamiliar scenarios — the underlying principles (product risk, regulation's purpose, pricing logic) transfer across markets even when the specific rules given in the question are unfamiliar."
+            },
+            {
+                "q": "What broad categories of health and care products does SA1 expect candidates to understand in detail?",
+                "a": "Income protection insurance, critical illness insurance, long-term care insurance, private medical insurance, health cash plans, major medical expenses insurance, and both group and individual versions of these covers.",
+                "explain": "This is effectively the syllabus for Modules 2-4 stated upfront — worth treating this list as the concrete product vocabulary every later module (pricing, reserving, regulation, strategy) will be applied to throughout the rest of this course."
+            },
+            {
+                "q": "Why does SA1 place significant weight (30%) on 'health insurance products and general business environment' as its single largest topic area?",
+                "a": "A genuinely sound understanding of the specific products and the wider environment they're sold within (demographic, medical, regulatory, economic factors) underpins every other technical topic in the syllabus — pricing, reserving, and strategy all depend on correctly understanding what's actually being priced, reserved for, or strategised about.",
+                "explain": "This is worth remembering as the reason this course spends its opening several modules (2-6) on products and environment before turning to more overtly technical topics (pricing, valuation) — the foundational material genuinely deserves the largest share of both study time and exam marks."
+            },
+            {
+                "q": "How does SA1's coverage of 'State health and care benefit provision' connect to the products covered in Modules 2-3?",
+                "a": "Private health and care products often exist specifically to supplement or substitute for State provision, so understanding what the State provides (and how generously) is essential context for understanding demand for, and appropriate design of, the private products themselves.",
+                "explain": "This directly previews Module 24's national healthcare systems material and Module 4's product-analysis card on interaction with State provision — worth recognising State provision as a genuine, recurring backdrop against which private health and care insurance decisions are made throughout this course."
+            },
+            {
+                "q": "Why might SA1 test 'assessing and recommending strategies' as dedicated syllabus topics, rather than only testing technical calculation skills?",
+                "a": "A Fellowship-level Specialist Advanced subject is meant to demonstrate the judgement to synthesise technical knowledge into genuine business recommendations, not just perform isolated calculations — strategy assessment is precisely where all the earlier technical topics (pricing, reserving, capital, regulation) are drawn together into an actionable recommendation.",
+                "explain": "This directly previews Modules 21-23 — worth recognising these later modules as the genuine capstone of the whole course, testing whether everything learned in Modules 2-20 can actually be synthesised into a coherent, well-justified strategic recommendation."
+            },
+            {
+                "q": "Why is a solid understanding of the 'principal terms used in general health and care' explicitly emphasised as an SA1 expectation?",
+                "a": "Precise, correct use of health and care terminology (e.g. distinguishing income protection from critical illness, or understanding what 'unbundling' means) is foundational to answering scenario questions accurately, since misunderstanding a basic term can undermine an otherwise well-reasoned answer.",
+                "explain": "This directly previews Module 27's glossary material — worth treating precise terminology as a genuinely important, easy-to-overlook exam skill, not just a box-ticking vocabulary exercise."
+            },
+            {
+                "q": "Why does SA1 build directly on subjects like CP1, CS2 and CM1, even though it doesn't re-teach their content explicitly?",
+                "a": "SA1's pricing, reserving, and risk-management material all depend on the general actuarial modelling, statistical, and financial techniques developed in those earlier subjects, applied specifically to the health and care context rather than taught again from scratch.",
+                "explain": "Worth treating this whole course as CP1's general risk-management and pricing principles, and CS2's statistical/survival modelling techniques, specifically SPECIALISED to health and care products — the underlying toolkit is already built; SA1 teaches its application to one particular, detailed context."
+            },
+            {
+                "q": "What is the general format of the SA1 exam, in terms of question style?",
+                "a": "A written, scenario-based exam requiring candidates to analyse a described business situation and produce a coherent, well-reasoned written response, rather than short-answer or purely computational questions.",
+                "explain": "This is worth remembering as directly comparable to CP1's exam style — SA1 similarly rewards structured, judgement-based written analysis of a scenario, just specialised to health and care business situations specifically."
+            },
+            {
+                "q": "Why is genuine breadth of preparation across the whole SA1 syllabus particularly important, given the topic weighting spread across five areas?",
+                "a": "With no single topic area dominating overwhelmingly (the largest is 30%, and every other area still carries meaningful weight), a candidate who neglects any one of the five areas risks losing a genuinely significant proportion of the available marks.",
+                "explain": "This is worth taking as direct, practical revision guidance — unlike a subject with one dominant topic that could be prioritised heavily, SA1's more even weighting spread means genuinely comprehensive preparation across all five areas matters more than in some other subjects."
+            },
+            {
+                "q": "How does this orientation module set up the structure of the rest of this course?",
+                "a": "The remaining modules follow the syllabus's own six-part structure: products and business environment (Modules 2-6), product design and pricing (Modules 7-9), regulation and reporting (Modules 10-15), valuation and risk management (Modules 16-19), surplus and strategy assessment (Modules 20-23), and broader context/practice (Modules 24-27).",
+                "explain": "This closing card is worth treating as a literal map for the rest of this course — everything that follows is organised to mirror the real syllabus's own six-part structure, so progress through this deck directly tracks progress through the genuine SA1 course."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Long-term health and care insurance products",
+        "description": "Covers the main long-term health and care insurance products — income protection, critical illness, and long-term care insurance — their benefits and key features.",
+        "cards": [
+            {
+                "q": "What is 'income protection insurance' (IP)?",
+                "a": "A long-term health insurance product paying a regular income (replacing a proportion of lost earnings) if the policyholder is unable to work due to illness or disability, typically until recovery, retirement, or the end of the policy term.",
+                "explain": "This is CS2's income protection material recalled directly — worth remembering IP is fundamentally about replacing INCOME during incapacity, distinguishing it clearly from critical illness insurance's lump-sum, diagnosis-triggered structure covered in the next card."
+            },
+            {
+                "q": "What is a 'deferred period' in an income protection policy, and why does it matter for pricing?",
+                "a": "The waiting period after the onset of incapacity before benefit payments begin; a longer deferred period reduces the insurer's cost (since shorter claims are excluded entirely) and typically results in a lower premium.",
+                "explain": "This is a genuinely important product lever worth remembering precisely — it directly parallels an excess/deductible in general insurance (CP1 Module 5), shifting some of the risk (short-duration incapacity) back onto the policyholder in exchange for a lower premium."
+            },
+            {
+                "q": "What is 'critical illness insurance' (CI)?",
+                "a": "A product paying a lump sum on diagnosis of one of a specified list of serious illnesses (e.g. cancer, heart attack, stroke), rather than on death or on inability to work.",
+                "explain": "This is CP1's critical illness card recalled directly — worth remembering CI is triggered by DIAGNOSIS of a listed condition, a genuinely different trigger from IP's inability-to-work trigger, which matters for how each product's risk is priced and reserved for."
+            },
+            {
+                "q": "Why might critical illness insurance be described as competing with, rather than complementing, life insurance risk in pricing?",
+                "a": "A critical illness claim (e.g. cancer diagnosis) can occur instead of, or before, a life insurance claim (death), so the two risks are not independent — CI pricing must account for the possibility that a life claim is 'pre-empted' by an earlier CI payout for the same underlying condition.",
+                "explain": "This is CS2's competing-risks framing applied directly — a policyholder can only experience death OR critical illness diagnosis first, not both independently, which is genuinely important to model correctly rather than treating the two risks as unrelated."
+            },
+            {
+                "q": "What is 'long-term care insurance' (LTC), and what risk does it primarily cover?",
+                "a": "Insurance covering the cost of long-term care services (e.g. residential care, home care) needed due to an inability to perform activities of daily living, typically in older age.",
+                "explain": "This is a distinctly different risk from IP and CI — worth recognising LTC's genuinely long, uncertain duration and its close connection to Module 24's national healthcare/social care system material, since LTC needs often interact directly with what the State does or doesn't provide."
+            },
+            {
+                "q": "Why is 'activities of daily living' (ADLs) a commonly used trigger for long-term care insurance claims?",
+                "a": "ADLs (e.g. washing, dressing, feeding, mobility) provide an objective, functional measure of care need, rather than relying on a specific diagnosis, which is often more appropriate for a condition (like frailty or dementia) without a single clear diagnostic trigger.",
+                "explain": "Worth contrasting this trigger type directly with CI's diagnosis-based trigger — ADL-based triggers assess genuine FUNCTIONAL capacity rather than a specific named illness, which matters for LTC given how varied the underlying causes of care need can be."
+            },
+            {
+                "q": "Why might long-term care insurance be particularly exposed to 'longevity risk', in a way distinct from a standard annuity?",
+                "a": "Not only does the insurer face uncertainty over how long a claimant survives once claiming, but also uncertainty over how long they survive to the point of needing care at all, and how the incidence and duration of care needs might change with future improvements in survival and health.",
+                "explain": "This is CM1's and CS2's longevity risk material given a distinctly compounded application — LTC insurers face genuine uncertainty at BOTH the incidence stage (will/when will care be needed) and the duration stage (how long will care be needed), a double layer of longevity-related uncertainty."
+            },
+            {
+                "q": "What is meant by a 'guaranteed' versus 'reviewable' premium structure for a long-term income protection or critical illness policy?",
+                "a": "A guaranteed premium is fixed at the outset and cannot be changed by the insurer; a reviewable premium can be adjusted by the insurer (typically upward) if claims experience is worse than originally assumed.",
+                "explain": "This is CB1's guaranteed-versus-reviewable premium material recalled directly — worth remembering the same fundamental risk-allocation trade-off applies here: guaranteed premiums shift more risk to the insurer, reviewable premiums shift more risk (via potential future increases) to the policyholder."
+            },
+            {
+                "q": "Why might long-term health and care products be particularly sensitive to assumptions about future medical advances?",
+                "a": "Medical advances can improve survival and recovery rates (reducing claims costs for some conditions) but can also extend the period over which a chronic condition is claimed upon, or create entirely new treatable/diagnosable conditions that weren't previously priced for.",
+                "explain": "This is a genuinely important, double-edged consideration worth remembering explicitly — medical progress doesn't straightforwardly reduce claims costs; it can cut both ways depending on the specific product and condition involved."
+            },
+            {
+                "q": "Why might income protection claims be particularly sensitive to the state of the wider economy, beyond pure health factors?",
+                "a": "During an economic downturn, claimants may be less motivated to return to work (if job prospects are poor) and insurers may see slower claim terminations, while economic conditions can also affect the incidence of stress-related and mental health claims.",
+                "explain": "This is worth connecting to CB2's macroeconomic material and CP1's external environment PESTLE framework — health and care claims experience isn't purely a medical phenomenon, it's genuinely intertwined with the wider economic environment."
+            },
+            {
+                "q": "Why might 'moral hazard' be a particularly significant concern for income protection insurance specifically?",
+                "a": "Because IP benefit is contingent on the claimant's own reported inability to work, there's a genuine risk that a policyholder exaggerates or prolongs a claim (consciously or unconsciously), especially if the benefit is a high proportion of prior earnings.",
+                "explain": "This is CB2's and CP1's moral hazard concept applied to its most acute health-insurance context — worth recognising why IP products are typically designed with a maximum benefit well below 100% of prior earnings, specifically to preserve some incentive to return to work."
+            },
+            {
+                "q": "Why might critical illness and income protection cover sometimes be sold as a combined ('accelerated' or rider) benefit alongside life insurance, rather than as entirely standalone products?",
+                "a": "Bundling can be more convenient and potentially cost-effective for the customer, and allows a single underwriting process to cover multiple related risks, though it also creates the interdependency between claim types discussed earlier in this module.",
+                "explain": "This directly recalls CB1's bundling-versus-standalone product design trade-off — worth recognising the same convenience-versus-complexity tension applies here, now specifically complicated by the genuine claims-interdependency this module has highlighted."
+            },
+            {
+                "q": "Why is understanding the precise policy definitions of each covered condition (for CI) or incapacity (for IP) particularly important for both pricing and claims management?",
+                "a": "Ambiguous or overly broad definitions can lead to unexpected claims experience and disputes, while overly narrow definitions can create genuine customer dissatisfaction and conduct risk if claims that customers reasonably expected to be covered are declined.",
+                "explain": "This connects directly to CP1's fair-treatment and conduct-regulation material — worth recognising precise definitions as sitting at the intersection of good technical pricing practice AND good customer treatment, not purely a technical actuarial concern."
+            },
+            {
+                "q": "Why might a long-term health and care product need periodic experience monitoring even after being carefully priced at outset?",
+                "a": "Genuine claims incidence, recovery, and mortality experience can differ from the assumptions used in pricing, particularly given the long durations involved and the sensitivity to evolving medical and economic conditions discussed earlier in this module.",
+                "explain": "This directly previews Module 19's analysis of experience material — worth recognising this as CP1's recurring ongoing-review theme applied specifically to long-term health and care products, where the long time horizon makes the case for monitoring especially strong."
+            },
+            {
+                "q": "How do the products covered in this module differ fundamentally from the short-term products covered in the next module?",
+                "a": "Long-term products (IP, CI, LTC) typically involve a single underwriting decision covering risk over many years (sometimes decades), whereas short-term products are typically renewed annually, allowing more frequent repricing and underwriting review.",
+                "explain": "This closing card previews Module 3 directly — worth recognising this long-term/short-term distinction as fundamentally the same structural difference CP1 drew between life insurance and general insurance, now applied within the health and care product family itself."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Short-term health and care insurance products",
+        "description": "Covers the main short-term health and care insurance products — private medical insurance, health cash plans, and major medical expenses cover.",
+        "cards": [
+            {
+                "q": "What is 'private medical insurance' (PMI)?",
+                "a": "Insurance covering the cost of private medical treatment (e.g. consultations, diagnostics, surgery), typically renewed annually, allowing policyholders to access treatment more quickly or with greater choice than relying solely on state provision.",
+                "explain": "This is the most commonly encountered short-term health product — worth noting its annual renewal structure immediately distinguishes it from Module 2's long-term products, allowing the insurer to reassess pricing and terms each year rather than committing to a single long-term rate."
+            },
+            {
+                "q": "What is a 'health cash plan'?",
+                "a": "A product paying fixed cash benefits towards routine healthcare costs (e.g. dental, optical, physiotherapy), typically for smaller, more predictable expenses than full PMI cover.",
+                "explain": "Worth contrasting directly with PMI — a health cash plan pays fixed, pre-specified amounts regardless of the actual cost incurred, whereas PMI typically indemnifies the actual (often much larger and less predictable) cost of private medical treatment."
+            },
+            {
+                "q": "What is 'major medical expenses' insurance, and how does it typically differ from PMI as commonly understood in some markets?",
+                "a": "Insurance covering the cost of significant, high-value medical treatment, often used in markets without extensive state healthcare provision, where it may serve as a primary source of medical cost cover rather than a supplement to state provision.",
+                "explain": "This directly previews Module 24's national healthcare systems material — worth recognising that the SAME broad type of product (covering medical treatment costs) can play a genuinely different market role depending on how much the local state healthcare system already provides."
+            },
+            {
+                "q": "Why is PMI typically renewed and repriced annually, rather than offering long-term guaranteed premiums?",
+                "a": "Medical cost inflation and individual health risk can change materially year to year, so annual repricing lets the insurer keep pace with genuine cost trends, in the same way general insurance products (CP1) are typically repriced annually rather than priced for a long fixed term.",
+                "explain": "This directly echoes CP1's general-insurance repricing material — worth remembering PMI shares far more structurally in common with annually-renewed general insurance than with the long-term guaranteed-premium products covered in Module 2, despite both being 'health' products."
+            },
+            {
+                "q": "What is 'medical inflation', and why is it a particularly significant consideration for PMI pricing?",
+                "a": "The rate at which the cost of medical treatment rises over time, often exceeding general price inflation due to factors like new (often more expensive) treatments, technology, and rising healthcare provider costs — a key driver of rising PMI premiums over time.",
+                "explain": "This is worth connecting to CB1's and CM1's inflation material — medical inflation is a SPECIFIC, often elevated form of inflation that PMI pricing must track particularly closely, since it can run persistently above general economic inflation measures."
+            },
+            {
+                "q": "What is a 'moratorium' underwriting approach, commonly used for PMI?",
+                "a": "An underwriting approach excluding cover for pre-existing conditions for a specified period (e.g. the first two years), after which conditions that haven't recurred or required treatment during that period become covered.",
+                "explain": "This is a genuinely practical alternative to full medical underwriting (Module 5) — worth recognising it as a way of managing anti-selection risk (CB1's and CP1's concept) on pre-existing conditions without requiring a detailed medical questionnaire at application."
+            },
+            {
+                "q": "Why might an insurer offer a PMI policy with a 'six-week option' or similar NHS wait-based benefit trigger?",
+                "a": "It provides cover specifically for cases where the wait for equivalent state (NHS) treatment would exceed a specified period, offering a lower-cost alternative to full private cover by only responding when state provision is genuinely slow.",
+                "explain": "This is a direct, practical example of the interaction-with-state-provision theme flagged in Module 1 — this specific product feature only makes sense once the alternative (state provision, and its typical waiting times) is properly understood."
+            },
+            {
+                "q": "Why might a health cash plan generally require less extensive underwriting than PMI or a long-term product like critical illness insurance?",
+                "a": "Health cash plan benefits are typically much smaller and more predictable (covering routine, low-cost care) than PMI or CI's potentially very large claims, so the insurer's exposure to any single policyholder's adverse health risk is inherently more limited.",
+                "explain": "This directly connects to CP1's proportionality principle applied to underwriting — the depth of underwriting should be proportionate to the materiality of the risk being accepted, and a health cash plan's small, predictable benefits simply don't warrant the same underwriting rigour as a large potential CI claim."
+            },
+            {
+                "q": "Why might 'no claims discounts' or premium loading based on claims history be used for PMI, similar to general insurance?",
+                "a": "It rewards and incentivises lower-risk behaviour (or simply reflects that a policyholder's claims-free history suggests lower expected future costs), directly mirroring the same mechanism CP1 describes for general insurance no-claims discounts.",
+                "explain": "This is CP1's no-claims discount material recalled directly — worth recognising PMI as sharing more in common structurally with general insurance (annual renewal, claims-experience-based pricing) than with the long-term products covered in Module 2."
+            },
+            {
+                "q": "Why might short-tail versus long-tail claims development (CP1's general insurance concept) be less of a central concern for PMI than for some general insurance products?",
+                "a": "PMI claims (medical treatment costs) are typically reported and settled relatively quickly after the underlying treatment occurs, making PMI predominantly short-tail business, unlike genuinely long-tail liability claims that can take years to emerge and settle.",
+                "explain": "This directly recalls CP1's short-tail/long-tail distinction — worth recognising PMI as sitting firmly on the short-tail side of that spectrum, simplifying (though not eliminating) the reserving challenge relative to genuinely long-tail general insurance business."
+            },
+            {
+                "q": "Why might group PMI (provided by an employer) typically involve less individual underwriting than an equivalent individual PMI policy?",
+                "a": "Group cover pools risk across many employees simultaneously, similar to CB1's group employer-benefit material, allowing the insurer to rely on the group's overall risk profile rather than assessing each individual member in detail.",
+                "explain": "This is exactly CB1's group-versus-individual benefit material and Module 2's guaranteed-acceptance card recalled directly — worth recognising the same risk-pooling logic (scale substituting for individual assessment) recurring across life, health, and general insurance contexts alike."
+            },
+            {
+                "q": "Why might unbundling (offering separate standalone products) versus bundling (combining several benefits into one policy) be a genuine design choice for short-term health products, as it is for long-term products?",
+                "a": "Bundling several short-term benefits (e.g. PMI plus a health cash plan) into one policy can be more convenient and potentially cheaper to administer, but reduces the customer's ability to select and pay only for the specific covers they genuinely need.",
+                "explain": "This directly recalls Module 1's bundling/unbundling theme and CB1's product-design trade-off material — worth recognising this as the same fundamental design choice recurring across both long-term (Module 2) and short-term product families."
+            },
+            {
+                "q": "Why might short-term health products generally be considered less exposed to long-term assumption risk than the products covered in Module 2?",
+                "a": "Since premiums are reset annually based on current, up-to-date experience and cost trends, the insurer isn't locked into assumptions made many years in advance — unlike a long-term IP or CI policy priced once at outset for a multi-decade term.",
+                "explain": "This closing card directly contrasts this module's short-term products against Module 2's long-term ones — worth recognising ANNUAL REPRICING as the fundamental risk-management mechanism that distinguishes the two product families' exposure to assumption risk."
+            },
+            {
+                "q": "Why might an insurer still need to hold meaningful reserves for short-term products like PMI, despite their annual renewal structure?",
+                "a": "Even short-tail claims take some time to be reported and settled after the underlying treatment, so a reserve (e.g. for claims incurred but not yet reported) is still needed to cover this short but genuine time lag, consistent with CP1's IBNR material.",
+                "explain": "This directly recalls CP1's IBNR and claims-outstanding provisioning material — worth remembering that even predominantly short-tail business (the previous card's point) is never fully instantaneous, so SOME reserve is always needed to bridge the gap between treatment and final claim settlement."
+            },
+            {
+                "q": "How does understanding both the long-term products (Module 2) and short-term products (this module) together support the product analysis developed in the next module?",
+                "a": "Recognising the genuinely different risk, pricing, and reserving characteristics across the full range of health and care products is essential background for the comparative product analysis (bundling, customer needs, State interaction) that Module 4 develops next.",
+                "explain": "This closing card hands off directly to Module 4 — worth treating Modules 2-3 together as building the full product vocabulary that Module 4's comparative analysis then draws upon."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Product analysis",
+        "description": "Covers how to analyse and compare health and care products in terms of customer needs, interaction with State provision, bundling/unbundling, and the impact of unit-linked wrappers.",
+        "cards": [
+            {
+                "q": "Why is understanding genuine customer needs considered the starting point for analysing whether a health and care product is well designed?",
+                "a": "A product can only be assessed as 'good' relative to what it's actually meant to achieve for the customer, so identifying the underlying need (income replacement, lump-sum protection, care cost coverage) is essential before judging whether a specific product design meets it well.",
+                "explain": "This is CB1's product-design-starts-with-customer-needs principle applied directly to health and care — worth recognising this as the same starting discipline recurring across the whole actuarial curriculum whenever product suitability is assessed."
+            },
+            {
+                "q": "How might a customer's life stage affect which health and care products are most relevant to their needs?",
+                "a": "A younger customer may prioritise income protection (protecting current earnings), while an older customer may prioritise long-term care insurance (protecting against future care costs) or critical illness cover, as underlying risk profiles and financial priorities shift over the life course.",
+                "explain": "This directly recalls CB1's life-stage product-needs material — worth recognising the same principle applying specifically within the health and care product family, not just across life insurance/savings/income products generally."
+            },
+            {
+                "q": "What does it mean for a health and care product to 'interact with State provision', and why does this matter for product design?",
+                "a": "A private product's genuine value depends partly on what the State already provides for the same risk — if State provision is generous, a private product may need to focus on supplementing specific gaps (e.g. faster access, additional choice) rather than replacing State provision entirely.",
+                "explain": "This directly connects to Module 1's and Module 24's State-provision theme — worth recognising every private health and care product as implicitly designed relative to a specific assumed level of State provision, which can vary significantly between markets and change over time."
+            },
+            {
+                "q": "Why might a change in State healthcare or benefit provision materially affect demand for a private product, even without any change to the private product itself?",
+                "a": "If State provision becomes more (or less) generous, the genuine gap the private product is filling narrows (or widens), directly affecting customer demand for that private cover, independent of any change in the private product's own price or features.",
+                "explain": "This is a genuinely important, sometimes underappreciated risk for a health and care insurer — demand risk here can originate from GOVERNMENT POLICY changes entirely outside the insurer's control, not just from competitor actions or the insurer's own pricing decisions."
+            },
+            {
+                "q": "What does 'bundling' mean in the context of health and care product design, and what is one advantage and one disadvantage of it?",
+                "a": "Bundling combines several distinct benefits (e.g. PMI plus a health cash plan, or CI plus life cover) into a single policy. Advantage: convenience and potentially lower combined cost/administration; disadvantage: reduced customer ability to select and pay only for genuinely needed covers, and added product complexity.",
+                "explain": "This directly recalls CB1's bundling/unbundling material and Module 2-3's earlier mentions — worth treating this card as pulling together a theme that's recurred throughout this course's product modules into a single, explicit definition and trade-off."
+            },
+            {
+                "q": "What does 'unbundling' mean, and why might it appeal to a more price- or choice-sensitive customer segment?",
+                "a": "Unbundling offers each benefit as a separate, standalone product, allowing a customer to select and pay only for the specific covers they genuinely want, at the cost of potentially less convenience and higher combined administrative cost than a single bundled policy.",
+                "explain": "This is the direct alternative to bundling described in the previous card — worth recognising unbundling and bundling as two ends of a genuine spectrum, with real products often sitting somewhere between the two extremes rather than being purely one or the other."
+            },
+            {
+                "q": "What is meant by a 'unit-linked wrapper' in the context of health and care products, and how might it affect a product like critical illness insurance?",
+                "a": "A unit-linked wrapper attaches a protection benefit (e.g. CI cover) to an underlying unit-linked investment structure, meaning the policy combines investment growth potential with protection cover, similar to CB1's and CP1's unit-linked life insurance material.",
+                "explain": "This directly recalls CP1's unit-linked product material — worth recognising the SAME investment-linking structure used for life insurance savings products can, in principle, also wrap around health and care protection benefits, creating a genuinely hybrid product."
+            },
+            {
+                "q": "Why might combining a protection benefit with a unit-linked investment wrapper add genuine complexity to pricing and reserving?",
+                "a": "The insurer must now model both the health/care insurance risk (e.g. CI incidence) AND the investment performance of the underlying unit fund, and how these two genuinely distinct sources of risk interact within a single combined product.",
+                "explain": "This is worth connecting to CM2's whole with-profits and unit-linked modelling material — worth recognising that wrapping a health/care benefit in an investment structure imports all the additional modelling complexity CM2 associates with investment-linked products generally."
+            },
+            {
+                "q": "Why might product analysis need to consider how a product will be distributed, not just its intrinsic design features?",
+                "a": "Different distribution channels (direct, broker, employer-based) reach different customer segments with different needs and levels of guidance available, so the same underlying product design might be more or less appropriate depending on how it's actually being sold, echoing CB1's distribution-channel material.",
+                "explain": "This is CB1's distribution-channel material recalled directly — worth recognising that a product's design and its distribution channel need to be assessed TOGETHER, since a design that's suitable through an advised channel might be genuinely unsuitable sold direct with no guidance available."
+            },
+            {
+                "q": "Why might a comparative product analysis need to consider how competitor products in the same market are structured?",
+                "a": "A product's genuine competitiveness depends partly on how it compares to similar available alternatives, so understanding competitor bundling choices, pricing, and features provides essential context for assessing whether a specific product design is well-positioned in its market.",
+                "explain": "This directly echoes CB2's competitor-behaviour and CP1's competitor-product-design material — worth remembering a technically sound product design can still be commercially uncompetitive if the wider market has moved toward different bundling or pricing conventions."
+            },
+            {
+                "q": "Why might product analysis for health and care insurance need to consider the product's treatment of pre-existing conditions specifically?",
+                "a": "How a product handles pre-existing conditions (e.g. via moratorium underwriting, exclusions, or full medical underwriting) directly affects both who can genuinely access the product and how well it addresses the needs of customers with an existing health history, a genuinely important product design dimension specific to health and care insurance.",
+                "explain": "This directly recalls Module 3's moratorium underwriting card — worth recognising pre-existing condition treatment as a genuinely distinctive design dimension for HEALTH products specifically, without a close parallel in most other insurance product families covered elsewhere in the curriculum."
+            },
+            {
+                "q": "How might product analysis differ between a market with generous State health and care provision and one with minimal State provision?",
+                "a": "In a market with generous State provision, private products likely focus on supplementing specific gaps (speed, choice, comfort); in a market with minimal State provision, private products may need to provide comprehensive primary cover, fundamentally changing what 'good' product design looks like in each context.",
+                "explain": "This directly previews Module 24's national healthcare systems material — worth recognising that product analysis genuinely cannot be conducted in the abstract, independent of the specific State-provision backdrop a product actually sits against."
+            },
+            {
+                "q": "Why is thorough product analysis considered essential groundwork before the product design and pricing material developed in the next two modules?",
+                "a": "Understanding customer needs, State interaction, bundling choices, and wrapper structures all directly shape what a new or revised product should actually look like, and what risks its pricing needs to capture — product analysis is the diagnostic step before the design and pricing decisions that follow.",
+                "explain": "This closing card hands off directly to Modules 7-8 — worth treating this whole module as the analytical groundwork that makes the specific product design and pricing decisions in those later modules genuinely well-informed, rather than arbitrary."
+            },
+            {
+                "q": "How does the product analysis developed in this module connect back to Module 1's 'health insurance products and general business environment' topic weighting of 30%?",
+                "a": "Products 2-3 and their comparative analysis in this module together make up the bulk of that single largest syllabus topic area, reflecting how much of SA1's overall assessment genuinely depends on a thorough, comparative understanding of the products themselves.",
+                "explain": "This closing card ties Modules 2-4 back to Module 1's topic-weighting material explicitly — worth recognising these three modules together as directly earning a very significant share of the exam's available marks, justifying the depth of coverage devoted to them."
+            }
+        ]
+    }
+],
 };
