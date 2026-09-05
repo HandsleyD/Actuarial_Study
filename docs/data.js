@@ -13548,6 +13548,472 @@ const MODULES = {
                 "explain": "This closing card ties Modules 2-4 back to Module 1's topic-weighting material explicitly — worth recognising these three modules together as directly earning a very significant share of the exam's available marks, justifying the depth of coverage devoted to them."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "General business environment (1)",
+        "description": "Covers how health and care products are distributed, the roles of the State and employers, underwriting approaches including genetic testing, and the use of reinsurers and other counterparties.",
+        "cards": [
+            {
+                "q": "Why does the role of the State in providing health and care benefits directly shape how private products are distributed and positioned?",
+                "a": "Where the State provides comprehensive baseline provision, private products are typically marketed as supplementing specific gaps (speed, choice, comfort); where State provision is minimal, private products must be positioned as primary, comprehensive cover, directly shaping marketing and distribution strategy.",
+                "explain": "This is Module 1's and Module 4's State-interaction theme applied specifically to distribution and market positioning — worth recognising the SAME underlying product can require a genuinely different sales pitch and distribution strategy depending on the State backdrop it's sold against."
+            },
+            {
+                "q": "Why might employers play a genuinely significant role as both distributor and purchaser of health and care benefits?",
+                "a": "Employers often purchase group health and care cover directly for their employees as part of a benefits package, making them a key distribution channel and buying decision-maker distinct from the individual end-customer who ultimately receives the cover.",
+                "explain": "This directly recalls CB1's employer-provided benefits material — worth recognising the employer as a genuinely distinct STAKEHOLDER in the sales process (the buyer) separate from the employee (the actual beneficiary), a structure with real implications for product design and communication (CP1's and CP3's audience-tailoring material)."
+            },
+            {
+                "q": "Why might genetic testing be a particularly sensitive and closely regulated area of underwriting for health and care insurance specifically?",
+                "a": "Genetic test results can reveal predictive information about future health risk that the individual themselves may not have known, raising genuine ethical and fairness concerns about using such information to price or decline cover, distinct from underwriting based on current, known health status.",
+                "explain": "This is worth connecting to CB1's information-asymmetry and anti-selection material from a genuinely different angle — here, the INSURER potentially having access to predictive genetic information the applicant hasn't fully processed themselves raises the reverse information-asymmetry concern, which is exactly why this area is subject to specific regulatory restriction in many markets."
+            },
+            {
+                "q": "Why might many jurisdictions restrict or prohibit insurers from requiring or using genetic test results in underwriting?",
+                "a": "To prevent discrimination based on predictive genetic information, and to avoid discouraging individuals from taking genetic tests for genuinely valuable medical reasons out of fear it could affect their insurability, a public-health and fairness concern beyond pure insurance risk assessment.",
+                "explain": "This directly connects to CP1's conduct regulation and fair-treatment material — worth recognising this restriction as a deliberate policy trade-off: it may leave insurers with less risk information than technically available, in exchange for a broader public-interest and fairness objective."
+            },
+            {
+                "q": "What is meant by the 'use of counterparties' in the general business environment of a health and care insurer?",
+                "a": "Reliance on external parties such as reinsurers, third-party administrators, or medical panels to share risk, administer claims, or provide specialist assessment, each introducing its own counterparty risk (CP1's credit/counterparty risk material) that must be managed.",
+                "explain": "This directly previews Module 17's reinsurance material — worth recognising counterparty reliance as introducing a genuinely distinct risk category (CP1 Module 26) alongside the underlying insurance risk itself, requiring its own oversight and diversification (e.g. not relying on a single reinsurer or administrator)."
+            },
+            {
+                "q": "Why might a health and care insurer rely on a third-party administrator (TPA) for claims handling, rather than managing claims entirely in-house?",
+                "a": "A TPA can provide specialist expertise and scale efficiency in processing claims (e.g. medical assessment, payment processing), potentially at lower cost than building equivalent in-house capability, though this introduces reliance on the TPA's own service quality and reliability.",
+                "explain": "Worth recognising this as a genuine outsourcing decision, directly analogous to CP1's outsourcing material — the insurer gains efficiency and expertise but takes on a new dependency that itself needs managing and monitoring."
+            },
+            {
+                "q": "How might the use of medical panels or specialist assessors affect the consistency of underwriting or claims decisions across a health and care insurer's book?",
+                "a": "Reliance on multiple external assessors could introduce inconsistency in how similar cases are judged, unless the insurer maintains clear guidelines and quality oversight to ensure genuinely comparable decisions are reached across different assessors and cases.",
+                "explain": "This directly recalls CP1's consistent-underwriting-standards material — worth recognising that outsourcing part of the underwriting/claims process doesn't remove the insurer's own responsibility for ensuring decisions remain fair and consistent across its whole book."
+            },
+            {
+                "q": "Why might direct distribution (e.g. selling online with no adviser involvement) be a growing distribution channel for simpler health and care products specifically?",
+                "a": "Simpler products with more standardised underwriting (e.g. some health cash plans) can be reasonably understood and purchased without extensive advice, making direct online distribution a genuinely viable, lower-cost channel, whereas more complex products may still benefit from adviser guidance.",
+                "explain": "This directly recalls CB1's distribution-channel material and CP1's product-complexity-versus-channel material — worth recognising this as the same underlying principle applied specifically to health and care products, where product complexity (not product category) is what genuinely determines suitable distribution channels."
+            },
+            {
+                "q": "Why might an insurer's choice of underwriting approach (full medical underwriting versus moratorium versus guaranteed acceptance) be considered part of its wider business environment strategy, not purely a technical pricing decision?",
+                "a": "The underwriting approach directly shapes which customer segments the product can realistically reach (a highly underwritten product may deter time-pressed or less health-literate customers), making it a genuine strategic and distribution decision, not just a risk-assessment technicality.",
+                "explain": "This connects Module 2's and Module 3's underwriting cards to a genuinely broader strategic lens — worth recognising underwriting rigour as trading off against MARKET REACH, not just pricing accuracy, echoing CB1's guaranteed-acceptance-products-reach-different-customers material."
+            },
+            {
+                "q": "Why might a health and care insurer need to consider the availability and cost of reinsurance as part of its general business environment, not just as a technical risk-transfer tool?",
+                "a": "Reinsurance availability and pricing can directly constrain what products an insurer can viably offer and at what scale, particularly for higher-risk or capital-intensive products like long-term care insurance, making reinsurer relationships a genuine strategic business consideration.",
+                "explain": "This directly previews Module 17's reinsurance material — worth recognising reinsurance not just as a risk-management technique applied after a product is designed, but as a genuine environmental CONSTRAINT shaping what products can be offered in the first place."
+            },
+            {
+                "q": "Why might the roles of the State, employers, and private insurers in providing health and care benefits shift over time within a single market?",
+                "a": "Government policy changes, economic conditions, and evolving employer benefit strategies can all shift the balance of who provides what, directly echoing CB1's material on how the state/employer/personal balance can change and vary between countries and over time.",
+                "explain": "This directly recalls CB1's state-employer-personal balance material — worth recognising this balance as genuinely dynamic, not a fixed feature of a market, which is precisely why ongoing monitoring of the business environment (previewing Module 19) matters for a health and care insurer's strategy."
+            },
+            {
+                "q": "How does this module's business environment material connect to the product analysis developed in Module 4?",
+                "a": "Module 4 analysed products in relation to customer needs and State provision in the abstract; this module develops the concrete MECHANISMS (distribution, underwriting approach, counterparty reliance) through which that product-market fit is actually achieved and managed in practice.",
+                "explain": "This closing card ties this module back to Module 4 explicitly — worth recognising this as moving from WHAT the product needs to achieve (Module 4) to HOW the insurer's operational choices (distribution, underwriting, counterparties) actually deliver that in the real business environment."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "General business environment (2)",
+        "description": "Covers the wider external influences on health and care insurers — demographic, medical, economic, political, social, pandemic and climate factors — and best practice in treating customers fairly.",
+        "cards": [
+            {
+                "q": "Why is demographic change (e.g. an ageing population) a particularly significant external influence on health and care insurers?",
+                "a": "An ageing population directly increases demand for age-related products (long-term care, critical illness) while also affecting State provision capacity and the wider cost of healthcare, making demographic trends a fundamental driver of both demand and cost for this specific insurance sector.",
+                "explain": "This is CB2's and CP1's demographic PESTLE material recalled directly — worth recognising demographic change as arguably the single most consequential external factor for health and care insurers specifically, more so than for many other insurance product lines."
+            },
+            {
+                "q": "How might medical advances act as a genuinely double-edged external influence on health and care insurers, as first flagged in Module 2?",
+                "a": "New treatments can improve survival and recovery (potentially reducing some claims costs) but can also be expensive to fund, extend the duration over which chronic conditions are claimed upon, or newly enable diagnosis/treatment of conditions not previously priced for.",
+                "explain": "This directly recalls Module 2's medical-advances card — worth treating this as a recurring theme across this whole course: medical progress is not simply 'good news' for insurer costs; its net effect can go either way depending on the specific advance and product involved."
+            },
+            {
+                "q": "Why might economic conditions (e.g. a recession) affect health and care insurance demand and claims experience simultaneously?",
+                "a": "A downturn can reduce demand for discretionary private health cover (affordability pressure) while simultaneously worsening claims experience for some products (e.g. income protection claims linked to stress or slower economic recovery from illness), a genuine double impact on the insurer.",
+                "explain": "This directly recalls Module 2's economic-sensitivity card for income protection specifically, now generalised across the wider product range — worth recognising economic conditions as affecting BOTH the top line (demand) and the bottom line (claims cost) simultaneously, not just one or the other."
+            },
+            {
+                "q": "Why might political factors (e.g. a change of government's healthcare policy) be a particularly significant external risk for health and care insurers, more so than for many other insurance lines?",
+                "a": "Government policy directly determines the scope and generosity of State health and care provision, which (as Module 4 and Module 5 established) directly shapes the size and nature of the gap private products need to fill — a policy change can materially alter private product demand almost overnight.",
+                "explain": "This directly recalls Module 4's State-provision-change card — worth recognising political risk as genuinely more consequential for health and care insurers than for many other insurance lines, given how tightly private demand is linked to State policy specifically."
+            },
+            {
+                "q": "Why might social attitudes towards healthcare and self-provision affect demand for private health and care products, independent of their objective quality or price?",
+                "a": "Changing social attitudes to self-reliance versus reliance on State provision, or changing attitudes towards specific conditions (e.g. reduced stigma around mental health claims), can shift demand and claims patterns even without any change to the products themselves.",
+                "explain": "This directly recalls CB1's social-attitudes-to-risk-and-insurance card — worth recognising the same principle applying specifically to health and care: demand isn't purely a function of objective need and price, it's also shaped by evolving social attitudes toward health, self-provision, and specific conditions."
+            },
+            {
+                "q": "Why do pandemics represent a particularly severe and distinctive risk for health and care insurers specifically, beyond their general insurance implications?",
+                "a": "A pandemic can cause significant, correlated deviations in both mortality and morbidity across a whole population simultaneously, directly affecting multiple health and care product lines (IP, CI, PMI) at once, a risk not well captured by assuming independent individual risks across policyholders.",
+                "explain": "This directly recalls CP1's pandemic and CS2's correlated-shock material — worth recognising pandemics as hitting health and care insurers with a genuinely distinctive, MULTI-PRODUCT correlated shock, unlike many other insurance catastrophes that are typically more confined to a single product line."
+            },
+            {
+                "q": "Why might climate change be considered a genuinely relevant external influence for health and care insurers, not just for general insurers facing physical catastrophe risk?",
+                "a": "Climate change can affect health outcomes directly (e.g. heat-related illness, changing disease patterns) and indirectly through economic and social disruption, potentially affecting both the incidence of health and care claims and the wider environment insurers operate within.",
+                "explain": "This directly recalls CB2's and CP1's environmental PESTLE factor — worth recognising climate change's relevance to health and care insurance as a genuinely emerging, evolving consideration, distinct from its more established relevance to general insurance catastrophe risk."
+            },
+            {
+                "q": "What does 'treating customers fairly' (TCF) mean specifically in the context of health and care insurance, building on CP1's general TCF material?",
+                "a": "Ensuring health and care products are designed, sold, and administered (including claims handling) in ways that deliver fair outcomes throughout the product lifecycle, which is particularly significant given how emotionally and financially consequential health and care claims decisions can be for customers.",
+                "explain": "This directly recalls CP1's TCF material — worth recognising TCF as taking on especially high stakes in health and care insurance specifically, given that claims often relate to genuinely difficult, sensitive life events (serious illness, care needs) where fair, sensitive treatment matters enormously."
+            },
+            {
+                "q": "Why might 'areas of best practice in international health and care provision' be a genuinely useful reference point for an insurer or regulator assessing its own market's approach?",
+                "a": "Comparing how different markets structure health and care provision, regulate insurers, and design products can reveal genuinely useful lessons and alternative approaches that might not be apparent from studying a single domestic market in isolation.",
+                "explain": "This directly previews Module 24's national healthcare systems material and Module 25's best practice material — worth recognising international comparison as a genuinely valuable analytical tool throughout this course, not confined to one specific module."
+            },
+            {
+                "q": "Why might key medical conditions and treatments need to be understood in some depth by an SA1 candidate, beyond purely actuarial technique?",
+                "a": "Genuinely understanding the nature, prevalence, and treatment of major conditions (e.g. cancer, cardiovascular disease, mental health conditions) underpins sound judgement about product design, underwriting, pricing assumptions, and claims experience analysis throughout this whole subject.",
+                "explain": "This is worth remembering as a genuinely distinguishing feature of SA1 compared with more purely technical/statistical subjects — real medical and clinical literacy is itself part of the syllabus, not just the actuarial techniques applied on top of it."
+            },
+            {
+                "q": "Why might monitoring the external business environment need to be an ongoing, rather than one-off, exercise for a health and care insurer?",
+                "a": "Demographic, medical, economic, political, social, pandemic, and climate factors all continue to evolve over time, so an environmental assessment conducted once and never revisited would quickly become outdated, consistent with CP1's recurring ongoing-review theme.",
+                "explain": "This directly previews Module 19's analysis-of-experience material and Module 21's strategy-assessment material — worth recognising environmental monitoring as a genuinely continuous discipline feeding directly into the later strategic assessment work this course develops."
+            },
+            {
+                "q": "How do the external influences covered in this module ultimately connect to the product design and pricing decisions covered in the next two modules?",
+                "a": "Every external factor covered in this module (demographic, medical, economic, political, social, pandemic, climate) directly feeds into the assumptions and design considerations that product design and pricing must account for, making this module's material essential context for what follows.",
+                "explain": "This closing card ties Modules 5-6 together and hands off directly to Modules 7-8 — worth recognising the whole business-environment material (both this module and the previous one) as the genuine INPUT that informed, sound product design and pricing decisions must be built upon."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Product design and pricing (1)",
+        "description": "Covers the principles of designing health and care products and setting appropriate premium rates, including the equivalence principle and key pricing assumptions.",
+        "cards": [
+            {
+                "q": "How does the equivalence principle (CB1's core pricing formula) apply to setting a premium for a health and care product?",
+                "a": "The premium is set so that, on the assumptions used, the expected present value of premium income equals the expected present value of benefit outgo plus expenses, possibly plus a profit margin — exactly the same principle CB1 develops generally, now applied specifically to health and care benefit cashflows.",
+                "explain": "This is CB1's equivalence principle recalled directly — worth recognising health and care pricing as fundamentally the SAME underlying technique as any other insurance pricing, just requiring health and care-specific assumptions (incidence, recovery, medical inflation) as inputs."
+            },
+            {
+                "q": "What are the key assumptions typically needed to price a critical illness product?",
+                "a": "Incidence rates for each covered condition (by age, sex, and other rating factors), the interaction between CI incidence and mortality (competing risks, Module 2), expenses, and an appropriate discount rate reflecting the timing of premiums and expected claims.",
+                "explain": "This directly recalls Module 2's competing-risks material — worth recognising that CI pricing genuinely needs the JOINT incidence/mortality assumption structure that module introduced, not simply an isolated incidence rate assumption for each condition in isolation."
+            },
+            {
+                "q": "What are the key assumptions typically needed to price an income protection product?",
+                "a": "Claim inception rates (by age, occupation, deferred period), claim recovery/termination rates (varying by duration since claim onset), and expenses, reflecting the multi-state nature of IP claims first introduced via CS2's Markov jump process material.",
+                "explain": "This directly recalls CS2's multi-state modelling material and CP1's inception/recovery-rate cards — worth recognising IP pricing as needing BOTH an inception assumption and a duration-dependent recovery assumption, genuinely more complex than a single-trigger product like term life insurance."
+            },
+            {
+                "q": "Why might occupation be a particularly significant rating factor for income protection pricing specifically?",
+                "a": "Different occupations carry genuinely different physical and health risks, directly affecting both the likelihood of a claim (incidence) and the likely duration of incapacity (recovery), making occupation a far more material rating factor for IP than for many other insurance products.",
+                "explain": "This directly recalls CP1's occupation-and-morbidity-assumption material — worth recognising occupation as playing an especially central pricing role for IP specifically, more so than its typically secondary role in many other product lines."
+            },
+            {
+                "q": "Why does medical underwriting for critical illness and income protection typically need to assess both current health status AND family medical history?",
+                "a": "Some conditions have a genetic or hereditary component, so family history can provide additional predictive information about future risk beyond what's captured by current health status alone, though this must be balanced against the genetic-testing-style ethical concerns raised in Module 5.",
+                "explain": "This directly connects to Module 5's genetic-testing material — worth recognising family history as a related, though distinct, source of predictive health information, subject to its own (typically less restrictive) regulatory treatment compared with direct genetic test results."
+            },
+            {
+                "q": "Why might PMI pricing need to reflect geographic variation within a single country, unlike many long-term health and care products?",
+                "a": "The cost of private medical treatment can vary significantly by region (e.g. driven by local provider costs and competition), directly affecting the appropriate premium for policyholders in different areas, a genuinely important short-term-product-specific pricing consideration.",
+                "explain": "This directly recalls Module 3's medical-inflation material — worth recognising that PMI pricing needs to track not just the LEVEL of medical inflation over time, but its variation ACROSS locations at a single point in time too, adding a genuinely distinct pricing dimension."
+            },
+            {
+                "q": "Why might expense assumptions for health and care products need particular care, given CB1's general expense-allocation material?",
+                "a": "Health and care products often involve genuinely significant claims-handling and medical assessment costs (beyond standard policy administration), which must be appropriately captured in the expense assumption, alongside the initial/renewal/termination expense categories CB1 develops generally.",
+                "explain": "This directly recalls CB1's expense material — worth recognising that health and care products' genuinely more complex claims process (medical assessment, ongoing claim reviews for IP) can create a materially higher and more variable claims-handling expense component than many other product lines."
+            },
+            {
+                "q": "Why might a health and care product's pricing need to build in an explicit allowance for anti-selection, beyond standard underwriting?",
+                "a": "Even with underwriting in place, some residual anti-selection risk typically remains (e.g. from moratorium underwriting periods, or guaranteed-acceptance products), so pricing may need an additional loading reflecting this residual risk not fully eliminated by underwriting alone.",
+                "explain": "This directly recalls CB1's and Module 3's anti-selection material — worth recognising that underwriting REDUCES but rarely fully ELIMINATES anti-selection risk, so a residual pricing allowance is often still genuinely needed on top of the underwriting process itself."
+            },
+            {
+                "q": "Why might a health and care product's profit margin need to reflect the specific risk profile of that product, rather than a single company-wide standard margin?",
+                "a": "Products with genuinely different risk characteristics (e.g. long-term care's compounded longevity uncertainty versus PMI's shorter-tail, annually-repriced risk) warrant different risk-adjusted margins, consistent with CB1's risk-adjusted discount rate material applied to profit margin setting specifically.",
+                "explain": "This directly recalls CB1's risk-adjusted discount rate material — worth recognising the same risk-differentiation principle applying to PROFIT MARGIN setting, not just the discount rate used in appraisal, since a riskier product genuinely warrants a higher required return to compensate for that risk."
+            },
+            {
+                "q": "Why might profit testing (CB1's technique) be a particularly important step before finalising a health and care product's pricing?",
+                "a": "Profit testing projects the product's expected cashflows over its full lifetime to confirm the proposed pricing actually achieves the desired profitability target, which is especially important for long-term health and care products given the genuine complexity and duration of their underlying cashflow patterns.",
+                "explain": "This directly recalls CB1's profit-testing material — worth recognising profit testing as the practical VERIFICATION step for health and care pricing specifically, confirming the equivalence-principle-based premium genuinely achieves its intended target once the product's full cashflow complexity is properly modelled."
+            },
+            {
+                "q": "Why might setting premiums for a genuinely new health and care product (with limited or no prior claims experience) require particular care and judgement?",
+                "a": "Without substantial own experience data, pricing must rely more heavily on external data, comparable products, and actuarial judgement (echoing CS1's/CB1's credibility theory and CP1's judgement-under-uncertainty material), increasing genuine pricing risk for a new product launch.",
+                "explain": "This directly recalls CS1's credibility theory and CP1's judgement-beyond-calculation material — worth recognising new product pricing as one of the clearest examples across the whole curriculum of needing to blend limited/no own data with external sources and genuine professional judgement."
+            },
+            {
+                "q": "How does this module's pricing material connect directly to the general business environment material covered in Modules 5-6?",
+                "a": "Every external factor covered in Modules 5-6 (demographic, medical, economic, regulatory) directly translates into a specific pricing assumption or consideration developed in this module — pricing is where the abstract business environment becomes concrete, quantified assumptions.",
+                "explain": "This closing card ties this module back to Modules 5-6 explicitly — worth recognising pricing as the point where the WIDER business environment (external factors) gets translated into SPECIFIC, quantified assumptions actually used in a premium calculation."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Product design and pricing (2)",
+        "description": "Covers further product design and pricing considerations for health and care insurance — reviewable premiums, guarantees, options, and pricing for group business.",
+        "cards": [
+            {
+                "q": "Why might a health and care insurer choose reviewable rather than guaranteed premiums for a long-term product, echoing CB1's contract design material?",
+                "a": "Reviewable premiums let the insurer adjust rates if future experience (incidence, recovery, medical inflation) diverges materially from original pricing assumptions, managing the insurer's risk over a genuinely long contract term, at the cost of introducing uncertainty for the policyholder.",
+                "explain": "This is CB1's and CP1's reviewable-versus-guaranteed-premium trade-off recalled directly — worth recognising this same risk-allocation choice as having particularly significant stakes for health and care products specifically, given the genuine, compounded long-term assumption uncertainty (medical, economic, demographic) covered in Modules 5-6."
+            },
+            {
+                "q": "What is a 'guaranteed insurability' option in the context of a health and care product, and why might it be particularly valuable to a customer here?",
+                "a": "An option allowing the policyholder to increase cover in future without further medical underwriting, e.g. at specified life events; it's particularly valuable in health and care insurance because health deterioration over time could otherwise make future cover difficult or expensive to obtain.",
+                "explain": "This directly recalls CB1's guaranteed insurability material and CM2's option-pricing material — worth recognising this option as having especially high genuine value in health and care specifically, since the alternative (needing fresh underwriting later, after health may have deteriorated) is a real and significant risk for the customer."
+            },
+            {
+                "q": "Why do embedded options like guaranteed insurability typically have a cost to the insurer, even if never exercised by every policyholder?",
+                "a": "Policyholders are more likely to exercise the option when it's financially advantageous to them (i.e. their health has genuinely deteriorated, making standard underwriting unfavourable), creating anti-selective risk that must be priced for, consistent with CB1's and CM2's embedded-option material.",
+                "explain": "This directly recalls CB1's and CM2's anti-selective-option-cost material — worth recognising this same option-pricing principle applying with particular force to health and care guaranteed insurability options, given how directly health deterioration (the exercise trigger) drives genuine adverse selection."
+            },
+            {
+                "q": "Why might group health and care pricing differ structurally from individual pricing, beyond simply pooling risk across more lives?",
+                "a": "Group pricing often reflects the specific risk profile of the employer's workforce (e.g. industry, average age, historical claims experience of that specific group), potentially using experience rating for larger groups rather than standard rates, distinct from purely individual underwriting.",
+                "explain": "This directly recalls CS1's credibility theory and CB1's group-benefit material — worth recognising group pricing as a genuine application of credibility-weighted rating: a large group's own claims experience carries more credibility (CS1) than a single individual's limited history ever could."
+            },
+            {
+                "q": "Why might a large employer group be offered 'experience-rated' premiums, adjusting the standard rate based on that specific group's own claims history?",
+                "a": "A sufficiently large group provides enough own claims data to be statistically credible (CS1's credibility theory), allowing the insurer to reflect that specific group's genuine risk profile rather than relying purely on standard, population-wide rates.",
+                "explain": "This directly recalls CS1's credibility theory and Module 7's new-product-pricing card — worth recognising experience rating as the DIRECT application of credibility weighting once a group is large enough to generate genuinely credible own experience, in contrast to the external-data reliance needed for a small group or new product."
+            },
+            {
+                "q": "Why might a health and care insurer design a product with a 'no-claims discount' or similar experience-based individual pricing feature, echoing CP1's general insurance material?",
+                "a": "It rewards and incentivises lower-risk behaviour and reflects that policyholders with a claims-free history tend to have lower expected future claims, directly mirroring CP1's general insurance no-claims discount mechanism applied to certain short-term health products like PMI.",
+                "explain": "This directly recalls CP1's and Module 3's no-claims-discount material — worth recognising the same mechanism recurring specifically for renewable, short-term health products, though it's far less applicable to long-term products like CI or LTC, priced once at outset."
+            },
+            {
+                "q": "Why might a health and care insurer need to consider the impact of a proposed product design on its overall reserving and capital requirements, not just its pricing?",
+                "a": "Product features like guarantees and options directly increase future liability uncertainty (previewing Modules 16 and 18), meaning product design decisions taken now have direct, lasting consequences for reserving methodology and capital requirements throughout the product's life.",
+                "explain": "This directly previews Modules 16-18's valuation, ALM, and reserving material — worth recognising product design as never a purely pricing-stage decision in isolation; its consequences ripple forward through the entire product lifecycle covered in later modules."
+            },
+            {
+                "q": "Why might a health and care insurer deliberately design simpler, more limited-benefit products alongside comprehensive ones, rather than offering only the most feature-rich version?",
+                "a": "A simpler product with fewer guarantees/options can be priced and underwritten more straightforwardly, potentially reach a broader or more price-sensitive customer segment, and carry less long-term assumption risk for the insurer, echoing CB1's proportionality-in-product-design material.",
+                "explain": "This directly recalls CB1's and CP2's proportionality principle — worth recognising that a MORE feature-rich product isn't automatically better; matching product complexity to genuine customer need and insurer risk appetite is itself a deliberate, valid design choice."
+            },
+            {
+                "q": "Why might pricing for a bundled health and care product (Module 4's bundling concept) be more complex than pricing each component separately and simply adding the prices together?",
+                "a": "Bundled benefits can have genuine interactions (e.g. Module 2's competing-risks point between CI and life cover) that a naive sum-of-standalone-prices approach would miss, requiring the combined product to be priced holistically rather than as independent components.",
+                "explain": "This directly recalls Module 2's competing-risks material and Module 4's bundling material — worth recognising that bundled pricing genuinely requires modelling the INTERACTION between components, not just adding up what each would cost if sold entirely separately."
+            },
+            {
+                "q": "Why might sensitivity analysis (CB1's/CP2's technique) be particularly valuable when finalising a health and care product's pricing?",
+                "a": "Given the genuine complexity and uncertainty of health and care assumptions (incidence, recovery, medical inflation), sensitivity analysis reveals which specific assumptions the product's profitability is most exposed to, informing where extra assumption-setting care and ongoing monitoring should be focused.",
+                "explain": "This directly recalls CB1's and CP2's sensitivity analysis material — worth recognising this technique as especially valuable here given how many genuinely uncertain, interacting assumptions (Modules 5-7) feed into a typical health and care pricing exercise."
+            },
+            {
+                "q": "Why might regulatory constraints (previewing Modules 10-13) directly limit certain product design or pricing choices for health and care insurance?",
+                "a": "Regulation may restrict permitted rating factors (e.g. genetic test results, per Module 5), require minimum standards of cover, or impose conduct requirements on how products are marketed and sold, all directly constraining otherwise purely commercial product design and pricing decisions.",
+                "explain": "This directly previews Modules 10-13's regulation material — worth recognising product design and pricing as never purely a technical, unconstrained actuarial exercise; regulatory requirements form a genuine, binding boundary within which all the pricing techniques in this module must operate."
+            },
+            {
+                "q": "How do this module and Module 7 together complete the syllabus's 'rating, pricing and underwriting' topic area (20% weighting)?",
+                "a": "Module 7's equivalence principle and product-specific assumptions, combined with this module's reviewable premiums, options, group pricing, and design-consequence material, together cover the full breadth of what the syllabus's pricing and underwriting topic area is meant to assess.",
+                "explain": "This closing card ties Modules 7-8 back to Module 1's topic-weighting material explicitly — worth recognising these two modules together as directly addressing the syllabus's third topic area, a genuinely substantial 20% share of the overall exam."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Taxation environment",
+        "description": "Covers how taxation affects health and care insurers and their policyholders, including tax treatment of premiums, benefits, and insurer profits.",
+        "cards": [
+            {
+                "q": "Why does the tax treatment of premiums and benefits directly affect the attractiveness and pricing of a health and care product, echoing CB1's taxation material?",
+                "a": "If premiums are tax-deductible or benefits are received tax-free, the effective cost to the customer or value of the benefit changes, directly affecting demand and the price the insurer can charge, exactly as CB1's general insurance-taxation material establishes.",
+                "explain": "This is CB1's taxation-affects-attractiveness principle recalled directly — worth recognising the same mechanism applying specifically to health and care products, where tax treatment can materially change genuine customer take-up."
+            },
+            {
+                "q": "Why might employer-paid group health and care premiums receive different tax treatment from individually purchased premiums?",
+                "a": "Many jurisdictions treat employer-provided benefits as a form of remuneration with its own specific tax rules (e.g. a benefit-in-kind charge on the employee, or deductibility for the employer), distinct from how an individual buying the same cover privately would be taxed.",
+                "explain": "This directly recalls Module 5's employer-as-distributor material and CB1's benefit-in-kind material — worth recognising that the SAME underlying cover can carry genuinely different tax consequences depending purely on whether it's bought individually or provided through an employer."
+            },
+            {
+                "q": "Why might the tax treatment of a critical illness lump-sum payment differ from that of an income protection replacement-income payment?",
+                "a": "A lump sum may be treated differently from a stream of income payments under many tax regimes (e.g. income payments potentially taxed as income, lump sums potentially tax-free), directly affecting the genuine net value each product delivers to the customer.",
+                "explain": "This directly recalls Module 2's product-comparison material — worth recognising that two products covering related risks (CI and IP) can still have genuinely different NET, after-tax value to a customer purely because of how their benefit is structured (lump sum versus income stream)."
+            },
+            {
+                "q": "Why does an insurer's own corporate tax position affect its pricing and profit-margin decisions, beyond the policyholder-level tax treatment?",
+                "a": "Tax payable on the insurer's own profits reduces the genuine after-tax return achieved from a given pre-tax margin, so pricing and profit testing (Module 7's technique) must incorporate the insurer's own tax position to assess whether a product achieves its true target return.",
+                "explain": "This directly recalls CB1's after-tax cost-of-capital material and Module 7's profit-testing material — worth recognising that profit testing conducted on a PRE-TAX basis alone could materially overstate a product's genuine economic attractiveness to the insurer."
+            },
+            {
+                "q": "Why might changes in tax legislation represent a genuine ongoing risk for health and care insurers, similar to the political risk raised in Module 6?",
+                "a": "A change in how premiums, benefits, or insurer profits are taxed can suddenly alter product attractiveness or profitability after a product has already been priced and sold, a risk the insurer cannot always fully anticipate or hedge against in advance.",
+                "explain": "This directly recalls Module 6's political-risk material — worth recognising tax risk as a specific, concrete manifestation of that wider political-risk category, deserving its own explicit monitoring given how directly and immediately it can move product economics."
+            },
+            {
+                "q": "Why might tax rules on reserves or provisions (previewing Modules 16-17) matter to a health and care insurer beyond the direct premium/benefit tax treatment?",
+                "a": "Tax rules can determine whether increases in technical reserves are tax-deductible when set aside, directly affecting the insurer's cashflow timing and effective tax charge over the life of a long-duration product like long-term care insurance.",
+                "explain": "This directly previews Module 16's reserving material — worth recognising taxation as touching not just the customer-facing premium/benefit flows, but also the insurer's internal reserving mechanics, adding yet another layer where tax treatment genuinely matters."
+            },
+            {
+                "q": "Why might taxation be treated as part of the 'general business environment' rather than purely a technical actuarial calculation?",
+                "a": "Taxation is set externally by government and can change independently of the insurer's own actions, exactly like the demographic, medical, economic, and political factors covered in Modules 5-6, making it a genuine EXTERNAL environmental factor the insurer must monitor and adapt to.",
+                "explain": "This directly recalls Modules 5-6's business-environment framing — worth recognising taxation as fitting the same external, insurer-cannot-control category as those other factors, rather than being a purely internal, controllable calculation input."
+            },
+            {
+                "q": "Why might cross-border tax differences matter for a health and care insurer operating in, or comparing, multiple national markets?",
+                "a": "Different countries can tax premiums, benefits, and insurer profits in genuinely different ways, meaning a product design and pricing approach that works well in one tax regime may need real adaptation before being viable in another.",
+                "explain": "This directly previews Module 24's national healthcare systems material and Module 25's international best-practice material — worth recognising tax treatment as one further dimension (alongside healthcare system structure) along which markets can genuinely differ."
+            },
+            {
+                "q": "How does this module's taxation material connect back to the equivalence-principle pricing developed in Module 7?",
+                "a": "Module 7's equivalence principle balances premium and benefit cashflows in present-value terms; this module shows that the RELEVANT cashflows for that calculation should genuinely be net-of-tax where tax materially affects either side, refining rather than replacing the core pricing technique.",
+                "explain": "This closing card ties this module back to Module 7 explicitly — worth recognising taxation as REFINING the equivalence-principle cashflows used in pricing (making them net-of-tax where relevant), rather than being a wholly separate calculation from the core pricing technique."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Approaches to regulation",
+        "description": "Covers the general purposes and approaches to regulation of health and care insurers, including prudential and conduct regulation.",
+        "cards": [
+            {
+                "q": "Why does insurance regulation typically distinguish between 'prudential' regulation and 'conduct' regulation, echoing CP1's regulatory framework material?",
+                "a": "Prudential regulation focuses on the insurer's financial soundness and ability to meet its obligations (capital, reserves), while conduct regulation focuses on how the insurer treats customers (fair sales, claims handling), addressing genuinely distinct risks to different stakeholders.",
+                "explain": "This is CP1's prudential-versus-conduct regulatory distinction recalled directly — worth recognising these as addressing TWO GENUINELY DIFFERENT risks: prudential protects against the insurer failing, conduct protects against the insurer treating customers unfairly even while solvent."
+            },
+            {
+                "q": "Why might health and care insurance warrant particularly close conduct regulation, beyond what applies to many other insurance products?",
+                "a": "Health and care claims often relate to genuinely difficult, sensitive events (serious illness, disability, care needs) where poor claims handling or unclear product terms can cause real customer harm at an already vulnerable time, raising the stakes of conduct failures specifically here.",
+                "explain": "This directly recalls Module 6's TCF material — worth recognising that the GENERAL principle of conduct regulation takes on especially high real-world stakes in health and care insurance specifically, given the vulnerability of customers at the point of claim."
+            },
+            {
+                "q": "Why might a regulator take a genuinely different regulatory approach to a State-provided healthcare system market than to one with substantial private health and care provision?",
+                "a": "Where private insurance plays a larger role in meeting genuine healthcare needs, closer regulatory scrutiny of product design, pricing, and conduct may be warranted to protect customers who have fewer State-provided alternatives to fall back on.",
+                "explain": "This directly recalls Module 4's and Module 5's State-provision-interaction material — worth recognising that the APPROPRIATE regulatory intensity itself depends on how much genuine reliance customers place on private cover, not a fixed, universal standard."
+            },
+            {
+                "q": "Why might 'principles-based' regulation (broad outcomes-focused rules) be used alongside or instead of 'rules-based' regulation (detailed prescriptive requirements)?",
+                "a": "Principles-based regulation allows flexibility to address genuinely novel situations and product innovations without needing constant rule updates, while rules-based regulation offers clearer, more predictable compliance requirements — each with real trade-offs in flexibility versus certainty.",
+                "explain": "This directly recalls CP1's regulatory-approach material — worth recognising this as a genuine, ongoing trade-off regulators must strike, not a solved problem with one universally correct answer."
+            },
+            {
+                "q": "Why might independent regulatory bodies (rather than government departments directly) typically oversee insurance regulation?",
+                "a": "An independent regulator can apply technical expertise and maintain consistency of approach somewhat insulated from short-term political pressures, though it typically still operates within a legal framework set by government, balancing independence with democratic accountability.",
+                "explain": "This directly recalls CP1's independent-regulator material — worth recognising this structure as attempting to balance technical, consistent oversight against the genuine need for regulators to remain accountable within a democratic system."
+            },
+            {
+                "q": "Why might regulation of health and care insurance need to address the specific risk of underwriting discrimination, beyond general conduct requirements?",
+                "a": "Given the genuine sensitivity of health-related underwriting factors (Module 5's genetic-testing material, family history), regulation often specifically restricts which factors can be used or requires justification for their use, a more targeted concern than general product conduct regulation.",
+                "explain": "This directly recalls Module 5's genetic-testing-restriction material — worth recognising this as a genuinely SPECIFIC regulatory concern for health and care insurance, distinct from and additional to the broader conduct regulation applying across all insurance products."
+            },
+            {
+                "q": "Why might international regulatory coordination (e.g. shared standards across jurisdictions) be relevant to health and care insurers operating across borders?",
+                "a": "Coordinated standards can reduce genuine compliance complexity and cost for insurers operating in multiple markets, and can help prevent genuine regulatory arbitrage where insurers might otherwise favour weaker-regulation jurisdictions.",
+                "explain": "This directly previews Module 11's Solvency II material (a coordinated EU regulatory regime) and Module 24's national-systems material — worth recognising coordinated regulation as a genuinely deliberate response to the risks of fragmented, purely national regulatory regimes."
+            },
+            {
+                "q": "Why might a regulator require health and care insurers to maintain minimum standards of financial disclosure and reporting, previewing Module 14's material?",
+                "a": "Transparent, comparable financial reporting allows the regulator (and other stakeholders) to assess an insurer's genuine financial soundness and monitor emerging risks, supporting the prudential regulatory objective established earlier in this module.",
+                "explain": "This directly previews Module 14's profit and value reporting material — worth recognising disclosure requirements as the practical MECHANISM through which prudential regulation's financial-soundness objective is actually monitored and enforced in practice."
+            },
+            {
+                "q": "How does this module's general regulatory-approach material connect directly to the Solvency II material covered in the next two modules?",
+                "a": "This module establishes the general PURPOSES and approaches regulation can take (prudential, conduct, principles- versus rules-based); Solvency II is a concrete, detailed EXAMPLE of a specific prudential regulatory regime built from those same underlying purposes.",
+                "explain": "This closing card ties this module directly to Modules 11-12 — worth recognising Solvency II as a specific, real-world INSTANCE of the general regulatory principles just covered, not a wholly separate topic."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Solvency II (1)",
+        "description": "Covers the structure and purpose of the Solvency II regulatory regime as it applies to health and care insurers, including the three-pillar framework.",
+        "cards": [
+            {
+                "q": "What are the three 'pillars' of the Solvency II regulatory framework, echoing CP1's regulatory-capital material?",
+                "a": "Pillar 1 sets quantitative capital and technical provision requirements; Pillar 2 covers governance and risk management (including the insurer's own risk assessment); Pillar 3 covers public disclosure and reporting requirements, together forming a genuinely comprehensive regulatory structure.",
+                "explain": "This is CP1's three-pillar Solvency II structure recalled directly — worth recognising these three pillars as addressing genuinely DIFFERENT aspects of prudential soundness: how much capital is held, how risk is managed, and what is disclosed publicly."
+            },
+            {
+                "q": "Why does Solvency II's Pillar 1 require both a Solvency Capital Requirement (SCR) and a Minimum Capital Requirement (MCR), rather than a single capital threshold?",
+                "a": "The SCR represents the target capital level reflecting the insurer's genuine risk profile, while the MCR represents a lower, more severe threshold below which regulatory intervention becomes especially urgent, giving the regulator a graduated, two-tier response to capital shortfalls.",
+                "explain": "This directly recalls CP1's SCR/MCR material — worth recognising this two-tier structure as enabling PROPORTIONATE regulatory response: mild breaches of the SCR trigger monitoring, while an MCR breach triggers much more urgent intervention."
+            },
+            {
+                "q": "Why might calculating the SCR for a health and care insurer's book require different technical approaches than for a life insurer's mortality-only book?",
+                "a": "Health and care risks (morbidity, recovery rates, medical inflation) have genuinely different risk drivers and correlation structures than pure mortality risk, requiring the standard formula or internal model to capture health-specific risk modules distinct from standard life insurance risk factors.",
+                "explain": "This directly recalls Module 7's and Module 2's product-specific-assumption material — worth recognising that Solvency II's CAPITAL calculation must reflect the same genuinely distinct risk drivers (incidence, recovery, medical inflation) that already made health and care PRICING genuinely distinct from ordinary life insurance."
+            },
+            {
+                "q": "Why might an insurer choose to use an internal model rather than the Solvency II standard formula to calculate its SCR?",
+                "a": "An internal model can better reflect the insurer's own genuine risk profile (e.g. a health and care specialist's true correlation structure between morbidity risks) than a generic standard formula calibrated across the whole industry, though it requires regulatory approval and significant development investment.",
+                "explain": "This directly recalls CS2's and CP1's internal-model-versus-standard-formula material — worth recognising this as a genuine cost-benefit trade-off: greater risk-sensitivity and potentially lower capital requirements, against real development cost and ongoing regulatory scrutiny."
+            },
+            {
+                "q": "Why does Solvency II require technical provisions to be valued on a genuinely market-consistent basis, rather than using traditional prudent margins?",
+                "a": "A market-consistent valuation aims to reflect the genuine current economic value of liabilities, giving a more accurate, comparable picture of the insurer's true financial position than historically prudent, margin-laden reserving approaches might provide.",
+                "explain": "This directly previews Module 14's and Module 16's valuation material — worth recognising market-consistent valuation as a deliberate SHIFT away from traditional actuarial prudence toward a genuinely more transparent, economically realistic reporting basis."
+            },
+            {
+                "q": "Why might the 'risk margin' component of Solvency II technical provisions be particularly significant for long-duration health and care products like long-term care insurance?",
+                "a": "The risk margin compensates for the cost of holding capital against non-hedgeable risks over the liability's remaining lifetime, and a genuinely long-duration product like LTC carries this capital cost for far longer than a short-tail product, making the risk margin a proportionately larger component of its provisions.",
+                "explain": "This directly recalls Module 2's compounded-longevity-risk material for long-term care — worth recognising that LTC's already-elevated risk profile translates directly into a genuinely larger risk margin under Solvency II, compounding its capital intensity from multiple angles."
+            },
+            {
+                "q": "Why might Solvency II apply specific 'health underwriting risk' or 'health catastrophe risk' sub-modules distinct from life underwriting risk?",
+                "a": "Health and care risks (e.g. pandemic-driven morbidity spikes, per Module 6) have genuinely distinct loss patterns from life mortality catastrophe risk, warranting dedicated risk sub-modules calibrated specifically to health and care insurers' actual experience.",
+                "explain": "This directly recalls Module 6's pandemic-risk material — worth recognising these dedicated sub-modules as Solvency II's direct regulatory RESPONSE to the genuinely distinct risk characteristics health and care business carries compared with ordinary life insurance."
+            },
+            {
+                "q": "How does this module's Solvency II material connect back to the general regulatory-approaches material covered in Module 10?",
+                "a": "Module 10 established that prudential regulation aims to protect insurer financial soundness through capital and reporting requirements; Solvency II is the concrete, detailed regulatory regime through which that general prudential objective is actually implemented for insurers in practice.",
+                "explain": "This closing card ties this module back to Module 10 explicitly — worth recognising Solvency II as the PRACTICAL IMPLEMENTATION of Module 10's general prudential-regulation objective, not a separate or unrelated regulatory topic."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Solvency II (2)",
+        "description": "Covers further Solvency II considerations for health and care insurers, including own risk and solvency assessment (ORSA), proportionality, and disclosure.",
+        "cards": [
+            {
+                "q": "What is the Own Risk and Solvency Assessment (ORSA) under Solvency II's Pillar 2, and why is it particularly valuable for a health and care insurer?",
+                "a": "The ORSA is the insurer's own forward-looking assessment of its overall solvency needs given its specific risk profile, particularly valuable for health and care insurers given the genuinely distinctive and evolving risk drivers (Modules 5-6) that a generic standard formula may not fully capture.",
+                "explain": "This directly recalls CP1's ORSA material — worth recognising the ORSA as the insurer's own opportunity to reflect its GENUINELY SPECIFIC risk profile (e.g. concentration in long-term care, a particular geographic PMI exposure) beyond what the standard formula's generic calibration captures."
+            },
+            {
+                "q": "Why might an ORSA need to include forward-looking scenario and stress testing, beyond a current point-in-time capital calculation?",
+                "a": "A point-in-time SCR calculation captures current risk but not how the insurer's solvency position might evolve under future adverse scenarios (e.g. a pandemic, medical inflation shock), so forward-looking stress testing provides genuinely additional insight into resilience over time.",
+                "explain": "This directly recalls CP2's and CP1's scenario/stress-testing material — worth recognising the ORSA's forward-looking element as extending the same stress-testing discipline developed generally in CP1/CP2 specifically into the regulatory solvency-assessment process."
+            },
+            {
+                "q": "Why does Solvency II apply the 'proportionality principle', allowing smaller or simpler insurers a less burdensome compliance approach?",
+                "a": "A smaller, simpler health and care insurer poses genuinely less systemic risk and has fewer resources to bear a full, complex compliance burden, so proportionate requirements aim to achieve the regulation's genuine protective purpose without imposing disproportionate cost relative to the risk involved.",
+                "explain": "This directly recalls CB1's and Module 8's proportionality material — worth recognising the same underlying principle (match the response to the genuine scale of the risk/need) recurring here specifically in a REGULATORY COMPLIANCE context."
+            },
+            {
+                "q": "What does Solvency II's Pillar 3 disclosure requirement (the Solvency and Financial Condition Report, SFCR) achieve for stakeholders?",
+                "a": "The SFCR provides genuinely public, standardised disclosure of an insurer's solvency position, risk profile, and governance, allowing policyholders, analysts, and other stakeholders to assess insurer soundness on a comparable basis across the industry.",
+                "explain": "This directly recalls Module 10's disclosure-requirement material — worth recognising the SFCR as the CONCRETE Solvency II mechanism delivering on Module 10's general point that transparent reporting supports the prudential regulatory objective."
+            },
+            {
+                "q": "Why might a health and care insurer's SFCR need to explain its approach to health-specific risks in more depth than a general life insurer's equivalent disclosure?",
+                "a": "Stakeholders assessing a health and care specialist genuinely need visibility into its specific morbidity, recovery, and medical-inflation risk exposures (Modules 5-7) to properly understand its risk profile, which a generic life-insurance-style disclosure would not adequately convey.",
+                "explain": "This directly recalls Module 7's product-specific-assumption material — worth recognising that MEANINGFUL disclosure (not just formal compliance) requires genuinely tailoring the SFCR's content to the insurer's actual, specific risk drivers rather than using a generic template."
+            },
+            {
+                "q": "Why might supervisory review (regulatory assessment of an insurer's ORSA and SCR) sometimes lead to a capital add-on above the calculated SCR?",
+                "a": "If the regulator judges that an insurer's risk profile is not adequately captured by the standard formula or internal model (e.g. concentration risk in a niche health and care product line), it may require additional capital to be held above the calculated figure to ensure genuine adequacy.",
+                "explain": "This directly recalls Module 11's standard-formula-limitations material — worth recognising the capital add-on as the regulator's DIRECT RESPONSE when it judges the calculated SCR doesn't fully reflect an insurer's genuine risk, a real check-and-balance on the modelling process itself."
+            },
+            {
+                "q": "Why might Solvency II's requirements evolve over time (e.g. through periodic reviews), rather than remaining fixed once implemented?",
+                "a": "As health and care insurers' products, risks, and the wider business environment evolve (Modules 5-6), the regulatory framework itself needs periodic review to remain genuinely fit for purpose, echoing the ongoing-monitoring theme recurring throughout this course.",
+                "explain": "This directly recalls Module 6's ongoing-environmental-monitoring theme — worth recognising that regulatory frameworks are not a one-off, static design; the recurring ongoing-review principle applies to the REGULATORY REGIME itself, not just to an individual insurer's own risk monitoring."
+            },
+            {
+                "q": "How do Modules 11-12 together complete the syllabus's regulatory-environment coverage, connecting back to Module 10?",
+                "a": "Module 10 established general regulatory purposes and approaches; Modules 11-12 develop Solvency II as the detailed, concrete prudential regime implementing those purposes, together giving a genuinely complete picture of the regulatory environment health and care insurers actually operate within.",
+                "explain": "This closing card ties Modules 10-12 together explicitly — worth recognising these three modules as a coherent unit moving from GENERAL regulatory principles (Module 10) to their SPECIFIC, detailed implementation (Modules 11-12) under Solvency II."
+            }
+        ]
     }
 ],
 };
