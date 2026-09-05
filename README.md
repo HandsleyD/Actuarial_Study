@@ -6,11 +6,13 @@ A free study companion for the IFoA actuarial exams, live at:
 
 No install, no sign-up required — just open the link.
 
+![Progress tracker showing a user who has reached Associate and is working toward Fellow](.github/readme-assets/progress-screenshot.png)
+
 ## What's here
 
 - **Flashcards** for every module of each subject, with a reveal-then-explain format: see the question, try to answer it, then reveal the answer alongside a short "why this matters" note that connects it to the wider syllabus.
 - **Practice exams** — original, IFoA-style question banks (multi-part questions, command verbs like *Calculate*, *Explain*, *Discuss*, mark allocations that add up) for exam-condition practice.
-- **Progress tracking** — a mastery star for every flashcard you've nailed, a study streak, and an overall completion rank, so you can see where you stand at a glance.
+- **Progress tracking** — a mastery star for every flashcard you've nailed, a study streak, and real Associate/Fellow tracking based on the actual IFoA qualification structure (not a made-up point scale). Mark a whole subject complete in one click if you already hold an exemption or a prior pass.
 - **Light/dark theme**, and a mobile-friendly layout.
 
 Subjects currently covered span the Core Principles (CB, CM, CS), Core Practice (CP), Specialist Principles (SP) and Specialist Advanced (SA) parts of the IFoA syllabus — see the subject grid on the site for the full, current list.
