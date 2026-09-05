@@ -18662,7 +18662,154 @@ const MODULES = {
                 "explain": "This closing card ties this module back to Module 3 explicitly — worth recognising this module's general derivative mechanics as the technical FOUNDATION underlying the SPECIFIC derivative instruments Module 3 already named."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "Valuing investments",
+        "description": "Covers the key principles of fundamental analysis of equities and bonds, and determining the value of individual investments including fixed income, securitisations and credit derivatives, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine factors does the official syllabus (objective 3.1) require candidates to understand as affecting equity prices?",
+                "a": "A company's genuine earnings and earnings growth prospects, its dividend policy, the wider market's required rate of return (discount rate), and broader economic and sector-specific conditions all genuinely combine to determine an equity's fundamental value.",
+                "explain": "This directly recalls CB1's dividend growth model and fundamental valuation material — worth recognising equity pricing as the genuine, practical application of that earlier fundamental valuation theory to real market analysis."
+            },
+            {
+                "q": "What is 'credit analysis' of bonds, and why might an investor not rely solely on external credit rating agencies for this, per the official syllabus objective 3.1?",
+                "a": "Credit analysis assesses a bond issuer's genuine ability and willingness to meet its debt obligations; while rating agencies provide a genuinely useful standardised assessment, an investor may conduct independent analysis since rating agencies can be slow to reflect genuinely emerging changes in issuer creditworthiness, and different investors may have genuinely different views on appropriate risk assessment.",
+                "explain": "Worth recognising credit rating agency output as a genuinely USEFUL BUT NOT SUFFICIENT input — sound investors conduct genuine independent analysis rather than relying purely on an external rating, echoing this whole curriculum's recurring theme of not over-relying on any single external source."
+            },
+            {
+                "q": "What genuine techniques does the official syllabus (objective 3.2) require for valuing fixed income investments, including interest rate swaps and futures?",
+                "a": "Fixed income analytics apply discounted cashflow principles (echoing CM1) to value bonds and related instruments like interest rate swaps and futures, discounting genuine future cashflows at appropriate market-consistent rates to determine fair value.",
+                "explain": "This directly recalls CM1's discounting and CM2's fixed-income-valuation material — worth recognising fixed income valuation as the direct, practical application of these earlier subjects' core discounting techniques."
+            },
+            {
+                "q": "What is 'arbitrage pricing' and the 'concept of hedging' in the context of valuing investments, per the official syllabus objective 3.2?",
+                "a": "Arbitrage pricing values an instrument by constructing a genuinely equivalent, replicating portfolio of other instruments whose combined value must equal the target instrument's fair value (otherwise a risk-free arbitrage profit would be available); hedging uses this same replication logic to construct a position that genuinely offsets a specific risk exposure.",
+                "explain": "This directly recalls CM2's arbitrage-free pricing material — worth recognising arbitrage pricing as the genuine THEORETICAL FOUNDATION underlying much of derivative and fixed-income valuation covered throughout this whole subject."
+            },
+            {
+                "q": "Why might evaluating a securitisation or a credit derivative (per the official syllabus objective 3.2) require genuinely more complex valuation techniques than valuing a simple, standard bond?",
+                "a": "A securitisation pools and tranches genuinely diverse underlying cashflows (e.g. mortgage payments) with different risk/priority levels across tranches, while a credit derivative's value depends on genuinely complex, correlated default probability assumptions across multiple reference entities, both requiring materially more sophisticated modelling than a single bond's straightforward discounted cashflow valuation.",
+                "explain": "This directly recalls Module 3's securitisation and credit-derivative product material — worth recognising these instruments' genuine STRUCTURAL COMPLEXITY as directly translating into genuinely more sophisticated valuation technique requirements."
+            },
+            {
+                "q": "Why must an actuary understand the 'empirical characteristics of asset prices' (per the official syllabus objective 3.2), rather than relying purely on theoretical pricing models?",
+                "a": "Real-world asset prices can genuinely deviate from theoretical model predictions (e.g. exhibiting 'fat tails' or volatility clustering not captured by simpler models), so genuine practical valuation and risk assessment should be informed by how asset prices ACTUALLY behave empirically, not solely by how theoretical models predict they should behave.",
+                "explain": "This directly recalls CS2's extreme-value and fat-tail material — worth recognising this as a genuinely important caution against over-reliance on elegant theoretical models without checking them against real-world empirical behaviour."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Monitoring investment risks and mean-variance portfolio theory",
+        "description": "Covers the methods used to monitor and control exposure to investment risks, and the application of mean-variance portfolio theory to investment scenarios, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine risk categories does the official syllabus (objective 4.1) require candidates to understand methods for monitoring and controlling?",
+                "a": "Asset/liability mismatching risk, market risk, credit risk (including counterparty risk), operational risk, liquidity risk, relative performance risk, and sustainability risk — seven genuinely distinct risk categories an investment institution must monitor.",
+                "explain": "Worth memorising this exact seven-part list — note 'relative performance risk' (the risk of underperforming a benchmark or peer group) and 'sustainability risk' as genuinely distinct categories beyond the more familiar market/credit/operational/liquidity risks."
+            },
+            {
+                "q": "Why might 'relative performance risk' be a genuinely important, distinct risk category for an actively-managed institutional portfolio, beyond simply managing absolute market risk?",
+                "a": "An institutional investor's mandate is typically judged against a specified benchmark, so genuinely underperforming that benchmark represents a distinct risk to the manager's reputation and the mandate's continuation, even where the portfolio's ABSOLUTE performance was genuinely positive in absolute terms.",
+                "explain": "This directly recalls SA7's tracking-error material — worth recognising relative performance risk as addressing a genuinely DIFFERENT concern from absolute market risk: underperforming a peer or benchmark, even while making genuine absolute gains."
+            },
+            {
+                "q": "What is 'sustainability risk' in this investment-risk-monitoring context, and how does it relate to Module 2's ESG material?",
+                "a": "Sustainability risk concerns the genuine risk that environmental, social or governance factors (e.g. climate transition risk) materially affect an investment's value or the wider portfolio's risk profile, directly connecting Module 2's regulatory ESG material to this module's genuine, practical risk-monitoring framework.",
+                "explain": "This directly recalls Module 2's ESG-as-regulatory-framework material — worth recognising sustainability risk as the genuine PRACTICAL RISK-MANAGEMENT counterpart to Module 2's more regulatory-framing of ESG considerations."
+            },
+            {
+                "q": "What is the 'opportunity set' in mean-variance portfolio theory, per the official syllabus objective 4.2?",
+                "a": "The opportunity set represents the full genuine range of possible portfolios achievable by combining available assets in different proportions, plotted in risk-return space, forming the foundation from which the efficient frontier is then identified.",
+                "explain": "Worth recognising the opportunity set as the genuine STARTING POINT for mean-variance analysis — before identifying which portfolios are optimal, you must first genuinely map out every combination that is even achievable."
+            },
+            {
+                "q": "What is the 'efficient frontier', and why does it represent only a genuine SUBSET of the full opportunity set?",
+                "a": "The efficient frontier consists of the portfolios offering the genuinely highest expected return for each given level of risk (or equivalently, the lowest risk for each given level of return), excluding all other achievable portfolios in the opportunity set that are genuinely dominated by a more efficient alternative.",
+                "explain": "Worth recognising the efficient frontier as the genuinely OPTIMAL subset of the opportunity set — every portfolio ON the frontier is achievable and non-dominated, while portfolios BELOW it, though achievable, are genuinely inferior to some frontier alternative."
+            },
+            {
+                "q": "How do 'indifference curves' combine with the efficient frontier to determine an investor's 'optimum portfolio', per the official syllabus objective 4.2?",
+                "a": "Indifference curves represent an individual investor's own genuine risk-return trade-off preferences (combinations of risk and return the investor is equally happy with); the optimum portfolio is found where an investor's highest achievable indifference curve is genuinely tangent to the efficient frontier, combining the objectively available opportunity set with the investor's own subjective risk preferences.",
+                "explain": "This directly recalls CB1's risk-return-preference material — worth recognising the optimum-portfolio determination as combining an OBJECTIVE input (the efficient frontier, available to all investors) with a SUBJECTIVE input (the specific investor's own indifference curves), producing a genuinely investor-specific optimal choice."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Investor characteristics, behavioural finance and taxation",
+        "description": "Covers the key findings of behavioural finance, the main steps in financial planning, and how taxation of investment returns affects investor behaviour, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is 'behavioural finance', and why does the official syllabus (objective 5.1) require understanding its key findings and how they might apply to different investor types?",
+                "a": "Behavioural finance studies how genuine psychological biases (e.g. overconfidence, loss aversion, anchoring) systematically affect real investor decision-making, often causing genuine deviations from the purely rational behaviour traditional finance theory assumes; understanding these biases helps advisers genuinely anticipate and address them when working with real investors.",
+                "explain": "Worth recognising behavioural finance as a genuinely important CORRECTIVE to purely rational-actor investment theory — real investors don't always behave as mean-variance theory (Module 6) assumes, and sound advice must genuinely account for this."
+            },
+            {
+                "q": "What is 'loss aversion', and why might it genuinely lead an investor to make suboptimal decisions?",
+                "a": "Loss aversion describes the genuine tendency for investors to feel the pain of a loss more intensely than the pleasure of an equivalent gain, which can lead to genuinely suboptimal behaviour such as holding onto losing investments too long (hoping to avoid crystallising the loss) or selling winning investments too early.",
+                "explain": "Worth recognising loss aversion as one of the most commonly-cited, genuinely well-evidenced behavioural biases — a concrete, memorable example of how psychology can genuinely diverge from purely rational decision-making."
+            },
+            {
+                "q": "What genuine steps does the official syllabus (objective 5.2) identify as involved in financial planning for an individual investor?",
+                "a": "Establishing the investor's genuine objectives and constraints, assessing their current financial position, developing an appropriate strategy to meet their objectives, implementing that strategy, and monitoring and reviewing progress over time — a genuinely structured, sequential planning process.",
+                "explain": "Worth recognising this sequence as directly echoing CP1's advice-process material — worth genuinely establishing objectives BEFORE developing strategy, a recurring theme across this whole curriculum."
+            },
+            {
+                "q": "Why does the genuine taxation of investment returns directly affect investor behaviour, per the official syllabus objective 5.3, beyond simply reducing net returns?",
+                "a": "Different tax treatments of income versus capital gains, or different tax-favoured account wrappers, can genuinely incentivise investors to prefer certain asset types, holding periods, or account structures purely for tax efficiency reasons, meaning genuine investor behaviour is directly shaped by tax rules, not solely by underlying investment merit.",
+                "explain": "This directly recalls SA1's and SA2's taxation-affects-attractiveness material — worth recognising this same principle applying to individual investor behaviour specifically, not just to insurance product demand."
+            },
+            {
+                "q": "Why might an investor's genuine time horizon and liquidity needs, alongside their behavioural tendencies and tax position, all need to be understood together before recommending an investment strategy?",
+                "a": "These characteristics genuinely interact — a behaviourally loss-averse investor with a genuinely short time horizon may need a materially more conservative strategy than the same behavioural profile paired with a long time horizon, so a sound recommendation must integrate ALL of an investor's genuine characteristics together, not consider any single dimension in isolation.",
+                "explain": "This directly previews this course's later investment-strategy module — worth recognising investor characterisation as requiring a genuinely HOLISTIC, integrated understanding, not separate, independently-assessed dimensions."
+            },
+            {
+                "q": "How does this module's investor-characteristics material connect back to Module 6's mean-variance portfolio theory?",
+                "a": "Module 6 established the theoretical framework for finding an investor's 'optimum portfolio' using indifference curves representing risk preferences; this module develops a genuinely richer, more realistic understanding of what actually shapes those preferences and constraints — behavioural biases, financial planning objectives, and tax position — moving from abstract theory toward practical investor-specific application.",
+                "explain": "This closing card ties this module back to Module 6 explicitly — worth recognising this module as making Module 6's abstract 'indifference curve' concept genuinely CONCRETE and practically applicable to real investors."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Actuarial techniques for investment strategy",
+        "description": "Covers how actuarial techniques may be used to develop an appropriate investment strategy for a particular investor, including asset/liability modelling and liability hedging, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine actuarial techniques does the official syllabus (objective 6.1) require candidates to understand for developing an appropriate investment strategy?",
+                "a": "Asset pricing models, asset/liability modelling, liability hedging, and dynamic liability benchmarks — four genuinely distinct techniques an actuary can apply when developing investment strategy for a specific investor with genuine liability obligations.",
+                "explain": "Worth memorising this exact four-part list — it defines the genuine actuarial-technique toolkit SP5 expects candidates to apply, directly connecting this whole subject's earlier valuation and portfolio-theory material to genuine strategic decision-making."
+            },
+            {
+                "q": "What are 'asset pricing models', and how might they genuinely inform investment strategy development, beyond their use in individual security valuation (Module 5)?",
+                "a": "Asset pricing models (e.g. capturing the genuine relationship between expected return and systematic risk) can inform strategic asset allocation decisions by helping estimate genuinely appropriate expected returns for different asset classes, feeding directly into the mean-variance-style optimisation covered in Module 6.",
+                "explain": "This directly recalls Module 6's mean-variance material — worth recognising asset pricing models as providing the genuine EXPECTED RETURN INPUTS that Module 6's optimisation framework requires, connecting individual-security valuation theory to portfolio-level strategy."
+            },
+            {
+                "q": "What is 'asset/liability modelling' in the context of developing investment strategy, echoing CM2's, SA1's and SA2's material?",
+                "a": "Asset/liability modelling projects how a specific investor's assets and liabilities would jointly evolve under a range of future scenarios, revealing whether a proposed investment strategy is genuinely likely to meet the investor's specific liability obligations with acceptable risk, directly applying CM2's matching principles in a genuinely forward-looking, scenario-based way.",
+                "explain": "This directly recalls CM2's ALM material and SA1's/SA2's ALM-modelling material — worth recognising asset/liability modelling as this whole curriculum's core matching principle, now explicitly framed as a STRATEGY-DEVELOPMENT TOOL rather than purely a risk-monitoring exercise."
+            },
+            {
+                "q": "What is 'liability hedging' as a genuine investment strategy technique, and how does it connect to Module 6's asset/liability mismatching risk material?",
+                "a": "Liability hedging deliberately structures a portion of the investment portfolio to closely track the genuine movements of specified liabilities (e.g. using duration-matched bonds or interest rate swaps), directly reducing the asset/liability mismatching risk identified as a genuine risk category in Module 6.",
+                "explain": "This directly recalls Module 6's asset/liability-mismatching-risk material and SA2's/SA4's LDI material — worth recognising liability hedging as the genuine, practical STRATEGY-LEVEL RESPONSE to the mismatching risk Module 6 identified as a genuine risk to monitor and manage."
+            },
+            {
+                "q": "What is a 'dynamic liability benchmark', and why might it be genuinely more useful than a static, fixed benchmark for an investor with genuine liability obligations?",
+                "a": "A dynamic liability benchmark adjusts over time to reflect the genuine, evolving characteristics of the investor's actual liabilities (e.g. as they mature or their duration changes), providing a more genuinely relevant ongoing performance comparison than a static benchmark that might quickly become misaligned with the investor's real, evolving liability profile.",
+                "explain": "This directly previews this course's later performance-measurement module — worth recognising a dynamic liability benchmark as directly solving the genuine problem a STATIC benchmark would create for a liability-driven investor whose true obligations keep evolving over time."
+            },
+            {
+                "q": "How do all four techniques covered in this module (asset pricing models, ALM, liability hedging, dynamic benchmarks) genuinely work together to develop a coherent investment strategy for a specific investor?",
+                "a": "Asset pricing models provide genuine return assumptions, ALM tests whether a proposed strategy genuinely meets liability objectives under a range of scenarios, liability hedging provides the genuine practical mechanism for reducing mismatching risk, and dynamic benchmarks provide the genuine, ongoing yardstick for assessing whether the implemented strategy continues to track the investor's evolving needs — together forming a coherent, end-to-end strategy development and monitoring process.",
+                "explain": "This closing card ties this module's four techniques together explicitly — worth recognising these as a genuinely INTEGRATED toolkit spanning strategy DEVELOPMENT (pricing models, ALM), IMPLEMENTATION (hedging), and ONGOING MONITORING (dynamic benchmarks), not four independent, unrelated techniques."
+            }
+        ]
     }
-
     ]
 };
