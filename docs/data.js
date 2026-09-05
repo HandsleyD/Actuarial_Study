@@ -19141,7 +19141,132 @@ const MODULES = {
                 "explain": "Worth recognising 'Bermudan' exercise style as a genuinely distinct THIRD category, named for sitting geographically 'between' Europe and America — a memorable way to recall its genuinely intermediate exercise flexibility."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "Exotic derivatives, structured securities and credit derivatives",
+        "description": "Covers exotic equity and foreign exchange derivatives, structured securities and OTC contracts used for hedging, and the types and application of credit derivatives, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is a 'barrier option', and how does its payoff genuinely differ from a standard call or put option?",
+                "a": "A barrier option's payoff genuinely depends on whether the underlying asset's price touches a specified barrier level at any point during the option's life, either activating ('knock-in') or extinguishing ('knock-out') the option's payoff, unlike a standard option whose payoff depends only on the underlying's price at expiry.",
+                "explain": "Worth recognising barrier options as genuinely PATH-DEPENDENT — their value depends on the underlying's whole price PATH during the option's life, not merely its final value, a genuinely more complex valuation problem than a standard European option."
+            },
+            {
+                "q": "What is an 'Asian option', and why might it be genuinely valuable to a corporate hedger managing regular, ongoing currency exposure?",
+                "a": "An Asian option's payoff depends on the AVERAGE price of the underlying over a specified period (rather than a single point-in-time price), making it genuinely well-suited to a corporate hedger with regular, ongoing exposure (e.g. monthly foreign currency receipts), since averaging reduces the genuine risk of the option's payoff being distorted by a single, potentially unrepresentative price observation.",
+                "explain": "Worth recognising the AVERAGING feature as directly matching a genuine real-world hedging need — a corporate with regular, recurring exposure benefits from a hedge reflecting AVERAGE conditions, not a single, potentially atypical spot price."
+            },
+            {
+                "q": "What is a 'quanto option', and why does it genuinely combine both an equity/index exposure and a currency exposure within a single instrument?",
+                "a": "A quanto option pays out based on a foreign underlying asset's performance, but settles in a DIFFERENT (typically domestic) currency at a FIXED exchange rate, genuinely eliminating currency risk from the payoff while retaining the foreign asset's price exposure, combining two genuinely distinct risk factors' management within one instrument.",
+                "explain": "Worth recognising the quanto structure as a genuinely elegant solution to a real hedging problem: gaining foreign asset exposure WITHOUT the accompanying currency risk that a simple, unhedged foreign investment would otherwise carry."
+            },
+            {
+                "q": "What is a Limited Price Indexation (LPI) swap, and how might it genuinely be used to hedge a pension scheme's inflation-linked liabilities, echoing SA4's material?",
+                "a": "An LPI swap exchanges cashflows linked to inflation subject to a CAP AND FLOOR (e.g. inflation between 0% and 5% per annum), genuinely matching many UK pension schemes' actual benefit increase structure (which is typically similarly capped and floored), providing a more precisely-matched hedge than a simple, uncapped inflation swap would.",
+                "explain": "This directly recalls SA4's pension-benefit-increase-structure material — worth recognising LPI swaps as a genuinely PRECISE hedging tool, matching the exact capped/floored structure of real pension liabilities rather than a simpler, less precisely-matched alternative."
+            },
+            {
+                "q": "How might a longevity swap be understood as a genuine structured security hedging a non-economic risk, echoing SA2's and SA4's material?",
+                "a": "A longevity swap exchanges genuine payments linked to actual mortality/survival experience of a specified population for fixed payments, allowing a pension scheme or annuity provider to hedge genuine longevity risk (a fundamentally demographic, non-economic risk) using a structured financial instrument, directly extending derivative-hedging technique beyond purely economic/market risk factors.",
+                "explain": "This directly recalls SA2's and SA4's longevity-swap material — worth recognising this as a genuinely important example of derivative technique extending beyond pure market risk into demographic risk hedging."
+            },
+            {
+                "q": "What is a 'credit default swap' (CDS), and what genuine payoff does it provide the protection buyer?",
+                "a": "A CDS pays the protection buyer a genuine compensating payment if a specified reference entity experiences a credit event (e.g. default), in exchange for the buyer paying a regular premium (the CDS spread) to the protection seller — effectively genuine insurance against a specific issuer's credit deterioration or default.",
+                "explain": "Worth recognising a CDS as functioning genuinely like an INSURANCE CONTRACT against credit risk — the buyer pays a regular premium for protection against a genuine, specified adverse credit event."
+            },
+            {
+                "q": "Why does the genuine relationship between CDS spreads and corporate bond credit spreads provide a useful market-based cross-check on credit risk pricing, per the official syllabus objective 2.10.2?",
+                "a": "Both a CDS spread and a corporate bond's credit spread over the risk-free rate genuinely compensate for the SAME underlying credit risk, so under normal market conditions these two measures should be genuinely closely related (via arbitrage arguments), and any material, sustained divergence between them can reveal genuinely important information about market liquidity or risk-pricing anomalies.",
+                "explain": "Worth recognising this relationship as a genuine PRACTICAL CROSS-CHECK — comparing CDS spreads against bond credit spreads for the same issuer provides a useful consistency check on credit risk pricing, similar in spirit to the no-arbitrage pricing principle underlying Module 3's forward pricing."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Option pricing factors and the binomial model",
+        "description": "Covers the factors affecting option prices, and the theory underpinning derivative pricing and hedging using the binomial model, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What six genuine factors does the official syllabus (objective 3.1) require understanding of, as affecting option prices?",
+                "a": "Stock price, strike price, term to expiry, volatility, risk-free rate, and dividends — six genuinely distinct inputs, each affecting call and put option values in specific, sometimes genuinely opposite, directions.",
+                "explain": "Worth memorising this exact six-factor list — it forms the direct input set to the Black-Scholes formula developed in Module 7, so genuine fluency with how each factor affects option value is essential foundational understanding."
+            },
+            {
+                "q": "Why does higher volatility genuinely increase the value of BOTH a call AND a put option, unlike most of the other five pricing factors which affect calls and puts in opposite directions?",
+                "a": "Since both calls and puts have genuinely asymmetric, capped-downside payoffs (the holder's maximum loss is the premium paid, regardless of how far the underlying moves against them), greater volatility genuinely increases the CHANCE of a large favourable move without a corresponding increase in downside risk, making higher volatility valuable to the holder of EITHER option type.",
+                "explain": "Worth recognising this as a genuinely important, distinctive insight — volatility's UNIFORMLY POSITIVE effect on both calls and puts follows directly from options' asymmetric payoff structure (Module 3's material), unlike factors like stock price which help calls and hurt puts."
+            },
+            {
+                "q": "What is the 'binomial model' for derivative pricing, and what genuine assumption does it make about the underlying asset's price movement over each time step?",
+                "a": "The binomial model assumes the underlying asset's price can only move to one of two genuine possible values (an 'up' or 'down' move) over each discrete time step, allowing derivative prices to be determined by working backward through a tree of these possible future price paths.",
+                "explain": "This directly recalls CM2's binomial-model foundation — worth recognising the genuinely SIMPLIFIED two-outcome assumption per step as what makes the model mathematically tractable, while still capturing genuine price uncertainty through the accumulation of many such steps."
+            },
+            {
+                "q": "What is a 'replicating strategy' in the binomial model, and why is it the genuine key to deriving an option's fair price?",
+                "a": "A replicating strategy is a genuine portfolio of the underlying asset and risk-free borrowing/lending that exactly reproduces the option's payoff in EVERY possible future state; since this replicating portfolio and the option must therefore have the same genuine value today (otherwise a risk-free arbitrage would exist), the option's fair price is determined as the cost of constructing this replicating portfolio.",
+                "explain": "This directly recalls CM2's replication-based-pricing material — worth recognising replication as the genuine CONCEPTUAL FOUNDATION of derivative pricing throughout this whole subject: an instrument is priced by finding what it costs to construct an equivalent, replicating alternative."
+            },
+            {
+                "q": "What is 'pricing under the martingale measure', and why does this genuinely simplify option pricing compared with using real-world probabilities?",
+                "a": "Under the martingale (risk-neutral) probability measure, discounted asset prices genuinely behave as martingales (their expected future value equals their current value), allowing an option's fair price to be calculated as the DISCOUNTED EXPECTED PAYOFF under this artificial measure, genuinely avoiding the need to know or estimate the underlying asset's true, real-world expected return.",
+                "explain": "This directly recalls CM2's risk-neutral-valuation material — worth recognising the martingale measure as a genuinely powerful SIMPLIFICATION: pricing no longer requires estimating the asset's real-world expected return, only its volatility and the risk-free rate."
+            },
+            {
+                "q": "What does the 'Binomial Representation Theorem' genuinely establish, and why is 'previsibility' a necessary condition within it?",
+                "a": "The Binomial Representation Theorem establishes that any genuine derivative payoff can be replicated by a self-financing trading strategy in the underlying asset and risk-free asset, provided the trading strategy is 'previsible' (the number of units held over each time step must be decided using only information available at the START of that step, not information revealed during it) — a genuine requirement ensuring the strategy is actually implementable in real time.",
+                "explain": "Worth recognising 'previsibility' as a genuinely important TECHNICAL CONDITION, not a mere formality — a trading strategy that could 'see the future' within each step would not represent a genuinely realistic, implementable hedging strategy."
+            },
+            {
+                "q": "Why must a genuine replicating or hedging strategy be 'self-financing', and what would happen if this condition were not satisfied?",
+                "a": "A self-financing strategy requires that any change in the portfolio's composition over time is funded entirely from within the portfolio itself (buying more of one asset by selling another, with no external cash injected or withdrawn); without this condition, the replicating portfolio's value would not genuinely track the derivative's value purely through market movements, undermining the whole replication-based pricing argument.",
+                "explain": "Worth recognising self-financing as a genuinely essential technical requirement — without it, any observed difference between the replicating portfolio and the derivative's payoff could simply reflect external cash flows rather than genuine market-driven value changes, breaking the replication argument entirely."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "The Black-Scholes model",
+        "description": "Covers the theory underpinning the Black-Scholes model for derivative pricing and hedging, including Brownian motion, Itô calculus, and the martingale approach, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is 'Brownian motion', and why does it provide a genuine mathematical foundation for modelling continuous-time asset price movements, echoing CM2's material?",
+                "a": "Brownian motion is a continuous-time stochastic process with independent, normally-distributed increments, providing a genuine mathematical building block for modelling asset prices as evolving continuously and randomly through time, extending the binomial model's discrete-time, two-outcome-per-step framework into continuous time.",
+                "explain": "This directly recalls CM2's Brownian motion material — worth recognising Brownian motion as the genuine CONTINUOUS-TIME ANALOGUE of the binomial model's discrete up/down steps, taken to the limit as the time step shrinks toward zero."
+            },
+            {
+                "q": "What is 'Itô's Lemma', and why is it genuinely essential for working with functions of a stochastic process like an asset price?",
+                "a": "Itô's Lemma provides the genuine chain rule for differentiating a function of a stochastic process (like an option's value, which is a function of the underlying's genuinely random price), correctly accounting for the process's random, non-smooth path behaviour through an additional term absent from ordinary calculus's chain rule.",
+                "explain": "This directly recalls CM2's Itô calculus material — worth recognising Itô's Lemma as the genuine MATHEMATICAL TOOL making it possible to analyse how a derivative's value changes as its underlying stochastic asset price changes, a foundational technique underlying the whole Black-Scholes derivation."
+            },
+            {
+                "q": "What does the 'Cameron-Martin-Girsanov Theorem' genuinely allow an actuary to do when pricing derivatives, echoing the martingale-measure material from Module 6?",
+                "a": "The Cameron-Martin-Girsanov Theorem provides the genuine mathematical justification for changing from the real-world probability measure to the risk-neutral (martingale) measure in continuous time, the direct continuous-time analogue of the discrete-time martingale-measure pricing developed in the binomial model.",
+                "explain": "This directly recalls Module 6's martingale-measure material — worth recognising this theorem as the genuine CONTINUOUS-TIME JUSTIFICATION for the same change-of-measure pricing technique already introduced discretely in the binomial model."
+            },
+            {
+                "q": "What is the 'Radon-Nikodym derivative', and what genuine role does it play in changing probability measures?",
+                "a": "The Radon-Nikodym derivative provides the genuine mathematical 'exchange rate' converting probabilities (or expectations) calculated under one probability measure into the equivalent probabilities (or expectations) under a different, related measure, the precise technical mechanism underlying the change of measure from real-world to risk-neutral probabilities.",
+                "explain": "Worth recognising the Radon-Nikodym derivative as the genuine TECHNICAL MECHANISM implementing the change-of-measure concept — not just an abstract idea that measures can be changed, but the specific mathematical tool for actually doing so correctly."
+            },
+            {
+                "q": "What does the Black-Scholes formula for a non-dividend-paying stock's European call option genuinely state, echoing CM2's material?",
+                "a": "The Black-Scholes call price is $C = S_0 N(d_1) - Ke^{-rT}N(d_2)$, where $N(\\cdot)$ is the standard normal cumulative distribution function, $S_0$ is the current stock price, $K$ is the strike price, $r$ is the risk-free rate, $T$ is time to expiry, and $d_1, d_2$ are specific functions of these inputs plus volatility.",
+                "explain": "This directly recalls CM2's Black-Scholes formula material — worth recognising this closed-form formula as the genuine, practical PAYOFF of the whole theoretical apparatus (Brownian motion, Itô's Lemma, martingale pricing) developed throughout this module: a single, directly usable pricing equation."
+            },
+            {
+                "q": "Why does the Black-Scholes formula's construction genuinely rely on 'continuous-time portfolio strategies' and 'self-financing portfolios in continuous time', echoing Module 6's self-financing material?",
+                "a": "Just as the binomial model's discrete-time replication argument required a self-financing, previsible trading strategy (Module 6's material), the continuous-time Black-Scholes derivation genuinely requires the SAME underlying replication logic, now expressed using continuous-time stochastic calculus rather than discrete time steps.",
+                "explain": "This directly recalls Module 6's self-financing-and-previsibility material — worth recognising the Black-Scholes derivation as genuinely EXTENDING, not replacing, the binomial model's core replication argument into continuous time, using more sophisticated but conceptually parallel mathematical machinery."
+            },
+            {
+                "q": "How does the 'construction of replicating strategies using the martingale approach' genuinely connect the Black-Scholes formula back to the fundamental no-arbitrage pricing principle established in Module 3?",
+                "a": "The Black-Scholes formula's price is genuinely justified because a specific, continuously-rebalanced replicating portfolio of the underlying stock and risk-free bond can be constructed that exactly reproduces the option's payoff in every future state, so the option's fair price must equal this replicating portfolio's cost, directly applying Module 3's no-arbitrage principle in a continuous-time setting.",
+                "explain": "This closing card ties this module back to Module 3's foundational no-arbitrage material — worth recognising the whole sophisticated Black-Scholes apparatus as ultimately resting on the SAME simple no-arbitrage logic this subject introduced right at the start, just requiring genuinely more advanced mathematics to apply it in continuous time."
+            }
+        ]
     }
-
     ]
 };
