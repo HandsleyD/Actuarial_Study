@@ -6304,4 +6304,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SA7: [
+    {
+      id: "sa7-q1",
+      title: "Investment management industry structure and governance",
+      modules: "Modules 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a pension scheme typically uses an independent custodian to hold its investment assets, rather than allowing its asset manager to hold them directly.",
+          answer:
+            "Separating asset management (decision-making) from custody (safekeeping) reduces the risk of a single party having both control over investment decisions AND physical/legal control of the assets, providing a genuine safeguard against fraud or error.",
+          note: "A strong answer explicitly names the segregation-of-duties rationale, not just asserts that custodians 'keep assets safe'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an investment mandate must set a genuinely clear and specific benchmark, agreed independently in advance, rather than allowing the manager to select or change its own performance comparison after the fact.",
+          answer:
+            "A benchmark set independently and in advance provides an objective, unbiased basis for assessing whether the manager has genuinely added value, whereas a benchmark chosen or changed by the manager itself after seeing results could be selected specifically to flatter poor performance.",
+          note: "This connects directly to the independent-assessment/governance-safeguard theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why potential conflicts of interest might arise within the investment management industry's multi-party structure (managers, custodians, consultants), and one way a pension scheme's governance could mitigate this.",
+          answer:
+            "An asset manager's fee structure, a consultant's relationships with multiple asset managers, or a custodian offering additional services could all create genuine incentives that may not perfectly align with the underlying investor's best interests. A governing body could mitigate this by requiring genuine disclosure of any such relationships or incentives, and periodically reviewing whether advice or services received remain genuinely independent and in the scheme's best interests.",
+          note: "A strong answer identifies a genuine, specific conflict source (not just asserts conflicts 'can arise') and proposes a genuinely workable mitigation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a governing body typically retains responsibility for setting strategic asset allocation itself, while delegating day-to-day security selection to its manager.",
+          answer:
+            "Strategic asset allocation decisions directly reflect the investor's own risk appetite and objectives, which the governing body itself is best placed to determine, while day-to-day security selection within that framework benefits from the manager's specialist expertise and market access.",
+          note: "This connects directly to the division-of-responsibility governance theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q2",
+      title: "The investment decision-making process",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an investment manager's process typically separates 'research' from 'portfolio construction', rather than allowing a single individual to move directly from a market view to a trade.",
+          answer:
+            "Separating these stages allows genuine specialisation and provides a check that a compelling research view is actually translated into a genuinely appropriate, risk-controlled portfolio position, rather than an unconstrained bet based purely on one individual's conviction.",
+          note: "A strong answer explicitly names the CHECK-AND-BALANCE this separation provides, not just describes the two stages.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss one genuine advantage and one genuine limitation of a systematic, rules-based investment process compared with a purely discretionary process.",
+          answer:
+            "Advantage: a systematic process can apply its rules consistently across a large universe of assets without emotional or behavioural bias. Limitation: a fixed model calibrated on historical data may fail to anticipate genuinely novel market conditions not represented in that historical data, a form of model risk that a skilled discretionary manager might be better placed to respond to.",
+          note: "A strong answer addresses BOTH sides explicitly, not just one.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a discretionary investment process typically requires robust internal challenge (e.g. an investment committee), rather than relying purely on individual manager judgement.",
+          answer:
+            "Individual judgement, however skilled, can be subject to genuine behavioural biases (e.g. overconfidence, anchoring), so internal challenge and review processes provide a check against these biases, improving the overall quality and consistency of investment decisions.",
+          note: "This connects directly to the judgement-needs-challenge theme developed elsewhere across the actuarial curriculum.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why implementation quality (efficient trade execution) is a genuinely distinct skill from investment decision-making quality.",
+          answer:
+            "Trading costs and execution risk can genuinely erode the value of an otherwise sound investment decision, so a good decision poorly implemented can still produce a disappointing outcome, meaning efficient implementation is itself a genuinely important, distinct skill rather than a mechanical afterthought.",
+          note: "This connects directly to the performance-attribution material developed later in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q3",
+      title: "Investor objectives across institution types",
+      modules: "Module 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a DB pension scheme's investment objectives differ fundamentally from a DC pension scheme's.",
+          answer:
+            "A DB scheme invests to meet a defined set of promised liabilities, so its objectives centre on funding adequacy relative to those specific liabilities, while a DC scheme's objectives centre on maximising genuinely appropriate risk-adjusted returns for individual members' own accumulating pots, a fundamentally different investment problem reflecting who bears the investment risk in each case.",
+          note: "A strong answer explicitly connects the objective difference to WHO bears the investment risk (sponsor versus member), not just describes DB and DC generically.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a life insurer's annuity business typically favours long-dated matching assets, while a general insurer typically emphasises liquidity more heavily.",
+          answer:
+            "A life insurer's annuity business has genuinely long-duration, interest-rate-sensitive liabilities favouring long-dated matching assets, while a general insurer's typically shorter-tail, more volatile and less predictable claims payment pattern favours a different balance emphasising liquidity and capital preservation over long-duration matching.",
+          note: "This connects directly to the ALM-duration material developed for life and general insurance elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why an individual investor's investment advice needs to be genuinely more personalised than the more standardised frameworks often applicable to institutional investors.",
+          answer:
+            "An individual investor typically has a genuinely more concentrated, personal set of goals (e.g. their own retirement, a specific purchase) and may have less capacity to bear risk or absorb losses than a large institution with diversified objectives and a longer collective time horizon, requiring genuinely more personalised, risk-tolerance-sensitive advice rather than a standardised institutional template.",
+          note: "A strong answer explicitly contrasts individual and institutional circumstances (concentrated goals, lower risk capacity), not just asserts individuals need 'more personal' advice.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a manager must genuinely understand a specific investor's objectives and constraints before proposing an investment strategy, rather than applying a generic 'best practice' template.",
+          answer:
+            "The same asset allocation or strategy could be genuinely excellent for one investor type and genuinely unsuitable for another, depending entirely on their specific liabilities, risk tolerance, and objectives, so sound strategy proposals must be anchored in the specific investor's circumstances.",
+          note: "This connects directly to the context-specific-assessment theme developed across every SA subject.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q4",
+      title: "Liability-driven investing and hedge ratio impact",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A pension scheme has liabilities valued at &pound;100,000,000 with an effective duration of 18 years, and hedges 75% of its interest rate exposure using an LDI strategy. If interest rates fall by 1%, calculate (a) the increase in the value of the scheme's liabilities, (b) the increase in the value of the hedged assets (assuming they move in line with the hedged portion of the liability), and (c) the net impact on the scheme's funding position.",
+          answer:
+            "(a) Liability increase = &pound;100,000,000 &times; 18 &times; 1% = &pound;18,000,000. (b) Hedged asset increase = (&pound;100,000,000 &times; 75%) &times; 18 &times; 1% = &pound;75,000,000 &times; 18 &times; 1% = &pound;13,500,000. (c) Net impact on funding position = &pound;13,500,000 &minus; &pound;18,000,000 = &minus;&pound;4,500,000 (the funding position worsens by &pound;4,500,000 due to the unhedged 25% exposure).",
+          note: "Verified: 100,000,000×18×0.01=18,000,000; 75,000,000×18×0.01=13,500,000; 13,500,000-18,000,000=-4,500,000 (Node-verified). Marks are typically split across all three sub-calculations, with credit for correctly identifying the funding position WORSENS.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this scheme might deliberately choose to hedge only 75%, rather than 100%, of its interest rate exposure.",
+          answer:
+            "Full hedging would fully protect against interest rate risk but forgo any potential upside from rates moving favourably and typically requires holding more matching assets at the expense of growth assets, so a partial hedge ratio reflects a deliberate trade-off between reducing funding volatility and retaining some growth potential, calibrated to the scheme's specific risk appetite and covenant strength.",
+          note: "A strong answer frames this as a genuine, deliberate risk-appetite trade-off, not an oversight or failure to fully hedge.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why this scheme's hedge ratio should be reviewed periodically, rather than set once and left unchanged.",
+          answer:
+            "The scheme's funding position, sponsor covenant, and the wider market environment can all change materially over time, so a hedge ratio set for a past set of circumstances may no longer be genuinely appropriate, requiring periodic reassessment rather than indefinite persistence.",
+          note: "This connects directly to the ongoing-review theme developed throughout this course.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why implementing this LDI strategy using interest rate swaps introduces a genuine liquidity consideration the scheme must manage.",
+          answer:
+            "Derivative-based LDI positions typically require posting collateral, which can increase sharply during periods of market stress (e.g. a sharp rise in rates moving against the swap position), so the scheme must hold sufficient liquid assets to meet these collateral calls without being forced to sell other assets at an unfavourable time.",
+          note: "This connects directly to the LDI-derivative-liquidity-risk material developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q5",
+      title: "Alternative asset classes",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an institutional investor might allocate to infrastructure as an alternative asset class specifically, beyond simply seeking a higher expected return.",
+          answer:
+            "Infrastructure assets can offer genuine diversification benefits (returns less correlated with traditional listed markets) and, in some cases, inflation-linked revenue streams whose cashflow characteristics can usefully match specific liability profiles, not merely provide a higher-risk version of traditional equity returns.",
+          note: "A strong answer names the genuinely DIFFERENT cashflow/correlation characteristics, not just asserts alternatives offer 'higher returns'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why valuing an illiquid private equity holding requires genuinely different techniques from valuing a listed equity holding.",
+          answer:
+            "Illiquid assets typically lack a continuously observable market price, so valuation relies on periodic appraisals, comparable transaction analysis, or discounted cashflow techniques involving genuine estimation uncertainty, unlike listed assets whose market price is directly and continuously observable.",
+          note: "This connects directly to the valuation-technique material developed elsewhere across the actuarial curriculum.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why an investor's governance process should genuinely scrutinise a private equity manager's 'two and twenty' fee structure, and why this allocation should be assessed within the context of the whole portfolio rather than in isolation.",
+          answer:
+            "Higher, performance-linked fee structures directly reduce the net return delivered to the investor, so governance should genuinely assess whether the manager's demonstrated skill and the asset class's genuine diversification benefit justify this higher cost relative to lower-cost traditional alternatives. The allocation should also be assessed within the whole portfolio because alternative assets' genuine diversification value depends on how their returns interact with the rest of the portfolio, not on their standalone characteristics alone.",
+          note: "A strong answer addresses BOTH the fee-scrutiny point AND the whole-portfolio-context point, not just one half of the question.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an investor with genuine near-term liquidity needs should limit its allocation to illiquid alternative assets.",
+          answer:
+            "Illiquid assets cannot be readily sold to meet near-term cashflow needs, so an investor with genuine near-term liquidity requirements must ensure sufficient allocation remains in liquid assets, reserving illiquid alternatives for genuinely long-term, patient capital.",
+          note: "This connects directly to the liquidity-risk theme developed elsewhere across the SA subjects.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q6",
+      title: "ESG and responsible investment",
+      modules: "Module 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why ESG considerations can be understood as genuinely relevant to investment risk and return, not solely as an ethical overlay.",
+          answer:
+            "Environmental, social, and governance factors can genuinely affect a company's or asset's long-term financial performance and risk (e.g. climate transition risk, poor governance leading to fraud), making ESG analysis a genuine extension of fundamental investment analysis, not solely a values-based consideration layered on top.",
+          note: "A strong answer explicitly makes the dual-framing argument (financial materiality, not just ethics), not just asserts that ESG 'matters'.",
+        },
+        {
+          label: "(ii)",
+          command: "Distinguish",
+          marks: 3,
+          question:
+            "Distinguish between 'exclusion' and 'stewardship' as responsible investment approaches, and explain one genuine trade-off between them.",
+          answer:
+            "Exclusion removes certain assets from the portfolio entirely, while stewardship retains an ownership stake and uses that position to genuinely engage with and influence company behaviour. The trade-off is that exclusion removes an investor's ability to influence a company's practices entirely, while stewardship retains this influence but requires genuine, sustained engagement effort and does not guarantee the company will actually change its behaviour.",
+          note: "A strong answer explicitly names the trade-off (lost influence versus effort without guaranteed outcome), not just describes the two approaches.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why different ESG rating providers might produce genuinely inconsistent assessments of the same company, and why this matters for an investor relying on a single provider's rating.",
+          answer:
+            "Different ESG rating providers can use genuinely different methodologies and weightings for various ESG factors (e.g. how much weight is given to carbon emissions versus board diversity), producing inconsistent scores for the same company. This matters because an investor relying on a single provider's rating without awareness of this genuine methodological variation could treat that score as an objective, universally agreed truth, when it in fact reflects one provider's specific, contestable methodology.",
+          note: "A strong answer explains WHY inconsistency arises (differing methodology/weightings) and the genuine practical consequence of over-reliance on a single source.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a pension scheme's governing body should establish a clear responsible investment policy, rather than leaving ESG considerations to individual portfolio managers' discretion.",
+          answer:
+            "A clear policy ensures ESG considerations are applied consistently across the whole portfolio in line with the investor's own genuine objectives and values, rather than varying unpredictably by individual manager discretion.",
+          note: "This connects directly to the mandate-clarity governance theme developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q7",
+      title: "Risk measurement: Value at Risk and tracking error",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A &pound;50,000,000 portfolio has an annual return volatility of 12%. Assuming returns are normally distributed, calculate the 1-year 95% Value at Risk (VaR), using a z-score of 1.645 for the 95% confidence level.",
+          answer:
+            "VaR = &pound;50,000,000 &times; 12% &times; 1.645 = &pound;9,870,000 (to the nearest &pound;10,000, approximately &pound;9.87 million). This means there is a 5% chance the portfolio loses more than approximately &pound;9.87 million over the year.",
+          note: "Verified: 50,000,000×0.12×1.645=9,870,000 (Node-verified). Full marks require both the calculation and a correct statement of what the resulting VaR figure represents.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain one genuine limitation of the VaR figure calculated in part (i), and why stress testing provides genuinely complementary insight.",
+          answer:
+            "VaR says nothing about how much WORSE losses could be beyond the stated threshold (i.e. in the 5% of outcomes worse than the VaR figure), potentially understating genuine tail risk. Stress testing directly reveals how the portfolio would perform under specific, named adverse scenarios, providing more concrete, interpretable insight into the portfolio's genuine vulnerabilities than a single probabilistic VaR figure alone.",
+          note: "A strong answer explicitly names the 'beyond the threshold' limitation, not just asserts VaR is 'imperfect'.",
+        },
+        {
+          label: "(iii)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "An actively-managed portfolio's active returns (portfolio return minus benchmark return) over five periods were: 2.0%, -1.0%, 1.5%, 0.5%, and -0.8%. Calculate the mean active return and the tracking error (sample standard deviation of the active returns).",
+          answer:
+            "Mean active return = (2.0% &minus; 1.0% + 1.5% + 0.5% &minus; 0.8%) / 5 = 0.44%. Tracking error (sample standard deviation) &asymp; 1.34%.",
+          note: "Verified: mean=0.44%, sample stdev≈1.339% (Node-verified, using n-1 divisor). Accept answers using either sample (n-1) or population (n) standard deviation provided the method is stated.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why tracking error is a more mandate-relevant risk measure than absolute portfolio volatility for this actively-managed portfolio.",
+          answer:
+            "Since an active manager's mandate is typically judged against a specified benchmark, tracking error directly measures how much the manager's actual portfolio has genuinely deviated from that benchmark, a more mandate-relevant risk measure than absolute volatility alone for assessing whether the manager is operating within agreed risk parameters.",
+          note: "This connects the numeric tracking error calculation directly to the mandate-governance material developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q8",
+      title: "Performance attribution",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A portfolio returned 8.2% over a year, against a benchmark return of 6.5%. Attribution analysis identifies an asset allocation effect of 1.0%. Calculate the total active return and the resulting security selection effect.",
+          answer:
+            "Total active return = 8.2% &minus; 6.5% = 1.7%. Security selection effect = 1.7% &minus; 1.0% (asset allocation effect) = 0.7%.",
+          note: "Verified: 8.2%-6.5%=1.7%; 1.7%-1.0%=0.7% (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why decomposing the 1.7% total active return calculated in part (i) into asset allocation and security selection components is more informative to trustees than the single 1.7% figure alone.",
+          answer:
+            "Performance attribution reveals genuinely WHY the manager outperformed, rather than just confirming THAT they did, allowing trustees to assess whether the outperformance came from decisions genuinely within the manager's mandate (e.g. security selection within agreed asset classes) or from asset allocation deviations that may raise mandate compliance questions.",
+          note: "A strong answer explicitly explains the WHY-versus-THAT distinction, not just asserts that decomposition is 'more detailed'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the governing body should investigate whether the 1.0% asset allocation effect in part (i) reflected decisions genuinely authorised by the manager's mandate.",
+          answer:
+            "If the manager's mandate specified a fixed strategic asset allocation with security selection delegated for implementation only, a 1.0% asset allocation effect could reveal the manager made unauthorised allocation deviations beyond its intended mandate, which even if favourable this time raises a genuine governance concern about whether the manager is operating within agreed limits.",
+          note: "A strong answer explicitly connects the attribution finding to a genuine mandate-compliance concern, not just treats the favourable outcome as unambiguously good news.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this portfolio's performance should be assessed over a genuinely longer time horizon before drawing firm conclusions about the manager's skill.",
+          answer:
+            "Short-term performance can be heavily influenced by genuine random market fluctuation rather than manager skill, so assessing performance over a longer, more statistically meaningful period gives a more reliable picture of the manager's true, sustained skill than a single year's result alone.",
+          note: "This connects directly to the statistical-significance-versus-random-fluctuation theme developed elsewhere across the actuarial curriculum.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q9",
+      title: "Regulation and operational risk",
+      modules: "Modules 12, 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why regulation of investment management typically emphasises conduct requirements particularly heavily, given the agency relationship between manager and client.",
+          answer:
+            "Since the manager acts on behalf of, but does not itself bear the risk of, the client's assets, conduct regulation aims to ensure the manager genuinely acts in the client's best interests despite this separation of decision-making from risk-bearing, addressing the genuine potential for misaligned incentives this agency structure creates.",
+          note: "A strong answer explicitly connects conduct regulation's emphasis to the specific agency-relationship risk, not just asserts that conduct 'matters'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what is meant by 'key-person risk' for an investment management firm, and one mitigant against it.",
+          answer:
+            "Key-person risk arises where a firm's investment process and client relationships depend heavily on one individual's expertise or judgement, so that individual's departure, illness, or error could cause genuinely significant disruption. Well-documented, genuinely repeatable investment processes are a direct mitigant, reducing the firm's dependence on any single individual's undocumented, tacit expertise.",
+          note: "A strong answer names a genuinely specific mitigant (documented process), not just asserts that firms should 'reduce key-person risk' generically.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why an investment management firm's governance structure should include a genuinely independent risk management function, separate from its portfolio management teams.",
+          answer:
+            "An independent risk function can objectively monitor and challenge portfolio managers' risk-taking against agreed limits without the same incentive to prioritise short-term performance that portfolio managers themselves might have, providing a genuine check-and-balance within the firm's internal governance. Without this independence, risk oversight could be compromised by the same incentives (e.g. performance fees, career advancement tied to short-term results) that drive the risk-taking behaviour it is meant to oversee.",
+          note: "A strong answer explains WHY independence specifically matters here (avoiding conflicted incentives), not just asserts that risk management is 'important'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why cyber-security has become a genuinely growing operational risk concern for investment management firms specifically.",
+          answer:
+            "Investment managers hold and process genuinely sensitive client data and control significant client assets, making them an attractive target for cyber-attacks that could result in financial loss, data breaches, or disruption to critical trading and settlement systems, a risk that has grown as reliance on digital systems has increased.",
+          note: "This connects directly to the contemporary, evolving operational risk theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa7-q10",
+      title: "Solving a complex investment management issue",
+      modules: "Module 14",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A DB pension scheme's investment manager has significantly outperformed its benchmark, but attribution analysis reveals this came primarily from unauthorised asset allocation deviations beyond the agreed mandate. Discuss why this represents a genuinely complex issue for the scheme's governing body.",
+          answer:
+            "This situation genuinely involves competing considerations across multiple topic areas at once &mdash; the manager has delivered a strong financial outcome, but the attribution finding reveals a mandate compliance failure, raising genuine governance and conduct questions about whether the manager can be trusted to operate within agreed limits going forward, even though the specific outcome this time happened to be favourable. A purely outcome-focused view would celebrate the result, while a purely compliance-focused view would treat it as a serious breach; the governing body must genuinely weigh both.",
+          note: "A strong answer explicitly draws on both performance attribution AND mandate governance material together, not treating the favourable outcome as unambiguously good news or the breach as automatically disqualifying regardless of outcome.",
+        },
+        {
+          label: "(ii)",
+          command: "Recommend",
+          marks: 4,
+          question:
+            "Recommend a course of action for the governing body in response to this finding, with justification.",
+          answer:
+            "The governing body should require the manager to explain the unauthorised deviations and provide reassurance (e.g. enhanced reporting or tighter risk limits monitoring) that future decisions will remain within the agreed mandate, rather than either ignoring the breach because the outcome was favourable, or immediately terminating the mandate without investigating whether this was a genuine one-off lapse or a pattern of behaviour. A formal review period with more frequent attribution and compliance monitoring would allow the governing body to assess whether trust in the manager's mandate adherence can genuinely be restored.",
+          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the tension between the favourable outcome and the compliance failure, rather than dismissing either consideration.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question:
+            "Explain why the governing body should specify how the manager's future mandate adherence will be monitored, rather than treating this decision as final once made.",
+          answer:
+            "Whether the manager genuinely changes its behaviour is rarely fully knowable at the point of the decision, so specifying how future adherence will be tracked (e.g. through enhanced attribution reporting) shows the decision is genuinely designed to be verified and adjusted over time, rather than a one-off, unchecked judgement.",
+          note: "This connects directly to the ongoing-monitoring-of-decisions theme developed across every SA subject.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why solving this issue required drawing on multiple SA7 topic areas simultaneously, rather than a single technique in isolation.",
+          answer:
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on performance attribution, mandate and governance material, and conduct/regulatory considerations together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once.",
+          note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA7 syllabus.",
+        },
+      ],
+    },
+  ],
 };
