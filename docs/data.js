@@ -15844,6 +15844,166 @@ const MODULES = {
                 "explain": "This directly recalls SA1's reinsurer-counterparty-risk material — worth recognising catastrophe reinsurance as raising a particularly acute version of this risk, since the very event triggering the reinsurance claim could also stress the reinsurer's own ability to pay it."
             }
         ]
+    },
+    {
+        "id": "m16",
+        "title": "Financial planning in general insurance management (1)",
+        "description": "Covers analysing the financial planning requirements of a general insurer and developing appropriate strategies, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What does 'financial planning' mean for a general insurer, in the sense the official syllabus intends?",
+                "a": "The process of setting and monitoring financial objectives (e.g. growth, profitability, capital adequacy) and developing coherent strategies to achieve them, integrating pricing, reserving, capital, and reinsurance decisions into a single, forward-looking plan.",
+                "explain": "Worth recognising financial planning as the genuine INTEGRATION point for almost every technical topic covered earlier in this course — pricing, reserving, ALM, and reinsurance all feed into a coherent financial plan, not operate as separate silos."
+            },
+            {
+                "q": "Why might a general insurer's financial planning need to explicitly incorporate catastrophe risk (Modules 5-6's material), given its typically volatile, correlated nature?",
+                "a": "Catastrophe losses can be genuinely large and volatile relative to an insurer's typical annual result, so financial planning that ignored this risk (e.g. planning purely around an 'expected' loss year) could leave the insurer genuinely unprepared for a realistic adverse scenario.",
+                "explain": "This directly recalls Modules 5-6's catastrophe-modelling material — worth recognising that sound financial planning for a catastrophe-exposed insurer must genuinely incorporate the FULL DISTRIBUTION of possible outcomes, not just an average expected result."
+            },
+            {
+                "q": "Why might a general insurer's financial plan need to explicitly address its reinsurance strategy, rather than treating reinsurance purchasing as a separate, standalone decision?",
+                "a": "Reinsurance directly affects the insurer's expected profit, capital requirements, and volatility of results, so a genuinely coherent financial plan must treat reinsurance strategy as an integrated lever alongside pricing and underwriting decisions, not an afterthought decided independently.",
+                "explain": "This directly recalls Module 15's reinsurance material — worth recognising financial planning as the natural point where reinsurance strategy should be assessed ALONGSIDE, not separately from, pricing and capital decisions."
+            },
+            {
+                "q": "Why might financial planning for a general insurer need to set genuinely realistic, rather than purely aspirational, growth targets?",
+                "a": "Overly aggressive growth targets can pressure underwriting standards and pricing discipline, potentially leading to adverse selection or under-pricing that only becomes apparent once claims emerge, so financial planning should genuinely balance growth ambition against maintaining sound underwriting standards.",
+                "explain": "This directly recalls CB1's and SA1's sustainable-growth-versus-underwriting-discipline material — worth recognising this same tension applying to general insurance financial planning specifically."
+            },
+            {
+                "q": "Why does financial planning require genuine actuarial judgement in weighing multiple, sometimes competing objectives (growth, profitability, capital adequacy), rather than optimising a single metric?",
+                "a": "These objectives can genuinely conflict (e.g. aggressive growth may reduce near-term profitability or increase capital strain), so financial planning requires balanced, well-reasoned judgement about the genuinely appropriate trade-off for the insurer's specific circumstances, not mechanical optimisation of one metric alone.",
+                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising financial planning as one of the clearest examples of genuine multi-objective actuarial judgement across this whole course."
+            }
+        ]
+    },
+    {
+        "id": "m17",
+        "title": "Financial planning in general insurance management (2)",
+        "description": "Covers evaluating appropriate models for financial planning at the corporate and product level, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why might a general insurer use financial projection models at both the corporate (whole-company) and product level, rather than relying on a single combined model?",
+                "a": "Corporate-level models help monitor overall solvency, profitability and strategic objectives, while product-level models help assess whether individual product lines are genuinely meeting their own profitability targets, revealing insight a purely aggregated corporate view could mask.",
+                "explain": "This directly recalls SA1's and SA2's surplus-analysis-by-product-line material — worth recognising the same principle applying to financial planning MODELS specifically, not just retrospective analysis of past results."
+            },
+            {
+                "q": "Why might a financial planning model need to incorporate stochastic (rather than purely deterministic) projections for a catastrophe-exposed general insurer?",
+                "a": "A deterministic, single-scenario projection would only show one possible future outcome, while a stochastic model simulating many possible scenarios (including catastrophe events) reveals the genuine RANGE of outcomes and associated risk the insurer's financial plan must be resilient against.",
+                "explain": "This directly recalls Modules 5-6's catastrophe-modelling material and CP2's stochastic-modelling material — worth recognising stochastic financial planning models as a genuine extension of catastrophe modelling techniques into the broader financial planning process."
+            },
+            {
+                "q": "Why might evaluating a financial planning model's appropriateness require assessing whether its underlying assumptions remain genuinely valid for the insurer's current book, echoing this course's recurring theme?",
+                "a": "A model built on assumptions appropriate to a past book composition or market environment may no longer produce reliable projections if the insurer's business mix or external environment has genuinely changed, so model appropriateness must be actively assessed, not assumed to remain valid indefinitely.",
+                "explain": "This directly recalls SA1's ongoing-review theme and Module 12's reserving-basis material — worth recognising that a financial planning MODEL itself, not just the assumptions fed into it, needs periodic critical review."
+            },
+            {
+                "q": "Why might a general insurer's product-level financial planning model need to reflect the genuinely different capital intensity of different product lines (e.g. catastrophe-exposed property versus simpler motor business)?",
+                "a": "A model that allocated capital uniformly across product lines regardless of their genuine risk profile would misrepresent each line's true risk-adjusted profitability, potentially leading management to over-invest in an apparently attractive but genuinely capital-intensive line.",
+                "explain": "This directly recalls SA2's capital-allocation-by-product-line material — worth recognising the same principle applying to general insurance financial planning models specifically."
+            },
+            {
+                "q": "How does this module's financial planning models material connect back to Module 16's financial planning requirements material?",
+                "a": "Module 16 established WHAT a financial plan needs to achieve (balanced, realistic objectives integrating pricing, reserving, capital and reinsurance); this module develops the MODELLING TOOLS (corporate and product-level, stochastic where appropriate) used to actually build and monitor that plan in practice.",
+                "explain": "This closing card ties this module back to Module 16 explicitly — worth recognising Module 16's requirements and this module's modelling tools as two genuinely complementary halves of the same financial planning process."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Exits and transfers",
+        "description": "Covers general insurance portfolio transfer alternatives, the reasons an insurer may wish to transfer business, and the alternative approaches available, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the main alternatives available to a general insurer wishing to exit a line of business or transfer a portfolio, per the official syllabus?",
+                "a": "A formal portfolio transfer (transferring the legal liabilities to another insurer, typically requiring regulatory and sometimes court approval), reinsurance-based exit (ceding substantially all the risk via reinsurance while retaining legal liability), or run-off (ceasing new business while managing existing liabilities to natural expiry).",
+                "explain": "Worth recognising these three genuinely distinct approaches as offering different combinations of speed, cost, and finality — a strong answer should distinguish between them clearly, not treat 'exit' as a single undifferentiated option."
+            },
+            {
+                "q": "Why might an insurer wish to transfer a portfolio of business to another insurer, per the official syllabus's objective on this point?",
+                "a": "Reasons include exiting a line of business no longer aligned with strategy, releasing capital tied up supporting a legacy book, reducing management attention and operational cost devoted to a non-core line, or as part of a wider corporate restructuring or acquisition.",
+                "explain": "Worth recognising these reasons as directly connecting to Module 16's financial planning material — a portfolio transfer is often the concrete IMPLEMENTATION of a strategic decision to refocus the insurer's business."
+            },
+            {
+                "q": "Why might a formal portfolio transfer typically require independent expert review and regulatory or court approval, echoing Module 11's material?",
+                "a": "Since affected policyholders did not choose the new insurer taking on their liabilities, this oversight helps ensure the transfer does not materially disadvantage their security or service, a genuine policyholder protection safeguard given policyholders have no direct say in the transaction.",
+                "explain": "This directly recalls Module 11's transfer-oversight material — worth recognising this as the SAME regulatory protection principle, now developed in more practical detail specifically for portfolio transfers."
+            },
+            {
+                "q": "Why might run-off be a genuinely more suitable exit approach than a formal transfer for a book with highly uncertain, long-tail liabilities (e.g. latent claims, per Module 13)?",
+                "a": "The genuine uncertainty in valuing long-tail liabilities could make it difficult to agree a fair transfer price acceptable to both parties, whereas run-off avoids needing to crystallise this uncertain value upfront, instead managing the liabilities as they genuinely emerge over time.",
+                "explain": "This directly recalls Module 13's latent-claims-uncertainty material — worth recognising that the CHOICE between transfer and run-off should genuinely reflect how confidently the liabilities in question can be valued."
+            },
+            {
+                "q": "Why might an insurer need to consider the genuine capital and management cost of maintaining a run-off book, rather than assuming run-off is always the lowest-cost exit option?",
+                "a": "A run-off book still requires ongoing capital support and specialist claims management attention for potentially many years, so while it avoids an upfront transfer price, its genuine total cost over the run-off period should be weighed against the alternative of a formal transfer with a clean, immediate exit.",
+                "explain": "This directly recalls this module's transfer-alternatives material — worth recognising that 'exit' options should be compared on a genuinely like-for-like TOTAL COST basis, not assumed to be automatically cheaper simply because run-off avoids an upfront price."
+            }
+        ]
+    },
+    {
+        "id": "m19",
+        "title": "Solving complex problems",
+        "description": "Covers applying the full range of SA3 knowledge and skills to genuinely complex, multi-dimensional general insurance problems, per the official syllabus's final topic area.",
+        "cards": [
+            {
+                "q": "What four skills does the official SA3 syllabus's 'Solving problems' topic area explicitly require, echoing Module 1's material?",
+                "a": "Analyse complex problems in terms of actuarial, economic and financial factors; assess the implications and relevance of such factors, integrating results into a coherent whole; evaluate results critically in a wider context, drawing appropriate conclusions; and propose solutions or actions based on that evaluation.",
+                "explain": "This directly recalls Module 1's own restatement of this official syllabus wording — worth memorising this four-stage analyse/assess/evaluate/propose structure as a genuine, examinable answer-writing template."
+            },
+            {
+                "q": "Why does SA3 include a dedicated focus on solving complex problems, beyond the four main weighted topic areas covered in earlier modules?",
+                "a": "Real strategic and technical problems in general insurance rarely fall neatly into a single topic area; a genuinely complex issue typically requires drawing on product/pricing knowledge, regulatory constraints, reserving/reinsurance considerations, and financial planning judgement simultaneously.",
+                "explain": "This directly recalls this course's earlier topic-weighting material — worth recognising this module as the course's deliberate integration point, combining skills the earlier modules mostly developed in isolation."
+            },
+            {
+                "q": "A general insurer must decide whether to withdraw from a catastrophe-exposed property line following several years of adverse experience. Discuss why this represents a genuinely complex issue.",
+                "a": "This decision genuinely involves competing considerations across multiple topic areas at once — the reliability of catastrophe model output informing whether adverse experience reflects genuine trend or random fluctuation (Modules 5-6), reinsurance and capital implications of continuing versus exiting (Modules 14-15), and the strategic/financial planning consequences of withdrawal (Modules 16-18) — requiring integrated judgement.",
+                "explain": "This directly recalls this module's integration theme — worth recognising that resolving this specific issue genuinely requires drawing on catastrophe modelling, reinsurance, capital, and strategic material together, not any single module in isolation."
+            },
+            {
+                "q": "Why might a genuinely complex general insurance issue require an actuary to state reasonable assumptions explicitly, given realistic scenarios rarely provide every fact needed for a definitive answer?",
+                "a": "A strong response explicitly states what assumptions are being made and how they affect the conclusion, rather than either ignoring genuine ambiguity or refusing to reach a conclusion at all, demonstrating the genuine judgement the 'Solving problems' skill area is designed to test.",
+                "explain": "This directly recalls SA1's assumption-stating-under-uncertainty material — worth recognising this as a genuinely valued exam skill across every SA subject, not an admission of weakness in the answer."
+            },
+            {
+                "q": "Why might practising complex, integrated problems be considered the most realistic preparation for the actual SA3 exam, more so than reviewing individual topic areas in isolation?",
+                "a": "Since the real exam typically presents scenarios requiring genuinely integrated analysis across several topic areas at once, practising this kind of integrated problem-solving directly mirrors the actual skill being examined, rather than just topic-by-topic recall.",
+                "explain": "This directly recalls SA1's exam-format material — worth treating this module's integrated-practice approach as directly analogous to genuine exam technique, not merely an academic exercise separate from actual exam preparation."
+            }
+        ]
+    },
+    {
+        "id": "m20",
+        "title": "Glossary",
+        "description": "Consolidates key terminology used throughout the SA3 syllabus, drawing precise definitions from across earlier modules.",
+        "cards": [
+            {
+                "q": "Why does the SA3 syllabus benefit from a dedicated glossary of terms, rather than relying purely on definitions embedded within each topic module, echoing SA1's material?",
+                "a": "A consolidated glossary ensures precise, consistent terminology is used and understood across the whole subject, which matters given how many technical terms (e.g. catastrophe model, matching adjustment-equivalent concepts, latent claim) recur across multiple modules and must be used accurately in exam answers.",
+                "explain": "This directly recalls SA1's glossary rationale — worth treating this closing module as a genuinely practical final revision tool, not a separate new topic."
+            },
+            {
+                "q": "What is a 'catastrophe model', as a precise, glossary-style restatement of Modules 5-6's material?",
+                "a": "A model simulating a large number of hypothetical events using scientific and engineering data (hazard, vulnerability, and financial modules), estimating extreme, rare losses that historical claims data alone cannot reliably capture, used to inform pricing, reinsurance, and capital decisions.",
+                "explain": "This directly recalls Modules 5-6's catastrophe-modelling material — worth treating this as the precise definition to reach for if an exam question asks you to explain or apply catastrophe modelling directly."
+            },
+            {
+                "q": "What is a 'latent claim', as a precise, glossary-style restatement of Module 13's material?",
+                "a": "A claim arising from an event or exposure that may not be reported until many years or decades later, requiring reserving techniques that blend limited own experience with external data, scientific/medical understanding, and legal developments, given the standard reporting-pattern-based techniques' poor suitability.",
+                "explain": "This directly recalls Module 13's latent-claims material — worth treating this as the precise definition to use if asked to explain why latent claims need genuinely different reserving techniques from standard claims."
+            },
+            {
+                "q": "What is 'run-off', as a precise, glossary-style restatement of Module 18's material?",
+                "a": "An exit approach where an insurer ceases writing new business in a line but continues to manage and pay existing liabilities to their natural expiry, avoiding the need to crystallise an upfront transfer price for genuinely uncertain long-tail liabilities.",
+                "explain": "This directly recalls Module 18's exit-alternatives material — worth treating this as the precise definition to use if asked to compare exit options for a general insurance portfolio."
+            },
+            {
+                "q": "Why does this closing glossary module deliberately draw its terms from across every earlier module, rather than introducing wholly new content, echoing SA1's approach?",
+                "a": "A glossary's purpose is genuinely consolidative, not additive — bringing together precise, exam-ready definitions of terms already developed in context throughout Modules 1-19, supporting confident, accurate terminology use in the actual exam.",
+                "explain": "This closing card confirms this module completes SA3's 20-module structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
+            }
+        ]
     }
     ]
 };
