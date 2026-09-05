@@ -18039,4 +18039,156 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP4: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP4 all about?",
+        "description": "An orientation chapter explaining SP4's role as the Specialist Principles subject introducing the main principles relevant to the provision of pensions and other benefits, and how it feeds into SA4.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SP4, according to its official syllabus?",
+                "a": "To understand the main principles that are relevant to the provision of pensions and other benefits, including the design and financing of benefit arrangements, the methods of valuation, and the management and monitoring of risks that are relevant to benefit arrangements.",
+                "explain": "This is the genuine, official IFoA syllabus wording — worth noting SP4's genuinely broad scope: it covers pensions AND other benefits together, not pensions alone."
+            },
+            {
+                "q": "Which subjects does SP4 build directly on, according to its official links across the qualification?",
+                "a": "CM1 (Actuarial Mathematics) provides the fundamental quantitative principles used in the financing and valuing of benefit arrangements, while CP1 (Actuarial Practice) provides fundamental background on different types of risk from an actuarial perspective and how these risks can be managed.",
+                "explain": "Worth recognising CM1 as SP4's genuine quantitative foundation (given the heavy valuation/modelling content in topic 4's 30% weighting) and CP1 as its risk-management foundation."
+            },
+            {
+                "q": "What are the five official syllabus topic areas of SP4, and their approximate topic weightings?",
+                "a": "Pension provision and the general business environment (20%); Scheme design and financing (20%); Managing schemes and risks (20%); Models, valuations and setting assumptions (30%); and Monitoring experience and the Actuarial Control Cycle (10%).",
+                "explain": "Worth memorising these weightings directly — 'Models, valuations and setting assumptions' at 30% is genuinely the single largest topic area, a notably heavier weighting than SP1's/SP2's equivalent 15% 'Models and valuation' topic, reflecting the genuinely central role of actuarial valuation in pensions work."
+            },
+            {
+                "q": "How does SP4's topic structure genuinely differ from SP1's and SP2's, despite sharing a broadly similar five-part shape?",
+                "a": "SP4 splits its risk-management coverage across a combined 'Managing schemes and risks' topic (20%) rather than SP1/SP2's more granular separate treatment, and weights valuation-related content notably more heavily (30% versus SP1/SP2's 15%), reflecting pensions work's genuinely greater emphasis on funding valuations relative to product design.",
+                "explain": "Worth recognising that while all three SP subjects share a broadly similar five-topic template, the RELATIVE EMPHASIS genuinely differs — SP4 is more valuation-heavy, while SP1/SP2 are more evenly split between design, risk, and valuation."
+            },
+            {
+                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP4?",
+                "a": "Approximately 25% knowledge, 50% application, and 25% higher-order skills — the same split as SP1 and SP2, and the standard SP-subject pattern across the whole curriculum.",
+                "explain": "Worth recognising this split as genuinely universal across all SP subjects, distinct from the SA subjects' typical 20/50/30 split — SP subjects place relatively more weight on straightforward knowledge recall than their SA counterparts."
+            },
+            {
+                "q": "Why might understanding SP4's five topic areas as a coherent sequence (provision/environment → design/financing → managing risk → valuation → monitoring) help structure revision, echoing SP1's and SP2's equivalent material?",
+                "a": "This sequence genuinely mirrors a benefit arrangement's real lifecycle — first understanding the environment benefits are provided within, then how they're designed and financed, then how the resulting risks are managed, then how the arrangement is valued, and finally how actual experience is monitored — each stage building on genuine understanding from the one before.",
+                "explain": "This directly recalls SP1's and SP2's identical lifecycle-sequencing material — worth recognising this five-stage structure as a genuinely universal SP-subject template, applied here to pensions and other benefits specifically."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Stakeholders in benefit provision",
+        "description": "Covers the roles and responsibilities of the different stakeholders involved in providing pensions and other benefits, and comparing State, public and private sector provision, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine stakeholders does the official SP4 syllabus (objective 1.1) require candidates to understand the roles and responsibilities of?",
+                "a": "State and statutory bodies, employers or groups of employers, trustees or scheme managers, financial advisers for individuals, consultants and other professional advisers, and individuals or groups of individuals.",
+                "explain": "Worth memorising this exact list — it defines the genuine range of parties SP4 expects candidates to understand as having distinct roles in the provision of pensions and other benefits, none of which should be conflated with another."
+            },
+            {
+                "q": "Why must trustees or scheme managers be understood as occupying a genuinely distinct role from the employer that sponsors a pension scheme?",
+                "a": "Trustees typically hold a genuine fiduciary duty to act in the best interests of scheme members and beneficiaries, which can require them to exercise independent judgement (e.g. on funding, investment strategy) that may not always align with the sponsoring employer's own commercial interests, a structurally distinct role from the employer's own management.",
+                "explain": "This directly recalls SA4's trustee-fiduciary-duty material — worth recognising this genuine role separation as examinable even at SP4's more foundational level, not exclusively an SA4-level concept."
+            },
+            {
+                "q": "Why might consultants and other professional advisers play a genuinely important role for a pension scheme's trustees, distinct from the scheme actuary's own role?",
+                "a": "Consultants can provide independent advice on investment strategy, scheme administration, or legal matters, helping trustees make genuinely informed decisions across a range of specialist areas beyond the scheme actuary's specific technical valuation and funding expertise, supporting a genuinely well-rounded governance structure.",
+                "explain": "Worth recognising that sound scheme governance typically draws on MULTIPLE distinct professional advisers, each contributing genuinely different expertise, not relying on a single adviser for every decision."
+            },
+            {
+                "q": "What genuine comparison does the official syllabus (objective 1.2) require between State, public and private sector provision of benefits?",
+                "a": "Understanding and comparing how State provision (e.g. State pensions), public sector employer provision (e.g. government or public body pension schemes), and private sector employer provision genuinely differ in their design, financing, and risk allocation approaches.",
+                "explain": "Worth recognising this comparison as directly previewing this course's later scheme-design material — understanding how these three provision types genuinely differ provides essential context before designing or advising on any specific arrangement."
+            },
+            {
+                "q": "Why might public sector pension provision genuinely differ from private sector provision in its typical financing approach?",
+                "a": "Public sector schemes are sometimes financed on an unfunded (pay-as-you-go) basis, backed by the State's ongoing taxation power, while private sector schemes are typically funded, requiring assets to be genuinely accumulated in advance to meet promised benefits — a fundamentally different financing philosophy reflecting the different underlying financial backing available to each sector.",
+                "explain": "This directly previews this course's later financing-methods module — worth recognising unfunded, pay-as-you-go financing as a genuinely distinct approach available to public sector (and State) provision that is typically not available to private sector employers."
+            },
+            {
+                "q": "Why might individuals themselves be considered a genuine stakeholder category distinct from 'employers' in benefit provision, even for an employer-sponsored scheme?",
+                "a": "Individuals genuinely bear the ultimate consequences of benefit design and funding decisions (e.g. their own retirement income adequacy), and in many arrangements (particularly DC) also make genuine decisions themselves (e.g. contribution levels, investment choices), giving them a distinct stakeholder interest and role separate from the employer providing the arrangement.",
+                "explain": "This directly previews this course's later scheme-design material — worth recognising individuals as genuine ACTIVE stakeholders in many benefit arrangements, not merely passive recipients of whatever the employer and trustees decide."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "The environment's impact on stakeholders, and sponsor covenant",
+        "description": "Covers how the environment in which benefits are provided affects different stakeholders, and the relevance and measurement of sponsor covenant, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine environmental impacts on stakeholders does the official syllabus (objective 1.3) require candidates to identify?",
+                "a": "Different presentation and reporting of benefits and contributions, regulation and taxation, and relevant professional guidance for actuaries or other professional advisers — three genuinely distinct ways the wider environment shapes how benefit provision is actually experienced and managed by different stakeholders.",
+                "explain": "Worth memorising this exact three-part list — it defines the genuine environmental-impact scope SP4 expects, directly echoing SP1's and SP2's parallel operating-environment material."
+            },
+            {
+                "q": "Why might different presentation and reporting requirements for benefits and contributions genuinely affect how stakeholders perceive and make decisions about a benefit arrangement?",
+                "a": "How a benefit's cost or value is presented (e.g. as an annual contribution rate versus a total accrued benefit value) can genuinely shape stakeholder understanding and decision-making even where the underlying economic reality is identical, making presentation and reporting choices a genuinely important, not merely cosmetic, consideration.",
+                "explain": "Worth recognising that presentation genuinely affects PERCEPTION and DECISION-MAKING, not just how information is formally recorded — a theme echoing CP3's communication-shapes-understanding material."
+            },
+            {
+                "q": "What is 'sponsor covenant', and why is its relevance explicitly named in the official syllabus (objective 1.4) as a distinct topic within the business environment?",
+                "a": "Sponsor covenant is the sponsoring employer's financial ability and willingness to support a pension scheme (e.g. through ongoing contributions) over time; it is explicitly named because member security in a DB scheme depends directly on a THIRD PARTY's (the sponsor's) ongoing financial health, a genuinely distinctive risk not present in most other financial arrangements.",
+                "explain": "This directly recalls SA4's sponsor-covenant material — worth recognising sponsor covenant as examinable even at SP4's foundational level, not exclusively an SA4-level concept, given its genuine centrality to DB scheme security."
+            },
+            {
+                "q": "What genuine methods might be used to measure sponsor covenant, per the official syllabus objective 1.4?",
+                "a": "Assessing the sponsor's financial statements and credit rating, its cashflow generation capacity relative to the scheme's funding needs, its wider business prospects and competitive position, and any legal or structural factors affecting the scheme's claim on sponsor assets in the event of insolvency.",
+                "explain": "Worth recognising covenant measurement as drawing on genuinely diverse information sources — financial, commercial, and legal — not a single financial ratio calculation alone."
+            },
+            {
+                "q": "Why does the official syllabus explicitly require understanding the 'integration of sponsor covenant with funding and investment' (objective 1.4), rather than treating covenant as a standalone assessment?",
+                "a": "Covenant strength should genuinely inform both funding strategy (e.g. how quickly a shortfall should be recovered) and investment strategy (e.g. how much investment risk the scheme can reasonably tolerate given the covenant's ability to absorb any resulting shortfall), meaning covenant assessment is only genuinely useful when actively connected to these other decisions, not conducted in isolation.",
+                "explain": "This directly previews this course's later funding and investment-strategy material — worth recognising covenant assessment as an INPUT feeding directly into other decisions, not a standalone report produced for its own sake."
+            },
+            {
+                "q": "Why might a scheme with a genuinely strong sponsor covenant reasonably adopt a different funding and investment approach than an identical scheme with a weak covenant?",
+                "a": "A strong covenant can support a longer recovery period and more investment risk (since the sponsor can reasonably be relied upon to address any resulting shortfall), while a weak covenant may require a shorter recovery period and more cautious investment strategy to avoid relying on sponsor support that may not reliably be available.",
+                "explain": "This directly recalls SA4's covenant-strength-shapes-strategy material — worth recognising this as the concrete, practical CONSEQUENCE of the covenant-integration principle raised in the previous card."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Financing methods for benefits",
+        "description": "Covers the different ways in which providers may finance the benefits they provide, including timing of contributions, investment forms, and insurance products, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine financing approaches does the official syllabus (objective 2.1) require candidates to understand?",
+                "a": "The timing of contributions relative to when benefits are due to be paid, the forms and characteristics of investment that may be available if benefits are funded, financial instruments (including contingent assets) that may be used to back benefit promises, and insurance products (including protection and annuity policies).",
+                "explain": "Worth memorising this exact four-part list — it defines the genuine financing-method scope SP4 expects candidates to understand before considering scheme DESIGN in the next module."
+            },
+            {
+                "q": "What is the genuine difference between 'pay-as-you-go' (unfunded) and 'funded' financing of benefits, echoing Module 2's public-versus-private-sector material?",
+                "a": "Pay-as-you-go financing pays benefits from current income (e.g. current taxation or current contributions) as they fall due, with no significant advance asset accumulation, while funded financing accumulates genuine assets in advance, specifically earmarked to meet promised future benefits.",
+                "explain": "This directly recalls Module 2's public-sector-financing material — worth recognising this as the single most fundamental financing choice a benefit provider faces, with direct implications for genuine security, investment strategy, and intergenerational fairness."
+            },
+            {
+                "q": "What is a 'contingent asset' in the context of financing pension benefits, and why might a sponsor use one to support a scheme?",
+                "a": "A contingent asset is a genuine claim on specific sponsor (or related-party) assets that only becomes available to the scheme under specified trigger conditions (e.g. sponsor insolvency), providing additional genuine security to the scheme without requiring the sponsor to make an immediate cash contribution.",
+                "explain": "Worth recognising contingent assets as a genuinely useful FLEXIBLE financing tool — they can enhance genuine scheme security without the sponsor needing to commit cash upfront, a middle ground between pure cash funding and no additional security at all."
+            },
+            {
+                "q": "Why might a benefit provider use insurance products (protection or annuity policies) as part of its financing approach, rather than relying purely on self-funded investment assets?",
+                "a": "Insurance products can transfer specific risks (e.g. mortality/longevity risk via annuity purchase, or death-in-service risk via protection policies) to a specialist insurer, potentially more efficiently than the provider bearing and reserving for that risk itself, echoing this course's later reinsurance-style risk-transfer material.",
+                "explain": "This directly previews this course's later risk-management module — worth recognising insurance products as a genuine FINANCING AND RISK-TRANSFER tool available even at the initial benefit-design stage, not only as an after-the-fact risk management technique."
+            },
+            {
+                "q": "Why might the FORM of investment available for funded benefits (e.g. equities, bonds, property) genuinely matter for financing strategy, beyond simply choosing to fund rather than pay-as-you-go?",
+                "a": "Different investment forms carry genuinely different expected return, volatility, and liquidity characteristics, so the specific investment forms available and chosen directly shape how much funding is genuinely needed and how reliably it will meet promised benefits, making investment form a genuine, not merely secondary, financing decision.",
+                "explain": "This directly previews this course's later investment-strategy material — worth recognising the CHOICE OF FUNDING (versus pay-as-you-go) and the CHOICE OF INVESTMENT FORM as two genuinely distinct, sequential financing decisions."
+            },
+            {
+                "q": "How does this module's financing material connect forward to Module 5's scheme-design material?",
+                "a": "This module established the genuine financing TOOLS available (timing, investment forms, contingent assets, insurance products); Module 5 will show how these tools are actually combined and applied when determining a suitable overall DESIGN for a specific pension scheme or benefit arrangement.",
+                "explain": "This closing card ties this module directly to Module 5 — worth recognising financing methods as the genuine TOOLKIT that scheme design decisions (covered next) must draw upon and combine appropriately."
+            }
+        ]
+    }
+
+    ]
 };
