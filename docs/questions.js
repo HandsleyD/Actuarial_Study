@@ -4280,4 +4280,582 @@ const QUESTIONS = {
       ],
     },
   ],
+  SA1: [
+    {
+      id: "sa1-q1",
+      title: "Long-term health and care products for a new market entrant",
+      modules: "Modules 1, 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 3,
+          question:
+            "A general insurer with no prior health and care experience is considering launching an income protection (IP) product. Define 'deferred period' and 'moratorium underwriting', and state which of these two concepts is directly relevant to IP.",
+          answer:
+            "The deferred period is the waiting period between the start of incapacity and when IP benefit payments begin, during which no benefit is paid. Moratorium underwriting is an approach excluding pre-existing conditions for an initial period after the policy starts, after which they become covered if not recurring. The deferred period is the concept directly relevant to IP; moratorium underwriting is more commonly associated with PMI.",
+          note: "A strong answer notes both terms precisely but correctly identifies only one as directly relevant to this specific product, rather than conflating them.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why critical illness (CI) insurance requires pricing assumptions that jointly model incidence and mortality, rather than incidence alone.",
+          answer:
+            "A policyholder who dies before a covered condition is diagnosed will never generate a CI claim for that condition, so mortality and CI incidence compete for the same life &mdash; pricing that ignored this competing-risks interaction and used incidence rates alone (unadjusted for the possibility of death occurring first) would overstate expected claims.",
+          note: "Candidates should name the competing-risks mechanism explicitly, not just assert that 'mortality matters'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss two reasons why long-term care (LTC) insurance is generally considered a materially riskier product for an insurer to price and reserve for than either IP or CI.",
+          answer:
+            "First, LTC combines longevity risk and care-need incidence risk, and both are genuinely long-term and compounding &mdash; an error in either assumption compounds over a potentially very long claim duration, unlike a single-trigger product. Second, LTC is highly sensitive to future medical advances and economic/care-cost inflation over a very long time horizon, both of which are genuinely difficult to project decades ahead with confidence, unlike a shorter-tail product where such assumptions need only hold over a shorter window.",
+          note: "Any two genuinely distinct, well-explained reasons should be accepted, including ADL-trigger subjectivity or the moral hazard point, provided they are properly justified rather than merely asserted.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this new entrant should expect underwriting and pricing for these products to require more actuarial judgement than the general insurance products it already writes.",
+          answer:
+            "Health and care products involve genuinely long-term, medically-driven risk drivers with limited own historical data available to a new entrant, so pricing and reserving cannot rely purely on established statistical technique; genuine actuarial judgement, blended with external data and professional standards, is required to a materially greater extent than for many general insurance lines.",
+          note: "This connects directly to the credibility-theory and new-product-pricing-judgement themes developed across this course.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q2",
+      title: "Short-term products and product analysis",
+      modules: "Modules 3, 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 3,
+          question:
+            "Define 'health cash plan' and 'private medical insurance' (PMI), and identify the key structural difference between them.",
+          answer:
+            "A health cash plan pays fixed cash benefits toward the cost of routine treatments (e.g. dental, optical) regardless of the actual cost incurred, while PMI reimburses (or pays providers directly for) the actual cost of private medical treatment, typically up to specified limits. The key structural difference is fixed-cash-benefit versus cost-reimbursement.",
+          note: "A complete answer states both definitions precisely and explicitly names the fixed-versus-reimbursement distinction, not just a vague sense that they're different.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why PMI is generally considered a short-tail product, and why this affects how it can be priced compared with long-term care insurance.",
+          answer:
+            "PMI claims are typically reported and settled relatively quickly after treatment, and premiums are usually reviewed and reset annually, so pricing need only reflect near-term medical cost assumptions rather than needing to project decades of future experience &mdash; unlike LTC, which locks in long-term assumptions at outset that cannot be easily corrected through annual repricing.",
+          note: "Candidates should connect 'short-tail' directly to the practical implication that annual repricing allows regular assumption correction.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A health and care insurer is analysing its PMI product against customer needs in a market with comprehensive, free-at-point-of-use State healthcare provision. Discuss what this product analysis needs to establish about the genuine value proposition of PMI in this market.",
+          answer:
+            "The analysis needs to establish precisely what gap PMI fills given the State provision already available &mdash; typically speed of access, choice of provider/consultant, and comfort/privacy of treatment, rather than access to care that would otherwise be entirely unavailable. This matters because a product's genuine value proposition, and hence its appropriate pricing and marketing, depends directly on what customers cannot already obtain for free through the State system.",
+          note: "This directly tests the State-provision-interaction theme; a strong answer explicitly connects product value to what the State does NOT provide, not just what the product itself contains.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a bundled product combining PMI and health cash plan benefits might require more than simply adding the two products' standalone prices together.",
+          answer:
+            "Bundled benefits can have genuine interactions (e.g. overlapping benefit triggers, or combined risk correlation) that a naive sum-of-standalone-prices approach would miss, so the combined product should genuinely be priced holistically rather than as two independent components simply added together.",
+          note: "This connects to the general bundling-pricing principle developed for other product combinations (e.g. CI and life cover) elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q3",
+      title: "General business environment: distribution and external influences",
+      modules: "Modules 5, 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the roles of the State and employers in providing health and care benefits directly shape how a private insurer should design its distribution strategy.",
+          answer:
+            "Where the State provides comprehensive baseline provision, private products typically need to be marketed as supplementary; where employers play a large role as group purchasers, employer relationships become a genuinely central distribution channel distinct from direct-to-individual sales. The insurer's distribution strategy must therefore be tailored to the specific balance of State, employer and private provision in its target market, not designed generically.",
+          note: "A strong answer explicitly connects the market's State/employer balance to concrete distribution-channel implications, not just described in the abstract.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why many jurisdictions restrict insurers from using genetic test results in underwriting, and identify one other underwriting-related regulatory restriction relevant to health and care insurance.",
+          answer:
+            "Restricting genetic test results aims to prevent discrimination based on predictive information the applicant may not have fully processed themselves, and to avoid discouraging people from taking medically valuable genetic tests out of fear of losing insurability &mdash; a public-interest and fairness objective beyond pure risk assessment. Another relevant restriction is limits on the underwriting factors that can be used more generally (e.g. restrictions on using certain demographic characteristics), reflecting the same broader fairness objective.",
+          note: "Any genuinely valid second restriction should be accepted provided it's properly explained, not merely named.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a pandemic represents a particularly severe risk for a health and care insurer specifically, compared with many other external business-environment shocks.",
+          answer:
+            "A pandemic can cause significant, correlated deviations in both mortality and morbidity across a whole population simultaneously, directly affecting multiple product lines (IP, CI, PMI) at once, unlike a shock confined to a single risk driver or product line. This correlated, multi-product impact is not well captured by assumptions of independent risk across policyholders, meaning standard diversification benefits an insurer might otherwise rely on can genuinely fail precisely when they are most needed.",
+          note: "Candidates should explicitly identify the CORRELATED, multi-product nature of pandemic risk as the distinguishing feature, not just describe pandemics generically as 'bad for business'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why monitoring the external business environment needs to be an ongoing exercise for a health and care insurer, rather than a one-off assessment.",
+          answer:
+            "Demographic, medical, economic, political, social, pandemic and climate factors all continue to evolve over time, so an assessment conducted once and never revisited would quickly become outdated, leaving the insurer's strategy and assumptions based on a stale picture of its actual operating environment.",
+          note: "This connects directly to the recurring ongoing-review theme developed throughout this course.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q4",
+      title: "Pricing a critical illness product",
+      modules: "Modules 7, 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A health and care insurer is pricing a one-year renewable critical illness rider with a sum insured of £50,000. The assumed annual incidence rate is 0.004, and expenses are assumed to be 10% of the gross premium, with no other loadings and no discounting within the one-year term. Using the equivalence principle, calculate the required annual premium.",
+          answer:
+            "Expected cost of benefits = 0.004 &times; &pound;50,000 = &pound;200. Setting gross premium P such that P &times; (1 &minus; 0.10) = &pound;200 gives P = &pound;200 / 0.90 = &pound;222.22 (to the nearest penny).",
+          note: "Verified: 0.004 × 50000 = 200; 200 / 0.9 = 222.22 (Node-verified). Full marks require setting up the equivalence-principle equation explicitly, not just stating the final figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer might choose reviewable, rather than guaranteed, premiums for a longer-term version of this product.",
+          answer:
+            "Reviewable premiums let the insurer adjust rates if future incidence or medical-inflation experience diverges materially from the original pricing assumptions, managing the insurer's risk over what could be a long contract term &mdash; at the cost of introducing genuine premium uncertainty for the policyholder, a direct trade-off between insurer risk management and policyholder certainty.",
+          note: "A strong answer names the trade-off explicitly (insurer risk management versus policyholder certainty), not just one side of it.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why this insurer should conduct profit testing before finalising this product's pricing, rather than relying solely on the equivalence-principle premium calculated in part (i).",
+          answer:
+            "Profit testing projects the product's expected cashflows over its full lifetime (including expenses, lapses, and any embedded options) to confirm the pricing genuinely achieves the insurer's target profitability, which a single equivalence-principle calculation covering only expected benefit cost and expenses does not fully verify &mdash; particularly important given the genuine complexity of real product cashflow patterns.",
+          note: "Candidates should recognise profit testing as a verification step distinct from, and following on from, the initial equivalence-principle premium calculation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this product's expense assumption may need particular care compared with a simple term life insurance product.",
+          answer:
+            "Health and care products like this often involve genuinely significant claims-handling and medical assessment costs (e.g. verifying a claimed condition against policy definitions) beyond standard policy administration, which must be appropriately captured in the expense assumption, unlike a simpler term life product with a more straightforward claims process.",
+          note: "This connects to the claims-handling-expense theme developed for health and care products specifically elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q5",
+      title: "Taxation and the general regulatory environment",
+      modules: "Modules 9, 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the tax treatment of premiums and benefits directly affects the attractiveness of a health and care product to customers.",
+          answer:
+            "If premiums are tax-deductible or benefits are received tax-free, the effective cost to the customer or value of the benefit changes, directly affecting demand and the price the insurer can competitively charge &mdash; the same underlying cover can be genuinely more or less attractive purely because of how it is taxed.",
+          note: "A complete answer explains the mechanism (effective cost/value changes), not just asserts that tax 'matters'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why employer-paid group health and care premiums might receive different tax treatment from individually purchased premiums, and why this matters for product strategy.",
+          answer:
+            "Many jurisdictions treat employer-provided benefits as a form of remuneration with their own specific tax rules (e.g. benefit-in-kind charges or employer deductibility), distinct from individually purchased cover. This matters because the same underlying cover can carry genuinely different net cost depending purely on the purchase channel, directly affecting which distribution channel (Module 5) is most attractive to a given customer segment.",
+          note: "A strong answer connects this back to distribution-channel strategy, not just describes the tax difference in isolation.",
+        },
+        {
+          label: "(iii)",
+          command: "Distinguish",
+          marks: 3,
+          question:
+            "Distinguish between prudential and conduct regulation, and explain which is more directly relevant to restrictions on using genetic test results in underwriting.",
+          answer:
+            "Prudential regulation focuses on an insurer's financial soundness and ability to meet obligations, while conduct regulation focuses on how insurers treat customers, including fair and non-discriminatory treatment. Restrictions on genetic test results are a conduct-regulation matter, since they concern fair treatment of applicants rather than the insurer's financial soundness.",
+          note: "Candidates should give a precise definition of both terms before correctly attributing the genetic-testing restriction to conduct regulation specifically.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question:
+            "Comment on why an independent regulatory body, rather than a government department directly, typically oversees insurance regulation.",
+          answer:
+            "An independent regulator can apply technical expertise and maintain consistency of approach somewhat insulated from short-term political pressures, though it typically still operates within a legal framework set by government, balancing genuine technical independence against democratic accountability.",
+          note: "A strong answer acknowledges both the benefit (technical independence) and the constraint (remaining accountable within a legal framework), not just one side.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q6",
+      title: "Solvency II capital requirements for a health and care insurer",
+      modules: "Modules 11, 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A health and care insurer's long-term care book has a best estimate liability (BEL) of &pound;10,000,000. The risk margin is assessed as 6% of BEL. The Solvency Capital Requirement (SCR) is assessed as 15% of BEL, and the Minimum Capital Requirement (MCR) is 25% of the SCR. Calculate (a) the total technical provisions, (b) the SCR, and (c) the MCR.",
+          answer:
+            "(a) Risk margin = 6% &times; &pound;10,000,000 = &pound;600,000, so total technical provisions = &pound;10,000,000 + &pound;600,000 = &pound;10,600,000. (b) SCR = 15% &times; &pound;10,000,000 = &pound;1,500,000. (c) MCR = 25% &times; &pound;1,500,000 = &pound;375,000.",
+          note: "Verified: 0.06×10,000,000=600,000; TP=10,600,000; 0.15×10,000,000=1,500,000; 0.25×1,500,000=375,000 (Node-verified). Marks are typically split across the three sub-calculations.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the risk margin calculated in part (i) is likely to represent a proportionately larger share of total technical provisions for this long-term care book than it would for a short-tail PMI book.",
+          answer:
+            "The risk margin compensates for the cost of holding capital against non-hedgeable risks over the liability's remaining lifetime, and a long-duration product like LTC carries this capital cost for far longer than a short-tail product like PMI, making the risk margin proportionately larger for LTC given its genuinely extended time horizon.",
+          note: "A strong answer explicitly connects duration to the capital-cost-over-time mechanism, not just asserts LTC is 'riskier'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss one reason this insurer might choose to develop an internal model rather than use the Solvency II standard formula to calculate its SCR.",
+          answer:
+            "An internal model can better reflect the insurer's own genuine risk profile (e.g. its specific correlation structure between morbidity risks) than a generic standard formula calibrated across the whole industry, potentially producing a more risk-sensitive and possibly lower capital requirement, though this requires regulatory approval and significant development investment.",
+          note: "Any one genuinely valid, well-explained reason should be accepted.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this insurer's Own Risk and Solvency Assessment (ORSA) should include forward-looking stress testing, in addition to the point-in-time calculations in part (i).",
+          answer:
+            "The calculations in part (i) capture the insurer's current risk position, but not how its solvency might evolve under future adverse scenarios (e.g. a pandemic or medical inflation shock), so forward-looking stress testing provides genuinely additional insight into resilience over time that a single point-in-time calculation cannot.",
+          note: "This connects the numeric SCR/MCR calculation directly to the ORSA's genuinely forward-looking purpose.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q7",
+      title: "Comparative regulation and professional standards",
+      modules: "Modules 13, 15",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a health and care insurer operating outside the Solvency II framework might still be subject to a broadly similar risk-based capital regime.",
+          answer:
+            "Different jurisdictions have developed their own risk-based capital frameworks (e.g. risk-based capital, RBC, systems used elsewhere) that share Solvency II's broad goal of ensuring adequate capital relative to risk, but differ in technical detail, calibration, and structure, reflecting genuinely different regulatory traditions pursuing a similar underlying objective.",
+          note: "A strong answer recognises Solvency II as one example of a risk-based capital regime, not the only possible approach.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why an SA1 candidate should focus on understanding general regulatory principles, rather than memorising the detail of a single specific regulatory regime.",
+          answer:
+            "SA1 exam scenarios often present unfamiliar or fictional regulatory regimes, so understanding the underlying principles different approaches share (e.g. prudential soundness, fair conduct) equips candidates to reason about genuinely novel regulatory contexts, whereas memorised detail specific to one real regime may not transfer directly to an unfamiliar scenario.",
+          note: "This connects directly to SA1's stated exam-format approach of testing applied judgement over memorised, jurisdiction-specific detail.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an actuary holding a statutory reporting role for this insurer may have personal professional responsibilities distinct from the insurer's general corporate obligations.",
+          answer:
+            "A statutory actuarial role typically carries personal accountability for specific technical opinions (e.g. on reserve adequacy), meaning the individual actuary can face professional consequences distinct from, and sometimes in tension with, the wider commercial interests of the insurer employing them.",
+          note: "A strong answer names this personal-accountability structure explicitly as a deliberate design feature, not merely a technicality.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question:
+            "The insurer's finance director asks the Chief Actuary to adopt more optimistic long-term care morbidity assumptions to improve reported profit. Comment on how the Chief Actuary should respond.",
+          answer:
+            "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement, meaning commercial pressure to adopt a particular assumption does not override this obligation; the Chief Actuary should maintain assumptions genuinely supported by the evidence, clearly document the reasoning, and escalate through appropriate channels if pressure continues, rather than adjusting the assumption simply to satisfy the request.",
+          note: "This is a directly testable ethical scenario; a strong answer explicitly refuses to simply comply while describing a constructive, professional path forward.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q8",
+      title: "Capital management and reinsurance",
+      modules: "Modules 16, 17",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a health and care insurer might hold capital buffers above its calculated SCR, rather than managing capital exactly to the regulatory minimum.",
+          answer:
+            "A buffer provides genuine resilience against adverse experience (e.g. a pandemic morbidity shock) or assumption changes without immediately breaching regulatory thresholds, giving the insurer time and flexibility to respond before facing urgent regulatory intervention, unlike managing capital exactly to the SCR which offers no such margin for error.",
+          note: "A strong answer connects the buffer directly to the stress-testing/ORSA themes developed elsewhere in this course.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why excess of loss reinsurance is particularly well suited to protecting this insurer against a pandemic-driven morbidity shock, compared with quota share reinsurance.",
+          answer:
+            "Excess of loss reinsurance responds when aggregate claims from an event exceed a specified threshold, directly targeting the correlated, catastrophic loss pattern a pandemic creates, whereas quota share cedes a fixed proportion of every individual policy's risk regardless of whether losses are correlated, providing less targeted protection against this specific type of aggregate, correlated shock.",
+          note: "Candidates should explicitly distinguish the AGGREGATE, CORRELATED nature of the risk excess of loss targets, not just describe both structures generically.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "This insurer is considering raising its retention level (reducing reinsurance cover) on its critical illness book to increase expected retained profit. Discuss the genuine trade-off involved in this decision.",
+          answer:
+            "A higher retention keeps more premium and expected profit potential with the insurer, but exposes it to greater volatility and capital strain from adverse incidence experience; a lower retention (more reinsurance) reduces volatility but cedes more expected profit to the reinsurer &mdash; this is a genuine risk-return trade-off that should be assessed against the insurer's specific risk appetite and current capital position, not decided on expected profit alone.",
+          note: "A strong answer explicitly frames this as a risk-return trade-off requiring judgement against risk appetite, not a straightforward 'more retention is better' conclusion.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why reinsurer counterparty risk should be considered when this insurer designs its reinsurance programme.",
+          answer:
+            "Ceding risk to a reinsurer only provides genuine protection if the reinsurer remains able to pay recoveries when needed, so the insurer should diversify across multiple reinsurers and monitor reinsurer credit quality, recognising that reinsurance transfers risk rather than eliminating it entirely.",
+          note: "This connects to the general counterparty/credit risk theme developed elsewhere across the actuarial curriculum.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q9",
+      title: "Asset-liability management for a long-term care book",
+      modules: "Module 18",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 4,
+          question:
+            "Explain why asset-liability management (ALM) is particularly important for a long-term care insurance book, and identify one specific technique the insurer could use.",
+          answer:
+            "A long-duration LTC liability's value is highly sensitive to interest rate changes over a very long horizon, so ALM is needed to protect the insurer's balance sheet from adverse rate movements. One specific technique is duration matching (or immunisation) &mdash; holding assets whose value moves similarly to the liabilities in response to interest rate changes, e.g. through cashflow-matched bond portfolios.",
+          note: "A strong answer names a genuine technique (duration matching, immunisation, or cashflow matching), not just asserts that 'assets and liabilities should be matched'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this insurer might also value holding a meaningful allocation to liquid assets, even though most of its liabilities are long-duration.",
+          answer:
+            "Even a predominantly long-duration book has some near-term cashflow needs (claims payments, expenses), so genuine liquidity risk management requires holding sufficient liquid assets to meet these without being forced to sell less liquid, longer-duration assets at a potentially unfavourable time.",
+          note: "Candidates should recognise that duration matching alone does not fully address liquidity risk; a separate, near-term liquidity allocation is also needed.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why inflation-linked assets might be a valuable component of this insurer's ALM strategy for its LTC book specifically.",
+          answer:
+            "If LTC benefit payments are linked to care-cost inflation, holding assets whose value also responds to inflation helps protect the insurer against inflation eroding the real matching quality of a purely nominal asset portfolio, directly addressing the genuinely important medical/care-cost inflation risk driver identified elsewhere for this product.",
+          note: "A strong answer connects this directly to the specific inflation-sensitivity of LTC benefits, not inflation-linked assets in the abstract.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why ALM alone cannot fully address this insurer's overall risk position for its LTC book.",
+          answer:
+            "ALM is an asset-side tool addressing financial (interest rate, inflation) risk, but cannot address liability-side morbidity and longevity risk drivers, which instead require separate techniques such as reinsurance and sound reserving; ALM therefore addresses only part of the insurer's overall risk position, not the whole of it.",
+          note: "This connects directly to the point that ALM and reinsurance/reserving are complementary, not substitute, risk management tools.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q10",
+      title: "Analysis of experience and surplus",
+      modules: "Modules 19, 20",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A health and care insurer expected 500 critical illness claims in the year, each averaging &pound;2,000 in expected cost, but actually experienced 540 claims at the same average cost. Calculate the expected total claims cost, the actual total claims cost, and the resulting experience variance, stating whether it is favourable or adverse from the insurer's perspective.",
+          answer:
+            "Expected total claims cost = 500 &times; &pound;2,000 = &pound;1,000,000. Actual total claims cost = 540 &times; &pound;2,000 = &pound;1,080,000. The variance is &pound;1,080,000 &minus; &pound;1,000,000 = &pound;80,000, which is adverse (a loss relative to assumption) since actual claims cost exceeded the expected amount.",
+          note: "Verified: 500×2000=1,000,000; 540×2000=1,080,000; difference=80,000 (Node-verified). Marks are typically split across the expected figure, actual figure, and correctly labelling the variance as adverse.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the insurer should investigate whether this variance reflects genuine random fluctuation or a persistent trend, before deciding whether to revise its incidence assumption.",
+          answer:
+            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts &mdash; revising the assumption based on noise alone could introduce unnecessary pricing or reserving change, while ignoring a genuine trend could leave the insurer under-reserved or mispriced going forward.",
+          note: "A strong answer explicitly frames this as a statistical-significance judgement, not simply 'more data is needed' without explaining why.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the insurer's overall surplus analysis should separately identify the 'expected' release of margins from experience variances such as the one in part (i).",
+          answer:
+            "The expected component reflects prudent margins built into original pricing/reserving assumptions that are expected to emerge as profit purely through the passage of time, forming a predictable baseline; separately identifying experience variances (like the adverse claims variance above) reveals genuinely unexpected deviations from that baseline, which is what actually informs sound management action &mdash; conflating the two would obscure whether results moved as planned or due to a genuine, unexpected issue.",
+          note: "A strong answer explicitly explains why conflating expected release and experience variance would reduce the analysis's diagnostic value.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this experience finding should feed back into both the insurer's pricing and reserving assumptions, not just one of the two.",
+          answer:
+            "The same underlying experience (higher-than-assumed incidence) affects both the pricing of new business going forward and the adequacy of reserves already held for existing business, so a genuinely complete response to this finding must consider both applications together, not address only pricing or only reserving in isolation.",
+          note: "This connects directly to the theme that experience analysis is a genuinely central activity feeding into multiple other technical areas.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q11",
+      title: "Assessing, recommending and implementing a strategic option",
+      modules: "Modules 21, 22, 23",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A health and care insurer with an established PMI book is considering entering the long-term care insurance market. Discuss two factors the insurer should consider when assessing this strategic option.",
+          answer:
+            "First, capital impact: LTC is a materially more capital-intensive product than PMI (given its larger risk margin and long-duration risk), so the insurer must assess whether it has, or can raise, sufficient capital to support this new business. Second, risk profile fit: LTC introduces genuinely new, compounded longevity and care-need risk drivers the insurer has no existing experience managing, unlike its established, shorter-tail PMI risk, so the insurer must assess whether it has or can build the necessary underwriting, pricing and reserving expertise.",
+          note: "Any two genuinely distinct, well-justified factors should be accepted, provided they are assessed against this insurer's SPECIFIC circumstances, not stated generically.",
+        },
+        {
+          label: "(ii)",
+          command: "Recommend",
+          marks: 4,
+          question:
+            "Assuming the insurer has adequate capital headroom but limited in-house LTC expertise, recommend a course of action for entering this market, with justification.",
+          answer:
+            "A phased entry via a reinsurance-supported launch is recommended: partnering with a reinsurer experienced in LTC provides access to pricing expertise, data and capital support the insurer currently lacks, while a phased rollout (e.g. starting with a single simplified product variant before broader expansion) limits the insurer's exposure while it builds its own capability, rather than launching a full, complex product range immediately based on borrowed expertise alone.",
+          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the stated capability gap, not just a plausible-sounding conclusion asserted without justification.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question:
+            "Explain one genuine implication of this recommended reinsurance-supported entry for the insurer's reported profit pattern.",
+          answer:
+            "Ceding a share of risk to the reinsurance partner typically also cedes a share of expected profit, so the insurer's own reported profit from this new LTC business will likely be lower and less volatile than if it retained the risk entirely itself &mdash; a genuine trade-off between reduced volatility/risk and reduced expected retained profit.",
+          note: "A strong answer explicitly traces the capital/reinsurance decision through to its concrete effect on reported financial results.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why this recommendation should specify how its success will be monitored going forward, rather than treating the decision as final once implemented.",
+          answer:
+            "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics) shows the recommendation is genuinely designed to be verified and adjusted over time, rather than a one-off, unchecked decision.",
+          note: "This connects directly to this course's recurring ongoing-monitoring theme, applied specifically to strategic decision-making.",
+        },
+      ],
+    },
+    {
+      id: "sa1-q12",
+      title: "National healthcare systems and best practice",
+      modules: "Modules 24, 25, 26",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why understanding a country's national healthcare system is essential context before assessing private health and care insurance strategy in that market.",
+          answer:
+            "The scope, quality, and cost of State-provided healthcare directly determines what genuine gaps private insurance needs to fill, so a sound strategic assessment in any market must start from a clear understanding of that market's specific national healthcare system, rather than assuming a generic private-insurance role that applies everywhere equally.",
+          note: "A complete answer connects national system understanding directly to product/strategy assessment, not just describes healthcare systems in isolation.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why identifying 'best practice' in health and care insurance requires genuine judgement about context, rather than assuming one market's approach transfers directly to another.",
+          answer:
+            "An approach that works well in one market's specific regulatory, cultural, and healthcare-system context may not transfer straightforwardly to a genuinely different context, so identifying best practice requires assessing WHY an approach works in its original context, not just copying it directly &mdash; 'best practice' genuinely means best-for-context, not a single universal standard.",
+          note: "A strong answer explicitly explains why context-blind copying is risky, not just asserts that context 'matters'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A health and care insurer must decide how to balance highly granular, risk-reflective underwriting against broader risk-pooling for access and equity reasons in a new market. Discuss this trade-off and how the insurer might reasonably resolve it.",
+          answer:
+            "Very granular, individually risk-reflective underwriting maximises fairness between individual policyholders (lower-risk customers pay less) but can reduce broader risk-pooling and access for higher-risk individuals, potentially excluding those with greatest genuine need; broader pooling improves access and equity but can be perceived as less fair to lower-risk customers who effectively subsidise higher-risk ones. A reasonable resolution balances these by using risk-reflective pricing within limits (e.g. avoiding certain highly sensitive rating factors, per regulatory restrictions), combined with broader pooling for the most severe or unpredictable risks, rather than maximising either fairness-to-individuals or access-for-all in isolation.",
+          note: "A strong answer explicitly frames this as a genuine trade-off with no single universally correct answer, and proposes a balanced, justified resolution rather than favouring one side without acknowledging the cost to the other.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why solving a genuinely complex health and care strategic issue like this one typically requires drawing on multiple SA1 topic areas simultaneously, rather than a single technique in isolation.",
+          answer:
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific trade-off genuinely required drawing on product and market understanding, regulatory constraints, and conduct/fairness principles together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
+          note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA1 syllabus.",
+        },
+      ],
+    },
+  ],
 };
