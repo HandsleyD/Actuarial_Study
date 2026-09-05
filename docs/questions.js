@@ -8232,4 +8232,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP5: [
+    {
+      id: "sp5-q1",
+      title: "The economic and regulatory framework",
+      modules: "Module 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why central bank actions can genuinely affect investment markets across multiple asset classes simultaneously, rather than a single, isolated effect.",
+          answer:
+            "Interest rate changes directly affect bond valuations (via discount rates), can influence equity valuations (via the relative attractiveness of bonds versus equities and via corporate borrowing costs), and affect currency values (via relative interest rate differentials), giving central bank policy a genuinely broad, cross-asset-class impact.",
+          note: "A strong answer names the impact channel for at least two distinct asset classes, not just asserts that central banks 'matter'.",
+        },
+        {
+          label: "(ii)",
+          command: "List",
+          marks: 3,
+          question:
+            "List six genuine considerations named in the official syllabus as part of the legislative and regulatory framework affecting investment management practice.",
+          answer:
+            "Any six of: corporate governance, role of the listings authority, environmental/social/governance (ESG) factors, ethical issues, competition and fair trading controls, monopolies regulators, investment restrictions in investment agreements, provision of financial services, institutional investment practices, development of international accounting standards.",
+          note: "A complete answer names six genuinely distinct considerations from the official list.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why 'investment restrictions in investment agreements' represent a genuinely different layer of constraint from general securities market regulation.",
+          answer:
+            "These restrictions arise from the specific, negotiated terms of an individual investment mandate or agreement (e.g. permitted asset classes, concentration limits) rather than from broader, market-wide statutory regulation, representing a genuinely more bespoke, contract-specific layer of constraint an investment manager must operate within, on top of general market regulation which applies uniformly to all managers regardless of any specific client agreement.",
+          note: "A strong answer explicitly distinguishes the CONTRACTUAL, client-specific nature of these restrictions from the STATUTORY, market-wide nature of general regulation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why ESG factors might be considered part of the genuine regulatory framework in some jurisdictions, rather than purely a voluntary investment consideration.",
+          answer:
+            "Many jurisdictions now impose genuine regulatory disclosure and conduct requirements around ESG considerations, making ESG a genuinely regulatory, not purely voluntary or values-based, consideration in at least some markets.",
+          note: "This connects directly to the ESG-as-evolving-regulatory-consideration theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q2",
+      title: "Specialist investment products and derivatives",
+      modules: "Modules 3, 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what insurance-linked securities (ILS) are, and why they might offer investors genuinely valuable diversification.",
+          answer:
+            "ILS (e.g. catastrophe bonds) transfer insurance-related risk (e.g. natural catastrophe risk) to capital markets investors in exchange for a return, offering genuinely valuable diversification since insurance losses are typically driven by genuinely different underlying factors (weather, seismic activity) than traditional financial market risk factors.",
+          note: "A strong answer explains WHY diversification benefit arises (different underlying risk drivers), not just that ILS exist.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the genuine trade-off between exchange-traded and over-the-counter (OTC) derivative trading.",
+          answer:
+            "Exchange-traded derivatives offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC derivatives offer genuinely greater flexibility to tailor contract terms to a specific investor's precise needs, at the cost of typically greater counterparty risk and reduced price transparency.",
+          note: "A strong answer names both sides of the genuine trade-off, not just describes one venue favourably.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss the genuine difference between using derivatives for hedging and for efficient portfolio management, with an example of each.",
+          answer:
+            "Hedging uses derivatives (e.g. put options, futures) to offset or reduce an existing, unwanted risk exposure in the underlying portfolio, achieving genuine risk reduction without disrupting core holdings — for example, buying put options to protect an existing equity holding against a market fall. Efficient portfolio management uses derivatives to gain or adjust market exposure quickly and cost-effectively — for example, using equity index futures to quickly increase market exposure ahead of executing underlying stock purchases, providing implementation efficiency rather than reducing existing risk.",
+          note: "A strong answer gives a genuine, distinct example for each use case, not just describes both in the abstract.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a structured product might require particularly careful analysis by an investor before purchase.",
+          answer:
+            "A structured product combines a traditional investment with a derivative overlay to create a genuinely customised risk/return payoff, but the genuine underlying risk and cost structure can be less transparent than a simple, standalone investment, potentially embedding fees or risks not immediately obvious to the investor.",
+          note: "This connects directly to the customisation-versus-transparency trade-off theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q3",
+      title: "Valuing a bond investment",
+      modules: "Module 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A bond has a face value of &pound;100,000, pays an annual coupon of &pound;5,000 at the end of each of the next 3 years, and redeems at par (&pound;100,000) at the end of year 3. Using a discount rate of 4% per annum, calculate the bond's present value.",
+          answer:
+            "PV = &pound;5,000/1.04 + &pound;5,000/1.04&sup2; + &pound;5,000/1.04&sup3; + &pound;100,000/1.04&sup3; = &pound;4,807.69 + &pound;4,622.78 + &pound;4,445.94 + &pound;88,899.64 = &pound;102,775.09 (to the nearest penny).",
+          note: "Verified: PV=102,775.09 (Node-verified). Marks are typically split across correctly discounting the coupons and the redemption value.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why this bond's present value exceeds its face value, given the coupon rate (5%) is higher than the discount rate used (4%).",
+          answer:
+            "Since the bond's coupon rate (5%) exceeds the discount rate applied to value it (4%), the bond pays more income than the market currently requires for a bond of this risk, making it genuinely more valuable than its face value — this relationship between coupon rate and discount/yield rate directly determines whether a bond trades above or below par.",
+          note: "A strong answer explicitly connects the coupon-versus-discount-rate relationship to the premium-versus-par pricing outcome.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why an investor might not rely solely on an external credit rating agency's assessment of this bond's issuer before investing.",
+          answer:
+            "While rating agencies provide a genuinely useful standardised assessment, an investor may conduct independent credit analysis since rating agencies can be slow to reflect genuinely emerging changes in issuer creditworthiness, and different investors may have genuinely different views on appropriate risk assessment given their own specific circumstances and risk tolerance.",
+          note: "A strong answer treats rating agency output as useful but not sufficient, not as either fully reliable or worthless.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why understanding the empirical characteristics of asset prices matters when valuing bonds and other investments, beyond applying theoretical pricing models alone.",
+          answer:
+            "Real-world asset prices can genuinely deviate from theoretical model predictions, so genuine practical valuation and risk assessment should be informed by how asset prices actually behave empirically, not solely by how theoretical models predict they should behave.",
+          note: "This connects directly to the empirical-versus-theoretical caution developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q4",
+      title: "Monitoring risk and mean-variance portfolio theory",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A two-asset portfolio invests 60% in Asset A (expected return 8%, standard deviation 15%) and 40% in Asset B (expected return 5%, standard deviation 8%), with a correlation of 0.3 between the two assets. Calculate the portfolio's expected return and standard deviation.",
+          answer:
+            "Expected return = (0.6 &times; 8%) + (0.4 &times; 5%) = 4.8% + 2.0% = 6.8%. Variance = (0.6&sup2; &times; 0.15&sup2;) + (0.4&sup2; &times; 0.08&sup2;) + (2 &times; 0.6 &times; 0.4 &times; 0.15 &times; 0.08 &times; 0.3) = 0.0081 + 0.001024 + 0.001728 = 0.010852. Standard deviation = &radic;0.010852 &asymp; 10.42%.",
+          note: "Verified: expected return=6.80%; variance=0.010852; sd≈10.42% (Node-verified). Marks are typically split across the expected return, variance, and standard deviation calculations.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the portfolio's standard deviation calculated in part (i) is lower than a simple weighted average of the two assets' individual standard deviations (which would be 0.6×15%+0.4×8%=12.2%).",
+          answer:
+            "Since the two assets are not perfectly correlated (correlation of 0.3, less than 1), combining them provides a genuine diversification benefit — the portfolio's actual risk is lower than the weighted average of individual risks because the assets' returns do not move perfectly together, so some of each asset's individual volatility is offset by the other's movements.",
+          note: "A strong answer explicitly connects the diversification benefit to the correlation being less than 1, not just asserts that 'diversification reduces risk'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss what the 'efficient frontier' represents, and how this portfolio might relate to it.",
+          answer:
+            "The efficient frontier consists of the portfolios offering the genuinely highest expected return for each given level of risk, excluding all other achievable portfolios that are dominated by a more efficient alternative. This specific 60/40 portfolio may or may not lie on the efficient frontier — it lies on the frontier only if no other combination of these two assets (or other available assets) offers a higher return for the same 10.42% risk level, or the same 6.8% return for lower risk.",
+          note: "A strong answer explains what would need to be true for this specific portfolio to lie ON the frontier, not just defines the frontier generically.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why 'sustainability risk' might be considered a genuinely distinct risk category for this portfolio, beyond the market and credit risk already reflected in the standard deviation calculation.",
+          answer:
+            "Sustainability risk concerns the genuine risk that environmental, social or governance factors materially affect an investment's value or the wider portfolio's risk profile in ways not necessarily captured by historical volatility and correlation figures alone, representing a genuinely forward-looking risk dimension beyond backward-looking statistical risk measures.",
+          note: "This connects directly to the sustainability-risk-as-distinct-category theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q5",
+      title: "Investor characteristics and behavioural finance",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what 'loss aversion' is, and how it might genuinely lead an investor to make suboptimal decisions.",
+          answer:
+            "Loss aversion describes the genuine tendency for investors to feel the pain of a loss more intensely than the pleasure of an equivalent gain, which can lead to genuinely suboptimal behaviour such as holding onto losing investments too long (hoping to avoid crystallising the loss) or selling winning investments too early.",
+          note: "A strong answer explains both the psychological mechanism AND a concrete behavioural consequence.",
+        },
+        {
+          label: "(ii)",
+          command: "List",
+          marks: 3,
+          question:
+            "List the genuine steps involved in financial planning for an individual investor, per the official syllabus.",
+          answer:
+            "Establishing the investor's genuine objectives and constraints, assessing their current financial position, developing an appropriate strategy to meet their objectives, implementing that strategy, and monitoring and reviewing progress over time.",
+          note: "A complete answer names all five steps in a genuinely sequential order.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why the taxation of investment returns genuinely affects investor behaviour, beyond simply reducing net returns, and give one example.",
+          answer:
+            "Different tax treatments of income versus capital gains, or different tax-favoured account wrappers, can genuinely incentivise investors to prefer certain asset types, holding periods, or account structures purely for tax efficiency reasons, meaning genuine investor behaviour is directly shaped by tax rules, not solely by underlying investment merit. For example, an investor might hold a growth-oriented (low-dividend) investment in a taxable account and an income-oriented (high-dividend) investment in a tax-favoured account specifically to minimise their overall tax liability, even if this is not the allocation that would otherwise best reflect their genuine investment preferences alone.",
+          note: "A strong answer explains the general principle AND provides a genuinely concrete example of tax-driven behaviour.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an investor's time horizon, liquidity needs, behavioural tendencies, and tax position should all be understood together before recommending an investment strategy.",
+          answer:
+            "These characteristics genuinely interact — a behaviourally loss-averse investor with a genuinely short time horizon may need a materially more conservative strategy than the same behavioural profile paired with a long time horizon, so a sound recommendation must integrate all of an investor's genuine characteristics together, not consider any single dimension in isolation.",
+          note: "This connects directly to the holistic-investor-characterisation theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q6",
+      title: "Actuarial techniques for investment strategy",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List the four genuine actuarial techniques named in the official syllabus for developing an appropriate investment strategy.",
+          answer:
+            "Asset pricing models, asset/liability modelling, liability hedging, and dynamic liability benchmarks.",
+          note: "A complete answer names all four techniques precisely.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what asset/liability modelling achieves for an investor with genuine liability obligations, echoing CM2's material.",
+          answer:
+            "Asset/liability modelling projects how a specific investor's assets and liabilities would jointly evolve under a range of future scenarios, revealing whether a proposed investment strategy is genuinely likely to meet the investor's specific liability obligations with acceptable risk, directly applying CM2's matching principles in a genuinely forward-looking, scenario-based way.",
+          note: "This connects directly to CM2's ALM material applied to a genuine strategy-development context.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a dynamic liability benchmark might be genuinely more useful than a static, fixed benchmark for an investor with evolving liability obligations.",
+          answer:
+            "A dynamic liability benchmark adjusts over time to reflect the genuine, evolving characteristics of the investor's actual liabilities (e.g. as they mature or their duration changes), providing a more genuinely relevant ongoing performance comparison than a static benchmark that might quickly become misaligned with the investor's real, evolving liability profile. A static benchmark set at one point in time could become genuinely misleading as a comparison point precisely because the investor's own liabilities have moved on, while the benchmark has not.",
+          note: "A strong answer explains WHY a static benchmark becomes misleading over time, not just asserts that dynamic benchmarks are 'better'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how liability hedging directly addresses the asset/liability mismatching risk named in Module 6's risk-monitoring material.",
+          answer:
+            "Liability hedging deliberately structures a portion of the investment portfolio to closely track the genuine movements of specified liabilities, directly reducing the asset/liability mismatching risk identified as a genuine risk category to be monitored and managed.",
+          note: "This connects directly to the risk-monitoring-to-strategy-response theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q7",
+      title: "Portfolio management styles and institutional derivative use",
+      modules: "Modules 9, 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between 'value' and 'momentum' active management styles, including the genuine underlying belief each rests on.",
+          answer:
+            "Value investing seeks securities trading below their genuine intrinsic or fundamental worth, resting on the belief that market prices can temporarily diverge from true fundamental value and will eventually converge back toward it. Momentum investing buys securities that have recently performed well (and sells those performing poorly), resting on the belief that recent price trends tend to persist for some period — a philosophically opposite approach, since value seeks underperformers relative to fundamentals while momentum seeks recent outperformers.",
+          note: "A strong answer explicitly identifies these as philosophically OPPOSITE approaches, not just describes each independently.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a pension scheme might use forward foreign exchange contracts specifically for currency hedging.",
+          answer:
+            "A scheme holding overseas assets to fund domestic-currency liabilities faces genuine currency risk, since asset value in domestic-currency terms can fall purely due to exchange rate movements, unrelated to the underlying asset's own performance, so forward FX contracts can hedge this specific currency mismatch, directly applying the general asset-liability matching principle to currency exposure specifically.",
+          note: "This connects directly to CM2's and SA4's ALM material applied to a genuine currency-hedging context.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why 'transition management' is genuinely important when a large institutional investor makes a significant change to its portfolio allocation.",
+          answer:
+            "Transition management is the specialist process of executing a large-scale change in a portfolio's asset allocation efficiently, minimising genuine transaction costs and market impact; without careful management, a large, poorly-executed transition could incur genuinely significant hidden costs from market impact and prolonged exposure to unintended interim risk during the transition period, potentially undermining even a well-justified strategic reallocation decision.",
+          note: "A strong answer explains WHY poor execution could undermine an otherwise sound strategic decision, not just that transitions should be 'managed carefully'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a multifactor model provides genuinely richer insight than a single-factor asset pricing model when constructing a portfolio.",
+          answer:
+            "A multifactor model explains genuine asset returns using multiple systematic risk factors simultaneously, rather than a single risk-return relationship, providing a genuinely richer, more nuanced framework for understanding what drives returns and for revealing a portfolio's genuine exposure to specific risk factors that a single-factor model would not show.",
+          note: "This connects directly to the multifactor-model-extension theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q8",
+      title: "Portfolio risk measurement and Value at Risk",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "An &pound;80,000,000 institutional portfolio has an annual return volatility of 10%. Assuming returns are normally distributed, calculate the 1-year 95% Value at Risk (VaR), using a z-score of 1.645 for the 95% confidence level.",
+          answer:
+            "VaR = &pound;80,000,000 &times; 10% &times; 1.645 = &pound;13,160,000. This means there is a 5% chance the portfolio loses more than approximately &pound;13.16 million over the year.",
+          note: "Verified: 80,000,000×0.10×1.645=13,160,000 (Node-verified). Full marks require both the calculation and a correct statement of what the resulting VaR figure represents.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what a 'risk budget' is, and how it might be used alongside the VaR figure calculated in part (i).",
+          answer:
+            "A risk budget allocates a genuine, explicit amount of acceptable risk (e.g. measured via VaR or tracking error) across different components of a portfolio or investment decisions, ensuring the total portfolio's aggregate risk remains within a genuinely intended overall limit. The &pound;13,160,000 VaR figure could be checked against the scheme's overall risk budget to confirm the portfolio remains within its intended aggregate risk tolerance, and could be further decomposed to check individual position-level risk budgets.",
+          note: "A strong answer connects the numeric VaR result directly to the risk-budget governance concept.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why tracking error would provide genuinely complementary insight to the VaR figure calculated in part (i) for an actively-managed portfolio.",
+          answer:
+            "VaR measures genuine absolute downside risk in monetary terms, while tracking error measures genuine relative risk against a benchmark; using both together provides a more complete risk picture, since a portfolio could have low tracking error (closely following its benchmark) while the benchmark itself carries genuinely significant absolute VaR, or vice versa, so neither measure alone gives a fully complete risk picture.",
+          note: "A strong answer explains the genuine difference between absolute and relative risk, not just asserts both measures are 'useful'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why risk attribution is a genuinely valuable additional step beyond simply calculating the portfolio's total VaR figure.",
+          answer:
+            "Risk attribution decomposes where the portfolio's genuine risk actually comes from (e.g. which specific positions or factor exposures contribute most), revealing genuinely important concentration insights that a single aggregate VaR number alone would not show, since correlated or highly volatile positions can dominate overall risk even while representing a modest proportion of total portfolio value.",
+          note: "This connects the numeric VaR calculation directly to the risk-attribution material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q9",
+      title: "Performance attribution analysis",
+      modules: "Modules 12, 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A portfolio returned 9.1% over a year, against a benchmark return of 7.2%. Attribution analysis identifies a sector allocation effect of 1.2%. Calculate the total active return and the resulting stock selection effect.",
+          answer:
+            "Total active return = 9.1% &minus; 7.2% = 1.9%. Stock selection effect = 1.9% &minus; 1.2% (allocation effect) = 0.7%.",
+          note: "Verified: 9.1%-7.2%=1.9%; 1.9%-1.2%=0.7% (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why sector allocation and stock selection should be assessed as genuinely separate skills, rather than combined into the single 1.9% active return figure calculated in part (i).",
+          answer:
+            "Sector allocation and stock selection are genuinely separate skills that can offset each other — being right about which sectors to favour doesn't guarantee genuine skill in choosing the best individual stocks within those correctly-favoured sectors, so overall performance depends on both skills together, and only decomposing them reveals which specific skill genuinely drove the result.",
+          note: "A strong answer explains why the two skills are genuinely distinct and can diverge, not just asserts that decomposition is 'more detailed'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why this portfolio's performance might look genuinely different when compared against a peer group of similar managers rather than against the market index used in part (i).",
+          answer:
+            "The whole peer group could genuinely outperform or underperform the broad market together (e.g. due to a shared style tilt that happened to be in or out of favour), meaning this manager could genuinely beat the market index while still underperforming their peer group, or vice versa, since these two comparisons answer genuinely different relative-performance questions.",
+          note: "A strong answer explicitly explains why the two comparisons can genuinely diverge, not just asserts they are 'different'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a risk-adjusted performance measure should be considered alongside the raw 1.9% active return figure calculated in part (i).",
+          answer:
+            "A risk-adjusted measure assesses whether this genuine outperformance reflects genuine skill or simply reflects taking on genuinely more risk than the mandate intended; a manager achieving a higher raw return by accepting materially more risk has not necessarily demonstrated genuine skill superior to one achieving a slightly lower return with materially less risk.",
+          note: "This connects the numeric attribution result directly to the risk-adjusted-performance theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp5-q10",
+      title: "Investment indices and their construction",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why NAV (net asset value) might be a genuinely more appropriate performance measure than a market-price-based measure for a fund holding illiquid assets.",
+          answer:
+            "NAV directly reflects the genuine underlying value of a fund's holdings (assets minus liabilities), providing a meaningful valuation even where no continuous, liquid market price exists for the fund itself, unlike a market-price-based approach which would require a genuinely observable trading price that illiquid asset funds often lack.",
+          note: "A strong answer explains WHY NAV solves the illiquid-asset valuation problem, not just defines NAV.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why constructing a genuinely representative index for unlisted or illiquid assets is materially more difficult than for listed equities.",
+          answer:
+            "Unlisted or illiquid assets lack continuously observable market prices, so an index tracking them must rely on periodic appraisals or modelled valuations rather than genuine, real-time transaction prices, introducing genuine valuation lag and smoothing effects that can distort the index's apparent volatility and correlation with other, more liquid asset classes.",
+          note: "This connects directly to the illiquid-asset-valuation-challenge theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss the genuine limitations of performance measurement techniques that an actuary should bear in mind when interpreting a fund's reported performance figures.",
+          answer:
+            "Performance measures can be genuinely distorted by the timing of cashflows into and out of a portfolio, can depend heavily on the specific period chosen for measurement (a genuinely different period could tell a materially different story), and may not fully capture genuine risk taken to achieve the reported return, meaning raw performance figures require careful, critical interpretation rather than being taken at face value.",
+          note: "A strong answer names multiple genuine limitations, not just one, demonstrating critical awareness rather than uncritical acceptance of reported figures.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the same investment index might serve genuinely different purposes depending on whether it is used as a performance benchmark or as the basis for an index-tracking product.",
+          answer:
+            "As a benchmark, an index provides a genuine, independent comparison point for assessing active manager performance; as the basis for a tracking product, the same index instead becomes the genuine, direct investment target itself, meaning index construction methodology decisions can matter differently depending on which of these two purposes is primary.",
+          note: "This connects directly to the dual-purpose-of-indices theme developed in this course.",
+        },
+      ],
+    },
+  ],
 };
