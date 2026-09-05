@@ -20061,4 +20061,141 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP8: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP8 all about?",
+        "description": "An orientation chapter explaining SP8's role as the Specialist Principles subject introducing general insurance pricing technique, and how it complements SP7 and feeds into SA3.",
+        "cards": [
+            {
+                "q": "What is the genuine aim of Subject SP8, echoing the SP-subject template established across this whole curriculum?",
+                "a": "To instil in successful candidates the ability to apply, in simple situations, the main principles and techniques of pricing that are relevant to general insurance business, building directly on the pricing foundation developed in CS2.",
+                "explain": "Worth recognising this as the genuine, standard SP-subject aim structure — SP8 applies core pricing PRINCIPLES to simple situations, with SA3 (which this course feeds into) applying that same underlying knowledge to genuinely complex scenarios."
+            },
+            {
+                "q": "What are the four official syllabus topic areas of SP8, and their approximate topic weightings?",
+                "a": "Rating bases and methodologies (35%); General insurance products and the business environment (25%); Data, risks and risk management (25%); and Credibility, reinsurance and catastrophe modelling (15%).",
+                "explain": "Worth memorising these weightings directly — 'Rating bases and methodologies' at 35% is genuinely the single largest topic area, meaning fluency with rating technique (burning cost, frequency-severity, GLMs) deserves the greatest concentrated revision effort."
+            },
+            {
+                "q": "How does SP8 genuinely relate to SP7 (General Insurance Reserving and Capital Modelling Principles) as a pair of subjects, echoing SP7's own material?",
+                "a": "SP7 focuses on the BACKWARD-LOOKING and CAPITAL-FOCUSED side of general insurance actuarial work — reserving for claims already incurred and modelling capital — while SP8 focuses on the FORWARD-LOOKING side — pricing future business appropriately; together they cover the two genuinely complementary technical pillars underlying general insurance actuarial practice.",
+                "explain": "This directly recalls SP7's identical trio-relationship material — worth recognising SP7 and SP8 as genuinely COMPLEMENTARY, not overlapping subjects, together spanning the full technical scope SA3 later applies to complex, integrated scenarios."
+            },
+            {
+                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP8?",
+                "a": "Approximately 15% knowledge, 60% application, and 25% higher order — a genuinely more APPLICATION-heavy split than SP1's, SP2's, SP4's, SP6's and SP7's standard 25/50/25 pattern, echoing SP5's similarly application-heavy split.",
+                "explain": "Worth recognising this as a genuinely distinctive feature of SP8 specifically, shared with SP5 — both place notably LESS weight on pure knowledge recall (15% versus 25%) and correspondingly MORE on application, reflecting pricing work's genuinely calculation- and scenario-heavy character."
+            },
+            {
+                "q": "Why might genuine actuarial pricing technique in general insurance require blending statistical rigour with genuine underwriting and market judgement, rather than being a purely mechanical calculation exercise?",
+                "a": "While rating methods provide a genuinely important statistical foundation, real-world pricing decisions must also account for genuine competitive positioning, underwriting appetite, and business strategy considerations that pure statistical technique alone cannot fully capture, meaning sound pricing genuinely combines both technical calculation AND commercial judgement.",
+                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising general insurance pricing as one of the clearest, most exam-relevant examples of this genuine blend of technique and judgement across the whole actuarial curriculum."
+            },
+            {
+                "q": "Why might SP8's heavier weighting on 'Application' (60%) genuinely mean that practising realistic pricing calculations matters more for exam success than memorising formulas in isolation?",
+                "a": "Since the majority of SP8's marks genuinely reward APPLYING pricing principles to specific, realistic scenarios rather than reciting technique in the abstract, genuine exam preparation should prioritise working through realistic pricing problems (e.g. genuine burning cost or GLM-style calculations applied to specific data) over pure formula memorisation alone.",
+                "explain": "Worth treating this weighting as direct, practical revision guidance — a strong SP8 candidate should be genuinely comfortable APPLYING each rating technique to realistic numerical scenarios, not just describing what each technique is."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Premium components and basic rating methodology",
+        "description": "Covers the components of a general insurance premium and the basic methodology used in rating general insurance products, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine components does a general insurance premium consist of, echoing CB1's material?",
+                "a": "A gross premium genuinely comprises the expected cost of claims (the pure risk premium), expenses (acquisition, administration, and claims-handling costs), a genuine profit margin/cost of capital loading, and any applicable taxes or levies — together forming the total amount a policyholder actually pays.",
+                "explain": "This directly recalls CB1's premium-component material — worth recognising general insurance premium structure as the direct, practical application of CB1's general equivalence-principle-style pricing framework, just decomposed into its specific general insurance components."
+            },
+            {
+                "q": "What is the 'pure risk premium', and why must it genuinely be calculated BEFORE the other premium components (expenses, profit margin) can meaningfully be added?",
+                "a": "The pure risk premium represents the genuine expected cost of claims alone, calculated from claim frequency and severity assumptions; since expenses and profit margin are typically expressed as loadings ON TOP of this underlying risk cost, the pure risk premium must genuinely be estimated first as the foundational building block the rest of the premium structure is built upon.",
+                "explain": "Worth recognising the pure risk premium as the genuine FOUNDATIONAL calculation this whole subject's rating methods (covered in later modules) are ultimately trying to estimate accurately — everything else in the premium structure is added on top of this core estimate."
+            },
+            {
+                "q": "What is the genuine basic methodology used in rating general insurance products, combining frequency and severity, echoing SA3's material?",
+                "a": "The basic rating methodology genuinely estimates expected claims cost as the product of claim FREQUENCY (the expected number of claims) and claim SEVERITY (the expected average cost per claim), reflecting the same fundamental decomposition principle SA3 and SP7 apply to reserving, now applied specifically to forward-looking PRICING.",
+                "explain": "This directly recalls SP7's average-cost-per-claim material — worth recognising the SAME frequency-times-severity decomposition principle recurring here in a pricing context, having already been introduced in SP7's reserving context."
+            },
+            {
+                "q": "Why might a rating actuary genuinely need to consider EXPOSURE (e.g. vehicle-years, sums insured) alongside claim frequency, rather than working with a raw claim count alone?",
+                "a": "A raw claim count only becomes genuinely meaningful when related to the underlying EXPOSURE that generated it (e.g. claims per vehicle-year, not simply total claims), since a portfolio with more genuine exposure would naturally generate more claims even at an unchanged underlying risk level, so frequency must genuinely be expressed relative to exposure to support meaningful rating comparisons.",
+                "explain": "Worth recognising exposure as the genuine DENOMINATOR making frequency a meaningful, comparable rate rather than simply a raw count — a portfolio-size-adjusted measure essential for sound rating."
+            },
+            {
+                "q": "Why might different general insurance products (e.g. motor versus property) genuinely require different specific rating factors within the same basic frequency-times-severity framework?",
+                "a": "While the underlying frequency-times-severity METHODOLOGY is genuinely universal, the SPECIFIC factors driving frequency and severity genuinely differ by product (e.g. driver age and vehicle type for motor, construction type and location for property), so the basic methodology must be populated with genuinely product-specific rating factors reflecting each product's own distinct risk drivers.",
+                "explain": "Worth recognising the frequency-times-severity FRAMEWORK as universal, while the specific rating FACTORS populating it are genuinely product-specific — a distinction directly echoing this course's later material on genuine product-specific pricing considerations."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Rating foundations and the burning cost approach",
+        "description": "Covers appropriate rating foundations including expenses, investment and capital considerations, and the burning cost approach to rating, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why must a genuine rating basis explicitly incorporate expense assumptions, beyond the pure risk premium alone, echoing CB1's material?",
+                "a": "Since an insurer genuinely incurs real costs beyond claims (acquisition, administration, claims-handling), a premium reflecting only the pure risk premium would systematically understate the genuine total cost of providing cover, so expense loadings must be explicitly and appropriately incorporated into the overall rating basis.",
+                "explain": "This directly recalls CB1's expense-loading material — worth recognising expense allowance as a genuinely NECESSARY, not optional, component of a sound rating basis, echoing CB1's general pricing framework applied specifically here."
+            },
+            {
+                "q": "Why must a rating basis genuinely incorporate an appropriate cost-of-capital/profit margin loading, rather than simply covering expected costs alone?",
+                "a": "Since capital genuinely needs to be held to support the insurer's risk (SP7's capital modelling material), and that capital carries a genuine opportunity cost to shareholders, a sound rating basis must genuinely price in a return sufficient to compensate for this capital cost, not merely cover the expected claims and expense costs alone.",
+                "explain": "This directly recalls CB1's cost-of-capital material and SP7's capital-modelling material — worth recognising the genuine LINK between this course's capital modelling content (SP7) and pricing: capital that must genuinely be HELD (SP7) must also genuinely be PAID FOR through pricing (SP8)."
+            },
+            {
+                "q": "Why might genuine investment income considerations affect an appropriate rating basis, beyond the claims, expense and capital-cost components already covered?",
+                "a": "Since premiums are typically genuinely received before claims are eventually paid (particularly for longer-tail lines), the insurer earns genuine investment income on this float in the intervening period, so a fully sound rating basis may reasonably allow for this genuine investment income as an OFFSET reducing the required premium loading, rather than ignoring this genuine timing benefit entirely.",
+                "explain": "This directly recalls CM1's and SP7's time-value-of-money material — worth recognising investment income as a genuine, quantifiable BENEFIT the rating basis can reasonably reflect, particularly significant for longer-tail lines where the premium-to-claim-payment gap is genuinely larger."
+            },
+            {
+                "q": "What is the 'burning cost' approach to rating, and how does it genuinely differ from the more granular frequency-times-severity decomposition covered in Module 2?",
+                "a": "The burning cost approach genuinely calculates historical claims experience as a simple RATIO of claims to exposure (e.g. total claims divided by total premium or sum insured) over a past period, projecting this historical ratio forward as the basis for future rating, WITHOUT explicitly decomposing it into separate frequency and severity components.",
+                "explain": "This directly recalls Module 2's frequency-times-severity material — worth recognising burning cost as a genuinely SIMPLER, more AGGREGATED alternative to that granular decomposition, trading some analytical insight for genuine calculation simplicity."
+            },
+            {
+                "q": "Why might the burning cost approach be genuinely well-suited to rating a specific, individual large commercial risk with limited own claims history, echoing SP7's and SA3's material?",
+                "a": "For a large commercial risk with genuinely limited own claims data, a simple, aggregated burning cost ratio (rather than attempting a more granular, data-intensive frequency-severity decomposition the limited data cannot reliably support) can provide a genuinely practical, defensible starting point for rating, particularly when blended with broader market benchmark data via credibility-weighting (previewed in this course's later credibility module).",
+                "explain": "This directly previews this course's later credibility-theory module — worth recognising burning cost's genuine practical value specifically for LOW-DATA-VOLUME risks, where a simpler method may genuinely be more robust than attempting an overly granular decomposition the data cannot reliably support."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Frequency-severity models and generalised linear models",
+        "description": "Covers frequency-severity models, original loss curve techniques, and the application of generalised linear models (GLMs) and multivariate modelling to pricing, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is a genuine 'frequency-severity model' for rating, and how does it develop Module 2's basic frequency-times-severity decomposition into a genuinely more sophisticated statistical framework?",
+                "a": "A frequency-severity model genuinely fits SEPARATE statistical distributions to claim frequency (e.g. a Poisson or negative binomial distribution) and claim severity (e.g. a gamma or lognormal distribution), allowing rating factors to be estimated for each component SEPARATELY using appropriate statistical technique, rather than Module 2's simpler, more basic multiplication of aggregate frequency and severity figures.",
+                "explain": "This directly recalls Module 2's frequency-times-severity foundation and CS1's/CS2's statistical distribution material — worth recognising this module as taking that earlier BASIC decomposition and developing it into a genuinely more STATISTICALLY RIGOROUS modelling framework."
+            },
+            {
+                "q": "What is an 'original loss curve' technique, and why might it be genuinely useful for pricing large or unusual individual risks, echoing SA3's material?",
+                "a": "An original loss curve describes the genuine relationship between a policy's limit of indemnity (or excess/retention level) and the EXPECTED PROPORTION of ground-up losses that a given limit would cover, allowing an actuary to genuinely price different limit or excess structures for the SAME underlying risk using a single, calibrated curve, rather than requiring entirely separate pricing exercises for each different limit structure considered.",
+                "explain": "This directly recalls SA3's large-commercial-risk-pricing material — worth recognising original loss curves as a genuinely practical tool for pricing MULTIPLE possible policy structures (different limits/excesses) for the same underlying risk efficiently, from a single underlying severity distribution."
+            },
+            {
+                "q": "What is a Generalised Linear Model (GLM), and why has it become genuinely central to modern general insurance rating, echoing CS1's material?",
+                "a": "A GLM genuinely extends standard linear regression to handle response variables (like claim frequency or severity) that don't follow a normal distribution and whose relationship with rating factors may not be purely additive, allowing MULTIPLE rating factors to be modelled SIMULTANEOUSLY while genuinely isolating each factor's own distinct effect, controlling for the influence of all other factors included in the model.",
+                "explain": "This directly recalls CS1's GLM material — worth recognising GLMs as the genuine, modern STATISTICAL WORKHORSE of general insurance pricing, allowing many rating factors to be assessed together rather than one at a time in isolation."
+            },
+            {
+                "q": "Why might assessing rating factors ONE AT A TIME (univariate analysis), rather than using a genuine multivariate GLM approach, produce systematically misleading results?",
+                "a": "If two rating factors are genuinely CORRELATED with each other (e.g. younger drivers genuinely tending to drive certain vehicle types), a univariate analysis of either factor alone would genuinely CONFOUND that factor's own true effect with the correlated factor's effect, while a multivariate GLM can genuinely ISOLATE each factor's own distinct, independent contribution, controlling for the other correlated factors simultaneously.",
+                "explain": "This directly recalls CS1's confounding-and-multivariate-analysis material — worth recognising this CONFOUNDING problem as the genuine, core motivation for using GLMs over simpler univariate rating factor analysis in modern general insurance pricing."
+            },
+            {
+                "q": "Why might general insurance pricing increasingly draw on genuine machine learning applications, beyond traditional GLM technique, per the official syllabus?",
+                "a": "Machine learning techniques can genuinely capture more complex, non-linear relationships and interactions between rating factors than a standard GLM's typically more constrained functional form allows, potentially improving genuine predictive accuracy, though often at some cost to the INTERPRETABILITY that GLMs typically offer more readily to a reserving or pricing actuary needing to explain and justify the resulting rates.",
+                "explain": "Worth recognising this as a genuine, important TRADE-OFF — machine learning's potential accuracy gains against GLMs' typically greater interpretability and ease of justifying results to stakeholders and regulators, a genuinely live tension in modern actuarial pricing practice."
+            }
+        ]
+    }
+
+    ]
 };
