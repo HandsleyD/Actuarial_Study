@@ -16712,7 +16712,166 @@ const MODULES = {
                 "explain": "This directly recalls SA1's context-specific-assessment material — worth recognising this principle as identical across every SA subject: strong investment advice is always anchored in the SPECIFIC investor's circumstances, not applied generically."
             }
         ]
+    },
+    {
+        "id": "m06",
+        "title": "Asset allocation and liability-driven investing",
+        "description": "Covers how strategic asset allocation is set, and the principles of liability-driven investing (LDI) for investors with genuine liability obligations.",
+        "cards": [
+            {
+                "q": "What is 'strategic asset allocation', and why is it typically considered the single most significant investment decision for an institutional investor, echoing CM2's material?",
+                "a": "Strategic asset allocation is the overall long-term split of a portfolio across broad asset classes (e.g. equities, bonds, property); it is typically the most significant decision because the vast majority of a portfolio's return and risk over time is driven by this broad allocation, rather than by individual security selection within each asset class.",
+                "explain": "This directly recalls CM2's asset-allocation material — worth recognising strategic asset allocation as the genuine PRIMARY LEVER shaping investment outcomes, with security selection playing a comparatively secondary role."
+            },
+            {
+                "q": "What is 'liability-driven investing' (LDI), and why is it particularly relevant for investors with genuine, specified liability obligations, echoing SA2's and SA4's material?",
+                "a": "LDI sets investment strategy explicitly to match the behaviour of a specific set of liabilities (e.g. matching interest rate and inflation sensitivity), directly relevant for investors like DB pension schemes and annuity-writing insurers whose genuine objective is meeting defined future obligations, not simply maximising return in the abstract.",
+                "explain": "This directly recalls SA2's annuity-ALM material and SA4's pension-scheme-LDI material — worth recognising LDI as the SAME underlying matching principle CM2 develops generally, now viewed specifically from the investment manager's implementation perspective."
+            },
+            {
+                "q": "Why might an investor with LDI-style objectives still allocate some assets to growth investments (e.g. equities) rather than matching its entire liability profile?",
+                "a": "Growth assets offer higher expected returns that can help close a funding shortfall or generate genuine surplus over time, so investors often balance a matching 'liability-hedging' portfolio against a smaller 'growth' portfolio, echoing SA2's and SA4's safety-versus-growth trade-off material.",
+                "explain": "This directly recalls SA2's with-profits and SA4's DB-investment-strategy material — worth recognising this same genuine trade-off recurring here specifically from the investment manager's portfolio-construction perspective."
+            },
+            {
+                "q": "Why might strategic asset allocation need genuine, periodic review, rather than being set once and left permanently unchanged, echoing this course's recurring theme?",
+                "a": "An investor's liabilities, risk tolerance, funding position, and the wider market environment can all change materially over time, so an allocation set for a past set of circumstances may no longer be genuinely appropriate, requiring periodic reassessment rather than indefinite persistence.",
+                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to strategic asset allocation specifically, echoing the identical discipline covered across every SA subject."
+            },
+            {
+                "q": "Why might 'tactical asset allocation' (short-term deviations from the strategic allocation to exploit perceived market opportunities) carry genuine risks beyond its potential for added return?",
+                "a": "Tactical deviations rely on the manager's ability to genuinely and consistently identify short-term market mispricing, which is difficult to achieve reliably, and unsuccessful tactical calls can detract from the carefully-considered strategic allocation's intended risk/return profile, a genuine implementation risk.",
+                "explain": "This directly recalls Module 4's model-risk and judgement-risk material — worth recognising tactical allocation as carrying genuine EXECUTION RISK on top of the underlying strategic allocation, not a costless additional source of potential return."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Investment strategy for different investor types",
+        "description": "Covers how investment strategy should be genuinely tailored to the specific objectives and constraints of DB schemes, DC schemes, insurers, and other investor types.",
+        "cards": [
+            {
+                "q": "Why might a maturing DB pension scheme's investment strategy genuinely differ from a young, cash-flow-positive DB scheme's, echoing SA4's de-risking material?",
+                "a": "A maturing scheme (more pensioners relative to active members) has a genuinely shorter investment horizon and reduced tolerance for short-term volatility, favouring a more matching, lower-risk strategy, while a younger, cash-flow-positive scheme can reasonably tolerate more growth-asset exposure given its longer horizon.",
+                "explain": "This directly recalls SA4's de-risking-as-scheme-matures material — worth recognising SCHEME MATURITY, not just scheme type, as a genuinely important driver of appropriate investment strategy."
+            },
+            {
+                "q": "Why should a DC scheme's default investment strategy genuinely differ in structure from a DB scheme's overall strategic asset allocation, echoing SA4's material?",
+                "a": "A DC default strategy must manage risk appropriately across a whole population of individual members at genuinely different ages and stages (via a glide path), while a DB scheme's allocation is set once for the whole scheme's aggregate liability profile, a structurally different problem despite both ultimately involving asset allocation decisions.",
+                "explain": "This directly recalls SA4's DC-glide-path material — worth recognising DC default design as solving a genuinely different problem (managing risk across many individual members' differing time horizons) than DB's single aggregate allocation decision."
+            },
+            {
+                "q": "Why might a life insurer writing with-profits business need a genuinely different investment strategy from the same insurer's shareholder-backed annuity business, echoing SA2's material?",
+                "a": "With-profits assets support smoothed, discretionary bonus payments across pooled policyholder generations, while annuity assets support fixed, guaranteed liability cashflows, so even within a single insurer, genuinely different product lines can require materially different investment approaches.",
+                "explain": "This directly recalls SA2's multi-product-line ALM material — worth recognising that INVESTMENT STRATEGY should genuinely vary even WITHIN a single institution's different business lines, not just across different types of institutional investor."
+            },
+            {
+                "q": "Why might a general insurer's investment strategy typically prioritise liquidity and capital preservation more heavily than a life insurer's, echoing SA3's material?",
+                "a": "General insurance claims (especially from catastrophic events) can arrive suddenly and require prompt payment, and the insurer's shorter-tail liabilities are less interest-rate sensitive over a long horizon, so its investment strategy can reasonably prioritise near-term liquidity over the long-duration matching that dominates life insurance investment strategy.",
+                "explain": "This directly recalls SA3's liquidity-risk material — worth recognising LIABILITY DURATION AND VOLATILITY, not insurer type as such, as the genuine underlying driver of appropriate investment strategy emphasis."
+            },
+            {
+                "q": "Why must an investment manager genuinely understand which of these investor-type-specific considerations apply to a given client before proposing a strategy, rather than applying a single generic framework?",
+                "a": "The same broad investment principles (matching, growth, liquidity) apply across investor types, but their RELATIVE IMPORTANCE and appropriate balance genuinely differs by investor type, maturity, and specific circumstances, so sound advice must be tailored to the specific client, not applied as a one-size-fits-all template.",
+                "explain": "This directly recalls Module 5's client-specific-understanding material — worth recognising this module's whole content as reinforcing that same principle across several concrete investor-type examples."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Alternative asset classes",
+        "description": "Covers the role of alternative asset classes such as private equity, infrastructure, and property in institutional investment portfolios.",
+        "cards": [
+            {
+                "q": "Why might an institutional investor allocate to alternative asset classes (e.g. private equity, infrastructure) rather than relying solely on traditional listed equities and bonds?",
+                "a": "Alternative assets can offer genuine diversification benefits (returns less correlated with traditional markets), potentially higher expected returns to compensate for illiquidity, and in some cases (e.g. infrastructure with inflation-linked revenues) cashflow characteristics that can usefully match specific liability profiles.",
+                "explain": "Worth recognising alternatives as offering genuinely DIFFERENT risk/return and cashflow characteristics from traditional listed assets, not simply a higher-risk version of the same underlying exposures."
+            },
+            {
+                "q": "Why does investing in illiquid alternative assets require genuine consideration of an investor's own liquidity needs, echoing this course's recurring liquidity theme?",
+                "a": "Illiquid assets cannot be readily sold to meet near-term cashflow needs, so an investor with genuine near-term liquidity requirements (e.g. benefit payments or collateral calls) must ensure sufficient allocation remains in liquid assets, reserving illiquid alternatives for genuinely long-term, patient capital.",
+                "explain": "This directly recalls SA1's, SA2's, SA3's and SA4's liquidity-risk material — worth recognising this same principle applying to alternative asset allocation specifically, a genuinely important practical constraint."
+            },
+            {
+                "q": "Why might valuing illiquid alternative assets (e.g. private equity holdings) require genuinely different, more judgement-based techniques than valuing listed equities?",
+                "a": "Illiquid assets typically lack a continuously observable market price, so valuation relies on periodic appraisals, comparable transaction analysis, or discounted cashflow techniques involving genuine estimation uncertainty, unlike listed assets whose market price is directly and continuously observable.",
+                "explain": "This directly recalls CM1's and CB1's valuation-technique material — worth recognising illiquid asset valuation as requiring genuinely more JUDGEMENT and carrying more estimation uncertainty than straightforwardly observing a listed market price."
+            },
+            {
+                "q": "Why might fees for alternative asset investments (e.g. private equity's typical 'two and twenty' structure) require particular scrutiny by an investor's governance process?",
+                "a": "Higher, performance-linked fee structures directly reduce the net return delivered to the investor, so governance should genuinely assess whether the manager's demonstrated (not just claimed) skill and the asset class's genuine diversification benefit justify this higher cost relative to lower-cost traditional alternatives.",
+                "explain": "This directly recalls Module 3's mandate-and-fee-scrutiny material — worth recognising fee scrutiny as a genuinely important governance responsibility, not simply accepting an asset class's headline gross return claims uncritically."
+            },
+            {
+                "q": "Why might an investor's allocation to alternative assets need to be assessed within the context of its overall strategic asset allocation, rather than considered in isolation?",
+                "a": "Alternative assets' genuine diversification value depends on how their returns interact with the rest of the portfolio, so their appropriate allocation size should be assessed as part of the WHOLE portfolio's risk and return characteristics, not decided as a standalone allocation independent of the rest of the strategy.",
+                "explain": "This directly recalls Module 6's strategic-asset-allocation-as-primary-driver material — worth recognising alternatives allocation as a genuine COMPONENT of the broader strategic allocation decision, not a separate, independent choice."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "ESG and responsible investment",
+        "description": "Covers environmental, social and governance (ESG) considerations in investment management, and the principles of responsible investment.",
+        "cards": [
+            {
+                "q": "What does 'ESG investing' mean, and why might it be considered genuinely relevant to investment risk and return, not just an ethical consideration?",
+                "a": "ESG investing incorporates environmental, social, and governance factors into investment analysis and decision-making; these factors can genuinely affect a company's or asset's long-term financial performance and risk (e.g. climate transition risk, poor governance leading to fraud), making ESG analysis a genuine extension of fundamental investment analysis, not solely an ethical overlay.",
+                "explain": "Worth recognising this dual framing as genuinely important — ESG can be understood BOTH as a values-based consideration AND as a material financial risk factor, and a strong answer should be able to discuss both framings."
+            },
+            {
+                "q": "Why might climate change represent a genuinely distinctive, long-term risk consideration for institutional investors, echoing this course's recurring climate-risk material?",
+                "a": "Climate change can affect asset values through both physical risks (direct damage to assets from extreme weather) and transition risks (asset values changing as economies shift away from carbon-intensive activities), both potentially materialising over a genuinely long time horizon relevant to institutional investors' typically long investment periods.",
+                "explain": "This directly recalls SA1's and SA3's climate-risk material — worth recognising this same emerging risk category applying to investment portfolios specifically, alongside its relevance to insurers' underwriting risk covered elsewhere."
+            },
+            {
+                "q": "Why might 'stewardship' (engaging with companies as a shareholder to encourage genuinely improved practices) be considered a distinct responsible investment activity from simply excluding certain assets from a portfolio?",
+                "a": "Exclusion removes an investor's ability to influence a company's practices entirely, while stewardship retains an ownership stake and uses that position to genuinely engage with and influence company behaviour, potentially achieving more real-world change than divestment alone, though requiring genuine, sustained engagement effort.",
+                "explain": "Worth recognising exclusion and stewardship as genuinely DIFFERENT responsible-investment approaches with different trade-offs, not interchangeable terms for the same underlying activity."
+            },
+            {
+                "q": "Why might an investor's governing body need to establish a clear responsible investment policy, rather than leaving ESG considerations to the discretion of individual portfolio managers?",
+                "a": "A clear policy ensures ESG considerations are applied consistently across the whole portfolio in line with the investor's own genuine objectives and values, rather than varying unpredictably by individual manager discretion, echoing Module 3's mandate-clarity material.",
+                "explain": "This directly recalls Module 3's mandate-clarity material — worth recognising responsible investment policy as a specific APPLICATION of the general principle that mandates should be clear and specific, not left to informal individual discretion."
+            },
+            {
+                "q": "Why might ESG data and ratings from different providers sometimes produce genuinely inconsistent assessments of the same company, and why does this matter for investment decision-making?",
+                "a": "Different ESG rating providers can use genuinely different methodologies and weightings for various ESG factors, producing inconsistent scores for the same company, so investors relying on a single provider's rating should be aware of this genuine methodological variation rather than treating any single score as an objective, universally agreed truth.",
+                "explain": "This directly recalls SA3's catastrophe-model-uncertainty material — worth recognising ESG rating variation as a genuinely analogous form of MODEL/METHODOLOGY UNCERTAINTY, requiring similar critical awareness rather than uncritical reliance on a single source."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Risk measurement for investment managers",
+        "description": "Covers the key techniques investment managers use to measure and monitor portfolio risk, including volatility, value at risk, and stress testing.",
+        "cards": [
+            {
+                "q": "Why might volatility (standard deviation of returns) alone be an incomplete measure of an investment portfolio's genuine risk, echoing CS2's material?",
+                "a": "Volatility treats upside and downside deviations symmetrically, while investors typically care more genuinely about downside risk (losses) than upside variation (unexpectedly good returns), so volatility alone can understate what investors actually care about, requiring complementary downside-focused risk measures.",
+                "explain": "This directly recalls CS2's and CP2's risk-measure-limitations material — worth recognising this as a genuinely important critique applicable to volatility as a risk measure across the whole actuarial curriculum, not specific to investment management alone."
+            },
+            {
+                "q": "What is 'Value at Risk' (VaR), and what is one genuine limitation of this measure, echoing CP1's and SA1's material?",
+                "a": "VaR estimates the maximum loss expected to be exceeded with a given probability over a given time period (e.g. a 1-in-20 chance of losing more than a stated amount over one month); one genuine limitation is that VaR says nothing about how much WORSE losses could be beyond that threshold, potentially understating genuine tail risk.",
+                "explain": "This directly recalls CS2's and CP2's tail-risk material — worth recognising VaR's limitation as directly analogous to catastrophe modelling's return-period concept: knowing a threshold's probability doesn't tell you the genuine severity beyond it."
+            },
+            {
+                "q": "Why might stress testing (assessing portfolio performance under specific adverse scenarios) provide genuinely complementary insight to VaR, echoing SA1's and SA3's material?",
+                "a": "Stress testing directly reveals how a portfolio would perform under specific, named adverse scenarios (e.g. a sharp equity market fall combined with rising interest rates), providing more concrete, interpretable insight into a portfolio's genuine vulnerabilities than a single probabilistic VaR figure alone.",
+                "explain": "This directly recalls SA1's and SA3's stress-testing material — worth recognising stress testing and VaR as genuinely COMPLEMENTARY techniques, addressing different aspects of risk measurement rather than one simply replacing the other."
+            },
+            {
+                "q": "Why might 'tracking error' (the volatility of a portfolio's return relative to its benchmark) be a particularly important risk measure for an actively-managed portfolio, echoing Module 3's mandate material?",
+                "a": "Since an active manager's mandate is typically judged against a specified benchmark (Module 3's material), tracking error directly measures how much the manager's actual portfolio has genuinely deviated from that benchmark, a more mandate-relevant risk measure than absolute volatility alone for assessing whether the manager is operating within agreed risk parameters.",
+                "explain": "This directly recalls Module 3's benchmark-and-mandate material — worth recognising tracking error as the risk measure MOST DIRECTLY connected to whether a manager is genuinely adhering to its agreed mandate."
+            },
+            {
+                "q": "Why might risk measurement for an investment portfolio need to be an ongoing, rather than one-off, exercise, echoing this course's recurring theme?",
+                "a": "Portfolio composition, market conditions, and correlations between assets can all change materially over time, so a risk assessment conducted once and never revisited would quickly become outdated, leaving governance and risk management decisions based on a stale picture of the portfolio's actual current risk.",
+                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to investment risk measurement, echoing the identical discipline covered across every SA subject."
+            }
+        ]
     }
-
     ]
 };
