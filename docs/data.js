@@ -18810,6 +18810,117 @@ const MODULES = {
                 "explain": "This closing card ties this module's four techniques together explicitly — worth recognising these as a genuinely INTEGRATED toolkit spanning strategy DEVELOPMENT (pricing models, ALM), IMPLEMENTATION (hedging), and ONGOING MONITORING (dynamic benchmarks), not four independent, unrelated techniques."
             }
         ]
+    },
+    {
+        "id": "m09",
+        "title": "Portfolio management techniques",
+        "description": "Covers the principal portfolio management techniques including active management styles, and equity and bond portfolio management approaches, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine active management 'styles' does the official syllabus (objective 7.1) name as principal portfolio management techniques?",
+                "a": "Value, growth, momentum, and rotational styles — four genuinely distinct philosophical approaches to actively selecting investments, each based on different underlying beliefs about what drives genuine outperformance.",
+                "explain": "Worth memorising these four named styles precisely — each represents a genuinely different underlying THEORY of what causes securities to outperform, not simply different levels of aggressiveness."
+            },
+            {
+                "q": "What is a 'value' investing style, and what genuine underlying belief does it rest on?",
+                "a": "Value investing seeks securities trading below their genuine intrinsic or fundamental worth (e.g. low price relative to earnings or book value), resting on the genuine belief that market prices can temporarily diverge from true fundamental value and will eventually converge back toward it.",
+                "explain": "This directly recalls Module 5's fundamental-analysis material — worth recognising value investing as the direct PRACTICAL APPLICATION of fundamental analysis: identifying securities where market price and genuine fundamental value have diverged."
+            },
+            {
+                "q": "How does a 'momentum' investing style genuinely differ in philosophy from a 'value' style?",
+                "a": "Momentum investing buys securities that have recently performed well (and sells those performing poorly), resting on the genuine belief that recent price trends tend to persist for some period, a philosophically OPPOSITE approach to value investing, which instead seeks securities that have UNDERperformed relative to their genuine fundamental worth.",
+                "explain": "Worth recognising value and momentum as representing genuinely OPPOSING underlying philosophies — value bets on price-to-fundamental convergence, momentum bets on recent trend persistence — making them a useful contrasting pair to understand together."
+            },
+            {
+                "q": "What is a 'rotational' style of active management, and why might it require genuinely broader market-timing skill than the other three named styles?",
+                "a": "A rotational style deliberately shifts allocation between different sectors, styles, or asset classes based on the manager's view of where in an economic or market cycle conditions currently sit, requiring genuine skill not just in selecting individual securities but in correctly timing broader shifts between whole market segments.",
+                "explain": "Worth recognising rotational investing as operating at a genuinely HIGHER LEVEL than the other three styles — value, growth and momentum are typically applied WITHIN a chosen segment, while rotation decides WHICH segment to be in at all."
+            },
+            {
+                "q": "What genuine techniques does the official syllabus (objective 7.1) require for equity portfolio management specifically, beyond the general active styles already covered?",
+                "a": "Techniques for constructing and managing a diversified equity portfolio, including decisions about the number of holdings, concentration versus diversification trade-offs, and how individual security selection combines into an overall portfolio-level risk and return profile.",
+                "explain": "Worth recognising equity PORTFOLIO management as a genuinely distinct skill from individual equity SECURITY selection — combining many individual security decisions into a coherent, well-diversified overall portfolio requires its own genuine expertise."
+            },
+            {
+                "q": "Why might bond portfolio management techniques genuinely differ from equity portfolio management techniques, echoing this course's recurring asset-class-specific material?",
+                "a": "Bond portfolios often place genuinely greater emphasis on duration and yield curve positioning (reflecting bonds' more directly interest-rate-driven valuation), while equity portfolios often place genuinely greater emphasis on style/factor exposure and stock-specific fundamental analysis, reflecting the genuinely different primary return and risk drivers each asset class carries.",
+                "explain": "This directly recalls this course's asset-class-specific-technique theme — worth recognising bond and equity portfolio management as requiring genuinely DIFFERENT primary skill emphases, reflecting each asset class's own dominant risk and return drivers."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Institutional use of derivatives, multifactor models and transition management",
+        "description": "Covers how, why and when an institutional investor may use financial futures/options/swaps, the use of multifactor models, and understanding transition management and the custodian's role, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine derivative instruments does the official syllabus (objective 7.2) require understanding of institutional use for, echoing Module 4's material?",
+                "a": "Financial futures and options (including over-the-counter contracts), interest rate/currency/inflation swaps, and forward foreign exchange contracts for currency hedging — a genuinely practical, institutional-application extension of Module 4's general derivative mechanics material.",
+                "explain": "This directly recalls Module 4's derivative-mechanics material — worth recognising this module as taking that earlier GENERAL understanding and applying it to genuinely SPECIFIC institutional investor use cases."
+            },
+            {
+                "q": "Why might a pension scheme institutional investor use forward foreign exchange contracts specifically for currency hedging, echoing this course's ALM material?",
+                "a": "A scheme holding overseas assets to fund domestic-currency liabilities faces genuine currency risk (asset value in domestic-currency terms can fall purely due to exchange rate movements, unrelated to the underlying asset's own performance), so forward FX contracts can hedge this specific currency mismatch, directly applying this course's recurring asset-liability matching principle to currency exposure specifically.",
+                "explain": "This directly recalls CM2's and SA4's ALM material — worth recognising currency hedging as a genuine, specific APPLICATION of the general asset-liability matching principle, addressing currency risk specifically rather than interest rate or inflation risk."
+            },
+            {
+                "q": "What is a 'multifactor model', and how does it genuinely extend beyond the single-factor logic of basic asset pricing models covered in Module 8, per the official syllabus objective 7.3?",
+                "a": "A multifactor model explains genuine asset returns using multiple systematic risk factors (e.g. value, size, momentum, quality) simultaneously, rather than a single risk-return relationship, providing a genuinely richer, more nuanced framework for understanding what drives returns and for constructing and analysing portfolios.",
+                "explain": "This directly recalls Module 8's single-factor asset pricing model material — worth recognising multifactor models as a genuine EXTENSION, capturing multiple genuinely distinct return drivers simultaneously rather than a single, simplified risk-return relationship."
+            },
+            {
+                "q": "Why might multifactor models be genuinely useful for practical portfolio construction and risk control, beyond purely academic asset pricing theory?",
+                "a": "A multifactor model can reveal a portfolio's genuine exposure to specific risk factors (e.g. unintended concentration in a 'value' or 'small-cap' factor), allowing managers to genuinely understand and deliberately control these exposures, rather than only seeing aggregate portfolio risk without understanding its underlying, factor-level composition.",
+                "explain": "This directly previews this course's later portfolio-construction module — worth recognising multifactor models as providing genuinely actionable, DECOMPOSED risk insight, not merely an academic return-explanation exercise."
+            },
+            {
+                "q": "What is 'transition management', and why might making significant changes to a substantial portfolio's investment allocation be genuinely problematic without it, per the official syllabus objectives 7.4-7.5?",
+                "a": "Transition management is the specialist process of executing a large-scale change in a portfolio's asset allocation (e.g. switching manager or strategy) efficiently, minimising genuine transaction costs and market impact; without careful management, a large, poorly-executed transition could incur genuinely significant hidden costs from market impact and prolonged exposure to unintended interim risk during the transition period.",
+                "explain": "Worth recognising transition management as addressing a genuinely practical, easily-overlooked IMPLEMENTATION risk — even a well-justified strategic reallocation decision can be genuinely undermined by poor execution during the transition itself."
+            },
+            {
+                "q": "What are the genuine roles and responsibilities of a custodian, per the official syllabus objective 7.6, echoing SA7's material?",
+                "a": "A custodian holds and safeguards an institutional investor's assets, settles trades, and provides administrative services (e.g. dividend/interest collection, corporate action processing), providing a genuine safeguard by separating asset SAFEKEEPING from the investment MANAGER's decision-making role.",
+                "explain": "This directly recalls SA7's custody-separation material — worth recognising the custodian's role as examinable even at SP5's foundational level, not exclusively an SA7-level governance concept."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Portfolio construction and risk measurement",
+        "description": "Covers assessing portfolio construction considering Value at Risk, tracking error and risk budgets, and understanding the measurement, comparison and attribution of risk, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is a 'risk budget' in the context of portfolio construction, per the official syllabus objective 7.7, echoing this course's recurring risk-measurement material?",
+                "a": "A risk budget allocates a genuine, explicit amount of acceptable risk (e.g. measured via tracking error or VaR) across different components of a portfolio or investment decisions, ensuring the total portfolio's aggregate risk remains within a genuinely intended overall limit while allowing managers flexibility in how that risk is distributed across specific positions.",
+                "explain": "This directly recalls SA7's risk-budget material — worth recognising risk budgeting as a genuinely practical GOVERNANCE TOOL, translating an overall risk tolerance into specific, actionable limits for individual portfolio decisions."
+            },
+            {
+                "q": "Why might Value at Risk (VaR) and tracking error be used TOGETHER when assessing portfolio construction, rather than relying on either measure alone, echoing SA7's material?",
+                "a": "VaR measures genuine absolute downside risk (potential loss in monetary or percentage terms), while tracking error measures genuine RELATIVE risk against a benchmark; using both together provides a more complete risk picture, since a portfolio could have low tracking error (closely following its benchmark) while the benchmark itself carries genuinely significant absolute VaR, or vice versa.",
+                "explain": "This directly recalls SA7's VaR-and-tracking-error material — worth recognising these as measuring genuinely DIFFERENT dimensions of risk (absolute versus relative), each potentially telling a genuinely different story about the same portfolio."
+            },
+            {
+                "q": "What does 'measurement, comparison and attribution of risk' (per the official syllabus objective 7.8) genuinely require, beyond simply calculating a single risk number for a portfolio?",
+                "a": "Measurement calculates the genuine risk figure itself (e.g. VaR, tracking error); comparison assesses that figure against a benchmark, peer group, or the portfolio's own risk budget; attribution decomposes WHERE that risk genuinely comes from (e.g. which specific positions or factor exposures contribute most), together providing a genuinely complete risk-understanding framework, not just a single output number.",
+                "explain": "Worth recognising this three-part framework (measure, compare, attribute) as directly paralleling this course's recurring WHY-versus-THAT decomposition theme applied specifically to RISK, not just to performance or surplus analysis."
+            },
+            {
+                "q": "Why might risk attribution reveal that a portfolio's overall risk is dominated by a small number of specific positions or factor exposures, even in a portfolio with genuinely many holdings?",
+                "a": "Genuine correlation between holdings means a portfolio's TOTAL risk is not simply the sum of each individual holding's own risk; a small number of highly correlated or highly volatile positions can genuinely dominate overall portfolio risk even while representing a modest proportion of total portfolio value, an insight risk attribution specifically reveals.",
+                "explain": "This directly recalls Module 6's mean-variance-correlation material — worth recognising risk attribution as revealing genuinely important CONCENTRATION insights that simple position-weighting alone would not show."
+            },
+            {
+                "q": "Why might a manager deliberately construct a portfolio to have genuinely low tracking error against its benchmark, and what genuine trade-off does this involve?",
+                "a": "Low tracking error signals the portfolio closely follows its benchmark, reducing genuine relative performance risk and reassuring clients the manager is operating within its intended mandate, but this genuinely limits the manager's scope to add value through active security selection, since closely hugging the benchmark leaves little room for genuinely differentiated positioning.",
+                "explain": "This directly recalls Module 9's active-management-style material — worth recognising this as a genuine trade-off between MANDATE-ADHERENCE COMFORT and GENUINE ACTIVE-MANAGEMENT OPPORTUNITY, not a straightforwardly 'lower is always better' risk metric."
+            },
+            {
+                "q": "How does this module's portfolio-construction and risk-measurement material connect back to Module 9's portfolio management techniques?",
+                "a": "Module 9 established the genuine STYLES and TECHNIQUES a manager might use to select investments (value, growth, momentum, rotation); this module shows how the resulting portfolio's genuine RISK CHARACTERISTICS (via VaR, tracking error, risk budgets, and attribution) should then be assessed and controlled, closing the loop between investment SELECTION and portfolio-level RISK MANAGEMENT.",
+                "explain": "This closing card ties this module back to Module 9 explicitly — worth recognising portfolio construction and risk measurement as the genuine RISK-MANAGEMENT COUNTERPART to Module 9's investment-selection techniques, not a separate, unrelated topic."
+            }
+        ]
     }
     ]
 };
