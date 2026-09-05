@@ -18188,7 +18188,149 @@ const MODULES = {
                 "explain": "This closing card ties this module directly to Module 5 — worth recognising financing methods as the genuine TOOLKIT that scheme design decisions (covered next) must draw upon and combine appropriately."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "Scheme design factors",
+        "description": "Covers the factors to consider when determining a suitable design for a pension scheme or other benefit arrangement, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine design factors does the official syllabus (objective 2.2) require candidates to consider when determining a suitable pension scheme or benefit design?",
+                "a": "Type of pension scheme (e.g. defined benefit, defined contribution, risk-sharing), governance requirements, level and form of benefits and/or contributions, method of financing the benefits, how risk is shared between parties, and choice of assets (when benefits are to be funded and when assets are to be invested).",
+                "explain": "Worth memorising this exact six-part list — it defines the genuine scope of design factors SP4 expects, directly building on Module 4's financing-methods material as one of these six factors."
+            },
+            {
+                "q": "What is a 'risk-sharing' scheme design, and why might it be considered a genuinely distinct third category alongside pure DB and pure DC, echoing SA4's material?",
+                "a": "A risk-sharing scheme (e.g. a hybrid or collective defined contribution arrangement) genuinely splits investment and/or longevity risk between the sponsor and members, rather than allocating it entirely to one side as pure DB (sponsor bears risk) or pure DC (member bears risk) do.",
+                "explain": "This directly recalls SA4's hybrid-and-CDC material — worth recognising risk-sharing as a genuine, deliberate design category in its own right, not merely a variant of DB or DC."
+            },
+            {
+                "q": "Why must a scheme's 'governance requirements' be considered as a genuine design factor, rather than a separate, downstream implementation detail decided after the scheme's core design?",
+                "a": "Different scheme designs genuinely require different governance structures to operate soundly (e.g. a DB scheme needs trustees exercising fiduciary judgement over funding and investment, while a simpler DC arrangement may need less intensive ongoing governance), so governance capability and design choice are genuinely interconnected, not sequential, decisions.",
+                "explain": "Worth recognising that a scheme design requiring MORE governance sophistication than the sponsor/trustees can genuinely provide would be a poor design choice regardless of its technical merits — governance capacity is a genuine design CONSTRAINT, not an afterthought."
+            },
+            {
+                "q": "Why must 'how risk is shared between parties' be assessed as a genuinely distinct design factor from 'type of pension scheme', even though scheme type strongly influences risk allocation?",
+                "a": "Even within a single scheme TYPE (e.g. DB), risk-sharing details can genuinely vary (e.g. different benefit increase bases, different member contribution structures affecting how much risk members bear even in a nominally DB arrangement), so risk allocation deserves genuinely distinct, explicit consideration beyond simply naming the scheme type.",
+                "explain": "Worth recognising that scheme TYPE provides only a broad starting point for risk allocation — the GENUINE, detailed risk-sharing structure requires its own explicit design consideration within whatever broad type is chosen."
+            },
+            {
+                "q": "Why might 'choice of assets' need to distinguish between 'when benefits are to be funded' and 'when assets are to be invested', per the official syllabus's parenthetical clarification?",
+                "a": "These are genuinely two distinct decisions — WHETHER and WHEN to set aside funding for a benefit (a financing-timing decision, echoing Module 4) is conceptually separate from HOW any funded assets are then invested (an investment-strategy decision), and a design could genuinely combine different choices along each of these two dimensions.",
+                "explain": "This directly recalls Module 4's financing-timing material — worth recognising these as two genuinely SEQUENTIAL decisions (first whether/when to fund, then how to invest what is funded), not a single combined choice."
+            },
+            {
+                "q": "Why might determining a 'suitable' scheme design genuinely depend on the specific sponsor and member population involved, rather than following one universally best template, echoing SP1's and SP2's identical design-context material?",
+                "a": "The same underlying design concept could be genuinely well-suited to a sponsor with strong covenant and a stable, engaged workforce, and poorly suited to a sponsor with weaker covenant or a more transient workforce needing greater flexibility, so design decisions must be anchored in the specific situation given.",
+                "explain": "This directly recalls SP1's and SP2's context-specific-design material — worth recognising this same principle applying identically to pension scheme design specifically."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Risks affecting benefit design and financing",
+        "description": "Covers the risks affecting the level and incidence of benefits, contributions and asset returns, asset exhaustion, and overall benefit security, including insurance-based mitigation, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine risk categories does the official syllabus (objective 3.1) require candidates to understand as affecting a benefit arrangement?",
+                "a": "Risks affecting the level and incidence of benefits, the level and incidence of contributions, the level and incidence of return on assets, the extent to which assets are exhausted during a member's lifetime, and the overall security of benefits — five genuinely distinct risk dimensions.",
+                "explain": "Worth memorising this exact five-part list — note the genuinely DC-relevant 'extent to which assets are exhausted during a member's lifetime' risk, addressing the risk that an individual's accumulated pot runs out before they die, distinct from a DB scheme's benefit-security risk."
+            },
+            {
+                "q": "Why might 'the extent to which assets are exhausted during a member's lifetime' be a genuinely distinctive risk primarily relevant to DC arrangements, rather than DB schemes?",
+                "a": "A DC member drawing down their own accumulated pot faces genuine longevity risk that their assets could run out before they die (unless the pot is converted to a guaranteed income), while a DB scheme's promised benefit is paid for as long as the member lives regardless of any underlying asset exhaustion, since the SPONSOR (not the individual) bears this risk in a DB arrangement.",
+                "explain": "This directly recalls Module 5's risk-sharing material — worth recognising this specific risk as a direct consequence of DC's individual-risk-bearing structure, genuinely absent (or at least structured very differently) in a pure DB arrangement."
+            },
+            {
+                "q": "Why does the syllabus explicitly require understanding which of these risks 'can, and cannot, be mitigated through the use of insurance products' (objective 3.1)?",
+                "a": "Some risks (e.g. longevity risk, via annuity purchase) can genuinely be transferred to an insurer through appropriate insurance products, while others (e.g. certain investment or inflation risks in some markets) may have no readily available insurance solution, so understanding this distinction genuinely shapes what risk management options are actually available to a provider or individual.",
+                "explain": "This directly previews this course's later insurance-products-as-financing material — worth recognising insurance as a genuinely PARTIAL, not universal, solution to the risks named in this module."
+            },
+            {
+                "q": "Why might contribution-level risk genuinely differ in significance between a scheme with fixed, contractually-defined contributions and one with variable, need-based contributions?",
+                "a": "A fixed contribution structure provides certainty to whoever pays contributions but shifts the genuine risk of any shortfall onto whoever bears the benefit-adequacy risk, while a variable, need-based contribution structure (e.g. a DB recovery plan) shifts genuine funding risk onto the contribution-payer instead, so contribution-level risk and benefit-level risk are genuinely linked, opposite sides of the same underlying risk allocation.",
+                "explain": "Worth recognising contribution risk and benefit risk as two GENUINELY CONNECTED sides of the same underlying risk-allocation coin, not independent risk categories that happen to be listed separately."
+            },
+            {
+                "q": "Why might 'overall security of benefits' need to be assessed as a genuinely distinct, higher-level risk category, beyond simply summing the individual risks affecting benefit level, contributions, and asset returns?",
+                "a": "Overall security genuinely depends on how these individual risks interact and are backed by the wider provider's (e.g. sponsor's) financial strength, so a scheme could have well-managed individual risk components yet still face genuine overall security concerns if the sponsor backing those components is itself financially weak — a genuinely holistic assessment beyond the sum of individual risk parts.",
+                "explain": "This directly recalls Module 3's sponsor-covenant material — worth recognising overall security as requiring the same INTEGRATED assessment approach Module 3 developed for covenant, not a simple additive combination of the other four listed risks."
+            },
+            {
+                "q": "Why might an insurance-based risk mitigation solution (e.g. purchasing an annuity or a longevity swap) itself introduce a genuine new risk that the provider must then manage?",
+                "a": "Transferring risk to an insurer creates genuine counterparty/credit risk — the insurer must itself remain financially able to honour the transferred obligation, so insurance-based mitigation transforms the original risk into a genuinely different, though typically smaller, counterparty risk rather than eliminating risk entirely.",
+                "explain": "This directly recalls this course's counterparty-risk material developed elsewhere — worth recognising that insurance mitigation TRANSFERS rather than ELIMINATES risk, a genuinely important nuance for a complete risk assessment."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Accounting standards for benefit provision",
+        "description": "Covers the purposes of accounting standards, their disclosure requirements, and the calculation of the cost of benefit provision, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine purpose of accounting standards for pension and other benefit provision, per the official syllabus objective 3.2?",
+                "a": "Accounting standards ensure a sponsoring employer's financial statements genuinely and consistently reflect the cost and obligations arising from its benefit arrangements, allowing stakeholders (e.g. investors, creditors) to assess the sponsor's true financial position on a comparable basis across different companies and reporting periods.",
+                "explain": "Worth recognising accounting standards' purpose as genuinely about COMPARABILITY and TRANSPARENCY for the sponsor's own financial statement users, a distinct purpose from the scheme's own funding valuation (covered later in this course), even though both draw on similar underlying actuarial techniques."
+            },
+            {
+                "q": "What genuine disclosure requirements do accounting standards typically impose regarding a sponsor's pension obligations?",
+                "a": "Standards typically require disclosure of the scheme's accounting liability, the value of scheme assets, the resulting net surplus or deficit position, and the key assumptions used in the calculation, giving financial statement users a genuinely transparent view of the pension arrangement's financial impact on the sponsoring employer.",
+                "explain": "Worth recognising these disclosures as directly analogous to a life insurer's Solvency II Pillar 3 disclosures — both aim to give external stakeholders a genuinely transparent, standardised view of an otherwise complex underlying obligation."
+            },
+            {
+                "q": "Why might the accounting basis used to calculate the cost of benefit provision genuinely differ from the funding basis used for the scheme's own funding valuation?",
+                "a": "Accounting standards aim for a genuinely consistent, comparable measurement basis across companies (often using a prescribed discount rate methodology, e.g. linked to high-quality corporate bond yields), while the funding basis reflects the scheme's own specific investment strategy and prudence requirements, so the SAME underlying liability can genuinely be measured differently under each basis.",
+                "explain": "This directly recalls SP1's and SP2's multiple-reporting-bases material — worth recognising this same principle applying to pensions: different reporting PURPOSES (accounting comparability versus funding adequacy) genuinely warrant different measurement bases."
+            },
+            {
+                "q": "Why might a genuinely large pension deficit disclosed under accounting standards affect a sponsoring company's own share price or credit rating, beyond the scheme's own funding position?",
+                "a": "Financial statement users (investors, credit rating agencies) genuinely incorporate disclosed pension obligations into their assessment of a company's overall financial health, so a large disclosed deficit can directly affect market perceptions of the sponsor's creditworthiness and value, independent of whatever funding plan the scheme's own trustees have separately agreed with the sponsor.",
+                "explain": "Worth recognising accounting disclosure as having genuine, direct real-world consequences for the sponsor beyond the scheme's own internal funding management — a further reason sound, transparent accounting matters."
+            },
+            {
+                "q": "Why must calculating the cost of benefit provision under accounting standards involve genuine actuarial judgement, rather than a purely mechanical formula, echoing this course's recurring theme?",
+                "a": "Even within a prescribed accounting framework, genuine judgement is required in selecting specific assumptions (e.g. discount rate, mortality, salary growth) consistent with the standard's requirements but still requiring the actuary's own professional assessment of what is genuinely appropriate for the specific scheme and sponsor circumstances.",
+                "explain": "This directly recalls this course's recurring judgement-within-a-framework theme — worth recognising accounting-basis assumption-setting as requiring the SAME genuine professional judgement discipline as funding-basis assumption-setting, even though the two serve different purposes."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Member options and investment strategy",
+        "description": "Covers setting terms and consent requirements for member options, and the factors relevant to setting investment strategy and using projection models to develop it, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine factors does the official syllabus (objective 3.3) require candidates to consider when setting terms and consent requirements for member options?",
+                "a": "The genuine risk and reward for all stakeholders affected by the option (not just the member exercising it), ensuring the terms offered are neither unfairly generous (creating anti-selection risk to the scheme) nor unfairly restrictive (failing to serve genuine member interests).",
+                "explain": "Worth recognising this as directly echoing this course's recurring embedded-option anti-selection material — member option terms must genuinely balance fairness to the exercising member against the resulting risk to the wider scheme and other stakeholders."
+            },
+            {
+                "q": "Why might a pension scheme require a member to obtain independent financial advice before exercising a large transfer-value option, echoing SA4's material?",
+                "a": "Giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a transfer value is a genuinely significant, often irreversible decision shifting investment and longevity risk onto the member, so requiring independent advice helps ensure the member genuinely understands this consequence before deciding, protecting the member's own interests as a key stakeholder.",
+                "explain": "This directly recalls SA4's transfer-advice-requirement material — worth recognising consent requirements as a genuine, practical CONDUCT PROTECTION mechanism, directly connecting this module's abstract 'terms and consent' objective to a concrete real-world example."
+            },
+            {
+                "q": "What genuine factors does the official syllabus (objective 3.4) require candidates to consider when setting a benefit provider's investment strategy?",
+                "a": "The nature and duration of the scheme's genuine liabilities, the strength of the sponsor covenant (echoing Module 3's material), the scheme's genuine funding position and risk appetite, and regulatory or governance constraints on permissible investment approaches.",
+                "explain": "This directly recalls Module 3's sponsor-covenant material and CM2's ALM material — worth recognising investment strategy-setting as drawing on MULTIPLE earlier modules' material together, not a standalone technical exercise."
+            },
+            {
+                "q": "Why might projection models be genuinely useful for developing an appropriate investment strategy, rather than setting strategy based purely on current-position analysis?",
+                "a": "Projection models can show how a proposed investment strategy might genuinely perform under a range of future scenarios (including adverse ones), revealing whether the strategy is likely to achieve the scheme's funding objectives with acceptable risk over time, insight a single current-position snapshot cannot provide.",
+                "explain": "This directly recalls this course's recurring stochastic-modelling-for-forward-looking-insight material — worth recognising projection models as providing genuinely FORWARD-LOOKING insight that current-position analysis alone cannot."
+            },
+            {
+                "q": "Why might a maturing DB scheme's investment strategy genuinely need to change over time, even without any change in sponsor covenant or member option terms, echoing SA4's de-risking material?",
+                "a": "As a scheme matures (more pensioners relative to active members), its investment time horizon genuinely shortens and its tolerance for short-term volatility reduces, so investment strategy should evolve in response to this genuine change in the scheme's own liability profile over time, independent of any other change in circumstances.",
+                "explain": "This directly recalls SA4's de-risking-as-scheme-matures material — worth recognising SCHEME MATURITY itself as a genuine, independent driver of appropriate investment strategy evolution, examinable even at SP4's more foundational level."
+            },
+            {
+                "q": "How do this module's member options and investment strategy material connect back to Module 6's risk material?",
+                "a": "Member options can transfer or crystallise specific risks identified in Module 6 (e.g. exercising a transfer option removes the scheme's future exposure to that member's longevity risk), while investment strategy directly manages Module 6's asset-return risk, showing how this module's practical tools connect directly to managing the risk categories Module 6 established.",
+                "explain": "This closing card ties this module back to Module 6 explicitly — worth recognising member options and investment strategy as PRACTICAL TOOLS for managing the risk categories that module identified, not separate, unrelated topics."
+            }
+        ]
     }
-
     ]
 };
