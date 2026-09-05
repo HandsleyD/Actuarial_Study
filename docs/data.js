@@ -14952,7 +14952,218 @@ const MODULES = {
                 "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this principle as genuinely universal across every SA subject, not specific to health and care."
             }
         ]
+    },
+    {
+        "id": "m07",
+        "title": "Product design and pricing (1)",
+        "description": "Covers pricing principles for protection products and the with-profits bonus philosophy, applying the equivalence principle to life insurance.",
+        "cards": [
+            {
+                "q": "How does the equivalence principle apply to pricing a term assurance product, echoing CB1's and SA1's core pricing material?",
+                "a": "The premium is set so the expected present value of premium income equals the expected present value of death benefit outgo plus expenses, using mortality, lapse and expense assumptions appropriate to the specific product and market.",
+                "explain": "This is CB1's and SA1's equivalence principle recalled directly — worth recognising life insurance pricing as fundamentally the same technique as health and care pricing, just with mortality (not morbidity) as the primary decrement."
+            },
+            {
+                "q": "Why might mortality assumptions for term assurance pricing need to reflect both current mortality levels and expected future improvement, echoing CS2's material?",
+                "a": "A multi-year term assurance contract's cost depends on mortality rates throughout the whole term, and mortality has historically improved over time, so pricing that used only current, unprojected mortality rates could materially overstate the product's true expected cost.",
+                "explain": "This directly recalls CS2's mortality-projection material and Module 2's protection-product material — worth recognising this as the direct pricing application of CS2's mortality-improvement modelling techniques."
+            },
+            {
+                "q": "Why does setting a with-profits bonus rate require balancing the interests of different generations of policyholders in the same fund, rather than simply reflecting current investment returns?",
+                "a": "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. paying overly generous bonuses now could disadvantage future policyholders' claims), requiring genuine fairness judgement across the whole fund over time.",
+                "explain": "This directly recalls Module 3's bonus-judgement material — worth recognising this INTER-GENERATIONAL fairness dimension as a genuinely distinctive feature of with-profits pricing, not present in most other product pricing decisions."
+            },
+            {
+                "q": "Why might an insurer need to set aside an explicit allowance for smoothing costs when pricing a with-profits product?",
+                "a": "Smoothing investment returns (Module 3's material) means the insurer sometimes pays out more than the underlying assets currently support (in poor years) and sometimes less (in good years), so pricing needs to anticipate the genuine net cost of providing this smoothing over the product's life.",
+                "explain": "This directly recalls Module 3's smoothing-mechanism material — worth recognising smoothing as a genuine cost to be priced for, not simply a free administrative feature of with-profits products."
+            },
+            {
+                "q": "Why might profit testing (CB1's technique) be particularly important for a with-profits product, given its embedded discretion and smoothing?",
+                "a": "Profit testing projects the product's cashflows under the insurer's actual bonus and smoothing policy to confirm the pricing genuinely achieves target profitability, which is especially important given how much of a with-profits product's economics depends on discretionary decisions not fixed at outset.",
+                "explain": "This directly recalls CB1's profit-testing material and SA1's equivalent card — worth recognising profit testing as the practical verification step needed precisely because with-profits pricing cannot be fully captured by a single closed-form equivalence-principle calculation."
+            },
+            {
+                "q": "Why might expense assumptions for with-profits products need particular care, given their typically longer duration and higher administrative complexity than term assurance?",
+                "a": "With-profits products often involve ongoing bonus calculation, fund management, and communication with policyholders over a genuinely long duration, so their expense assumption must reflect this higher, sustained administrative burden rather than a simpler protection product's more limited ongoing servicing needs.",
+                "explain": "This directly recalls CB1's expense-category material — worth recognising that different life insurance product types carry genuinely different expense profiles, not a single generic 'life insurance expense' assumption applicable everywhere."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Product design and pricing (2)",
+        "description": "Covers pricing considerations for unit-linked products, embedded guarantees and options, and pricing for group life business.",
+        "cards": [
+            {
+                "q": "Why might setting a unit-linked policy's annual management charge require genuine equivalence-principle-style analysis, even though it looks like a simple percentage fee?",
+                "a": "The charge must be set so the expected present value of charge income covers the expected present value of expenses and required profit margin over the policy's expected lifetime, exactly the same underlying pricing logic as a traditional premium calculation, just expressed as an ongoing deduction rather than an upfront premium.",
+                "explain": "This directly recalls Module 3's unit-linked-charging material — worth recognising that charge-setting is genuine PRICING in substance, even though its everyday presentation (a simple annual percentage) can make this less obvious than a traditional premium calculation."
+            },
+            {
+                "q": "Why might a unit-linked product's persistency (lapse) assumption be particularly important to its profitability, echoing CB1's and SA1's material?",
+                "a": "Since unit-linked profit largely derives from ongoing charges rather than an upfront margin, higher-than-assumed early lapses directly reduce the insurer's opportunity to recoup initial expenses and earn its intended margin, potentially turning an expected-profitable policy into a loss-making one.",
+                "explain": "This directly recalls SA1's and CB1's lapse-and-new-business-strain material — worth recognising that this same principle applies with particular force to unit-linked business, where ongoing charges (not an upfront margin) are the primary profit source."
+            },
+            {
+                "q": "Why might a unit-linked product embedding a guaranteed minimum death benefit require materially more complex pricing than a pure unit-linked product with no guarantee?",
+                "a": "The guarantee only bites if the fund value falls below the guaranteed level at the point of claim, so pricing it requires modelling the genuine, path-dependent probability and cost of this scenario across many possible future market outcomes, echoing CM2's option-pricing material.",
+                "explain": "This directly recalls CM2's embedded-option-pricing material and Module 3's guarantee-cost material — worth recognising that adding even a simple-sounding guarantee can require materially more sophisticated pricing techniques than the base unit-linked product alone."
+            },
+            {
+                "q": "Why might pricing for group life assurance (e.g. employer-sponsored death-in-service benefits) differ structurally from individual life pricing, echoing SA1's group-pricing material?",
+                "a": "Group pricing often reflects the specific risk profile of the employer's workforce and may use experience rating for larger groups, applying credibility-weighted pricing (CS1's material) rather than purely individual medical underwriting.",
+                "explain": "This directly recalls SA1's and CS1's group/credibility-rating material — worth recognising the same underlying principle recurring here: a large group's own claims experience carries genuine statistical credibility that a single individual's history cannot."
+            },
+            {
+                "q": "Why might a life insurer offering guaranteed insurability options (Module 2's material) need to price the option's cost explicitly, rather than folding it into the base product's general margin?",
+                "a": "Since policyholders are more likely to exercise the option when it is financially advantageous (health has genuinely deteriorated), the option carries a genuine anti-selective cost that should be identified and priced for explicitly, rather than assumed to be self-funding within a generic margin.",
+                "explain": "This directly recalls Module 2's and CM2's anti-selective-option-cost material — worth recognising explicit option pricing as good practice precisely because folding it into a generic margin risks systematically underpricing the option's true cost."
+            },
+            {
+                "q": "How does this module's pricing material connect back to Module 7's core pricing principles?",
+                "a": "Module 7 established the equivalence principle and with-profits bonus philosophy for core protection and savings pricing; this module extends the same underlying pricing discipline to unit-linked charges, embedded guarantees, and group business, showing the principle's genuine breadth of application.",
+                "explain": "This closing card ties this module back to Module 7 explicitly — worth recognising both modules as applying the SAME underlying equivalence-principle discipline to genuinely different product structures, not two unrelated pricing topics."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Taxation and the general regulatory environment",
+        "description": "Covers how taxation affects life insurers and policyholders, and the general purposes and approaches to regulation of life insurance business.",
+        "cards": [
+            {
+                "q": "Why does the tax treatment of life insurance premiums and benefits directly affect a product's genuine attractiveness to customers, echoing SA1's material?",
+                "a": "If premiums attract tax relief or benefits are received tax-free (or tax-favoured), the effective cost or value of the product changes materially, directly affecting demand and the price the insurer can competitively charge for economically similar cover.",
+                "explain": "This directly recalls SA1's taxation-affects-attractiveness material — worth recognising the same mechanism applying to life insurance, where tax-favoured savings and pension-linked products are a particularly significant real-world example."
+            },
+            {
+                "q": "Why might the taxation of a with-profits fund's investment returns need particular care, given the fund pools assets across many policyholders?",
+                "a": "Tax charged on the fund's investment income and gains directly reduces the returns available to support bonuses, so bonus-setting (Module 7's material) must genuinely account for the fund's after-tax investment performance, not its gross returns.",
+                "explain": "This directly recalls Module 7's bonus-setting material — worth recognising that with-profits bonus philosophy must be understood on an AFTER-TAX basis, since gross investment performance overstates what is genuinely available to distribute."
+            },
+            {
+                "q": "Why does an insurer's own corporate tax position affect its pricing and profit-margin decisions, beyond the policyholder-level tax treatment, echoing SA1's material?",
+                "a": "Tax payable on the insurer's own profits reduces the genuine after-tax return achieved from a given pre-tax margin, so pricing and profit testing must incorporate the insurer's own tax position to assess whether a product achieves its true target return.",
+                "explain": "This directly recalls SA1's and CB1's after-tax profitability material — worth recognising this as a genuinely universal pricing consideration across every insurance sector, not specific to life insurance."
+            },
+            {
+                "q": "Why does insurance regulation typically distinguish between prudential and conduct regulation, echoing SA1's and CP1's material?",
+                "a": "Prudential regulation focuses on financial soundness and ability to meet obligations, while conduct regulation focuses on fair customer treatment, addressing genuinely distinct risks — a life insurer can be prudentially sound while still treating customers unfairly, or vice versa.",
+                "explain": "This directly recalls SA1's and CP1's prudential-versus-conduct distinction — worth recognising this as a universal regulatory framework applying identically across every insurance sector this course covers."
+            },
+            {
+                "q": "Why might conduct regulation for with-profits business specifically focus on the fairness of insurer discretion, echoing Module 7's inter-generational fairness material?",
+                "a": "Since with-profits bonus-setting inherently involves genuine insurer discretion affecting different generations of policyholders differently, conduct regulation in this area typically requires clear governance and disclosure of how that discretion is exercised, a more targeted concern than for products with no comparable discretionary element.",
+                "explain": "This directly recalls Module 7's inter-generational-fairness material — worth recognising with-profits conduct regulation as addressing a genuinely SPECIFIC risk (fair exercise of discretion), distinct from the broader conduct regulation applying across all products."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Solvency II (1)",
+        "description": "Covers the structure and purpose of the Solvency II regulatory regime as it applies to life insurers, including the three-pillar framework and technical provisions.",
+        "cards": [
+            {
+                "q": "What are the three pillars of the Solvency II framework, echoing SA1's and CP1's material?",
+                "a": "Pillar 1 sets quantitative capital and technical provision requirements; Pillar 2 covers governance and risk management; Pillar 3 covers public disclosure and reporting requirements, together forming a comprehensive prudential regime.",
+                "explain": "This directly recalls SA1's three-pillar Solvency II material — worth recognising this structure as identical across every insurance sector Solvency II applies to, life insurance included."
+            },
+            {
+                "q": "Why might calculating the SCR for a life insurer's book require materially different risk modules than for a health and care insurer's book, echoing SA1's material?",
+                "a": "Life insurance risks (mortality, longevity, lapse, and market risk from guarantees) have genuinely different drivers and correlation structures than morbidity-driven health and care risk, requiring the standard formula or internal model to capture life-specific risk modules.",
+                "explain": "This directly recalls SA1's product-specific-capital-modelling material — worth recognising that Solvency II's CAPITAL calculation must reflect whichever risk drivers are genuinely material to the specific book being assessed, life or health and care."
+            },
+            {
+                "q": "Why might 'longevity risk' and 'mortality risk' be modelled as genuinely distinct, and sometimes offsetting, risk modules under Solvency II for a life insurer with both annuity and protection business?",
+                "a": "Longevity risk (annuitants living longer than expected) and mortality risk (policyholders dying sooner than expected) move in opposite directions for the insurer's balance sheet, so a life insurer with both business types has some natural diversification benefit that a pure single-product insurer would not have.",
+                "explain": "This directly recalls Module 6's inverted-risk-exposure material — worth recognising this natural diversification as a genuine, quantifiable capital benefit under Solvency II, not just a qualitative business-mix observation."
+            },
+            {
+                "q": "Why might Solvency II's technical provisions for a with-profits fund be particularly complex to calculate, given the fund's embedded discretion?",
+                "a": "Valuing with-profits liabilities requires modelling the insurer's own future discretionary bonus decisions under a market-consistent framework, a genuinely more complex exercise than valuing a liability with fixed, contractually-determined cashflows.",
+                "explain": "This directly recalls Module 7's with-profits-discretion material — worth recognising that market-consistent valuation of discretionary benefits requires explicitly modelling the insurer's own future decision-making, not just projecting fixed cashflows."
+            },
+            {
+                "q": "Why might the risk margin component of technical provisions be particularly significant for long-duration annuity business, echoing SA1's LTC-risk-margin material?",
+                "a": "The risk margin compensates for the cost of holding capital against non-hedgeable risks over the liability's remaining lifetime, and annuity business carries this capital cost for a potentially very long payment horizon, making the risk margin a proportionately larger component of its provisions.",
+                "explain": "This directly recalls SA1's LTC-risk-margin material — worth recognising the same duration-driven risk margin principle applying to annuities as the clearest life insurance parallel to SA1's long-term care example."
+            },
+            {
+                "q": "How does this module's Solvency II material connect back to the general regulatory-approaches material covered in Module 9?",
+                "a": "Module 9 established that prudential regulation aims to protect insurer financial soundness through capital and reporting requirements; Solvency II is the concrete regulatory regime through which that general prudential objective is actually implemented for life insurers in practice.",
+                "explain": "This closing card ties this module back to Module 9 explicitly — worth recognising Solvency II as the practical implementation of Module 9's general prudential-regulation objective, echoing SA1's identical framing."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Solvency II (2)",
+        "description": "Covers further Solvency II considerations for life insurers, including the matching adjustment, volatility adjustment, ORSA, and internal models.",
+        "cards": [
+            {
+                "q": "What is the 'matching adjustment' under Solvency II, and why is it particularly relevant to annuity business specifically?",
+                "a": "The matching adjustment allows an insurer to discount certain long-term, predictable liabilities (like annuities) using a higher rate reflecting the return on assets held to back them, where those assets are closely cashflow-matched to the liabilities, recognising the genuine illiquidity premium available on a held-to-maturity matched portfolio.",
+                "explain": "This directly recalls Module 4's ALM/matching material — worth recognising the matching adjustment as the SPECIFIC Solvency II mechanism rewarding genuine cashflow matching (CM2's technique) with a more favourable discount rate for reserving purposes."
+            },
+            {
+                "q": "Why does using the matching adjustment require an insurer to demonstrate genuinely strict asset-liability matching criteria, rather than being available to any annuity book?",
+                "a": "Since the matching adjustment relies on assets being reliably held to maturity with predictable cashflows closely matching the liabilities, using it inappropriately (e.g. with mismatched or illiquid assets) could materially overstate the insurer's genuine financial strength, so strict eligibility criteria and ongoing monitoring apply.",
+                "explain": "This directly recalls CM2's matching-quality material — worth recognising the matching adjustment as a genuine REWARD for demonstrably sound ALM practice, not a free capital benefit available regardless of actual asset quality."
+            },
+            {
+                "q": "What is the 'volatility adjustment' under Solvency II, and how does it differ in purpose from the matching adjustment?",
+                "a": "The volatility adjustment provides a smaller, more broadly-applicable adjustment to the discount rate reflecting general market volatility, reducing the impact of short-term market noise on technical provisions, without requiring the strict matching criteria the matching adjustment demands.",
+                "explain": "Worth contrasting directly against the matching adjustment above — the volatility adjustment is a genuinely BROADER, less stringent tool addressing general market-noise volatility, while the matching adjustment specifically rewards demonstrated, strict cashflow matching."
+            },
+            {
+                "q": "Why might a life insurer's ORSA need to consider the combined impact of mortality, longevity, lapse and market risk together, rather than assessing each in isolation?",
+                "a": "These risks can interact in genuinely important ways (e.g. a market downturn combined with unfavourable lapse experience), so a forward-looking assessment of overall solvency needs must consider combined, correlated stress scenarios, not just each risk module's standalone impact.",
+                "explain": "This directly recalls SA1's ORSA material — worth recognising that a genuinely useful ORSA goes beyond simply re-running the standard formula's risk modules individually; it should explore combined, correlated stresses relevant to the insurer's specific risk profile."
+            },
+            {
+                "q": "Why might a life insurer developing an internal model need particular focus on modelling policyholder behaviour (e.g. lapse rates) under stressed conditions?",
+                "a": "Policyholder behaviour can genuinely change under stress (e.g. lapse rates rising or falling in response to market conditions or product guarantees becoming valuable), and a standard formula may not adequately capture an insurer's own specific book's behavioural dynamics, making this a common area where internal models add genuine value.",
+                "explain": "This directly recalls SA1's internal-model-versus-standard-formula material — worth recognising policyholder behaviour modelling as a genuinely important, life-insurance-specific area where bespoke internal modelling can meaningfully improve on generic standard formula assumptions."
+            },
+            {
+                "q": "How do the matching adjustment and volatility adjustment together illustrate a genuine theme running through this whole Solvency II topic area?",
+                "a": "Both mechanisms show that Solvency II is not a single rigid formula but a framework offering different tools calibrated to different circumstances (strict long-term matching versus general market-noise smoothing), rewarding insurers whose practices genuinely reduce risk with correspondingly favourable regulatory treatment.",
+                "explain": "This closing card ties Modules 10-11 together — worth recognising Solvency II's genuine underlying philosophy: regulatory treatment that responds to an insurer's ACTUAL risk-reducing practices, not a one-size-fits-all capital calculation."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Profit and value reporting",
+        "description": "Covers how life insurers measure and report profit and value, including embedded value and IFRS 17 reporting approaches.",
+        "cards": [
+            {
+                "q": "Why might a life insurer report profit under multiple different bases (statutory, IFRS 17, embedded value), echoing SA1's material?",
+                "a": "Different bases serve genuinely different purposes — statutory reporting supports regulatory solvency assessment, IFRS 17 provides comparable financial statements for investors, and embedded value captures the discounted value of in-force business — each answering a genuinely different stakeholder question.",
+                "explain": "This directly recalls SA1's multiple-reporting-bases material — worth recognising this as a universal life-and-health-insurance reporting principle, not specific to either sector alone."
+            },
+            {
+                "q": "Why is embedded value particularly important for assessing a life insurer's true economic value, given the long-duration nature of many life products?",
+                "a": "Embedded value captures the present value of future profits expected to emerge from existing in-force business, which is essential for long-duration products (annuities, with-profits, whole of life) whose true economic value is heavily weighted toward future profit emergence not yet visible in current-year statutory profit.",
+                "explain": "This directly recalls SA1's embedded-value material — worth recognising life insurance, with its especially long product durations, as arguably the sector where embedded value reporting is MOST essential across the whole insurance industry."
+            },
+            {
+                "q": "Why might a new annuity or with-profits policy's statutory profit appear low or negative in its early years, despite a genuinely positive embedded value contribution, echoing SA1's new-business-strain material?",
+                "a": "Statutory reporting requires prudent reserves to be set up at the point of sale, depressing reported early profit even though embedded value (capturing the full expected future profit stream) may already be genuinely positive from inception.",
+                "explain": "This directly recalls SA1's new-business-strain material — worth recognising this apparent conflict as entirely consistent: the two bases measure the SAME underlying economics differently, not contradictory results."
+            },
+            {
+                "q": "Why does IFRS 17's contractual service margin (CSM) matter particularly for with-profits and long-duration annuity business, echoing SA1's material?",
+                "a": "The CSM represents unearned future profit released gradually as service is provided, directly shaping how a long-duration product's total expected profit is spread across many future reporting periods, which matters especially for products whose profit genuinely emerges over decades rather than a few years.",
+                "explain": "This directly recalls SA1's CSM material — worth recognising that the CSM's importance scales directly with product DURATION, making it especially significant for life insurance's characteristically very long-duration products."
+            },
+            {
+                "q": "Why might an 'analysis of embedded value movement' be a particularly valuable management tool for a life insurer with mixed protection, savings and annuity business?",
+                "a": "Decomposing the year-on-year embedded value change into components (new business, expected unwind, experience variances, assumption changes) by product line reveals which specific parts of a diversified book are genuinely driving value creation or destruction, more actionable than a single combined total.",
+                "explain": "This directly previews this course's analysis-of-surplus module — worth recognising that a genuinely diversified life insurer's embedded value analysis is most useful when broken down by product LINE, not just reported as one aggregated whole-company figure."
+            }
+        ]
     }
-
     ]
 };
