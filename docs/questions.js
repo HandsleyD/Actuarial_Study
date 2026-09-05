@@ -3295,4 +3295,537 @@ const QUESTIONS = {
       ],
     },
   ],
+  CB1: [
+    {
+      id: "cb1-q1",
+      title: "The finance function, the balance sheet, and the income statement",
+      modules: "Modules 1, 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 2,
+          question: "Define the 'agency problem', and give one mechanism companies commonly use to reduce it.",
+          answer:
+            "The agency problem is the risk that managers (agents) pursue their own interests rather than those of shareholders (principals), since ownership and control are separated in most companies of any size. A common mitigation mechanism is linking management remuneration to share price/performance (e.g. share options), aligning managers' incentives more closely with shareholders'.",
+          note: "Candidates should name a genuine, specific mechanism (not just 'better oversight' vaguely) &mdash; remuneration linked to performance is the most commonly cited example.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain the fundamental accounting equation underlying the balance sheet, and state which of the three main financial statements shows a company's performance over a period rather than its position at a point in time.",
+          answer:
+            "The accounting equation is Assets = Liabilities + Equity. The income statement (profit and loss account) shows performance over a period; the balance sheet, by contrast, is a snapshot of financial position at a single point in time. (The cash flow statement also covers a period, reconciling cash movement.)",
+          note: "A complete answer states the equation precisely and correctly distinguishes 'position' (a snapshot) from 'performance' (over a period) &mdash; a very commonly tested distinction.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 4,
+          question: "Explain why a company's reported profit after tax is not the same thing as the cash it actually generated over the same period, giving one specific example of a cost that illustrates this.",
+          answer:
+            "The income statement uses accruals accounting, recognising revenue and costs when they're earned/incurred rather than when cash actually changes hands, so profit can differ substantially from actual cash movement. Depreciation is a clear example: it's charged as an expense reducing reported profit each period, but involves no actual cash outflow in that period &mdash; the cash was paid when the asset was originally purchased.",
+          note: "The depreciation example should be explained precisely: the cash outflow happened at PURCHASE, not when the expense is later charged in the income statement.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "A company reports strong profit after tax but its finance director is concerned about the business's cash position. Comment on why this combination is genuinely possible, and name the financial statement that would reveal the concern directly.",
+          answer:
+            "Because profit and cash can diverge substantially (per part (iii)), a company can be genuinely profitable on an accounting basis while still facing a cash shortfall, e.g. due to growing receivables or inventory tying up cash faster than profitable trading generates it. The cash flow statement would reveal this directly, since it reports actual cash inflows and outflows rather than accruals-based profit.",
+          note: "This tests whether candidates can apply the profit-versus-cash distinction to a realistic scenario, not just recite the definition.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q2",
+      title: "Liquidity and cash flow analysis",
+      modules: "Modules 4, 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A company has current assets of &pound;450,000 (of which &pound;150,000 is inventory) and current liabilities of &pound;300,000. Calculate the current ratio and the quick (acid-test) ratio.",
+          answer:
+            "Current ratio $= 450{,}000 / 300{,}000 = 1.50$. Quick ratio $= (450{,}000 - 150{,}000) / 300{,}000 = 300{,}000/300{,}000 = 1.00$.",
+          note: "The quick ratio excludes inventory from the numerator before dividing &mdash; a common error is to forget this exclusion and simply recompute the current ratio again.",
+        },
+        {
+          label: "(ii)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on what the gap between the current ratio and quick ratio calculated in part (i) suggests about this company's liquidity, and one industry-related caveat that should accompany any conclusion.",
+          answer:
+            "The meaningful gap between the two ratios (1.50 versus 1.00) indicates the company holds a significant amount of inventory relative to its current liabilities, so its ability to meet short-term obligations depends materially on being able to sell that inventory reasonably quickly. However, whether this is a genuine concern depends on the industry &mdash; a company with fast-moving, easily-liquidated stock may be entirely comfortable with this gap, while one with slow-moving stock may not be.",
+          note: "A strong answer explicitly avoids declaring the ratios 'good' or 'bad' in isolation, instead flagging the industry-dependence caveat.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how an increase in trade receivables during the period would affect operating cash flow relative to reported profit, and why.",
+          answer:
+            "An increase in trade receivables reduces operating cash flow relative to profit, since the corresponding revenue has already been recognised in profit but the cash hasn't yet actually been collected from customers &mdash; the sale is 'on the books' as profit before the cash physically arrives.",
+          note: "Candidates should be clear on the DIRECTION of the adjustment (receivables UP means cash flow LOWER relative to profit), a common point of confusion.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why a rapidly growing, profitable company might still experience a cash flow crisis (overtrading).",
+          answer:
+            "Growth often requires increasing investment in working capital (more inventory, more receivables as sales grow) and non-current assets, which can consume cash faster than profitable trading generates it &mdash; a genuinely profitable company can still run out of cash purely from this timing mismatch.",
+          note: "This is a well-known, important real-world phenomenon worth being able to explain confidently and concisely.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q3",
+      title: "Efficiency and gearing ratios",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 3,
+          question: "A company's cost of sales for the year was &pound;2,400,000, and its average inventory held during the year was &pound;300,000. Calculate inventory days.",
+          answer: "Inventory days $= (300{,}000 / 2{,}400{,}000) \\times 365 = 45.63$ days.",
+          note: "The formula uses COST OF SALES (not revenue) in the denominator &mdash; using revenue instead is a common error for this specific ratio.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question: "The same company has &pound;4,000,000 of debt and &pound;6,000,000 of equity (at market value). Calculate its gearing ratio, expressed as debt divided by (debt plus equity).",
+          answer: "Gearing $= 4{,}000{,}000 / (4{,}000{,}000 + 6{,}000{,}000) = 4{,}000{,}000/10{,}000{,}000 = 40.0\\%$.",
+          note: "Candidates should state clearly which gearing formula variant they're using (D/(D+E) versus D/E), since exam questions may specify either.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why a company with a gearing ratio of 40% is generally considered riskier for shareholders than an otherwise identical company with a gearing ratio of 10%.",
+          answer:
+            "Interest on debt must be paid regardless of how the business performs, so higher gearing means a greater proportion of profit is committed to fixed interest payments, amplifying the volatility of what's left over for shareholders &mdash; a magnifying effect known as financial risk. The 40%-geared company has substantially more of this fixed commitment relative to its capital base than the 10%-geared company.",
+          note: "A strong answer explains the MECHANISM (fixed interest amplifying profit volatility for shareholders), not just asserts that higher gearing is 'riskier'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why assessing this company's 40% gearing ratio in isolation, without further context, could be misleading.",
+          answer:
+            "The appropriate gearing level varies significantly by industry &mdash; a capital-intensive industry with stable, predictable cashflows (e.g. utilities) can typically sustain much higher gearing safely than an industry with volatile earnings, so 40% could be entirely prudent for one company and excessive for another depending on the nature and stability of its business.",
+          note: "This connects directly to the same industry-comparison caution that applies to liquidity ratios &mdash; a recurring theme worth applying consistently across ratio types.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q4",
+      title: "Working capital management",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 3,
+          question: "A company has inventory days of 45, receivables days of 60, and payables days of 40. Calculate its working capital cycle (cash conversion cycle).",
+          answer: "Working capital cycle $= 45 + 60 - 40 = 65$ days.",
+          note: "Payables days is SUBTRACTED (not added) &mdash; forgetting the subtraction is the most common error in this calculation.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what the 65-day cycle calculated in part (i) means in practical terms, and why a shorter cycle is generally preferable.",
+          answer:
+            "It means, on average, 65 days pass between the company paying cash out for its inputs and receiving cash in from customers for the resulting sales. A shorter cycle is generally preferable because it means less cash is tied up in the business for a shorter period, freeing up capital that could otherwise be used productively elsewhere (reflecting the opportunity cost of capital tied up in working capital).",
+          note: "A complete answer explains both WHAT the figure represents and WHY shorter is better (the opportunity cost argument), not just one or the other.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss two distinct techniques the company could use to reduce its working capital cycle.",
+          answer:
+            "Reducing inventory days: implementing just-in-time ordering or better demand forecasting to hold less stock. Reducing receivables days: offering an early payment discount or tightening credit control to collect from customers faster. (Increasing payables days, within agreed supplier terms, would also reduce the cycle, though this must be balanced against supplier relationship risk.)",
+          note: "Any two genuinely distinct techniques targeting different components of the cycle (inventory, receivables, or payables) should be credited if clearly explained.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why aggressively extending payables days beyond agreed supplier terms, purely to shorten the working capital cycle, could be a poor strategy despite the mechanical improvement it would show.",
+          answer:
+            "Deliberately delaying payment beyond agreed terms can damage supplier relationships, risk losing favourable credit terms or discounts, and harm the company's reputation and ability to negotiate good terms in future &mdash; the short-term working capital improvement could be outweighed by these longer-term costs.",
+          note: "This tests whether candidates recognise the difference between efficiently using AGREED credit terms and damagingly abusing supplier goodwill.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q5",
+      title: "Choosing between sources of equity and debt finance",
+      modules: "Modules 8, 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question: "A company is planning a rights issue. Explain what a rights issue is, and why it's typically priced at a discount to the current market share price.",
+          answer:
+            "A rights issue is an offer of new shares to existing shareholders, in proportion to their current shareholding, typically at a discount to the current market price. The discount makes the offer attractive enough to encourage existing shareholders to take up their entitlement (providing new capital), while the proportional nature of the issue protects them from being diluted if they do so.",
+          note: "Candidates should explain WHY the proportional structure specifically protects against dilution, not just describe the discount in isolation.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what a 'loan covenant' is, and give one example of a financial ratio a lender might require the company to maintain.",
+          answer:
+            "A loan covenant is a condition attached to a loan agreement, restricting the borrower's actions or requiring certain financial ratios to be maintained, protecting the lender's position. A lender might commonly require a minimum interest cover ratio or a maximum gearing ratio to be maintained throughout the life of the loan.",
+          note: "Any genuine, specific ratio example (interest cover or gearing) tied clearly to lender protection should be credited.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why equity investors generally require a higher expected return than debt investors in the same company.",
+          answer:
+            "Equity holders bear more risk than debt holders &mdash; they're paid only after debt obligations are met (a residual claim), have no guaranteed return, and no fixed repayment date, whereas debt holders have a priority, contractual claim to interest and principal. Investors require greater compensation for bearing this additional risk, which is precisely why equity is generally a more expensive source of finance than debt.",
+          note: "A strong answer explicitly connects the RISK difference (priority of claim, certainty of payment) to the RETURN difference, rather than simply asserting equity is 'riskier'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "The company is deciding between financing a new project with equity or debt. Comment on one advantage and one disadvantage of using debt rather than equity for this purpose.",
+          answer:
+            "Advantage: debt is typically cheaper than equity, and interest payments are usually tax-deductible, further reducing the effective cost. Disadvantage: interest and principal repayments are contractual obligations that must be met regardless of the company's profitability, increasing financial risk and potentially leading to default if the project's cashflow is insufficient.",
+          note: "A complete answer presents both sides of the trade-off, since a one-sided answer (advantage or disadvantage alone) would be incomplete for a 'comment' question of this weight.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q6",
+      title: "Estimating the cost of equity",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A company's current dividend ($D_0$) is &pound;0.25 per share, expected to grow at a constant rate of 5% per year indefinitely. Its current share price is &pound;4.00. Using the dividend growth model, calculate the company's cost of equity.",
+          answer:
+            "$k_e = \\dfrac{D_0(1+g)}{P_0} + g = \\dfrac{0.25(1.05)}{4.00} + 0.05 = \\dfrac{0.2625}{4.00} + 0.05 = 0.065625 + 0.05 = 11.56\\%$.",
+          note: "The numerator must use $D_0(1+g)$ (the NEXT dividend expected), not $D_0$ itself &mdash; using $D_0$ directly is the most common error in this formula.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question: "The company's beta is 1.2, the risk-free rate is 3%, and the expected return on the market is 8%. Calculate the cost of equity using CAPM.",
+          answer: "$k_e = r_f + \\beta(r_m - r_f) = 0.03 + 1.2(0.08 - 0.03) = 0.03 + 1.2(0.05) = 0.03 + 0.06 = 9.00\\%$.",
+          note: "A straightforward CAPM substitution &mdash; candidates should compute the risk premium $(r_m - r_f)$ first, then multiply by beta, before adding the risk-free rate.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why the two cost of equity estimates from parts (i) and (ii) differ, and which (if either) should be considered 'correct'.",
+          answer:
+            "The dividend growth model and CAPM rely on different underlying assumptions and data (historical/assumed dividend growth versus market risk and beta), so they will rarely agree exactly in practice &mdash; neither is definitively 'correct'; both are estimates subject to genuine uncertainty, and judgement is needed in choosing between or reconciling them, rather than treating either figure as a precise, guaranteed answer.",
+          note: "A strong answer resists declaring one method definitively superior, instead acknowledging both are estimates built on different, imperfect assumptions.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain one circumstance in which CAPM would be the only viable method of the two for estimating a company's cost of equity.",
+          answer:
+            "If the company pays no dividend at all (e.g. a young, high-growth company retaining all profit for reinvestment), the dividend growth model cannot be applied at all, since it relies entirely on a dividend stream &mdash; CAPM, which doesn't depend on dividends, remains applicable in this situation.",
+          note: "This is a genuinely important, commonly tested limitation of the dividend growth model worth remembering precisely.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q7",
+      title: "Weighted average cost of capital",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A company is financed by &pound;60m of equity (market value) with a cost of equity of 12%, and &pound;40m of debt (market value) with a pre-tax cost of debt of 6%. The corporation tax rate is 25%. Calculate the company's WACC.",
+          answer:
+            "$WACC = \\dfrac{E}{E+D}k_e + \\dfrac{D}{E+D}k_d(1-t) = \\dfrac{60}{100}(0.12) + \\dfrac{40}{100}(0.06)(1-0.25) = 0.072 + 0.018 = 9.00\\%$.",
+          note: "The cost of debt must be adjusted by $(1-t)$ to reflect the tax deductibility of interest &mdash; forgetting this adjustment (using the pre-tax cost of debt directly) is the most common error in this calculation.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why market values (rather than balance sheet book values) of equity and debt are used to calculate WACC.",
+          answer:
+            "Market values reflect what investors would actually require today for the risk they're bearing, whereas book values are historical accounting figures that may bear little relation to current economic value &mdash; WACC is fundamentally a forward-looking, market-based figure representing the company's true current cost of capital, not a backward-looking accounting one.",
+          note: "Candidates should connect this to the broader principle (also seen in business valuation) that market values are preferred wherever genuinely available, for objectivity and relevance.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain why WACC is typically used as the discount rate for appraising a new investment project of average risk for this company.",
+          answer:
+            "WACC represents the minimum return required by the company's providers of finance overall, so a project earning at least the WACC is expected to satisfy those providers and create value for shareholders &mdash; making it the natural hurdle rate for a project whose risk matches the company's average existing risk.",
+          note: "The word 'average risk' is important &mdash; a project materially riskier or safer than the company's typical activities would need a risk-adjusted rate instead.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why the tax-deductibility of interest creates an incentive for a company to increase its gearing, and one factor that limits how far this incentive can reasonably be pursued.",
+          answer:
+            "Since interest is tax-deductible, increasing the proportion of (relatively cheap) debt finance reduces WACC further via a larger tax shield, all else equal. However, very high gearing introduces significant costs of financial distress (increased risk of default, higher borrowing costs, potential bankruptcy costs), which eventually outweigh the tax benefit of additional debt.",
+          note: "This is Modigliani-Miller's tax-adjusted theory in brief &mdash; candidates should name financial distress costs specifically as the limiting factor.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q8",
+      title: "Payback period and accounting rate of return",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A project requires an initial investment of &pound;80,000 and is expected to generate cash inflows of &pound;25,000, &pound;30,000, &pound;35,000 and &pound;20,000 in years 1 to 4 respectively. Calculate the project's payback period.",
+          answer:
+            "Cumulative cashflows: Year 1 &pound;25,000; Year 2 &pound;55,000; Year 3 &pound;90,000. Payback occurs during year 3: remaining amount needed after year 2 $= 80{,}000 - 55{,}000 = \\pounds25{,}000$; fraction of year 3 $= 25{,}000/35{,}000 = 0.71$. Payback period $= 2 + 0.71 = 2.71$ years.",
+          note: "Candidates should identify the correct year in which cumulative cashflow first exceeds the initial investment, then calculate the FRACTION of that year needed, not round to a whole number of years.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "The project's asset is depreciated on a straight-line basis to zero residual value over its 4-year life. Using the average investment basis, calculate the project's accounting rate of return (ARR).",
+          answer:
+            "Annual depreciation $= 80{,}000/4 = \\pounds20{,}000$. Accounting profit each year (cash inflow minus depreciation): Year 1 $= \\pounds5{,}000$; Year 2 $=\\pounds10{,}000$; Year 3 $=\\pounds15{,}000$; Year 4 $=\\pounds0$. Average annual profit $= (5{,}000+10{,}000+15{,}000+0)/4 = \\pounds7{,}500$. Average investment $= (80{,}000+0)/2 = \\pounds40{,}000$. $ARR = 7{,}500/40{,}000 = 18.75\\%$.",
+          note: "Candidates must first convert cash inflows into accounting PROFIT by deducting depreciation, before calculating the average &mdash; using the cash inflows directly (without deducting depreciation) is a common error.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 1,
+          question: "State the ARR that would result if the INITIAL investment (rather than average investment) were used as the denominator instead.",
+          answer: "$ARR = 7{,}500/80{,}000 = 9.38\\%$.",
+          note: "Roughly half the average-investment-basis figure, illustrating why the choice of denominator must always be stated explicitly alongside any ARR result.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 1,
+          question: "Discuss the single most significant theoretical limitation shared by both payback period and ARR.",
+          answer:
+            "Both methods ignore the time value of money entirely, treating cashflows or profits from different years as equally valuable without any discounting &mdash; a flaw directly corrected by NPV and IRR, which explicitly discount future cashflows.",
+          note: "This is the central theme distinguishing this module's techniques from the NPV/IRR methods covered next.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q9",
+      title: "Net present value",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "Using the same project as the previous question (initial investment &pound;80,000; cash inflows &pound;25,000, &pound;30,000, &pound;35,000, &pound;20,000 in years 1-4), calculate the project's NPV using a discount rate of 8%.",
+          answer:
+            "Discount factors: year 1 $=0.9259$; year 2 $=0.8573$; year 3 $=0.7938$; year 4 $=0.7350$. Present values: $25{,}000(0.9259)=\\pounds23{,}148$; $30{,}000(0.8573)=\\pounds25{,}720$; $35{,}000(0.7938)=\\pounds27{,}784$; $20{,}000(0.7350)=\\pounds14{,}701$. Sum of present values $= \\pounds91{,}353$. $NPV = 91{,}353 - 80{,}000 = \\pounds11{,}353$.",
+          note: "Candidates should keep the time-0 initial investment UNDISCOUNTED, deducting it directly from the sum of the discounted inflows.",
+        },
+        {
+          label: "(ii)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on whether the company should accept this project, based on the NPV calculated in part (i).",
+          answer:
+            "Since the NPV is positive (&pound;11,353), the project should be accepted &mdash; it's expected to increase shareholder wealth by generating a return greater than the 8% required by the discount rate used.",
+          note: "A simple, direct application of the NPV decision rule following correctly from part (i)'s calculation.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain why NPV is generally considered theoretically superior to both payback period and ARR (from the previous question) as an investment appraisal technique.",
+          answer:
+            "NPV explicitly accounts for the time value of money (unlike both alternatives) and is based on cashflow rather than accounting profit (unlike ARR), and it directly measures the project's expected contribution to shareholder wealth, which is the company's stated financial objective.",
+          note: "This directly contrasts NPV's two corrected flaws against the two methods evaluated in the previous question.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain what a 'sunk cost' is, and why it should never be included in an NPV calculation.",
+          answer:
+            "A sunk cost is a cost that has already been incurred and cannot be recovered regardless of the current decision. It should be excluded from NPV because it doesn't change based on whether the project proceeds or not, so it's entirely irrelevant to the decision at hand &mdash; only cashflows that genuinely change as a result of the decision belong in the calculation.",
+          note: "This is one of the most commonly tested sources of error in NPV questions &mdash; a strong answer states the general principle (only relevant, incremental cashflows) alongside the specific sunk-cost definition.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q10",
+      title: "Internal rate of return",
+      modules: "Module 14",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "Using the same project (initial investment &pound;80,000; cash inflows &pound;25,000, &pound;30,000, &pound;35,000, &pound;20,000 in years 1-4), NPV at 13% is &pound;2,141 and NPV at 14% is &pound;479. Using linear interpolation, estimate the project's IRR.",
+          answer:
+            "$IRR \\approx 13\\% + \\dfrac{2{,}141}{2{,}141 - 479} \\times (14\\%-13\\%) = 13\\% + \\dfrac{2{,}141}{1{,}662} \\times 1\\% = 13\\% + 1.29\\% = 14.29\\%$. (The precise IRR, found by iteration, is approximately 14.30%, confirming the interpolation is a close approximation.)",
+          note: "The interpolation formula adds the LOWER rate's proportional share of the gap between the two NPVs &mdash; candidates should double-check the sign and direction of the calculation, since NPV is falling as the rate rises here.",
+        },
+        {
+          label: "(ii)",
+          command: "Comment",
+          marks: 2,
+          question: "The company's WACC is 8%. Comment on whether this project should be accepted, based on the IRR calculated in part (i).",
+          answer:
+            "Since the IRR (approximately 14.3%) exceeds the company's WACC (8%), the project should be accepted under the IRR decision rule &mdash; consistent with the positive NPV found in the previous question at the 8% discount rate.",
+          note: "Worth noting the IRR and NPV decision rules agree here, as they always will for a single, independent, conventional project.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why NPV and IRR can give conflicting rankings when choosing between two mutually exclusive projects, and which method's recommendation should generally be followed if they disagree.",
+          answer:
+            "The two methods can rank projects differently when the projects have different cashflow patterns or scales, because IRR measures a RATE of return while NPV measures an absolute VALUE created &mdash; a smaller project can have a higher IRR but a lower NPV than a larger one. NPV should generally be followed, since it directly measures the absolute increase in shareholder wealth, the company's actual financial objective.",
+          note: "This is one of the most important theoretical points in investment appraisal &mdash; candidates should state clearly that NPV wins when the two methods conflict for mutually exclusive projects.",
+        },
+        {
+          label: "(iv)",
+          command: "Explain",
+          marks: 2,
+          question: "Explain the 'multiple IRR' problem, and identify the type of project cashflow pattern that can cause it.",
+          answer:
+            "A project with unconventional cashflows (e.g. an initial outflow, followed by inflows, followed by a further large outflow, such as a decommissioning cost) can have more than one discount rate at which NPV equals zero, making IRR ambiguous or meaningless as a single figure. This typically arises when a project's cashflow signs change more than once over its life.",
+          note: "Candidates should name a concrete example of the sign-changing pattern (e.g. a decommissioning cost) that causes this problem.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q11",
+      title: "Inflation and taxation in investment appraisal",
+      modules: "Module 15",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question: "The money (nominal) discount rate is 9% and expected inflation is 4% per annum. Using the Fisher equation, calculate the equivalent real discount rate.",
+          answer:
+            "$(1+\\text{real rate}) = \\dfrac{1+\\text{money rate}}{1+\\text{inflation rate}} = \\dfrac{1.09}{1.04} = 1.0481$. Real rate $= 4.81\\%$.",
+          note: "Candidates should use the exact multiplicative Fisher relationship (dividing, not subtracting) &mdash; the simple approximation (money rate minus inflation) would give 5%, noticeably different from the exact 4.81%.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why cashflows expressed in real terms must be discounted using a real discount rate, rather than the money discount rate, and vice versa.",
+          answer:
+            "Mixing a real cashflow with a money discount rate (or vice versa) would inconsistently double-count or omit the effect of inflation, distorting the resulting NPV &mdash; the cashflows and discount rate must be consistently on the same (either both real or both money) basis for the calculation to be valid.",
+          note: "This consistency principle is one of the most frequently tested points in this topic &mdash; worth stating explicitly and precisely.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what 'capital allowances' are, and why they are relevant when appraising an investment involving a new asset purchase.",
+          answer:
+            "Capital allowances are tax relief given on the cost of qualifying capital expenditure (broadly analogous to depreciation, but calculated under tax rules rather than accounting rules). They reduce the company's taxable profit and hence its tax payable, meaning they should be incorporated into the post-tax cashflows used in an NPV calculation involving a new asset purchase.",
+          note: "Candidates should recognise capital allowances as the TAX equivalent of accounting depreciation, both reducing the cash tax actually paid.",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 2,
+          question: "Discuss why the timing of a tax cashflow (e.g. tax paid one year after the profit is earned) can materially affect a project's calculated NPV.",
+          answer:
+            "Since NPV explicitly accounts for the time value of money, a tax payment delayed by a year is worth less in present value terms than an equivalent payment made immediately, so the exact timing assumption used for tax cashflows can materially affect the calculated NPV &mdash; a correctly-sized cashflow placed in the wrong year will still produce an incorrect NPV.",
+          note: "This reinforces that NPV is sensitive to WHEN a cashflow occurs, not just its amount.",
+        },
+      ],
+    },
+    {
+      id: "cb1-q12",
+      title: "Business valuation, dividend policy, and mergers and acquisitions",
+      modules: "Modules 16, 17, 18, 19",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A company's current dividend is &pound;0.30 per share, expected to grow at 4% per year indefinitely, and its cost of equity is 10%. Using the dividend growth model, calculate the theoretical value of one share. Separately, a comparable listed company trades on a P/E ratio of 15, and the target company's EPS is &pound;0.40 &mdash; calculate the implied share value using this earnings-based approach.",
+          answer:
+            "Dividend growth model: $P_0 = \\dfrac{D_0(1+g)}{k_e-g} = \\dfrac{0.30(1.04)}{0.10-0.04} = \\dfrac{0.312}{0.06} = \\pounds5.20$. P/E-based value: $15 \\times \\pounds0.40 = \\pounds6.00$ per share.",
+          note: "Two genuinely different valuation methods applied to the same company can (and often do) give different results &mdash; both figures should be calculated and left as they are, not artificially reconciled.",
+        },
+        {
+          label: "(ii)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on why the two valuations calculated in part (i) differ, and why a valuer might reasonably calculate both rather than relying on a single method.",
+          answer:
+            "Each method relies on different underlying assumptions and data (an assumed constant dividend growth rate versus a market-based comparable earnings multiple), so they will rarely agree exactly. Using multiple methods together gives a more robust, cross-checked view of the business's likely value range than relying on any single method's output in isolation.",
+          note: "This echoes the same 'use multiple methods to triangulate' principle seen elsewhere in this course (e.g. checking a model's output via independent recalculation).",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain the 'signalling effect' of a dividend cut, and why a company might be reluctant to cut its dividend even if retaining the cash would be financially sound.",
+          answer:
+            "Because managers typically have better information about a company's prospects than outside shareholders, a dividend cut is often interpreted by the market as a negative signal about management's genuine view of future prospects, causing the share price to fall &mdash; regardless of whether the underlying financial logic for the cut (e.g. funding a good investment opportunity) is actually sound. This negative market reaction is exactly why companies are often very reluctant to cut dividends.",
+          note: "A strong answer distinguishes the genuine financial logic (which might favour retention) from the market's SIGNALLING interpretation (which can react negatively regardless).",
+        },
+        {
+          label: "(iv)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss two distinct reasons why mergers and acquisitions often fail to create the value originally anticipated.",
+          answer:
+            "Overpaying: an excessive takeover premium, or overestimating achievable synergies, means the price paid exceeds the genuine value created by the combination. Poor integration and agency motives: difficulty integrating the two companies' operations and cultures, or management being driven by empire-building motives (a form of the agency problem) rather than genuine shareholder value creation, can both prevent anticipated benefits from actually being realised.",
+          note: "Any two genuinely distinct reasons (overpaying/overestimating synergies, poor integration, empire-building/agency motives) should be credited if clearly explained.",
+        },
+      ],
+    },
+  ],
 };
