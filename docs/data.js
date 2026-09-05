@@ -17299,6 +17299,117 @@ const MODULES = {
                 "explain": "This closing card ties Modules 5-8 together explicitly, echoing Module 1's topic-weighting material — worth recognising these four modules as together addressing SP1's single largest syllabus topic area (30% of the whole exam)."
             }
         ]
+    },
+    {
+        "id": "m09",
+        "title": "Health and care insurance models",
+        "description": "Covers the main features of an actuarial model for health and care insurance, including stochastic versus deterministic approaches and the use of sensitivity analysis, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine purpose of an actuarial model in health and care insurance, per the official syllabus objective 4.1?",
+                "a": "A model provides a structured, simplified representation of an insurer's genuine cashflows and risks, allowing the insurer to project outcomes, test assumptions, and support decision-making in areas like pricing, investment strategy, solvency assessment, and embedded value calculation, without needing to wait for genuine real-world experience to emerge.",
+                "explain": "Worth recognising a model's core value as allowing DECISIONS TO BE MADE IN ADVANCE of genuine experience actually emerging — the whole point of modelling is projecting forward, not just describing the past."
+            },
+            {
+                "q": "What is the difference between a stochastic and a deterministic modelling approach, and why might a health and care insurer use both?",
+                "a": "A deterministic model projects a single set of assumed outcomes (a 'best estimate' scenario), while a stochastic model simulates many possible outcomes drawn from probability distributions, revealing the genuine RANGE of results possible; an insurer might use deterministic modelling for straightforward central-scenario planning and stochastic modelling where understanding genuine variability (e.g. for capital assessment) matters most.",
+                "explain": "Worth recognising these as serving genuinely different purposes, not one simply being a 'more advanced' version of the other — a deterministic model answers 'what do we expect', while a stochastic model answers 'what is the genuine range of possible outcomes and their likelihoods'."
+            },
+            {
+                "q": "Why might a formula-based approach and a cashflow-based approach to modelling produce genuinely different levels of insight for the same underlying product?",
+                "a": "A formula approach (e.g. a closed-form equation of value) can quickly produce a single result but may struggle to capture genuinely complex product features (e.g. multiple decrements, varying assumptions over time), while a cashflow approach explicitly projects each future cashflow period by period, capturing this complexity at the cost of greater computational effort.",
+                "explain": "Worth recognising this as a genuine trade-off between SPEED/SIMPLICITY (formula) and FLEXIBILITY/DETAIL (cashflow) — the right choice depends on how complex the product's genuine cashflow pattern actually is."
+            },
+            {
+                "q": "What is a 'multi-state model', and why is it particularly relevant to health and care insurance specifically, echoing CS2's material?",
+                "a": "A multi-state model represents a policyholder as moving between distinct states (e.g. healthy, claiming, recovered, dead) with defined transition probabilities between states, particularly relevant to health and care insurance because products like income protection genuinely involve multiple possible states and transitions, not a single binary trigger like standard term life insurance.",
+                "explain": "This directly recalls CS2's Markov jump process and multi-state modelling material — worth recognising health and care insurance as one of the clearest, most direct real-world applications of CS2's multi-state modelling technique."
+            },
+            {
+                "q": "Why is sensitivity analysis a genuinely essential companion to any actuarial model, rather than an optional extra step, per the official syllabus objective 4.1.5?",
+                "a": "Sensitivity analysis reveals how much a model's output genuinely changes when key assumptions are varied, showing which assumptions the result is most exposed to — without this, a single-point model output could give false confidence, since a model is only as reliable as its assumptions and those assumptions carry genuine uncertainty.",
+                "explain": "Worth recognising sensitivity analysis as addressing the genuine, unavoidable UNCERTAINTY inherent in any model's assumptions, a theme recurring throughout the whole SP1/SA1 curriculum."
+            },
+            {
+                "q": "Why might a health and care insurer's model need periodic review and updating, rather than being built once and used indefinitely, echoing this course's recurring theme?",
+                "a": "As genuine experience emerges, product features change, or the wider business environment evolves, a model built on assumptions and structure appropriate to a past situation may no longer produce genuinely reliable output for current decision-making, requiring ongoing review to remain fit for purpose.",
+                "explain": "This directly previews this course's later experience-monitoring modules — worth recognising model review as directly connected to the experience-monitoring discipline covered later in this course, not a separate, unrelated activity."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Pricing techniques and the uses of actuarial models",
+        "description": "Covers the techniques used to price health and care insurance products, and the different decision-making purposes actuarial models serve, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine inputs does the official syllabus (objective 4.2) require candidates to understand when pricing health and care insurance products?",
+                "a": "Data availability, the assumptions used, the equation of value/formula approach, cashflow techniques, group risk assessments, options and guarantees, and external influences — together forming the genuine toolkit needed to price a health and care product soundly.",
+                "explain": "Worth memorising this exact list — it defines the genuine scope of pricing technique SP1 expects, directly echoing Module 9's formula-versus-cashflow modelling distinction now applied specifically to pricing."
+            },
+            {
+                "q": "How does the equation of value (equivalence principle) apply to pricing a health and care product, echoing CB1's foundational material?",
+                "a": "The premium is set so the expected present value of premium income equals the expected present value of benefit outgo plus expenses, using assumptions appropriate to the specific product's genuine risk drivers (e.g. incidence, recovery, medical inflation for health and care specifically).",
+                "explain": "This directly recalls CB1's equivalence principle material — worth recognising health and care pricing as fundamentally the SAME underlying technique CB1 develops generally, just requiring health-and-care-specific assumptions as inputs."
+            },
+            {
+                "q": "Why might group risk assessment for pricing genuinely differ from individual risk assessment, echoing CS1's credibility theory?",
+                "a": "A large group provides enough own claims data to be statistically credible, allowing the insurer to reflect that specific group's genuine risk profile rather than relying purely on standard, population-wide rates, unlike a single individual whose limited own history carries little statistical weight on its own.",
+                "explain": "This directly recalls CS1's credibility theory material — worth recognising group pricing as a direct application of credibility-weighted rating, blending a group's own experience with wider population data according to how statistically credible that own experience genuinely is."
+            },
+            {
+                "q": "Why must pricing for embedded options and guarantees (e.g. a guaranteed insurability option) genuinely account for anti-selective exercise behaviour?",
+                "a": "Policyholders are more likely to exercise an option when it is financially advantageous to them (e.g. their health has genuinely deteriorated), so pricing that assumed uniform, non-selective exercise across all policyholders would understate the option's true cost.",
+                "explain": "This directly recalls CM2's embedded-option-cost material — worth recognising this same anti-selective-exercise principle as directly examinable within SP1's pricing objective, not just a more advanced SA1-level concept."
+            },
+            {
+                "q": "What different decision-making purposes does the official syllabus (objective 4.3) require actuarial models to be understood as serving?",
+                "a": "Pricing products, developing investment strategy, projecting solvency, and calculating embedded value — the same underlying model can genuinely be adapted or reused to answer several genuinely different business questions.",
+                "explain": "Worth recognising this as directly connecting Module 9's model-building material to genuinely practical business applications — a model is not built for its own sake, but to answer specific, genuinely important decision-making questions."
+            },
+            {
+                "q": "Why might the SAME underlying actuarial model require genuinely different assumption sets depending on whether it is being used for pricing versus solvency projection?",
+                "a": "Pricing typically uses best-estimate or lightly-margined assumptions to determine a competitive, sustainable premium, while solvency projection typically requires more prudent assumptions reflecting a regulator's genuine concern for policyholder protection under adverse conditions, so the SAME model structure can genuinely require different assumption inputs depending on its specific purpose.",
+                "explain": "This directly previews this course's later assumption-setting module — worth recognising that model PURPOSE genuinely shapes appropriate assumption choice, even when the underlying model structure itself remains the same."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Supervisory reserves and solvency capital",
+        "description": "Covers the purposes and methodologies for determining supervisory reserves and solvency capital requirements for a health and care insurer, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine purposes of supervisory reserves and solvency capital requirements for a health and care insurer, per the official syllabus objective 4.4.1?",
+                "a": "Supervisory reserves ensure the insurer holds sufficient assets to meet its genuine expected liabilities, while solvency capital requirements provide an additional buffer protecting against the genuine risk that actual experience diverges adversely from expected, together supporting the insurer's ongoing ability to meet policyholder obligations.",
+                "explain": "Worth recognising these as addressing genuinely DIFFERENT levels of protection — reserves cover the expected liability itself, while capital provides an ADDITIONAL buffer against adverse deviation from that expectation."
+            },
+            {
+                "q": "What is the difference between the 'role of statistical' and 'individual case' estimates in determining reserves, per the official syllabus?",
+                "a": "Statistical estimates apply aggregate, population-level assumptions (e.g. average claim development patterns) across a portfolio, while individual case estimates assess specific, known claims on their own genuine merits (e.g. a large, complex claim already reported); a sound reserving approach often genuinely combines both, using individual case estimates for known large claims and statistical methods for the remaining, less individually-significant claims.",
+                "explain": "Worth recognising these as genuinely complementary approaches, not competing alternatives — the choice of which to apply where should reflect the genuine size and knowability of specific claims versus the broader portfolio."
+            },
+            {
+                "q": "What is 'market consistent valuation', and why might it be used for determining a health and care insurer's supervisory reserves?",
+                "a": "Market consistent valuation values liabilities using assumptions and discount rates genuinely consistent with observable current market prices, aiming to reflect the genuine current economic value of the liabilities rather than relying on historically prudent, margin-laden assumptions set once and left unchanged.",
+                "explain": "This directly recalls SA1's market-consistent-valuation material — worth recognising this as a genuinely important valuation philosophy examinable even at SP1's more foundational level, not exclusively an SA1/Solvency-II-specific concept."
+            },
+            {
+                "q": "What is 'Value at Risk' (VaR) capital assessment, and how does it apply to determining a health and care insurer's solvency capital requirement?",
+                "a": "VaR estimates the maximum loss expected to be exceeded with a given probability over a given time period; applied to solvency capital, it can help determine the genuine capital buffer needed so that the insurer remains solvent with a specified, high level of confidence (e.g. 99.5% over one year) even under adverse experience.",
+                "explain": "This directly recalls SA7's VaR material — worth recognising VaR as a genuinely portable risk-measurement concept applying to solvency capital assessment here, just as it applies to investment portfolio risk elsewhere in this curriculum."
+            },
+            {
+                "q": "Why does the official syllabus explicitly require discussing 'the interplay between the strength of the supervisory reserves and the level of solvency capital required' (objective 4.4.2), rather than treating reserves and capital as fully independent figures?",
+                "a": "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital genuinely depends on how prudent the reserving basis already is — the two figures interact rather than being determined in complete isolation from one another.",
+                "explain": "Worth recognising this interplay as a genuinely important, examinable nuance — a candidate who treats reserves and capital as two totally separate, independently-determined figures would miss this genuine interaction."
+            },
+            {
+                "q": "What is the difference between 'passive' and 'active' valuation approaches, per the official syllabus objective 4.4.3?",
+                "a": "A passive valuation approach applies a fixed, prescribed set of rules or assumptions consistently regardless of the insurer's own specific circumstances, while an active approach allows the insurer's own genuine judgement and specific experience to inform the valuation basis, within any regulatory constraints that apply.",
+                "explain": "Worth recognising this distinction as echoing the standard-formula-versus-internal-model distinction developed further at SA1 level — passive approaches offer consistency and simplicity, while active approaches offer genuinely greater risk-sensitivity at the cost of complexity and judgement."
+            }
+        ]
     }
     ]
 };
