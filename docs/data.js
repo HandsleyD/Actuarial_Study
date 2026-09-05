@@ -14204,5 +14204,194 @@ const MODULES = {
             }
         ]
     }
+,
+    {
+        "id": "m17",
+        "title": "Reinsurance",
+        "description": "Covers the role and forms of reinsurance in managing health and care insurance risk, including quota share, surplus, and excess of loss arrangements.",
+        "cards": [
+            {
+                "q": "Why might a health and care insurer use quota share reinsurance, ceding a fixed proportion of every policy's risk and premium?",
+                "a": "Quota share provides straightforward, proportional risk and capital relief across the whole book (echoing Module 16's capital-efficiency point), and can be particularly valuable for a newer or smaller insurer wanting broad-based support across its entire portfolio.",
+                "explain": "This directly recalls Module 16's reinsurance-as-capital-tool material — worth recognising quota share as the SIMPLEST form of proportional reinsurance: a fixed percentage of every risk, making its capital and risk effects easy to understand and administer."
+            },
+            {
+                "q": "Why might a health and care insurer prefer surplus reinsurance over quota share when its portfolio contains policies of widely varying sums insured?",
+                "a": "Surplus reinsurance cedes only the portion of risk above a chosen retention level per policy, allowing the insurer to retain proportionally more of smaller, better-understood risks while ceding a larger share of unusually large individual exposures.",
+                "explain": "This directly recalls CS2's and CP1's reinsurance-structure material — worth recognising surplus reinsurance as solving a genuine problem quota share cannot: it lets retention vary by POLICY SIZE, rather than ceding the same fixed proportion regardless of how large or small an individual risk is."
+            },
+            {
+                "q": "Why might excess of loss reinsurance be particularly suited to protecting against catastrophic, correlated health and care risks like a pandemic?",
+                "a": "Excess of loss reinsurance responds when AGGREGATE claims from an event exceed a specified threshold, directly targeting the correlated, catastrophic loss pattern a pandemic creates (Module 6's material), rather than responding to routine, individually large claims.",
+                "explain": "This directly recalls Module 6's and Module 11's pandemic/health-catastrophe-risk material — worth recognising excess of loss as the reinsurance structure specifically designed for CORRELATED, aggregate shocks, distinct from quota share/surplus which respond to INDIVIDUAL policy-level risk."
+            },
+            {
+                "q": "Why might a health and care insurer's choice of retention level (how much risk it keeps before ceding to reinsurance) involve a genuine trade-off?",
+                "a": "A higher retention keeps more premium and profit potential but exposes the insurer to greater volatility and capital strain from adverse experience; a lower retention reduces volatility but cedes more profit potential to the reinsurer, a genuine risk-return trade-off.",
+                "explain": "This directly recalls CB1's risk-return trade-off material — worth recognising retention-level setting as this same general principle applied specifically to reinsurance: more risk retained means more potential reward, but genuinely more exposure to adverse outcomes."
+            },
+            {
+                "q": "Why might reinsurance treaty terms for long-term care insurance need particular care in specifying how claims and reserves are shared over the contract's very long duration?",
+                "a": "Given LTC's genuinely long claim tail and compounded longevity uncertainty (Module 2's material), treaty terms must clearly specify how both current claims AND the associated long-term reserving risk are shared, not just how an individual claim payment is split.",
+                "explain": "This directly recalls Module 2's compounded-longevity-risk material and Module 11's LTC-risk-margin material — worth recognising that LTC reinsurance is genuinely more complex than short-tail product reinsurance precisely because the RESERVING risk, not just the claims-payment risk, needs to be clearly allocated."
+            },
+            {
+                "q": "Why might reinsurer counterparty risk (the risk the reinsurer itself fails to pay) be a genuinely important consideration when designing a health and care reinsurance programme?",
+                "a": "Ceding risk to a reinsurer only provides genuine protection if the reinsurer remains able to pay recoveries when needed, so insurers typically diversify across multiple reinsurers and monitor reinsurer credit quality, echoing CP1's counterparty risk material.",
+                "explain": "This directly recalls CP1's counterparty/credit risk material and Module 5's counterparty-reliance material — worth recognising that reinsurance TRANSFERS risk, it doesn't ELIMINATE it; a new counterparty risk is created in the process, which itself needs active management."
+            },
+            {
+                "q": "Why might a health and care insurer use reinsurance to support entry into a new product line or geographic market, beyond its ongoing risk-management purpose?",
+                "a": "A reinsurer's expertise, pricing data, and capital support can help an insurer enter a genuinely unfamiliar product line or market with more confidence than it could achieve relying purely on its own limited experience, echoing Module 7's new-product-pricing-judgement material.",
+                "explain": "This directly recalls Module 7's new-product-pricing material — worth recognising reinsurance as serving a genuinely BROADER strategic role beyond pure risk transfer: it can provide access to expertise and data an insurer wouldn't otherwise have for a new venture."
+            },
+            {
+                "q": "How does this module's reinsurance material connect back to the capital management material covered in Module 16?",
+                "a": "Module 16 identified reinsurance as one lever within an insurer's broader capital management toolkit; this module develops the specific forms reinsurance can take (quota share, surplus, excess of loss) and how each is suited to different risk and capital objectives.",
+                "explain": "This closing card ties this module back to Module 16 explicitly — worth recognising this module as taking Module 16's brief mention of reinsurance-as-capital-tool and developing it into the full range of PRACTICAL STRUCTURES available to actually implement that capital management objective."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Asset-liability management",
+        "description": "Covers how health and care insurers manage the relationship between their assets and liabilities, including matching, duration, and liquidity considerations.",
+        "cards": [
+            {
+                "q": "Why is asset-liability management (ALM) particularly important for long-duration health and care products like long-term care insurance, echoing CM2's matching principles?",
+                "a": "A long-duration liability's value is highly sensitive to interest rate changes over a very long horizon, so holding assets whose value moves similarly (duration-matched) protects the insurer's balance sheet from adverse interest rate movements, exactly as CM2's immunisation material establishes generally.",
+                "explain": "This is CM2's asset-liability matching/immunisation material recalled directly — worth recognising LTC as one of the clearest real-world cases where CM2's abstract matching theory has genuine, high-stakes practical application, given how long and uncertain its liability cashflows are."
+            },
+            {
+                "q": "Why might short-tail products like PMI require a genuinely different ALM approach from long-duration products like long-term care insurance?",
+                "a": "PMI's short claim tail and annual repricing (Module 3's material) mean its liabilities are far less interest-rate sensitive over a long horizon, so its ALM approach can reasonably prioritise liquidity for near-term claims payment over long-duration interest rate matching.",
+                "explain": "This directly recalls Module 3's short-tail-product material — worth recognising that ALM strategy should genuinely differ by PRODUCT DURATION, not follow a single one-size-fits-all approach across an insurer's whole book."
+            },
+            {
+                "q": "Why might a health and care insurer need to hold a meaningful allocation to liquid assets, even for a book dominated by long-duration liabilities?",
+                "a": "Even a predominantly long-duration book has some near-term cashflow needs (claims payments, expenses), so genuine liquidity risk management requires holding sufficient liquid assets to meet these without being forced to sell less liquid, longer-duration assets at a potentially unfavourable time.",
+                "explain": "This directly recalls CM2's liquidity risk material — worth recognising that DURATION MATCHING alone doesn't fully address liquidity risk; even a well-matched book still needs genuinely accessible liquid assets to meet near-term cash outflows smoothly."
+            },
+            {
+                "q": "Why might inflation-linked assets be a genuinely valuable ALM tool for products like income protection or long-term care with inflation-sensitive benefits?",
+                "a": "If benefit payments are linked to inflation (e.g. an escalating IP benefit or care-cost-linked LTC benefit), holding assets whose value also responds to inflation helps protect the insurer against inflation eroding the real matching quality of a purely nominal asset portfolio.",
+                "explain": "This directly recalls Module 3's medical-inflation material and CM2's inflation-linked-bond material — worth recognising this as CM2's general inflation-matching principle applied specifically to a genuinely important, recurring health and care risk driver (medical/care cost inflation)."
+            },
+            {
+                "q": "Why might ALM for health and care insurance need to consider non-financial risk drivers (e.g. morbidity improvement trends), not just interest rate and inflation matching?",
+                "a": "Unlike a purely financial liability, health and care liabilities are also driven by genuinely uncertain morbidity and recovery experience, which cannot be hedged through asset allocation alone, meaning ALM must be understood as addressing only PART of the insurer's overall risk position.",
+                "explain": "This directly recalls Module 7's incidence/recovery-assumption material — worth recognising that ALM (an ASSET-side risk management tool) cannot address LIABILITY-side morbidity risk; that requires separate techniques like reinsurance (Module 17) and sound reserving (Module 16), not asset allocation."
+            },
+            {
+                "q": "Why might a health and care insurer's ALM strategy need periodic review as its book of business changes over time?",
+                "a": "As new products are sold and existing policies mature or lapse, the insurer's overall liability profile (duration, inflation-sensitivity) shifts, so an ALM strategy set for a past liability profile may no longer provide genuinely appropriate matching for the current book.",
+                "explain": "This directly recalls this course's recurring ongoing-review theme (Modules 6, 12, 15) — worth recognising ALM as needing the SAME ongoing-monitoring discipline as every other risk management technique covered in this course, not a one-off strategy set at a single point in time."
+            },
+            {
+                "q": "Why might stress testing (previewed in Module 12's ORSA material) be a valuable tool for assessing the adequacy of a health and care insurer's ALM strategy?",
+                "a": "Stress testing reveals how the insurer's asset and liability values would move together (or diverge) under adverse interest rate, inflation, or morbidity scenarios, providing genuine insight into ALM strategy resilience beyond a single central-scenario assessment.",
+                "explain": "This directly recalls Module 12's ORSA stress-testing material — worth recognising stress testing as the practical VERIFICATION tool for ALM strategy, confirming whether the intended matching genuinely holds up under adverse conditions, not just under expected, central assumptions."
+            },
+            {
+                "q": "How does this module's ALM material connect back to the capital management material covered in Module 16?",
+                "a": "Sound ALM reduces the volatility of the insurer's net asset position from interest rate and inflation movements, directly supporting Module 16's capital management objective of maintaining an adequate, stable capital buffer against adverse experience.",
+                "explain": "This closing card ties this module back to Module 16 explicitly — worth recognising ALM as one further practical TOOL (alongside reinsurance, Module 17) supporting the broader capital management objective Module 16 established."
+            }
+        ]
+    },
+    {
+        "id": "m19",
+        "title": "Analysis of experience",
+        "description": "Covers how health and care insurers monitor and analyse actual experience against assumptions, including mortality, morbidity, persistency and expense investigations.",
+        "cards": [
+            {
+                "q": "Why does a health and care insurer need to regularly analyse actual experience against the assumptions used in pricing and reserving, echoing CS2's experience analysis material?",
+                "a": "Comparing actual incidence, recovery, persistency, and expense experience against assumptions reveals whether those assumptions remain genuinely appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
+                "explain": "This is CS2's experience-monitoring principle recalled directly — worth recognising that pricing and reserving assumptions (Modules 7-9, 16) are never 'set and forget'; ongoing experience analysis is what actually confirms whether they remain sound over time."
+            },
+            {
+                "q": "Why might a critical illness insurer's experience analysis need to separately monitor incidence rates for each covered condition, rather than a single combined CI incidence rate?",
+                "a": "Different conditions can experience genuinely different trends (e.g. medical advances improving cancer survival while other conditions remain stable), so a single combined rate could mask offsetting movements that each individually warrant distinct assumption review.",
+                "explain": "This directly recalls Module 2's competing-risks material and Module 6's medical-advances material — worth recognising that AGGREGATED analysis can hide genuinely important condition-specific trends that separate analysis by condition would reveal."
+            },
+            {
+                "q": "Why might income protection experience analysis need to examine recovery rates separately by duration since claim onset, rather than a single overall recovery rate?",
+                "a": "Recovery rates typically vary significantly with how long a claim has already been open (Module 7's multi-state material), so a single overall rate could obscure genuinely important shifts in, for example, longer-duration claims persisting for longer than assumed.",
+                "explain": "This directly recalls Module 7's multi-state/duration-dependent-recovery material — worth recognising that experience analysis needs to be conducted at the SAME level of granularity the original pricing/reserving assumption was set at, or genuinely important patterns can be missed."
+            },
+            {
+                "q": "Why might persistency (lapse rate) experience analysis be particularly important for a health and care insurer's profitability, beyond its effect on in-force volumes?",
+                "a": "Since expenses are often front-loaded relative to premium income (Module 14's new-business-strain material), higher-than-assumed early lapses can mean the insurer fails to recover its initial expenses before the policy lapses, directly damaging profitability beyond simply reducing the size of the in-force book.",
+                "explain": "This directly recalls Module 14's new-business-strain material and CB1's expense-recovery material — worth recognising that a lapse ISN'T PROFIT-NEUTRAL; unfavourable early lapse experience can directly turn an expected-profitable policy into a loss-making one."
+            },
+            {
+                "q": "Why might an insurer investigate whether experience variances are genuinely random fluctuation or a persistent trend, rather than simply updating assumptions after any single adverse period?",
+                "a": "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation (echoing CS1's statistical significance material) avoids over-reacting to noise while still catching genuinely important shifts.",
+                "explain": "This directly recalls CS1's hypothesis-testing and statistical-significance material — worth recognising this as CS1's general statistical-inference discipline applied directly to a genuine, practical actuarial judgement call: when does an experience variance actually warrant an assumption change?"
+            },
+            {
+                "q": "Why might expense investigations need to distinguish between different expense categories (e.g. acquisition, maintenance, claims-handling) rather than analysing total expenses alone?",
+                "a": "Different expense categories can behave differently over time (e.g. claims-handling costs rising with claim complexity while acquisition costs remain stable), so category-level analysis reveals genuinely more actionable insight than a single aggregated total-expense comparison.",
+                "explain": "This directly recalls CB1's expense-category material and Module 7's claims-handling-expense material — worth recognising the same granularity principle recurring here: analysing at too aggregated a level can mask genuinely important category-specific trends."
+            },
+            {
+                "q": "Why might the results of an experience analysis need to feed directly back into both pricing (Modules 7-8) and reserving (Module 16) assumptions, not just one or the other?",
+                "a": "The same underlying experience (e.g. a genuine shift in recovery rates) affects both future pricing of new business and the adequacy of reserves held for existing business, so a genuinely complete response to an experience finding must consider both applications together.",
+                "explain": "This directly recalls Modules 7-8's pricing material and Module 16's capital/reserving material — worth recognising experience analysis as a genuinely CENTRAL, connecting activity: its findings ripple forward into essentially every other technical area this course covers."
+            },
+            {
+                "q": "How does this module's experience analysis material connect directly to the analysis of surplus and embedded value covered in the next module?",
+                "a": "This module analyses experience at the level of individual assumptions (incidence, recovery, persistency, expenses); the next module shows how those same experience variances translate into and explain the insurer's overall financial surplus and embedded value movement.",
+                "explain": "This closing card ties this module directly to Module 20 — worth recognising Module 20 as taking this module's DETAILED, assumption-by-assumption experience analysis and aggregating it into an overall explanation of the insurer's FINANCIAL results."
+            }
+        ]
+    },
+    {
+        "id": "m20",
+        "title": "Analysis of surplus, embedded value and profit",
+        "description": "Covers how health and care insurers decompose movements in surplus, embedded value and reported profit into their underlying causes.",
+        "cards": [
+            {
+                "q": "Why is an 'analysis of surplus' (decomposing the change in an insurer's financial position into its underlying causes) a genuinely valuable management tool, echoing CS2's source-of-profit analysis?",
+                "a": "Decomposing overall surplus movement into components (expected release of margins, experience variances, assumption changes, new business) reveals genuinely WHY results moved as they did, distinguishing planned, expected sources of profit from unexpected variances requiring management attention.",
+                "explain": "This is CS2's source-of-earnings/profit analysis recalled directly — worth recognising this technique's core value: a single overall profit FIGURE tells you WHAT happened, but only decomposition tells you WHY, which is what actually informs sound management action."
+            },
+            {
+                "q": "Why might the 'expected' component of a surplus analysis (the release of margins built into original pricing assumptions) typically represent the largest, most predictable share of emerging profit?",
+                "a": "Prudent pricing and reserving assumptions (Modules 7-8, 16) build in margins that are expected to emerge as profit over time purely through the passage of time and survival of the assumptions, forming a genuinely predictable baseline against which actual variances can be meaningfully compared.",
+                "explain": "This directly recalls Module 7's profit-margin material — worth recognising the expected component as the genuine BASELINE the whole analysis is built around: everything else in the decomposition is measured as a DEVIATION from this predictable expected release."
+            },
+            {
+                "q": "Why does distinguishing 'experience variances' from 'assumption changes' matter within a surplus analysis, rather than treating both as simply 'unexpected' results?",
+                "a": "An experience variance reflects a single period's actual outcome differing from assumption (which may or may not persist), while an assumption change reflects a genuine, deliberate revision to future expectations — conflating them would obscure whether a variance is a one-off or a persistent, forward-looking change.",
+                "explain": "This directly recalls Module 19's random-fluctuation-versus-trend material — worth recognising this distinction as the surplus-analysis application of that same judgement call: is this period's variance a one-off (experience variance) or does it justify updating future assumptions (assumption change)?"
+            },
+            {
+                "q": "Why might new business strain (Module 14's material) typically appear as a distinct, separately identified component within a surplus analysis?",
+                "a": "New business strain reflects a deliberate, expected reduction in surplus from writing new business (due to upfront reserving and acquisition costs), and isolating it prevents this expected, growth-related drag from being confused with genuinely adverse experience elsewhere in the book.",
+                "explain": "This directly recalls Module 14's new-business-strain material — worth recognising that WITHOUT this separate identification, a growing, healthy insurer writing lots of (strain-generating) new business could be wrongly read as performing poorly, when the strain is actually an expected cost of genuine growth."
+            },
+            {
+                "q": "Why might an analysis of embedded value movement (Module 14's concept) need its own distinct 'unwind of discount' component, separate from experience variances?",
+                "a": "Embedded value is a discounted present value, so simply moving one year closer to when future profits emerge mechanically increases embedded value (the discount unwinds) even with zero change in underlying experience, and this expected, mechanical effect must be separated from genuine experience-driven movements.",
+                "explain": "This directly recalls Module 14's embedded-value material and CM1's discounting-mechanics material — worth recognising the unwind of discount as a genuinely MECHANICAL, time-value-of-money effect, not a reflection of any actual change in underlying insurer performance."
+            },
+            {
+                "q": "Why might a health and care insurer's surplus analysis for a critical illness book specifically isolate incidence-rate variances by condition, echoing Module 19's granular experience-analysis point?",
+                "a": "Since Module 19 established that different CI conditions can move in genuinely different directions, an aggregated single incidence-variance figure could mask offsetting movements, so condition-level decomposition within the surplus analysis preserves the granular insight Module 19's experience analysis identified.",
+                "explain": "This directly recalls Module 19's condition-level-experience-analysis material — worth recognising that the DECOMPOSITION granularity in a surplus analysis should mirror the granularity at which experience was originally investigated, or genuinely important detail gets lost in aggregation."
+            },
+            {
+                "q": "Why might senior management and the Board place particular weight on a well-constructed surplus analysis when assessing an insurer's performance, beyond the headline profit figure?",
+                "a": "A clear decomposition distinguishes sustainable, expected sources of profit from one-off or potentially concerning experience variances, supporting genuinely better-informed strategic decisions than a single opaque profit number could on its own.",
+                "explain": "This directly previews Module 21's strategy-assessment material — worth recognising surplus analysis as providing the essential factual, decomposed EVIDENCE BASE that sound strategic assessment and decision-making (covered next) needs to draw upon."
+            },
+            {
+                "q": "How does this module's surplus and embedded value analysis connect back to Module 19's experience analysis and forward to Module 21's strategy assessment?",
+                "a": "Module 19 investigates experience at a granular, assumption-by-assumption level; this module aggregates those findings (alongside expected margin release and mechanical effects) into an overall financial decomposition, which Module 21 then uses as evidence to assess and inform strategic decisions.",
+                "explain": "This closing card ties Modules 19-21 together explicitly — worth recognising this three-module sequence as a coherent pipeline: detailed EXPERIENCE analysis (Module 19) feeds into overall FINANCIAL decomposition (this module), which feeds into STRATEGIC assessment (Module 21)."
+            }
+        ]
+    }
 ],
 };
