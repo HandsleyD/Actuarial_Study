@@ -15164,6 +15164,198 @@ const MODULES = {
                 "explain": "This directly previews this course's analysis-of-surplus module — worth recognising that a genuinely diversified life insurer's embedded value analysis is most useful when broken down by product LINE, not just reported as one aggregated whole-company figure."
             }
         ]
+    },
+    {
+        "id": "m13",
+        "title": "Professional standards, capital management and reinsurance",
+        "description": "Covers professional standards and ethics for life actuaries, capital management strategy, and the role of reinsurance in life insurance.",
+        "cards": [
+            {
+                "q": "Why might an actuary holding a statutory reporting role (e.g. Chief Actuary or With-Profits Actuary) at a life insurer carry personal professional responsibilities distinct from the insurer's corporate obligations, echoing SA1's material?",
+                "a": "A statutory actuarial role typically carries personal accountability for specific technical opinions (e.g. on with-profits bonus fairness or reserve adequacy), meaning the individual actuary can face professional consequences distinct from, and sometimes in tension with, the insurer's own commercial interests.",
+                "explain": "This directly recalls SA1's personal-accountability material — worth recognising the With-Profits Actuary role specifically as a genuinely distinctive, life-insurance-specific example of this general principle, given the fairness-of-discretion issues raised in Module 7."
+            },
+            {
+                "q": "Why might a life insurer's finance director pressuring the actuary to adopt optimistic mortality improvement assumptions for annuity reserving present a genuine ethical conflict, echoing SA1's material?",
+                "a": "Understating future mortality improvement would understate annuity reserves and flatter near-term reported profit, but professional standards require the actuary to maintain assumptions genuinely supported by the evidence rather than adjusted to satisfy commercial pressure.",
+                "explain": "This directly recalls SA1's professional-standards ethical-scenario material — worth recognising this as the life-insurance mirror of SA1's LTC-assumption-pressure scenario, with annuity mortality improvement playing the equivalent role."
+            },
+            {
+                "q": "Why might a life insurer hold capital buffers above its calculated SCR, rather than managing capital exactly to the regulatory minimum, echoing SA1's material?",
+                "a": "A buffer provides genuine resilience against adverse experience (e.g. a pandemic mortality shock, or a sharp fall in interest rates affecting guarantee costs) without immediately breaching regulatory thresholds, giving the insurer time and flexibility to respond.",
+                "explain": "This directly recalls SA1's capital-buffer material — worth recognising the same underlying principle applying to life insurers, with interest-rate-driven guarantee cost shocks as a particularly relevant life-insurance-specific stress scenario."
+            },
+            {
+                "q": "Why might a life insurer use reinsurance for both mortality risk on protection business and longevity risk on annuity business, using genuinely different reinsurance structures for each?",
+                "a": "Mortality risk reinsurance typically resembles quota share or surplus arrangements ceding a share of individual policy risk, while longevity risk reinsurance (e.g. longevity swaps) typically transfers the aggregate risk that a whole annuity book's mortality experience improves faster than assumed, a genuinely different risk transfer mechanism.",
+                "explain": "This directly recalls SA1's reinsurance-structure material — worth recognising that life insurance reinsurance genuinely spans both traditional individual-risk structures AND newer aggregate, index-based longevity risk transfer instruments."
+            },
+            {
+                "q": "Why might raising new capital to support a bulk annuity transaction (taking on a pension scheme's liabilities) carry genuine strategic significance beyond the immediate transaction, echoing CB1's material?",
+                "a": "A large bulk annuity transaction can materially change the insurer's overall risk profile and capital requirements, so the capital-raising decision should be assessed against the insurer's wider strategy and risk appetite, not evaluated purely as a standalone transaction.",
+                "explain": "This directly recalls CB1's capital-raising and SA1's strategy-assessment material — worth recognising bulk annuity transactions as a genuinely significant, real-world example of a strategic decision with material capital management consequences."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Asset-liability management",
+        "description": "Covers how life insurers manage the relationship between assets and liabilities across with-profits, unit-linked and annuity business.",
+        "cards": [
+            {
+                "q": "Why is asset-liability management particularly important for annuity business specifically, echoing CM2's and SA1's material?",
+                "a": "A long-duration annuity liability's value is highly sensitive to interest rate changes over a very long horizon, so holding duration-matched assets (e.g. long-dated bonds, potentially supported by the matching adjustment) protects the insurer's balance sheet from adverse rate movements.",
+                "explain": "This directly recalls CM2's immunisation material and Module 11's matching-adjustment material — worth recognising annuity ALM as the clearest, most textbook real-world example of CM2's matching principle in the whole life insurance sector."
+            },
+            {
+                "q": "Why might a with-profits fund's ALM strategy need to balance matching guarantee liabilities against pursuing growth assets to support bonus generation, echoing Module 7's material?",
+                "a": "Guarantees within a with-profits fund benefit from matching to reduce risk, while genuine bonus generation typically requires some allocation to growth assets (e.g. equities) whose expected returns exceed matched bond yields, creating a genuine tension the fund's ALM strategy must balance.",
+                "explain": "This directly recalls Module 7's with-profits-bonus material — worth recognising with-profits ALM as involving a genuine trade-off (safety of matching versus growth potential) that annuity ALM, focused purely on matching, does not face in the same way."
+            },
+            {
+                "q": "Why does unit-linked business require a genuinely different ALM approach from with-profits or annuity business?",
+                "a": "Since unit-linked investment risk and return pass directly to the policyholder, the insurer's own ALM concern is largely limited to managing charges, expenses, and any embedded guarantees, rather than managing a large pool of insurer-owned assets against insurer-owned liabilities.",
+                "explain": "This directly recalls Module 3's unit-linked-risk-transfer material — worth recognising that 'ALM' means something genuinely different across a life insurer's different product lines, not a single uniform activity."
+            },
+            {
+                "q": "Why might a life insurer use derivatives (e.g. interest rate swaps or equity options) as part of its ALM strategy, echoing CM2's material?",
+                "a": "Derivatives can efficiently adjust interest rate or equity exposure without needing to buy or sell large quantities of the underlying assets directly, providing a genuinely flexible tool for fine-tuning matching or hedging embedded guarantee costs (Module 8's material).",
+                "explain": "This directly recalls CM2's derivative-hedging material and Module 8's guarantee-cost material — worth recognising derivatives as a genuinely practical tool for hedging embedded option risk that would be difficult or inefficient to manage through the underlying assets alone."
+            },
+            {
+                "q": "Why might a life insurer's ALM strategy need periodic review as its book of business changes over time, echoing SA1's recurring theme?",
+                "a": "As new business is written and existing policies mature, lapse, or claim, the insurer's overall liability profile shifts, so an ALM strategy set for a past liability profile may no longer provide genuinely appropriate matching for the current book.",
+                "explain": "This directly recalls SA1's ALM-ongoing-review material — worth recognising this same ongoing-monitoring discipline applying identically to life insurance ALM."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Analysis of experience and surplus",
+        "description": "Covers how life insurers monitor actual experience against assumptions and decompose movements in surplus, embedded value and profit.",
+        "cards": [
+            {
+                "q": "Why does a life insurer need to regularly analyse actual mortality, longevity, lapse and expense experience against assumptions, echoing SA1's and CS2's material?",
+                "a": "Comparing actual experience against assumptions reveals whether pricing and reserving assumptions remain genuinely appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
+                "explain": "This directly recalls SA1's and CS2's experience-monitoring material — worth recognising this as a universal actuarial discipline applying identically across life and health and care insurance."
+            },
+            {
+                "q": "Why might an annuity insurer's experience analysis need to separately monitor mortality improvement by cause of death or socioeconomic group, rather than a single aggregate longevity trend?",
+                "a": "Different subgroups of annuitants can experience genuinely different mortality improvement trends (e.g. driven by differential access to medical advances), so an aggregated single trend could mask offsetting or diverging patterns that separate analysis would reveal.",
+                "explain": "This directly recalls SA1's condition-level-granularity material — worth recognising the same principle applying to longevity experience analysis: analysing at too aggregated a level can hide genuinely important subgroup-specific trends."
+            },
+            {
+                "q": "Why does distinguishing 'experience variances' from 'assumption changes' matter within a life insurer's surplus analysis, echoing SA1's material?",
+                "a": "An experience variance reflects a single period's actual outcome differing from assumption, while an assumption change reflects a deliberate, forward-looking revision to future expectations — conflating them would obscure whether a result is a one-off or a persistent, forward-looking change.",
+                "explain": "This directly recalls SA1's surplus-analysis decomposition material — worth recognising this distinction as equally essential for life insurance surplus analysis as for health and care."
+            },
+            {
+                "q": "Why might new business strain typically appear as a distinct component within a life insurer's surplus analysis, echoing SA1's and CB1's material?",
+                "a": "New business strain reflects a deliberate, expected reduction in surplus from writing new business (due to upfront reserving and acquisition costs), and isolating it prevents this expected, growth-related drag from being confused with genuinely adverse experience elsewhere in the book.",
+                "explain": "This directly recalls SA1's and CB1's new-business-strain material — worth recognising the same principle applying identically to life insurance, where new business strain is a particularly well-known, long-established feature of the industry."
+            },
+            {
+                "q": "Why might an 'unwind of discount' component be particularly significant within an embedded value movement analysis for annuity business specifically?",
+                "a": "Since annuity liabilities and their supporting assets are typically very long-duration, simply moving one year closer to when future profits emerge mechanically increases embedded value by a genuinely larger amount than for a shorter-duration product, purely as a function of the discount unwinding over a longer remaining horizon.",
+                "explain": "This directly recalls SA1's and Module 12's unwind-of-discount material — worth recognising that this mechanical effect scales directly with liability DURATION, making it especially significant for annuity business specifically."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Assessing, recommending and implementing strategies",
+        "description": "Covers the skills of assessing strategic options, making a justified recommendation, and working through its downstream implications for a life insurer.",
+        "cards": [
+            {
+                "q": "Why must assessing a proposed strategy for a life insurer (e.g. entering the bulk annuity market) start from that insurer's own specific objectives, capital position and risk appetite, echoing SA1's material?",
+                "a": "The same strategic option could be genuinely excellent for one insurer and genuinely unsuitable for another depending entirely on its specific capital position, existing product mix, and risk appetite, making context-specific assessment essential rather than a generic checklist.",
+                "explain": "This directly recalls SA1's context-specific-assessment material — worth recognising this principle as identical across every SA subject: a strong answer is always anchored in the SPECIFIC scenario given."
+            },
+            {
+                "q": "A life insurer with strong annuity expertise but no with-profits experience is considering acquiring a closed with-profits book. Discuss one factor the insurer should assess.",
+                "a": "The insurer should assess whether it has, or can build, the genuine governance and actuarial expertise needed to exercise fair bonus discretion (Module 7's material) across a closed fund with no new business to dilute legacy guarantee costs, a materially different skill set from its existing annuity expertise.",
+                "explain": "This is a genuinely complex strategic assessment drawing on Module 7's with-profits-discretion material — worth recognising that a strong answer identifies the SPECIFIC capability gap (with-profits governance) rather than assessing the acquisition generically."
+            },
+            {
+                "q": "Why should a strategic recommendation for a life insurer explicitly acknowledge genuine trade-offs, rather than presenting the chosen option as unambiguously best, echoing SA1's material?",
+                "a": "Real strategic decisions almost always involve genuine trade-offs (e.g. capital efficiency versus diversification benefit), so acknowledging these demonstrates a genuinely balanced, realistic understanding rather than an oversimplified, one-sided justification.",
+                "explain": "This directly recalls SA1's balanced-recommendation material — worth recognising that examiners typically reward candidates who show awareness of a recommendation's downsides, not just those who present only supporting arguments."
+            },
+            {
+                "q": "Why might entering the bulk annuity market have genuine capital and reinsurance implications beyond the immediate transaction, echoing SA1's implications material?",
+                "a": "A large bulk annuity transaction directly increases the insurer's longevity risk exposure and SCR, potentially requiring additional capital raising or increased use of longevity reinsurance to manage the resulting risk concentration, implications that should be worked through explicitly rather than assumed away.",
+                "explain": "This directly recalls SA1's implications-of-strategies material and Module 13's reinsurance material — worth recognising that a genuinely complete answer traces a strategic decision through to its concrete capital and reinsurance consequences."
+            },
+            {
+                "q": "Why might a recommendation need to specify how its success will be monitored going forward, rather than treating the decision as final once implemented, echoing SA1's material?",
+                "a": "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics) shows the recommendation is genuinely designed to be verified and adjusted over time.",
+                "explain": "This directly recalls SA1's ongoing-monitoring-of-strategy material — worth recognising this as a universal closing principle for any SA-subject strategic recommendation, life insurance included."
+            }
+        ]
+    },
+    {
+        "id": "m17",
+        "title": "International comparison and best practice",
+        "description": "Covers comparing life insurance markets and regulatory approaches across jurisdictions, and identifying transferable best practice.",
+        "cards": [
+            {
+                "q": "Why might comparing life insurance markets across jurisdictions reveal genuinely transferable insight, rather than being purely descriptive background, echoing SA1's material?",
+                "a": "Observing how other markets have addressed similar challenges (e.g. managing legacy with-profits guarantees, or structuring bulk annuity regulation) can surface approaches not obvious from studying a single market in isolation, informing genuinely better strategic decisions.",
+                "explain": "This directly recalls SA1's national-systems-comparison material — worth recognising the same analytical value applying to comparing life insurance markets specifically, not just health and care systems."
+            },
+            {
+                "q": "Why might a life insurer operating outside the Solvency II framework still be subject to a broadly similar risk-based capital regime, echoing SA1's material?",
+                "a": "Different jurisdictions have developed their own risk-based capital frameworks (e.g. US risk-based capital) sharing Solvency II's broad goal of ensuring adequate capital relative to risk, but differing in technical detail and calibration, reflecting genuinely different regulatory traditions.",
+                "explain": "This directly recalls SA1's comparative-regulation material — worth recognising Solvency II as one example of a risk-based capital regime, not the only possible approach even within life insurance specifically."
+            },
+            {
+                "q": "Why might best practice in with-profits governance increasingly emphasise transparent, documented bonus-setting processes, echoing Module 7's fairness material?",
+                "a": "Clear documentation and transparency around how bonus decisions are made helps demonstrate fair treatment of different policyholder generations and supports genuine accountability, directly addressing the inter-generational fairness challenge with-profits business inherently carries.",
+                "explain": "This directly recalls Module 7's inter-generational-fairness material — worth recognising transparent governance as a specific, concrete example of best practice responding directly to with-profits' most distinctive conduct risk."
+            },
+            {
+                "q": "Why might best practice in longevity risk management increasingly favour a combination of reinsurance, matching adjustment-eligible assets, and longevity hedging instruments, rather than relying on a single technique?",
+                "a": "Each technique addresses the risk differently (reinsurance transfers risk to a specialist counterparty, matching adjustment rewards genuine asset-liability matching, hedging instruments target specific longevity trend risk), so combining them can achieve more efficient, diversified risk management than relying on any single approach alone.",
+                "explain": "This directly recalls Module 11's matching-adjustment material and Module 13's reinsurance material — worth recognising best practice as often genuinely COMBINING multiple risk management tools, not choosing a single 'best' technique in isolation."
+            },
+            {
+                "q": "Why might identifying best practice be considered an ongoing, evolving exercise rather than a fixed body of knowledge, echoing SA1's recurring theme?",
+                "a": "As regulation, mortality/longevity trends, and market conditions evolve, what counts as best practice genuinely evolves too, meaning best-practice knowledge itself requires periodic review rather than being treated as permanently fixed.",
+                "explain": "This directly recalls SA1's ongoing-review theme applied to best practice specifically — worth recognising this as a universal closing principle recurring across every SA subject's best-practice material."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Solving complex issues and glossary",
+        "description": "Covers applying the full range of SA2 knowledge and skills to genuinely complex, multi-dimensional life insurance problems, and consolidates key syllabus terminology.",
+        "cards": [
+            {
+                "q": "Why does SA2 include a dedicated focus on solving complex issues, drawing on every earlier module, echoing SA1's material?",
+                "a": "Real strategic and technical problems in life insurance rarely fall neatly into a single topic area; a genuinely complex issue typically requires drawing on product knowledge, pricing, regulation, reporting, and strategic judgement simultaneously.",
+                "explain": "This directly recalls SA1's complex-issue-integration material — worth recognising this module as this course's deliberate integration point, combining skills the earlier modules mostly developed in isolation."
+            },
+            {
+                "q": "A life insurer must decide whether to close its with-profits fund to new business while managing existing policyholders' fair treatment. Discuss why this represents a genuinely complex issue.",
+                "a": "This decision genuinely involves competing considerations across multiple topic areas at once — conduct obligations to existing policyholders (Module 9), capital implications of a shrinking, ageing fund (Module 13), and strategic implications for the insurer's wider business (Module 16) — requiring integrated judgement rather than a single-dimension analysis.",
+                "explain": "This directly recalls this module's integration theme — worth recognising that resolving this specific issue genuinely requires drawing on conduct, capital, and strategy material together, not any single module in isolation."
+            },
+            {
+                "q": "What is the 'matching adjustment' under Solvency II, as a glossary-style precise restatement of Module 11's material?",
+                "a": "A mechanism allowing an insurer to discount certain long-term, predictable liabilities (like annuities) using a higher rate reflecting the return on assets held to back them, where those assets are closely cashflow-matched to the liabilities and held to maturity.",
+                "explain": "This directly recalls Module 11's matching-adjustment material — worth treating this as the precise definition to reach for if an exam question asks you to explain or apply the matching adjustment directly."
+            },
+            {
+                "q": "What is a 'guaranteed annuity option' (GAO), as a glossary-style precise restatement of Module 4's material?",
+                "a": "A guarantee giving a policyholder the right to convert an accumulated fund into an annuity at a specified, guaranteed rate, which can become severely costly to the insurer if market annuity rates fall well below the guaranteed rate.",
+                "explain": "This directly recalls Module 4's GAO material — worth treating this as the precise definition to use if asked to explain why legacy guarantees can pose severe long-term risk to a life insurer."
+            },
+            {
+                "q": "Why does this closing module deliberately draw its content from across every earlier module, rather than introducing wholly new material, echoing SA1's glossary approach?",
+                "a": "This module's purpose is genuinely consolidative and integrative, bringing together precise terminology and complex, multi-topic problem-solving practice using material already developed throughout the course, supporting confident, accurate application in the actual exam.",
+                "explain": "This closing card confirms this module completes SA2's structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
+            }
+        ]
     }
     ]
 };
