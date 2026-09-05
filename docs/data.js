@@ -20195,7 +20195,70 @@ const MODULES = {
                 "explain": "Worth recognising this as a genuine, important TRADE-OFF — machine learning's potential accuracy gains against GLMs' typically greater interpretability and ease of justifying results to stakeholders and regulators, a genuinely live tension in modern actuarial pricing practice."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "General insurance products and the business environment",
+        "description": "Covers the core features of direct and reinsurance products, customer requirements, and insurer exposures, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why must a rating actuary genuinely understand a product's core features before applying any of the rating techniques covered in Modules 2-4, echoing SA3's material?",
+                "a": "Different products carry genuinely different claim frequency, severity, and development characteristics (SP7's material), so the SPECIFIC rating factors, data requirements, and appropriate technique choice genuinely depend on the specific product being priced, meaning product understanding is a genuine PRECURSOR to sound rating, not a separate, unrelated topic.",
+                "explain": "This directly recalls SP7's product-understanding-precedes-technique material — worth recognising this same principle applying identically to PRICING as it does to RESERVING, given both draw on the same underlying product knowledge foundation."
+            },
+            {
+                "q": "Why might pricing a REINSURANCE product (e.g. an excess of loss treaty) genuinely require different rating considerations from pricing the underlying DIRECT insurance product it sits above, echoing SP7's material?",
+                "a": "A reinsurance treaty's genuine payoff depends on whether AGGREGATE or INDIVIDUAL underlying claims exceed a specified attachment point, requiring the reinsurance pricing actuary to understand the FULL severity distribution of the underlying direct business (not just its average cost), a genuinely more complex pricing problem than pricing the direct policies themselves.",
+                "explain": "This directly recalls SP7's non-proportional-reinsurance-modelling material — worth recognising reinsurance pricing as requiring genuinely DEEPER distributional understanding of the underlying business than direct pricing alone typically demands."
+            },
+            {
+                "q": "Why must a rating actuary genuinely understand CUSTOMER REQUIREMENTS, not just technical claim cost drivers, when setting a general insurance premium?",
+                "a": "Since a premium must genuinely be commercially viable (customers willing to pay it) as well as technically adequate (covering expected costs), understanding what customers genuinely value and are willing to pay for directly shapes both product design and the acceptable range within which a technically-derived rate must genuinely fall to remain commercially competitive.",
+                "explain": "This directly recalls CB1's and SA1's customer-need-and-insurer-risk dual-perspective material — worth recognising this same DUAL PERSPECTIVE (technical cost AND genuine customer value) applying to general insurance pricing specifically."
+            },
+            {
+                "q": "Why must a rating actuary genuinely understand the insurer's own EXPOSURES from a specific product, beyond simply calculating an adequate premium for each individual policy?",
+                "a": "Since individually well-priced policies can still genuinely AGGREGATE into concerning concentration risk (e.g. many property policies all exposed to the same flood plain), understanding the insurer's genuine PORTFOLIO-LEVEL exposure, not just individual policy adequacy, is essential for sound overall pricing and risk management strategy.",
+                "explain": "This directly recalls SA3's and SP7's aggregation-and-concentration-risk material — worth recognising that PRICING adequacy at the individual policy level does not automatically guarantee sound AGGREGATE portfolio risk management."
+            },
+            {
+                "q": "Why might understanding both direct and reinsurance product features together give a rating actuary genuinely richer insight than understanding either in isolation?",
+                "a": "Since reinsurance pricing directly depends on genuine understanding of the underlying direct business it sits above, and direct insurers' own pricing and risk appetite decisions are directly shaped by the reinsurance protection genuinely available to them, understanding BOTH sides together reveals the genuine, two-way interaction between direct and reinsurance markets that understanding either in isolation would miss.",
+                "explain": "This closing card ties direct and reinsurance product understanding together explicitly — worth recognising this whole module's dual coverage (direct AND reinsurance) as reflecting a genuinely important, two-way market interaction, not two unrelated product categories covered merely for completeness."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "External factors affecting general insurance pricing",
+        "description": "Covers the implications of fiscal regimes, inflation, and regulatory, legal, political, social, climate and technological factors affecting general insurers' pricing, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why must general insurance pricing genuinely reflect the specific fiscal (tax) regime it operates within, echoing SA3's material?",
+                "a": "Different tax treatments of premiums, claims, and insurer profits can genuinely affect the insurer's true after-tax economics of a given rate, so a sound pricing basis must genuinely incorporate the specific fiscal regime's implications, not assume a uniform, tax-neutral pricing framework applicable everywhere.",
+                "explain": "This directly recalls SA3's taxation-of-general-insurance material — worth recognising this same principle applying directly to the PRICING side (not just reserving/reporting) of general insurance actuarial work."
+            },
+            {
+                "q": "Why does claims inflation require genuinely explicit, forward-looking treatment in pricing, distinct from its treatment in reserving (SP7's material)?",
+                "a": "While SP7 addresses claims inflation's effect on ALREADY-INCURRED claims still developing, pricing must genuinely project claims inflation FORWARD across the FUTURE policy period being priced, requiring a genuinely forward-looking inflation assumption distinct from (though informed by) the historical inflation experience SP7's reserving analysis reveals.",
+                "explain": "This directly recalls SP7's claims-inflation-in-reserving material — worth recognising that inflation assumption-setting genuinely differs in DIRECTION (backward-looking analysis informing a forward-looking pricing assumption) between these two, otherwise closely related, actuarial disciplines."
+            },
+            {
+                "q": "Why might regulatory and legal developments genuinely affect general insurance pricing directly, beyond simply constraining permitted rating factors, echoing SA3's material?",
+                "a": "Regulatory and legal changes can genuinely alter the underlying CLAIMS COST itself (e.g. changing court awards for bodily injury, or new consumer protection requirements affecting claims handling costs), directly affecting the genuine pure risk premium calculation, not merely constraining which rating factors an insurer is permitted to use.",
+                "explain": "This directly recalls SA3's legislation-affects-genuine-claims-cost material — worth recognising regulatory/legal factors as affecting pricing through TWO genuinely distinct channels: constraining permitted rating factors AND directly changing the underlying claims cost itself."
+            },
+            {
+                "q": "Why might genuine social and technological trends (e.g. changing attitudes to risk, or new vehicle safety technology) directly affect appropriate pricing assumptions, echoing this course's recurring PESTLE-style material?",
+                "a": "Social trends can genuinely affect claim frequency (e.g. changing driving behaviours) or severity (e.g. changing attitudes toward litigation), while technological developments can genuinely affect both frequency (e.g. autonomous vehicle safety features reducing accidents) and severity (e.g. more expensive vehicle repair costs from advanced sensor technology), requiring pricing assumptions to genuinely evolve alongside these ongoing external trends.",
+                "explain": "This directly recalls CB2's and SA3's PESTLE-style external-factor material — worth recognising these social and technological trends as genuinely capable of moving frequency and severity assumptions in either direction, requiring active monitoring rather than assumed stability."
+            },
+            {
+                "q": "Why has climate change become a genuinely important pricing consideration for general insurers specifically, echoing SA3's catastrophe-modelling material?",
+                "a": "Climate change can genuinely alter the frequency and severity of weather-related perils (e.g. flood, windstorm), directly affecting the catastrophe risk assumptions underlying pricing for exposed property and other lines, requiring genuinely forward-looking climate-adjusted assumptions rather than relying purely on historical weather patterns that may no longer reliably represent genuine future risk.",
+                "explain": "This directly recalls SA3's catastrophe-modelling and climate-risk material — worth recognising climate change as directly threatening the genuine RELIABILITY of historical weather data as a guide to future pricing assumptions, a theme recurring across multiple subjects in this curriculum."
+            }
+        ]
     }
-
     ]
 };
