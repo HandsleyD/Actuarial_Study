@@ -19435,6 +19435,90 @@ const MODULES = {
                 "explain": "This directly recalls Module 5's credit-derivative-types material and CS2's copula/dependence material — worth recognising correlation as playing a genuinely CRITICAL role specifically for MULTI-NAME credit derivatives, a consideration entirely absent from single-name CDS pricing."
             }
         ]
+    },
+    {
+        "id": "m12",
+        "title": "How investors use derivatives, and hedging with the Greeks",
+        "description": "Covers how derivatives help investors meet objectives, the change in portfolio risk profile from derivative use, and hedging using the Greeks and scenario analysis, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine objectives might an investor achieve through derivative use, per the official syllabus objective 4.1.1?",
+                "a": "Derivatives can help investors genuinely hedge existing risk exposures, gain efficient market exposure without directly trading the underlying, express a specific market view (speculation), or exploit genuine pricing anomalies (arbitrage) — directly echoing Module 2's hedger/speculator/arbitrageur categorisation now applied to genuine investor objective-setting.",
+                "explain": "This directly recalls Module 2's market-participant-types material — worth recognising this module as taking that earlier categorisation and developing it into genuinely practical INVESTOR OBJECTIVES a portfolio manager might explicitly pursue."
+            },
+            {
+                "q": "Why must an investor genuinely assess how derivative use changes a portfolio's OVERALL risk profile, rather than assessing each derivative position in isolation, per the official syllabus objective 4.1.2?",
+                "a": "A derivative position's risk effect depends genuinely on how it interacts with the REST of the portfolio (e.g. a hedge reduces overall risk only if it genuinely offsets an existing exposure), so assessing derivative impact requires a genuinely PORTFOLIO-LEVEL view, not evaluating each derivative's standalone risk in isolation from everything else held.",
+                "explain": "This directly recalls Module 6's mean-variance-portfolio-theory material from SP5 — worth recognising this same portfolio-level (not position-by-position) risk assessment principle applying directly to derivative use specifically."
+            },
+            {
+                "q": "What genuine practical issues and limitations might arise from derivative use, per the official syllabus objective 4.1.3?",
+                "a": "Practical issues can include genuine basis risk (the hedge not perfectly matching the exposure being hedged, covered further in Module 13), liquidity constraints on entering or exiting positions, operational complexity in managing derivative positions, and genuine model risk in valuing more complex instruments.",
+                "explain": "Worth recognising this as a genuinely important CAUTION alongside derivatives' theoretical benefits — a strong exam answer discussing derivative use should demonstrate awareness of these genuine practical limitations, not just describe derivatives' benefits uncritically."
+            },
+            {
+                "q": "What are 'the Greeks', and why does calculating them (per the official syllabus objective 4.2.1) provide genuinely essential information for hedging a derivative position?",
+                "a": "The Greeks are the partial derivatives of a derivative's price with respect to its various pricing inputs (e.g. delta $\\frac{\\partial C}{\\partial S}$ with respect to the underlying price, vega with respect to volatility, theta with respect to time), each quantifying genuinely how sensitive the derivative's value is to a small change in that specific input, directly informing how much of the underlying (or other instruments) must be held to hedge that specific sensitivity.",
+                "explain": "This directly recalls CM2's Greeks material — worth recognising the Greeks as the genuine, practical MEASUREMENT TOOL translating the theoretical Black-Scholes/binomial pricing machinery (Modules 6-9) into concrete, actionable hedging quantities."
+            },
+            {
+                "q": "How does 'delta' specifically enable hedging of an individual derivative, and why might a hedger need to continuously REBALANCE this hedge over time?",
+                "a": "Delta ($\\Delta = \\frac{\\partial C}{\\partial S}$) genuinely quantifies how much the derivative's price changes per unit change in the underlying's price, so holding a genuinely offsetting position of $\\Delta$ units of the underlying creates a delta-neutral hedge; since delta itself changes as the underlying's price and time to expiry change, this hedge requires genuine ongoing rebalancing to remain effective (dynamic hedging).",
+                "explain": "This directly recalls Module 6's and Module 7's continuous-time replicating-portfolio material — worth recognising delta hedging as the genuine, PRACTICAL implementation of the same continuous-time replication logic underlying the Black-Scholes derivation itself."
+            },
+            {
+                "q": "How might a portfolio manager use 'scenario analysis' to manage a portfolio of derivatives, per the official syllabus objective 4.2.4?",
+                "a": "Scenario analysis projects a genuine portfolio's value under a range of specified future market conditions (e.g. a sharp market fall combined with a volatility spike), revealing how the portfolio's Greeks-based sensitivities translate into genuine potential outcomes under realistic, combined market moves that a single Greek in isolation might not fully capture.",
+                "explain": "This directly recalls SA1's and SA3's stress-testing material — worth recognising scenario analysis as this course's genuine, portfolio-level COMPLEMENT to the Greeks' more granular, single-sensitivity measures, providing a more holistic risk picture."
+            },
+            {
+                "q": "Why might exotic derivatives (Module 5's material) genuinely require particular care when assessing their risk management characteristics, per the official syllabus objective 4.2.5?",
+                "a": "Exotic derivatives' genuinely more complex, sometimes discontinuous payoff structures (e.g. a barrier option's payoff jumping discontinuously when the barrier is touched) can produce Greeks that behave in genuinely unstable or non-intuitive ways near critical price levels, requiring particular care and more sophisticated risk management technique than a standard vanilla option's more smoothly-behaving Greeks.",
+                "explain": "This directly recalls Module 5's exotic-derivative material — worth recognising that a derivative's genuine STRUCTURAL COMPLEXITY (covered in Module 5) directly translates into genuinely more complex RISK MANAGEMENT challenges (covered here), not two unrelated considerations."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Risks in the use of derivatives",
+        "description": "Covers basis risk, market/credit/liquidity risk in derivative use, Value at Risk, credit ratings, techniques for managing counterparty risk, and the role of special purpose vehicles, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is 'basis risk', and why does it genuinely undermine even a carefully-constructed hedge, per the official syllabus objective 4.3?",
+                "a": "Basis risk arises when the derivative used to hedge a specific exposure does not GENUINELY, perfectly match that exposure (e.g. hedging a specific corporate bond's credit risk using a standardised CDS index rather than a single-name CDS on that exact issuer), meaning the hedge's value may not move in perfect lockstep with the underlying exposure, leaving genuine residual risk even after 'hedging'.",
+                "explain": "Worth recognising basis risk as a genuinely important, PRACTICAL caveat to this whole subject's theoretical hedging material — even a technically well-constructed hedge using the Greeks (Module 12) can leave genuine residual risk if the hedging instrument doesn't perfectly match the exposure being hedged."
+            },
+            {
+                "q": "How do market risk, credit (counterparty) risk and liquidity risk, per the official syllabus objectives 4.4.1-4.4.2, genuinely differ when they arise specifically in the context of derivative use?",
+                "a": "Market risk reflects genuine exposure to adverse underlying price movements (partially managed via the Greeks, Module 12); credit/counterparty risk reflects the genuine risk that the derivative's other party fails to honour its obligations (particularly relevant for OTC contracts, per Module 2); liquidity risk reflects the genuine risk of being unable to exit or adjust a derivative position at a reasonable price when needed.",
+                "explain": "This directly recalls Module 2's exchange-versus-OTC material — worth recognising these three risk types as genuinely DISTINCT dimensions requiring different management responses, even though a single derivative position can be exposed to all three simultaneously."
+            },
+            {
+                "q": "What genuine methods might be used to establish Value at Risk (VaR) on a derivatives portfolio, and what genuine weaknesses does the VaR measure carry, per the official syllabus objectives 4.4.4-4.4.5?",
+                "a": "VaR can genuinely be established via historical simulation (using past price movements), variance-covariance methods (using assumed statistical distributions), or Monte Carlo simulation (Module 9's material); its genuine weaknesses include saying nothing about the genuine SEVERITY of losses beyond the VaR threshold, and potentially being unreliable for portfolios containing genuinely non-linear payoffs like options, where simple statistical assumptions may not hold well.",
+                "explain": "This directly recalls SA1's, SA7's and SP5's VaR-limitation material — worth recognising VaR's genuine weaknesses as particularly acute for DERIVATIVE portfolios specifically, given options' characteristically non-linear payoff structures that can undermine VaR's typically linear/normal-distribution-based assumptions."
+            },
+            {
+                "q": "Why might an investor not rely solely on external credit ratings when assessing counterparty risk on OTC derivative positions, per the official syllabus objective 4.4.6, echoing SP5's material?",
+                "a": "Credit ratings can genuinely be slow to reflect emerging changes in a counterparty's creditworthiness, and rating agencies' methodologies may not fully capture the SPECIFIC counterparty risk profile relevant to a particular derivative exposure, so genuine independent assessment alongside rating agency output provides a more robust basis for managing counterparty risk.",
+                "explain": "This directly recalls SP5's credit-rating-agency-limitation material — worth recognising this same caution (ratings as useful but not sufficient) applying specifically to derivative counterparty risk assessment."
+            },
+            {
+                "q": "What genuine techniques does the official syllabus (objective 4.4.7) name for measuring and managing counterparty risk on derivatives, and how does each genuinely function?",
+                "a": "ISDA (International Swaps and Derivatives Association) agreements provide genuinely standardised legal documentation governing OTC derivative relationships, including provisions for netting offsetting exposures; collateral management requires counterparties to genuinely post collateral reflecting their current mark-to-market exposure, reducing the genuine loss if a counterparty were to default.",
+                "explain": "Worth recognising ISDA agreements and collateral management as addressing counterparty risk through genuinely DIFFERENT mechanisms — legal netting/standardisation versus genuine, tangible financial security — often used together for more comprehensive protection."
+            },
+            {
+                "q": "How might a Special Purpose Vehicle (SPV) genuinely be used as part of a risk transfer mechanism, and what role does a credit enhancement agency play, per the official syllabus objective 4.5, echoing this subject's structured-securities material?",
+                "a": "An SPV is a genuinely separate legal entity created specifically to hold and isolate certain assets or risks (e.g. issuing insurance-linked securities or securitised debt, per Module 5), ring-fencing this specific risk from the sponsoring institution's own broader balance sheet; a credit enhancement agency may provide additional genuine guarantees or support improving the SPV-issued securities' creditworthiness, making them more attractive to investors.",
+                "explain": "This directly recalls Module 5's insurance-linked-securities and securitisation material — worth recognising the SPV as the genuine STRUCTURAL MECHANISM underlying much of this subject's structured product material, isolating specific risks into a dedicated legal entity for genuinely cleaner risk transfer."
+            },
+            {
+                "q": "How do this module's derivative-use risks connect back to this whole subject's earlier pricing and hedging material, completing SP6's overall structure?",
+                "a": "This module's genuine risks (basis, market, credit, liquidity) represent the practical, real-world CONSEQUENCES of using the pricing and hedging techniques (Modules 6-12) this subject has developed throughout — a sound derivatives practitioner must genuinely understand not just HOW to price and hedge a derivative theoretically, but also the genuine practical risks that remain even after applying these techniques carefully.",
+                "explain": "This closing card ties SP6's whole structure together — worth recognising this final module as this subject's genuine REALITY CHECK, completing the journey from theoretical pricing (Modules 6-11) and hedging technique (Module 12) to the genuine practical risks that remain even for a technically sound derivatives practitioner."
+            }
+        ]
     }
     ]
 };
