@@ -1,0 +1,36 @@
+name: Validate study content
+
+# Catches the class of bug that has shipped to main before: broken LaTeX
+# escaping in flashcard/question text (a raw backslash silently dropped, or
+# turned into a real JS escape like \t, corrupting the visible text),
+# missing "explain" fields, question marks not summing to their declared
+# total, and progress.md module rows drifting out of sync with
+# docs/data.js. See scripts/validate-content.mjs for what's actually
+# checked.
+
+on:
+  push:
+    paths:
+      - "docs/data.js"
+      - "docs/questions.js"
+      - "maths-study/exams/*/progress.md"
+      - "scripts/validate-content.mjs"
+  pull_request:
+    paths:
+      - "docs/data.js"
+      - "docs/questions.js"
+      - "maths-study/exams/*/progress.md"
+      - "scripts/validate-content.mjs"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate content
+        run: node scripts/validate-content.mjs
