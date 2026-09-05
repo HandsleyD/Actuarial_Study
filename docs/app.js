@@ -5,7 +5,7 @@ const CONFIG = {
 };
 
 const EXAMS = [
-  "CB1", "CB2",
+  "CB1", "CB2", "CB3",
   "CM1", "CM2",
   "CP1", "CP2", "CP3",
   "CS1", "CS2",
@@ -211,13 +211,13 @@ function generateMixedSession(code) {
   return [...shuffleArray(unmastered), ...shuffleArray(mastered)].slice(0, SESSION_SIZE);
 }
 
-const RANKS = [
-  { min: 0, label: "Trainee Actuary" },
-  { min: 5, label: "Student Actuary" },
-  { min: 20, label: "Associate (in training)" },
-  { min: 50, label: "Fellowship Candidate" },
-  { min: 80, label: "Fellow of the Institute" },
-];
+// Real IFoA qualification structure (not a gamified point scale): Associate
+// requires every Core Principles + Core Practice subject; Fellowship
+// additionally requires any 2 Specialist Principles subjects and any 1
+// Specialist Advanced subject, from the candidate's choice of the full list.
+const CORE_SUBJECTS = ["CB1", "CB2", "CB3", "CM1", "CM2", "CS1", "CS2", "CP1", "CP2", "CP3"];
+const SP_CHOICES = ["SP1", "SP2", "SP4", "SP5", "SP6", "SP7", "SP8", "SP9"];
+const SA_CHOICES = ["SA1", "SA2", "SA3", "SA4", "SA7"];
 
 function pathFor(code) {
   return `maths-study/exams/${code}/progress.md`;
@@ -335,6 +335,41 @@ function handleToggle(btn) {
   renderSyncStatus();
 }
 
+// Bulk status set for a whole subject at once -- e.g. an exemption or a
+// past pass means every module should flip to Done (or back) in one click
+// instead of toggling each module's badge individually.
+function setAllModuleStatus(code, status) {
+  const d = examData[code];
+  if (!d || d.error) return;
+  d.modules.forEach((m) => {
+    m.status = status;
+    Store.setModuleStatus(code, m.id, status);
+  });
+  onExamDataChanged(code);
+  renderSyncStatus();
+}
+
+function isSubjectDone(code) {
+  const d = examData[code];
+  return !!d && !d.error && computePct(d.modules) === 100;
+}
+
+function fellowshipStatus() {
+  const coreDone = CORE_SUBJECTS.every(isSubjectDone);
+  const spRemaining = Math.max(0, 2 - SP_CHOICES.filter(isSubjectDone).length);
+  const saRemaining = Math.max(0, 1 - SA_CHOICES.filter(isSubjectDone).length);
+  const fellowRemaining = spRemaining + saRemaining;
+
+  if (coreDone && fellowRemaining === 0) {
+    return { label: "Fellow of the Institute", sub: "All Fellowship requirements complete" };
+  }
+  if (coreDone) {
+    return { label: "Associate", sub: `${fellowRemaining} more subject${fellowRemaining === 1 ? "" : "s"} to Fellow` };
+  }
+  const coreRemaining = CORE_SUBJECTS.filter((c) => !isSubjectDone(c)).length;
+  return { label: "Aspiring Actuary", sub: `${coreRemaining} more subject${coreRemaining === 1 ? "" : "s"} to Associate` };
+}
+
 /* ---------- flashcard mastery (per-card sufficient/insufficient) ---------- */
 
 async function loadFlash(code) {
@@ -390,45 +425,17 @@ function totalMasteredCards() {
   return total;
 }
 
-function rankFor(count) {
-  let r = RANKS[0];
-  for (const rank of RANKS) if (count >= rank.min) r = rank;
-  return r;
-}
-
 function renderGameBar() {
   const total = totalMasteredCards();
-  const rank = rankFor(total);
-  const idx = RANKS.indexOf(rank);
-  const next = RANKS[idx + 1];
+  const status = fellowshipStatus();
 
   document.getElementById("starTotal").textContent = total;
-  document.getElementById("rankLabel").textContent = rank.label;
-  document.getElementById("rankSub").textContent = next ? `${next.min - total} to ${next.label}` : "Max rank!";
+  document.getElementById("rankLabel").textContent = status.label;
+  document.getElementById("rankSub").textContent = status.sub;
   document.getElementById("streakValue").textContent = Store.getStreakCache().count;
 }
 
 /* ---------- home view ---------- */
-
-function renderOverview() {
-  let totalModules = 0;
-  let doneModules = 0;
-  let loaded = 0;
-  for (const code of EXAMS) {
-    const d = examData[code];
-    if (!d) continue;
-    loaded++;
-    totalModules += d.modules.length;
-    doneModules += d.modules.filter((m) => m.status.toLowerCase() === "done").length;
-  }
-  const pct = totalModules ? Math.round((doneModules / totalModules) * 100) : 0;
-  document.getElementById("overallPct").textContent = `${pct}%`;
-  document.getElementById("overallBarFill").style.width = `${pct}%`;
-  document.getElementById("overallSub").textContent =
-    loaded < EXAMS.length
-      ? `Loading (${loaded}/${EXAMS.length} exams)…`
-      : `${doneModules} of ${totalModules} modules done across ${EXAMS.length} exams`;
-}
 
 function updateHomeCard(code) {
   const card = document.getElementById(`card-${code}`);
@@ -560,6 +567,11 @@ function renderSubjectView(code) {
           ? `<button class="btn qbank-btn" id="startQbank">&#128220; Practice exam questions &mdash; ${totalQuestions} original question${totalQuestions === 1 ? "" : "s"} in the IFoA style</button>`
           : ""
       }
+      <div class="exemption-row">
+        <span class="exemption-hint">Already passed this exam, or have an exemption?</span>
+        <button class="btn" id="markAllDone">Mark whole subject complete</button>
+        <button class="btn" id="markAllReset">Reset progress</button>
+      </div>
     </div>
     ${modulesHtml}
   `;
@@ -575,6 +587,11 @@ function renderSubjectView(code) {
   if (qbankBtn) {
     qbankBtn.addEventListener("click", () => navigate(`#/${code}/questions`));
   }
+
+  document.getElementById("markAllDone").addEventListener("click", () => setAllModuleStatus(code, "Done"));
+  document.getElementById("markAllReset").addEventListener("click", () => {
+    if (confirm(`Reset all of ${code}'s modules back to "Not started"?`)) setAllModuleStatus(code, "Not started");
+  });
 
   el.querySelectorAll(".status-badge").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -868,7 +885,7 @@ function renderMixedView(code) {
 
 function onExamDataChanged(code) {
   updateHomeCard(code);
-  renderOverview();
+  renderGameBar();
   const r = parseHash();
   if (r.view === "subject" && r.exam === code) renderSubjectView(code);
   if (r.view === "flash" && r.exam === code) renderFlashView(code, r.module);
@@ -908,7 +925,6 @@ function renderRoute() {
   window.scrollTo(0, 0);
 
   if (r.view === "home") {
-    renderOverview();
     renderGameBar();
   } else if (r.view === "subject") {
     renderSubjectView(r.exam);

@@ -3,6 +3,7 @@
 const SUBJECTS = {
   CB1: { name: "Business Finance", blurb: "Core financial concepts for business: financial statements, investment appraisal, cost of capital, and how businesses are financed and valued." },
   CB2: { name: "Business Economics", blurb: "Micro- and macroeconomic principles applied to business and financial decision-making — markets, firms, government policy and the wider economy." },
+  CB3: { name: "Business Management", blurb: "Business strategy, professional ethics and teamwork, assessed via an online case-study exercise rather than a written exam — tracked here so it counts toward Associate, even though it has no flashcard content." },
   CM1: { name: "Actuarial Mathematics", blurb: "The mathematics of compound interest, cashflows and life contingencies that underpin actuarial valuations." },
   CM2: { name: "Financial Engineering and Loss Reserving", blurb: "Stochastic models of asset prices and derivatives, plus general insurance reserving techniques." },
   CP1: { name: "Actuarial Practice", blurb: "Applies core actuarial techniques to real-world modelling, pricing and reserving problems across practice areas." },
