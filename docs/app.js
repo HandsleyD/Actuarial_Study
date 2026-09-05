@@ -588,7 +588,9 @@ function renderSubjectView(code) {
     qbankBtn.addEventListener("click", () => navigate(`#/${code}/questions`));
   }
 
-  document.getElementById("markAllDone").addEventListener("click", () => setAllModuleStatus(code, "Done"));
+  document.getElementById("markAllDone").addEventListener("click", () => {
+    if (confirm(`Mark all of ${code}'s modules as Done? Use this for an exemption or a prior pass.`)) setAllModuleStatus(code, "Done");
+  });
   document.getElementById("markAllReset").addEventListener("click", () => {
     if (confirm(`Reset all of ${code}'s modules back to "Not started"?`)) setAllModuleStatus(code, "Not started");
   });
