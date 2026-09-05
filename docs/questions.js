@@ -5822,4 +5822,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SA4: [
+    {
+      id: "sa4-q1",
+      title: "Designing a DB scheme benefit structure",
+      modules: "Modules 1, 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "A member of a final salary DB scheme retires with 20 years of pensionable service and a final salary of &pound;45,000. The scheme's accrual rate is 1/60ths. Calculate the member's annual pension.",
+          answer:
+            "Annual pension = &pound;45,000 &times; (1/60) &times; 20 = &pound;15,000 per annum.",
+          note: "Verified: 45000 × (1/60) × 20 = 15,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a career average revalued earnings (CARE) scheme design would reduce the sponsor's exposure to a 'final salary spike' risk compared with the final salary design in part (i).",
+          answer:
+            "A CARE scheme accrues a pension each year based on that year's salary, revalued up to retirement, spreading the salary-linkage risk more evenly across a member's career rather than concentrating it at the end, unlike final salary where a large late-career pay rise disproportionately increases pension cost relative to contributions paid over the member's whole career.",
+          note: "A strong answer explicitly names the 'final salary spike' mechanism, not just asserts that CARE is 'less risky'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why the scheme's design of pension increases in payment (fixed rate versus inflation-linked) represents a genuine, deliberate risk-allocation choice, not just an administrative detail.",
+          answer:
+            "Inflation-linked increases directly expose the sponsor to genuine, open-ended inflation risk over a potentially long payment period, whereas fixed-rate increases cap this risk at a known level. This is a deliberate choice about who bears inflation risk &mdash; the sponsor (if the increase basis tracks inflation, however high it turns out to be) or effectively the member (if increases are capped and inflation erodes the pension's real value), directly affecting both the scheme's genuine risk profile and members' retirement income security.",
+          note: "A strong answer explicitly frames this as a RISK-ALLOCATION decision between sponsor and member, not merely a description of the two increase types.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the scheme's early retirement provisions should be priced to reflect genuine anti-selection risk, rather than assumed to be self-funding within the scheme's general assumptions.",
+          answer:
+            "Members are more likely to exercise an early retirement option when it is financially advantageous to them, so the option carries a genuine anti-selective cost that should be reflected explicitly in the scheme's assumptions, rather than assumed to be self-funding within a generic actuarial basis.",
+          note: "This connects directly to the embedded-option-cost theme developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q2",
+      title: "DC scheme design and the default investment strategy",
+      modules: "Module 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A DC scheme member contributes &pound;3,000 per annum (combined employer and employee contributions) for 25 years, with contributions assumed to grow at 5% per annum net investment return, added at the end of each year and then growing with the fund for the remaining years. Calculate the accumulated fund value at retirement (to the nearest &pound;100), given the fund value follows F(y) = (F(y-1) + 3,000) &times; 1.05 with F(0) = 0.",
+          answer:
+            "Applying the recursive growth formula for 25 years gives an accumulated fund value of approximately &pound;150,300 (&pound;150,340 to the nearest pound).",
+          note: "Verified via iterative calculation: F(25) = 150,340.36 (Node-verified). Full marks require showing the recursive/compounding approach, not just stating the final figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the design of this scheme's default investment strategy carries outsized real-world importance, given that most members do not actively choose their own investments.",
+          answer:
+            "Since most members in practice remain in the default option, its design directly shapes the retirement outcomes of the majority of the scheme's membership, so it should genuinely reflect an appropriate risk/return balance and glide path toward retirement for a typical member, not just a technically available but rarely-used default.",
+          note: "A strong answer explicitly connects default design to its outsized real-world reach, not just describes what a default strategy is.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why 'sequencing risk' is a genuinely distinct concern for this member in the years immediately before retirement, compared with earlier in their 25-year saving period.",
+          answer:
+            "A market downturn shortly before retirement gives the member far less time to recover before needing to convert their pot into retirement income, unlike an equivalent downturn earlier in their career when ongoing contributions and time can help recover lost value, making sequencing risk a genuinely distinct late-career concern requiring a de-risking glide path as retirement approaches.",
+          note: "A strong answer explains WHY timing matters (limited recovery time near retirement), not just that market downturns are bad.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why clear member communication is particularly important for this DC scheme, more so than it might be for an equivalent DB scheme.",
+          answer:
+            "Since DC members bear genuine investment and longevity risk and must often make their own decisions (contribution levels, investment choices, retirement income options), clear, accessible communication is essential to support genuinely informed member decision-making, more so than for a DB scheme where the sponsor bears the risk and makes most of the relevant decisions.",
+          note: "This connects directly to CP3's audience-tailored-communication material applied to a genuine DC-specific context.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q3",
+      title: "Other employee benefits alongside a pension scheme",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a death-in-service benefit should be designed and priced with genuine awareness of the pension scheme's own death benefits, rather than in isolation.",
+          answer:
+            "A death-in-service benefit is typically provided alongside or integrated with any pension scheme death benefits, together forming the employee's overall protection package; designing it in isolation risks either genuinely unnecessary duplication of cover or an unintended gap in overall protection.",
+          note: "A strong answer explicitly frames this as a genuine INTEGRATION issue, not two independent benefits that happen to coexist.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the actuarial pricing considerations for an employer-provided income protection benefit are genuinely the same as for a directly-purchased income protection policy.",
+          answer:
+            "The underlying risk (incapacity preventing an employee from working) and its actuarial drivers (incidence, recovery rates, deferred period) are genuinely the same regardless of whether the cover is purchased directly or provided as an employee benefit, so the same technical pricing and design principles apply &mdash; the distribution channel does not change the underlying risk being covered.",
+          note: "This connects directly to the general principle that product complexity and risk drivers, not distribution channel, determine appropriate pricing technique.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why an employer should assess the combined cost and risk of its whole employee benefits package (pension, death-in-service, ill-health, medical) together, rather than assessing each benefit independently.",
+          answer:
+            "These benefits can genuinely interact &mdash; for example, a death-in-service payout can reduce the need for an ongoing ill-health benefit for the same event, while medical cover can reduce genuine ill-health incidence through earlier treatment and diagnosis &mdash; so a holistic view of the whole package's combined cost and risk gives a more accurate picture of the employer's true benefits spend and risk exposure than assessing each benefit in isolation, which could double-count some interacting risks or miss genuine offsetting effects.",
+          note: "A strong answer identifies at least one genuine INTERACTION between benefits, not just asserts that a holistic view is 'better' in general.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the tax treatment of these employer-provided benefits may differ from a directly-purchased equivalent.",
+          answer:
+            "Many jurisdictions treat employer-provided benefits as a form of remuneration with their own specific tax rules (e.g. a benefit-in-kind charge on the employee, or deductibility for the employer), distinct from how an individual buying the same cover privately would be taxed.",
+          note: "This connects directly to the employer-benefit-taxation theme developed elsewhere across the SA subjects.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q4",
+      title: "Sponsor covenant and the business environment",
+      modules: "Module 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what is meant by a DB scheme's 'sponsor covenant', and why it is a genuinely distinctive risk not present in a standalone insurance product.",
+          answer:
+            "The sponsor covenant is the sponsoring employer's financial ability and willingness to support the pension scheme (e.g. through ongoing contributions) over time. Unlike an insurance policyholder relying on the insurer's own balance sheet, a pension scheme member's security depends directly on a third party's (the sponsor's) ongoing financial health, a genuinely distinctive risk unique to DB pensions.",
+          note: "A strong answer explicitly contrasts this with the insurance-company-centred risk model, not just describes covenant in isolation.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why demographic change (improving longevity) poses a similar risk direction to DB pension schemes as it does to an insurer's annuity business.",
+          answer:
+            "Improving longevity directly increases the cost of DB pension promises, since members draw their pension for longer than assumed, exactly the same inverted mortality-improvement sensitivity that increases annuity cost for an insurer &mdash; the risk direction is genuinely the same because both pay income for as long as someone survives.",
+          note: "Candidates should connect this directly to the inverted mortality-improvement sensitivity theme developed for annuity business elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A scheme's sponsor is showing signs of financial distress. Discuss why this represents a particularly acute risk to scheme members, and one action trustees might reasonably consider.",
+          answer:
+            "If the sponsor becomes insolvent, the scheme may be left with an underfunded position and no ongoing ability to recover the shortfall through future contributions, potentially requiring entry into a statutory pension protection arrangement that may not fully replace members' original promised benefits. Trustees might reasonably consider negotiating additional security (e.g. a charge over sponsor assets) or accelerating de-risking of the scheme's investment strategy to reduce reliance on the weakening sponsor's ongoing support.",
+          note: "A strong answer explains WHY the risk is acute (potential benefit reduction via statutory protection) and proposes at least one genuinely reasonable trustee action.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why trustees should monitor sponsor covenant strength on an ongoing basis, rather than only at the point of each formal funding valuation.",
+          answer:
+            "Sponsor financial health can change materially between valuations, so ongoing covenant monitoring helps trustees identify a genuinely weakening covenant early enough to adjust funding or investment strategy before the sponsor's ability to support the scheme deteriorates further.",
+          note: "This connects directly to the ongoing-monitoring theme developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q5",
+      title: "Taxation and the regulatory/legislative environment",
+      modules: "Modules 6, 7, 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an annual or lifetime limit on tax-favoured pension saving represents a deliberate policy trade-off, rather than an arbitrary restriction.",
+          answer:
+            "Governments typically aim to encourage pension saving up to a level supporting adequate retirement income, while limiting the tax revenue cost of unlimited tax-favoured saving, particularly for higher earners who could otherwise use pensions primarily as a general tax shelter rather than genuine retirement provision &mdash; the limit balances these two genuine policy objectives.",
+          note: "A strong answer names both sides of the trade-off (encouraging saving versus controlling tax cost), not just one.",
+        },
+        {
+          label: "(ii)",
+          command: "Distinguish",
+          marks: 3,
+          question:
+            "Distinguish between a pensions regulator's funding/solvency oversight role and its member-protection/conduct-style oversight role.",
+          answer:
+            "Funding oversight focuses on whether a scheme (and its sponsor) can genuinely meet its promised benefits over time, while conduct-style oversight focuses on whether trustees and administrators treat members fairly (e.g. in communications, transfer advice, and administration), addressing genuinely distinct risks to members.",
+          note: "This directly mirrors the prudential-versus-conduct distinction developed for insurance regulation elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why legislation requiring independent financial advice before a large DB-to-DC transfer was introduced, and why auto-enrolment legislation has increased the practical importance of default DC investment strategy design.",
+          answer:
+            "Transfer advice legislation responds to the genuinely significant, often irreversible nature of giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a DC transfer value, ensuring members receive genuinely informed advice before making a decision with serious, hard-to-reverse consequences for retirement security. Auto-enrolment legislation automatically enrols eligible employees into a qualifying (typically DC) scheme unless they opt out, directly increasing scheme membership among largely passive members who rarely engage with fund choice, making the DEFAULT investment strategy's design disproportionately important for the outcomes of the majority of the membership.",
+          note: "A strong answer addresses both pieces of legislation and explains the genuine rationale behind each, not just describes what they require.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why changes in pension taxation legislation represent a genuine ongoing risk for schemes, sponsors and members.",
+          answer:
+            "A change in contribution limits, tax relief rates, or benefit taxation can suddenly alter the attractiveness and genuine cost of pension provision after a scheme has already been designed and funded on prior assumptions, a risk that is particularly prominent given how frequently pension tax rules have changed in practice.",
+          note: "This connects directly to the political-and-tax-risk theme developed elsewhere across the SA subjects.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q6",
+      title: "Funding valuation and recovery plan",
+      modules: "Modules 9, 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A DB scheme's funding valuation assesses technical provisions of &pound;80,000,000, against scheme assets of &pound;68,000,000. Trustees and the sponsor agree a recovery plan to eliminate the shortfall via equal annual contributions over 8 years. Calculate (a) the funding shortfall, and (b) the required annual recovery contribution.",
+          answer:
+            "(a) Funding shortfall = &pound;80,000,000 &minus; &pound;68,000,000 = &pound;12,000,000. (b) Required annual recovery contribution = &pound;12,000,000 / 8 = &pound;1,500,000 per annum.",
+          note: "Verified: 80,000,000-68,000,000=12,000,000; 12,000,000/8=1,500,000 (Node-verified). This is a simplified calculation ignoring investment return on the recovery contributions and discounting, for illustrative purposes.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the discount rate used to calculate this scheme's technical provisions requires genuine actuarial judgement, rather than a single universally correct rate.",
+          answer:
+            "The discount rate should reflect the expected return on the scheme's actual (or intended) investment strategy and its genuine level of prudence, so different schemes with different investment strategies and risk appetites can reasonably adopt different discount rates, without there being one single objectively correct answer.",
+          note: "A strong answer connects the discount rate directly to the scheme's OWN investment strategy and prudence level, not just asserts that judgement is required.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss the genuine trade-off in choosing an 8-year recovery period, as opposed to a shorter or longer period.",
+          answer:
+            "A longer recovery period spreads the additional contributions over more years, easing the sponsor's near-term cash burden, but leaves the scheme underfunded for longer, genuinely increasing the risk that adverse experience or sponsor distress could prevent the shortfall ever being fully addressed; a shorter period reduces this risk but places a greater near-term cash burden on the sponsor.",
+          note: "A strong answer explicitly frames this as a genuine trade-off between sponsor affordability and member security, not a straightforward 'shorter is always better' conclusion.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the scheme actuary should assess the sponsor's covenant strength when advising trustees on an appropriate recovery plan length.",
+          answer:
+            "A weaker sponsor covenant may genuinely justify requiring a shorter recovery period or higher near-term contributions (since the scheme cannot rely on the sponsor's ongoing support with the same confidence), while a stronger covenant may reasonably support a longer, more gradual recovery plan.",
+          note: "This connects the numeric recovery plan calculation directly to the sponsor covenant material developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q7",
+      title: "Investment strategy and de-risking",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a maturing DB scheme typically 'de-risks' its investment strategy over time, shifting from growth assets toward more matching assets.",
+          answer:
+            "As a scheme matures, its investment time horizon shortens (benefits need to be paid sooner) and its tolerance for short-term volatility genuinely reduces, so shifting toward more matching, lower-volatility assets reduces the risk of a poorly-timed market downturn coinciding with when the scheme most needs to pay benefits.",
+          note: "A strong answer explicitly connects maturity to shortened time horizon and reduced volatility tolerance, not just asserts that de-risking is 'safer'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain how a liability-driven investment (LDI) strategy using interest rate and inflation swaps helps a scheme manage its funding volatility, and one genuine risk this introduces.",
+          answer:
+            "Derivatives can efficiently adjust the scheme's sensitivity to interest rate and inflation movements without needing to buy or sell large quantities of underlying bonds directly, providing a flexible, capital-efficient tool for closely matching the scheme's specific liability profile. One genuine risk this introduces is the need for liquid assets to meet collateral calls on the derivative positions, particularly during periods of market stress when collateral requirements can increase sharply.",
+          note: "A strong answer explains both the matching benefit AND names the genuine collateral/liquidity risk LDI introduces, not just describes the matching benefit alone.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a sponsor's covenant strength should directly influence the scheme's appropriate level of investment risk.",
+          answer:
+            "A scheme backed by a strong sponsor covenant can reasonably tolerate more investment risk, since the sponsor can support a temporary funding shortfall through additional contributions if needed, while a scheme with a weaker covenant may need a genuinely more cautious, closely-matched investment strategy to avoid relying on sponsor support that may not be reliably available, so investment strategy should reflect covenant strength rather than being decided purely on financial-market grounds in isolation.",
+          note: "A strong answer explicitly connects covenant strength to appropriate risk tolerance in both directions (strong covenant supports more risk, weak covenant requires less), not just one direction.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the scheme should hold sufficient liquid assets even though its overall investment horizon is genuinely long-term.",
+          answer:
+            "Even a long-horizon scheme has near-term cashflow needs (benefit payments, expenses, and potentially collateral calls on derivative positions), so genuine liquidity risk management requires holding sufficient liquid assets to meet these without being forced to sell less liquid assets at a potentially unfavourable time.",
+          note: "This connects directly to the liquidity-risk theme developed elsewhere across the SA subjects.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q8",
+      title: "Integrated risk management",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List the main categories of risk a DB pension scheme and its sponsor face.",
+          answer:
+            "Sponsor covenant risk, longevity risk, market and interest rate risk, and inflation risk (affecting both benefit increases and asset values).",
+          note: "A complete answer names all four categories, not just one or two.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a longevity swap or buy-in might be used to manage longevity risk specifically, rather than relying purely on investment strategy.",
+          answer:
+            "Investment strategy can manage market and interest rate risk, but does little to address genuine uncertainty in how long members will live; a longevity swap or buy-in directly transfers this specific risk to a reinsurer or insurer, addressing a risk driver investment strategy alone cannot manage.",
+          note: "A strong answer explains WHY investment strategy alone is insufficient for longevity risk specifically, not just names longevity swaps as an option.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why an 'integrated risk management' (IRM) framework linking funding, investment, and covenant strategy together is more valuable than managing each area independently.",
+          answer:
+            "These three areas are genuinely interdependent &mdash; for example, a stronger covenant can support a riskier investment strategy, which in turn affects the appropriate funding target and discount rate &mdash; so managing them through a single, integrated framework helps ensure decisions in one area appropriately reflect the current position in the other two, rather than being set independently and potentially inconsistently with each other.",
+          note: "A strong answer explicitly identifies at least one genuine INTERDEPENDENCY (e.g. covenant strength affecting appropriate investment risk), not just asserts that integration is 'better'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a scheme's risk management strategy should be reviewed periodically, rather than set once and left unchanged.",
+          answer:
+            "As funding position, membership profile, and sponsor covenant evolve over time, a risk management strategy set for a past position may no longer be genuinely appropriate for the scheme's current circumstances, so ongoing review ensures the strategy remains aligned with the scheme's actual, current risk profile.",
+          note: "This connects directly to the ongoing-review theme developed elsewhere across every SA subject.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q9",
+      title: "Buy-in, buy-out and scheme wind-up",
+      modules: "Module 14",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A pension scheme is considering a buy-in for a group of pensioner members whose technical provisions are valued at &pound;47,000,000. An insurer quotes a buy-in premium of &pound;52,000,000 for this group. Calculate the excess of the buy-in premium over the technical provisions, and explain in one sentence what this excess broadly represents.",
+          answer:
+            "Excess = &pound;52,000,000 &minus; &pound;47,000,000 = &pound;5,000,000. This excess broadly represents the additional prudence, profit margin, and risk premium the insurer requires to take on the longevity, investment and expense risk of this group of members, beyond the scheme's own best-estimate-plus-margin technical provisions basis.",
+          note: "Verified: 52,000,000-47,000,000=5,000,000 (Node-verified). Full marks require both the calculation and a genuine explanation of what the excess represents.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the difference between a buy-in and a buy-out, and why a buy-in is often pursued as a step before an eventual buy-out.",
+          answer:
+            "A buy-in involves the scheme purchasing an insurance policy matching a specified group of members' benefits, with the policy held as a scheme asset while the scheme itself remains responsible for paying members; a buy-out goes further, fully transferring the legal liability for those members' benefits to the insurer. A buy-in is often pursued first because it can be executed for a subset of membership without requiring the scheme to be immediately fully funded for a complete buy-out and wind-up.",
+          note: "A strong answer explains both the structural difference AND why a phased buy-in-then-buy-out approach is often practically useful.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why legislation requiring independent financial advice before a large DB-to-DC transfer is particularly important in the context of a scheme heading toward wind-up.",
+          answer:
+            "Giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a DC transfer value is a genuinely significant, often irreversible decision shifting investment and longevity risk onto the member; as a scheme approaches wind-up, members may face pressure or a limited window to decide, making independent advice particularly important to ensure they genuinely understand the consequences before an effectively final decision.",
+          note: "A strong answer connects the advice requirement's importance directly to the wind-up context's time pressure and irreversibility.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a scheme facing sponsor insolvency might need to consider a statutory pension protection arrangement rather than proceeding with a standard buy-out.",
+          answer:
+            "If the scheme is insufficiently funded and the sponsor cannot provide additional contributions due to insolvency, a standard buy-out (requiring full funding to purchase members' benefits) may not be achievable, making a statutory protection arrangement (providing a safety-net level of benefit, potentially lower than originally promised) the genuinely necessary alternative.",
+          note: "This connects directly to the sponsor-insolvency material developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sa4-q10",
+      title: "Mergers, restructuring and solving a complex pensions issue",
+      modules: "Modules 15, 16",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a corporate acquisition of a scheme's sponsor could directly affect the scheme's sponsor covenant, in either direction.",
+          answer:
+            "The acquiring company's own financial strength and strategic priorities become the scheme's new effective covenant support, which could genuinely strengthen the scheme's security (if the acquirer is financially stronger and supportive) or weaken it (if the acquirer is less committed to the scheme or has weaker finances) depending on the acquirer's own position and intentions.",
+          note: "A strong answer explains BOTH possible directions of covenant change, not just assumes acquisitions are always negative or always positive for the scheme.",
+        },
+        {
+          label: "(ii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why trustees should typically seek to be actively involved in merger negotiations affecting their scheme's sponsor, rather than being informed only after the transaction completes.",
+          answer:
+            "Since trustees have a genuine fiduciary duty to protect member interests, and a merger can materially affect covenant strength, trustees typically need the opportunity to negotiate protections (e.g. additional contributions, security, or guarantees) as part of the transaction itself, rather than accepting whatever covenant position results after the deal is already complete.",
+          note: "This connects directly to the trustee fiduciary-duty material developed elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A DB scheme's sponsor is being acquired, and the scheme is significantly underfunded. Discuss why this represents a genuinely complex issue for the trustees, requiring integrated judgement across multiple topic areas.",
+          answer:
+            "This decision genuinely involves competing considerations across multiple topic areas at once &mdash; assessing the acquirer's covenant strength, negotiating appropriate funding or security protections as part of the transaction, and considering longer-term strategic options like accelerated de-risking or eventual buy-out &mdash; requiring integrated judgement across covenant, funding, investment and strategic areas rather than a single-dimension analysis.",
+          note: "A strong answer explicitly draws on multiple topic areas together (covenant, funding, investment, strategy), not just one in isolation, reflecting the genuinely integrated nature of complex real-world issues.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why solving a genuinely complex pensions issue like this typically requires drawing on multiple SA4 topic areas simultaneously, rather than a single technique in isolation.",
+          answer:
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on covenant assessment, funding strategy, investment strategy, and strategic risk-transfer options together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
+          note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA4 syllabus.",
+        },
+      ],
+    },
+  ],
 };
