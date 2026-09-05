@@ -3828,4 +3828,456 @@ const QUESTIONS = {
       ],
     },
   ],
+  CP3: [
+    {
+      id: "cp3-q1",
+      title: "Why communication is examined as its own dedicated skill",
+      modules: "Module 1",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A trainee actuary has produced a technically flawless piece of analysis but struggles to explain it clearly to the client who commissioned it. Explain why this represents only 'half' of a complete piece of actuarial work.",
+          answer:
+            "Even the most rigorous, correct technical analysis has limited practical value until it's successfully communicated to the people who need to understand and act on it. If the client cannot understand or act on the analysis, the work has not genuinely achieved its purpose, regardless of how sound the underlying technical content is &mdash; communication is the essential 'last mile' that determines whether good analysis actually achieves anything.",
+          note: "A strong answer names communication as a genuinely distinct, necessary skill, not merely a nice-to-have addition to technical competence.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why CP3 is typically assessed by producing a finished written document, rather than through essay-style questions about communication theory.",
+          answer:
+            "CP3 tests the practical skill of producing genuinely clear, well-structured, appropriately-toned communication, which can only be properly assessed by evaluating an actual finished document, not by testing whether a candidate can describe communication principles in the abstract.",
+          note: "This distinguishes CP3's assessment style from CP1's scenario-analysis essays and connects to CP2's similarly practical, artefact-based assessment approach.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why a CP3 exam question might deliberately specify an audience the candidate must write for, rather than leaving the audience for the candidate to infer or choose freely.",
+          answer:
+            "Specifying the audience directly determines what counts as a good answer, since the same technical content written appropriately for an actuarial colleague would very likely be an inappropriate, jargon-heavy answer for a specified non-technical audience such as a policyholder. This tests whether the candidate can genuinely tailor communication to a stated audience, not just write generically well.",
+          note: "Candidates should recognise that a technically accurate answer written for the wrong audience can still lose significant marks under this exam style.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why strong CP3 skills remain valuable to an actuary throughout their career, beyond the immediate goal of passing the exam.",
+          answer:
+            "Actuaries regularly need to explain complex analysis to clients, boards, regulators and the public throughout their working life, so the ability to communicate clearly is a genuinely core, continuously-used professional skill, not a one-off exam hurdle to be cleared and then forgotten.",
+          note: "This closing comment should connect CP3's practical, real-world value to its status as a mandatory Core Practice subject.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q2",
+      title: "Identifying audience and purpose",
+      modules: "Module 2",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A pensions actuary has been asked to prepare a document summarising the results of a scheme funding valuation, to be sent to the scheme's trustees (who include several non-actuarial members). Explain the two foundational questions the actuary should answer before drafting a single word.",
+          answer:
+            "Who is the audience, and what is the purpose of the communication. Here, the audience is a mixed group including non-technical trustees, and the purpose is likely to inform the trustees' understanding of the scheme's funding position so they can fulfil their governance duties &mdash; both must be identified clearly before any drafting begins, since they shape every subsequent structural and language choice.",
+          note: "A complete answer names both questions explicitly and applies them to the specific scenario given, not just states the questions generically.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what is meant by a document's 'key message', and why it should typically be identified before the document is drafted in detail.",
+          answer:
+            "The key message is the single most important point the communication needs to convey. Identifying it clearly beforehand helps ensure the document's structure and content genuinely support and highlight that message, rather than the message emerging only incidentally after everything else has already been written and organised around less important detail.",
+          note: "Candidates should connect the key message to structure directly &mdash; it is the thing the whole document should be organised around.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why this document, given its mixed audience of technical and non-technical trustees, presents a genuine communication challenge, and one general technique for addressing it.",
+          answer:
+            "A single document read by a genuinely mixed readership must serve both readers who want full technical detail and readers who need the essential message in accessible terms, which a single undifferentiated version is unlikely to do well for either group. A layered approach &mdash; e.g. a plain-language executive summary alongside more detailed technical sections &mdash; lets each reader engage with the document at their own appropriate level.",
+          note: "This previews the executive summary technique developed further in the structuring module; candidates need not describe it in full detail here, just identify it as a valid approach.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why correctly identifying the audience and purpose at the very start of the writing process is difficult to fully correct later, if done incorrectly.",
+          answer:
+            "Structure, language, and level of detail are all built around the assumed audience and purpose from the very beginning of drafting, so a fundamental misidentification typically requires substantially rewriting the document, rather than a simple, quick edit near the end &mdash; making it far more efficient to get this right upfront.",
+          note: "This is genuinely important, practical guidance worth remembering: a brief planning step before drafting is a small investment that avoids a much larger correction later.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q3",
+      title: "Restructuring a poorly organised report",
+      modules: "Module 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A draft report on a proposed change to a company's investment strategy presents detailed technical calculations first, followed by background context, and only states its final recommendation in the last paragraph. Explain why this structure is likely to communicate poorly to a busy board reader.",
+          answer:
+            "Many readers, especially senior or time-constrained ones, want to know the outcome and recommended action first, then decide how much supporting detail they need to read to be satisfied with that conclusion. Presenting detailed calculations before any context or conclusion forces the reader to work through unexplained detail before reaching the point of the document, which is likely to lose or frustrate a busy board reader before they reach the actual recommendation.",
+          note: "Candidates should identify the specific structural problem (conclusion buried at the end, detail presented before context) rather than describing the issue only vaguely.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain what an executive summary is, and what it should typically contain if added to the front of this report.",
+          answer:
+            "An executive summary is a brief, self-contained overview at the start of a longer document, summarising the key findings, conclusions and recommendations in plain language. For this report, it should state the recommended change to investment strategy, the key reason supporting it, and any major risk or caveat, allowing a busy board reader to grasp the essential message without reading the full technical report.",
+          note: "A strong answer states both the general definition and applies it specifically to what THIS report's summary should contain.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question: "Discuss how the report should be restructured, describing a logical order of sections from start to finish.",
+          answer:
+            "A logical structure would run: (1) executive summary, stating the recommendation and key reasons upfront; (2) background/context, explaining what prompted the review of investment strategy; (3) analysis, presenting the detailed technical calculations and reasoning; (4) conclusions and recommendations, restating and justifying the recommended action in light of the analysis; (5) appendices, for any detailed supporting calculations not essential to the main narrative.",
+          note: "Candidates should present a genuinely logical flow (context before analysis, analysis before conclusion, with the executive summary leading) rather than simply relisting the original sections in a different order without justification.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question: "Comment on why detailed supporting calculations might be better placed in an appendix rather than removed from the report entirely.",
+          answer:
+            "An appendix lets detailed, technical supporting material remain available for a reader who wants to verify it (e.g. a technical reviewer), without cluttering the main body and obscuring the report's key message for readers who don't need that level of detail &mdash; removing it entirely would lose this genuine verification value for readers who do want it.",
+          note: "This tests whether candidates understand appendices as a solution serving multiple reader needs, not simply a place to discard unwanted content.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q4",
+      title: "Rewriting technical content in plain language",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 2,
+          question:
+            "A draft letter to a policyholder states: 'Your policy's surrender value has been calculated net of the applicable market value reduction, reflecting prevailing asset share conditions.' Explain what is wrong with this sentence for its intended non-technical audience.",
+          answer:
+            "The sentence uses multiple pieces of unexplained technical jargon ('surrender value', 'market value reduction', 'asset share') that a policyholder without actuarial or insurance background is very unlikely to understand, undermining the whole purpose of the letter, which is for the policyholder to genuinely understand their position.",
+          note: "Candidates should identify the SPECIFIC jargon terms causing the problem, not just assert generically that the sentence is 'too technical'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 4,
+          question: "Rewrite the sentence in plain language suitable for a policyholder with no actuarial background, preserving its genuine meaning.",
+          answer:
+            "For example: 'The amount you would receive if you cashed in your policy today is &pound;X. This amount has been reduced because current market conditions mean the underlying investments backing your policy are worth less than usual.' (Any plain-language rewrite that preserves the genuine substance &mdash; a reduced surrender value due to a market-based adjustment &mdash; without introducing new jargon should be credited.)",
+          note: "Model rewrites will vary in exact wording; markers should credit any answer that removes the unexplained jargon while preserving accurate meaning, not penalise minor stylistic differences from this specific example.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why plain language must never be used as an excuse to omit or distort genuinely important information, even when writing very simply.",
+          answer:
+            "Plain language is about HOW something is expressed, not about removing or distorting WHAT is actually true &mdash; a well-written plain-language explanation should convey the same genuine substance as a technical version, just in more accessible form. Simplifying language should never come at the cost of accuracy or completeness of genuinely important information.",
+          note: "This is a key distinction candidates should draw explicitly: simplicity of language versus accuracy/completeness of substance are two separate things.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why asking someone unfamiliar with the topic to read a draft can help identify remaining plain-language problems that the original writer might miss.",
+          answer:
+            "The writer, having worked closely with the material, can easily forget which concepts are genuinely unfamiliar to someone encountering them for the first time. A reader without that background creates genuine distance from the writer's own familiarity, helping reveal passages that are unclear or assume knowledge the intended reader wouldn't actually have.",
+          note: "This connects to the broader review/editing theme developed later in the course &mdash; independent perspective catches what self-review alone often misses.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q5",
+      title: "Presenting numerical results clearly",
+      modules: "Module 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A draft report states a projected reserve figure as '&pound;4,827,341.62' for a long-term liability with genuinely significant underlying uncertainty. Explain why this level of precision is likely to be inappropriate.",
+          answer:
+            "Presenting a figure with more precision than is genuinely meaningful, given the significant underlying uncertainty in a long-term projection, can mislead the reader about how confident they should be in it. Sensible rounding (e.g. to the nearest &pound;100,000 or &pound;1m) would convey a more honest impression of the figure's genuine reliability.",
+          note: "Candidates should connect excessive precision directly to the risk of implying false confidence, not just assert that the figure 'looks odd'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain one genuinely useful purpose a well-designed table could serve if the report needs to present this reserve figure alongside the equivalent figures for the previous three years.",
+          answer:
+            "A table lets a reader compare the four years' figures systematically and at a glance, which is far harder to do when the same figures are embedded within continuous prose &mdash; comparison across multiple related figures is exactly the kind of task a table serves well.",
+          note: "A strong answer explicitly names COMPARISON across multiple figures as the specific benefit, not just 'tables are clearer' in general terms.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss whether a chart or a table would better communicate a rising trend in this reserve figure over the four years, and why.",
+          answer:
+            "A chart would likely better communicate a rising TREND, since a chart can reveal a pattern visually and immediately in a way that can be harder to perceive from a table of raw numbers alone, especially for a non-technical reader. A table would remain more useful if the reader instead needs to look up specific, precise individual figures rather than grasp the overall pattern.",
+          note: "Candidates should recognise that the right choice depends on whether the point being made is a PATTERN (favouring a chart) or precise individual VALUES (favouring a table).",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why the chart or table should be accompanied by a brief written explanation of what it shows and why it matters, rather than left to 'speak for itself'.",
+          answer:
+            "A visual or tabular presentation alone may not make its intended significance obvious to every reader, so a brief accompanying explanation helps ensure the reader draws the genuinely intended conclusion (e.g. that the rising trend reflects a specific, named cause) rather than an unintended or unclear one.",
+          note: "This tests whether candidates understand that visuals rarely fully substitute for a clear, explicit statement of the key takeaway.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q6",
+      title: "Communicating uncertainty in a projection",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A report states a single best-estimate figure for a company's projected profit next year, with no further context. Explain why this could be insufficient for a board making a significant strategic decision based on it.",
+          answer:
+            "A single figure conveys no information about how much the actual outcome might reasonably differ from that estimate, which can matter significantly for a decision where the consequences of being wrong in either direction are meaningfully different &mdash; the board cannot properly weigh the risk of the decision without some sense of the genuine uncertainty involved.",
+          note: "Candidates should connect the missing uncertainty information directly to the board's ability to make a genuinely informed decision.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain a practical technique for conveying a range of possible outcomes to this non-technical board, without overwhelming them with full statistical detail.",
+          answer:
+            "Presenting a small number of illustrative scenarios (e.g. 'best case', 'expected case', 'worst case') with brief, plain-language descriptions of what each represents, rather than a full probability distribution or detailed statistical range &mdash; this conveys the genuine existence and rough scale of uncertainty without requiring the board to understand statistical concepts.",
+          note: "The scenario approach is the standard practical technique here; a strong answer names it explicitly rather than describing uncertainty communication only vaguely.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why the report should avoid stating that the projected profit 'will' be achieved, in favour of language such as 'is expected to be'.",
+          answer:
+            "Language implying certainty ('will') misrepresents the genuinely uncertain, assumption-based nature of most actuarial projections, potentially misleading the board about how reliable the stated figure actually is. 'Is expected to be' more honestly conveys that the figure is a projection subject to genuine uncertainty, not a guaranteed outcome.",
+          note: "This is a subtle but important point about word choice alone communicating a level of confidence, independent of the actual figures presented.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why the report should avoid the opposite failure of including so many caveats and qualifications that the board struggles to identify the genuine headline message.",
+          answer:
+            "A document so hedged with caveats that its genuine message becomes unclear fails just as much as one presenting false certainty &mdash; the goal is honest, proportionate acknowledgement of genuine uncertainty, not endless qualification that obscures the actual conclusion the board needs to act on.",
+          note: "A strong answer recognises this as the OTHER side of the central balance in this module, not a separate, unrelated concern from overstating certainty.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q7",
+      title: "Choosing the right document type",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A senior actuary needs to quickly inform a director of an urgent, single finding from an ongoing investigation. Explain why a brief briefing note would likely be more appropriate than a full formal report for this purpose.",
+          answer:
+            "A briefing note conveys key information or a recommendation concisely, suited to a reader who needs the essential point quickly, and is usually much shorter than a full report, often omitting extensive background or detailed appendices &mdash; exactly matching the urgent, single-finding nature of this communication need.",
+          note: "Candidates should connect the URGENCY and SINGLE-FINDING nature of the scenario directly to why the briefing note format specifically fits, not just assert it's 'shorter and therefore better'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how the appropriate structure of a full formal report would differ from this briefing note, if the same finding later needed to be documented comprehensively.",
+          answer:
+            "A formal report would typically cover the topic in significantly more depth, including a fuller structure (executive summary, background, detailed analysis, conclusions, and often appendices), suited to a reader wanting a comprehensive, standalone treatment of the subject, unlike the concise, single-point focus of a briefing note.",
+          note: "This directly contrasts the two document types' typical structural depth, connecting to the structuring module covered earlier.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "The finding must also be presented to a wider group at an upcoming meeting. Discuss why presentation slides would require a genuinely different writing approach from the written report covering the same material.",
+          answer:
+            "Slides are typically viewed alongside a live spoken explanation, so they should generally contain concise key points and visual support rather than dense prose, with the accompanying spoken commentary providing the fuller explanation &mdash; a slide as dense with prose as a written report would generally be considered a poor presentation slide, since slides and speech are meant to work together, not duplicate each other.",
+          note: "A strong answer explains WHY slides differ (they're paired with live speech), not just asserts that slides should be 'shorter'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why correctly identifying the specific document type required by an exam question is itself an important part of answering it well.",
+          answer:
+            "Each document type carries its own conventions for structure, length, and tone, so producing the wrong type of document (e.g. a full formal report when a brief note was specifically requested) would likely be marked down, regardless of how well-written the content itself is &mdash; following the specified format is part of the actual instruction given, not an optional stylistic choice.",
+          note: "This is genuinely important, practical exam guidance worth stating explicitly and directly.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q8",
+      title: "Judging tone when delivering a difficult message",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A draft letter informing a policyholder that their claim has been declined states, bluntly: 'Your claim does not meet the policy conditions and has therefore been rejected.' Explain why the tone of this sentence is likely to be inappropriate, even though it may be factually accurate.",
+          answer:
+            "The reader is likely to be personally and emotionally affected by this outcome, so an unnecessarily blunt, clinical tone can cause genuine additional distress, even though the underlying factual content is communicated accurately. Tone matters most precisely in situations where the content itself is already difficult for the reader to receive.",
+          note: "Candidates should recognise that factual accuracy alone does not make a communication appropriate &mdash; tone is a genuinely separate dimension that must also be judged carefully.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how the sentence could be rewritten to convey the same accurate outcome with a more appropriately sensitive tone.",
+          answer:
+            "For example: 'We have carefully reviewed your claim against the terms of your policy, and unfortunately we are unable to approve it on this occasion, as it does not meet the specific conditions set out in your policy documents. We understand this may be disappointing news.' (Any answer that preserves the accurate outcome &mdash; the claim is declined &mdash; while adopting a more sensitive, less abrupt tone should be credited.)",
+          note: "Markers should credit any genuinely more sensitive rewrite that still accurately and clearly conveys the claim has been declined, without becoming vague or misleading about the actual outcome.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why the rewritten letter must still clearly and unambiguously communicate that the claim has been declined, even while adopting a more sensitive tone.",
+          answer:
+            "A sensitive tone should never come at the cost of clarity about the genuine outcome &mdash; a policyholder needs to understand clearly and without doubt that their claim has been declined, so they can take any further action available to them (e.g. querying the decision or seeking further information), which an overly softened or ambiguous message could obscure.",
+          note: "This tests the balance between sensitivity and clarity explicitly &mdash; sensitivity must not be achieved by sacrificing honest clarity about the actual outcome.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why maintaining a professional register matters even in this emotionally sensitive letter, rather than becoming overly informal in an attempt to seem more sympathetic.",
+          answer:
+            "Actuarial and insurance communication, regardless of the emotional sensitivity of its content, represents the writer's professional judgement and the organisation they represent, so an inappropriately casual tone could undermine confidence in the professionalism and reliability of the communication, even if intended kindly &mdash; sensitivity and professionalism should be combined, not treated as opposites.",
+          note: "A strong answer recognises that 'sensitive' does not mean 'casual' &mdash; a sensitive tone can and should remain professionally toned throughout.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q9",
+      title: "Reviewing a draft for errors and inconsistencies",
+      modules: "Module 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A draft report states in its text that 'reserves increased by 8% over the year', but the accompanying table shows reserves rising from &pound;10.5m to &pound;11.5m (an increase of approximately 9.5%). Explain why this kind of inconsistency is a genuinely serious problem, even if it's simply a transcription slip.",
+          answer:
+            "An inconsistency between the text and an accompanying table can seriously undermine a reader's confidence in the whole document's accuracy, even if it's a simple transcription slip rather than a genuine analytical error &mdash; the reader has no way of knowing which figure (if either) is correct, and the discrepancy itself raises doubt about the document's overall reliability.",
+          note: "Candidates should recognise that the SEVERITY of the problem (undermining trust in the whole document) doesn't depend on whether the underlying cause was a minor slip or a genuine analytical error.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain why this kind of numerical inconsistency is a specific item worth checking deliberately during a review pass, rather than assuming it would be caught by checking for clarity or tone alone.",
+          answer:
+            "Accuracy, clarity, tone, and structure can each independently succeed or fail, so a thorough review should check each dimension deliberately &mdash; a document could be clearly written and appropriately toned while still containing an internal numerical inconsistency that a clarity or tone check alone would not necessarily catch.",
+          note: "This tests whether candidates understand review as covering several genuinely distinct dimensions, not a single, undifferentiated check.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why leaving a short amount of time between finishing a draft and reviewing it might help catch this kind of error more reliably than reviewing immediately after writing.",
+          answer:
+            "A short break creates some genuine distance from the writer's immediate train of thought, making it easier to read the document with fresher, more objective eyes and notice inconsistencies or errors that would otherwise be missed reviewing it immediately, while still mentally 'inside' the writing process.",
+          note: "Even within exam time constraints, candidates should recognise the practical value of even a brief pause before a final review pass.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why having an independent colleague review the report, where practically possible, might catch this kind of inconsistency more reliably than the original author reviewing it alone.",
+          answer:
+            "An independent reviewer approaches the document without the writer's own assumptions and prior context, making them more likely to notice inconsistencies, unclear passages, or errors that the original author, having worked closely with the figures already, might overlook through over-familiarity with their own work.",
+          note: "This connects to the same peer review principle applying to written work as it does to checking a spreadsheet model or a piece of technical analysis.",
+        },
+      ],
+    },
+    {
+      id: "cp3-q10",
+      title: "Responding to pressure to present results misleadingly",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A client asks an actuary to omit a significant negative finding from a report, arguing it would 'only confuse' the board. Explain why the actuary should not simply comply with this request.",
+          answer:
+            "Withholding or obscuring a genuine limitation or negative finding to make a document appear more favourable than is genuinely warranted would mislead the board about the true position, which is a professional integrity failure, not merely a stylistic choice &mdash; professional standards require honest, accurate communication regardless of a client's preferences.",
+          note: "Candidates should recognise the client's stated justification ('it would only confuse the board') as insufficient grounds to omit genuinely material information.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question: "Explain how the actuary might address the client's genuine underlying concern (that the finding could be confusing) without simply omitting it.",
+          answer:
+            "The actuary could present the finding in clear, plain language with an appropriate, proportionate level of explanation (rather than dense technical detail), addressing the client's genuine concern about clarity while still ensuring the board receives the complete, honest picture &mdash; the solution to a fear of 'confusion' is clearer communication, not omission of material information.",
+          note: "This directly connects plain-language and structuring techniques from earlier in the course to resolving this specific ethical tension constructively.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question: "Discuss why an actuary's duty in this situation extends beyond simply satisfying the immediate client's request.",
+          answer:
+            "Actuarial work often has consequences extending beyond the immediate client (e.g. affecting the board's ability to make a genuinely informed decision, and potentially wider stakeholders relying on that decision), so professional standards require considering this broader responsibility, not just satisfying the client's stated preference for what to include.",
+          note: "This connects to the actuary's public interest duty, extending beyond the immediate paying client to those genuinely affected by the resulting decisions.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 3,
+          question: "Comment on why peer review of the final report could provide an additional safeguard in a situation like this.",
+          answer:
+            "Independent review helps ensure a document meets the profession's standards of honesty and completeness before it's relied upon, providing a genuine safeguard against a negative finding being inappropriately omitted or downplayed, whether through external client pressure or the original author's own unconscious bias.",
+          note: "This ties the module's ethical theme directly to the practical review/peer-review safeguards developed elsewhere in the course.",
+        },
+      ],
+    },
+  ],
 };
