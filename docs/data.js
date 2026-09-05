@@ -19351,6 +19351,90 @@ const MODULES = {
                 "explain": "This closing card ties this module's three numerical methods together — worth recognising that no single numerical method is universally best; a genuinely sound choice depends on the SPECIFIC derivative's features (path-dependency, early exercise, dimensionality) being priced."
             }
         ]
+    },
+    {
+        "id": "m10",
+        "title": "Interest rate derivative pricing and the Black model",
+        "description": "Covers the yield curve and forward rates, the relationship between swap quotes and LIBOR zero rates, and using the Black model to price bond options, caps/floors and swaptions, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine relationship connects the yield curve, zero rates, forward rates and bond prices, per the official syllabus objective 3.6.1?",
+                "a": "Zero rates (the genuine yield on a zero-coupon bond of a given maturity) collectively form the yield curve, bond prices can be derived by discounting each of a coupon bond's cashflows at the appropriate zero rate for its own maturity, and forward rates (the genuine interest rate implied for a future period) can be derived from the relationship between zero rates of different maturities via a no-arbitrage argument.",
+                "explain": "This directly recalls CM1's and CM2's yield-curve and forward-rate material — worth recognising these four concepts as genuinely INTERCONNECTED: knowing any one of the zero-rate curve, bond prices, or forward rates allows the others to be derived via no-arbitrage relationships."
+            },
+            {
+                "q": "What is the genuine relationship between forward rates and futures rates, and why might they differ in practice, echoing Module 3's forward-versus-futures material?",
+                "a": "Forward rates and futures rates theoretically represent the same underlying expected future interest rate, but can genuinely differ due to 'convexity adjustment' — since futures are marked-to-market daily while forwards settle only at maturity, and interest rate movements genuinely correlate with the value of holding a futures position, this creates a small but genuine, systematic difference between the two.",
+                "explain": "This directly recalls Module 3's forward-versus-futures-price-difference material — worth recognising this same margining-driven divergence principle applying specifically to INTEREST RATE forwards and futures, where the effect can be genuinely more material than for equity forwards/futures."
+            },
+            {
+                "q": "How is the genuine value of an interest rate swap determined, drawing on the yield curve relationships covered in this module?",
+                "a": "An interest rate swap's value can be determined by treating it as the genuine difference between a fixed-rate bond (valuing the fixed leg) and a floating-rate bond (valuing the floating leg), each discounted using the appropriate zero-rate curve, with the swap's fair fixed rate set so the two legs have genuinely equal value at initiation.",
+                "explain": "This directly recalls CM2's swap-valuation-as-bond-difference material — worth recognising this DECOMPOSITION approach (swap = fixed bond minus floating bond) as the genuine, standard technique for swap valuation, converting an unfamiliar instrument into two familiar bond valuations."
+            },
+            {
+                "q": "What is the genuine relationship between swap quotes and LIBOR zero rates, per the official syllabus objective 3.6.2?",
+                "a": "Market-observed swap rates (the fixed rates at which swaps of various maturities are genuinely quoted) can be used to derive (or 'bootstrap') the underlying LIBOR zero-rate curve, since each swap's fair fixed rate is itself determined by, and therefore genuinely reveals information about, the underlying zero-rate curve.",
+                "explain": "Worth recognising swap quotes as a genuinely PRACTICAL, widely-used market data source for constructing the zero-rate curve — since swaps trade in large, liquid volumes across many maturities, they provide genuinely useful, directly observable market information for this purpose."
+            },
+            {
+                "q": "What is the 'Black model', and why does it genuinely provide a practical, Black-Scholes-like framework for pricing interest rate derivatives despite interest rates not literally following the same lognormal price process as a stock, per the official syllabus objective 3.6.3?",
+                "a": "The Black model adapts the Black-Scholes framework's mathematical structure to price options on FORWARD prices or rates (rather than spot prices directly), providing a genuinely practical, widely-used pricing approach for bond options, caps/floors and swaptions, even though its underlying lognormality assumption for interest rates is a genuine simplification not perfectly matching real interest rate behaviour.",
+                "explain": "This directly recalls Module 6's and Module 7's Black-Scholes foundation — worth recognising the Black model as a genuinely PRAGMATIC ADAPTATION of Black-Scholes machinery to interest rate derivatives, valued for its practical tractability despite known theoretical limitations."
+            },
+            {
+                "q": "How does the Black model genuinely price a cap using the caplet-decomposition principle introduced in Module 4?",
+                "a": "Since a cap can genuinely be decomposed into a portfolio of individual caplets (Module 4's material), the Black model prices EACH caplet as an option on the relevant forward interest rate for its specific period, then sums these individual caplet values to obtain the whole cap's total price.",
+                "explain": "This directly recalls Module 4's cap-as-portfolio-of-caplets material — worth recognising this module's Black-model pricing technique as the genuine, practical COMPLETION of that earlier conceptual decomposition: now you know both WHAT a cap decomposes into, and HOW to price each resulting component."
+            },
+            {
+                "q": "What genuine assumptions underpin the Black model, and why must an actuary using it 'comment on' these assumptions rather than applying it uncritically, per the official syllabus objective 3.6.4?",
+                "a": "The Black model genuinely assumes the relevant forward rate (or forward price) is lognormally distributed with constant volatility, an assumption that, like Black-Scholes's own assumptions, may not perfectly hold in reality (e.g. genuine volatility smile effects, per Module 8's material), so a sound actuarial application should genuinely acknowledge these limitations rather than treating the model's output as unquestionably precise.",
+                "explain": "This directly recalls Module 8's volatility-smile-as-genuine-model-limitation material — worth recognising the Black model as sharing Black-Scholes's own genuine simplifying-assumption limitations, requiring the SAME critical awareness this course has emphasised throughout."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Term structure models, property swaps and credit derivative pricing",
+        "description": "Covers models of the term structure of interest rates, approaches to pricing property swaps, and demonstrating an understanding of pricing credit derivatives, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine difference between 'equilibrium' and 'no-arbitrage' term structure models, per the official syllabus objective 3.7.1?",
+                "a": "Equilibrium models (e.g. Vasicek, Cox-Ingersoll-Ross) genuinely derive the term structure's shape from underlying economic assumptions about interest rate behaviour, potentially producing a model-implied curve that does not exactly match today's observed market curve; no-arbitrage models (e.g. Hull-White) are genuinely calibrated to exactly fit today's observed market curve by construction, prioritising consistency with current market prices over deriving the curve from first economic principles.",
+                "explain": "Worth recognising this as a genuine, important trade-off — equilibrium models offer more economically-motivated INSIGHT into what drives rates, while no-arbitrage models offer more practically USEFUL consistency with today's actual observed market prices, valuable for pricing other instruments consistently."
+            },
+            {
+                "q": "What is the Hull-White model for the term structure of interest rates, and how does it genuinely relate to the Vasicek model, per the official syllabus objectives 3.7.2-3.7.3?",
+                "a": "The Hull-White model extends the Vasicek model's mean-reverting interest rate structure by allowing genuinely TIME-DEPENDENT parameters, enabling the model to be exactly calibrated (as a no-arbitrage model) to today's observed yield curve, while the simpler Vasicek model uses constant parameters and is typically classified as an equilibrium model that may not exactly fit today's curve.",
+                "explain": "This directly recalls this module's equilibrium-versus-no-arbitrage distinction — worth recognising Hull-White as genuinely EXTENDING Vasicek's mathematical structure specifically to achieve no-arbitrage consistency with observed market data, illustrating the practical difference between these two model categories concretely."
+            },
+            {
+                "q": "How does the Cox-Ingersoll-Ross (CIR) model genuinely differ from the Vasicek model, per the official syllabus objective 3.7.3?",
+                "a": "The CIR model's interest rate volatility genuinely depends on the current level of interest rates themselves (higher rates produce higher volatility), while Vasicek assumes constant volatility regardless of the rate level; CIR's structure also genuinely ensures interest rates cannot become negative, an advantage over Vasicek which theoretically permits negative rates.",
+                "explain": "Worth recognising CIR's rate-DEPENDENT volatility and its non-negativity property as its two genuinely distinguishing features versus Vasicek — worth memorising both as concrete, contrasting characteristics rather than a vague sense that CIR is simply 'more advanced'."
+            },
+            {
+                "q": "What are the Heath-Jarrow-Morton (HJM) and LIBOR market models, and how do they genuinely extend single-factor models like Hull-White, per the official syllabus objectives 3.7.7-3.7.8?",
+                "a": "HJM and LIBOR market models genuinely model the EVOLUTION of the WHOLE forward rate curve (or a discrete set of forward LIBOR rates) simultaneously, rather than a single short-rate process as in Hull-White/Vasicek/CIR, allowing genuinely richer, multi-factor modelling of how different parts of the yield curve can move independently of each other.",
+                "explain": "This directly recalls Module 7's multifactor-model-extension material — worth recognising HJM and LIBOR market models as extending single-factor short-rate models in essentially the SAME spirit SA7's multifactor equity models extend single-factor asset pricing models: capturing genuinely richer, multi-dimensional behaviour."
+            },
+            {
+                "q": "Why might Black's model be used to CALIBRATE the LIBOR market model despite the two models resting on genuinely different theoretical foundations, and what genuine problems does this calibration approach create, per the official syllabus objective 3.7.10?",
+                "a": "Since market cap and swaption prices are genuinely quoted using Black-model-implied volatilities as a market convention, calibrating the LIBOR market model to match these Black-implied volatilities provides a genuinely practical way to align the more sophisticated model with observed market prices; however, this can create genuine internal inconsistencies since the LIBOR market model's own underlying dynamics don't necessarily support Black's simplifying lognormality assumption exactly.",
+                "explain": "Worth recognising this as a genuinely important, PRACTICAL tension in real-world derivative pricing — market convention and theoretical model consistency don't always align perfectly, requiring practitioners to genuinely navigate this tension rather than assuming a single 'correct' theoretical framework always prevails in practice."
+            },
+            {
+                "q": "What genuine approaches might be taken to price a property swap, per the official syllabus objective 3.8, given property's characteristically illiquid, infrequently-traded nature?",
+                "a": "Since property indices (echoing SA7's material) can suffer from genuine valuation lag and smoothing due to infrequent, appraisal-based underlying valuations, pricing a property swap requires genuine care in selecting an appropriate reference index and adjusting for these known distortions, rather than applying standard derivative pricing techniques (which typically assume continuously-observable, liquid underlying prices) without adaptation.",
+                "explain": "This directly recalls SA7's illiquid-index-construction-challenge material — worth recognising property swap pricing as directly inheriting the genuine index-construction challenges that illiquid asset classes create, a recurring theme across this whole curriculum."
+            },
+            {
+                "q": "How is a credit default swap (CDS) genuinely priced, and what role does correlation play in pricing more complex, multi-name credit derivatives, per the official syllabus objectives 3.9.1-3.9.2?",
+                "a": "A single-name CDS is genuinely priced by setting its premium (spread) such that the expected present value of premium payments equals the expected present value of the contingent default payment, given assumed default probabilities and recovery rates; for multi-name credit derivatives (e.g. nth-to-default baskets, per Module 5), the genuine CORRELATION between different reference entities' default probabilities becomes critically important, since a basket's payoff depends on the JOINT, not just individual, default behaviour of multiple names.",
+                "explain": "This directly recalls Module 5's credit-derivative-types material and CS2's copula/dependence material — worth recognising correlation as playing a genuinely CRITICAL role specifically for MULTI-NAME credit derivatives, a consideration entirely absent from single-name CDS pricing."
+            }
+        ]
     }
     ]
 };
