@@ -20259,6 +20259,102 @@ const MODULES = {
                 "explain": "This directly recalls SA3's catastrophe-modelling and climate-risk material — worth recognising climate change as directly threatening the genuine RELIABILITY of historical weather data as a guide to future pricing assumptions, a theme recurring across multiple subjects in this curriculum."
             }
         ]
+    },
+    {
+        "id": "m07",
+        "title": "Major pricing uncertainties, data types and quality",
+        "description": "Covers the major sources of uncertainty in general insurance pricing, and the genuine types and quality of data needed to support sound pricing, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine sources of pricing uncertainty does a rating actuary face, echoing SP7's reserving-uncertainty material?",
+                "a": "Pricing uncertainty genuinely includes PROCESS uncertainty (genuine random variation in actual future claims experience even given perfectly correct assumptions), PARAMETER uncertainty (genuine imprecision in estimating the rating model's own parameters from limited historical data), and MODEL uncertainty (the genuine risk that the chosen rating approach itself is inappropriate), directly paralleling SP7's model/parameter risk distinction now applied to pricing.",
+                "explain": "This directly recalls SP7's model-risk-versus-parameter-risk material — worth recognising this same, genuinely important distinction applying to PRICING uncertainty just as directly as it applies to RESERVING uncertainty."
+            },
+            {
+                "q": "Why might pricing uncertainty for a genuinely new or unusual risk (with limited own historical experience) be particularly significant, echoing SA1's and SP7's material?",
+                "a": "Without substantial own experience data, pricing must rely more heavily on external data, comparable risks, and genuine actuarial judgement, introducing genuinely greater parameter and model uncertainty than pricing a well-established, high-volume risk with abundant own historical data supporting more statistically reliable estimation.",
+                "explain": "This directly recalls SA1's and SP7's new-risk-limited-data-judgement material — worth recognising this same principle recurring here specifically in a general insurance pricing context."
+            },
+            {
+                "q": "What genuine TYPES of data does a rating actuary typically need, beyond raw claims and premium figures?",
+                "a": "Rating typically requires genuine EXPOSURE data (e.g. vehicle-years, sums insured, previewing Module 2's material), CLAIMS data (frequency, severity, and development information), POLICY-level data (rating factors like age, location, construction type), and genuinely relevant EXTERNAL data (market benchmarks, economic indices) to support and cross-check internally-derived estimates.",
+                "explain": "Worth recognising this as a genuinely broader data requirement than reserving alone might need — pricing genuinely requires detailed POLICY-LEVEL rating factor data (to support GLM-style multivariate analysis, Module 4's material) beyond the aggregate claims triangle data SP7's reserving work primarily relies upon."
+            },
+            {
+                "q": "Why must a rating actuary genuinely assess data QUALITY, not just data availability, before relying on it for pricing, echoing SP7's data-validation material?",
+                "a": "Since every rating technique covered in this course depends directly on the genuine accuracy and completeness of underlying data, poor-quality data (e.g. inconsistent rating factor recording, incomplete exposure records) can silently undermine even the most technically sophisticated rating model, making genuine data quality assessment an essential PRECONDITION for sound pricing, directly echoing SP7's identical data-validation principle.",
+                "explain": "This directly recalls SP7's data-validation-as-precondition material — worth recognising this same principle applying identically to pricing as it does to reserving, given both depend on the same underlying data quality foundation."
+            },
+            {
+                "q": "Why might genuine data quality issues be particularly acute when a rating actuary attempts to incorporate NEW or recently-introduced rating factors into a pricing model?",
+                "a": "A newly-introduced rating factor typically has genuinely LESS historical data available (since it may not have been consistently recorded in the past), meaning statistical estimation of that factor's genuine effect is inherently based on a smaller, potentially less reliable dataset than more long-established rating factors with genuinely deeper historical records.",
+                "explain": "Worth recognising new-rating-factor data quality as a genuinely specific, practical manifestation of the broader new-risk-limited-data challenge raised earlier in this module, applied specifically to individual RATING FACTORS rather than whole new risk categories."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Actuarial investigations of pricing results",
+        "description": "Covers the actuarial investigations undertaken to monitor and understand genuine pricing results, echoing this course's recurring experience-monitoring theme.",
+        "cards": [
+            {
+                "q": "Why must a rating actuary genuinely monitor ACTUAL experience against PRICING assumptions after a rate has been implemented, echoing this course's recurring experience-monitoring theme?",
+                "a": "Comparing actual claims experience against the assumptions used in setting a rate reveals whether those pricing assumptions remain genuinely appropriate, allowing timely correction before mispriced business accumulates to a materially damaging scale, directly echoing SP1's, SP2's and SP7's identical experience-monitoring principle now applied specifically to PRICING results.",
+                "explain": "This directly recalls SP1's, SP2's and SP7's experience-monitoring material — worth recognising this same universal actuarial control-cycle principle applying to pricing just as directly as to reserving or insurance-product experience monitoring generally."
+            },
+            {
+                "q": "What genuine measure might a rating actuary use to assess whether a rating model's predicted frequency and severity are genuinely tracking actual experience, echoing CS1's material?",
+                "a": "A rating actuary might genuinely compare the model's PREDICTED loss ratio (or predicted frequency/severity) against the ACTUAL, observed loss ratio (or frequency/severity) for the same period, using this comparison to assess whether genuine, material divergence has emerged requiring investigation, directly echoing CS1's model-validation-through-comparison-against-actual-outcomes principle.",
+                "explain": "This directly recalls CS1's model-validation material — worth recognising loss ratio monitoring as the genuine, practical PRICING equivalent of CS1's general model-validation discipline."
+            },
+            {
+                "q": "Why should a rating actuary genuinely investigate WHETHER an observed pricing variance reflects genuine random fluctuation or a persistent trend, before revising rates, echoing this course's recurring statistical-significance theme?",
+                "a": "A single period's adverse variance could reflect genuine random noise or a genuine one-off event, so investigating the underlying cause before revising rates avoids both over-reacting to noise (unnecessarily disrupting competitive positioning) and under-reacting to a genuinely important emerging trend requiring genuine rate correction.",
+                "explain": "This directly recalls SP1's, SP2's and SP7's random-fluctuation-versus-trend material — worth recognising this same judgement discipline recurring here specifically in a pricing-results-investigation context."
+            },
+            {
+                "q": "Why might a rating actuary need to genuinely investigate results at a GRANULAR level (e.g. by individual rating factor or segment), rather than assessing only the AGGREGATE loss ratio, echoing SP7's material?",
+                "a": "An aggregate loss ratio genuinely consistent with expectations could still MASK offsetting variances across different segments (e.g. one segment performing better than expected while another performs worse, netting out to an apparently unremarkable aggregate figure), so granular investigation by segment or rating factor is genuinely necessary to reveal these individually important, offsetting patterns.",
+                "explain": "This directly recalls SP7's granular-decomposition material — worth recognising this same AGGREGATION-CAN-HIDE-IMPORTANT-DETAIL principle applying directly to pricing results investigation, echoing its identical application to reserving experience analysis."
+            },
+            {
+                "q": "How might the results of a genuine pricing investigation feed directly back into the rating factors and GLM models covered in Module 4?",
+                "a": "Where a genuine, persistent variance is identified for a specific rating factor or segment, this should genuinely inform a REVISION to that factor's estimated effect within the pricing GLM (Module 4's material), closing the actuarial control cycle loop between INVESTIGATION (this module) and MODEL REFINEMENT (Module 4), rather than treating pricing investigation as a standalone, disconnected activity.",
+                "explain": "This closing card ties this module back to Module 4 explicitly — worth recognising pricing investigation results as feeding directly BACK into the rating model itself, completing a genuine, ongoing actuarial control cycle for pricing."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "The collective risk model and aggregate claims distributions",
+        "description": "Covers the collective risk model, and deriving the aggregate claim distribution via stochastic simulation, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the 'collective risk model', and how does it genuinely differ from a simpler individual-risk-model approach to modelling aggregate claims, echoing CS2's material?",
+                "a": "The collective risk model genuinely represents total aggregate claims as the SUM of a RANDOM NUMBER of individual claims (the claim count following a frequency distribution) each with a RANDOM severity (following a severity distribution), rather than a simpler individual-risk-model approach summing a FIXED number of individual policy outcomes, providing a genuinely more flexible framework better suited to lines where claim COUNT itself is uncertain, not just each individual claim's size.",
+                "explain": "This directly recalls CS2's collective-risk-model material and Module 4's frequency-severity-model foundation — worth recognising the collective risk model as the genuine, more sophisticated STATISTICAL FRAMEWORK underlying Module 4's frequency-severity rating approach."
+            },
+            {
+                "q": "Why might deriving the aggregate claims distribution ANALYTICALLY (via a closed-form formula) be genuinely difficult or impossible for many realistic frequency and severity distribution combinations?",
+                "a": "Combining a genuinely realistic frequency distribution (e.g. Poisson or negative binomial) with a genuinely realistic severity distribution (e.g. gamma or lognormal) typically does not produce a mathematically tractable, closed-form aggregate claims distribution, requiring numerical or simulation-based approaches instead of a simple analytical formula.",
+                "explain": "This directly recalls SP6's material on why numerical methods are needed where closed-form derivative pricing formulas don't exist — worth recognising this same GENUINE ANALYTICAL INTRACTABILITY problem recurring here in an aggregate claims context, motivating simulation as the practical solution."
+            },
+            {
+                "q": "How does STOCHASTIC SIMULATION genuinely derive the aggregate claims distribution, per the official syllabus, echoing this course's recurring Monte Carlo material?",
+                "a": "Stochastic simulation genuinely repeats a two-step process many thousands of times — first simulating a random claim COUNT from the assumed frequency distribution, then simulating that many random claim SEVERITIES and summing them — building up a genuine, empirical distribution of simulated aggregate claims outcomes across all these repeated simulation trials.",
+                "explain": "This directly recalls SP6's and SP7's Monte-Carlo-simulation material — worth recognising this same general simulation TECHNIQUE recurring here, applied specifically to building up an aggregate claims distribution from its underlying frequency and severity components."
+            },
+            {
+                "q": "Why might a rating actuary genuinely value having the FULL simulated aggregate claims distribution, rather than just its mean (the pure risk premium), echoing SP7's material?",
+                "a": "The full distribution reveals genuine information about the SPREAD and TAIL RISK of possible aggregate outcomes (e.g. informing capital requirements, per SP7's material, or reinsurance purchasing decisions, previewed in this course's later credibility/reinsurance module), insight a single mean figure (the pure risk premium alone) cannot provide.",
+                "explain": "This directly recalls SP7's VaR/TVaR material — worth recognising the full simulated distribution as providing genuinely richer information supporting DOWNSTREAM decisions (capital, reinsurance) beyond simply setting the central pure risk premium itself."
+            },
+            {
+                "q": "How does this module's collective risk model and simulation material connect back to Module 4's frequency-severity GLM material?",
+                "a": "Module 4 developed how INDIVIDUAL rating factors affect frequency and severity through GLMs; this module shows how those SAME frequency and severity distributions can be combined via the collective risk model and stochastic simulation to derive the AGGREGATE claims distribution for a whole portfolio or segment, moving from individual rating-factor-level modelling to portfolio-level aggregate risk understanding.",
+                "explain": "This closing card ties this module back to Module 4 explicitly — worth recognising this module as SCALING UP Module 4's individual rating-factor GLM technique to a genuinely PORTFOLIO-LEVEL aggregate claims perspective, not a separate, unrelated statistical topic."
+            }
+        ]
     }
     ]
 };
