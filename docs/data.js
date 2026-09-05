@@ -14015,5 +14015,194 @@ const MODULES = {
             }
         ]
     }
+,
+    {
+        "id": "m13",
+        "title": "Other approaches to regulation",
+        "description": "Covers regulatory approaches beyond Solvency II, including how different jurisdictions regulate health and care insurers and the role of professional actuarial standards.",
+        "cards": [
+            {
+                "q": "Why might a jurisdiction outside the EU/UK Solvency II framework use a genuinely different prudential regulatory regime, such as risk-based capital (RBC) approaches used elsewhere?",
+                "a": "Different jurisdictions have developed their own regulatory histories and risk-based capital frameworks (e.g. the US RBC system) that share Solvency II's broad goal of ensuring adequate capital, but differ in technical detail, calibration, and structure, reflecting genuinely different regulatory traditions.",
+                "explain": "This directly recalls Module 11's Solvency II material — worth recognising Solvency II as ONE SPECIFIC example of a risk-based capital regime, not the only possible approach; other jurisdictions achieve broadly similar prudential goals through genuinely different technical frameworks."
+            },
+            {
+                "q": "Why might comparing different national regulatory approaches to health and care insurance be a genuinely useful analytical skill for an SA1 candidate?",
+                "a": "SA1 exam scenarios often present unfamiliar or fictional regulatory regimes (Module 1's format point), so understanding the underlying PRINCIPLES different approaches share, rather than memorising one specific regime, equips candidates to reason about genuinely novel regulatory contexts.",
+                "explain": "This directly recalls Module 1's fictional-scenario material — worth recognising this module's comparative approach as direct preparation for exactly that exam format: applying general regulatory principles to an unfamiliar regime, not just reciting Solvency II's specific rules."
+            },
+            {
+                "q": "Why might some jurisdictions rely more heavily on actuarial professional standards and peer review, rather than detailed statutory regulation, to ensure sound insurer practice?",
+                "a": "Where actuaries hold statutory reporting responsibilities backed by professional standards and disciplinary oversight, this can substitute for some detailed regulatory prescription, delegating part of the prudential objective to the actuarial profession's own governance.",
+                "explain": "This directly previews Module 15's professional-standards material — worth recognising professional standards as a genuinely ALTERNATIVE (or complementary) route to achieving prudential regulation's objectives, alongside or instead of purely statutory regulatory rules."
+            },
+            {
+                "q": "Why might a 'twin peaks' regulatory model (separate prudential and conduct regulators) be used in some jurisdictions rather than a single combined regulator?",
+                "a": "Separating prudential and conduct regulation into distinct bodies can allow each regulator to specialise and focus without one objective (e.g. financial soundness) being allowed to dominate over or conflict with the other (e.g. fair customer treatment).",
+                "explain": "This directly recalls Module 10's prudential-versus-conduct distinction — worth recognising 'twin peaks' as a genuine STRUCTURAL choice some jurisdictions make to keep these two genuinely distinct regulatory objectives institutionally separate, rather than housed in a single regulator."
+            },
+            {
+                "q": "Why might a health and care insurer operating in a jurisdiction with less-developed regulation still choose to hold capital and reserves consistent with more stringent standards voluntarily?",
+                "a": "Meeting a higher voluntary standard can support genuine policyholder and market confidence, ease entry into other more regulated markets, or reflect a group-wide risk management standard, even where local regulation would technically permit a lower bar.",
+                "explain": "This directly recalls CP1's group-wide-risk-standards material — worth recognising regulatory minimums as a FLOOR, not a target; a well-run insurer may deliberately exceed local minimum standards for genuinely sound commercial or reputational reasons."
+            },
+            {
+                "q": "Why might international bodies (e.g. the IAIS, International Association of Insurance Supervisors) develop global insurance capital standards despite each jurisdiction retaining its own regulator?",
+                "a": "Global standards aim to promote genuine consistency and reduce regulatory arbitrage for insurance groups operating across multiple jurisdictions, supporting cross-border supervisory cooperation without necessarily replacing each jurisdiction's own regulatory authority.",
+                "explain": "This directly recalls Module 10's international-coordination material — worth recognising global standard-setting bodies as working ALONGSIDE, not replacing, national regulators — a coordinating rather than overriding role."
+            },
+            {
+                "q": "Why might a regulator in a developing insurance market prioritise building basic market infrastructure and consumer protection over sophisticated risk-based capital modelling?",
+                "a": "Where genuine data, actuarial capacity, or market maturity is limited, a simpler regulatory approach focused on foundational consumer protection and basic solvency margins may be more practically achievable and appropriate than immediately adopting a sophisticated regime like Solvency II.",
+                "explain": "This directly recalls Module 12's proportionality material — worth recognising that PROPORTIONALITY applies at the level of a whole regulatory REGIME, not just to individual insurers within an established regime — a market's overall development stage should shape its appropriate regulatory sophistication."
+            },
+            {
+                "q": "How does this module's comparative regulatory material connect back to the general regulatory-approaches framework established in Module 10?",
+                "a": "Module 10 established the general purposes regulation serves (prudential soundness, conduct protection) and the broad approaches available (principles- versus rules-based); this module shows those same purposes can genuinely be achieved through varied, jurisdiction-specific technical implementations.",
+                "explain": "This closing card ties this module back to Module 10 and forward to Module 15 — worth recognising the recurring theme across Modules 10-15: regulatory OBJECTIVES are broadly universal, but the specific MECHANISMS used to achieve them can and do genuinely vary."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Profit and value reporting",
+        "description": "Covers how health and care insurers measure and report profit and value, including embedded value and IFRS reporting approaches.",
+        "cards": [
+            {
+                "q": "Why might a health and care insurer report profit under multiple different bases (e.g. statutory, IFRS, embedded value), rather than a single measure?",
+                "a": "Different bases serve genuinely different purposes — statutory reporting supports regulatory solvency assessment, IFRS provides comparable financial statements for investors, and embedded value captures the discounted value of in-force business — each answering a genuinely different stakeholder question.",
+                "explain": "This directly recalls Module 11's market-consistent-valuation material — worth recognising that asking 'how profitable is the insurer?' genuinely has MULTIPLE valid answers depending on which stakeholder's question is actually being asked."
+            },
+            {
+                "q": "What is 'embedded value' in the context of a health and care insurer, and why is it particularly relevant for long-duration products like long-term care insurance?",
+                "a": "Embedded value represents the present value of future profits expected to emerge from existing in-force business, plus net assets; it's particularly relevant for long-duration products because their true economic value is heavily weighted toward FUTURE profit emergence not yet visible in current-year statutory profit.",
+                "explain": "This directly recalls Module 2's and Module 11's long-duration-product material — worth recognising that a purely CURRENT-YEAR profit figure would badly understate a long-term care book's genuine economic value, since most of its profit is still to emerge over future years."
+            },
+            {
+                "q": "Why might statutory (regulatory) profit for a new health and care product often appear lower, or even negative, in its early years compared with its embedded value contribution?",
+                "a": "Statutory reporting often requires prudent reserves to be set up at the point of sale (reflecting new-business strain), depressing reported early profit even though the product's embedded value (capturing the full expected future profit stream) may be genuinely positive from inception.",
+                "explain": "This directly recalls CB1's new-business-strain material — worth recognising this apparent conflict as ENTIRELY consistent: statutory profit recognises income prudently over time, while embedded value recognises the same expected profit stream immediately, in present-value terms."
+            },
+            {
+                "q": "Why does IFRS 17 require insurance contract liabilities to be measured using current, market-consistent assumptions, similar in spirit to Solvency II's approach?",
+                "a": "Using current assumptions rather than fixed, locked-in ones aims to give a more genuinely up-to-date and comparable picture of insurer financial position across companies and over time, echoing Module 11's Solvency II market-consistency rationale but for general-purpose financial reporting rather than regulatory solvency assessment.",
+                "explain": "This directly recalls Module 11's market-consistent valuation material — worth recognising IFRS 17 and Solvency II as PARALLEL, independently-motivated moves toward current-assumption-based valuation, developed for different purposes (financial reporting versus regulatory solvency) but sharing a similar underlying philosophy."
+            },
+            {
+                "q": "Why might the 'contractual service margin' (CSM) under IFRS 17 be a particularly significant concept for long-term health and care products?",
+                "a": "The CSM represents unearned future profit that is released into reported profit gradually as service is provided over the contract's life, directly shaping how a long-duration product's genuine total profitability gets SPREAD across many future reporting periods rather than recognised all at once.",
+                "explain": "This directly recalls Module 2's and Module 14's long-duration-recognition-pattern material — worth recognising the CSM as the specific IFRS 17 mechanism controlling exactly WHEN, across a long contract's life, its total expected profit actually shows up in reported results."
+            },
+            {
+                "q": "Why might analysts and investors place particular weight on embedded value or IFRS 17 reporting, rather than purely statutory profit, when assessing a health and care insurer?",
+                "a": "Statutory profit can be heavily distorted by new-business strain and reserving prudence in a way that obscures genuine underlying performance, whereas embedded value and IFRS 17 aim to more directly reflect the insurer's true economic value creation over time.",
+                "explain": "This directly recalls Module 14's new-business-strain material — worth recognising that different reporting bases can tell genuinely DIFFERENT stories about the same insurer's performance, and sophisticated stakeholders often look past statutory profit alone for this reason."
+            },
+            {
+                "q": "Why might an 'analysis of embedded value movement' (explaining the change in embedded value from one year to the next) be a valuable management and disclosure tool?",
+                "a": "Decomposing the year-on-year change into components (new business added, expected unwind, experience variances, assumption changes) reveals genuinely WHY value changed, distinguishing planned, expected movements from unexpected experience or assumption shifts requiring management attention.",
+                "explain": "This directly previews Module 20's analysis-of-surplus/embedded-value material — worth recognising embedded value movement analysis as this module's REPORTING concept feeding directly into Module 20's deeper DIAGNOSTIC analysis of what actually drove that movement."
+            },
+            {
+                "q": "How does this module's profit and value reporting material connect to the capital management material covered in Module 16?",
+                "a": "Understanding how profit and value are genuinely measured and reported provides the essential foundation for capital management decisions (e.g. dividend policy, capital raising) covered next, since those decisions depend directly on an accurate picture of the insurer's true financial position and performance.",
+                "explain": "This closing card ties this module directly to Module 16 — worth recognising REPORTING (this module) as the essential INPUT that sound CAPITAL MANAGEMENT decisions (Module 16) must be built upon."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Professional standards and guidance",
+        "description": "Covers the role of actuarial professional standards, guidance, and ethical responsibilities in the practice of health and care insurance actuarial work.",
+        "cards": [
+            {
+                "q": "Why do actuaries working in health and care insurance need to follow specific professional standards and guidance, beyond general regulatory requirements?",
+                "a": "Professional standards set out expected practice for specific actuarial roles and tasks (e.g. reserving, reporting) in a way that complements statutory regulation, ensuring consistent, high-quality technical work even where detailed regulatory prescription doesn't fully specify the required actuarial approach.",
+                "explain": "This directly recalls Module 13's professional-standards-as-alternative-regulatory-route material — worth recognising professional standards as OPERATING ALONGSIDE regulation, filling in genuinely important technical detail that statutory rules alone often don't fully specify."
+            },
+            {
+                "q": "Why might an actuary holding a statutory reporting role (e.g. a Chief Actuary or Actuarial Function Holder) have personal professional responsibilities distinct from the insurer's general corporate obligations?",
+                "a": "A statutory actuarial role typically carries personal accountability for specific technical opinions (e.g. on reserve adequacy), meaning the individual actuary can face professional consequences distinct from, and sometimes in tension with, the wider commercial interests of the insurer employing them.",
+                "explain": "This directly recalls CP1's actuary's-personal-professional-responsibility material — worth recognising this personal-accountability structure as a deliberate design feature: it gives the actuary a genuine professional incentive to maintain technical integrity even under commercial pressure."
+            },
+            {
+                "q": "Why might an actuary need to exercise independent professional judgement even when instructed otherwise by their employer, echoing CP1's ethical-conflict material?",
+                "a": "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement and the public interest, meaning commercial or managerial pressure to reach a particular conclusion does not override the actuary's own professional obligations.",
+                "explain": "This directly recalls CP1's whistleblowing and ethical-conflict material — worth recognising this as one of the most exam-testable ethical themes across the whole actuarial curriculum, now specifically contextualised to health and care scenarios (e.g. pressure to understate long-term care reserves)."
+            },
+            {
+                "q": "Why might professional guidance specifically address the actuary's role in setting assumptions for long-duration health and care products like long-term care insurance?",
+                "a": "Given the genuine, compounded uncertainty in long-term assumptions (Module 2's longevity-risk material) and the potential for commercial pressure to adopt optimistic assumptions, specific guidance helps ensure assumption-setting remains genuinely sound and appropriately prudent rather than driven by short-term reported-profit pressure.",
+                "explain": "This directly recalls Module 2's compounded-longevity-risk material and Module 14's new-business-strain material — worth recognising this guidance as a direct professional safeguard against the genuine temptation to set optimistic assumptions that flatter near-term reported profit at the expense of long-term reserve adequacy."
+            },
+            {
+                "q": "Why might an actuary need to disclose a material limitation or uncertainty in their work (e.g. data quality issues) even if not specifically asked about it?",
+                "a": "Professional standards typically require actuaries to ensure their communications are clear and do not mislead, which includes proactively disclosing material limitations that could affect how a stakeholder should interpret or rely on the actuary's work.",
+                "explain": "This directly recalls CP3's clear-communication material and CP1's disclosure-obligation material — worth recognising this as CP3's plain-communication principle applied specifically to a genuine professional-ethics obligation, not just a stylistic preference."
+            },
+            {
+                "q": "Why might professional bodies maintain disciplinary processes for actuaries who breach professional standards, alongside any regulatory sanctions the insurer itself might face?",
+                "a": "Disciplinary processes hold the INDIVIDUAL actuary accountable for their own professional conduct, distinct from and additional to any corporate regulatory sanctions the insurer might separately face, reinforcing the personal-accountability structure raised earlier in this module.",
+                "explain": "This directly recalls this module's personal-accountability material — worth recognising professional discipline and regulatory sanction as operating on GENUINELY DIFFERENT levels: one holds the individual professional accountable, the other holds the corporate entity accountable."
+            },
+            {
+                "q": "Why might professional guidance on health and care insurance be periodically updated, rather than remaining fixed indefinitely?",
+                "a": "As products, risks, and the wider business and regulatory environment evolve (Modules 5-6, 10-13), professional guidance must be periodically reviewed and updated to remain genuinely relevant and fit for purpose, echoing this course's recurring ongoing-review theme.",
+                "explain": "This directly recalls Module 12's regulatory-evolution material — worth recognising the same ongoing-review principle applying to PROFESSIONAL GUIDANCE itself, not just to regulatory frameworks or an individual insurer's own risk monitoring."
+            },
+            {
+                "q": "How does this module's professional standards material connect back to the wider regulatory environment covered in Modules 10-13?",
+                "a": "Professional standards and statutory regulation together form the complete oversight framework health and care insurers and their actuaries operate within — regulation sets external, legally-binding requirements, while professional standards set internal, profession-driven expectations of sound technical practice.",
+                "explain": "This closing card ties this module back to Modules 10-13 explicitly — worth recognising REGULATION and PROFESSIONAL STANDARDS as two complementary, mutually reinforcing layers of oversight, together completing this course's regulatory-environment topic area."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Capital management",
+        "description": "Covers how health and care insurers manage their capital position, including capital raising, dividend policy, and capital allocation across product lines.",
+        "cards": [
+            {
+                "q": "Why does a health and care insurer need an active capital management strategy, beyond simply holding enough capital to meet its Solvency II SCR?",
+                "a": "Capital management involves genuinely forward-looking decisions about how much capital to hold above the regulatory minimum, how to raise capital when needed, and how to return excess capital to shareholders, going well beyond a single point-in-time regulatory compliance check.",
+                "explain": "This directly recalls Module 11's SCR material — worth recognising the SCR as a regulatory FLOOR, not a target; genuine capital management is about the insurer's own strategic choices operating above and around that floor."
+            },
+            {
+                "q": "Why might a health and care insurer choose to hold capital buffers above its calculated SCR, echoing this course's stress-testing themes?",
+                "a": "A buffer provides genuine resilience against adverse experience (e.g. a pandemic morbidity shock, per Module 6) or assumption changes without immediately breaching regulatory thresholds, giving the insurer time and flexibility to respond before facing urgent regulatory intervention.",
+                "explain": "This directly recalls Module 12's ORSA stress-testing material — worth recognising the capital buffer as the PRACTICAL OUTPUT of ORSA-style forward-looking stress testing: it translates identified stress scenarios into an actual, held amount of extra capital."
+            },
+            {
+                "q": "Why might raising new capital (e.g. through a rights issue or subordinated debt) be a genuinely significant decision for a health and care insurer, beyond the immediate cash raised?",
+                "a": "New capital raising can dilute existing shareholders, signal financial weakness to the market if poorly explained, or (for debt) create fixed future obligations, so the decision carries genuine strategic and reputational consequences beyond simply solving an immediate capital need.",
+                "explain": "This directly recalls CB1's sources-of-finance material — worth recognising that CB1's general capital-raising trade-offs (dilution, cost, signalling) apply directly to an insurer's own capital management decisions, not just to a corporate's investment financing choices."
+            },
+            {
+                "q": "Why might a health and care insurer's dividend policy need to reflect its capital position and future capital needs, echoing CB1's dividend policy material?",
+                "a": "Paying out capital as dividends reduces the buffer available to absorb future adverse experience, so a sound dividend policy must genuinely balance shareholder return expectations against maintaining adequate capital for the insurer's ongoing risk exposure and growth plans.",
+                "explain": "This directly recalls CB1's dividend policy material — worth recognising this same general corporate-finance trade-off applying with particular weight to an insurer, where paying out capital directly reduces its ability to absorb the genuinely significant risks covered throughout this course."
+            },
+            {
+                "q": "Why might a health and care insurer need to allocate capital across different product lines (e.g. PMI versus long-term care) rather than treating its total capital as one undifferentiated pool?",
+                "a": "Different product lines carry genuinely different capital intensity (Module 11's risk-margin material shows LTC as particularly capital-heavy) and different expected returns, so capital allocation helps assess which lines genuinely earn an adequate return on the capital they consume.",
+                "explain": "This directly recalls Module 11's LTC-capital-intensity material and CB1's cost-of-capital material — worth recognising capital allocation as applying CB1's risk-adjusted-return thinking at the PRODUCT LINE level, not just to whole-company capital decisions."
+            },
+            {
+                "q": "Why might reinsurance (previewed in Module 5, developed fully in Module 17) be considered a genuine capital management tool, not just a risk-transfer technique?",
+                "a": "Ceding risk to a reinsurer can directly reduce the capital an insurer needs to hold against that risk under Solvency II, making reinsurance a genuine lever for managing capital efficiency alongside its more obvious risk-diversification purpose.",
+                "explain": "This directly previews Module 17's reinsurance material — worth recognising reinsurance as serving a DUAL purpose: reducing volatility of experience, AND directly reducing the regulatory capital required to be held, both genuinely valuable to an insurer's overall capital position."
+            },
+            {
+                "q": "Why might a health and care insurer's capital management strategy need to be reassessed following a merger or acquisition, echoing CB1's M&A material?",
+                "a": "Combining two insurers' capital positions, risk profiles, and product mixes can create genuine diversification benefits (reducing combined capital needs) or concentration risks, meaning the combined entity's capital strategy cannot simply assume the pre-merger position remains appropriate.",
+                "explain": "This directly recalls CB1's mergers-and-acquisitions material — worth recognising that M&A doesn't just change WHO owns a business; it can genuinely change how much capital the combined entity actually needs to hold, given new diversification or concentration effects."
+            },
+            {
+                "q": "How does this module's capital management material connect back to the profit and value reporting covered in Module 14?",
+                "a": "Sound capital management decisions (buffers, raising capital, dividends, allocation) all depend on an accurate underlying picture of the insurer's genuine profit, value, and risk position, which is exactly what Module 14's reporting concepts are designed to provide.",
+                "explain": "This closing card ties this module back to Module 14 explicitly — worth recognising Module 14's REPORTING material as the essential factual foundation that this module's CAPITAL MANAGEMENT decisions must be built upon to be genuinely sound."
+            }
+        ]
+    }
 ],
 };
