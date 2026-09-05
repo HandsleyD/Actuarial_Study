@@ -7750,4 +7750,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP4: [
+    {
+      id: "sp4-q1",
+      title: "Stakeholders and the general business environment",
+      modules: "Modules 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List the six genuine stakeholder categories named in the official SP4 syllabus as having roles and responsibilities in the provision of benefits.",
+          answer:
+            "State and statutory bodies, employers or groups of employers, trustees or scheme managers, financial advisers for individuals, consultants and other professional advisers, and individuals or groups of individuals.",
+          note: "A complete answer names all six categories precisely.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why trustees must be understood as occupying a genuinely distinct role from the employer that sponsors a pension scheme.",
+          answer:
+            "Trustees typically hold a genuine fiduciary duty to act in the best interests of scheme members and beneficiaries, which can require them to exercise independent judgement (e.g. on funding, investment strategy) that may not always align with the sponsoring employer's own commercial interests, a structurally distinct role from the employer's own management.",
+          note: "A strong answer explicitly names the fiduciary duty concept, not just asserts that trustees and employers are 'different'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss what 'sponsor covenant' means, and why its integration with a scheme's funding and investment strategy matters.",
+          answer:
+            "Sponsor covenant is the sponsoring employer's financial ability and willingness to support a pension scheme over time. Covenant strength should genuinely inform both funding strategy (e.g. how quickly a shortfall should be recovered) and investment strategy (e.g. how much investment risk the scheme can reasonably tolerate given the covenant's ability to absorb any resulting shortfall), meaning covenant assessment is only genuinely useful when actively connected to these other decisions, not conducted in isolation. A scheme with a strong covenant can reasonably support a longer recovery period and more investment risk than an identical scheme with a weak covenant.",
+          note: "A strong answer defines covenant AND explains the genuine integration principle with a concrete example, not just one or the other.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why public sector pension provision might be financed on an unfunded, pay-as-you-go basis while most private sector schemes are funded.",
+          answer:
+            "Public sector schemes are sometimes financed on an unfunded basis, backed by the State's ongoing taxation power, while private sector schemes are typically funded, requiring assets to be genuinely accumulated in advance to meet promised benefits, reflecting the different underlying financial backing available to each sector.",
+          note: "This connects directly to the public-versus-private financing distinction developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q2",
+      title: "Financing methods and scheme design for a new arrangement",
+      modules: "Modules 4, 5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A new employer is considering how to finance a benefit promise to its employees. Explain the genuine difference between pay-as-you-go and funded financing.",
+          answer:
+            "Pay-as-you-go financing pays benefits from current income as they fall due, with no significant advance asset accumulation, while funded financing accumulates genuine assets in advance, specifically earmarked to meet promised future benefits.",
+          note: "A strong answer explains both approaches precisely, not just names them.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what a 'contingent asset' is, and why this employer might use one rather than making an immediate cash contribution.",
+          answer:
+            "A contingent asset is a genuine claim on specific sponsor (or related-party) assets that only becomes available to the scheme under specified trigger conditions (e.g. sponsor insolvency), providing additional genuine security to the scheme without requiring the sponsor to make an immediate cash contribution.",
+          note: "This connects directly to the flexible-financing-tool theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss the six genuine design factors this employer should consider when determining a suitable benefit design, per the official syllabus.",
+          answer:
+            "Type of pension scheme (e.g. DB, DC, risk-sharing), governance requirements, level and form of benefits and/or contributions, method of financing the benefits, how risk is shared between parties, and choice of assets (when benefits are to be funded and when assets are to be invested) — all six should genuinely be considered together, since they interact (e.g. scheme type strongly shapes risk-sharing, and financing method shapes asset choice timing).",
+          note: "A complete answer names all six factors and shows awareness that they interact, not just lists them independently.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a 'risk-sharing' scheme design might be considered a genuinely distinct category alongside pure DB and pure DC.",
+          answer:
+            "A risk-sharing scheme genuinely splits investment and/or longevity risk between the sponsor and members, rather than allocating it entirely to one side as pure DB (sponsor bears risk) or pure DC (member bears risk) do.",
+          note: "This connects directly to the risk-sharing-as-genuine-third-category theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q3",
+      title: "Risks affecting a benefit arrangement",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List the five genuine risk categories named in the official SP4 syllabus as affecting a benefit arrangement.",
+          answer:
+            "Risks affecting the level and incidence of benefits, the level and incidence of contributions, the level and incidence of return on assets, the extent to which assets are exhausted during a member's lifetime, and the overall security of benefits.",
+          note: "A complete answer names all five categories precisely.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why 'the extent to which assets are exhausted during a member's lifetime' is a genuinely distinctive risk primarily relevant to DC arrangements, rather than DB schemes.",
+          answer:
+            "A DC member drawing down their own accumulated pot faces genuine longevity risk that their assets could run out before they die (unless converted to a guaranteed income), while a DB scheme's promised benefit is paid for as long as the member lives regardless of any underlying asset exhaustion, since the sponsor bears this risk in a DB arrangement.",
+          note: "A strong answer explicitly connects this risk to DC's individual-risk-bearing structure.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss which of these five risks can genuinely be mitigated through insurance products, and one genuine limitation of insurance-based mitigation.",
+          answer:
+            "Longevity risk (via annuity purchase or longevity swap) and death-in-service risk (via life insurance) can genuinely be mitigated through insurance products, transferring these specific risks to a specialist insurer. A genuine limitation is that this transfer introduces new counterparty/credit risk — the insurer must itself remain financially able to honour the transferred obligation — so insurance mitigation transforms rather than eliminates risk, and not every listed risk (e.g. some investment or inflation risks) has a readily available insurance solution.",
+          note: "A strong answer names at least one genuinely insurable risk AND explains the counterparty-risk limitation, not just asserts that insurance 'helps'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why 'overall security of benefits' should be assessed as a genuinely distinct, higher-level risk category beyond simply summing the other four listed risks.",
+          answer:
+            "Overall security genuinely depends on how these individual risks interact and are backed by the wider provider's financial strength, so a scheme could have well-managed individual risk components yet still face genuine overall security concerns if the sponsor backing those components is itself financially weak.",
+          note: "This connects directly to the holistic-versus-additive risk assessment theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q4",
+      title: "Accounting standards and member options",
+      modules: "Modules 7, 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the genuine purpose of accounting standards for pension and other benefit provision.",
+          answer:
+            "Accounting standards ensure a sponsoring employer's financial statements genuinely and consistently reflect the cost and obligations arising from its benefit arrangements, allowing stakeholders to assess the sponsor's true financial position on a comparable basis across different companies and reporting periods.",
+          note: "A strong answer explicitly names the comparability/transparency purpose.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the accounting basis used to value a sponsor's pension obligation might genuinely differ from the scheme's own funding basis.",
+          answer:
+            "Accounting standards aim for a genuinely consistent, comparable measurement basis across companies (often using a prescribed discount rate methodology), while the funding basis reflects the scheme's own specific investment strategy and prudence requirements, so the same underlying liability can genuinely be measured differently under each basis.",
+          note: "This connects directly to the multiple-reporting-bases theme developed elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A scheme is considering the terms it should offer members exercising a large transfer-value option. Discuss why setting these terms genuinely requires balancing member interests against the interests of the wider scheme.",
+          answer:
+            "Terms must consider the genuine risk and reward for all stakeholders affected, not just the member exercising the option — terms that are unfairly generous could create genuine anti-selection risk to the scheme (members with weaker health or lower expected longevity being more likely to transfer), while unfairly restrictive terms would fail to serve genuine member interests. This is why schemes often require independent financial advice before a large transfer, since giving up guaranteed benefits is a genuinely significant, often irreversible decision shifting investment and longevity risk onto the member.",
+          note: "A strong answer identifies the genuine anti-selection concern AND the member-protection rationale for advice requirements, not just one or the other.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a maturing DB scheme's investment strategy might need to change over time, even without any change in sponsor covenant.",
+          answer:
+            "As a scheme matures, its investment time horizon genuinely shortens and its tolerance for short-term volatility reduces, so investment strategy should evolve in response to this genuine change in the scheme's own liability profile over time, independent of any other change in circumstances.",
+          note: "This connects directly to the de-risking-as-scheme-matures theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q5",
+      title: "Calculating a defined benefit pension",
+      modules: "Modules 9, 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "A member of a final salary DB scheme retires with 25 years of pensionable service and a final salary of &pound;60,000. The scheme's accrual rate is 1/80ths. Calculate the member's annual pension.",
+          answer:
+            "Annual pension = &pound;60,000 &times; (1/80) &times; 25 = &pound;18,750 per annum.",
+          note: "Verified: 60000 × (1/80) × 25 = 18,750 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the model used to project this member's future benefit and the scheme's future income and outgo needs to incorporate assumptions about both membership movements and financial factors.",
+          answer:
+            "The model should project genuine future contribution income and benefit outgo cashflows over time, incorporating assumptions about membership movements (new entrants, leavers, retirements, deaths) and financial assumptions (investment returns, salary growth, inflation) that together determine the arrangement's projected financial position at future points in time.",
+          note: "A strong answer names both categories of assumption, not just one.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why the choice of discount rate assumption for valuing this member's pension requires genuine judgement, rather than a single universally correct rate.",
+          answer:
+            "The discount rate should reflect the expected return on the scheme's actual (or intended) investment strategy and its genuine level of prudence, so different schemes with different investment strategies and risk appetites can reasonably adopt different discount rates. It must also reflect the requirements for prudence and the objectives of stakeholders (trustees prioritising member security may prefer more prudent assumptions, while sponsors prioritising affordability may prefer less prudent ones), meaning discount rate setting is a genuine, multi-factor judgement, not a single mechanically correct calculation.",
+          note: "A strong answer connects the discount rate to BOTH investment strategy AND stakeholder-objective/prudence considerations.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why sensitivity analysis should be carried out alongside the pension calculation in part (i) if it were extended into a full funding projection.",
+          answer:
+            "Sensitivity analysis reveals how much the projected outcome genuinely changes when key assumptions (e.g. salary growth, investment return) are varied, showing which assumptions the result is most exposed to — without this, a single-point projection could give false confidence, since the projection is only as reliable as the assumptions used.",
+          note: "This connects directly to the sensitivity-analysis theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q6",
+      title: "Funding valuation and recovery plan",
+      modules: "Modules 10, 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A DB scheme's funding valuation assesses technical provisions of &pound;40,000,000, against scheme assets of &pound;34,000,000. Trustees and the sponsor agree a recovery plan to eliminate the shortfall via equal annual contributions over 6 years. Calculate (a) the funding shortfall, and (b) the required annual recovery contribution.",
+          answer:
+            "(a) Funding shortfall = &pound;40,000,000 &minus; &pound;34,000,000 = &pound;6,000,000. (b) Required annual recovery contribution = &pound;6,000,000 / 6 = &pound;1,000,000 per annum.",
+          note: "Verified: 40,000,000-34,000,000=6,000,000; 6,000,000/6=1,000,000 (Node-verified). This is a simplified calculation ignoring investment return on recovery contributions and discounting, for illustrative purposes.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the recovery plan length in part (i) involves a genuine trade-off between sponsor affordability and member security.",
+          answer:
+            "A longer recovery period spreads the additional contributions over more years, easing the sponsor's near-term cash burden, but leaves the scheme underfunded for longer, genuinely increasing the risk that adverse experience or sponsor distress could prevent the shortfall ever being fully addressed.",
+          note: "A strong answer explicitly frames this as a genuine trade-off, not a straightforward 'shorter is always better' conclusion.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why the actuary should consider the sponsor's covenant strength when advising on this recovery plan's length.",
+          answer:
+            "A weaker sponsor covenant may genuinely justify requiring a shorter recovery period or higher near-term contributions (since the scheme cannot rely on the sponsor's ongoing support with the same confidence), while a stronger covenant may reasonably support a longer, more gradual recovery plan.",
+          note: "This connects the numeric recovery plan calculation directly to the covenant material developed elsewhere in this course.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the data used to calculate the &pound;40,000,000 technical provisions figure must be genuinely accurate for this valuation to be reliable.",
+          answer:
+            "Since the valuation's genuine reliability depends directly on accurate membership data, scheme rules, and asset values, poor-quality or incomplete data can produce genuinely misleading valuation results regardless of how sound the calculation technique applied to that data otherwise is.",
+          note: "This connects directly to the data-as-foundational-input theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q7",
+      title: "Valuing a DC accumulation and comparing designs",
+      modules: "Modules 9, 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A DC scheme member contributes &pound;4,000 per annum (combined employer and employee contributions) for 20 years, with the fund assumed to grow at 4.5% per annum net investment return, contributions added at the end of each year. Using the recursive relationship F(y) = (F(y-1) + 4,000) &times; 1.045 with F(0) = 0, calculate the accumulated fund value at the end of year 20 (to the nearest &pound;100).",
+          answer:
+            "Applying the recursive growth formula for 20 years gives an accumulated fund value of approximately &pound;131,100 (&pound;131,132.55 to the nearest penny).",
+          note: "Verified via iterative calculation: F(20) = 131,132.55 (Node-verified). Full marks require showing the recursive/compounding approach, not just stating the final figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the 'extent to which assets are exhausted during a member's lifetime' risk applies to this DC member's accumulated fund but would not apply in the same way to a DB pension of equivalent starting value.",
+          answer:
+            "This DC member draws down their own accumulated pot in retirement, facing genuine longevity risk that the pot could run out before they die (unless converted to a guaranteed income), while a DB pension of equivalent value is paid for as long as the member lives regardless of the notional 'pot' being exhausted, since the sponsor bears this risk in a DB arrangement.",
+          note: "This connects directly to the DC-specific asset-exhaustion risk material developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why valuing guarantees or options that might be added to this DC arrangement (e.g. a guaranteed minimum fund value at retirement) would require genuinely different techniques from the straightforward accumulation calculation in part (i).",
+          answer:
+            "A guarantee only genuinely bites under certain, adverse future market outcomes, so its true cost depends on the full probability-weighted range of possible future market paths, requiring stochastic modelling or option-pricing techniques capturing this genuine range, unlike the single deterministic accumulation calculation used in part (i) which assumes one fixed growth rate throughout.",
+          note: "This connects directly to CM2's option-pricing material applied to a genuine pension guarantee-costing context.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why reasonableness checking should be applied to the result in part (i), beyond confirming the arithmetic is correct.",
+          answer:
+            "Reasonableness checking (e.g. comparing the result against a simplified approximation or prior similar calculations) provides a genuine, practical sanity check catching potential input or methodology errors that a technically correct but unchecked calculation might otherwise miss.",
+          note: "This connects directly to the reasonableness-checking-as-practical-safeguard theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q8",
+      title: "Discontinuance of a benefit arrangement",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "A DB scheme is discontinuing following its sponsor's insolvency. Explain why the 'rights and expectations of beneficiaries' must genuinely constrain the discontinuance terms offered, rather than being set purely for administrative convenience.",
+          answer:
+            "Beneficiaries have genuine, often legally-protected rights to accrued benefits, and their reasonable expectations (formed based on how the arrangement was originally communicated and administered) carry genuine weight in determining fair discontinuance treatment, meaning discontinuance terms cannot simply be set to minimise administrative cost regardless of beneficiary interests.",
+          note: "A strong answer explicitly frames rights and expectations as a genuine constraint, not a secondary consideration.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the level of available assets might genuinely constrain which discontinuance method is actually feasible for this scheme.",
+          answer:
+            "If the scheme's available assets are genuinely insufficient to fully fund the preferred discontinuance method (e.g. a full buy-out requiring complete funding), the provider may need to consider a more modest method, or accept a shortfall requiring some other resolution, making available assets a genuine, binding constraint on method selection, not an afterthought.",
+          note: "This connects directly to the asset-adequacy-as-constraint theme developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why the actuary would need genuine professional judgement, not just mechanical calculation, to determine how a genuinely limited pool of available assets should be allocated across different beneficiary groups (e.g. pensioners in payment versus deferred members).",
+          answer:
+            "Allocating a genuinely limited pool of assets fairly across different beneficiary groups involves genuine, difficult trade-offs with no single objectively correct answer, requiring the actuary's professional judgement to propose a fair, defensible allocation approach reflecting the arrangement's rules and beneficiaries' genuine relative positions, rather than a purely mechanical, formulaic split.",
+          note: "A strong answer explicitly names this as a genuine judgement call requiring professional reasoning, not a calculation with one correct numeric answer.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why discontinuance for a DC arrangement is typically more straightforward than for a DB arrangement.",
+          answer:
+            "A DC arrangement's discontinuance is typically more straightforward — the member's own accumulated pot value is genuinely clear and can usually be transferred or paid out directly — while a DB arrangement requires genuinely valuing complex, uncertain future benefit promises and determining how any funding shortfall across the whole membership should be allocated.",
+          note: "This connects directly to the DB-versus-DC discontinuance-complexity theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q9",
+      title: "Sources of surplus for a pension scheme",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A pension scheme's actual surplus for the year was &pound;410,000, against an expected surplus of &pound;300,000 under its original assumptions. Of the total variance, &pound;90,000 is attributed to favourable investment experience. Calculate the total variance and the resulting variance attributable to other (e.g. mortality) sources.",
+          answer:
+            "Total variance = &pound;410,000 &minus; &pound;300,000 = &pound;110,000. Variance attributable to other sources = &pound;110,000 &minus; &pound;90,000 (investment) = &pound;20,000.",
+          note: "Verified: 410,000-300,000=110,000; 110,000-90,000=20,000 (Node-verified).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the &pound;90,000 investment variance and the &pound;20,000 remaining variance in part (i) should be reported separately, rather than combined into a single 'total experience variance' figure.",
+          answer:
+            "Different experience sources can move in genuinely offsetting or reinforcing directions and require genuinely different management responses (e.g. an investment variance might prompt reviewing investment strategy, while a mortality variance might prompt reviewing longevity assumptions), so combining them would obscure which specific underlying driver actually requires attention.",
+          note: "A strong answer explains WHY separate reporting matters for management response, not just that decomposition is 'more detailed'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss the genuine factors that would affect how this &pound;110,000 surplus should be applied, once identified.",
+          answer:
+            "The scheme's own rules governing surplus use, the relative interests of different stakeholders (members might favour benefit improvements, while the sponsor might favour reduced future contributions), regulatory constraints on permissible surplus applications, and the scheme's ongoing funding risk appetite going forward — a genuine, multi-factor decision, not a single automatic outcome.",
+          note: "A strong answer names multiple genuine factors, reflecting the real complexity of surplus-application decisions.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how this module's source-of-surplus analysis relates to the Actuarial Control Cycle.",
+          answer:
+            "The Actuarial Control Cycle describes the recurring process of setting assumptions and a funding approach, monitoring actual experience against those assumptions, and feeding the resulting insight back into revised assumptions and approach — this surplus analysis is the monitoring step whose findings directly feed back into the cycle's next iteration of assumption-setting.",
+          note: "This connects the numeric decomposition directly to the Actuarial Control Cycle framework developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp4-q10",
+      title: "Solving a complex pension scheme issue",
+      modules: "Modules 3, 6, 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "A DB scheme's sponsor covenant has genuinely weakened, and the scheme is significantly underfunded. Discuss why this represents a genuinely complex issue requiring integrated judgement across multiple areas.",
+          answer:
+            "This situation genuinely involves competing considerations across multiple topic areas at once — reassessing sponsor covenant strength and its integration with funding and investment strategy, evaluating the genuine risks to overall benefit security given the weakened covenant, and considering whether discontinuance-related protections might eventually be needed if the sponsor's position deteriorates further — requiring integrated judgement across covenant, risk-management and discontinuance-planning material, not a single-dimension analysis.",
+          note: "A strong answer explicitly draws on covenant, risk, and discontinuance material together, reflecting the genuinely integrated nature of complex real-world pension issues.",
+        },
+        {
+          label: "(ii)",
+          command: "Recommend",
+          marks: 4,
+          question:
+            "Recommend a course of action for the trustees in response to this situation, with justification.",
+          answer:
+            "The trustees should reassess the appropriate funding and investment strategy in light of the weakened covenant (likely favouring a shorter recovery period and more cautious investment approach, per Module 3's integration principle), while also proactively engaging with the sponsor to understand its genuine prospects and negotiate any additional security available (e.g. contingent assets), rather than continuing with the scheme's existing funding and investment plan unchanged despite the genuinely altered circumstances.",
+          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the weakened covenant, not a generic response.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question:
+            "Explain why the trustees should specify how the sponsor's covenant will be monitored going forward, rather than treating this reassessment as a one-off exercise.",
+          answer:
+            "Sponsor financial health can continue to change over time, so ongoing covenant monitoring helps trustees identify any further genuine deterioration early enough to adjust funding or investment strategy again if needed, rather than relying on a single, now potentially outdated assessment.",
+          note: "This connects directly to the ongoing-monitoring theme developed throughout this course.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why solving this issue required drawing on multiple SP4 topic areas simultaneously, rather than a single technique in isolation.",
+          answer:
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on sponsor covenant assessment, funding and investment strategy, and risk management material together, reflecting how complex pension issues in practice typically require integrated judgement across several technical areas at once.",
+          note: "This connects directly to the integrated nature of complex problem-solving as tested throughout the later parts of this course.",
+        },
+      ],
+    },
+  ],
 };
