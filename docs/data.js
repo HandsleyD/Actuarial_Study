@@ -18513,4 +18513,156 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP5: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP5 all about?",
+        "description": "An orientation chapter explaining SP5's role as the Specialist Principles subject introducing the key principles of evaluating investments, and how it feeds into SP6 and SA7.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SP5, according to its official syllabus?",
+                "a": "Understand and apply the key principles of evaluating investments, including the appropriate selection and effective risk management of a portfolio of investments that meet the needs of a particular investor.",
+                "explain": "This is the genuine, official IFoA syllabus wording — worth noting the explicit emphasis on 'meet the needs of a particular investor', signalling that SP5's whole approach is genuinely investor-specific, not abstract investment theory in isolation."
+            },
+            {
+                "q": "Which four subjects does SP5 build directly on within the Associateship qualification, according to its official links?",
+                "a": "CB1 (Business Finance), CB2 (Business Economics), CM2 (Economic Modelling), and CP1 (Actuarial Practice) — these provide the underpinning technical concepts of asset/liability valuation, the nature of liabilities for different institutions, and basics of how economies work.",
+                "explain": "Worth recognising SP5's foundation as genuinely broader than SP1/SP2/SP4's typical two-subject links — it draws on business finance, economics, financial modelling, AND general actuarial practice together."
+            },
+            {
+                "q": "How does SP5 fit alongside SP6 (Investment and Derivatives Principles) and SA7 (Investment and Finance Advanced) as a genuine 'trio' of subjects, per the official syllabus?",
+                "a": "SP5 develops broad investment management concepts applied to meeting different investor needs; SP6 focuses in detail on the technical aspects of derivatives and their use; SA7 develops both sets of concepts further via more complex 'real world' problems at Specialist Advanced level.",
+                "explain": "Worth recognising this trio structure as genuinely distinctive to the investment specialism — unlike health/life/pensions (each a simple SP-to-SA pipeline), investment has a THIRD subject (SP6) providing deep technical derivative expertise alongside SP5's broader principles."
+            },
+            {
+                "q": "What are the eight official syllabus topic areas of SP5, and their approximate topic weightings?",
+                "a": "The economic, regulatory and legislative framework (10%); Specialist investment products (15%); Valuing investments (10%); Monitoring and managing investment risks (10%); Investor characteristics including behavioural finance and taxation (10%); Appropriate investment strategies (15%); Portfolio management and risk control (15%); and Analysing portfolio performance (15%).",
+                "explain": "Worth recognising SP5 as having a genuinely different structure from SP1/SP2/SP4's five-topic template — eight, more granular topic areas, none carrying a single dominant weighting the way SP1's 30% risk topic or SP4's 30% valuation topic does."
+            },
+            {
+                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP5?",
+                "a": "Approximately 10% knowledge, 60% application, and 30% higher order — a genuinely more APPLICATION-heavy split than SP1's, SP2's, and SP4's standard 25/50/25 pattern.",
+                "explain": "Worth recognising this as a genuinely distinctive feature of SP5 specifically — the syllabus places notably LESS weight on pure knowledge recall (10% versus 25%) and correspondingly MORE on application (60% versus 50%), reflecting investment work's genuinely more calculation- and scenario-heavy character."
+            },
+            {
+                "q": "Why might SP5's eight, more granular topic areas genuinely suit a subject covering investment management, compared with the five-topic template shared by SP1, SP2 and SP4?",
+                "a": "Investment management spans a genuinely wide range of distinct technical areas (products, valuation, risk, investor psychology, strategy, portfolio construction, performance measurement) that don't collapse as naturally into the product-design-risk-valuation-monitoring lifecycle shared by insurance and pensions subjects, so a more granular topic breakdown better reflects investment management's genuinely broader technical scope.",
+                "explain": "Worth recognising that different SP subjects' topic STRUCTURES genuinely reflect the underlying discipline's natural shape — insurance/pensions fit a product lifecycle, while investment management spans genuinely more parallel, less strictly sequential technical areas."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "The economic, regulatory and legislative framework",
+        "description": "Covers the commercial and economic environment influencing investment management, and the legislative and regulatory framework for investment management and the securities industry, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine commercial and economic influences does the official syllabus (objective 1.1) require candidates to understand?",
+                "a": "The role of central banks, the characteristics of the main investor classes, and the influence of government policy — three genuinely distinct forces shaping the wider economic environment investment management operates within.",
+                "explain": "Worth memorising this exact three-part list — it defines the genuine economic-framework scope SP5 expects candidates to understand before considering specific investment products or strategies."
+            },
+            {
+                "q": "Why might central bank actions (e.g. setting interest rates) genuinely affect investment markets across multiple asset classes simultaneously, rather than a single, isolated effect?",
+                "a": "Interest rate changes directly affect bond valuations (via discount rates), can influence equity valuations (via the relative attractiveness of bonds versus equities and via corporate borrowing costs), and affect currency values (via relative interest rate differentials), giving central bank policy a genuinely broad, cross-asset-class impact.",
+                "explain": "Worth recognising central bank policy as one of the single most consequential economic influences across this whole subject, with genuine knock-on effects rippling across essentially every asset class covered in later modules."
+            },
+            {
+                "q": "What genuine impacts on investment management practice does the official syllabus (objective 1.2) require the legislative and regulatory framework to be understood for?",
+                "a": "Corporate governance, the role of the listings authority, environmental/social/governance (ESG) factors, ethical issues, competition and fair trading controls, monopolies regulators, investment restrictions in investment agreements, provision of financial services, institutional investment practices, and the development of international accounting standards.",
+                "explain": "Worth memorising this exact, extensive list (objective 1.2) — it defines the genuine regulatory scope SP5 expects, spanning governance, market conduct, competition, and international standards together."
+            },
+            {
+                "q": "Why might 'investment restrictions in investment agreements' be listed as a genuinely distinct regulatory-framework consideration, separate from general securities market regulation?",
+                "a": "These restrictions arise from the specific, negotiated terms of an individual investment mandate or agreement (e.g. permitted asset classes, concentration limits) rather than from broader, market-wide statutory regulation, representing a genuinely more BESPOKE, contract-specific layer of constraint an investment manager must operate within, on top of general market regulation.",
+                "explain": "This directly previews this course's later portfolio-management and mandate material — worth recognising this as a genuinely CONTRACTUAL, not purely statutory, layer of constraint on investment management practice."
+            },
+            {
+                "q": "Why might the development of international accounting standards genuinely matter to investment managers, beyond being a purely corporate-reporting concern?",
+                "a": "Consistent international accounting standards allow investment managers to genuinely compare companies' financial statements across different jurisdictions on a like-for-like basis, supporting sound fundamental analysis (previewed in this course's later valuation module) that would otherwise be undermined by inconsistent, incomparable reporting practices.",
+                "explain": "This directly previews this course's later fundamental-analysis material — worth recognising accounting standards as a genuine ENABLING FRAMEWORK for cross-border investment analysis, not merely a corporate compliance topic disconnected from investment decision-making."
+            },
+            {
+                "q": "Why might ESG factors be considered part of the genuine REGULATORY framework, rather than purely a voluntary investment consideration, echoing SA7's material?",
+                "a": "Many jurisdictions now impose genuine regulatory disclosure and conduct requirements around ESG considerations (e.g. requiring investment managers to disclose their ESG approach), making ESG a genuinely regulatory, not purely voluntary or values-based, consideration in at least some markets.",
+                "explain": "This directly recalls SA7's ESG-disclosure-regulation material — worth recognising ESG as having genuinely migrated, in many jurisdictions, from a purely voluntary consideration to an increasingly regulated one."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Specialist financial instruments",
+        "description": "Covers the characteristics of specialist financial instruments available to investors, including private debt, hedge funds, infrastructure, and structured products, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine range of specialist financial instruments does the official syllabus (objective 2.1) require candidates to understand the characteristics of?",
+                "a": "Financial instruments for short-term lending/borrowing, corporate debt, credit derivatives, swaps and swaptions, private debt, asset-backed securities/securitisation, venture capital, hedge funds, currency, infrastructure, commodities, insurance-linked securities, structured products, and new ways of investing in old asset classes.",
+                "explain": "Worth memorising this exact, extensive list — it defines the genuine breadth of specialist product knowledge SP5 expects, spanning debt, derivative, alternative, and structured product categories together."
+            },
+            {
+                "q": "What is 'private debt', and why might it offer genuinely different characteristics from publicly-traded corporate debt?",
+                "a": "Private debt involves lending directly to companies outside public bond markets, typically offering investors a genuine illiquidity premium (higher expected return compensating for the inability to easily sell the position) and more bespoke, negotiated loan terms than standardised public bonds.",
+                "explain": "This directly recalls SA7's illiquid-alternative-asset material — worth recognising private debt as one of the clearest examples of the general illiquidity-premium principle applying to a specific, named asset class."
+            },
+            {
+                "q": "What are 'insurance-linked securities' (ILS), and why might they offer investors genuinely valuable diversification?",
+                "a": "ILS (e.g. catastrophe bonds) transfer insurance-related risk (e.g. natural catastrophe risk) to capital markets investors in exchange for a return, offering genuinely valuable diversification since insurance losses are typically driven by genuinely different underlying factors (weather, seismic activity) than traditional financial market risk factors.",
+                "explain": "This directly recalls SA3's catastrophe-modelling material — worth recognising ILS as a genuine BRIDGE between the insurance and investment worlds, transferring insurance risk to investment markets specifically because of its genuinely low correlation with traditional asset classes."
+            },
+            {
+                "q": "What is a 'structured product', and why might it require particularly careful analysis by an investor before purchase?",
+                "a": "A structured product combines a traditional investment (e.g. a bond) with a derivative overlay to create a genuinely customised risk/return payoff (e.g. capital protection with equity-linked upside); careful analysis is needed because the genuine underlying risk and cost structure can be less transparent than a simple, standalone investment, potentially embedding fees or risks not immediately obvious to the investor.",
+                "explain": "Worth recognising structured products as combining GENUINE customisation value with a genuine transparency risk — the complexity that enables tailored payoffs can also obscure the product's true underlying cost and risk from an insufficiently careful investor."
+            },
+            {
+                "q": "Why might 'new ways of investing in old asset classes' be explicitly named as its own category, rather than assuming traditional asset classes require no further study?",
+                "a": "Even well-established asset classes (e.g. equities, bonds) continue to see genuinely new access mechanisms emerge (e.g. exchange-traded funds, direct indexing, fractional ownership platforms), so understanding an asset class's fundamental characteristics alone is insufficient without also understanding the genuinely evolving ways investors can now access and gain exposure to it.",
+                "explain": "Worth recognising this category as reflecting the genuinely EVOLVING nature of even traditional investment markets — access mechanisms and market structure continue to develop even where the underlying asset class itself is long-established."
+            },
+            {
+                "q": "Why might understanding this module's full range of specialist instruments be genuinely important even for an actuary who will never personally trade many of them directly?",
+                "a": "An actuary advising an institutional investor on appropriate investment strategy needs genuine awareness of the full range of instruments potentially available to construct a well-diversified, suitable portfolio, even if actual trading execution is delegated to specialist portfolio managers, so this knowledge directly supports sound STRATEGIC advice rather than requiring personal trading expertise.",
+                "explain": "This directly previews this course's later investment-strategy module — worth recognising product knowledge as supporting STRATEGIC ADVISORY capability, not necessarily hands-on trading skill."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Derivative contracts",
+        "description": "Covers the main types and features of derivative contracts, how they are traded, their payoffs, and how they can be used by an investment manager, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine understanding does the official syllabus (objective 2.2) require of derivative contracts?",
+                "a": "How derivative contracts are traded, their genuine payoff structures, and how they can be used by an investment manager — three genuinely distinct dimensions of derivative understanding, moving from market mechanics through to practical portfolio application.",
+                "explain": "Worth recognising this three-part structure as moving from HOW derivatives work MECHANICALLY (trading) to WHAT they pay out (payoffs) to WHY a manager would actually use them (application) — a genuinely logical progression for building derivative understanding."
+            },
+            {
+                "q": "Why might derivatives be traded either on an exchange or over-the-counter (OTC), and what genuine trade-off does this choice involve?",
+                "a": "Exchange-traded derivatives offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC derivatives offer genuinely greater flexibility to tailor contract terms to a specific investor's precise needs, at the cost of typically greater counterparty risk and reduced price transparency.",
+                "explain": "This directly recalls SA7's exchange-versus-OTC material — worth recognising this as a genuine trade-off between STANDARDISATION/SAFETY and CUSTOMISATION/FLEXIBILITY, not one venue being universally superior."
+            },
+            {
+                "q": "How might an investment manager genuinely use derivatives for HEDGING purposes, rather than for speculative exposure?",
+                "a": "A manager can use derivatives (e.g. put options, futures) to offset or reduce an existing, unwanted risk exposure in the underlying portfolio (e.g. hedging equity market risk without needing to sell the underlying equity holdings directly), achieving genuine risk reduction efficiently without disrupting the portfolio's core holdings.",
+                "explain": "This directly recalls CM2's and SA2's derivative-hedging material — worth recognising hedging as achieving genuine RISK REDUCTION efficiently, often more so than physically restructuring the underlying portfolio would."
+            },
+            {
+                "q": "How might an investment manager genuinely use derivatives for EFFICIENT PORTFOLIO MANAGEMENT, distinct from hedging?",
+                "a": "Derivatives can allow a manager to gain or adjust market exposure quickly and cost-effectively (e.g. using futures to quickly increase equity market exposure ahead of executing underlying stock purchases), providing genuine implementation efficiency rather than primarily reducing an existing risk.",
+                "explain": "Worth recognising this as a genuinely DIFFERENT use case from hedging — here, derivatives provide efficient MARKET ACCESS and IMPLEMENTATION SPEED, rather than reducing an existing unwanted exposure."
+            },
+            {
+                "q": "Why might understanding a derivative's genuine payoff structure (e.g. an option's asymmetric payoff versus a future's linear payoff) be essential before an investment manager decides to use it?",
+                "a": "Different derivatives provide genuinely different risk/return profiles under different market outcomes — an option provides asymmetric protection at the cost of an upfront premium, while a future provides symmetric, linear exposure with no upfront premium but genuine two-way risk — so choosing the wrong instrument for a given objective could produce a genuinely unintended risk profile.",
+                "explain": "This directly recalls CM2's option-versus-forward payoff material — worth recognising payoff-structure understanding as essential to selecting the genuinely RIGHT tool for a specific hedging or exposure objective, not simply 'a derivative' in the abstract."
+            },
+            {
+                "q": "How does this module's derivative material connect back to Module 3's specialist-instruments material?",
+                "a": "Module 3 introduced credit derivatives and swaps/swaptions as named specialist instruments among many others; this module develops the genuine underlying MECHANICS (trading, payoffs, uses) common to derivatives generally, providing the technical foundation needed to properly understand those specific derivative instruments named in Module 3.",
+                "explain": "This closing card ties this module back to Module 3 explicitly — worth recognising this module's general derivative mechanics as the technical FOUNDATION underlying the SPECIFIC derivative instruments Module 3 already named."
+            }
+        ]
+    }
+
+    ]
 };
