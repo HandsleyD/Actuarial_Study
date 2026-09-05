@@ -9196,4 +9196,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP7: [
+    {
+      id: "sp7-q1",
+      title: "The underwriting cycle and long-tail business",
+      modules: "Modules 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what the underwriting cycle is, and why historical claims experience must be interpreted in light of which cycle phase it was written in.",
+          answer:
+            "The underwriting cycle describes the genuine, recurring pattern of insurance market conditions moving between 'soft' phases (intense competition, lower premium rates, looser terms) and 'hard' phases (reduced competition, higher premium rates, tighter terms), meaning historical claims experience must genuinely be interpreted in light of WHICH cycle phase it was written in, not treated as a uniform, comparable series across time.",
+          note: "A strong answer explains both cycle phases and why this genuinely affects data interpretation, not just names the concept.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the genuine difference between an 'occurrence' and a 'claims-made' policy wording, and why this distinction directly affects reserving.",
+          answer:
+            "An occurrence policy covers claims arising from an event that occurred during the policy period, regardless of when the claim is eventually reported, while a claims-made policy covers claims reported during the policy period, regardless of when the underlying event occurred; this genuinely affects which policy period bears responsibility for a given claim, directly shaping how reserves should be allocated across accident/underwriting years.",
+          note: "A strong answer explains the reserving implication, not just the definitional difference.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a latent claim represents one of the genuinely most challenging reserving problems in general insurance, and why claims-made wordings might reduce an insurer's exposure to this challenge.",
+          answer:
+            "A latent claim arises from an event or exposure that may not be reported until many years or decades later, meaning standard reserving techniques relying on a reasonably short, observable reporting pattern are poorly suited to estimating these claims' eventual number and cost, requiring genuinely different, more judgement-based reserving approaches. Since a claims-made policy only covers claims reported during its own policy period (plus any extended reporting period), the insurer's exposure for that policy year is genuinely capped, unlike occurrence wordings where claims from events occurring in a given year could still emerge decades later.",
+          note: "A strong answer explains both the genuine latent-claims challenge AND the claims-made mitigation mechanism, not just one.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why competitive pressure during a soft market phase might create reserving risk that only becomes apparent years later.",
+          answer:
+            "Competitive pressure during a soft market can genuinely lead to looser underwriting standards or broader policy terms being accepted to retain market share, potentially creating genuinely worse-than-historical claims experience on business written during that period, a risk that may not become fully apparent until claims from that period mature years later.",
+          note: "This connects directly to the delayed-reserving-risk-from-soft-market-business theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q2",
+      title: "Reserving uncertainty and model risk",
+      modules: "Module 4",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 3,
+          question:
+            "Distinguish between systematic and independent reserving uncertainty.",
+          answer:
+            "Systematic uncertainty reflects genuine, correlated sources of error affecting an insurer's whole reserving estimate simultaneously, while independent uncertainty reflects genuine, uncorrelated random variation specific to individual claims or accident years that would genuinely average out to some degree across a larger, more diversified book.",
+          note: "A complete answer distinguishes both types clearly, not just names them.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why systematic reserving uncertainty is genuinely more concerning to an insurer's overall solvency than independent uncertainty of a similar apparent magnitude.",
+          answer:
+            "Since systematic uncertainty affects the whole reserve estimate in a correlated way, it cannot be diversified away across a larger book of business, meaning it directly translates into genuine, undiluted risk to the insurer's overall reserve adequacy, unlike independent uncertainty which genuinely reduces in relative significance as the book of business grows larger.",
+          note: "A strong answer explains the diversification mechanism explicitly.",
+        },
+        {
+          label: "(iii)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between model risk and parameter risk in general insurance reserving, with an example of each.",
+          answer:
+            "Model risk is the genuine risk that the chosen reserving method (e.g. chain ladder versus Bornhuetter-Ferguson) is itself inappropriate for the specific data or situation — for example, applying a chain ladder to an immature accident year where development factors are highly unreliable. Parameter risk is the genuine risk that the specific parameter values used within an otherwise appropriately-chosen method are estimated inaccurately — for example, a genuinely mis-estimated development factor within a correctly-chosen chain ladder approach.",
+          note: "A complete answer distinguishes both risk types AND provides a genuine, distinct example of each.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why a sound reserving process requires an explicit risk appetite, rather than simply aiming to minimise uncertainty as much as possible.",
+          answer:
+            "Since reserving uncertainty can never genuinely be eliminated entirely, a sound reserving process requires an explicit, deliberate decision about how much residual uncertainty and what level of prudence is genuinely acceptable, balancing the cost of excessive prudence against the risk of inadequate reserves.",
+          note: "This connects directly to the risk-appetite-as-deliberate-balance theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q3",
+      title: "The chain ladder method",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "An accident year's cumulative claims stand at &pound;4,000,000 at the latest observed development period. The remaining development factors to ultimate for this year are 1.50, 1.20 and 1.05 (applied successively). Calculate the estimated ultimate claims and the resulting chain ladder reserve for this accident year.",
+          answer:
+            "Combined development factor to ultimate = 1.50 &times; 1.20 &times; 1.05 = 1.89. Estimated ultimate claims = &pound;4,000,000 &times; 1.89 = &pound;7,560,000. Chain ladder reserve = &pound;7,560,000 &minus; &pound;4,000,000 = &pound;3,560,000.",
+          note: "Verified: 1.5×1.2×1.05=1.89; 4,000,000×1.89=7,560,000; reserve=3,560,000 (Node-verified). Marks are typically split across the combined development factor and the final reserve figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the genuine core assumption underlying the chain ladder calculation in part (i).",
+          answer:
+            "The chain ladder genuinely assumes that claims development patterns (the proportional relationship between cumulative claims at successive development periods) are consistent across different accident years, even though the absolute level of claims may genuinely differ between years.",
+          note: "A strong answer explicitly distinguishes consistent development PATTERN from consistent claims LEVEL.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why this chain ladder estimate might be genuinely less reliable if this accident year is the most recent, least mature year in the triangle.",
+          answer:
+            "The most recent accident years have genuinely fewer development periods of observed data, meaning their projection to ultimate relies on applying larger development factors to a genuinely smaller, less mature base of observed claims, amplifying the genuine impact of any random fluctuation or estimation error in those later development factors.",
+          note: "This connects the numeric calculation directly to the chain ladder's known limitation for immature years.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why the underwriting cycle could genuinely threaten the reliability of the development factors used in part (i).",
+          answer:
+            "If underwriting conditions have genuinely shifted materially between accident years (e.g. tighter terms in a hard market altering claims development speed), the historical development pattern used to derive these factors may no longer genuinely represent how this specific, differently-underwritten year will develop.",
+          note: "This connects directly to the underwriting-cycle-threatens-chain-ladder-assumptions theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q4",
+      title: "The Bornhuetter-Ferguson method",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "For the same accident year as the previous question (cumulative claims of &pound;4,000,000 at latest development, combined development factor to ultimate of 1.89), an independent a priori estimate of ultimate claims is &pound;5,000,000. Using the Bornhuetter-Ferguson method, calculate the percentage developed, the BF reserve, and the resulting BF estimate of ultimate claims.",
+          answer:
+            "Percentage developed = 1 / 1.89 = 52.91%. BF reserve = a priori ultimate &times; (1 &minus; % developed) = &pound;5,000,000 &times; (1 &minus; 0.5291) = &pound;5,000,000 &times; 0.4709 = &pound;2,354,497. BF ultimate = &pound;4,000,000 + &pound;2,354,497 = &pound;6,354,497 (to the nearest pound).",
+          note: "Verified: pctDeveloped=52.91%; bfReserve=2,354,497.35; bfUltimate=6,354,497.35 (Node-verified). Marks are typically split across the percentage-developed calculation, the BF reserve, and the final BF ultimate.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the chain ladder ultimate calculated in the previous question (&pound;7,560,000) differs from the Bornhuetter-Ferguson ultimate calculated in part (i) (&pound;6,354,497), and which is likely to be more reliable for this accident year.",
+          answer:
+            "The chain ladder relies purely on this accident year's own claims-based projection (applying development factors to observed claims), while BF blends this with an independent a priori estimate, weighting the a priori estimate more heavily for immature years where chain-ladder-implied development factors are least reliable. Since a chain ladder ultimate derived from applying a genuinely large development factor (1.89) to a relatively immature year is more exposed to estimation error, the BF estimate, which dampens this exposure by blending in the a priori view, is likely to be more reliable here.",
+          note: "A strong answer explains WHY the figures differ (the blending mechanism) AND makes a genuine, justified judgement about relative reliability.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why the quality of the &pound;5,000,000 a priori estimate used in part (i) matters more for this accident year than it would for a much more mature accident year.",
+          answer:
+            "Since BF weights the a priori estimate most heavily precisely for immature years, a genuinely poor a priori estimate would have its greatest distorting effect on exactly this kind of immature year, while for a mature year (where the chain-ladder-based component dominates the blend) a poor a priori estimate would have comparatively little effect on the final result.",
+          note: "This connects the numeric example directly to BF's own weighting-mechanism logic.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 1,
+          question:
+            "Comment on how the Cape Cod method would genuinely derive its a priori estimate differently from the Bornhuetter-Ferguson approach used in part (i).",
+          answer:
+            "Rather than using an externally-supplied a priori estimate (as BF does), the Cape Cod method derives its a priori loss ratio directly from the insurer's own historical claims and premium data, reducing reliance on a purely external assumption.",
+          note: "This connects directly to the Cape Cod-as-hybrid-method material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q5",
+      title: "IBNR, IBNER and claims inflation",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between IBNR and IBNER, and explain why these represent two genuinely different reserving gaps.",
+          answer:
+            "IBNR stands for 'Incurred But Not Reported' — claims that have genuinely already occurred but which the insurer has not yet been notified of, representing a genuine, entirely unknown future liability. IBNER stands for 'Incurred But Not Enough Reported' (or 'Reserved') — claims the insurer genuinely already knows about and has an existing case reserve for, but where that existing reserve may prove genuinely insufficient as the claim continues to develop. IBNR concerns claims the insurer doesn't yet KNOW about at all, while IBNER concerns claims already known but potentially under-RESERVED.",
+          note: "A complete answer distinguishes both concepts precisely, not just expands the acronyms.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what a tail factor is, and why it might be particularly important for a genuinely long-tail line of business.",
+          answer:
+            "A tail factor extends a chain-ladder-style projection beyond the last development period actually observed in the data, capturing genuine, further expected claims development that the triangle's own limited historical data does not yet show, particularly important for genuinely long-tail lines where claims can continue developing for many years beyond the observed data window.",
+          note: "This connects directly to the long-tail-business material developed elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the average cost per claim (ACPC) method's decomposition into frequency and severity might reveal insight the chain ladder's aggregate approach could miss.",
+          answer:
+            "Frequency and severity can genuinely be driven by different underlying factors and can move in genuinely different directions (e.g. claim frequency falling while average severity rises due to claims inflation), so decomposing them allows a reserving actuary to genuinely investigate and understand each driver separately, rather than seeing only their combined, potentially offsetting net effect in an aggregate figure.",
+          note: "A strong answer gives a genuine, concrete example of frequency and severity moving in offsetting directions.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why claims inflation must be explicitly and separately incorporated into reserving projections, rather than assumed to be implicitly captured within standard development factors.",
+          answer:
+            "If claims inflation genuinely varies over time, development factors calculated from historical periods with different inflation experience may not genuinely reflect the inflation rate expected to apply to future claims payments, requiring explicit, separate treatment rather than assuming historical development factors implicitly and correctly capture future inflation trends.",
+          note: "This connects directly to the explicit-inflation-treatment theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q6",
+      title: "Stochastic reserving: Mack and ODP bootstrap",
+      modules: "Modules 9, 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the genuine relationship between the Mack model's reserve estimates and the standard chain ladder's reserve estimates.",
+          answer:
+            "The Mack model genuinely reproduces the same central reserve estimates as the standard chain ladder method, while additionally providing a genuine estimate of the standard error (and hence a measure of uncertainty) around those chain ladder estimates, without requiring a full distributional assumption for the underlying claims.",
+          note: "A strong answer explains the additive (not replacing) relationship between Mack and the standard chain ladder.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what 'over-dispersion' means in the context of the ODP bootstrap model, and why it is genuinely necessary.",
+          answer:
+            "A standard Poisson distribution genuinely assumes its variance equals its mean, but real claims data typically exhibits greater variance than a standard Poisson would predict (genuine over-dispersion), so the ODP model introduces an additional scaling parameter allowing variance to exceed the mean, providing a genuinely more realistic fit to actual claims data's typically greater-than-Poisson variability.",
+          note: "A strong answer explains WHY over-dispersion is needed (real data's greater variability), not just defines the term.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss how bootstrapping is applied within the ODP bootstrap reserving method, and why this method might be considered genuinely more flexible than the Mack model.",
+          answer:
+            "Bootstrapping genuinely resamples (with replacement) from residuals of an initial ODP model fit to the claims triangle to generate many simulated alternative 'pseudo-triangles', each producing its own chain-ladder-style reserve estimate; repeating this process many times builds up a genuine, empirical distribution of possible reserve outcomes. This is genuinely more flexible than Mack because it directly provides percentiles and full distributional shape information, while Mack's analytical approach genuinely provides only the mean and variance without a full distributional picture.",
+          note: "A strong answer explains both the genuine bootstrapping mechanism AND the flexibility comparison against Mack.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why residuals from the initial ODP model fit might require adjustment before being used in the bootstrap resampling process.",
+          answer:
+            "Raw residuals from a fitted model can genuinely understate the true underlying variability, since fitting a model to data inherently uses up some of that variability in estimating the model's own parameters, so an adjustment helps ensure the bootstrap resampling process produces a genuinely realistic, not artificially narrow, range of simulated outcomes.",
+          note: "This connects directly to the residual-adjustment-for-degrees-of-freedom theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q7",
+      title: "Internal models and the standard formula",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the genuine trade-off a general insurer faces when deciding between the Solvency II standard formula and developing an internal capital model.",
+          answer:
+            "An internal model can better reflect the insurer's own genuine risk profile than a generic standard formula calibrated across the whole industry, potentially producing a more risk-sensitive (and possibly lower) capital requirement, though this requires regulatory approval and significant development investment.",
+          note: "A strong answer names both sides of the trade-off (risk-sensitivity benefit versus development cost).",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the standard formula's genuine, industry-wide calibration might be particularly poorly suited to capturing a specific general insurer's catastrophe risk exposure.",
+          answer:
+            "The standard formula's catastrophe risk module reflects genuinely generic, industry-average assumptions about catastrophe exposure, while a specific insurer's actual geographic concentration and specific perils covered can genuinely differ materially from this industry average, making an internal model's more tailored catastrophe assessment particularly valuable for insurers with genuinely unusual or concentrated catastrophe exposure profiles.",
+          note: "This connects directly to the catastrophe-risk-as-clearest-example theme developed elsewhere in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a smaller general insurer might reasonably choose to remain on the standard formula, and what a 'partial internal model' might offer as a middle ground.",
+          answer:
+            "Developing and maintaining an internal model requires genuinely significant actuarial and technical resources, so for a smaller insurer whose risk profile does not diverge dramatically from industry-average assumptions, the genuine cost of internal model development may reasonably outweigh the potential benefit. A partial internal model allows an insurer to develop genuinely tailored internal modelling for specific risk modules where its own risk profile most diverges from standard formula assumptions (e.g. catastrophe risk), while continuing to use the standard formula for other, less distinctive risk modules, balancing genuine development effort against where tailored modelling adds most value.",
+          note: "A strong answer explains both the proportionality rationale for staying on the standard formula AND the genuine middle-ground value of a partial internal model.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an internal model requires genuine, ongoing validation and governance, beyond the initial regulatory approval process.",
+          answer:
+            "An internal model's genuine reliability depends on its underlying assumptions and calibration remaining appropriate over time, so ongoing validation and sound governance around model changes are genuinely essential, since a model's genuine value depends on ongoing maintenance, not simply on achieving initial regulatory approval.",
+          note: "This connects directly to the ongoing-model-validation theme developed elsewhere in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q8",
+      title: "Diversification benefit and capital allocation",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "An insurer's two business lines have standalone capital requirements of &pound;8,000,000 (Line A) and &pound;6,000,000 (Line B), with an assumed correlation of 0.4 between them. Using the formula $\\sqrt{C_A^2 + C_B^2 + 2\\rho C_A C_B}$, calculate the diversified aggregate capital requirement and the resulting diversification benefit.",
+          answer:
+            "Diversified capital = $\\sqrt{8,000,000^2 + 6,000,000^2 + 2 \\times 0.4 \\times 8,000,000 \\times 6,000,000} = \\sqrt{64,000,000,000,000 + 36,000,000,000,000 + 38,400,000,000,000} = \\sqrt{138,400,000,000,000} \\approx £11,764,353$. Diversification benefit = (£8,000,000 + £6,000,000) &minus; £11,764,353 = £2,235,647 (to the nearest pound).",
+          note: "Verified: diversifiedCap≈11,764,352.94; benefit≈2,235,647.06 (Node-verified). Marks are typically split across the diversified capital calculation and the final benefit figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the diversified capital requirement calculated in part (i) is genuinely lower than the simple sum of the two lines' standalone capital requirements.",
+          answer:
+            "Since the two business lines are not genuinely perfectly correlated (correlation of 0.4, less than 1), adverse outcomes across both lines simultaneously at their individual worst-case levels are genuinely less likely than each line's own individual worst case occurring in isolation, so the insurer's genuine aggregate capital requirement is typically lower than the simple sum of each line's standalone capital requirement.",
+          note: "A strong answer explicitly connects the diversification benefit to the correlation being less than 1.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss why a copula might be used instead of a simple correlation coefficient when aggregating these two risk sources in a genuine capital model.",
+          answer:
+            "A copula genuinely models the dependence structure between multiple risk sources separately from each variable's own individual distribution, allowing a capital model to genuinely combine risks with realistic, potentially non-linear dependence patterns (including genuine tail dependence, where risks become more correlated in extreme scenarios) rather than assuming a simple, constant linear correlation throughout.",
+          note: "This connects the numeric correlation-based example directly to the more sophisticated copula material developed in this course.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why allocating the £11,764,353 diversified capital back to Lines A and B using the Euler principle would be more theoretically sound than a simple proportional allocation based on standalone capital.",
+          answer:
+            "The Euler principle allocates capital based on each risk source's genuine marginal contribution to the total, diversified capital requirement, while simple proportional allocation ignores these genuine interaction effects, potentially over- or under-allocating capital to a business line whose risk is more or less correlated with the rest of the portfolio than its standalone size alone would suggest.",
+          note: "This connects the numeric diversification example directly to the Euler-allocation-principle material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q9",
+      title: "Value at Risk and Tail Value at Risk",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "An insurer's simulated aggregate loss distribution (5 equally likely outcomes, sorted ascending) is: £100,000, £200,000, £300,000, £400,000, £1,000,000. Calculate the 80% Value at Risk (VaR) and the 80% Tail Value at Risk (TVaR).",
+          answer:
+            "80% VaR is the 4th of 5 equally-likely, sorted outcomes = £400,000. 80% TVaR is the average of all outcomes at or above the VaR threshold: (£400,000 + £1,000,000) / 2 = £700,000.",
+          note: "Verified: VaR80=400,000; TVaR80=700,000 (Node-verified). This is a simplified discrete illustration; marks are typically split across correctly identifying VaR and correctly averaging the tail outcomes for TVaR.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the TVaR figure calculated in part (i) reveals genuine information the VaR figure alone does not.",
+          answer:
+            "VaR alone says nothing about how much worse losses could be beyond its threshold — here, VaR of £400,000 gives no indication that the worst outcome is actually £1,000,000. TVaR genuinely captures the average severity of losses beyond the threshold, directly revealing that the genuine tail risk (£700,000 average, driven by the £1,000,000 outcome) is materially worse than the £400,000 VaR figure alone would suggest.",
+          note: "A strong answer uses the specific numbers from part (i) to illustrate the genuine information gap VaR leaves.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why TVaR is considered a genuinely more 'coherent' risk measure than VaR.",
+          answer:
+            "TVaR genuinely satisfies the mathematical property of sub-additivity (the risk measure of a combined portfolio is never greater than the sum of its individual components' risk measures, correctly reflecting genuine diversification benefit), while VaR can, in certain circumstances, genuinely violate this property, producing the counter-intuitive result that diversification appears to increase measured risk under VaR.",
+          note: "A strong answer names sub-additivity specifically as the technical property distinguishing TVaR's coherence.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how Solvency II's SCR calculation genuinely applies the VaR concept.",
+          answer:
+            "Solvency II's SCR is genuinely calibrated to a 99.5% VaR over a one-year horizon, meaning the SCR represents the capital genuinely needed so that the insurer's basic own funds would remain non-negative with 99.5% confidence over the following year.",
+          note: "This connects directly to the SCR's precise VaR calibration developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp7-q10",
+      title: "Reinsurance modelling, counterparty risk and discounting",
+      modules: "Modules 15, 16",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why modelling a non-proportional (excess of loss) reinsurance treaty's recoveries genuinely requires understanding the full claims severity distribution, not just the aggregate claims total.",
+          answer:
+            "Since excess of loss recoveries depend on whether individual claims (or aggregate claims from a specific event) exceed a specified threshold, an actuary must genuinely understand how claims are distributed across different sizes to estimate how much of the total claims will genuinely fall above versus below the treaty's attachment point, information a simple aggregate total alone cannot provide.",
+          note: "A strong answer explains WHY the distribution (not just the total) is needed, connecting to the attachment-point mechanism.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what counterparty default risk means for a general insurer's reinsurance programme, and why it could directly affect the insurer's genuine net reserve position.",
+          answer:
+            "Counterparty default risk is the genuine risk that a reinsurer fails to pay recoveries the ceding insurer is genuinely entitled to, meaning the insurer's net reserve position (assuming full recovery) could understate its true potential liability if a reinsurer's own financial weakness is not adequately reflected, requiring a genuine allowance for reinsurer credit risk when reserving on a net basis.",
+          note: "This connects directly to the reserving-level impact of reinsurer counterparty risk developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a general insurer might genuinely discount its technical provisions to reflect the time value of money, and why the choice of discount rate requires genuine care.",
+          answer:
+            "Since claims (particularly for long-tail lines) may genuinely not be paid for years after the reserve is established, discounting reflects the genuine economic reality that a liability payable in the future is worth less today than its nominal, undiscounted amount. The discount rate requires genuine care because an excessively high rate would understate technical provisions, potentially masking genuine reserve inadequacy, so the rate should genuinely reflect the actual investment return the insurer can reliably expect to earn on assets backing these liabilities, rather than an arbitrary or overly optimistic assumption.",
+          note: "A strong answer explains both WHY discounting is applied AND why the rate choice requires genuine prudence.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an insurer's investment strategy for assets backing its technical provisions should genuinely reflect the specific duration and certainty of the underlying liabilities.",
+          answer:
+            "Since different lines of business carry genuinely different claim payment timing and predictability (short-tail versus long-tail), investment strategy should genuinely match assets to the specific duration and liquidity needs of the liabilities being backed, rather than applying a single, undifferentiated investment approach across an insurer's whole reserve base.",
+          note: "This connects directly to CM2's and SA3's asset-liability matching material.",
+        },
+      ],
+    },
+  ],
 };
