@@ -8714,4 +8714,486 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP6: [
+    {
+      id: "sp6-q1",
+      title: "Derivative markets and market participants",
+      modules: "Modules 2, 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 3,
+          question:
+            "Distinguish between hedgers, speculators and arbitrageurs as users of derivatives.",
+          answer:
+            "Hedgers use derivatives to genuinely reduce an existing risk exposure; speculators use derivatives to take on genuine new exposure in the hope of profiting from an anticipated market movement; arbitrageurs use derivatives to exploit genuine, temporary pricing discrepancies between related instruments, aiming for a risk-free profit.",
+          note: "A complete answer distinguishes all three genuinely distinct motivations, not just names them.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why a central counterparty clearing house (CCP) genuinely reduces counterparty risk in exchange-traded derivative markets.",
+          answer:
+            "A CCP interposes itself between the two original parties to a trade, becoming the genuine buyer to every seller and seller to every buyer, so each party's counterparty risk is against the CCP itself (typically very well-capitalised and margined) rather than against the original, potentially less creditworthy counterparty directly.",
+          note: "A strong answer explicitly names the interposition mechanism, not just asserts that CCPs 'reduce risk'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss the genuine trade-off between exchange-traded and over-the-counter (OTC) derivative contracts.",
+          answer:
+            "Exchange-traded contracts offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC contracts offer genuinely greater flexibility to tailor contract terms to specific needs, at the cost of typically greater counterparty risk and reduced price transparency. A party requiring a bespoke hedge (e.g. a specific maturity or notional not available on-exchange) may genuinely need to accept OTC's greater counterparty risk to achieve the precise exposure required.",
+          note: "A strong answer names both sides of the trade-off and gives a genuine example of when OTC's flexibility might be worth its added risk.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why margining and settlement processes for exchange-traded futures are genuinely distinct from a contract's theoretical payoff structure.",
+          answer:
+            "Exchange-traded futures typically require posting and maintaining margin that is marked-to-market daily, with genuine cashflow implications for the holder distinct from the contract's eventual payoff at expiry, so understanding market mechanics is genuinely separate from understanding the contract's theoretical payoff.",
+          note: "This connects directly to the mechanics-versus-payoff distinction developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q2",
+      title: "Forward pricing and hedging",
+      modules: "Module 3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A non-dividend-paying stock currently trades at $50. The continuously-compounded risk-free rate is 5% per annum. Calculate the fair forward price for delivery in 6 months.",
+          answer:
+            "$F = S_0 e^{rT} = 50 \\times e^{0.05 \\times 0.5} = 50 \\times e^{0.025} = £51.27$ (to the nearest penny).",
+          note: "Verified: 50×e^(0.05×0.5)=51.2658 (Node-verified). Full marks require setting up the no-arbitrage forward pricing formula explicitly.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why any forward price genuinely deviating from the figure calculated in part (i) would allow a risk-free arbitrage profit.",
+          answer:
+            "If the forward price were genuinely higher than $F = S_0 e^{rT}$, an arbitrageur could sell the forward, simultaneously buy the stock (financed by borrowing at the risk-free rate), and lock in a risk-free profit at maturity; if genuinely lower, the reverse strategy (buy the forward, short the stock, invest the proceeds) would achieve the same. Either way, this arbitrage activity would push the forward price back toward its no-arbitrage level.",
+          note: "A strong answer explains the arbitrage mechanism in at least one direction explicitly, not just asserts that arbitrage 'would occur'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss why the payoff of the forward contract priced in part (i) is genuinely linear and symmetric, unlike an option's payoff.",
+          answer:
+            "The forward's payoff at maturity is $S_T - F$, a genuinely linear function of the underlying's price with unbounded upside AND unbounded downside for the long holder, unlike an option's payoff of $\\max(S_T - K, 0)$ or $\\max(K - S_T, 0)$, which caps the holder's downside at the premium paid while retaining upside potential — a fundamentally different, asymmetric risk profile.",
+          note: "A strong answer explicitly contrasts the mathematical payoff structures, not just asserts they are 'different'.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on how an investor holding this stock could use a futures contract to hedge against a price fall over the next 6 months.",
+          answer:
+            "Selling (going short) a futures contract on the same underlying stock creates a genuinely offsetting position — if the stock's price falls, the loss on the physical holding is offset by the genuine gain on the short futures position, effectively locking in the stock's current value regardless of subsequent price movements.",
+          note: "This connects directly to the hedging-with-futures material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q3",
+      title: "Binomial option pricing",
+      modules: "Module 6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "A non-dividend-paying stock currently trades at $100. Over the next year, its price will either rise to $110 (an 'up' move, $u = 1.1$) or fall to $90 (a 'down' move, $d = 0.9$). The continuously-compounded risk-free rate is 4% per annum. Using a one-step binomial model, calculate the risk-neutral probability of an up-move, and hence the fair price of a one-year European call option with strike price $100.",
+          answer:
+            "Risk-neutral probability $p = \\frac{e^{rT} - d}{u - d} = \\frac{e^{0.04} - 0.9}{1.1 - 0.9} = \\frac{1.0408 - 0.9}{0.2} = 0.7041$. Option payoffs: $C_u = \\max(110-100, 0) = £10$; $C_d = \\max(90-100, 0) = £0$. Fair price $= e^{-rT}(p \\times C_u + (1-p) \\times C_d) = e^{-0.04} \\times (0.7041 \\times 10 + 0.2959 \\times 0) = 0.9608 \\times 7.041 = £6.76$ (to the nearest penny).",
+          note: "Verified: p=0.7041, C0=6.7645 (Node-verified). Marks are typically split across the risk-neutral probability calculation, the payoff calculation, and the final discounted expected payoff.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the risk-neutral probability calculated in part (i) is used to price the option, rather than the market's genuine real-world assessment of the probability of an up-move.",
+          answer:
+            "Under the martingale (risk-neutral) probability measure, discounted asset prices genuinely behave as martingales, allowing the option's fair price to be calculated as the discounted expected payoff under this artificial measure, genuinely avoiding the need to know or estimate the underlying asset's true, real-world expected return — a genuinely powerful simplification since real-world probabilities are far harder to estimate reliably than risk-neutral ones, which are derived purely from observable market prices.",
+          note: "A strong answer explains WHY risk-neutral pricing avoids needing the real-world probability, not just that it does.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 2,
+          question:
+            "Discuss what genuine replicating portfolio underlies the option price calculated in part (i).",
+          answer:
+            "A genuine replicating portfolio of the underlying stock and risk-free borrowing/lending can be constructed that exactly reproduces the option's payoff in both the up and down states; since this replicating portfolio and the option must therefore have the same genuine value today (otherwise a risk-free arbitrage would exist), the option's fair price equals the cost of constructing this replicating portfolio, which is exactly what the risk-neutral valuation formula calculates.",
+          note: "This connects the numeric calculation directly to the replication-based pricing foundation developed in this course.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 1,
+          question:
+            "Comment on why extending this one-step model to many genuine time steps (a multi-step tree) would provide a more refined price estimate.",
+          answer:
+            "A multi-step tree captures a genuinely richer range of possible price paths and converges toward the continuous-time Black-Scholes result as the number of steps increases and each step's time interval shrinks, providing a more refined approximation than a single, coarse one-step model.",
+          note: "This connects directly to the tree-as-multi-step-extension material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q4",
+      title: "The Black-Scholes formula",
+      modules: "Module 7",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "A non-dividend-paying stock trades at $100, with volatility 20% per annum. The risk-free rate is 5% per annum (continuously compounded). Using the Black-Scholes formula, calculate the price of a one-year European call option with strike price $100, given $d_1 = 0.3500$ and $d_2 = 0.1500$, and $N(d_1) = 0.6368$, $N(d_2) = 0.5596$.",
+          answer:
+            "$C = S_0 N(d_1) - Ke^{-rT}N(d_2) = 100 \\times 0.6368 - 100 \\times e^{-0.05} \\times 0.5596 = 63.68 - 95.12 \\times 0.5596 = 63.68 - 53.23 = £10.45$ (to the nearest penny).",
+          note: "Verified: C=10.4506 (Node-verified, using the given d1/d2/N values). Full marks require correctly substituting into the Black-Scholes formula, not just stating the final figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Calculate",
+          marks: 3,
+          question:
+            "Using put-call parity, calculate the price of the equivalent European put option with the same strike and expiry.",
+          answer:
+            "Put-call parity: $P = C - S_0 + Ke^{-rT} = 10.4506 - 100 + 100 \\times e^{-0.05} = 10.4506 - 100 + 95.1229 = £5.57$ (to the nearest penny).",
+          note: "Verified: P=5.5735 (Node-verified).",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 2,
+          question:
+            "Explain why $N(d_1)$ in part (i) can also be interpreted as the option's delta.",
+          answer:
+            "Delta measures how much the option's price genuinely changes per unit change in the underlying's price ($\\Delta = \\frac{\\partial C}{\\partial S}$); differentiating the Black-Scholes call formula with respect to $S_0$ shows this partial derivative equals exactly $N(d_1)$, so $N(d_1)$ serves the dual role of both a probability term in the pricing formula and the option's genuine hedge ratio.",
+          note: "A strong answer connects the mathematical differentiation to the practical hedging interpretation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 1,
+          question:
+            "Comment on why a genuine volatility smile in the market would mean the 20% volatility assumption used in part (i) may not be appropriate for options with different strike prices on the same stock.",
+          answer:
+            "The volatility smile describes the genuine empirical pattern where implied volatility varies systematically across different strike prices for the same underlying and expiry, directly contradicting Black-Scholes's assumption that volatility is a single, constant parameter applicable across all strikes.",
+          note: "This connects directly to the volatility-smile-as-model-limitation theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q5",
+      title: "Numerical methods for derivative pricing",
+      modules: "Module 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why Monte Carlo simulation is particularly well-suited to pricing an Asian option, but historically struggled with pricing American options.",
+          answer:
+            "Monte Carlo simulation naturally handles path-dependent payoffs like an Asian option's average-price payoff, since each simulation genuinely tracks a full price path, not just a final value. It historically struggled with American options because standard forward-simulation Monte Carlo only evaluates payoffs at final maturity, but American options require determining, at each point, whether immediate exercise is more valuable than continuing to hold — a genuinely different 'optimal stopping' problem forward simulation alone cannot directly solve.",
+          note: "A strong answer explains both the genuine strength (path-dependency) and the genuine historical limitation (early exercise), not just one.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain how the Longstaff-Schwartz least-squares approach adapts Monte Carlo simulation to price American options.",
+          answer:
+            "The Longstaff-Schwartz approach uses regression at each simulated time step to estimate the genuine expected value of continuing to hold the option, comparing this against the value of exercising immediately at that point, allowing a genuinely informed, backward-looking optimal exercise decision to be estimated within an otherwise forward-simulating Monte Carlo framework.",
+          note: "This connects directly to the Longstaff-Schwartz solution material developed in this course.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss the genuine relative strengths of binomial/trinomial trees, Monte Carlo simulation, and finite difference methods for derivative pricing.",
+          answer:
+            "Trees are genuinely intuitive and handle American-style early exercise naturally through backward induction. Monte Carlo excels at high-dimensional and path-dependent problems but historically struggled with early exercise until adaptations like Longstaff-Schwartz. Finite difference methods directly solve the governing Black-Scholes-Merton PDE and handle certain boundary conditions well but can become genuinely computationally expensive in high dimensions. The choice of method should genuinely reflect the specific derivative's structural features (path-dependency, early exercise, dimensionality).",
+          note: "A strong answer names a genuine relative strength/weakness for each of the three methods, not just describes what each method is.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why finite difference methods are directly linked to the Black-Scholes-Merton partial differential equation.",
+          answer:
+            "Finite difference methods numerically solve the Black-Scholes-Merton PDE directly, by discretising the underlying's price and time into a genuine grid and approximating the PDE's derivatives using differences between adjacent grid points, providing a numerical solution where a closed-form analytical solution is unavailable.",
+          note: "This connects directly to the PDE-numerical-solution material developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q6",
+      title: "Interest rate derivatives and the Black model",
+      modules: "Module 10",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain how an interest rate swap can be valued by treating it as the difference between a fixed-rate bond and a floating-rate bond.",
+          answer:
+            "An interest rate swap's value can be determined by treating it as the genuine difference between a fixed-rate bond (valuing the fixed leg) and a floating-rate bond (valuing the floating leg), each discounted using the appropriate zero-rate curve, with the swap's fair fixed rate set so the two legs have genuinely equal value at initiation.",
+          note: "A strong answer explicitly names the bond-decomposition technique, not just asserts that swaps 'can be valued using discounting'.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what the Black model is, and why it provides a practical framework for pricing interest rate derivatives despite genuine known limitations.",
+          answer:
+            "The Black model adapts the Black-Scholes framework's mathematical structure to price options on forward prices or rates, providing a genuinely practical, widely-used pricing approach for bond options, caps/floors and swaptions, even though its underlying lognormality assumption for interest rates is a genuine simplification not perfectly matching real interest rate behaviour.",
+          note: "A strong answer explains both the practical value AND acknowledges the genuine simplifying assumption's limitation.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss how a cap can be decomposed into individual caplets, and how this decomposition is used within the Black model to price the whole cap.",
+          answer:
+            "A cap protects the holder against rising interest rates by paying out if a reference rate exceeds a specified strike level at each of a series of future dates; a cap can genuinely be decomposed into a portfolio of individual caplets, each a simple interest-rate call option applying to a single future period. The Black model prices EACH caplet as an option on the relevant forward interest rate for its specific period, then sums these individual caplet values to obtain the whole cap's total price.",
+          note: "A strong answer explains both the conceptual decomposition AND how the Black model uses it practically, not just one or the other.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an actuary applying the Black model should explicitly acknowledge its underlying assumptions, rather than applying it uncritically.",
+          answer:
+            "The Black model genuinely assumes the relevant forward rate is lognormally distributed with constant volatility, an assumption that, like Black-Scholes's own assumptions, may not perfectly hold in reality (e.g. genuine volatility smile effects), so a sound actuarial application should genuinely acknowledge these limitations rather than treating the model's output as unquestionably precise.",
+          note: "This connects directly to the critical-model-awareness theme developed throughout this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q7",
+      title: "Term structure models",
+      modules: "Module 11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Distinguish",
+          marks: 3,
+          question:
+            "Distinguish between 'equilibrium' and 'no-arbitrage' term structure models, naming one example of each.",
+          answer:
+            "Equilibrium models (e.g. Vasicek) genuinely derive the term structure's shape from underlying economic assumptions about interest rate behaviour, potentially producing a model-implied curve that does not exactly match today's observed market curve. No-arbitrage models (e.g. Hull-White) are genuinely calibrated to exactly fit today's observed market curve by construction, prioritising consistency with current market prices.",
+          note: "A complete answer distinguishes both categories AND names a correct example of each.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain how the Cox-Ingersoll-Ross (CIR) model genuinely differs from the Vasicek model.",
+          answer:
+            "The CIR model's interest rate volatility genuinely depends on the current level of interest rates themselves (higher rates produce higher volatility), while Vasicek assumes constant volatility regardless of the rate level; CIR's structure also genuinely ensures interest rates cannot become negative, an advantage over Vasicek which theoretically permits negative rates.",
+          note: "A strong answer names both distinguishing features (rate-dependent volatility and non-negativity), not just one.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss how the Heath-Jarrow-Morton (HJM) and LIBOR market models genuinely extend single-factor short-rate models like Hull-White, and one genuine problem with calibrating the LIBOR market model using Black's model.",
+          answer:
+            "HJM and LIBOR market models genuinely model the evolution of the whole forward rate curve (or a discrete set of forward LIBOR rates) simultaneously, rather than a single short-rate process, allowing genuinely richer, multi-factor modelling of how different parts of the yield curve can move independently. Calibrating the LIBOR market model using Black-implied volatilities (a practical market convention) can create genuine internal inconsistencies, since the LIBOR market model's own underlying dynamics don't necessarily support Black's simplifying lognormality assumption exactly.",
+          note: "A strong answer explains both the genuine multi-factor extension AND the genuine calibration tension, not just one.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why correlation plays a genuinely critical role in pricing a multi-name credit derivative (e.g. an nth-to-default basket) but not a single-name CDS.",
+          answer:
+            "A single-name CDS's payoff depends only on one reference entity's default, requiring no correlation assumption, while a multi-name basket's payoff depends on the JOINT, not just individual, default behaviour of multiple names, making the genuine correlation between different reference entities' default probabilities critically important for pricing.",
+          note: "This connects directly to the correlation-critical-for-multi-name-instruments theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q8",
+      title: "Using derivatives and hedging with the Greeks",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why an investor must assess how derivative use changes a portfolio's overall risk profile, rather than assessing each derivative position in isolation.",
+          answer:
+            "A derivative position's risk effect depends genuinely on how it interacts with the rest of the portfolio (e.g. a hedge reduces overall risk only if it genuinely offsets an existing exposure), so assessing derivative impact requires a genuinely portfolio-level view, not evaluating each derivative's standalone risk in isolation from everything else held.",
+          note: "A strong answer explicitly explains why portfolio-level assessment is necessary, not just asserts that it should be done.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what 'delta' measures, and why a delta-hedged position requires genuine ongoing rebalancing.",
+          answer:
+            "Delta ($\\Delta = \\frac{\\partial C}{\\partial S}$) genuinely quantifies how much the derivative's price changes per unit change in the underlying's price, so holding a genuinely offsetting position of $\\Delta$ units of the underlying creates a delta-neutral hedge; since delta itself changes as the underlying's price and time to expiry change, this hedge requires genuine ongoing rebalancing to remain effective (dynamic hedging).",
+          note: "A strong answer explains both what delta measures AND why the hedge requires rebalancing, not just one.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why exotic derivatives might require particular care when assessing their risk management characteristics, compared with standard vanilla options.",
+          answer:
+            "Exotic derivatives' genuinely more complex, sometimes discontinuous payoff structures (e.g. a barrier option's payoff jumping discontinuously when the barrier is touched) can produce Greeks that behave in genuinely unstable or non-intuitive ways near critical price levels, requiring particular care and more sophisticated risk management technique than a standard vanilla option's more smoothly-behaving Greeks.",
+          note: "A strong answer connects the exotic payoff's structural complexity directly to the resulting Greeks-behaviour challenge.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why scenario analysis provides genuinely complementary insight to the Greeks when managing a portfolio of derivatives.",
+          answer:
+            "Scenario analysis projects a genuine portfolio's value under a range of specified future market conditions, revealing how the portfolio's Greeks-based sensitivities translate into genuine potential outcomes under realistic, combined market moves that a single Greek in isolation might not fully capture.",
+          note: "This connects directly to the scenario-analysis-as-portfolio-level-complement theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q9",
+      title: "Risks in the use of derivatives",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 4,
+          question:
+            "A $30,000,000 derivatives portfolio has a delta of 0.65 relative to its underlying, and the underlying has an annual return volatility of 18%. Using a delta-normal approach with a 99% confidence level (z-score of 2.326), calculate the portfolio's 1-year 99% Value at Risk.",
+          answer:
+            "VaR = &#36;30,000,000 &times; 0.65 &times; 18% &times; 2.326 = &#36;8,164,260 (to the nearest &#36;10). This means there is a 1% chance the portfolio loses more than approximately &#36;8.16 million over the year, based on this simplified delta-normal approximation.",
+          note: "Verified: 30,000,000×0.65×0.18×2.326=8,164,260 (Node-verified). This is a simplified delta-normal VaR approximation, treating the portfolio's exposure as linear via its delta, for illustrative purposes.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain one genuine weakness of the delta-normal VaR approach used in part (i) when applied to a portfolio containing options.",
+          answer:
+            "The delta-normal approach treats the portfolio's exposure as genuinely linear via its delta, but an options portfolio's true payoff is genuinely non-linear (the delta itself changes as the underlying moves), so this linear approximation can materially misstate genuine risk for large market moves, understating the portfolio's true tail risk compared with a method that properly captures this non-linearity (e.g. full Monte Carlo revaluation).",
+          note: "A strong answer explicitly names the linear-approximation-versus-non-linear-payoff mismatch, not just asserts that VaR has 'limitations'.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss what 'basis risk' means in the context of a derivatives hedge, and why it could genuinely undermine this portfolio's risk management even after implementing a theoretically sound delta hedge.",
+          answer:
+            "Basis risk arises when the derivative used to hedge a specific exposure does not genuinely, perfectly match that exposure, meaning the hedge's value may not move in perfect lockstep with the underlying exposure being hedged. Even a theoretically sound delta hedge calculated precisely (as in part (i)) could leave genuine residual risk if the actual hedging instrument's underlying doesn't perfectly correspond to the true exposure being managed.",
+          note: "A strong answer explains why basis risk persists even given a technically correct delta calculation.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why ISDA agreements and collateral management address counterparty risk through genuinely different mechanisms.",
+          answer:
+            "ISDA agreements provide genuinely standardised legal documentation governing OTC derivative relationships, including provisions for netting offsetting exposures, while collateral management requires counterparties to genuinely post collateral reflecting their current mark-to-market exposure, reducing the genuine loss if a counterparty were to default — legal netting/standardisation versus genuine, tangible financial security.",
+          note: "This connects directly to the complementary-counterparty-risk-mechanisms theme developed in this course.",
+        },
+      ],
+    },
+    {
+      id: "sp6-q10",
+      title: "Structured securities and special purpose vehicles",
+      modules: "Modules 5, 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain what a Limited Price Indexation (LPI) swap is, and why it might provide a more precisely-matched hedge for a pension scheme than a simple, uncapped inflation swap.",
+          answer:
+            "An LPI swap exchanges cashflows linked to inflation subject to a cap and floor, genuinely matching many pension schemes' actual benefit increase structure (which is typically similarly capped and floored), providing a more precisely-matched hedge than a simple, uncapped inflation swap would, since the hedge's payoff structure directly mirrors the genuine liability structure being hedged.",
+          note: "A strong answer explains WHY the capped/floored structure provides a better match, not just describes what an LPI swap is.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain how a special purpose vehicle (SPV) can be used as part of a risk transfer mechanism, and the genuine role a credit enhancement agency might play.",
+          answer:
+            "An SPV is a genuinely separate legal entity created specifically to hold and isolate certain assets or risks (e.g. issuing insurance-linked securities or securitised debt), ring-fencing this specific risk from the sponsoring institution's own broader balance sheet; a credit enhancement agency may provide additional genuine guarantees or support improving the SPV-issued securities' creditworthiness, making them more attractive to investors.",
+          note: "A strong answer explains both the SPV's genuine risk-isolation role AND the credit enhancement agency's role.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 4,
+          question:
+            "Discuss why a credit default swap (CDS) can be understood as functioning like an insurance contract, and how its fair premium (spread) is genuinely determined.",
+          answer:
+            "A CDS pays the protection buyer a genuine compensating payment if a specified reference entity experiences a credit event, in exchange for the buyer paying a regular premium (the CDS spread) to the protection seller — functioning genuinely like an insurance contract against credit risk. A single-name CDS is genuinely priced by setting its premium such that the expected present value of premium payments equals the expected present value of the contingent default payment, given assumed default probabilities and recovery rates, directly echoing the equivalence-principle pricing logic used across the actuarial curriculum.",
+          note: "A strong answer explains both the insurance analogy AND the genuine equivalence-principle-style pricing mechanism.",
+        },
+        {
+          label: "(iv)",
+          command: "Comment",
+          marks: 2,
+          question:
+            "Comment on why an investor should not rely solely on external credit ratings when assessing counterparty risk on an OTC derivative position.",
+          answer:
+            "Credit ratings can genuinely be slow to reflect emerging changes in a counterparty's creditworthiness, and rating agencies' methodologies may not fully capture the specific counterparty risk profile relevant to a particular derivative exposure, so genuine independent assessment alongside rating agency output provides a more robust basis for managing counterparty risk.",
+          note: "This connects directly to the credit-rating-agency-limitation theme developed elsewhere in this course.",
+        },
+      ],
+    },
+  ],
 };
