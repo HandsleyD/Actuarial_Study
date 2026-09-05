@@ -17704,7 +17704,154 @@ const MODULES = {
                 "explain": "This directly previews this course's later supervisory reserves material — worth recognising asset shares as feeding into BOTH bonus-setting AND solvency assessment, not serving a single, narrow purpose."
             }
         ]
+    },
+    {
+        "id": "m06",
+        "title": "Unit pricing and discontinuance terms",
+        "description": "Covers the principles of unit pricing for internal unit-linked funds, and determining discontinuance and alteration terms for without-profits contracts, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is 'unit pricing' for an internal unit-linked fund, and why must it be applied with genuine consistency and fairness across all policyholders in that fund?",
+                "a": "Unit pricing determines the value of each notional unit in a unit-linked fund based on the fund's underlying asset value, applied consistently so that policyholders buying or selling units at any given time receive a genuinely fair price reflecting the fund's true current value, protecting both entering and existing policyholders from unfair dilution or advantage.",
+                "explain": "Worth recognising unit pricing as a genuine FAIRNESS mechanism, not just an administrative calculation — an unfair or inconsistent pricing basis could genuinely disadvantage either new or existing policyholders in the same fund."
+            },
+            {
+                "q": "Why might an internal unit-linked fund's unit price need to reflect genuine dealing costs (e.g. buying or selling underlying assets), rather than simply the fund's net asset value alone?",
+                "a": "If large numbers of policyholders enter or exit the fund, the fund manager must genuinely buy or sell underlying assets to accommodate this, incurring real transaction costs; reflecting these costs in the unit price (e.g. via a bid-offer spread) ensures that policyholders CAUSING the dealing activity bear its genuine cost, rather than that cost being unfairly spread across all fund policyholders including those not transacting.",
+                "explain": "Worth recognising the bid-offer spread mechanism as directly protecting FAIRNESS between transacting and non-transacting policyholders, a genuine application of the fairness principle raised in this module's first card."
+            },
+            {
+                "q": "What are 'discontinuance terms' for a without-profits contract, and why must their determination follow genuine, defensible principles rather than an arbitrary figure?",
+                "a": "Discontinuance terms (e.g. a surrender value) determine what a policyholder receives if they discontinue a without-profits contract before its natural maturity or claim; since discontinuing early genuinely changes the insurer's expected future cashflows and expense recovery, these terms must be set using genuine, defensible principles that fairly reflect this change, not set arbitrarily.",
+                "explain": "This directly recalls CB1's expense-recovery material — worth recognising discontinuance terms as needing to genuinely reflect the insurer's changed financial position on early exit, not simply return premiums paid."
+            },
+            {
+                "q": "Why might surrender values for a conventional without-profits contract be calculated 'using reserves or by equating policy values', per the official syllabus objective 2.4.4?",
+                "a": "A reserve-based approach values the surrender benefit with reference to the insurer's own held reserve for that policy, while an equation-of-policy-values approach directly calculates a surrender value reflecting the policy's genuine remaining expected value under the original pricing basis; both aim to produce a genuinely fair, defensible surrender figure, just via different calculation routes.",
+                "explain": "Worth recognising these as two genuinely different, but both legitimate, TECHNICAL ROUTES to a similar underlying fairness objective, not one being definitively superior to the other."
+            },
+            {
+                "q": "Why might discontinuance terms need to be set with genuine care to avoid creating an incentive for anti-selective early discontinuance, echoing this course's recurring anti-selection theme?",
+                "a": "If surrender terms are genuinely more generous than the policy's true remaining value, healthier or lower-risk policyholders might be incentivised to surrender and re-purchase more advantageous new cover elsewhere, leaving the insurer with a genuinely worse-than-average remaining book, a form of anti-selection the discontinuance basis should guard against.",
+                "explain": "This directly recalls this course's non-disclosure-and-anti-selection risk material — worth recognising that discontinuance terms, like underwriting and pricing, carry genuine anti-selection risk if not set carefully."
+            },
+            {
+                "q": "Why does the syllabus require candidates to 'discuss the extent to which these methods meet the principles' set out earlier (objective 2.4.3), rather than simply describing the calculation methods?",
+                "a": "This tests a genuinely higher-order skill — critically evaluating whether a specific calculation METHOD actually achieves the underlying fairness and defensibility PRINCIPLES it is meant to serve, not merely being able to perform the calculation mechanically without judging its adequacy.",
+                "explain": "Worth recognising this as a genuine example of SP2's higher-order skill requirement — a strong answer critically assesses whether a method delivers on its intended principle, not just describes the method's mechanics."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Sources of risk in life insurance",
+        "description": "Covers the wide range of factors that can be a genuine source of risk to a life insurance company, per the official syllabus's core risk-assessment objective.",
+        "cards": [
+            {
+                "q": "What full list of factors does the official SP2 syllabus (objective 3.1) require candidates to be able to assess as a genuine source of risk to a life insurer?",
+                "a": "Policy and other data, mortality rates, investment performance, expenses (including the effect of inflation), persistency, mix of new business, volume of new business, guarantees and options, competition, actions of the board of directors, actions of distributors, failure of appropriate management systems and controls, counterparties, legal/regulatory/tax developments, fraud, aggregation and concentration of risk, and climate risks.",
+                "explain": "Worth treating this exact list as a genuine exam checklist — note it closely mirrors SP1's equivalent list, with 'mortality rates' replacing 'claim rates/amounts', and 'climate risks' now explicitly named for 2026 (a recent syllabus addition)."
+            },
+            {
+                "q": "Why might mortality rate risk for a life insurer's protection business and its annuity business point in genuinely opposite directions?",
+                "a": "Mortality improving faster than assumed reduces protection-business cost (fewer deaths than priced for) but increases annuity-business cost (annuitants living longer than priced for), meaning the SAME underlying mortality trend risk can be a genuine tailwind for one product line and a headwind for the other within the same insurer.",
+                "explain": "This directly recalls SA2's inverted-mortality-risk material — worth recognising this same genuinely important asymmetry as examinable even at SP2's foundational level, not exclusively an SA2-level concept."
+            },
+            {
+                "q": "Why might 'climate risks' have been added as an explicitly named risk source in the current syllabus, alongside more traditional risk categories?",
+                "a": "Climate change can affect life insurance business through both physical risks (e.g. affecting mortality via extreme weather or heat-related illness) and transition risks (e.g. affecting the value of the insurer's own investment portfolio as economies shift away from carbon-intensive activities), a genuinely emerging risk category not fully captured by traditional mortality or investment risk assessment alone.",
+                "explain": "This directly recalls SA1's and SA3's climate-risk material — worth recognising climate risk's explicit addition as reflecting the actuarial profession's genuinely evolving understanding of emerging risk categories over time."
+            },
+            {
+                "q": "Why might 'failure of appropriate management systems and controls' be listed as a genuinely distinct risk source from 'actions of the board of directors'?",
+                "a": "Board actions concern genuine strategic or governance DECISIONS (e.g. an overly aggressive growth strategy), while failure of management systems and controls concerns a genuinely different, more OPERATIONAL risk — the insurer's internal processes failing to detect or prevent problems (e.g. inadequate reserving review processes), even where board-level strategic decisions were themselves entirely sound.",
+                "explain": "Worth recognising these as addressing genuinely DIFFERENT levels of risk — strategic/governance DECISIONS versus operational SYSTEMS AND CONTROLS failing to execute soundly, even when decisions themselves were reasonable."
+            },
+            {
+                "q": "Why might 'guarantees and options' represent a particularly significant risk source specifically for life insurance, given this sector's characteristically long product durations?",
+                "a": "Life insurance guarantees (e.g. guaranteed annuity options, guaranteed minimum benefits) are often embedded at outset in products that may not mature for decades, meaning a guarantee that looked unlikely to bite when priced can become severely costly if market conditions (e.g. interest rates, longevity) move adversely over that very long horizon.",
+                "explain": "This directly recalls SA2's guarantee-becoming-costly-decades-later material — worth recognising life insurance's characteristically LONG product duration as amplifying guarantee/option risk more severely than for many shorter-duration insurance products."
+            },
+            {
+                "q": "Why does the syllabus list 'fraud' as a genuinely distinct risk source, separate from both data quality and non-disclosure/anti-selection risks?",
+                "a": "Fraud concerns deliberate, dishonest misrepresentation or falsification (e.g. a fabricated claim), a genuinely more serious and intentional form of misconduct than either innocent data errors or the more subtle, financially-motivated non-disclosure that anti-selection risk addresses, warranting distinct detection and management approaches (e.g. dedicated fraud investigation processes).",
+                "explain": "Worth recognising fraud as sitting at the most serious, deliberately dishonest end of a genuine spectrum running from innocent data error through financially-motivated non-disclosure to outright fraud, each warranting a genuinely different management response."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Reinsurance as a risk management technique",
+        "description": "Covers the purposes, types and structures of reinsurance, and the factors relevant to determining an appropriate level of retention, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine purposes of reinsurance for a life insurer, per the official syllabus objective 3.2.1?",
+                "a": "Reinsurance can reduce volatility in mortality/morbidity claims experience, provide capital relief by transferring risk off the insurer's own balance sheet, and give the insurer access to the reinsurer's own mortality pricing expertise and data, particularly valuable when pricing new or unusual risks.",
+                "explain": "Worth recognising reinsurance's purpose as genuinely three-fold — risk reduction, capital efficiency, and expertise access — directly mirroring SP1's equivalent material, just for mortality rather than morbidity risk."
+            },
+            {
+                "q": "Why might life reinsurance play a particularly significant role in pricing new protection products specifically, beyond its general risk-transfer purpose?",
+                "a": "Reinsurers often hold significant mortality pricing expertise and data pooled across many insurers' experience, making them a genuinely valuable partner for pricing new or unusual mortality risks an individual insurer may have limited own experience with, not merely a pure risk-transfer counterparty.",
+                "explain": "This directly recalls SA1's and SA2's reinsurer-as-expertise-source material — worth recognising this same principle applying with particular force in life protection, where reinsurer mortality data pooling is a long-established, genuinely important market feature."
+            },
+            {
+                "q": "What is quota share reinsurance, and why might it suit a life insurer wanting broad-based support across its whole protection book?",
+                "a": "Quota share reinsurance cedes a fixed proportion of every policy's risk and premium regardless of size, providing straightforward, proportional risk and capital relief across the whole book, particularly valuable for a newer or smaller insurer wanting broad-based support rather than targeted protection for specific large risks.",
+                "explain": "Worth recognising quota share as the simplest form of proportional reinsurance — a fixed percentage of every risk, making its capital and risk effects easy to understand and administer."
+            },
+            {
+                "q": "How does surplus reinsurance differ from quota share, and when might a life insurer prefer it?",
+                "a": "Surplus reinsurance cedes only the portion of risk above a chosen retention level per policy, allowing the insurer to retain proportionally more of smaller, well-understood risks while ceding a larger share of unusually large individual sums insured — genuinely useful where a book contains policies of widely varying sums insured.",
+                "explain": "Worth recognising surplus reinsurance as solving a problem quota share cannot: letting retention vary by POLICY SIZE, rather than ceding the same fixed proportion regardless of how large or small an individual risk is."
+            },
+            {
+                "q": "What genuine factors should a life insurer consider before taking out reinsurance, per the official syllabus objective 3.2.3?",
+                "a": "The insurer's own capital position and risk appetite, the genuine cost of reinsurance relative to the risk transferred, the volatility of the specific mortality risk being considered, and the insurer's confidence in its own pricing and reserving for that risk without reinsurance support.",
+                "explain": "Worth recognising retention-setting as a genuine, multi-factor judgement (capital, cost, volatility, confidence), echoing SP1's equivalent underwriting/retention material, not a single formula-driven calculation."
+            },
+            {
+                "q": "Why might a life insurer use longevity-specific reinsurance for its annuity business, structurally distinct from mortality reinsurance for its protection business?",
+                "a": "Longevity reinsurance (e.g. a longevity swap) transfers the aggregate risk that a whole annuity book's mortality experience improves faster than assumed, a genuinely different risk transfer mechanism from traditional quota share or surplus mortality reinsurance which cedes a share of individual policy-level protection risk.",
+                "explain": "This directly recalls SA2's longevity-swap material — worth recognising that life insurers with both protection AND annuity business genuinely need distinct reinsurance structures addressing the two genuinely different, inverted risk directions each business line carries."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Underwriting as a risk management technique",
+        "description": "Covers the purposes of underwriting, the different approaches by which it is applied, and the factors relevant to determining an appropriate level of underwriting, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine purposes of underwriting for a life insurer, per the official syllabus objective 3.3.1?",
+                "a": "Underwriting assesses an individual applicant's genuine mortality risk level, allowing the insurer to price appropriately for that risk, decide whether to accept the risk at all, and manage genuine anti-selection by identifying and appropriately pricing or declining applicants whose risk differs materially from the standard assumed population.",
+                "explain": "Worth recognising underwriting's purpose as genuinely three-fold — appropriate pricing, accept/decline decision-making, and anti-selection management — directly mirroring SP1's equivalent material, applied to mortality rather than morbidity risk."
+            },
+            {
+                "q": "What different approaches to underwriting does the official syllabus (objective 3.3.2) expect candidates to be able to describe for life insurance specifically?",
+                "a": "Full medical underwriting (detailed individual health assessment, potentially including medical examination), simplified underwriting (a shorter set of health questions with reduced individual assessment), and guaranteed acceptance (no individual underwriting, typically with a corresponding pricing or benefit-restriction trade-off, e.g. lower sums insured).",
+                "explain": "Worth memorising these three distinct approaches — each represents a genuinely different point on the spectrum between rigorous individual risk assessment and broad, simple accessibility, echoing SP1's parallel underwriting material."
+            },
+            {
+                "q": "Why might life insurance underwriting genuinely need to consider family medical history alongside the applicant's own current health status?",
+                "a": "Some conditions have a genuine hereditary or genetic component, so family history can provide additional predictive information about future mortality risk beyond what current health status alone captures, though this must be balanced against genuine ethical concerns about using such predictive family information fairly.",
+                "explain": "This directly recalls SA1's genetic-testing-ethics material — worth recognising family history as a related, though distinct, source of predictive risk information carrying its own genuine fairness considerations."
+            },
+            {
+                "q": "What genuine factors should an insurer consider when determining the appropriate level of underwriting to apply to a life insurance product, per the official syllabus objective 3.3.3?",
+                "a": "The genuine cost of underwriting relative to the sum insured being assessed, the size and duration of the policy, the insurer's own risk appetite and pricing confidence without full underwriting, and the competitive/distribution implications of a more or less rigorous underwriting process on genuine customer take-up.",
+                "explain": "Worth recognising underwriting-level determination as another genuine multi-factor judgement, echoing SP1's parallel material — cost, policy characteristics, risk appetite, and market/distribution implications together, not a single formula."
+            },
+            {
+                "q": "Why might a guaranteed acceptance whole of life product (no underwriting) typically carry a lower sum insured or a graded early-years benefit compared with a fully-underwritten equivalent?",
+                "a": "Without individual underwriting, the insurer faces genuine anti-selection risk from applicants who know they have poor health choosing this product specifically, so limiting the sum insured or grading benefits up over the early policy years reduces the insurer's genuine financial exposure to this anti-selection risk while still offering broadly accessible cover.",
+                "explain": "This directly recalls this course's guaranteed-acceptance-anti-selection material — worth recognising benefit limitation/grading as a genuine, practical PRICING AND DESIGN response to the anti-selection risk that dispensing with underwriting inherently creates."
+            },
+            {
+                "q": "Why might underwriting and reinsurance (Module 8) be considered genuinely complementary, rather than substitute, risk management techniques for a life insurer?",
+                "a": "Underwriting manages risk at the point of individual policy selection (deciding who to insure and at what price), while reinsurance manages risk after that selection has been made (transferring some of the resulting portfolio risk to a third party) — together they address different STAGES of the risk management process, not the same underlying problem twice.",
+                "explain": "This directly recalls SP1's identical complementary-techniques framing — worth recognising this same principle applying identically to life insurance risk management."
+            }
+        ]
     }
-
     ]
 };
