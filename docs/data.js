@@ -16006,4 +16006,188 @@ const MODULES = {
         ]
     }
     ]
+,
+  SA4: [
+    {
+        "id": "m01",
+        "title": "What is Subject SA4 all about?",
+        "description": "An orientation chapter explaining SA4's role as the Specialist Advanced subject applying core actuarial techniques to complex pensions and employee benefits scenarios, and how it builds on SP4.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SA4?",
+                "a": "To develop a candidate's ability to apply actuarial techniques and knowledge of the pensions and employee benefits environment, including regulatory, legislative, taxation, financial management, monitoring and strategic considerations, to complex scenarios concerning the management and advice of pension schemes and other employee benefit arrangements.",
+                "explain": "This mirrors SA1's, SA2's and SA3's aim wording almost exactly, just for pensions and benefits — worth recognising that every SA subject shares this near-identical template: applied judgement in complex, realistic scenarios, not bookwork recall."
+            },
+            {
+                "q": "How does SA4 relate to Subject SP4 (Pensions and Other Benefits Specialist Principles)?",
+                "a": "SP4 introduces the main principles and knowledge required in pensions and employee benefits and how they apply in simple scenarios; SA4 builds on those same skills and knowledge, applied to much more complex scenarios and in greater depth.",
+                "explain": "This directly mirrors SA1's relationship to SP1 and SA2's relationship to SP2 — worth treating SP4 as the assumed technical foundation SA4 does not re-teach."
+            },
+            {
+                "q": "What broad syllabus topic areas does SA4 cover, echoing the shared SA-subject structure?",
+                "a": "Pension scheme and employee benefit design; the general business, regulatory, legislative and taxation environment; funding and investment strategy; risk management; financial management and monitoring; and assessing/recommending strategies including scheme transfers and restructuring.",
+                "explain": "Worth comparing directly against SA1's, SA2's and SA3's own topic lists — the underlying skeleton (design, environment, funding/pricing, risk, reporting, strategy) recurs across every SA subject, just applied to a different sector each time."
+            },
+            {
+                "q": "What skills, beyond technical knowledge, does the SA4 syllabus expect candidates to demonstrate?",
+                "a": "Candidates must analyse a scenario, assess the implications of relevant factors, evaluate results critically in a wider context, and propose solutions or courses of action — the same analyse/assess/evaluate/propose progression used across every SA subject.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's skill-progression material — worth memorising this four-stage structure as a genuine answer-writing template applicable across all Specialist Advanced subjects."
+            },
+            {
+                "q": "Why might a SA4 exam question present an unfamiliar or fictional pension scheme or jurisdiction, rather than only the candidate's home market?",
+                "a": "This tests whether candidates can apply the underlying principles and skills developed throughout the course to any given set of facts, rather than simply recalling memorised knowledge about one specific, familiar real-world scheme or regulatory regime.",
+                "explain": "This directly recalls SA1's fictional-scenario exam-format material — worth recognising this as a deliberate, shared SA-subject design choice testing transferable judgement, not jurisdiction-specific memorisation."
+            },
+            {
+                "q": "Why does SA4 build directly on subjects like CP1, CM1, CM2 and CS2, even though it does not re-teach their content explicitly?",
+                "a": "SA4's funding, investment, and risk-management material all depend on the general actuarial modelling, financial mathematics, and survival modelling techniques developed in those earlier subjects, applied specifically to the pensions and employee benefits context.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's equivalent cards — worth treating this whole course as CP1's risk-management principles and CM1/CM2/CS2's technical toolkit, specifically specialised to pension scheme management."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Pension scheme design (1): defined benefit schemes",
+        "description": "Covers the design and key features of defined benefit (DB) pension schemes, including final salary and career average structures.",
+        "cards": [
+            {
+                "q": "What is a 'defined benefit' (DB) pension scheme, and what is its core risk-allocation characteristic?",
+                "a": "A DB scheme promises members a specified benefit (e.g. based on salary and service) regardless of the scheme's actual investment performance or how long members live, meaning the sponsoring employer, not the individual member, bears the investment, longevity, and inflation risk of providing that promised benefit.",
+                "explain": "This directly recalls CB1's protection-versus-savings framing and SA2's annuity risk material — worth recognising DB's risk allocation as genuinely the OPPOSITE of a DC scheme's (covered next module): here the SPONSOR bears the uncertainty, not the member."
+            },
+            {
+                "q": "What is the difference between a 'final salary' and a 'career average revalued earnings' (CARE) DB scheme?",
+                "a": "A final salary scheme bases the pension on salary near retirement (or leaving), while a CARE scheme accrues a pension each year based on that year's salary, revalued (e.g. in line with inflation) up to retirement, spreading the salary-linkage risk more evenly across a member's career rather than concentrating it at the end.",
+                "explain": "Worth recognising CARE as a genuine risk-reduction design choice for the sponsor — it avoids the 'final salary spike' risk where a large late-career pay rise disproportionately increases pension cost relative to contributions paid over the member's whole career."
+            },
+            {
+                "q": "Why might a DB scheme's benefit design need to specify how pensions in payment are increased (e.g. fixed rate or inflation-linked), and why does this matter for the sponsor's risk exposure?",
+                "a": "Inflation-linked increases directly expose the sponsor to genuine, open-ended inflation risk over a potentially long payment period, whereas fixed-rate increases cap this risk at a known level, so the increase basis is a genuine, deliberate risk-allocation choice, not just an administrative detail.",
+                "explain": "This directly recalls SA1's and SA2's inflation-risk material — worth recognising pension increase design as directly analogous to the guarantee-design choices covered for life insurance and health and care products elsewhere in this course."
+            },
+            {
+                "q": "Why might a DB scheme include early retirement or ill-health retirement provisions, and what genuine actuarial complexity do these add to scheme design?",
+                "a": "These provisions give members valuable flexibility to retire earlier than normal pension age under specified circumstances, but require the scheme to price the genuine cost of this optionality (echoing CM2's embedded-option material), since members are more likely to exercise favourable options when it is financially advantageous to them.",
+                "explain": "This directly recalls CM2's and SA1's embedded-option-cost material — worth recognising early/ill-health retirement options as carrying the same genuine anti-selective pricing challenge as any other embedded insurance option."
+            },
+            {
+                "q": "Why might a DB scheme's design need to consider how benefits are treated on a member leaving service before retirement (a 'deferred member')?",
+                "a": "The scheme must specify how the accrued benefit is preserved and revalued for a deferred member until they eventually draw their pension, and whether a transfer value option is offered allowing the member to move the benefit elsewhere, both carrying genuine actuarial and member-protection implications.",
+                "explain": "This directly previews this course's later transfer-value material — worth recognising deferred-member treatment as a genuinely distinct design question from either active-member accrual or pensioner-in-payment increases."
+            },
+            {
+                "q": "Why might DB scheme design require balancing member security against sponsor affordability, echoing this course's recurring risk-allocation theme?",
+                "a": "More generous, less conditional benefit promises provide members with greater security but place correspondingly greater funding and risk burden on the sponsor, so scheme design genuinely involves a deliberate trade-off between these two stakeholders' interests, not a single objectively 'correct' design.",
+                "explain": "This directly recalls SA1's and SA2's stakeholder-balance material — worth recognising this same fundamental trade-off recurring here between MEMBER security and SPONSOR affordability, a defining theme of DB scheme design throughout this whole course."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Pension scheme design (2): defined contribution and hybrid schemes",
+        "description": "Covers the design and key features of defined contribution (DC) schemes and hybrid arrangements combining DB and DC elements.",
+        "cards": [
+            {
+                "q": "What is a 'defined contribution' (DC) pension scheme, and how does its risk allocation genuinely differ from a DB scheme's, echoing Module 2's material?",
+                "a": "A DC scheme specifies the contributions paid in (by employer and/or member) rather than the eventual benefit, with the member's eventual pension pot depending directly on investment performance and, at retirement, how that pot is converted into income — meaning the MEMBER, not the sponsor, bears investment and longevity risk.",
+                "explain": "This directly recalls Module 2's DB risk-allocation material — worth recognising DC as the genuine mirror image: risk that sat with the sponsor under DB now sits with the individual member instead."
+            },
+            {
+                "q": "Why might a DC scheme's default investment strategy (for members who do not actively choose their own investments) need particular design care?",
+                "a": "Since most members in practice remain in the default option, its design directly shapes the retirement outcomes of the majority of the scheme's membership, so it should genuinely reflect an appropriate risk/return balance and glide path toward retirement for a typical member, not just a technically available but rarely-used default.",
+                "explain": "This directly previews this course's investment-strategy module — worth recognising the DEFAULT option's design as carrying outsized real-world importance precisely because most members never actively engage with fund choice decisions."
+            },
+            {
+                "q": "Why might a DC scheme member's genuine investment risk be particularly significant in the years immediately before retirement, more so than earlier in their career?",
+                "a": "A market downturn shortly before retirement gives the member far less time to recover before needing to convert their pot into retirement income, unlike an equivalent downturn earlier in their career when ongoing contributions and time can help recover lost value, making 'sequencing risk' a genuinely distinct late-career concern.",
+                "explain": "This directly recalls CM2's and SA2's market-risk-timing material — worth recognising this 'sequencing risk' as a genuinely important, DC-specific risk concept distinct from simple average investment volatility."
+            },
+            {
+                "q": "What is a 'hybrid' pension scheme, and why might a sponsor design one rather than a pure DB or pure DC arrangement?",
+                "a": "A hybrid scheme combines DB and DC elements (e.g. a DB underpin on top of a DC arrangement, or a 'cash balance' design specifying a defined contribution-style accumulating fund but with some guaranteed features), allowing a sponsor to share risk between itself and members rather than allocating it entirely to one side.",
+                "explain": "This directly recalls Module 2's sponsor-versus-member risk-allocation material — worth recognising hybrid design as a genuine, deliberate MIDDLE GROUND on the same risk-allocation spectrum DB and DC occupy at opposite ends."
+            },
+            {
+                "q": "Why might a 'collective defined contribution' (CDC) scheme be considered a genuinely distinct third model, beyond a simple hybrid of DB and DC?",
+                "a": "A CDC scheme pools investment and longevity risk across the whole membership collectively (rather than each member bearing their own individual risk as in pure DC, or the sponsor bearing it as in DB), aiming to deliver more stable, pooled outcomes without placing the ultimate risk on the sponsor's balance sheet.",
+                "explain": "This directly recalls SA2's with-profits-fund-pooling material — worth recognising CDC as applying a genuinely similar POOLING AND SMOOTHING principle to pensions that SA2's with-profits material develops for life insurance savings products."
+            },
+            {
+                "q": "Why might scheme design need to consider genuine member communication and understanding, particularly for DC and CDC arrangements, echoing CP3's material?",
+                "a": "Since DC and CDC members bear genuine risk and must often make their own decisions (e.g. contribution levels, investment choices, retirement income options), clear, accessible communication is essential to support genuinely informed member decision-making, more so than for a DB scheme where the sponsor bears the risk and makes most of the relevant decisions.",
+                "explain": "This directly recalls CP3's audience-tailored-communication material — worth recognising member communication as carrying genuinely higher stakes for risk-bearing DC/CDC members than for DB members who are more insulated from needing to understand complex investment and longevity concepts themselves."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Other employee benefits",
+        "description": "Covers non-pension employee benefits such as death-in-service, ill-health/income protection, and medical benefits provided alongside pension arrangements.",
+        "cards": [
+            {
+                "q": "What is a 'death-in-service' benefit, and how does it typically interact with a pension scheme's own death benefits?",
+                "a": "A death-in-service benefit pays a lump sum (and/or income) if an employee dies while still actively employed, typically provided alongside or integrated with any pension scheme death benefits, together forming the employee's overall protection package rather than being designed in isolation.",
+                "explain": "This directly recalls CB1's employer-provided-benefits material — worth recognising death-in-service as a genuine EXTENSION of the pension scheme's own risk coverage, not a wholly separate, unrelated benefit."
+            },
+            {
+                "q": "Why might an employer's ill-health or income protection benefit for employees require pricing and design considerations genuinely similar to SA1's income protection material, despite being provided through an employment relationship rather than a directly-purchased insurance policy?",
+                "a": "The underlying risk (incapacity preventing an employee from working) and its actuarial drivers (incidence, recovery rates, deferred period) are genuinely the same regardless of whether the cover is purchased directly or provided as an employee benefit, so the same technical pricing and design principles apply.",
+                "explain": "This directly recalls SA1's income-protection material — worth recognising that the DISTRIBUTION CHANNEL (direct purchase versus employer-provided benefit) doesn't change the underlying actuarial risk being covered."
+            },
+            {
+                "q": "Why might an employer offering private medical insurance as an employee benefit need to consider its interaction with State healthcare provision, echoing SA1's material?",
+                "a": "The genuine value proposition of employer-provided medical cover depends directly on what State provision does NOT already cover, so the same benefit could be highly valued in one market and largely redundant in another purely due to differences in State healthcare provision.",
+                "explain": "This directly recalls SA1's State-provision-interaction material — worth recognising the same principle applying to employer-provided medical benefits specifically, not just directly-purchased health insurance."
+            },
+            {
+                "q": "Why might an employer need to consider the combined cost and risk of its whole employee benefits package (pension, death-in-service, ill-health, medical) together, rather than assessing each benefit in isolation?",
+                "a": "These benefits can genuinely interact (e.g. a death-in-service payout reducing the need for an ongoing ill-health benefit, or medical cover reducing genuine ill-health incidence through earlier treatment), so a holistic view of the whole package's combined cost and risk gives a more accurate picture than assessing each benefit independently.",
+                "explain": "This directly recalls SA1's bundled-product-analysis material — worth recognising the same principle applying to an employer's WHOLE BENEFITS PACKAGE, not just to a single bundled insurance product."
+            },
+            {
+                "q": "Why might the taxation treatment of employer-provided benefits genuinely differ from directly-purchased equivalents, echoing SA1's, SA2's and SA3's material?",
+                "a": "Many jurisdictions treat employer-provided benefits as a form of remuneration with their own specific tax rules (e.g. a benefit-in-kind charge on the employee, or deductibility for the employer), distinct from how an individual buying the same cover privately would be taxed.",
+                "explain": "This directly recalls SA1's employer-benefit-taxation material — worth recognising this same principle recurring across every SA subject wherever employer-provided benefits are discussed."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "General business environment for pension schemes",
+        "description": "Covers the wider external influences on pension schemes and their sponsors, including demographic, economic, and sponsor-covenant factors.",
+        "cards": [
+            {
+                "q": "Why is demographic change (e.g. an ageing population and improving longevity) a particularly significant external influence on DB pension schemes specifically, echoing SA2's annuity material?",
+                "a": "Improving longevity directly increases the cost of DB pension promises (members draw their pension for longer than assumed), and an ageing scheme membership (more pensioners relative to active/deferred members) can also affect the scheme's genuine investment time horizon and liquidity needs.",
+                "explain": "This directly recalls SA2's inverted-longevity-risk material — worth recognising DB pension schemes as facing genuinely the SAME longevity risk direction as SA2's annuity business, since both pay income for as long as someone survives."
+            },
+            {
+                "q": "Why might economic conditions (e.g. low interest rates) pose a particularly severe risk to DB pension scheme funding specifically, echoing SA2's material?",
+                "a": "Low interest rates directly increase the discounted value of long-term DB pension liabilities while potentially also reducing investment returns available to fund them, a genuine double impact on the scheme's funding position, closely echoing the same dynamic SA2 identifies for with-profits and annuity business.",
+                "explain": "This directly recalls SA2's low-interest-rate-double-impact material — worth recognising DB pension schemes as facing an almost identical economic risk profile to life insurers' guarantee-heavy product lines."
+            },
+            {
+                "q": "What is meant by a DB scheme's 'sponsor covenant', and why is it a genuinely distinctive risk consideration not present in a standalone insurance product?",
+                "a": "The sponsor covenant is the sponsoring employer's financial ability and willingness to support the pension scheme (e.g. through ongoing contributions) over time; unlike an insurance policyholder relying on the insurer's own balance sheet, a pension scheme member's security depends directly on a THIRD PARTY's (the sponsor's) ongoing financial health.",
+                "explain": "This directly previews this course's risk-management module — worth recognising sponsor covenant as a genuinely DISTINCTIVE risk unique to DB pensions, with no direct equivalent in the insurance-company-centred risk material covered in SA1-SA3."
+            },
+            {
+                "q": "Why might a sponsor's own financial distress or insolvency pose a particularly acute risk to DB scheme members, beyond simply reduced future contributions?",
+                "a": "If the sponsor becomes insolvent, the scheme may be left with an underfunded position and no ongoing ability to recover the shortfall through future contributions, potentially requiring entry into a pension protection arrangement (e.g. a statutory compensation scheme) that may not fully replace members' original promised benefits.",
+                "explain": "This directly previews this course's winding-up module — worth recognising sponsor insolvency as the single most severe realisation of the sponsor covenant risk just introduced, with direct, serious consequences for member security."
+            },
+            {
+                "q": "Why might regulatory and legislative change (e.g. new funding standards or auto-enrolment requirements) represent a genuine ongoing risk for pension schemes and their sponsors, echoing this course's recurring theme?",
+                "a": "A change in funding requirements, benefit standards, or mandatory scheme participation rules can suddenly alter a scheme's genuine funding target or a sponsor's cost obligations after the scheme has already been designed and funded on prior assumptions, a risk neither party can always fully anticipate in advance.",
+                "explain": "This directly recalls SA1's political-and-regulatory-risk material — worth recognising this same principle applying to pensions, where regulatory change is a particularly prominent, frequently-tested real-world risk given how politically salient pension policy often is."
+            },
+            {
+                "q": "Why might monitoring the external business environment need to be an ongoing exercise for pension scheme trustees and sponsors, echoing this course's recurring theme?",
+                "a": "Demographic, economic, regulatory and sponsor-covenant factors all continue to evolve over time, so an assessment conducted once and never revisited would quickly become outdated, leaving funding and investment strategy based on a stale picture of the scheme's actual operating environment.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's ongoing-review theme — worth recognising this principle as genuinely universal across every SA subject, pensions included."
+            }
+        ]
+    }
+
+    ]
 };
