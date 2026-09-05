@@ -15524,7 +15524,166 @@ const MODULES = {
                 "explain": "This directly recalls CS2's extreme-value-theory material — worth recognising the 1-in-200-year return period specifically as a commonly used benchmark directly linked to Solvency II's SCR calibration (previewing Module 7's material)."
             }
         ]
+    },
+    {
+        "id": "m06",
+        "title": "Catastrophe modelling (2): uses and limitations",
+        "description": "Covers the key uses to which an actuary might put catastrophe model output, and the key considerations and limitations in using that output, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the key uses to which a general insurance actuary might put catastrophe model output, per the official syllabus objective?",
+                "a": "Pricing catastrophe-exposed risks, assessing overall portfolio accumulation risk, informing reinsurance purchasing decisions, and supporting Solvency II SCR capital calculations for catastrophe risk.",
+                "explain": "Worth recognising these four uses as spanning almost this whole course's later topic areas (pricing, reinsurance, capital) — catastrophe model output is a genuinely central input feeding into many different actuarial decisions, not a standalone technical exercise."
+            },
+            {
+                "q": "Why might catastrophe model output be a particularly important input to an insurer's reinsurance purchasing decisions?",
+                "a": "Understanding the modelled probability and severity of losses at different return periods (e.g. 1-in-100, 1-in-200 years) directly informs how much reinsurance cover to buy and at what attachment points, targeting the specific tail risk the insurer wants to transfer.",
+                "explain": "This directly previews this course's reinsurance module — worth recognising catastrophe modelling and reinsurance purchasing as tightly linked activities, with model output providing the genuine quantitative basis for reinsurance structuring decisions."
+            },
+            {
+                "q": "What are some key considerations an actuary should bear in mind when using catastrophe model output, per the official syllabus objective?",
+                "a": "Model uncertainty (different models or model versions can produce genuinely different loss estimates for the same portfolio), the quality and completeness of the exposure data fed into the model, and the fact that models are calibrated on historical and scientific data that may not fully capture emerging or changing risk (e.g. climate change).",
+                "explain": "Worth treating this as a genuine checklist of catastrophe-model LIMITATIONS — a strong exam answer discussing catastrophe modelling should demonstrate awareness of these limitations, not just describe the model's mechanics uncritically."
+            },
+            {
+                "q": "Why might using output from multiple different catastrophe models (a 'multi-model' approach) provide a genuinely more robust view of an insurer's catastrophe risk than relying on a single model?",
+                "a": "Since different models can embed genuinely different scientific assumptions and calibrations, comparing output across multiple models reveals the genuine degree of model uncertainty, helping the insurer avoid over-reliance on any single model's specific assumptions.",
+                "explain": "This directly recalls SA1's model-limitation-awareness material — worth recognising a multi-model approach as a direct, practical response to the model-uncertainty limitation raised in the card above."
+            },
+            {
+                "q": "Why might catastrophe models need regular recalibration and updating, rather than being treated as a fixed, permanently accurate tool, echoing this course's recurring ongoing-review theme?",
+                "a": "Scientific understanding of perils, exposure data, and the underlying risk itself (e.g. climate change affecting windstorm or flood frequency and severity) all continue to evolve, so a model calibrated once and never updated would increasingly diverge from genuine current risk.",
+                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to catastrophe MODELS themselves, not just to an insurer's own risk assessment process."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Solvency II regulatory framework for general insurance",
+        "description": "Covers the Solvency II framework's background, structure, and governance and disclosure requirements as they apply to general insurers, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the three pillars of the Solvency II framework, echoing SA1's and SA2's material?",
+                "a": "Pillar 1 sets quantitative capital and technical provision requirements; Pillar 2 covers governance and risk management (including the insurer's own risk assessment); Pillar 3 covers public disclosure and reporting requirements.",
+                "explain": "This directly recalls SA1's and SA2's three-pillar Solvency II material — worth recognising this structure as identical across every insurance sector, general insurance included."
+            },
+            {
+                "q": "Why might calculating the SCR for a general insurer's book require materially different risk modules than for a life insurer's book, echoing SA1's and SA2's material?",
+                "a": "General insurance risks (premium risk, reserve risk, and catastrophe risk) have genuinely different drivers than life insurance's mortality, longevity, and lapse risk, requiring the standard formula or internal model to capture genuinely different, non-life-specific risk modules.",
+                "explain": "This directly recalls SA1's and SA2's product-specific-capital-modelling material — worth recognising catastrophe risk specifically (Modules 5-6's material) as a genuinely distinctive general insurance risk module not present in life insurance's risk categories."
+            },
+            {
+                "q": "Why might Solvency II's Pillar 2 governance requirements place particular emphasis on a general insurer's reserving process, given this course's later reserving material?",
+                "a": "Since general insurance reserves (particularly for longer-tail claims) involve genuine estimation uncertainty, sound governance around how reserves are set, reviewed, and challenged is essential to ensuring the reported technical provisions genuinely reflect the insurer's true liability position.",
+                "explain": "This directly previews this course's reserving modules — worth recognising Pillar 2 governance as directly supporting the reliability of the technical provisions calculated under Pillar 1, particularly for general insurance's genuinely more uncertain reserving process."
+            },
+            {
+                "q": "Why does Solvency II's Pillar 3 group reporting requirement matter particularly for a general insurance group operating across multiple jurisdictions or business lines?",
+                "a": "Group-level disclosure allows stakeholders to assess the genuine overall financial position and risk profile of the whole group, capturing diversification benefits and concentration risks that individual entity-level reporting alone might not reveal.",
+                "explain": "This directly recalls SA1's group-wide-risk-standards material — worth recognising group reporting as addressing a genuinely different stakeholder question (overall group soundness) than entity-level reporting alone."
+            },
+            {
+                "q": "How does this module's Solvency II material connect back to the catastrophe modelling material covered in Modules 5-6?",
+                "a": "Catastrophe model output (e.g. estimated 1-in-200-year losses) directly feeds into the Solvency II SCR's catastrophe risk module calculation, meaning Modules 5-6's technical material is a genuine, practical INPUT to this module's regulatory capital calculation.",
+                "explain": "This closing card ties this module back to Modules 5-6 explicitly — worth recognising catastrophe modelling not as a standalone technical topic, but as feeding directly into this module's regulatory capital requirements."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Lloyd's regulatory regime and cross-jurisdiction comparison",
+        "description": "Covers the regulatory regime in place at Lloyd's, and comparing regulatory, legislative and taxation environments across different jurisdictions, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why does Lloyd's operate under a dual-layer regulatory regime, combining the Council of Lloyd's internal oversight with external UK prudential regulation, echoing Module 3's material?",
+                "a": "Lloyd's internal oversight applies market-specific rules tailored to its unique syndicate structure (capital allocation across members, syndicate-level monitoring), while external regulation ensures the whole market meets the same genuine prudential standards expected of any other UK insurer under Solvency II.",
+                "explain": "This directly recalls Module 3's Lloyd's-structure material — worth recognising this dual-layer regime as a direct structural consequence of Lloyd's marketplace structure, not a duplicative or redundant regulatory arrangement."
+            },
+            {
+                "q": "Why might comparing regulatory, legislative and taxation environments across different jurisdictions be a genuinely important skill for a general insurance actuary, rather than purely academic knowledge?",
+                "a": "An actuary advising an insurer operating across multiple jurisdictions, or assessing entry into a new market, needs to understand how genuinely different regulatory and tax environments would affect product design, pricing, and capital requirements in that specific market.",
+                "explain": "This directly recalls SA1's comparative-regulation material — worth recognising cross-jurisdiction comparison as a practically important skill for real multinational general insurance business, not an abstract academic exercise."
+            },
+            {
+                "q": "Why might a jurisdiction's regulatory approach to catastrophe-exposed general insurance genuinely differ from a jurisdiction with limited natural catastrophe exposure?",
+                "a": "A jurisdiction with significant catastrophe exposure may impose more detailed, prescriptive requirements around catastrophe modelling, reinsurance, and capital adequacy specifically for that risk, reflecting the genuinely greater systemic importance of getting catastrophe risk management right in that market.",
+                "explain": "This directly recalls Modules 5-7's catastrophe-risk material — worth recognising that regulatory intensity should genuinely track the actual risk profile of a market, not be applied uniformly regardless of local risk characteristics."
+            },
+            {
+                "q": "Why might the regulatory, legislative and taxation environment affect how general insurance companies carry out their business in practice, beyond simply setting compliance minimums?",
+                "a": "Regulatory capital requirements, permitted product features, and tax treatment can all directly shape which products are commercially viable to offer, how they are priced, and how the insurer structures its capital and reinsurance arrangements, making the environment a genuine determinant of practical business strategy, not just a compliance backdrop.",
+                "explain": "This directly recalls the official syllabus's explicit objective on this point — worth treating the regulatory/legislative/tax environment as a genuine STRATEGIC CONSTRAINT shaping real business decisions, echoing this course's later financial-management material."
+            },
+            {
+                "q": "Why might actuarial professional standards apply consistently to actuaries practising in or advising general insurance companies across different jurisdictions, even where local regulation varies?",
+                "a": "Professional standards set out expected practice for sound, honest actuarial work that complements varying local regulation, ensuring a consistent baseline of technical and ethical practice regardless of how permissive or strict any particular jurisdiction's own regulatory requirements happen to be.",
+                "explain": "This directly recalls SA1's professional-standards-as-consistent-baseline material — worth recognising professional standards as providing genuine consistency precisely where regulatory requirements themselves can vary significantly by jurisdiction."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Legislation: consumer protection and equality",
+        "description": "Covers the relevance of consumer protection and equality legislation to general insurance business, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why is consumer protection legislation particularly relevant to general insurance business, beyond general conduct regulation, echoing CP1's material?",
+                "a": "Consumer protection legislation typically sets specific legal rights and remedies for policyholders (e.g. around unfair contract terms or misleading sales practices), operating alongside and sometimes overlapping with regulatory conduct requirements, giving policyholders a further, legally enforceable layer of protection.",
+                "explain": "This directly recalls CP1's conduct-regulation material — worth recognising consumer protection LEGISLATION as a genuinely distinct layer from regulatory conduct RULES, even though both pursue similar fair-treatment objectives."
+            },
+            {
+                "q": "Why might equality legislation be particularly relevant to how a general insurer sets its underwriting and rating factors?",
+                "a": "Equality legislation can restrict or prohibit the use of certain personal characteristics (e.g. protected characteristics under relevant law) as rating factors, even where those characteristics might otherwise be statistically correlated with risk, reflecting a genuine fairness objective that constrains purely risk-based rating.",
+                "explain": "This directly recalls SA1's genetic-testing-restriction material — worth recognising the same underlying principle applying here: legislation can restrict statistically useful rating factors on fairness grounds, a recurring tension across every insurance sector."
+            },
+            {
+                "q": "Why might a general insurer need to genuinely balance actuarially-justified risk differentiation against equality legislation's fairness constraints, rather than treating one as simply overriding the other?",
+                "a": "Actuarially sound, risk-reflective pricing supports genuine fairness between policyholders of different risk levels, while equality legislation protects against discrimination on certain grounds regardless of any genuine statistical correlation, meaning the insurer must design rating structures that are both actuarially sound AND legally compliant.",
+                "explain": "This directly recalls SA1's fairness-versus-access-tension material — worth recognising this as a genuine, ongoing balance rather than a solved problem with one correct answer, echoing the same tension raised across multiple SA subjects."
+            },
+            {
+                "q": "Why might non-compliance with consumer protection or equality legislation pose a genuinely significant reputational, not just legal, risk to a general insurer?",
+                "a": "Publicised breaches of consumer protection or equality requirements can damage customer trust and brand reputation well beyond the direct legal or regulatory penalty involved, potentially affecting future business volumes and relationships with distributors and regulators alike.",
+                "explain": "This directly recalls CP1's reputational-risk material — worth recognising legal compliance and reputational risk management as genuinely linked, not two entirely separate considerations for a general insurer."
+            },
+            {
+                "q": "Why might a general insurance actuary need working knowledge of consumer protection and equality legislation, even though these areas are primarily legal rather than actuarial in nature?",
+                "a": "Since this legislation directly constrains permissible rating factors and product terms, an actuary designing pricing structures or product features must understand these constraints well enough to ensure proposed approaches are both actuarially sound and legally compliant from the outset.",
+                "explain": "This directly recalls this module's own official syllabus objective — worth recognising legal literacy in this specific area as a genuinely practical necessity for actuarial work, not an optional extra outside the actuary's remit."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Taxation of general insurance business",
+        "description": "Covers the implications of taxation for policyholders, general insurance companies (mutual and proprietary), and Lloyd's syndicates and members, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why might the tax treatment of general insurance premiums and claims payments directly affect a product's genuine attractiveness to policyholders, echoing SA1's and SA2's material?",
+                "a": "If premiums attract tax relief, or claims payments are tax-favoured, the effective cost or value of cover changes materially, directly affecting demand and the price the insurer can competitively charge for economically similar cover.",
+                "explain": "This directly recalls SA1's and SA2's taxation-affects-attractiveness material — worth recognising the same mechanism applying to general insurance, though tax-favoured treatment is generally less prominent here than for life insurance savings products."
+            },
+            {
+                "q": "Why might taxation of a mutual general insurance company (owned by its policyholders) differ genuinely from taxation of a proprietary company (owned by shareholders)?",
+                "a": "A mutual's surplus typically belongs to its policyholder-members collectively rather than external shareholders, so its tax treatment may reflect this different ownership and profit-distribution structure, distinct from a proprietary company's shareholder-focused profit and dividend taxation.",
+                "explain": "This directly recalls the official syllabus's explicit mutual-versus-proprietary distinction — worth recognising ownership STRUCTURE, not just the underlying insurance business, as directly shaping appropriate tax treatment."
+            },
+            {
+                "q": "Why might Lloyd's syndicates and their members face genuinely distinct taxation considerations compared with a conventional general insurance company, echoing Module 3's material?",
+                "a": "Since underwriting profits and losses flow through to individual or corporate members according to their specific syndicate participation, tax treatment must reflect this genuinely different profit-flow structure, rather than the more straightforward corporate taxation applicable to a conventional insurer's shareholders.",
+                "explain": "This directly recalls Module 3's Lloyd's-profit-flow material — worth recognising Lloyd's distinctive capital and profit structure as creating genuinely distinct tax questions, not just a variant of standard corporate insurance taxation."
+            },
+            {
+                "q": "Why does an insurer's own corporate tax position affect its pricing and profit-margin decisions, beyond the policyholder-level tax treatment, echoing SA1's and SA2's material?",
+                "a": "Tax payable on the insurer's own profits reduces the genuine after-tax return achieved from a given pre-tax margin, so pricing and profit testing must incorporate the insurer's own tax position to assess whether a product achieves its true target return.",
+                "explain": "This directly recalls SA1's and SA2's after-tax profitability material — worth recognising this as a genuinely universal pricing consideration across every insurance sector this course covers."
+            },
+            {
+                "q": "Why might changes in tax legislation represent a genuine ongoing risk for general insurers, similar to the political risk raised for other insurance sectors?",
+                "a": "A change in how premiums, claims, or insurer profits are taxed can suddenly alter product attractiveness or profitability after a product has already been priced and sold, a risk the insurer cannot always fully anticipate or hedge against in advance.",
+                "explain": "This directly recalls SA1's political-and-tax-risk material — worth recognising tax risk as a specific, concrete manifestation of the wider political-risk category, deserving explicit ongoing monitoring across every insurance sector."
+            }
+        ]
     }
-
     ]
 };
