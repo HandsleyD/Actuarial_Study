@@ -17852,6 +17852,117 @@ const MODULES = {
                 "explain": "This directly recalls SP1's identical complementary-techniques framing — worth recognising this same principle applying identically to life insurance risk management."
             }
         ]
+    },
+    {
+        "id": "m10",
+        "title": "Asset-liability matching and further risk management techniques",
+        "description": "Covers the principles of investment for a life insurer, categorising liabilities for matching purposes, and further ways of managing the risks identified in Module 7, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine principles of investment for a life insurance company, per the official syllabus objective 3.4.1?",
+                "a": "Investment strategy should genuinely reflect the nature, term and currency of the insurer's liabilities, balance security against return, and provide sufficient liquidity to meet claims and expenses as they fall due — the same core CM2-derived matching principles applied specifically to life insurance liabilities.",
+                "explain": "This directly recalls CM2's asset-liability matching material and SP1's identical investment-principles material — worth recognising these principles as genuinely universal across life and health and care insurance, not sector-specific."
+            },
+            {
+                "q": "Why does the syllabus explicitly require candidates to 'categorise life insurance liabilities into different types for asset-liability matching purposes' (objective 3.4.2), rather than treating all liabilities as a single undifferentiated pool?",
+                "a": "Different liability types (e.g. short-term protection claims versus long-duration annuity payments versus unit-linked liabilities that pass investment risk directly to the policyholder) have genuinely different duration, cashflow certainty, and risk-bearing characteristics, so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually.",
+                "explain": "Worth recognising this categorisation step as the essential PRECURSOR to sound matching strategy, directly echoing SP1's identical material — you cannot match assets to liabilities appropriately without first genuinely understanding how those liabilities differ from each other."
+            },
+            {
+                "q": "Why does unit-linked business require a genuinely different asset-liability matching approach from with-profits or annuity business?",
+                "a": "Since unit-linked investment risk and return pass directly to the policyholder, the insurer's own ALM concern is largely limited to managing charges, expenses, and any embedded guarantees, rather than managing a large pool of insurer-owned assets against insurer-owned liabilities, unlike with-profits or annuity business where the insurer itself genuinely bears the investment/longevity risk.",
+                "explain": "This directly recalls SA2's unit-linked-risk-transfer material — worth recognising that 'ALM' means something genuinely different across a life insurer's different product lines, not a single uniform activity."
+            },
+            {
+                "q": "Why might annuity business require a genuinely different matching strategy from protection business, echoing SA2's inverted-risk material?",
+                "a": "Annuity liabilities are long-duration and highly interest-rate sensitive, favouring long-dated matching assets (e.g. long-dated bonds), while protection business liabilities are typically shorter-duration and less interest-rate sensitive, allowing a different balance prioritising liquidity and expense-matching over long-duration interest rate matching.",
+                "explain": "This directly recalls SA2's ALM-duration material — worth recognising DURATION, not product category alone, as the genuine underlying driver of appropriate matching strategy emphasis."
+            },
+            {
+                "q": "What further ways of managing risk does the official syllabus (objective 3.5, per its equivalent list) explicitly name, beyond reinsurance, underwriting, and asset-liability matching, for life insurance specifically?",
+                "a": "Policy data checks, choice of with-profits bonus method (directly connecting to Module 5's material), capital management, expense control, policy retention activity, management of new business mix and volumes, management of options, and systematic risk assessment and management strategies.",
+                "explain": "Worth recognising 'choice of with-profits bonus method' as a genuinely life-insurance-specific addition to this list compared with SP1's equivalent — bonus-method choice is itself a genuine risk management lever, not purely a customer-value decision."
+            },
+            {
+                "q": "Why might 'policy retention activity' be considered a genuine risk management technique, rather than purely a commercial sales activity?",
+                "a": "Since higher-than-assumed lapses can genuinely damage profitability (given typically front-loaded expenses relative to premium income), proactive policy retention activity directly manages persistency risk, one of the risk sources identified in Module 7, making it a genuine risk management tool as much as a commercial retention exercise.",
+                "explain": "This directly recalls Module 7's persistency-risk material and CB1's new-business-strain material — worth recognising retention activity as addressing a NAMED risk source directly, not merely a generic 'good business practice'."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Life insurance models",
+        "description": "Covers the main features of an actuarial model for life insurance, including stochastic versus deterministic approaches, sensitivity analysis, and the different decision-making purposes such models serve, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine purpose of an actuarial model in life insurance, per the official syllabus objective 4.1?",
+                "a": "A model provides a structured, simplified representation of an insurer's genuine cashflows and risks, allowing the insurer to project outcomes, test assumptions, and support decision-making in areas like pricing, investment strategy, solvency assessment, and embedded value calculation, without needing to wait for genuine real-world experience to emerge.",
+                "explain": "This directly recalls SP1's identical model-purpose material — worth recognising this as a genuinely universal actuarial-modelling principle applying equally to life and health and care insurance."
+            },
+            {
+                "q": "What is the difference between a stochastic and a deterministic modelling approach, and why might a life insurer particularly need stochastic modelling for with-profits or unit-linked guarantee business?",
+                "a": "A deterministic model projects a single set of assumed outcomes, while a stochastic model simulates many possible outcomes drawn from probability distributions; life insurers particularly need stochastic modelling for products with embedded guarantees (e.g. guaranteed minimum benefits) since the genuine cost of such guarantees depends on the full RANGE of possible future market outcomes, not a single central scenario.",
+                "explain": "This directly recalls SA2's embedded-option-pricing material — worth recognising stochastic modelling as especially essential for life insurance's characteristically guarantee-rich product range."
+            },
+            {
+                "q": "Why is sensitivity analysis a genuinely essential companion to any life insurance actuarial model, per the official syllabus objective 4.1.3?",
+                "a": "Sensitivity analysis reveals how much a model's output genuinely changes when key assumptions (e.g. mortality, lapse rates, investment returns) are varied, showing which assumptions the result is most exposed to — without this, a single-point model output could give false confidence, since a model is only as reliable as its assumptions.",
+                "explain": "This directly recalls SP1's identical sensitivity-analysis material — worth recognising this as a genuinely universal modelling discipline, not specific to either life or health and care insurance."
+            },
+            {
+                "q": "What different decision-making purposes does the official syllabus (objective 4.2) require actuarial models to be understood as serving for life insurance?",
+                "a": "Pricing products, developing investment strategy, projecting solvency, and calculating embedded value — directly mirroring SP1's identical list of model uses, applied specifically to life insurance products and assumptions.",
+                "explain": "Worth recognising this as a genuinely universal set of model applications recurring across every SA and SP subject that covers actuarial modelling."
+            },
+            {
+                "q": "Why might the SAME underlying life insurance model require genuinely different assumption sets depending on whether it is being used for pricing versus embedded value calculation?",
+                "a": "Pricing typically uses best-estimate or lightly-margined assumptions (including a profit requirement) to determine a competitive, sustainable premium, while embedded value calculation requires genuinely realistic, best-estimate assumptions reflecting the true expected value of in-force business, so the SAME model structure can require different assumption inputs depending on its specific purpose.",
+                "explain": "This directly previews this course's later assumption-setting module — worth recognising that model PURPOSE genuinely shapes appropriate assumption choice, even when the underlying model structure itself remains the same."
+            },
+            {
+                "q": "Why might building a genuinely sound model for a with-profits fund require particular care in representing the insurer's own future discretionary bonus decisions?",
+                "a": "Unlike a without-profits contract with fixed, contractually-determined cashflows, a with-profits contract's genuine future cashflows depend directly on the insurer's own future bonus decisions, so the model must explicitly represent this discretionary decision-making process (e.g. via an assumed bonus-setting formula or policy), a genuinely more complex modelling challenge than a fixed-cashflow product.",
+                "explain": "This directly recalls Module 5's with-profits-discretion material — worth recognising that modelling discretionary benefits requires explicitly representing the insurer's own future decision rules, not simply projecting fixed cashflows."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Cost of options and guarantees, and supervisory reserves",
+        "description": "Covers the methods used to determine the cost of options and guarantees, and the determination of supervisory reserves and solvency capital requirements for a life insurer, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine methods does the official syllabus (objective 4.3) name for determining the cost of options and guarantees in life insurance?",
+                "a": "Stochastic simulation combined with the use of option prices to determine the cost of an investment guarantee, and separate assessment techniques for the cost of simple mortality options (e.g. guaranteed insurability options).",
+                "explain": "Worth recognising these as genuinely two distinct technique FAMILIES — stochastic/option-pricing methods for INVESTMENT guarantees, and separate assessment approaches for MORTALITY-related options, reflecting the genuinely different risk drivers each involves."
+            },
+            {
+                "q": "Why might stochastic simulation combined with option pricing theory (echoing CM2's material) be genuinely necessary to cost an investment guarantee, rather than a simple deterministic calculation?",
+                "a": "An investment guarantee (e.g. a guaranteed minimum maturity value) only genuinely bites under certain, adverse future market outcomes, so its true cost depends on the full probability-weighted RANGE of possible future market paths, which stochastic simulation and option-pricing techniques are specifically designed to capture, unlike a single deterministic scenario.",
+                "explain": "This directly recalls CM2's embedded-option-pricing material — worth recognising this as the direct SP2-level application of CM2's general option-pricing technique to a genuine life insurance guarantee-costing problem."
+            },
+            {
+                "q": "Why might assessing the cost of a 'simple mortality option' (e.g. a guaranteed insurability option) require genuinely different techniques from an investment guarantee, per the official syllabus objective 4.3.2?",
+                "a": "A mortality option's cost depends on genuine anti-selective exercise behaviour linked to an applicant's own health status (they exercise the option when their health has genuinely deteriorated), a fundamentally different risk driver from market-price-linked investment guarantees, requiring assessment techniques focused on modelling anti-selective take-up rates rather than stochastic market simulation.",
+                "explain": "This directly recalls this course's anti-selective-option-cost material — worth recognising mortality options as costed through modelling BEHAVIOURAL/HEALTH-LINKED exercise patterns, genuinely distinct from the MARKET-LINKED stochastic techniques used for investment guarantees."
+            },
+            {
+                "q": "What are the genuine purposes of supervisory reserves and solvency capital requirements for a life insurer, per the official syllabus objective 4.4.1?",
+                "a": "Supervisory reserves ensure the insurer holds sufficient assets to meet its genuine expected liabilities, while solvency capital requirements provide an additional buffer protecting against the genuine risk that actual experience diverges adversely from expected, directly mirroring SP1's identical purposes for health and care insurance.",
+                "explain": "This directly recalls SP1's identical reserve-and-capital-purpose material — worth recognising these as genuinely universal prudential concepts applying equally to life and health and care insurance."
+            },
+            {
+                "q": "What is 'non-unit reserve', and why is this concept genuinely specific to unit-linked business, per the official syllabus objective 4.4.1?",
+                "a": "A non-unit reserve is an additional reserve held for a unit-linked contract's non-unit-linked elements (e.g. mortality risk cover, or the risk that future charges won't cover future expenses), needed because the unit-linked fund value itself only covers the investment-linked element of the contract, not these additional non-investment risk elements.",
+                "explain": "Worth recognising the non-unit reserve as addressing a genuinely SPECIFIC gap unique to unit-linked business — the unit fund covers investment risk, but a SEPARATE reserve is needed for the mortality/expense risk elements the unit fund itself does not cover."
+            },
+            {
+                "q": "Why might the 'interplay between the strength of supervisory reserves and the level of solvency capital required' (per the syllabus objective 4.4.2) matter for a life insurer just as it does for a health and care insurer, echoing SP1's identical material?",
+                "a": "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital genuinely depends on how prudent the reserving basis already is, a genuinely universal interplay applying regardless of insurance sector.",
+                "explain": "This directly recalls SP1's identical reserve-capital-interplay material — worth recognising this interplay as a genuinely universal prudential principle, not specific to health and care insurance alone."
+            }
+        ]
     }
     ]
 };
