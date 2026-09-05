@@ -14735,4 +14735,224 @@ const MODULES = {
         ]
     }
 ],
+  SA2: [
+    {
+        "id": "m01",
+        "title": "What is Subject SA2 all about?",
+        "description": "An orientation chapter explaining SA2's role as the Specialist Advanced subject applying core actuarial techniques to complex life insurance scenarios, and how it builds on SP2.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SA2?",
+                "a": "To develop a candidate's ability to apply actuarial techniques and knowledge of the life insurance environment, including regulatory, legislative, taxation, financial management, monitoring and strategic considerations, to complex scenarios concerning the management of life insurance companies.",
+                "explain": "This mirrors SA1's aim almost word for word, just for life insurance instead of health and care — worth recognising that all SA subjects share a near-identical template: applied judgement in complex, realistic scenarios, not bookwork recall."
+            },
+            {
+                "q": "How does SA2 relate to Subject SP2 (Life Insurance Specialist Principles)?",
+                "a": "SP2 introduces the main principles and knowledge required in life insurance and how they apply in simple scenarios; SA2 builds on those same skills and knowledge, applied to much more complex scenarios and in greater depth.",
+                "explain": "This directly mirrors SA1's relationship to SP1 — worth treating SP2 as the assumed technical foundation SA2 does not re-teach."
+            },
+            {
+                "q": "What broad syllabus topic areas does SA2 cover, echoing SA1's five-area structure?",
+                "a": "Life insurance products and the general business environment; product design and pricing; the regulatory, legislative and taxation environment (including Solvency II); financial management, profit and value reporting; and monitoring experience and assessing/recommending strategies.",
+                "explain": "This is worth comparing directly against SA1's own topic list — the underlying skeleton (products, environment, pricing, regulation, reporting, strategy) recurs across every SA subject, just applied to a different insurance sector each time."
+            },
+            {
+                "q": "What skills, beyond technical knowledge, does the SA2 syllabus expect candidates to demonstrate?",
+                "a": "Candidates must analyse a scenario, assess the implications of relevant factors, evaluate results critically in a wider context, and propose solutions or courses of action — the same analyse/assess/evaluate/propose progression used across every SA subject.",
+                "explain": "This directly recalls SA1's skill-progression material — worth memorising this four-stage structure as a genuine answer-writing template applicable across all Specialist Advanced subjects, not just SA2."
+            },
+            {
+                "q": "Why might a SA2 exam question present an unfamiliar or fictional life insurance market, rather than only the candidate's home market?",
+                "a": "This tests whether candidates can apply the underlying principles and skills developed throughout the course to any given set of facts, rather than simply recalling memorised knowledge about one specific, familiar real-world market.",
+                "explain": "This directly recalls SA1's fictional-scenario exam-format material — worth recognising this as a deliberate, shared SA-subject design choice testing transferable judgement, not jurisdiction-specific memorisation."
+            },
+            {
+                "q": "Why does SA2 build directly on subjects like CP1, CM1, CM2 and CS2, even though it does not re-teach their content explicitly?",
+                "a": "SA2's pricing, reserving and risk-management material all depend on the general actuarial modelling, financial mathematics, and survival modelling techniques developed in those earlier subjects, applied specifically to the life insurance context.",
+                "explain": "This directly recalls SA1's equivalent card — worth treating this whole course as CP1's risk-management principles and CM1/CM2/CS2's technical toolkit, specifically specialised to life insurance products."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Protection products",
+        "description": "Covers the main life insurance protection products — term assurance, whole of life assurance, and their variants — and their key features.",
+        "cards": [
+            {
+                "q": "What is 'term assurance', and what is its core purpose?",
+                "a": "A life insurance product paying a benefit only if the life assured dies within a specified term, with no benefit payable if the policyholder survives the term — providing pure protection against the financial consequences of an early death.",
+                "explain": "This directly recalls CB1's protection-versus-savings product categorisation — worth recognising term assurance as the clearest example of pure protection with no savings element at all."
+            },
+            {
+                "q": "What is 'whole of life assurance', and how does it differ from term assurance in its guarantee of paying out?",
+                "a": "Whole of life assurance pays a benefit on death whenever it occurs, with no fixed term, so (barring lapse) it is certain to eventually pay a benefit — unlike term assurance, which only pays if death occurs within the specified term.",
+                "explain": "Worth contrasting directly against term assurance's card above — the CERTAINTY of eventual payment (subject to persistency) is the key structural difference, with direct consequences for pricing and reserving."
+            },
+            {
+                "q": "Why might whole of life assurance require a materially different pricing and reserving approach than term assurance?",
+                "a": "Since a payment is certain to eventually be made (absent lapse), whole of life pricing and reserving must reflect the genuinely long, open-ended payment horizon, unlike term assurance where mortality risk is confined to a fixed, bounded period.",
+                "explain": "This directly recalls CM1's whole-of-life versus term-assurance actuarial present value material — worth recognising this as CM1's foundational technique now applied within a genuine product-management and business context."
+            },
+            {
+                "q": "Why might a life insurer offer 'convertible term assurance', allowing conversion to a whole of life or endowment policy without further medical underwriting?",
+                "a": "This gives the policyholder valuable protection against future health deterioration making later cover difficult or expensive to obtain, echoing SA1's guaranteed-insurability-option material but for life insurance specifically.",
+                "explain": "This directly recalls SA1's guaranteed-insurability-option material — worth recognising the same anti-selective-option-cost principle applying here: the insurer must price for the fact that policyholders whose health has worsened are more likely to exercise the conversion option."
+            },
+            {
+                "q": "Why might a life insurer need to model mortality improvement trends when pricing and reserving long-duration protection products, echoing CS2's survival-modelling material?",
+                "a": "A long-duration product's true cost depends on mortality rates over many future decades, and mortality has historically improved over time, so ignoring this trend could materially misprice or under-reserve a genuinely long-term liability.",
+                "explain": "This directly recalls CS2's mortality-improvement and projection-modelling material — worth recognising life insurance protection products as one of the clearest real-world applications of CS2's mortality-trend techniques."
+            },
+            {
+                "q": "Why might critical illness and income protection riders sold alongside a core life protection product need to be priced with genuine care for their interaction with the core benefit?",
+                "a": "As SA1's competing-risks material establishes, CI and mortality compete for the same life, so a combined product's pricing must jointly model these interacting risks rather than pricing each rider as if fully independent of the core life cover.",
+                "explain": "This directly recalls SA1's competing-risks material — worth recognising that life insurers selling combined protection products face exactly the same interaction risk SA1 develops for standalone health and care products."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "Savings and investment products",
+        "description": "Covers with-profits and unit-linked savings and investment products, their bonus and charging structures, and their key features.",
+        "cards": [
+            {
+                "q": "What is a 'with-profits' policy, and how does its bonus mechanism work?",
+                "a": "A with-profits policy shares in the profits of the insurer's with-profits fund through bonuses added to the policy value, typically a combination of regular (reversionary) bonuses added periodically and a final (terminal) bonus paid on claim, smoothing investment returns over time relative to the fund's actual experience.",
+                "explain": "Worth treating 'smoothing' as the defining feature of with-profits — it deliberately dampens the volatility a policyholder would otherwise experience from directly-invested returns, at the cost of some complexity and insurer discretion in bonus-setting."
+            },
+            {
+                "q": "Why does with-profits bonus-setting involve genuine actuarial judgement, rather than a purely mechanical formula?",
+                "a": "The insurer must balance fair treatment of policyholders (paying out broadly what the underlying assets have earned over time) against smoothing volatility and maintaining fund solvency, a genuine judgement call with no single mechanically correct answer.",
+                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising with-profits bonus-setting as one of the clearest genuine examples of actuarial judgement operating within a defined but flexible framework."
+            },
+            {
+                "q": "What is a 'unit-linked' policy, and how does its charging structure typically work?",
+                "a": "A unit-linked policy directly invests premiums (net of charges) into notional 'units' of one or more investment funds, with the policy value moving directly with the fund's unit price; charges (e.g. bid-offer spread, annual management charge, policy fee) are deducted explicitly rather than smoothed.",
+                "explain": "Worth contrasting directly against with-profits — unit-linked passes investment risk and return DIRECTLY to the policyholder, with charges made explicit and transparent rather than implicitly absorbed into a smoothed bonus mechanism."
+            },
+            {
+                "q": "Why might a unit-linked policy's charging structure need to cover both the insurer's expenses and its cost of capital, not just recoup administrative costs?",
+                "a": "Since unit-linked business typically carries lower guarantees and risk than with-profits, its profit largely derives from charges, so the charging structure must be set with the same equivalence-principle-style rigour as any other pricing exercise, covering both expenses and a genuine required return.",
+                "explain": "This directly recalls CB1's and SA1's equivalence-principle material — worth recognising unit-linked charge-setting as pricing in substance, even though it takes the form of ongoing deductions rather than a single upfront premium calculation."
+            },
+            {
+                "q": "Why might a with-profits fund's investment strategy need to differ genuinely from a unit-linked fund's strategy, even holding similar underlying assets?",
+                "a": "A with-profits fund must manage assets to support smoothing and guarantee obligations across the whole fund collectively, while unit-linked assets are managed to directly track a specific fund's stated investment objective for individual policyholders, a genuinely different risk and governance structure.",
+                "explain": "This directly previews this course's asset-liability management module — worth recognising that 'life insurance investment' is not a single undifferentiated activity; the underlying product structure genuinely shapes appropriate investment strategy."
+            },
+            {
+                "q": "Why might guarantees embedded in older-style with-profits policies (e.g. guaranteed annuity options) pose a genuine, sometimes severe, risk to an insurer decades after the policy was sold?",
+                "a": "A guarantee that seemed unlikely to bite when interest rates and mortality assumptions were set at outset can become deeply in-the-money if rates fall or longevity improves significantly over the following decades, echoing CM2's embedded-option material but realised over a genuinely very long time horizon.",
+                "explain": "This directly recalls CM2's and CB1's embedded-option-cost material — worth recognising long-duration with-profits guarantees as a real-world case where an option that looked cheap at pricing can become severely costly decades later, a recurring theme in actual UK life insurance history."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Retirement and annuity products",
+        "description": "Covers annuity products and other retirement-related life insurance products, their risks, and their interaction with pension provision.",
+        "cards": [
+            {
+                "q": "What is a 'life annuity', and what is its core longevity-risk characteristic?",
+                "a": "A life annuity pays a regular income for as long as the annuitant survives, transferring longevity risk from the individual to the insurer — the insurer, not the individual, bears the risk of the annuitant living longer than expected.",
+                "explain": "Worth contrasting directly with protection products (Module 2), where the insurer's risk is triggered by DEATH — for annuities, the insurer's risk is triggered by SURVIVAL, an inverted risk exposure with direct implications for pricing and reserving assumptions."
+            },
+            {
+                "q": "Why does pricing a life annuity require genuinely careful mortality improvement assumptions, given the inverted risk exposure just described?",
+                "a": "Since the insurer's cost increases the longer the annuitant survives, understating future mortality improvement would understate the annuity's true cost, exactly the opposite pricing risk to a protection product where understating improvement would OVERstate cost.",
+                "explain": "This directly recalls CS2's mortality-improvement material and Module 2's protection-product material — worth recognising this genuine, important asymmetry: the SAME mortality-improvement trend that reduces protection-product cost INCREASES annuity cost."
+            },
+            {
+                "q": "What is a 'guaranteed annuity option' (GAO), and why did such options prove so costly for some UK life insurers historically?",
+                "a": "A GAO guarantees a policyholder the right to convert an accumulated fund into an annuity at a specified, guaranteed rate; when market annuity rates fell well below the guaranteed rate (driven by falling interest rates and improving longevity), the guarantee became deeply valuable to policyholders and extremely costly to insurers.",
+                "explain": "This directly recalls Module 3's guarantee-becoming-costly-decades-later material — worth treating GAOs as the single most commonly cited real-world UK life insurance example of this exact risk crystallising."
+            },
+            {
+                "q": "Why might an insurer offering annuities need to hold assets whose cashflows are closely matched to the annuity's long-term payment profile, echoing CM2's immunisation material?",
+                "a": "Annuity liabilities are highly sensitive to interest rate movements over a very long horizon, so holding assets (e.g. long-dated bonds) whose value moves similarly protects the insurer's balance sheet from adverse rate changes, directly applying CM2's matching/immunisation principle.",
+                "explain": "This directly recalls CM2's asset-liability matching material and SA1's LTC-ALM material — worth recognising annuities as one of the clearest, most textbook real-world applications of duration matching in the whole actuarial curriculum."
+            },
+            {
+                "q": "Why might 'enhanced' or 'impaired life' annuities (offering higher income to annuitants with reduced life expectancy) require genuinely careful underwriting?",
+                "a": "Accurately assessing reduced life expectancy (e.g. due to smoking, specific medical conditions) allows the insurer to offer a genuinely fair, competitively-priced higher income without taking on excessive anti-selection risk from over- or under-estimating an applicant's true reduced life expectancy.",
+                "explain": "This directly recalls SA1's underwriting-and-anti-selection material — worth recognising enhanced annuities as applying that same underwriting discipline in the OPPOSITE direction to standard life underwriting: here, WORSE health genuinely qualifies for a better rate."
+            },
+            {
+                "q": "Why might annuity products interact directly with a country's State pension and private pension system, echoing SA1's State-provision-interaction material?",
+                "a": "The scope and generosity of State pension provision and whether private pension savings must (or can voluntarily) be converted into an annuity at retirement directly shapes the size and nature of the private annuity market a life insurer operates within.",
+                "explain": "This directly recalls SA1's State-provision-interaction material — worth recognising the same principle applying to retirement products specifically: annuity demand is genuinely shaped by the wider pension and State-provision system, not determined by the product alone."
+            }
+        ]
+    },
+    {
+        "id": "m05",
+        "title": "Product analysis",
+        "description": "Covers how to analyse and compare life insurance products in terms of customer needs, distribution, and interaction with State and employer provision.",
+        "cards": [
+            {
+                "q": "What three broad categories of customer financial need do life insurance products typically address, echoing CP1's material?",
+                "a": "Protection against risk (e.g. death, illness), saving/investment for the future, and income provision (e.g. in retirement) — with many real products combining more than one of these categories in a single contract.",
+                "explain": "This directly recalls CP1's three-category customer-need framework — worth using this as a genuine analytical checklist when assessing any life insurance product's true purpose and target market."
+            },
+            {
+                "q": "Why might a genuinely complete product analysis need to consider how a product interacts with State pension and welfare provision, not just its own stated features?",
+                "a": "A product's genuine value proposition depends on what State provision does NOT already cover, so the same product could be essential in one market and largely redundant in another purely due to differences in State provision, not the product's own design.",
+                "explain": "This directly recalls SA1's State-provision-interaction material — worth recognising the same analytical principle applying to life insurance products just as much as to health and care products."
+            },
+            {
+                "q": "Why might distribution channel choice materially affect which life insurance products are genuinely suitable to offer through it?",
+                "a": "Complex products with significant guarantees or investment choices (e.g. with-profits, unit-linked with fund selection) may genuinely benefit from adviser guidance, while simpler, standardised protection products can be reasonably sold through direct or online channels without extensive advice.",
+                "explain": "This directly recalls CB1's and SA1's product-complexity-versus-distribution-channel material — worth recognising this same principle recurring here: channel suitability depends on product COMPLEXITY, not product category as such."
+            },
+            {
+                "q": "Why might bundling protection and savings elements into a single life insurance contract create genuine analytical complexity when comparing it against two separate standalone products?",
+                "a": "A bundled product can have genuine interactions (e.g. a with-profits savings element combined with a guaranteed protection benefit) that a naive comparison against two standalone products would miss, requiring the combined product to be analysed holistically.",
+                "explain": "This directly recalls SA1's bundling-analysis material — worth recognising the same principle applying to combined life insurance products, not just combined health and care products."
+            },
+            {
+                "q": "Why might a genuinely thorough product analysis need to consider a customer's full life stage and evolving needs, rather than assessing a product against a single static need?",
+                "a": "A customer's protection, savings, and income needs typically evolve significantly over their lifetime (e.g. from pure protection when young with dependants, to savings in mid-career, to income needs in retirement), so a product's genuine suitability should be assessed against this evolving trajectory, not a single snapshot.",
+                "explain": "This directly recalls SA1's life-stage-analysis material — worth recognising life-stage thinking as a genuinely portable analytical tool across insurance sectors, not specific to health and care."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "General business environment",
+        "description": "Covers how life insurance products are distributed, the roles of reinsurers and other counterparties, and wider external influences on life insurers.",
+        "cards": [
+            {
+                "q": "Why might a life insurer's distribution strategy need to reflect whether it primarily sells protection, savings, or retirement products?",
+                "a": "Different product types often suit genuinely different channels (e.g. simple protection via direct/online, complex with-profits/unit-linked via advisers, bulk annuities via specialist brokers to pension schemes), so a single, undifferentiated distribution strategy is unlikely to serve all product lines equally well.",
+                "explain": "This directly recalls Module 5's channel-suitability material — worth recognising that a life insurer with a genuinely diverse product range may need multiple, genuinely distinct distribution strategies operating in parallel."
+            },
+            {
+                "q": "Why might reinsurance play a particularly significant role in the life insurance protection market specifically, beyond its general risk-management purpose?",
+                "a": "Reinsurers often hold significant mortality/morbidity pricing expertise and data across many insurers' experience, making them a genuinely valuable partner for pricing new or unusual protection risks, not just a pure risk-transfer counterparty.",
+                "explain": "This directly recalls SA1's reinsurer-as-expertise-source material — worth recognising the same principle applying with particular force in life protection, where reinsurer mortality data pooling is a long-established, genuinely important market feature."
+            },
+            {
+                "q": "Why might demographic change (e.g. an ageing population) affect a life insurer's annuity and protection business in genuinely opposite directions?",
+                "a": "An ageing population with improving longevity increases the cost of annuity business (more years of payment) while potentially reducing near-term mortality-related protection claims, meaning the SAME demographic trend can be a genuine headwind for one product line and a tailwind for another within the same insurer.",
+                "explain": "This directly recalls Module 4's inverted-risk-exposure material — worth recognising this as a genuinely important portfolio-level insight: a life insurer with both annuity and protection business has some natural, partial diversification against demographic risk."
+            },
+            {
+                "q": "Why might economic conditions (e.g. low interest rates) pose a particularly severe risk to with-profits and annuity business specifically?",
+                "a": "Low interest rates directly reduce investment returns available to back with-profits bonuses and annuity guarantees, while simultaneously increasing the discounted value of long-term guaranteed liabilities, a genuine double impact on these specific product lines' solvency position.",
+                "explain": "This directly recalls Module 3's and Module 4's guarantee-cost material — worth recognising interest rate risk as hitting GUARANTEE-HEAVY product lines (with-profits, annuities) with particular severity, more so than simpler protection or unit-linked business."
+            },
+            {
+                "q": "Why does treating customers fairly (TCF) carry particular significance for with-profits business specifically, beyond general conduct regulation?",
+                "a": "With-profits bonus-setting involves genuine insurer discretion (Module 3's material), so TCF requires the insurer to exercise that discretion fairly and transparently across different generations of policyholders in the fund, a genuinely distinct conduct challenge from products with no comparable discretionary element.",
+                "explain": "This directly recalls SA1's TCF material and Module 3's bonus-judgement material — worth recognising with-profits TCF as specifically about fair exercise of DISCRETION, not just fair treatment in sales and claims handling generally."
+            },
+            {
+                "q": "Why might monitoring the external business environment need to be an ongoing exercise for a life insurer, echoing SA1's recurring theme?",
+                "a": "Demographic, economic, and regulatory factors all continue to evolve over time, so an assessment conducted once and never revisited would quickly become outdated, leaving pricing and strategy based on a stale picture of the insurer's actual operating environment.",
+                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this principle as genuinely universal across every SA subject, not specific to health and care."
+            }
+        ]
+    }
+
+    ]
 };
