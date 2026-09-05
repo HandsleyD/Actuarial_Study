@@ -17002,4 +17002,156 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP1: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP1 all about?",
+        "description": "An orientation chapter explaining SP1's role as the Specialist Principles subject introducing actuarial management and control techniques for health and care insurance, and how it feeds into SA1.",
+        "cards": [
+            {
+                "q": "What is the aim of Subject SP1, according to its official syllabus?",
+                "a": "To instil in successful candidates the ability to apply, in simple situations, the main principles of actuarial planning and control that are relevant to the provision of health and care benefits.",
+                "explain": "This is the genuine, official IFoA syllabus wording — worth contrasting directly against SA1's aim: SP1 applies principles to SIMPLE situations, while SA1 (which this course feeds into) applies the same underlying knowledge to genuinely COMPLEX scenarios."
+            },
+            {
+                "q": "What three competences does the SP1 syllabus state a successful candidate should demonstrate?",
+                "a": "Understand the main principles and techniques of actuarial management and control relevant to health and care insurance; apply these principles to simple situations; and analyse hypothetical scenarios, using judgement to assess implications and develop appropriate proposals or recommendations.",
+                "explain": "Worth treating these three competences as a genuine checklist — a strong SP1 answer should demonstrate understanding, application, AND judgement-based analysis, not just recite technical knowledge."
+            },
+            {
+                "q": "Which subjects does SP1 build directly on, and which subject does it feed into, according to its official links?",
+                "a": "SP1 builds on CS2 (Actuarial Statistics 2) and CM1 (Actuarial Mathematics 1) for its technical/statistical foundation, and CP1 (Actuarial Practice) for general actuarial practice principles; SP1 itself feeds directly into SA1 (Health and Care Advanced).",
+                "explain": "Worth recognising SP1 as occupying the middle position in a genuine three-stage pipeline: CS2/CM1/CP1's general techniques → SP1's health-and-care-specific principles → SA1's complex, advanced application of those same principles."
+            },
+            {
+                "q": "What are the five official syllabus topic areas of SP1, and their approximate topic weightings?",
+                "a": "Health and Care products and general business environment (15%); Product design and specific features (25%); Risks and risk management (30%); Models and valuation (15%); and Monitoring experience and setting assumptions (15%).",
+                "explain": "Worth memorising these weightings directly — 'Risks and risk management' at 30% is genuinely the single largest topic area, meaning risk identification and management technique deserves the most concentrated revision effort."
+            },
+            {
+                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP subjects like SP1?",
+                "a": "Approximately 25% knowledge, 50% application, and 25% higher-order skills — a genuinely more knowledge-weighted split than the SA subjects' typical 20/50/30 split.",
+                "explain": "Worth comparing this directly against SA1's 20/50/30 split — SP1 places relatively more weight on straightforward knowledge recall than its SA1 counterpart, reflecting SP1's 'simple situations' aim versus SA1's 'complex scenarios' aim."
+            },
+            {
+                "q": "Why might understanding SP1's five topic areas as a coherent sequence (products → design → risk → models → monitoring) help structure revision, rather than treating them as five unrelated lists?",
+                "a": "This sequence genuinely mirrors a product's real lifecycle — first understanding what products exist, then how they're designed, then what risks they carry and how those risks are managed, then how they're modelled and valued, and finally how actual experience is monitored against the models' assumptions — each stage building on genuine understanding from the one before.",
+                "explain": "Worth treating this five-stage sequence as this whole course's own structural backbone — later modules will explicitly build on and reference earlier ones, echoing this lifecycle logic."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "Health and care products",
+        "description": "Covers the main types of health and care insurance products, their purpose, and the interests and risks of consumers and insurers, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the main types of health and care contact/customer products named explicitly in the official SP1 syllabus?",
+                "a": "Critical illness insurance, income protection insurance, long term care insurance, health cash plans, major medical expenses, private medical insurance (PMI), and both group and individual covers of these products.",
+                "explain": "Worth memorising this exact list — it defines the genuine product scope SP1 (and its SA1 counterpart) expects candidates to know, matching the product modules covered later in this course."
+            },
+            {
+                "q": "What is a 'deferred period' in income protection insurance, and why is understanding this term explicitly part of SP1's syllabus?",
+                "a": "The waiting period between the start of incapacity and when IP benefit payments begin, during which no benefit is paid — the syllabus's opening 'define the principal terms' objective explicitly expects candidates to know precise definitions like this before analysing products in depth.",
+                "explain": "Worth treating precise product terminology as a genuinely examinable foundation, not just background context — the syllabus's Introduction section (0.1) exists specifically to test this."
+            },
+            {
+                "q": "Why does critical illness insurance require pricing assumptions that jointly consider incidence and mortality, rather than incidence alone?",
+                "a": "A policyholder who dies before a covered condition is diagnosed will never generate a CI claim for that condition, so mortality and CI incidence compete for the same life — ignoring this competing-risks interaction would overstate expected claims.",
+                "explain": "This directly recalls a genuinely important actuarial mechanism examinable at SP1 level — worth naming the competing-risks mechanism explicitly, not just asserting that 'mortality matters' for CI pricing."
+            },
+            {
+                "q": "Why is long term care (LTC) insurance generally considered a materially riskier product for an insurer to price and reserve for than a shorter-duration product like income protection?",
+                "a": "LTC combines longevity risk and care-need incidence risk, both genuinely long-term and compounding — an error in either assumption compounds over a potentially very long claim duration, unlike a shorter-tail product where such assumptions need only hold over a much shorter window.",
+                "explain": "Worth recognising LTC as the syllabus's clearest example of compounded long-term risk among the named health and care products, a theme that recurs throughout this whole course."
+            },
+            {
+                "q": "Why does the syllabus explicitly require understanding 'the purpose and key risks for the insurer' alongside 'the needs of the consumers', rather than treating product understanding as purely customer-facing?",
+                "a": "A genuinely complete understanding of any health and care product requires seeing it from both sides simultaneously — what genuine need it meets for the customer, AND what genuine risk exposure it creates for the insurer providing it — since these two perspectives directly shape appropriate design, pricing and risk management decisions covered later in this course.",
+                "explain": "Worth treating this dual-perspective requirement (objective 1.2) as a genuinely deliberate syllabus design choice, previewing this course's product-design and risk-management modules which build directly on understanding both sides."
+            },
+            {
+                "q": "Why might a health cash plan and a major medical expenses product, despite both being 'short-term' health products, differ genuinely in their benefit structure?",
+                "a": "A health cash plan pays fixed cash benefits toward routine treatment costs regardless of the actual cost incurred, while major medical expenses cover (like PMI) reimburses the actual cost of treatment up to specified limits — a genuinely different fixed-benefit-versus-reimbursement structure with direct pricing and risk implications.",
+                "explain": "Worth recognising that products sharing a similar TIME HORIZON (short-term) can still differ fundamentally in their BENEFIT STRUCTURE, a distinction the syllabus's product list (1.1) expects candidates to understand precisely."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "The operating environment and the role of the State",
+        "description": "Covers the general business environment in which health and care insurance is traded, and the role of the State in health and care provision, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What operating-environment factors does the official SP1 syllabus explicitly require candidates to understand?",
+                "a": "Distribution channels, regulatory and taxation regimes, professional guidance, and economic and political influences — the four broad categories shaping the environment in which health and care products are traded.",
+                "explain": "Worth memorising this exact list (objective 1.2) — it defines the genuine environmental scope SP1 expects, directly paralleling SA1's more advanced treatment of the same broad themes."
+            },
+            {
+                "q": "Why might distribution channel choice genuinely affect which health and care products are suitable to offer through it?",
+                "a": "Complex products with significant underwriting or benefit structure (e.g. LTC) may genuinely benefit from adviser guidance, while simpler, more standardised products (e.g. some health cash plans) can be reasonably sold through direct or online channels without extensive advice.",
+                "explain": "Worth recognising that distribution suitability tracks product COMPLEXITY, not product category as such — a principle recurring throughout this whole course."
+            },
+            {
+                "q": "Why might regulatory and taxation regimes directly shape which health and care products are commercially viable in a given market?",
+                "a": "Regulatory capital requirements, permitted product features, and tax treatment of premiums and benefits can all directly affect a product's cost structure and genuine attractiveness to customers, meaning the same product design could be commercially viable in one regulatory/tax environment and unviable in another.",
+                "explain": "Worth recognising the regulatory and tax environment as a genuine business CONSTRAINT shaping real product decisions, not merely background compliance context."
+            },
+            {
+                "q": "What three aspects of the State's role in health and care provision does the official syllabus explicitly require understanding?",
+                "a": "The objectives of State healthcare provision, the methods by which the State provides healthcare, and the funding approaches used to finance State provision.",
+                "explain": "Worth memorising this exact three-part structure (objective 1.3) — it defines precisely what SP1 expects candidates to know about State provision, beyond a general sense that 'the State provides some healthcare'."
+            },
+            {
+                "q": "Why does the genuine scope and generosity of State healthcare provision directly determine what private health and care insurance needs to achieve in a given market?",
+                "a": "Where the State provides comprehensive baseline provision, private products typically need to be marketed as supplementary (speed, choice, comfort), while in markets with minimal State provision, private products must be positioned as primary, comprehensive cover — the same private product concept can have a genuinely different real-world role depending on the State backdrop.",
+                "explain": "Worth recognising State-provision interaction as one of the single most important environmental factors shaping health and care insurance strategy, a theme this course (and its SA1 counterpart) returns to repeatedly."
+            },
+            {
+                "q": "Why might economic and political influences on health and care insurance be genuinely harder to anticipate and manage than regulatory or taxation influences?",
+                "a": "Regulatory and tax rules are typically published and change through a known, formal process, while economic conditions (e.g. recessions) and political shifts (e.g. changing government healthcare policy priorities) can move less predictably and with less formal advance notice, requiring genuine ongoing vigilance rather than a one-off compliance check.",
+                "explain": "Worth recognising this distinction between more PROCEDURALLY predictable influences (regulation, tax) and less predictable ones (economics, politics), both of which the syllabus (1.2) expects candidates to understand as part of the operating environment."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "Product design principles",
+        "description": "Covers the principles by which health and care insurance contracts are designed, the interests of stakeholders in that process, and how to determine and compare suitable designs, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What three specific product-design skills does the official SP1 syllabus (objective 2.1) explicitly require?",
+                "a": "Describing the principles by which health and care insurance contracts are designed and the interests of stakeholders in that process; determining a suitable design for a product in a given situation; and discussing the relative merits of different product designs.",
+                "explain": "Worth memorising this exact three-part structure — it moves from PRINCIPLES (understanding) to DETERMINING A DESIGN (application) to COMPARING DESIGNS (higher-order judgement), directly mirroring SP1's overall knowledge/application/higher-order skill split."
+            },
+            {
+                "q": "Why might different stakeholders (policyholders, distributors, the insurer, and shareholders) have genuinely different interests in how a health and care product is designed?",
+                "a": "Policyholders want genuine value and appropriate cover for their needs, distributors want a product that is straightforward to sell and adequately remunerated, the insurer wants a product that is profitable and manageable from a risk perspective, and shareholders want an adequate return on the capital the product requires — these interests can align but can also genuinely conflict.",
+                "explain": "Worth recognising that 'good product design' is not a single objective criterion but a genuine BALANCING exercise across stakeholders with potentially competing interests, directly echoing this course's later risk-management material."
+            },
+            {
+                "q": "Why must determining a suitable product design for 'a given situation' (per the syllabus objective 2.1.2) genuinely depend on the specific market and customer context, rather than following one universally best template?",
+                "a": "The same underlying product concept could be genuinely well-suited to one market (e.g. a fully-underwritten product in a market with sophisticated distribution) and poorly suited to another (e.g. that same underwriting approach in a market needing fast, simple guaranteed-acceptance cover), so design decisions must be anchored in the specific situation given.",
+                "explain": "This directly previews the context-specific-judgement principle running through this whole actuarial curriculum — worth recognising design suitability as always evaluated against a SPECIFIC scenario, not against an abstract, universal standard."
+            },
+            {
+                "q": "Why might comparing the 'relative merits' of different product designs (per objective 2.1.3) require genuinely weighing trade-offs, rather than identifying a single objectively superior design?",
+                "a": "Different designs typically trade off differently across dimensions like customer accessibility, insurer risk exposure, pricing simplicity, and profitability, so a genuinely balanced comparison must weigh these trade-offs against the specific priorities of the situation, rather than assuming one design dominates on every dimension simultaneously.",
+                "explain": "Worth recognising this as a genuinely higher-order skill (per the syllabus's skill-level framework) — simply describing two designs is not the same as critically comparing their relative merits for a stated purpose."
+            },
+            {
+                "q": "Why might a health and care product's premium, benefit, and charge structure need to be designed together as an integrated whole, rather than each element decided independently?",
+                "a": "The premium a customer is willing to pay, the benefits genuinely delivered, and any charges levied are all interconnected — a benefit-rich design typically requires a correspondingly higher premium or charge structure to remain viable, so these elements must be designed coherently together rather than in isolation.",
+                "explain": "This directly previews this course's later pricing material — worth recognising product design as genuinely inseparable from the pricing decisions that make a given design commercially viable."
+            },
+            {
+                "q": "How does this module's product design material connect back to Module 2's product-types material and forward to this course's risk-management modules?",
+                "a": "Module 2 established WHAT products exist and their basic purpose; this module develops HOW those products are actually designed and for whom; the risk-management modules that follow will show how design choices made here directly shape the risk exposure the insurer must then manage.",
+                "explain": "This closing card ties this module to both its predecessor and what follows — worth recognising design as the genuine BRIDGE between understanding a product category (Module 2) and managing the risk that design choice creates (later modules)."
+            }
+        ]
+    }
+
+    ]
 };
