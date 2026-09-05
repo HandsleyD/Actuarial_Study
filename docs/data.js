@@ -14535,5 +14535,204 @@ const MODULES = {
             }
         ]
     }
+,
+    {
+        "id": "m24",
+        "title": "National healthcare systems",
+        "description": "Covers different national approaches to healthcare provision and financing, and how these shape the private health and care insurance market in a given country.",
+        "cards": [
+            {
+                "q": "Why does understanding a country's national healthcare system matter for assessing private health and care insurance strategy, building directly on Module 4's product-analysis material?",
+                "a": "The scope, quality, and cost of State-provided healthcare directly determines what genuine gaps private insurance needs to fill, so a sound strategic assessment in any market must start from a clear understanding of that market's specific national healthcare system.",
+                "explain": "This directly recalls Module 4's State-provision-interaction material — worth recognising national healthcare system understanding as the essential FOUNDATIONAL CONTEXT for nearly every other topic in this course when applied to a specific country scenario."
+            },
+            {
+                "q": "Why might a Beveridge-style healthcare system (funded through general taxation, e.g. the UK's NHS) create a genuinely different private insurance market than a Bismarck-style system (funded through mandatory social health insurance)?",
+                "a": "A tax-funded system with universal free-at-point-of-use provision tends to position private insurance as supplementary (speed, choice), while a mandatory social-insurance system may already involve private insurers as primary providers within a regulated framework, creating a genuinely different competitive structure.",
+                "explain": "This directly recalls Module 5's distribution-and-positioning material — worth recognising these two major system TYPES as producing genuinely different private-insurance market structures, not just different levels of the same underlying model."
+            },
+            {
+                "q": "Why might a purely private, insurance-based healthcare financing system (with minimal State provision) create genuinely different underwriting and access considerations than a system with strong universal State provision?",
+                "a": "Without substantial State provision as a safety net, private insurers may need to consider genuine access and affordability implications more directly (e.g. for high-risk or low-income individuals), and underwriting decisions carry higher stakes for the individual's actual access to care.",
+                "explain": "This directly recalls Module 6's TCF and Module 10's conduct-regulation material — worth recognising that in a system with LESS State backstop, private insurers' underwriting and conduct decisions carry genuinely higher real-world consequences for affected individuals."
+            },
+            {
+                "q": "Why is understanding how a national healthcare system is FINANCED (general taxation, social insurance contributions, out-of-pocket payments) important, separate from understanding how care is actually delivered?",
+                "a": "Financing and delivery are genuinely distinct dimensions — a system could deliver care through public hospitals but finance it via a mix of taxation and private insurance, so both dimensions need to be understood separately to properly characterise a given national system.",
+                "explain": "This is worth treating as a genuinely important conceptual distinction — 'who pays' and 'who provides the care' can vary independently, and conflating them risks a genuinely oversimplified or inaccurate characterisation of a national system."
+            },
+            {
+                "q": "Why might QALYs (quality-adjusted life years) be a genuinely relevant concept for understanding how some national healthcare systems allocate limited resources?",
+                "a": "QALYs provide a standardised way to compare the health benefit different treatments deliver relative to their cost, allowing a system with finite resources to make genuinely more consistent, transparent rationing and prioritisation decisions across very different types of treatment.",
+                "explain": "This directly recalls Module 1's stated syllabus objective naming QALYs explicitly — worth recognising QALYs as the specific ECONOMIC TOOL some national systems use to make the genuinely difficult resource-allocation decisions that any healthcare system with finite resources ultimately faces."
+            },
+            {
+                "q": "Why might demographic and economic factors (Module 6's material) affect different national healthcare systems' sustainability in genuinely different ways?",
+                "a": "A tax-funded system's sustainability depends on the working-age tax base relative to healthcare demand, while a contribution-funded social insurance system depends on contribution rates and employment levels, meaning the SAME demographic pressure (e.g. an ageing population) can threaten different systems' sustainability through genuinely different mechanisms.",
+                "explain": "This directly recalls Module 6's demographic-change material — worth recognising that the GENERIC pressure (ageing population) is common across systems, but the SPECIFIC financing mechanism through which that pressure threatens sustainability genuinely differs by system type."
+            },
+            {
+                "q": "Why might comparing multiple national healthcare systems reveal genuinely transferable lessons for a private insurer operating in, or considering entry to, a specific market?",
+                "a": "Observing how other systems have addressed similar challenges (e.g. managing long-term care cost growth, or structuring private-public interaction) can surface approaches or risks not obvious from studying a single market in isolation, informing genuinely better strategic decisions.",
+                "explain": "This directly previews Module 25's international best-practice material — worth recognising cross-system comparison as a genuinely valuable analytical tool, not merely descriptive background knowledge for its own sake."
+            },
+            {
+                "q": "How does this module's national healthcare systems material connect directly to Module 25's coverage of international best practice?",
+                "a": "This module characterises how different national systems are structured and financed; Module 25 builds on that understanding to identify genuinely transferable examples of good practice that could inform strategic or product decisions in a different market context.",
+                "explain": "This closing card ties this module directly to Module 25 — worth recognising Module 25 as taking this module's DESCRIPTIVE, comparative understanding of national systems and turning it into PRESCRIPTIVE, applicable best-practice insight."
+            }
+        ]
+    },
+    {
+        "id": "m25",
+        "title": "Best practice",
+        "description": "Covers identifying and applying areas of international best practice in health and care insurance product design, underwriting, and market conduct.",
+        "cards": [
+            {
+                "q": "Why might identifying 'best practice' in health and care insurance require genuine judgement about context, rather than assuming one market's approach is universally best?",
+                "a": "An approach that works well in one market's specific regulatory, cultural, and healthcare-system context (Module 24's material) may not transfer straightforwardly to a genuinely different context, so identifying best practice requires assessing WHY an approach works, not just copying it directly.",
+                "explain": "This directly recalls Module 24's national-healthcare-systems material — worth recognising that 'best practice' genuinely means best-FOR-CONTEXT, not a single universal standard applicable everywhere regardless of local circumstances."
+            },
+            {
+                "q": "Why might best practice in underwriting (e.g. balancing risk assessment against genetic-testing restrictions, per Module 5) differ across markets with different regulatory and social attitudes?",
+                "a": "What counts as fair, proportionate underwriting genuinely depends on local regulatory restrictions and social attitudes toward risk classification, so an underwriting approach considered best practice in one market could be considered inappropriate or even unlawful in another.",
+                "explain": "This directly recalls Module 5's genetic-testing-restriction material — worth recognising that best-practice underwriting is genuinely SHAPED by the local regulatory and social context, not a fixed technical standard independent of where it's applied."
+            },
+            {
+                "q": "Why might best practice in claims handling for health and care insurance place particular emphasis on empathetic, clear communication, echoing CP3's material?",
+                "a": "Given the genuinely sensitive circumstances surrounding many health and care claims (Module 6's TCF material), best-practice claims handling combines technical accuracy with clear, sensitive communication, directly applying CP3's plain-language and tone-appropriate communication principles to a specific, high-stakes context.",
+                "explain": "This directly recalls CP3's tone/register material and Module 6's TCF material — worth recognising best-practice claims handling as requiring BOTH the right technical decision AND the right way of communicating it, echoing this course's repeated emphasis on communication quality alongside technical substance."
+            },
+            {
+                "q": "Why might best practice in product design increasingly emphasise genuine transparency about policy exclusions and limitations, rather than purely competitive feature-richness?",
+                "a": "Transparent communication of what is and isn't covered reduces the risk of customer detriment at claim time and supports genuine trust, directly aligning with the TCF and conduct regulation principles established in Modules 6 and 10.",
+                "explain": "This directly recalls Module 6's and Module 10's TCF and conduct-regulation material — worth recognising that best-practice product design isn't just about offering the MOST features; genuine clarity about limitations is itself a recognised element of sound, ethical product design."
+            },
+            {
+                "q": "Why might best practice in managing long-term care insurance specifically emphasise proactive assumption review, echoing Module 15's professional-standards material?",
+                "a": "Given LTC's genuinely compounded, long-term assumption uncertainty (Module 2, Module 11), best-practice management involves regularly and proactively reviewing assumptions rather than waiting for problems to emerge, directly reflecting Module 15's professional-standards emphasis on sound, proactive assumption-setting.",
+                "explain": "This directly recalls Module 15's assumption-setting-professional-guidance material — worth recognising this as a genuinely concrete example of best practice: proactive rather than reactive assumption review, specifically for the product this course repeatedly flags as carrying the most compounded long-term risk."
+            },
+            {
+                "q": "Why might best practice recognise a genuine trade-off between highly granular, risk-reflective pricing and broader risk-pooling for social equity reasons?",
+                "a": "Very granular, individually risk-reflective pricing can maximise fairness between individual policyholders but may reduce broader risk-pooling and access for higher-risk individuals, so best practice often involves a genuine, deliberate balance rather than maximising individual risk-reflection alone.",
+                "explain": "This directly recalls Module 5's genetic-testing-ethics material and Module 10's fairness-versus-access material — worth recognising this tension as a recurring theme across the whole course, appearing again here specifically as a best-practice PRINCIPLE rather than just a regulatory restriction."
+            },
+            {
+                "q": "Why might identifying best practice be treated as an ongoing, evolving exercise rather than a fixed body of knowledge, echoing this course's recurring ongoing-review theme?",
+                "a": "As the business environment (Modules 5-6), regulation (Modules 10-13), and medical/technological context evolve, what counts as best practice genuinely evolves too, meaning best-practice knowledge itself requires periodic review rather than being treated as permanently fixed.",
+                "explain": "This directly recalls this course's recurring ongoing-review theme (Modules 6, 12, 15, 18) — worth recognising that BEST PRACTICE ITSELF is subject to the same ongoing-review discipline this course has applied to assumptions, regulation, and strategy throughout."
+            },
+            {
+                "q": "How does this module's best-practice material connect back to Module 24's national healthcare systems coverage, and forward to Module 26's complex-issues material?",
+                "a": "Module 24 characterises how different systems are structured; this module identifies genuinely transferable good practice drawing on those comparisons; Module 26 then applies this whole course's accumulated knowledge to genuinely complex, multi-dimensional problems requiring judgement across several topic areas at once.",
+                "explain": "This closing card ties Modules 24-26 together explicitly — worth recognising this module as the bridge between DESCRIPTIVE comparison (Module 24) and APPLIED, complex problem-solving (Module 26), which draws on best practice as one of its key inputs."
+            }
+        ]
+    },
+    {
+        "id": "m26",
+        "title": "Solving complex issues",
+        "description": "Covers applying the full range of SA1 knowledge and skills to genuinely complex, multi-dimensional health and care insurance problems.",
+        "cards": [
+            {
+                "q": "Why does SA1 include a dedicated focus on 'solving complex issues', beyond the individual topic areas covered in earlier modules?",
+                "a": "Real strategic and technical problems in health and care insurance rarely fall neatly into a single topic area; a genuinely complex issue typically requires drawing on product knowledge, pricing, regulation, reporting, and strategic judgement simultaneously, which this module explicitly practises.",
+                "explain": "This directly recalls Module 1's topic-weighting material and Module 21's multi-dimensional-assessment material — worth recognising this module as the course's deliberate INTEGRATION point, explicitly combining skills the earlier modules mostly developed in isolation."
+            },
+            {
+                "q": "Why might a genuinely complex health and care insurance issue require identifying which of several competing considerations should take priority, rather than addressing them independently?",
+                "a": "Complex issues often involve genuine tension between objectives (e.g. capital efficiency versus customer fairness, per Modules 10 and 16), so effective problem-solving requires explicitly weighing and prioritising between them, not treating each consideration as independently resolvable.",
+                "explain": "This directly recalls Module 22's recommendation-with-trade-offs material — worth recognising that COMPLEX issues are complex PRECISELY BECAUSE they involve genuine tension between valid considerations, not simply because they involve more individual facts to process."
+            },
+            {
+                "q": "Why might solving a complex issue require structuring an answer clearly (echoing CP3's structuring material), even when the underlying analysis is genuinely intricate?",
+                "a": "A clearly structured answer (e.g. working through each relevant dimension systematically) helps demonstrate genuine command of a complex problem and ensures no significant consideration is overlooked, directly applying CP3's structuring principles to technically demanding content.",
+                "explain": "This directly recalls CP3's structuring-for-clarity material — worth recognising that COMPLEXITY of content makes clear structure MORE important, not less; a disorganised answer to a complex question is far harder to follow and mark favourably than the same content presented systematically."
+            },
+            {
+                "q": "Why might a genuinely complex health and care issue involve incomplete or ambiguous information, requiring candidates to state reasonable assumptions explicitly?",
+                "a": "Realistic complex scenarios rarely provide every fact needed for a definitive answer, so a strong response explicitly states what assumptions are being made and how they affect the conclusion, rather than either ignoring the ambiguity or refusing to reach a conclusion at all.",
+                "explain": "This directly recalls Module 7's new-product-pricing-under-uncertainty material — worth recognising that stating assumptions explicitly is itself a valued SKILL under exam conditions, not an admission of weakness in the answer."
+            },
+            {
+                "q": "Why might solving a complex issue benefit from explicitly considering the perspectives of multiple stakeholders, echoing Module 22's stakeholder material?",
+                "a": "A genuinely complex issue often affects shareholders, policyholders, regulators, and employees differently, so working through how each stakeholder is affected can reveal considerations a single-perspective analysis would miss, producing a more genuinely complete solution.",
+                "explain": "This directly recalls Module 22's multiple-stakeholder-perspective material — worth recognising multi-stakeholder analysis as a genuinely reliable technique for surfacing considerations a narrower, single-perspective analysis of a complex issue might otherwise overlook."
+            },
+            {
+                "q": "Why might a complex health and care issue require an actuary to explicitly balance technical actuarial judgement against genuine professional and ethical obligations, echoing Module 15's material?",
+                "a": "Complex issues can involve genuine tension between what is commercially expedient and what professional standards require (e.g. assumption-setting under commercial pressure), so resolving them soundly requires the same professional-integrity discipline Module 15 established.",
+                "explain": "This directly recalls Module 15's professional-standards-and-ethics material — worth recognising that GENUINELY complex issues, almost by definition, often surface exactly the kind of ethical tension Module 15 discusses, rather than being purely technical puzzles."
+            },
+            {
+                "q": "Why might practising complex, integrated problems be considered the most realistic preparation for the actual SA1 exam, more so than reviewing individual topic areas in isolation?",
+                "a": "Since the real exam typically presents scenarios requiring genuinely integrated analysis across several topic areas at once (Module 1's format material), practising this kind of integrated problem-solving directly mirrors the actual skill being examined, rather than just topic-by-topic recall.",
+                "explain": "This directly recalls Module 1's exam-format material — worth treating this module's integrated-practice approach as directly analogous to genuine exam technique, not merely an academic exercise separate from actual exam preparation."
+            },
+            {
+                "q": "How does this module's complex-issue-solving material connect back to and draw upon every other module in this course?",
+                "a": "This module deliberately requires combining product knowledge (Modules 2-4), business environment understanding (Modules 5-6, 9, 24), pricing (Modules 7-8), regulation (Modules 10-13), reporting and capital (Modules 14-18), monitoring (Modules 19-20), and strategic judgement (Modules 21-23, 25) all together.",
+                "explain": "This closing card is worth treating as a genuine capstone — worth recognising this module as the point where the entire course's earlier material is meant to be drawn upon SIMULTANEOUSLY, which is exactly the integrated skill the real SA1 exam ultimately tests."
+            }
+        ]
+    },
+    {
+        "id": "m27",
+        "title": "Glossary",
+        "description": "Covers key terminology used throughout the SA1 syllabus, consolidating precise definitions of terms introduced across earlier modules.",
+        "cards": [
+            {
+                "q": "Why does the SA1 syllabus include a dedicated glossary of terms, rather than relying purely on definitions embedded within each topic module?",
+                "a": "A consolidated glossary ensures precise, consistent terminology is used and understood across the whole subject, which matters given how many technical terms (e.g. deferred period, moratorium underwriting) recur across multiple modules and must be used accurately in exam answers.",
+                "explain": "This is worth treating as a genuinely practical final revision tool — worth recognising precise terminology as itself something SA1 marking rewards; using a term slightly incorrectly can undermine an otherwise sound answer."
+            },
+            {
+                "q": "What is a 'deferred period' in income protection insurance, as first introduced in Module 2?",
+                "a": "The waiting period between the start of incapacity and when IP benefit payments begin, during which the policyholder receives no benefit from the policy, directly affecting both the premium (Module 7) and the product's suitability for a given customer's circumstances.",
+                "explain": "This directly recalls Module 2's IP material — worth treating this glossary card as a precise, exam-ready restatement of a term used repeatedly across Modules 2, 5, and 7."
+            },
+            {
+                "q": "What is 'moratorium underwriting', as first introduced in Module 3?",
+                "a": "An underwriting approach excluding cover for pre-existing conditions during an initial 'moratorium' period after the policy starts, after which those conditions become covered if they haven't recurred or required treatment during that period, avoiding full medical underwriting at outset.",
+                "explain": "This directly recalls Module 3's PMI material — worth treating this as the precise definition to use if an exam question asks you to explain or compare underwriting approaches directly."
+            },
+            {
+                "q": "What does 'equivalence principle' mean in the specific context of health and care product pricing, as developed in Module 7?",
+                "a": "Setting the premium so that the expected present value of premium income equals the expected present value of benefit outgo plus expenses (possibly plus profit margin), the foundational pricing technique underlying Modules 7-8's product-specific pricing material.",
+                "explain": "This directly recalls Module 7's pricing material and CB1's general equivalence-principle material — worth treating this as the single most foundational technical term underpinning this entire course's pricing topic area."
+            },
+            {
+                "q": "What is the 'risk margin' component of Solvency II technical provisions, as developed in Module 11?",
+                "a": "An additional amount held above the best-estimate liability, compensating for the cost of holding capital against non-hedgeable risks over the liability's remaining lifetime, particularly significant for long-duration products like long-term care insurance.",
+                "explain": "This directly recalls Module 11's Solvency II material — worth treating this glossary entry as the precise definition to reach for if asked to explain why LTC's technical provisions are proportionately more capital-intensive than a shorter-tail product's."
+            },
+            {
+                "q": "What is the 'contractual service margin' (CSM) under IFRS 17, as developed in Module 14?",
+                "a": "Unearned expected future profit on an insurance contract, released into reported profit gradually as service is provided over the contract's life, directly shaping how a long-duration health and care product's profit emerges across future reporting periods.",
+                "explain": "This directly recalls Module 14's IFRS 17 material — worth treating this as the precise term to use when discussing how and when a long-duration product's expected profit actually shows up in reported financial results."
+            },
+            {
+                "q": "What is an 'Own Risk and Solvency Assessment' (ORSA), as developed in Module 12?",
+                "a": "The insurer's own forward-looking assessment of its overall solvency needs given its specific risk profile, including scenario and stress testing, distinct from the regulatory SCR/MCR calculation itself.",
+                "explain": "This directly recalls Module 12's Solvency II Pillar 2 material — worth treating this as the precise term for the insurer's OWN risk assessment process, as distinct from the externally-calculated SCR it complements."
+            },
+            {
+                "q": "What does 'quota share' reinsurance mean, as developed in Module 17, and how does it differ from 'surplus' reinsurance?",
+                "a": "Quota share cedes a FIXED PROPORTION of every policy's risk and premium regardless of size, while surplus reinsurance cedes only the portion of risk above a chosen retention level per policy, allowing retention to vary genuinely by policy size.",
+                "explain": "This directly recalls Module 17's reinsurance-structures material — worth treating this glossary entry as a precise, side-by-side comparison to reach for if an exam question asks you to distinguish between reinsurance forms directly."
+            },
+            {
+                "q": "What is a 'QALY' (quality-adjusted life year), as developed in Module 24?",
+                "a": "A standardised measure combining the quantity and quality of life gained from a treatment, used by some national healthcare systems to compare the health benefit different treatments deliver relative to cost, supporting consistent resource-allocation decisions.",
+                "explain": "This directly recalls Module 24's national-healthcare-systems material — worth treating this as the precise definition to use if a scenario question requires discussing how a State system prioritises limited healthcare resources."
+            },
+            {
+                "q": "Why does this closing glossary module deliberately draw its terms from across every earlier module in the course, rather than introducing wholly new content?",
+                "a": "A glossary's purpose is genuinely consolidative, not additive — bringing together precise, exam-ready definitions of terms already developed in context throughout Modules 1-26, supporting confident, accurate terminology use in the actual exam.",
+                "explain": "This closing card is worth treating as confirmation that Module 27 completes this course's full 27-module structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
+            }
+        ]
+    }
 ],
 };
