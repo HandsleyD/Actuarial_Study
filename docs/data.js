@@ -15684,6 +15684,166 @@ const MODULES = {
                 "explain": "This directly recalls SA1's political-and-tax-risk material — worth recognising tax risk as a specific, concrete manifestation of the wider political-risk category, deserving explicit ongoing monitoring across every insurance sector."
             }
         ]
+    },
+    {
+        "id": "m11",
+        "title": "Regulatory frameworks and actuarial standards",
+        "description": "Covers the objectives of regulators, supervisory tools, statutory actuarial roles, and the transfer of liabilities between companies, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the typical objectives of a general insurance regulator, per the official syllabus's regulatory-frameworks objective?",
+                "a": "Protecting policyholders by ensuring insurers remain financially sound (prudential objective) and are treated fairly (conduct objective), while supporting the overall stability and proper functioning of the insurance market.",
+                "explain": "This directly recalls SA1's and CP1's regulatory-objectives material — worth recognising these objectives as universal across every insurance sector, applied here specifically to general insurance regulators."
+            },
+            {
+                "q": "What supervisory tools might a general insurance regulator use to monitor and enforce these objectives, per the official syllabus?",
+                "a": "Regulatory rulebooks setting detailed requirements, ongoing reporting requirements (e.g. regular financial and risk reporting), and powers to intervene (e.g. requiring additional capital or restricting new business) where an insurer's position gives genuine cause for concern.",
+                "explain": "Worth recognising rulebooks and reporting as the ROUTINE monitoring tools, with intervention powers as the ESCALATION mechanism when routine monitoring reveals a genuine problem."
+            },
+            {
+                "q": "What is a 'statutory actuarial role' in the context of general insurance regulation, echoing SA1's material?",
+                "a": "A role (e.g. Chief Actuary or Actuarial Function Holder) carrying specific, personally-accountable regulatory responsibilities, such as providing a formal actuarial opinion on the adequacy of technical provisions, distinct from the actuary's general employment relationship with the insurer.",
+                "explain": "This directly recalls SA1's personal-accountability material — worth recognising statutory actuarial roles as creating genuine PERSONAL accountability, separate from and sometimes in tension with the insurer's own commercial interests."
+            },
+            {
+                "q": "Why might the transfer of a portfolio of insurance liabilities from one company to another require specific regulatory oversight, rather than being a purely private commercial transaction?",
+                "a": "Since policyholders did not choose the new insurer taking on their liabilities, regulatory oversight (e.g. requiring an independent expert's report and court approval in some jurisdictions) helps ensure the transfer does not materially disadvantage the affected policyholders' security or service.",
+                "explain": "This directly previews this course's exits-and-transfers module — worth recognising regulatory oversight of transfers as protecting policyholders precisely because they have no direct say in a transaction that materially affects who is responsible for meeting their claims."
+            },
+            {
+                "q": "Why might actuarial standards specifically require a statutory actuary to exercise independent professional judgement, even under commercial pressure, echoing SA1's ethical material?",
+                "a": "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement and the public interest, meaning commercial or managerial pressure to reach a particular conclusion (e.g. on reserve adequacy) does not override the actuary's own professional obligations.",
+                "explain": "This directly recalls SA1's professional-standards ethical material — worth recognising this as a genuinely universal principle recurring across every SA subject wherever a statutory actuarial role exists."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Valuing insurance liabilities",
+        "description": "Covers determining appropriate bases for valuing a general insurer's liabilities for annual accounting and statutory returns, and for management accounts, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why might a general insurer need to value its liabilities on genuinely different bases for statutory returns versus internal management accounts?",
+                "a": "Statutory returns typically require a prudent, regulator-mandated basis supporting solvency assessment, while management accounts can use a best-estimate or different basis better suited to internal decision-making, meaning the SAME underlying liabilities can genuinely be valued differently depending on the reporting purpose.",
+                "explain": "This directly recalls SA1's and SA2's multiple-reporting-bases material — worth recognising this same principle applying to general insurance liability valuation specifically."
+            },
+            {
+                "q": "Why does general insurance reserving typically involve genuinely greater estimation uncertainty than life insurance reserving for a comparable-sized book?",
+                "a": "General insurance claims (particularly longer-tail lines) can take years or decades to fully develop and settle, with genuine uncertainty about both the number and eventual size of claims, unlike life insurance's typically more predictable, mortality-table-driven cashflow patterns.",
+                "explain": "This directly recalls CS2's claims-reserving and reserving-uncertainty material — worth recognising this greater inherent uncertainty as the reason general insurance reserving methodology (chain-ladder, Bornhuetter-Ferguson, etc.) is such a substantial, distinct technical area."
+            },
+            {
+                "q": "Why might a general insurer's statutory technical provisions need to include a risk margin, echoing SA1's and Solvency II's material?",
+                "a": "The risk margin compensates for the cost of holding capital against non-hedgeable reserving risk over the liability's remaining settlement period, recognising that the genuine uncertainty in general insurance reserves (Module 12's material) itself represents a cost that must be reflected in technical provisions.",
+                "explain": "This directly recalls SA1's and Module 7's risk-margin material — worth recognising the risk margin as directly compensating for the RESERVING UNCERTAINTY this module has just identified as characteristic of general insurance."
+            },
+            {
+                "q": "Why might management accounts sometimes use a best-estimate (rather than prudent) basis for valuing liabilities, even though statutory returns require prudence?",
+                "a": "Management decision-making (e.g. assessing genuine underlying profitability or pricing adequacy) benefits from an unbiased, best-estimate view of expected liabilities, whereas statutory prudence deliberately builds in a margin for genuine policyholder protection, serving a different, more conservative purpose.",
+                "explain": "This directly recalls Module 12's multiple-basis material — worth recognising that PRUDENCE is a deliberate feature of statutory reporting, not simply a more 'accurate' version of the best-estimate basis used internally."
+            },
+            {
+                "q": "How does this module's liability-valuation material connect back to the Solvency II material covered in Module 7?",
+                "a": "Solvency II's technical provisions (best estimate plus risk margin) are a specific, regulator-mandated example of the statutory valuation basis this module develops generally, showing how the general principles of liability valuation are actually implemented under the current UK/EU regulatory regime.",
+                "explain": "This closing card ties this module back to Module 7 explicitly — worth recognising Solvency II's technical provisions as a CONCRETE APPLICATION of this module's general liability-valuation principles."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Reserving for latent claims and disease claims",
+        "description": "Covers why different reserving techniques are required for latent claims and disease claims, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is a 'latent claim', and why does it require a genuinely different reserving approach from a standard, promptly-reported claim?",
+                "a": "A latent claim arises from an event or exposure (e.g. exposure to a harmful substance) that may not be reported as a claim until many years or even decades later, meaning standard reserving techniques relying on a reasonably short, observable reporting pattern are poorly suited to estimating these claims' eventual number and cost.",
+                "explain": "This directly recalls Module 2's very-long-tail-claims material — worth recognising latent claims as the most extreme example of the long-tail phenomenon this course has already flagged as a defining feature of some general insurance products."
+            },
+            {
+                "q": "Why might disease claims (e.g. industrial disease claims) present genuinely similar reserving challenges to latent claims from a single specific event?",
+                "a": "Disease claims often involve a genuinely long and uncertain latency period between exposure and diagnosis, combined with evolving medical understanding of causation and genuinely uncertain future claim volumes as awareness or diagnostic criteria change, echoing the same fundamental reporting-delay challenge latent claims present.",
+                "explain": "This directly recalls Module 13's own latent-claims material — worth recognising disease claims as sharing the SAME underlying reserving challenge (long, uncertain reporting delay) as latent claims from a discrete historical event."
+            },
+            {
+                "q": "Why might reserving for latent or disease claims need to draw on external data and expert judgement (e.g. medical or legal opinion), beyond the insurer's own historical claims experience?",
+                "a": "Given the genuinely limited own historical data available for slowly-emerging, rare claim types, reserving actuaries typically need to blend limited own experience with external data, scientific/medical understanding, and legal developments (e.g. changing case law on liability), echoing CS1's credibility-theory material.",
+                "explain": "This directly recalls CS1's credibility theory material and Module 4's large-commercial-risk-pricing material — worth recognising this as the same underlying principle of blending limited own data with external sources, now applied to reserving rather than pricing."
+            },
+            {
+                "q": "Why might reserves for latent or disease claims be particularly sensitive to changes in legal or regulatory environment, more so than reserves for standard, promptly-settled claims?",
+                "a": "Legal developments (e.g. court rulings expanding or narrowing insurer liability, or new disease-recognition criteria) can materially change the expected number and cost of latent or disease claims retrospectively, a genuinely important risk driver that standard, quickly-settled claim reserves are far less exposed to.",
+                "explain": "This directly recalls Module 9's legislation material — worth recognising legal and regulatory change as a genuinely material RESERVING risk driver specifically for latent and disease claims, not just a general business-environment consideration."
+            },
+            {
+                "q": "Why might an insurer's reserving actuary need to apply genuinely greater caution and wider ranges of estimates for latent and disease claims compared with standard reserving classes?",
+                "a": "Given the compounded uncertainty from long reporting delays, limited own data, and legal/scientific evolution, a single point-estimate reserve is less likely to be reliable, so presenting a genuine range of reasonable estimates (rather than false precision) better reflects the true underlying uncertainty.",
+                "explain": "This directly recalls CP1's judgement-under-genuine-uncertainty material — worth recognising the presentation of a RANGE, not just a point estimate, as good professional practice specifically for these particularly uncertain reserve classes."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Asset-liability management for general insurers",
+        "description": "Covers how general insurers manage the relationship between assets and liabilities, given their typically shorter-tail liabilities than life insurers.",
+        "cards": [
+            {
+                "q": "Why might asset-liability management for a general insurer's short-tail personal lines book differ genuinely from a life insurer's long-duration annuity ALM strategy, echoing SA1's and SA2's material?",
+                "a": "Short-tail liabilities are far less interest-rate sensitive over a long horizon, so ALM strategy can reasonably prioritise liquidity for near-term claims payment over the long-duration interest rate matching that dominates life insurance ALM.",
+                "explain": "This directly recalls SA1's and SA2's product-duration-and-ALM material — worth recognising ALM strategy as needing to genuinely differ by liability duration, not follow a single one-size-fits-all approach."
+            },
+            {
+                "q": "Why might a general insurer's ALM strategy for its long-tail liability book (e.g. latent or disease claims, per Module 13) need to resemble life insurance-style duration matching more closely than its short-tail personal lines book?",
+                "a": "Long-tail liabilities can extend over a genuinely long horizon similar to life insurance liabilities, making them similarly sensitive to interest rate movements over time, so duration matching (CM2's technique) becomes correspondingly more relevant than for the insurer's short-tail business.",
+                "explain": "This directly recalls Module 13's long-tail-claims material and CM2's matching material — worth recognising that a single general insurer can genuinely need MULTIPLE distinct ALM approaches across its different liability durations, echoing SA2's multi-product-line ALM material."
+            },
+            {
+                "q": "Why might a general insurer need to hold a meaningful allocation to highly liquid assets, given the genuinely more volatile and less predictable claims payment pattern of general insurance compared with life insurance?",
+                "a": "Since general insurance claims (especially from catastrophic events) can arrive suddenly and require prompt payment, genuine liquidity risk management requires holding sufficient liquid assets to meet these without being forced to sell less liquid assets at a potentially unfavourable time.",
+                "explain": "This directly recalls SA1's and SA2's liquidity-risk material — worth recognising this same principle applying with particular force to general insurance, given its genuinely more volatile and less predictable claim payment timing than life insurance."
+            },
+            {
+                "q": "Why might a general insurer's ALM strategy need to account for inflation risk, given that many general insurance claims (e.g. bodily injury, property repair) are directly exposed to cost inflation?",
+                "a": "If claims costs are exposed to general or claims-specific inflation, holding assets whose value also responds to inflation (e.g. inflation-linked bonds) helps protect the insurer against inflation eroding the real matching quality of a purely nominal asset portfolio, echoing SA1's medical-inflation-matching material.",
+                "explain": "This directly recalls SA1's inflation-matching material and Module 12's reserving-uncertainty material — worth recognising claims inflation as a genuinely important general insurance risk driver, with direct ALM implications parallel to health and care's medical inflation."
+            },
+            {
+                "q": "Why might a general insurer's ALM strategy require periodic review as its book of business and liability profile change over time, echoing this course's recurring ongoing-review theme?",
+                "a": "As the mix of short-tail and long-tail business changes, or as new latent/disease claim risks emerge, the insurer's overall liability profile shifts, so an ALM strategy set for a past liability profile may no longer provide genuinely appropriate matching for the current book.",
+                "explain": "This directly recalls SA1's and SA2's ALM-ongoing-review material — worth recognising this same ongoing-monitoring discipline applying identically to general insurance ALM."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Reinsurance for general insurers",
+        "description": "Covers the role and forms of reinsurance in managing general insurance risk, including proportional, non-proportional, and catastrophe-specific structures.",
+        "cards": [
+            {
+                "q": "Why might a general insurer use quota share reinsurance across its whole personal lines book, echoing SA1's material?",
+                "a": "Quota share provides straightforward, proportional risk and capital relief across the whole book, ceding a fixed proportion of every policy's risk and premium, valuable for a newer or smaller insurer wanting broad-based support across its entire portfolio.",
+                "explain": "This directly recalls SA1's quota-share material — worth recognising the same underlying reinsurance structure applying identically across insurance sectors, here for general insurance personal lines."
+            },
+            {
+                "q": "Why might excess of loss reinsurance be particularly suited to protecting a general insurer against a catastrophic windstorm or flood event, echoing SA1's and this course's catastrophe-modelling material?",
+                "a": "Excess of loss reinsurance responds when aggregate claims from an event exceed a specified threshold, directly targeting the correlated, catastrophic loss pattern a natural catastrophe creates, informed directly by the catastrophe model output covered in Modules 5-6.",
+                "explain": "This directly recalls SA1's excess-of-loss material and Module 6's catastrophe-model-reinsurance-input material — worth recognising catastrophe excess of loss reinsurance as one of the clearest, most direct real-world applications of catastrophe model output."
+            },
+            {
+                "q": "Why might a general insurer use surplus reinsurance for its large commercial property book specifically, echoing SA1's and Module 4's material?",
+                "a": "Surplus reinsurance cedes only the portion of risk above a chosen retention level per policy, allowing the insurer to retain proportionally more of smaller, better-understood risks while ceding a larger share of unusually large individual commercial exposures, directly addressing the heterogeneity Module 4 identified in commercial risk.",
+                "explain": "This directly recalls SA1's surplus-reinsurance material and Module 4's commercial-risk-heterogeneity material — worth recognising surplus reinsurance as specifically well-suited to managing the WIDE VARIATION in individual risk size that large commercial books present."
+            },
+            {
+                "q": "Why might a general insurer's choice of reinsurance retention level involve a genuine trade-off between expected profit and capital efficiency, echoing SA1's and CB1's material?",
+                "a": "A higher retention keeps more premium and expected profit potential with the insurer, but exposes it to greater volatility and capital strain from adverse claims experience; a lower retention (more reinsurance) reduces volatility and capital requirements but cedes more expected profit to the reinsurer.",
+                "explain": "This directly recalls SA1's and CB1's retention-level trade-off material — worth recognising this same genuine risk-return trade-off applying identically to general insurance reinsurance purchasing decisions."
+            },
+            {
+                "q": "Why might reinsurer counterparty risk be a particularly important consideration for a general insurer's catastrophe reinsurance programme specifically?",
+                "a": "A major catastrophic event affecting the insurer is likely to also affect its reinsurers' own exposures, so the insurer must genuinely assess whether its reinsurance panel remains able to pay recoveries even under the same severe, correlated event, diversifying across multiple reinsurers to manage this concentrated counterparty risk.",
+                "explain": "This directly recalls SA1's reinsurer-counterparty-risk material — worth recognising catastrophe reinsurance as raising a particularly acute version of this risk, since the very event triggering the reinsurance claim could also stress the reinsurer's own ability to pay it."
+            }
+        ]
     }
     ]
 };
