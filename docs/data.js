@@ -14393,5 +14393,147 @@ const MODULES = {
             }
         ]
     }
+,
+    {
+        "id": "m21",
+        "title": "Assessing strategies",
+        "description": "Covers the skills needed to assess proposed strategic options for a health and care insurer against its objectives, risk appetite and business environment.",
+        "cards": [
+            {
+                "q": "Why does SA1 explicitly test 'assessing strategies' as a distinct skill, building on Module 1's analyse-assess-evaluate-propose skill progression?",
+                "a": "Assessing a strategic option means judging how well it would actually achieve the insurer's objectives given its specific circumstances, genuinely different from simply describing or listing the option's features, which is why the syllabus and exam distinguish assessment from description.",
+                "explain": "This directly recalls Module 1's skill-progression material — worth recognising 'assess' as the specific skill level requiring genuine evaluative judgement against stated criteria, not just accurate description of what a strategy involves."
+            },
+            {
+                "q": "Why must assessing any proposed strategy for a health and care insurer start from that insurer's own specific objectives and risk appetite, rather than a generic 'good strategy' checklist?",
+                "a": "The same strategic option (e.g. entering the long-term care market) could be genuinely excellent for one insurer and genuinely unsuitable for another, depending entirely on each insurer's specific capital position, existing product mix, and risk appetite, making context-specific assessment essential.",
+                "explain": "This directly recalls CP1's whole exam philosophy of scenario-specific judgement over generic answers — worth recognising that a SA1 assessment answer genuinely needs to be anchored in the SPECIFIC scenario given, not a generic list of strategy pros and cons."
+            },
+            {
+                "q": "Why might assessing a strategy require considering its impact across all five of SA1's syllabus topic areas (products, pricing, regulation, reporting, monitoring), rather than a single dimension?",
+                "a": "A strategic option (e.g. launching a new LTC product) genuinely has consequences for pricing (Modules 7-9), regulatory capital (Modules 11-13), reporting (Module 14), and ongoing monitoring (Modules 19-20) simultaneously, so a genuinely thorough assessment must consider all these dimensions together.",
+                "explain": "This directly recalls Module 1's topic-weighting material — worth recognising strategy assessment as the point where ALL of this course's earlier modules genuinely converge; a strong assessment answer draws on multiple topic areas, not just one in isolation."
+            },
+            {
+                "q": "Why might assessing a strategy require considering both its expected (central-scenario) outcome and its performance under adverse scenarios, echoing Module 12's ORSA stress-testing material?",
+                "a": "A strategy that looks attractive under expected assumptions could still expose the insurer to unacceptable risk under adverse conditions (e.g. a pandemic, per Module 6), so genuine assessment requires considering resilience across a range of scenarios, not just the most likely one.",
+                "explain": "This directly recalls Module 12's ORSA stress-testing material — worth recognising that assessment ISN'T COMPLETE after evaluating only the expected outcome; genuinely sound assessment considers the DOWNSIDE case too, echoing this course's recurring stress-testing theme."
+            },
+            {
+                "q": "Why might assessing a strategy involve weighing quantitative financial metrics (e.g. expected profit, capital impact) alongside genuinely qualitative considerations (e.g. reputational risk, strategic fit)?",
+                "a": "A strategy that scores well financially could still be genuinely unsuitable for reputational, regulatory, or strategic-fit reasons not fully captured in a purely quantitative model, so a complete assessment must weigh both quantitative and qualitative dimensions together.",
+                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising that a strong SA1 assessment answer explicitly ADDRESSES qualitative factors, not just financial metrics; overlooking them is a common way to produce a technically correct but genuinely incomplete answer."
+            },
+            {
+                "q": "Why might comparing multiple alternative strategic options against each other (rather than assessing a single option in isolation) often produce a more genuinely useful assessment?",
+                "a": "Assessing a single option's merits in isolation doesn't reveal whether it's genuinely the BEST available choice; comparing it against realistic alternatives (including 'do nothing') provides a genuinely more complete basis for the recommendation stage that follows.",
+                "explain": "This directly previews Module 22's recommending-strategies material — worth recognising comparative assessment as providing the genuine EVIDENCE BASE Module 22's recommendation stage needs; you can't soundly recommend one option without having genuinely assessed it against realistic alternatives."
+            },
+            {
+                "q": "Why might an SA1 exam question ask candidates to assess a strategy using information given in an unfamiliar or fictional scenario, rather than a well-known real insurer?",
+                "a": "This tests whether candidates can apply the genuine underlying assessment SKILLS and PRINCIPLES developed throughout this course to any given set of facts, rather than simply recalling memorised knowledge about a specific, familiar real-world company.",
+                "explain": "This directly recalls Module 1's fictional-scenario-format material — worth recognising this as testing GENERALISABLE assessment skill, not memorised industry knowledge; the specific facts given in the question are what a strong answer must actually engage with."
+            },
+            {
+                "q": "How does this module's strategy-assessment material connect back to Module 20's analysis of surplus and embedded value?",
+                "a": "Module 20's decomposed financial analysis provides genuinely important evidence (e.g. which product lines are genuinely profitable, which experience trends are persistent) that a sound strategic assessment should draw upon rather than ignore.",
+                "explain": "This closing card ties this module back to Module 20 explicitly — worth recognising Module 20's financial decomposition as providing genuinely important EVIDENCE INPUT into this module's strategic assessment process, not a separate, unconnected topic."
+            }
+        ]
+    },
+    {
+        "id": "m22",
+        "title": "Recommending strategies",
+        "description": "Covers how to move from assessment to a genuine, well-justified strategic recommendation for a health and care insurer.",
+        "cards": [
+            {
+                "q": "Why does SA1 distinguish 'recommending' strategies as a further skill beyond 'assessing' them, per Module 1's skill progression?",
+                "a": "Assessment evaluates options against criteria; recommendation requires taking a genuine POSITION — selecting and justifying a specific course of action — which is a distinct, further step candidates must not skip even after a thorough assessment.",
+                "explain": "This directly recalls Module 1's and Module 21's skill-progression material — worth recognising that a strong SA1 answer must not stop at assessment; the exam explicitly rewards candidates who go on to make and justify a genuine recommendation."
+            },
+            {
+                "q": "Why might a genuinely sound strategic recommendation need to explicitly state the criteria or objectives it is judged against, rather than simply asserting a preferred option?",
+                "a": "Making the underlying criteria explicit (e.g. capital efficiency, growth, risk appetite alignment) allows the recommendation's reasoning to be genuinely followed and evaluated, rather than presenting an unexplained conclusion that doesn't demonstrate the assessment work behind it.",
+                "explain": "This directly recalls CP3's clear-reasoning/structuring material — worth recognising that a recommendation without stated criteria reads as an unjustified opinion, while one with explicit criteria demonstrates the genuine analytical process behind it, which is what SA1 marking rewards."
+            },
+            {
+                "q": "Why might a strong strategic recommendation acknowledge genuine trade-offs and limitations of the chosen option, rather than presenting it as unambiguously the best choice?",
+                "a": "Real strategic decisions almost always involve genuine trade-offs (e.g. higher expected return against higher risk), so acknowledging these demonstrates a genuinely balanced, realistic understanding rather than an oversimplified, one-sided justification.",
+                "explain": "This directly recalls CP1's balanced-judgement material — worth recognising that examiners typically reward candidates who show AWARENESS of a recommendation's downsides, rather than those who present only supporting arguments and ignore genuine counterpoints."
+            },
+            {
+                "q": "Why might a recommendation need to specify not just WHAT strategic option to pursue, but also HOW and WHEN it should be implemented?",
+                "a": "A genuinely complete recommendation addresses practical implementation considerations (e.g. phased rollout, required capital raising timing, regulatory approval steps), since a strategically sound option poorly implemented could still fail to deliver its intended benefit.",
+                "explain": "This directly previews Module 23's implications-of-strategies material — worth recognising that WHAT to do and HOW to do it are genuinely distinct considerations; a complete recommendation should address both rather than stopping at the headline choice."
+            },
+            {
+                "q": "Why might different stakeholders (shareholders, policyholders, regulators, employees) genuinely disagree about which strategic option is preferable, and why does a sound recommendation need to address this?",
+                "a": "Different stakeholders can have genuinely different priorities (e.g. shareholders favouring growth, regulators favouring prudence), so a sound recommendation should acknowledge these different perspectives and explain why the recommended balance is nonetheless justified.",
+                "explain": "This directly recalls CP1's multiple-stakeholder-perspective material — worth recognising that a recommendation ignoring genuine stakeholder tension looks naive; addressing it directly demonstrates a more complete, realistic understanding of the decision."
+            },
+            {
+                "q": "Why might a recommendation for a health and care insurer need to explicitly address how the chosen strategy would be monitored going forward, echoing Modules 19-20's analysis themes?",
+                "a": "A strategy's success is rarely fully knowable at the point of recommendation; specifying how outcomes will be tracked (e.g. against Module 19's experience-analysis or Module 20's surplus-analysis metrics) shows the recommendation is genuinely designed to be verified and adjusted over time, not a one-off, unchecked decision.",
+                "explain": "This directly recalls Modules 19-20's ongoing-monitoring material — worth recognising that a genuinely complete recommendation loops back to this course's recurring ongoing-review theme, rather than treating the strategic decision as final and unmonitored."
+            },
+            {
+                "q": "Why might examiners award only partial credit for a recommendation that simply restates the 'obviously best' option from the assessment without adding genuine further justification?",
+                "a": "The recommendation stage is meant to demonstrate genuine synthesis and judgement, not just repeat the assessment's conclusion; marks are typically awarded for the QUALITY of reasoning and awareness of trade-offs, not merely for identifying the technically superior option.",
+                "explain": "This directly recalls CP1's marking-rewards-reasoning-not-just-answers philosophy — worth recognising that a SA1 recommendation answer earns marks through the JUSTIFICATION process itself, not simply by naming the correct-seeming option."
+            },
+            {
+                "q": "How does this module's recommendation material connect directly to Module 23's coverage of the implications of strategies?",
+                "a": "This module focuses on selecting and justifying a strategic option; Module 23 develops the further step of working through that chosen option's genuine downstream consequences across the insurer's products, capital, and regulatory position.",
+                "explain": "This closing card ties this module directly to Module 23 — worth recognising Module 23 as the NATURAL NEXT STEP once a recommendation has been made: understanding its full, genuine consequences in detail, not just its headline justification."
+            }
+        ]
+    },
+    {
+        "id": "m23",
+        "title": "Implications of strategies",
+        "description": "Covers working through the downstream consequences of a chosen strategic option across a health and care insurer's products, capital, regulatory position and operations.",
+        "cards": [
+            {
+                "q": "Why might SA1 test 'implications of strategies' as a further distinct skill beyond assessment and recommendation, completing Module 1's skill progression?",
+                "a": "Even a well-justified recommendation needs its full DOWNSTREAM CONSEQUENCES worked through — implications for pricing, capital, regulation, and operations — which is a genuinely distinct exercise from justifying why the option was chosen in the first place.",
+                "explain": "This directly recalls Module 1's and Modules 21-22's skill-progression material — worth recognising 'implications' as the final, most detailed skill level: having chosen and justified a strategy, a strong candidate then works through EXACTLY what changes as a result, in concrete terms."
+            },
+            {
+                "q": "Why might launching a new product line (e.g. entering the long-term care market) have genuine implications for an insurer's capital position beyond the immediate cost of product development?",
+                "a": "A new, capital-intensive product like LTC (Module 11's risk-margin material) directly increases the insurer's overall SCR and technical provisions, meaning the capital management strategy (Module 16) must genuinely adapt to accommodate this new liability alongside existing business.",
+                "explain": "This directly recalls Module 11's LTC-capital-intensity material and Module 16's capital management material — worth recognising that a strategic product decision has REAL, QUANTIFIABLE knock-on effects for capital that a complete answer should explicitly trace through."
+            },
+            {
+                "q": "Why might a decision to expand into a new geographic market have genuine regulatory implications beyond simply following the new market's existing rules?",
+                "a": "Operating in a new jurisdiction may require new regulatory approvals, additional local reporting (Module 14), and potentially a different local Solvency II-equivalent regime (Module 13's comparative-regulation material), each carrying genuine compliance cost and lead time.",
+                "explain": "This directly recalls Module 13's comparative-regulatory-regimes material — worth recognising that geographic expansion's regulatory implications go well beyond a simple 'check the local rules' exercise; genuinely new compliance infrastructure may be needed."
+            },
+            {
+                "q": "Why might a strategic decision to increase reinsurance use have implications for reported profit patterns, beyond its direct risk-reduction and capital-relief effect?",
+                "a": "Ceding more risk to reinsurance typically also cedes a share of expected profit to the reinsurer, meaning the insurer's own reported profit (Module 14) may be lower and less volatile, a genuine trade-off between reduced volatility and reduced expected retained profit.",
+                "explain": "This directly recalls Module 17's reinsurance material and Module 14's profit-reporting material — worth recognising that a reinsurance strategy change ripples through into REPORTED FINANCIAL RESULTS, not just the underlying risk profile, a genuinely important implication to trace through explicitly."
+            },
+            {
+                "q": "Why might a strategic decision to withdraw from a product line have genuine implications for existing policyholders and the insurer's conduct obligations, even if no new business is affected?",
+                "a": "Existing policyholders with in-force contracts must continue to be treated fairly (Module 10's TCF material) even after new sales cease, meaning withdrawal decisions carry genuine ongoing conduct and servicing obligations, not simply a one-off cessation of new sales.",
+                "explain": "This directly recalls Module 10's TCF material — worth recognising that a strategic 'exit' decision is rarely a clean, immediate stop; genuine implications for EXISTING policyholders typically continue for as long as their contracts remain in force."
+            },
+            {
+                "q": "Why might implications of a chosen strategy need to be assessed across a realistic implementation timeline, rather than assuming all consequences occur immediately?",
+                "a": "Capital impacts, regulatory approvals, and operational changes typically unfold over months or years, so a genuinely complete answer traces through implications at appropriate points along a realistic timeline, rather than treating the whole strategy as instantaneously implemented.",
+                "explain": "This directly recalls Module 22's implementation-timing material — worth recognising that TIMING matters for implications just as much as for the recommendation itself; a strong answer should be explicit about WHEN particular consequences would actually materialise."
+            },
+            {
+                "q": "Why might working through a strategy's implications sometimes reveal that the original recommendation needs to be revisited or refined?",
+                "a": "Detailed implications analysis can surface a genuinely significant consequence (e.g. an unacceptable capital strain) not fully anticipated at the recommendation stage, showing that assessment, recommendation, and implications analysis are genuinely iterative, not a strictly one-way process.",
+                "explain": "This directly recalls Module 21's and Module 22's assessment/recommendation material — worth recognising that in a genuinely realistic (and good exam) answer, working through implications can legitimately loop back and refine an earlier recommendation, rather than being a purely mechanical follow-on step."
+            },
+            {
+                "q": "How do Modules 21-23 together form a coherent strategic decision-making sequence, connecting back to the topic weighting established in Module 1?",
+                "a": "Module 21 assesses options against objectives and risk appetite, Module 22 selects and justifies a specific recommendation, and Module 23 works through that recommendation's genuine downstream consequences — together forming the complete strategic-judgement skill set the syllabus's later topic areas emphasise.",
+                "explain": "This closing card ties Modules 21-23 together explicitly, echoing Module 1's topic-weighting material — worth recognising these three modules as one coherent, sequential skill (assess, recommend, work through implications), not three separate, unrelated topics."
+            }
+        ]
+    }
 ],
 };
