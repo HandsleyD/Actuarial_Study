@@ -19655,7 +19655,80 @@ const MODULES = {
                 "explain": "This directly recalls SA1's and SA3's risk-appetite material — worth recognising risk appetite as requiring a genuine, deliberate BALANCE, not simply pursuing minimum uncertainty as an end in itself regardless of the genuine cost of achieving it."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "Professional standards and the Solvency II framework",
+        "description": "Covers the role of professional standards in reserving work, and the Solvency II three-pillar framework as it applies to general insurance reserving and capital, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why might a reserving actuary hold statutory responsibilities carrying genuine personal professional accountability, echoing SA1's and SA3's material?",
+                "a": "A statutory reserving role typically carries personal accountability for specific technical opinions (e.g. on reserve adequacy), meaning the individual actuary can face professional consequences distinct from, and sometimes in tension with, the insurer's own commercial interests in reporting favourable results.",
+                "explain": "This directly recalls SA1's and SA3's personal-accountability material — worth recognising this same principle as directly examinable at SP7's foundational level, not exclusively an SA3-level concept."
+            },
+            {
+                "q": "Why might a finance director pressuring a reserving actuary to adopt a more optimistic reserving basis for a long-tail liability account represent a genuine, directly examinable ethical scenario?",
+                "a": "Professional standards place the actuary's overriding duty on sound, honest technical judgement, meaning commercial pressure to adopt a particular basis does not override this obligation; the actuary should maintain a basis genuinely supported by the evidence, clearly document the reasoning, and escalate through appropriate channels if pressure continues, rather than adjusting the basis simply to satisfy the request.",
+                "explain": "This directly recalls SA3's identical ethical-scenario material — worth recognising this exact scenario type as a genuinely recurring, directly testable theme across every subject touching reserving work, from SP7's foundational level through to SA3's advanced level."
+            },
+            {
+                "q": "What are the three pillars of the Solvency II framework, echoing this course's recurring material across every insurance subject?",
+                "a": "Pillar 1 sets quantitative capital and technical provision requirements; Pillar 2 covers governance and risk management (including the insurer's own risk assessment); Pillar 3 covers public disclosure and reporting requirements — the same universal three-pillar structure applying identically across every insurance sector.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's identical three-pillar material — worth recognising this structure as a genuinely universal Solvency II concept, examinable at SP7's foundational level for general insurance reserving and capital specifically."
+            },
+            {
+                "q": "Why does Solvency II's Pillar 2 governance requirement place particular emphasis on a general insurer's reserving process specifically, echoing SA3's material?",
+                "a": "Since general insurance reserves (particularly for longer-tail claims) involve genuine estimation uncertainty (Module 4's systematic/independent uncertainty and model/parameter risk material), sound governance around how reserves are set, reviewed, and challenged is essential to ensuring the reported technical provisions genuinely reflect the insurer's true liability position.",
+                "explain": "This directly recalls SA3's Pillar-2-reserving-governance material and Module 4's uncertainty material — worth recognising Pillar 2 governance as directly addressing this course's earlier uncertainty and model/parameter risk themes through genuine, practical oversight processes."
+            },
+            {
+                "q": "Why might Pillar 1's technical provisions for general insurance genuinely require both a best estimate liability AND a risk margin, echoing this course's recurring Solvency II material?",
+                "a": "The best estimate liability reflects the genuine expected cost of claims, while the risk margin compensates for the genuine cost of holding capital against non-hedgeable reserving risk over the liability's remaining settlement period, together forming the total technical provisions a general insurer must hold under Pillar 1.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's identical best-estimate-plus-risk-margin material — worth recognising this same two-component structure applying universally across every insurance sector's Solvency II technical provisions."
+            },
+            {
+                "q": "Why might Pillar 3's disclosure requirements be particularly important for stakeholders assessing a general insurer's genuine financial strength, given the reserving uncertainty this whole subject develops?",
+                "a": "Since general insurance reserves carry genuine, material estimation uncertainty (Module 4's material), transparent Pillar 3 disclosure of an insurer's reserving methodology, key assumptions, and sensitivity to those assumptions allows stakeholders to genuinely assess the reliability of the insurer's reported financial position, rather than taking a single reported reserve figure at face value.",
+                "explain": "This directly recalls Module 4's reserving-uncertainty material — worth recognising Pillar 3 disclosure as a direct, practical RESPONSE to the genuine uncertainty this course's earlier module identified as inherent in general insurance reserving."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "The chain ladder method",
+        "description": "Covers the basic mechanics and assumptions of the chain ladder reserving method, per the official syllabus's largest topic area.",
+        "cards": [
+            {
+                "q": "What is the genuine basic mechanic of the chain ladder reserving method?",
+                "a": "The chain ladder method arranges historical claims data into a 'triangle' (accident year against development year), calculates genuine average development factors from the observed ratios between successive development periods, and applies these factors to the latest diagonal of known cumulative claims to project each accident year's claims forward to their genuine estimated ultimate value.",
+                "explain": "Worth recognising the chain ladder as this course's single most foundational reserving technique — the genuine starting point from which the more refined methods covered in later modules (Bornhuetter-Ferguson, Cape Cod, stochastic approaches) are all developed as extensions or alternatives."
+            },
+            {
+                "q": "What genuine assumption underlies the chain ladder method's use of AVERAGE development factors calculated across multiple historical accident years?",
+                "a": "The chain ladder genuinely assumes that claims development PATTERNS (the proportional relationship between cumulative claims at successive development periods) are consistent across different accident years, even though the absolute LEVEL of claims may genuinely differ between years — a crucial, sometimes violated assumption this course's later modules directly address.",
+                "explain": "Worth recognising this consistent-development-PATTERN assumption (not consistent claims LEVEL) as the chain ladder's genuine core assumption — worth distinguishing this precisely, since the method does NOT assume claims levels are the same across years, only that their development SHAPE is."
+            },
+            {
+                "q": "Why might the chain ladder method's core consistency assumption genuinely be violated by the underwriting cycle effects covered in Module 2?",
+                "a": "If underwriting conditions have genuinely shifted materially between accident years (e.g. tighter terms in a hard market reducing claim frequency or altering claims development speed), the historical development pattern observed in older years may no longer genuinely represent how more recent, differently-underwritten years will develop, violating the chain ladder's core consistency assumption.",
+                "explain": "This directly recalls Module 2's underwriting-cycle-threatens-reserving-assumptions material — worth recognising this as a concrete, practical example of exactly the assumption violation that module warned about, now applied specifically to the chain ladder method."
+            },
+            {
+                "q": "Why might a genuine change in claims handling practice (e.g. faster claims settlement following a new case management process) directly distort chain ladder development factors, even without any genuine change in the underlying claims themselves?",
+                "a": "The chain ladder method genuinely relies on historical development PATTERNS reflecting how claims typically emerge and settle over time; a genuine operational change in claims handling speed would alter this pattern going forward without reflecting any genuine change in the underlying claims experience itself, meaning historical development factors calculated from PRE-change data could genuinely mislead if applied unadjusted to POST-change years.",
+                "explain": "Worth recognising this as a genuinely important, practical PROCESS RISK distinct from genuine changes in underlying claims experience — a reserving actuary must genuinely distinguish between changes in the CLAIMS themselves and changes in how they are ADMINISTERED, since only the chain ladder's core assumption is threatened by the latter, requiring genuine investigation and potential adjustment."
+            },
+            {
+                "q": "Why might the chain ladder method genuinely struggle to produce reliable estimates for the MOST RECENT accident years in a claims triangle, compared with older, more fully-developed years?",
+                "a": "The most recent accident years have genuinely fewer development periods of observed data, meaning their projection to ultimate relies on applying LARGER development factors to a genuinely SMALLER, less mature base of observed claims, amplifying the genuine impact of any random fluctuation or estimation error in those later development factors.",
+                "explain": "Worth recognising this as a genuinely important, practical LIMITATION of the chain ladder — the method's reliability genuinely DECREASES for the most recent, least-developed accident years, precisely the years where a reserving estimate is often most commercially important."
+            },
+            {
+                "q": "How does this module's chain ladder material connect forward to Module 7's Bornhuetter-Ferguson and Cape Cod material?",
+                "a": "This module's genuine LIMITATION for immature, recent accident years (relying heavily on large, potentially unreliable development factors) directly motivates the alternative methods covered next, which genuinely BLEND the chain ladder's own claims-based projection with an independent, external estimate (e.g. an a priori loss ratio) to produce more stable estimates for these genuinely less mature years.",
+                "explain": "This closing card ties this module directly to Module 7 — worth recognising the chain ladder's own genuine weaknesses (identified in this module) as the direct MOTIVATION for the blended methods developed next, not a separate, unrelated technique."
+            }
+        ]
     }
-
     ]
 };
