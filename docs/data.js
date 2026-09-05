@@ -20802,6 +20802,90 @@ const MODULES = {
                 "explain": "This directly recalls SA7's replicating-portfolio and proxy-model material — worth recognising these same computational-shortcut techniques recurring here specifically in the ERM capital-modelling context, not merely coincidentally similar to earlier subjects' material."
             }
         ]
+    },
+    {
+        "id": "m10",
+        "title": "Risk management tools: avoidance, retention and mitigation",
+        "description": "Covers risk avoidance, retention and mitigation as practical risk management techniques, developing the 'treat' and 'terminate' responses from Module 6's four Ts in greater depth, per the official syllabus's sixth topic area.",
+        "cards": [
+            {
+                "q": "What does genuine 'risk avoidance' mean in practice, and how does it relate to Module 6's 'terminate' response?",
+                "a": "Risk avoidance genuinely means declining to undertake an activity altogether specifically because of the risk it would introduce (e.g. an insurer genuinely declining to write a particular class of business), directly corresponding to Module 6's 'TERMINATE' response — the most extreme of the four Ts, eliminating the risk entirely by eliminating the underlying activity.",
+                "explain": "This directly recalls Module 6's four-Ts material — worth recognising avoidance as simply the practical NAME given to the 'terminate' response when applied specifically to a not-yet-undertaken activity."
+            },
+            {
+                "q": "Why might genuine risk avoidance carry a significant, genuine OPPORTUNITY COST, even though it eliminates the specific risk in question entirely?",
+                "a": "Since many genuinely risk-bearing activities also offer genuine expected RETURN or strategic value (e.g. writing a profitable but volatile insurance class, or entering a new but uncertain market), avoiding the risk entirely also means forgoing that genuine potential upside, meaning avoidance is rarely costless even when it succeeds in eliminating the specific risk.",
+                "explain": "This directly recalls SA1's and SP5's risk-return-trade-off material — worth recognising that genuine risk avoidance is a GENUINE trade-off, not a free lunch — the foregone expected return is itself a real, if less visible, cost."
+            },
+            {
+                "q": "What does genuine 'risk retention' mean, and why might an organisation deliberately choose to retain a risk rather than transfer or mitigate it?",
+                "a": "Risk retention genuinely means consciously choosing to bear a risk's financial consequences internally, rather than transferring it elsewhere; an organisation might genuinely choose retention when the risk sits comfortably within its risk appetite and capacity (Module 5's material), when transfer would be prohibitively expensive relative to the risk's expected cost, or when the organisation has genuine comparative expertise in managing that specific risk internally.",
+                "explain": "This directly recalls Module 5's appetite-and-capacity material and Module 6's 'tolerate' response — worth recognising retention as a genuinely DELIBERATE, reasoned choice, not merely a default arising from failing to arrange transfer."
+            },
+            {
+                "q": "What is a genuine 'deductible' or 'excess', and how does it represent a PARTIAL form of risk retention combined with risk transfer?",
+                "a": "A deductible genuinely means the policyholder (or ceding insurer, in a reinsurance context) retains losses up to a specified threshold, with only losses ABOVE that threshold transferred to the insurer (or reinsurer); this genuinely combines RETENTION (of smaller, more predictable losses) with TRANSFER (of larger, less predictable losses), often at genuinely lower overall cost than transferring the whole risk.",
+                "explain": "This directly recalls SA3's and SP8's excess-of-loss-reinsurance material — worth recognising deductibles as a genuinely PRACTICAL BLEND of retention and transfer, not a purely binary choice between the two."
+            },
+            {
+                "q": "What does genuine 'risk mitigation' mean, and how does it differ from both avoidance and transfer in its fundamental approach?",
+                "a": "Risk mitigation genuinely means taking action to reduce a risk's LIKELIHOOD or IMPACT (e.g. improving internal controls, diversifying a portfolio, or strengthening IT security), while still genuinely undertaking the underlying activity (unlike avoidance) and still genuinely bearing the residual risk internally (unlike transfer) — directly corresponding to Module 6's 'TREAT' response.",
+                "explain": "This directly recalls Module 6's 'treat' response material — worth recognising mitigation's genuinely distinctive position: it neither eliminates the activity (avoidance) nor passes the risk elsewhere (transfer), but genuinely REDUCES the risk while keeping both the activity and its residual risk in-house."
+            },
+            {
+                "q": "Why might genuine DIVERSIFICATION be considered a specific, powerful FORM of risk mitigation, echoing this course's recurring diversification-benefit theme?",
+                "a": "Diversification genuinely mitigates risk by spreading exposure across multiple, imperfectly-correlated risk sources (e.g. different product lines, geographies, or counterparties), so that adverse outcomes in one area are genuinely less likely to be fully replicated across all areas simultaneously — directly applying Module 7's correlation-and-aggregation logic as a genuinely PRACTICAL risk MANAGEMENT tool, not merely a modelling consideration.",
+                "explain": "This directly recalls Module 7's correlation-and-diversification-benefit material — worth recognising diversification as the genuine PRACTICAL APPLICATION of that earlier, more theoretical modelling concept — actively engineering LOWER correlation into an organisation's risk exposures, not merely measuring existing correlation."
+            },
+            {
+                "q": "Why must a genuine cost-benefit assessment underpin the choice between mitigation, retention, transfer and avoidance for any given risk, rather than defaulting to whichever tool seems most intuitively 'safe'?",
+                "a": "Each of the four Ts genuinely carries its own cost (mitigation's control costs, transfer's premium cost, avoidance's opportunity cost, retention's genuine capital cost of bearing the risk), so a genuinely SOUND risk management decision must weigh each tool's cost against the genuine reduction in risk it achieves, relative to the organisation's risk appetite — rather than reflexively choosing the most conservative-seeming option regardless of cost.",
+                "explain": "This directly recalls SA1's and SP5's cost-benefit-of-risk-management material — worth recognising that genuinely EFFECTIVE risk management requires balancing cost against benefit for EACH risk individually, not applying a single default response uniformly across all risks."
+            }
+        ]
+    },
+    {
+        "id": "m11",
+        "title": "Risk management tools: hedging, insurance and alternative risk transfer",
+        "description": "Covers hedging, insurance and alternative risk transfer as risk transfer techniques, completing the official syllabus's sixth topic area's coverage of practical risk management tools.",
+        "cards": [
+            {
+                "q": "What does genuine 'hedging' mean, and how does it typically use derivative instruments to reduce risk, echoing SP6's material?",
+                "a": "Hedging genuinely means taking an offsetting position (often using derivative instruments like futures, options or swaps) whose value genuinely moves in the OPPOSITE direction to an existing exposure, so that losses on the original exposure are genuinely offset, at least partially, by gains on the hedging position.",
+                "explain": "This directly recalls SP6's derivative-hedging-and-Greeks material — worth recognising hedging as the genuinely PRACTICAL, ERM-level application of SP6's more technical, instrument-specific hedging mechanics."
+            },
+            {
+                "q": "Why is a hedge genuinely rarely 'perfect' in practice, echoing SP5's and SP6's basis-risk material?",
+                "a": "A genuine hedge is rarely perfect because of BASIS RISK — the hedging instrument's value may not move in EXACTLY the opposite direction to the underlying exposure (e.g. differing maturities, differing underlying reference assets, or genuine liquidity constraints), meaning genuine RESIDUAL risk typically remains even after hedging.",
+                "explain": "This directly recalls SP5's and SP6's basis-risk material — worth recognising basis risk as a genuinely RECURRING limitation on hedging effectiveness across this whole curriculum, not a concern unique to any single subject."
+            },
+            {
+                "q": "What does genuine 'insurance' mean as a risk transfer tool from the PURCHASER's perspective, and how does it differ from hedging in its typical payoff structure?",
+                "a": "Insurance genuinely transfers a SPECIFIC, typically insurable risk (e.g. property damage, liability) to an insurer in exchange for a premium, with the insurer genuinely paying out only if a specified insured EVENT occurs; unlike many hedging instruments (which typically pay out based on a continuously-varying market price), insurance payoffs are genuinely CONTINGENT on a discrete, specified event occurring, rather than tracking a continuous underlying variable.",
+                "explain": "Worth recognising this genuine STRUCTURAL distinction — insurance genuinely responds to discrete, insurable EVENTS, while most hedging instruments respond to continuous MARKET PRICE movements, even though both genuinely serve the same underlying risk-transfer purpose."
+            },
+            {
+                "q": "What is 'Alternative Risk Transfer' (ART), and why might an organisation use ART instruments (e.g. catastrophe bonds, insurance-linked securities) rather than conventional insurance or reinsurance?",
+                "a": "ART genuinely refers to non-traditional risk transfer mechanisms that transfer risk to CAPITAL MARKETS investors rather than conventional (re)insurers (e.g. catastrophe bonds, where investors genuinely lose some or all of their principal if a specified catastrophic event occurs); organisations might genuinely use ART to access capital markets' genuinely much LARGER capacity than the traditional (re)insurance market can offer, particularly for very large, infrequent, catastrophic risks.",
+                "explain": "This directly recalls SA3's catastrophe-bond material — worth recognising ART's genuine, distinctive VALUE PROPOSITION: tapping the genuinely vast scale of global capital markets for risks whose sheer SIZE could otherwise exceed traditional reinsurance market capacity."
+            },
+            {
+                "q": "What is a 'catastrophe bond', and how does its genuine payoff structure transfer risk from the issuing organisation to bond investors?",
+                "a": "A catastrophe bond genuinely pays investors an attractive coupon in exchange for investors' capital being genuinely AT RISK — if a predefined catastrophic trigger event occurs (e.g. a hurricane exceeding a specified magnitude), the bond's principal is genuinely reduced or forfeited, with the freed-up funds used by the issuing organisation to cover its own catastrophe losses, meaning investors genuinely bear the catastrophe risk in exchange for the enhanced coupon.",
+                "explain": "This directly recalls SA3's catastrophe-bond mechanics material — worth recognising the genuine TRADE investors are making: accepting genuine principal-at-risk in exchange for a genuinely enhanced yield, effectively taking on the insurer's catastrophe exposure."
+            },
+            {
+                "q": "What is genuine 'basis risk' specifically within an ART/catastrophe-bond context (e.g. an INDEX-based trigger), and why might it be a MORE significant genuine concern for ART instruments than for traditional, indemnity-based reinsurance?",
+                "a": "An index-based (parametric) catastrophe bond genuinely pays out based on an independently-measured INDEX (e.g. modelled industry-wide losses, or a physical parameter like wind speed) rather than the issuing organisation's OWN actual losses, meaning the issuer genuinely bears the risk that the index-based payout may not precisely match its own actual loss experience — a genuinely more significant basis-risk concern than traditional indemnity reinsurance, which pays based on the cedant's own actual, incurred losses directly.",
+                "explain": "This directly recalls SA3's parametric-versus-indemnity-trigger material — worth recognising this genuine trade-off: index-based ART triggers offer genuinely FASTER, more OBJECTIVE payouts (avoiding lengthy claims assessment) at the cost of genuinely GREATER basis risk relative to the issuer's own actual experience."
+            },
+            {
+                "q": "How does this module's hedging, insurance and ART material connect back to Module 10, completing SP9's sixth syllabus topic area (risk management tools and techniques)?",
+                "a": "Module 10 developed the AVOIDANCE, RETENTION and MITIGATION responses (three of Module 6's four Ts); this module completes the picture by developing TRANSFER in depth — through hedging, conventional insurance, and alternative risk transfer — together giving genuinely comprehensive coverage of all four Ts' practical implementation, completing SP9's largest (20%-weighted) syllabus topic area.",
+                "explain": "This closing card ties Modules 10-11 together explicitly, echoing Module 1's topic-weighting material — worth recognising these two modules as together addressing SP9's single LARGEST syllabus topic area, reflecting its genuinely central importance to the whole ERM discipline."
+            }
+        ]
     }
 
   ]
