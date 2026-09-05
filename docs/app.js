@@ -5,7 +5,7 @@ const CONFIG = {
 };
 
 const EXAMS = [
-  "CB1", "CB2", "CB3",
+  "CB1", "CB2",
   "CM1", "CM2",
   "CP1", "CP2", "CP3",
   "CS1", "CS2",

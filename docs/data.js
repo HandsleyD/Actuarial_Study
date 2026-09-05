@@ -3,7 +3,6 @@
 const SUBJECTS = {
   CB1: { name: "Business Finance", blurb: "Core financial concepts for business: financial statements, investment appraisal, cost of capital, and how businesses are financed and valued." },
   CB2: { name: "Business Economics", blurb: "Micro- and macroeconomic principles applied to business and financial decision-making — markets, firms, government policy and the wider economy." },
-  CB3: { name: "Business Management", blurb: "How organisations are structured, managed and governed — strategy, people, operations and change." },
   CM1: { name: "Actuarial Mathematics", blurb: "The mathematics of compound interest, cashflows and life contingencies that underpin actuarial valuations." },
   CM2: { name: "Financial Engineering and Loss Reserving", blurb: "Stochastic models of asset prices and derivatives, plus general insurance reserving techniques." },
   CP1: { name: "Actuarial Practice", blurb: "Applies core actuarial techniques to real-world modelling, pricing and reserving problems across practice areas." },
@@ -11248,7 +11247,7 @@ const MODULES = {
             {
                 "q": "Why is business finance a genuinely relevant subject for an actuary, even outside a specialist corporate finance role?",
                 "a": "Actuaries routinely need to understand company accounts, valuations, and financing decisions when assessing an insurer's or pension sponsor's financial strength, valuing investments, or advising on business decisions with financial consequences.",
-                "explain": "This closing card sets the tone for why CB1 sits in the Core Business stage of the curriculum alongside CB2 and CB3 — every actuarial specialism eventually needs to interpret a company's accounts or assess its financial strength, making this course's content genuinely foundational, not a detour from actuarial work."
+                "explain": "This closing card sets the tone for why CB1 sits in the Core Business stage of the curriculum alongside CB2 — every actuarial specialism eventually needs to interpret a company's accounts or assess its financial strength, making this course's content genuinely foundational, not a detour from actuarial work."
             }
         ]
     },
