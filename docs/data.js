@@ -18442,6 +18442,75 @@ const MODULES = {
                 "explain": "This closing card ties this module back to Module 10 explicitly — worth recognising this module as the PRACTICAL APPLICATION of Module 10's principles, not a separate, unrelated valuation topic."
             }
         ]
+    },
+    {
+        "id": "m12",
+        "title": "Discontinuance terms",
+        "description": "Covers the rights and expectations of beneficiaries, the availability and selection of a discontinuance method, and the level of available assets, when a benefit arrangement discontinues, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why must a benefit arrangement's discontinuance terms genuinely consider the 'rights and expectations of beneficiaries' (per the official syllabus objective 4.4), rather than being determined by the provider's own convenience alone?",
+                "a": "Beneficiaries have genuine, often legally-protected rights to accrued benefits, and their reasonable expectations (formed based on how the arrangement was originally communicated and administered) carry genuine weight in determining fair discontinuance treatment, meaning discontinuance terms cannot simply be set to minimise the provider's own cost regardless of beneficiary interests.",
+                "explain": "This directly recalls SA4's winding-up-member-protection material — worth recognising rights and expectations as a genuine CONSTRAINT on discontinuance decision-making, not a secondary consideration after cost minimisation."
+            },
+            {
+                "q": "What genuine methods of providing discontinuance benefits might be available, per the official syllabus objective 4.4 ('availability and selection of a method')?",
+                "a": "Options can include transferring accrued benefits to another arrangement (echoing SA4's buy-out material), converting to deferred benefits held within the existing (now closed) arrangement, or paying a cash equivalent transfer value directly to the member — each genuinely differing in cost, complexity, and the level of ongoing security provided to the member.",
+                "explain": "This directly recalls SA4's buy-out/buy-in and winding-up material — worth recognising discontinuance as offering genuinely MULTIPLE possible methods, not a single, universal approach, echoing this course's general theme that exit options should be genuinely compared rather than a single default assumed."
+            },
+            {
+                "q": "Why might 'the level of available assets' genuinely constrain which discontinuance method is actually feasible, rather than being a purely secondary consideration after the preferred method is chosen?",
+                "a": "If the arrangement's available assets are genuinely insufficient to fully fund the preferred discontinuance method (e.g. a full buy-out requiring complete funding), the provider may need to consider a more modest method, or accept a shortfall requiring some other resolution, making available assets a genuine, binding CONSTRAINT on method selection, not an afterthought.",
+                "explain": "This directly recalls SA4's sponsor-insolvency-and-statutory-protection material — worth recognising asset adequacy as potentially determining the FEASIBLE SET of discontinuance methods available, before any preference-based selection among them can even occur."
+            },
+            {
+                "q": "Why might discontinuance terms for a DC arrangement genuinely differ in complexity from discontinuance terms for a DB arrangement?",
+                "a": "A DC arrangement's discontinuance is typically more straightforward — the member's own accumulated pot value is genuinely clear and can usually be transferred or paid out directly — while a DB arrangement's discontinuance requires genuinely valuing complex, uncertain future benefit promises and determining how any funding shortfall (or surplus) across the whole membership should be allocated, a materially more complex exercise.",
+                "explain": "This directly recalls Module 5's DB-versus-DC risk-allocation material — worth recognising this same fundamental structural difference (individual accumulated pot versus collective, uncertain future promise) as directly shaping discontinuance complexity too, not just ongoing scheme management."
+            },
+            {
+                "q": "Why might a benefit provider need genuine actuarial judgement, not just mechanical calculation, when determining discontinuance terms in a scenario with insufficient available assets to meet all beneficiaries' full expectations?",
+                "a": "Allocating a genuinely limited pool of assets fairly across different beneficiary groups (e.g. pensioners already in payment versus deferred members) involves genuine, difficult trade-offs with no single objectively correct answer, requiring the actuary's professional judgement to propose a fair, defensible allocation approach reflecting the arrangement's rules and beneficiaries' genuine relative positions.",
+                "explain": "This directly recalls CP1's judgement-under-genuine-uncertainty material — worth recognising discontinuance-asset allocation as one of the clearest, most difficult real-world examples of genuine actuarial judgement this whole subject develops."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Monitoring experience and the Actuarial Control Cycle",
+        "description": "Covers identifying the sources of surplus or deficit for a benefit provider, and the factors affecting the application of that surplus or deficit, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What does the official syllabus (objective 5.1) require candidates to identify regarding a benefit provider's financial position?",
+                "a": "The sources of surplus or deficit for a benefit provider — the genuine underlying causes (e.g. investment experience differing from assumption, mortality experience differing from assumption, contributions differing from the funding plan) driving a change in the scheme's funding position, and the factors affecting how any resulting surplus or deficit should genuinely be applied.",
+                "explain": "This directly recalls SP1's and SP2's identical surplus-analysis material — worth recognising this same WHY-versus-THAT decomposition principle applying to pension schemes: a single funding-position figure tells you WHAT changed, but only source-analysis tells you WHY."
+            },
+            {
+                "q": "What is the 'Actuarial Control Cycle', and why does it provide a genuinely useful framework for understanding this whole SP4 subject's structure?",
+                "a": "The Actuarial Control Cycle describes the recurring, genuinely cyclical process of setting assumptions and a funding approach, monitoring actual experience against those assumptions, and feeding the resulting insight back into revised assumptions and approach — a continuous loop rather than a one-off, linear exercise.",
+                "explain": "Worth recognising this cycle as genuinely describing the WHOLE relationship between Modules 9-13: model-building and assumption-setting (Modules 9-11) feed into monitoring (this module), whose results then feed BACK into revised assumptions, closing the loop rather than ending the process."
+            },
+            {
+                "q": "Why might a genuine investment experience variance and a genuine mortality experience variance need to be identified and reported SEPARATELY within a source-of-surplus analysis, rather than combined into a single 'experience variance' figure?",
+                "a": "Different experience sources can move in genuinely offsetting or reinforcing directions and require genuinely different management responses (e.g. an investment variance might prompt reviewing investment strategy, while a mortality variance might prompt reviewing longevity assumptions), so combining them into a single figure would obscure which specific underlying driver actually requires attention.",
+                "explain": "This directly recalls SP1's and SP2's granular-decomposition material — worth recognising this same principle applying to pension surplus analysis: aggregating distinct sources can hide genuinely important individual drivers requiring distinct management responses."
+            },
+            {
+                "q": "What genuine factors might affect how a scheme surplus should be applied, once identified, per the official syllabus objective 5.1?",
+                "a": "The scheme's own rules governing surplus use, the relative interests of different stakeholders (e.g. members might favour benefit improvements, while the sponsor might favour reduced future contributions), regulatory constraints on permissible surplus applications, and the scheme's ongoing funding risk appetite going forward.",
+                "explain": "This directly recalls Module 3's member-security-versus-sponsor-affordability material — worth recognising this same fundamental stakeholder tension recurring here specifically in the context of DECIDING WHAT TO DO with a genuine, identified surplus."
+            },
+            {
+                "q": "Why might identifying a genuine deficit's source matter just as much as identifying a surplus's source, echoing this module's own symmetric framing?",
+                "a": "Just as with a surplus, understanding WHY a deficit arose (e.g. adverse investment experience versus a deliberate assumption change) directly informs the genuinely appropriate response — a deficit from temporary, reversible market conditions may warrant a different response than one from a persistent, structural assumption shift, so source-identification matters symmetrically for both surplus and deficit.",
+                "explain": "This directly recalls this module's WHY-versus-THAT decomposition principle applied to the deficit case specifically — worth recognising the analysis technique as genuinely SYMMETRIC, equally valuable whether the finding is favourable or unfavourable."
+            },
+            {
+                "q": "How does this closing module complete SP4's overall structure, connecting back to Module 1's topic-weighting material?",
+                "a": "This module completes the syllabus's fifth and final topic area (Monitoring experience and the Actuarial Control Cycle, 10%), closing the loop this whole subject has traced from understanding the provision environment (Modules 1-3), through design and financing (Modules 4-5), managing risk (Modules 6-8), and valuation (Modules 9-12), to this final monitoring stage feeding back into the ongoing control cycle.",
+                "explain": "This closing card ties this whole subject together explicitly, echoing Module 1's topic-weighting material — worth recognising SP4's full 13-module structure as tracing one coherent, genuinely cyclical actuarial control process from provision through to ongoing monitoring and back again."
+            }
+        ]
     }
     ]
 };
