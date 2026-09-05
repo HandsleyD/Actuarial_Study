@@ -19729,6 +19729,80 @@ const MODULES = {
                 "explain": "This closing card ties this module directly to Module 7 — worth recognising the chain ladder's own genuine weaknesses (identified in this module) as the direct MOTIVATION for the blended methods developed next, not a separate, unrelated technique."
             }
         ]
+    },
+    {
+        "id": "m07",
+        "title": "The Bornhuetter-Ferguson and Cape Cod methods",
+        "description": "Covers the Bornhuetter-Ferguson and Cape Cod reserving methods as genuine alternatives and complements to the chain ladder, per the official syllabus.",
+        "cards": [
+            {
+                "q": "How does the Bornhuetter-Ferguson (BF) method genuinely address the chain ladder's identified weakness for immature, recent accident years, echoing Module 6's closing material?",
+                "a": "The BF method genuinely BLENDS an independent, external a priori estimate of ultimate claims (e.g. from an expected loss ratio) with the chain ladder's own claims-based projection, weighting the a priori estimate more heavily for immature years (where genuine chain-ladder-implied development factors are least reliable) and the chain-ladder-based estimate more heavily as a year genuinely matures and more claims data becomes available.",
+                "explain": "This directly recalls Module 6's chain-ladder-immature-year-weakness material — worth recognising BF as the direct, genuine SOLUTION to that identified problem: blending in external information specifically where the chain ladder alone is least reliable."
+            },
+            {
+                "q": "What genuine INPUT does the Bornhuetter-Ferguson method require beyond the historical claims triangle the chain ladder alone needs?",
+                "a": "BF genuinely requires an independent a priori estimate of ultimate claims for each accident year (e.g. derived from an expected loss ratio applied to that year's earned premium), an external input not needed by the chain ladder method, which relies purely on the claims triangle's own internal development pattern.",
+                "explain": "Worth recognising this EXTERNAL a priori estimate as BF's genuinely distinguishing INPUT requirement — a reserving actuary must have, or be able to derive, this additional information beyond the claims data alone to apply BF, unlike the self-contained chain ladder."
+            },
+            {
+                "q": "Why might the QUALITY of the a priori estimate used in Bornhuetter-Ferguson genuinely matter more for immature accident years than for mature ones, echoing the method's own weighting logic?",
+                "a": "Since BF weights the a priori estimate most heavily precisely for immature years, a genuinely poor a priori estimate would have its GREATEST distorting effect on exactly those immature years, while for mature years (where the chain-ladder-based component dominates the blend) a poor a priori estimate would have comparatively little effect on the final result.",
+                "explain": "Worth recognising this as a genuinely important practical implication of BF's own weighting mechanism — the METHOD's reliability for immature years depends directly on the QUALITY of an input (the a priori estimate) that itself requires genuine judgement and external information to set well."
+            },
+            {
+                "q": "What is the genuine Cape Cod method, and how does it differ from Bornhuetter-Ferguson in how it derives its a priori estimate?",
+                "a": "Rather than using an EXTERNALLY-SUPPLIED a priori estimate (as BF does), the Cape Cod method derives its a priori loss ratio DIRECTLY FROM the insurer's own historical claims and premium data, calculating a genuinely internally-consistent expected loss ratio by combining information across multiple accident years, reducing (though not eliminating) reliance on a purely external assumption.",
+                "explain": "Worth recognising Cape Cod as a genuine, practical HYBRID — it retains BF's blending logic but derives the a priori component more OBJECTIVELY from the insurer's own data, reducing the genuine subjectivity Module 7's earlier BF material identified in selecting an external a priori estimate."
+            },
+            {
+                "q": "Why might a reserving actuary genuinely apply BOTH the chain ladder and Bornhuetter-Ferguson/Cape Cod methods to the same data, rather than selecting a single 'best' method upfront?",
+                "a": "Comparing results across genuinely different methods provides a useful practical CROSS-CHECK, revealing whether the methods' results are genuinely converging (supporting confidence in the estimate) or diverging materially (signalling a genuine need for further investigation into why the methods disagree), rather than relying on the output of any single method in isolation.",
+                "explain": "This directly recalls this course's recurring cross-check-and-reasonableness-checking theme — worth recognising multi-method comparison as a genuinely valuable diagnostic practice, not merely an academic exercise in comparing techniques."
+            },
+            {
+                "q": "How do the chain ladder, Bornhuetter-Ferguson and Cape Cod methods together illustrate a genuine spectrum of reliance on external, a priori information versus purely claims-triangle-derived information?",
+                "a": "The chain ladder relies PURELY on the claims triangle's own internal development pattern with no external a priori input; Cape Cod derives its a priori estimate from the insurer's own broader historical data (a partial external input, but self-derived); Bornhuetter-Ferguson uses a genuinely fully EXTERNAL a priori estimate — together forming a genuine spectrum from purely internal to more externally-informed reserving approaches.",
+                "explain": "This closing card ties Modules 6-7 together explicitly — worth recognising these three methods as occupying different points along a genuine spectrum of reliance on external information, not three entirely unrelated, independent techniques."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Average cost per claim, IBNR/IBNER, tail factors and claims inflation",
+        "description": "Covers the average cost per claim reserving method, IBNR and IBNER, tail factors, and the treatment of claims inflation, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the 'average cost per claim' (ACPC) reserving method, and how does it genuinely differ in approach from the chain ladder's aggregate claims-triangle method?",
+                "a": "The ACPC method separately projects the genuine NUMBER of claims expected to ultimately be reported and the genuine AVERAGE COST per claim, then multiplies these two separately-projected figures together to estimate total ultimate claims, rather than the chain ladder's approach of directly projecting AGGREGATE claim amounts as a single combined figure.",
+                "explain": "Worth recognising ACPC's genuine DECOMPOSITION into frequency and severity components as its key distinguishing feature — this separates two genuinely distinct underlying drivers (how many claims, and how much each costs) that the chain ladder's aggregate approach combines into a single, less granular figure."
+            },
+            {
+                "q": "Why might decomposing claims into frequency (claim count) and severity (average cost) components, as ACPC does, genuinely reveal insight the chain ladder's aggregate approach might miss?",
+                "a": "Frequency and severity can genuinely be driven by different underlying factors and can move in genuinely different directions (e.g. claim frequency falling while average severity rises due to claims inflation), so decomposing them allows a reserving actuary to genuinely investigate and understand each driver separately, rather than seeing only their combined, potentially offsetting net effect in an aggregate figure.",
+                "explain": "This directly recalls SA3's frequency-severity-decomposition material — worth recognising this same principle of separating distinct underlying drivers as applying directly to reserving method choice, not just to pricing analysis."
+            },
+            {
+                "q": "What does 'IBNR' genuinely stand for, and what distinct category of claims does it represent?",
+                "a": "IBNR stands for 'Incurred But Not Reported' — claims that have genuinely already occurred (been incurred) but which the insurer has not yet been notified of, representing a genuine, entirely UNKNOWN future liability that must be estimated using reserving technique rather than known from any currently-held claim record.",
+                "explain": "Worth recognising IBNR as representing claims the insurer doesn't yet know ABOUT AT ALL — a genuinely different category from claims already reported but not yet fully settled, covered by the related IBNER concept next."
+            },
+            {
+                "q": "What does 'IBNER' genuinely stand for, and how does it differ from IBNR?",
+                "a": "IBNER stands for 'Incurred But Not Enough Reported' (or 'Incurred But Not Enough Reserved') — claims the insurer genuinely already knows about and has an existing case reserve for, but where that existing reserve may prove genuinely insufficient as the claim continues to develop, distinct from IBNR's entirely unknown, not-yet-reported claims.",
+                "explain": "Worth recognising IBNR and IBNER as addressing two genuinely different reserving gaps — IBNR concerns claims the insurer doesn't yet KNOW about, while IBNER concerns claims the insurer DOES know about but may have under-RESERVED for."
+            },
+            {
+                "q": "What is a 'tail factor', and why might a reserving actuary need to apply one beyond the final observed development period in a claims triangle?",
+                "a": "A tail factor extends a chain-ladder-style projection BEYOND the last development period actually observed in the data, capturing genuine, further expected claims development that the triangle's own limited historical data does not yet show, particularly important for genuinely long-tail lines where claims can continue developing for many years beyond the observed data window.",
+                "explain": "This directly recalls Module 3's long-tail-business material — worth recognising the tail factor as a genuinely necessary EXTRAPOLATION beyond available data, requiring particular actuarial judgement given the inherent lack of direct observed evidence for this extended period."
+            },
+            {
+                "q": "Why must claims inflation be genuinely and explicitly incorporated into reserving projections, rather than assumed to be implicitly captured within standard development factors?",
+                "a": "If claims inflation genuinely varies over time (e.g. accelerating due to rising medical or repair costs), development factors calculated from HISTORICAL periods with different inflation experience may not genuinely reflect the inflation rate expected to apply to FUTURE claims payments, requiring explicit, separate treatment of claims inflation rather than assuming historical development factors implicitly and correctly capture future inflation trends.",
+                "explain": "Worth recognising claims inflation as a genuinely distinct assumption requiring EXPLICIT, separate consideration — implicitly assuming historical development patterns will simply continue can silently embed an outdated inflation assumption without the reserving actuary genuinely realising it."
+            }
+        ]
     }
     ]
 };
