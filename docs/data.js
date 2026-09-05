@@ -17151,7 +17151,154 @@ const MODULES = {
                 "explain": "This closing card ties this module to both its predecessor and what follows — worth recognising design as the genuine BRIDGE between understanding a product category (Module 2) and managing the risk that design choice creates (later modules)."
             }
         ]
+    },
+    {
+        "id": "m05",
+        "title": "Sources of risk in health and care insurance",
+        "description": "Covers the wide range of factors that can be a genuine source of risk to a health and care insurance company, per the official syllabus's core risk-assessment objective.",
+        "cards": [
+            {
+                "q": "What full list of factors does the official SP1 syllabus (objective 3.1) require candidates to be able to assess as a genuine source of risk to a health and care insurer?",
+                "a": "Data, claim rates, claim amounts, investment performance, expenses and inflation, persistency, mix of new business, volume of new business, guarantees and options, competition, actions of management, actions of distributors, counterparties, legal/regulatory/tax developments, reputation, internal audit failures/fraud, physical risks, aggregation and concentration of risk, catastrophes, and non-disclosure/anti-selection.",
+                "explain": "Worth treating this exact, exhaustive list as a genuine exam checklist — a strong SP1 risk-identification answer should be able to draw on this full range, not just the two or three most obvious sources."
+            },
+            {
+                "q": "Why might poor-quality or incomplete DATA represent a genuine, foundational risk source distinct from the other risks named in the syllabus list?",
+                "a": "Since every other risk assessment and pricing decision ultimately relies on data (claim rates, amounts, persistency, etc.), poor data quality can silently undermine the reliability of ALL other risk assessments built on top of it, making it a genuinely foundational, not merely one-among-many, risk source.",
+                "explain": "Worth recognising why data appears FIRST in the syllabus's risk list — it is the genuine foundation every other listed risk assessment ultimately depends upon."
+            },
+            {
+                "q": "Why might 'mix of new business' and 'volume of new business' represent genuinely distinct risk sources, rather than a single combined concept?",
+                "a": "Mix risk concerns whether the PROPORTIONS of different product types or risk categories written diverge from what was planned or priced for (e.g. more high-risk business than assumed), while volume risk concerns whether the sheer SCALE of new business written (too much or too little) creates capacity, capital, or expense-recovery problems independent of the mix itself.",
+                "explain": "Worth recognising these as genuinely separate dimensions — a book could have exactly the right MIX but the wrong VOLUME, or vice versa, each creating distinct problems."
+            },
+            {
+                "q": "Why might 'aggregation and concentration of risk' and 'catastrophes' be listed as genuinely distinct risk sources, despite both relating to correlated, large-scale losses?",
+                "a": "Aggregation/concentration risk concerns the insurer's own portfolio structure (e.g. too much business concentrated in one region or risk type, creating vulnerability even without any single triggering event), while catastrophe risk concerns a specific, discrete EVENT (e.g. a pandemic) capable of triggering correlated claims across that concentrated exposure — the underlying structural vulnerability and the triggering event are genuinely separate concepts.",
+                "explain": "Worth recognising concentration as the underlying STRUCTURAL vulnerability and catastrophe as the EVENT that can crystallise losses from that vulnerability — understanding both separately is more useful than treating them as one undifferentiated 'big risk' category."
+            },
+            {
+                "q": "Why might 'non-disclosure and anti-selection' be listed as a genuinely distinct risk source from 'data' quality, despite both relating to imperfect information?",
+                "a": "Data quality risk concerns unintentional errors, gaps or inaccuracies in the insurer's own records, while non-disclosure and anti-selection concern a genuinely different mechanism — applicants deliberately withholding or misrepresenting information because they have a financial incentive to do so, a behavioural risk rather than a purely administrative data-quality issue.",
+                "explain": "Worth recognising this as a genuinely important distinction: one is essentially an ADMINISTRATIVE/DATA-QUALITY problem, the other a BEHAVIOURAL/INCENTIVE problem, requiring different management responses (data governance versus underwriting and pricing safeguards)."
+            },
+            {
+                "q": "Why does the syllabus explicitly separate 'actions of management' and 'actions of distributors' as distinct risk sources from the more technical, actuarial risks in the same list?",
+                "a": "These recognise that genuine risk to a health and care insurer can arise from HUMAN DECISIONS by parties within or connected to the insurer (e.g. management pursuing an overly aggressive growth strategy, or a distributor mis-selling products), not only from external, statistically-modellable factors like claim rates or investment performance.",
+                "explain": "Worth recognising this as broadening risk assessment beyond purely quantitative, statistically-modellable factors to include genuine GOVERNANCE and CONDUCT risks arising from how people within the value chain actually behave."
+            }
+        ]
+    },
+    {
+        "id": "m06",
+        "title": "Reinsurance as a risk management technique",
+        "description": "Covers the purposes, types and structures of reinsurance, and the factors relevant to determining an appropriate level of retention, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine purposes of reinsurance for a health and care insurer, per the official syllabus objective 3.2.1?",
+                "a": "Reinsurance can reduce volatility in claims experience, provide capital relief by transferring risk off the insurer's own balance sheet, and give the insurer access to the reinsurer's own pricing expertise and data, particularly valuable when pricing new or unusual risks.",
+                "explain": "Worth recognising reinsurance's purpose as genuinely THREE-FOLD — risk reduction, capital efficiency, and expertise access — not simply 'reducing risk' in a single undifferentiated sense."
+            },
+            {
+                "q": "What is quota share reinsurance, and why might it be a straightforward choice for an insurer wanting broad-based support across its whole book?",
+                "a": "Quota share reinsurance cedes a fixed proportion of every policy's risk and premium regardless of size, providing straightforward, proportional risk and capital relief across the whole book, particularly valuable for a newer or smaller insurer wanting broad-based support rather than targeted protection for specific large risks.",
+                "explain": "Worth recognising quota share as the SIMPLEST form of proportional reinsurance — a fixed percentage of every risk, making its capital and risk effects easy to understand and administer."
+            },
+            {
+                "q": "How does surplus reinsurance differ from quota share, and when might an insurer prefer it?",
+                "a": "Surplus reinsurance cedes only the portion of risk above a chosen retention level per policy, allowing the insurer to retain proportionally more of smaller, well-understood risks while ceding a larger share of unusually large individual exposures — genuinely useful where a portfolio contains policies of widely varying sums insured.",
+                "explain": "Worth recognising surplus reinsurance as solving a problem quota share cannot: letting retention vary by POLICY SIZE, rather than ceding the same fixed proportion regardless of how large or small an individual risk is."
+            },
+            {
+                "q": "Why might excess of loss reinsurance be particularly suited to protecting a health and care insurer against a pandemic-driven claims shock?",
+                "a": "Excess of loss reinsurance responds when AGGREGATE claims from an event exceed a specified threshold, directly targeting the correlated, catastrophic loss pattern a pandemic creates, rather than responding to routine, individually large claims the way quota share or surplus reinsurance would.",
+                "explain": "Worth recognising excess of loss as the reinsurance structure specifically designed for CORRELATED, aggregate shocks, distinct from quota share/surplus which respond to INDIVIDUAL policy-level risk."
+            },
+            {
+                "q": "What genuine factors should an insurer consider when determining its level of retention before taking out reinsurance, per the official syllabus objective 3.2.3?",
+                "a": "The insurer's own capital position and risk appetite, the genuine cost of reinsurance relative to the risk transferred, the volatility of the specific risk being considered, and the insurer's confidence in its own pricing and reserving for that risk.",
+                "explain": "Worth recognising retention-setting as a genuine, multi-factor judgement (capital, cost, volatility, confidence in own pricing), not a single formula-driven calculation."
+            },
+            {
+                "q": "Why might a higher retention level involve a genuine trade-off between expected profit and risk exposure?",
+                "a": "A higher retention keeps more premium and profit potential with the insurer, but exposes it to greater volatility and capital strain from adverse claims experience; a lower retention (more reinsurance) reduces volatility but cedes more expected profit to the reinsurer — a genuine risk-return trade-off requiring judgement against the insurer's specific risk appetite.",
+                "explain": "Worth recognising this trade-off as a recurring theme this course returns to whenever reinsurance retention decisions are discussed — more risk retained means more potential reward, but genuinely more exposure to adverse outcomes."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "Underwriting as a risk management technique",
+        "description": "Covers the purposes of underwriting, the different approaches by which it is applied, and the factors relevant to determining an appropriate level of underwriting, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine purposes of underwriting for a health and care insurer, per the official syllabus objective 3.3.1?",
+                "a": "Underwriting assesses an individual applicant's genuine risk level, allowing the insurer to price appropriately for that risk, decide whether to accept the risk at all, and manage genuine anti-selection by identifying and appropriately pricing or declining applicants whose risk differs materially from the standard assumed population.",
+                "explain": "Worth recognising underwriting's purpose as genuinely THREE-FOLD — appropriate pricing, accept/decline decision-making, and anti-selection management — directly connecting back to Module 5's non-disclosure/anti-selection risk source."
+            },
+            {
+                "q": "What different approaches to underwriting does the official syllabus (objective 3.3.2) expect candidates to be able to describe?",
+                "a": "Full medical underwriting (detailed individual health assessment), moratorium underwriting (excluding pre-existing conditions for an initial period, after which they become covered if not recurring), and guaranteed acceptance (no individual underwriting, typically with a corresponding pricing or benefit-restriction trade-off).",
+                "explain": "Worth memorising these three distinct approaches — each represents a genuinely different point on the spectrum between rigorous individual risk assessment and broad, simple accessibility."
+            },
+            {
+                "q": "Why does a more rigorous underwriting approach (e.g. full medical underwriting) typically trade off against broader market accessibility?",
+                "a": "Detailed individual health assessment takes genuine time and can deter time-pressed or less health-literate applicants, or result in declined cover for higher-risk individuals, so more rigorous underwriting typically narrows the pool of customers who can access or are willing to complete the purchase process, compared with simpler guaranteed-acceptance approaches.",
+                "explain": "Worth recognising underwriting rigour as trading off against MARKET REACH, not just pricing accuracy — a genuinely important strategic, not merely technical, consideration."
+            },
+            {
+                "q": "What genuine factors should an insurer consider when determining the appropriate level of underwriting to apply, per the official syllabus objective 3.3.3?",
+                "a": "The genuine cost of underwriting relative to the risk being assessed, the size and duration of the policy being underwritten, the insurer's own risk appetite and pricing confidence without full underwriting, and the competitive/distribution implications of a more or less rigorous underwriting process.",
+                "explain": "Worth recognising underwriting-level determination as another genuine multi-factor judgement, echoing Module 6's retention-setting judgement — cost, policy characteristics, risk appetite, and market/distribution implications together, not a single formula."
+            },
+            {
+                "q": "Why might a longer-duration product like long term care insurance warrant more rigorous underwriting than a short-duration product like a one-year renewable health cash plan?",
+                "a": "A longer-duration commitment locks the insurer into pricing based on assumptions made at outset for potentially decades, so more rigorous underwriting at the point of sale reduces the genuine risk of adverse selection that cannot be easily corrected through repricing later, unlike a short-duration product that can be repriced annually if experience diverges from assumptions.",
+                "explain": "This directly recalls this course's recurring theme that PRODUCT DURATION shapes appropriate risk-management intensity — worth recognising underwriting rigour as one further example of this general principle."
+            },
+            {
+                "q": "Why might underwriting and reinsurance (Module 6) be considered genuinely complementary, rather than substitute, risk management techniques?",
+                "a": "Underwriting manages risk at the point of individual policy selection (deciding who to insure and at what price), while reinsurance manages risk after that selection has been made (transferring some of the resulting portfolio risk to a third party) — together they address different STAGES of the risk management process, not the same underlying problem twice.",
+                "explain": "This closing card ties this module back to Module 6 explicitly — worth recognising these as two genuinely distinct, complementary risk management techniques, each addressing a different point in the risk management lifecycle."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "Asset-liability matching and further risk management techniques",
+        "description": "Covers the principles of investment for a health and care insurer, categorising liabilities for matching purposes, and further ways of managing the risks identified in Module 5.",
+        "cards": [
+            {
+                "q": "What are the genuine principles of investment for a health and care insurance company, per the official syllabus objective 3.4.1?",
+                "a": "Investment strategy should genuinely reflect the nature, term and currency of the insurer's liabilities, balance security against return, and provide sufficient liquidity to meet claims and expenses as they fall due — the same core CM2-derived matching principles applied specifically to health and care insurance liabilities.",
+                "explain": "This directly recalls CM2's asset-liability matching material — worth recognising health and care investment principles as a direct APPLICATION of CM2's general matching theory to this specific insurance sector, not a separate, unrelated set of ideas."
+            },
+            {
+                "q": "Why does the syllabus explicitly require candidates to 'categorise health and care insurance liabilities into different types for asset-liability matching purposes' (objective 3.4.2), rather than treating all liabilities as a single undifferentiated pool?",
+                "a": "Different liability types (e.g. short-tail PMI claims versus long-tail LTC benefit payments) have genuinely different duration and cashflow certainty characteristics, so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually.",
+                "explain": "Worth recognising this categorisation step as the essential PRECURSOR to sound matching strategy — you cannot match assets to liabilities appropriately without first genuinely understanding how those liabilities differ from each other."
+            },
+            {
+                "q": "Why might a short-tail product like PMI warrant a genuinely different asset-liability matching strategy from a long-tail product like long term care insurance?",
+                "a": "PMI's short claim tail and annual repricing mean its liabilities are far less interest-rate sensitive over a long horizon, so its matching strategy can reasonably prioritise liquidity for near-term claims payment, while LTC's long-duration liabilities require genuine long-duration matching (e.g. long-dated bonds) to protect against interest rate risk over a much longer horizon.",
+                "explain": "This directly recalls CM2's duration-matching material — worth recognising that matching STRATEGY should genuinely differ by liability DURATION, not follow a single one-size-fits-all approach across an insurer's whole book."
+            },
+            {
+                "q": "What further ways of managing the risks identified in Module 5 does the official syllabus (objective 3.4, final bullet) explicitly name, beyond reinsurance, underwriting, and asset-liability matching?",
+                "a": "Managing the distribution process and customer relationship, managing other counterparties, and managing other internal processes — recognising that not every risk identified in Module 5 can be addressed through the three main technical risk-management techniques alone.",
+                "explain": "Worth recognising that some risks (e.g. actions of distributors, counterparty risk, internal audit failures) require genuinely OPERATIONAL and GOVERNANCE responses, not just the three main technical risk-transfer/matching techniques covered in Modules 6-8."
+            },
+            {
+                "q": "What further ways of managing risk does the official syllabus (objective 3.4, initial bullets) explicitly name for addressing the Module 5 risk sources more broadly?",
+                "a": "Claims management, data checks, and product design — recognising that sound claims handling processes, robust data quality controls, and thoughtful product design decisions (Module 4) all serve as genuine, practical risk management tools in their own right, beyond the three main technical techniques.",
+                "explain": "This directly recalls Module 4's product-design material — worth recognising design itself as a genuine RISK MANAGEMENT TOOL, not simply a customer-and-commercial consideration decided independently of risk."
+            },
+            {
+                "q": "How do Modules 6, 7 and 8 together address the full 30%-weighted 'Risks and risk management' topic area, connecting back to Module 5?",
+                "a": "Module 5 identified the full range of genuine risk sources a health and care insurer faces; Modules 6-8 then developed the three main technical risk management techniques (reinsurance, underwriting, asset-liability matching) plus further operational and governance-based approaches, together forming a genuinely comprehensive risk management toolkit addressing Module 5's risk list.",
+                "explain": "This closing card ties Modules 5-8 together explicitly, echoing Module 1's topic-weighting material — worth recognising these four modules as together addressing SP1's single largest syllabus topic area (30% of the whole exam)."
+            }
+        ]
     }
-
     ]
 };
