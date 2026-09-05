@@ -19867,6 +19867,102 @@ const MODULES = {
                 "explain": "This closing card ties Modules 9-10 together, echoing this course's broader analytical-versus-numerical-methods theme — worth recognising these two stochastic reserving approaches as occupying genuinely complementary positions on the same analytical-versus-simulation spectrum this whole curriculum returns to repeatedly."
             }
         ]
+    },
+    {
+        "id": "m11",
+        "title": "Internal models versus the standard formula",
+        "description": "Covers the genuine choice between an internal capital model and the Solvency II standard formula for a general insurer, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine trade-off between using the Solvency II standard formula and developing an internal capital model, echoing this course's recurring material?",
+                "a": "An internal model can better reflect the insurer's own genuine risk profile than a generic standard formula calibrated across the whole industry, potentially producing a more risk-sensitive (and possibly lower) capital requirement, though this requires regulatory approval and significant development investment, a trade-off recurring identically across every insurance sector this curriculum covers.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's identical standard-formula-versus-internal-model material — worth recognising this as a genuinely universal Solvency II choice, examinable at SP7's foundational level for general insurance specifically."
+            },
+            {
+                "q": "Why might the standard formula's genuine, industry-wide calibration be particularly poorly suited to capturing a general insurer's SPECIFIC catastrophe risk exposure, echoing SA3's material?",
+                "a": "The standard formula's catastrophe risk module reflects genuinely GENERIC, industry-average assumptions about catastrophe exposure, while a specific insurer's ACTUAL geographic concentration and specific perils covered can genuinely differ materially from this industry average, making an internal model's more tailored catastrophe assessment particularly valuable for insurers with genuinely unusual or concentrated catastrophe exposure profiles.",
+                "explain": "This directly recalls SA3's catastrophe-modelling material — worth recognising catastrophe risk specifically as one of the clearest, most commonly-cited examples of where standard formula genericness can genuinely diverge from an insurer's true, specific risk profile."
+            },
+            {
+                "q": "Why might developing an internal capital model require genuine, ongoing validation and governance, beyond the initial approval process?",
+                "a": "An internal model's genuine reliability depends on its underlying assumptions and calibration remaining appropriate over time, so ongoing validation (checking the model continues to genuinely reflect the insurer's actual risk profile as the business evolves) and sound governance around model changes are genuinely essential, echoing this course's recurring model-risk and validation themes from earlier modules.",
+                "explain": "This directly recalls Module 4's model-validation material — worth recognising that an internal model's genuine value depends on ONGOING maintenance and validation, not simply on achieving initial regulatory approval."
+            },
+            {
+                "q": "Why might a smaller general insurer reasonably choose to remain on the standard formula rather than developing an internal model, echoing this course's proportionality theme?",
+                "a": "Developing and maintaining an internal model requires genuinely significant actuarial and technical resources, so for a smaller insurer whose risk profile does not diverge dramatically from the industry-average assumptions underlying the standard formula, the genuine cost of internal model development may reasonably outweigh the potential benefit of a more tailored capital calculation.",
+                "explain": "This directly recalls SA1's proportionality material — worth recognising the standard-formula-versus-internal-model choice as itself a genuine PROPORTIONALITY decision, not simply 'internal models are always better' — the right choice depends on the insurer's specific circumstances and resources."
+            },
+            {
+                "q": "Why might a 'partial internal model' represent a genuine middle ground between the full standard formula and a full internal model?",
+                "a": "A partial internal model allows an insurer to develop genuinely tailored internal modelling for SPECIFIC risk modules where its own risk profile most diverges from standard formula assumptions (e.g. catastrophe risk), while continuing to use the standard formula for other, less distinctive risk modules, balancing genuine development effort against the areas where tailored modelling adds the most value.",
+                "explain": "Worth recognising the partial internal model as a genuinely PRACTICAL, proportionate compromise — an insurer need not choose between an all-or-nothing full standard formula or full internal model, but can target internal modelling effort specifically where it genuinely matters most."
+            }
+        ]
+    },
+    {
+        "id": "m12",
+        "title": "Copulas, diversification and capital allocation",
+        "description": "Covers the use of copulas for risk aggregation, quantifying diversification benefit, and allocating capital across risk sources, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is a 'copula', and why is it genuinely necessary for aggregating multiple risk sources within a capital model, echoing CS2's material?",
+                "a": "A copula genuinely models the DEPENDENCE STRUCTURE between multiple random variables (e.g. different risk sources) SEPARATELY from each variable's own individual (marginal) distribution, allowing a capital model to genuinely combine risks with realistic, potentially non-linear dependence patterns rather than assuming either full independence or simple linear correlation, which often poorly represents genuine real-world risk relationships.",
+                "explain": "This directly recalls CS2's copula and dependence-modelling material — worth recognising copulas as the genuine, technical SOLUTION to aggregating multiple risk sources whose true dependence structure is more complex than simple correlation can capture."
+            },
+            {
+                "q": "Why might genuine 'tail dependence' between risk sources be a particularly important consideration when choosing an appropriate copula for capital aggregation?",
+                "a": "Some risk sources can appear only weakly correlated under NORMAL conditions but become genuinely much more strongly correlated during EXTREME, tail events (e.g. multiple lines of business all suffering simultaneously during a severe economic crisis), so a copula capturing this genuine tail dependence provides a more realistic picture of aggregate capital need under stress than one assuming constant, moderate correlation throughout.",
+                "explain": "This directly recalls CS2's extreme-value and tail-dependence material — worth recognising tail dependence as a genuinely CRITICAL consideration for capital modelling specifically, since capital is precisely meant to protect against extreme, tail outcomes where naive correlation assumptions can most severely understate true aggregate risk."
+            },
+            {
+                "q": "What is 'diversification benefit' in the context of capital modelling, and why does it genuinely reduce an insurer's aggregate capital requirement below the simple SUM of its individual risk sources' standalone capital requirements?",
+                "a": "Since different risk sources are not genuinely perfectly correlated, adverse outcomes across all sources simultaneously at their individual worst-case levels are genuinely LESS LIKELY than each source's own individual worst case occurring in isolation, so the insurer's genuine aggregate capital requirement (reflecting this less-than-perfect correlation) is typically LOWER than the simple sum of each risk source's standalone capital requirement.",
+                "explain": "This directly recalls CS1's and CM2's diversification-benefit material — worth recognising diversification benefit as the genuine, quantifiable REWARD for holding a genuinely diversified portfolio of risks, directly incentivising insurers to maintain diversified books of business."
+            },
+            {
+                "q": "What genuine methods might be used to allocate an insurer's total, diversified capital requirement back down to individual risk sources or business lines, echoing SA7's material?",
+                "a": "Capital allocation methods (e.g. the Euler/gradient allocation principle, or simpler proportional allocation based on standalone capital) genuinely distribute the insurer's total capital requirement (AFTER diversification benefit) across its individual risk sources or business lines, supporting genuinely risk-adjusted performance assessment and pricing decisions at a more granular level than the total company figure alone allows.",
+                "explain": "This directly recalls SA7's Euler-principle capital allocation material — worth recognising capital allocation as the genuine, practical NEXT STEP after calculating total diversified capital: distributing that total back down to inform granular, business-line-level decisions."
+            },
+            {
+                "q": "Why might allocating capital using the Euler (gradient) principle be considered genuinely more theoretically sound than a simple proportional allocation based on standalone capital requirements?",
+                "a": "The Euler principle allocates capital based on each risk source's genuine MARGINAL contribution to the total, diversified capital requirement (accounting for how that source's risk genuinely interacts with all others), while simple proportional allocation ignores these genuine interaction effects, potentially over- or under-allocating capital to business lines whose risk is more or less correlated with the rest of the portfolio than their standalone size alone would suggest.",
+                "explain": "Worth recognising the Euler principle's genuine theoretical advantage as capturing each risk source's true MARGINAL, diversification-adjusted contribution, rather than a cruder allocation based purely on standalone size that ignores genuine correlation effects."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Value at Risk and Tail Value at Risk for SCR and technical provisions",
+        "description": "Covers applying Value at Risk and Tail Value at Risk to the Solvency Capital Requirement and technical provisions, per the official syllabus.",
+        "cards": [
+            {
+                "q": "How does Solvency II's SCR calculation genuinely apply the Value at Risk (VaR) concept, echoing this course's recurring VaR material?",
+                "a": "Solvency II's SCR is genuinely calibrated to a 99.5% VaR over a one-year horizon, meaning the SCR represents the capital genuinely needed so that the insurer's basic own funds would remain non-negative with 99.5% confidence over the following year — a direct, specific application of the general VaR concept to regulatory capital setting.",
+                "explain": "This directly recalls SA1's, SA7's and SP5's VaR material — worth recognising the SCR's precise 99.5% one-year calibration as a genuinely concrete, memorable application of the general VaR concept this whole curriculum develops repeatedly."
+            },
+            {
+                "q": "What is 'Tail Value at Risk' (TVaR), and how does it genuinely address VaR's well-known weakness of saying nothing about losses BEYOND the VaR threshold, echoing this course's recurring material?",
+                "a": "TVaR (also called expected shortfall) genuinely measures the AVERAGE loss GIVEN THAT the loss exceeds the VaR threshold, directly capturing genuine information about the SEVERITY of losses in the tail beyond VaR, addressing VaR's well-documented weakness of providing no information about how much worse losses could be once the threshold is breached.",
+                "explain": "This directly recalls SA1's, SA7's and SP5's VaR-limitation material — worth recognising TVaR as the genuine, direct SOLUTION to VaR's most commonly-cited weakness, now specifically applied to Solvency II capital and technical provisions context."
+            },
+            {
+                "q": "Why might TVaR be considered a genuinely more 'coherent' risk measure than VaR, echoing SA7's and CS2's material?",
+                "a": "TVaR genuinely satisfies the mathematical property of 'sub-additivity' (the risk measure of a combined portfolio is never greater than the sum of its individual components' risk measures, correctly reflecting genuine diversification benefit), while VaR can, in certain circumstances, genuinely VIOLATE this property, producing the counter-intuitive result that diversification appears to INCREASE measured risk under VaR.",
+                "explain": "This directly recalls CS2's and SA7's coherent-risk-measure material — worth recognising sub-additivity as the specific, technical mathematical property distinguishing TVaR's genuine coherence advantage over VaR, not merely a vague sense that TVaR is 'better'."
+            },
+            {
+                "q": "Why might technical provisions (Module 5's material) also draw on VaR-style concepts, distinct from the SCR's own VaR-based calibration?",
+                "a": "The risk margin component of technical provisions can genuinely draw on VaR-based capital concepts (since it compensates for the cost of holding capital, itself calibrated using VaR-style risk measures) to determine the genuine capital cost being compensated for, showing how the SAME underlying risk-measurement concept (VaR) can genuinely feed into both the SCR calculation AND the technical provisions calculation, via different but related mechanisms.",
+                "explain": "This directly recalls Module 5's technical-provisions material — worth recognising VaR-based thinking as genuinely PERVASIVE across Solvency II's whole framework, connecting the SCR and technical provisions calculations rather than being confined to capital alone."
+            },
+            {
+                "q": "How do this module's VaR/TVaR material and Module 12's copula/diversification material together illustrate a coherent capital modelling process, connecting Module 11's model-choice material?",
+                "a": "Module 11 establishes the genuine choice of MODEL (standard formula versus internal); Module 12 develops how MULTIPLE risk sources are genuinely aggregated within that chosen model using copulas, capturing genuine diversification benefit; this module shows how the resulting AGGREGATE risk distribution is genuinely translated into concrete capital figures (SCR, technical provisions) using VaR/TVaR-based risk measures — together forming a coherent, end-to-end capital modelling process.",
+                "explain": "This closing card ties Modules 11-13 together explicitly, echoing Module 1's topic-weighting material — worth recognising this three-module sequence as tracing SP7's 'Capital modelling' topic area from initial model CHOICE, through risk AGGREGATION, to final capital QUANTIFICATION."
+            }
+        ]
     }
     ]
 };
