@@ -10160,4 +10160,387 @@ const QUESTIONS = {
       ],
     },
   ],
+  SP9: [
+    {
+      id: "sp9-q1",
+      title: "ERM concepts, governance and the use test",
+      modules: "Modules 1-3",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 3,
+          question:
+            "Define Enterprise Risk Management (ERM), and explain how it genuinely differs from managing an organisation's risks separately, in isolation from one another.",
+          answer:
+            "ERM is the coordinated, organisation-wide management of ALL of an organisation's material risks together, explicitly considering how different risks interact and aggregate. This genuinely differs from managing risks in isolation (e.g. each department managing its own risks independently with no coordination), since ERM provides a genuinely more complete, holistic view of the organisation's overall risk position, including risk interactions that a siloed approach would miss entirely.",
+          note: "A strong answer emphasises the INTEGRATED, cross-organisational nature of ERM as its defining feature, not merely a list of risk types covered.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 4,
+          question:
+            "Explain the 'three lines of defence' model for risk governance, describing the distinct role played by each line.",
+          answer:
+            "The first line comprises operational management, who own and manage risk directly in their day-to-day activities. The second line comprises risk management and compliance functions, who provide oversight, challenge, and set risk policy across the organisation. The third line comprises internal audit, who provide genuinely independent assurance that the first two lines are operating effectively. Each successive line stands more removed from day-to-day risk-taking, providing an escalating series of independent checks.",
+          note: "Full marks require describing all three lines AND explaining the genuine logic of increasing independence, not simply naming the three lines.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 5,
+          question:
+            "A large insurer has recently implemented a formal ERM framework, including a detailed economic capital model. However, senior management continues to make major strategic decisions (such as entering new markets) without referring to the risk model's output. Discuss what this suggests about the insurer's ERM framework, and how this could be assessed and addressed.",
+          answer:
+            "This scenario suggests the insurer's ERM framework would genuinely FAIL the 'use test' — the practical test of whether risk models and risk management outputs are actually used in real, material business decisions, rather than being produced purely for compliance purposes and then ignored. A technically well-designed framework delivers little genuine value if senior management does not actually consult it when making consequential decisions. This could be assessed by reviewing board and executive committee minutes and decision papers for genuine evidence that risk analysis was considered, and addressed by ensuring the CRO holds sufficient organisational seniority and influence to require risk input into strategic decision-making, and by embedding a genuine risk-aware culture (e.g. via training, incentives and tone from the top) rather than relying on formal process alone.",
+          note: "A strong answer explicitly identifies the use-test failure, links it to the CRO's organisational standing and culture, and proposes concrete remedial steps, not just a generic description of the use test.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q2",
+      title: "The ERM process and risk appetite, capacity and tolerance",
+      modules: "Modules 4-5",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List the four genuine, recurring stages of the ERM process.",
+          answer:
+            "Risk identification (recognising what risks the organisation faces); risk assessment (understanding their likelihood and impact); risk response/management (deciding how to address identified risks); and monitoring (tracking outcomes and feeding insight back into renewed identification).",
+          note: "Full marks require all four stages in a genuinely coherent, cyclical order.",
+        },
+        {
+          label: "(ii)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between risk appetite, risk capacity and risk tolerance.",
+          answer:
+            "Risk appetite is the amount and type of risk an organisation is WILLING to accept in pursuit of its objectives — a strategic choice reflecting organisational preference. Risk capacity is the maximum risk the organisation is genuinely ABLE to bear given its financial resources — an objective constraint. Risk tolerance translates the high-level appetite into more granular, specific, measurable limits or thresholds for particular risk categories or business units, giving the broader appetite practical, operational effect. Appetite should always sit within capacity.",
+          note: "A strong answer draws the choice-versus-constraint distinction between appetite and capacity explicitly, and explains tolerance as the operational translation of appetite, not merely define the three terms in isolation.",
+        },
+        {
+          label: "(iii)",
+          command: "Explain",
+          marks: 5,
+          question:
+            "Explain why an organisation's risk appetite should genuinely be set and approved by the board, rather than being determined purely by operational management.",
+          answer:
+            "Risk appetite reflects a fundamental strategic choice about how much risk the organisation should accept in pursuit of its objectives, and materially affects the interests of stakeholders such as shareholders, policyholders and members. Board-level ownership ensures this choice receives appropriately senior, accountable oversight, reflecting the board's ultimate responsibility for the organisation's strategic direction and long-term sustainability, rather than being set unilaterally by management closer to day-to-day operations, who may face incentives (such as short-term performance targets) that could bias appetite-setting if left unchecked by senior, independent oversight.",
+          note: "A strong answer explains WHY board ownership matters (accountability, stakeholder protection, avoiding potential management bias), not just asserts that the board should be involved.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q3",
+      title: "Risk categories, heat maps and the four Ts",
+      modules: "Modules 5-6",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 3,
+          question:
+            "Define operational risk, and explain why it may genuinely be harder to identify and quantify than market or credit risk.",
+          answer:
+            "Operational risk is the risk of loss from inadequate or failed internal processes, people, and systems, or from external events (e.g. fraud, IT failure, human error). It is harder to quantify than market or credit risk because it lacks the rich historical market-price or default data available for financial risks, and its causes are more varied and organisation-specific, making statistical modelling genuinely more difficult.",
+          note: "Full marks require both the definition and a genuine explanation of the data-scarcity reason, not just a list of example causes.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 4,
+          question:
+            "Explain what a risk heat map is, and describe the 'four Ts' of risk response.",
+          answer:
+            "A heat map plots identified risks on a two-dimensional grid, typically with likelihood on one axis and impact on the other, using colour-coding to visually highlight which risks are highest priority. The four Ts of risk response are: Tolerate (accept the risk as within appetite); Treat (take action to reduce likelihood or impact); Transfer (pass the risk to a third party, e.g. via insurance); and Terminate (stop the activity giving rise to the risk entirely).",
+          note: "Full marks require explaining the heat map's two dimensions AND naming and briefly describing all four Ts.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 5,
+          question:
+            "A risk manager proposes deprioritising a particular risk on the basis that its heat-map position shows low likelihood. Comment on this proposal, given that the risk in question also carries a genuinely catastrophic potential impact.",
+          answer:
+            "This proposal is questionable: a genuinely low-likelihood but high-impact risk can still warrant serious, even disproportionate, management attention relative to its likelihood alone, since a genuinely catastrophic impact could threaten the organisation's continued existence even if it occurs rarely. Prioritisation based on likelihood alone ignores the genuine severity dimension entirely. The risk manager should instead weigh likelihood AND impact together (as the heat map's two-dimensional structure is designed to support), and should also consider whether reverse stress testing or scenario analysis might reveal the risk's true materiality more fully than likelihood-based prioritisation alone.",
+          note: "A strong answer explicitly challenges the likelihood-only reasoning and connects to the general principle that severity can outweigh low probability for tail risks, rather than simply agreeing or disagreeing without justification.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q4",
+      title: "Diversification benefit from risk aggregation",
+      modules: "Modules 7, 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "An organisation's stand-alone economic capital requirements are £40m for market risk and £25m for credit risk. The correlation between the two risks is estimated at 0.25. Assuming aggregate capital is given by $C_{\\text{agg}} = \\sqrt{C_M^2 + C_C^2 + 2 \\rho C_M C_C}$, calculate the aggregate capital requirement and the resulting diversification benefit.",
+          answer:
+            "$C_{\\text{agg}} = \\sqrt{40^2 + 25^2 + 2 \\times 0.25 \\times 40 \\times 25} = \\sqrt{1600 + 625 + 500} = \\sqrt{2725} = £52.20m$ (to 2 decimal places). The diversification benefit is the sum of stand-alone capital less the aggregate capital: £40m + £25m &minus; £52.20m = £12.80m.",
+          note: "Verified: sqrt(1600+625+500)=52.2015...; 65-52.2015=12.7985 (Node-verified, rounds to £52.20m and £12.80m). Full marks require both the aggregate capital figure and the diversification benefit, correctly derived.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the aggregate capital requirement calculated in part (i) is genuinely lower than the simple sum of the two risks' stand-alone capital requirements.",
+          answer:
+            "Since the two risks are imperfectly correlated ($\\rho = 0.25$, well below 1), they are unlikely to both materialise at their worst simultaneously. A properly modelled aggregate capital requirement reflects this genuine diversification benefit, whereas simply summing the stand-alone requirements would implicitly assume perfect correlation between the risks, overstating the organisation's true combined risk.",
+          note: "A strong answer explicitly connects the diversification benefit to the correlation being below 1, not just asserts that diversification exists.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 3,
+          question:
+            "Discuss a genuine limitation of using a single, constant correlation parameter (as in part (i)) to model the dependence between two risks.",
+          answer:
+            "A single, constant correlation parameter typically reflects dependence under normal or 'typical' conditions, but many genuine risk pairs exhibit tail dependence — a tendency to become more strongly correlated specifically in extreme, tail scenarios (e.g. a severe market shock triggering simultaneous credit defaults). A constant correlation assumption can therefore understate genuine dependence, and hence understate required capital, precisely in the extreme scenarios that matter most for solvency. A copula-based approach may better capture this tail dependence than a single correlation parameter alone.",
+          note: "A strong answer identifies tail dependence specifically as the limitation, and may reference copulas as a more sophisticated alternative.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q5",
+      title: "Value at Risk and Tail Value at Risk",
+      modules: "Module 9",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A CRO's risk model produces the following discrete aggregate loss distribution for next year: L = £0m with probability 0.70; L = £10m with probability 0.15; L = £30m with probability 0.08; L = £80m with probability 0.05; L = £150m with probability 0.02. Calculate the Value at Risk (VaR) at the 90% confidence level, and the Tail Value at Risk (TVaR) at the 90% confidence level.",
+          answer:
+            "Cumulative probabilities are: L &le; £0m: 0.70; L &le; £10m: 0.85; L &le; £30m: 0.93; L &le; £80m: 0.98; L &le; £150m: 1.00. VaR at the 90% confidence level is the smallest loss level with cumulative probability at least 0.90, which is L = £30m. The losses exceeding this VaR threshold are £80m (probability 0.05) and £150m (probability 0.02), with combined probability 0.07. TVaR90 is the probability-weighted average of these tail losses: (£80m &times; 0.05 + £150m &times; 0.02) / 0.07 = (£4m + £3m) / 0.07 = £100m.",
+          note: "Verified: cumulative probabilities 0.70/0.85/0.93/0.98/1.00 (Node-verified); VaR90=£30m; TVaR90=(80*0.05+150*0.02)/0.07=100 exactly (Node-verified). Full marks require correctly identifying the VaR threshold from the cumulative distribution and correctly computing the conditional tail average for TVaR.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain the key difference between what VaR and TVaR each tell a risk manager about the loss distribution in part (i).",
+          answer:
+            "VaR only identifies the loss THRESHOLD itself (£30m) that is exceeded with 10% probability; it says nothing about how severe losses beyond that threshold might be. TVaR instead gives the AVERAGE loss, given that the threshold is exceeded (£100m here), so it genuinely incorporates the severity of the tail beyond the threshold, providing materially more information about the potential scale of extreme losses than VaR alone.",
+          note: "A strong answer explicitly contrasts VaR's threshold-only nature with TVaR's severity-incorporating nature, referencing the specific figures from part (i).",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 4,
+          question:
+            "Comment on why TVaR is generally considered a 'coherent' risk measure while VaR is not, and why VaR nonetheless remains widely used in regulatory capital calculations such as Solvency II's SCR.",
+          answer:
+            "A coherent risk measure satisfies monotonicity, subadditivity, positive homogeneity and translation invariance. TVaR satisfies all four, but VaR can fail subadditivity — the VaR of a combined portfolio can, in some cases, exceed the sum of its parts' individual VaRs, understating the true diversification benefit of combining risks. Despite this theoretical weakness, VaR remains widely used in regulatory practice because it is simpler to calculate, communicate and calibrate consistently across firms than TVaR, which requires modelling the full tail beyond the threshold rather than just the threshold itself; regulators have generally judged this practical advantage to outweigh VaR's theoretical subadditivity failure.",
+          note: "Full marks require naming subadditivity as the specific axiom VaR can fail, and explaining the practicality-versus-theoretical-purity trade-off behind VaR's continued regulatory use.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q6",
+      title: "Extreme value theory and stress testing",
+      modules: "Module 8",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Define",
+          marks: 3,
+          question:
+            "Define Extreme Value Theory (EVT), and explain its genuine purpose relative to fitting a single distribution across a whole dataset.",
+          answer:
+            "EVT is a branch of statistics specifically focused on modelling the behaviour of extreme, tail observations. Its purpose is to address the fact that a single distribution fitted to capture an entire dataset's typical, central behaviour may fit the tail poorly, whereas EVT-specific distributions are designed to fit tail behaviour more accurately, since the tail is what matters most for assessing genuinely extreme risk outcomes.",
+          note: "Full marks require explaining WHY EVT exists (the whole-distribution fit's tail weakness), not just stating that EVT models tails.",
+        },
+        {
+          label: "(ii)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between stress testing and reverse stress testing.",
+          answer:
+            "Stress testing starts from a specified, predefined adverse scenario and calculates its impact on the organisation's financial position, without necessarily attaching a probability to that scenario. Reverse stress testing instead starts from a defined, severe OUTCOME (such as the organisation's failure) and works backwards to identify what combination of circumstances could plausibly cause that outcome. Ordinary stress testing therefore proceeds scenario-to-outcome, while reverse stress testing proceeds outcome-to-scenario.",
+          note: "A strong answer explicitly identifies the reversed direction of reasoning as the key distinction, not just that both relate to adverse scenarios.",
+        },
+        {
+          label: "(iii)",
+          command: "Discuss",
+          marks: 5,
+          question:
+            "Discuss why reverse stress testing may be particularly valuable for uncovering risk combinations that ordinary, forward-looking stress testing might miss.",
+          answer:
+            "Ordinary stress testing requires the risk manager to first imagine a plausible adverse scenario before testing it, so it can miss risk combinations that were never considered in the first place. Reverse stress testing's backwards approach can reveal surprising, previously unconsidered combinations of circumstances capable of causing a severe outcome, precisely because it works back from the defined outcome rather than requiring the scenario to be imagined upfront. This makes it a genuinely valuable complement to forward stress testing, helping surface unknown-unknowns that conventional scenario-imagination would likely never generate, though it can still be limited by the imagination and expertise of those conducting the exercise in working backwards from the outcome.",
+          note: "A strong answer explains the specific mechanism by which reverse stress testing surfaces unanticipated combinations, and may note that it is not immune to its own judgement limitations.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q7",
+      title: "Risk management tools and alternative risk transfer",
+      modules: "Modules 10-11",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "List",
+          marks: 3,
+          question:
+            "List the four Ts of risk response, giving a brief description of each.",
+          answer:
+            "Tolerate (accept the risk as within appetite, taking no further action); Treat (take action to reduce likelihood or impact, e.g. via controls or mitigation); Transfer (pass the risk to a third party, e.g. via insurance or reinsurance); Terminate (stop the activity giving rise to the risk entirely).",
+          note: "Full marks require all four Ts with a correct, if brief, description of each.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 4,
+          question:
+            "Explain how a catastrophe bond transfers risk from the issuing insurer to bond investors, and explain the genuine basis risk that can arise from an index-based (parametric) trigger.",
+          answer:
+            "A catastrophe bond pays investors an attractive coupon in exchange for investors' capital being genuinely at risk: if a predefined catastrophic trigger event occurs, the bond's principal is reduced or forfeited, and the freed-up funds are used by the issuing insurer to cover its own catastrophe losses. Where the trigger is index-based (e.g. modelled industry-wide losses or a physical parameter such as wind speed) rather than based on the issuer's own actual losses, the issuer bears basis risk: the risk that the index-based payout may not precisely match its own actual loss experience, potentially leaving a shortfall (or windfall) relative to its real losses.",
+          note: "Full marks require explaining the coupon-for-principal-at-risk mechanism AND the specific index-versus-own-losses basis risk.",
+        },
+        {
+          label: "(iii)",
+          command: "Recommend",
+          marks: 5,
+          question:
+            "An insurer faces frequent, modest-sized claims from a well-understood peril, and separately faces rare but potentially catastrophic losses from a large-scale natural catastrophe. Recommend, with justification, an appropriate risk management approach for each of these two exposures.",
+          answer:
+            "For the frequent, modest-sized, well-understood claims, retention (potentially via a deductible or excess) is likely appropriate: these losses are relatively predictable, and the insurer can typically absorb them from ongoing operations more cheaply than paying a risk-transfer premium loaded for the transferee's own costs and profit margin. For the rare but potentially catastrophic natural catastrophe exposure, transfer via reinsurance or alternative risk transfer (such as a catastrophe bond) is likely more appropriate: the insurer's own capacity to bear such a severe, low-frequency loss may be limited relative to its risk appetite and capacity, and catastrophe bonds in particular can access capital markets' substantially larger capacity than traditional reinsurance alone, at the cost of accepting some basis risk if an index-based trigger is used.",
+          note: "A strong answer recommends genuinely different tools for the two exposures and justifies each recommendation by reference to the exposure's specific characteristics (frequency/severity, predictability, capacity), not a generic list of available tools.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q8",
+      title: "Euler capital allocation",
+      modules: "Module 12",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 6,
+          question:
+            "An organisation has two business units, A and B, with stand-alone economic capital of £60m and £20m respectively, and a correlation of 0.4 between their risks. Using the Euler allocation formula $C_i = \\dfrac{C_i^2 + \\rho C_A C_B}{C_{\\text{agg}}}$ (applied to each unit in turn, with $C_{\\text{agg}} = \\sqrt{C_A^2 + C_B^2 + 2 \\rho C_A C_B}$), calculate the aggregate capital requirement and the Euler-allocated capital for each business unit.",
+          answer:
+            "$C_{\\text{agg}} = \\sqrt{60^2 + 20^2 + 2 \\times 0.4 \\times 60 \\times 20} = \\sqrt{3600 + 400 + 960} = \\sqrt{4960} = £70.43m$ (to 2 decimal places). Euler allocation to A: $(60^2 + 0.4 \\times 60 \\times 20) / 70.43 = (3600 + 480) / 70.43 = 4080 / 70.43 = £57.93m$. Euler allocation to B: $(20^2 + 0.4 \\times 60 \\times 20) / 70.43 = (400 + 480) / 70.43 = 880 / 70.43 = £12.50m$. As a check, £57.93m + £12.50m = £70.43m, matching the aggregate capital requirement exactly.",
+          note: "Verified: sqrt(3600+400+960)=70.4273 (Node-verified); Euler A=57.93, Euler B=12.50, sum=70.43 (Node-verified, full allocation property holds exactly). Full marks require both individual allocations AND the confirming check that they sum to the aggregate figure.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why the two Euler allocations calculated in part (i) sum exactly to the aggregate capital requirement, with no residual left over.",
+          answer:
+            "This 'full allocation' property arises because the Euler principle allocates capital according to each unit's marginal contribution to the aggregate risk measure, and for risk measures that are positively homogeneous of degree one (such as the square-root formula used here), the sum of these marginal contributions is mathematically guaranteed to equal the total. This is a genuine mathematical property of Euler's homogeneous function theorem applied to the aggregate capital formula, not a coincidence specific to these particular numbers.",
+          note: "A strong answer references the positive homogeneity property and explains that full allocation is guaranteed generally, not just verified for this specific example.",
+        },
+        {
+          label: "(iii)",
+          command: "Comment",
+          marks: 3,
+          question:
+            "Comment on a genuine practical difficulty an organisation might face in applying the Euler allocation approach used in part (i) across many more than two business units.",
+          answer:
+            "Calculating each unit's genuine marginal contribution requires a fully specified, granular aggregate risk model capturing how every business unit's risk correlates with every other unit, not just a single pairwise correlation as used in this simplified two-unit example. With many business units, this requires estimating a genuinely large correlation (or copula) structure, which inherits all the data scarcity, correlation-estimation and computational challenges of aggregate risk modelling more broadly, making the Euler principle's elegant formula considerably harder to apply reliably in practice than this stylised example suggests.",
+          note: "A strong answer connects the difficulty specifically to the scaling burden of estimating a full correlation/dependence structure across many units, not just a generic 'it's complicated' comment.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q9",
+      title: "RAROC and Economic Value Added",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Calculate",
+          marks: 5,
+          question:
+            "A business unit generates a risk-adjusted return of £8m for the year, and has been allocated economic capital of £50m. The organisation's cost of capital rate is 10% per annum. Calculate the business unit's RAROC and its Economic Value Added (EVA) for the year.",
+          answer:
+            "RAROC = risk-adjusted return / economic capital allocated = £8m / £50m = 16%. EVA = return &minus; (cost of capital rate &times; economic capital allocated) = £8m &minus; (0.10 &times; £50m) = £8m &minus; £5m = £3m.",
+          note: "Verified: 8/50=0.16 (16%); 8-0.10*50=3 (Node-verified). Full marks require both RAROC and EVA correctly calculated, with EVA expressed as a monetary amount and RAROC as a percentage.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 3,
+          question:
+            "Explain why RAROC provides a fairer basis for comparing business units' performance than a simple, unadjusted return on capital.",
+          answer:
+            "RAROC divides a business unit's return by the economic capital allocated to it, which reflects the genuine risk taken on to generate that return. A simple, unadjusted return figure would allow a unit generating high returns purely by taking on disproportionate risk to appear more attractive than it genuinely is; RAROC appropriately penalises such a unit through its correspondingly higher allocated capital in the denominator, giving a genuinely risk-adjusted, and therefore fairer, basis for comparison.",
+          note: "A strong answer explicitly explains the risk-penalisation mechanism via the capital denominator, not just states that RAROC is 'risk-adjusted' without explaining how.",
+        },
+        {
+          label: "(iii)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between RAROC and EVA as performance measures, and explain how they could give different rankings when comparing a small business unit against a much larger one.",
+          answer:
+            "RAROC produces a ratio (a percentage return figure), while EVA produces a monetary amount, measuring the genuine value created above and beyond the cost of capital. A small business unit could have a high RAROC percentage (a high return relative to its own, small allocated capital) while creating relatively little absolute value in monetary terms, whereas a much larger unit with a lower RAROC percentage could still generate a substantially larger EVA, since its much bigger capital base means even a modest percentage return translates into a genuinely larger absolute monetary surplus above the cost of capital. The two measures can therefore rank business units differently, and using RAROC alone risks understating the genuine value created by larger units.",
+          note: "Full marks require the ratio-versus-absolute-amount distinction AND a genuine worked-through explanation of why rankings can differ (small-high-percentage versus large-lower-percentage-but-bigger-absolute-value), not just an assertion that they can differ.",
+        },
+      ],
+    },
+    {
+      id: "sp9-q10",
+      title: "Solvency II, ORSA and the regulatory landscape for ERM",
+      modules: "Module 13",
+      marks: 12,
+      parts: [
+        {
+          label: "(i)",
+          command: "Explain",
+          marks: 4,
+          question:
+            "Explain the three-pillar structure of the Solvency II regulatory regime.",
+          answer:
+            "Pillar 1 sets quantitative capital requirements, such as the Solvency Capital Requirement (SCR), calculated either via a standard formula or an approved internal model. Pillar 2 sets governance and risk management requirements, including the Own Risk and Solvency Assessment (ORSA) and requirements around the effectiveness of the risk management system more broadly. Pillar 3 sets disclosure and reporting requirements, requiring insurers to report information to regulators and, in part, to the wider market.",
+          note: "Full marks require correctly naming and describing all three pillars, not just naming them.",
+        },
+        {
+          label: "(ii)",
+          command: "Explain",
+          marks: 4,
+          question:
+            "Explain what the ORSA is, and explain how it embodies the 'use test' principle.",
+          answer:
+            "The ORSA is a regular, forward-looking internal assessment an insurer must conduct of its own overall solvency needs, considering its own specific risk profile rather than relying purely on a generic regulatory formula's calibration. It embodies the use test because it explicitly requires the organisation to genuinely use its own risk assessment and models in a real governance process — feeding into actual business planning and decision-making — rather than treating regulatory capital as a purely mechanical, compliance-only calculation divorced from how the business is actually run.",
+          note: "A strong answer explicitly draws the connection to the use test, not just describes the ORSA in isolation.",
+        },
+        {
+          label: "(iii)",
+          command: "Distinguish",
+          marks: 4,
+          question:
+            "Distinguish between the Solvency II and Basel regulatory frameworks, noting both their structural similarity and a key difference in what each is calibrated to address.",
+          answer:
+            "Solvency II (for insurers) and Basel (for banks) share a broadly similar three-pillar structure: quantitative capital requirements, supervisory review of governance and risk management, and market discipline through disclosure. However, each is calibrated to its own sector's distinct risk profile: Solvency II is calibrated to insurance-specific risks such as long-term underwriting and reserving risk, while Basel is calibrated to banking-specific risks such as credit risk from loan portfolios and short-term liquidity risk arising from deposit withdrawals.",
+          note: "Full marks require identifying both the shared three-pillar architecture AND the sector-specific calibration difference, not just naming the two frameworks.",
+        },
+      ],
+    },
+  ],
 };
+
