@@ -17410,6 +17410,117 @@ const MODULES = {
                 "explain": "Worth recognising this distinction as echoing the standard-formula-versus-internal-model distinction developed further at SA1 level — passive approaches offer consistency and simplicity, while active approaches offer genuinely greater risk-sensitivity at the cost of complexity and judgement."
             }
         ]
+    },
+    {
+        "id": "m12",
+        "title": "Setting assumptions",
+        "description": "Covers the principles of setting assumptions for pricing, reserving and embedded value in health and care insurance, and why these assumptions may genuinely differ across purposes, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine purposes does the official syllabus (objective 5.1) require assumption-setting principles to be understood for?",
+                "a": "Pricing health and care insurance contracts (including profit requirements), determining liabilities, and determining embedded value — three genuinely distinct purposes, each potentially warranting a genuinely different assumption basis even for the same underlying risk.",
+                "explain": "Worth recognising this three-way split as directly connecting Module 10's pricing material and Module 11's reserving material to a common underlying question: how should assumptions genuinely differ depending on WHY they're being set?"
+            },
+            {
+                "q": "Why might pricing assumptions genuinely include an explicit profit requirement, while liability-determination assumptions typically do not?",
+                "a": "Pricing must recover the insurer's cost of capital and target margin to be commercially sustainable, so profit requirements are a genuine, deliberate input to the pricing assumption set, while reserves are meant to reflect the genuine expected cost of meeting obligations (plus prudence), not to embed a forward-looking profit margin.",
+                "explain": "Worth recognising this as a genuinely important distinction in assumption PURPOSE — pricing assumptions answer 'what do we need to charge to be sustainably profitable', while reserving assumptions answer 'what do we genuinely expect to pay out'."
+            },
+            {
+                "q": "Why might assumptions used for supervisory reserves genuinely differ from those used in pricing, per the official syllabus objective 5.1.3?",
+                "a": "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the SAME underlying risk (e.g. incidence rate) can genuinely warrant a more cautious figure for reserving than for pricing.",
+                "explain": "This directly recalls Module 11's supervisory-reserve-purpose material — worth recognising this as the direct assumption-level consequence of reserves and pricing serving genuinely different underlying purposes."
+            },
+            {
+                "q": "What genuine principles apply to setting assumptions for determining embedded value, per the official syllabus objective 5.1.4?",
+                "a": "Embedded value assumptions should genuinely reflect realistic, best-estimate expectations of future experience (not deliberately prudent reserving assumptions), since embedded value aims to capture the true expected economic value of in-force business, which prudent, margin-laden assumptions would understate.",
+                "explain": "This directly recalls SA1's embedded-value material — worth recognising embedded value assumptions as needing to be genuinely realistic/best-estimate, in contrast to reserving's deliberate prudence, even though both use broadly similar underlying risk drivers."
+            },
+            {
+                "q": "Why might setting assumptions for a genuinely new health and care product (with limited or no own prior claims experience) require particular judgement, echoing CS1's material?",
+                "a": "Without substantial own experience data, assumption-setting must rely more heavily on external data, comparable products, and genuine actuarial judgement, blending limited own information with external sources according to CS1's credibility-theory approach rather than relying on a purely statistical, own-experience-based estimate.",
+                "explain": "This directly recalls CS1's credibility theory material and Module 10's group-risk-assessment material — worth recognising new-product assumption-setting as one of the clearest examples across this whole curriculum of blending limited own data with external sources and genuine professional judgement."
+            },
+            {
+                "q": "Why must an actuary setting assumptions for any of these three purposes (pricing, reserving, embedded value) be able to justify their choice with genuine, documented reasoning, rather than simply asserting a figure?",
+                "a": "Since assumption-setting genuinely involves judgement (not purely mechanical calculation), transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work.",
+                "explain": "This directly recalls CP1's and CP3's transparent-reasoning material — worth recognising documented justification as a genuinely essential professional discipline accompanying every assumption-setting decision covered in this module."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Monitoring experience",
+        "description": "Covers why experience monitoring matters to a health and care insurer, and how actual mortality, morbidity, claims, persistency, expense, new business and investment experience should be monitored, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why is it genuinely important for a health and care insurance company to monitor its own experience, per the official syllabus objective 5.2.1?",
+                "a": "Comparing actual experience against the assumptions used in pricing and reserving (Module 12's material) reveals whether those assumptions remain genuinely appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
+                "explain": "This directly recalls Module 12's assumption-setting material — worth recognising experience monitoring as the genuine VERIFICATION step confirming whether Module 12's assumptions actually held up against real-world outcomes."
+            },
+            {
+                "q": "What genuine experience categories does the official syllabus (objective 5.2.2) require candidates to understand how to monitor?",
+                "a": "Mortality, morbidity, claims amounts, persistency, expense, new business, and investment experience — together forming the genuine range of experience types a health and care insurer should track against its assumptions.",
+                "explain": "Worth recognising this list as directly mirroring Module 5's risk-source list — the risks identified there are precisely the experience categories monitored here, closing the loop between risk identification and experience verification."
+            },
+            {
+                "q": "Why might a critical illness insurer need to monitor incidence rates separately for each covered condition, rather than a single combined CI incidence rate?",
+                "a": "Different conditions can experience genuinely different trends (e.g. medical advances improving cancer survival while other conditions remain stable), so a single combined rate could mask offsetting movements that each individually warrant distinct assumption review.",
+                "explain": "Worth recognising that AGGREGATED monitoring can hide genuinely important condition-specific trends that separate, granular analysis would reveal — a recurring theme in sound experience monitoring."
+            },
+            {
+                "q": "Why might persistency (lapse rate) experience monitoring be particularly important to a health and care insurer's profitability, beyond simply tracking in-force volumes?",
+                "a": "Since expenses are often front-loaded relative to premium income, higher-than-assumed early lapses can mean the insurer fails to recover its initial expenses before the policy lapses, directly damaging profitability beyond simply reducing the size of the in-force book.",
+                "explain": "This directly recalls CB1's new-business-strain and expense-recovery material — worth recognising that a lapse is NOT profit-neutral; unfavourable early lapse experience can directly turn an expected-profitable policy into a loss-making one."
+            },
+            {
+                "q": "What genuine data is required to support meaningful experience monitoring, and why might poor data quality undermine the whole monitoring exercise?",
+                "a": "Monitoring requires accurate, complete, and appropriately granular records of exposure and claims (echoing Module 5's data-as-foundational-risk material), and since experience monitoring's conclusions depend entirely on this underlying data, poor data quality can produce genuinely misleading conclusions about whether assumptions need revision.",
+                "explain": "This directly recalls Module 5's data-as-foundational-risk material — worth recognising that experience monitoring is only as reliable as the DATA feeding it, closing the loop back to this course's very first-listed risk source."
+            },
+            {
+                "q": "Why should an insurer investigate whether an experience variance reflects genuine random fluctuation or a persistent trend, rather than immediately revising assumptions after any single adverse period?",
+                "a": "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts that should inform assumption revision.",
+                "explain": "This directly recalls CS1's statistical-significance material — worth recognising this as CS1's general statistical-inference discipline applied directly to a genuine, practical actuarial judgement call within experience monitoring specifically."
+            }
+        ]
+    },
+    {
+        "id": "m14",
+        "title": "Analysis of surplus and embedded value profit",
+        "description": "Covers the reasons for undertaking an analysis of surplus and an analysis of embedded value profit, and how the results of such analyses can be used, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What are the genuine reasons for undertaking an analysis of surplus and an analysis of embedded value profit, per the official syllabus objective 5.3.1?",
+                "a": "These analyses decompose the overall change in an insurer's financial position (surplus) or embedded value into its underlying causes (e.g. expected release of margins, experience variances, assumption changes), revealing genuinely WHY results moved as they did, not just confirming THAT they moved.",
+                "explain": "Worth recognising this WHY-versus-THAT distinction as the single most important insight of this whole module — a single overall profit or surplus figure tells you WHAT happened, but only decomposition analysis tells you WHY, which is what actually informs sound management action."
+            },
+            {
+                "q": "Why does the 'expected' component of a surplus analysis typically represent the largest, most predictable share of emerging surplus?",
+                "a": "Prudent pricing and reserving assumptions (Module 12's material) build in margins that are expected to emerge as surplus over time purely through the passage of time and survival of the assumptions, forming a genuinely predictable baseline against which actual variances can be meaningfully compared.",
+                "explain": "This directly recalls Module 12's prudent-margin material — worth recognising the expected component as the genuine BASELINE the whole analysis is built around: everything else in the decomposition is measured as a DEVIATION from this predictable expected release."
+            },
+            {
+                "q": "Why does distinguishing 'experience variances' from 'assumption changes' matter within a surplus analysis, rather than treating both as simply 'unexpected' results?",
+                "a": "An experience variance reflects a single period's actual outcome differing from assumption (which may or may not persist, per Module 13's material), while an assumption change reflects a genuine, deliberate revision to future expectations — conflating them would obscure whether a variance is a one-off or a persistent, forward-looking change.",
+                "explain": "This directly recalls Module 13's random-fluctuation-versus-trend material — worth recognising this distinction as the surplus-analysis application of that same judgement call: is this period's variance a one-off (experience variance) or does it justify updating future assumptions (assumption change)?"
+            },
+            {
+                "q": "What genuine ways can the results of a surplus or embedded value profit analysis be used, per the official syllabus objective 5.3.2?",
+                "a": "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business genuinely requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
+                "explain": "Worth recognising these results as feeding directly BACK into essentially every earlier module in this course — pricing (Module 10), reserving (Module 11), assumptions (Module 12), and experience monitoring (Module 13) itself, closing the full actuarial control cycle this course develops."
+            },
+            {
+                "q": "Why might senior management place particular weight on a well-constructed surplus analysis when assessing an insurer's genuine underlying performance, beyond the headline profit figure?",
+                "a": "A clear decomposition distinguishes sustainable, expected sources of profit from one-off or potentially concerning experience variances, supporting genuinely better-informed management decisions than a single opaque profit number could on its own.",
+                "explain": "This directly recalls SA1's surplus-analysis-management-value material — worth recognising that even at SP1's more foundational level, this same management-value insight applies, previewing the more advanced strategic use of this analysis developed further at SA1 level."
+            },
+            {
+                "q": "How do Modules 12, 13 and 14 together complete SP1's 'Monitoring experience and setting assumptions' topic area, connecting back to Module 1's topic-weighting material?",
+                "a": "Module 12 established how assumptions are genuinely set for different purposes; Module 13 developed how actual experience is monitored against those assumptions; Module 14 showed how the resulting variances are decomposed and used to inform management action — together forming a coherent actuarial control cycle covering this syllabus topic area's full 15% weighting.",
+                "explain": "This closing card ties Modules 12-14 together explicitly, echoing Module 1's topic-weighting material — worth recognising this whole course as tracing a genuine, coherent actuarial control cycle from product design (Module 4) through risk management (Modules 5-8), modelling and valuation (Modules 9-11), to this closing monitoring cycle (Modules 12-14)."
+            }
+        ]
     }
     ]
 };
