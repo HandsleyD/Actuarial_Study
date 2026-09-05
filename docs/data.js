@@ -18921,6 +18921,80 @@ const MODULES = {
                 "explain": "This closing card ties this module back to Module 9 explicitly — worth recognising portfolio construction and risk measurement as the genuine RISK-MANAGEMENT COUNTERPART to Module 9's investment-selection techniques, not a separate, unrelated topic."
             }
         ]
+    },
+    {
+        "id": "m12",
+        "title": "Investment performance analysis and indices",
+        "description": "Covers analysing investment performance and the limitations of measurement techniques, and understanding the construction and use of investment indices, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What genuine performance measures does the official syllabus (objective 8.1) name for analysing investment performance?",
+                "a": "Portfolio risk and return analysis, equity price, net present value (NPV), net asset value (NAV), and return on capital (ROC) — a genuinely diverse set of measures spanning both portfolio-level and individual-security-level performance assessment.",
+                "explain": "Worth memorising this exact list — note it spans genuinely different LEVELS of analysis, from whole-portfolio risk/return down to individual metrics like NPV and NAV more typically applied to specific investments or funds."
+            },
+            {
+                "q": "Why might NAV (net asset value) be a genuinely more appropriate performance measure for a fund holding illiquid assets than a simple market-price-based measure?",
+                "a": "NAV directly reflects the genuine underlying value of a fund's holdings (assets minus liabilities), providing a meaningful valuation even where no continuous, liquid market price exists for the fund itself, unlike a market-price-based approach which would require a genuinely observable trading price that illiquid asset funds often lack.",
+                "explain": "This directly recalls Module 5's illiquid-asset-valuation material — worth recognising NAV as the genuine, practical SOLUTION to the valuation challenge illiquid assets create for performance measurement specifically."
+            },
+            {
+                "q": "What genuine limitations of performance measurement techniques does the official syllabus (objective 8.1) explicitly require understanding, beyond simply how to calculate the measures themselves?",
+                "a": "Performance measures can be genuinely distorted by the timing of cashflows into and out of a portfolio, can depend heavily on the specific period chosen for measurement, and may not fully capture genuine risk taken to achieve the reported return, meaning raw performance figures require careful, critical interpretation rather than being taken at face value.",
+                "explain": "Worth recognising this as a genuinely important critical-thinking requirement — a strong SP5 answer discussing performance measurement should demonstrate awareness of these limitations, not just describe the calculation techniques uncritically."
+            },
+            {
+                "q": "What genuine considerations does the official syllabus (objective 8.2) require for understanding the construction and use of investment indices?",
+                "a": "Understanding the main indices used in international stock markets, the genuine problems in constructing indices for unlisted or illiquid assets, and the genuine uses to which investment indices are put (e.g. as performance benchmarks, or as the basis for index-tracking investment products).",
+                "explain": "Worth recognising this three-part structure as moving from WHAT indices exist, to WHY constructing some indices is genuinely harder than others, to HOW indices are actually used in practice."
+            },
+            {
+                "q": "Why might constructing a genuinely representative index for unlisted or illiquid assets be materially more difficult than for listed equities, echoing Module 5's material?",
+                "a": "Unlisted or illiquid assets lack continuously observable market prices, so an index tracking them must rely on periodic appraisals or modelled valuations rather than genuine, real-time transaction prices, introducing genuine valuation lag and smoothing effects that can distort the index's apparent volatility and correlation with other, more liquid asset classes.",
+                "explain": "This directly recalls Module 5's illiquid-asset-valuation-uncertainty material — worth recognising this same valuation challenge as directly extending to INDEX CONSTRUCTION for illiquid asset classes, not just individual fund valuation."
+            },
+            {
+                "q": "Why might an investment index serve genuinely different purposes depending on whether it is used as a performance benchmark versus as the basis for an index-tracking (passive) investment product?",
+                "a": "As a benchmark, an index provides a genuine, independent comparison point for assessing active manager performance; as the basis for a tracking product, the SAME index instead becomes the genuine, direct investment target itself, meaning index construction methodology decisions (e.g. how frequently constituents are rebalanced) can matter differently depending on which of these two purposes is primary.",
+                "explain": "This directly previews this course's closing performance-comparison module — worth recognising the SAME index as serving genuinely DIFFERENT functional roles depending on how it is actually being used."
+            }
+        ]
+    },
+    {
+        "id": "m13",
+        "title": "Comparing performance and risk-adjusted measures",
+        "description": "Covers understanding investment portfolio performance relative to published indices, benchmark portfolios and peer groups, the contribution of sector and stock selection, and risk-adjusted performance measures, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What three genuine comparison points does the official syllabus (objective 8.3.1) name for assessing an investment portfolio's performance?",
+                "a": "Performance relative to a published market index, relative to a specified benchmark portfolio, and relative to other portfolios such as a peer group — three genuinely distinct comparison approaches, each answering a genuinely different question about the portfolio's relative success.",
+                "explain": "Worth recognising these as answering GENUINELY DIFFERENT questions: a market index asks 'did the manager beat the broad market', a benchmark portfolio asks 'did the manager beat their specific, agreed comparison', and a peer group asks 'did the manager beat other managers facing similar constraints'."
+            },
+            {
+                "q": "Why might a manager's performance look genuinely different when compared against a market index versus against a peer group of similar managers?",
+                "a": "The whole peer group could genuinely outperform or underperform the broad market together (e.g. due to a shared style tilt that happened to be in or out of favour), meaning a manager could genuinely beat the market index while still underperforming their peer group, or vice versa, since these two comparisons answer genuinely different relative-performance questions.",
+                "explain": "This directly recalls Module 6's relative-performance-risk material — worth recognising that BEATING THE MARKET and BEATING YOUR PEERS are genuinely distinct, sometimes divergent achievements, not the same underlying comparison viewed two ways."
+            },
+            {
+                "q": "How does 'the contribution of sector selection and individual stock selection' (per the official syllabus objective 8.3.2) genuinely decompose a portfolio's overall relative performance?",
+                "a": "This decomposes total active return into the genuine contribution from overweighting/underweighting different sectors relative to the benchmark (sector selection or allocation effect) and the genuine contribution from picking specific winning or losing stocks WITHIN each sector (stock selection effect), revealing WHY the manager outperformed or underperformed, not just THAT they did.",
+                "explain": "This directly recalls SA7's performance-attribution material — worth recognising this same WHY-versus-THAT decomposition principle applying here at SP5's more foundational level, developed further in more detail at SA7 level."
+            },
+            {
+                "q": "Why might a manager who correctly picked the winning SECTORS but poor individual STOCKS within them still achieve a genuinely disappointing overall relative performance, echoing this module's decomposition material?",
+                "a": "Sector allocation and stock selection are genuinely SEPARATE skills that can offset each other — being right about WHICH sectors to favour (positive allocation effect) doesn't guarantee genuine skill in choosing the BEST individual stocks within those correctly-favoured sectors (potentially negative selection effect), so overall performance depends on BOTH skills together, not either alone.",
+                "explain": "This directly recalls this module's own decomposition material — worth recognising this scenario as a genuinely realistic illustration of why the two effects must be assessed SEPARATELY, since strong performance in one does not guarantee strong performance in the other."
+            },
+            {
+                "q": "What are 'risk-adjusted performance measures' (per the official syllabus objective 8.3.3), and why are they genuinely necessary alongside raw return comparisons?",
+                "a": "Risk-adjusted measures (e.g. comparing return relative to volatility or tracking error taken) assess whether a manager's genuine outperformance reflects genuine skill or simply reflects taking on genuinely more risk than the mandate intended; a manager achieving a higher raw return by accepting materially more risk has not necessarily demonstrated genuine skill superior to a manager achieving a slightly lower return with materially less risk.",
+                "explain": "This directly recalls SA7's risk-adjusted-performance material — worth recognising risk-adjusted measures as essential for distinguishing genuine SKILL from simply taking on more RISK, a distinction raw return comparison alone cannot make."
+            },
+            {
+                "q": "How does this closing module complete SP5's overall structure, connecting back to Module 1's topic-weighting material?",
+                "a": "This module completes the syllabus's eighth and final topic area (Analysing portfolio performance, 15%), closing the loop this whole subject has traced from the economic/regulatory framework and specific investment products (Modules 1-4), through valuation and risk (Modules 5-6), investor characteristics and strategy (Modules 7-8), portfolio management and construction (Modules 9-11), to this final performance-analysis stage assessing whether the whole process genuinely delivered for the investor.",
+                "explain": "This closing card ties this whole subject together explicitly, echoing Module 1's topic-weighting material — worth recognising SP5's full 13-module structure as tracing one coherent journey from understanding the investment environment through to genuinely assessing whether strategy and execution delivered the investor's intended outcome."
+            }
+        ]
     }
     ]
 };
