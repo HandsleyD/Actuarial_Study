@@ -19803,6 +19803,70 @@ const MODULES = {
                 "explain": "Worth recognising claims inflation as a genuinely distinct assumption requiring EXPLICIT, separate consideration — implicitly assuming historical development patterns will simply continue can silently embed an outdated inflation assumption without the reserving actuary genuinely realising it."
             }
         ]
+    },
+    {
+        "id": "m09",
+        "title": "Stochastic reserving: the Mack model",
+        "description": "Covers the Mack model as a stochastic approach genuinely quantifying the uncertainty around chain-ladder-style reserve estimates, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why do the reserving methods covered in Modules 6-8 (chain ladder, Bornhuetter-Ferguson, Cape Cod, ACPC) share a genuine limitation that stochastic reserving methods like Mack directly address?",
+                "a": "These earlier methods each produce a single, deterministic POINT ESTIMATE of ultimate claims, without genuinely quantifying the RANGE of uncertainty around that estimate, while stochastic methods explicitly model this uncertainty, producing a genuine probability distribution (or at least a standard error) around the reserve estimate, not just a single central figure.",
+                "explain": "This directly recalls Module 4's reserving-uncertainty material — worth recognising stochastic methods as the genuine, technical MECHANISM for quantifying the uncertainty Module 4 conceptually introduced, moving from acknowledging uncertainty exists to actually MEASURING it."
+            },
+            {
+                "q": "What is the Mack model, and what genuine relationship does it have to the standard chain ladder method?",
+                "a": "The Mack model is a stochastic model that genuinely reproduces the SAME central reserve estimates as the standard chain ladder method, while additionally providing a genuine estimate of the STANDARD ERROR (and hence a measure of uncertainty) around those chain ladder estimates, without requiring a full distributional assumption for the underlying claims.",
+                "explain": "Worth recognising the Mack model's genuine relationship to the standard chain ladder as ADDITIVE, not replacing it — Mack reproduces the SAME point estimates while adding genuine uncertainty quantification on top."
+            },
+            {
+                "q": "Why might the Mack model be considered genuinely valuable precisely because it does NOT require a full distributional assumption for the underlying claims, unlike some other stochastic approaches?",
+                "a": "Many genuinely realistic claims processes don't neatly follow simple, well-known probability distributions, so a method that can estimate uncertainty WITHOUT committing to a specific, potentially wrong distributional assumption offers genuine robustness — the Mack model achieves this by working with the FIRST AND SECOND MOMENTS (mean and variance) of the underlying process, rather than its full distribution.",
+                "explain": "Worth recognising this as a genuinely important practical ADVANTAGE — avoiding a strong distributional assumption reduces the genuine model risk (Module 4's material) of that specific assumption being wrong for the actual data being analysed."
+            },
+            {
+                "q": "What genuine assumptions does the Mack model make about the variance of claims development, beyond the chain ladder's own core consistency assumption?",
+                "a": "The Mack model genuinely assumes that the variance of claims development at each development period is proportional to the cumulative claims observed at the start of that period (scaled by an estimated variance parameter specific to that development period), a specific, testable assumption about how uncertainty genuinely scales with claim size across the development process.",
+                "explain": "Worth recognising this variance-proportionality assumption as a genuinely ADDITIONAL, TESTABLE assumption beyond the chain ladder's own core development-pattern-consistency assumption (Module 6's material) — Mack requires this extra assumption specifically to derive its genuine uncertainty estimates."
+            },
+            {
+                "q": "Why might a reserving actuary genuinely value the Mack model's standard error output when communicating reserve estimates to stakeholders, echoing this course's recurring communication themes?",
+                "a": "Presenting a reserve estimate alongside a genuine measure of its uncertainty (e.g. a range or standard error) gives stakeholders a genuinely more complete, honest picture of the estimate's reliability than a single point figure alone, supporting more informed decision-making about capital adequacy and risk appetite than a false sense of precision from an unqualified single number.",
+                "explain": "This directly recalls SA1's and CP1's genuine-range-over-false-precision material — worth recognising the Mack model's uncertainty output as directly supporting this whole curriculum's recurring emphasis on honest, uncertainty-aware communication."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Stochastic reserving: the ODP bootstrap",
+        "description": "Covers the over-dispersed Poisson (ODP) bootstrap method as a further stochastic reserving approach, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the 'over-dispersed Poisson' (ODP) model, and why is 'over-dispersion' genuinely necessary beyond a standard Poisson assumption for modelling claims development?",
+                "a": "A standard Poisson distribution genuinely assumes its variance equals its mean, but real claims data typically exhibits GREATER variance than a standard Poisson would predict (genuine 'over-dispersion'), so the ODP model introduces an additional scaling parameter allowing variance to exceed the mean, providing a genuinely more realistic fit to actual claims data's typically greater-than-Poisson variability.",
+                "explain": "Worth recognising over-dispersion as addressing a genuine, commonly-observed EMPIRICAL FEATURE of real claims data — a standard, unmodified Poisson assumption would genuinely understate the true variability actually observed in practice."
+            },
+            {
+                "q": "What is 'bootstrapping' as a genuine statistical technique, and how is it applied within the ODP bootstrap reserving method?",
+                "a": "Bootstrapping genuinely resamples (with replacement) from a set of observed data points (here, the residuals from an initial ODP model fit to the claims triangle) to generate many simulated alternative 'pseudo-triangles', each producing its own chain-ladder-style reserve estimate; repeating this process many times builds up a genuine, empirical DISTRIBUTION of possible reserve outcomes.",
+                "explain": "This directly recalls CS1's and CS2's bootstrapping material — worth recognising the ODP bootstrap as a direct, practical APPLICATION of general bootstrapping technique specifically to the reserving problem, building a genuine empirical distribution rather than relying on a purely analytical formula."
+            },
+            {
+                "q": "Why might the ODP bootstrap method be considered genuinely more flexible than the Mack model in the type of output it can produce?",
+                "a": "Since the ODP bootstrap genuinely generates a full empirical DISTRIBUTION of simulated reserve outcomes (via repeated resampling), it can directly provide genuine percentiles, full distributional shape information, and other risk measures beyond a simple standard error, while the Mack model's analytical approach genuinely provides only the first two moments (mean and variance) without a full distributional picture.",
+                "explain": "This directly recalls Module 9's Mack-model-limitations material — worth recognising the ODP bootstrap as offering a genuinely RICHER output (full distribution) at the cost of requiring more computational simulation, compared with Mack's simpler, purely analytical mean/variance output."
+            },
+            {
+                "q": "Why might residuals from the initial ODP model fit require genuine adjustment (e.g. for degrees of freedom) before being used in the bootstrap resampling process?",
+                "a": "Raw residuals from a fitted model can genuinely understate the TRUE underlying variability, since fitting a model to data inherently 'uses up' some of that variability in estimating the model's own parameters, so an adjustment (e.g. scaling residuals to reflect the genuine degrees of freedom used) helps ensure the bootstrap resampling process produces a genuinely realistic, not artificially narrow, range of simulated outcomes.",
+                "explain": "Worth recognising this as a genuinely important TECHNICAL REFINEMENT — a naive, unadjusted bootstrap could genuinely understate the true reserve uncertainty by resampling from residuals that are artificially too small relative to the genuine underlying variability."
+            },
+            {
+                "q": "How do the Mack model and the ODP bootstrap together illustrate a genuine choice between analytical and simulation-based approaches to stochastic reserving, connecting back to Module 9?",
+                "a": "The Mack model provides a genuinely analytical, closed-form estimate of the mean and variance without requiring simulation, while the ODP bootstrap genuinely relies on repeated simulation to build up an empirical distribution — together illustrating the SAME analytical-versus-simulation choice this course's earlier derivative-pricing material (in SP6) also develops, just applied to reserving uncertainty rather than derivative valuation.",
+                "explain": "This closing card ties Modules 9-10 together, echoing this course's broader analytical-versus-numerical-methods theme — worth recognising these two stochastic reserving approaches as occupying genuinely complementary positions on the same analytical-versus-simulation spectrum this whole curriculum returns to repeatedly."
+            }
+        ]
     }
     ]
 };
