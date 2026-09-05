@@ -20453,4 +20453,151 @@ const MODULES = {
         ]
     }
     ]
+,
+  SP9: [
+    {
+        "id": "m01",
+        "title": "What is Subject SP9 all about?",
+        "description": "An orientation chapter explaining SP9's role as the Specialist Principles subject introducing enterprise risk management, and its distinctive position as the qualifying subject for CERA membership.",
+        "cards": [
+            {
+                "q": "What is the genuine aim of Subject SP9, echoing the SP-subject template established across this whole curriculum?",
+                "a": "To provide students with an introduction to the key principles and concepts of Enterprise Risk Management (ERM), how it is applied within an organisation, and how external and regulatory risk frameworks can influence an organisation's approach to ERM.",
+                "explain": "Worth recognising this as genuinely BROADER in scope than most other SP subjects — rather than focusing on a single insurance sector's products and technique, SP9 develops a genuinely CROSS-CUTTING risk management discipline applicable across any type of organisation."
+            },
+            {
+                "q": "What is genuinely distinctive about SP9 compared with every other SP subject in terms of the wider professional qualification it supports?",
+                "a": "SP9 is the specific qualifying subject supporting the Chartered Enterprise Risk Actuary (CERA) designation, a genuinely internationally-recognised risk management credential distinct from the core Fellowship pathway, reflecting ERM's genuinely cross-industry relevance beyond traditional actuarial practice areas.",
+                "explain": "Worth recognising SP9 as occupying a genuinely UNIQUE position in the curriculum — while other SP subjects feed toward sector-specific SA subjects, SP9 additionally supports this genuinely distinct, internationally-portable CERA qualification."
+            },
+            {
+                "q": "What are the seven official syllabus topic areas of SP9, and their approximate topic weightings?",
+                "a": "ERM concept and framework (15%); ERM process (10%); Risk categories and identification (10%); Risk modelling and aggregation of risks (15%); Risk measurement and assessment (15%); Risk management tools and techniques (20%); and Capital management (15%).",
+                "explain": "Worth memorising these weightings directly — 'Risk management tools and techniques' at 20% is genuinely the single largest topic area, meaning fluency with the practical toolkit for actually MANAGING identified and measured risk deserves the greatest concentrated revision effort."
+            },
+            {
+                "q": "Why might SP9's genuinely broad, cross-cutting scope require drawing together material from across MULTIPLE earlier subjects in this curriculum, more so than most other SP subjects?",
+                "a": "Since ERM genuinely synthesises risk identification, measurement, aggregation, and management technique developed separately across insurance-specific subjects (SA1's, SA3's and SP7's reserving/capital risk material, SA7's and SP5's investment risk material, SP6's derivative risk material), SP9 explicitly draws these threads together into a single, genuinely UNIFIED risk management framework applicable across any organisation, not just insurance.",
+                "explain": "Worth recognising SP9 as this whole curriculum's genuine SYNTHESIS point — much of what this subject covers directly recalls and generalises material already developed in a more sector-specific form across earlier subjects."
+            },
+            {
+                "q": "According to the official SP-subject template, what is the approximate split of assessment across knowledge, application, and higher-order skills for SP9?",
+                "a": "Approximately 25% knowledge, 50% application, and 25% higher order — the same standard split shared across SP1, SP2, SP4 and SP7, reflecting SP9's blend of genuinely conceptual/qualitative material (ERM frameworks, governance) alongside its more quantitative risk measurement and capital content.",
+                "explain": "Worth recognising this standard split as applying even to a subject spanning both genuinely QUALITATIVE (governance, frameworks) and QUANTITATIVE (risk measures, capital) content — SP9's genuine breadth doesn't change the fundamental knowledge/application/higher-order emphasis shared across the SP-subject template."
+            },
+            {
+                "q": "Why might understanding SP9's seven topic areas as a coherent sequence (framework → process → identification → modelling → measurement → tools → capital) help structure revision, echoing this course's recurring lifecycle-sequencing theme?",
+                "a": "This sequence genuinely mirrors ERM's real practical lifecycle — first establishing the genuine organisational FRAMEWORK and PROCESS for managing risk, then identifying and classifying specific risks, then modelling and measuring their genuine scale and interaction, then applying practical management tools, and finally connecting this whole process to genuine capital adequacy — each stage building on genuine understanding from the one before.",
+                "explain": "This directly recalls SP1's, SP2's, SP4's and SP7's identical lifecycle-sequencing material — worth recognising this same coherent-sequence principle applying to SP9's seven topic areas, just genuinely broader in scope than any single subject's product-specific lifecycle."
+            }
+        ]
+    },
+    {
+        "id": "m02",
+        "title": "ERM concepts, the control cycle and governance structure",
+        "description": "Covers core ERM concepts and definitions, the risk management control cycle, the three lines of defence, and the Chief Risk Officer role, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is 'Enterprise Risk Management' (ERM), and how does it genuinely differ from managing individual risks in isolation, echoing this course's recurring holistic-assessment theme?",
+                "a": "ERM genuinely manages ALL of an organisation's material risks TOGETHER, in a coordinated, organisation-wide way, explicitly considering how different risks INTERACT and AGGREGATE (rather than each risk being managed independently by a separate department or function with no genuine coordination), providing a genuinely more complete, holistic view of the organisation's overall risk position.",
+                "explain": "This directly recalls SA1's and SP7's holistic-versus-additive-risk-assessment material — worth recognising ERM's whole genuine value proposition as precisely this INTEGRATED, organisation-wide perspective, rather than siloed, risk-by-risk management."
+            },
+            {
+                "q": "What is the genuine 'risk management control cycle', and why does it echo this course's recurring actuarial control cycle theme?",
+                "a": "The risk management control cycle genuinely describes the recurring, cyclical process of identifying risks, assessing and measuring them, deciding on and implementing management responses, and monitoring outcomes — feeding back into revised risk identification and assessment, directly paralleling SP4's identically-structured Actuarial Control Cycle, just applied at the whole-organisation ERM level rather than to a single pension scheme's assumptions.",
+                "explain": "This directly recalls SP4's Actuarial Control Cycle material — worth recognising this SAME recurring, cyclical control-process STRUCTURE applying to ERM specifically, not merely a coincidental similarity in name."
+            },
+            {
+                "q": "What is the genuine 'three lines of defence' model for risk governance, and how does each 'line' differ in its role?",
+                "a": "The first line comprises genuine operational management, who own and manage risk directly in their day-to-day activities; the second line comprises risk management and compliance functions, who provide oversight, challenge, and set genuine risk policy; the third line comprises internal audit, who provide genuinely independent assurance that the first two lines are operating effectively.",
+                "explain": "Worth recognising these three lines as providing genuinely LAYERED, INCREASINGLY INDEPENDENT oversight — each successive line stands genuinely more removed from day-to-day risk-taking, providing an escalating series of checks on the line(s) before it."
+            },
+            {
+                "q": "Why might the genuine INDEPENDENCE of the third line (internal audit) from the first and second lines be particularly important for the whole three-lines-of-defence model's credibility?",
+                "a": "If internal audit were not genuinely independent of the functions it is meant to assess, its assurance would carry little genuine value, since it could be influenced by the same pressures or incentives affecting the very risk-taking and oversight functions it is meant to independently evaluate, undermining the whole model's genuine purpose.",
+                "explain": "This directly recalls CP1's and SA1's independent-review-and-challenge material — worth recognising genuine independence as the whole FOUNDATION the third line's value rests upon, not merely a nice-to-have organisational feature."
+            },
+            {
+                "q": "What is the genuine role of a Chief Risk Officer (CRO), and why does this role typically sit within (or closely alongside) the second line of defence?",
+                "a": "A CRO genuinely holds organisation-wide responsibility for overseeing and coordinating risk management across the whole enterprise, setting risk policy, and reporting risk information to senior management and the board; this genuinely aligns with the second line's oversight-and-challenge function, distinct from both first-line operational risk-taking and third-line independent audit assurance.",
+                "explain": "Worth recognising the CRO as the genuine, senior EMBODIMENT of the second line's coordinating and oversight function — a specific, named leadership role occupying that layer of the three-lines-of-defence structure."
+            },
+            {
+                "q": "Why might a genuinely effective CRO need both strong technical risk expertise AND genuine organisational influence/seniority, rather than technical expertise alone?",
+                "a": "Since sound ERM requires genuinely embedding risk considerations into strategic and operational decision-making across the whole organisation (previewing Module 3's use-test material), a CRO lacking genuine organisational seniority and influence may struggle to ensure risk considerations are actually HEEDED in practice, regardless of how technically sound their risk analysis itself is.",
+                "explain": "This directly previews Module 3's use-test material — worth recognising that TECHNICAL competence alone is genuinely insufficient for the CRO role; genuine organisational STANDING is equally necessary for ERM to be actually effective in practice, not merely theoretically sound."
+            }
+        ]
+    },
+    {
+        "id": "m03",
+        "title": "ERM frameworks, the use test and embedding ERM in decision-making",
+        "description": "Covers the COSO ERM and ISO 31000 frameworks, the genuine 'use test', and embedding ERM in strategy and decision-making, per the official syllabus.",
+        "cards": [
+            {
+                "q": "What is the genuine purpose of a formal ERM framework like COSO ERM or ISO 31000, rather than each organisation developing its own entirely bespoke risk management approach?",
+                "a": "A formal framework provides a genuinely well-established, tested structure and common terminology for organising an organisation's ERM activities, supporting genuine comparability and communication (both internally and with external stakeholders like regulators and investors), while still typically allowing genuine flexibility in how the framework's principles are specifically implemented for a given organisation's own circumstances.",
+                "explain": "Worth recognising formal frameworks as providing a genuinely useful STRUCTURAL FOUNDATION and common language, not a rigid, one-size-fits-all prescription — organisations still exercise genuine judgement in applying framework principles to their own specific context."
+            },
+            {
+                "q": "What is the genuine 'use test', and why is it considered a particularly important, practical indicator of whether ERM is genuinely embedded in an organisation, rather than merely a formal, box-ticking exercise?",
+                "a": "The use test genuinely assesses whether an organisation's risk models and risk management outputs are ACTUALLY USED in real, material business decisions (e.g. pricing, capital allocation, strategic planning), rather than being produced purely for regulatory compliance purposes and then genuinely ignored in actual decision-making, providing a concrete, practical test of whether ERM has genuinely taken root.",
+                "explain": "This directly recalls SA1's genuine-versus-superficial-compliance material — worth recognising the use test as a genuinely PRACTICAL, verifiable indicator distinguishing authentic ERM embedding from mere formal compliance."
+            },
+            {
+                "q": "Why might an ERM framework genuinely FAIL to be effective even if it is technically well-designed on paper, connecting back to Module 2's CRO-organisational-influence material?",
+                "a": "If risk considerations are not genuinely embedded into actual strategic and operational decision-making processes (e.g. senior management continuing to make major decisions without genuinely consulting risk analysis), even a technically excellent ERM framework would fail to deliver its intended genuine value, since risk management's real purpose is influencing actual decisions, not producing reports that go unused.",
+                "explain": "This directly recalls Module 2's CRO-organisational-influence material — worth recognising this same genuine embedding challenge recurring here specifically in the context of the OVERALL ERM framework, not just the CRO's individual role."
+            },
+            {
+                "q": "Why might genuinely embedding ERM into an organisation's STRATEGIC planning process (not just operational risk management) be particularly valuable, echoing SA1's strategic-assessment material?",
+                "a": "Major strategic decisions (e.g. entering a new market, launching a new product line) often carry the genuinely largest, most consequential risk implications for an organisation, so embedding ERM considerations directly into strategic decision-making ensures these genuinely significant risks are properly assessed BEFORE major commitments are made, rather than only managing smaller, operational-level risks after strategic decisions have already been taken.",
+                "explain": "This directly recalls SA1's strategic-assessment material — worth recognising strategic-level ERM embedding as addressing genuinely the LARGEST, most consequential risk decisions an organisation makes, not merely routine, smaller-scale operational risk management."
+            },
+            {
+                "q": "Why might genuine cultural and behavioural factors, beyond formal frameworks and processes alone, significantly determine whether ERM is truly embedded in an organisation?",
+                "a": "Even a well-designed formal framework can genuinely fail if the organisation's actual CULTURE does not support open, honest risk discussion (e.g. if raising risk concerns is genuinely discouraged or penalised), so genuine ERM embedding requires supportive organisational culture and behaviour alongside formal structures, not formal frameworks alone.",
+                "explain": "This directly recalls CP1's ethical-culture-and-psychological-safety material — worth recognising that FORMAL STRUCTURES (frameworks, the CRO role, three lines of defence) require a genuinely SUPPORTIVE CULTURE to actually function as intended, not operate effectively in isolation from culture."
+            },
+            {
+                "q": "How do this module's use-test and embedding material connect back to Module 2's control-cycle material, completing SP9's opening topic area?",
+                "a": "Module 2 established the genuine STRUCTURE (control cycle, three lines of defence, CRO role) through which ERM operates; this module shows how that structure must genuinely be MADE REAL through actual use in decision-making and supportive organisational culture, together completing SP9's 'ERM concept and framework' topic area's full coverage.",
+                "explain": "This closing card ties Modules 2-3 together explicitly, echoing Module 1's topic-weighting material — worth recognising these two modules as together addressing SP9's first syllabus topic area: the genuine STRUCTURE (Module 2) and its genuine PRACTICAL REALISATION (Module 3)."
+            }
+        ]
+    },
+    {
+        "id": "m04",
+        "title": "The ERM process",
+        "description": "Covers the genuine, recurring process through which enterprise risk management is actually carried out, per the official syllabus's second topic area.",
+        "cards": [
+            {
+                "q": "What genuine, recurring STAGES does the ERM process typically comprise, echoing Module 2's control-cycle material?",
+                "a": "The ERM process genuinely comprises risk IDENTIFICATION (recognising what risks the organisation faces), risk ASSESSMENT (understanding their genuine likelihood and impact), risk RESPONSE/MANAGEMENT (deciding how to address identified risks), and MONITORING (tracking outcomes and feeding insight back into the cycle) — the same genuine control-cycle structure Module 2 introduced, now developed as its own dedicated syllabus topic area.",
+                "explain": "This directly recalls Module 2's control-cycle material — worth recognising this module as taking that earlier STRUCTURAL introduction and developing each specific STAGE in genuinely greater practical detail."
+            },
+            {
+                "q": "Why must the ERM process's risk IDENTIFICATION stage genuinely be conducted on an organisation-WIDE basis, rather than each department identifying risks purely within its own silo?",
+                "a": "Since ERM's whole genuine value lies in its INTEGRATED, organisation-wide perspective (Module 2's material), risk identification conducted purely within departmental silos would genuinely miss risks that only become apparent when considering how different parts of the organisation interact, or risks that fall genuinely between departmental boundaries with no single owner.",
+                "explain": "This directly recalls Module 2's ERM-integrated-perspective material — worth recognising organisation-wide identification as the genuine, practical STARTING POINT ensuring ERM's later stages actually deliver on its integrated, holistic promise."
+            },
+            {
+                "q": "Why does the ERM process's ASSESSMENT stage genuinely require considering both LIKELIHOOD and IMPACT together, rather than either dimension in isolation, previewing this course's later heat-map material?",
+                "a": "A genuinely low-likelihood but high-impact risk (e.g. a rare catastrophic event) may warrant materially different management attention than a genuinely high-likelihood but low-impact risk (e.g. routine, minor operational errors), so assessing BOTH dimensions together provides genuinely more useful prioritisation insight than either measure alone.",
+                "explain": "This directly previews this course's later heat-map material — worth recognising the likelihood-and-impact combination as the genuine, foundational logic underlying that visual prioritisation tool covered in more detail later in this course."
+            },
+            {
+                "q": "Why must the ERM process's RESPONSE stage genuinely involve a deliberate CHOICE among different possible management approaches, rather than a single, universally 'correct' response applying to every identified risk?",
+                "a": "Different risks genuinely warrant different management responses depending on their specific likelihood, impact, and the organisation's own risk appetite (previewing this course's later risk-management-tools material covering avoidance, retention, mitigation, and transfer as genuinely distinct response options), so the response stage requires genuine, deliberate JUDGEMENT selecting the most appropriate approach for each specific risk, not a single default response.",
+                "explain": "This directly previews this course's later risk-management-tools-and-techniques material — worth recognising the response stage as requiring genuine, case-by-case JUDGEMENT, not a single, mechanically-applied default response."
+            },
+            {
+                "q": "Why must the ERM process's MONITORING stage genuinely feed BACK into renewed risk identification, rather than being a final, one-off check at the end of the process, echoing this course's recurring ongoing-review theme?",
+                "a": "Since an organisation's risk landscape genuinely evolves continuously (new risks emerging, existing risks changing in likelihood or impact), monitoring must genuinely feed its findings back into a RENEWED identification and assessment cycle, making the ERM process genuinely CONTINUOUS and cyclical, not a single, linear sequence completed once and never revisited.",
+                "explain": "This directly recalls this course's recurring ongoing-review theme (developed across SP1, SP2, SP4 and SP7) — worth recognising this same principle applying to the ERM process as a whole: monitoring closes the loop, making the whole process genuinely cyclical rather than linear."
+            }
+        ]
+    }
+
+  ]
 };
