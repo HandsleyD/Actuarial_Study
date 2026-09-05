@@ -16187,7 +16187,166 @@ const MODULES = {
                 "explain": "This directly recalls SA1's, SA2's and SA3's ongoing-review theme — worth recognising this principle as genuinely universal across every SA subject, pensions included."
             }
         ]
+    },
+    {
+        "id": "m06",
+        "title": "Taxation of pension schemes",
+        "description": "Covers how taxation affects pension schemes, sponsors and members, including tax relief on contributions and tax treatment of benefits.",
+        "cards": [
+            {
+                "q": "Why does the tax treatment of pension contributions and benefits directly affect a scheme's genuine attractiveness to both sponsors and members, echoing SA1's and SA2's material?",
+                "a": "If contributions attract tax relief and benefits are received tax-favoured, the effective cost of providing (and value of receiving) pension benefits changes materially, directly affecting how attractive pension saving is relative to other forms of remuneration or saving.",
+                "explain": "This directly recalls SA1's and SA2's taxation-affects-attractiveness material — worth recognising the same mechanism applying to pensions, where tax relief on contributions is often the single most significant driver of pension saving behaviour."
+            },
+            {
+                "q": "Why might many jurisdictions impose a lifetime or annual limit on the amount of pension saving that can receive favourable tax treatment?",
+                "a": "Governments typically aim to encourage pension saving up to a level supporting adequate retirement income, while limiting the tax revenue cost of unlimited tax-favoured saving, particularly for higher earners who could otherwise use pensions primarily as a general tax-shelter rather than genuine retirement provision.",
+                "explain": "Worth recognising these limits as a deliberate POLICY TRADE-OFF between encouraging adequate retirement saving and controlling the tax revenue cost, not an arbitrary restriction."
+            },
+            {
+                "q": "Why might a DB scheme sponsor's own tax position affect its funding and contribution strategy decisions, echoing SA1's and SA2's after-tax profitability material?",
+                "a": "Since pension contributions are often tax-deductible for the sponsor, the sponsor's genuine after-tax cost of funding the scheme can differ materially from the gross contribution amount, meaning funding strategy decisions should reflect the sponsor's true, after-tax cost, not just the nominal contribution figure.",
+                "explain": "This directly recalls SA1's and SA2's after-tax cost material — worth recognising this same principle applying to sponsor contribution decisions specifically, not just to insurer profit margins."
+            },
+            {
+                "q": "Why might changes in pension taxation legislation represent a genuine ongoing risk for schemes, sponsors and members, echoing this course's recurring theme?",
+                "a": "A change in contribution limits, tax relief rates, or benefit taxation can suddenly alter the attractiveness and genuine cost of pension provision after a scheme has already been designed and funded on prior assumptions, a risk that is particularly prominent given how frequently pension tax rules have changed in practice.",
+                "explain": "This directly recalls SA1's political-and-tax-risk material — worth recognising pension taxation specifically as one of the most frequently-changing areas of tax policy in many real jurisdictions, making this risk especially salient here."
+            },
+            {
+                "q": "Why might the taxation of a transfer value paid to a member leaving a DB scheme require particular care, echoing this course's later transfer-value material?",
+                "a": "Different jurisdictions can tax transfer payments differently depending on how and where the transferred value is subsequently held or accessed, so members and their advisers need genuine clarity on the tax consequences of a transfer decision, not just its headline monetary value.",
+                "explain": "This directly previews this course's winding-up-and-transfers module — worth recognising that a transfer's genuine after-tax value to a member can differ materially from its gross headline figure, a point often overlooked in simplified comparisons."
+            }
+        ]
+    },
+    {
+        "id": "m07",
+        "title": "The regulatory environment for pension schemes",
+        "description": "Covers the objectives and tools of pensions regulation, and the approaches to prudential and conduct-style oversight applied to pension schemes.",
+        "cards": [
+            {
+                "q": "Why does pensions regulation typically distinguish between funding/solvency oversight and member-protection/conduct-style oversight, echoing SA1's and CP1's prudential-versus-conduct material?",
+                "a": "Funding oversight focuses on whether a scheme (and its sponsor) can genuinely meet its promised benefits over time, while conduct-style oversight focuses on whether trustees and administrators treat members fairly (e.g. in communications, transfer advice, and administration), addressing genuinely distinct risks.",
+                "explain": "This directly recalls SA1's and CP1's prudential-versus-conduct distinction — worth recognising this same universal regulatory framework applying to pensions, even though the underlying institutions (trustees, sponsors) differ from an insurance company."
+            },
+            {
+                "q": "Why might a pensions regulator have specific powers to intervene where a sponsor's covenant has genuinely weakened, beyond standard funding monitoring, echoing Module 5's material?",
+                "a": "Since scheme member security depends directly on the sponsor's ongoing financial health (Module 5's sponsor-covenant material), a regulator may need powers to require additional funding, restrict corporate actions that could weaken the covenant further, or otherwise protect members when the sponsor's ability to support the scheme genuinely deteriorates.",
+                "explain": "This directly recalls Module 5's sponsor-covenant material — worth recognising these specific regulatory powers as a direct RESPONSE to the genuinely distinctive sponsor-covenant risk pension schemes carry, unlike a standalone insurance company."
+            },
+            {
+                "q": "Why might trustees of a pension scheme have distinct governance and fiduciary responsibilities, separate from both the sponsor's management and the scheme actuary's technical role?",
+                "a": "Trustees are typically responsible for acting in the genuine best interests of scheme members and beneficiaries, requiring them to exercise independent judgement (e.g. on funding, investment strategy, and benefit administration) that may not always align with the sponsor's own commercial interests.",
+                "explain": "This directly recalls SA1's personal-accountability material — worth recognising trustees as occupying a genuinely distinct governance role, structurally separate from the actuary's technical advisory role and the sponsor's own management, each with different duties and accountabilities."
+            },
+            {
+                "q": "Why might a scheme actuary hold statutory responsibilities (e.g. providing a formal actuarial valuation opinion) carrying personal professional accountability, echoing SA1's and SA3's material?",
+                "a": "A statutory actuarial role typically carries personal accountability for specific technical opinions (e.g. on funding adequacy), meaning the individual actuary can face professional consequences distinct from, and sometimes in tension with, the sponsor's or trustees' own commercial or strategic interests.",
+                "explain": "This directly recalls SA1's and SA3's personal-accountability material — worth recognising this same principle recurring here specifically for the scheme actuary role in pensions."
+            },
+            {
+                "q": "Why might pensions regulation increasingly require schemes to demonstrate genuine, forward-looking risk management (echoing Solvency II's ORSA-style thinking), rather than assessing funding purely at a single valuation date?",
+                "a": "A scheme's funding position and sponsor covenant can both evolve significantly between valuations, so forward-looking risk assessment helps trustees and regulators identify emerging problems earlier, rather than relying solely on periodic, backward-looking valuation snapshots.",
+                "explain": "This directly recalls SA1's and SA2's ORSA material — worth recognising this same forward-looking risk-assessment principle extending into pensions regulation, even without a formal Solvency-II-style regime applying directly to most pension schemes."
+            }
+        ]
+    },
+    {
+        "id": "m08",
+        "title": "The legislative environment for pension schemes",
+        "description": "Covers key pensions legislation such as auto-enrolment and equalisation requirements, and their implications for scheme design and administration.",
+        "cards": [
+            {
+                "q": "What is 'auto-enrolment' legislation, and why does it directly affect DC scheme membership and design, echoing Module 3's material?",
+                "a": "Auto-enrolment legislation requires eligible employees to be automatically enrolled into a qualifying pension scheme (typically DC) unless they actively opt out, directly increasing scheme membership and contribution flows, and placing genuine pressure on scheme design (e.g. default investment strategy, per Module 3) to suit a much broader, more passive membership base.",
+                "explain": "This directly recalls Module 3's default-investment-strategy material — worth recognising auto-enrolment as the LEGISLATIVE DRIVER that makes default strategy design so practically important: most auto-enrolled members never actively engage with their scheme."
+            },
+            {
+                "q": "Why might 'equalisation' legislation (requiring equal treatment of different genders in pension benefits) have required genuinely complex retrospective actuarial work for some historic DB schemes?",
+                "a": "Where historic scheme rules provided different benefits (e.g. different normal pension ages) by gender, equalisation requirements can require retrospective recalculation and adjustment of past benefits to eliminate the unequal treatment, a genuinely complex exercise given the need to identify and correct decades of historic administration.",
+                "explain": "Worth recognising equalisation as a genuine real-world example of legislation creating substantial RETROSPECTIVE actuarial and administrative work, not just affecting benefits accruing going forward."
+            },
+            {
+                "q": "Why might legislation mandating minimum funding standards for DB schemes directly affect a sponsor's contribution strategy, echoing this course's later funding-valuation material?",
+                "a": "Minimum funding standards can require a sponsor to make specified contributions to address any funding shortfall within a defined period, directly constraining the sponsor's own discretion over contribution timing and amount, previewing the recovery-plan material covered in the funding valuation modules.",
+                "explain": "This directly previews this course's funding-valuation modules — worth recognising minimum funding legislation as the LEGAL BACKSTOP behind the funding valuation and recovery plan process developed in more technical detail there."
+            },
+            {
+                "q": "Why might legislation restricting or regulating pension transfer advice (e.g. requiring members to take independent financial advice before transferring a large DB benefit) have been introduced?",
+                "a": "Given the genuine complexity and often irreversible nature of giving up a DB scheme's guaranteed benefits in exchange for a DC transfer value, such legislation aims to ensure members receive genuinely informed, independent advice before making a decision with potentially serious, hard-to-reverse consequences for their retirement security.",
+                "explain": "This directly previews this course's transfer-value module — worth recognising this legislation as a genuine, direct CONDUCT PROTECTION responding to the serious consequences of an ill-informed transfer decision."
+            },
+            {
+                "q": "Why might pensions legislation continue to evolve significantly over time, more so than in some other areas of insurance regulation, echoing this course's recurring theme?",
+                "a": "Pension policy is often politically salient (affecting a large proportion of the population's retirement security) and must respond to genuinely evolving demographic and economic conditions, meaning legislative change in this area tends to be frequent and can have significant retrospective as well as prospective effects.",
+                "explain": "This directly recalls SA1's political-risk material — worth recognising pensions legislation as one of the most FREQUENTLY-CHANGING regulatory areas across the whole actuarial curriculum, given its political salience and genuine long-term demographic drivers."
+            }
+        ]
+    },
+    {
+        "id": "m09",
+        "title": "Funding valuations (1): approaches and assumptions",
+        "description": "Covers the purpose of a DB scheme funding valuation, and the key assumptions and approaches used to determine an appropriate funding target.",
+        "cards": [
+            {
+                "q": "What is the core purpose of a DB scheme's funding valuation, echoing CB1's and SA1's equivalence-principle material?",
+                "a": "To assess whether the scheme's current assets are sufficient to meet its accrued liabilities (the promised benefits already earned by members), and if not, to determine an appropriate contribution plan to address any shortfall — a genuine application of matching assets against liabilities, much like an insurer's technical provisions calculation.",
+                "explain": "This directly recalls SA1's and SA2's technical-provisions material — worth recognising a funding valuation as genuinely analogous to an insurer's liability valuation, just applied to a pension scheme's trustee-sponsor structure rather than an insurance company."
+            },
+            {
+                "q": "Why might a funding valuation's discount rate assumption require genuine judgement, rather than a single universally correct rate, echoing CM1's and SA2's material?",
+                "a": "The discount rate should reflect the expected return on the scheme's actual (or intended) investment strategy and its genuine level of prudence, so different schemes with different investment strategies and risk appetites can reasonably adopt different discount rates, without there being one single objectively correct answer.",
+                "explain": "This directly recalls CM1's discounting material and SA2's discount-rate-judgement material — worth recognising the discount rate as one of the most consequential, genuinely judgement-based assumptions in the whole funding valuation process."
+            },
+            {
+                "q": "Why might mortality and longevity assumptions be particularly significant for a DB scheme funding valuation, echoing SA2's annuity material?",
+                "a": "Since DB pensions are paid for as long as members (and often their dependants) survive, understating future longevity improvement would understate the scheme's true liability, exactly the same inverted mortality-improvement sensitivity SA2 identifies for annuity business.",
+                "explain": "This directly recalls SA2's inverted-mortality-improvement material — worth recognising DB pension funding as facing genuinely the SAME longevity risk direction and sensitivity as SA2's annuity pricing, just from a scheme rather than an insurer's perspective."
+            },
+            {
+                "q": "Why might a funding valuation need genuine, scheme-specific assumptions about member behaviour (e.g. commutation of pension for cash, or early retirement take-up rates)?",
+                "a": "Different membership demographics and scheme rules can lead to genuinely different member behaviour patterns, so assumptions calibrated to one scheme's membership may not be appropriate for another, requiring the actuary to exercise genuine judgement informed by the specific scheme's own experience where available.",
+                "explain": "This directly recalls CS1's credibility-theory material — worth recognising scheme-specific behavioural assumptions as another genuine example of blending general/external data with scheme-specific own experience where credible."
+            },
+            {
+                "q": "Why might trustees and the sponsor sometimes have genuinely different preferences regarding the prudence built into a funding valuation's assumptions?",
+                "a": "Trustees, prioritising member security, may prefer more prudent assumptions producing a higher funding target, while the sponsor, managing its own cashflow and business priorities, may prefer less prudent assumptions producing a lower, more affordable funding target, reflecting the same genuine member-security-versus-sponsor-affordability trade-off raised in Module 2.",
+                "explain": "This directly recalls Module 2's member-security-versus-sponsor-affordability material — worth recognising this same fundamental tension recurring here specifically in the context of ASSUMPTION-SETTING for a funding valuation, not just overall scheme design."
+            }
+        ]
+    },
+    {
+        "id": "m10",
+        "title": "Funding valuations (2): technical provisions and recovery plans",
+        "description": "Covers the concept of technical provisions for a DB scheme, and how a recovery plan addresses any funding shortfall identified by a valuation.",
+        "cards": [
+            {
+                "q": "What are a DB scheme's 'technical provisions', echoing SA1's and SA2's Solvency II material?",
+                "a": "The assessed value of the scheme's accrued liabilities under the funding valuation's chosen assumptions, representing the amount of assets the scheme should genuinely hold to meet its promised benefits on the funding basis adopted — directly analogous to an insurer's best estimate liability.",
+                "explain": "This directly recalls SA1's and SA2's technical-provisions material — worth recognising this as the SAME underlying concept (a liability valuation on a specified basis), just without Solvency II's specific risk-margin and matching-adjustment mechanics, which do not directly apply to most pension schemes."
+            },
+            {
+                "q": "What is a 'recovery plan', and when does a scheme typically need one?",
+                "a": "A recovery plan is a schedule of additional contributions the sponsor agrees to pay to eliminate a funding shortfall (where scheme assets are less than technical provisions) over an agreed period, negotiated between trustees and the sponsor and typically subject to regulatory oversight.",
+                "explain": "Worth recognising the recovery plan as the PRACTICAL MECHANISM through which a funding shortfall identified by the valuation (Module 9's material) is actually addressed over time, not a separate, unrelated concept."
+            },
+            {
+                "q": "Why might the length of a recovery plan involve a genuine trade-off between sponsor affordability and member security, echoing Module 9's material?",
+                "a": "A longer recovery period spreads the additional contributions over more years, easing the sponsor's near-term cash burden, but leaves the scheme underfunded for longer, genuinely increasing the risk that adverse experience or sponsor distress could prevent the shortfall ever being fully addressed.",
+                "explain": "This directly recalls Module 9's member-security-versus-sponsor-affordability material — worth recognising recovery plan LENGTH as a concrete, quantifiable expression of this same fundamental trade-off."
+            },
+            {
+                "q": "Why might a scheme actuary need to assess the sponsor's covenant strength when advising trustees on an appropriate recovery plan, echoing Module 5's material?",
+                "a": "A weaker sponsor covenant may genuinely justify requiring a shorter recovery period or higher near-term contributions (since the scheme cannot rely on the sponsor's ongoing support with the same confidence), while a stronger covenant may reasonably support a longer, more gradual recovery plan.",
+                "explain": "This directly recalls Module 5's sponsor-covenant material — worth recognising covenant assessment as a genuinely necessary INPUT to sound recovery plan advice, not a separate, unrelated consideration from the funding numbers themselves."
+            },
+            {
+                "q": "Why might a funding valuation and recovery plan need to be reviewed periodically (e.g. every three years), rather than being set once and left unchanged, echoing this course's recurring ongoing-review theme?",
+                "a": "The scheme's funding position, sponsor covenant, and demographic/economic environment can all change materially over time, so periodic revaluation ensures the recovery plan remains genuinely appropriate to the scheme's current circumstances, rather than being based on an increasingly outdated assessment.",
+                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to pension funding valuations, typically required at set intervals by both good practice and regulatory requirement."
+            }
+        ]
     }
-
     ]
 };
