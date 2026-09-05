@@ -12319,6 +12319,289 @@ const MODULES = {
                 "explain": "This closing card ties Modules 13-15 together explicitly — worth recognising that nothing in this module changes the underlying NPV formula itself; it only refines the INPUTS (cashflows and discount rate) to make the resulting NPV a more accurate, realistic reflection of a genuine investment decision."
             }
         ]
+    },
+    {
+        "id": "m16",
+        "title": "Business valuation methods",
+        "description": "Covers the main approaches to valuing a whole business or its shares — asset-based, earnings-based, dividend-based, and cashflow-based valuation methods.",
+        "cards": [
+            {
+                "q": "Why might a business need to be formally valued?",
+                "a": "For purposes such as a takeover or merger (Module 18), a share sale, raising new finance, tax purposes, or resolving a dispute between shareholders.",
+                "explain": "This module directly previews Module 18's mergers and acquisitions material — a proposed takeover is one of the single most common, high-stakes reasons a business valuation is genuinely needed, since both parties must agree (or dispute) a fair price."
+            },
+            {
+                "q": "What is 'asset-based valuation', as an approach to valuing a business?",
+                "a": "Valuing a business as the net value of its underlying assets (typically at market value) minus its liabilities, broadly equivalent to a market-value-adjusted balance sheet.",
+                "explain": "This is Module 2's balance sheet recalled directly, but restated using MARKET values rather than accounting book values — worth remembering the balance sheet's book values (e.g. depreciated cost) can diverge substantially from what those same assets would fetch if genuinely sold today."
+            },
+            {
+                "q": "Why might asset-based valuation understate the true value of a profitable, ongoing business?",
+                "a": "It ignores the business's ability to generate future profits and cashflows beyond simply liquidating its assets — a highly profitable business with modest physical assets (e.g. a services company) could be worth far more as a going concern than its net asset value alone suggests.",
+                "explain": "This is worth remembering as the central limitation motivating every other valuation approach in this module — asset-based valuation is really best suited to a business being wound up or one with few genuine future earning prospects beyond its physical assets."
+            },
+            {
+                "q": "What is the 'price/earnings' (P/E) ratio, and how is it used in earnings-based valuation?",
+                "a": "A company's share price divided by its earnings per share (EPS); a target company can be valued by applying a suitable comparable P/E ratio (e.g. from similar listed companies) to its own earnings.",
+                "explain": "This is Module 3's EPS concept given its direct valuation application — worth recognising this method as fundamentally a COMPARABLES approach: it values a company relative to how the market prices similar, already-known companies, rather than building a valuation from first principles."
+            },
+            {
+                "q": "Why might choosing an appropriate comparable P/E ratio for a private (unlisted) company be genuinely challenging?",
+                "a": "Private companies typically lack directly comparable listed peers with identical risk, growth, and size characteristics, and a private company's shares are also less liquid than listed shares, often warranting a discount to any comparable P/E used.",
+                "explain": "This is worth connecting to Module 1's private-versus-public distinction — the earnings-based method's reliability depends heavily on finding a genuinely comparable listed company, which is often harder than it first appears for a smaller or more specialised private business."
+            },
+            {
+                "q": "How does the dividend valuation model (dividend growth model) value a share, and how does this connect to its earlier use in this course?",
+                "a": "It values a share as the present value of its expected future dividends, using $P_0 = \\dfrac{D_0(1+g)}{k_e - g}$ — exactly the same formula Module 10 used to ESTIMATE cost of equity, now rearranged to solve for the share price instead.",
+                "explain": "This is worth recognising explicitly as the same formula from Module 10 used in reverse — there, share price was known and the formula solved for $k_e$; here, $k_e$ is assumed known (e.g. from CAPM) and the formula solves for the share's theoretical value $P_0$ instead."
+            },
+            {
+                "q": "What is a key limitation of the dividend valuation model shared with its earlier use in Module 10?",
+                "a": "It relies on the constant-growth assumption and cannot meaningfully value a company that pays no dividend, exactly the same limitations flagged when the model was first introduced for estimating cost of equity.",
+                "explain": "This is worth remembering as a direct callback rather than a new idea — since the underlying formula is identical to Module 10's, its limitations transfer over completely unchanged."
+            },
+            {
+                "q": "What is 'discounted cashflow' (DCF) valuation, as applied to valuing a whole business?",
+                "a": "Valuing a business as the present value of its expected future free cashflows, discounted at an appropriate rate (typically WACC).",
+                "explain": "This is Module 4's free cash flow concept and Module 13's NPV discounting machinery combined directly — worth recognising DCF business valuation as essentially treating the WHOLE business as a single giant investment project, valued using exactly the same NPV logic Module 13 developed for a single project."
+            },
+            {
+                "q": "Why is DCF valuation often considered the most theoretically robust of the valuation methods covered in this module?",
+                "a": "It's grounded directly in the same present-value, cashflow-based logic underlying NPV (Module 13), which this course has established as the theoretically superior approach to valuing any investment or asset.",
+                "explain": "Worth connecting this explicitly to Module 13's closing arguments for NPV's superiority over payback and ARR — the same reasoning (cashflow-based, time-value-of-money-adjusted) that made NPV the preferred project appraisal technique makes DCF the preferred whole-business valuation technique too."
+            },
+            {
+                "q": "What is a key practical challenge in applying DCF valuation to a real business?",
+                "a": "It requires forecasting cashflows many years into the future and choosing an appropriate discount rate and terminal value assumption, all of which involve substantial estimation uncertainty that can materially affect the resulting valuation.",
+                "explain": "This directly echoes Module 13's own practical-limitation card about NPV generally — worth recognising the same forecasting uncertainty concern scales up considerably when projecting an entire business's cashflows over many years, rather than a single, more contained project."
+            },
+            {
+                "q": "What is a 'terminal value', in the context of a multi-year DCF business valuation?",
+                "a": "An estimate of the business's value at the end of the explicit forecast period, representing all cashflows beyond that point, often calculated using a perpetuity-based formula similar to the dividend growth model.",
+                "explain": "This is worth connecting directly to CM1's perpetuity valuation techniques — since forecasting cashflows indefinitely into the future isn't practical, a terminal value effectively 'caps off' the explicit forecast with a single, simplified present-value figure representing everything beyond it."
+            },
+            {
+                "q": "Why might a business's market capitalisation (for a listed company) differ from a valuation derived using asset-based, earnings-based, or DCF methods?",
+                "a": "Market capitalisation reflects the actual price at which the market currently trades the company's shares, which incorporates the market's own (possibly different) expectations, sentiment, and information, and may not exactly match any single valuation model's theoretical output.",
+                "explain": "This directly connects to CM2's market efficiency material — worth recognising market price as itself just one more 'estimate' of value, informed by all publicly available information (under semi-strong efficiency), which different valuation models are essentially trying to independently replicate or challenge."
+            },
+            {
+                "q": "Why might a valuer use several different methods together, rather than relying on a single valuation approach?",
+                "a": "Each method has different strengths and weaknesses and relies on different assumptions, so triangulating across several methods (asset-based, earnings-based, DCF) gives a more robust, cross-checked view of a business's likely value range than any single method alone.",
+                "explain": "This directly echoes CP2's independent-recalculation checking principle — using multiple, genuinely different valuation methods that broadly agree gives far more confidence in the resulting valuation than relying on a single method's output in isolation."
+            },
+            {
+                "q": "How does the choice of valuation method typically depend on the purpose of the valuation and the nature of the business being valued?",
+                "a": "A business being wound up may be valued primarily on an asset basis; a stable, profitable going concern might be valued primarily on earnings or DCF; a company with volatile or no current profits might need a DCF approach built around future potential rather than current earnings.",
+                "explain": "This closing card ties the whole module together — worth treating valuation method selection itself as a judgement call (echoing CP1's recurring theme), matched to the specific business and purpose at hand, rather than a single universally 'correct' technique."
+            }
+        ]
+    },
+    {
+        "id": "m17",
+        "title": "Dividend policy",
+        "description": "Covers the theory and practical considerations behind a company's decision on how much profit to distribute as dividends versus retain for reinvestment.",
+        "cards": [
+            {
+                "q": "What is 'dividend policy'?",
+                "a": "A company's approach to deciding how much of its profit to distribute to shareholders as dividends, versus how much to retain for reinvestment in the business.",
+                "explain": "This directly recalls Module 8's retained-earnings material and Module 1's dividend/distribution decision — worth recognising dividend policy as the direct resolution of that third fundamental financing decision named right at the start of this course."
+            },
+            {
+                "q": "What does the Modigliani-Miller 'dividend irrelevance' theory state, in a world with no taxes or transaction costs?",
+                "a": "In a perfect capital market, a company's dividend policy has no effect on its share value — shareholders are indifferent between receiving dividends now or the company retaining and reinvesting the profit (which should increase future share price/capital gains instead).",
+                "explain": "This is exactly the same MM 'irrelevance' logic from Module 11's capital structure material, now applied to dividend policy rather than financing mix — worth recognising both as MM's characteristic theoretical starting point: in a perfect market, a particular financial DECISION doesn't matter, only the company's underlying cashflows do."
+            },
+            {
+                "q": "Why might dividend policy matter in practice, despite MM's theoretical irrelevance result?",
+                "a": "Real markets have taxes, transaction costs, and information asymmetries that MM's theory assumes away, meaning dividend decisions can genuinely affect shareholder wealth and share price in practice.",
+                "explain": "This is worth reading exactly like Module 11's tax-adjusted MM refinement — the theoretical baseline (irrelevance) gets modified once real-world frictions are introduced, and the rest of this module explores precisely which frictions make dividend policy matter."
+            },
+            {
+                "q": "What is the 'signalling effect' of a dividend change?",
+                "a": "Because managers typically have better information about a company's prospects than outside shareholders, a change in dividend (especially a cut) is often interpreted by the market as a signal about management's genuine view of future prospects.",
+                "explain": "This is exactly the same information-asymmetry logic from Module 8's pecking order theory card, now applied to dividends rather than financing choices — worth recognising this as the SAME underlying market-signalling mechanism recurring in a different corporate finance context."
+            },
+            {
+                "q": "Why might a dividend cut typically cause a company's share price to fall, even if the cash saved is reinvested productively?",
+                "a": "The market often interprets a dividend cut as a negative signal about management's confidence in future cashflows, causing share price to fall due to this signalling effect, regardless of the (potentially sound) underlying financial logic for the cut.",
+                "explain": "This is a genuinely important practical consequence worth remembering — it's precisely why companies are often very reluctant to cut dividends even when retaining the cash might be the theoretically sound decision, since the market's negative reaction to the SIGNAL can outweigh the benefit of the retained cash."
+            },
+            {
+                "q": "What is the 'clientele effect', as it relates to dividend policy?",
+                "a": "Different groups of investors (clienteles) have different preferences for dividend income versus capital gains (e.g. due to differing tax situations or income needs), so a company's dividend policy can attract a particular clientele of investors suited to that policy.",
+                "explain": "Worth recognising the practical implication: a company that suddenly and significantly changes its dividend policy risks disappointing its existing shareholder clientele (who chose the shares partly BECAUSE of the prior policy), even if the new policy is otherwise reasonable."
+            },
+            {
+                "q": "Why might a company prefer a stable, consistent dividend policy over one that fluctuates with each year's actual profit?",
+                "a": "Shareholders (and the clientele effect above) often value predictability, and volatile dividends can send confusing or negative signals (the signalling effect above) even when driven purely by normal year-to-year profit fluctuation rather than any genuine change in prospects.",
+                "explain": "This directly connects the clientele effect and signalling effect cards together — worth recognising dividend STABILITY as a genuinely important, distinct objective in its own right, not simply a byproduct of choosing an appropriate overall payout level."
+            },
+            {
+                "q": "What is a 'residual dividend policy'?",
+                "a": "A policy where a company first funds all its positive-NPV investment opportunities from available profit, then distributes whatever profit remains (the residual) as dividends.",
+                "explain": "This directly connects Module 13's NPV decision rule to dividend policy — worth recognising this as a genuinely principled approach: investment decisions (funding every positive-NPV project) take priority, and dividends are simply whatever's left over once all worthwhile investment has been funded."
+            },
+            {
+                "q": "What is a 'scrip dividend' (stock dividend)?",
+                "a": "A dividend paid in the form of additional shares rather than cash, allowing a company to reward shareholders without an equivalent cash outflow.",
+                "explain": "This is worth connecting to Module 4's cash flow material — a scrip dividend preserves the company's cash (relevant if it's facing a cash constraint per Module 7) while still providing shareholders with something of value, though it doesn't fundamentally increase the total value of what each shareholder holds."
+            },
+            {
+                "q": "Why might a company facing a temporary cash shortage prefer to offer a scrip dividend rather than cut its cash dividend entirely?",
+                "a": "It can preserve cash within the business while avoiding (or softening) the negative signalling effect that an outright dividend cut would likely trigger.",
+                "explain": "This directly combines two earlier cards in this module — worth recognising a scrip dividend as a genuine compromise solution addressing both the cash-preservation need (Module 7's working capital concerns) and the signalling/clientele concerns raised earlier in this module."
+            },
+            {
+                "q": "How might a company's dividend policy interact with the capital structure decisions covered in Module 11?",
+                "a": "Retaining more profit (paying lower dividends) increases equity finance from retained earnings, potentially reducing the need for external financing and affecting the company's overall gearing level over time.",
+                "explain": "This connects directly back to Module 8's retained-earnings material and Module 11's capital structure theory — worth recognising dividend policy and capital structure as genuinely INTERLINKED decisions, not two entirely separate topics, since retaining profit is itself a financing choice."
+            },
+            {
+                "q": "Why is dividend policy ultimately considered a genuine judgement call for a company's board, rather than a decision with one theoretically 'correct' answer?",
+                "a": "It must balance MM's theoretical irrelevance baseline against real-world signalling effects, clientele preferences, cash needs, and investment opportunities, none of which point to a single universally optimal policy for every company.",
+                "explain": "This closing card ties the whole module together — worth recognising dividend policy as another genuine instance of CP1's recurring theme: technical theory (MM irrelevance) provides a useful starting point, but real decisions require weighing multiple, sometimes competing, practical considerations through professional judgement."
+            }
+        ]
+    },
+    {
+        "id": "m18",
+        "title": "Mergers, acquisitions and corporate restructuring",
+        "description": "Covers why and how companies combine through mergers and acquisitions, how a target company might be valued and paid for, and common reasons M&A activity fails to create value.",
+        "cards": [
+            {
+                "q": "What is the difference between a 'merger' and an 'acquisition' (takeover)?",
+                "a": "A merger is a combination of two companies of broadly similar size, typically on mutually agreed terms; an acquisition (takeover) is where one company (the acquirer) purchases a controlling stake in another (the target), which may be agreed or contested.",
+                "explain": "This distinction matters more in practice than in strict legal terms — worth noting the underlying financial evaluation techniques (valuation, methods of payment) covered in this module apply broadly the same way to both, even though the negotiating dynamics can differ considerably."
+            },
+            {
+                "q": "What is a 'horizontal merger'?",
+                "a": "A merger between two companies operating in the same industry at the same stage of production, often direct competitors.",
+                "explain": "This is worth connecting to CB2's market structure material — a horizontal merger directly reduces the number of competitors in a market, which is exactly why such mergers often attract close regulatory (competition authority) scrutiny."
+            },
+            {
+                "q": "What is a 'vertical merger'?",
+                "a": "A merger between two companies at different stages of the same supply chain, e.g. a manufacturer merging with one of its key suppliers or distributors.",
+                "explain": "Worth connecting this to Module 7's working capital and Module 9's trade credit material — a vertical merger can directly reduce reliance on external suppliers/customers, potentially improving control over the working capital cycle discussed in that earlier module."
+            },
+            {
+                "q": "What is a 'conglomerate merger'?",
+                "a": "A merger between two companies in genuinely unrelated industries, with little or no direct operational overlap.",
+                "explain": "This is worth contrasting with the diversification logic seen elsewhere in this curriculum — while diversification can reduce risk for an INVESTOR holding a portfolio of separate shares, a conglomerate merger diversifying a single COMPANY's operations doesn't necessarily create similar value, since shareholders could typically diversify more cheaply themselves by holding separate shares directly."
+            },
+            {
+                "q": "What is 'synergy', as a commonly cited motivation for mergers and acquisitions?",
+                "a": "The idea that the combined company will be worth more than the sum of the two separate companies' individual values, e.g. through cost savings, increased market power, or complementary capabilities.",
+                "explain": "This is worth remembering as the central economic JUSTIFICATION most M&A deals are built around — worth being appropriately sceptical of it too, since (as a later card explores) genuinely realising claimed synergies in practice is notoriously difficult."
+            },
+            {
+                "q": "How might a bidding company estimate an appropriate value to offer for a target company?",
+                "a": "Using the valuation methods covered in Module 16 (asset-based, earnings-based, DCF) applied to the target, often incorporating an estimate of expected synergy value on top of the target's standalone value.",
+                "explain": "This is Module 16's whole valuation toolkit applied directly to a specific, high-stakes application — worth recognising the target's value to the ACQUIRER can genuinely exceed its standalone value precisely because of the synergy benefits the previous card described."
+            },
+            {
+                "q": "What is a 'takeover premium'?",
+                "a": "The amount by which the offer price for a target company exceeds its pre-bid market value, often reflecting the bidder's expected synergy value and the need to persuade existing shareholders to sell.",
+                "explain": "Worth connecting this directly to the synergy card above — a premium is only genuinely justified if the anticipated synergies are real and achievable; an excessive premium paid for synergies that never materialise is a common, well-documented cause of M&A value destruction, explored further later in this module."
+            },
+            {
+                "q": "What is the difference between a 'cash' offer and a 'share exchange' offer as methods of payment in an acquisition?",
+                "a": "A cash offer pays target shareholders in cash for their shares; a share exchange offer gives target shareholders new shares in the combined/acquiring company instead of (or alongside) cash.",
+                "explain": "This connects directly to Module 8's equity finance material — a share exchange offer is effectively the acquirer financing the deal with newly issued equity, which dilutes the acquirer's existing shareholders, exactly the dilution concern raised in that earlier module."
+            },
+            {
+                "q": "Why might target shareholders prefer a cash offer over a share exchange offer?",
+                "a": "Cash provides certain, immediate value, whereas shares in the combined company carry ongoing risk and uncertainty about the future performance and value of that combined entity.",
+                "explain": "This is worth reading as the direct mirror image of Module 8's risk-based argument for why equity investors require higher returns than debt investors — cash is the certain, risk-free option here, while accepting shares means continuing to bear genuine risk in the combined entity's future performance."
+            },
+            {
+                "q": "Why might an acquiring company prefer to finance a takeover using shares rather than cash?",
+                "a": "It avoids the need to raise or use large amounts of cash (or debt), and effectively shares the risk of the acquisition with the target's former shareholders, who become shareholders in the combined entity going forward.",
+                "explain": "This is the acquirer's side of the same trade-off explored in the previous card — worth recognising this as a genuine risk-sharing mechanism: if the anticipated synergies don't materialise, former target shareholders (now holding shares in the combined company) bear part of that disappointment alongside the acquirer's original shareholders, rather than the acquirer alone."
+            },
+            {
+                "q": "What is a 'defensive tactic' a target company's management might use to resist an unwanted takeover bid?",
+                "a": "Actions such as seeking a more favourable alternative bidder (a 'white knight'), making the company less attractive to the bidder, or appealing directly to shareholders to reject the offer.",
+                "explain": "This directly connects to Module 1's agency problem material — worth being appropriately critical here: management resisting a takeover isn't always acting in shareholders' best interests, since a hostile bid at a fair premium might genuinely benefit shareholders even if it threatens management's own job security."
+            },
+            {
+                "q": "Why do many mergers and acquisitions fail to create the value originally anticipated?",
+                "a": "Common reasons include overpaying (an excessive takeover premium), overestimating achievable synergies, poor integration of the two companies' operations and cultures, and management being driven by empire-building motives rather than genuine shareholder value creation.",
+                "explain": "This directly connects back to Module 1's agency problem — worth recognising 'empire-building' as a genuinely important, well-documented example of managers pursuing their own interests (running a larger, more prestigious company) rather than shareholders' interests, exactly the tension that module first introduced."
+            },
+            {
+                "q": "How should a proposed acquisition ultimately be evaluated using the investment appraisal principles developed earlier in this course?",
+                "a": "In principle, an acquisition is just a very large investment decision and can be evaluated using NPV (Module 13) — comparing the present value of the expected incremental cashflows/synergies against the price paid (including any premium), applying the same relevant-cashflow and risk-adjustment principles covered in Modules 13-15.",
+                "explain": "This closing card ties the whole module back to the investment appraisal material — worth recognising that, despite all the additional strategic and behavioural complexity M&A introduces, the underlying financial evaluation is fundamentally the same NPV logic used throughout this course, just applied at a much larger and more complex scale."
+            }
+        ]
+    },
+    {
+        "id": "m19",
+        "title": "Financial markets, risk management and the finance function's role",
+        "description": "Covers the role of financial markets and institutions in business finance, an introduction to corporate risk management/hedging, and how the finance function supports overall business strategy.",
+        "cards": [
+            {
+                "q": "What is the general economic function of financial markets?",
+                "a": "To channel funds from those with surplus capital (savers/investors) to those who need capital (businesses/borrowers), enabling investment and economic activity that wouldn't otherwise be possible.",
+                "explain": "This is worth connecting directly to every source-of-finance module in this course (8-9) — financial markets are precisely the mechanism through which companies actually access the equity and debt finance those modules describe, connecting individual company decisions to the wider economy."
+            },
+            {
+                "q": "What is the difference between a 'primary' market and a 'secondary' market?",
+                "a": "A primary market is where new securities are first issued (e.g. an IPO or rights issue), raising new capital for the issuer; a secondary market is where existing securities are subsequently traded between investors, with no new capital raised for the issuing company.",
+                "explain": "This directly connects to Module 8's IPO and rights issue material — worth recognising that once shares from an IPO start trading on a stock exchange day-to-day, that ongoing trading is entirely SECONDARY market activity, generating no further direct cash for the company itself."
+            },
+            {
+                "q": "What is the Efficient Markets Hypothesis (EMH), and how does it relate to a company's shares?",
+                "a": "The theory that share prices fully reflect available information, so a company's share price at any time represents the market's best estimate of its true underlying value given that information.",
+                "explain": "This is CM2's whole EMH material recalled directly — worth connecting to Module 16's valuation methods here: under semi-strong efficiency, a company's market capitalisation should already reflect a genuinely well-informed valuation, which is exactly why the various valuation methods in that module are often cross-checked against actual market price."
+            },
+            {
+                "q": "What is 'hedging', as a risk management technique available to a business?",
+                "a": "Using financial instruments (e.g. forward contracts, futures, options) to reduce or offset exposure to a specific financial risk, such as interest rate, currency, or commodity price movements.",
+                "explain": "This is CM2's derivatives material and CP1's risk transfer material both recalled directly — worth recognising a business using hedging as doing exactly what an insurer does with reinsurance (CP1 Module 30): deliberately transferring away a specific risk it would rather not bear itself."
+            },
+            {
+                "q": "What is a 'forward contract', in the context of a business hedging a future currency payment?",
+                "a": "An agreement to buy or sell a specified amount of currency at a fixed exchange rate on a specified future date, removing uncertainty about the exchange rate that will apply to that future transaction.",
+                "explain": "This is CM2's forward contract material applied directly to a genuine business use case — worth recognising why an exporting or importing business would use this: it converts an uncertain future cash amount (in domestic currency terms) into a certain, known one, at the cost of giving up any potential upside if the exchange rate moves favourably instead."
+            },
+            {
+                "q": "Why might a business choose not to hedge a particular risk, despite hedging instruments being available?",
+                "a": "Hedging has a cost (the price of the instrument, or the opportunity cost of forgone favourable movements), and a business may judge the risk to be small, well-diversified elsewhere in its operations, or not worth the cost and complexity of hedging.",
+                "explain": "This directly echoes CP1's cost-of-risk-transfer material — worth remembering hedging isn't automatically the right choice for every risk; it's a genuine cost-benefit decision, exactly like the reinsurance cost trade-off covered in that earlier subject."
+            },
+            {
+                "q": "What role does the finance function typically play in supporting a company's overall strategy, beyond routine accounting and reporting?",
+                "a": "Providing financial analysis and appraisal to support strategic decisions (e.g. investment appraisal, M&A evaluation, financing choices), managing financial risk, and ensuring the business has adequate capital and liquidity to pursue its strategic objectives.",
+                "explain": "This closing-section card ties together almost every module in this course — worth recognising the finance function as the genuine PRACTITIONER of everything this course has covered: financial statement analysis (2-6), financing decisions (8-11), investment appraisal (12-16), and risk management (this module)."
+            },
+            {
+                "q": "Why might the finance function be considered a genuinely strategic, rather than purely administrative, part of a business?",
+                "a": "Major strategic decisions (which investments to pursue, how to finance growth, whether to acquire another company) all fundamentally depend on financial analysis and judgement, making finance integral to strategy formulation, not just its after-the-fact reporting.",
+                "explain": "This directly echoes Module 1's opening framing of business finance's importance — worth recognising this as the course coming full circle: the finance function's strategic role is precisely why every technical topic covered since Module 1 matters for genuine business decision-making, not just for producing accurate financial statements."
+            },
+            {
+                "q": "How does corporate governance (introduced via the agency problem in Module 1) relate to the finance function's role within a company?",
+                "a": "Strong governance structures (e.g. board oversight, audit committees, transparent financial reporting) help ensure the finance function's analysis and decisions genuinely serve shareholders' interests, rather than being distorted by the agency problems Module 1 identified.",
+                "explain": "This closes the loop back to Module 1's agency problem material — worth recognising governance as the structural safeguard ensuring everything this course has covered (financial reporting, investment appraisal, M&A evaluation) is conducted with genuine integrity, rather than being manipulated to serve managers' own interests."
+            },
+            {
+                "q": "Why is understanding financial markets and institutions relevant background for interpreting a company's financing choices (Modules 8-9)?",
+                "a": "The availability, cost, and terms of both equity and debt finance are directly shaped by prevailing conditions in financial markets, so a company's financing decisions can't genuinely be understood in isolation from the market context they're made within.",
+                "explain": "This directly recalls the market-conditions card from Module 8 — worth recognising financial markets not as a separate, background topic, but as the genuine environment within which every financing decision covered earlier in this course actually takes place."
+            },
+            {
+                "q": "Why might an actuary working outside a specialist corporate finance role still need to understand financial markets and corporate risk management?",
+                "a": "Actuaries routinely assess counterparty and market risk when valuing investments or advising on an insurer's or pension scheme's asset strategy, and many of the hedging techniques used by businesses (forwards, options) are the same instruments actuaries use in an investment or risk management context.",
+                "explain": "This connects directly back to Module 1's closing card on why CB1 matters for actuaries — worth recognising this whole module as bringing that opening justification full circle, now grounded in the specific financial markets and risk management concepts developed throughout the rest of the course."
+            },
+            {
+                "q": "How does this closing module tie together the recurring themes of business objectives, financing, investment, and risk developed across the whole of CB1?",
+                "a": "Financial markets provide the mechanism through which financing decisions (Modules 8-11) are actually executed, risk management techniques manage the uncertainty surrounding investment decisions (Modules 12-16) and M&A (Module 18), and the finance function coordinates all of this in service of the shareholder wealth objective established in Module 1.",
+                "explain": "This closing card is worth treating as CB1's own summary of itself — every module in this course has ultimately been developing one part of a single, coherent picture: how a business raises capital, decides where to invest it, manages the risks involved, and reports honestly on the results, all in service of the objective Module 1 established at the very start."
+            }
+        ]
     }
 ],
 };
