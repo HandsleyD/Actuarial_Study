@@ -19963,6 +19963,102 @@ const MODULES = {
                 "explain": "This closing card ties Modules 11-13 together explicitly, echoing Module 1's topic-weighting material — worth recognising this three-module sequence as tracing SP7's 'Capital modelling' topic area from initial model CHOICE, through risk AGGREGATION, to final capital QUANTIFICATION."
             }
         ]
+    },
+    {
+        "id": "m14",
+        "title": "Data validation and actuarial investigations",
+        "description": "Covers the use of data and key actuarial investigations in reserving and capital modelling, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why must data validation genuinely be the FIRST step in any reserving or capital modelling exercise, echoing this course's recurring data-as-foundational-risk theme?",
+                "a": "Since every reserving method covered in this course (chain ladder, Bornhuetter-Ferguson, stochastic approaches) relies directly on the genuine accuracy and completeness of the underlying claims data, poor data quality can silently undermine even the most technically sophisticated reserving or capital calculation, making data validation a genuinely essential PRECONDITION, not an optional add-on step.",
+                "explain": "This directly recalls SP1's and SP2's data-as-foundational-risk material — worth recognising this same principle applying with particular force to reserving, given how directly reserving methods depend on the genuine accuracy of historical claims triangles."
+            },
+            {
+                "q": "What genuine checks might a reserving actuary perform as part of data validation before applying reserving methods to a claims triangle?",
+                "a": "Checks might include genuinely reconciling the claims data against the insurer's own financial accounting records, checking for genuine consistency in how claims have been coded and categorised over time, identifying any genuine large or unusual individual claims that might distort aggregate development patterns, and confirming genuine completeness of the data across all relevant accident and development periods.",
+                "explain": "Worth recognising these as genuinely PRACTICAL, concrete validation steps — a strong exam answer discussing data validation should demonstrate awareness of specific, actionable checks, not merely assert that 'data should be validated'."
+            },
+            {
+                "q": "What genuine 'actuarial investigations' might a reserving actuary undertake to support and inform their reserving assumptions, beyond the mechanical application of a chosen method?",
+                "a": "Investigations might include genuinely analysing large claims individually to understand their specific drivers, investigating genuine changes in claims handling processes or case reserving philosophy that could distort development patterns, and comparing actual experience against previous reserving assumptions to identify genuine emerging trends requiring assumption revision.",
+                "explain": "This directly recalls Module 8's IBNR/IBNER material and Module 6's claims-handling-process-change material — worth recognising these investigations as directly supporting and validating the specific reserving concepts already covered earlier in this course."
+            },
+            {
+                "q": "Why might a reserving actuary genuinely investigate the CAUSE of an observed experience variance, rather than simply adjusting future assumptions immediately after any single adverse deviation?",
+                "a": "A single period's adverse variance could reflect genuine random fluctuation, a genuine one-off event, or a genuinely persistent underlying trend, so investigating the underlying CAUSE before revising assumptions avoids both over-reacting to noise and under-reacting to a genuinely important emerging trend, echoing this course's recurring statistical-significance judgement theme.",
+                "explain": "This directly recalls SP1's and SP2's random-fluctuation-versus-trend material — worth recognising this same judgement discipline applying directly to general insurance reserving investigations specifically."
+            },
+            {
+                "q": "How do genuine data validation and actuarial investigations feed directly into the capital modelling topic area covered in Modules 11-13?",
+                "a": "Since capital modelling genuinely depends on the same underlying reserving estimates and uncertainty measures this data-quality and investigation work supports, poor data quality or unvalidated reserving assumptions would directly propagate into an unreliable capital calculation, meaning sound data validation and investigation practice underpins the whole reserving-to-capital pipeline this course develops, not just the reserving topic area in isolation.",
+                "explain": "This closing card ties this module back to Modules 6-13 explicitly — worth recognising data validation and investigation as the genuine FOUNDATION supporting BOTH this course's reserving topic area AND its capital modelling topic area together, not a separate, standalone concern."
+            }
+        ]
+    },
+    {
+        "id": "m15",
+        "title": "Reinsurance programme modelling and counterparty default risk",
+        "description": "Covers modelling proportional and non-proportional reinsurance programmes, and counterparty default risk for general insurers, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why must a reserving actuary genuinely model reinsurance recoveries EXPLICITLY, rather than simply reserving for GROSS claims and treating reinsurance as a separate consideration, echoing SA3's material?",
+                "a": "Since reinsurance recoveries genuinely reduce the insurer's own NET liability, and different reinsurance structures (quota share, surplus, excess of loss) recover in genuinely different ways relative to the underlying gross claims, explicitly modelling the reinsurance programme's genuine recovery mechanics is essential to producing an accurate NET reserve estimate, not merely a gross one requiring separate, informal adjustment.",
+                "explain": "This directly recalls SA3's reinsurance-structure material — worth recognising NET reserving as requiring genuine, explicit modelling of the specific reinsurance programme's recovery mechanics, not an afterthought applied loosely to a gross estimate."
+            },
+            {
+                "q": "Why might modelling a proportional reinsurance treaty's (e.g. quota share) recoveries be genuinely more straightforward than modelling a non-proportional treaty's (e.g. excess of loss) recoveries?",
+                "a": "A proportional treaty cedes a genuinely FIXED PROPORTION of every claim, so recoveries scale directly and predictably with gross claims, while a non-proportional treaty's recoveries depend on whether and by how much AGGREGATE or INDIVIDUAL claims exceed a specified threshold, requiring genuinely more complex modelling of the claims DISTRIBUTION (not just its total) to estimate recoveries accurately.",
+                "explain": "This directly recalls SA1's and SA3's reinsurance-structure-comparison material — worth recognising this same PROPORTIONAL-versus-NON-PROPORTIONAL complexity distinction applying directly to reserving/recovery modelling, not just to the initial reinsurance purchasing decision."
+            },
+            {
+                "q": "Why might modelling a non-proportional treaty's recoveries genuinely require understanding the FULL claims severity distribution, not just the aggregate claims total?",
+                "a": "Since excess of loss recoveries depend on whether INDIVIDUAL claims (or aggregate claims from a specific event) exceed a specified threshold, an actuary must genuinely understand how claims are distributed across different sizes (the severity distribution) to estimate how much of the total claims will genuinely fall above versus below the treaty's attachment point, information a simple aggregate total alone cannot provide.",
+                "explain": "This directly recalls SA3's catastrophe-modelling and severity-distribution material — worth recognising non-proportional reinsurance modelling as requiring genuinely DISTRIBUTIONAL, not merely aggregate, claims information."
+            },
+            {
+                "q": "What is 'counterparty default risk' in the context of a general insurer's reinsurance programme, and why might it directly affect the insurer's genuine net reserve position, echoing SA1's material?",
+                "a": "Counterparty default risk is the genuine risk that a reinsurer fails to pay recoveries the ceding insurer is genuinely entitled to, meaning the insurer's NET reserve position (assuming full recovery) could understate its TRUE potential liability if a reinsurer's own financial weakness is not adequately reflected, requiring a genuine allowance for reinsurer credit risk when reserving on a net basis.",
+                "explain": "This directly recalls SA1's reinsurer-counterparty-risk material — worth recognising this same risk as directly affecting the RESERVING calculation itself, not merely a separate risk-management consideration decided independently of the reserve figure."
+            },
+            {
+                "q": "Why might an insurer genuinely diversify its reinsurance panel across multiple reinsurers, rather than concentrating its whole reinsurance programme with a single counterparty, echoing this course's recurring diversification theme?",
+                "a": "Diversifying across multiple reinsurers reduces the genuine concentration of counterparty default risk with any single reinsurer, echoing this course's recurring diversification-benefit principle now applied specifically to REINSURER counterparty risk rather than underlying insurance risk itself.",
+                "explain": "This directly recalls Module 12's diversification-benefit material — worth recognising this same underlying diversification principle applying to counterparty risk management specifically, a genuinely practical extension of the general diversification concept developed for capital aggregation."
+            }
+        ]
+    },
+    {
+        "id": "m16",
+        "title": "Investment and discounting considerations for reserving",
+        "description": "Covers investment and asset-liability management considerations, and the methods and principles of accounting relevant to reserving, per the official syllabus.",
+        "cards": [
+            {
+                "q": "Why might a general insurer genuinely consider discounting its technical provisions to reflect the time value of money, given claims may not be paid until many years after being reserved for, echoing this course's recurring material?",
+                "a": "Since claims (particularly for long-tail lines, per Module 3's material) may genuinely not be paid for years after the reserve is established, discounting reflects the genuine economic reality that a liability payable in the future is worth LESS today than its nominal, undiscounted amount, directly echoing CM1's foundational time-value-of-money principle.",
+                "explain": "This directly recalls CM1's time-value-of-money material and Module 3's long-tail-business material — worth recognising discounting as directly relevant to general insurance reserving specifically BECAUSE of the genuinely long payment delays long-tail claims can involve."
+            },
+            {
+                "q": "Why might discounting technical provisions require genuine care in choosing an appropriate discount rate, rather than an arbitrary or overly optimistic assumption?",
+                "a": "An excessively high discount rate would understate technical provisions, potentially masking genuine reserve inadequacy, so the discount rate should genuinely reflect the actual investment return the insurer can reliably expect to earn on assets backing these liabilities, echoing this course's recurring theme of genuine, defensible assumption-setting rather than optimistic, unjustified figures.",
+                "explain": "This directly recalls SP1's and SP2's defensible-assumption-setting material — worth recognising discount rate selection as carrying the SAME genuine prudence and defensibility requirements this course applies to every other reserving and pricing assumption."
+            },
+            {
+                "q": "Why must a general insurer's investment strategy for assets backing its technical provisions genuinely reflect the specific DURATION and CERTAINTY of those liabilities, echoing CM2's material?",
+                "a": "Since different lines of business carry genuinely different claim payment timing and predictability (short-tail versus long-tail, per Module 3), investment strategy should genuinely match assets to the SPECIFIC duration and liquidity needs of the liabilities being backed, rather than applying a single, undifferentiated investment approach across an insurer's whole reserve base.",
+                "explain": "This directly recalls CM2's asset-liability matching material and SA3's liability-duration-and-ALM material — worth recognising this same matching principle applying directly to how technical provisions should genuinely be backed by appropriately-matched investment assets."
+            },
+            {
+                "q": "What genuine methods and principles of accounting are relevant to how a general insurer reports its reserves and capital position, echoing SA3's multiple-reporting-bases material?",
+                "a": "Different accounting bases (e.g. statutory/regulatory reporting under Solvency II versus general purpose financial reporting under accounting standards like IFRS 17) can genuinely require different measurement approaches for the SAME underlying liabilities, meaning a reserving actuary must understand which basis is relevant for a given reporting purpose, rather than assuming a single reserve figure serves every genuine reporting need.",
+                "explain": "This directly recalls SA1's, SA2's and SA3's multiple-reporting-bases material — worth recognising this same principle applying to general insurance reserving specifically: different reporting PURPOSES can genuinely warrant different measurement bases for the same underlying liability."
+            },
+            {
+                "q": "How do this module's investment/discounting and accounting material complete SP7's 'Data, investigations, reinsurance and investment' topic area, connecting back to Modules 14-15?",
+                "a": "Module 14 established sound data and investigation practice; Module 15 developed reinsurance programme modelling; this module completes the topic area by addressing how the RESULTING net, discounted reserve estimates genuinely interact with investment strategy and accounting reporting requirements, together forming SP7's final topic area covering the wider practical and financial context surrounding the reserving and capital work developed throughout this whole course.",
+                "explain": "This closing card ties Modules 14-16 together explicitly, echoing Module 1's topic-weighting material — worth recognising this three-module sequence as completing SP7's final topic area, moving from data quality (Module 14) through reinsurance (Module 15) to investment and accounting context (this module)."
+            }
+        ]
     }
     ]
 };
