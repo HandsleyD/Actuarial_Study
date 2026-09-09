@@ -29,6 +29,14 @@ const flashState = {
   _lastKey: "",
 };
 
+// flashState.typed/mixedState.typed are user-typed text that gets injected
+// back into innerHTML (the textarea while answering, the comparison view
+// after reveal) — escape it so a pasted "<script>"/"<img onerror=...>" can't
+// run in the user's own page.
+function escapeHtml(str) {
+  return str.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
 function shuffleArray(arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -428,6 +436,11 @@ function resetAiGradeIfStale(key) {
   }
 }
 
+function userAnswerHtml(typed) {
+  if (!typed || !typed.trim()) return "";
+  return `<div class="flashcard-user-answer"><strong>Your answer:</strong> ${escapeHtml(typed)}</div>`;
+}
+
 function aiGradePanelHtml(typed) {
   if (!typed || !typed.trim()) return "";
   if (!Store.isConfigured() || !Store.getUser()) {
@@ -740,9 +753,10 @@ function renderFlashView(code, moduleId) {
         <div class="flashcard-question">${card.q}</div>
         ${
           !flashState.revealed
-            ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${flashState.typed}</textarea>
+            ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${escapeHtml(flashState.typed)}</textarea>
                <button class="btn primary" id="revealBtn">Reveal answer</button>`
-            : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+            : `${userAnswerHtml(flashState.typed)}
+               <div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
                ${aiGradePanelHtml(flashState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
@@ -891,9 +905,10 @@ function renderMixedView(code) {
         <div class="flashcard-question">${card.q}</div>
         ${
           !mixedState.revealed
-            ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${mixedState.typed}</textarea>
+            ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${escapeHtml(mixedState.typed)}</textarea>
                <button class="btn primary" id="revealBtn">Reveal answer</button>`
-            : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+            : `${userAnswerHtml(mixedState.typed)}
+               <div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
                ${aiGradePanelHtml(mixedState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>

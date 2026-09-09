@@ -867,6 +867,18 @@ main {
   margin-bottom: 18px;
 }
 
+.flashcard-user-answer {
+  background: var(--not-started-bg);
+  color: var(--text);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: 13px 15px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+}
+
 .ai-grade-btn {
   width: 100%;
   margin-bottom: 12px;
