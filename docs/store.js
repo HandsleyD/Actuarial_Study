@@ -22,6 +22,9 @@ const Store = (function () {
   const STATUS_TABLE = "module_status";
   const MASTERY_TABLE = "flashcard_mastery";
   const STREAK_TABLE = "study_streak";
+  const SESSION_TABLE = "session_log";
+  // Reviews with more than this much idle time between them belong to separate sessions.
+  const SESSION_GAP_MS = 30 * 60 * 1000;
 
   let client = null;
   let currentUser = null;
@@ -299,6 +302,104 @@ const Store = (function () {
     return next;
   }
 
+  /* ---------- session log ---------- */
+  //
+  // A "session" is a run of flashcard reviews with no gap longer than
+  // SESSION_GAP_MS between cards. There's no reliable "the user left the
+  // site" event (tab close / phone lock don't fire anything we can count
+  // on), so instead the current session just accumulates in localStorage
+  // and gets closed out the next time a card is reviewed (or the site is
+  // reopened) after the gap has passed — see recordCardReview() and
+  // checkStaleSession().
+
+  function getCurrentSession() {
+    return readLS(lsKey("session"), null);
+  }
+
+  function getLastSessionCache() {
+    return readLS(lsKey("lastSession"), null);
+  }
+
+  function finalizeSession(session) {
+    if (!session || session.cardsReviewed <= 0) return;
+    const finished = { ...session, endedAt: session.lastActivity };
+    writeLS(lsKey("lastSession"), finished);
+    enqueue({ type: "session", value: finished });
+  }
+
+  // Closes out a session left open from a previous visit, if it's gone stale.
+  function checkStaleSession() {
+    const session = getCurrentSession();
+    if (session && Date.now() - session.lastActivity > SESSION_GAP_MS) {
+      finalizeSession(session);
+      writeLS(lsKey("session"), null);
+    }
+  }
+
+  function recordCardReview(mastered) {
+    const now = Date.now();
+    let session = getCurrentSession();
+    if (session && now - session.lastActivity > SESSION_GAP_MS) {
+      finalizeSession(session);
+      session = null;
+    }
+    if (!session) session = { startedAt: now, lastActivity: now, cardsReviewed: 0, cardsMastered: 0 };
+    session.cardsReviewed += 1;
+    if (mastered) session.cardsMastered += 1;
+    session.lastActivity = now;
+    writeLS(lsKey("session"), session);
+  }
+
+  async function loadLastSession() {
+    checkStaleSession();
+    const cache = getLastSessionCache();
+    if (!client || !currentUser) return cache;
+    try {
+      const { data, error } = await client
+        .from(SESSION_TABLE)
+        .select("started_at, ended_at, cards_reviewed, cards_mastered")
+        .eq("user_id", currentUser.id)
+        .order("ended_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (error) throw error;
+      if (data) {
+        const remote = {
+          startedAt: new Date(data.started_at).getTime(),
+          endedAt: new Date(data.ended_at).getTime(),
+          cardsReviewed: data.cards_reviewed,
+          cardsMastered: data.cards_mastered,
+        };
+        if (!cache || remote.endedAt > cache.endedAt) {
+          writeLS(lsKey("lastSession"), remote);
+          return remote;
+        }
+      }
+      return cache;
+    } catch {
+      return cache;
+    }
+  }
+
+  /* ---------- AI answer feedback (optional Supabase Edge Function) ---------- */
+
+  // Grades a typed flashcard answer against the model answer using a
+  // serverless proxy (supabase/functions/grade-answer) so the LLM API key
+  // never has to live in the browser. Requires the user to be signed in —
+  // this endpoint calls an external AI API, so it's gated the same way
+  // cloud sync is, rather than left open to anonymous callers of the public
+  // anon key.
+  async function gradeAnswer({ question, modelAnswer, userAnswer }) {
+    if (!client) throw new Error("Cloud sync isn't set up on this site yet.");
+    if (!currentUser) throw new Error("Sign in to get AI feedback on your answers.");
+    const { data, error } = await client.functions.invoke("grade-answer", {
+      body: { question, modelAnswer, userAnswer },
+    });
+    if (error) throw error;
+    if (!data || !data.verdict) throw new Error((data && data.error) || "AI grading is temporarily unavailable.");
+    return data;
+  }
+
   /* ---------- sync queue ---------- */
 
   async function flushPending() {
@@ -350,6 +451,18 @@ const Store = (function () {
               { onConflict: "user_id" }
             );
             if (error) throw error;
+          } else if (op.type === "session") {
+            const { error } = await client.from(SESSION_TABLE).upsert(
+              {
+                user_id: currentUser.id,
+                started_at: new Date(op.value.startedAt).toISOString(),
+                ended_at: new Date(op.value.endedAt).toISOString(),
+                cards_reviewed: op.value.cardsReviewed,
+                cards_mastered: op.value.cardsMastered,
+              },
+              { onConflict: "user_id,started_at" }
+            );
+            if (error) throw error;
           }
         } catch {
           remaining.push(op); // network/transient error — keep for retry
@@ -387,6 +500,10 @@ const Store = (function () {
     loadStreak,
     bumpStreak,
     getStreakCache,
+    recordCardReview,
+    loadLastSession,
+    getLastSessionCache,
+    gradeAnswer,
     flushPending,
     pendingCount,
   };
