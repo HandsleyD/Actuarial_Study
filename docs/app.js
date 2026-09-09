@@ -384,6 +384,7 @@ function loadAllFlash() {
 
 function scoreCard(code, moduleId, idx, sufficient) {
   Store.setMastery(code, moduleId, idx, sufficient); // instant locally; syncs in the background if signed in
+  Store.recordCardReview(sufficient);
   flashData[code] = { mastery: Store.getMasteryCache(code) };
 
   const def = (MODULES[code] || []).find((m) => m.id === moduleId);
@@ -400,6 +401,7 @@ function scoreCard(code, moduleId, idx, sufficient) {
 
 function scoreMixedCard(code, moduleId, idx, sufficient) {
   Store.setMastery(code, moduleId, idx, sufficient);
+  Store.recordCardReview(sufficient);
   flashData[code] = { mastery: Store.getMasteryCache(code) };
 
   mixedState.revealed = false;
@@ -409,6 +411,61 @@ function scoreMixedCard(code, moduleId, idx, sufficient) {
   renderMixedView(code);
   renderGameBar();
   renderSyncStatus();
+}
+
+/* ---------- AI answer feedback (optional, needs sign-in) ---------- */
+
+// Only one card is ever on screen at a time (flash or mixed view), so a
+// single shared state keyed by which card it's for is enough.
+const aiGradeState = { key: "", status: "idle", result: null, error: "" };
+
+function resetAiGradeIfStale(key) {
+  if (aiGradeState.key !== key) {
+    aiGradeState.key = key;
+    aiGradeState.status = "idle";
+    aiGradeState.result = null;
+    aiGradeState.error = "";
+  }
+}
+
+function aiGradePanelHtml(typed) {
+  if (!typed || !typed.trim()) return "";
+  if (!Store.isConfigured() || !Store.getUser()) {
+    return `<div class="ai-grade-panel hint">Sign in (gear icon) to get AI feedback on typed answers.</div>`;
+  }
+  if (aiGradeState.status === "idle") {
+    return `<button class="btn ai-grade-btn" id="aiGradeBtn">&#10024; Get AI feedback on my answer</button>`;
+  }
+  if (aiGradeState.status === "loading") {
+    return `<div class="ai-grade-panel loading">Grading your answer&hellip;</div>`;
+  }
+  if (aiGradeState.status === "error") {
+    return `<div class="ai-grade-panel error">${aiGradeState.error}</div>`;
+  }
+  const verdict = aiGradeState.result.verdict;
+  const cls = verdict === "Strong" ? "strong" : verdict === "Weak" ? "weak" : "partial";
+  return `
+    <div class="ai-grade-panel ${cls}">
+      <span class="ai-grade-verdict">${verdict}</span>
+      <span class="ai-grade-feedback">${aiGradeState.result.feedback}</span>
+    </div>`;
+}
+
+function wireAiGradeButton(el, card, typed, rerender) {
+  const btn = el.querySelector("#aiGradeBtn");
+  if (!btn) return;
+  btn.addEventListener("click", async () => {
+    aiGradeState.status = "loading";
+    rerender();
+    try {
+      aiGradeState.result = await Store.gradeAnswer({ question: card.q, modelAnswer: card.a, userAnswer: typed });
+      aiGradeState.status = "done";
+    } catch (e) {
+      aiGradeState.status = "error";
+      aiGradeState.error = (e && e.message) || "Couldn't get AI feedback right now.";
+    }
+    rerender();
+  });
 }
 
 /* ---------- gamification ---------- */
@@ -425,6 +482,13 @@ function totalMasteredCards() {
   return total;
 }
 
+function formatRelativeDay(ts) {
+  const days = Math.floor((Date.now() - ts) / 86400000);
+  if (days <= 0) return "Today";
+  if (days === 1) return "Yesterday";
+  return `${days} days ago`;
+}
+
 function renderGameBar() {
   const total = totalMasteredCards();
   const status = fellowshipStatus();
@@ -433,6 +497,12 @@ function renderGameBar() {
   document.getElementById("rankLabel").textContent = status.label;
   document.getElementById("rankSub").textContent = status.sub;
   document.getElementById("streakValue").textContent = Store.getStreakCache().count;
+
+  const lastSession = Store.getLastSessionCache();
+  document.getElementById("lastSessionValue").textContent = lastSession ? `${lastSession.cardsReviewed} cards` : "—";
+  document.getElementById("lastSessionSub").textContent = lastSession
+    ? `${lastSession.cardsMastered} mastered · ${formatRelativeDay(lastSession.endedAt)}`
+    : "No sessions yet";
 }
 
 /* ---------- home view ---------- */
@@ -638,6 +708,7 @@ function renderFlashView(code, moduleId) {
   const realIdx = seq[pos];
   const card = cards[realIdx];
   const isMastered = !!moduleMastery[realIdx];
+  resetAiGradeIfStale(`${code}:${moduleId}:${realIdx}`);
 
   const dots = seq
     .map((realI, i) => {
@@ -672,6 +743,7 @@ function renderFlashView(code, moduleId) {
             ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${flashState.typed}</textarea>
                <button class="btn primary" id="revealBtn">Reveal answer</button>`
             : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               ${aiGradePanelHtml(flashState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
                  <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
@@ -752,6 +824,7 @@ function renderFlashView(code, moduleId) {
   } else {
     document.getElementById("scoreGood").addEventListener("click", () => scoreCard(code, moduleId, realIdx, true));
     document.getElementById("scoreBad").addEventListener("click", () => scoreCard(code, moduleId, realIdx, false));
+    wireAiGradeButton(el, card, flashState.typed, () => renderFlashView(code, moduleId));
   }
 
   renderMath(el);
@@ -784,6 +857,7 @@ function renderMixedView(code) {
   const fd = flashData[code] || { mastery: {} };
   const moduleMastery = (fd.mastery && fd.mastery[entry.moduleId]) || {};
   const isMastered = !!moduleMastery[entry.cardIdx];
+  resetAiGradeIfStale(`mixed:${code}:${entry.moduleId}:${entry.cardIdx}`);
   const { total, masteredCount } = subjectMasteryTotals(code);
 
   const dots = mixedState.entries
@@ -820,6 +894,7 @@ function renderMixedView(code) {
             ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${mixedState.typed}</textarea>
                <button class="btn primary" id="revealBtn">Reveal answer</button>`
             : `<div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               ${aiGradePanelHtml(mixedState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
                  <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
@@ -878,6 +953,7 @@ function renderMixedView(code) {
   } else {
     document.getElementById("scoreGood").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true));
     document.getElementById("scoreBad").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false));
+    wireAiGradeButton(el, card, mixedState.typed, () => renderMixedView(code));
   }
 
   renderMath(el);
@@ -1143,4 +1219,5 @@ Store.init().then(() => {
     Store.bumpStreak();
     renderGameBar();
   });
+  Store.loadLastSession().then(() => renderGameBar());
 });

@@ -20,6 +20,8 @@
   --star: #b7791f;
   --star-bg: #fdf3dc;
   --studying: #6d4aff;
+  --weak: #b91c1c;
+  --weak-bg: #fdecea;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -60,6 +62,8 @@
     --star: #f2c14e;
     --star-bg: #332711;
     --studying: #a78bfa;
+    --weak: #f87171;
+    --weak-bg: #331616;
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -88,6 +92,8 @@
   --star: #f2c14e;
   --star-bg: #332711;
   --studying: #a78bfa;
+  --weak: #f87171;
+  --weak-bg: #331616;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -859,6 +865,67 @@ main {
   font-size: 0.95rem;
   line-height: 1.55;
   margin-bottom: 18px;
+}
+
+.ai-grade-btn {
+  width: 100%;
+  margin-bottom: 12px;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.ai-grade-panel {
+  border-radius: var(--radius-md);
+  padding: 11px 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ai-grade-panel.hint {
+  color: var(--text-muted);
+  background: var(--not-started-bg);
+  font-size: 0.82rem;
+}
+
+.ai-grade-panel.loading {
+  color: var(--text-muted);
+  background: var(--not-started-bg);
+}
+
+.ai-grade-panel.error {
+  color: var(--weak);
+  background: var(--weak-bg);
+}
+
+.ai-grade-panel.strong {
+  background: var(--done-bg);
+}
+
+.ai-grade-panel.partial {
+  background: var(--progress-bg);
+}
+
+.ai-grade-panel.weak {
+  background: var(--weak-bg);
+}
+
+.ai-grade-verdict {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.ai-grade-panel.strong .ai-grade-verdict { color: var(--done); }
+.ai-grade-panel.partial .ai-grade-verdict { color: var(--progress); }
+.ai-grade-panel.weak .ai-grade-verdict { color: var(--weak); }
+
+.ai-grade-feedback {
+  color: var(--text);
 }
 
 .flash-score-row {

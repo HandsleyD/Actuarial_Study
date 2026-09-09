@@ -22,12 +22,14 @@ the old ones instead, "anon" = publishable key, "service_role" = secret key.
 2. Paste the entire contents of [`schema.sql`](./schema.sql) from this folder.
 3. Click **Run**.
 
-This creates three tables (`module_status`, `flashcard_mastery`,
-`study_streak`) with Row Level Security turned on, so each signed-in user can
-only ever read or write their own rows. This is the important part — without
-RLS, anyone could read or overwrite anyone else's progress, since the site
-talks to Supabase using a public key. You can re-run this file safely if you
-ever need to (it won't error on tables/policies that already exist).
+This creates four tables (`module_status`, `flashcard_mastery`,
+`study_streak`, `session_log`) with Row Level Security turned on, so each
+signed-in user can only ever read or write their own rows. This is the
+important part — without RLS, anyone could read or overwrite anyone else's
+progress, since the site talks to Supabase using a public key. You can
+re-run this file safely if you ever need to (it won't error on
+tables/policies that already exist) — that includes picking up `session_log`
+on a project that was already set up before it existed.
 
 ## 3. (Optional) Skip email confirmation
 
@@ -119,6 +121,54 @@ This only writes files locally — review the diff and commit/push yourself
 when you're happy with it. Don't put the Secret key in a file; pass it as an
 environment variable each time (or keep it in a password manager and paste
 it into the shell command when you need it).
+
+## 7. (Optional) AI feedback on typed flashcard answers
+
+When you type an answer before revealing a flashcard, the site can send it
+off to be graded by Google Gemini's free-tier API and show you a
+Strong/Partial/Weak verdict plus a one-line comment — purely advisory, it
+doesn't affect your Sufficient/Insufficient mastery mark. This needs a small
+serverless proxy (a Supabase Edge Function) so the AI API key never has to
+sit in the browser, and it's gated behind sign-in so the free quota can't be
+burned by random visitors reading the public key out of the page source.
+Skip this whole section if you don't want it — everything else on the site
+works fine without it.
+
+**Get a free Gemini API key**
+
+1. Go to [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+   and create a free API key (a Google account is all that's needed — no
+   card, no billing setup).
+
+**Install the Supabase CLI and link this project**
+
+2. Install the CLI — see
+   [supabase.com/docs/guides/local-development/cli/getting-started](https://supabase.com/docs/guides/local-development/cli/getting-started)
+   (e.g. `npm install -g supabase`, or Scoop on Windows).
+3. From the repo root, log in and link:
+
+   ```bash
+   supabase login
+   supabase link --project-ref wcrrobslfcngnwgpsnqa
+   ```
+
+   (`wcrrobslfcngnwgpsnqa` is the project ref from `docs/config.js`'s
+   `SUPABASE_URL` — swap it in if you're running your own project instead of
+   the one this repo ships with.)
+
+**Deploy the function and set the secret**
+
+4. ```bash
+   supabase functions deploy grade-answer
+   supabase secrets set GEMINI_API_KEY=your-key-here
+   ```
+
+That's it — the site automatically shows a "Get AI feedback" button under
+the model answer whenever you've typed something and you're signed in. If
+you ever want to change models or tighten/loosen the grading prompt, it's
+all in
+[`supabase/functions/grade-answer/index.ts`](./functions/grade-answer/index.ts);
+redeploy with the same `supabase functions deploy grade-answer` command.
 
 ## If your project still uses the old anon/service_role keys
 
