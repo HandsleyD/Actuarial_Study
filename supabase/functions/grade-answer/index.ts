@@ -14,7 +14,10 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.4";
 
 const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
-const GEMINI_MODEL = "gemini-3.6-flash";
+// flash-lite over the flagship flash model: this is a one-sentence grading
+// task, not worth the extra cost/latency, and lite models see less of the
+// "high demand" 503s that hit popular flagship models at peak times.
+const GEMINI_MODEL = "gemini-3.5-flash-lite";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 const CORS_HEADERS = {
@@ -37,6 +40,23 @@ async function requireUser(req: Request) {
   const { data, error } = await supabase.auth.getUser();
   if (error || !data?.user) return null;
   return data.user;
+}
+
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Gemini returns 503 ("high demand, try again later") and occasionally 429
+// under load — both are transient, so retry a couple of times with backoff
+// before giving up, rather than failing a grading request outright.
+async function fetchGeminiWithRetry(url: string, options: RequestInit, attempts = 3) {
+  let res: Response | null = null;
+  for (let i = 0; i < attempts; i++) {
+    res = await fetch(url, options);
+    if (res.ok || (res.status !== 503 && res.status !== 429)) return res;
+    if (i < attempts - 1) await sleep(500 * (i + 1));
+  }
+  return res!;
 }
 
 function buildPrompt(question: string, modelAnswer: string, userAnswer: string) {
@@ -70,7 +90,7 @@ Deno.serve(async (req) => {
       return json({ error: "Missing question, modelAnswer, or userAnswer." });
     }
 
-    const geminiRes = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
+    const geminiRes = await fetchGeminiWithRetry(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
