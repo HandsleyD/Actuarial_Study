@@ -26,6 +26,8 @@ const flashState = {
   typed: "",
   mode: "session", // "session" | "full"
   sessionIndices: [],
+  sessionDone: false,
+  sessionStats: { reviewed: 0, mastered: 0 },
   _lastKey: "",
 };
 
@@ -72,7 +74,16 @@ function currentSequence(code, moduleId, def) {
 
 /* ---------- mixed session (across every module in a subject) ---------- */
 
-const mixedState = { code: null, cardIndex: 0, revealed: false, typed: "", entries: [], _lastKey: "" };
+const mixedState = {
+  code: null,
+  cardIndex: 0,
+  revealed: false,
+  typed: "",
+  entries: [],
+  sessionDone: false,
+  sessionStats: { reviewed: 0, mastered: 0 },
+  _lastKey: "",
+};
 
 /* ---------- practice exam question bank ---------- */
 
@@ -395,12 +406,20 @@ function scoreCard(code, moduleId, idx, sufficient) {
   Store.recordCardReview(sufficient);
   flashData[code] = { mastery: Store.getMasteryCache(code) };
 
+  flashState.sessionStats.reviewed += 1;
+  if (sufficient) flashState.sessionStats.mastered += 1;
+
   const def = (MODULES[code] || []).find((m) => m.id === moduleId);
   const seq = def ? currentSequence(code, moduleId, def) : [];
+  const wasLastCard = flashState.cardIndex >= seq.length - 1;
 
   flashState.revealed = false;
   flashState.typed = "";
-  flashState.cardIndex = Math.min(seq.length - 1, flashState.cardIndex + 1);
+  if (wasLastCard) {
+    flashState.sessionDone = true;
+  } else {
+    flashState.cardIndex = flashState.cardIndex + 1;
+  }
 
   renderFlashView(code, moduleId);
   renderGameBar();
@@ -412,9 +431,18 @@ function scoreMixedCard(code, moduleId, idx, sufficient) {
   Store.recordCardReview(sufficient);
   flashData[code] = { mastery: Store.getMasteryCache(code) };
 
+  mixedState.sessionStats.reviewed += 1;
+  if (sufficient) mixedState.sessionStats.mastered += 1;
+
+  const wasLastCard = mixedState.cardIndex >= mixedState.entries.length - 1;
+
   mixedState.revealed = false;
   mixedState.typed = "";
-  mixedState.cardIndex = Math.min(mixedState.entries.length - 1, mixedState.cardIndex + 1);
+  if (wasLastCard) {
+    mixedState.sessionDone = true;
+  } else {
+    mixedState.cardIndex = mixedState.cardIndex + 1;
+  }
 
   renderMixedView(code);
   renderGameBar();
@@ -692,6 +720,36 @@ function renderSubjectView(code) {
   renderMath(el);
 }
 
+/* ---------- session-complete summary (shared by single-module & mixed sessions) ---------- */
+
+// options: { title, backHref, backLabel, stats: {reviewed, mastered}, overallLabel,
+//            onReviewAgain(), onNewSession()|null }
+function renderSessionSummary(el, options) {
+  const { title, backHref, backLabel, stats, overallLabel, onReviewAgain, onNewSession } = options;
+
+  el.innerHTML = `
+    <button class="back-link" id="summaryBack">&larr; ${backLabel}</button>
+    <div class="flash-session-summary">
+      <div class="summary-badge">&#127881;</div>
+      <h2>Session complete!</h2>
+      <p class="summary-title">${title}</p>
+      <p class="summary-stats">You reviewed <strong>${stats.reviewed}</strong> card${stats.reviewed === 1 ? "" : "s"}
+        &mdash; <strong>${stats.mastered}</strong> marked sufficient.</p>
+      <p class="summary-overall">${overallLabel}</p>
+      <div class="summary-actions">
+        ${onNewSession ? `<button class="btn primary" id="summaryNewSession">&#128256; New session</button>` : ""}
+        <button class="btn" id="summaryReviewAgain">&#8635; Review these cards again</button>
+        <button class="btn" id="summaryBackBtn">&larr; Back to ${backLabel}</button>
+      </div>
+    </div>`;
+
+  document.getElementById("summaryBack").addEventListener("click", () => navigate(backHref));
+  document.getElementById("summaryBackBtn").addEventListener("click", () => navigate(backHref));
+  document.getElementById("summaryReviewAgain").addEventListener("click", onReviewAgain);
+  const newSessionBtn = document.getElementById("summaryNewSession");
+  if (newSessionBtn) newSessionBtn.addEventListener("click", onNewSession);
+}
+
 /* ---------- flashcard view ---------- */
 
 function renderFlashView(code, moduleId) {
@@ -714,6 +772,37 @@ function renderFlashView(code, moduleId) {
   const cards = def.cards;
   const total = cards.length;
   const masteredCount = Object.values(moduleMastery).filter(Boolean).length;
+
+  if (flashState.sessionDone) {
+    renderSessionSummary(el, {
+      title: def.title,
+      backHref: `#/${code}`,
+      backLabel: code,
+      stats: flashState.sessionStats,
+      overallLabel: `${masteredCount}/${total} mastered in this module`,
+      onReviewAgain: () => {
+        flashState.sessionDone = false;
+        flashState.sessionStats = { reviewed: 0, mastered: 0 };
+        flashState.cardIndex = 0;
+        flashState.revealed = false;
+        flashState.typed = "";
+        renderFlashView(code, moduleId);
+      },
+      onNewSession:
+        flashState.mode === "session"
+          ? () => {
+              flashState.sessionDone = false;
+              flashState.sessionStats = { reviewed: 0, mastered: 0 };
+              flashState.sessionIndices = generateSession(code, moduleId);
+              flashState.cardIndex = 0;
+              flashState.revealed = false;
+              flashState.typed = "";
+              renderFlashView(code, moduleId);
+            }
+          : null,
+    });
+    return;
+  }
 
   const seq = currentSequence(code, moduleId, def);
   if (flashState.cardIndex >= seq.length) flashState.cardIndex = 0;
@@ -859,6 +948,35 @@ function renderMixedView(code) {
         <p>No flashcards for ${code} yet.</p>
       </div>`;
     document.getElementById("backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
+    return;
+  }
+
+  if (mixedState.sessionDone) {
+    const { total, masteredCount } = subjectMasteryTotals(code);
+    renderSessionSummary(el, {
+      title: `Mixed session &mdash; ${info.name}`,
+      backHref: `#/${code}`,
+      backLabel: code,
+      stats: mixedState.sessionStats,
+      overallLabel: `${masteredCount}/${total} mastered across ${code}`,
+      onReviewAgain: () => {
+        mixedState.sessionDone = false;
+        mixedState.sessionStats = { reviewed: 0, mastered: 0 };
+        mixedState.cardIndex = 0;
+        mixedState.revealed = false;
+        mixedState.typed = "";
+        renderMixedView(code);
+      },
+      onNewSession: () => {
+        mixedState.sessionDone = false;
+        mixedState.sessionStats = { reviewed: 0, mastered: 0 };
+        mixedState.entries = generateMixedSession(code);
+        mixedState.cardIndex = 0;
+        mixedState.revealed = false;
+        mixedState.typed = "";
+        renderMixedView(code);
+      },
+    });
     return;
   }
 
