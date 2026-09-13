@@ -980,6 +980,47 @@ main {
   color: var(--text-muted);
 }
 
+.flash-session-summary {
+  max-width: 480px;
+  margin: 24px auto 0;
+  padding: 32px 28px;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.summary-badge {
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.flash-session-summary h2 {
+  margin: 0 0 4px;
+}
+
+.summary-title {
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.summary-stats {
+  margin: 0 0 6px;
+}
+
+.summary-overall {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+}
+
+.summary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* ---------- explanation panel (flashcards + question bank) ---------- */
 /* Mobile-first: a full-width section under the card/question by default.
    Only promoted to a right-hand column once there's room for both at a
