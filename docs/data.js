@@ -31813,397 +31813,1811 @@ const MODULES = {
       }
   ],
   SP8: [
-    {
-        "id": "m01",
-        "title": "What is Subject SP8 all about?",
-        "description": "An orientation chapter explaining SP8's role as the Specialist Principles subject introducing general insurance pricing technique, and how it complements SP7 and feeds into SA3.",
-        "cards": [
-            {
-                "q": "What is the genuine aim of Subject SP8, echoing the SP-subject template established across this whole curriculum?",
-                "a": "To instil in successful candidates the ability to apply, in simple situations, the main principles and techniques of pricing that are relevant to general insurance business, building directly on the pricing foundation developed in CS2.",
-                "explain": "Worth recognising this as the genuine, standard SP-subject aim structure — SP8 applies core pricing <em>principles</em> to simple situations, with SA3 (which this course feeds into) applying that same underlying knowledge to complex scenarios."
-            },
-            {
-                "q": "What are the four official syllabus topic areas of SP8, and their approximate topic weightings?",
-                "a": "Rating bases and methodologies (35%); General insurance products and the business environment (25%); Data, risks and risk management (25%); and Credibility, reinsurance and catastrophe modelling (15%).",
-                "explain": "Worth memorising these weightings directly — 'Rating bases and methodologies' at 35% is the single largest topic area, meaning fluency with rating technique (burning cost, frequency-severity, GLMs) deserves the greatest concentrated revision effort."
-            },
-            {
-                "q": "How does SP8 relate to SP7 (General Insurance Reserving and Capital Modelling Principles) as a pair of subjects, echoing SP7's own material?",
-                "a": "SP7 focuses on the <em>backward-looking</em> and <em>capital-focused</em> side of general insurance actuarial work — reserving for claims already incurred and modelling capital — while SP8 focuses on the <em>forward-looking</em> side — pricing future business appropriately; together they cover the two complementary technical pillars underlying general insurance actuarial practice.",
-                "explain": "This directly recalls SP7's identical trio-relationship material — worth recognising SP7 and SP8 as <em>complementary</em>, not overlapping subjects, together spanning the full technical scope SA3 later applies to complex, integrated scenarios."
-            },
-            {
-                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP8?",
-                "a": "Approximately 15% knowledge, 60% application, and 25% higher order — a more <em>application</em>-heavy split than SP1's, SP2's, SP4's, SP6's and SP7's standard 25/50/25 pattern, echoing SP5's similarly application-heavy split.",
-                "explain": "Worth recognising this as a distinctive feature of SP8 specifically, shared with SP5 — both place notably <em>less</em> weight on pure knowledge recall (15% versus 25%) and correspondingly <em>more</em> on application, reflecting pricing work's calculation- and scenario-heavy character."
-            },
-            {
-                "q": "Why might genuine actuarial pricing technique in general insurance require blending statistical rigour with genuine underwriting and market judgement, rather than being a purely mechanical calculation exercise?",
-                "a": "While rating methods provide an important statistical foundation, real-world pricing decisions must also account for genuine competitive positioning, underwriting appetite, and business strategy considerations that pure statistical technique alone cannot fully capture, meaning sound pricing combines both technical calculation <em>and</em> commercial judgement.",
-                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising general insurance pricing as one of the clearest, most exam-relevant examples of this genuine blend of technique and judgement across the whole actuarial curriculum."
-            },
-            {
-                "q": "Why might SP8's heavier weighting on 'Application' (60%) mean that practising realistic pricing calculations matters more for exam success than memorising formulas in isolation?",
-                "a": "Since the majority of SP8's marks reward <em>applying</em> pricing principles to specific, realistic scenarios rather than reciting technique in the abstract, genuine exam preparation should prioritise working through realistic pricing problems (e.g. genuine burning cost or GLM-style calculations applied to specific data) over pure formula memorisation alone.",
-                "explain": "Worth treating this weighting as direct, practical revision guidance — a strong SP8 candidate should be comfortable <em>applying</em> each rating technique to realistic numerical scenarios, not just describing what each technique is."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "Premium components and basic rating methodology",
-        "description": "Covers the components of a general insurance premium and the basic methodology used in rating general insurance products, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine components does a general insurance premium consist of, echoing CB1's material?",
-                "a": "A gross premium comprises the expected cost of claims (the pure risk premium), expenses (acquisition, administration, and claims-handling costs), a genuine profit margin/cost of capital loading, and any applicable taxes or levies — together forming the total amount a policyholder actually pays.",
-                "explain": "This directly recalls CB1's premium-component material — worth recognising general insurance premium structure as the direct, practical application of CB1's general equivalence-principle-style pricing framework, just decomposed into its specific general insurance components."
-            },
-            {
-                "q": "What is the 'pure risk premium', and why must it be calculated <em>before</em> the other premium components (expenses, profit margin) can meaningfully be added?",
-                "a": "The pure risk premium represents the genuine expected cost of claims alone, calculated from claim frequency and severity assumptions; since expenses and profit margin are typically expressed as loadings <em>on top</em> of this underlying risk cost, the pure risk premium must be estimated first as the foundational building block the rest of the premium structure is built upon.",
-                "explain": "Worth recognising the pure risk premium as the genuine <em>foundational</em> calculation this whole subject's rating methods (covered in later modules) are ultimately trying to estimate accurately — everything else in the premium structure is added on top of this core estimate."
-            },
-            {
-                "q": "What is the genuine basic methodology used in rating general insurance products, combining frequency and severity, echoing SA3's material?",
-                "a": "The basic rating methodology estimates expected claims cost as the product of claim <em>frequency</em> (the expected number of claims) and claim <em>severity</em> (the expected average cost per claim), reflecting the same fundamental decomposition principle SA3 and SP7 apply to reserving, now applied specifically to forward-looking <em>pricing</em>.",
-                "explain": "This directly recalls SP7's average-cost-per-claim material — worth recognising the <em>same</em> frequency-times-severity decomposition principle recurring here in a pricing context, having already been introduced in SP7's reserving context."
-            },
-            {
-                "q": "Why might a rating actuary need to consider <em>exposure</em> (e.g. vehicle-years, sums insured) alongside claim frequency, rather than working with a raw claim count alone?",
-                "a": "A raw claim count only becomes meaningful when related to the underlying <em>exposure</em> that generated it (e.g. claims per vehicle-year, not simply total claims), since a portfolio with more genuine exposure would naturally generate more claims even at an unchanged underlying risk level, so frequency must be expressed relative to exposure to support meaningful rating comparisons.",
-                "explain": "Worth recognising exposure as the genuine <em>denominator</em> making frequency a meaningful, comparable rate rather than simply a raw count — a portfolio-size-adjusted measure essential for sound rating."
-            },
-            {
-                "q": "Why might different general insurance products (e.g. motor versus property) require different specific rating factors within the same basic frequency-times-severity framework?",
-                "a": "While the underlying frequency-times-severity <em>methodology</em> is universal, the <em>specific</em> factors driving frequency and severity differ by product (e.g. driver age and vehicle type for motor, construction type and location for property), so the basic methodology must be populated with product-specific rating factors reflecting each product's own distinct risk drivers.",
-                "explain": "Worth recognising the frequency-times-severity <em>framework</em> as universal, while the specific rating <em>factors</em> populating it are product-specific — a distinction directly echoing this course's later material on genuine product-specific pricing considerations."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "Rating foundations and the burning cost approach",
-        "description": "Covers appropriate rating foundations including expenses, investment and capital considerations, and the burning cost approach to rating, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why must a genuine rating basis explicitly incorporate expense assumptions, beyond the pure risk premium alone, echoing CB1's material?",
-                "a": "Since an insurer incurs real costs beyond claims (acquisition, administration, claims-handling), a premium reflecting only the pure risk premium would systematically understate the genuine total cost of providing cover, so expense loadings must be explicitly and appropriately incorporated into the overall rating basis.",
-                "explain": "This directly recalls CB1's expense-loading material — worth recognising expense allowance as a <em>necessary</em>, not optional, component of a sound rating basis, echoing CB1's general pricing framework applied specifically here."
-            },
-            {
-                "q": "Why must a rating basis incorporate an appropriate cost-of-capital/profit margin loading, rather than simply covering expected costs alone?",
-                "a": "Since capital needs to be held to support the insurer's risk (SP7's capital modelling material), and that capital carries a genuine opportunity cost to shareholders, a sound rating basis must price in a return sufficient to compensate for this capital cost, not merely cover the expected claims and expense costs alone.",
-                "explain": "This directly recalls CB1's cost-of-capital material and SP7's capital-modelling material — worth recognising the genuine <em>link</em> between this course's capital modelling content (SP7) and pricing: capital that must be <em>held</em> (SP7) must also be <em>paid for</em> through pricing (SP8)."
-            },
-            {
-                "q": "Why might genuine investment income considerations affect an appropriate rating basis, beyond the claims, expense and capital-cost components already covered?",
-                "a": "Since premiums are typically received before claims are eventually paid (particularly for longer-tail lines), the insurer earns genuine investment income on this float in the intervening period, so a fully sound rating basis may reasonably allow for this genuine investment income as an <em>offset</em> reducing the required premium loading, rather than ignoring this genuine timing benefit entirely.",
-                "explain": "This directly recalls CM1's and SP7's time-value-of-money material — worth recognising investment income as a genuine, quantifiable <em>benefit</em> the rating basis can reasonably reflect, particularly significant for longer-tail lines where the premium-to-claim-payment gap is larger."
-            },
-            {
-                "q": "What is the 'burning cost' approach to rating, and how does it differ from the more granular frequency-times-severity decomposition covered in Module 2?",
-                "a": "The burning cost approach calculates historical claims experience as a simple <em>ratio</em> of claims to exposure (e.g. total claims divided by total premium or sum insured) over a past period, projecting this historical ratio forward as the basis for future rating, <em>without</em> explicitly decomposing it into separate frequency and severity components.",
-                "explain": "This directly recalls Module 2's frequency-times-severity material — worth recognising burning cost as a <em>simpler</em>, more <em>aggregated</em> alternative to that granular decomposition, trading some analytical insight for genuine calculation simplicity."
-            },
-            {
-                "q": "Why might the burning cost approach be well-suited to rating a specific, individual large commercial risk with limited own claims history, echoing SP7's and SA3's material?",
-                "a": "For a large commercial risk with limited own claims data, a simple, aggregated burning cost ratio (rather than attempting a more granular, data-intensive frequency-severity decomposition the limited data cannot reliably support) can provide a practical, defensible starting point for rating, particularly when blended with broader market benchmark data via credibility-weighting (previewed in this course's later credibility module).",
-                "explain": "This directly previews this course's later credibility-theory module — worth recognising burning cost's genuine practical value specifically for <em>low-data-volume</em> risks, where a simpler method may be more robust than attempting an overly granular decomposition the data cannot reliably support."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "Frequency-severity models and generalised linear models",
-        "description": "Covers frequency-severity models, original loss curve techniques, and the application of generalised linear models (GLMs) and multivariate modelling to pricing, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is a genuine 'frequency-severity model' for rating, and how does it develop Module 2's basic frequency-times-severity decomposition into a more sophisticated statistical framework?",
-                "a": "A frequency-severity model fits <em>separate</em> statistical distributions to claim frequency (e.g. a Poisson or negative binomial distribution) and claim severity (e.g. a gamma or lognormal distribution), allowing rating factors to be estimated for each component <em>separately</em> using appropriate statistical technique, rather than Module 2's simpler, more basic multiplication of aggregate frequency and severity figures.",
-                "explain": "This directly recalls Module 2's frequency-times-severity foundation and CS1's/CS2's statistical distribution material — worth recognising this module as taking that earlier <em>basic</em> decomposition and developing it into a more <em>statistically rigorous</em> modelling framework."
-            },
-            {
-                "q": "What is an 'original loss curve' technique, and why might it be useful for pricing large or unusual individual risks, echoing SA3's material?",
-                "a": "An original loss curve describes the genuine relationship between a policy's limit of indemnity (or excess/retention level) and the <em>expected proportion</em> of ground-up losses that a given limit would cover, allowing an actuary to price different limit or excess structures for the <em>same</em> underlying risk using a single, calibrated curve, rather than requiring entirely separate pricing exercises for each different limit structure considered.",
-                "explain": "This directly recalls SA3's large-commercial-risk-pricing material — worth recognising original loss curves as a practical tool for pricing <em>multiple</em> possible policy structures (different limits/excesses) for the same underlying risk efficiently, from a single underlying severity distribution."
-            },
-            {
-                "q": "What is a Generalised Linear Model (GLM), and why has it become central to modern general insurance rating, echoing CS1's material?",
-                "a": "A GLM extends standard linear regression to handle response variables (like claim frequency or severity) that don't follow a normal distribution and whose relationship with rating factors may not be purely additive, allowing <em>multiple</em> rating factors to be modelled <em>simultaneously</em> while isolating each factor's own distinct effect, controlling for the influence of all other factors included in the model.",
-                "explain": "This directly recalls CS1's GLM material — worth recognising GLMs as the genuine, modern <em>statistical workhorse</em> of general insurance pricing, allowing many rating factors to be assessed together rather than one at a time in isolation."
-            },
-            {
-                "q": "Why might assessing rating factors <em>one at</em> A <em>time</em> (univariate analysis), rather than using a genuine multivariate GLM approach, produce systematically misleading results?",
-                "a": "If two rating factors are <em>correlated</em> with each other (e.g. younger drivers tending to drive certain vehicle types), a univariate analysis of either factor alone would <em>confound</em> that factor's own true effect with the correlated factor's effect, while a multivariate GLM can <em>isolate</em> each factor's own distinct, independent contribution, controlling for the other correlated factors simultaneously.",
-                "explain": "This directly recalls CS1's confounding-and-multivariate-analysis material — worth recognising this <em>confounding</em> problem as the genuine, core motivation for using GLMs over simpler univariate rating factor analysis in modern general insurance pricing."
-            },
-            {
-                "q": "Why might general insurance pricing increasingly draw on genuine machine learning applications, beyond traditional GLM technique, per the official syllabus?",
-                "a": "Machine learning techniques can capture more complex, non-linear relationships and interactions between rating factors than a standard GLM's typically more constrained functional form allows, potentially improving genuine predictive accuracy, though often at some cost to the <em>interpretability</em> that GLMs typically offer more readily to a reserving or pricing actuary needing to explain and justify the resulting rates.",
-                "explain": "Worth recognising this as a genuine, important <em>trade-off</em> — machine learning's potential accuracy gains against GLMs' typically greater interpretability and ease of justifying results to stakeholders and regulators, a live tension in modern actuarial pricing practice."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "General insurance products and the business environment",
-        "description": "Covers the core features of direct and reinsurance products, customer requirements, and insurer exposures, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why must a rating actuary understand a product's core features before applying any of the rating techniques covered in Modules 2-4, echoing SA3's material?",
-                "a": "Different products carry different claim frequency, severity, and development characteristics (SP7's material), so the <em>specific</em> rating factors, data requirements, and appropriate technique choice depend on the specific product being priced, meaning product understanding is a genuine <em>precursor</em> to sound rating, not a separate, unrelated topic.",
-                "explain": "This directly recalls SP7's product-understanding-precedes-technique material — worth recognising this same principle applying identically to <em>pricing</em> as it does to <em>reserving</em>, given both draw on the same underlying product knowledge foundation."
-            },
-            {
-                "q": "Why might pricing a <em>reinsurance</em> product (e.g. an excess of loss treaty) require different rating considerations from pricing the underlying <em>direct</em> insurance product it sits above, echoing SP7's material?",
-                "a": "A reinsurance treaty's genuine payoff depends on whether <em>aggregate</em> or <em>individual</em> underlying claims exceed a specified attachment point, requiring the reinsurance pricing actuary to understand the <em>full</em> severity distribution of the underlying direct business (not just its average cost), a more complex pricing problem than pricing the direct policies themselves.",
-                "explain": "This directly recalls SP7's non-proportional-reinsurance-modelling material — worth recognising reinsurance pricing as requiring <em>deeper</em> distributional understanding of the underlying business than direct pricing alone typically demands."
-            },
-            {
-                "q": "Why must a rating actuary understand <em>customer requirements</em>, not just technical claim cost drivers, when setting a general insurance premium?",
-                "a": "Since a premium must be commercially viable (customers willing to pay it) as well as technically adequate (covering expected costs), understanding what customers value and are willing to pay for directly shapes both product design and the acceptable range within which a technically-derived rate must fall to remain commercially competitive.",
-                "explain": "This directly recalls CB1's and SA1's customer-need-and-insurer-risk dual-perspective material — worth recognising this same <em>dual perspective</em> (technical cost <em>and</em> genuine customer value) applying to general insurance pricing specifically."
-            },
-            {
-                "q": "Why must a rating actuary understand the insurer's own <em>exposures</em> from a specific product, beyond simply calculating an adequate premium for each individual policy?",
-                "a": "Since individually well-priced policies can still <em>aggregate</em> into concerning concentration risk (e.g. many property policies all exposed to the same flood plain), understanding the insurer's genuine <em>portfolio-level</em> exposure, not just individual policy adequacy, is essential for sound overall pricing and risk management strategy.",
-                "explain": "This directly recalls SA3's and SP7's aggregation-and-concentration-risk material — worth recognising that <em>pricing</em> adequacy at the individual policy level does not automatically guarantee sound <em>aggregate</em> portfolio risk management."
-            },
-            {
-                "q": "Why might understanding both direct and reinsurance product features together give a rating actuary richer insight than understanding either in isolation?",
-                "a": "Since reinsurance pricing directly depends on genuine understanding of the underlying direct business it sits above, and direct insurers' own pricing and risk appetite decisions are directly shaped by the reinsurance protection available to them, understanding <em>both</em> sides together reveals the genuine, two-way interaction between direct and reinsurance markets that understanding either in isolation would miss.",
-                "explain": "This closing card ties direct and reinsurance product understanding together explicitly — worth recognising this whole module's dual coverage (direct <em>and</em> reinsurance) as reflecting an important, two-way market interaction, not two unrelated product categories covered merely for completeness."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "External factors affecting general insurance pricing",
-        "description": "Covers the implications of fiscal regimes, inflation, and regulatory, legal, political, social, climate and technological factors affecting general insurers' pricing, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why must general insurance pricing reflect the specific fiscal (tax) regime it operates within, echoing SA3's material?",
-                "a": "Different tax treatments of premiums, claims, and insurer profits can affect the insurer's true after-tax economics of a given rate, so a sound pricing basis must incorporate the specific fiscal regime's implications, not assume a uniform, tax-neutral pricing framework applicable everywhere.",
-                "explain": "This directly recalls SA3's taxation-of-general-insurance material — worth recognising this same principle applying directly to the <em>pricing</em> side (not just reserving/reporting) of general insurance actuarial work."
-            },
-            {
-                "q": "Why does claims inflation require explicit, forward-looking treatment in pricing, distinct from its treatment in reserving (SP7's material)?",
-                "a": "While SP7 addresses claims inflation's effect on <em>already-incurred</em> claims still developing, pricing must project claims inflation <em>forward</em> across the <em>future</em> policy period being priced, requiring a forward-looking inflation assumption distinct from (though informed by) the historical inflation experience SP7's reserving analysis reveals.",
-                "explain": "This directly recalls SP7's claims-inflation-in-reserving material — worth recognising that inflation assumption-setting differs in <em>direction</em> (backward-looking analysis informing a forward-looking pricing assumption) between these two, otherwise closely related, actuarial disciplines."
-            },
-            {
-                "q": "Why might regulatory and legal developments affect general insurance pricing directly, beyond simply constraining permitted rating factors, echoing SA3's material?",
-                "a": "Regulatory and legal changes can alter the underlying <em>claims cost</em> itself (e.g. changing court awards for bodily injury, or new consumer protection requirements affecting claims handling costs), directly affecting the genuine pure risk premium calculation, not merely constraining which rating factors an insurer is permitted to use.",
-                "explain": "This directly recalls SA3's legislation-affects-genuine-claims-cost material — worth recognising regulatory/legal factors as affecting pricing through <em>two</em> distinct channels: constraining permitted rating factors <em>and</em> directly changing the underlying claims cost itself."
-            },
-            {
-                "q": "Why might genuine social and technological trends (e.g. changing attitudes to risk, or new vehicle safety technology) directly affect appropriate pricing assumptions, echoing this course's recurring PESTLE-style material?",
-                "a": "Social trends can affect claim frequency (e.g. changing driving behaviours) or severity (e.g. changing attitudes toward litigation), while technological developments can affect both frequency (e.g. autonomous vehicle safety features reducing accidents) and severity (e.g. more expensive vehicle repair costs from advanced sensor technology), requiring pricing assumptions to evolve alongside these ongoing external trends.",
-                "explain": "This directly recalls CB2's and SA3's PESTLE-style external-factor material — worth recognising these social and technological trends as capable of moving frequency and severity assumptions in either direction, requiring active monitoring rather than assumed stability."
-            },
-            {
-                "q": "Why has climate change become an important pricing consideration for general insurers specifically, echoing SA3's catastrophe-modelling material?",
-                "a": "Climate change can alter the frequency and severity of weather-related perils (e.g. flood, windstorm), directly affecting the catastrophe risk assumptions underlying pricing for exposed property and other lines, requiring forward-looking climate-adjusted assumptions rather than relying purely on historical weather patterns that may no longer reliably represent genuine future risk.",
-                "explain": "This directly recalls SA3's catastrophe-modelling and climate-risk material — worth recognising climate change as directly threatening the genuine <em>reliability</em> of historical weather data as a guide to future pricing assumptions, a theme recurring across multiple subjects in this curriculum."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "Major pricing uncertainties, data types and quality",
-        "description": "Covers the major sources of uncertainty in general insurance pricing, and the genuine types and quality of data needed to support sound pricing, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine sources of pricing uncertainty does a rating actuary face, echoing SP7's reserving-uncertainty material?",
-                "a": "Pricing uncertainty includes <em>process</em> uncertainty (genuine random variation in actual future claims experience even given perfectly correct assumptions), <em>parameter</em> uncertainty (genuine imprecision in estimating the rating model's own parameters from limited historical data), and <em>model</em> uncertainty (the genuine risk that the chosen rating approach itself is inappropriate), directly paralleling SP7's model/parameter risk distinction now applied to pricing.",
-                "explain": "This directly recalls SP7's model-risk-versus-parameter-risk material — worth recognising this same, important distinction applying to <em>pricing</em> uncertainty just as directly as it applies to <em>reserving</em> uncertainty."
-            },
-            {
-                "q": "Why might pricing uncertainty for a new or unusual risk (with limited own historical experience) be particularly significant, echoing SA1's and SP7's material?",
-                "a": "Without substantial own experience data, pricing must rely more heavily on external data, comparable risks, and genuine actuarial judgement, introducing greater parameter and model uncertainty than pricing a well-established, high-volume risk with abundant own historical data supporting more statistically reliable estimation.",
-                "explain": "This directly recalls SA1's and SP7's new-risk-limited-data-judgement material — worth recognising this same principle recurring here specifically in a general insurance pricing context."
-            },
-            {
-                "q": "What genuine <em>types</em> of data does a rating actuary typically need, beyond raw claims and premium figures?",
-                "a": "Rating typically requires genuine <em>exposure</em> data (e.g. vehicle-years, sums insured, previewing Module 2's material), <em>claims</em> data (frequency, severity, and development information), <em>policy</em>-level data (rating factors like age, location, construction type), and relevant <em>external</em> data (market benchmarks, economic indices) to support and cross-check internally-derived estimates.",
-                "explain": "Worth recognising this as a broader data requirement than reserving alone might need — pricing requires detailed <em>policy-level</em> rating factor data (to support GLM-style multivariate analysis, Module 4's material) beyond the aggregate claims triangle data SP7's reserving work primarily relies upon."
-            },
-            {
-                "q": "Why must a rating actuary assess data <em>quality</em>, not just data availability, before relying on it for pricing, echoing SP7's data-validation material?",
-                "a": "Since every rating technique covered in this course depends directly on the genuine accuracy and completeness of underlying data, poor-quality data (e.g. inconsistent rating factor recording, incomplete exposure records) can silently undermine even the most technically sophisticated rating model, making genuine data quality assessment an essential <em>precondition</em> for sound pricing, directly echoing SP7's identical data-validation principle.",
-                "explain": "This directly recalls SP7's data-validation-as-precondition material — worth recognising this same principle applying identically to pricing as it does to reserving, given both depend on the same underlying data quality foundation."
-            },
-            {
-                "q": "Why might genuine data quality issues be particularly acute when a rating actuary attempts to incorporate <em>new</em> or recently-introduced rating factors into a pricing model?",
-                "a": "A newly-introduced rating factor typically has <em>less</em> historical data available (since it may not have been consistently recorded in the past), meaning statistical estimation of that factor's genuine effect is inherently based on a smaller, potentially less reliable dataset than more long-established rating factors with deeper historical records.",
-                "explain": "Worth recognising new-rating-factor data quality as a specific, practical manifestation of the broader new-risk-limited-data challenge raised earlier in this module, applied specifically to individual <em>rating factors</em> rather than whole new risk categories."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Actuarial investigations of pricing results",
-        "description": "Covers the actuarial investigations undertaken to monitor and understand genuine pricing results, echoing this course's recurring experience-monitoring theme.",
-        "cards": [
-            {
-                "q": "Why must a rating actuary monitor <em>actual</em> experience against <em>pricing</em> assumptions after a rate has been implemented, echoing this course's recurring experience-monitoring theme?",
-                "a": "Comparing actual claims experience against the assumptions used in setting a rate reveals whether those pricing assumptions remain appropriate, allowing timely correction before mispriced business accumulates to a materially damaging scale, directly echoing SP1's, SP2's and SP7's identical experience-monitoring principle now applied specifically to <em>pricing</em> results.",
-                "explain": "This directly recalls SP1's, SP2's and SP7's experience-monitoring material — worth recognising this same universal actuarial control-cycle principle applying to pricing just as directly as to reserving or insurance-product experience monitoring generally."
-            },
-            {
-                "q": "What genuine measure might a rating actuary use to assess whether a rating model's predicted frequency and severity are tracking actual experience, echoing CS1's material?",
-                "a": "A rating actuary might compare the model's <em>predicted</em> loss ratio (or predicted frequency/severity) against the <em>actual</em>, observed loss ratio (or frequency/severity) for the same period, using this comparison to assess whether genuine, material divergence has emerged requiring investigation, directly echoing CS1's model-validation-through-comparison-against-actual-outcomes principle.",
-                "explain": "This directly recalls CS1's model-validation material — worth recognising loss ratio monitoring as the genuine, practical <em>pricing</em> equivalent of CS1's general model-validation discipline."
-            },
-            {
-                "q": "Why should a rating actuary investigate <em>whether</em> an observed pricing variance reflects genuine random fluctuation or a persistent trend, before revising rates, echoing this course's recurring statistical-significance theme?",
-                "a": "A single period's adverse variance could reflect genuine random noise or a genuine one-off event, so investigating the underlying cause before revising rates avoids both over-reacting to noise (unnecessarily disrupting competitive positioning) and under-reacting to an important emerging trend requiring genuine rate correction.",
-                "explain": "This directly recalls SP1's, SP2's and SP7's random-fluctuation-versus-trend material — worth recognising this same judgement discipline recurring here specifically in a pricing-results-investigation context."
-            },
-            {
-                "q": "Why might a rating actuary need to investigate results at a <em>granular</em> level (e.g. by individual rating factor or segment), rather than assessing only the <em>aggregate</em> loss ratio, echoing SP7's material?",
-                "a": "An aggregate loss ratio consistent with expectations could still <em>mask</em> offsetting variances across different segments (e.g. one segment performing better than expected while another performs worse, netting out to an apparently unremarkable aggregate figure), so granular investigation by segment or rating factor is necessary to reveal these individually important, offsetting patterns.",
-                "explain": "This directly recalls SP7's granular-decomposition material — worth recognising this same <em>aggregation-can-hide-important-detail</em> principle applying directly to pricing results investigation, echoing its identical application to reserving experience analysis."
-            },
-            {
-                "q": "How might the results of a genuine pricing investigation feed directly back into the rating factors and GLM models covered in Module 4?",
-                "a": "Where a genuine, persistent variance is identified for a specific rating factor or segment, this should inform a <em>revision</em> to that factor's estimated effect within the pricing GLM (Module 4's material), closing the actuarial control cycle loop between <em>investigation</em> (this module) and <em>model refinement</em> (Module 4), rather than treating pricing investigation as a standalone, disconnected activity.",
-                "explain": "This closing card ties this module back to Module 4 explicitly — worth recognising pricing investigation results as feeding directly <em>back</em> into the rating model itself, completing a genuine, ongoing actuarial control cycle for pricing."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "The collective risk model and aggregate claims distributions",
-        "description": "Covers the collective risk model, and deriving the aggregate claim distribution via stochastic simulation, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the 'collective risk model', and how does it differ from a simpler individual-risk-model approach to modelling aggregate claims, echoing CS2's material?",
-                "a": "The collective risk model represents total aggregate claims as the <em>sum</em> of a <em>random number</em> of individual claims (the claim count following a frequency distribution) each with a <em>random</em> severity (following a severity distribution), rather than a simpler individual-risk-model approach summing a <em>fixed</em> number of individual policy outcomes, providing a more flexible framework better suited to lines where claim <em>count</em> itself is uncertain, not just each individual claim's size.",
-                "explain": "This directly recalls CS2's collective-risk-model material and Module 4's frequency-severity-model foundation — worth recognising the collective risk model as the genuine, more sophisticated <em>statistical framework</em> underlying Module 4's frequency-severity rating approach."
-            },
-            {
-                "q": "Why might deriving the aggregate claims distribution <em>analytically</em> (via a closed-form formula) be difficult or impossible for many realistic frequency and severity distribution combinations?",
-                "a": "Combining a realistic frequency distribution (e.g. Poisson or negative binomial) with a realistic severity distribution (e.g. gamma or lognormal) typically does not produce a mathematically tractable, closed-form aggregate claims distribution, requiring numerical or simulation-based approaches instead of a simple analytical formula.",
-                "explain": "This directly recalls SP6's material on why numerical methods are needed where closed-form derivative pricing formulas don't exist — worth recognising this same <em>genuine analytical intractability</em> problem recurring here in an aggregate claims context, motivating simulation as the practical solution."
-            },
-            {
-                "q": "How does <em>stochastic simulation</em> derive the aggregate claims distribution, per the official syllabus, echoing this course's recurring Monte Carlo material?",
-                "a": "Stochastic simulation repeats a two-step process many thousands of times — first simulating a random claim <em>count</em> from the assumed frequency distribution, then simulating that many random claim <em>severities</em> and summing them — building up a genuine, empirical distribution of simulated aggregate claims outcomes across all these repeated simulation trials.",
-                "explain": "This directly recalls SP6's and SP7's Monte-Carlo-simulation material — worth recognising this same general simulation <em>technique</em> recurring here, applied specifically to building up an aggregate claims distribution from its underlying frequency and severity components."
-            },
-            {
-                "q": "Why might a rating actuary value having the <em>full</em> simulated aggregate claims distribution, rather than just its mean (the pure risk premium), echoing SP7's material?",
-                "a": "The full distribution reveals genuine information about the <em>spread</em> and <em>tail risk</em> of possible aggregate outcomes (e.g. informing capital requirements, per SP7's material, or reinsurance purchasing decisions, previewed in this course's later credibility/reinsurance module), insight a single mean figure (the pure risk premium alone) cannot provide.",
-                "explain": "This directly recalls SP7's VaR/TVaR material — worth recognising the full simulated distribution as providing richer information supporting <em>downstream</em> decisions (capital, reinsurance) beyond simply setting the central pure risk premium itself."
-            },
-            {
-                "q": "How does this module's collective risk model and simulation material connect back to Module 4's frequency-severity GLM material?",
-                "a": "Module 4 developed how <em>individual</em> rating factors affect frequency and severity through GLMs; this module shows how those <em>same</em> frequency and severity distributions can be combined via the collective risk model and stochastic simulation to derive the <em>aggregate</em> claims distribution for a whole portfolio or segment, moving from individual rating-factor-level modelling to portfolio-level aggregate risk understanding.",
-                "explain": "This closing card ties this module back to Module 4 explicitly — worth recognising this module as <em>scaling up</em> Module 4's individual rating-factor GLM technique to a <em>portfolio-level</em> aggregate claims perspective, not a separate, unrelated statistical topic."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Credibility theory and its pricing applications",
-        "description": "Covers classical and Bayesian credibility approaches, and their genuine application to general insurance pricing, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is 'credibility theory', and why does it matter for pricing a risk with <em>limited</em> own historical data, echoing CS1's material?",
-                "a": "Credibility theory blends a risk's <em>own</em> limited historical experience with a broader, more statistically stable <em>external</em> benchmark (e.g. industry-wide or portfolio-wide experience), weighting the own experience by a genuine 'credibility factor' reflecting how statistically <em>reliable</em> that own experience actually is, rather than relying purely on either own experience alone (too noisy for small risks) or external data alone (ignoring relevant own information).",
-                "explain": "This directly recalls CS1's credibility theory material — worth recognising credibility as the genuine, direct <em>solution</em> to Module 3's earlier burning-cost-for-low-data-risks material: a more statistically rigorous way of blending own and external data than an informal burning cost approach alone."
-            },
-            {
-                "q": "What is 'classical' (limited fluctuation) credibility, and how does it determine an appropriate credibility factor?",
-                "a": "Classical credibility sets a credibility factor based on whether the <em>own</em> data has reached a specified minimum <em>volume</em> (e.g. a minimum number of claims) considered sufficient to limit random fluctuation to an acceptable level, applying <em>full</em> credibility once this threshold is reached and <em>partial</em> credibility (scaled down) below it.",
-                "explain": "Worth recognising classical credibility's genuine, defining feature as a <em>threshold-based</em> approach — credibility is determined by whether own data volume crosses a specified minimum standard, a more mechanical rule than the Bayesian approach covered next."
-            },
-            {
-                "q": "What is 'Bayesian' credibility, and how does it differ in philosophy from classical credibility?",
-                "a": "Bayesian credibility derives the credibility factor from formal Bayesian statistical principles, updating a <em>prior</em> belief about the risk (based on external/portfolio-wide information) with <em>observed</em> own data to produce a genuine <em>posterior</em> estimate, with the credibility weighting emerging naturally from the relative statistical <em>precision</em> of the prior and the observed data, rather than a fixed volume threshold.",
-                "explain": "This directly recalls CS1's Bayesian statistics material — worth recognising Bayesian credibility as grounding the <em>same</em> blending intuition classical credibility uses in a more formal, statistically coherent <em>prior-to-posterior</em> updating framework."
-            },
-            {
-                "q": "Why might Bayesian credibility be considered more theoretically elegant than classical credibility, despite classical credibility's genuine practical simplicity?",
-                "a": "Bayesian credibility derives its credibility weighting directly from the underlying statistical properties of the prior and data (rather than an essentially arbitrary volume threshold), providing a more theoretically <em>justified</em> blending weight, though classical credibility's genuine simplicity and ease of practical application can make it a reasonable, pragmatic choice in many real-world pricing contexts.",
-                "explain": "Worth recognising this as a genuine, important trade-off — Bayesian credibility's greater theoretical rigour against classical credibility's genuine practical simplicity, echoing this course's recurring theme of balancing sophistication against practical usability."
-            },
-            {
-                "q": "How might credibility theory be applied to pricing a specific large commercial risk or a new rating factor, connecting Module 7's data-quality material?",
-                "a": "Credibility theory allows a rating actuary to blend a large commercial risk's own limited claims history (or a new rating factor's limited own data) with broader portfolio or market benchmark experience, producing a more statistically robust rate than relying on either the limited own data alone or an entirely generic market rate ignoring the risk's own genuine, specific experience.",
-                "explain": "This directly recalls Module 7's limited-own-data-for-new-risks-and-factors material — worth recognising credibility theory as the genuine, formal <em>statistical solution</em> to exactly the data-limitation challenge that module identified."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Direct versus reinsurance pricing",
-        "description": "Covers the genuine distinctions between pricing direct and reinsurance business, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why might pricing reinsurance business require a fundamentally different <em>data</em> perspective from pricing direct business, echoing Module 5's material?",
-                "a": "A reinsurer typically has <em>less</em> direct visibility into individual policy-level underwriting detail than the <em>ceding</em> insurer itself, often relying on <em>summarised</em> information about the underlying direct book (e.g. aggregate exposure and historical loss experience) rather than full individual-policy-level data, requiring different data-handling and rating techniques adapted to this more limited, aggregated information.",
-                "explain": "This directly recalls Module 5's direct-versus-reinsurance-product-features material — worth recognising this <em>data visibility gap</em> as an important, practical consequence of reinsurance sitting one step removed from the underlying individual risks."
-            },
-            {
-                "q": "Why might a reinsurer's own <em>pricing margin</em> need to reflect different considerations from a direct insurer's margin, echoing SA1's and SA3's material?",
-                "a": "A reinsurer often takes on more <em>concentrated</em>, correlated risk (e.g. providing catastrophe cover across many direct insurers' exposures to the same peril), requiring a higher risk-adjusted margin to compensate for this concentrated risk exposure, compared with a direct insurer's typically more diversified, individual-policy-level risk pool.",
-                "explain": "This directly recalls SA1's and SA3's risk-adjusted-margin material — worth recognising reinsurer margin-setting as needing to reflect its <em>different</em>, more concentrated risk profile compared with the direct insurers it reinsures."
-            },
-            {
-                "q": "Why might pricing a <em>proportional</em> reinsurance treaty (e.g. quota share) be more straightforward than pricing a <em>non-proportional</em> treaty, echoing SP7's material?",
-                "a": "A proportional treaty's premium and claims scale directly with the underlying direct business (a fixed percentage of both), so pricing largely involves agreeing the appropriate <em>ceding commission</em> and any risk margin, while a non-proportional treaty's pricing requires understanding the full <em>severity distribution</em> of underlying claims to price the specific layer being reinsured, a materially more complex exercise.",
-                "explain": "This directly recalls SP7's proportional-versus-non-proportional-modelling material — worth recognising this same complexity distinction applying to the initial <em>pricing</em> of reinsurance treaties, not just to modelling their recoveries for reserving purposes."
-            },
-            {
-                "q": "Why might a reinsurer need to price for its own <em>aggregate</em> exposure across <em>multiple</em> ceding insurers, rather than pricing each individual treaty in complete isolation?",
-                "a": "Since a reinsurer's overall risk depends on genuine <em>aggregate</em> exposure across <em>all</em> the treaties it writes (particularly for correlated perils like catastrophe risk affecting many ceding insurers simultaneously), sound reinsurance pricing must consider how <em>each</em> treaty contributes to the reinsurer's <em>own</em> overall portfolio risk, not simply price each treaty as an independent, standalone transaction.",
-                "explain": "This directly recalls SP7's aggregation-and-diversification material — worth recognising reinsurer pricing as needing the <em>same</em> portfolio-level, aggregate risk perspective this course develops for capital modelling, now applied specifically to the reinsurer's own pricing decisions."
-            },
-            {
-                "q": "How does this module's direct-versus-reinsurance pricing material connect back to Module 5's product-and-environment material?",
-                "a": "Module 5 established the genuine <em>structural</em> differences between direct and reinsurance products; this module develops the direct <em>pricing consequences</em> of those structural differences (data visibility, margin considerations, complexity, aggregate portfolio perspective), showing how product-level differences translate into distinct pricing approaches.",
-                "explain": "This closing card ties this module back to Module 5 explicitly — worth recognising this module as the genuine <em>pricing application</em> of Module 5's earlier product-structure understanding."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Catastrophe modelling fundamentals in pricing",
-        "description": "Covers the fundamentals of catastrophe modelling as applied to general insurance pricing, echoing SA3's material at SP8's foundational level.",
-        "cards": [
-            {
-                "q": "Why does catastrophe modelling differ from traditional frequency-severity rating technique (Module 4's material) for catastrophe-exposed property risks, echoing SA3's material?",
-                "a": "Traditional actuarial rating typically relies on genuine statistical analysis of an insurer's own historical claims experience, while catastrophe modelling simulates a large number of hypothetical events using scientific and engineering data, allowing estimation of extreme, rare losses that historical claims data alone (often too sparse for rare events) cannot reliably capture.",
-                "explain": "This directly recalls SA3's catastrophe-modelling-versus-traditional-rating material — worth recognising this same principle as examinable at SP8's foundational level, not exclusively an SA3-level concept."
-            },
-            {
-                "q": "What is the genuine three-part structure of a catastrophe model, echoing SA3's material?",
-                "a": "A hazard module (modelling the physical characteristics and probability of the peril itself), a vulnerability module (modelling how exposed assets are damaged by a given hazard intensity), and a financial module (translating physical damage into insured financial loss, reflecting policy terms and conditions).",
-                "explain": "This directly recalls SA3's identical hazard-vulnerability-financial structure — worth memorising this three-part structure precisely, as it is the standard way catastrophe models are described and directly examinable."
-            },
-            {
-                "q": "Why must catastrophe model output be incorporated <em>alongside</em>, not instead of, the frequency-severity rating techniques covered in Module 4, when pricing a catastrophe-exposed property risk?",
-                "a": "Catastrophe model output specifically addresses the <em>catastrophe</em> peril component of a property risk's total expected cost, while Module 4's frequency-severity technique remains necessary for pricing the <em>non-catastrophe</em> (attritional) claims that risk also generates, meaning a complete pricing approach <em>combines</em> both catastrophe model output and traditional frequency-severity technique, addressing different components of the same risk's total cost.",
-                "explain": "This directly recalls Module 4's and Module 9's frequency-severity material — worth recognising catastrophe modelling as <em>addressing</em> A <em>specific component</em> of total risk cost, not replacing the broader rating framework this whole course develops."
-            },
-            {
-                "q": "Why might a rating actuary need to acknowledge catastrophe <em>model uncertainty</em> when incorporating catastrophe model output into a final rate, echoing SA3's material?",
-                "a": "Different catastrophe models or model versions can produce different loss estimates for the same portfolio, so a rating actuary should acknowledge this model uncertainty (e.g. by comparing multiple models, or applying genuine judgement-based adjustment) rather than treating a single model's output as unquestionably precise, echoing this course's recurring critical-model-awareness theme.",
-                "explain": "This directly recalls SA3's catastrophe-model-uncertainty material and this course's recurring model-limitation-awareness theme — worth recognising this genuine caution as applying identically to catastrophe modelling within pricing as it does within capital modelling."
-            },
-            {
-                "q": "How does this module's catastrophe modelling material, alongside Modules 10-11's credibility and reinsurance material, complete SP8's final topic area, connecting back to Module 1's topic-weighting material?",
-                "a": "Module 10 established how to blend limited own data with external information (credibility); Module 11 developed reinsurance-specific pricing considerations; this module completes the topic area with catastrophe modelling technique for extreme, correlated risks — together addressing SP8's 'Credibility, reinsurance and catastrophe modelling' topic area's full 15% weighting, and closing this whole course's journey from foundational rating technique through to these more specialised, advanced pricing tools.",
-                "explain": "This closing card ties Modules 10-12 together explicitly, echoing Module 1's topic-weighting material — worth recognising these three modules as together addressing SP8's final syllabus topic area, completing this course's full coverage."
-            }
-        ]
-    }
-    ]
-,
+      {
+          "id": "m01",
+          "title": "Insurance companies",
+          "description": "How general insurance companies operate: why insurance exists, insurable risks, the insurance cycle of premiums, claims, reserves and investment, types of insurer (proprietary, mutual, captive, Lloyd's syndicates), and the main functions and stakeholders in a GI company.",
+          "cards": [
+              {
+                  "q": "What makes a risk insurable?",
+                  "a": "Independent exposures, a clear definition of loss, quantifiable probability and severity, no moral hazard or anti-selection beyond control, a premium affordable to the buyer, and an insurable interest.",
+                  "explain": "Few real risks meet all conditions perfectly."
+              },
+              {
+                  "q": "How does a general insurer make profit?",
+                  "a": "Underwriting profit (premiums exceed claims and expenses) plus investment income on premiums and reserves held before claims are paid.",
+                  "explain": "Long-tail business earns more investment income."
+              },
+              {
+                  "q": "What is a proprietary insurer?",
+                  "a": "An insurer owned by shareholders who receive profits and provide capital.",
+                  "explain": "Contrast mutuals owned by policyholders."
+              },
+              {
+                  "q": "What is a mutual insurer?",
+                  "a": "An insurer owned by its policyholders, with profits retained or returned to members.",
+                  "explain": "Limited ways to raise capital."
+              },
+              {
+                  "q": "What is a captive insurer?",
+                  "a": "An insurer owned by a non-insurance company to insure the parent's own risks.",
+                  "explain": "Access to reinsurance, tax and cost benefits."
+              },
+              {
+                  "q": "What are the main functions in a GI company?",
+                  "a": "Underwriting, claims, actuarial (pricing, reserving, capital), finance, investment, reinsurance, risk management, compliance, distribution.",
+                  "explain": "Actuaries interact with most."
+              },
+              {
+                  "q": "What is the underwriting cycle?",
+                  "a": "Recurring periods of soft (falling rates, loose terms) and hard (rising rates, tight terms) markets.",
+                  "explain": "Driven by capacity and competition."
+              },
+              {
+                  "q": "Why do insurers hold reserves?",
+                  "a": "Claims are paid after premiums are received; reserves represent obligations for unexpired cover and outstanding claims.",
+                  "explain": "Chapter 14 onwards."
+              },
+              {
+                  "q": "What is the role of capital in a GI company?",
+                  "a": "To absorb unexpected losses and meet regulatory requirements, supporting policyholder security.",
+                  "explain": "Cost of capital is part of price."
+              },
+              {
+                  "q": "What are the main stakeholders of an insurer?",
+                  "a": "Policyholders, shareholders/members, regulators, brokers, reinsurers, employees, rating agencies, tax authorities.",
+                  "explain": "Conflicting interests."
+              },
+              {
+                  "q": "What is the difference between short-tail and long-tail business?",
+                  "a": "Short-tail claims are reported and settled quickly (e.g. property); long-tail take years (e.g. liability).",
+                  "explain": "Affects reserving and investment."
+              },
+              {
+                  "q": "What is an MGA?",
+                  "a": "A managing general agent — an intermediary with delegated authority to underwrite on an insurer's behalf.",
+                  "explain": "Delegated authority risk."
+              },
+              {
+                  "q": "How can an insurer's business plan affect actuarial work?",
+                  "a": "Growth targets, product mix and capital constraints shape pricing, reserving and reinsurance decisions.",
+                  "explain": "Actuaries support planning."
+              },
+              {
+                  "q": "What are the main risks to a general insurer?",
+                  "a": "Underwriting, reserving, catastrophe, market, credit (incl. reinsurance), operational, liquidity risks.",
+                  "explain": "Chapter 11."
+              },
+              {
+                  "q": "Why is investment income important in GI?",
+                  "a": "It can allow underwriting losses to be sustained while remaining profitable overall.",
+                  "explain": "Cash-flow underwriting in soft markets."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Insurance products – background",
+          "description": "Background to general insurance products: how products are classified, perils and hazards, types of cover and policy features (excess, limits, deductibles), policy bases (losses occurring, claims made), and factors that affect claim frequency and severity.",
+          "cards": [
+              {
+                  "q": "What is the difference between a peril and a hazard?",
+                  "a": "A peril is the cause of loss (e.g. fire); a hazard is a factor increasing the likelihood or severity of loss (e.g. poor wiring).",
+                  "explain": "Rating factors often measure hazards."
+              },
+              {
+                  "q": "What is an excess (deductible)?",
+                  "a": "The amount of each loss borne by the policyholder before the insurer pays.",
+                  "explain": "Removes small claims and encourages care."
+              },
+              {
+                  "q": "What is a policy limit?",
+                  "a": "The maximum amount the insurer will pay per claim or in aggregate.",
+                  "explain": "Caps exposure."
+              },
+              {
+                  "q": "What is a losses-occurring basis?",
+                  "a": "The policy covers losses that occur during the policy period, whenever reported.",
+                  "explain": "Creates IBNR for long-tail classes."
+              },
+              {
+                  "q": "What is a claims-made basis?",
+                  "a": "The policy covers claims first made during the policy period, regardless of when the loss occurred (subject to retroactive date).",
+                  "explain": "Reduces IBNR for the insurer."
+              },
+              {
+                  "q": "What is first-party cover?",
+                  "a": "Cover for the policyholder's own loss (e.g. property damage).",
+                  "explain": "Short-tail usually."
+              },
+              {
+                  "q": "What is third-party (liability) cover?",
+                  "a": "Cover for the policyholder's legal liability to others.",
+                  "explain": "Long-tail usually."
+              },
+              {
+                  "q": "What is indemnity?",
+                  "a": "Restoring the insured to the financial position they were in before the loss, no better.",
+                  "explain": "Principle of property insurance."
+              },
+              {
+                  "q": "What is 'new for old' cover?",
+                  "a": "Replacement cost without deduction for wear and tear.",
+                  "explain": "Beyond strict indemnity."
+              },
+              {
+                  "q": "What is average (underinsurance) clause?",
+                  "a": "Reduces claims proportionally if the sum insured is less than the value at risk.",
+                  "explain": "Encourages adequate sums insured."
+              },
+              {
+                  "q": "What is a franchise?",
+                  "a": "A threshold below which nothing is paid but above which the whole loss is paid.",
+                  "explain": "Contrast with a deductible."
+              },
+              {
+                  "q": "What drives claim frequency?",
+                  "a": "Exposure, hazards, policy terms, claimant behaviour, economic and legal conditions.",
+                  "explain": "Rating factors."
+              },
+              {
+                  "q": "What drives claim severity?",
+                  "a": "Values at risk, inflation (economic, social, legal), policy limits and excesses.",
+                  "explain": "Claims inflation."
+              },
+              {
+                  "q": "What is exposure measure?",
+                  "a": "A measure proportional to risk, e.g. vehicle-years, sum insured, payroll, turnover.",
+                  "explain": "Basis for pricing."
+              },
+              {
+                  "q": "What is social inflation?",
+                  "a": "Increase in claim costs from changing legal and social attitudes (e.g. higher court awards).",
+                  "explain": "Liability classes."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Insurance products – types",
+          "description": "The main classes of general insurance — motor, household, commercial property, business interruption, employers' and public liability, professional indemnity, D&O, product liability, marine, aviation and transport, credit and surety, travel, pet, extended warranty, cyber — with their perils, claim characteristics and tail length.",
+          "cards": [
+              {
+                  "q": "What are the main covers in private motor insurance?",
+                  "a": "Third-party liability (compulsory), fire and theft, comprehensive (own damage).",
+                  "explain": "Bodily injury drives long tail."
+              },
+              {
+                  "q": "What does household insurance cover?",
+                  "a": "Buildings and contents against perils like fire, flood, storm, theft, escape of water, often with accidental damage options.",
+                  "explain": "Short-tail, catastrophe exposed."
+              },
+              {
+                  "q": "What is business interruption insurance?",
+                  "a": "Covers loss of profits following insured damage that disrupts business.",
+                  "explain": "Indemnity period; linked to property damage."
+              },
+              {
+                  "q": "What is employers' liability insurance?",
+                  "a": "Covers employers' liability for injury or disease to employees.",
+                  "explain": "Long-tail; latent disease claims."
+              },
+              {
+                  "q": "What is public liability insurance?",
+                  "a": "Covers liability to the public for injury or property damage.",
+                  "explain": "Long-tail."
+              },
+              {
+                  "q": "What is professional indemnity insurance?",
+                  "a": "Covers professionals' liability for negligent advice or services.",
+                  "explain": "Claims-made basis common."
+              },
+              {
+                  "q": "What is D&O insurance?",
+                  "a": "Covers directors and officers against claims for wrongful acts in managing a company.",
+                  "explain": "Long-tail, volatile."
+              },
+              {
+                  "q": "What is product liability insurance?",
+                  "a": "Covers liability for injury or damage caused by products supplied.",
+                  "explain": "Series claims possible."
+              },
+              {
+                  "q": "What is marine hull insurance?",
+                  "a": "Covers physical damage to ships.",
+                  "explain": "Specialist market."
+              },
+              {
+                  "q": "What is cargo insurance?",
+                  "a": "Covers goods in transit.",
+                  "explain": "Short-tail."
+              },
+              {
+                  "q": "What is aviation insurance?",
+                  "a": "Covers aircraft hull and liabilities.",
+                  "explain": "High severity, low frequency."
+              },
+              {
+                  "q": "What is credit insurance?",
+                  "a": "Covers losses from non-payment of trade debts.",
+                  "explain": "Correlated with economic cycle."
+              },
+              {
+                  "q": "What is cyber insurance?",
+                  "a": "Covers losses from cyber incidents: data breach costs, business interruption, liability, extortion.",
+                  "explain": "Accumulation risk."
+              },
+              {
+                  "q": "What is extended warranty insurance?",
+                  "a": "Covers repair costs of goods after manufacturer's warranty expires.",
+                  "explain": "Short-tail, high frequency."
+              },
+              {
+                  "q": "Why does tail length matter by class?",
+                  "a": "Long-tail classes have more reserving uncertainty, more investment income and more inflation exposure.",
+                  "explain": "Reserving method choice."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Problem solving",
+          "description": "An early problem-solving chapter: approaching SP7/SP8 exam questions on insurance products and companies — identifying perils, claim characteristics and stakeholders for unfamiliar products, and structuring answers.",
+          "cards": [
+              {
+                  "q": "How should you analyse an unfamiliar GI product?",
+                  "a": "Identify insured, perils, cover triggers, exposure measure, claim frequency and severity drivers, tail length, catastrophe exposure, and policy features.",
+                  "explain": "Structured approach."
+              },
+              {
+                  "q": "Which frameworks help generate points?",
+                  "a": "Stakeholders, risks, products features, environment (PESTLE-style), control cycle.",
+                  "explain": "Breadth."
+              },
+              {
+                  "q": "How should marks guide answers?",
+                  "a": "Roughly one point per half-mark to mark.",
+                  "explain": "Breadth matters."
+              },
+              {
+                  "q": "Why consider claims inflation in product questions?",
+                  "a": "It affects both pricing and reserving.",
+                  "explain": "Economic and social."
+              },
+              {
+                  "q": "How do you identify catastrophe exposure?",
+                  "a": "Look for correlated perils (weather, pandemic, cyber) affecting many policies.",
+                  "explain": "Accumulation."
+              },
+              {
+                  "q": "What makes a good exam answer?",
+                  "a": "Relevant, specific points applied to the scenario.",
+                  "explain": "Avoid generic lists."
+              },
+              {
+                  "q": "How do you consider data availability?",
+                  "a": "Ask what data would be needed and whether it exists for the product.",
+                  "explain": "New products lack data."
+              },
+              {
+                  "q": "How do you assess tail length?",
+                  "a": "Consider reporting and settlement delays, liability vs property.",
+                  "explain": "Reserving implications."
+              },
+              {
+                  "q": "Why consider moral hazard?",
+                  "a": "Policy design can change behaviour.",
+                  "explain": "Excesses and conditions."
+              },
+              {
+                  "q": "How should calculations be presented?",
+                  "a": "Clear method and assumptions.",
+                  "explain": "Method marks."
+              },
+              {
+                  "q": "Why consider regulatory issues?",
+                  "a": "Compulsory covers, conduct rules, capital.",
+                  "explain": "Environment."
+              },
+              {
+                  "q": "How do you consider reinsurance in product questions?",
+                  "a": "Large or catastrophe exposures may require reinsurance.",
+                  "explain": "Chapter 24."
+              },
+              {
+                  "q": "How can examiners' reports help?",
+                  "a": "Show typical weaknesses and marking.",
+                  "explain": "Past papers."
+              },
+              {
+                  "q": "Why think about the insurer's objectives?",
+                  "a": "Profit, growth, risk appetite shape answers.",
+                  "explain": "Context."
+              },
+              {
+                  "q": "How to manage time?",
+                  "a": "Allocate by marks.",
+                  "explain": "Complete all parts."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "Reinsurance products – background",
+          "description": "Background to reinsurance: why insurers buy it, the parties and market, proportional versus non-proportional bases, treaty versus facultative placement, and key terms (retention, limit, layer, reinstatement, event, hours clause).",
+          "cards": [
+              {
+                  "q": "Why do insurers buy reinsurance?",
+                  "a": "Limit large and catastrophe losses, smooth results, increase capacity, provide capital relief, financial assistance, and access expertise.",
+                  "explain": "Purposes."
+              },
+              {
+                  "q": "What is proportional reinsurance?",
+                  "a": "Reinsurer shares premiums and claims in fixed proportions.",
+                  "explain": "Quota share, surplus."
+              },
+              {
+                  "q": "What is non-proportional reinsurance?",
+                  "a": "Reinsurer pays losses above a retention up to a limit.",
+                  "explain": "Excess of loss, stop loss."
+              },
+              {
+                  "q": "What is treaty reinsurance?",
+                  "a": "An agreement covering a defined portfolio automatically.",
+                  "explain": "Efficient."
+              },
+              {
+                  "q": "What is facultative reinsurance?",
+                  "a": "Reinsurance of individual risks, negotiated case by case.",
+                  "explain": "Large or unusual risks."
+              },
+              {
+                  "q": "What is a layer?",
+                  "a": "A band of cover between a retention (deductible) and an upper limit.",
+                  "explain": "E.g. £5m xs £5m."
+              },
+              {
+                  "q": "What is a reinstatement?",
+                  "a": "Restoring cover after a loss, often for an additional premium.",
+                  "explain": "Catastrophe XoL."
+              },
+              {
+                  "q": "What is an hours clause?",
+                  "a": "Defines the period within which losses count as one event.",
+                  "explain": "E.g. 72 hours for storms."
+              },
+              {
+                  "q": "What is reinsurance commission?",
+                  "a": "Payment from reinsurer to cedant under proportional treaties to cover acquisition costs.",
+                  "explain": "Sliding scale possible."
+              },
+              {
+                  "q": "What is retrocession?",
+                  "a": "Reinsurance bought by reinsurers.",
+                  "explain": "Spiral risk."
+              },
+              {
+                  "q": "What is a cedant?",
+                  "a": "The insurer ceding risk.",
+                  "explain": "Reinsured."
+              },
+              {
+                  "q": "What is burning cost?",
+                  "a": "Historical losses to a layer relative to premium.",
+                  "explain": "Pricing method."
+              },
+              {
+                  "q": "What is a broker's role in reinsurance?",
+                  "a": "Placing programmes, advice and market access.",
+                  "explain": "Most placements via brokers."
+              },
+              {
+                  "q": "What is capacity?",
+                  "a": "The amount of risk the market or insurer can accept.",
+                  "explain": "Reinsurance increases it."
+              },
+              {
+                  "q": "What is counterparty risk in reinsurance?",
+                  "a": "Reinsurer failing to pay.",
+                  "explain": "Security assessment."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Reinsurance products – types",
+          "description": "Types of reinsurance in detail: quota share, surplus, risk excess of loss, catastrophe excess of loss, aggregate excess of loss and stop loss, clash cover, financial and finite reinsurance, and alternative risk transfer (cat bonds, ILWs, sidecars, collateralised reinsurance).",
+          "cards": [
+              {
+                  "q": "What is quota share reinsurance?",
+                  "a": "A fixed percentage of every risk ceded.",
+                  "explain": "Capital relief, new portfolios."
+              },
+              {
+                  "q": "What is surplus reinsurance?",
+                  "a": "Cedes the part of each risk above a retention line, up to a number of lines.",
+                  "explain": "Varies proportion by risk size."
+              },
+              {
+                  "q": "What is risk excess of loss?",
+                  "a": "Covers losses on any one risk above a retention.",
+                  "explain": "Protects against large individual losses."
+              },
+              {
+                  "q": "What is catastrophe excess of loss?",
+                  "a": "Covers aggregated losses from one event above a retention.",
+                  "explain": "Natural catastrophes."
+              },
+              {
+                  "q": "What is aggregate excess of loss?",
+                  "a": "Covers total losses over a period above an aggregate retention.",
+                  "explain": "Frequency protection."
+              },
+              {
+                  "q": "What is stop loss?",
+                  "a": "Covers loss ratio above a threshold.",
+                  "explain": "Protects results."
+              },
+              {
+                  "q": "What is clash cover?",
+                  "a": "Covers multiple policies/classes affected by one event (e.g. liability).",
+                  "explain": "Accumulation."
+              },
+              {
+                  "q": "What is finite reinsurance?",
+                  "a": "Limited risk transfer, emphasising financing and time value.",
+                  "explain": "Regulatory scrutiny."
+              },
+              {
+                  "q": "What is a catastrophe bond?",
+                  "a": "Securitised catastrophe risk where investors lose principal on trigger.",
+                  "explain": "Alternative capital."
+              },
+              {
+                  "q": "What is an industry loss warranty?",
+                  "a": "Pays if industry losses exceed a trigger.",
+                  "explain": "Basis risk."
+              },
+              {
+                  "q": "What is a sidecar?",
+                  "a": "Vehicle letting investors share a reinsurer's portfolio.",
+                  "explain": "Capacity."
+              },
+              {
+                  "q": "What is collateralised reinsurance?",
+                  "a": "Reinsurance fully backed by collateral from capital market investors.",
+                  "explain": "Low credit risk."
+              },
+              {
+                  "q": "What is an adverse development cover?",
+                  "a": "Reinsurance of reserves against deterioration.",
+                  "explain": "Legacy management."
+              },
+              {
+                  "q": "What is a loss portfolio transfer?",
+                  "a": "Transfer of existing claim liabilities to a reinsurer.",
+                  "explain": "Finality."
+              },
+              {
+                  "q": "What are trigger types in ART?",
+                  "a": "Indemnity, industry index, parametric, modelled loss.",
+                  "explain": "Trade-off basis risk vs moral hazard."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "General insurance markets",
+          "description": "How GI markets are structured: personal, commercial and specialty lines, distribution (brokers, direct, aggregators, MGAs, bancassurance), the London and Lloyd's markets, reinsurance markets, and competitive dynamics and the underwriting cycle.",
+          "cards": [
+              {
+                  "q": "What are personal lines?",
+                  "a": "Insurance for individuals: motor, household, travel, pet.",
+                  "explain": "High volume, commoditised."
+              },
+              {
+                  "q": "What are commercial lines?",
+                  "a": "Insurance for businesses: property, liability, BI.",
+                  "explain": "Broker-led."
+              },
+              {
+                  "q": "What are specialty lines?",
+                  "a": "Complex or unusual risks: marine, aviation, energy, political risk.",
+                  "explain": "London market."
+              },
+              {
+                  "q": "What are the main distribution channels?",
+                  "a": "Brokers, direct (phone/web), aggregators, MGAs, affinity, bancassurance.",
+                  "explain": "Channel shapes pricing."
+              },
+              {
+                  "q": "How have aggregators changed personal lines?",
+                  "a": "Increased price competition, switching and price optimisation.",
+                  "explain": "Regulatory interventions on pricing."
+              },
+              {
+                  "q": "What is the London market?",
+                  "a": "Specialty and wholesale insurance and reinsurance centred on Lloyd's and London companies.",
+                  "explain": "Subscription market."
+              },
+              {
+                  "q": "What is a subscription market?",
+                  "a": "Several insurers each take a share of a risk, led by a lead underwriter.",
+                  "explain": "Lloyd's model."
+              },
+              {
+                  "q": "What drives the underwriting cycle?",
+                  "a": "Capital inflows/outflows, catastrophe losses, reserve releases, investment returns, competition.",
+                  "explain": "Soft and hard markets."
+              },
+              {
+                  "q": "What is market capacity?",
+                  "a": "Total capital available to write risk.",
+                  "explain": "Affects price."
+              },
+              {
+                  "q": "How do reinsurance markets affect primary markets?",
+                  "a": "Reinsurance cost and availability feed into primary pricing and capacity.",
+                  "explain": "Hard reinsurance markets."
+              },
+              {
+                  "q": "What is a delegated authority arrangement?",
+                  "a": "Coverholders/MGAs underwriting on behalf of insurers.",
+                  "explain": "Oversight needed."
+              },
+              {
+                  "q": "How does competition affect profitability?",
+                  "a": "Soft markets reduce premium adequacy.",
+                  "explain": "Pricing discipline."
+              },
+              {
+                  "q": "What are barriers to entry in GI?",
+                  "a": "Capital requirements, regulation, data, distribution, brand.",
+                  "explain": "Lower in some lines."
+              },
+              {
+                  "q": "What is the role of insurance brokers?",
+                  "a": "Advising clients, placing risks, negotiating terms.",
+                  "explain": "Commission or fees."
+              },
+              {
+                  "q": "What is market consolidation?",
+                  "a": "Mergers reducing number of insurers.",
+                  "explain": "Economies of scale."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "External environment",
+          "description": "The external environment for general insurers: legal and legislative changes, regulation and conduct, taxation, economic conditions and inflation, social and demographic trends, technology, climate change and emerging risks, and their effects on claims, pricing and reserving.",
+          "cards": [
+              {
+                  "q": "How can legal changes affect GI claims?",
+                  "a": "Changes in liability law, court awards, discount rates for personal injury (e.g. Ogden rate) can increase claims retrospectively.",
+                  "explain": "Reserving uncertainty."
+              },
+              {
+                  "q": "What is the Ogden discount rate?",
+                  "a": "The rate used in the UK to calculate lump sum personal injury awards; lower rates increase awards.",
+                  "explain": "Big effect on motor/EL reserves."
+              },
+              {
+                  "q": "How does economic inflation affect GI?",
+                  "a": "Increases claim costs (repairs, wages) and reserves.",
+                  "explain": "Claims inflation."
+              },
+              {
+                  "q": "How can recessions affect GI?",
+                  "a": "Fraud and some claims rise (e.g. theft, credit), exposures fall.",
+                  "explain": "Economic cycle."
+              },
+              {
+                  "q": "How does technology affect GI?",
+                  "a": "Telematics, data analytics, autonomous vehicles, cyber risks.",
+                  "explain": "New risks and pricing."
+              },
+              {
+                  "q": "How does climate change affect GI?",
+                  "a": "More frequent/severe weather events, changing flood risk, transition risks.",
+                  "explain": "Catastrophe modelling."
+              },
+              {
+                  "q": "What are emerging risks?",
+                  "a": "New or changing risks with uncertain effects (e.g. cyber, PFAS, AI liability).",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "How do conduct regulations affect GI?",
+                  "a": "Pricing practices rules (e.g. banning price walking), fair value, claims handling standards.",
+                  "explain": "Profit impact."
+              },
+              {
+                  "q": "How does taxation affect GI?",
+                  "a": "Insurance premium tax, corporation tax, reserve taxation.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "How do social trends affect claims?",
+                  "a": "Claims culture, compensation expectations, litigation funding.",
+                  "explain": "Social inflation."
+              },
+              {
+                  "q": "How does demography affect GI?",
+                  "a": "Ageing population, urbanisation, changing household structures.",
+                  "explain": "Exposure changes."
+              },
+              {
+                  "q": "What is PESTLE?",
+                  "a": "Political, economic, social, technological, legal, environmental analysis.",
+                  "explain": "Framework."
+              },
+              {
+                  "q": "How can government schemes affect GI?",
+                  "a": "Flood Re, terrorism pools, compulsory covers.",
+                  "explain": "Market structure."
+              },
+              {
+                  "q": "How can pandemics affect GI?",
+                  "a": "Business interruption, event cancellation, travel claims; reduced motor claims.",
+                  "explain": "COVID-19 BI test case."
+              },
+              {
+                  "q": "Why monitor the environment?",
+                  "a": "Changes affect pricing and reserving assumptions.",
+                  "explain": "Control cycle."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Risk and uncertainty",
+          "description": "Risks faced by a general insurer and sources of uncertainty: underwriting, reserving, catastrophe, market, credit, liquidity, operational, strategic and regulatory risks; model, parameter and process uncertainty; and how they affect pricing, reserving and capital.",
+          "cards": [
+              {
+                  "q": "List the main risks for a general insurer.",
+                  "a": "Underwriting (premium), reserving, catastrophe, market, credit (reinsurance, brokers), liquidity, operational, strategic, regulatory/legal, reputational.",
+                  "explain": "Risk categories."
+              },
+              {
+                  "q": "What is premium (underwriting) risk?",
+                  "a": "Risk that future claims on business written exceed premiums.",
+                  "explain": "Pricing adequacy."
+              },
+              {
+                  "q": "What is reserving risk?",
+                  "a": "Risk that reserves for existing claims prove inadequate.",
+                  "explain": "Deterioration."
+              },
+              {
+                  "q": "What is catastrophe risk?",
+                  "a": "Risk of large losses from single events affecting many policies.",
+                  "explain": "Accumulation."
+              },
+              {
+                  "q": "What is process uncertainty?",
+                  "a": "Randomness in outcomes even if the model and parameters are correct.",
+                  "explain": "Irreducible."
+              },
+              {
+                  "q": "What is parameter uncertainty?",
+                  "a": "Uncertainty in estimated parameters.",
+                  "explain": "Data limitations."
+              },
+              {
+                  "q": "What is model uncertainty?",
+                  "a": "Risk the model structure is wrong.",
+                  "explain": "Model risk."
+              },
+              {
+                  "q": "What is credit risk for a GI insurer?",
+                  "a": "Reinsurer default, broker default, bond default.",
+                  "explain": "Security."
+              },
+              {
+                  "q": "What is liquidity risk?",
+                  "a": "Inability to pay claims when due without loss.",
+                  "explain": "Catastrophes."
+              },
+              {
+                  "q": "What is operational risk?",
+                  "a": "Losses from failed processes, people, systems or external events.",
+                  "explain": "Cyber, fraud."
+              },
+              {
+                  "q": "What is systemic risk in GI?",
+                  "a": "Risks affecting many insurers simultaneously (e.g. legal changes, pandemics).",
+                  "explain": "Correlation."
+              },
+              {
+                  "q": "What is anti-selection in GI?",
+                  "a": "Higher risks buying cover disproportionately.",
+                  "explain": "Rating and underwriting."
+              },
+              {
+                  "q": "What is moral hazard?",
+                  "a": "Behaviour changes because of insurance.",
+                  "explain": "Excesses."
+              },
+              {
+                  "q": "What is uncertainty vs risk?",
+                  "a": "Risk can be quantified; uncertainty cannot reliably.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How can uncertainty be communicated?",
+                  "a": "Ranges, scenarios, sensitivities.",
+                  "explain": "Stakeholders."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "Data",
+          "description": "Data for general insurance actuarial work: sources and types (policy, claims, exposure, external), data requirements for pricing and reserving, data quality checks and reconciliations, grouping and homogeneity, and dealing with data problems.",
+          "cards": [
+              {
+                  "q": "What policy data is needed?",
+                  "a": "Policy details, exposure, rating factors, premiums, cover details, dates.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "What claims data is needed?",
+                  "a": "Dates of loss, report, settlement; paid and incurred amounts; claim status; cause; reserves.",
+                  "explain": "Reserving triangles."
+              },
+              {
+                  "q": "What external data can be used?",
+                  "a": "Industry data, reinsurer data, census, weather, credit, geocoding.",
+                  "explain": "Enhance models."
+              },
+              {
+                  "q": "What data checks should be performed?",
+                  "a": "Reconciliation to accounts, consistency checks, reasonableness, duplicates, missing values, comparisons with previous data.",
+                  "explain": "Quality."
+              },
+              {
+                  "q": "Why group data into homogeneous cells?",
+                  "a": "To ensure similar risks are analysed together while keeping credible volumes.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "What is the trade-off in data grouping?",
+                  "a": "More granular = homogeneous but less credible; coarser = credible but heterogeneous.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What problems arise with claims data?",
+                  "a": "Changes in reserving practice, reopened claims, large claims, coding changes.",
+                  "explain": "Distort triangles."
+              },
+              {
+                  "q": "How do case reserving changes affect data?",
+                  "a": "Incurred triangles show changed development patterns.",
+                  "explain": "Adjust or use paid data."
+              },
+              {
+                  "q": "What is exposure data?",
+                  "a": "Measures of risk volume (e.g. vehicle-years).",
+                  "explain": "Frequency calculation."
+              },
+              {
+                  "q": "Why reconcile data to accounts?",
+                  "a": "Ensures completeness and consistency.",
+                  "explain": "Control."
+              },
+              {
+                  "q": "How are large claims handled in data?",
+                  "a": "Separated or capped to avoid distorting results.",
+                  "explain": "Large loss loading."
+              },
+              {
+                  "q": "What is data granularity?",
+                  "a": "Level of detail (individual vs aggregated).",
+                  "explain": "Model choice."
+              },
+              {
+                  "q": "What are data protection considerations?",
+                  "a": "Legal limits on using personal data.",
+                  "explain": "GDPR."
+              },
+              {
+                  "q": "How can poor data be mitigated?",
+                  "a": "Industry data, prudence, reviewing sources, improving systems.",
+                  "explain": "Disclose limitations."
+              },
+              {
+                  "q": "Why is data important for capital modelling?",
+                  "a": "Parameter estimation for distributions and dependencies.",
+                  "explain": "Tail data scarce."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Aggregate claim distribution models",
+          "description": "Modelling aggregate claims: the collective risk model with compound Poisson, negative binomial and binomial frequencies, moments of aggregate claims, severity distributions (lognormal, gamma, Pareto, Weibull), approximations and simulation, and the effect of reinsurance and deductibles.",
+          "cards": [
+              {
+                  "q": "What is the collective risk model?",
+                  "a": "$S = X_1 + \\dots + X_N$ with $N$ the claim count and $X_i$ iid severities independent of $N$.",
+                  "explain": "Basis of aggregate modelling."
+              },
+              {
+                  "q": "What is the mean of a compound distribution?",
+                  "a": "$E[S] = E[N]\\,E[X]$.",
+                  "explain": "Frequency × severity."
+              },
+              {
+                  "q": "What is the variance of a compound distribution?",
+                  "a": "$\\mathrm{Var}(S) = E[N]\\mathrm{Var}(X) + \\mathrm{Var}(N)(E[X])^2$.",
+                  "explain": "Both sources."
+              },
+              {
+                  "q": "What is the variance of a compound Poisson?",
+                  "a": "$\\lambda E[X^2]$.",
+                  "explain": "Simplification."
+              },
+              {
+                  "q": "When is the negative binomial used for frequency?",
+                  "a": "When claim counts are over-dispersed (variance > mean), e.g. heterogeneous risks.",
+                  "explain": "Poisson-gamma mixture."
+              },
+              {
+                  "q": "Which severity distributions have heavy tails?",
+                  "a": "Pareto, lognormal (moderately), Burr.",
+                  "explain": "Large losses."
+              },
+              {
+                  "q": "How can aggregate distributions be computed?",
+                  "a": "Panjer recursion, Fast Fourier Transform, simulation, normal/translated gamma approximations.",
+                  "explain": "Methods."
+              },
+              {
+                  "q": "What is Panjer recursion?",
+                  "a": "A recursive method for compound distributions with (a,b,0) frequency distributions and discrete severities.",
+                  "explain": "Exact computation."
+              },
+              {
+                  "q": "How does a deductible affect frequency and severity?",
+                  "a": "Reduces number of claims (only those above deductible) and changes severity to the excess.",
+                  "explain": "Truncation."
+              },
+              {
+                  "q": "How does an XoL layer affect severity?",
+                  "a": "Claims to layer are min(max(X − d, 0), l).",
+                  "explain": "Layer loss cost."
+              },
+              {
+                  "q": "What is the limited expected value?",
+                  "a": "$E[\\min(X, u)]$ — used to price limits and layers.",
+                  "explain": "ILFs."
+              },
+              {
+                  "q": "What is the method of moments?",
+                  "a": "Fitting parameters by matching sample moments.",
+                  "explain": "Simple fitting."
+              },
+              {
+                  "q": "What is maximum likelihood estimation?",
+                  "a": "Choosing parameters that maximise the likelihood of the data.",
+                  "explain": "Preferred for fitting."
+              },
+              {
+                  "q": "How is goodness of fit tested?",
+                  "a": "Q-Q plots, chi-square, Kolmogorov-Smirnov, AIC.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "Why simulate aggregate claims?",
+                  "a": "Flexibility for complex structures (reinsurance, dependencies).",
+                  "explain": "Monte Carlo."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Rating methodologies and bases",
+          "description": "Building up premiums: risk premium (pure premium), office premium loadings for expenses, commission, profit and contingencies, investment income, reinsurance and capital costs, and the main rating methodologies (burning cost, frequency-severity, GLMs, exposure rating).",
+          "cards": [
+              {
+                  "q": "What is the risk (pure) premium?",
+                  "a": "Expected claims cost per unit of exposure.",
+                  "explain": "Frequency × severity."
+              },
+              {
+                  "q": "What loadings are added to reach the office premium?",
+                  "a": "Expenses (fixed and variable), commission, profit, contingency margins, reinsurance costs, cost of capital, less investment income credit.",
+                  "explain": "Build-up."
+              },
+              {
+                  "q": "Give the standard office premium formula.",
+                  "a": "$P = \\frac{RP + F}{1 - c - v - p}$ with fixed expense $F$, commission $c$, variable expense $v$, profit $p$ as proportions of premium.",
+                  "explain": "Solve for P."
+              },
+              {
+                  "q": "How is investment income allowed for?",
+                  "a": "Discounting expected claims payments or crediting interest on premiums held.",
+                  "explain": "More for long-tail."
+              },
+              {
+                  "q": "What is the burning cost approach?",
+                  "a": "Historical claims (adjusted) divided by historical exposure.",
+                  "explain": "Simple, needs stable data."
+              },
+              {
+                  "q": "What is frequency-severity rating?",
+                  "a": "Modelling claim frequency and average severity separately, then combining.",
+                  "explain": "Different trends."
+              },
+              {
+                  "q": "What is exposure rating?",
+                  "a": "Pricing using benchmark loss curves applied to exposure (e.g. sums insured).",
+                  "explain": "Chapter 15."
+              },
+              {
+                  "q": "What are rating factors?",
+                  "a": "Characteristics used to vary premium by risk (e.g. age, location, vehicle).",
+                  "explain": "Must be predictive and permitted."
+              },
+              {
+                  "q": "What is a base rate?",
+                  "a": "Rate for the reference risk, adjusted by relativities.",
+                  "explain": "Multiplicative tariff."
+              },
+              {
+                  "q": "What is the rating basis?",
+                  "a": "The set of assumptions and methodology for pricing.",
+                  "explain": "Documented."
+              },
+              {
+                  "q": "How is cost of capital included?",
+                  "a": "Required return on capital allocated to the policy.",
+                  "explain": "Capital intensive lines."
+              },
+              {
+                  "q": "What is contingency loading?",
+                  "a": "Margin for uncertainty in estimates.",
+                  "explain": "Prudence."
+              },
+              {
+                  "q": "How is reinsurance cost allocated?",
+                  "a": "Net cost of reinsurance allocated to classes/policies.",
+                  "explain": "Chapter 13."
+              },
+              {
+                  "q": "What is a technical price?",
+                  "a": "Price derived from actuarial analysis before commercial adjustment.",
+                  "explain": "Contrast with market price."
+              },
+              {
+                  "q": "Why might the final premium differ from technical price?",
+                  "a": "Competition, strategy, customer lifetime value, regulation.",
+                  "explain": "Commercial."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Further considerations when rating",
+          "description": "Other factors in setting premiums: competition and the underwriting cycle, marketing and distribution, regulation and fairness, reinsurance, capital, anti-selection, customer behaviour and lifetime value, and monitoring the adequacy of rates.",
+          "cards": [
+              {
+                  "q": "How does competition affect rating?",
+                  "a": "Market prices constrain premiums; insurers may accept lower margins.",
+                  "explain": "Cycle."
+              },
+              {
+                  "q": "How does the underwriting cycle affect rating?",
+                  "a": "Soft markets push rates down; hard markets allow increases.",
+                  "explain": "Monitor adequacy."
+              },
+              {
+                  "q": "What is anti-selection in rating?",
+                  "a": "If an insurer's rates are too low for some risks relative to competitors, it attracts those risks.",
+                  "explain": "Rate segmentation."
+              },
+              {
+                  "q": "How can regulation constrain rating?",
+                  "a": "Banned factors (e.g. gender), fair value and pricing practice rules.",
+                  "explain": "Compliance."
+              },
+              {
+                  "q": "What was the UK price walking ban?",
+                  "a": "Renewal prices for home and motor cannot exceed equivalent new business prices (from 2022).",
+                  "explain": "FCA rules."
+              },
+              {
+                  "q": "How does distribution affect rating?",
+                  "a": "Commission and channel-specific experience.",
+                  "explain": "Aggregators."
+              },
+              {
+                  "q": "What is customer lifetime value?",
+                  "a": "Expected profit over a customer's relationship including renewals.",
+                  "explain": "Pricing strategy."
+              },
+              {
+                  "q": "What is price elasticity?",
+                  "a": "Sensitivity of demand or retention to price changes.",
+                  "explain": "Demand modelling."
+              },
+              {
+                  "q": "How can reinsurance affect rating?",
+                  "a": "Cost and availability of reinsurance feeds into price.",
+                  "explain": "Capacity."
+              },
+              {
+                  "q": "What is portfolio management?",
+                  "a": "Adjusting rates by segment to achieve target mix.",
+                  "explain": "Strategy."
+              },
+              {
+                  "q": "How can inflation be allowed for?",
+                  "a": "Projecting claims costs to the period of cover.",
+                  "explain": "Trending."
+              },
+              {
+                  "q": "What is the effect of large claim loading?",
+                  "a": "Spreading cost of large claims across the portfolio.",
+                  "explain": "Stability."
+              },
+              {
+                  "q": "How can underwriting judgement modify rates?",
+                  "a": "Schedule rating, debits/credits for risk features.",
+                  "explain": "Commercial lines."
+              },
+              {
+                  "q": "How do expenses vary by channel and size?",
+                  "a": "Fixed costs matter more for small policies.",
+                  "explain": "Rating structure."
+              },
+              {
+                  "q": "Why monitor rate adequacy?",
+                  "a": "To ensure rates keep pace with claims trends.",
+                  "explain": "Rate monitoring."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Rating using frequency-severity and burning cost approaches",
+          "description": "Experience rating with burning cost and frequency-severity methods: adjusting historical data for inflation, development (IBNR), exposure changes, policy changes and large losses, projecting to the rating period, and strengths and weaknesses of each approach.",
+          "cards": [
+              {
+                  "q": "What adjustments are made to historical claims in burning cost?",
+                  "a": "Inflate to rating period, develop to ultimate, adjust for exposure and policy changes, treat large claims.",
+                  "explain": "As-if data."
+              },
+              {
+                  "q": "How is claims inflation applied?",
+                  "a": "Trend each claim from its occurrence date to the midpoint of the future policy period.",
+                  "explain": "Compound inflation."
+              },
+              {
+                  "q": "Why develop claims to ultimate?",
+                  "a": "Recent years are immature and understate ultimate costs.",
+                  "explain": "IBNR."
+              },
+              {
+                  "q": "How are exposure changes allowed for?",
+                  "a": "Divide by exposure to get rates per unit.",
+                  "explain": "Normalisation."
+              },
+              {
+                  "q": "How are policy changes (e.g. deductibles) allowed for?",
+                  "a": "Restate historical claims as if under current terms.",
+                  "explain": "As-if."
+              },
+              {
+                  "q": "What is the advantage of frequency-severity over burning cost?",
+                  "a": "Separates drivers, allowing different trends and better modelling of layers.",
+                  "explain": "More insight."
+              },
+              {
+                  "q": "When is burning cost appropriate?",
+                  "a": "Stable portfolios with credible data.",
+                  "explain": "Simplicity."
+              },
+              {
+                  "q": "What are weaknesses of burning cost?",
+                  "a": "Sensitive to large claims, data limitations, changes in portfolio.",
+                  "explain": "Volatility."
+              },
+              {
+                  "q": "How are large claims treated?",
+                  "a": "Capped and a large loss loading added, or modelled separately.",
+                  "explain": "Stability."
+              },
+              {
+                  "q": "What is the midpoint of exposure?",
+                  "a": "Average date of loss in the future policy period, used for trending.",
+                  "explain": "Inflation."
+              },
+              {
+                  "q": "How are frequency trends estimated?",
+                  "a": "Regression of claim frequency over time.",
+                  "explain": "Trends."
+              },
+              {
+                  "q": "How are severity trends estimated?",
+                  "a": "Regression of average cost, economic indices.",
+                  "explain": "Inflation."
+              },
+              {
+                  "q": "What is on-levelling premium?",
+                  "a": "Restating historical premium at current rates.",
+                  "explain": "Loss ratio approach."
+              },
+              {
+                  "q": "What is the loss ratio method?",
+                  "a": "New rate change = projected loss ratio / target loss ratio − 1.",
+                  "explain": "Rate adjustment."
+              },
+              {
+                  "q": "Why credibility-weight experience?",
+                  "a": "Small portfolios' experience is volatile.",
+                  "explain": "Chapter 18."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Rating using original loss curves",
+          "description": "Exposure rating with original loss curves: exposure curves (e.g. MBBEFD/Swiss Re curves) for property per-risk layers, increased limit factors for liability, their derivation and use when experience data is sparse, and limitations.",
+          "cards": [
+              {
+                  "q": "What is an exposure curve?",
+                  "a": "A curve giving the proportion of expected loss below a deductible as a fraction of sum insured (or MPL).",
+                  "explain": "Property."
+              },
+              {
+                  "q": "How are exposure curves used to price layers?",
+                  "a": "The share of expected loss in a layer = G(upper/SI) − G(lower/SI), applied to risk premium.",
+                  "explain": "Per risk."
+              },
+              {
+                  "q": "What are MBBEFD curves?",
+                  "a": "A parametric family of exposure curves (Bernegger) including Swiss Re curves.",
+                  "explain": "Industry standard."
+              },
+              {
+                  "q": "What is an increased limit factor (ILF)?",
+                  "a": "Ratio of expected losses at a higher limit to a basic limit.",
+                  "explain": "Liability pricing."
+              },
+              {
+                  "q": "How are ILFs derived?",
+                  "a": "From limited expected values of severity distributions: ILF(u) = E[min(X,u)]/E[min(X,b)].",
+                  "explain": "Severity."
+              },
+              {
+                  "q": "When is exposure rating useful?",
+                  "a": "When experience data is sparse or not relevant (new layers).",
+                  "explain": "Benchmarks."
+              },
+              {
+                  "q": "What data is needed for exposure rating?",
+                  "a": "Risk profile: sums insured/limits, premiums, occupancy.",
+                  "explain": "Bordereaux."
+              },
+              {
+                  "q": "What are limitations of exposure curves?",
+                  "a": "Generic curves may not match the portfolio; sum insured quality issues.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What is the difference between exposure and experience rating?",
+                  "a": "Exposure uses benchmark curves applied to current exposure; experience uses the portfolio's own history.",
+                  "explain": "Blend."
+              },
+              {
+                  "q": "What is the MPL?",
+                  "a": "Maximum possible loss for a risk.",
+                  "explain": "Denominator for curves."
+              },
+              {
+                  "q": "Why do curves depend on risk type?",
+                  "a": "Different loss severity profiles (e.g. residential vs industrial).",
+                  "explain": "Curve choice."
+              },
+              {
+                  "q": "How are ILFs used in primary liability?",
+                  "a": "Pricing higher limits relative to basic limit premium.",
+                  "explain": "Limits pricing."
+              },
+              {
+                  "q": "What is the risk profile?",
+                  "a": "Distribution of risks by sum insured band.",
+                  "explain": "Input."
+              },
+              {
+                  "q": "How can exposure and experience rates be combined?",
+                  "a": "Credibility weighting.",
+                  "explain": "Chapter 18."
+              },
+              {
+                  "q": "What is first loss scale?",
+                  "a": "Another name for exposure curve.",
+                  "explain": "Terminology."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Generalised linear modelling and machine learning",
+          "description": "GLMs for pricing: exponential family distributions, link functions, offsets and weights, frequency (Poisson), severity (gamma), Tweedie pure premium models, model selection and diagnostics; and machine learning methods (GBMs, random forests, neural networks), overfitting, validation and interpretability.",
+          "cards": [
+              {
+                  "q": "What are the components of a GLM?",
+                  "a": "A distribution from the exponential family, a linear predictor $\\eta = X\\beta$, and a link function $g(\\mu) = \\eta$.",
+                  "explain": "Generalises linear regression."
+              },
+              {
+                  "q": "Which GLM is used for claim frequency?",
+                  "a": "Poisson with log link and log exposure offset.",
+                  "explain": "Multiplicative."
+              },
+              {
+                  "q": "Which GLM is used for severity?",
+                  "a": "Gamma with log link, weighted by claim count.",
+                  "explain": "Multiplicative."
+              },
+              {
+                  "q": "What is a Tweedie model?",
+                  "a": "Compound Poisson-gamma distribution modelling pure premium directly.",
+                  "explain": "Power parameter 1–2."
+              },
+              {
+                  "q": "What is an offset?",
+                  "a": "A term with fixed coefficient 1, e.g. log(exposure).",
+                  "explain": "Rates per exposure."
+              },
+              {
+                  "q": "How are GLM factors assessed?",
+                  "a": "Significance tests, deviance, AIC/BIC, consistency over time, parameter standard errors.",
+                  "explain": "Model selection."
+              },
+              {
+                  "q": "What is deviance?",
+                  "a": "A goodness-of-fit measure comparing the model to a saturated model.",
+                  "explain": "Nested model tests."
+              },
+              {
+                  "q": "What are interaction terms?",
+                  "a": "Terms allowing one factor's effect to depend on another.",
+                  "explain": "E.g. age × vehicle."
+              },
+              {
+                  "q": "What is a gradient boosting machine?",
+                  "a": "An ensemble of decision trees fitted sequentially to residuals.",
+                  "explain": "High predictive power."
+              },
+              {
+                  "q": "What is overfitting?",
+                  "a": "Model captures noise rather than signal, performing poorly on new data.",
+                  "explain": "Validation data."
+              },
+              {
+                  "q": "How is overfitting avoided?",
+                  "a": "Hold-out and cross-validation, regularisation, parsimony.",
+                  "explain": "Out-of-sample testing."
+              },
+              {
+                  "q": "What is regularisation?",
+                  "a": "Penalising model complexity (lasso, ridge).",
+                  "explain": "Stability."
+              },
+              {
+                  "q": "Why is interpretability important?",
+                  "a": "Regulators, underwriters and customers need to understand price drivers; fairness concerns.",
+                  "explain": "GLMs more transparent."
+              },
+              {
+                  "q": "How can ML models be explained?",
+                  "a": "Partial dependence plots, SHAP values, feature importance.",
+                  "explain": "Explainability tools."
+              },
+              {
+                  "q": "What are fairness concerns with ML pricing?",
+                  "a": "Proxy discrimination via correlated variables.",
+                  "explain": "Regulatory scrutiny."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Use of multivariate models in pricing",
+          "description": "Using multivariate models in practice: data preparation, factor selection and grouping, smoothing, spatial and vehicle classifications, combining frequency and severity models, building the tariff, demand and retention models, and price optimisation within regulatory limits.",
+          "cards": [
+              {
+                  "q": "Why use multivariate models rather than one-way analysis?",
+                  "a": "One-way analysis ignores correlations between factors, double-counting effects.",
+                  "explain": "GLMs adjust simultaneously."
+              },
+              {
+                  "q": "How are frequency and severity models combined?",
+                  "a": "Multiply fitted relativities to produce pure premium relativities.",
+                  "explain": "Or Tweedie."
+              },
+              {
+                  "q": "What is factor grouping?",
+                  "a": "Combining levels with similar effects to improve credibility.",
+                  "explain": "Parsimony."
+              },
+              {
+                  "q": "What is smoothing?",
+                  "a": "Fitting curves to ordered factors (e.g. age) to avoid erratic relativities.",
+                  "explain": "Polynomials, splines."
+              },
+              {
+                  "q": "How is postcode handled?",
+                  "a": "Spatial smoothing or clustering into risk zones.",
+                  "explain": "Geographic rating."
+              },
+              {
+                  "q": "What is a vehicle classification?",
+                  "a": "Grouping vehicles by risk (e.g. group rating).",
+                  "explain": "Motor."
+              },
+              {
+                  "q": "How is the tariff built?",
+                  "a": "Base rate × relativities, adjusted to hit target average premium.",
+                  "explain": "Implementation."
+              },
+              {
+                  "q": "What is a demand (conversion) model?",
+                  "a": "Predicts probability of a quote converting to a sale given price.",
+                  "explain": "Price optimisation."
+              },
+              {
+                  "q": "What is a retention model?",
+                  "a": "Predicts probability of renewal given price change.",
+                  "explain": "Elasticity."
+              },
+              {
+                  "q": "What is price optimisation?",
+                  "a": "Setting prices to maximise objectives given cost and demand models.",
+                  "explain": "Regulatory constraints."
+              },
+              {
+                  "q": "What constraints apply to optimisation?",
+                  "a": "Fairness rules, price walking bans, rate change caps.",
+                  "explain": "FCA."
+              },
+              {
+                  "q": "How are models validated?",
+                  "a": "Hold-out tests, lift charts, Gini coefficients, actual vs expected.",
+                  "explain": "Performance."
+              },
+              {
+                  "q": "What is a lift chart?",
+                  "a": "Compares predicted vs actual by predicted risk band.",
+                  "explain": "Discrimination power."
+              },
+              {
+                  "q": "Why cap rate changes?",
+                  "a": "Avoid customer shock and retention losses.",
+                  "explain": "Implementation."
+              },
+              {
+                  "q": "How are external data sources used?",
+                  "a": "Enrich models (credit, telematics, geodata).",
+                  "explain": "Data."
+              }
+          ]
+      },
+      {
+          "id": "m18",
+          "title": "Credibility theory",
+          "description": "Credibility in pricing: limited fluctuation (full and partial credibility), Bühlmann and Bühlmann-Straub empirical Bayes credibility, Bayesian interpretation, and applications to experience rating, reinsurance and blending exposure and experience rates.",
+          "cards": [
+              {
+                  "q": "What is credibility?",
+                  "a": "The weight given to a risk's own experience versus a prior/collective estimate.",
+                  "explain": "$Z \\times$ own + $(1-Z) \\times$ collective."
+              },
+              {
+                  "q": "What is limited fluctuation credibility?",
+                  "a": "Full credibility if claim count exceeds a standard so estimates are within a tolerance with given probability; partial credibility via square-root rule.",
+                  "explain": "Classical approach."
+              },
+              {
+                  "q": "What is the square-root rule?",
+                  "a": "$Z = \\sqrt{n / n_F}$ for partial credibility.",
+                  "explain": "Limited fluctuation."
+              },
+              {
+                  "q": "What is Bühlmann credibility?",
+                  "a": "$Z = \\frac{n}{n + k}$ with $k = \\frac{E[s^2(\\theta)]}{\\mathrm{Var}[m(\\theta)]}$.",
+                  "explain": "Empirical Bayes."
+              },
+              {
+                  "q": "What is Bühlmann-Straub?",
+                  "a": "Extension allowing different exposure volumes across years.",
+                  "explain": "Weights."
+              },
+              {
+                  "q": "What does k represent?",
+                  "a": "Ratio of expected process variance to variance of hypothetical means.",
+                  "explain": "Heterogeneity."
+              },
+              {
+                  "q": "When does Z approach 1?",
+                  "a": "Large volumes of data or high heterogeneity between risks.",
+                  "explain": "Own experience dominates."
+              },
+              {
+                  "q": "What is the Bayesian interpretation?",
+                  "a": "Credibility estimate equals posterior mean for certain conjugate models (e.g. Poisson-gamma).",
+                  "explain": "Exact credibility."
+              },
+              {
+                  "q": "How is credibility used in experience rating?",
+                  "a": "Blending group experience with book rates.",
+                  "explain": "Group schemes."
+              },
+              {
+                  "q": "How is credibility used in reinsurance pricing?",
+                  "a": "Blending experience and exposure rates.",
+                  "explain": "Layers."
+              },
+              {
+                  "q": "What are limitations of credibility?",
+                  "a": "Parameter estimation, assumes stable risks, subjectivity.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "Worked example: n=3 years, k=6. Z?",
+                  "a": "$Z = 3/(3+6) = 1/3$.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What is the collective premium?",
+                  "a": "The mean for the whole portfolio.",
+                  "explain": "Prior estimate."
+              },
+              {
+                  "q": "How does exposure volume affect credibility?",
+                  "a": "More exposure gives higher Z.",
+                  "explain": "Bühlmann-Straub."
+              },
+              {
+                  "q": "What is the effect of heterogeneity on credibility?",
+                  "a": "More heterogeneity increases Z since collective is less informative.",
+                  "explain": "Variance of means."
+              }
+          ]
+      },
+      {
+          "id": "m19",
+          "title": "Actuarial investigations",
+          "description": "Pricing-related actuarial investigations: rate monitoring, portfolio and profitability analysis, renewal and new business analysis, claims trend studies, reviewing rating structures, and monitoring the effectiveness of pricing changes.",
+          "cards": [
+              {
+                  "q": "What is rate monitoring?",
+                  "a": "Measuring changes in price per unit of exposure on renewing business, adjusted for terms.",
+                  "explain": "Market cycle."
+              },
+              {
+                  "q": "What is a portfolio profitability analysis?",
+                  "a": "Comparing actual loss ratios and profitability by segment.",
+                  "explain": "Rating review."
+              },
+              {
+                  "q": "Why analyse new business versus renewals?",
+                  "a": "Different experience and selection effects.",
+                  "explain": "Anti-selection."
+              },
+              {
+                  "q": "What is a claims trend study?",
+                  "a": "Estimating frequency and severity trends over time.",
+                  "explain": "Inflation input."
+              },
+              {
+                  "q": "How are pricing changes monitored?",
+                  "a": "Comparing actual volumes, mix, retention and loss ratios with expectations.",
+                  "explain": "Feedback."
+              },
+              {
+                  "q": "What is mix analysis?",
+                  "a": "Understanding changes in portfolio composition.",
+                  "explain": "Average premium changes."
+              },
+              {
+                  "q": "Why investigate retention rates?",
+                  "a": "Price elasticity and customer behaviour.",
+                  "explain": "Retention models."
+              },
+              {
+                  "q": "What is an actual vs expected analysis in pricing?",
+                  "a": "Comparing actual claims with those predicted by the rating model.",
+                  "explain": "Model monitoring."
+              },
+              {
+                  "q": "How can underwriters' input help?",
+                  "a": "Explaining anomalies and changes in risk.",
+                  "explain": "Qualitative."
+              },
+              {
+                  "q": "What is a rate adequacy review?",
+                  "a": "Assessing whether rates cover expected costs and profit.",
+                  "explain": "Periodic."
+              },
+              {
+                  "q": "What is a competitor analysis?",
+                  "a": "Comparing prices with competitors.",
+                  "explain": "Market positioning."
+              },
+              {
+                  "q": "How are large losses investigated?",
+                  "a": "Individually, for causes and pricing implications.",
+                  "explain": "Underwriting feedback."
+              },
+              {
+                  "q": "Why monitor conversion rates?",
+                  "a": "Indicates competitiveness.",
+                  "explain": "Demand."
+              },
+              {
+                  "q": "What is a loss ratio analysis by channel?",
+                  "a": "Identifies profitable distribution channels.",
+                  "explain": "Strategy."
+              },
+              {
+                  "q": "How should findings be communicated?",
+                  "a": "Clear recommendations with supporting analysis.",
+                  "explain": "TAS."
+              }
+          ]
+      },
+      {
+          "id": "m20",
+          "title": "Reinsurance pricing",
+          "description": "Pricing reinsurance: proportional treaty pricing (commission, loss ratios), experience rating of XoL layers (as-if burning cost with trending and development), exposure rating and ILFs, catastrophe XoL pricing with cat models, rate on line and payback, reinstatements and loadings.",
+          "cards": [
+              {
+                  "q": "How is proportional reinsurance priced?",
+                  "a": "Mainly by setting ceding commission, based on expected loss ratio and reinsurer margin.",
+                  "explain": "Sliding scales."
+              },
+              {
+                  "q": "How is an XoL layer experience-rated?",
+                  "a": "Trend and develop historical large claims, apply layer terms, divide by exposure (as-if burning cost).",
+                  "explain": "Large claims data."
+              },
+              {
+                  "q": "Why does inflation leverage affect XoL layers?",
+                  "a": "Claims inflation pushes more losses into and through layers, so layer costs grow faster than inflation.",
+                  "explain": "Leveraging effect."
+              },
+              {
+                  "q": "How is exposure rating used for XoL?",
+                  "a": "Apply exposure curves or ILFs to the risk profile.",
+                  "explain": "Sparse data."
+              },
+              {
+                  "q": "How is cat XoL priced?",
+                  "a": "Using cat model EP curves to compute expected layer loss plus loadings.",
+                  "explain": "Model uncertainty."
+              },
+              {
+                  "q": "What is rate on line?",
+                  "a": "Reinsurance premium / layer limit.",
+                  "explain": "Market metric."
+              },
+              {
+                  "q": "What is payback period?",
+                  "a": "Limit / premium — years of premium to pay for one full loss.",
+                  "explain": "Inverse of ROL."
+              },
+              {
+                  "q": "How do reinstatements affect pricing?",
+                  "a": "Reinstatement premiums reduce net cost; free or paid reinstatements affect expected premium.",
+                  "explain": "Adjust."
+              },
+              {
+                  "q": "What loadings are added to reinsurance risk premium?",
+                  "a": "Expenses, brokerage, cost of capital, uncertainty.",
+                  "explain": "Build-up."
+              },
+              {
+                  "q": "How is credibility used in reinsurance pricing?",
+                  "a": "Blend experience and exposure results.",
+                  "explain": "Chapter 18."
+              },
+              {
+                  "q": "What is an as-if loss?",
+                  "a": "Historical loss adjusted to current conditions.",
+                  "explain": "Experience rating."
+              },
+              {
+                  "q": "What is a Pareto severity for layers?",
+                  "a": "Common heavy-tailed fit for large losses.",
+                  "explain": "Layer pricing."
+              },
+              {
+                  "q": "What is aggregate deductible pricing?",
+                  "a": "Modelling aggregate losses with simulation.",
+                  "explain": "Complex terms."
+              },
+              {
+                  "q": "How do market conditions affect reinsurance pricing?",
+                  "a": "Capacity, recent catastrophes, capital inflows.",
+                  "explain": "Cycle."
+              },
+              {
+                  "q": "What data is needed for reinsurance pricing?",
+                  "a": "Large loss listings, risk profiles, premium history, exposure data.",
+                  "explain": "Submission."
+              }
+          ]
+      },
+      {
+          "id": "m21",
+          "title": "Use of catastrophe models",
+          "description": "Catastrophe models in pricing: hazard, vulnerability and financial modules, event loss tables, exceedance probability curves (OEP and AEP), average annual loss and PMLs, model uncertainty and non-modelled perils, and using model output in primary and reinsurance pricing.",
+          "cards": [
+              {
+                  "q": "What are the modules of a catastrophe model?",
+                  "a": "Hazard (event catalogue), vulnerability (damage functions), financial (policy terms).",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "What is an event loss table?",
+                  "a": "Events with annual rates and modelled losses.",
+                  "explain": "Model output."
+              },
+              {
+                  "q": "What is the average annual loss (AAL)?",
+                  "a": "Expected annual catastrophe loss.",
+                  "explain": "Technical cat load."
+              },
+              {
+                  "q": "What is an OEP curve?",
+                  "a": "Occurrence exceedance probability — probability the largest event loss in a year exceeds a value.",
+                  "explain": "Per-occurrence covers."
+              },
+              {
+                  "q": "What is an AEP curve?",
+                  "a": "Aggregate exceedance probability — probability total annual losses exceed a value.",
+                  "explain": "Aggregate covers."
+              },
+              {
+                  "q": "What is a PML?",
+                  "a": "Probable maximum loss at a return period (e.g. 1-in-200).",
+                  "explain": "Capital and limits."
+              },
+              {
+                  "q": "How is cat model output used in primary pricing?",
+                  "a": "Cat load per policy based on location AAL plus risk margin.",
+                  "explain": "Property pricing."
+              },
+              {
+                  "q": "How is cat model output used in reinsurance pricing?",
+                  "a": "Expected layer losses and volatility from event losses.",
+                  "explain": "Cat XoL."
+              },
+              {
+                  "q": "What is model uncertainty in cat modelling?",
+                  "a": "Different vendor models give different results; secondary uncertainty.",
+                  "explain": "Blend or adjust."
+              },
+              {
+                  "q": "What are non-modelled perils?",
+                  "a": "Perils or regions not covered by models; need loadings.",
+                  "explain": "E.g. some floods."
+              },
+              {
+                  "q": "What data quality issues affect cat models?",
+                  "a": "Location accuracy, construction details, sums insured.",
+                  "explain": "Garbage in."
+              },
+              {
+                  "q": "What is secondary uncertainty?",
+                  "a": "Uncertainty in loss given an event.",
+                  "explain": "Vulnerability."
+              },
+              {
+                  "q": "How does climate change affect cat models?",
+                  "a": "Historical catalogues may understate current risk.",
+                  "explain": "Adjustments."
+              },
+              {
+                  "q": "What is demand surge?",
+                  "a": "Increase in repair costs after large events.",
+                  "explain": "Loss amplification."
+              },
+              {
+                  "q": "Why not rely solely on cat models?",
+                  "a": "Model risk, data issues; combine with experience and judgement.",
+                  "explain": "Blending."
+              }
+          ]
+      },
+      {
+          "id": "m22",
+          "title": "Principal terms",
+          "description": "Key SP8 terminology — pricing, credibility, GLM, reinsurance and catastrophe modelling terms — as a recall deck.",
+          "cards": [
+              {
+                  "q": "Define 'risk premium'.",
+                  "a": "Expected claims cost per exposure unit.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "Define 'burning cost'.",
+                  "a": "Historical adjusted claims per exposure.",
+                  "explain": "Experience rating."
+              },
+              {
+                  "q": "Define 'ILF'.",
+                  "a": "Increased limit factor.",
+                  "explain": "Liability pricing."
+              },
+              {
+                  "q": "Define 'exposure curve'.",
+                  "a": "Proportion of loss below a deductible as fraction of SI.",
+                  "explain": "Property XoL."
+              },
+              {
+                  "q": "Define 'credibility factor'.",
+                  "a": "Weight given to own experience.",
+                  "explain": "Z."
+              },
+              {
+                  "q": "Define 'Tweedie distribution'.",
+                  "a": "Compound Poisson-gamma for pure premium.",
+                  "explain": "GLMs."
+              },
+              {
+                  "q": "Define 'offset'.",
+                  "a": "Fixed-coefficient term in a GLM.",
+                  "explain": "Exposure."
+              },
+              {
+                  "q": "Define 'rate on line'.",
+                  "a": "Premium divided by layer limit.",
+                  "explain": "Reinsurance."
+              },
+              {
+                  "q": "Define 'AAL'.",
+                  "a": "Average annual loss.",
+                  "explain": "Cat models."
+              },
+              {
+                  "q": "Define 'OEP'.",
+                  "a": "Occurrence exceedance probability.",
+                  "explain": "Cat models."
+              },
+              {
+                  "q": "Define 'price elasticity'.",
+                  "a": "Responsiveness of demand to price.",
+                  "explain": "Optimisation."
+              },
+              {
+                  "q": "Define 'as-if claims'.",
+                  "a": "Historical claims restated to current terms.",
+                  "explain": "Experience rating."
+              },
+              {
+                  "q": "Define 'office premium'.",
+                  "a": "Premium including all loadings.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "Define 'on-levelling'.",
+                  "a": "Restating premium at current rates.",
+                  "explain": "Loss ratios."
+              },
+              {
+                  "q": "Define 'large loss loading'.",
+                  "a": "Allowance for capped large claims.",
+                  "explain": "Stability."
+              }
+          ]
+      }
+  ],
   SP9: [
     {
         "id": "m01",

@@ -9682,7 +9682,7 @@ const QUESTIONS = {
     {
       id: "sp8-q1",
       title: "Premium components and gross premium calculation",
-      modules: "Module 2",
+      modules: "Modules 12, 13",
       marks: 12,
       parts: [
         {
@@ -9730,7 +9730,7 @@ const QUESTIONS = {
     {
       id: "sp8-q2",
       title: "The burning cost approach",
-      modules: "Module 3",
+      modules: "Module 14",
       marks: 12,
       parts: [
         {
@@ -9778,7 +9778,7 @@ const QUESTIONS = {
     {
       id: "sp8-q3",
       title: "Frequency-severity models and GLMs",
-      modules: "Module 4",
+      modules: "Modules 14, 16, 17",
       marks: 12,
       parts: [
         {
@@ -9826,7 +9826,7 @@ const QUESTIONS = {
     {
       id: "sp8-q4",
       title: "General insurance products, direct and reinsurance business",
-      modules: "Module 5",
+      modules: "Modules 2, 3, 5, 6",
       marks: 12,
       parts: [
         {
@@ -9874,7 +9874,7 @@ const QUESTIONS = {
     {
       id: "sp8-q5",
       title: "External factors affecting pricing",
-      modules: "Module 6",
+      modules: "Modules 8, 13",
       marks: 12,
       parts: [
         {
@@ -9922,7 +9922,7 @@ const QUESTIONS = {
     {
       id: "sp8-q6",
       title: "Pricing uncertainty and data quality",
-      modules: "Module 7",
+      modules: "Modules 9, 10",
       marks: 12,
       parts: [
         {
@@ -9970,7 +9970,7 @@ const QUESTIONS = {
     {
       id: "sp8-q7",
       title: "Actuarial investigations of pricing results",
-      modules: "Module 8",
+      modules: "Module 19",
       marks: 12,
       parts: [
         {
@@ -10018,7 +10018,7 @@ const QUESTIONS = {
     {
       id: "sp8-q8",
       title: "The collective risk model and aggregate claims",
-      modules: "Module 9",
+      modules: "Module 11",
       marks: 12,
       parts: [
         {
@@ -10066,7 +10066,7 @@ const QUESTIONS = {
     {
       id: "sp8-q9",
       title: "Credibility theory",
-      modules: "Module 10",
+      modules: "Module 18",
       marks: 12,
       parts: [
         {
@@ -10114,7 +10114,7 @@ const QUESTIONS = {
     {
       id: "sp8-q10",
       title: "Reinsurance pricing and catastrophe modelling",
-      modules: "Modules 11, 12",
+      modules: "Modules 20, 21",
       marks: 12,
       parts: [
         {
