@@ -1147,7 +1147,7 @@ const QUESTIONS = {
           marks: 3,
           question: "State the degrees of freedom for this test, compare the statistic to the 5% critical value of 9.488, and state your conclusion.",
           answer:
-            "Degrees of freedom $= 5-1 = 4$ (5 categories, no parameters estimated from the data). Since $\\chi^2=2.90 < 9.488$, there is insufficient evidence to reject $H_0$ at the 5% level &mdash; the data are consistent with the specified distribution.",
+            "Degrees of freedom $= 5-1 = 4$ (5 categories, no parameters estimated from the data). Since $\\chi^2=2.90 \\lt  9.488$, there is insufficient evidence to reject $H_0$ at the 5% level &mdash; the data are consistent with the specified distribution.",
           note: "The conclusion must be phrased as 'insufficient evidence to reject' rather than 'accept $H_0$' &mdash; a hypothesis test never proves the null hypothesis true, only that the data don't contradict it.",
         },
         {
@@ -1661,7 +1661,7 @@ const QUESTIONS = {
           command: "State",
           marks: 2,
           question: "State the formula for the risk-neutral up-probability $p$ in a one-step binomial model, and the no-arbitrage condition the up and down factors $u,d$ must satisfy.",
-          answer: "$p=\\dfrac{e^{r\\Delta t}-d}{u-d}$, requiring $d<e^{r\\Delta t}<u$ for $p$ to lie strictly between 0 and 1.",
+          answer: "$p=\\dfrac{e^{r\\Delta t}-d}{u-d}$, requiring $d\\lt e^{r\\Delta t}\\lt u$ for $p$ to lie strictly between 0 and 1.",
           note: "Both the formula and the no-arbitrage condition should be stated, since part (ii) requires checking the given $u,d,r$ satisfy this condition implicitly by producing a valid $p\\in(0,1)$.",
         },
         {
@@ -2086,7 +2086,7 @@ const QUESTIONS = {
           marks: 2,
           question: "Comment on the conclusion from the chi-square statistic in part (ii), given a 5% critical value of 9.488 on 4 degrees of freedom.",
           answer:
-            "Since $\\chi^2=2.042 < 9.488$, there is no evidence to reject the null hypothesis that the graduated rates are consistent with the crude data &mdash; the graduation passes this overall goodness-of-fit test.",
+            "Since $\\chi^2=2.042 \\lt  9.488$, there is no evidence to reject the null hypothesis that the graduated rates are consistent with the crude data &mdash; the graduation passes this overall goodness-of-fit test.",
           note: "Degrees of freedom here is (number of age groups) $-1$; candidates should be able to identify why 1 degree of freedom is lost (the graduation is typically constrained to reproduce the total observed deaths, as noted in part (ii)).",
         },
         {
@@ -2132,16 +2132,16 @@ const QUESTIONS = {
           question: "A time series of annual mortality improvement rates is modelled as a stationary AR(1) process $X_t=\\phi X_{t-1}+\\varepsilon_t$ with $\\phi=0.7$ and $\\text{Var}(\\varepsilon_t)=4$. Calculate the unconditional variance of $X_t$, and the autocorrelations $\\rho(1)$ and $\\rho(2)$.",
           answer:
             "$\\text{Var}(X_t) = \\dfrac{\\sigma_\\varepsilon^2}{1-\\phi^2} = \\dfrac{4}{1-0.49} = \\dfrac{4}{0.51} = 7.843$. For an AR(1), $\\rho(k)=\\phi^k$, so $\\rho(1)=0.7$ and $\\rho(2)=0.7^2=0.49$.",
-          note: "The unconditional variance formula $\\sigma_\\varepsilon^2/(1-\\phi^2)$ is only valid because $|\\phi|=0.7<1$, which is exactly the stationarity condition for an AR(1) process &mdash; the formula would be meaningless (negative or undefined) for $|\\phi|\\geq1$.",
+          note: "The unconditional variance formula $\\sigma_\\varepsilon^2/(1-\\phi^2)$ is only valid because $|\\phi|=0.7\\lt 1$, which is exactly the stationarity condition for an AR(1) process &mdash; the formula would be meaningless (negative or undefined) for $|\\phi|\\geq1$.",
         },
         {
           label: "(iv)",
           command: "Discuss",
           marks: 3,
-          question: "Discuss briefly why the stationarity condition $|\\phi|<1$ matters for using this AR(1) model to project future mortality improvement rates.",
+          question: "Discuss briefly why the stationarity condition $|\\phi|\\lt 1$ matters for using this AR(1) model to project future mortality improvement rates.",
           answer:
             "Stationarity ensures the process has a constant, finite unconditional mean and variance, and that shocks $\\varepsilon_t$ have a diminishing (rather than ever-growing) effect on future values as $\\phi^k\\to0$ &mdash; this means projections revert toward a stable long-run mean rather than diverging or drifting without bound, which is essential for a mortality improvement model to give sensible, bounded long-term projections rather than explosive or non-mean-reverting ones.",
-          note: "The key mechanism to name explicitly is that $\\phi^k\\to0$ as $k\\to\\infty$ only when $|\\phi|<1$, which is exactly what causes both the autocorrelations (part iii) and the influence of past shocks to decay over time, underpinning stable long-run projections.",
+          note: "The key mechanism to name explicitly is that $\\phi^k\\to0$ as $k\\to\\infty$ only when $|\\phi|\\lt 1$, which is exactly what causes both the autocorrelations (part iii) and the influence of past shocks to decay over time, underpinning stable long-run projections.",
         },
       ],
     },
@@ -2967,7 +2967,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain the difference between a relative and an absolute cell reference, and why this distinction matters when copying a discount factor formula down a column of years.",
           answer:
-            "A relative reference (e.g. A1) shifts automatically when a formula is copied to another cell, while an absolute reference (e.g. $A$1) stays fixed regardless of where it's copied. If the discount rate is held in one fixed input cell, that reference must be made absolute before copying the formula down the column of years, otherwise the reference would shift to point at the wrong (likely empty or incorrect) cell in each new row.",
+            "A relative reference (e.g. A1) shifts automatically when a formula is copied to another cell, while an absolute reference (e.g. <code>$A$1</code>) stays fixed regardless of where it's copied. If the discount rate is held in one fixed input cell, that reference must be made absolute before copying the formula down the column of years, otherwise the reference would shift to point at the wrong (likely empty or incorrect) cell in each new row.",
           note: "This is one of the most commonly tested CP2 formula-technique points &mdash; candidates should give a concrete, specific example of what would go wrong if the reference type were mismatched.",
         },
         {
@@ -8774,7 +8774,7 @@ const QUESTIONS = {
           command: "Calculate",
           marks: 4,
           question:
-            "A non-dividend-paying stock currently trades at $50. The continuously-compounded risk-free rate is 5% per annum. Calculate the fair forward price for delivery in 6 months.",
+            "A non-dividend-paying stock currently trades at £50. The continuously-compounded risk-free rate is 5% per annum. Calculate the fair forward price for delivery in 6 months.",
           answer:
             "$F = S_0 e^{rT} = 50 \\times e^{0.05 \\times 0.5} = 50 \\times e^{0.025} = £51.27$ (to the nearest penny).",
           note: "Verified: 50×e^(0.05×0.5)=51.2658 (Node-verified). Full marks require setting up the no-arbitrage forward pricing formula explicitly.",
@@ -8822,7 +8822,7 @@ const QUESTIONS = {
           command: "Calculate",
           marks: 6,
           question:
-            "A non-dividend-paying stock currently trades at $100. Over the next year, its price will either rise to $110 (an 'up' move, $u = 1.1$) or fall to $90 (a 'down' move, $d = 0.9$). The continuously-compounded risk-free rate is 4% per annum. Using a one-step binomial model, calculate the risk-neutral probability of an up-move, and hence the fair price of a one-year European call option with strike price $100.",
+            "A non-dividend-paying stock currently trades at £100. Over the next year, its price will either rise to £110 (an 'up' move, $u = 1.1$) or fall to £90 (a 'down' move, $d = 0.9$). The continuously-compounded risk-free rate is 4% per annum. Using a one-step binomial model, calculate the risk-neutral probability of an up-move, and hence the fair price of a one-year European call option with strike price £100.",
           answer:
             "Risk-neutral probability $p = \\frac{e^{rT} - d}{u - d} = \\frac{e^{0.04} - 0.9}{1.1 - 0.9} = \\frac{1.0408 - 0.9}{0.2} = 0.7041$. Option payoffs: $C_u = \\max(110-100, 0) = £10$; $C_d = \\max(90-100, 0) = £0$. Fair price $= e^{-rT}(p \\times C_u + (1-p) \\times C_d) = e^{-0.04} \\times (0.7041 \\times 10 + 0.2959 \\times 0) = 0.9608 \\times 7.041 = £6.76$ (to the nearest penny).",
           note: "Verified: p=0.7041, C0=6.7645 (Node-verified). Marks are typically split across the risk-neutral probability calculation, the payoff calculation, and the final discounted expected payoff.",
@@ -8870,7 +8870,7 @@ const QUESTIONS = {
           command: "Calculate",
           marks: 6,
           question:
-            "A non-dividend-paying stock trades at $100, with volatility 20% per annum. The risk-free rate is 5% per annum (continuously compounded). Using the Black-Scholes formula, calculate the price of a one-year European call option with strike price $100, given $d_1 = 0.3500$ and $d_2 = 0.1500$, and $N(d_1) = 0.6368$, $N(d_2) = 0.5596$.",
+            "A non-dividend-paying stock trades at £100, with volatility 20% per annum. The risk-free rate is 5% per annum (continuously compounded). Using the Black-Scholes formula, calculate the price of a one-year European call option with strike price £100, given $d_1 = 0.3500$ and $d_2 = 0.1500$, and $N(d_1) = 0.6368$, $N(d_2) = 0.5596$.",
           answer:
             "$C = S_0 N(d_1) - Ke^{-rT}N(d_2) = 100 \\times 0.6368 - 100 \\times e^{-0.05} \\times 0.5596 = 63.68 - 95.12 \\times 0.5596 = 63.68 - 53.23 = £10.45$ (to the nearest penny).",
           note: "Verified: C=10.4506 (Node-verified, using the given d1/d2/N values). Full marks require correctly substituting into the Black-Scholes formula, not just stating the final figure.",
@@ -9110,7 +9110,7 @@ const QUESTIONS = {
           command: "Calculate",
           marks: 4,
           question:
-            "A $30,000,000 derivatives portfolio has a delta of 0.65 relative to its underlying, and the underlying has an annual return volatility of 18%. Using a delta-normal approach with a 99% confidence level (z-score of 2.326), calculate the portfolio's 1-year 99% Value at Risk.",
+            "A £30,000,000 derivatives portfolio has a delta of 0.65 relative to its underlying, and the underlying has an annual return volatility of 18%. Using a delta-normal approach with a 99% confidence level (z-score of 2.326), calculate the portfolio's 1-year 99% Value at Risk.",
           answer:
             "VaR = &#36;30,000,000 &times; 0.65 &times; 18% &times; 2.326 = &#36;8,164,260 (to the nearest &#36;10). This means there is a 1% chance the portfolio loses more than approximately &#36;8.16 million over the year, based on this simplified delta-normal approximation.",
           note: "Verified: 30,000,000×0.65×0.18×2.326=8,164,260 (Node-verified). This is a simplified delta-normal VaR approximation, treating the portfolio's exposure as linear via its delta, for illustrative purposes.",

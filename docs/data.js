@@ -569,7 +569,7 @@ const MODULES = {
                 "explain": "This is the plain-English justification for discounting and accumulating existing at all — whenever an exam question asks you to 'explain why' a cashflow needs adjusting for timing, this principle is the one-sentence answer to reach for before diving into formulas."
             },
             {
-                "q": "For $n<1$, does simple or compound interest give a higher accumulated value?",
+                "q": "For $n\\lt 1$, does simple or compound interest give a higher accumulated value?",
                 "a": "Simple interest gives a slightly higher accumulated value than compound interest for periods less than one year.",
                 "explain": "This is a genuinely counterintuitive result worth remembering precisely because it's easy to assume compound interest always wins — it's a common short-answer trap. The crossover happens exactly at $n=1$, where both formulas agree exactly (both give $C(1+i)$)."
             },
@@ -628,7 +628,7 @@ const MODULES = {
             {
                 "q": "What is the relationship between the effective annual rate $i$ and effective annual discount rate $d$?",
                 "a": "$d = \\frac{i}{1+i}$, or equivalently $1-d = \\frac{1}{1+i} = v$",
-                "explain": "$i$ and $d$ answer the same economic question (how much does money grow/shrink over a year) from two different reference points: $i$ is interest as a fraction of the amount at the START of the year, $d$ is discount as a fraction of the amount at the END — that's why $d < i$ always, and the identity $1-d=v$ links this module straight back to Module 1's discount factor."
+                "explain": "$i$ and $d$ answer the same economic question (how much does money grow/shrink over a year) from two different reference points: $i$ is interest as a fraction of the amount at the START of the year, $d$ is discount as a fraction of the amount at the END — that's why $d \\lt  i$ always, and the identity $1-d=v$ links this module straight back to Module 1's discount factor."
             },
             {
                 "q": "What does $i^{(p)}$ represent?",
@@ -678,7 +678,7 @@ const MODULES = {
             {
                 "q": "Why might a bank quote a 'nominal' rather than 'effective' interest rate?",
                 "a": "It's a convention for rates compounded more frequently than annually, and can make quoted rates look lower than the true effective rate.",
-                "explain": "This is a genuinely practical point beyond the exam: since $i^{(p)} < i$ for $p>1$ (per the ordering card above), a nominal rate always looks smaller than the effective rate it implies — which is exactly why regulators require lenders to also disclose an APR (Module 8), to stop nominal-rate quoting from being misleading."
+                "explain": "This is a genuinely practical point beyond the exam: since $i^{(p)} \\lt  i$ for $p>1$ (per the ordering card above), a nominal rate always looks smaller than the effective rate it implies — which is exactly why regulators require lenders to also disclose an APR (Module 8), to stop nominal-rate quoting from being misleading."
             },
             {
                 "q": "What happens to the accumulated value as compounding frequency $p$ increases, holding $i^{(p)}$ fixed?",
@@ -909,7 +909,7 @@ const MODULES = {
             {
                 "q": "What is a 'perpetuity', and what is the present value of a level perpetuity of $1$ per year in arrears?",
                 "a": "An annuity with no end date; its present value is $a_{\\overline{\\infty}|} = \\frac{1}{i}$",
-                "explain": "This falls out of $a_{\\overline{n}|}=\\frac{1-v^n}{i}$ by letting $n\\to\\infty$: since $0<v<1$, $v^n\\to0$, leaving $\\frac1i$ — a useful sanity check is that a perpetuity's value must be finite despite infinite payments, precisely because each payment is discounted by an ever-shrinking factor."
+                "explain": "This falls out of $a_{\\overline{n}|}=\\frac{1-v^n}{i}$ by letting $n\\to\\infty$: since $0\\lt v\\lt 1$, $v^n\\to0$, leaving $\\frac1i$ — a useful sanity check is that a perpetuity's value must be finite despite infinite payments, precisely because each payment is discounted by an ever-shrinking factor."
             },
             {
                 "q": "What does $_{m|}a_{\\overline{n}|}$ represent?",
@@ -929,7 +929,7 @@ const MODULES = {
             {
                 "q": "What is the relationship between $a_{\\overline{n}|}^{(p)}$ and $a_{\\overline{n}|}$ (in terms of $i$ and $i^{(p)}$)?",
                 "a": "$a_{\\overline{n}|}^{(p)} = \\frac{i}{i^{(p)}}\\,a_{\\overline{n}|}$",
-                "explain": "The ratio $\\frac{i}{i^{(p)}}$ is always slightly greater than 1 (since $i^{(p)}<i$ from Module 2), which makes sense: paying the same total amount per year in smaller, more frequent instalments means receiving money slightly sooner on average, so it's worth slightly more — confirms $a_{\\overline{n}|}^{(p)} > a_{\\overline{n}|}$ for $p>1$."
+                "explain": "The ratio $\\frac{i}{i^{(p)}}$ is always slightly greater than 1 (since $i^{(p)}\\lt i$ from Module 2), which makes sense: paying the same total amount per year in smaller, more frequent instalments means receiving money slightly sooner on average, so it's worth slightly more — confirms $a_{\\overline{n}|}^{(p)} > a_{\\overline{n}|}$ for $p>1$."
             },
             {
                 "q": "What is the present value of a continuously paid level annuity of $1$ per year for $n$ years, $\\overline{a}_{\\overline{n}|}$?",
@@ -1339,7 +1339,7 @@ const MODULES = {
             {
                 "q": "What is the Gordon growth model used for?",
                 "a": "Valuing a share (or property) whose dividends/rents grow at a constant rate $g$ forever: price $= \\frac{D_1}{i-g}$",
-                "explain": "This can be derived as a geometrically-growing perpetuity — it's Module 5's simple perpetuity $\\frac1i$ generalised to allow the payment itself to grow at rate $g$ each year, which effectively reduces the discount rate from $i$ down to a 'net of growth' rate of $i-g$ (note this REQUIRES $g<i$, or the perpetuity's value would be infinite)."
+                "explain": "This can be derived as a geometrically-growing perpetuity — it's Module 5's simple perpetuity $\\frac1i$ generalised to allow the payment itself to grow at rate $g$ each year, which effectively reduces the discount rate from $i$ down to a 'net of growth' rate of $i-g$ (note this REQUIRES $g\\lt i$, or the perpetuity's value would be infinite)."
             },
             {
                 "q": "What is a key difference between valuing a bond and valuing an equity?",
@@ -3158,7 +3158,7 @@ const MODULES = {
                 "explain": "This closes the loop between the two properties emphasised throughout this module (nowhere differentiable, non-zero quadratic variation) and directly motivates the entire next module — Module 8's Ito's Lemma exists specifically to handle functions of a process with exactly these two awkward features, which ordinary calculus was never designed for."
             },
             {
-                "q": "What is the covariance $\\text{Cov}(W_s, W_t)$ for standard Brownian motion, with $s<t$?",
+                "q": "What is the covariance $\\text{Cov}(W_s, W_t)$ for standard Brownian motion, with $s\\lt t$?",
                 "a": "$\\min(s,t) = s$",
                 "explain": "This closes the module with a useful derivable fact, not one to simply memorise — write $W_t=W_s+(W_t-W_s)$, note the two pieces are independent (increments property), so $\\text{Cov}(W_s,W_t)=\\text{Cov}(W_s,W_s)+\\text{Cov}(W_s,W_t-W_s)=\\text{Var}(W_s)+0=s$, confirming the min$(s,t)$ result directly from the module's opening axioms."
             }
@@ -3217,7 +3217,7 @@ const MODULES = {
             {
                 "q": "What is the SDE for the Ornstein-Uhlenbeck process?",
                 "a": "$dX_t = \\alpha(\\mu - X_t)\\,dt + \\sigma\\,dW_t$, where the drift pulls $X_t$ back towards the long-run mean $\\mu$.",
-                "explain": "Look at the drift term's sign logic: when $X_t>\\mu$ (above the long-run mean), $(\\mu-X_t)$ is negative, so the drift pulls DOWNWARD; when $X_t<\\mu$, the drift pulls UPWARD — this self-correcting mechanism is precisely what 'mean-reverting' means mathematically, and it's this exact SDE that resurfaces as the Vasicek short-rate model in Module 15."
+                "explain": "Look at the drift term's sign logic: when $X_t>\\mu$ (above the long-run mean), $(\\mu-X_t)$ is negative, so the drift pulls DOWNWARD; when $X_t\\lt \\mu$, the drift pulls UPWARD — this self-correcting mechanism is precisely what 'mean-reverting' means mathematically, and it's this exact SDE that resurfaces as the Vasicek short-rate model in Module 15."
             },
             {
                 "q": "What does the parameter $\\alpha$ represent in the Ornstein-Uhlenbeck process?",
@@ -3401,7 +3401,7 @@ const MODULES = {
             {
                 "q": "What is the payoff to the holder of a European call option at maturity?",
                 "a": "$\\max(S_T - K, 0)$",
-                "explain": "This payoff function is the starting point for literally every pricing formula in Modules 12-13 — worth picturing its shape directly: flat at zero for $S_T<K$ (worthless, walk away), then rising one-for-one with the stock price above $K$ (exercise and profit), the classic 'hockey stick' option payoff diagram."
+                "explain": "This payoff function is the starting point for literally every pricing formula in Modules 12-13 — worth picturing its shape directly: flat at zero for $S_T\\lt K$ (worthless, walk away), then rising one-for-one with the stock price above $K$ (exercise and profit), the classic 'hockey stick' option payoff diagram."
             },
             {
                 "q": "What is the payoff to the holder of a European put option at maturity?",
@@ -3544,7 +3544,7 @@ const MODULES = {
             },
             {
                 "q": "What no-arbitrage condition must the up and down factors ($u, d$) satisfy relative to the risk-free rate?",
-                "a": "$d < e^{r\\Delta t} < u$, for the risk-neutral probability to lie strictly between 0 and 1.",
+                "a": "$d \\lt  e^{r\\Delta t} \\lt  u$, for the risk-neutral probability to lie strictly between 0 and 1.",
                 "explain": "This condition makes intuitive sense: if $e^{r\\Delta t}\\geq u$ (the risk-free return beats even the BEST possible stock outcome), everyone would sell the stock and invest risk-free, an arbitrage; if $e^{r\\Delta t}\\leq d$ (risk-free return is worse than even the WORST stock outcome), everyone would borrow risk-free to buy the stock, also an arbitrage — the condition rules out both degenerate cases."
             },
             {
@@ -6553,7 +6553,7 @@ const MODULES = {
             {
                 "q": "How does an excess of $d$ affect the distribution of amounts actually paid by the insurer?",
                 "a": "The insurer pays the loss amount minus $d$, so the paid amount is truncated/shifted, conditional on the loss exceeding $d$.",
-                "explain": "This is worth picturing precisely: for a loss $X<d$, the insurer pays nothing (and typically never even hears about it); for $X>d$, the insurer pays $X-d$ — this SHIFT-and-TRUNCATE transformation of the underlying ground-up loss distribution is exactly what makes estimating the true parameters from observed insurer-level data non-trivial, as later cards explore."
+                "explain": "This is worth picturing precisely: for a loss $X\\lt d$, the insurer pays nothing (and typically never even hears about it); for $X>d$, the insurer pays $X-d$ — this SHIFT-and-TRUNCATE transformation of the underlying ground-up loss distribution is exactly what makes estimating the true parameters from observed insurer-level data non-trivial, as later cards explore."
             },
             {
                 "q": "What is 'proportional reinsurance'?",
@@ -10559,7 +10559,7 @@ const MODULES = {
         "cards": [
             {
                 "q": "What is the difference between a relative and an absolute cell reference in a formula?",
-                "a": "A relative reference (e.g. A1) shifts automatically when the formula is copied to another cell; an absolute reference (e.g. $A$1) stays fixed, always pointing to the same cell regardless of where the formula is copied.",
+                "a": "A relative reference (e.g. A1) shifts automatically when the formula is copied to another cell; an absolute reference (e.g. <code>$A$1</code>) stays fixed, always pointing to the same cell regardless of where the formula is copied.",
                 "explain": "This is exactly the distinction whose misuse Module 2 flagged as a common source of serious, hard-to-spot errors — getting this right is foundational to reliably copying a formula across a row or column, which almost every actuarial spreadsheet model needs to do at some point."
             },
             {
