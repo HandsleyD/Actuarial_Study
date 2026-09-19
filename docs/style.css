@@ -1501,3 +1501,41 @@ a.btn { text-decoration: none; display: inline-block; }
 @media (hover: none) {
   .kbd-hint { display: none; }
 }
+
+/* ---------- search ---------- */
+
+a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+
+.search-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.search-bar .text-input { margin: 0; }
+.search-bar #searchInput { flex: 1 1 260px; }
+.search-exam { flex: 0 0 auto; width: auto; }
+
+.search-count { font-size: 0.78rem; margin: 0 0 8px; }
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-result:hover { border-color: var(--accent); }
+
+.search-result-label { font-size: 0.7rem; font-weight: 800; color: var(--accent); }
+.search-result-q { font-size: 0.9rem; font-weight: 600; line-height: 1.45; }
+.search-result-hit { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
+
+.search-result mark {
+  background: var(--star-bg);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+}

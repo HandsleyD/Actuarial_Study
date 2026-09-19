@@ -1655,6 +1655,213 @@ function refreshDashboardActivity() {
   });
 }
 
+/* ---------- search across every card and practice question ---------- */
+
+let searchIndex = null; // built on first use: cards and question parts, lower-cased once
+const searchState = { q: "", exam: "" };
+
+function plainText(html) {
+  return String(html || "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&pound;/g, "£")
+    .replace(/&[a-z]+;|&#\d+;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildSearchIndex() {
+  const items = [];
+  for (const code of Object.keys(MODULES)) {
+    for (const def of MODULES[code]) {
+      const title = plainText(def.title);
+      def.cards.forEach((c, i) => {
+        const q = plainText(c.q);
+        const a = plainText(c.a);
+        const e = plainText(c.explain);
+        items.push({
+          kind: "card",
+          code,
+          href: `#/${code}/${def.id}/${i}`,
+          label: `${code} · ${def.id.toUpperCase()} · ${title}`,
+          title,
+          q,
+          a,
+          e,
+          lq: q.toLowerCase(),
+          la: a.toLowerCase(),
+          le: e.toLowerCase(),
+          lt: title.toLowerCase(),
+        });
+      });
+    }
+  }
+  for (const code of Object.keys(QUESTIONS)) {
+    QUESTIONS[code].forEach((qq, qi) => {
+      const title = plainText(qq.title);
+      qq.parts.forEach((p) => {
+        const q = plainText(p.question);
+        const a = plainText(p.answer);
+        const e = plainText(p.note);
+        items.push({
+          kind: "question",
+          code,
+          href: `#/${code}/questions/${qi}`,
+          label: `${code} · Practice Q${qi + 1} ${p.label} · ${title}`,
+          title,
+          q,
+          a,
+          e,
+          lq: q.toLowerCase(),
+          la: a.toLowerCase(),
+          le: e.toLowerCase(),
+          lt: title.toLowerCase(),
+        });
+      });
+    });
+  }
+  return items;
+}
+
+function searchTokens(query) {
+  return query
+    .toLowerCase()
+    .split(/[\s,;]+/)
+    .map((t) => t.replace(/^["']|["']$/g, ""))
+    .filter((t) => t.length >= 2 || /^\d$/.test(t));
+}
+
+function runSearch(query, exam) {
+  const tokens = searchTokens(query);
+  if (!tokens.length) return { tokens, results: [], total: 0 };
+  if (!searchIndex) searchIndex = buildSearchIndex();
+  const phrase = query.trim().toLowerCase();
+  const scored = [];
+  for (const it of searchIndex) {
+    if (exam && it.code !== exam) continue;
+    let score = 0;
+    let ok = true;
+    for (const t of tokens) {
+      let s = 0;
+      if (it.lq.includes(t)) s += 4;
+      if (it.lt.includes(t)) s += 2;
+      if (it.la.includes(t)) s += 2;
+      if (it.le.includes(t)) s += 1;
+      if (!s) {
+        ok = false;
+        break;
+      }
+      score += s;
+    }
+    if (!ok) continue;
+    if (tokens.length > 1) {
+      if (it.lq.includes(phrase)) score += 6;
+      else if (it.la.includes(phrase) || it.le.includes(phrase)) score += 3;
+    }
+    if (it.kind === "card") score += 3; // concept lookups: cards before practice-question parts
+    scored.push([score, it]);
+  }
+  scored.sort((a, b) => b[0] - a[0]);
+  return { tokens, results: scored.slice(0, 60).map((x) => x[1]), total: scored.length };
+}
+
+// Escape, then wrap matches in <mark> — but only outside $...$ maths spans so
+// highlighting can't break LaTeX.
+function highlightText(text, tokens) {
+  const re = tokens.length ? new RegExp(`(${tokens.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "gi") : null;
+  return text
+    .split(/(\$[^$]*\$)/)
+    .map((seg, i) => {
+      if (i % 2 === 1) return escapeHtml(seg);
+      const esc = escapeHtml(seg);
+      return re ? esc.replace(re, "<mark>$1</mark>") : esc;
+    })
+    .join("");
+}
+
+// A short excerpt of `text` around the first token match.
+function excerpt(text, tokens, len) {
+  const lower = text.toLowerCase();
+  let pos = -1;
+  for (const t of tokens) {
+    const p = lower.indexOf(t);
+    if (p >= 0 && (pos < 0 || p < pos)) pos = p;
+  }
+  if (text.length <= len) return text;
+  let start = Math.max(0, (pos < 0 ? 0 : pos) - 40);
+  // don't start or end inside a maths span
+  const before = text.slice(0, start);
+  if ((before.match(/\$/g) || []).length % 2 === 1) start = before.lastIndexOf("$");
+  let out = text.slice(start, start + len);
+  if ((out.match(/\$/g) || []).length % 2 === 1) out = out.slice(0, out.lastIndexOf("$"));
+  return (start > 0 ? "… " : "") + out + (start + len < text.length ? " …" : "");
+}
+
+function renderSearchResults() {
+  const el = document.getElementById("searchResults");
+  if (!el) return;
+  const { tokens, results, total } = runSearch(searchState.q, searchState.exam);
+  if (!tokens.length) {
+    el.innerHTML = `<p class="muted">Type at least two letters. Every word must appear somewhere in the card or question; matches in the question rank highest.</p>`;
+    return;
+  }
+  if (!results.length) {
+    el.innerHTML = `<p class="muted">No cards or questions match &ldquo;${escapeHtml(searchState.q)}&rdquo;${searchState.exam ? ` in ${searchState.exam}` : ""}.</p>`;
+    return;
+  }
+  el.innerHTML =
+    `<p class="muted search-count">${total > results.length ? `Showing the best ${results.length} of ${total} matches` : `${total} match${total === 1 ? "" : "es"}`}</p>` +
+    results
+      .map((it) => {
+        const where = tokens.some((t) => it.lq.includes(t)) ? null : tokens.some((t) => it.la.includes(t)) ? ["Answer", it.a] : ["Explanation", it.e];
+        return `
+        <a class="search-result" href="${it.href}">
+          <span class="search-result-label">${escapeHtml(it.label)}</span>
+          <span class="search-result-q">${highlightText(excerpt(it.q, tokens, 220), tokens)}</span>
+          ${where ? `<span class="search-result-hit"><strong>${where[0]}:</strong> ${highlightText(excerpt(where[1], tokens, 200), tokens)}</span>` : ""}
+        </a>`;
+      })
+      .join("");
+  renderMath(el);
+}
+
+function renderSearchView(q) {
+  const el = document.getElementById("searchView");
+  if (typeof q === "string") searchState.q = q;
+  const codes = Object.keys(MODULES).sort();
+  el.innerHTML = `
+    <button class="back-link" id="backFromSearch">&larr; Home</button>
+    <div class="subject-head">
+      <h2>Search</h2>
+      <p class="subject-blurb">Find a concept across every flashcard and practice question, without needing to remember which module it lives in.</p>
+    </div>
+    <div class="search-bar">
+      <input id="searchInput" class="text-input" type="search" placeholder="e.g. tracking error, Bornhuetter, section 75" value="${escapeHtml(searchState.q)}" autocomplete="off">
+      <select id="searchExam" class="text-input search-exam" aria-label="Limit to subject">
+        <option value="">All subjects</option>
+        ${codes.map((c) => `<option value="${c}" ${c === searchState.exam ? "selected" : ""}>${c}</option>`).join("")}
+      </select>
+    </div>
+    <div id="searchResults"></div>`;
+  document.getElementById("backFromSearch").addEventListener("click", () => navigate("#/"));
+  const input = document.getElementById("searchInput");
+  let timer = null;
+  input.addEventListener("input", () => {
+    searchState.q = input.value;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      renderSearchResults();
+      // keep the URL shareable/back-button friendly without re-rendering the view
+      history.replaceState(null, "", `#/search?q=${encodeURIComponent(searchState.q)}`);
+    }, 150);
+  });
+  document.getElementById("searchExam").addEventListener("change", (e) => {
+    searchState.exam = e.target.value;
+    renderSearchResults();
+  });
+  renderSearchResults();
+  input.focus();
+}
+
 /* ---------- data-change hooks ---------- */
 
 function onExamDataChanged(code) {
@@ -1689,13 +1896,25 @@ function parseHash() {
   const parts = h.split("/").filter(Boolean);
   const first = parts[0].toLowerCase();
   if (first === "dashboard") return { view: "dashboard" };
+  if (first.startsWith("search")) {
+    const m = h.match(/[?&]q=([^&]*)/);
+    let q = "";
+    try {
+      q = m ? decodeURIComponent(m[1]) : "";
+    } catch {
+      q = m ? m[1] : "";
+    }
+    return { view: "search", q };
+  }
   if (first === "review" || first === "weak") {
     return { view: "review", kind: first === "weak" ? "weak" : "due", exam: parts[1] ? parts[1].toUpperCase() : null };
   }
   if (parts.length === 1) return { view: "subject", exam: parts[0].toUpperCase() };
   if (parts[1].toLowerCase() === "mixed") return { view: "mixed", exam: parts[0].toUpperCase() };
-  if (parts[1].toLowerCase() === "questions") return { view: "questions", exam: parts[0].toUpperCase() };
-  return { view: "flash", exam: parts[0].toUpperCase(), module: parts[1].toLowerCase() };
+  // optional third segment deep-links to a specific question / card (used by search)
+  const idx = /^\d+$/.test(parts[2] || "") ? Number(parts[2]) : null;
+  if (parts[1].toLowerCase() === "questions") return { view: "questions", exam: parts[0].toUpperCase(), index: idx };
+  return { view: "flash", exam: parts[0].toUpperCase(), module: parts[1].toLowerCase(), index: idx };
 }
 
 function navigate(hash) {
@@ -1711,6 +1930,7 @@ function renderRoute() {
   document.getElementById("questionsView").hidden = r.view !== "questions";
   document.getElementById("reviewView").hidden = r.view !== "review";
   document.getElementById("dashboardView").hidden = r.view !== "dashboard";
+  document.getElementById("searchView").hidden = r.view !== "search";
   document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
 
@@ -1724,19 +1944,28 @@ function renderRoute() {
       reviewState.key = key;
     }
     renderReviewView();
+  } else if (r.view === "search") {
+    renderSearchView(r.q);
   } else if (r.view === "dashboard") {
     renderDashboardView();
     refreshDashboardActivity();
   } else if (r.view === "subject") {
     renderSubjectView(r.exam);
   } else if (r.view === "flash") {
-    const key = `${r.exam}/${r.module}`;
+    const key = `${r.exam}/${r.module}/${r.index === null ? "" : r.index}`;
     if (flashState._lastKey !== key) {
       flashState.cardIndex = 0;
       flashState.revealed = false;
       flashState.typed = "";
       flashState.mode = "session";
       flashState.sessionIndices = generateSession(r.exam, r.module);
+      flashState.sessionDone = false;
+      flashState.sessionStats = { reviewed: 0, mastered: 0 };
+      if (r.index !== null) {
+        // deep link to one card: open the full deck at that card
+        flashState.mode = "full";
+        flashState.cardIndex = r.index;
+      }
       flashState._lastKey = key;
     }
     renderFlashView(r.exam, r.module);
@@ -1751,9 +1980,9 @@ function renderRoute() {
     }
     renderMixedView(r.exam);
   } else if (r.view === "questions") {
-    const key = `questions:${r.exam}`;
+    const key = `questions:${r.exam}:${r.index === null ? "" : r.index}`;
     if (qbankState._lastKey !== key) {
-      qbankState.qIndex = 0;
+      qbankState.qIndex = r.index === null ? 0 : r.index;
       qbankState.revealed = false;
       qbankState._lastKey = key;
     }
@@ -1954,6 +2183,11 @@ function clickIfEnabled(id) {
 
 document.addEventListener("keydown", (e) => {
   if (e.altKey || e.metaKey && e.key !== "Enter") return;
+  if (e.key === "/" && !e.ctrlKey && !/^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || "")) {
+    e.preventDefault();
+    navigate("#/search");
+    return;
+  }
   if (!document.getElementById("settingsPanel").hidden) return;
   const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || "");
   const view = parseHash().view;

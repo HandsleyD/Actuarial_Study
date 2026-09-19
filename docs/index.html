@@ -26,7 +26,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=13">
+<link rel="stylesheet" href="style.css?v=14">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -35,6 +35,7 @@
     <h1>Actuarial Study Progress</h1>
     <div class="topbar-right">
       <span id="syncStatus" class="sync-status" hidden></span>
+      <a id="searchLink" class="icon-btn" href="#/search" title="Search all cards and questions ( / )" aria-label="Search">&#128269;</a>
       <button id="themeToggleBtn" class="icon-btn" title="Toggle light/dark theme">&#9728;&#65039;</button>
       <button id="settingsBtn" class="icon-btn" title="Account">&#9881;</button>
     </div>
@@ -82,6 +83,8 @@
   <div id="reviewView" class="flash-view" hidden></div>
 
   <div id="dashboardView" class="dashboard-view" hidden></div>
+
+  <div id="searchView" class="flash-view" hidden></div>
 
   <p id="kbdHint" class="kbd-hint" hidden><kbd>Space</kbd> reveal &middot; <kbd>1</kbd> Insufficient &middot; <kbd>2</kbd> Sufficient &middot; <kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate</p>
 </main>
@@ -139,6 +142,6 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 <script src="store.js?v=3"></script>
 <script src="data.js?v=42"></script>
 <script src="questions.js?v=33"></script>
-<script src="app.js?v=16"></script>
+<script src="app.js?v=18"></script>
 </body>
 </html>
