@@ -22,7 +22,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -78,6 +78,8 @@
   <div id="reviewView" class="flash-view" hidden></div>
 
   <div id="dashboardView" class="dashboard-view" hidden></div>
+
+  <p id="kbdHint" class="kbd-hint" hidden><kbd>Space</kbd> reveal &middot; <kbd>1</kbd> Insufficient &middot; <kbd>2</kbd> Sufficient &middot; <kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate</p>
 </main>
 
 <div id="settingsPanel" class="settings-panel" hidden>
@@ -124,6 +126,6 @@
 <script src="store.js?v=3"></script>
 <script src="data.js?v=42"></script>
 <script src="questions.js?v=33"></script>
-<script src="app.js?v=15"></script>
+<script src="app.js?v=16"></script>
 </body>
 </html>

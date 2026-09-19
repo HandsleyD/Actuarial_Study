@@ -1711,6 +1711,7 @@ function renderRoute() {
   document.getElementById("questionsView").hidden = r.view !== "questions";
   document.getElementById("reviewView").hidden = r.view !== "review";
   document.getElementById("dashboardView").hidden = r.view !== "dashboard";
+  document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
 
   if (r.view === "home") {
@@ -1935,6 +1936,46 @@ function initThemeToggle() {
 buildExamGrid();
 initAuthUI();
 initThemeToggle();
+/* ---------- keyboard shortcuts ---------- */
+//
+// On any card view: Space/Enter reveal, 1 = Insufficient, 2 = Sufficient,
+// Left/Right previous/next. On the question bank: Space/Enter reveals the
+// model answers, Left/Right change question. Ignored while typing in a text
+// box (Ctrl/Cmd+Enter there reveals, so you can type an answer then reveal
+// without reaching for the mouse) and when a modifier key is held.
+function clickIfEnabled(id) {
+  const el = document.getElementById(id);
+  if (el && !el.disabled && el.offsetParent !== null) {
+    el.click();
+    return true;
+  }
+  return false;
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.altKey || e.metaKey && e.key !== "Enter") return;
+  if (!document.getElementById("settingsPanel").hidden) return;
+  const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || "");
+  const view = parseHash().view;
+  if (!["flash", "mixed", "review", "questions"].includes(view)) return;
+
+  if (typing) {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+      if (clickIfEnabled("revealBtn")) e.preventDefault();
+    }
+    return;
+  }
+  if (e.ctrlKey) return;
+
+  let handled = false;
+  if (e.key === " " || e.key === "Enter") handled = clickIfEnabled("revealBtn") || clickIfEnabled("revealQBtn");
+  else if (e.key === "1") handled = clickIfEnabled("scoreBad");
+  else if (e.key === "2") handled = clickIfEnabled("scoreGood");
+  else if (e.key === "ArrowRight") handled = clickIfEnabled("nextCard") || clickIfEnabled("nextQ");
+  else if (e.key === "ArrowLeft") handled = clickIfEnabled("prevCard") || clickIfEnabled("prevQ");
+  if (handled) e.preventDefault();
+});
+
 window.addEventListener("hashchange", renderRoute);
 renderRoute();
 
