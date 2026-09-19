@@ -6790,7 +6790,7 @@ const QUESTIONS = {
     {
       id: "sp1-q1",
       title: "Health and care products and the operating environment",
-      modules: "Modules 2, 3",
+      modules: "Modules 2, 5, 9, 10",
       marks: 12,
       parts: [
         {
@@ -6838,7 +6838,7 @@ const QUESTIONS = {
     {
       id: "sp1-q2",
       title: "Product design for a new long term care product",
-      modules: "Module 4",
+      modules: "Modules 4, 7, 8",
       marks: 12,
       parts: [
         {
@@ -6886,7 +6886,7 @@ const QUESTIONS = {
     {
       id: "sp1-q3",
       title: "Identifying sources of risk",
-      modules: "Module 5",
+      modules: "Modules 24, 25, 26",
       marks: 12,
       parts: [
         {
@@ -6934,7 +6934,7 @@ const QUESTIONS = {
     {
       id: "sp1-q4",
       title: "Reinsurance and underwriting as risk management",
-      modules: "Modules 6, 7",
+      modules: "Modules 27, 28",
       marks: 12,
       parts: [
         {
@@ -6982,7 +6982,7 @@ const QUESTIONS = {
     {
       id: "sp1-q5",
       title: "Asset-liability matching for a mixed health and care book",
-      modules: "Module 8",
+      modules: "Module 29",
       marks: 12,
       parts: [
         {
@@ -7012,7 +7012,7 @@ const QUESTIONS = {
           question:
             "Discuss two further ways (beyond reinsurance, underwriting, and asset-liability matching) this insurer could manage the risks it faces across its mixed book.",
           answer:
-            "Claims management: sound claims handling processes (e.g. rigorous validation of claimed conditions against policy definitions) can reduce the risk of overpayment or fraud. Data checks: robust data quality controls reduce the genuine foundational risk that poor data undermines pricing, reserving, and experience monitoring across the whole book. Product design itself (e.g. Module 4's material) is also a genuine risk management tool, shaping the risk the insurer takes on before it is even written.",
+            "Claims management: sound claims handling processes (e.g. rigorous validation of claimed conditions against policy definitions) can reduce the risk of overpayment or fraud. Data checks: robust data quality controls reduce the genuine foundational risk that poor data undermines pricing, reserving, and experience monitoring across the whole book. Product design itself (Modules 7–8) is also a genuine risk management tool, shaping the risk the insurer takes on before it is even written.",
           note: "Any two distinct, well-explained further risk management approaches should be accepted from the official syllabus list.",
         },
         {
@@ -7030,7 +7030,7 @@ const QUESTIONS = {
     {
       id: "sp1-q6",
       title: "Modelling and pricing an income protection product",
-      modules: "Modules 9, 10",
+      modules: "Modules 12, 18",
       marks: 12,
       parts: [
         {
@@ -7078,7 +7078,7 @@ const QUESTIONS = {
     {
       id: "sp1-q7",
       title: "Supervisory reserves and solvency capital",
-      modules: "Module 11",
+      modules: "Modules 22, 23",
       marks: 12,
       parts: [
         {
@@ -7126,7 +7126,7 @@ const QUESTIONS = {
     {
       id: "sp1-q8",
       title: "Setting assumptions for pricing, reserving and embedded value",
-      modules: "Module 12",
+      modules: "Modules 14, 15, 16, 17",
       marks: 12,
       parts: [
         {
@@ -7174,7 +7174,7 @@ const QUESTIONS = {
     {
       id: "sp1-q9",
       title: "Monitoring experience for a critical illness account",
-      modules: "Module 13",
+      modules: "Module 30",
       marks: 12,
       parts: [
         {
@@ -7222,7 +7222,7 @@ const QUESTIONS = {
     {
       id: "sp1-q10",
       title: "Analysis of surplus for a health and care insurer",
-      modules: "Module 14",
+      modules: "Module 30",
       marks: 12,
       parts: [
         {
