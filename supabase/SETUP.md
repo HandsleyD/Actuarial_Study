@@ -31,6 +31,27 @@ re-run this file safely if you ever need to (it won't error on
 tables/policies that already exist) — that includes picking up `session_log`
 on a project that was already set up before it existed.
 
+## 2b. Run the migrations (anything in `migrations/`)
+
+`schema.sql` is the original setup. Features added since then ship as
+numbered migration files in [`migrations/`](./migrations/) instead of being
+folded into `schema.sql`, so a project that has already run `schema.sql`
+only needs the new pieces. **Run each one in number order, once**, the same
+way as above (SQL Editor → New query → paste → Run):
+
+| File | Adds | Needed for |
+|------|------|------------|
+| [`migrations/002_spaced_repetition.sql`](./migrations/002_spaced_repetition.sql) | `flashcard_srs` table (+ RLS policy) | Syncing flashcard review schedules ("Due today", the study dashboard's weak areas) across devices |
+
+Each file is additive and guarded (`create table if not exists`, policies
+dropped and recreated), so re-running one by accident is harmless.
+
+**Already set up before 2026-09-19?** You still need to run
+`002_spaced_repetition.sql` — `schema.sql` doesn't include it. Until you do,
+spaced repetition still works, but schedules stay on the device you reviewed
+on (queued, and uploaded automatically the first time the site finds the
+table exists). The Account panel says so while it's waiting.
+
 ## 3. (Optional) Skip email confirmation
 
 By default, Supabase makes a new user confirm their email before they can

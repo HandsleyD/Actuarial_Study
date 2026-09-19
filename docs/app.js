@@ -17,6 +17,8 @@ const STATUSES = ["Not started", "In progress", "Done"];
 
 const examData = {}; // code -> { modules: [{id, status, notes}] }
 const flashData = {}; // code -> { mastery: { m01: { "0": true, ... } }, sha }
+const srsData = {}; // code -> { m01: { "0": {reps, interval, ease, due, lapses, reviews, last} } } — see srs.js
+const REVIEW_BATCH = 20;
 const SESSION_SIZE = 10;
 const flashState = {
   code: null,
@@ -48,18 +50,23 @@ function shuffleArray(arr) {
   return a;
 }
 
-// Weighted random draw: unmastered cards first (shuffled), topped up with
-// mastered ones only if the module has fewer than SESSION_SIZE unmastered.
+// Weighted random draw: cards due for review first, then unmastered cards
+// (shuffled), topped up with mastered-and-not-yet-due ones only if the module
+// has fewer than SESSION_SIZE of the others.
 function generateSession(code, moduleId) {
   const def = (MODULES[code] || []).find((m) => m.id === moduleId);
   if (!def) return [];
   const fd = flashData[code];
   const moduleMastery = (fd && fd.mastery && fd.mastery[moduleId]) || {};
+  const moduleSrs = (srsData[code] && srsData[code][moduleId]) || {};
+  const today = SRS.today();
   const total = def.cards.length;
   const allIdx = Array.from({ length: total }, (_, i) => i);
-  const unmastered = shuffleArray(allIdx.filter((i) => !moduleMastery[i]));
-  const mastered = shuffleArray(allIdx.filter((i) => !!moduleMastery[i]));
-  return [...unmastered, ...mastered].slice(0, Math.min(SESSION_SIZE, total));
+  const due = shuffleArray(allIdx.filter((i) => SRS.isDue(moduleSrs[i], today)));
+  const rest = allIdx.filter((i) => !SRS.isDue(moduleSrs[i], today));
+  const unmastered = shuffleArray(rest.filter((i) => !moduleMastery[i]));
+  const mastered = shuffleArray(rest.filter((i) => !!moduleMastery[i]));
+  return [...due, ...unmastered, ...mastered].slice(0, Math.min(SESSION_SIZE, total));
 }
 
 function currentSequence(code, moduleId, def) {
@@ -392,8 +399,13 @@ function fellowshipStatus() {
 /* ---------- flashcard mastery (per-card sufficient/insufficient) ---------- */
 
 async function loadFlash(code) {
-  const mastery = await Store.loadMastery(code);
+  const [mastery] = await Promise.all([Store.loadMastery(code), Store.loadSrs(code)]);
   flashData[code] = { mastery };
+  // Cards starred before spaced repetition existed get a starting schedule,
+  // staggered over the next week so they don't all fall due at once.
+  const today = SRS.today();
+  Store.seedSrsFromMastery(code, mastery, (mastered, k) => SRS.seed(mastered, k, today));
+  srsData[code] = Store.getSrsCache(code);
   onFlashDataChanged(code);
 }
 
@@ -401,10 +413,26 @@ function loadAllFlash() {
   for (const code of Object.keys(MODULES)) loadFlash(code);
 }
 
-function scoreCard(code, moduleId, idx, sufficient) {
+// Every Sufficient/Insufficient tap, from any view, goes through here: the
+// star, the review schedule and the session log all update together.
+function recordScore(code, moduleId, idx, sufficient) {
   Store.setMastery(code, moduleId, idx, sufficient); // instant locally; syncs in the background if signed in
+  const prev = (Store.getSrsCache(code)[moduleId] || {})[idx];
+  Store.setSrs(code, moduleId, idx, SRS.next(prev, sufficient, SRS.today()));
   Store.recordCardReview(sufficient);
   flashData[code] = { mastery: Store.getMasteryCache(code) };
+  srsData[code] = Store.getSrsCache(code);
+}
+
+function srsLabelHtml(code, moduleId, idx) {
+  const st = srsData[code] && srsData[code][moduleId] && srsData[code][moduleId][idx];
+  const today = SRS.today();
+  const cls = SRS.isDue(st, today) ? "due" : st ? "scheduled" : "new";
+  return `<span class="srs-label ${cls}">${SRS.describeDue(st, today)}</span>`;
+}
+
+function scoreCard(code, moduleId, idx, sufficient) {
+  recordScore(code, moduleId, idx, sufficient);
 
   flashState.sessionStats.reviewed += 1;
   if (sufficient) flashState.sessionStats.mastered += 1;
@@ -427,9 +455,7 @@ function scoreCard(code, moduleId, idx, sufficient) {
 }
 
 function scoreMixedCard(code, moduleId, idx, sufficient) {
-  Store.setMastery(code, moduleId, idx, sufficient);
-  Store.recordCardReview(sufficient);
-  flashData[code] = { mastery: Store.getMasteryCache(code) };
+  recordScore(code, moduleId, idx, sufficient);
 
   mixedState.sessionStats.reviewed += 1;
   if (sufficient) mixedState.sessionStats.mastered += 1;
@@ -637,6 +663,7 @@ function renderSubjectView(code) {
         const masteryMap = fd && fd.mastery && fd.mastery[mod.id] ? fd.mastery[mod.id] : {};
         const masteredCount = Object.values(masteryMap).filter(Boolean).length;
         const pct = hasCards ? Math.round((masteredCount / cardCount) * 100) : 0;
+        const modDue = def ? moduleStats(code, def).due : 0;
 
         return `
         <div class="module-card ${hasCards ? "clickable" : ""}" data-module="${mod.id}">
@@ -650,7 +677,7 @@ function renderSubjectView(code) {
             hasCards
               ? `<div class="module-card-foot">
                    <div class="mastery-track"><div class="mastery-fill" style="width:${pct}%"></div></div>
-                   <span class="mastery-label">${masteredCount}/${cardCount} &#11088;</span>
+                   <span class="mastery-label">${modDue ? `<span class="due-pill">${modDue} due</span> ` : ""}${masteredCount}/${cardCount} &#11088;</span>
                  </div>`
               : `<div class="module-card-foot muted">Flashcards coming soon</div>`
           }
@@ -661,6 +688,8 @@ function renderSubjectView(code) {
 
   const totalCards = modDefs.reduce((s, m) => s + m.cards.length, 0);
   const totalQuestions = (QUESTIONS[code] || []).length;
+  const subjectDue = dueCards(code).length;
+  const subjectWeak = weakCards(code).length;
 
   el.innerHTML = `
     <button class="back-link" id="backToHome">&larr; All subjects</button>
@@ -670,7 +699,11 @@ function renderSubjectView(code) {
       ${info.blurb ? `<p class="subject-blurb">${info.blurb}</p>` : ""}
       ${
         totalCards > 0
-          ? `<button class="btn primary mixed-session-btn" id="startMixed">&#128256; Mixed session &mdash; 10 random cards across all of ${code}</button>`
+          ? `<div class="subject-actions">
+               ${subjectDue ? `<a class="btn primary" href="${reviewHash("due", code)}">&#128197; Review ${subjectDue} due card${subjectDue === 1 ? "" : "s"}</a>` : ""}
+               <button class="btn ${subjectDue ? "" : "primary"} mixed-session-btn" id="startMixed">&#128256; Mixed session &mdash; 10 random cards across all of ${code}</button>
+               ${subjectWeak ? `<a class="btn" href="${reviewHash("weak", code)}">&#127919; Drill ${subjectWeak} weak card${subjectWeak === 1 ? "" : "s"}</a>` : ""}
+             </div>`
           : ""
       }
       ${
@@ -838,7 +871,7 @@ function renderFlashView(code, moduleId) {
     <div class="${flashcardLayoutClass(card, flashState.revealed)}">
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
         ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
-        <div class="flashcard-label">Card ${pos + 1} of ${seq.length}</div>
+        <div class="flashcard-label">Card ${pos + 1} of ${seq.length} ${srsLabelHtml(code, moduleId, realIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
         ${
           !flashState.revealed
@@ -1019,7 +1052,7 @@ function renderMixedView(code) {
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
         ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
         <a class="flashcard-source" href="#/${code}/${entry.moduleId}">${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
-        <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length}</div>
+        <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length} ${srsLabelHtml(code, entry.moduleId, entry.cardIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
         ${
           !mixedState.revealed
@@ -1092,6 +1125,536 @@ function renderMixedView(code) {
   renderMath(el);
 }
 
+/* ---------- spaced repetition: due-today & weak-card review runs ---------- */
+
+// Every scheduled card (optionally within one subject), skipping any whose
+// module/card no longer exists in data.js.
+function scheduledCards(scope) {
+  const out = [];
+  const codes = scope ? [scope] : Object.keys(MODULES);
+  for (const code of codes) {
+    const bySrs = srsData[code] || {};
+    for (const def of MODULES[code] || []) {
+      const modSrs = bySrs[def.id];
+      if (!modSrs) continue;
+      Object.keys(modSrs).forEach((k) => {
+        const cardIdx = Number(k);
+        if (cardIdx < def.cards.length && modSrs[k]) out.push({ code, moduleId: def.id, cardIdx, st: modSrs[k] });
+      });
+    }
+  }
+  return out;
+}
+
+function isMasteredEntry(e) {
+  const fd = flashData[e.code];
+  return !!(fd && fd.mastery && fd.mastery[e.moduleId] && fd.mastery[e.moduleId][e.cardIdx]);
+}
+
+function dueCards(scope) {
+  const today = SRS.today();
+  return scheduledCards(scope)
+    .filter((e) => SRS.isDue(e.st, today))
+    .sort((a, b) => (a.st.due < b.st.due ? -1 : a.st.due > b.st.due ? 1 : (b.st.lapses || 0) - (a.st.lapses || 0)));
+}
+
+// "Trouble" cards: missed more than once, or missed and still not starred.
+function isTrouble(st, mastered) {
+  const lapses = (st && st.lapses) || 0;
+  return lapses >= 2 || (lapses >= 1 && !mastered);
+}
+
+function weakCards(scope) {
+  return scheduledCards(scope)
+    .filter((e) => isTrouble(e.st, isMasteredEntry(e)))
+    .sort((a, b) => (b.st.lapses || 0) - (a.st.lapses || 0) || (a.st.ease || 0) - (b.st.ease || 0));
+}
+
+function buildReviewDeck(kind, scope) {
+  const pool = kind === "weak" ? weakCards(scope) : dueCards(scope);
+  // Highest-priority batch first (most overdue / most missed), shuffled within
+  // the batch so subjects and modules interleave.
+  return shuffleArray(pool.slice(0, REVIEW_BATCH)).map(({ code, moduleId, cardIdx }) => ({ code, moduleId, cardIdx }));
+}
+
+const reviewState = {
+  key: "",
+  kind: "due",
+  scope: null,
+  entries: [],
+  cardIndex: 0,
+  revealed: false,
+  typed: "",
+  sessionDone: false,
+  sessionStats: { reviewed: 0, mastered: 0 },
+};
+
+function startReviewRun(kind, scope) {
+  reviewState.kind = kind;
+  reviewState.scope = scope;
+  reviewState.entries = buildReviewDeck(kind, scope);
+  reviewState.cardIndex = 0;
+  reviewState.revealed = false;
+  reviewState.typed = "";
+  reviewState.sessionDone = false;
+  reviewState.sessionStats = { reviewed: 0, mastered: 0 };
+}
+
+function reviewRunUntouched() {
+  return reviewState.sessionStats.reviewed === 0 && reviewState.cardIndex === 0 && !reviewState.revealed;
+}
+
+function reviewHash(kind, scope) {
+  return `#/${kind === "weak" ? "weak" : "review"}${scope ? `/${scope}` : ""}`;
+}
+
+function scoreReviewCard(entry, sufficient) {
+  recordScore(entry.code, entry.moduleId, entry.cardIdx, sufficient);
+  reviewState.sessionStats.reviewed += 1;
+  if (sufficient) reviewState.sessionStats.mastered += 1;
+  const wasLast = reviewState.cardIndex >= reviewState.entries.length - 1;
+  reviewState.revealed = false;
+  reviewState.typed = "";
+  if (wasLast) reviewState.sessionDone = true;
+  else reviewState.cardIndex += 1;
+  renderReviewView();
+  renderGameBar();
+  renderDueBanner();
+  renderSyncStatus();
+}
+
+function nextDueSummary(scope) {
+  const today = SRS.today();
+  const upcoming = scheduledCards(scope)
+    .map((e) => e.st.due)
+    .filter((d) => d > today)
+    .sort();
+  if (!upcoming.length) return "";
+  const first = upcoming[0];
+  const n = upcoming.filter((d) => d === first).length;
+  const days = SRS.daysBetween(today, first);
+  return `Next up: ${n} card${n === 1 ? "" : "s"} ${days === 1 ? "tomorrow" : `in ${days} days`}.`;
+}
+
+function renderReviewView() {
+  const el = document.getElementById("reviewView");
+  const { kind, scope } = reviewState;
+  const scopeName = scope ? `${scope} &mdash; ${(SUBJECTS[scope] || { name: "" }).name}` : "all subjects";
+  const title = kind === "weak" ? "Weak-card drill" : "Due for review";
+  const backHref = scope ? `#/${scope}` : "#/";
+  const backLabel = scope || "Home";
+
+  if (reviewState.sessionDone) {
+    const left = kind === "weak" ? weakCards(scope).length : dueCards(scope).length;
+    renderSessionSummary(el, {
+      title: `${title} &mdash; ${scopeName}`,
+      backHref,
+      backLabel,
+      stats: reviewState.sessionStats,
+      overallLabel:
+        kind === "weak"
+          ? `${left} weak card${left === 1 ? "" : "s"} still flagged.`
+          : left
+            ? `${left} more card${left === 1 ? "" : "s"} due today.`
+            : `All caught up for today. ${nextDueSummary(scope)}`,
+      onReviewAgain: () => {
+        reviewState.sessionDone = false;
+        reviewState.sessionStats = { reviewed: 0, mastered: 0 };
+        reviewState.cardIndex = 0;
+        reviewState.revealed = false;
+        reviewState.typed = "";
+        renderReviewView();
+      },
+      onNewSession: left
+        ? () => {
+            startReviewRun(kind, scope);
+            renderReviewView();
+          }
+        : null,
+    });
+    return;
+  }
+
+  if (!reviewState.entries.length) {
+    const msg =
+      kind === "weak"
+        ? `<p>No weak cards in ${scopeName} yet. Cards land here once you've marked them Insufficient &mdash; twice, or once and not yet re-starred.</p>`
+        : scheduledCards(scope).length
+          ? `<p>Nothing due today in ${scopeName}. &#127881; ${nextDueSummary(scope)}</p>`
+          : `<p>No cards scheduled yet. Every card you score Sufficient or Insufficient gets a review date &mdash; open a module and start a session, and cards will come back here when they're due.</p>`;
+    el.innerHTML = `
+      <button class="back-link" id="backFromReview">&larr; ${backLabel}</button>
+      <div class="flash-empty">
+        <h2>${title}</h2>
+        ${msg}
+        <p><a href="#/dashboard">Open the study dashboard &rarr;</a></p>
+      </div>`;
+    document.getElementById("backFromReview").addEventListener("click", () => navigate(backHref));
+    return;
+  }
+
+  if (reviewState.cardIndex >= reviewState.entries.length) reviewState.cardIndex = 0;
+  const pos = reviewState.cardIndex;
+  const entry = reviewState.entries[pos];
+  const def = (MODULES[entry.code] || []).find((m) => m.id === entry.moduleId);
+  const card = def.cards[entry.cardIdx];
+  const isMastered = isMasteredEntry(entry);
+  resetAiGradeIfStale(`review:${entry.code}:${entry.moduleId}:${entry.cardIdx}`);
+  const remaining = (kind === "weak" ? weakCards(scope) : dueCards(scope)).length;
+
+  const dots = reviewState.entries
+    .map((e, i) => {
+      const m = isMasteredEntry(e);
+      return `<button class="card-dot ${m ? "mastered" : ""} ${i === pos ? "active" : ""}" data-idx="${i}" title="Card ${i + 1} (${e.code} ${e.moduleId.toUpperCase()})">${m ? "&#11088;" : i + 1}</button>`;
+    })
+    .join("");
+
+  el.innerHTML = `
+    <button class="back-link" id="backFromReview">&larr; ${backLabel}</button>
+    <div class="flash-head">
+      <div class="flash-title-row">
+        <h2>${title} &mdash; ${scopeName}</h2>
+        <span class="flash-progress">${remaining} ${kind === "weak" ? "flagged" : "due"}</span>
+      </div>
+    </div>
+    <div class="card-dots">${dots}</div>
+    <div class="${flashcardLayoutClass(card, reviewState.revealed)}">
+      <div class="flashcard ${isMastered ? "is-mastered" : ""}">
+        ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
+        <a class="flashcard-source" href="#/${entry.code}/${entry.moduleId}">${entry.code} &middot; ${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
+        <div class="flashcard-label">Card ${pos + 1} of ${reviewState.entries.length} ${srsLabelHtml(entry.code, entry.moduleId, entry.cardIdx)}</div>
+        <div class="flashcard-question">${card.q}</div>
+        ${
+          !reviewState.revealed
+            ? `<textarea id="answerInput" class="answer-input" placeholder="Type your answer here (optional) — then reveal to check yourself.">${escapeHtml(reviewState.typed)}</textarea>
+               <button class="btn primary" id="revealBtn">Reveal answer</button>`
+            : `${userAnswerHtml(reviewState.typed)}
+               <div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               ${aiGradePanelHtml(reviewState.typed)}
+               <div class="flash-score-row">
+                 <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
+                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
+               </div>`
+        }
+      </div>
+      ${explainPanelHtml(card, reviewState.revealed)}
+    </div>
+    <div class="flash-nav">
+      <button class="btn" id="prevCard" ${pos === 0 ? "disabled" : ""}>&larr; Prev</button>
+      <button class="btn" id="nextCard" ${pos === reviewState.entries.length - 1 ? "disabled" : ""}>Next &rarr;</button>
+    </div>
+  `;
+
+  document.getElementById("backFromReview").addEventListener("click", () => navigate(backHref));
+  const go = (i) => {
+    reviewState.cardIndex = i;
+    reviewState.revealed = false;
+    reviewState.typed = "";
+    renderReviewView();
+  };
+  el.querySelectorAll(".card-dot").forEach((btn) => btn.addEventListener("click", () => go(Number(btn.dataset.idx))));
+  document.getElementById("prevCard").addEventListener("click", () => go(Math.max(0, pos - 1)));
+  document.getElementById("nextCard").addEventListener("click", () => go(Math.min(reviewState.entries.length - 1, pos + 1)));
+
+  if (!reviewState.revealed) {
+    const ta = document.getElementById("answerInput");
+    ta.addEventListener("input", () => {
+      reviewState.typed = ta.value;
+    });
+    document.getElementById("revealBtn").addEventListener("click", () => {
+      reviewState.revealed = true;
+      renderReviewView();
+    });
+  } else {
+    document.getElementById("scoreGood").addEventListener("click", () => scoreReviewCard(entry, true));
+    document.getElementById("scoreBad").addEventListener("click", () => scoreReviewCard(entry, false));
+    wireAiGradeButton(el, card, reviewState.typed, () => renderReviewView());
+  }
+
+  renderMath(el);
+}
+
+// Home-page entry point: "N cards due today" with a one-click start.
+function renderDueBanner() {
+  const el = document.getElementById("dueBanner");
+  if (!el) return;
+  const due = dueCards(null);
+  const scheduled = scheduledCards(null).length;
+  if (due.length) {
+    const bySubject = {};
+    due.forEach((e) => (bySubject[e.code] = (bySubject[e.code] || 0) + 1));
+    const breakdown = Object.keys(bySubject)
+      .sort((a, b) => bySubject[b] - bySubject[a])
+      .map((c) => `<a href="${reviewHash("due", c)}">${c}&nbsp;${bySubject[c]}</a>`)
+      .join(" &middot; ");
+    el.innerHTML = `
+      <div class="due-banner-text">
+        <strong>&#128197; ${due.length} card${due.length === 1 ? "" : "s"} due for review today</strong>
+        <span class="due-banner-sub">${breakdown}</span>
+      </div>
+      <div class="due-banner-actions">
+        <a class="btn primary" href="#/review">Review due cards${due.length > REVIEW_BATCH ? ` (${REVIEW_BATCH} at a time)` : ""}</a>
+        <a class="btn" href="#/dashboard">Dashboard</a>
+      </div>`;
+  } else {
+    el.innerHTML = `
+      <div class="due-banner-text">
+        <strong>&#128197; ${scheduled ? "Nothing due today &#127881;" : "Spaced repetition"}</strong>
+        <span class="due-banner-sub">${
+          scheduled
+            ? nextDueSummary(null)
+            : "Cards you score in any module get a review date and come back here when they're due."
+        }</span>
+      </div>
+      <div class="due-banner-actions"><a class="btn" href="#/dashboard">Dashboard</a></div>`;
+  }
+  el.classList.toggle("has-due", due.length > 0);
+}
+
+/* ---------- study dashboard ---------- */
+
+let activityData = null; // { "YYYY-MM-DD": cardsReviewed } — merged local + session_log
+
+function studyStreak(activity) {
+  let day = SRS.today();
+  if (!activity[day]) day = SRS.addDays(day, -1); // not studied yet today doesn't break the streak
+  let n = 0;
+  while (activity[day]) {
+    n++;
+    day = SRS.addDays(day, -1);
+  }
+  return n;
+}
+
+function moduleStats(code, def) {
+  const fd = flashData[code];
+  const mastery = (fd && fd.mastery && fd.mastery[def.id]) || {};
+  const modSrs = (srsData[code] && srsData[code][def.id]) || {};
+  const today = SRS.today();
+  const s = { code, def, total: def.cards.length, mastered: 0, seen: 0, due: 0, lapses: 0, reviews: 0, trouble: 0 };
+  for (let i = 0; i < def.cards.length; i++) {
+    if (mastery[i]) s.mastered++;
+    const st = modSrs[i];
+    if (!st) continue;
+    s.seen++;
+    if (SRS.isDue(st, today)) s.due++;
+    s.lapses += st.lapses || 0;
+    s.reviews += st.reviews || 0;
+    if (isTrouble(st, !!mastery[i])) s.trouble++;
+  }
+  return s;
+}
+
+function pctOf(n, d) {
+  return d ? Math.round((n / d) * 100) : 0;
+}
+
+function barHtml(pct, cls) {
+  return `<div class="dash-bar ${cls || ""}"><div class="dash-bar-fill" style="width:${pct}%"></div></div>`;
+}
+
+function stripHtml(html) {
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  return tmp.textContent || "";
+}
+
+function renderDashboardView() {
+  const el = document.getElementById("dashboardView");
+  const today = SRS.today();
+  const activity = activityData || Store.getActivityCache();
+
+  const subjects = Object.keys(MODULES).map((code) => {
+    const mods = MODULES[code].map((def) => moduleStats(code, def));
+    const sum = (k) => mods.reduce((a, m) => a + m[k], 0);
+    return {
+      code,
+      mods,
+      total: sum("total"),
+      mastered: sum("mastered"),
+      seen: sum("seen"),
+      due: sum("due"),
+      lapses: sum("lapses"),
+      reviews: sum("reviews"),
+      trouble: sum("trouble"),
+    };
+  });
+  const active = subjects.filter((s) => s.seen || s.mastered).sort((a, b) => b.seen - a.seen);
+  const inactive = subjects.filter((s) => !s.seen && !s.mastered);
+  const allMods = subjects.flatMap((s) => s.mods);
+
+  const totalDue = subjects.reduce((a, s) => a + s.due, 0);
+  const streak = studyStreak(activity);
+  let week = 0;
+  for (let i = 0; i < 7; i++) week += activity[SRS.addDays(today, -i)] || 0;
+  const masteredAll = subjects.reduce((a, s) => a + s.mastered, 0);
+  const cardsInStudied = active.reduce((a, s) => a + s.total, 0);
+
+  // Upcoming review load: overdue folds into today.
+  const scheduled = scheduledCards(null);
+  const upcoming = [];
+  for (let i = 0; i < 14; i++) {
+    const d = SRS.addDays(today, i);
+    upcoming.push({ d, n: scheduled.filter((e) => (i === 0 ? e.st.due <= d : e.st.due === d)).length });
+  }
+  const upMax = Math.max(1, ...upcoming.map((u) => u.n));
+  const dayName = (d, i) =>
+    i === 0 ? "Today" : i === 1 ? "Tmrw" : new Date(`${d}T12:00:00`).toLocaleDateString(undefined, { weekday: "short" });
+  const upcomingHtml = upcoming
+    .map(
+      (u, i) => `
+      <div class="dash-col" title="${u.n} card${u.n === 1 ? "" : "s"} due ${i === 0 ? "today (incl. overdue)" : u.d}">
+        <span class="dash-col-val">${u.n || ""}</span>
+        <div class="dash-col-bar"><div class="dash-col-fill" style="height:${Math.round((u.n / upMax) * 100)}%"></div></div>
+        <span class="dash-col-lbl">${dayName(u.d, i)}</span>
+      </div>`
+    )
+    .join("");
+
+  // Last 12 weeks of activity, one square per day, darker = more cards.
+  const days = 84;
+  const actMax = Math.max(1, ...Object.values(activity));
+  const heat = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const d = SRS.addDays(today, -i);
+    const n = activity[d] || 0;
+    const lvl = n === 0 ? 0 : Math.min(4, 1 + Math.floor((n / actMax) * 3.999));
+    heat.push(`<span class="heat-cell l${lvl}" title="${d}: ${n} card${n === 1 ? "" : "s"} reviewed"></span>`);
+  }
+
+  // Weak areas: modules ranked by misses; share = misses / reviews.
+  const weakMods = allMods
+    .filter((m) => m.lapses > 0)
+    .sort((a, b) => b.lapses - a.lapses || b.lapses / b.reviews - a.lapses / a.reviews)
+    .slice(0, 8);
+  const weakModsHtml = weakMods.length
+    ? `<div class="dash-table">${weakMods
+        .map((m) => {
+          const rate = pctOf(m.lapses, m.reviews);
+          return `
+          <a class="dash-row" href="#/${m.code}/${m.def.id}">
+            <span class="dash-row-name"><span class="dash-tag">${m.code} ${m.def.id.toUpperCase()}</span> ${m.def.title}</span>
+            <span class="dash-row-meta">${m.lapses} miss${m.lapses === 1 ? "" : "es"} &middot; ${m.trouble} trouble card${m.trouble === 1 ? "" : "s"}</span>
+            <span class="dash-row-bar" title="${rate}% of this module's reviews were marked Insufficient">${barHtml(rate, "weak")}<span class="dash-row-pct">${rate}%</span></span>
+          </a>`;
+        })
+        .join("")}</div>`
+    : `<p class="muted">Nothing flagged yet. Modules show up here once you've marked some of their cards Insufficient.</p>`;
+
+  const trouble = weakCards(null).slice(0, 10);
+  const troubleHtml = trouble.length
+    ? `<ol class="trouble-list">${trouble
+        .map((e) => {
+          const def = MODULES[e.code].find((m) => m.id === e.moduleId);
+          const q = stripHtml(def.cards[e.cardIdx].q);
+          return `<li><a href="#/${e.code}/${e.moduleId}"><span class="dash-tag">${e.code} ${e.moduleId.toUpperCase()}</span>
+            <span class="trouble-q">${escapeHtml(q)}</span></a>
+            <span class="trouble-meta">missed ${e.st.lapses}&times; &middot; ${SRS.describeDue(e.st, today).toLowerCase()}</span></li>`;
+        })
+        .join("")}</ol>`
+    : "";
+
+  const subjectRow = (s) => `
+    <details class="dash-subject">
+      <summary>
+        <span class="dash-subject-name"><strong>${s.code}</strong> ${(SUBJECTS[s.code] || { name: "" }).name}</span>
+        <span class="dash-subject-meta">${s.mastered}/${s.total} &#11088; &middot; ${s.due} due${s.lapses ? ` &middot; ${s.lapses} misses` : ""}</span>
+        ${barHtml(pctOf(s.mastered, s.total))}
+      </summary>
+      <div class="dash-subject-actions">
+        <a class="btn" href="#/${s.code}">Open ${s.code}</a>
+        ${s.due ? `<a class="btn primary" href="${reviewHash("due", s.code)}">Review ${s.due} due</a>` : ""}
+        ${s.trouble ? `<a class="btn" href="${reviewHash("weak", s.code)}">Drill ${s.trouble} weak</a>` : ""}
+      </div>
+      <div class="dash-table">${s.mods
+        .map(
+          (m) => `
+        <a class="dash-row" href="#/${s.code}/${m.def.id}">
+          <span class="dash-row-name"><span class="dash-tag">${m.def.id.toUpperCase()}</span> ${m.def.title}</span>
+          <span class="dash-row-meta">${m.due ? `<span class="due-pill">${m.due} due</span> ` : ""}${m.lapses ? `${m.lapses} miss${m.lapses === 1 ? "" : "es"}` : m.seen ? "" : "not started"}</span>
+          <span class="dash-row-bar" title="${m.mastered} of ${m.total} cards starred">${barHtml(pctOf(m.mastered, m.total))}<span class="dash-row-pct">${m.mastered}/${m.total}</span></span>
+        </a>`
+        )
+        .join("")}</div>
+    </details>`;
+
+  el.innerHTML = `
+    <button class="back-link" id="backFromDash">&larr; All subjects</button>
+    <div class="subject-head">
+      <h2>Study dashboard</h2>
+      <p class="subject-blurb">What's due, where you keep slipping, and mastery by subject and module.${
+        Store.isConfigured() && Store.getUser() ? "" : " Showing this device's data &mdash; sign in to combine devices."
+      }</p>
+    </div>
+
+    <section class="game-bar dash-tiles">
+      <a class="game-stat" href="#/review">
+        <span class="game-stat-icon">&#128197;</span>
+        <span class="game-stat-value">${totalDue}</span>
+        <span class="game-stat-label">cards due today</span>
+      </a>
+      <div class="game-stat" title="Consecutive days on which you've scored at least one card">
+        <span class="game-stat-icon">&#128293;</span>
+        <span class="game-stat-value">${streak}</span>
+        <span class="game-stat-label">day study streak</span>
+      </div>
+      <div class="game-stat">
+        <span class="game-stat-icon">&#128202;</span>
+        <span class="game-stat-value">${week}</span>
+        <span class="game-stat-label">cards reviewed, last 7 days</span>
+      </div>
+      <div class="game-stat">
+        <span class="game-stat-icon">&#11088;</span>
+        <span class="game-stat-value">${masteredAll}</span>
+        <span class="game-stat-label">${cardsInStudied ? `of ${cardsInStudied} starred in subjects you've started` : "cards starred"}</span>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-head">
+        <h3>Weak areas</h3>
+        ${trouble.length ? `<a class="btn primary" href="#/weak">Drill weak cards</a>` : ""}
+      </div>
+      <p class="dash-note">Modules ranked by how often you've marked their cards Insufficient; the bar is the share of that module's reviews that were misses. A card counts as a trouble card once it's been missed twice, or missed and not yet re-starred.</p>
+      ${weakModsHtml}
+      ${trouble.length ? `<h4 class="dash-sub">Most-missed cards</h4>${troubleHtml}` : ""}
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-head"><h3>Review forecast &mdash; next 14 days</h3></div>
+      <div class="dash-cols">${upcomingHtml}</div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-head"><h3>Activity &mdash; last 12 weeks</h3></div>
+      <div class="heat-grid">${heat.join("")}</div>
+      <div class="heat-legend">Less <span class="heat-cell l0"></span><span class="heat-cell l1"></span><span class="heat-cell l2"></span><span class="heat-cell l3"></span><span class="heat-cell l4"></span> More</div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-head"><h3>Mastery by subject</h3></div>
+      ${active.length ? active.map(subjectRow).join("") : `<p class="muted">No cards scored yet.</p>`}
+      ${
+        inactive.length
+          ? `<details class="dash-subject dash-inactive"><summary><span class="dash-subject-name">Not started yet (${inactive.length})</span><span class="dash-subject-meta">${inactive
+              .map((s) => s.code)
+              .join(", ")}</span></summary>${inactive.map(subjectRow).join("")}</details>`
+          : ""
+      }
+    </section>
+  `;
+
+  document.getElementById("backFromDash").addEventListener("click", () => navigate("#/"));
+  renderMath(el);
+}
+
+function refreshDashboardActivity() {
+  Store.loadActivity().then((a) => {
+    activityData = a;
+    if (parseHash().view === "dashboard") renderDashboardView();
+  });
+}
+
 /* ---------- data-change hooks ---------- */
 
 function onExamDataChanged(code) {
@@ -1104,10 +1667,18 @@ function onExamDataChanged(code) {
 
 function onFlashDataChanged(code) {
   renderGameBar();
+  renderDueBanner();
   const r = parseHash();
   if (r.view === "subject" && r.exam === code) renderSubjectView(code);
   if (r.view === "flash" && r.exam === code) renderFlashView(code, r.module);
   if (r.view === "mixed" && r.exam === code) renderMixedView(code);
+  if (r.view === "dashboard") renderDashboardView();
+  if (r.view === "review" && (!r.exam || r.exam === code) && reviewRunUntouched() && !reviewState.sessionDone) {
+    // Subjects' schedules load asynchronously — if the run hasn't started yet,
+    // rebuild it so cards from subjects that just finished loading are included.
+    startReviewRun(r.kind, r.exam);
+    renderReviewView();
+  }
 }
 
 /* ---------- routing ---------- */
@@ -1116,6 +1687,11 @@ function parseHash() {
   const h = location.hash.replace(/^#\/?/, "");
   if (!h) return { view: "home" };
   const parts = h.split("/").filter(Boolean);
+  const first = parts[0].toLowerCase();
+  if (first === "dashboard") return { view: "dashboard" };
+  if (first === "review" || first === "weak") {
+    return { view: "review", kind: first === "weak" ? "weak" : "due", exam: parts[1] ? parts[1].toUpperCase() : null };
+  }
   if (parts.length === 1) return { view: "subject", exam: parts[0].toUpperCase() };
   if (parts[1].toLowerCase() === "mixed") return { view: "mixed", exam: parts[0].toUpperCase() };
   if (parts[1].toLowerCase() === "questions") return { view: "questions", exam: parts[0].toUpperCase() };
@@ -1133,10 +1709,23 @@ function renderRoute() {
   document.getElementById("flashView").hidden = r.view !== "flash";
   document.getElementById("mixedView").hidden = r.view !== "mixed";
   document.getElementById("questionsView").hidden = r.view !== "questions";
+  document.getElementById("reviewView").hidden = r.view !== "review";
+  document.getElementById("dashboardView").hidden = r.view !== "dashboard";
   window.scrollTo(0, 0);
 
   if (r.view === "home") {
     renderGameBar();
+    renderDueBanner();
+  } else if (r.view === "review") {
+    const key = `${r.kind}:${r.exam || "all"}`;
+    if (reviewState.key !== key || reviewState.sessionDone) {
+      startReviewRun(r.kind, r.exam);
+      reviewState.key = key;
+    }
+    renderReviewView();
+  } else if (r.view === "dashboard") {
+    renderDashboardView();
+    refreshDashboardActivity();
   } else if (r.view === "subject") {
     renderSubjectView(r.exam);
   } else if (r.view === "flash") {
@@ -1204,7 +1793,10 @@ function renderAuthPanel() {
     document.getElementById("authEmailLabel").textContent = user.email || "(no email)";
     const pending = Store.pendingCount();
     document.getElementById("syncDetail").textContent =
-      pending > 0 ? `${pending} change${pending === 1 ? "" : "s"} waiting to sync.` : "All changes saved.";
+      (pending > 0 ? `${pending} change${pending === 1 ? "" : "s"} waiting to sync.` : "All changes saved.") +
+      (Store.isSrsTableMissing()
+        ? " Review schedules are saved on this device only until supabase/migrations/002_spaced_repetition.sql is run on the Supabase project (see supabase/SETUP.md)."
+        : "");
   }
 }
 
@@ -1244,6 +1836,8 @@ function renderSyncStatus() {
 }
 
 function reloadAllForAuthChange() {
+  activityData = null;
+  reviewState.key = "";
   loadAll();
   loadAllFlash();
   Store.loadStreak().then(() => renderGameBar());
@@ -1353,4 +1947,5 @@ Store.init().then(() => {
     renderGameBar();
   });
   Store.loadLastSession().then(() => renderGameBar());
+  renderDueBanner();
 });

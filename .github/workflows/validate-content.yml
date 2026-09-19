@@ -15,12 +15,16 @@ on:
       - "docs/questions.js"
       - "maths-study/exams/*/progress.md"
       - "scripts/validate-content.mjs"
+      - "docs/srs.js"
+      - "scripts/test-srs.mjs"
   pull_request:
     paths:
       - "docs/data.js"
       - "docs/questions.js"
       - "maths-study/exams/*/progress.md"
       - "scripts/validate-content.mjs"
+      - "docs/srs.js"
+      - "scripts/test-srs.mjs"
 
 jobs:
   validate:
@@ -34,3 +38,6 @@ jobs:
 
       - name: Validate content
         run: node scripts/validate-content.mjs
+
+      - name: Spaced-repetition scheduling tests
+        run: node scripts/test-srs.mjs

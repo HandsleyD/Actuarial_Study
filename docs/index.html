@@ -22,7 +22,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -39,6 +39,8 @@
 
 <main>
   <div id="homeView">
+    <section id="dueBanner" class="due-banner"></section>
+
     <section class="game-bar" id="gameBar">
       <div class="game-stat">
         <span class="game-stat-icon">&#11088;</span>
@@ -72,6 +74,10 @@
   <div id="mixedView" class="flash-view" hidden></div>
 
   <div id="questionsView" class="flash-view" hidden></div>
+
+  <div id="reviewView" class="flash-view" hidden></div>
+
+  <div id="dashboardView" class="dashboard-view" hidden></div>
 </main>
 
 <div id="settingsPanel" class="settings-panel" hidden>
@@ -114,9 +120,10 @@
      new format either way -- see supabase/SETUP.md. -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
-<script src="store.js"></script>
+<script src="srs.js?v=1"></script>
+<script src="store.js?v=2"></script>
 <script src="data.js?v=28"></script>
 <script src="questions.js?v=18"></script>
-<script src="app.js?v=14"></script>
+<script src="app.js?v=15"></script>
 </body>
 </html>

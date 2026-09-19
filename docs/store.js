@@ -23,6 +23,7 @@ const Store = (function () {
   const MASTERY_TABLE = "flashcard_mastery";
   const STREAK_TABLE = "study_streak";
   const SESSION_TABLE = "session_log";
+  const SRS_TABLE = "flashcard_srs"; // added by supabase/migrations/002_spaced_repetition.sql
   // Reviews with more than this much idle time between them belong to separate sessions.
   const SESSION_GAP_MS = 30 * 60 * 1000;
 
@@ -30,6 +31,20 @@ const Store = (function () {
   let currentUser = null;
   let readyPromise = null;
   let flushing = false;
+  // Exams whose spaced-repetition rows have been fetched from the server this
+  // page load (or that don't need fetching: signed out / unconfigured). Seeding
+  // schedules for pre-existing stars waits for this, so a signed-in device that
+  // happens to be offline can't overwrite real server-side schedules with seeds.
+  const srsAuthoritative = new Set();
+  // Set when Supabase says flashcard_srs doesn't exist — i.e. the account's
+  // project hasn't had supabase/migrations/002_spaced_repetition.sql run yet.
+  let srsTableMissing = false;
+
+  function looksLikeMissingTable(error) {
+    const code = error && error.code;
+    const msg = (error && error.message) || "";
+    return code === "42P01" || code === "PGRST205" || /flashcard_srs/.test(msg);
+  }
   const authListeners = [];
   const syncListeners = [];
 
@@ -192,6 +207,14 @@ const Store = (function () {
             enqueue({ type: "mastery", examCode, moduleId, cardIdx: Number(cardIdx), value: map[moduleId][cardIdx] })
           );
         });
+      } else if (key.startsWith(`${LS_PREFIX}:srs:${uKey}:`)) {
+        const examCode = key.split(":").pop();
+        const map = readLS(key, {});
+        Object.keys(map).forEach((moduleId) => {
+          Object.keys(map[moduleId] || {}).forEach((cardIdx) =>
+            enqueue({ type: "srs", examCode, moduleId, cardIdx: Number(cardIdx), value: map[moduleId][cardIdx] })
+          );
+        });
       } else if (key === `${LS_PREFIX}:streak:${uKey}`) {
         const streak = readLS(key, null);
         if (streak) enqueue({ type: "streak", value: streak });
@@ -262,6 +285,101 @@ const Store = (function () {
     cache[moduleId][cardIdx] = value;
     writeLS(lsKey("mastery", examCode), cache);
     enqueue({ type: "mastery", examCode, moduleId, cardIdx, value });
+  }
+
+  /* ---------- spaced repetition (per-card review schedule) ---------- */
+  //
+  // One entry per card that has ever been scored — see docs/srs.js for the
+  // scheduling rules and the shape of each entry. Stored and synced exactly
+  // like mastery, except that merging keeps whichever copy of a card was
+  // reviewed more recently, so an offline review isn't undone by a stale
+  // server row when the page reloads before the queue has flushed.
+
+  function getSrsCache(examCode) {
+    return readLS(lsKey("srs", examCode), {});
+  }
+
+  function isNewer(a, b) {
+    // true if schedule a reflects a later review than schedule b
+    if (!b) return true;
+    const la = a.last || "";
+    const lb = b.last || "";
+    if (la !== lb) return la > lb;
+    return (a.reviews || 0) >= (b.reviews || 0);
+  }
+
+  async function loadSrs(examCode) {
+    const cache = getSrsCache(examCode);
+    if (!client || !currentUser) {
+      srsAuthoritative.add(examCode);
+      return cache;
+    }
+    try {
+      const { data, error } = await client
+        .from(SRS_TABLE)
+        .select("module_id, card_idx, reps, interval_days, ease, due_date, lapses, reviews, last_reviewed")
+        .eq("exam_code", examCode);
+      if (error) {
+        srsTableMissing = looksLikeMissingTable(error);
+        throw error;
+      }
+      srsTableMissing = false;
+      const merged = { ...cache };
+      (data || []).forEach((row) => {
+        const remote = {
+          reps: row.reps,
+          interval: row.interval_days,
+          ease: Number(row.ease),
+          due: row.due_date,
+          lapses: row.lapses,
+          reviews: row.reviews,
+          last: row.last_reviewed,
+        };
+        if (!merged[row.module_id]) merged[row.module_id] = {};
+        const local = merged[row.module_id][row.card_idx];
+        if (!local || isNewer(remote, local)) merged[row.module_id][row.card_idx] = remote;
+      });
+      writeLS(lsKey("srs", examCode), merged);
+      srsAuthoritative.add(examCode);
+      return merged;
+    } catch {
+      // Table missing (migration not run yet) or offline: scheduling still
+      // works locally; seeding is skipped until a load succeeds.
+      return cache;
+    }
+  }
+
+  function setSrs(examCode, moduleId, cardIdx, value) {
+    const cache = getSrsCache(examCode);
+    if (!cache[moduleId]) cache[moduleId] = {};
+    cache[moduleId][cardIdx] = value;
+    writeLS(lsKey("srs", examCode), cache);
+    enqueue({ type: "srs", examCode, moduleId, cardIdx, value });
+  }
+
+  // Gives every card that has a mastery mark but no schedule yet (i.e. it was
+  // scored before spaced repetition existed) a starting schedule via
+  // makeSeed(mastered, k). Returns how many were seeded.
+  function seedSrsFromMastery(examCode, mastery, makeSeed) {
+    if (!srsAuthoritative.has(examCode)) return 0;
+    const cache = getSrsCache(examCode);
+    let k = 0;
+    Object.keys(mastery || {})
+      .sort()
+      .forEach((moduleId) => {
+        Object.keys(mastery[moduleId] || {})
+          .map(Number)
+          .sort((a, b) => a - b)
+          .forEach((cardIdx) => {
+            if (cache[moduleId] && cache[moduleId][cardIdx]) return;
+            const value = makeSeed(!!mastery[moduleId][cardIdx], k++);
+            if (!cache[moduleId]) cache[moduleId] = {};
+            cache[moduleId][cardIdx] = value;
+            enqueue({ type: "srs", examCode, moduleId, cardIdx, value });
+          });
+      });
+    if (k) writeLS(lsKey("srs", examCode), cache);
+    return k;
   }
 
   /* ---------- streak ---------- */
@@ -336,8 +454,52 @@ const Store = (function () {
     }
   }
 
+  function localDate(ts) {
+    const d = new Date(ts);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  }
+
+  // Cards reviewed per local calendar day, on this device — the dashboard's
+  // activity strip and study streak. Merged with session_log from the server
+  // by loadActivity(), so other devices' study days show up once synced.
+  function getActivityCache() {
+    return readLS(lsKey("activity"), {});
+  }
+
+  async function loadActivity() {
+    const local = getActivityCache();
+    if (!client || !currentUser) return local;
+    try {
+      const since = new Date(Date.now() - 400 * 86400000).toISOString();
+      const { data, error } = await client
+        .from(SESSION_TABLE)
+        .select("started_at, cards_reviewed")
+        .eq("user_id", currentUser.id)
+        .gte("started_at", since);
+      if (error) throw error;
+      const remote = {};
+      (data || []).forEach((row) => {
+        const day = localDate(new Date(row.started_at).getTime());
+        remote[day] = (remote[day] || 0) + row.cards_reviewed;
+      });
+      // Per day, take whichever source saw more reviews: local knows about
+      // this device's unfinished session, remote knows about other devices.
+      const merged = { ...local };
+      Object.keys(remote).forEach((day) => {
+        merged[day] = Math.max(merged[day] || 0, remote[day]);
+      });
+      return merged;
+    } catch {
+      return local;
+    }
+  }
+
   function recordCardReview(mastered) {
     const now = Date.now();
+    const activity = getActivityCache();
+    const day = localDate(now);
+    activity[day] = (activity[day] || 0) + 1;
+    writeLS(lsKey("activity"), activity);
     let session = getCurrentSession();
     if (session && now - session.lastActivity > SESSION_GAP_MS) {
       finalizeSession(session);
@@ -409,11 +571,49 @@ const Store = (function () {
     flushing = true;
     const remaining = [];
     try {
+      // Review schedules are written in bulk (seeding pre-existing stars can
+      // queue hundreds at once), as one upsert with only the latest value per
+      // card, instead of one request per op like the rest.
+      const srsOps = list.filter((op) => op.type === "srs" && (!op.userId || op.userId === currentUser.id));
+      if (srsOps.length) {
+        const latest = new Map();
+        srsOps.forEach((op) => latest.set(`${op.examCode}|${op.moduleId}|${op.cardIdx}`, op));
+        const now = new Date().toISOString();
+        const rows = [...latest.values()].map((op) => ({
+          user_id: currentUser.id,
+          exam_code: op.examCode,
+          module_id: op.moduleId,
+          card_idx: op.cardIdx,
+          reps: op.value.reps,
+          interval_days: op.value.interval,
+          ease: op.value.ease,
+          due_date: op.value.due,
+          lapses: op.value.lapses,
+          reviews: op.value.reviews,
+          last_reviewed: op.value.last,
+          updated_at: now,
+        }));
+        try {
+          const { error } = await client.from(SRS_TABLE).upsert(rows, { onConflict: "user_id,exam_code,module_id,card_idx" });
+          if (error) {
+            srsTableMissing = looksLikeMissingTable(error);
+            throw error;
+          }
+          srsTableMissing = false;
+        } catch {
+          // Offline, or the table doesn't exist yet because
+          // 002_spaced_repetition.sql hasn't been run — keep only the latest
+          // op per card queued so it uploads once it can.
+          remaining.push(...latest.values());
+        }
+      }
+
       for (const op of list) {
         if (op.userId && op.userId !== currentUser.id) {
           remaining.push(op); // belongs to a different (now signed-out) account — leave it queued
           continue;
         }
+        if (op.type === "srs") continue; // handled in bulk above
         try {
           if (op.type === "status") {
             const { error } = await client.from(STATUS_TABLE).upsert(
@@ -469,15 +669,23 @@ const Store = (function () {
         }
       }
     } finally {
-      writePending(remaining);
+      // Anything enqueued while this flush was awaiting the network was
+      // appended after the snapshot we started from — keep it, don't clobber it.
+      const addedMeanwhile = readPending().slice(list.length);
+      writePending([...remaining, ...addedMeanwhile]);
       flushing = false;
       notifySync();
+      if (addedMeanwhile.length) flushPending();
     }
   }
 
   function pendingCount() {
     if (!currentUser) return readPending().length;
     return readPending().filter((op) => !op.userId || op.userId === currentUser.id).length;
+  }
+
+  function isSrsTableMissing() {
+    return srsTableMissing;
   }
 
   window.addEventListener("online", () => flushPending());
@@ -497,12 +705,19 @@ const Store = (function () {
     loadMastery,
     setMastery,
     getMasteryCache,
+    loadSrs,
+    setSrs,
+    getSrsCache,
+    seedSrsFromMastery,
+    isSrsTableMissing,
     loadStreak,
     bumpStreak,
     getStreakCache,
     recordCardReview,
     loadLastSession,
     getLastSessionCache,
+    getActivityCache,
+    loadActivity,
     gradeAnswer,
     flushPending,
     pendingCount,
