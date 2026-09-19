@@ -26067,489 +26067,2057 @@ const MODULES = {
       }
   ],
   SP5: [
-    {
-        "id": "m01",
-        "title": "What is Subject SP5 all about?",
-        "description": "An orientation chapter explaining SP5's role as the Specialist Principles subject introducing the key principles of evaluating investments, and how it feeds into SP6 and SA7.",
-        "cards": [
-            {
-                "q": "What is the aim of Subject SP5, according to its official syllabus?",
-                "a": "Understand and apply the key principles of evaluating investments, including the appropriate selection and effective risk management of a portfolio of investments that meet the needs of a particular investor.",
-                "explain": "This is the genuine, official IFoA syllabus wording — worth noting the explicit emphasis on 'meet the needs of a particular investor', signalling that SP5's whole approach is investor-specific, not abstract investment theory in isolation."
-            },
-            {
-                "q": "Which four subjects does SP5 build directly on within the Associateship qualification, according to its official links?",
-                "a": "CB1 (Business Finance), CB2 (Business Economics), CM2 (Economic Modelling), and CP1 (Actuarial Practice) — these provide the underpinning technical concepts of asset/liability valuation, the nature of liabilities for different institutions, and basics of how economies work.",
-                "explain": "Worth recognising SP5's foundation as broader than SP1/SP2/SP4's typical two-subject links — it draws on business finance, economics, financial modelling, <em>and</em> general actuarial practice together."
-            },
-            {
-                "q": "How does SP5 fit alongside SP6 (Investment and Derivatives Principles) and SA7 (Investment and Finance Advanced) as a genuine 'trio' of subjects, per the official syllabus?",
-                "a": "SP5 develops broad investment management concepts applied to meeting different investor needs; SP6 focuses in detail on the technical aspects of derivatives and their use; SA7 develops both sets of concepts further via more complex 'real world' problems at Specialist Advanced level.",
-                "explain": "Worth recognising this trio structure as distinctive to the investment specialism — unlike health/life/pensions (each a simple SP-to-SA pipeline), investment has a <em>third</em> subject (SP6) providing deep technical derivative expertise alongside SP5's broader principles."
-            },
-            {
-                "q": "What are the eight official syllabus topic areas of SP5, and their approximate topic weightings?",
-                "a": "The economic, regulatory and legislative framework (10%); Specialist investment products (15%); Valuing investments (10%); Monitoring and managing investment risks (10%); Investor characteristics including behavioural finance and taxation (10%); Appropriate investment strategies (15%); Portfolio management and risk control (15%); and Analysing portfolio performance (15%).",
-                "explain": "Worth recognising SP5 as having a different structure from SP1/SP2/SP4's five-topic template — eight, more granular topic areas, none carrying a single dominant weighting the way SP1's 30% risk topic or SP4's 30% valuation topic does."
-            },
-            {
-                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP5?",
-                "a": "Approximately 10% knowledge, 60% application, and 30% higher order — a more <em>application</em>-heavy split than SP1's, SP2's, and SP4's standard 25/50/25 pattern.",
-                "explain": "Worth recognising this as a distinctive feature of SP5 specifically — the syllabus places notably <em>less</em> weight on pure knowledge recall (10% versus 25%) and correspondingly <em>more</em> on application (60% versus 50%), reflecting investment work's more calculation- and scenario-heavy character."
-            },
-            {
-                "q": "Why might SP5's eight, more granular topic areas suit a subject covering investment management, compared with the five-topic template shared by SP1, SP2 and SP4?",
-                "a": "Investment management spans a wide range of distinct technical areas (products, valuation, risk, investor psychology, strategy, portfolio construction, performance measurement) that don't collapse as naturally into the product-design-risk-valuation-monitoring lifecycle shared by insurance and pensions subjects, so a more granular topic breakdown better reflects investment management's broader technical scope.",
-                "explain": "Worth recognising that different SP subjects' topic <em>structures</em> reflect the underlying discipline's natural shape — insurance/pensions fit a product lifecycle, while investment management spans more parallel, less strictly sequential technical areas."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "The economic, regulatory and legislative framework",
-        "description": "Covers the commercial and economic environment influencing investment management, and the legislative and regulatory framework for investment management and the securities industry, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine commercial and economic influences does the official syllabus (objective 1.1) require candidates to understand?",
-                "a": "The role of central banks, the characteristics of the main investor classes, and the influence of government policy — three distinct forces shaping the wider economic environment investment management operates within.",
-                "explain": "Worth memorising this exact three-part list — it defines the genuine economic-framework scope SP5 expects candidates to understand before considering specific investment products or strategies."
-            },
-            {
-                "q": "Why might central bank actions (e.g. setting interest rates) affect investment markets across multiple asset classes simultaneously, rather than a single, isolated effect?",
-                "a": "Interest rate changes directly affect bond valuations (via discount rates), can influence equity valuations (via the relative attractiveness of bonds versus equities and via corporate borrowing costs), and affect currency values (via relative interest rate differentials), giving central bank policy a broad, cross-asset-class impact.",
-                "explain": "Worth recognising central bank policy as one of the single most consequential economic influences across this whole subject, with genuine knock-on effects rippling across essentially every asset class covered in later modules."
-            },
-            {
-                "q": "What genuine impacts on investment management practice does the official syllabus (objective 1.2) require the legislative and regulatory framework to be understood for?",
-                "a": "Corporate governance, the role of the listings authority, environmental/social/governance (ESG) factors, ethical issues, competition and fair trading controls, monopolies regulators, investment restrictions in investment agreements, provision of financial services, institutional investment practices, and the development of international accounting standards.",
-                "explain": "Worth memorising this exact, extensive list (objective 1.2) — it defines the genuine regulatory scope SP5 expects, spanning governance, market conduct, competition, and international standards together."
-            },
-            {
-                "q": "Why might 'investment restrictions in investment agreements' be listed as a distinct regulatory-framework consideration, separate from general securities market regulation?",
-                "a": "These restrictions arise from the specific, negotiated terms of an individual investment mandate or agreement (e.g. permitted asset classes, concentration limits) rather than from broader, market-wide statutory regulation, representing a more <em>bespoke</em>, contract-specific layer of constraint an investment manager must operate within, on top of general market regulation.",
-                "explain": "This directly previews this course's later portfolio-management and mandate material — worth recognising this as a <em>contractual</em>, not purely statutory, layer of constraint on investment management practice."
-            },
-            {
-                "q": "Why might the development of international accounting standards matter to investment managers, beyond being a purely corporate-reporting concern?",
-                "a": "Consistent international accounting standards allow investment managers to compare companies' financial statements across different jurisdictions on a like-for-like basis, supporting sound fundamental analysis (previewed in this course's later valuation module) that would otherwise be undermined by inconsistent, incomparable reporting practices.",
-                "explain": "This directly previews this course's later fundamental-analysis material — worth recognising accounting standards as a genuine <em>enabling framework</em> for cross-border investment analysis, not merely a corporate compliance topic disconnected from investment decision-making."
-            },
-            {
-                "q": "Why might ESG factors be considered part of the genuine <em>regulatory</em> framework, rather than purely a voluntary investment consideration, echoing SA7's material?",
-                "a": "Many jurisdictions now impose genuine regulatory disclosure and conduct requirements around ESG considerations (e.g. requiring investment managers to disclose their ESG approach), making ESG a regulatory, not purely voluntary or values-based, consideration in at least some markets.",
-                "explain": "This directly recalls SA7's ESG-disclosure-regulation material — worth recognising ESG as having migrated, in many jurisdictions, from a purely voluntary consideration to an increasingly regulated one."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "Specialist financial instruments",
-        "description": "Covers the characteristics of specialist financial instruments available to investors, including private debt, hedge funds, infrastructure, and structured products, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine range of specialist financial instruments does the official syllabus (objective 2.1) require candidates to understand the characteristics of?",
-                "a": "Financial instruments for short-term lending/borrowing, corporate debt, credit derivatives, swaps and swaptions, private debt, asset-backed securities/securitisation, venture capital, hedge funds, currency, infrastructure, commodities, insurance-linked securities, structured products, and new ways of investing in old asset classes.",
-                "explain": "Worth memorising this exact, extensive list — it defines the genuine breadth of specialist product knowledge SP5 expects, spanning debt, derivative, alternative, and structured product categories together."
-            },
-            {
-                "q": "What is 'private debt', and why might it offer different characteristics from publicly-traded corporate debt?",
-                "a": "Private debt involves lending directly to companies outside public bond markets, typically offering investors a genuine illiquidity premium (higher expected return compensating for the inability to easily sell the position) and more bespoke, negotiated loan terms than standardised public bonds.",
-                "explain": "This directly recalls SA7's illiquid-alternative-asset material — worth recognising private debt as one of the clearest examples of the general illiquidity-premium principle applying to a specific, named asset class."
-            },
-            {
-                "q": "What are 'insurance-linked securities' (ILS), and why might they offer investors valuable diversification?",
-                "a": "ILS (e.g. catastrophe bonds) transfer insurance-related risk (e.g. natural catastrophe risk) to capital markets investors in exchange for a return, offering valuable diversification since insurance losses are typically driven by different underlying factors (weather, seismic activity) than traditional financial market risk factors.",
-                "explain": "This directly recalls SA3's catastrophe-modelling material — worth recognising ILS as a genuine <em>bridge</em> between the insurance and investment worlds, transferring insurance risk to investment markets specifically because of its low correlation with traditional asset classes."
-            },
-            {
-                "q": "What is a 'structured product', and why might it require particularly careful analysis by an investor before purchase?",
-                "a": "A structured product combines a traditional investment (e.g. a bond) with a derivative overlay to create a customised risk/return payoff (e.g. capital protection with equity-linked upside); careful analysis is needed because the genuine underlying risk and cost structure can be less transparent than a simple, standalone investment, potentially embedding fees or risks not immediately obvious to the investor.",
-                "explain": "Worth recognising structured products as combining <em>genuine</em> customisation value with a genuine transparency risk — the complexity that enables tailored payoffs can also obscure the product's true underlying cost and risk from an insufficiently careful investor."
-            },
-            {
-                "q": "Why might 'new ways of investing in old asset classes' be explicitly named as its own category, rather than assuming traditional asset classes require no further study?",
-                "a": "Even well-established asset classes (e.g. equities, bonds) continue to see new access mechanisms emerge (e.g. exchange-traded funds, direct indexing, fractional ownership platforms), so understanding an asset class's fundamental characteristics alone is insufficient without also understanding the evolving ways investors can now access and gain exposure to it.",
-                "explain": "Worth recognising this category as reflecting the <em>evolving</em> nature of even traditional investment markets — access mechanisms and market structure continue to develop even where the underlying asset class itself is long-established."
-            },
-            {
-                "q": "Why might understanding this module's full range of specialist instruments be important even for an actuary who will never personally trade many of them directly?",
-                "a": "An actuary advising an institutional investor on appropriate investment strategy needs genuine awareness of the full range of instruments potentially available to construct a well-diversified, suitable portfolio, even if actual trading execution is delegated to specialist portfolio managers, so this knowledge directly supports sound <em>strategic</em> advice rather than requiring personal trading expertise.",
-                "explain": "This directly previews this course's later investment-strategy module — worth recognising product knowledge as supporting <em>strategic advisory</em> capability, not necessarily hands-on trading skill."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "Derivative contracts",
-        "description": "Covers the main types and features of derivative contracts, how they are traded, their payoffs, and how they can be used by an investment manager, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine understanding does the official syllabus (objective 2.2) require of derivative contracts?",
-                "a": "How derivative contracts are traded, their genuine payoff structures, and how they can be used by an investment manager — three distinct dimensions of derivative understanding, moving from market mechanics through to practical portfolio application.",
-                "explain": "Worth recognising this three-part structure as moving from <em>how</em> derivatives work <em>mechanically</em> (trading) to <em>what</em> they pay out (payoffs) to <em>why</em> a manager would actually use them (application) — a logical progression for building derivative understanding."
-            },
-            {
-                "q": "Why might derivatives be traded either on an exchange or over-the-counter (OTC), and what genuine trade-off does this choice involve?",
-                "a": "Exchange-traded derivatives offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC derivatives offer greater flexibility to tailor contract terms to a specific investor's precise needs, at the cost of typically greater counterparty risk and reduced price transparency.",
-                "explain": "This directly recalls SA7's exchange-versus-OTC material — worth recognising this as a genuine trade-off between <em>standardisation/safety</em> and <em>customisation/flexibility</em>, not one venue being universally superior."
-            },
-            {
-                "q": "How might an investment manager use derivatives for <em>hedging</em> purposes, rather than for speculative exposure?",
-                "a": "A manager can use derivatives (e.g. put options, futures) to offset or reduce an existing, unwanted risk exposure in the underlying portfolio (e.g. hedging equity market risk without needing to sell the underlying equity holdings directly), achieving genuine risk reduction efficiently without disrupting the portfolio's core holdings.",
-                "explain": "This directly recalls CM2's and SA2's derivative-hedging material — worth recognising hedging as achieving genuine <em>risk reduction</em> efficiently, often more so than physically restructuring the underlying portfolio would."
-            },
-            {
-                "q": "How might an investment manager use derivatives for <em>efficient portfolio management</em>, distinct from hedging?",
-                "a": "Derivatives can allow a manager to gain or adjust market exposure quickly and cost-effectively (e.g. using futures to quickly increase equity market exposure ahead of executing underlying stock purchases), providing genuine implementation efficiency rather than primarily reducing an existing risk.",
-                "explain": "Worth recognising this as a <em>different</em> use case from hedging — here, derivatives provide efficient <em>market access</em> and <em>implementation speed</em>, rather than reducing an existing unwanted exposure."
-            },
-            {
-                "q": "Why might understanding a derivative's genuine payoff structure (e.g. an option's asymmetric payoff versus a future's linear payoff) be essential before an investment manager decides to use it?",
-                "a": "Different derivatives provide different risk/return profiles under different market outcomes — an option provides asymmetric protection at the cost of an upfront premium, while a future provides symmetric, linear exposure with no upfront premium but genuine two-way risk — so choosing the wrong instrument for a given objective could produce a unintended risk profile.",
-                "explain": "This directly recalls CM2's option-versus-forward payoff material — worth recognising payoff-structure understanding as essential to selecting the <em>right</em> tool for a specific hedging or exposure objective, not simply 'a derivative' in the abstract."
-            },
-            {
-                "q": "How does this module's derivative material connect back to Module 3's specialist-instruments material?",
-                "a": "Module 3 introduced credit derivatives and swaps/swaptions as named specialist instruments among many others; this module develops the genuine underlying <em>mechanics</em> (trading, payoffs, uses) common to derivatives generally, providing the technical foundation needed to properly understand those specific derivative instruments named in Module 3.",
-                "explain": "This closing card ties this module back to Module 3 explicitly — worth recognising this module's general derivative mechanics as the technical <em>foundation</em> underlying the <em>specific</em> derivative instruments Module 3 already named."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Valuing investments",
-        "description": "Covers the key principles of fundamental analysis of equities and bonds, and determining the value of individual investments including fixed income, securitisations and credit derivatives, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine factors does the official syllabus (objective 3.1) require candidates to understand as affecting equity prices?",
-                "a": "A company's genuine earnings and earnings growth prospects, its dividend policy, the wider market's required rate of return (discount rate), and broader economic and sector-specific conditions all combine to determine an equity's fundamental value.",
-                "explain": "This directly recalls CB1's dividend growth model and fundamental valuation material — worth recognising equity pricing as the genuine, practical application of that earlier fundamental valuation theory to real market analysis."
-            },
-            {
-                "q": "What is 'credit analysis' of bonds, and why might an investor not rely solely on external credit rating agencies for this, per the official syllabus objective 3.1?",
-                "a": "Credit analysis assesses a bond issuer's genuine ability and willingness to meet its debt obligations; while rating agencies provide a useful standardised assessment, an investor may conduct independent analysis since rating agencies can be slow to reflect emerging changes in issuer creditworthiness, and different investors may have different views on appropriate risk assessment.",
-                "explain": "Worth recognising credit rating agency output as a <em>useful but not sufficient</em> input — sound investors conduct genuine independent analysis rather than relying purely on an external rating, echoing this whole curriculum's recurring theme of not over-relying on any single external source."
-            },
-            {
-                "q": "What genuine techniques does the official syllabus (objective 3.2) require for valuing fixed income investments, including interest rate swaps and futures?",
-                "a": "Fixed income analytics apply discounted cashflow principles (echoing CM1) to value bonds and related instruments like interest rate swaps and futures, discounting genuine future cashflows at appropriate market-consistent rates to determine fair value.",
-                "explain": "This directly recalls CM1's discounting and CM2's fixed-income-valuation material — worth recognising fixed income valuation as the direct, practical application of these earlier subjects' core discounting techniques."
-            },
-            {
-                "q": "What is 'arbitrage pricing' and the 'concept of hedging' in the context of valuing investments, per the official syllabus objective 3.2?",
-                "a": "Arbitrage pricing values an instrument by constructing an equivalent, replicating portfolio of other instruments whose combined value must equal the target instrument's fair value (otherwise a risk-free arbitrage profit would be available); hedging uses this same replication logic to construct a position that offsets a specific risk exposure.",
-                "explain": "This directly recalls CM2's arbitrage-free pricing material — worth recognising arbitrage pricing as the genuine <em>theoretical foundation</em> underlying much of derivative and fixed-income valuation covered throughout this whole subject."
-            },
-            {
-                "q": "Why might evaluating a securitisation or a credit derivative (per the official syllabus objective 3.2) require more complex valuation techniques than valuing a simple, standard bond?",
-                "a": "A securitisation pools and tranches diverse underlying cashflows (e.g. mortgage payments) with different risk/priority levels across tranches, while a credit derivative's value depends on complex, correlated default probability assumptions across multiple reference entities, both requiring materially more sophisticated modelling than a single bond's straightforward discounted cashflow valuation.",
-                "explain": "This directly recalls Module 3's securitisation and credit-derivative product material — worth recognising these instruments' genuine <em>structural complexity</em> as directly translating into more sophisticated valuation technique requirements."
-            },
-            {
-                "q": "Why must an actuary understand the 'empirical characteristics of asset prices' (per the official syllabus objective 3.2), rather than relying purely on theoretical pricing models?",
-                "a": "Real-world asset prices can deviate from theoretical model predictions (e.g. exhibiting 'fat tails' or volatility clustering not captured by simpler models), so genuine practical valuation and risk assessment should be informed by how asset prices <em>actually</em> behave empirically, not solely by how theoretical models predict they should behave.",
-                "explain": "This directly recalls CS2's extreme-value and fat-tail material — worth recognising this as an important caution against over-reliance on elegant theoretical models without checking them against real-world empirical behaviour."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "Monitoring investment risks and mean-variance portfolio theory",
-        "description": "Covers the methods used to monitor and control exposure to investment risks, and the application of mean-variance portfolio theory to investment scenarios, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine risk categories does the official syllabus (objective 4.1) require candidates to understand methods for monitoring and controlling?",
-                "a": "Asset/liability mismatching risk, market risk, credit risk (including counterparty risk), operational risk, liquidity risk, relative performance risk, and sustainability risk — seven distinct risk categories an investment institution must monitor.",
-                "explain": "Worth memorising this exact seven-part list — note 'relative performance risk' (the risk of underperforming a benchmark or peer group) and 'sustainability risk' as distinct categories beyond the more familiar market/credit/operational/liquidity risks."
-            },
-            {
-                "q": "Why might 'relative performance risk' be an important, distinct risk category for an actively-managed institutional portfolio, beyond simply managing absolute market risk?",
-                "a": "An institutional investor's mandate is typically judged against a specified benchmark, so underperforming that benchmark represents a distinct risk to the manager's reputation and the mandate's continuation, even where the portfolio's <em>absolute</em> performance was positive in absolute terms.",
-                "explain": "This directly recalls SA7's tracking-error material — worth recognising relative performance risk as addressing a <em>different</em> concern from absolute market risk: underperforming a peer or benchmark, even while making genuine absolute gains."
-            },
-            {
-                "q": "What is 'sustainability risk' in this investment-risk-monitoring context, and how does it relate to Module 2's ESG material?",
-                "a": "Sustainability risk concerns the genuine risk that environmental, social or governance factors (e.g. climate transition risk) materially affect an investment's value or the wider portfolio's risk profile, directly connecting Module 2's regulatory ESG material to this module's genuine, practical risk-monitoring framework.",
-                "explain": "This directly recalls Module 2's ESG-as-regulatory-framework material — worth recognising sustainability risk as the genuine <em>practical risk-management</em> counterpart to Module 2's more regulatory-framing of ESG considerations."
-            },
-            {
-                "q": "What is the 'opportunity set' in mean-variance portfolio theory, per the official syllabus objective 4.2?",
-                "a": "The opportunity set represents the full genuine range of possible portfolios achievable by combining available assets in different proportions, plotted in risk-return space, forming the foundation from which the efficient frontier is then identified.",
-                "explain": "Worth recognising the opportunity set as the genuine <em>starting point</em> for mean-variance analysis — before identifying which portfolios are optimal, you must first map out every combination that is even achievable."
-            },
-            {
-                "q": "What is the 'efficient frontier', and why does it represent only a genuine <em>subset</em> of the full opportunity set?",
-                "a": "The efficient frontier consists of the portfolios offering the highest expected return for each given level of risk (or equivalently, the lowest risk for each given level of return), excluding all other achievable portfolios in the opportunity set that are dominated by a more efficient alternative.",
-                "explain": "Worth recognising the efficient frontier as the <em>optimal</em> subset of the opportunity set — every portfolio ON the frontier is achievable and non-dominated, while portfolios <em>below</em> it, though achievable, are inferior to some frontier alternative."
-            },
-            {
-                "q": "How do 'indifference curves' combine with the efficient frontier to determine an investor's 'optimum portfolio', per the official syllabus objective 4.2?",
-                "a": "Indifference curves represent an individual investor's own genuine risk-return trade-off preferences (combinations of risk and return the investor is equally happy with); the optimum portfolio is found where an investor's highest achievable indifference curve is tangent to the efficient frontier, combining the objectively available opportunity set with the investor's own subjective risk preferences.",
-                "explain": "This directly recalls CB1's risk-return-preference material — worth recognising the optimum-portfolio determination as combining an <em>objective</em> input (the efficient frontier, available to all investors) with a <em>subjective</em> input (the specific investor's own indifference curves), producing an investor-specific optimal choice."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "Investor characteristics, behavioural finance and taxation",
-        "description": "Covers the key findings of behavioural finance, the main steps in financial planning, and how taxation of investment returns affects investor behaviour, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is 'behavioural finance', and why does the official syllabus (objective 5.1) require understanding its key findings and how they might apply to different investor types?",
-                "a": "Behavioural finance studies how genuine psychological biases (e.g. overconfidence, loss aversion, anchoring) systematically affect real investor decision-making, often causing genuine deviations from the purely rational behaviour traditional finance theory assumes; understanding these biases helps advisers anticipate and address them when working with real investors.",
-                "explain": "Worth recognising behavioural finance as an important <em>corrective</em> to purely rational-actor investment theory — real investors don't always behave as mean-variance theory (Module 6) assumes, and sound advice must account for this."
-            },
-            {
-                "q": "What is 'loss aversion', and why might it lead an investor to make suboptimal decisions?",
-                "a": "Loss aversion describes the genuine tendency for investors to feel the pain of a loss more intensely than the pleasure of an equivalent gain, which can lead to suboptimal behaviour such as holding onto losing investments too long (hoping to avoid crystallising the loss) or selling winning investments too early.",
-                "explain": "Worth recognising loss aversion as one of the most commonly-cited, well-evidenced behavioural biases — a concrete, memorable example of how psychology can diverge from purely rational decision-making."
-            },
-            {
-                "q": "What genuine steps does the official syllabus (objective 5.2) identify as involved in financial planning for an individual investor?",
-                "a": "Establishing the investor's genuine objectives and constraints, assessing their current financial position, developing an appropriate strategy to meet their objectives, implementing that strategy, and monitoring and reviewing progress over time — a structured, sequential planning process.",
-                "explain": "Worth recognising this sequence as directly echoing CP1's advice-process material — worth establishing objectives <em>before</em> developing strategy, a recurring theme across this whole curriculum."
-            },
-            {
-                "q": "Why does the genuine taxation of investment returns directly affect investor behaviour, per the official syllabus objective 5.3, beyond simply reducing net returns?",
-                "a": "Different tax treatments of income versus capital gains, or different tax-favoured account wrappers, can incentivise investors to prefer certain asset types, holding periods, or account structures purely for tax efficiency reasons, meaning genuine investor behaviour is directly shaped by tax rules, not solely by underlying investment merit.",
-                "explain": "This directly recalls SA1's and SA2's taxation-affects-attractiveness material — worth recognising this same principle applying to individual investor behaviour specifically, not just to insurance product demand."
-            },
-            {
-                "q": "Why might an investor's genuine time horizon and liquidity needs, alongside their behavioural tendencies and tax position, all need to be understood together before recommending an investment strategy?",
-                "a": "These characteristics interact — a behaviourally loss-averse investor with a short time horizon may need a materially more conservative strategy than the same behavioural profile paired with a long time horizon, so a sound recommendation must integrate <em>all</em> of an investor's genuine characteristics together, not consider any single dimension in isolation.",
-                "explain": "This directly previews this course's later investment-strategy module — worth recognising investor characterisation as requiring a <em>holistic</em>, integrated understanding, not separate, independently-assessed dimensions."
-            },
-            {
-                "q": "How does this module's investor-characteristics material connect back to Module 6's mean-variance portfolio theory?",
-                "a": "Module 6 established the theoretical framework for finding an investor's 'optimum portfolio' using indifference curves representing risk preferences; this module develops a richer, more realistic understanding of what actually shapes those preferences and constraints — behavioural biases, financial planning objectives, and tax position — moving from abstract theory toward practical investor-specific application.",
-                "explain": "This closing card ties this module back to Module 6 explicitly — worth recognising this module as making Module 6's abstract 'indifference curve' concept <em>concrete</em> and practically applicable to real investors."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Actuarial techniques for investment strategy",
-        "description": "Covers how actuarial techniques may be used to develop an appropriate investment strategy for a particular investor, including asset/liability modelling and liability hedging, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine actuarial techniques does the official syllabus (objective 6.1) require candidates to understand for developing an appropriate investment strategy?",
-                "a": "Asset pricing models, asset/liability modelling, liability hedging, and dynamic liability benchmarks — four distinct techniques an actuary can apply when developing investment strategy for a specific investor with genuine liability obligations.",
-                "explain": "Worth memorising this exact four-part list — it defines the genuine actuarial-technique toolkit SP5 expects candidates to apply, directly connecting this whole subject's earlier valuation and portfolio-theory material to genuine strategic decision-making."
-            },
-            {
-                "q": "What are 'asset pricing models', and how might they inform investment strategy development, beyond their use in individual security valuation (Module 5)?",
-                "a": "Asset pricing models (e.g. capturing the genuine relationship between expected return and systematic risk) can inform strategic asset allocation decisions by helping estimate appropriate expected returns for different asset classes, feeding directly into the mean-variance-style optimisation covered in Module 6.",
-                "explain": "This directly recalls Module 6's mean-variance material — worth recognising asset pricing models as providing the genuine <em>expected return inputs</em> that Module 6's optimisation framework requires, connecting individual-security valuation theory to portfolio-level strategy."
-            },
-            {
-                "q": "What is 'asset/liability modelling' in the context of developing investment strategy, echoing CM2's, SA1's and SA2's material?",
-                "a": "Asset/liability modelling projects how a specific investor's assets and liabilities would jointly evolve under a range of future scenarios, revealing whether a proposed investment strategy is likely to meet the investor's specific liability obligations with acceptable risk, directly applying CM2's matching principles in a forward-looking, scenario-based way.",
-                "explain": "This directly recalls CM2's ALM material and SA1's/SA2's ALM-modelling material — worth recognising asset/liability modelling as this whole curriculum's core matching principle, now explicitly framed as a <em>strategy-development tool</em> rather than purely a risk-monitoring exercise."
-            },
-            {
-                "q": "What is 'liability hedging' as a genuine investment strategy technique, and how does it connect to Module 6's asset/liability mismatching risk material?",
-                "a": "Liability hedging deliberately structures a portion of the investment portfolio to closely track the genuine movements of specified liabilities (e.g. using duration-matched bonds or interest rate swaps), directly reducing the asset/liability mismatching risk identified as a genuine risk category in Module 6.",
-                "explain": "This directly recalls Module 6's asset/liability-mismatching-risk material and SA2's/SA4's LDI material — worth recognising liability hedging as the genuine, practical <em>strategy-level response</em> to the mismatching risk Module 6 identified as a genuine risk to monitor and manage."
-            },
-            {
-                "q": "What is a 'dynamic liability benchmark', and why might it be more useful than a static, fixed benchmark for an investor with genuine liability obligations?",
-                "a": "A dynamic liability benchmark adjusts over time to reflect the genuine, evolving characteristics of the investor's actual liabilities (e.g. as they mature or their duration changes), providing a more relevant ongoing performance comparison than a static benchmark that might quickly become misaligned with the investor's real, evolving liability profile.",
-                "explain": "This directly previews this course's later performance-measurement module — worth recognising a dynamic liability benchmark as directly solving the genuine problem a <em>static</em> benchmark would create for a liability-driven investor whose true obligations keep evolving over time."
-            },
-            {
-                "q": "How do all four techniques covered in this module (asset pricing models, ALM, liability hedging, dynamic benchmarks) work together to develop a coherent investment strategy for a specific investor?",
-                "a": "Asset pricing models provide genuine return assumptions, ALM tests whether a proposed strategy meets liability objectives under a range of scenarios, liability hedging provides the genuine practical mechanism for reducing mismatching risk, and dynamic benchmarks provide the genuine, ongoing yardstick for assessing whether the implemented strategy continues to track the investor's evolving needs — together forming a coherent, end-to-end strategy development and monitoring process.",
-                "explain": "This closing card ties this module's four techniques together explicitly — worth recognising these as an <em>integrated</em> toolkit spanning strategy <em>development</em> (pricing models, ALM), <em>implementation</em> (hedging), and <em>ongoing monitoring</em> (dynamic benchmarks), not four independent, unrelated techniques."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "Portfolio management techniques",
-        "description": "Covers the principal portfolio management techniques including active management styles, and equity and bond portfolio management approaches, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine active management 'styles' does the official syllabus (objective 7.1) name as principal portfolio management techniques?",
-                "a": "Value, growth, momentum, and rotational styles — four distinct philosophical approaches to actively selecting investments, each based on different underlying beliefs about what drives genuine outperformance.",
-                "explain": "Worth memorising these four named styles precisely — each represents a different underlying <em>theory</em> of what causes securities to outperform, not simply different levels of aggressiveness."
-            },
-            {
-                "q": "What is a 'value' investing style, and what genuine underlying belief does it rest on?",
-                "a": "Value investing seeks securities trading below their genuine intrinsic or fundamental worth (e.g. low price relative to earnings or book value), resting on the genuine belief that market prices can temporarily diverge from true fundamental value and will eventually converge back toward it.",
-                "explain": "This directly recalls Module 5's fundamental-analysis material — worth recognising value investing as the direct <em>practical application</em> of fundamental analysis: identifying securities where market price and genuine fundamental value have diverged."
-            },
-            {
-                "q": "How does a 'momentum' investing style differ in philosophy from a 'value' style?",
-                "a": "Momentum investing buys securities that have recently performed well (and sells those performing poorly), resting on the genuine belief that recent price trends tend to persist for some period, a philosophically <em>opposite</em> approach to value investing, which instead seeks securities that have UNDERperformed relative to their genuine fundamental worth.",
-                "explain": "Worth recognising value and momentum as representing <em>opposing</em> underlying philosophies — value bets on price-to-fundamental convergence, momentum bets on recent trend persistence — making them a useful contrasting pair to understand together."
-            },
-            {
-                "q": "What is a 'rotational' style of active management, and why might it require broader market-timing skill than the other three named styles?",
-                "a": "A rotational style deliberately shifts allocation between different sectors, styles, or asset classes based on the manager's view of where in an economic or market cycle conditions currently sit, requiring genuine skill not just in selecting individual securities but in correctly timing broader shifts between whole market segments.",
-                "explain": "Worth recognising rotational investing as operating at a <em>higher level</em> than the other three styles — value, growth and momentum are typically applied <em>within</em> a chosen segment, while rotation decides <em>which</em> segment to be in at all."
-            },
-            {
-                "q": "What genuine techniques does the official syllabus (objective 7.1) require for equity portfolio management specifically, beyond the general active styles already covered?",
-                "a": "Techniques for constructing and managing a diversified equity portfolio, including decisions about the number of holdings, concentration versus diversification trade-offs, and how individual security selection combines into an overall portfolio-level risk and return profile.",
-                "explain": "Worth recognising equity <em>portfolio</em> management as a distinct skill from individual equity <em>security</em> selection — combining many individual security decisions into a coherent, well-diversified overall portfolio requires its own genuine expertise."
-            },
-            {
-                "q": "Why might bond portfolio management techniques differ from equity portfolio management techniques, echoing this course's recurring asset-class-specific material?",
-                "a": "Bond portfolios often place greater emphasis on duration and yield curve positioning (reflecting bonds' more directly interest-rate-driven valuation), while equity portfolios often place greater emphasis on style/factor exposure and stock-specific fundamental analysis, reflecting the different primary return and risk drivers each asset class carries.",
-                "explain": "This directly recalls this course's asset-class-specific-technique theme — worth recognising bond and equity portfolio management as requiring <em>different</em> primary skill emphases, reflecting each asset class's own dominant risk and return drivers."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Institutional use of derivatives, multifactor models and transition management",
-        "description": "Covers how, why and when an institutional investor may use financial futures/options/swaps, the use of multifactor models, and understanding transition management and the custodian's role, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine derivative instruments does the official syllabus (objective 7.2) require understanding of institutional use for, echoing Module 4's material?",
-                "a": "Financial futures and options (including over-the-counter contracts), interest rate/currency/inflation swaps, and forward foreign exchange contracts for currency hedging — a practical, institutional-application extension of Module 4's general derivative mechanics material.",
-                "explain": "This directly recalls Module 4's derivative-mechanics material — worth recognising this module as taking that earlier <em>general</em> understanding and applying it to <em>specific</em> institutional investor use cases."
-            },
-            {
-                "q": "Why might a pension scheme institutional investor use forward foreign exchange contracts specifically for currency hedging, echoing this course's ALM material?",
-                "a": "A scheme holding overseas assets to fund domestic-currency liabilities faces genuine currency risk (asset value in domestic-currency terms can fall purely due to exchange rate movements, unrelated to the underlying asset's own performance), so forward FX contracts can hedge this specific currency mismatch, directly applying this course's recurring asset-liability matching principle to currency exposure specifically.",
-                "explain": "This directly recalls CM2's and SA4's ALM material — worth recognising currency hedging as a genuine, specific <em>application</em> of the general asset-liability matching principle, addressing currency risk specifically rather than interest rate or inflation risk."
-            },
-            {
-                "q": "What is a 'multifactor model', and how does it extend beyond the single-factor logic of basic asset pricing models covered in Module 8, per the official syllabus objective 7.3?",
-                "a": "A multifactor model explains genuine asset returns using multiple systematic risk factors (e.g. value, size, momentum, quality) simultaneously, rather than a single risk-return relationship, providing a richer, more nuanced framework for understanding what drives returns and for constructing and analysing portfolios.",
-                "explain": "This directly recalls Module 8's single-factor asset pricing model material — worth recognising multifactor models as a genuine <em>extension</em>, capturing multiple distinct return drivers simultaneously rather than a single, simplified risk-return relationship."
-            },
-            {
-                "q": "Why might multifactor models be useful for practical portfolio construction and risk control, beyond purely academic asset pricing theory?",
-                "a": "A multifactor model can reveal a portfolio's genuine exposure to specific risk factors (e.g. unintended concentration in a 'value' or 'small-cap' factor), allowing managers to understand and deliberately control these exposures, rather than only seeing aggregate portfolio risk without understanding its underlying, factor-level composition.",
-                "explain": "This directly previews this course's later portfolio-construction module — worth recognising multifactor models as providing actionable, <em>decomposed</em> risk insight, not merely an academic return-explanation exercise."
-            },
-            {
-                "q": "What is 'transition management', and why might making significant changes to a substantial portfolio's investment allocation be problematic without it, per the official syllabus objectives 7.4-7.5?",
-                "a": "Transition management is the specialist process of executing a large-scale change in a portfolio's asset allocation (e.g. switching manager or strategy) efficiently, minimising genuine transaction costs and market impact; without careful management, a large, poorly-executed transition could incur significant hidden costs from market impact and prolonged exposure to unintended interim risk during the transition period.",
-                "explain": "Worth recognising transition management as addressing a practical, easily-overlooked <em>implementation</em> risk — even a well-justified strategic reallocation decision can be undermined by poor execution during the transition itself."
-            },
-            {
-                "q": "What are the genuine roles and responsibilities of a custodian, per the official syllabus objective 7.6, echoing SA7's material?",
-                "a": "A custodian holds and safeguards an institutional investor's assets, settles trades, and provides administrative services (e.g. dividend/interest collection, corporate action processing), providing a genuine safeguard by separating asset <em>safekeeping</em> from the investment <em>manager</em>'s decision-making role.",
-                "explain": "This directly recalls SA7's custody-separation material — worth recognising the custodian's role as examinable even at SP5's foundational level, not exclusively an SA7-level governance concept."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Portfolio construction and risk measurement",
-        "description": "Covers assessing portfolio construction considering Value at Risk, tracking error and risk budgets, and understanding the measurement, comparison and attribution of risk, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is a 'risk budget' in the context of portfolio construction, per the official syllabus objective 7.7, echoing this course's recurring risk-measurement material?",
-                "a": "A risk budget allocates a genuine, explicit amount of acceptable risk (e.g. measured via tracking error or VaR) across different components of a portfolio or investment decisions, ensuring the total portfolio's aggregate risk remains within an intended overall limit while allowing managers flexibility in how that risk is distributed across specific positions.",
-                "explain": "This directly recalls SA7's risk-budget material — worth recognising risk budgeting as a practical <em>governance tool</em>, translating an overall risk tolerance into specific, actionable limits for individual portfolio decisions."
-            },
-            {
-                "q": "Why might Value at Risk (VaR) and tracking error be used <em>together</em> when assessing portfolio construction, rather than relying on either measure alone, echoing SA7's material?",
-                "a": "VaR measures genuine absolute downside risk (potential loss in monetary or percentage terms), while tracking error measures genuine <em>relative</em> risk against a benchmark; using both together provides a more complete risk picture, since a portfolio could have low tracking error (closely following its benchmark) while the benchmark itself carries significant absolute VaR, or vice versa.",
-                "explain": "This directly recalls SA7's VaR-and-tracking-error material — worth recognising these as measuring <em>different</em> dimensions of risk (absolute versus relative), each potentially telling a different story about the same portfolio."
-            },
-            {
-                "q": "What does 'measurement, comparison and attribution of risk' (per the official syllabus objective 7.8) require, beyond simply calculating a single risk number for a portfolio?",
-                "a": "Measurement calculates the genuine risk figure itself (e.g. VaR, tracking error); comparison assesses that figure against a benchmark, peer group, or the portfolio's own risk budget; attribution decomposes <em>where</em> that risk comes from (e.g. which specific positions or factor exposures contribute most), together providing a complete risk-understanding framework, not just a single output number.",
-                "explain": "Worth recognising this three-part framework (measure, compare, attribute) as directly paralleling this course's recurring <em>why</em>-versus-<em>that</em> decomposition theme applied specifically to <em>risk</em>, not just to performance or surplus analysis."
-            },
-            {
-                "q": "Why might risk attribution reveal that a portfolio's overall risk is dominated by a small number of specific positions or factor exposures, even in a portfolio with many holdings?",
-                "a": "Genuine correlation between holdings means a portfolio's <em>total</em> risk is not simply the sum of each individual holding's own risk; a small number of highly correlated or highly volatile positions can dominate overall portfolio risk even while representing a modest proportion of total portfolio value, an insight risk attribution specifically reveals.",
-                "explain": "This directly recalls Module 6's mean-variance-correlation material — worth recognising risk attribution as revealing important <em>concentration</em> insights that simple position-weighting alone would not show."
-            },
-            {
-                "q": "Why might a manager deliberately construct a portfolio to have low tracking error against its benchmark, and what genuine trade-off does this involve?",
-                "a": "Low tracking error signals the portfolio closely follows its benchmark, reducing genuine relative performance risk and reassuring clients the manager is operating within its intended mandate, but this limits the manager's scope to add value through active security selection, since closely hugging the benchmark leaves little room for differentiated positioning.",
-                "explain": "This directly recalls Module 9's active-management-style material — worth recognising this as a genuine trade-off between <em>mandate-adherence comfort</em> and <em>genuine active-management opportunity</em>, not a straightforwardly 'lower is always better' risk metric."
-            },
-            {
-                "q": "How does this module's portfolio-construction and risk-measurement material connect back to Module 9's portfolio management techniques?",
-                "a": "Module 9 established the genuine <em>styles</em> and <em>techniques</em> a manager might use to select investments (value, growth, momentum, rotation); this module shows how the resulting portfolio's genuine <em>risk characteristics</em> (via VaR, tracking error, risk budgets, and attribution) should then be assessed and controlled, closing the loop between investment <em>selection</em> and portfolio-level <em>risk management</em>.",
-                "explain": "This closing card ties this module back to Module 9 explicitly — worth recognising portfolio construction and risk measurement as the genuine <em>risk-management counterpart</em> to Module 9's investment-selection techniques, not a separate, unrelated topic."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Investment performance analysis and indices",
-        "description": "Covers analysing investment performance and the limitations of measurement techniques, and understanding the construction and use of investment indices, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine performance measures does the official syllabus (objective 8.1) name for analysing investment performance?",
-                "a": "Portfolio risk and return analysis, equity price, net present value (NPV), net asset value (NAV), and return on capital (ROC) — a diverse set of measures spanning both portfolio-level and individual-security-level performance assessment.",
-                "explain": "Worth memorising this exact list — note it spans different <em>levels</em> of analysis, from whole-portfolio risk/return down to individual metrics like NPV and NAV more typically applied to specific investments or funds."
-            },
-            {
-                "q": "Why might NAV (net asset value) be a more appropriate performance measure for a fund holding illiquid assets than a simple market-price-based measure?",
-                "a": "NAV directly reflects the genuine underlying value of a fund's holdings (assets minus liabilities), providing a meaningful valuation even where no continuous, liquid market price exists for the fund itself, unlike a market-price-based approach which would require an observable trading price that illiquid asset funds often lack.",
-                "explain": "This directly recalls Module 5's illiquid-asset-valuation material — worth recognising NAV as the genuine, practical <em>solution</em> to the valuation challenge illiquid assets create for performance measurement specifically."
-            },
-            {
-                "q": "What genuine limitations of performance measurement techniques does the official syllabus (objective 8.1) explicitly require understanding, beyond simply how to calculate the measures themselves?",
-                "a": "Performance measures can be distorted by the timing of cashflows into and out of a portfolio, can depend heavily on the specific period chosen for measurement, and may not fully capture genuine risk taken to achieve the reported return, meaning raw performance figures require careful, critical interpretation rather than being taken at face value.",
-                "explain": "Worth recognising this as an important critical-thinking requirement — a strong SP5 answer discussing performance measurement should demonstrate awareness of these limitations, not just describe the calculation techniques uncritically."
-            },
-            {
-                "q": "What genuine considerations does the official syllabus (objective 8.2) require for understanding the construction and use of investment indices?",
-                "a": "Understanding the main indices used in international stock markets, the genuine problems in constructing indices for unlisted or illiquid assets, and the genuine uses to which investment indices are put (e.g. as performance benchmarks, or as the basis for index-tracking investment products).",
-                "explain": "Worth recognising this three-part structure as moving from <em>what</em> indices exist, to <em>why</em> constructing some indices is harder than others, to <em>how</em> indices are actually used in practice."
-            },
-            {
-                "q": "Why might constructing a representative index for unlisted or illiquid assets be materially more difficult than for listed equities, echoing Module 5's material?",
-                "a": "Unlisted or illiquid assets lack continuously observable market prices, so an index tracking them must rely on periodic appraisals or modelled valuations rather than genuine, real-time transaction prices, introducing genuine valuation lag and smoothing effects that can distort the index's apparent volatility and correlation with other, more liquid asset classes.",
-                "explain": "This directly recalls Module 5's illiquid-asset-valuation-uncertainty material — worth recognising this same valuation challenge as directly extending to <em>index construction</em> for illiquid asset classes, not just individual fund valuation."
-            },
-            {
-                "q": "Why might an investment index serve different purposes depending on whether it is used as a performance benchmark versus as the basis for an index-tracking (passive) investment product?",
-                "a": "As a benchmark, an index provides a genuine, independent comparison point for assessing active manager performance; as the basis for a tracking product, the <em>same</em> index instead becomes the genuine, direct investment target itself, meaning index construction methodology decisions (e.g. how frequently constituents are rebalanced) can matter differently depending on which of these two purposes is primary.",
-                "explain": "This directly previews this course's closing performance-comparison module — worth recognising the <em>same</em> index as serving <em>different</em> functional roles depending on how it is actually being used."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "Comparing performance and risk-adjusted measures",
-        "description": "Covers understanding investment portfolio performance relative to published indices, benchmark portfolios and peer groups, the contribution of sector and stock selection, and risk-adjusted performance measures, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What three genuine comparison points does the official syllabus (objective 8.3.1) name for assessing an investment portfolio's performance?",
-                "a": "Performance relative to a published market index, relative to a specified benchmark portfolio, and relative to other portfolios such as a peer group — three distinct comparison approaches, each answering a different question about the portfolio's relative success.",
-                "explain": "Worth recognising these as answering <em>different</em> questions: a market index asks 'did the manager beat the broad market', a benchmark portfolio asks 'did the manager beat their specific, agreed comparison', and a peer group asks 'did the manager beat other managers facing similar constraints'."
-            },
-            {
-                "q": "Why might a manager's performance look different when compared against a market index versus against a peer group of similar managers?",
-                "a": "The whole peer group could outperform or underperform the broad market together (e.g. due to a shared style tilt that happened to be in or out of favour), meaning a manager could beat the market index while still underperforming their peer group, or vice versa, since these two comparisons answer different relative-performance questions.",
-                "explain": "This directly recalls Module 6's relative-performance-risk material — worth recognising that <em>beating the market</em> and <em>beating</em> <em>your</em> PEERS are distinct, sometimes divergent achievements, not the same underlying comparison viewed two ways."
-            },
-            {
-                "q": "How does 'the contribution of sector selection and individual stock selection' (per the official syllabus objective 8.3.2) decompose a portfolio's overall relative performance?",
-                "a": "This decomposes total active return into the genuine contribution from overweighting/underweighting different sectors relative to the benchmark (sector selection or allocation effect) and the genuine contribution from picking specific winning or losing stocks <em>within</em> each sector (stock selection effect), revealing <em>why</em> the manager outperformed or underperformed, not just <em>that</em> they did.",
-                "explain": "This directly recalls SA7's performance-attribution material — worth recognising this same <em>why</em>-versus-<em>that</em> decomposition principle applying here at SP5's more foundational level, developed further in more detail at SA7 level."
-            },
-            {
-                "q": "Why might a manager who correctly picked the winning <em>sectors</em> but poor individual <em>stocks</em> within them still achieve a disappointing overall relative performance, echoing this module's decomposition material?",
-                "a": "Sector allocation and stock selection are <em>separate</em> skills that can offset each other — being right about <em>which</em> sectors to favour (positive allocation effect) doesn't guarantee genuine skill in choosing the <em>best</em> individual stocks within those correctly-favoured sectors (potentially negative selection effect), so overall performance depends on <em>both</em> skills together, not either alone.",
-                "explain": "This directly recalls this module's own decomposition material — worth recognising this scenario as a realistic illustration of why the two effects must be assessed <em>separately</em>, since strong performance in one does not guarantee strong performance in the other."
-            },
-            {
-                "q": "What are 'risk-adjusted performance measures' (per the official syllabus objective 8.3.3), and why are they necessary alongside raw return comparisons?",
-                "a": "Risk-adjusted measures (e.g. comparing return relative to volatility or tracking error taken) assess whether a manager's genuine outperformance reflects genuine skill or simply reflects taking on more risk than the mandate intended; a manager achieving a higher raw return by accepting materially more risk has not necessarily demonstrated genuine skill superior to a manager achieving a slightly lower return with materially less risk.",
-                "explain": "This directly recalls SA7's risk-adjusted-performance material — worth recognising risk-adjusted measures as essential for distinguishing genuine <em>skill</em> from simply taking on more <em>risk</em>, a distinction raw return comparison alone cannot make."
-            },
-            {
-                "q": "How does this closing module complete SP5's overall structure, connecting back to Module 1's topic-weighting material?",
-                "a": "This module completes the syllabus's eighth and final topic area (Analysing portfolio performance, 15%), closing the loop this whole subject has traced from the economic/regulatory framework and specific investment products (Modules 1-4), through valuation and risk (Modules 5-6), investor characteristics and strategy (Modules 7-8), portfolio management and construction (Modules 9-11), to this final performance-analysis stage assessing whether the whole process delivered for the investor.",
-                "explain": "This closing card ties this whole subject together explicitly, echoing Module 1's topic-weighting material — worth recognising SP5's full 13-module structure as tracing one coherent journey from understanding the investment environment through to assessing whether strategy and execution delivered the investor's intended outcome."
-            }
-        ]
-    }
-    ]
-,
+      {
+          "id": "m01",
+          "title": "Introduction to Subject SP5",
+          "description": "SP5's aim and structure: the eight syllabus topics and their weightings, the link from CM2/CP1 to SA7, and the investment management control cycle that connects the course.",
+          "cards": [
+              {
+                  "q": "What is the aim of SP5?",
+                  "a": "To develop the ability to apply principles of investment management and financial theory to the needs of investors, including valuing investments, constructing and managing portfolios, and measuring performance.",
+                  "explain": "Principles-based, like other SP subjects."
+              },
+              {
+                  "q": "List SP5's syllabus topics.",
+                  "a": "Economic, regulatory and legislative framework (10%); specialist investment products (15%); valuing investments (10%); monitoring and managing investment risks (10%); investor characteristics, behavioural finance and tax (10%); investment strategies (15%); portfolio management and risk control (15%); analysing performance (15%).",
+                  "explain": "Weightings spread fairly evenly."
+              },
+              {
+                  "q": "How does SP5 build on CM2?",
+                  "a": "CM2 gives the financial economics theory (utility, portfolio theory, CAPM, derivatives pricing); SP5 applies it to practical investment management.",
+                  "explain": "Theory plus practice."
+              },
+              {
+                  "q": "How does SP5 relate to SA7?",
+                  "a": "SA7 applies SP5 principles to complex investment and finance problems in practice.",
+                  "explain": "SP→SA progression."
+              },
+              {
+                  "q": "What are the main types of investor?",
+                  "a": "Individuals, pension schemes, life insurers, general insurers, banks, charities, endowments, sovereign wealth funds, investment funds.",
+                  "explain": "Each has different objectives and constraints."
+              },
+              {
+                  "q": "What is the investment control cycle?",
+                  "a": "Define objectives and constraints, set strategy, implement, monitor performance and risk, feed back.",
+                  "explain": "Mirrors the actuarial control cycle."
+              },
+              {
+                  "q": "Why do liabilities matter in investment?",
+                  "a": "Institutional investors must invest to meet their liabilities, so strategy starts from liability characteristics.",
+                  "explain": "Asset-liability approach."
+              },
+              {
+                  "q": "What are the main investment objectives?",
+                  "a": "Return, risk control, liquidity, meeting liabilities, and constraints like tax and regulation.",
+                  "explain": "Balance return and risk."
+              },
+              {
+                  "q": "What distinguishes strategic from tactical asset allocation?",
+                  "a": "Strategic: long-term benchmark mix; tactical: short-term deviations to exploit opportunities.",
+                  "explain": "Chapter 21–23."
+              },
+              {
+                  "q": "Why is performance measurement important?",
+                  "a": "To assess managers, strategies and value added.",
+                  "explain": "Chapters 16–17."
+              },
+              {
+                  "q": "What role do derivatives play in SP5?",
+                  "a": "Hedging, efficient portfolio management, and gaining exposure.",
+                  "explain": "Chapters 2, 3, 23."
+              },
+              {
+                  "q": "What is meant by 'specialist asset classes'?",
+                  "a": "Assets beyond traditional bonds/equities/property, e.g. hedge funds, private equity, infrastructure, ILS, structured products.",
+                  "explain": "Chapters 4–5."
+              },
+              {
+                  "q": "Why study behavioural finance?",
+                  "a": "Investors' biases affect markets and decisions; understanding them improves advice and strategy.",
+                  "explain": "Chapter 7."
+              },
+              {
+                  "q": "What exam skills does SP5 need?",
+                  "a": "Applying principles to investor scenarios, calculations of returns and values, and discussing pros and cons.",
+                  "explain": "Application focus."
+              },
+              {
+                  "q": "How is tax relevant in SP5?",
+                  "a": "Taxation affects net returns and investor preferences for asset types.",
+                  "explain": "Chapter 24."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Derivatives (1)",
+          "description": "The main types of derivative — forwards, futures, swaps and options — how they are traded (exchange versus OTC), their payoffs, margin and collateral, and the basic principles of pricing by no-arbitrage.",
+          "cards": [
+              {
+                  "q": "What is a forward contract?",
+                  "a": "An OTC agreement to buy or sell an asset at a fixed price on a future date.",
+                  "explain": "Counterparty risk, customisable."
+              },
+              {
+                  "q": "What is a futures contract?",
+                  "a": "An exchange-traded standardised forward with daily margining through a clearing house.",
+                  "explain": "Reduced counterparty risk."
+              },
+              {
+                  "q": "What is margin in futures?",
+                  "a": "Initial margin deposited and variation margin paid daily to reflect price changes.",
+                  "explain": "Marking to market."
+              },
+              {
+                  "q": "What is a swap?",
+                  "a": "An agreement to exchange series of cash flows, e.g. fixed for floating interest.",
+                  "explain": "Mostly OTC, often centrally cleared."
+              },
+              {
+                  "q": "What is a call option?",
+                  "a": "The right but not obligation to buy an asset at a strike price by/at expiry.",
+                  "explain": "Payoff max(S − K, 0)."
+              },
+              {
+                  "q": "What is a put option?",
+                  "a": "The right to sell at the strike price.",
+                  "explain": "Payoff max(K − S, 0)."
+              },
+              {
+                  "q": "What is the difference between European and American options?",
+                  "a": "European exercisable only at expiry; American any time up to expiry.",
+                  "explain": "American worth at least as much."
+              },
+              {
+                  "q": "What is the forward price of a non-income asset?",
+                  "a": "$F = S_0 e^{rT}$ by no-arbitrage.",
+                  "explain": "Cash-and-carry argument."
+              },
+              {
+                  "q": "What is put-call parity?",
+                  "a": "$c + Ke^{-rT} = p + S_0$ for European options on a non-dividend asset.",
+                  "explain": "No-arbitrage relationship."
+              },
+              {
+                  "q": "What is the advantage of exchange trading?",
+                  "a": "Liquidity, transparency, reduced counterparty risk.",
+                  "explain": "Standardisation limits flexibility."
+              },
+              {
+                  "q": "What is the advantage of OTC trading?",
+                  "a": "Tailored terms for specific needs.",
+                  "explain": "Counterparty and liquidity risk; collateral agreements."
+              },
+              {
+                  "q": "What is an interest rate swap used for?",
+                  "a": "Changing exposure from fixed to floating rates or hedging liability duration.",
+                  "explain": "LDI use."
+              },
+              {
+                  "q": "What is a currency swap?",
+                  "a": "Exchange of principal and interest in different currencies.",
+                  "explain": "Hedging foreign debt."
+              },
+              {
+                  "q": "What is a swaption?",
+                  "a": "An option to enter a swap.",
+                  "explain": "Used to hedge interest rate guarantees."
+              },
+              {
+                  "q": "What is the payoff of a long forward?",
+                  "a": "$S_T - F$.",
+                  "explain": "Linear, symmetric."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Derivatives (2)",
+          "description": "Further derivatives: credit derivatives (CDS, CDOs), inflation and currency derivatives, exotic and structured features, the Black-Scholes framework and Greeks in outline, and how investment managers use derivatives for hedging, efficient portfolio management and exposure.",
+          "cards": [
+              {
+                  "q": "What is a credit default swap (CDS)?",
+                  "a": "A contract where the protection buyer pays a premium and receives compensation if a reference entity defaults.",
+                  "explain": "Transfers credit risk."
+              },
+              {
+                  "q": "What is a CDO?",
+                  "a": "A structure pooling debt instruments and issuing tranches with different seniority to credit losses.",
+                  "explain": "Tranching concentrates risk."
+              },
+              {
+                  "q": "What is an inflation swap?",
+                  "a": "Exchanging fixed payments for inflation-linked payments.",
+                  "explain": "Hedges inflation-linked liabilities."
+              },
+              {
+                  "q": "How can an investment manager use derivatives?",
+                  "a": "Hedging risks, changing asset allocation quickly and cheaply, gaining exposure, enhancing income (e.g. covered calls), efficient portfolio management.",
+                  "explain": "Syllabus 2.2."
+              },
+              {
+                  "q": "What are the Greeks?",
+                  "a": "Sensitivities of option values: delta (to underlying), gamma (delta's sensitivity), vega (volatility), theta (time), rho (interest rates).",
+                  "explain": "Used for hedging."
+              },
+              {
+                  "q": "What is delta hedging?",
+                  "a": "Holding a position in the underlying to offset an option's delta.",
+                  "explain": "Needs rebalancing."
+              },
+              {
+                  "q": "What does Black-Scholes assume?",
+                  "a": "Lognormal prices, constant volatility and interest rates, continuous trading, no transaction costs, no arbitrage.",
+                  "explain": "Assumptions rarely hold exactly."
+              },
+              {
+                  "q": "What is implied volatility?",
+                  "a": "The volatility that equates the model price to the market price.",
+                  "explain": "Market's volatility estimate."
+              },
+              {
+                  "q": "What is a covered call strategy?",
+                  "a": "Holding an asset and selling a call on it for premium income.",
+                  "explain": "Caps upside."
+              },
+              {
+                  "q": "What is a protective put?",
+                  "a": "Holding an asset and buying a put to limit downside.",
+                  "explain": "Insurance-like."
+              },
+              {
+                  "q": "What are the risks of derivatives for investors?",
+                  "a": "Counterparty, leverage, liquidity/collateral, basis, model and operational risks.",
+                  "explain": "Governance needed."
+              },
+              {
+                  "q": "What is a total return swap?",
+                  "a": "Exchanging the total return on an asset for a floating rate.",
+                  "explain": "Synthetic exposure."
+              },
+              {
+                  "q": "What is a currency forward used for?",
+                  "a": "Hedging foreign currency exposure.",
+                  "explain": "Chapter 23."
+              },
+              {
+                  "q": "What is basis risk?",
+                  "a": "Hedge and hedged item not moving exactly together.",
+                  "explain": "Imperfect hedge."
+              },
+              {
+                  "q": "What is central clearing?",
+                  "a": "OTC derivatives cleared through a central counterparty to reduce counterparty risk.",
+                  "explain": "Regulatory reform after 2008."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Specialist asset classes (1)",
+          "description": "Specialist instruments part 1: short-term lending and borrowing instruments, corporate debt, private debt, asset-backed securities and securitisation, and credit derivatives — their characteristics and suitability for different investors.",
+          "cards": [
+              {
+                  "q": "List short-term lending/borrowing instruments.",
+                  "a": "Treasury bills, commercial paper, certificates of deposit, repos, money market deposits.",
+                  "explain": "Liquidity management."
+              },
+              {
+                  "q": "What is a repo?",
+                  "a": "Sale of securities with agreement to repurchase, effectively a secured loan.",
+                  "explain": "Used for leverage and liquidity."
+              },
+              {
+                  "q": "What are the characteristics of corporate bonds?",
+                  "a": "Higher yield than government bonds reflecting credit and liquidity risk; covenants; seniority.",
+                  "explain": "Credit analysis needed."
+              },
+              {
+                  "q": "What is private debt?",
+                  "a": "Loans or bonds not publicly traded, e.g. direct lending to mid-sized companies.",
+                  "explain": "Illiquidity premium."
+              },
+              {
+                  "q": "What is securitisation?",
+                  "a": "Pooling assets (e.g. mortgages) and issuing securities backed by their cash flows.",
+                  "explain": "Transfers risk to investors."
+              },
+              {
+                  "q": "What are asset-backed securities (ABS)?",
+                  "a": "Securities backed by pools of loans or receivables.",
+                  "explain": "Prepayment and credit risk."
+              },
+              {
+                  "q": "What are the benefits of securitisation to the originator?",
+                  "a": "Frees capital, provides funding, transfers risk.",
+                  "explain": "Moral hazard risks."
+              },
+              {
+                  "q": "What are risks to ABS investors?",
+                  "a": "Credit risk of underlying pool, prepayment, complexity, liquidity, model risk.",
+                  "explain": "2008 crisis lessons."
+              },
+              {
+                  "q": "What is tranching?",
+                  "a": "Dividing securities into seniority levels absorbing losses in order.",
+                  "explain": "Senior tranches safer."
+              },
+              {
+                  "q": "What is a covered bond?",
+                  "a": "A bond secured on a pool of assets that remains on the issuer's balance sheet, with recourse to the issuer.",
+                  "explain": "Dual recourse."
+              },
+              {
+                  "q": "How are credit derivatives used by investors?",
+                  "a": "To hedge credit exposure or gain credit exposure synthetically.",
+                  "explain": "CDS."
+              },
+              {
+                  "q": "What is a high-yield bond?",
+                  "a": "A bond rated below investment grade.",
+                  "explain": "Higher default risk."
+              },
+              {
+                  "q": "Why might insurers like private debt?",
+                  "a": "Illiquidity premium matches long-term illiquid liabilities.",
+                  "explain": "Matching adjustment eligibility."
+              },
+              {
+                  "q": "What is commercial paper?",
+                  "a": "Short-term unsecured corporate debt.",
+                  "explain": "Money market."
+              },
+              {
+                  "q": "What is a floating rate note?",
+                  "a": "A bond with coupons linked to a reference rate.",
+                  "explain": "Low interest rate duration."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "Specialist asset classes (2)",
+          "description": "Specialist instruments part 2: venture capital and private equity, hedge funds, currency, infrastructure, commodities, insurance-linked securities, structured products and new ways of investing in old asset classes (ETFs, smart beta).",
+          "cards": [
+              {
+                  "q": "What is venture capital?",
+                  "a": "Investment in early-stage unlisted companies with high growth potential.",
+                  "explain": "High risk, illiquid."
+              },
+              {
+                  "q": "What is private equity?",
+                  "a": "Investment in unlisted companies, often via buyouts, through funds with long lock-ups.",
+                  "explain": "J-curve returns."
+              },
+              {
+                  "q": "What are hedge funds?",
+                  "a": "Lightly regulated pooled funds using varied strategies (long/short, arbitrage, macro), often with leverage and performance fees.",
+                  "explain": "Diversification claims vs fees."
+              },
+              {
+                  "q": "Is currency an asset class?",
+                  "a": "Currency can be managed for return (currency overlay) though it has no intrinsic long-term return.",
+                  "explain": "Mostly a risk to hedge."
+              },
+              {
+                  "q": "What are infrastructure investments?",
+                  "a": "Long-term assets like utilities, toll roads, with stable, often inflation-linked cash flows.",
+                  "explain": "Suits long-term investors."
+              },
+              {
+                  "q": "How can investors gain commodity exposure?",
+                  "a": "Futures, commodity funds, ETFs, equities of producers.",
+                  "explain": "Roll yield matters."
+              },
+              {
+                  "q": "What are insurance-linked securities (ILS)?",
+                  "a": "Securities whose returns depend on insurance events, e.g. catastrophe bonds.",
+                  "explain": "Low correlation with markets."
+              },
+              {
+                  "q": "What is a catastrophe bond?",
+                  "a": "A bond where principal is lost if a specified catastrophe occurs.",
+                  "explain": "High yield for risk."
+              },
+              {
+                  "q": "What are structured products?",
+                  "a": "Packaged products combining bonds and derivatives to give tailored payoffs (e.g. capital protection with equity upside).",
+                  "explain": "Complexity and counterparty risk."
+              },
+              {
+                  "q": "What is an ETF?",
+                  "a": "Exchange-traded fund tracking an index, traded like a share.",
+                  "explain": "Low cost, liquid."
+              },
+              {
+                  "q": "What is smart beta?",
+                  "a": "Index strategies weighting by factors other than market cap (value, low volatility).",
+                  "explain": "New way of investing in old assets."
+              },
+              {
+                  "q": "What are the risks of hedge funds?",
+                  "a": "Leverage, opacity, liquidity restrictions, fees, manager risk.",
+                  "explain": "Due diligence."
+              },
+              {
+                  "q": "What is the J-curve in private equity?",
+                  "a": "Negative early returns (fees, investments) before later gains.",
+                  "explain": "Timing."
+              },
+              {
+                  "q": "Why might investors use listed alternatives?",
+                  "a": "Liquidity and transparency while accessing alternative exposures.",
+                  "explain": "Correlation with equities."
+              },
+              {
+                  "q": "What suitability factors apply to specialist assets?",
+                  "a": "Investor's liquidity needs, risk appetite, governance capacity, regulatory limits, fees.",
+                  "explain": "Syllabus 2.1 — suitability."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Economic influences",
+          "description": "Influences on the commercial and economic environment for investment: central banks and monetary policy, fiscal and government policy, the main investor classes, and how economic variables drive asset returns.",
+          "cards": [
+              {
+                  "q": "How do central banks influence markets?",
+                  "a": "Setting interest rates, quantitative easing/tightening, forward guidance, and financial stability measures.",
+                  "explain": "Syllabus 1.1."
+              },
+              {
+                  "q": "What is quantitative easing?",
+                  "a": "Central bank purchases of assets to lower long-term yields and increase liquidity.",
+                  "explain": "Raises asset prices."
+              },
+              {
+                  "q": "How does government fiscal policy affect markets?",
+                  "a": "Borrowing affects bond supply and yields; tax and spending affect growth.",
+                  "explain": "Crowding out."
+              },
+              {
+                  "q": "Who are the main investor classes?",
+                  "a": "Pension funds, insurers, investment funds, banks, sovereign wealth funds, retail investors, hedge funds.",
+                  "explain": "Their behaviour moves markets."
+              },
+              {
+                  "q": "How does inflation affect asset classes?",
+                  "a": "Hurts fixed bonds; equities and real assets provide partial protection over the long term.",
+                  "explain": "Index-linked bonds hedge."
+              },
+              {
+                  "q": "How does economic growth affect equities?",
+                  "a": "Higher growth increases corporate earnings and equity prices.",
+                  "explain": "Cyclical sectors."
+              },
+              {
+                  "q": "How do interest rates affect bond prices?",
+                  "a": "Rising rates lower bond prices.",
+                  "explain": "Duration."
+              },
+              {
+                  "q": "How do exchange rates affect investments?",
+                  "a": "Change domestic value of overseas assets and competitiveness of companies.",
+                  "explain": "Currency risk."
+              },
+              {
+                  "q": "What is the yield curve?",
+                  "a": "Relationship between yields and maturities.",
+                  "explain": "Reflects expectations and risk premiums."
+              },
+              {
+                  "q": "How can government regulation affect markets?",
+                  "a": "Capital rules for insurers/banks change demand for assets.",
+                  "explain": "E.g. Solvency II and bonds."
+              },
+              {
+                  "q": "What is the role of investor sentiment?",
+                  "a": "Can drive prices away from fundamentals in the short term.",
+                  "explain": "Behavioural finance."
+              },
+              {
+                  "q": "How can demographic trends affect markets?",
+                  "a": "Ageing increases demand for income assets and bonds.",
+                  "explain": "Long-term influence."
+              },
+              {
+                  "q": "What is the effect of central bank independence?",
+                  "a": "Improves inflation credibility, lowers inflation risk premiums.",
+                  "explain": "Anchored expectations."
+              },
+              {
+                  "q": "How do commodity prices affect economies?",
+                  "a": "Affect inflation and producers' growth.",
+                  "explain": "Terms of trade."
+              },
+              {
+                  "q": "How do political events affect markets?",
+                  "a": "Increase uncertainty and risk premiums.",
+                  "explain": "Political risk."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "The theory of finance",
+          "description": "Financial theory applied to investment: efficient markets, CAPM and multifactor models in outline, the key findings of behavioural finance and how they apply to different investors, and the main steps in financial planning.",
+          "cards": [
+              {
+                  "q": "What are the three forms of the efficient markets hypothesis?",
+                  "a": "Weak (prices reflect past prices), semi-strong (all public information), strong (all information).",
+                  "explain": "Implications for active management."
+              },
+              {
+                  "q": "What does CAPM say?",
+                  "a": "Expected return = risk-free rate + beta × market risk premium.",
+                  "explain": "Only systematic risk is rewarded."
+              },
+              {
+                  "q": "What is behavioural finance?",
+                  "a": "The study of how psychological biases affect financial decisions and markets.",
+                  "explain": "Syllabus 5.1."
+              },
+              {
+                  "q": "Give four behavioural biases.",
+                  "a": "Overconfidence, loss aversion, anchoring, herding, mental accounting, framing, confirmation bias, myopia.",
+                  "explain": "Affect investors of all types."
+              },
+              {
+                  "q": "How can loss aversion affect investors?",
+                  "a": "They hold losing investments too long and avoid risk after losses.",
+                  "explain": "Disposition effect."
+              },
+              {
+                  "q": "How can herding affect markets?",
+                  "a": "Causes bubbles and crashes as investors follow others.",
+                  "explain": "Momentum."
+              },
+              {
+                  "q": "How do biases apply to institutional investors?",
+                  "a": "Career risk leads to herding and benchmark-hugging; short-termism.",
+                  "explain": "Different from individuals."
+              },
+              {
+                  "q": "What is prospect theory?",
+                  "a": "People value gains and losses relative to a reference point, with losses weighing more.",
+                  "explain": "Kahneman–Tversky."
+              },
+              {
+                  "q": "List the main steps in financial planning.",
+                  "a": "Establish relationship; gather data and objectives; analyse position; develop recommendations; implement; monitor and review.",
+                  "explain": "Syllabus 5.2."
+              },
+              {
+                  "q": "What is the arbitrage pricing theory?",
+                  "a": "Returns driven by several systematic factors, priced by no-arbitrage.",
+                  "explain": "Multifactor basis."
+              },
+              {
+                  "q": "What evidence challenges EMH?",
+                  "a": "Anomalies like momentum, value premium, small-cap effect, bubbles.",
+                  "explain": "Debate continues."
+              },
+              {
+                  "q": "What is mental accounting?",
+                  "a": "Treating money differently depending on its source or intended use.",
+                  "explain": "Suboptimal allocation."
+              },
+              {
+                  "q": "How can advisers counter biases?",
+                  "a": "Structured processes, default options, education, framing.",
+                  "explain": "Nudges."
+              },
+              {
+                  "q": "What is overconfidence?",
+                  "a": "Overestimating one's knowledge or ability, leading to excessive trading.",
+                  "explain": "Lower returns."
+              },
+              {
+                  "q": "Why is myopic loss aversion relevant to pensions?",
+                  "a": "Frequent evaluation makes investors avoid equities despite long horizons.",
+                  "explain": "Affects DC members."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "Regulation of financial services",
+          "description": "The legislative and regulatory framework for investment management and the securities industry: aims of regulation, regulators and approaches, provision of financial services, conduct rules, competition and fair trading, and monopolies regulation.",
+          "cards": [
+              {
+                  "q": "What are the aims of financial regulation?",
+                  "a": "Protect consumers, maintain market integrity, promote competition, ensure financial stability.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "What is prudential regulation?",
+                  "a": "Ensuring firms are financially sound (capital, liquidity).",
+                  "explain": "Protects against failure."
+              },
+              {
+                  "q": "What is conduct regulation?",
+                  "a": "Ensuring firms treat customers fairly and markets function properly.",
+                  "explain": "Suitability, disclosure."
+              },
+              {
+                  "q": "What is the role of competition regulation?",
+                  "a": "Preventing anti-competitive practices and abuse of dominance.",
+                  "explain": "Monopolies regulators."
+              },
+              {
+                  "q": "What is market abuse?",
+                  "a": "Insider dealing, market manipulation, misleading statements.",
+                  "explain": "Criminal and civil sanctions."
+              },
+              {
+                  "q": "How is the provision of financial services regulated?",
+                  "a": "Authorisation of firms, approved persons, conduct rules, complaints handling, compensation schemes.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "What is suitability?",
+                  "a": "Advice or products must be appropriate to the client's needs and risk profile.",
+                  "explain": "Conduct requirement."
+              },
+              {
+                  "q": "What is a compensation scheme?",
+                  "a": "A scheme compensating investors if an authorised firm fails.",
+                  "explain": "Consumer protection."
+              },
+              {
+                  "q": "What is self-regulation?",
+                  "a": "Industry bodies setting standards.",
+                  "explain": "Complements statutory regulation."
+              },
+              {
+                  "q": "What is the role of fair trading controls?",
+                  "a": "Ensuring transparent, orderly trading and fair prices.",
+                  "explain": "Best execution."
+              },
+              {
+                  "q": "What is best execution?",
+                  "a": "Obligation to obtain the best possible result for clients when executing orders.",
+                  "explain": "Conduct rule."
+              },
+              {
+                  "q": "Why regulate investment advisers?",
+                  "a": "Information asymmetry between advisers and clients.",
+                  "explain": "Consumer protection."
+              },
+              {
+                  "q": "How does regulation affect costs?",
+                  "a": "Compliance costs raise product costs.",
+                  "explain": "Trade-off."
+              },
+              {
+                  "q": "What is disclosure regulation?",
+                  "a": "Requiring clear information on costs, risks and performance.",
+                  "explain": "Informed decisions."
+              },
+              {
+                  "q": "What is the risk of over-regulation?",
+                  "a": "Reduced innovation and competition, higher costs.",
+                  "explain": "Balance."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Impact of the legislative and regulatory framework (1)",
+          "description": "How legislation and regulation affect investment practice (part 1): corporate governance and stewardship, the listing authority and listing rules, investment restrictions in agreements, and institutional investment practices.",
+          "cards": [
+              {
+                  "q": "What is corporate governance?",
+                  "a": "The system by which companies are directed and controlled, balancing shareholder and stakeholder interests.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "What is the role of a listings authority?",
+                  "a": "Approving securities for listing, setting listing rules on disclosure and governance.",
+                  "explain": "Investor protection."
+              },
+              {
+                  "q": "What are listing rules?",
+                  "a": "Requirements on disclosure, governance and conduct for listed companies.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "What is stewardship?",
+                  "a": "Institutional investors' responsible allocation, management and oversight of capital, including engagement and voting.",
+                  "explain": "Stewardship codes."
+              },
+              {
+                  "q": "What are investment restrictions in investment agreements?",
+                  "a": "Limits in mandates on asset classes, concentrations, derivatives use, credit quality.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "How do institutional practices develop under regulation?",
+                  "a": "Rules shape asset allocation (e.g. insurers' capital charges), reporting and governance.",
+                  "explain": "Institutional investment practices."
+              },
+              {
+                  "q": "What is shareholder activism?",
+                  "a": "Investors using voting and engagement to influence company management.",
+                  "explain": "Governance tool."
+              },
+              {
+                  "q": "Why do governance codes matter to investors?",
+                  "a": "Well-governed companies may be less risky and more valuable.",
+                  "explain": "ESG link."
+              },
+              {
+                  "q": "What is a 'comply or explain' approach?",
+                  "a": "Companies either comply with a code or explain why not.",
+                  "explain": "Flexibility with transparency."
+              },
+              {
+                  "q": "How do regulations restrict pension investments?",
+                  "a": "Limits on employer-related investment, prudent person principle.",
+                  "explain": "Pension-specific."
+              },
+              {
+                  "q": "How do regulations affect insurer investments?",
+                  "a": "Capital charges on risky assets, matching requirements.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "What is an investment management agreement?",
+                  "a": "Contract setting the mandate, benchmark, restrictions and fees.",
+                  "explain": "Governs the manager."
+              },
+              {
+                  "q": "How do voting rights affect investors?",
+                  "a": "Allow influence on major decisions.",
+                  "explain": "Stewardship."
+              },
+              {
+                  "q": "What is the role of proxy advisers?",
+                  "a": "Advise institutional investors on voting.",
+                  "explain": "Influence concerns."
+              },
+              {
+                  "q": "How can regulation affect market liquidity?",
+                  "a": "Capital rules may reduce dealers' market-making.",
+                  "explain": "Unintended consequences."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "Impact of the legislative and regulatory framework (2)",
+          "description": "How legislation and regulation affect investment (part 2): environmental, social and governance factors, ethical issues, sustainability disclosure, and the development of international accounting standards.",
+          "cards": [
+              {
+                  "q": "What are ESG factors?",
+                  "a": "Environmental, social and governance considerations affecting investment risk and return.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "Why might ESG be financially material?",
+                  "a": "Climate, regulatory, reputational and governance risks can affect company value.",
+                  "explain": "Risk management."
+              },
+              {
+                  "q": "What approaches exist to ESG investing?",
+                  "a": "Exclusion/screening, ESG integration, best-in-class, thematic/impact investing, engagement.",
+                  "explain": "Different objectives."
+              },
+              {
+                  "q": "What are ethical issues in investment?",
+                  "a": "Investing in controversial sectors, conflicts of interest, fair treatment of clients.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "What is greenwashing?",
+                  "a": "Overstating a product's sustainability credentials.",
+                  "explain": "Regulatory focus."
+              },
+              {
+                  "q": "What is sustainability disclosure regulation?",
+                  "a": "Requirements to disclose how ESG risks are considered (e.g. TCFD, SFDR).",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "Why do international accounting standards matter to investors?",
+                  "a": "Comparable financial statements improve analysis and valuation.",
+                  "explain": "IFRS development."
+              },
+              {
+                  "q": "How can accounting standards affect investment behaviour?",
+                  "a": "Fair value accounting increases volatility; insurers and pensions may adjust strategies.",
+                  "explain": "IFRS 9/17."
+              },
+              {
+                  "q": "What is impact investing?",
+                  "a": "Investing for measurable social or environmental impact alongside return.",
+                  "explain": "Additionality."
+              },
+              {
+                  "q": "How can engagement differ from divestment?",
+                  "a": "Engagement seeks change as owner; divestment exits.",
+                  "explain": "Debate."
+              },
+              {
+                  "q": "What is climate transition risk?",
+                  "a": "Loss from policy and technology changes in moving to low-carbon economy.",
+                  "explain": "Stranded assets."
+              },
+              {
+                  "q": "What is fiduciary duty in ESG context?",
+                  "a": "Trustees must consider financially material ESG factors.",
+                  "explain": "Legal interpretation."
+              },
+              {
+                  "q": "How can ESG data limitations affect investors?",
+                  "a": "Inconsistent ratings and data quality hamper analysis.",
+                  "explain": "Challenge."
+              },
+              {
+                  "q": "What is the role of IFRS?",
+                  "a": "Common global accounting standards for listed companies.",
+                  "explain": "Comparability."
+              },
+              {
+                  "q": "How can ethical preferences be accommodated?",
+                  "a": "Screened funds, member choice options.",
+                  "explain": "Suitability."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Fundamental analysis",
+          "description": "Fundamental analysis of equities and bonds: factors affecting equity prices, company and financial statement analysis, ratio analysis, credit analysis of bonds, and the role and limitations of credit rating agencies.",
+          "cards": [
+              {
+                  "q": "What is fundamental analysis?",
+                  "a": "Estimating intrinsic value from economic, industry and company fundamentals.",
+                  "explain": "Syllabus 3.1."
+              },
+              {
+                  "q": "What factors affect equity prices?",
+                  "a": "Earnings and dividend expectations, growth, risk, interest rates, sentiment, economic conditions.",
+                  "explain": "Syllabus 3.1."
+              },
+              {
+                  "q": "List key financial ratios in equity analysis.",
+                  "a": "P/E ratio, dividend yield, price-to-book, EV/EBITDA, return on equity, gearing, interest cover.",
+                  "explain": "Comparisons."
+              },
+              {
+                  "q": "What is credit analysis?",
+                  "a": "Assessing the issuer's ability and willingness to pay debt obligations.",
+                  "explain": "Syllabus 3.1."
+              },
+              {
+                  "q": "What factors are in credit analysis?",
+                  "a": "Cash flow, leverage, interest cover, business risk, management, covenants, industry.",
+                  "explain": "Qualitative and quantitative."
+              },
+              {
+                  "q": "What is the role of credit rating agencies?",
+                  "a": "Providing independent assessments of credit quality.",
+                  "explain": "Syllabus 3.1."
+              },
+              {
+                  "q": "What are criticisms of rating agencies?",
+                  "a": "Conflicts (issuer pays), slow downgrades, mis-rating structured products.",
+                  "explain": "2008 crisis."
+              },
+              {
+                  "q": "What is top-down analysis?",
+                  "a": "Starting from economy to sectors to companies.",
+                  "explain": "Contrast bottom-up."
+              },
+              {
+                  "q": "What is bottom-up analysis?",
+                  "a": "Focusing on individual companies' fundamentals.",
+                  "explain": "Stock-picking."
+              },
+              {
+                  "q": "What is a P/E ratio?",
+                  "a": "Share price divided by earnings per share.",
+                  "explain": "Valuation multiple."
+              },
+              {
+                  "q": "What is gearing?",
+                  "a": "Debt relative to equity or capital.",
+                  "explain": "Financial risk."
+              },
+              {
+                  "q": "Why is cash flow analysis important?",
+                  "a": "Earnings can be manipulated; cash flow shows ability to pay.",
+                  "explain": "Quality of earnings."
+              },
+              {
+                  "q": "What is a bond covenant?",
+                  "a": "Contractual restrictions protecting bondholders.",
+                  "explain": "Credit protection."
+              },
+              {
+                  "q": "What is the credit spread?",
+                  "a": "Yield difference between a corporate and government bond.",
+                  "explain": "Default + liquidity + risk premium."
+              },
+              {
+                  "q": "How can sector analysis help?",
+                  "a": "Industries differ in cyclicality, growth and risk.",
+                  "explain": "Industry classification (Chapter 14)."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Valuation of investments (1)",
+          "description": "Valuing individual investments: discounted cash flow valuation of bonds and equities, fixed income analytics (yields, duration, convexity), valuing interest rate swaps and futures, and arbitrage pricing and hedging.",
+          "cards": [
+              {
+                  "q": "How is a bond valued by DCF?",
+                  "a": "Present value of coupons and redemption at an appropriate discount rate or spot curve.",
+                  "explain": "Syllabus 3.2."
+              },
+              {
+                  "q": "What is yield to maturity?",
+                  "a": "The discount rate equating the bond price with the present value of cash flows.",
+                  "explain": "Internal rate of return."
+              },
+              {
+                  "q": "What is duration?",
+                  "a": "Weighted average time to cash flows (Macaulay) or price sensitivity to yield (modified).",
+                  "explain": "Interest rate risk."
+              },
+              {
+                  "q": "What is convexity?",
+                  "a": "The curvature of the price-yield relationship.",
+                  "explain": "Second-order sensitivity."
+              },
+              {
+                  "q": "How is an equity valued by the dividend discount model?",
+                  "a": "Present value of expected future dividends, e.g. $P = D_1/(r - g)$ for constant growth.",
+                  "explain": "Gordon growth model."
+              },
+              {
+                  "q": "How is an interest rate swap valued?",
+                  "a": "As the difference between the value of a fixed-rate bond and a floating-rate bond.",
+                  "explain": "Or as a series of forward contracts."
+              },
+              {
+                  "q": "How are futures valued?",
+                  "a": "At zero at inception; value changes with futures price, settled daily.",
+                  "explain": "Pricing via cost of carry."
+              },
+              {
+                  "q": "What is arbitrage pricing?",
+                  "a": "Pricing an asset by constructing a replicating portfolio with the same payoffs.",
+                  "explain": "Law of one price."
+              },
+              {
+                  "q": "What is hedging?",
+                  "a": "Taking offsetting positions to reduce risk.",
+                  "explain": "Syllabus 3.2."
+              },
+              {
+                  "q": "What is a spot rate?",
+                  "a": "The yield on a zero-coupon bond of a given maturity.",
+                  "explain": "Used for discounting."
+              },
+              {
+                  "q": "What is a forward rate?",
+                  "a": "The implied future rate between two dates from spot rates.",
+                  "explain": "Term structure."
+              },
+              {
+                  "q": "How does credit risk affect bond valuation?",
+                  "a": "Higher discount rates or expected default losses reduce value.",
+                  "explain": "Spread."
+              },
+              {
+                  "q": "What is the effect of callable features on bond value?",
+                  "a": "Reduces value to investor since issuer can redeem when favourable.",
+                  "explain": "Negative convexity."
+              },
+              {
+                  "q": "What is the price of a zero-coupon bond?",
+                  "a": "Face value discounted at the spot rate for its maturity.",
+                  "explain": "Simplest bond."
+              },
+              {
+                  "q": "Why is DCF valuation sensitive?",
+                  "a": "Small changes in discount rate or growth assumptions change value significantly.",
+                  "explain": "Sensitivity analysis."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Valuation of investments (2)",
+          "description": "Further valuation topics: empirical characteristics of asset prices (fat tails, volatility clustering, mean reversion), fixed income option pricing, evaluating securitisations and credit derivatives, and valuing property and unquoted investments.",
+          "cards": [
+              {
+                  "q": "What are empirical characteristics of asset prices?",
+                  "a": "Fat tails, volatility clustering, skewness, mean reversion over long periods, momentum in short term, correlations rising in crises.",
+                  "explain": "Syllabus 3.2."
+              },
+              {
+                  "q": "Why do fat tails matter?",
+                  "a": "Extreme losses are more likely than normal models suggest.",
+                  "explain": "Risk management."
+              },
+              {
+                  "q": "How are fixed income options priced?",
+                  "a": "Using interest rate models (e.g. Black model, term structure models) calibrated to market.",
+                  "explain": "Syllabus 3.2."
+              },
+              {
+                  "q": "How is a securitisation evaluated?",
+                  "a": "Analyse collateral quality, cash flow waterfall, credit enhancement, prepayment and default scenarios.",
+                  "explain": "Syllabus 3.2."
+              },
+              {
+                  "q": "How is a credit derivative evaluated?",
+                  "a": "Using default probabilities and recovery rates to value protection payments versus premiums.",
+                  "explain": "CDS pricing."
+              },
+              {
+                  "q": "How is property valued?",
+                  "a": "Using comparable transactions or DCF of rental income.",
+                  "explain": "Appraisal-based."
+              },
+              {
+                  "q": "How are unquoted shares valued?",
+                  "a": "Using comparable multiples, DCF, or net assets, with illiquidity discounts.",
+                  "explain": "Subjective."
+              },
+              {
+                  "q": "What is the Black model?",
+                  "a": "An adaptation of Black-Scholes for options on futures/forwards, used for caps and swaptions.",
+                  "explain": "Market standard."
+              },
+              {
+                  "q": "What is prepayment risk?",
+                  "a": "Borrowers repaying early, altering cash flows of mortgage-backed securities.",
+                  "explain": "Negative convexity."
+              },
+              {
+                  "q": "What is credit enhancement?",
+                  "a": "Features protecting senior investors, e.g. subordination, overcollateralisation.",
+                  "explain": "Securitisation."
+              },
+              {
+                  "q": "What is the recovery rate?",
+                  "a": "Proportion of exposure recovered after default.",
+                  "explain": "CDS pricing input."
+              },
+              {
+                  "q": "What is volatility clustering?",
+                  "a": "Periods of high volatility tend to follow each other.",
+                  "explain": "GARCH models."
+              },
+              {
+                  "q": "Why is mean reversion relevant?",
+                  "a": "Suggests long-term investors can tolerate short-term volatility.",
+                  "explain": "Debated."
+              },
+              {
+                  "q": "What is a waterfall in securitisation?",
+                  "a": "The order in which cash flows are allocated to tranches.",
+                  "explain": "Senior first."
+              },
+              {
+                  "q": "Why is valuation of illiquid assets uncertain?",
+                  "a": "Infrequent transactions and appraisal smoothing.",
+                  "explain": "Stale prices."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Industry classification",
+          "description": "Classifying companies into industries and sectors: the purpose of classification systems (e.g. GICS, ICB), how they are used in analysis, index construction and performance attribution, and their limitations.",
+          "cards": [
+              {
+                  "q": "Why classify companies into industries?",
+                  "a": "To group companies with similar economic characteristics for analysis, benchmarking, index construction and attribution.",
+                  "explain": "Syllabus 8.2."
+              },
+              {
+                  "q": "Name two industry classification systems.",
+                  "a": "GICS (Global Industry Classification Standard) and ICB (Industry Classification Benchmark).",
+                  "explain": "Hierarchical levels."
+              },
+              {
+                  "q": "How are companies assigned to sectors?",
+                  "a": "Mainly by principal business activity, usually by revenue source.",
+                  "explain": "Conglomerates are hard."
+              },
+              {
+                  "q": "How is classification used in performance attribution?",
+                  "a": "Separating sector allocation from stock selection effects.",
+                  "explain": "Chapter 16."
+              },
+              {
+                  "q": "What are limitations of classification?",
+                  "a": "Diversified companies, changing business models, subjective judgements, global differences.",
+                  "explain": "Misclassification."
+              },
+              {
+                  "q": "How does classification help risk control?",
+                  "a": "Monitoring sector concentrations.",
+                  "explain": "Diversification."
+              },
+              {
+                  "q": "What are cyclical sectors?",
+                  "a": "Sectors whose earnings are sensitive to economic cycles (e.g. industrials, consumer discretionary).",
+                  "explain": "Rotation strategies."
+              },
+              {
+                  "q": "What are defensive sectors?",
+                  "a": "Sectors with stable demand (e.g. utilities, consumer staples, healthcare).",
+                  "explain": "Lower beta."
+              },
+              {
+                  "q": "How does classification support sector rotation?",
+                  "a": "Managers shift between sectors according to economic outlook.",
+                  "explain": "Active style."
+              },
+              {
+                  "q": "Why must classification be stable?",
+                  "a": "Frequent changes disrupt benchmarks and analysis.",
+                  "explain": "Periodic review."
+              },
+              {
+                  "q": "How is classification used in index construction?",
+                  "a": "Creating sector indices and ensuring representative coverage.",
+                  "explain": "Chapter 15."
+              },
+              {
+                  "q": "What is a growth sector?",
+                  "a": "Sectors with high expected earnings growth (e.g. technology).",
+                  "explain": "Higher P/E."
+              },
+              {
+                  "q": "How can technology blur classification?",
+                  "a": "Tech companies span many industries (e.g. retail, media).",
+                  "explain": "Reclassification events."
+              },
+              {
+                  "q": "Why compare companies within sectors?",
+                  "a": "Valuation multiples differ by sector.",
+                  "explain": "Relative valuation."
+              },
+              {
+                  "q": "What is the effect of reclassification on index funds?",
+                  "a": "Forced trading as sector weights change.",
+                  "explain": "Transaction costs."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Investment indices",
+          "description": "Construction and uses of investment indices: weighting methods, arithmetic versus geometric averages, main international equity and bond indices, problems with indices of unlisted or illiquid assets (property, private equity, hedge funds), and uses in benchmarking and passive investment.",
+          "cards": [
+              {
+                  "q": "What are the uses of investment indices?",
+                  "a": "Measuring market performance, benchmarking managers, basis for index funds and derivatives, economic indicators, asset allocation research.",
+                  "explain": "Syllabus 8.2.3."
+              },
+              {
+                  "q": "What weighting methods are used?",
+                  "a": "Market capitalisation, free-float, price-weighting, equal weighting, fundamental weighting.",
+                  "explain": "Market cap most common."
+              },
+              {
+                  "q": "Why is free-float adjustment used?",
+                  "a": "To reflect shares actually available to investors.",
+                  "explain": "Investability."
+              },
+              {
+                  "q": "What is the difference between arithmetic and geometric indices?",
+                  "a": "Arithmetic averages price relatives; geometric takes the geometric mean, which is always lower and not replicable.",
+                  "explain": "Arithmetic weighted indices replicable."
+              },
+              {
+                  "q": "Name main international stock market indices.",
+                  "a": "FTSE 100/All-Share, S&P 500, Dow Jones, Nikkei 225, MSCI World, Euro Stoxx 50.",
+                  "explain": "Syllabus 8.2.1."
+              },
+              {
+                  "q": "What problems arise with property indices?",
+                  "a": "Valuation-based (appraisal smoothing), infrequent transactions, heterogeneity.",
+                  "explain": "Syllabus 8.2.2."
+              },
+              {
+                  "q": "What problems arise with hedge fund indices?",
+                  "a": "Survivorship bias, backfill bias, self-selection of reporting.",
+                  "explain": "Overstated returns."
+              },
+              {
+                  "q": "What problems arise with private equity indices?",
+                  "a": "Infrequent valuations, lags, selection bias.",
+                  "explain": "Illiquidity."
+              },
+              {
+                  "q": "What is survivorship bias?",
+                  "a": "Excluding failed funds overstates average returns.",
+                  "explain": "Index construction."
+              },
+              {
+                  "q": "What is a total return index?",
+                  "a": "An index including reinvested income.",
+                  "explain": "Performance measurement."
+              },
+              {
+                  "q": "What properties make a good benchmark index?",
+                  "a": "Representative, investable, transparent, measurable in advance, appropriate to mandate.",
+                  "explain": "Benchmark quality."
+              },
+              {
+                  "q": "What is a bond index's construction challenge?",
+                  "a": "Many issues, illiquidity, changing constituents as bonds mature.",
+                  "explain": "Rebalancing."
+              },
+              {
+                  "q": "How do index changes affect prices?",
+                  "a": "Inclusion/exclusion causes demand shifts from index funds.",
+                  "explain": "Index effect."
+              },
+              {
+                  "q": "What is the price-weighted index weakness?",
+                  "a": "High-priced stocks dominate regardless of company size.",
+                  "explain": "Dow Jones."
+              },
+              {
+                  "q": "What is a chain-linked index?",
+                  "a": "Index calculated by linking period returns, allowing constituent changes.",
+                  "explain": "Continuity."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Performance measurement (1)",
+          "description": "Measuring investment portfolio performance relative to a published index, a benchmark portfolio and peer groups: money-weighted and time-weighted returns, linked internal rate of return, attribution into sector (asset) allocation and stock selection, and risk-adjusted measures.",
+          "cards": [
+              {
+                  "q": "What is the money-weighted rate of return (MWRR)?",
+                  "a": "The internal rate of return equating initial value plus cash flows with final value.",
+                  "explain": "Affected by timing of cash flows."
+              },
+              {
+                  "q": "What is the time-weighted rate of return (TWRR)?",
+                  "a": "Product of returns between cash flows, removing the effect of cash flow timing.",
+                  "explain": "Best for assessing managers."
+              },
+              {
+                  "q": "What is the linked internal rate of return?",
+                  "a": "IRR calculated over subperiods and linked, approximating TWRR with less frequent valuations.",
+                  "explain": "Practical compromise."
+              },
+              {
+                  "q": "Why use TWRR to assess managers?",
+                  "a": "Managers don't control the timing of cash flows into the fund.",
+                  "explain": "Fair comparison."
+              },
+              {
+                  "q": "What is performance attribution?",
+                  "a": "Splitting relative return into sector (asset) allocation and stock selection contributions.",
+                  "explain": "Syllabus 8.3.2."
+              },
+              {
+                  "q": "How is the sector allocation effect calculated?",
+                  "a": "Sum of (portfolio weight − benchmark weight) × (benchmark sector return − total benchmark return) — or a similar formulation.",
+                  "explain": "Brinson-style."
+              },
+              {
+                  "q": "How is the stock selection effect calculated?",
+                  "a": "Sum of portfolio weight (or benchmark weight) × (portfolio sector return − benchmark sector return).",
+                  "explain": "Interaction term in some methods."
+              },
+              {
+                  "q": "What is peer group comparison?",
+                  "a": "Comparing performance with other managers with similar mandates.",
+                  "explain": "Survivorship and style differences."
+              },
+              {
+                  "q": "What is the Sharpe ratio?",
+                  "a": "(Portfolio return − risk-free rate) / standard deviation.",
+                  "explain": "Risk-adjusted, total risk."
+              },
+              {
+                  "q": "What is the Treynor ratio?",
+                  "a": "(Portfolio return − risk-free rate) / beta.",
+                  "explain": "Systematic risk."
+              },
+              {
+                  "q": "What is Jensen's alpha?",
+                  "a": "Actual return minus CAPM expected return.",
+                  "explain": "Manager skill measure."
+              },
+              {
+                  "q": "What is the information ratio?",
+                  "a": "Active return / tracking error.",
+                  "explain": "Consistency of outperformance."
+              },
+              {
+                  "q": "What are limitations of performance measurement?",
+                  "a": "Short periods, benchmark choice, risk not captured, survivorship, valuation issues.",
+                  "explain": "Syllabus 8.3."
+              },
+              {
+                  "q": "Why compare against a benchmark portfolio?",
+                  "a": "Reflects the investor's strategy and liabilities.",
+                  "explain": "Customised benchmark."
+              },
+              {
+                  "q": "How can performance be compared with an index?",
+                  "a": "Relative return versus the index, adjusted for costs and risk.",
+                  "explain": "Index choice matters."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Performance measurement (2)",
+          "description": "Analysing investment performance using equity price, net present value, net asset value and return on capital measures, the limitations of each, and presenting performance to investors.",
+          "cards": [
+              {
+                  "q": "How can equity price measure performance?",
+                  "a": "Share price movements reflect market assessment of company performance.",
+                  "explain": "Syllabus 8.1."
+              },
+              {
+                  "q": "What is net present value as a performance measure?",
+                  "a": "PV of future cash flows minus investment cost; positive NPV adds value.",
+                  "explain": "Project appraisal."
+              },
+              {
+                  "q": "What is net asset value (NAV)?",
+                  "a": "Value of assets minus liabilities, often per share for funds.",
+                  "explain": "Investment trusts."
+              },
+              {
+                  "q": "What is return on capital?",
+                  "a": "Profit relative to capital employed.",
+                  "explain": "ROCE."
+              },
+              {
+                  "q": "What is a discount to NAV?",
+                  "a": "When an investment trust's share price is below its NAV.",
+                  "explain": "Market sentiment."
+              },
+              {
+                  "q": "What are limitations of accounting-based measures?",
+                  "a": "Accounting conventions, manipulation, historic costs.",
+                  "explain": "Use with market measures."
+              },
+              {
+                  "q": "What is portfolio risk and return analysis?",
+                  "a": "Measuring returns alongside volatility, drawdown and tracking error.",
+                  "explain": "Syllabus 8.1."
+              },
+              {
+                  "q": "What is maximum drawdown?",
+                  "a": "Largest peak-to-trough decline.",
+                  "explain": "Downside risk measure."
+              },
+              {
+                  "q": "Why does NPV depend on discount rate?",
+                  "a": "Higher rates reduce PV of future cash flows.",
+                  "explain": "Sensitivity."
+              },
+              {
+                  "q": "What is economic value added (EVA)?",
+                  "a": "Profit after charging for the cost of capital.",
+                  "explain": "Value creation."
+              },
+              {
+                  "q": "How is performance presented to investors?",
+                  "a": "Returns over periods versus benchmarks with risk measures and attribution.",
+                  "explain": "Clear communication."
+              },
+              {
+                  "q": "What is the GIPS standard?",
+                  "a": "Global Investment Performance Standards for fair presentation.",
+                  "explain": "Consistency."
+              },
+              {
+                  "q": "How do fees affect performance measurement?",
+                  "a": "Net-of-fee returns show investor experience.",
+                  "explain": "Gross vs net."
+              },
+              {
+                  "q": "What is annualisation?",
+                  "a": "Converting multi-period returns to annual equivalents.",
+                  "explain": "Geometric."
+              },
+              {
+                  "q": "Why consider performance over multiple periods?",
+                  "a": "Short-term results are noisy.",
+                  "explain": "Luck vs skill."
+              }
+          ]
+      },
+      {
+          "id": "m18",
+          "title": "Overall risk control",
+          "description": "Monitoring and controlling an institution's exposure to risk — asset/liability mismatch, market, credit and counterparty, operational, liquidity, relative performance and sustainability risks — and applying mean-variance portfolio theory (opportunity set, efficient frontier, indifference curves, optimum portfolio).",
+          "cards": [
+              {
+                  "q": "List the risks in syllabus 4.1.",
+                  "a": "Asset/liability mismatching; market; credit (incl. counterparty); operational; liquidity; relative performance; sustainability.",
+                  "explain": "Monitoring and control."
+              },
+              {
+                  "q": "How is mismatch risk controlled?",
+                  "a": "Matching assets to liabilities, hedging, ALM limits.",
+                  "explain": "Liability benchmark."
+              },
+              {
+                  "q": "How is market risk controlled?",
+                  "a": "Diversification, limits, hedging, VaR monitoring.",
+                  "explain": "Risk budgets."
+              },
+              {
+                  "q": "How is credit risk controlled?",
+                  "a": "Credit limits, ratings, diversification, collateral, credit derivatives.",
+                  "explain": "Counterparty management."
+              },
+              {
+                  "q": "How is operational risk controlled?",
+                  "a": "Processes, controls, segregation of duties, audit, custodians.",
+                  "explain": "Operational due diligence."
+              },
+              {
+                  "q": "How is liquidity risk controlled?",
+                  "a": "Holding liquid assets, stress testing, limits on illiquid assets.",
+                  "explain": "Collateral needs."
+              },
+              {
+                  "q": "What is relative performance risk?",
+                  "a": "Risk of underperforming peers or benchmarks.",
+                  "explain": "Career risk for managers."
+              },
+              {
+                  "q": "What is sustainability risk?",
+                  "a": "ESG events that could cause material loss in value.",
+                  "explain": "Syllabus 4.1."
+              },
+              {
+                  "q": "What is the opportunity set?",
+                  "a": "All achievable portfolio risk-return combinations.",
+                  "explain": "Mean-variance."
+              },
+              {
+                  "q": "What is the efficient frontier?",
+                  "a": "Portfolios with highest expected return for each level of risk.",
+                  "explain": "Dominates others."
+              },
+              {
+                  "q": "What are indifference curves?",
+                  "a": "Combinations of risk and return giving equal utility to an investor.",
+                  "explain": "Risk preferences."
+              },
+              {
+                  "q": "What is the optimum portfolio?",
+                  "a": "Where the highest indifference curve touches the efficient frontier.",
+                  "explain": "Syllabus 4.2."
+              },
+              {
+                  "q": "What are limitations of mean-variance theory?",
+                  "a": "Relies on estimates, assumes normal returns and quadratic utility, ignores liabilities unless adapted.",
+                  "explain": "Estimation error."
+              },
+              {
+                  "q": "How can mean-variance be adapted for liabilities?",
+                  "a": "Use surplus (assets − liabilities) return and variance.",
+                  "explain": "Surplus optimisation."
+              },
+              {
+                  "q": "What is diversification benefit?",
+                  "a": "Portfolio risk less than weighted average of individual risks when correlations < 1.",
+                  "explain": "Core of MPT."
+              }
+          ]
+      },
+      {
+          "id": "m19",
+          "title": "Actuarial techniques (1)",
+          "description": "Using actuarial techniques to develop investment strategy: asset pricing models, asset-liability modelling, liability hedging and liability benchmarks for institutional investors.",
+          "cards": [
+              {
+                  "q": "How can asset pricing models help strategy?",
+                  "a": "Provide expected returns and risk premiums for asset classes.",
+                  "explain": "Syllabus 6.1."
+              },
+              {
+                  "q": "What is asset-liability modelling?",
+                  "a": "Projecting assets and liabilities under scenarios to evaluate strategies.",
+                  "explain": "Syllabus 6.1."
+              },
+              {
+                  "q": "What is liability hedging?",
+                  "a": "Using assets or derivatives to match liability sensitivities (interest rate, inflation).",
+                  "explain": "LDI."
+              },
+              {
+                  "q": "What is a liability benchmark?",
+                  "a": "A portfolio that best matches the liabilities, used as risk-free reference.",
+                  "explain": "Dynamic liability benchmarks adjust over time."
+              },
+              {
+                  "q": "What is a dynamic liability benchmark?",
+                  "a": "A liability-matching portfolio that changes as liabilities evolve.",
+                  "explain": "Syllabus 6.1."
+              },
+              {
+                  "q": "Why start strategy from liabilities?",
+                  "a": "Risk for institutions is relative to liabilities.",
+                  "explain": "Surplus risk."
+              },
+              {
+                  "q": "What outputs do ALM studies give?",
+                  "a": "Distributions of funding level, surplus, contributions.",
+                  "explain": "Compare strategies."
+              },
+              {
+                  "q": "What is the role of an economic scenario generator?",
+                  "a": "Produces consistent simulations of economic variables.",
+                  "explain": "ALM input."
+              },
+              {
+                  "q": "How is risk appetite reflected?",
+                  "a": "Constraints on probability of shortfall or surplus volatility.",
+                  "explain": "Strategy selection."
+              },
+              {
+                  "q": "What is a hedge ratio?",
+                  "a": "Proportion of liability sensitivity hedged.",
+                  "explain": "LDI parameter."
+              },
+              {
+                  "q": "What are limitations of ALM?",
+                  "a": "Model and parameter risk, false precision.",
+                  "explain": "Stress testing complements."
+              },
+              {
+                  "q": "How do insurers use ALM?",
+                  "a": "Match guaranteed liabilities, manage capital.",
+                  "explain": "Regulatory capital."
+              },
+              {
+                  "q": "How do pension schemes use ALM?",
+                  "a": "Set strategy and contribution policy.",
+                  "explain": "Journey plans."
+              },
+              {
+                  "q": "What is surplus risk?",
+                  "a": "Volatility of assets minus liabilities.",
+                  "explain": "Key measure."
+              },
+              {
+                  "q": "What is a growth vs matching portfolio split?",
+                  "a": "Separating return-seeking and liability-hedging assets.",
+                  "explain": "LDI framework."
+              }
+          ]
+      },
+      {
+          "id": "m20",
+          "title": "Actuarial techniques (2)",
+          "description": "Further actuarial techniques for investment strategy: stochastic modelling and its calibration, Value at Risk and tail measures, stress and scenario testing, and choosing strategy for different investor types.",
+          "cards": [
+              {
+                  "q": "Why use stochastic models for strategy?",
+                  "a": "Capture uncertainty and distribution of outcomes.",
+                  "explain": "Beyond deterministic."
+              },
+              {
+                  "q": "How is an ESG calibrated?",
+                  "a": "To historical data, market prices and expert views.",
+                  "explain": "Real-world vs risk-neutral."
+              },
+              {
+                  "q": "What is real-world vs risk-neutral calibration?",
+                  "a": "Real-world reflects expected returns for projection; risk-neutral for pricing.",
+                  "explain": "Purpose-specific."
+              },
+              {
+                  "q": "What is Value at Risk?",
+                  "a": "Loss not exceeded with a given probability over a period.",
+                  "explain": "Tail risk measure."
+              },
+              {
+                  "q": "What is Tail VaR?",
+                  "a": "Expected loss given the VaR is exceeded.",
+                  "explain": "Coherent measure."
+              },
+              {
+                  "q": "What is stress testing?",
+                  "a": "Assessing effect of severe but plausible scenarios.",
+                  "explain": "Complements VaR."
+              },
+              {
+                  "q": "How do strategies differ by investor type?",
+                  "a": "Insurers: matching and capital; pensions: liability-relative; individuals: goals and risk tolerance; charities: spending needs.",
+                  "explain": "Objectives."
+              },
+              {
+                  "q": "What is reverse stress testing?",
+                  "a": "Identifying scenarios that would cause failure.",
+                  "explain": "Risk management."
+              },
+              {
+                  "q": "How can tail dependence matter?",
+                  "a": "Assets can fall together in crises.",
+                  "explain": "Copulas."
+              },
+              {
+                  "q": "What is model risk?",
+                  "a": "Errors or inappropriate models leading to poor decisions.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "How is liquidity considered in strategy?",
+                  "a": "Ensure ability to meet cash needs under stress.",
+                  "explain": "Liquidity stress tests."
+              },
+              {
+                  "q": "What is a risk budget?",
+                  "a": "Allocating permitted risk across strategies or managers.",
+                  "explain": "Chapter 22."
+              },
+              {
+                  "q": "How can scenario analysis support communication?",
+                  "a": "Concrete stories are easier to understand than distributions.",
+                  "explain": "Stakeholder engagement."
+              },
+              {
+                  "q": "What is expected shortfall?",
+                  "a": "Same as TVaR.",
+                  "explain": "Regulatory use."
+              },
+              {
+                  "q": "What is backtesting?",
+                  "a": "Comparing model predictions with actual outcomes.",
+                  "explain": "Model validation."
+              }
+          ]
+      },
+      {
+          "id": "m21",
+          "title": "Portfolio management (1)",
+          "description": "Principal portfolio management techniques: active versus passive management, active styles (value, growth, momentum, rotational), equity portfolio techniques, and bond portfolio techniques (immunisation, duration management, yield curve and credit strategies).",
+          "cards": [
+              {
+                  "q": "What is passive management?",
+                  "a": "Tracking an index with minimal active decisions.",
+                  "explain": "Low cost."
+              },
+              {
+                  "q": "What is active management?",
+                  "a": "Seeking to outperform through security selection or allocation.",
+                  "explain": "Higher cost."
+              },
+              {
+                  "q": "What is value investing?",
+                  "a": "Buying stocks that appear cheap relative to fundamentals.",
+                  "explain": "Syllabus 7.1."
+              },
+              {
+                  "q": "What is growth investing?",
+                  "a": "Buying companies with high expected earnings growth.",
+                  "explain": "Syllabus 7.1."
+              },
+              {
+                  "q": "What is momentum investing?",
+                  "a": "Buying recent winners and selling losers.",
+                  "explain": "Syllabus 7.1."
+              },
+              {
+                  "q": "What is rotational (sector rotation) investing?",
+                  "a": "Shifting between sectors according to the economic cycle.",
+                  "explain": "Syllabus 7.1."
+              },
+              {
+                  "q": "List equity portfolio techniques.",
+                  "a": "Indexing, enhanced indexing, stock picking, sector allocation, core-satellite, quantitative/factor strategies.",
+                  "explain": "Syllabus 7.1."
+              },
+              {
+                  "q": "List bond portfolio techniques.",
+                  "a": "Immunisation, cash flow matching, duration management, yield curve positioning, credit selection, bond switching.",
+                  "explain": "Syllabus 7.1."
+              },
+              {
+                  "q": "What is immunisation?",
+                  "a": "Matching duration and having greater convexity so small rate changes don't create losses.",
+                  "explain": "Redington."
+              },
+              {
+                  "q": "What is core-satellite?",
+                  "a": "Passive core with active satellites.",
+                  "explain": "Balances cost and alpha."
+              },
+              {
+                  "q": "What is a bond switch?",
+                  "a": "Exchanging one bond for another to exploit anomalies or change characteristics.",
+                  "explain": "Anomaly/policy switches."
+              },
+              {
+                  "q": "What is enhanced indexing?",
+                  "a": "Small active tilts around an index.",
+                  "explain": "Low tracking error."
+              },
+              {
+                  "q": "What are riding the yield curve strategies?",
+                  "a": "Buying bonds on a steep curve and selling as they roll down.",
+                  "explain": "Yield curve strategy."
+              },
+              {
+                  "q": "What is credit selection?",
+                  "a": "Choosing bonds with favourable credit risk/return.",
+                  "explain": "Credit analysis."
+              },
+              {
+                  "q": "Why choose passive management?",
+                  "a": "Market efficiency, low cost, predictable tracking.",
+                  "explain": "Evidence on active underperformance."
+              }
+          ]
+      },
+      {
+          "id": "m22",
+          "title": "Portfolio management (2)",
+          "description": "Portfolio construction and risk control: multifactor models in practical management, the custodian's roles and responsibilities, Value at Risk, tracking error and risk budgets, and measurement, comparison and attribution of risk.",
+          "cards": [
+              {
+                  "q": "How are multifactor models used in practice?",
+                  "a": "To estimate risk exposures, construct portfolios, attribute risk and return, and control tracking error.",
+                  "explain": "Syllabus 7.3."
+              },
+              {
+                  "q": "What types of factors are used?",
+                  "a": "Macroeconomic, fundamental (value, size), statistical factors.",
+                  "explain": "Model types."
+              },
+              {
+                  "q": "What are the roles of a custodian?",
+                  "a": "Safekeeping assets, settlement, income collection, corporate actions, record keeping, reporting, stock lending.",
+                  "explain": "Syllabus 7.6."
+              },
+              {
+                  "q": "What is tracking error?",
+                  "a": "Standard deviation of active returns relative to a benchmark.",
+                  "explain": "Syllabus 7.7."
+              },
+              {
+                  "q": "How is VaR used in portfolio construction?",
+                  "a": "Limiting potential losses at a confidence level.",
+                  "explain": "Syllabus 7.7."
+              },
+              {
+                  "q": "What is risk budgeting?",
+                  "a": "Allocating total active risk across managers or decisions.",
+                  "explain": "Syllabus 7.7."
+              },
+              {
+                  "q": "What is risk attribution?",
+                  "a": "Decomposing portfolio risk into sources (factors, sectors, stocks).",
+                  "explain": "Syllabus 7.8."
+              },
+              {
+                  "q": "How is ex-ante tracking error estimated?",
+                  "a": "Using a factor model of active exposures.",
+                  "explain": "Forward-looking."
+              },
+              {
+                  "q": "What is ex-post tracking error?",
+                  "a": "Measured from realised active returns.",
+                  "explain": "Backward-looking."
+              },
+              {
+                  "q": "How do custodians reduce operational risk?",
+                  "a": "Segregating client assets from manager.",
+                  "explain": "Safekeeping."
+              },
+              {
+                  "q": "What is stock lending?",
+                  "a": "Lending securities for a fee, with collateral.",
+                  "explain": "Income with counterparty risk."
+              },
+              {
+                  "q": "How can multifactor models control style drift?",
+                  "a": "Monitoring factor exposures.",
+                  "explain": "Mandate compliance."
+              },
+              {
+                  "q": "How can risk be compared across portfolios?",
+                  "a": "Common metrics like tracking error, VaR, beta.",
+                  "explain": "Syllabus 7.8."
+              },
+              {
+                  "q": "What are limitations of factor models?",
+                  "a": "Model misspecification, unstable exposures.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What is the information ratio used for?",
+                  "a": "Assessing active return per unit of active risk.",
+                  "explain": "Manager selection."
+              }
+          ]
+      },
+      {
+          "id": "m23",
+          "title": "Portfolio management (3)",
+          "description": "Using derivatives and implementing change: how and when institutions use futures, options, swaps and FX forwards, why significant reallocations are problematic, and transition management and overlay strategies to realign portfolios.",
+          "cards": [
+              {
+                  "q": "How might an institution use futures?",
+                  "a": "Quick, low-cost changes in asset allocation, hedging, equitising cash.",
+                  "explain": "Syllabus 7.2."
+              },
+              {
+                  "q": "How might options be used?",
+                  "a": "Protecting downside (puts), income (covered calls), gaining leveraged exposure.",
+                  "explain": "Syllabus 7.2."
+              },
+              {
+                  "q": "How are interest rate swaps used?",
+                  "a": "Hedging liability interest rate risk, changing duration.",
+                  "explain": "Syllabus 7.2."
+              },
+              {
+                  "q": "How are inflation swaps used?",
+                  "a": "Hedging inflation-linked liabilities.",
+                  "explain": "Syllabus 7.2."
+              },
+              {
+                  "q": "How are currency forwards used?",
+                  "a": "Hedging currency exposure of overseas investments.",
+                  "explain": "Syllabus 7.2."
+              },
+              {
+                  "q": "Why can large reallocations be problematic?",
+                  "a": "Market impact costs, transaction costs, time out of market, operational risk, information leakage.",
+                  "explain": "Syllabus 7.4."
+              },
+              {
+                  "q": "What is transition management?",
+                  "a": "Specialist management of moving assets between managers or strategies to minimise cost and risk.",
+                  "explain": "Syllabus 7.5."
+              },
+              {
+                  "q": "What is an overlay strategy?",
+                  "a": "Using derivatives to adjust exposures without changing underlying holdings (e.g. currency overlay, beta overlay).",
+                  "explain": "Syllabus 7.5."
+              },
+              {
+                  "q": "What is equitisation of cash?",
+                  "a": "Using futures to give equity exposure on cash holdings.",
+                  "explain": "Reduces cash drag."
+              },
+              {
+                  "q": "What are OTC contracts' advantages for institutions?",
+                  "a": "Customised terms matching liabilities.",
+                  "explain": "Counterparty risk."
+              },
+              {
+                  "q": "How can transition risk be managed?",
+                  "a": "Pre-trade analysis, hedging exposures during transition, crossing trades.",
+                  "explain": "Transition managers."
+              },
+              {
+                  "q": "What is implementation shortfall?",
+                  "a": "Difference between paper portfolio returns and actual returns after costs.",
+                  "explain": "Transition cost measure."
+              },
+              {
+                  "q": "What is a currency overlay manager?",
+                  "a": "A manager handling currency exposure separately from asset managers.",
+                  "explain": "Specialisation."
+              },
+              {
+                  "q": "What are the risks of derivative overlays?",
+                  "a": "Collateral calls, basis risk, counterparty risk.",
+                  "explain": "Liquidity planning."
+              },
+              {
+                  "q": "When might a fund use a completion portfolio?",
+                  "a": "To fill gaps between manager exposures and strategic benchmark.",
+                  "explain": "Overlay approach."
+              }
+          ]
+      },
+      {
+          "id": "m24",
+          "title": "Taxation",
+          "description": "Typical ways investment returns are taxed — income tax, capital gains tax, withholding taxes, corporation tax, tax-exempt investors — and how the taxation basis affects investor behaviour and asset choice.",
+          "cards": [
+              {
+                  "q": "How are investment returns commonly taxed?",
+                  "a": "Income tax on interest/dividends, capital gains tax on gains, withholding tax on overseas income, corporation tax for companies.",
+                  "explain": "Syllabus 5.3."
+              },
+              {
+                  "q": "How does tax affect investor behaviour?",
+                  "a": "Investors favour assets whose returns are taxed lightly given their tax position.",
+                  "explain": "Tax clientele."
+              },
+              {
+                  "q": "Why might a high-rate taxpayer prefer capital gains?",
+                  "a": "Gains may be taxed at lower rates or deferred.",
+                  "explain": "Growth stocks."
+              },
+              {
+                  "q": "How are tax-exempt investors affected?",
+                  "a": "They prefer income-producing assets since they don't pay income tax.",
+                  "explain": "Pension funds."
+              },
+              {
+                  "q": "What is withholding tax?",
+                  "a": "Tax deducted at source on overseas income, possibly reclaimable under treaties.",
+                  "explain": "Affects international investment."
+              },
+              {
+                  "q": "What is a double tax treaty?",
+                  "a": "Agreement to avoid taxing the same income twice.",
+                  "explain": "Reduces withholding."
+              },
+              {
+                  "q": "How does tax affect bond choice?",
+                  "a": "Low-coupon bonds may be preferred by those taxed more on income.",
+                  "explain": "Tax efficiency."
+              },
+              {
+                  "q": "How does tax affect insurers' investment?",
+                  "a": "Tax on investment income affects net yields and asset choices.",
+                  "explain": "Company tax basis."
+              },
+              {
+                  "q": "What is tax deferral?",
+                  "a": "Postponing tax liability, increasing effective return.",
+                  "explain": "Pensions, ISAs."
+              },
+              {
+                  "q": "What is the effect of indexation allowances?",
+                  "a": "Reduces taxable gains for inflation.",
+                  "explain": "Some regimes."
+              },
+              {
+                  "q": "How can tax distort markets?",
+                  "a": "Creates demand for tax-favoured assets irrespective of fundamentals.",
+                  "explain": "Tax arbitrage."
+              },
+              {
+                  "q": "What are tax-efficient wrappers?",
+                  "a": "Accounts (ISAs, pensions) where returns are sheltered.",
+                  "explain": "Individual investors."
+              },
+              {
+                  "q": "How does stamp duty affect trading?",
+                  "a": "Transaction taxes increase costs and discourage frequent trading.",
+                  "explain": "Turnover."
+              },
+              {
+                  "q": "How can tax affect dividend policy?",
+                  "a": "Companies may prefer buybacks if dividends taxed more.",
+                  "explain": "Clientele effect."
+              },
+              {
+                  "q": "Why must tax be considered in performance?",
+                  "a": "Net-of-tax returns matter to taxable investors.",
+                  "explain": "After-tax measurement."
+              }
+          ]
+      },
+      {
+          "id": "m25",
+          "title": "Glossary",
+          "description": "Key SP5 terminology — derivatives, specialist assets, valuation, performance and risk terms — as a recall deck.",
+          "cards": [
+              {
+                  "q": "Define 'tracking error'.",
+                  "a": "Standard deviation of active returns.",
+                  "explain": "Active risk."
+              },
+              {
+                  "q": "Define 'TWRR'.",
+                  "a": "Time-weighted rate of return, removing cash flow timing effects.",
+                  "explain": "Manager assessment."
+              },
+              {
+                  "q": "Define 'duration'.",
+                  "a": "Weighted average time to cash flows / interest rate sensitivity.",
+                  "explain": "Bond risk."
+              },
+              {
+                  "q": "Define 'securitisation'.",
+                  "a": "Pooling assets and issuing securities backed by their cash flows.",
+                  "explain": "ABS."
+              },
+              {
+                  "q": "Define 'CDS'.",
+                  "a": "Credit default swap transferring credit risk.",
+                  "explain": "Credit derivative."
+              },
+              {
+                  "q": "Define 'efficient frontier'.",
+                  "a": "Portfolios with the best return for each risk level.",
+                  "explain": "MPT."
+              },
+              {
+                  "q": "Define 'information ratio'.",
+                  "a": "Active return divided by tracking error.",
+                  "explain": "Skill."
+              },
+              {
+                  "q": "Define 'custodian'.",
+                  "a": "Institution safeguarding assets and processing transactions.",
+                  "explain": "Operational."
+              },
+              {
+                  "q": "Define 'transition management'.",
+                  "a": "Managing large portfolio changes to minimise cost and risk.",
+                  "explain": "Implementation."
+              },
+              {
+                  "q": "Define 'free float'.",
+                  "a": "Shares available for public trading.",
+                  "explain": "Index weighting."
+              },
+              {
+                  "q": "Define 'catastrophe bond'.",
+                  "a": "Bond losing principal on specified catastrophe.",
+                  "explain": "ILS."
+              },
+              {
+                  "q": "Define 'Jensen's alpha'.",
+                  "a": "Excess return over CAPM expectation.",
+                  "explain": "Performance."
+              },
+              {
+                  "q": "Define 'overlay'.",
+                  "a": "Derivative-based adjustment of exposures.",
+                  "explain": "Portfolio management."
+              },
+              {
+                  "q": "Define 'liability benchmark'.",
+                  "a": "Portfolio best matching liabilities.",
+                  "explain": "ALM."
+              },
+              {
+                  "q": "Define 'withholding tax'.",
+                  "a": "Tax deducted at source on overseas income.",
+                  "explain": "Taxation."
+              }
+          ]
+      }
+  ],
   SP6: [
     {
         "id": "m01",

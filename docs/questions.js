@@ -8236,7 +8236,7 @@ const QUESTIONS = {
     {
       id: "sp5-q1",
       title: "The economic and regulatory framework",
-      modules: "Module 2",
+      modules: "Modules 6, 8, 9, 10",
       marks: 12,
       parts: [
         {
@@ -8284,7 +8284,7 @@ const QUESTIONS = {
     {
       id: "sp5-q2",
       title: "Specialist investment products and derivatives",
-      modules: "Modules 3, 4",
+      modules: "Modules 2, 3, 4, 5",
       marks: 12,
       parts: [
         {
@@ -8332,7 +8332,7 @@ const QUESTIONS = {
     {
       id: "sp5-q3",
       title: "Valuing a bond investment",
-      modules: "Module 5",
+      modules: "Modules 11, 12",
       marks: 12,
       parts: [
         {
@@ -8380,7 +8380,7 @@ const QUESTIONS = {
     {
       id: "sp5-q4",
       title: "Monitoring risk and mean-variance portfolio theory",
-      modules: "Module 6",
+      modules: "Module 18",
       marks: 12,
       parts: [
         {
@@ -8428,7 +8428,7 @@ const QUESTIONS = {
     {
       id: "sp5-q5",
       title: "Investor characteristics and behavioural finance",
-      modules: "Module 7",
+      modules: "Modules 7, 24",
       marks: 12,
       parts: [
         {
@@ -8476,7 +8476,7 @@ const QUESTIONS = {
     {
       id: "sp5-q6",
       title: "Actuarial techniques for investment strategy",
-      modules: "Module 8",
+      modules: "Modules 19, 20",
       marks: 12,
       parts: [
         {
@@ -8514,7 +8514,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on how liability hedging directly addresses the asset/liability mismatching risk named in Module 6's risk-monitoring material.",
+            "Comment on how liability hedging directly addresses the asset/liability mismatching risk named in Module 18's risk-monitoring material.",
           answer:
             "Liability hedging deliberately structures a portion of the investment portfolio to closely track the genuine movements of specified liabilities, directly reducing the asset/liability mismatching risk identified as a genuine risk category to be monitored and managed.",
           note: "This connects directly to the risk-monitoring-to-strategy-response theme developed in this course.",
@@ -8524,7 +8524,7 @@ const QUESTIONS = {
     {
       id: "sp5-q7",
       title: "Portfolio management styles and institutional derivative use",
-      modules: "Modules 9, 10",
+      modules: "Modules 21, 23",
       marks: 12,
       parts: [
         {
@@ -8572,7 +8572,7 @@ const QUESTIONS = {
     {
       id: "sp5-q8",
       title: "Portfolio risk measurement and Value at Risk",
-      modules: "Module 11",
+      modules: "Module 22",
       marks: 12,
       parts: [
         {
@@ -8620,7 +8620,7 @@ const QUESTIONS = {
     {
       id: "sp5-q9",
       title: "Performance attribution analysis",
-      modules: "Modules 12, 13",
+      modules: "Modules 16, 17",
       marks: 12,
       parts: [
         {
@@ -8668,7 +8668,7 @@ const QUESTIONS = {
     {
       id: "sp5-q10",
       title: "Investment indices and their construction",
-      modules: "Module 12",
+      modules: "Modules 14, 15",
       marks: 12,
       parts: [
         {
