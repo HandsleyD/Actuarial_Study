@@ -7754,7 +7754,7 @@ const QUESTIONS = {
     {
       id: "sp4-q1",
       title: "Stakeholders and the general business environment",
-      modules: "Modules 2, 3",
+      modules: "Modules 2, 3, 4",
       marks: 12,
       parts: [
         {
@@ -7802,7 +7802,7 @@ const QUESTIONS = {
     {
       id: "sp4-q2",
       title: "Financing methods and scheme design for a new arrangement",
-      modules: "Modules 4, 5",
+      modules: "Modules 6, 7, 10",
       marks: 12,
       parts: [
         {
@@ -7850,7 +7850,7 @@ const QUESTIONS = {
     {
       id: "sp4-q3",
       title: "Risks affecting a benefit arrangement",
-      modules: "Module 6",
+      modules: "Module 9",
       marks: 12,
       parts: [
         {
@@ -7898,7 +7898,7 @@ const QUESTIONS = {
     {
       id: "sp4-q4",
       title: "Accounting standards and member options",
-      modules: "Modules 7, 8",
+      modules: "Modules 4, 8",
       marks: 12,
       parts: [
         {
@@ -7946,7 +7946,7 @@ const QUESTIONS = {
     {
       id: "sp4-q5",
       title: "Calculating a defined benefit pension",
-      modules: "Modules 9, 10",
+      modules: "Modules 7, 14",
       marks: 12,
       parts: [
         {
@@ -7994,7 +7994,7 @@ const QUESTIONS = {
     {
       id: "sp4-q6",
       title: "Funding valuation and recovery plan",
-      modules: "Modules 10, 11",
+      modules: "Modules 16, 18, 19",
       marks: 12,
       parts: [
         {
@@ -8042,7 +8042,7 @@ const QUESTIONS = {
     {
       id: "sp4-q7",
       title: "Valuing a DC accumulation and comparing designs",
-      modules: "Modules 9, 11",
+      modules: "Modules 6, 14",
       marks: 12,
       parts: [
         {
@@ -8050,7 +8050,7 @@ const QUESTIONS = {
           command: "Calculate",
           marks: 4,
           question:
-            "A DC scheme member contributes &pound;4,000 per annum (combined employer and employee contributions) for 20 years, with the fund assumed to grow at 4.5% per annum net investment return, contributions added at the end of each year. Using the recursive relationship F(y) = (F(y-1) + 4,000) &times; 1.045 with F(0) = 0, calculate the accumulated fund value at the end of year 20 (to the nearest &pound;100).",
+            "A DC scheme member contributes &pound;4,000 per annum (combined employer and employee contributions) for 20 years, with the fund assumed to grow at 4.5% per annum net investment return, contributions paid at the start of each year. Using the recursive relationship F(y) = (F(y-1) + 4,000) &times; 1.045 with F(0) = 0, calculate the accumulated fund value at the end of year 20 (to the nearest &pound;100).",
           answer:
             "Applying the recursive growth formula for 20 years gives an accumulated fund value of approximately &pound;131,100 (&pound;131,132.55 to the nearest penny).",
           note: "Verified via iterative calculation: F(20) = 131,132.55 (Node-verified). Full marks require showing the recursive/compounding approach, not just stating the final figure.",
@@ -8090,7 +8090,7 @@ const QUESTIONS = {
     {
       id: "sp4-q8",
       title: "Discontinuance of a benefit arrangement",
-      modules: "Module 12",
+      modules: "Module 23",
       marks: 12,
       parts: [
         {
@@ -8138,7 +8138,7 @@ const QUESTIONS = {
     {
       id: "sp4-q9",
       title: "Sources of surplus for a pension scheme",
-      modules: "Module 13",
+      modules: "Module 20",
       marks: 12,
       parts: [
         {
@@ -8186,7 +8186,7 @@ const QUESTIONS = {
     {
       id: "sp4-q10",
       title: "Solving a complex pension scheme issue",
-      modules: "Modules 3, 6, 12",
+      modules: "Modules 9, 23, 24",
       marks: 12,
       parts: [
         {
@@ -8206,7 +8206,7 @@ const QUESTIONS = {
           question:
             "Recommend a course of action for the trustees in response to this situation, with justification.",
           answer:
-            "The trustees should reassess the appropriate funding and investment strategy in light of the weakened covenant (likely favouring a shorter recovery period and more cautious investment approach, per Module 3's integration principle), while also proactively engaging with the sponsor to understand its genuine prospects and negotiate any additional security available (e.g. contingent assets), rather than continuing with the scheme's existing funding and investment plan unchanged despite the altered circumstances.",
+            "The trustees should reassess the appropriate funding and investment strategy in light of the weakened covenant (likely favouring a shorter recovery period and more cautious investment approach, per the covenant integration principle (Module 11)), while also proactively engaging with the sponsor to understand its genuine prospects and negotiate any additional security available (e.g. contingent assets), rather than continuing with the scheme's existing funding and investment plan unchanged despite the altered circumstances.",
           note: "Credit should be given for any well-justified, reasoned recommendation that explicitly addresses the weakened covenant, not a generic response.",
         },
         {
