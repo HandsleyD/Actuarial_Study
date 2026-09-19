@@ -6308,7 +6308,7 @@ const QUESTIONS = {
     {
       id: "sa7-q1",
       title: "Investment management industry structure and governance",
-      modules: "Modules 2, 3",
+      modules: "Modules 12, 13",
       marks: 12,
       parts: [
         {
@@ -6356,7 +6356,7 @@ const QUESTIONS = {
     {
       id: "sa7-q2",
       title: "The investment decision-making process",
-      modules: "Module 4",
+      modules: "Modules 9, 11",
       marks: 12,
       parts: [
         {
@@ -6404,7 +6404,7 @@ const QUESTIONS = {
     {
       id: "sa7-q3",
       title: "Investor objectives across institution types",
-      modules: "Module 5",
+      modules: "Modules 2, 3",
       marks: 12,
       parts: [
         {
@@ -6452,7 +6452,7 @@ const QUESTIONS = {
     {
       id: "sa7-q4",
       title: "Liability-driven investing and hedge ratio impact",
-      modules: "Module 6",
+      modules: "Modules 5, 11",
       marks: 12,
       parts: [
         {
@@ -6500,7 +6500,7 @@ const QUESTIONS = {
     {
       id: "sa7-q5",
       title: "Alternative asset classes",
-      modules: "Module 8",
+      modules: "Module 4",
       marks: 12,
       parts: [
         {
@@ -6548,7 +6548,7 @@ const QUESTIONS = {
     {
       id: "sa7-q6",
       title: "ESG and responsible investment",
-      modules: "Module 9",
+      modules: "Modules 7, 11",
       marks: 12,
       parts: [
         {
@@ -6596,7 +6596,7 @@ const QUESTIONS = {
     {
       id: "sa7-q7",
       title: "Risk measurement: Value at Risk and tracking error",
-      modules: "Module 10",
+      modules: "Module 11",
       marks: 12,
       parts: [
         {
@@ -6644,7 +6644,7 @@ const QUESTIONS = {
     {
       id: "sa7-q8",
       title: "Performance attribution",
-      modules: "Module 11",
+      modules: "Module 13",
       marks: 12,
       parts: [
         {
@@ -6692,7 +6692,7 @@ const QUESTIONS = {
     {
       id: "sa7-q9",
       title: "Regulation and operational risk",
-      modules: "Modules 12, 13",
+      modules: "Modules 7, 12",
       marks: 12,
       parts: [
         {

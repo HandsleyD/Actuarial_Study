@@ -20483,461 +20483,1155 @@ const MODULES = {
       }
   ],
   SA7: [
-    {
-        "id": "m01",
-        "title": "What is Subject SA7 all about?",
-        "description": "An orientation chapter explaining SA7's role as the Specialist Advanced subject applying core actuarial techniques to complex investment management scenarios, and how it builds on SP5.",
-        "cards": [
-            {
-                "q": "What is the aim of Subject SA7, according to its official syllabus?",
-                "a": "To develop a candidate's expertise to a level that allows critical analysis across all major areas of investment practice, building on SP5 and earlier subjects, equipping candidates with the skills and broad working understanding of financial and investment markets to the level that may be required of a Chief Investment Officer (CIO).",
-                "explain": "This is the genuine, official IFoA syllabus wording — worth reading closely: naming the CIO level explicitly signals a senior, strategic decision-making standard, not just technical investment analysis."
-            },
-            {
-                "q": "How does SA7 relate to Subject SP5 (Investment and Finance Specialist Principles)?",
-                "a": "SP5 introduces the main principles and knowledge required in investment and finance and how they apply in simple scenarios; SA7 builds on those same skills and knowledge, applied to much more complex, senior-level investment management scenarios.",
-                "explain": "This directly mirrors SA1's, SA2's, SA3's and SA4's relationship to their respective SP subjects — worth treating SP5 as the assumed technical foundation SA7 does not re-teach."
-            },
-            {
-                "q": "What are the three main syllabus topic areas of SA7, and their approximate topic weightings, according to the official syllabus?",
-                "a": "The framework for investment management (30%); meeting investor requirements (35%); and management and risk control for an investment manager (35%).",
-                "explain": "Worth memorising these weightings directly — unlike some other SA subjects with four or five topic areas, SA7 concentrates its whole syllabus into just three broad, roughly equally-weighted areas."
-            },
-            {
-                "q": "What skills, beyond technical knowledge, does the SA7 syllabus expect candidates to demonstrate, echoing every other SA subject's shared structure?",
-                "a": "Candidates must analyse a scenario, assess the implications of relevant factors, evaluate results critically in a wider context, and propose solutions or courses of action — the same analyse/assess/evaluate/propose progression used across every SA subject.",
-                "explain": "This directly recalls SA1's, SA2's, SA3's and SA4's skill-progression material — worth memorising this four-stage structure as a genuine answer-writing template applicable across all Specialist Advanced subjects."
-            },
-            {
-                "q": "Why might a SA7 exam question present an unfamiliar investment mandate or fictional investor scenario, rather than only a well-known real-world fund or market?",
-                "a": "This tests whether candidates can apply the underlying principles and skills developed throughout the course to any given set of facts, rather than simply recalling memorised knowledge about one specific, familiar real-world investment manager or market.",
-                "explain": "This directly recalls SA1's fictional-scenario exam-format material — worth recognising this as a deliberate, shared SA-subject design choice testing transferable judgement, not market-specific memorisation."
-            },
-            {
-                "q": "Why does SA7 build directly on subjects like CM1, CM2, CP1 and CP2, even though it does not re-teach their content explicitly?",
-                "a": "SA7's asset allocation, risk management, and performance measurement material all depend on the general financial mathematics, derivative pricing, and modelling techniques developed in those earlier subjects, applied specifically to the investment management context.",
-                "explain": "This directly recalls SA1's, SA2's, SA3's and SA4's equivalent cards — worth treating this whole course as CM1/CM2's and CP1/CP2's technical toolkit, specifically specialised to investment management practice."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "The investment management industry structure",
-        "description": "Covers the structure of the investment management industry, including asset managers, custodians, consultants and other key participants.",
-        "cards": [
-            {
-                "q": "What is the core role of an asset management firm, distinct from the investors whose money it manages?",
-                "a": "An asset manager makes investment decisions on behalf of clients (e.g. pension schemes, insurers, individuals) according to an agreed mandate, typically earning fees based on assets under management or performance, without itself bearing the investment risk of the underlying portfolio.",
-                "explain": "Worth recognising this <em>agency</em> relationship (manager acting on behalf of, but not bearing the risk of, the client) as the defining structural feature shaping much of this course's later governance and conduct material."
-            },
-            {
-                "q": "Why might a pension scheme or insurer use an independent custodian to hold its investment assets, rather than the asset manager holding them directly?",
-                "a": "Separating asset management (decision-making) from custody (safekeeping) reduces the risk of a single party having both control over investment decisions <em>and</em> physical/legal control of the assets, providing a genuine safeguard against fraud or error.",
-                "explain": "This directly recalls CP1's segregation-of-duties material — worth recognising custody separation as an important governance safeguard, not merely an administrative convenience."
-            },
-            {
-                "q": "What role does an investment consultant typically play for a pension scheme or other institutional investor?",
-                "a": "An investment consultant provides independent advice on investment strategy, manager selection, and monitoring, helping trustees or other governing bodies make informed decisions without needing to develop the same level of in-house investment expertise themselves.",
-                "explain": "This directly recalls SA4's trustee-fiduciary-duty material — worth recognising the consultant as providing important <em>expertise support</em> to governing bodies whose members may not themselves be investment specialists."
-            },
-            {
-                "q": "Why might potential conflicts of interest arise within the investment management industry's structure, given the various parties involved?",
-                "a": "An asset manager's fee structure, a consultant's relationships with multiple asset managers, or a custodian offering additional services could all create genuine incentives that may not perfectly align with the underlying investor's best interests, requiring active management and disclosure of such conflicts.",
-                "explain": "This directly recalls CP1's conflict-of-interest material — worth recognising the multi-party structure of investment management as creating more opportunities for conflicts than a simpler, single-party relationship."
-            },
-            {
-                "q": "Why might regulation of the investment management industry need to address each of these different participant types (managers, custodians, consultants) somewhat differently, rather than applying a single uniform rulebook?",
-                "a": "Each participant type plays a different role and poses different risks to investors (e.g. a custodian's key risk is safekeeping failure, while a manager's key risk is poor or self-interested investment decisions), so regulation tailored to each role's specific risks is more effective than a one-size-fits-all approach.",
-                "explain": "This directly previews this course's regulation module — worth recognising that <em>proportionate</em>, <em>role-specific</em> regulation is more effective than uniform rules applied regardless of each participant's different function and risk profile."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "Investment mandates and governance",
-        "description": "Covers how investment mandates are structured, the role of governance in overseeing investment management, and how mandates translate investor objectives into practice.",
-        "cards": [
-            {
-                "q": "What is an 'investment mandate', and why must it be clear and specific rather than a vague statement of intent?",
-                "a": "An investment mandate sets out the specific objectives, constraints (e.g. permitted asset classes, risk limits), and benchmark against which an asset manager's performance will be judged; a vague mandate risks the manager pursuing an approach misaligned with what the investor actually needs.",
-                "explain": "This directly recalls CP1's clear-instructions-from-client material — worth recognising a well-specified mandate as the essential mechanism ensuring the manager's genuine agency relationship (Module 2's material) actually serves the investor's true interests."
-            },
-            {
-                "q": "Why might an investment mandate need to specify an appropriate benchmark, rather than allowing the manager to select or change its own performance comparison after the fact?",
-                "a": "A benchmark set independently and in advance provides an objective, unbiased basis for assessing whether the manager has added value, whereas a benchmark chosen or changed by the manager itself after seeing results could be selected specifically to flatter poor performance.",
-                "explain": "This directly recalls CP1's independent-assessment material — worth recognising benchmark selection as a genuine <em>governance</em> safeguard against a manager's own potential incentive to present its performance more favourably than it deserves."
-            },
-            {
-                "q": "Why does investment governance (e.g. a pension scheme's investment committee) need genuine, ongoing oversight of the mandate, rather than setting it once and leaving the manager entirely unmonitored?",
-                "a": "Market conditions, the investor's own circumstances, and the manager's actual performance can all change over time, so ongoing oversight allows the governing body to identify whether the mandate remains appropriate and whether the manager is delivering against it, rather than discovering a serious problem only much later.",
-                "explain": "This directly recalls this course's recurring ongoing-review theme (echoing SA1's material) — worth recognising mandate oversight as needing the same ongoing vigilance discipline as any other actuarial monitoring process."
-            },
-            {
-                "q": "Why might a governing body delegate day-to-day investment decisions to a manager while retaining responsibility for setting the overall strategic asset allocation itself?",
-                "a": "Strategic asset allocation decisions (e.g. the overall split between growth and matching assets) directly reflect the investor's own risk appetite and objectives, which the governing body itself is best placed to determine, while day-to-day security selection within that framework benefits from the manager's specialist expertise and market access.",
-                "explain": "This directly recalls SA4's trustee-versus-manager-role material — worth recognising this <em>division of responsibility</em> as a genuine, deliberate governance structure, not an arbitrary split of tasks."
-            },
-            {
-                "q": "Why might governance arrangements for investment management need to differ between a well-resourced institutional investor and a smaller pension scheme with limited in-house expertise?",
-                "a": "A smaller scheme with limited resources may need to rely more heavily on external consultants and simpler, more standardised mandates, while a larger, well-resourced investor may be able to support more sophisticated in-house governance and more bespoke mandate structures, echoing this course's recurring proportionality theme.",
-                "explain": "This directly recalls SA1's proportionality material — worth recognising that <em>governance sophistication</em> should scale with the investor's own resources and complexity, not be applied uniformly regardless of context."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "The investment process and decision-making frameworks",
-        "description": "Covers how investment managers structure their decision-making process, including research, portfolio construction, and implementation.",
-        "cards": [
-            {
-                "q": "Why might an investment manager's process typically distinguish between 'research' (forming views on assets or markets) and 'portfolio construction' (translating those views into an actual portfolio)?",
-                "a": "Separating these stages allows genuine specialisation (research analysts focusing on generating insight, portfolio managers focusing on implementation and risk management) and provides a check that a compelling research view is actually translated into an appropriate, risk-controlled portfolio position, rather than an unconstrained bet.",
-                "explain": "Worth recognising this separation as a genuine internal governance safeguard, similar in spirit to Module 2's custody-versus-management separation, just applied within the investment process itself."
-            },
-            {
-                "q": "Why might a systematic, rules-based investment process (e.g. a quantitative model) have genuine advantages over a purely discretionary, judgement-based process, and one genuine limitation?",
-                "a": "A systematic process can apply its rules consistently across a large universe of assets without emotional bias, but its genuine limitation is that a fixed model calibrated on historical data may fail to anticipate novel market conditions not represented in that historical data, a form of model risk.",
-                "explain": "This directly recalls SA1's and SA3's model-limitation-awareness material — worth recognising this as the <em>same</em> model-risk principle applying to investment decision-making processes specifically."
-            },
-            {
-                "q": "Why might a discretionary investment process require robust internal challenge (e.g. an investment committee reviewing individual managers' decisions), rather than relying purely on individual manager judgement?",
-                "a": "Individual judgement, however skilled, can be subject to genuine behavioural biases (e.g. overconfidence, anchoring), so internal challenge and review processes provide a check against these biases, improving the overall quality and consistency of investment decisions.",
-                "explain": "This directly recalls CP1's judgement-needs-challenge material — worth recognising internal challenge as a genuine <em>quality control</em> mechanism for discretionary decision-making, addressing behavioural risks a systematic process is less exposed to."
-            },
-            {
-                "q": "Why might the implementation stage of the investment process (actually executing trades) introduce genuine costs and risks beyond the investment decision itself?",
-                "a": "Trading costs (bid-offer spreads, market impact) and execution risk (the price moving unfavourably between deciding to trade and completing the trade) can erode the value of an otherwise sound investment decision, so efficient implementation is itself an important skill, not a mechanical afterthought.",
-                "explain": "This directly previews this course's later performance-attribution module — worth recognising that a <em>good decision</em> poorly implemented can still produce a disappointing outcome, making implementation quality a distinct skill from decision-making quality."
-            },
-            {
-                "q": "Why might an investment process need to be documented and consistently followed, rather than varying informally from decision to decision?",
-                "a": "A documented, consistently-applied process supports genuine accountability (allowing decisions to be reviewed against the stated process), helps identify when and why deviations occur, and supports the governance oversight (Module 3's material) that investors and regulators rely upon.",
-                "explain": "This directly recalls Module 3's governance-oversight material — worth recognising documented process consistency as the <em>practical foundation</em> that meaningful governance oversight actually depends upon."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Types of investors and their objectives",
-        "description": "Covers the different types of institutional and individual investors, and how their different objectives and constraints shape appropriate investment strategy.",
-        "cards": [
-            {
-                "q": "Why might a DB pension scheme's investment objectives differ from a DC pension scheme's, echoing SA4's material?",
-                "a": "A DB scheme invests to meet a defined set of promised liabilities, so its objectives centre on funding adequacy relative to those specific liabilities, while a DC scheme's objectives centre on maximising appropriate risk-adjusted returns for individual members' own accumulating pots, a fundamentally different investment problem.",
-                "explain": "This directly recalls SA4's DB-versus-DC risk-allocation material — worth recognising that <em>who</em> bears the investment risk (sponsor for DB, member for DC) directly shapes what the <em>investment objective</em> should be."
-            },
-            {
-                "q": "Why might a life insurer's investment objectives, echoing SA2's material, differ from a general insurer's, echoing SA3's material?",
-                "a": "A life insurer (particularly for annuity business) typically has long-duration, interest-rate-sensitive liabilities favouring long-dated matching assets, while a general insurer's typically shorter-tail, more liquidity-sensitive liabilities favour a different balance emphasising liquidity and capital preservation over long-duration matching.",
-                "explain": "This directly recalls SA2's and SA3's ALM-duration material — worth recognising that <em>investor type</em> (life versus general insurer) directly determines appropriate investment strategy, echoing this course's broader theme that objectives must be understood before strategy can be set."
-            },
-            {
-                "q": "Why might an individual investor's own investment objectives and risk tolerance require different consideration from an institutional investor's, even for a similarly-sized pool of assets?",
-                "a": "An individual investor typically has a more concentrated, personal set of goals (e.g. their own retirement, a specific purchase) and may have less capacity to bear risk or absorb losses than a large institution with diversified objectives and a longer collective time horizon, requiring more personalised, risk-tolerance-sensitive advice.",
-                "explain": "This directly recalls CP1's client-specific-advice material — worth recognising individual investors as requiring a more <em>personalised</em> approach than the more standardised frameworks often applicable to institutional investors."
-            },
-            {
-                "q": "Why might a sovereign wealth fund's investment objectives differ from a typical pension scheme's, despite both being long-term institutional investors?",
-                "a": "A sovereign wealth fund often has a longer investment horizon (potentially perpetual, without a fixed set of member liabilities to meet) and may have broader national economic or strategic objectives beyond pure risk-adjusted return, allowing a different risk tolerance and asset allocation approach than a pension scheme funding specific member benefits.",
-                "explain": "Worth recognising sovereign wealth funds as a distinct investor <em>type</em> with objectives that can extend beyond the risk-return optimisation framework common to most other institutional investors covered in this module."
-            },
-            {
-                "q": "Why must an investment manager understand an investor's specific objectives and constraints before proposing an investment strategy, echoing Module 3's mandate material?",
-                "a": "The same asset allocation or strategy could be excellent for one investor type and unsuitable for another, depending entirely on their specific liabilities, risk tolerance, and objectives, so a sound strategy proposal must be anchored in the <em>specific</em> investor's circumstances, not a generic 'best practice' template.",
-                "explain": "This directly recalls SA1's context-specific-assessment material — worth recognising this principle as identical across every SA subject: strong investment advice is always anchored in the <em>specific</em> investor's circumstances, not applied generically."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "Asset allocation and liability-driven investing",
-        "description": "Covers how strategic asset allocation is set, and the principles of liability-driven investing (LDI) for investors with genuine liability obligations.",
-        "cards": [
-            {
-                "q": "What is 'strategic asset allocation', and why is it typically considered the single most significant investment decision for an institutional investor, echoing CM2's material?",
-                "a": "Strategic asset allocation is the overall long-term split of a portfolio across broad asset classes (e.g. equities, bonds, property); it is typically the most significant decision because the vast majority of a portfolio's return and risk over time is driven by this broad allocation, rather than by individual security selection within each asset class.",
-                "explain": "This directly recalls CM2's asset-allocation material — worth recognising strategic asset allocation as the genuine <em>primary lever</em> shaping investment outcomes, with security selection playing a comparatively secondary role."
-            },
-            {
-                "q": "What is 'liability-driven investing' (LDI), and why is it particularly relevant for investors with genuine, specified liability obligations, echoing SA2's and SA4's material?",
-                "a": "LDI sets investment strategy explicitly to match the behaviour of a specific set of liabilities (e.g. matching interest rate and inflation sensitivity), directly relevant for investors like DB pension schemes and annuity-writing insurers whose genuine objective is meeting defined future obligations, not simply maximising return in the abstract.",
-                "explain": "This directly recalls SA2's annuity-ALM material and SA4's pension-scheme-LDI material — worth recognising LDI as the <em>same</em> underlying matching principle CM2 develops generally, now viewed specifically from the investment manager's implementation perspective."
-            },
-            {
-                "q": "Why might an investor with LDI-style objectives still allocate some assets to growth investments (e.g. equities) rather than matching its entire liability profile?",
-                "a": "Growth assets offer higher expected returns that can help close a funding shortfall or generate genuine surplus over time, so investors often balance a matching 'liability-hedging' portfolio against a smaller 'growth' portfolio, echoing SA2's and SA4's safety-versus-growth trade-off material.",
-                "explain": "This directly recalls SA2's with-profits and SA4's DB-investment-strategy material — worth recognising this same genuine trade-off recurring here specifically from the investment manager's portfolio-construction perspective."
-            },
-            {
-                "q": "Why might strategic asset allocation need genuine, periodic review, rather than being set once and left permanently unchanged, echoing this course's recurring theme?",
-                "a": "An investor's liabilities, risk tolerance, funding position, and the wider market environment can all change materially over time, so an allocation set for a past set of circumstances may no longer be appropriate, requiring periodic reassessment rather than indefinite persistence.",
-                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to strategic asset allocation specifically, echoing the identical discipline covered across every SA subject."
-            },
-            {
-                "q": "Why might 'tactical asset allocation' (short-term deviations from the strategic allocation to exploit perceived market opportunities) carry genuine risks beyond its potential for added return?",
-                "a": "Tactical deviations rely on the manager's ability to and consistently identify short-term market mispricing, which is difficult to achieve reliably, and unsuccessful tactical calls can detract from the carefully-considered strategic allocation's intended risk/return profile, a genuine implementation risk.",
-                "explain": "This directly recalls Module 4's model-risk and judgement-risk material — worth recognising tactical allocation as carrying genuine <em>execution risk</em> on top of the underlying strategic allocation, not a costless additional source of potential return."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "Investment strategy for different investor types",
-        "description": "Covers how investment strategy should be tailored to the specific objectives and constraints of DB schemes, DC schemes, insurers, and other investor types.",
-        "cards": [
-            {
-                "q": "Why might a maturing DB pension scheme's investment strategy differ from a young, cash-flow-positive DB scheme's, echoing SA4's de-risking material?",
-                "a": "A maturing scheme (more pensioners relative to active members) has a shorter investment horizon and reduced tolerance for short-term volatility, favouring a more matching, lower-risk strategy, while a younger, cash-flow-positive scheme can reasonably tolerate more growth-asset exposure given its longer horizon.",
-                "explain": "This directly recalls SA4's de-risking-as-scheme-matures material — worth recognising <em>scheme maturity</em>, not just scheme type, as an important driver of appropriate investment strategy."
-            },
-            {
-                "q": "Why should a DC scheme's default investment strategy differ in structure from a DB scheme's overall strategic asset allocation, echoing SA4's material?",
-                "a": "A DC default strategy must manage risk appropriately across a whole population of individual members at different ages and stages (via a glide path), while a DB scheme's allocation is set once for the whole scheme's aggregate liability profile, a structurally different problem despite both ultimately involving asset allocation decisions.",
-                "explain": "This directly recalls SA4's DC-glide-path material — worth recognising DC default design as solving a different problem (managing risk across many individual members' differing time horizons) than DB's single aggregate allocation decision."
-            },
-            {
-                "q": "Why might a life insurer writing with-profits business need a different investment strategy from the same insurer's shareholder-backed annuity business, echoing SA2's material?",
-                "a": "With-profits assets support smoothed, discretionary bonus payments across pooled policyholder generations, while annuity assets support fixed, guaranteed liability cashflows, so even within a single insurer, different product lines can require materially different investment approaches.",
-                "explain": "This directly recalls SA2's multi-product-line ALM material — worth recognising that <em>investment strategy</em> should vary even <em>within</em> a single institution's different business lines, not just across different types of institutional investor."
-            },
-            {
-                "q": "Why might a general insurer's investment strategy typically prioritise liquidity and capital preservation more heavily than a life insurer's, echoing SA3's material?",
-                "a": "General insurance claims (especially from catastrophic events) can arrive suddenly and require prompt payment, and the insurer's shorter-tail liabilities are less interest-rate sensitive over a long horizon, so its investment strategy can reasonably prioritise near-term liquidity over the long-duration matching that dominates life insurance investment strategy.",
-                "explain": "This directly recalls SA3's liquidity-risk material — worth recognising <em>liability duration and volatility</em>, not insurer type as such, as the genuine underlying driver of appropriate investment strategy emphasis."
-            },
-            {
-                "q": "Why must an investment manager understand which of these investor-type-specific considerations apply to a given client before proposing a strategy, rather than applying a single generic framework?",
-                "a": "The same broad investment principles (matching, growth, liquidity) apply across investor types, but their <em>relative importance</em> and appropriate balance differs by investor type, maturity, and specific circumstances, so sound advice must be tailored to the specific client, not applied as a one-size-fits-all template.",
-                "explain": "This directly recalls Module 5's client-specific-understanding material — worth recognising this module's whole content as reinforcing that same principle across several concrete investor-type examples."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Alternative asset classes",
-        "description": "Covers the role of alternative asset classes such as private equity, infrastructure, and property in institutional investment portfolios.",
-        "cards": [
-            {
-                "q": "Why might an institutional investor allocate to alternative asset classes (e.g. private equity, infrastructure) rather than relying solely on traditional listed equities and bonds?",
-                "a": "Alternative assets can offer genuine diversification benefits (returns less correlated with traditional markets), potentially higher expected returns to compensate for illiquidity, and in some cases (e.g. infrastructure with inflation-linked revenues) cashflow characteristics that can usefully match specific liability profiles.",
-                "explain": "Worth recognising alternatives as offering <em>different</em> risk/return and cashflow characteristics from traditional listed assets, not simply a higher-risk version of the same underlying exposures."
-            },
-            {
-                "q": "Why does investing in illiquid alternative assets require genuine consideration of an investor's own liquidity needs, echoing this course's recurring liquidity theme?",
-                "a": "Illiquid assets cannot be readily sold to meet near-term cashflow needs, so an investor with genuine near-term liquidity requirements (e.g. benefit payments or collateral calls) must ensure sufficient allocation remains in liquid assets, reserving illiquid alternatives for long-term, patient capital.",
-                "explain": "This directly recalls SA1's, SA2's, SA3's and SA4's liquidity-risk material — worth recognising this same principle applying to alternative asset allocation specifically, an important practical constraint."
-            },
-            {
-                "q": "Why might valuing illiquid alternative assets (e.g. private equity holdings) require different, more judgement-based techniques than valuing listed equities?",
-                "a": "Illiquid assets typically lack a continuously observable market price, so valuation relies on periodic appraisals, comparable transaction analysis, or discounted cashflow techniques involving genuine estimation uncertainty, unlike listed assets whose market price is directly and continuously observable.",
-                "explain": "This directly recalls CM1's and CB1's valuation-technique material — worth recognising illiquid asset valuation as requiring more <em>judgement</em> and carrying more estimation uncertainty than straightforwardly observing a listed market price."
-            },
-            {
-                "q": "Why might fees for alternative asset investments (e.g. private equity's typical 'two and twenty' structure) require particular scrutiny by an investor's governance process?",
-                "a": "Higher, performance-linked fee structures directly reduce the net return delivered to the investor, so governance should assess whether the manager's demonstrated (not just claimed) skill and the asset class's genuine diversification benefit justify this higher cost relative to lower-cost traditional alternatives.",
-                "explain": "This directly recalls Module 3's mandate-and-fee-scrutiny material — worth recognising fee scrutiny as an important governance responsibility, not simply accepting an asset class's headline gross return claims uncritically."
-            },
-            {
-                "q": "Why might an investor's allocation to alternative assets need to be assessed within the context of its overall strategic asset allocation, rather than considered in isolation?",
-                "a": "Alternative assets' genuine diversification value depends on how their returns interact with the rest of the portfolio, so their appropriate allocation size should be assessed as part of the <em>whole</em> portfolio's risk and return characteristics, not decided as a standalone allocation independent of the rest of the strategy.",
-                "explain": "This directly recalls Module 6's strategic-asset-allocation-as-primary-driver material — worth recognising alternatives allocation as a genuine <em>component</em> of the broader strategic allocation decision, not a separate, independent choice."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "ESG and responsible investment",
-        "description": "Covers environmental, social and governance (ESG) considerations in investment management, and the principles of responsible investment.",
-        "cards": [
-            {
-                "q": "What does 'ESG investing' mean, and why might it be considered relevant to investment risk and return, not just an ethical consideration?",
-                "a": "ESG investing incorporates environmental, social, and governance factors into investment analysis and decision-making; these factors can affect a company's or asset's long-term financial performance and risk (e.g. climate transition risk, poor governance leading to fraud), making ESG analysis a genuine extension of fundamental investment analysis, not solely an ethical overlay.",
-                "explain": "Worth recognising this dual framing as important — ESG can be understood <em>both</em> as a values-based consideration <em>and</em> as a material financial risk factor, and a strong answer should be able to discuss both framings."
-            },
-            {
-                "q": "Why might climate change represent a distinctive, long-term risk consideration for institutional investors, echoing this course's recurring climate-risk material?",
-                "a": "Climate change can affect asset values through both physical risks (direct damage to assets from extreme weather) and transition risks (asset values changing as economies shift away from carbon-intensive activities), both potentially materialising over a long time horizon relevant to institutional investors' typically long investment periods.",
-                "explain": "This directly recalls SA1's and SA3's climate-risk material — worth recognising this same emerging risk category applying to investment portfolios specifically, alongside its relevance to insurers' underwriting risk covered elsewhere."
-            },
-            {
-                "q": "Why might 'stewardship' (engaging with companies as a shareholder to encourage improved practices) be considered a distinct responsible investment activity from simply excluding certain assets from a portfolio?",
-                "a": "Exclusion removes an investor's ability to influence a company's practices entirely, while stewardship retains an ownership stake and uses that position to engage with and influence company behaviour, potentially achieving more real-world change than divestment alone, though requiring genuine, sustained engagement effort.",
-                "explain": "Worth recognising exclusion and stewardship as <em>different</em> responsible-investment approaches with different trade-offs, not interchangeable terms for the same underlying activity."
-            },
-            {
-                "q": "Why might an investor's governing body need to establish a clear responsible investment policy, rather than leaving ESG considerations to the discretion of individual portfolio managers?",
-                "a": "A clear policy ensures ESG considerations are applied consistently across the whole portfolio in line with the investor's own genuine objectives and values, rather than varying unpredictably by individual manager discretion, echoing Module 3's mandate-clarity material.",
-                "explain": "This directly recalls Module 3's mandate-clarity material — worth recognising responsible investment policy as a specific <em>application</em> of the general principle that mandates should be clear and specific, not left to informal individual discretion."
-            },
-            {
-                "q": "Why might ESG data and ratings from different providers sometimes produce inconsistent assessments of the same company, and why does this matter for investment decision-making?",
-                "a": "Different ESG rating providers can use different methodologies and weightings for various ESG factors, producing inconsistent scores for the same company, so investors relying on a single provider's rating should be aware of this genuine methodological variation rather than treating any single score as an objective, universally agreed truth.",
-                "explain": "This directly recalls SA3's catastrophe-model-uncertainty material — worth recognising ESG rating variation as an analogous form of <em>model/methodology uncertainty</em>, requiring similar critical awareness rather than uncritical reliance on a single source."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Risk measurement for investment managers",
-        "description": "Covers the key techniques investment managers use to measure and monitor portfolio risk, including volatility, value at risk, and stress testing.",
-        "cards": [
-            {
-                "q": "Why might volatility (standard deviation of returns) alone be an incomplete measure of an investment portfolio's genuine risk, echoing CS2's material?",
-                "a": "Volatility treats upside and downside deviations symmetrically, while investors typically care more about downside risk (losses) than upside variation (unexpectedly good returns), so volatility alone can understate what investors actually care about, requiring complementary downside-focused risk measures.",
-                "explain": "This directly recalls CS2's and CP2's risk-measure-limitations material — worth recognising this as an important critique applicable to volatility as a risk measure across the whole actuarial curriculum, not specific to investment management alone."
-            },
-            {
-                "q": "What is 'Value at Risk' (VaR), and what is one genuine limitation of this measure, echoing CP1's and SA1's material?",
-                "a": "VaR estimates the maximum loss expected to be exceeded with a given probability over a given time period (e.g. a 1-in-20 chance of losing more than a stated amount over one month); one genuine limitation is that VaR says nothing about how much <em>worse</em> losses could be beyond that threshold, potentially understating genuine tail risk.",
-                "explain": "This directly recalls CS2's and CP2's tail-risk material — worth recognising VaR's limitation as directly analogous to catastrophe modelling's return-period concept: knowing a threshold's probability doesn't tell you the genuine severity beyond it."
-            },
-            {
-                "q": "Why might stress testing (assessing portfolio performance under specific adverse scenarios) provide complementary insight to VaR, echoing SA1's and SA3's material?",
-                "a": "Stress testing directly reveals how a portfolio would perform under specific, named adverse scenarios (e.g. a sharp equity market fall combined with rising interest rates), providing more concrete, interpretable insight into a portfolio's genuine vulnerabilities than a single probabilistic VaR figure alone.",
-                "explain": "This directly recalls SA1's and SA3's stress-testing material — worth recognising stress testing and VaR as <em>complementary</em> techniques, addressing different aspects of risk measurement rather than one simply replacing the other."
-            },
-            {
-                "q": "Why might 'tracking error' (the volatility of a portfolio's return relative to its benchmark) be a particularly important risk measure for an actively-managed portfolio, echoing Module 3's mandate material?",
-                "a": "Since an active manager's mandate is typically judged against a specified benchmark (Module 3's material), tracking error directly measures how much the manager's actual portfolio has deviated from that benchmark, a more mandate-relevant risk measure than absolute volatility alone for assessing whether the manager is operating within agreed risk parameters.",
-                "explain": "This directly recalls Module 3's benchmark-and-mandate material — worth recognising tracking error as the risk measure <em>most directly</em> connected to whether a manager is adhering to its agreed mandate."
-            },
-            {
-                "q": "Why might risk measurement for an investment portfolio need to be an ongoing, rather than one-off, exercise, echoing this course's recurring theme?",
-                "a": "Portfolio composition, market conditions, and correlations between assets can all change materially over time, so a risk assessment conducted once and never revisited would quickly become outdated, leaving governance and risk management decisions based on a stale picture of the portfolio's actual current risk.",
-                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to investment risk measurement, echoing the identical discipline covered across every SA subject."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Performance measurement and attribution",
-        "description": "Covers how investment performance is measured and decomposed to explain the genuine sources of a portfolio's return relative to its benchmark.",
-        "cards": [
-            {
-                "q": "Why is comparing a portfolio's absolute return alone insufficient to assess an investment manager's skill, echoing Module 3's benchmark material?",
-                "a": "A high absolute return could simply reflect a generally strong market environment rather than genuine manager skill, so performance must be assessed <em>relative</em> to an appropriate benchmark to isolate the manager's genuine contribution from broader market movements.",
-                "explain": "This directly recalls Module 3's benchmark-setting material — worth recognising relative, benchmark-adjusted performance as the meaningful measure of manager skill, not absolute return viewed in isolation."
-            },
-            {
-                "q": "What is 'performance attribution', and why is it more informative to trustees or clients than a single relative-return figure alone?",
-                "a": "Performance attribution decomposes a portfolio's return relative to its benchmark into specific components (e.g. asset allocation decisions versus individual security selection), revealing <em>why</em> the manager outperformed or underperformed, rather than just confirming <em>that</em> they did.",
-                "explain": "This directly recalls SA1's and SA2's surplus-analysis-decomposition material — worth recognising performance attribution as the <em>same</em> underlying decomposition principle (explaining <em>why</em>, not just <em>what</em>) applied specifically to investment performance."
-            },
-            {
-                "q": "Why might decomposing performance into asset allocation and security selection components help a governing body assess whether a manager's mandate remains appropriate?",
-                "a": "If genuine outperformance has come primarily from asset allocation decisions the manager wasn't specifically mandated to make (rather than from security selection within the agreed asset classes), this could reveal the manager is taking risks or making decisions beyond its intended mandate, prompting a genuine mandate review.",
-                "explain": "This directly recalls Module 3's mandate-scope material — worth recognising attribution analysis as a genuine <em>tool</em> for verifying a manager is operating within, not silently exceeding, its agreed mandate."
-            },
-            {
-                "q": "Why might performance measurement need to consider risk-adjusted returns (e.g. comparing return relative to volatility or tracking error taken), rather than return alone?",
-                "a": "A manager achieving a higher return by simply taking on more risk than the mandate intended has not necessarily demonstrated genuine skill, so risk-adjusted measures help distinguish returns earned through skilful decision-making from returns earned simply by accepting more risk.",
-                "explain": "This directly recalls Module 10's tracking-error material — worth recognising risk-adjusted performance measurement as directly connecting this module's attribution material to the risk measurement techniques covered in the previous module."
-            },
-            {
-                "q": "Why might performance measurement need to be assessed over an appropriate time horizon, rather than judging a manager purely on very recent, short-term results?",
-                "a": "Short-term performance can be heavily influenced by genuine random market fluctuation rather than manager skill, so assessing performance over a longer, more statistically meaningful period (while still monitoring for concerning short-term issues) gives a more reliable picture of a manager's true, sustained skill.",
-                "explain": "This directly recalls CS1's statistical-significance material — worth recognising this same principle (distinguishing genuine skill/trend from short-term random noise) applying to investment performance assessment specifically."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Regulation of investment management",
-        "description": "Covers the objectives and approaches to regulating investment managers, including conduct regulation and the treatment of client assets.",
-        "cards": [
-            {
-                "q": "Why does regulation of investment management typically emphasise conduct requirements particularly heavily, given the agency relationship (Module 2's material) between manager and client?",
-                "a": "Since the manager acts on behalf of, but does not itself bear the risk of, the client's assets, conduct regulation aims to ensure the manager acts in the client's best interests despite this separation of decision-making from risk-bearing, addressing the genuine potential for misaligned incentives this agency structure creates.",
-                "explain": "This directly recalls Module 2's agency-relationship material and CP1's conduct-regulation material — worth recognising conduct regulation's emphasis here as a direct <em>response</em> to the specific agency-relationship risk this whole subject's structure creates."
-            },
-            {
-                "q": "Why might regulation require strict segregation of client assets from an investment manager's own assets, echoing Module 2's custody material?",
-                "a": "Segregation ensures that if the investment manager itself fails financially, client assets remain protected and are not treated as part of the manager's own insolvent estate, a fundamental client-protection safeguard distinct from investment performance regulation.",
-                "explain": "This directly recalls Module 2's custody-separation material — worth recognising asset segregation as addressing a <em>different</em> risk (manager insolvency) from conduct regulation's focus on fair treatment in investment decision-making itself."
-            },
-            {
-                "q": "Why might regulation of investment management need different approaches for retail (individual) clients compared with institutional clients, echoing SA1's proportionality material?",
-                "a": "Retail clients typically have less investment expertise and bargaining power than sophisticated institutional investors, so regulation often applies additional protections (e.g. more detailed disclosure requirements) for retail clients while allowing institutional clients, who can better assess and negotiate terms themselves, somewhat greater flexibility.",
-                "explain": "This directly recalls SA1's proportionality material — worth recognising this same principle applying to investment management regulation: protection should scale with the client's own capacity to assess and protect their interests."
-            },
-            {
-                "q": "Why might regulation increasingly require investment managers to disclose their approach to ESG and responsible investment, echoing Module 9's material?",
-                "a": "Genuine, standardised disclosure allows clients and other stakeholders to compare managers' actual ESG practices consistently, addressing the risk that vague or inconsistent claims about responsible investment ('greenwashing') could mislead clients about a manager's genuine approach.",
-                "explain": "This directly recalls Module 9's ESG-consistency material — worth recognising disclosure regulation as a direct <em>response</em> to the genuine risk of inconsistent or exaggerated ESG claims identified in that earlier module."
-            },
-            {
-                "q": "Why might investment management regulation need to evolve as new asset classes and investment techniques (e.g. increasingly complex alternative assets or algorithmic trading) develop over time, echoing this course's recurring theme?",
-                "a": "Regulation designed for traditional listed assets and human decision-making may not adequately address the different risks new asset classes or automated techniques introduce, so regulatory frameworks require periodic review and updating to remain fit for purpose.",
-                "explain": "This directly recalls SA1's ongoing-review theme and SA1's regulatory-evolution material — worth recognising this same principle applying to investment management regulation specifically."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "Operational risk and governance for investment managers",
-        "description": "Covers the operational risks facing an investment management firm, and the internal governance structures used to manage them.",
-        "cards": [
-            {
-                "q": "What is 'operational risk' in the context of an investment management firm, and why is it distinct from investment (market) risk?",
-                "a": "Operational risk arises from failures in internal processes, systems, or people (e.g. a settlement error, a cyber-security breach, or a key-person departure) rather than from adverse market movements, meaning it can cause genuine losses or client harm even when the firm's actual investment decisions were entirely sound.",
-                "explain": "Worth recognising operational risk as a <em>different</em> risk category from investment risk — a manager could make excellent investment decisions and still suffer serious client harm through an operational failure unrelated to those decisions."
-            },
-            {
-                "q": "Why might key-person risk (over-reliance on a single star portfolio manager) be a significant operational risk for an investment management firm?",
-                "a": "If a firm's investment process and client relationships depend heavily on one individual's expertise or judgement, that individual's departure, illness, or error could cause significant disruption, making succession planning and process documentation (Module 4's material) important mitigants.",
-                "explain": "This directly recalls Module 4's documented-process material — worth recognising well-documented, repeatable processes as a direct <em>mitigant</em> against key-person risk, not just a governance nicety."
-            },
-            {
-                "q": "Why might cyber-security represent a significant and growing operational risk for investment management firms specifically?",
-                "a": "Investment managers hold and process sensitive client data and control significant client assets, making them an attractive target for cyber-attacks that could result in financial loss, data breaches, or disruption to critical trading and settlement systems, a risk that has grown as reliance on digital systems has increased.",
-                "explain": "Worth recognising cyber risk as a <em>contemporary</em> and growing operational risk category, reflecting the increasing digitisation of investment management processes over time."
-            },
-            {
-                "q": "Why might an investment management firm's governance structure need an independent risk management function, separate from the portfolio management teams generating investment decisions?",
-                "a": "An independent risk function can objectively monitor and challenge portfolio managers' risk-taking against agreed limits without the same incentive to prioritise short-term performance that portfolio managers themselves might have, providing a genuine check-and-balance within the firm's internal governance.",
-                "explain": "This directly recalls CP1's independent-challenge material and Module 4's internal-challenge material — worth recognising an independent risk function as this same principle applied specifically to the investment manager's own internal firm structure."
-            },
-            {
-                "q": "Why might operational risk management need to be an ongoing, evolving discipline rather than a fixed set of controls established once, echoing this course's recurring theme?",
-                "a": "New operational risks (e.g. emerging cyber threats, or risks from new technology adoption) continue to develop over time, so a firm's operational risk controls must be periodically reviewed and updated to remain effective against the current risk landscape, not assumed to remain adequate indefinitely.",
-                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to operational risk management specifically, echoing the identical discipline covered across every SA subject."
-            }
-        ]
-    },
-    {
-        "id": "m14",
-        "title": "Solving complex issues and glossary",
-        "description": "Covers applying the full range of SA7 knowledge and skills to complex, multi-dimensional investment management problems, and consolidates key syllabus terminology.",
-        "cards": [
-            {
-                "q": "Why does SA7 include a dedicated focus on solving complex issues, drawing on every earlier module, echoing SA1's material?",
-                "a": "Real strategic and technical problems in investment management rarely fall neatly into a single topic area; a complex issue typically requires drawing on investor objectives, asset allocation, risk measurement, governance, and regulatory considerations simultaneously.",
-                "explain": "This directly recalls SA1's complex-issue-integration material — worth recognising this module as this course's deliberate integration point, combining skills the earlier modules mostly developed in isolation."
-            },
-            {
-                "q": "A DB pension scheme's investment manager has significantly outperformed its benchmark, but attribution reveals this came primarily from unauthorised asset allocation deviations. Discuss why this represents a complex issue for the scheme's governing body.",
-                "a": "This situation involves competing considerations across multiple topic areas at once — the manager has delivered a strong outcome, but attribution analysis reveals a mandate compliance failure, raising genuine governance and regulatory conduct questions about whether the manager can be trusted to operate within agreed limits going forward, even though the specific outcome this time was favourable.",
-                "explain": "This directly recalls Module 3's mandate material and Module 11's attribution material — worth recognising that resolving this specific issue requires drawing on performance attribution, mandate governance, and conduct/trust considerations together, not simply celebrating the favourable outcome."
-            },
-            {
-                "q": "What is 'liability-driven investing' (LDI), as a precise, glossary-style restatement of Module 6's material?",
-                "a": "An investment approach that sets strategy explicitly to match the behaviour of a specific set of liabilities (e.g. interest rate and inflation sensitivity), directly relevant for investors like DB pension schemes and annuity-writing insurers whose objective is meeting defined future obligations.",
-                "explain": "This directly recalls Module 6's LDI material — worth treating this as the precise definition to reach for if an exam question asks you to explain or apply LDI directly."
-            },
-            {
-                "q": "What is 'tracking error', as a precise, glossary-style restatement of Module 10's material?",
-                "a": "The volatility of a portfolio's return relative to its benchmark, directly measuring how much an actively-managed portfolio has deviated from its mandate's specified benchmark, a mandate-relevant risk measure distinct from absolute volatility.",
-                "explain": "This directly recalls Module 10's tracking-error material — worth treating this as the precise definition to use if asked to explain why tracking error matters for an actively-managed mandate specifically."
-            },
-            {
-                "q": "Why does this closing glossary module deliberately draw its content from across every earlier module, rather than introducing wholly new material, echoing SA1's approach?",
-                "a": "This module's purpose is consolidative and integrative, bringing together precise terminology and complex, multi-topic problem-solving practice using material already developed throughout the course, supporting confident, accurate application in the actual exam.",
-                "explain": "This closing card confirms this module completes SA7's 14-module structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
-            }
-        ]
-    }
-    ]
-,
+      {
+          "id": "m01",
+          "title": "Introduction",
+          "description": "SA7's aims and structure: the framework for investment management (30%), meeting investor requirements (35%), and management and risk control for an investment manager (35%), with how SA7 builds on SP5 and what examiners expect.",
+          "cards": [
+              {
+                  "q": "What are SA7's three syllabus topics?",
+                  "a": "Framework for investment management (30%); meeting investor requirements (35%); management and risk control for an investment manager (35%).",
+                  "explain": "Balanced."
+              },
+              {
+                  "q": "How does SA7 build on SP5?",
+                  "a": "Applies SP5's principles to complex practical investment problems and advice.",
+                  "explain": "Application."
+              },
+              {
+                  "q": "What jurisdictions does SA7 cover?",
+                  "a": "UK primarily, with other jurisdictions and emerging markets.",
+                  "explain": "Global context."
+              },
+              {
+                  "q": "What investors are covered?",
+                  "a": "Individuals, life and non-life insurers, DB and DC pensions, endowments/charities, banks, hedge funds, sovereign wealth funds.",
+                  "explain": "Chapter 2–3."
+              },
+              {
+                  "q": "What skills are tested?",
+                  "a": "Analysing investor needs, proposing strategies, evaluating managers, communicating advice.",
+                  "explain": "Higher-order."
+              },
+              {
+                  "q": "Why is regulation included?",
+                  "a": "Capital and conduct rules shape investment policies.",
+                  "explain": "Basel, Solvency II."
+              },
+              {
+                  "q": "What is the role of technology in SA7?",
+                  "a": "Trading, product development and investment management operations.",
+                  "explain": "Syllabus 3.3."
+              },
+              {
+                  "q": "Why is ESG covered?",
+                  "a": "Impact on performance and approaches to integrate ESG.",
+                  "explain": "Syllabus 3.1.4."
+              },
+              {
+                  "q": "What role does behavioural finance play?",
+                  "a": "Explains investor and market behaviour.",
+                  "explain": "Chapter 10."
+              },
+              {
+                  "q": "How should SA7 answers be structured?",
+                  "a": "Understand client, objectives and constraints; analyse; recommend.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "What is the investment consulting chapter about?",
+                  "a": "Manager selection, fiduciary management, performance measurement services.",
+                  "explain": "Chapter 13."
+              },
+              {
+                  "q": "Why is corporate finance included?",
+                  "a": "Capital structure and financing relate to asset classes.",
+                  "explain": "Chapter 6."
+              },
+              {
+                  "q": "What is the Core Reading date for 2025?",
+                  "a": "31 May 2024.",
+                  "explain": "Currency."
+              },
+              {
+                  "q": "Why study historic asset behaviour?",
+                  "a": "Informs expected returns and risk assumptions.",
+                  "explain": "Syllabus 1.1."
+              },
+              {
+                  "q": "What exam technique helps in SA7?",
+                  "a": "Breadth of relevant points, applied to the scenario.",
+                  "explain": "Examiners."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Individual investors",
+          "description": "Investment needs of individual investors: life-cycle stages, objectives and constraints (risk tolerance, liquidity, time horizon, tax, legal), financial planning, retail products and platforms, advice and regulation, and the impact of technology.",
+          "cards": [
+              {
+                  "q": "What determines an individual's investment needs?",
+                  "a": "Objectives, time horizon, risk tolerance and capacity, liquidity needs, tax position, other assets and liabilities.",
+                  "explain": "Profile."
+              },
+              {
+                  "q": "What is risk capacity vs risk tolerance?",
+                  "a": "Capacity: ability to bear losses financially; tolerance: psychological willingness.",
+                  "explain": "Both matter."
+              },
+              {
+                  "q": "How do needs change over the life cycle?",
+                  "a": "Accumulation (growth), pre-retirement (de-risking), decumulation (income, longevity).",
+                  "explain": "Life-cycle."
+              },
+              {
+                  "q": "What retail investment vehicles exist?",
+                  "a": "ISAs, pensions, unit trusts/OEICs, investment trusts, ETFs, bonds, direct shares.",
+                  "explain": "UK."
+              },
+              {
+                  "q": "What are platforms?",
+                  "a": "Online services holding investments across wrappers.",
+                  "explain": "Technology."
+              },
+              {
+                  "q": "What is robo-advice?",
+                  "a": "Automated, algorithm-based investment advice.",
+                  "explain": "Low cost."
+              },
+              {
+                  "q": "How does tax shape individual investing?",
+                  "a": "Use of ISAs and pensions to shelter returns.",
+                  "explain": "Wrappers."
+              },
+              {
+                  "q": "What is the role of financial advice?",
+                  "a": "Assessing needs and recommending suitable investments.",
+                  "explain": "Suitability."
+              },
+              {
+                  "q": "What regulation protects individual investors?",
+                  "a": "Suitability rules, disclosure, Consumer Duty, FSCS, FOS.",
+                  "explain": "Conduct."
+              },
+              {
+                  "q": "What behavioural issues affect individuals?",
+                  "a": "Loss aversion, overconfidence, inertia, herding.",
+                  "explain": "Chapter 10."
+              },
+              {
+                  "q": "How should decumulation be planned?",
+                  "a": "Balancing income, longevity risk, flexibility (annuities vs drawdown).",
+                  "explain": "Pension freedoms."
+              },
+              {
+                  "q": "How can technology change product development?",
+                  "a": "Digital platforms, fractional investing, model portfolios.",
+                  "explain": "Syllabus 3.3."
+              },
+              {
+                  "q": "What are high-net-worth considerations?",
+                  "a": "Complex tax, estate planning, alternative assets.",
+                  "explain": "Wealth management."
+              },
+              {
+                  "q": "What is a model portfolio?",
+                  "a": "Pre-set asset allocation matched to risk profiles.",
+                  "explain": "Scalable advice."
+              },
+              {
+                  "q": "How should risk profiling be done?",
+                  "a": "Questionnaires plus discussion, capacity checks.",
+                  "explain": "Suitability."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Institutional investors",
+          "description": "Investment needs of institutions: liability characteristics, requirements and regulatory influences for life insurers (with-profits, non-profit, unit-linked), non-life insurers, DB and DC pension funds, endowments and charities, banks, hedge funds and sovereign wealth funds, and the influence of central banks and capital regimes (Basel, Solvency II).",
+          "cards": [
+              {
+                  "q": "How do non-profit life liabilities shape investment?",
+                  "a": "Fixed long-term liabilities matched with bonds; MA portfolios for annuities.",
+                  "explain": "Matching."
+              },
+              {
+                  "q": "How do with-profits liabilities shape investment?",
+                  "a": "Guarantees plus discretion allow real assets, limited by guarantees and estate.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "How do unit-linked liabilities shape investment?",
+                  "a": "Assets follow unit fund mandates; insurer bears little investment risk.",
+                  "explain": "Mandates."
+              },
+              {
+                  "q": "How do non-life liabilities shape investment?",
+                  "a": "Shorter, uncertain liabilities; liquidity; matching by currency and term.",
+                  "explain": "GI."
+              },
+              {
+                  "q": "How do DB pension liabilities shape investment?",
+                  "a": "Long-term, often inflation-linked; LDI plus growth assets; covenant matters.",
+                  "explain": "Pensions."
+              },
+              {
+                  "q": "How do DC schemes shape investment?",
+                  "a": "Member-driven; default strategies and lifestyling.",
+                  "explain": "DC."
+              },
+              {
+                  "q": "What are endowments' investment needs?",
+                  "a": "Perpetual horizon, spending rules, real return targets.",
+                  "explain": "Charities."
+              },
+              {
+                  "q": "How do banks invest?",
+                  "a": "Liquidity and capital rules drive holdings of high-quality liquid assets.",
+                  "explain": "Basel."
+              },
+              {
+                  "q": "How do hedge funds invest?",
+                  "a": "Absolute return, leverage, flexible mandates.",
+                  "explain": "Unconstrained."
+              },
+              {
+                  "q": "What are sovereign wealth funds' objectives?",
+                  "a": "Long-term wealth preservation, stabilisation, intergenerational saving.",
+                  "explain": "Unconstrained."
+              },
+              {
+                  "q": "How does Solvency II affect insurers' investment?",
+                  "a": "Capital charges by asset risk; MA incentives.",
+                  "explain": "Regulation."
+              },
+              {
+                  "q": "How does Basel affect banks' investment?",
+                  "a": "Risk weights and liquidity ratios.",
+                  "explain": "Regulation."
+              },
+              {
+                  "q": "How do central banks affect institutional investors?",
+                  "a": "Interest rates, QE affecting yields and asset prices.",
+                  "explain": "Influence."
+              },
+              {
+                  "q": "What is a spending rule?",
+                  "a": "Rule for withdrawals from endowments (e.g. % of average assets).",
+                  "explain": "Sustainability."
+              },
+              {
+                  "q": "How does maturity affect institutions?",
+                  "a": "Mature funds need liquidity and matching.",
+                  "explain": "Cash flows."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Asset markets",
+          "description": "Financial markets in developed and emerging economies: public and private market assets (equities, bonds, property, private equity and debt, infrastructure), market structure and trading, historic behaviour of asset classes and indices, global economic trends, and technology in trading.",
+          "cards": [
+              {
+                  "q": "What are public market assets?",
+                  "a": "Listed equities, government and corporate bonds, REITs.",
+                  "explain": "Liquid."
+              },
+              {
+                  "q": "What are private market assets?",
+                  "a": "Private equity, private debt, direct property, infrastructure.",
+                  "explain": "Illiquid."
+              },
+              {
+                  "q": "How have equities behaved historically?",
+                  "a": "Higher long-term real returns than bonds with high volatility and occasional large drawdowns.",
+                  "explain": "Equity risk premium."
+              },
+              {
+                  "q": "How have bonds behaved historically?",
+                  "a": "Lower returns; long rate decline to 2020 then sharp rise in 2022.",
+                  "explain": "Rate cycle."
+              },
+              {
+                  "q": "What are emerging market features?",
+                  "a": "Higher growth, higher risk (political, currency, governance), lower liquidity.",
+                  "explain": "Diversification."
+              },
+              {
+                  "q": "How has technology affected trading?",
+                  "a": "Electronic and algorithmic trading, lower costs, faster markets.",
+                  "explain": "Syllabus 3.3."
+              },
+              {
+                  "q": "What is high-frequency trading?",
+                  "a": "Automated trading at very high speed.",
+                  "explain": "Liquidity and risks."
+              },
+              {
+                  "q": "What are global economic trends affecting markets?",
+                  "a": "Demographics, deglobalisation, inflation regimes, technology, climate transition.",
+                  "explain": "Macro."
+              },
+              {
+                  "q": "What is market liquidity?",
+                  "a": "Ease of trading without affecting price.",
+                  "explain": "Varies by asset."
+              },
+              {
+                  "q": "What is the equity risk premium?",
+                  "a": "Excess expected return of equities over risk-free.",
+                  "explain": "Key assumption."
+              },
+              {
+                  "q": "How are indices used?",
+                  "a": "Benchmarks, passive investing, measuring markets.",
+                  "explain": "Syllabus 1.1."
+              },
+              {
+                  "q": "What are the features of property markets?",
+                  "a": "Heterogeneous, illiquid, income-producing.",
+                  "explain": "Real asset."
+              },
+              {
+                  "q": "What is private credit?",
+                  "a": "Non-bank lending to companies.",
+                  "explain": "Growth area."
+              },
+              {
+                  "q": "What is market fragmentation?",
+                  "a": "Trading spread across venues.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "What are dark pools?",
+                  "a": "Venues where orders aren't displayed publicly.",
+                  "explain": "Large trades."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "Derivatives and structured products",
+          "description": "OTC and exchange-traded derivatives in investment management: futures, forwards, swaps, options, credit and inflation derivatives, structured products, their uses for risk taking or mitigation, collateral and counterparty issues, and technology's effect on derivative trading and product development.",
+          "cards": [
+              {
+                  "q": "How are derivatives used for risk mitigation?",
+                  "a": "Hedging interest rate, inflation, equity, currency and credit exposures.",
+                  "explain": "Syllabus 3.1.5."
+              },
+              {
+                  "q": "How are derivatives used for risk taking?",
+                  "a": "Gaining leveraged or synthetic exposure, relative value trades.",
+                  "explain": "Syllabus 3.1.5."
+              },
+              {
+                  "q": "What is the difference between OTC and exchange-traded?",
+                  "a": "OTC bilateral and customised; exchange standardised and centrally cleared.",
+                  "explain": "Syllabus 1.1."
+              },
+              {
+                  "q": "What are structured products?",
+                  "a": "Combinations of bonds and derivatives with tailored payoffs.",
+                  "explain": "Retail and institutional."
+              },
+              {
+                  "q": "What is collateral management?",
+                  "a": "Posting and receiving margin to mitigate counterparty risk.",
+                  "explain": "Operational."
+              },
+              {
+                  "q": "What is counterparty risk?",
+                  "a": "Risk counterparty fails to perform.",
+                  "explain": "Clearing reduces."
+              },
+              {
+                  "q": "How are inflation swaps used by pension funds?",
+                  "a": "Hedging inflation-linked liabilities.",
+                  "explain": "LDI."
+              },
+              {
+                  "q": "How are equity options used?",
+                  "a": "Protecting downside or enhancing income.",
+                  "explain": "Collars."
+              },
+              {
+                  "q": "What are credit derivatives used for?",
+                  "a": "Hedging or taking credit risk.",
+                  "explain": "CDS."
+              },
+              {
+                  "q": "How has technology changed derivatives trading?",
+                  "a": "Electronic platforms, faster execution, better risk systems.",
+                  "explain": "Syllabus 3.3."
+              },
+              {
+                  "q": "What regulation applies to derivatives?",
+                  "a": "Clearing mandates, reporting, margin rules.",
+                  "explain": "EMIR."
+              },
+              {
+                  "q": "What is basis risk?",
+                  "a": "Hedge doesn't perfectly track exposure.",
+                  "explain": "Imperfect."
+              },
+              {
+                  "q": "What are risks of structured products?",
+                  "a": "Complexity, liquidity, issuer credit, hidden costs.",
+                  "explain": "Suitability."
+              },
+              {
+                  "q": "What is a total return swap?",
+                  "a": "Exchange of total return for funding rate.",
+                  "explain": "Synthetic exposure."
+              },
+              {
+                  "q": "Why is liquidity important for derivative users?",
+                  "a": "Collateral calls in stress (2022 LDI).",
+                  "explain": "Buffers."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Corporate finance",
+          "description": "Corporate finance principles relevant to investment: capital structure theory (Modigliani-Miller, trade-off and pecking order), cost of capital, sources of finance (equity, debt, hybrid), dividend policy, corporate actions, and how corporate financing relates to different asset classes.",
+          "cards": [
+              {
+                  "q": "What is the Modigliani-Miller proposition?",
+                  "a": "In perfect markets, firm value is independent of capital structure.",
+                  "explain": "Baseline."
+              },
+              {
+                  "q": "What is the trade-off theory?",
+                  "a": "Optimal leverage balances tax benefits of debt against distress costs.",
+                  "explain": "Capital structure."
+              },
+              {
+                  "q": "What is the pecking order theory?",
+                  "a": "Firms prefer internal funds, then debt, then equity due to information asymmetry.",
+                  "explain": "Financing choices."
+              },
+              {
+                  "q": "What is WACC?",
+                  "a": "Weighted average cost of capital across debt and equity.",
+                  "explain": "Discount rate."
+              },
+              {
+                  "q": "What sources of finance exist?",
+                  "a": "Equity (ordinary, preference), debt (loans, bonds), hybrids (convertibles), leasing.",
+                  "explain": "Asset classes."
+              },
+              {
+                  "q": "How does capital structure relate to asset classes?",
+                  "a": "Equity and debt of the same firm have different risk-return profiles and claims.",
+                  "explain": "Syllabus 1.4."
+              },
+              {
+                  "q": "What is a convertible bond?",
+                  "a": "Bond convertible into equity.",
+                  "explain": "Hybrid."
+              },
+              {
+                  "q": "What is dividend policy?",
+                  "a": "Decisions on distributing profits vs retaining.",
+                  "explain": "Signalling."
+              },
+              {
+                  "q": "What are share buybacks?",
+                  "a": "Company repurchasing shares.",
+                  "explain": "Return capital."
+              },
+              {
+                  "q": "What are corporate actions?",
+                  "a": "Rights issues, splits, mergers, spin-offs.",
+                  "explain": "Investor impact."
+              },
+              {
+                  "q": "What is leverage's effect on equity risk?",
+                  "a": "Higher leverage increases equity volatility.",
+                  "explain": "Beta."
+              },
+              {
+                  "q": "What is a leveraged buyout?",
+                  "a": "Acquisition financed largely by debt.",
+                  "explain": "Private equity."
+              },
+              {
+                  "q": "How do credit ratings affect financing?",
+                  "a": "Lower ratings raise cost of debt.",
+                  "explain": "Access."
+              },
+              {
+                  "q": "What is the agency cost of debt?",
+                  "a": "Conflicts between shareholders and bondholders.",
+                  "explain": "Covenants."
+              },
+              {
+                  "q": "What is project finance?",
+                  "a": "Financing based on project cash flows.",
+                  "explain": "Infrastructure."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "Regulation",
+          "description": "Regulation of investment management in the UK and elsewhere: conduct regulation (FCA, MiFID-derived rules, Consumer Duty, SM&CR), fund regulation (UCITS, AIFMD), market regulation, prudential capital requirements (Basel, Solvency II), and legislative and tax frameworks.",
+          "cards": [
+              {
+                  "q": "What are aims of investment regulation?",
+                  "a": "Investor protection, market integrity, financial stability, competition.",
+                  "explain": "Objectives."
+              },
+              {
+                  "q": "What is MiFID?",
+                  "a": "EU framework (onshored in UK) for investment services: conduct, transparency, best execution.",
+                  "explain": "Conduct."
+              },
+              {
+                  "q": "What is UCITS?",
+                  "a": "Regulated retail fund framework with diversification and liquidity rules.",
+                  "explain": "Funds."
+              },
+              {
+                  "q": "What is AIFMD?",
+                  "a": "Regulation of alternative investment fund managers.",
+                  "explain": "Alternatives."
+              },
+              {
+                  "q": "How does the Consumer Duty affect managers?",
+                  "a": "Fair value and good outcomes for retail investors.",
+                  "explain": "UK."
+              },
+              {
+                  "q": "What is SM&CR?",
+                  "a": "Senior Managers and Certification Regime.",
+                  "explain": "Accountability."
+              },
+              {
+                  "q": "How do capital requirements affect investors?",
+                  "a": "Basel and Solvency II shape bank and insurer investments.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "What is best execution?",
+                  "a": "Obtaining best possible result for clients.",
+                  "explain": "Duty."
+              },
+              {
+                  "q": "What is market abuse regulation?",
+                  "a": "Prohibits insider dealing and manipulation.",
+                  "explain": "Integrity."
+              },
+              {
+                  "q": "What are stewardship codes?",
+                  "a": "Expectations for institutional investor engagement.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What are sustainability disclosure rules?",
+                  "a": "E.g. UK SDR, TCFD reporting.",
+                  "explain": "ESG."
+              },
+              {
+                  "q": "How does tax regulation affect investment?",
+                  "a": "Fund taxation, withholding taxes.",
+                  "explain": "Net returns."
+              },
+              {
+                  "q": "What is the role of depositaries?",
+                  "a": "Oversee fund compliance and safekeep assets.",
+                  "explain": "Protection."
+              },
+              {
+                  "q": "How do regimes differ internationally?",
+                  "a": "US SEC regime, EU rules, Asian regulators.",
+                  "explain": "Comparison."
+              },
+              {
+                  "q": "What is liquidity regulation for funds?",
+                  "a": "Rules on liquidity management, e.g. property fund suspensions.",
+                  "explain": "Investor protection."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "Economic, monetary and political influences",
+          "description": "Influences on capital markets: monetary policy and central banks (interest rates, QE/QT, forward guidance), fiscal and government policy, inflation and growth, exchange rates, political events and geopolitical risk, and their effects on asset returns.",
+          "cards": [
+              {
+                  "q": "How does monetary policy affect asset prices?",
+                  "a": "Lower rates and QE raise asset prices; tightening lowers them.",
+                  "explain": "Central banks."
+              },
+              {
+                  "q": "What is quantitative tightening?",
+                  "a": "Central banks reducing bond holdings.",
+                  "explain": "Upward yield pressure."
+              },
+              {
+                  "q": "What is forward guidance?",
+                  "a": "Central bank communication about future policy.",
+                  "explain": "Expectations."
+              },
+              {
+                  "q": "How does fiscal policy affect markets?",
+                  "a": "Borrowing affects gilt supply and yields; credibility matters (2022 mini-budget).",
+                  "explain": "UK example."
+              },
+              {
+                  "q": "How does inflation affect asset classes?",
+                  "a": "Negative for nominal bonds; mixed for equities; real assets partially hedge.",
+                  "explain": "Regime."
+              },
+              {
+                  "q": "How do exchange rates affect investors?",
+                  "a": "Change value of overseas assets; affect companies' earnings.",
+                  "explain": "Currency."
+              },
+              {
+                  "q": "What are political risks?",
+                  "a": "Elections, policy changes, sanctions, geopolitical conflict.",
+                  "explain": "Risk premium."
+              },
+              {
+                  "q": "How do economic cycles affect sectors?",
+                  "a": "Cyclicals outperform in expansions; defensives in slowdowns.",
+                  "explain": "Rotation."
+              },
+              {
+                  "q": "What is the yield curve's signal?",
+                  "a": "Inversion often precedes recession.",
+                  "explain": "Indicator."
+              },
+              {
+                  "q": "What was the 2022 UK gilt crisis?",
+                  "a": "Rapid gilt yield rises after fiscal announcements triggered LDI collateral calls and BoE intervention.",
+                  "explain": "Case."
+              },
+              {
+                  "q": "How do commodity shocks affect markets?",
+                  "a": "Inflation and growth effects.",
+                  "explain": "Energy."
+              },
+              {
+                  "q": "What is the role of central bank independence?",
+                  "a": "Credibility of inflation control.",
+                  "explain": "Expectations."
+              },
+              {
+                  "q": "How does globalisation affect markets?",
+                  "a": "Integrated capital flows and correlations.",
+                  "explain": "Contagion."
+              },
+              {
+                  "q": "How can demographic trends affect returns?",
+                  "a": "Savings patterns and labour supply.",
+                  "explain": "Long-term."
+              },
+              {
+                  "q": "How should investors respond to macro uncertainty?",
+                  "a": "Diversification, scenario analysis, hedging.",
+                  "explain": "Robustness."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Investment analysis",
+          "description": "Investment analysis for active management: fundamental analysis of equities and bonds, valuation models, technical analysis, quantitative and factor analysis, macro and asset allocation analysis, and analysis across different time horizons.",
+          "cards": [
+              {
+                  "q": "What is fundamental analysis?",
+                  "a": "Valuing securities from financial statements, prospects and economic conditions.",
+                  "explain": "Intrinsic value."
+              },
+              {
+                  "q": "What is technical analysis?",
+                  "a": "Using price and volume patterns to predict movements.",
+                  "explain": "Contested."
+              },
+              {
+                  "q": "What is quantitative analysis?",
+                  "a": "Statistical models and factors to select securities.",
+                  "explain": "Systematic."
+              },
+              {
+                  "q": "What valuation models are used for equities?",
+                  "a": "DCF, dividend discount, multiples (P/E, EV/EBITDA).",
+                  "explain": "Methods."
+              },
+              {
+                  "q": "How are bonds analysed?",
+                  "a": "Credit analysis, yield curve analysis, duration and spread assessment.",
+                  "explain": "Fixed income."
+              },
+              {
+                  "q": "What is top-down analysis?",
+                  "a": "Macro to sectors to securities.",
+                  "explain": "Asset allocation."
+              },
+              {
+                  "q": "What is bottom-up analysis?",
+                  "a": "Security-level analysis first.",
+                  "explain": "Stock picking."
+              },
+              {
+                  "q": "What is factor investing?",
+                  "a": "Targeting systematic return drivers (value, momentum, quality, low volatility, size).",
+                  "explain": "Smart beta."
+              },
+              {
+                  "q": "How do time horizons affect analysis?",
+                  "a": "Short-term: momentum, sentiment; long-term: fundamentals, valuation.",
+                  "explain": "Syllabus 3.1.1."
+              },
+              {
+                  "q": "What is relative value analysis?",
+                  "a": "Comparing securities to find mispricing.",
+                  "explain": "Pairs."
+              },
+              {
+                  "q": "What is scenario analysis in investment?",
+                  "a": "Assessing outcomes under different economic scenarios.",
+                  "explain": "Robustness."
+              },
+              {
+                  "q": "How is ESG integrated in analysis?",
+                  "a": "Assessing material ESG factors in valuation.",
+                  "explain": "Syllabus 3.1.4."
+              },
+              {
+                  "q": "What is alternative data?",
+                  "a": "Non-traditional data (satellite, web, transactions) for insights.",
+                  "explain": "Technology."
+              },
+              {
+                  "q": "What is the role of sell-side research?",
+                  "a": "Broker research to support investment decisions.",
+                  "explain": "Information."
+              },
+              {
+                  "q": "Why is analysis limited by market efficiency?",
+                  "a": "Public information quickly priced.",
+                  "explain": "Alpha scarce."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "Investment psychology",
+          "description": "Psychological aspects influencing investors: behavioural finance biases and heuristics, prospect theory, market anomalies and bubbles, institutional behaviour (herding, career risk), and applying behavioural insights to active management and client advice.",
+          "cards": [
+              {
+                  "q": "What is behavioural finance?",
+                  "a": "Study of psychological influences on investors and markets.",
+                  "explain": "Syllabus 3.1.7."
+              },
+              {
+                  "q": "What is prospect theory?",
+                  "a": "Losses loom larger than gains; decisions relative to reference points.",
+                  "explain": "Kahneman–Tversky."
+              },
+              {
+                  "q": "What is overconfidence?",
+                  "a": "Overestimating knowledge or skill.",
+                  "explain": "Excess trading."
+              },
+              {
+                  "q": "What is anchoring?",
+                  "a": "Relying on an initial reference value.",
+                  "explain": "Valuation bias."
+              },
+              {
+                  "q": "What is herding?",
+                  "a": "Following others' actions.",
+                  "explain": "Bubbles."
+              },
+              {
+                  "q": "What is the disposition effect?",
+                  "a": "Selling winners too early, holding losers too long.",
+                  "explain": "Loss aversion."
+              },
+              {
+                  "q": "What is confirmation bias?",
+                  "a": "Seeking information confirming beliefs.",
+                  "explain": "Research bias."
+              },
+              {
+                  "q": "What is mental accounting?",
+                  "a": "Treating money differently by category.",
+                  "explain": "Suboptimal."
+              },
+              {
+                  "q": "How do institutions show behavioural biases?",
+                  "a": "Career risk leads to benchmark hugging and herding.",
+                  "explain": "Agency."
+              },
+              {
+                  "q": "How can behavioural insights help active management?",
+                  "a": "Exploiting anomalies like momentum or overreaction.",
+                  "explain": "Strategies."
+              },
+              {
+                  "q": "How can advisers use behavioural insights?",
+                  "a": "Framing, defaults, commitment devices to improve client outcomes.",
+                  "explain": "Nudges."
+              },
+              {
+                  "q": "What are bubbles?",
+                  "a": "Prices far above fundamentals driven by speculation and sentiment.",
+                  "explain": "Dot-com."
+              },
+              {
+                  "q": "What is recency bias?",
+                  "a": "Overweighting recent events.",
+                  "explain": "Trend chasing."
+              },
+              {
+                  "q": "What is myopic loss aversion?",
+                  "a": "Frequent evaluation increases aversion to risky assets.",
+                  "explain": "Long-term investors."
+              },
+              {
+                  "q": "How can investment committees reduce bias?",
+                  "a": "Structured processes, diverse views, pre-mortems.",
+                  "explain": "Governance."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Investment strategy",
+          "description": "Designing investment strategy: strategic and tactical asset allocation, active and passive (including factor-based) approaches, risk control and risk-based portfolio construction, ESG integration, derivative strategies, liability benchmarks and replicating portfolios, and historic asset behaviour.",
+          "cards": [
+              {
+                  "q": "What is strategic asset allocation?",
+                  "a": "Long-term policy mix aligned to objectives and liabilities.",
+                  "explain": "Main driver of returns."
+              },
+              {
+                  "q": "What is tactical asset allocation?",
+                  "a": "Short-term deviations to exploit opportunities.",
+                  "explain": "Active."
+              },
+              {
+                  "q": "What is passive management?",
+                  "a": "Tracking an index at low cost.",
+                  "explain": "Syllabus 3.1.2."
+              },
+              {
+                  "q": "What is quasi-passive/factor-based management?",
+                  "a": "Rules-based exposure to factors.",
+                  "explain": "Smart beta."
+              },
+              {
+                  "q": "What is risk-based portfolio construction?",
+                  "a": "Allocating by risk contribution (e.g. risk parity, minimum variance).",
+                  "explain": "Syllabus 3.1.3."
+              },
+              {
+                  "q": "What is risk parity?",
+                  "a": "Equalising risk contributions across asset classes.",
+                  "explain": "Leverage often used."
+              },
+              {
+                  "q": "How is ESG incorporated into strategy?",
+                  "a": "Exclusions, integration, tilts, engagement, impact.",
+                  "explain": "Syllabus 3.1.4."
+              },
+              {
+                  "q": "What is a liability benchmark?",
+                  "a": "Portfolio replicating liabilities, the minimum-risk position.",
+                  "explain": "Syllabus 3.1.6."
+              },
+              {
+                  "q": "What is a replicating portfolio?",
+                  "a": "Assets designed to match liability cash flows or sensitivities.",
+                  "explain": "LDI."
+              },
+              {
+                  "q": "How are derivatives used in strategy?",
+                  "a": "Overlays, hedging, synthetic exposure.",
+                  "explain": "Syllabus 3.1.5."
+              },
+              {
+                  "q": "What risk control techniques are used?",
+                  "a": "Tracking error limits, VaR, stress testing, diversification.",
+                  "explain": "Syllabus 3.1.3."
+              },
+              {
+                  "q": "How is active risk budgeted?",
+                  "a": "Allocating tracking error across managers/strategies.",
+                  "explain": "Risk budgets."
+              },
+              {
+                  "q": "What is core-satellite?",
+                  "a": "Passive core with active satellites.",
+                  "explain": "Cost-efficient."
+              },
+              {
+                  "q": "How does history inform strategy?",
+                  "a": "Long-run returns, volatilities and correlations as inputs.",
+                  "explain": "Syllabus 1.1."
+              },
+              {
+                  "q": "How should strategy be reviewed?",
+                  "a": "Regularly against objectives, liabilities and markets.",
+                  "explain": "Governance."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Investment management",
+          "description": "How an investment management company operates: organising management of a large portfolio (in-house vs external, specialist vs balanced, multi-manager), structure of an institutional investment department, operations and risk control, fees, and legislative and conduct frameworks for managers.",
+          "cards": [
+              {
+                  "q": "How can a large portfolio be organised?",
+                  "a": "In-house or external; balanced or specialist mandates; multi-manager; core-satellite.",
+                  "explain": "Syllabus 3.2.1."
+              },
+              {
+                  "q": "What is a balanced mandate?",
+                  "a": "One manager handles asset allocation and selection across classes.",
+                  "explain": "Simple."
+              },
+              {
+                  "q": "What are specialist mandates?",
+                  "a": "Separate managers for each asset class.",
+                  "explain": "Expertise."
+              },
+              {
+                  "q": "What is the typical structure of an institutional investment department?",
+                  "a": "CIO, asset allocation team, asset class teams, risk, operations, compliance.",
+                  "explain": "Syllabus 3.2.2."
+              },
+              {
+                  "q": "What are pros of in-house management?",
+                  "a": "Lower costs, control, alignment.",
+                  "explain": "Scale needed."
+              },
+              {
+                  "q": "What are cons of in-house management?",
+                  "a": "Talent, systems, governance costs.",
+                  "explain": "Scale."
+              },
+              {
+                  "q": "What is a multi-manager approach?",
+                  "a": "Using several managers to diversify manager risk.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "How are managers paid?",
+                  "a": "Ad valorem fees, performance fees.",
+                  "explain": "Alignment."
+              },
+              {
+                  "q": "What are performance fee issues?",
+                  "a": "Asymmetric incentives, high-water marks.",
+                  "explain": "Design."
+              },
+              {
+                  "q": "What operational risks do managers face?",
+                  "a": "Trading errors, compliance breaches, cyber.",
+                  "explain": "Controls."
+              },
+              {
+                  "q": "What is the role of compliance?",
+                  "a": "Ensuring mandates and regulations are followed.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "How do managers control investment risk?",
+                  "a": "Risk systems, limits, independent risk function.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is a mandate?",
+                  "a": "Agreement setting objectives, benchmark, constraints.",
+                  "explain": "Contract."
+              },
+              {
+                  "q": "What is investment governance?",
+                  "a": "Committees and processes overseeing investment decisions.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "How does technology affect managers?",
+                  "a": "Data, automation, product development.",
+                  "explain": "Syllabus 3.3."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Investment consulting",
+          "description": "The investment consulting role: manager research and selection, fund-of-funds, fiduciary management and outsourced CIOs, performance measurement services, investment governance advice, and conflicts of interest and regulation of consultants.",
+          "cards": [
+              {
+                  "q": "What do investment consultants do?",
+                  "a": "Advise on strategy, manager selection, monitoring, governance.",
+                  "explain": "Institutions."
+              },
+              {
+                  "q": "How are managers researched and selected?",
+                  "a": "Philosophy, process, people, performance, risk, fees, operational due diligence.",
+                  "explain": "4Ps."
+              },
+              {
+                  "q": "What is a fund-of-funds?",
+                  "a": "A fund investing in other funds.",
+                  "explain": "Diversification, extra fees."
+              },
+              {
+                  "q": "What is fiduciary management?",
+                  "a": "Delegating implementation (and some strategy) decisions to a provider.",
+                  "explain": "Syllabus 3.2.3."
+              },
+              {
+                  "q": "What is an outsourced CIO?",
+                  "a": "External provider acting as the investor's CIO.",
+                  "explain": "Delegation."
+              },
+              {
+                  "q": "What does a performance measurement service do?",
+                  "a": "Calculates returns, attribution, risk, and peer comparisons.",
+                  "explain": "Syllabus 3.2.4."
+              },
+              {
+                  "q": "What conflicts arise in consulting?",
+                  "a": "Advising on and selling fiduciary services.",
+                  "explain": "CMA remedies."
+              },
+              {
+                  "q": "What did the CMA investigation require?",
+                  "a": "Competitive tendering for fiduciary management and objectives for consultants (UK pensions).",
+                  "explain": "Regulation."
+              },
+              {
+                  "q": "How should fiduciary managers be evaluated?",
+                  "a": "Performance against objectives, fees, transparency.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "What is operational due diligence?",
+                  "a": "Assessing managers' operations, controls and risks.",
+                  "explain": "Selection."
+              },
+              {
+                  "q": "Why monitor managers?",
+                  "a": "Detect changes in people, process, performance.",
+                  "explain": "Ongoing."
+              },
+              {
+                  "q": "What is a manager watch list?",
+                  "a": "List of managers under review.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "How are consultants paid?",
+                  "a": "Fees (retainer, project).",
+                  "explain": "Conflicts."
+              },
+              {
+                  "q": "What governance advice do consultants give?",
+                  "a": "Structure of committees, delegation, policies.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What are limitations of performance measurement?",
+                  "a": "Short periods, benchmark choice, survivorship.",
+                  "explain": "Interpretation."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Problem solving",
+          "description": "Approaching SA7 questions: understanding the investor, objectives and constraints; applying frameworks to propose strategies and structures; evaluating managers and risks; and communicating clear, justified recommendations.",
+          "cards": [
+              {
+                  "q": "How should SA7 questions be approached?",
+                  "a": "Identify investor type, objectives, constraints, liabilities; propose and justify strategy.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "Which frameworks help?",
+                  "a": "Objectives/constraints, stakeholders, risk types, regulation, implementation.",
+                  "explain": "Breadth."
+              },
+              {
+                  "q": "Why consider liabilities?",
+                  "a": "Institutional strategy starts from liabilities.",
+                  "explain": "Liability benchmark."
+              },
+              {
+                  "q": "How to handle manager selection questions?",
+                  "a": "4Ps, fees, governance, fit with strategy.",
+                  "explain": "Criteria."
+              },
+              {
+                  "q": "How to discuss ESG?",
+                  "a": "Financial materiality, approaches, trade-offs.",
+                  "explain": "Topical."
+              },
+              {
+                  "q": "How to handle derivatives questions?",
+                  "a": "Purpose, instrument, risks, governance, collateral.",
+                  "explain": "Practical."
+              },
+              {
+                  "q": "What are common weaknesses?",
+                  "a": "Generic lists, not tailoring to investor, missing implementation issues.",
+                  "explain": "Examiners."
+              },
+              {
+                  "q": "How to present calculations?",
+                  "a": "Clear method, assumptions, interpretation.",
+                  "explain": "Marks."
+              },
+              {
+                  "q": "How to make recommendations?",
+                  "a": "Clear, justified, with alternatives.",
+                  "explain": "Advice."
+              },
+              {
+                  "q": "Why consider regulation?",
+                  "a": "Constraints on institutions and managers.",
+                  "explain": "Compliance."
+              },
+              {
+                  "q": "How to manage time?",
+                  "a": "Allocate by marks.",
+                  "explain": "Complete all."
+              },
+              {
+                  "q": "How to consider behavioural aspects?",
+                  "a": "Client biases and governance.",
+                  "explain": "Chapter 10."
+              },
+              {
+                  "q": "Why consider costs?",
+                  "a": "Fees reduce net returns.",
+                  "explain": "Value for money."
+              },
+              {
+                  "q": "How to structure a written advice answer?",
+                  "a": "Summary, analysis, recommendation, next steps.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "How can past papers help?",
+                  "a": "Show typical investors and marking.",
+                  "explain": "Practice."
+              }
+          ]
+      }
+  ],
   SP1: [
       {
           "id": "m01",
