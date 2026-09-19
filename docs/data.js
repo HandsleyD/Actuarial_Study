@@ -29515,545 +29515,2303 @@ const MODULES = {
       }
   ],
   SP7: [
-    {
-        "id": "m01",
-        "title": "What is Subject SP7 all about?",
-        "description": "An orientation chapter explaining SP7's role as the Specialist Principles subject introducing general insurance reserving and capital modelling technique, and how it feeds into SA3.",
-        "cards": [
-            {
-                "q": "What is the genuine aim of Subject SP7, echoing the SP-subject template established across this whole curriculum?",
-                "a": "To instil in successful candidates the ability to apply, in simple situations, the main principles and techniques of reserving and capital modelling that are relevant to general insurance business, building directly on the reserving and capital foundation developed in CS2.",
-                "explain": "Worth recognising this as the genuine, standard SP-subject aim structure — SP7 applies core reserving/capital <em>principles</em> to simple situations, with SA3 (which this course feeds into) applying that same underlying knowledge to complex scenarios."
-            },
-            {
-                "q": "Which subject does SP7 build directly on, given its heavy quantitative reserving and capital modelling content?",
-                "a": "CS2 (Risk Modelling and Survival Analysis), which provides the foundational stochastic reserving, generalised linear modelling, and simulation technique that SP7 develops specifically for general insurance reserving and capital modelling contexts.",
-                "explain": "Worth recognising CS2 as SP7's genuine <em>technical foundation</em> — SP7 does not re-teach stochastic modelling technique from scratch, it applies and extends CS2's own methods specifically to general insurance reserving and capital problems."
-            },
-            {
-                "q": "What are the five official syllabus topic areas of SP7, and their approximate topic weightings?",
-                "a": "General insurance products and general business environment (20%); Risk, uncertainty and regulation (15%); Reserving (30%); Capital modelling (17.5%); and Data, investigations, reinsurance and investment (17.5%).",
-                "explain": "Worth memorising these weightings directly — 'Reserving' at 30% is the single largest topic area, meaning fluency with reserving methods (chain ladder, Bornhuetter-Ferguson, stochastic approaches) deserves the greatest concentrated revision effort."
-            },
-            {
-                "q": "How does SP7 relate to SP8 (General Insurance Pricing Principles) as a pair of subjects covering general insurance actuarial technique?",
-                "a": "SP7 focuses on the <em>backward-looking</em> and <em>capital-focused</em> side of general insurance actuarial work — reserving for claims already incurred and modelling the capital needed to withstand adverse outcomes — while SP8 focuses on the <em>forward-looking</em> side — pricing future business appropriately; together they cover the two complementary technical pillars underlying general insurance actuarial practice.",
-                "explain": "Worth recognising SP7 and SP8 as <em>complementary</em>, not overlapping subjects — SP7's backward-looking reserving/capital focus and SP8's forward-looking pricing focus together span the full technical scope SA3 later applies to complex, integrated scenarios."
-            },
-            {
-                "q": "Why might SP7's heavy weighting toward 'Reserving' (30%) reflect general insurance's distinctive actuarial challenge compared with other insurance sectors, echoing SA3's material?",
-                "a": "General insurance claims (particularly longer-tail lines) can take years or decades to fully develop and settle, with genuine uncertainty about both the number and eventual size of claims, making sound reserving technique a central, high-stakes actuarial skill for this sector specifically, more so than for shorter-duration or more predictable insurance products.",
-                "explain": "This directly recalls SA3's greater-reserving-uncertainty material — worth recognising SP7's heavy reserving weighting as a direct, structural reflection of this genuine, sector-specific actuarial challenge."
-            },
-            {
-                "q": "According to the official SP-subject template, what is the approximate split of assessment across knowledge, application, and higher-order skills for SP7?",
-                "a": "Approximately 25% knowledge, 50% application, and 25% higher order — the same standard split shared across SP1, SP2, SP4 and SP6, despite SP7's technical, calculation-heavy subject matter.",
-                "explain": "Worth recognising that even SP7's calculation-intensive reserving and capital content still places the <em>majority</em> of assessment weight on <em>application</em> — practising genuine reserving calculations in realistic scenarios matters more than memorising formulas alone."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "General insurance products, classes of business and the underwriting cycle",
-        "description": "Covers general insurance products and classes of business, and the genuine phenomenon of the underwriting cycle, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why does understanding the genuine range of general insurance products and classes of business matter as a genuine foundation for sound reserving, echoing SA3's material?",
-                "a": "Different classes of business (e.g. motor, property, liability) carry different claim frequency, severity, and development characteristics, so a reserving actuary must understand these product-specific differences before selecting appropriate reserving methods and assumptions for each class.",
-                "explain": "This directly recalls SA3's product-classification material — worth recognising product/class understanding as the essential <em>precursor</em> to sound reserving, not a separate, unrelated topic from the reserving technique covered later in this course."
-            },
-            {
-                "q": "What is the 'underwriting cycle', and why does it matter for interpreting a general insurer's historical claims and premium experience?",
-                "a": "The underwriting cycle describes the genuine, recurring pattern of insurance market conditions moving between 'soft' phases (intense competition, lower premium rates, looser terms) and 'hard' phases (reduced competition, higher premium rates, tighter terms), meaning historical claims experience must be interpreted in light of <em>which</em> cycle phase it was written in, not treated as a uniform, comparable series across time.",
-                "explain": "Worth recognising the underwriting cycle as an important <em>contextual</em> factor when interpreting historical data for reserving — the same nominal premium or loss ratio can mean different things depending on the market cycle phase it reflects."
-            },
-            {
-                "q": "Why might the underwriting cycle affect the <em>reliability</em> of reserving methods that implicitly assume stable, consistent underlying conditions over the historical period being analysed?",
-                "a": "Reserving methods like the chain ladder (covered later in this course) implicitly assume consistent claims development patterns across accident years; if underwriting conditions have shifted materially between years (e.g. tighter underwriting terms in a hard market reducing claim frequency), this consistency assumption may be violated, requiring the reserving actuary to adjust for or investigate these cycle-driven shifts.",
-                "explain": "This directly previews this course's later chain-ladder-assumption material — worth recognising the underwriting cycle as a genuine, practical <em>threat</em> to standard reserving methods' core assumptions, not merely abstract market commentary."
-            },
-            {
-                "q": "Why might genuine competitive pressure during a 'soft' market phase create particular reserving risk for an insurer, beyond simply reduced premium income?",
-                "a": "Competitive pressure during a soft market can lead to looser underwriting standards or broader policy terms being accepted to retain market share, potentially creating worse-than-historical claims experience on business written during that period, a risk that may not become fully apparent until claims from that period mature years later.",
-                "explain": "Worth recognising soft-market business as carrying a genuine, <em>delayed</em> reserving risk — the true cost of looser underwriting standards accepted during a soft phase may not be fully visible until that business's claims have had time to fully develop."
-            },
-            {
-                "q": "Why might different classes of general insurance business (e.g. motor versus liability) experience the underwriting cycle with different intensity or timing?",
-                "a": "Different classes have different competitive dynamics, capital requirements, and claims characteristics, so market-wide cyclical pressures can manifest with different intensity and timing across classes, meaning a reserving actuary should assess cycle effects at the <em>class</em> level, not assume a single, uniform cycle applies identically across an insurer's whole book.",
-                "explain": "Worth recognising the underwriting cycle as requiring <em>class-specific</em> assessment, echoing this course's recurring theme that reserving and risk assessment should be conducted at an appropriately granular level, not aggregated too broadly."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "Long-tail versus short-tail business, and the wider commercial environment",
-        "description": "Covers the distinction between long-tail and short-tail business, occurrence versus claims-made policy wordings, latent claims, and the wider commercial environment shaping reserving, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the genuine distinction between 'short-tail' and 'long-tail' general insurance business, echoing SA3's material?",
-                "a": "Short-tail business (e.g. motor damage, property) typically has claims reported and settled relatively quickly after the triggering event, while long-tail business (e.g. liability, some latent disease claims) can have claims reported and settled many years, even decades, after the triggering event, creating greater reserving uncertainty for long-tail lines.",
-                "explain": "This directly recalls SA3's short-tail-versus-long-tail material — worth recognising claim <em>tail length</em> as the single most important classifying feature of a general insurance product for reserving purposes."
-            },
-            {
-                "q": "What is the genuine difference between an 'occurrence' policy wording and a 'claims-made' policy wording, and why does this distinction directly affect reserving?",
-                "a": "An occurrence policy covers claims arising from an event that <em>occurred</em> during the policy period, regardless of when the claim is eventually reported (potentially years later), while a claims-made policy covers claims <em>reported</em> during the policy period, regardless of when the underlying event occurred; this affects which policy period bears responsibility for a given claim, directly shaping how reserves should be allocated across accident/underwriting years.",
-                "explain": "Worth recognising this distinction as directly determining <em>which</em> policy year's reserves a given claim should be attributed to — an important, easily-overlooked technical point with direct reserving consequences."
-            },
-            {
-                "q": "Why might claims-made wordings reduce an insurer's exposure to 'long-tail' reserving uncertainty compared with occurrence wordings for the same underlying risk, echoing Module 2's material?",
-                "a": "Since a claims-made policy only covers claims <em>reported</em> during its own policy period, the insurer's exposure for that policy year is capped once the policy period (plus any extended reporting period) ends, unlike occurrence wordings where claims from events occurring in a given year could still emerge decades later, creating open-ended, long-tail reserving exposure for that same accident year.",
-                "explain": "This directly recalls Module 2's long-tail-reserving-risk material — worth recognising claims-made wordings as a genuine, deliberate <em>risk management</em> tool an insurer can use to limit its own long-tail reserving exposure, not merely an alternative administrative convention."
-            },
-            {
-                "q": "What is a 'latent claim', and why does it represent one of the most challenging reserving problems in general insurance, echoing SA3's material?",
-                "a": "A latent claim arises from an event or exposure that may not be reported as a claim until many years or decades later (e.g. certain industrial disease claims), meaning standard reserving techniques relying on a reasonably short, observable reporting pattern are poorly suited to estimating these claims' eventual number and cost, requiring different, more judgement-based reserving approaches.",
-                "explain": "This directly recalls SA3's latent-claims-reserving-challenge material — worth recognising latent claims as the most extreme, difficult example of the long-tail reserving challenge this whole subject addresses."
-            },
-            {
-                "q": "Why must a reserving actuary understand the 'wider commercial environment' shaping their insurer's business, rather than treating reserving as a purely technical, self-contained exercise?",
-                "a": "Genuine commercial factors — competitive pressures (Module 2's underwriting cycle material), regulatory and legal developments, economic conditions, and emerging risk trends — can all directly affect the genuine reliability of historical claims patterns as a guide to future development, so sound reserving requires genuine awareness of this wider context, not purely mechanical application of standard techniques to historical data.",
-                "explain": "This directly recalls Module 2's underwriting-cycle-context material — worth recognising commercial-environment awareness as an essential <em>complement</em> to the technical reserving methods covered later in this course, not a separate, disconnected topic."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "Reserving uncertainty, and model and parameter risk",
-        "description": "Covers systematic and independent reserving uncertainty, and model and parameter risk, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the genuine distinction between 'systematic' and 'independent' reserving uncertainty?",
-                "a": "Systematic uncertainty reflects genuine, correlated sources of error affecting an insurer's <em>whole</em> reserving estimate simultaneously (e.g. a wrong assumption about future claims inflation affecting all accident years together), while independent uncertainty reflects genuine, uncorrelated random variation specific to individual claims or accident years that would average out to some degree across a larger, more diversified book.",
-                "explain": "Worth recognising this distinction as directly analogous to CS2's and CS1's systematic-versus-diversifiable-risk material — systematic uncertainty cannot be diversified away by simply having more claims or accident years, while independent uncertainty can be, at least partially."
-            },
-            {
-                "q": "Why might systematic reserving uncertainty be <em>more</em> concerning to an insurer's overall solvency than independent uncertainty of a similar apparent magnitude?",
-                "a": "Since systematic uncertainty affects the <em>whole</em> reserve estimate in a correlated way, it cannot be diversified away across a larger book of business, meaning it directly translates into genuine, undiluted risk to the insurer's overall reserve adequacy, unlike independent uncertainty which reduces in relative significance as the book of business grows larger.",
-                "explain": "This directly recalls CS1's and CS2's diversification-benefit material — worth recognising systematic uncertainty as posing a more structural threat to reserve adequacy, a key reason capital modelling (covered later in this course) must explicitly capture this distinction."
-            },
-            {
-                "q": "What is 'model risk' in the context of general insurance reserving, and how does it differ from 'parameter risk'?",
-                "a": "Model risk is the genuine risk that the <em>chosen</em> reserving <em>method</em> (e.g. chain ladder versus Bornhuetter-Ferguson) is itself inappropriate for the specific data or situation, while parameter risk is the genuine risk that the <em>specific parameter values</em> used within an otherwise appropriately-chosen method (e.g. the development factors within a correctly-chosen chain ladder approach) are estimated inaccurately.",
-                "explain": "Worth recognising this as an important two-level distinction — a reserving estimate can be wrong because the <em>wrong method</em> was chosen (model risk), or because the <em>right method</em> was chosen but its <em>inputs</em> were estimated poorly (parameter risk), requiring different diagnostic and mitigation approaches."
-            },
-            {
-                "q": "Why might genuine model validation and back-testing be essential practices for managing both model risk and parameter risk together?",
-                "a": "Validation (checking a model's genuine appropriateness for the specific data and situation) and back-testing (checking how well a model's <em>past</em> predictions would have matched <em>subsequent</em> actual experience) together provide genuine, practical evidence about whether both the chosen method (model risk) and its calibrated parameters (parameter risk) are producing reliable results, rather than relying purely on theoretical model appropriateness.",
-                "explain": "Worth recognising validation and back-testing as the genuine, <em>practical safeguards</em> against both model and parameter risk simultaneously — theoretical model selection alone cannot substitute for checking how well a model's predictions have held up against real, subsequent experience."
-            },
-            {
-                "q": "Why might a sound reserving process require setting an explicit 'risk appetite' for reserving uncertainty, rather than simply aiming to minimise uncertainty as much as possible?",
-                "a": "Since reserving uncertainty (both systematic and independent) can never be eliminated entirely, a sound reserving process requires an explicit, deliberate decision about how much residual uncertainty and what level of prudence is acceptable, balancing the cost of excessive prudence (tying up capital unnecessarily) against the risk of inadequate reserves, rather than treating uncertainty minimisation as an unlimited, unconstrained objective.",
-                "explain": "This directly recalls SA1's and SA3's risk-appetite material — worth recognising risk appetite as requiring a genuine, deliberate <em>balance</em>, not simply pursuing minimum uncertainty as an end in itself regardless of the genuine cost of achieving it."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Professional standards and the Solvency II framework",
-        "description": "Covers the role of professional standards in reserving work, and the Solvency II three-pillar framework as it applies to general insurance reserving and capital, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why might a reserving actuary hold statutory responsibilities carrying genuine personal professional accountability, echoing SA1's and SA3's material?",
-                "a": "A statutory reserving role typically carries personal accountability for specific technical opinions (e.g. on reserve adequacy), meaning the individual actuary can face professional consequences distinct from, and sometimes in tension with, the insurer's own commercial interests in reporting favourable results.",
-                "explain": "This directly recalls SA1's and SA3's personal-accountability material — worth recognising this same principle as directly examinable at SP7's foundational level, not exclusively an SA3-level concept."
-            },
-            {
-                "q": "Why might a finance director pressuring a reserving actuary to adopt a more optimistic reserving basis for a long-tail liability account represent a genuine, directly examinable ethical scenario?",
-                "a": "Professional standards place the actuary's overriding duty on sound, honest technical judgement, meaning commercial pressure to adopt a particular basis does not override this obligation; the actuary should maintain a basis supported by the evidence, clearly document the reasoning, and escalate through appropriate channels if pressure continues, rather than adjusting the basis simply to satisfy the request.",
-                "explain": "This directly recalls SA3's identical ethical-scenario material — worth recognising this exact scenario type as a recurring, directly testable theme across every subject touching reserving work, from SP7's foundational level through to SA3's advanced level."
-            },
-            {
-                "q": "What are the three pillars of the Solvency II framework, echoing this course's recurring material across every insurance subject?",
-                "a": "Pillar 1 sets quantitative capital and technical provision requirements; Pillar 2 covers governance and risk management (including the insurer's own risk assessment); Pillar 3 covers public disclosure and reporting requirements — the same universal three-pillar structure applying identically across every insurance sector.",
-                "explain": "This directly recalls SA1's, SA2's and SA3's identical three-pillar material — worth recognising this structure as a universal Solvency II concept, examinable at SP7's foundational level for general insurance reserving and capital specifically."
-            },
-            {
-                "q": "Why does Solvency II's Pillar 2 governance requirement place particular emphasis on a general insurer's reserving process specifically, echoing SA3's material?",
-                "a": "Since general insurance reserves (particularly for longer-tail claims) involve genuine estimation uncertainty (Module 4's systematic/independent uncertainty and model/parameter risk material), sound governance around how reserves are set, reviewed, and challenged is essential to ensuring the reported technical provisions reflect the insurer's true liability position.",
-                "explain": "This directly recalls SA3's Pillar-2-reserving-governance material and Module 4's uncertainty material — worth recognising Pillar 2 governance as directly addressing this course's earlier uncertainty and model/parameter risk themes through genuine, practical oversight processes."
-            },
-            {
-                "q": "Why might Pillar 1's technical provisions for general insurance require both a best estimate liability <em>and</em> a risk margin, echoing this course's recurring Solvency II material?",
-                "a": "The best estimate liability reflects the genuine expected cost of claims, while the risk margin compensates for the genuine cost of holding capital against non-hedgeable reserving risk over the liability's remaining settlement period, together forming the total technical provisions a general insurer must hold under Pillar 1.",
-                "explain": "This directly recalls SA1's, SA2's and SA3's identical best-estimate-plus-risk-margin material — worth recognising this same two-component structure applying universally across every insurance sector's Solvency II technical provisions."
-            },
-            {
-                "q": "Why might Pillar 3's disclosure requirements be particularly important for stakeholders assessing a general insurer's genuine financial strength, given the reserving uncertainty this whole subject develops?",
-                "a": "Since general insurance reserves carry genuine, material estimation uncertainty (Module 4's material), transparent Pillar 3 disclosure of an insurer's reserving methodology, key assumptions, and sensitivity to those assumptions allows stakeholders to assess the reliability of the insurer's reported financial position, rather than taking a single reported reserve figure at face value.",
-                "explain": "This directly recalls Module 4's reserving-uncertainty material — worth recognising Pillar 3 disclosure as a direct, practical <em>response</em> to the genuine uncertainty this course's earlier module identified as inherent in general insurance reserving."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "The chain ladder method",
-        "description": "Covers the basic mechanics and assumptions of the chain ladder reserving method, per the official syllabus's largest topic area.",
-        "cards": [
-            {
-                "q": "What is the genuine basic mechanic of the chain ladder reserving method?",
-                "a": "The chain ladder method arranges historical claims data into a 'triangle' (accident year against development year), calculates genuine average development factors from the observed ratios between successive development periods, and applies these factors to the latest diagonal of known cumulative claims to project each accident year's claims forward to their genuine estimated ultimate value.",
-                "explain": "Worth recognising the chain ladder as this course's single most foundational reserving technique — the genuine starting point from which the more refined methods covered in later modules (Bornhuetter-Ferguson, Cape Cod, stochastic approaches) are all developed as extensions or alternatives."
-            },
-            {
-                "q": "What genuine assumption underlies the chain ladder method's use of <em>average</em> development factors calculated across multiple historical accident years?",
-                "a": "The chain ladder assumes that claims development <em>patterns</em> (the proportional relationship between cumulative claims at successive development periods) are consistent across different accident years, even though the absolute <em>level</em> of claims may differ between years — a crucial, sometimes violated assumption this course's later modules directly address.",
-                "explain": "Worth recognising this consistent-development-<em>pattern</em> assumption (not consistent claims <em>level</em>) as the chain ladder's genuine core assumption — worth distinguishing this precisely, since the method does <em>not</em> assume claims levels are the same across years, only that their development <em>shape</em> is."
-            },
-            {
-                "q": "Why might the chain ladder method's core consistency assumption be violated by the underwriting cycle effects covered in Module 2?",
-                "a": "If underwriting conditions have shifted materially between accident years (e.g. tighter terms in a hard market reducing claim frequency or altering claims development speed), the historical development pattern observed in older years may no longer represent how more recent, differently-underwritten years will develop, violating the chain ladder's core consistency assumption.",
-                "explain": "This directly recalls Module 2's underwriting-cycle-threatens-reserving-assumptions material — worth recognising this as a concrete, practical example of exactly the assumption violation that module warned about, now applied specifically to the chain ladder method."
-            },
-            {
-                "q": "Why might a genuine change in claims handling practice (e.g. faster claims settlement following a new case management process) directly distort chain ladder development factors, even without any genuine change in the underlying claims themselves?",
-                "a": "The chain ladder method relies on historical development <em>patterns</em> reflecting how claims typically emerge and settle over time; a genuine operational change in claims handling speed would alter this pattern going forward without reflecting any genuine change in the underlying claims experience itself, meaning historical development factors calculated from <em>pre</em>-change data could mislead if applied unadjusted to <em>post</em>-change years.",
-                "explain": "Worth recognising this as an important, practical <em>process risk</em> distinct from genuine changes in underlying claims experience — a reserving actuary must distinguish between changes in the <em>claims</em> themselves and changes in how they are <em>administered</em>, since only the chain ladder's core assumption is threatened by the latter, requiring genuine investigation and potential adjustment."
-            },
-            {
-                "q": "Why might the chain ladder method struggle to produce reliable estimates for the <em>most recent</em> accident years in a claims triangle, compared with older, more fully-developed years?",
-                "a": "The most recent accident years have fewer development periods of observed data, meaning their projection to ultimate relies on applying <em>larger</em> development factors to a <em>smaller</em>, less mature base of observed claims, amplifying the genuine impact of any random fluctuation or estimation error in those later development factors.",
-                "explain": "Worth recognising this as an important, practical <em>limitation</em> of the chain ladder — the method's reliability <em>decreases</em> for the most recent, least-developed accident years, precisely the years where a reserving estimate is often most commercially important."
-            },
-            {
-                "q": "How does this module's chain ladder material connect forward to Module 7's Bornhuetter-Ferguson and Cape Cod material?",
-                "a": "This module's genuine <em>limitation</em> for immature, recent accident years (relying heavily on large, potentially unreliable development factors) directly motivates the alternative methods covered next, which <em>blend</em> the chain ladder's own claims-based projection with an independent, external estimate (e.g. an a priori loss ratio) to produce more stable estimates for these less mature years.",
-                "explain": "This closing card ties this module directly to Module 7 — worth recognising the chain ladder's own genuine weaknesses (identified in this module) as the direct <em>motivation</em> for the blended methods developed next, not a separate, unrelated technique."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "The Bornhuetter-Ferguson and Cape Cod methods",
-        "description": "Covers the Bornhuetter-Ferguson and Cape Cod reserving methods as genuine alternatives and complements to the chain ladder, per the official syllabus.",
-        "cards": [
-            {
-                "q": "How does the Bornhuetter-Ferguson (BF) method address the chain ladder's identified weakness for immature, recent accident years, echoing Module 6's closing material?",
-                "a": "The BF method <em>blends</em> an independent, external a priori estimate of ultimate claims (e.g. from an expected loss ratio) with the chain ladder's own claims-based projection, weighting the a priori estimate more heavily for immature years (where genuine chain-ladder-implied development factors are least reliable) and the chain-ladder-based estimate more heavily as a year matures and more claims data becomes available.",
-                "explain": "This directly recalls Module 6's chain-ladder-immature-year-weakness material — worth recognising BF as the direct, genuine <em>solution</em> to that identified problem: blending in external information specifically where the chain ladder alone is least reliable."
-            },
-            {
-                "q": "What genuine <em>input</em> does the Bornhuetter-Ferguson method require beyond the historical claims triangle the chain ladder alone needs?",
-                "a": "BF requires an independent a priori estimate of ultimate claims for each accident year (e.g. derived from an expected loss ratio applied to that year's earned premium), an external input not needed by the chain ladder method, which relies purely on the claims triangle's own internal development pattern.",
-                "explain": "Worth recognising this <em>external</em> a priori estimate as BF's distinguishing <em>input</em> requirement — a reserving actuary must have, or be able to derive, this additional information beyond the claims data alone to apply BF, unlike the self-contained chain ladder."
-            },
-            {
-                "q": "Why might the <em>quality</em> of the a priori estimate used in Bornhuetter-Ferguson matter more for immature accident years than for mature ones, echoing the method's own weighting logic?",
-                "a": "Since BF weights the a priori estimate most heavily precisely for immature years, a poor a priori estimate would have its <em>greatest</em> distorting effect on exactly those immature years, while for mature years (where the chain-ladder-based component dominates the blend) a poor a priori estimate would have comparatively little effect on the final result.",
-                "explain": "Worth recognising this as an important practical implication of BF's own weighting mechanism — the <em>method</em>'s reliability for immature years depends directly on the <em>quality</em> of an input (the a priori estimate) that itself requires genuine judgement and external information to set well."
-            },
-            {
-                "q": "What is the genuine Cape Cod method, and how does it differ from Bornhuetter-Ferguson in how it derives its a priori estimate?",
-                "a": "Rather than using an <em>externally-supplied</em> a priori estimate (as BF does), the Cape Cod method derives its a priori loss ratio <em>directly from</em> the insurer's own historical claims and premium data, calculating an internally-consistent expected loss ratio by combining information across multiple accident years, reducing (though not eliminating) reliance on a purely external assumption.",
-                "explain": "Worth recognising Cape Cod as a genuine, practical <em>hybrid</em> — it retains BF's blending logic but derives the a priori component more <em>objectively</em> from the insurer's own data, reducing the genuine subjectivity Module 7's earlier BF material identified in selecting an external a priori estimate."
-            },
-            {
-                "q": "Why might a reserving actuary apply <em>both</em> the chain ladder and Bornhuetter-Ferguson/Cape Cod methods to the same data, rather than selecting a single 'best' method upfront?",
-                "a": "Comparing results across different methods provides a useful practical <em>cross-check</em>, revealing whether the methods' results are converging (supporting confidence in the estimate) or diverging materially (signalling a genuine need for further investigation into why the methods disagree), rather than relying on the output of any single method in isolation.",
-                "explain": "This directly recalls this course's recurring cross-check-and-reasonableness-checking theme — worth recognising multi-method comparison as a valuable diagnostic practice, not merely an academic exercise in comparing techniques."
-            },
-            {
-                "q": "How do the chain ladder, Bornhuetter-Ferguson and Cape Cod methods together illustrate a genuine spectrum of reliance on external, a priori information versus purely claims-triangle-derived information?",
-                "a": "The chain ladder relies <em>purely</em> on the claims triangle's own internal development pattern with no external a priori input; Cape Cod derives its a priori estimate from the insurer's own broader historical data (a partial external input, but self-derived); Bornhuetter-Ferguson uses a fully <em>external</em> a priori estimate — together forming a genuine spectrum from purely internal to more externally-informed reserving approaches.",
-                "explain": "This closing card ties Modules 6-7 together explicitly — worth recognising these three methods as occupying different points along a genuine spectrum of reliance on external information, not three entirely unrelated, independent techniques."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Average cost per claim, IBNR/IBNER, tail factors and claims inflation",
-        "description": "Covers the average cost per claim reserving method, IBNR and IBNER, tail factors, and the treatment of claims inflation, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the 'average cost per claim' (ACPC) reserving method, and how does it differ in approach from the chain ladder's aggregate claims-triangle method?",
-                "a": "The ACPC method separately projects the genuine <em>number</em> of claims expected to ultimately be reported and the genuine <em>average cost</em> per claim, then multiplies these two separately-projected figures together to estimate total ultimate claims, rather than the chain ladder's approach of directly projecting <em>aggregate</em> claim amounts as a single combined figure.",
-                "explain": "Worth recognising ACPC's genuine <em>decomposition</em> into frequency and severity components as its key distinguishing feature — this separates two distinct underlying drivers (how many claims, and how much each costs) that the chain ladder's aggregate approach combines into a single, less granular figure."
-            },
-            {
-                "q": "Why might decomposing claims into frequency (claim count) and severity (average cost) components, as ACPC does, reveal insight the chain ladder's aggregate approach might miss?",
-                "a": "Frequency and severity can be driven by different underlying factors and can move in different directions (e.g. claim frequency falling while average severity rises due to claims inflation), so decomposing them allows a reserving actuary to investigate and understand each driver separately, rather than seeing only their combined, potentially offsetting net effect in an aggregate figure.",
-                "explain": "This directly recalls SA3's frequency-severity-decomposition material — worth recognising this same principle of separating distinct underlying drivers as applying directly to reserving method choice, not just to pricing analysis."
-            },
-            {
-                "q": "What does 'IBNR' stand for, and what distinct category of claims does it represent?",
-                "a": "IBNR stands for 'Incurred But Not Reported' — claims that have already occurred (been incurred) but which the insurer has not yet been notified of, representing a genuine, entirely <em>unknown</em> future liability that must be estimated using reserving technique rather than known from any currently-held claim record.",
-                "explain": "Worth recognising IBNR as representing claims the insurer doesn't yet know <em>about at all</em> — a different category from claims already reported but not yet fully settled, covered by the related IBNER concept next."
-            },
-            {
-                "q": "What does 'IBNER' stand for, and how does it differ from IBNR?",
-                "a": "IBNER stands for 'Incurred But Not Enough Reported' (or 'Incurred But Not Enough Reserved') — claims the insurer already knows about and has an existing case reserve for, but where that existing reserve may prove insufficient as the claim continues to develop, distinct from IBNR's entirely unknown, not-yet-reported claims.",
-                "explain": "Worth recognising IBNR and IBNER as addressing two different reserving gaps — IBNR concerns claims the insurer doesn't yet <em>know</em> about, while IBNER concerns claims the insurer <em>does</em> know about but may have under-<em>reserved</em> for."
-            },
-            {
-                "q": "What is a 'tail factor', and why might a reserving actuary need to apply one beyond the final observed development period in a claims triangle?",
-                "a": "A tail factor extends a chain-ladder-style projection <em>beyond</em> the last development period actually observed in the data, capturing genuine, further expected claims development that the triangle's own limited historical data does not yet show, particularly important for long-tail lines where claims can continue developing for many years beyond the observed data window.",
-                "explain": "This directly recalls Module 3's long-tail-business material — worth recognising the tail factor as a necessary <em>extrapolation</em> beyond available data, requiring particular actuarial judgement given the inherent lack of direct observed evidence for this extended period."
-            },
-            {
-                "q": "Why must claims inflation be and explicitly incorporated into reserving projections, rather than assumed to be implicitly captured within standard development factors?",
-                "a": "If claims inflation varies over time (e.g. accelerating due to rising medical or repair costs), development factors calculated from <em>historical</em> periods with different inflation experience may not reflect the inflation rate expected to apply to <em>future</em> claims payments, requiring explicit, separate treatment of claims inflation rather than assuming historical development factors implicitly and correctly capture future inflation trends.",
-                "explain": "Worth recognising claims inflation as a distinct assumption requiring <em>explicit</em>, separate consideration — implicitly assuming historical development patterns will simply continue can silently embed an outdated inflation assumption without the reserving actuary realising it."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "Stochastic reserving: the Mack model",
-        "description": "Covers the Mack model as a stochastic approach quantifying the uncertainty around chain-ladder-style reserve estimates, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why do the reserving methods covered in Modules 6-8 (chain ladder, Bornhuetter-Ferguson, Cape Cod, ACPC) share a genuine limitation that stochastic reserving methods like Mack directly address?",
-                "a": "These earlier methods each produce a single, deterministic <em>point estimate</em> of ultimate claims, without quantifying the <em>range</em> of uncertainty around that estimate, while stochastic methods explicitly model this uncertainty, producing a genuine probability distribution (or at least a standard error) around the reserve estimate, not just a single central figure.",
-                "explain": "This directly recalls Module 4's reserving-uncertainty material — worth recognising stochastic methods as the genuine, technical <em>mechanism</em> for quantifying the uncertainty Module 4 conceptually introduced, moving from acknowledging uncertainty exists to actually <em>measuring</em> it."
-            },
-            {
-                "q": "What is the Mack model, and what genuine relationship does it have to the standard chain ladder method?",
-                "a": "The Mack model is a stochastic model that reproduces the <em>same</em> central reserve estimates as the standard chain ladder method, while additionally providing a genuine estimate of the <em>standard error</em> (and hence a measure of uncertainty) around those chain ladder estimates, without requiring a full distributional assumption for the underlying claims.",
-                "explain": "Worth recognising the Mack model's genuine relationship to the standard chain ladder as <em>additive</em>, not replacing it — Mack reproduces the <em>same</em> point estimates while adding genuine uncertainty quantification on top."
-            },
-            {
-                "q": "Why might the Mack model be considered valuable precisely because it does <em>not</em> require a full distributional assumption for the underlying claims, unlike some other stochastic approaches?",
-                "a": "Many realistic claims processes don't neatly follow simple, well-known probability distributions, so a method that can estimate uncertainty <em>without</em> committing to a specific, potentially wrong distributional assumption offers genuine robustness — the Mack model achieves this by working with the <em>first and second moments</em> (mean and variance) of the underlying process, rather than its full distribution.",
-                "explain": "Worth recognising this as an important practical <em>advantage</em> — avoiding a strong distributional assumption reduces the genuine model risk (Module 4's material) of that specific assumption being wrong for the actual data being analysed."
-            },
-            {
-                "q": "What genuine assumptions does the Mack model make about the variance of claims development, beyond the chain ladder's own core consistency assumption?",
-                "a": "The Mack model assumes that the variance of claims development at each development period is proportional to the cumulative claims observed at the start of that period (scaled by an estimated variance parameter specific to that development period), a specific, testable assumption about how uncertainty scales with claim size across the development process.",
-                "explain": "Worth recognising this variance-proportionality assumption as an <em>additional</em>, <em>testable</em> assumption beyond the chain ladder's own core development-pattern-consistency assumption (Module 6's material) — Mack requires this extra assumption specifically to derive its genuine uncertainty estimates."
-            },
-            {
-                "q": "Why might a reserving actuary value the Mack model's standard error output when communicating reserve estimates to stakeholders, echoing this course's recurring communication themes?",
-                "a": "Presenting a reserve estimate alongside a genuine measure of its uncertainty (e.g. a range or standard error) gives stakeholders a more complete, honest picture of the estimate's reliability than a single point figure alone, supporting more informed decision-making about capital adequacy and risk appetite than a false sense of precision from an unqualified single number.",
-                "explain": "This directly recalls SA1's and CP1's genuine-range-over-false-precision material — worth recognising the Mack model's uncertainty output as directly supporting this whole curriculum's recurring emphasis on honest, uncertainty-aware communication."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Stochastic reserving: the ODP bootstrap",
-        "description": "Covers the over-dispersed Poisson (ODP) bootstrap method as a further stochastic reserving approach, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the 'over-dispersed Poisson' (ODP) model, and why is 'over-dispersion' necessary beyond a standard Poisson assumption for modelling claims development?",
-                "a": "A standard Poisson distribution assumes its variance equals its mean, but real claims data typically exhibits <em>greater</em> variance than a standard Poisson would predict (genuine 'over-dispersion'), so the ODP model introduces an additional scaling parameter allowing variance to exceed the mean, providing a more realistic fit to actual claims data's typically greater-than-Poisson variability.",
-                "explain": "Worth recognising over-dispersion as addressing a genuine, commonly-observed <em>empirical feature</em> of real claims data — a standard, unmodified Poisson assumption would understate the true variability actually observed in practice."
-            },
-            {
-                "q": "What is 'bootstrapping' as a genuine statistical technique, and how is it applied within the ODP bootstrap reserving method?",
-                "a": "Bootstrapping resamples (with replacement) from a set of observed data points (here, the residuals from an initial ODP model fit to the claims triangle) to generate many simulated alternative 'pseudo-triangles', each producing its own chain-ladder-style reserve estimate; repeating this process many times builds up a genuine, empirical <em>distribution</em> of possible reserve outcomes.",
-                "explain": "This directly recalls CS1's and CS2's bootstrapping material — worth recognising the ODP bootstrap as a direct, practical <em>application</em> of general bootstrapping technique specifically to the reserving problem, building a genuine empirical distribution rather than relying on a purely analytical formula."
-            },
-            {
-                "q": "Why might the ODP bootstrap method be considered more flexible than the Mack model in the type of output it can produce?",
-                "a": "Since the ODP bootstrap generates a full empirical <em>distribution</em> of simulated reserve outcomes (via repeated resampling), it can directly provide genuine percentiles, full distributional shape information, and other risk measures beyond a simple standard error, while the Mack model's analytical approach provides only the first two moments (mean and variance) without a full distributional picture.",
-                "explain": "This directly recalls Module 9's Mack-model-limitations material — worth recognising the ODP bootstrap as offering a <em>richer</em> output (full distribution) at the cost of requiring more computational simulation, compared with Mack's simpler, purely analytical mean/variance output."
-            },
-            {
-                "q": "Why might residuals from the initial ODP model fit require genuine adjustment (e.g. for degrees of freedom) before being used in the bootstrap resampling process?",
-                "a": "Raw residuals from a fitted model can understate the <em>true</em> underlying variability, since fitting a model to data inherently 'uses up' some of that variability in estimating the model's own parameters, so an adjustment (e.g. scaling residuals to reflect the genuine degrees of freedom used) helps ensure the bootstrap resampling process produces a realistic, not artificially narrow, range of simulated outcomes.",
-                "explain": "Worth recognising this as an important <em>technical refinement</em> — a naive, unadjusted bootstrap could understate the true reserve uncertainty by resampling from residuals that are artificially too small relative to the genuine underlying variability."
-            },
-            {
-                "q": "How do the Mack model and the ODP bootstrap together illustrate a genuine choice between analytical and simulation-based approaches to stochastic reserving, connecting back to Module 9?",
-                "a": "The Mack model provides an analytical, closed-form estimate of the mean and variance without requiring simulation, while the ODP bootstrap relies on repeated simulation to build up an empirical distribution — together illustrating the <em>same</em> analytical-versus-simulation choice this course's earlier derivative-pricing material (in SP6) also develops, just applied to reserving uncertainty rather than derivative valuation.",
-                "explain": "This closing card ties Modules 9-10 together, echoing this course's broader analytical-versus-numerical-methods theme — worth recognising these two stochastic reserving approaches as occupying complementary positions on the same analytical-versus-simulation spectrum this whole curriculum returns to repeatedly."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Internal models versus the standard formula",
-        "description": "Covers the genuine choice between an internal capital model and the Solvency II standard formula for a general insurer, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the genuine trade-off between using the Solvency II standard formula and developing an internal capital model, echoing this course's recurring material?",
-                "a": "An internal model can better reflect the insurer's own genuine risk profile than a generic standard formula calibrated across the whole industry, potentially producing a more risk-sensitive (and possibly lower) capital requirement, though this requires regulatory approval and significant development investment, a trade-off recurring identically across every insurance sector this curriculum covers.",
-                "explain": "This directly recalls SA1's, SA2's and SA3's identical standard-formula-versus-internal-model material — worth recognising this as a universal Solvency II choice, examinable at SP7's foundational level for general insurance specifically."
-            },
-            {
-                "q": "Why might the standard formula's genuine, industry-wide calibration be particularly poorly suited to capturing a general insurer's <em>specific</em> catastrophe risk exposure, echoing SA3's material?",
-                "a": "The standard formula's catastrophe risk module reflects <em>generic</em>, industry-average assumptions about catastrophe exposure, while a specific insurer's <em>actual</em> geographic concentration and specific perils covered can differ materially from this industry average, making an internal model's more tailored catastrophe assessment particularly valuable for insurers with unusual or concentrated catastrophe exposure profiles.",
-                "explain": "This directly recalls SA3's catastrophe-modelling material — worth recognising catastrophe risk specifically as one of the clearest, most commonly-cited examples of where standard formula genericness can diverge from an insurer's true, specific risk profile."
-            },
-            {
-                "q": "Why might developing an internal capital model require genuine, ongoing validation and governance, beyond the initial approval process?",
-                "a": "An internal model's genuine reliability depends on its underlying assumptions and calibration remaining appropriate over time, so ongoing validation (checking the model continues to reflect the insurer's actual risk profile as the business evolves) and sound governance around model changes are essential, echoing this course's recurring model-risk and validation themes from earlier modules.",
-                "explain": "This directly recalls Module 4's model-validation material — worth recognising that an internal model's genuine value depends on <em>ongoing</em> maintenance and validation, not simply on achieving initial regulatory approval."
-            },
-            {
-                "q": "Why might a smaller general insurer reasonably choose to remain on the standard formula rather than developing an internal model, echoing this course's proportionality theme?",
-                "a": "Developing and maintaining an internal model requires significant actuarial and technical resources, so for a smaller insurer whose risk profile does not diverge dramatically from the industry-average assumptions underlying the standard formula, the genuine cost of internal model development may reasonably outweigh the potential benefit of a more tailored capital calculation.",
-                "explain": "This directly recalls SA1's proportionality material — worth recognising the standard-formula-versus-internal-model choice as itself a genuine <em>proportionality</em> decision, not simply 'internal models are always better' — the right choice depends on the insurer's specific circumstances and resources."
-            },
-            {
-                "q": "Why might a 'partial internal model' represent a genuine middle ground between the full standard formula and a full internal model?",
-                "a": "A partial internal model allows an insurer to develop tailored internal modelling for <em>specific</em> risk modules where its own risk profile most diverges from standard formula assumptions (e.g. catastrophe risk), while continuing to use the standard formula for other, less distinctive risk modules, balancing genuine development effort against the areas where tailored modelling adds the most value.",
-                "explain": "Worth recognising the partial internal model as a <em>practical</em>, proportionate compromise — an insurer need not choose between an all-or-nothing full standard formula or full internal model, but can target internal modelling effort specifically where it matters most."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Copulas, diversification and capital allocation",
-        "description": "Covers the use of copulas for risk aggregation, quantifying diversification benefit, and allocating capital across risk sources, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is a 'copula', and why is it necessary for aggregating multiple risk sources within a capital model, echoing CS2's material?",
-                "a": "A copula models the <em>dependence structure</em> between multiple random variables (e.g. different risk sources) <em>separately</em> from each variable's own individual (marginal) distribution, allowing a capital model to combine risks with realistic, potentially non-linear dependence patterns rather than assuming either full independence or simple linear correlation, which often poorly represents genuine real-world risk relationships.",
-                "explain": "This directly recalls CS2's copula and dependence-modelling material — worth recognising copulas as the genuine, technical <em>solution</em> to aggregating multiple risk sources whose true dependence structure is more complex than simple correlation can capture."
-            },
-            {
-                "q": "Why might genuine 'tail dependence' between risk sources be a particularly important consideration when choosing an appropriate copula for capital aggregation?",
-                "a": "Some risk sources can appear only weakly correlated under <em>normal</em> conditions but become much more strongly correlated during <em>extreme</em>, tail events (e.g. multiple lines of business all suffering simultaneously during a severe economic crisis), so a copula capturing this genuine tail dependence provides a more realistic picture of aggregate capital need under stress than one assuming constant, moderate correlation throughout.",
-                "explain": "This directly recalls CS2's extreme-value and tail-dependence material — worth recognising tail dependence as a <em>critical</em> consideration for capital modelling specifically, since capital is precisely meant to protect against extreme, tail outcomes where naive correlation assumptions can most severely understate true aggregate risk."
-            },
-            {
-                "q": "What is 'diversification benefit' in the context of capital modelling, and why does it reduce an insurer's aggregate capital requirement below the simple <em>sum</em> of its individual risk sources' standalone capital requirements?",
-                "a": "Since different risk sources are not perfectly correlated, adverse outcomes across all sources simultaneously at their individual worst-case levels are <em>less likely</em> than each source's own individual worst case occurring in isolation, so the insurer's genuine aggregate capital requirement (reflecting this less-than-perfect correlation) is typically <em>lower</em> than the simple sum of each risk source's standalone capital requirement.",
-                "explain": "This directly recalls CS1's and CM2's diversification-benefit material — worth recognising diversification benefit as the genuine, quantifiable <em>reward</em> for holding a diversified portfolio of risks, directly incentivising insurers to maintain diversified books of business."
-            },
-            {
-                "q": "What genuine methods might be used to allocate an insurer's total, diversified capital requirement back down to individual risk sources or business lines, echoing SA7's material?",
-                "a": "Capital allocation methods (e.g. the Euler/gradient allocation principle, or simpler proportional allocation based on standalone capital) distribute the insurer's total capital requirement (<em>after</em> diversification benefit) across its individual risk sources or business lines, supporting risk-adjusted performance assessment and pricing decisions at a more granular level than the total company figure alone allows.",
-                "explain": "This directly recalls SA7's Euler-principle capital allocation material — worth recognising capital allocation as the genuine, practical <em>next step</em> after calculating total diversified capital: distributing that total back down to inform granular, business-line-level decisions."
-            },
-            {
-                "q": "Why might allocating capital using the Euler (gradient) principle be considered more theoretically sound than a simple proportional allocation based on standalone capital requirements?",
-                "a": "The Euler principle allocates capital based on each risk source's genuine <em>marginal</em> contribution to the total, diversified capital requirement (accounting for how that source's risk interacts with all others), while simple proportional allocation ignores these genuine interaction effects, potentially over- or under-allocating capital to business lines whose risk is more or less correlated with the rest of the portfolio than their standalone size alone would suggest.",
-                "explain": "Worth recognising the Euler principle's genuine theoretical advantage as capturing each risk source's true <em>marginal</em>, diversification-adjusted contribution, rather than a cruder allocation based purely on standalone size that ignores genuine correlation effects."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "Value at Risk and Tail Value at Risk for SCR and technical provisions",
-        "description": "Covers applying Value at Risk and Tail Value at Risk to the Solvency Capital Requirement and technical provisions, per the official syllabus.",
-        "cards": [
-            {
-                "q": "How does Solvency II's SCR calculation apply the Value at Risk (VaR) concept, echoing this course's recurring VaR material?",
-                "a": "Solvency II's SCR is calibrated to a 99.5% VaR over a one-year horizon, meaning the SCR represents the capital needed so that the insurer's basic own funds would remain non-negative with 99.5% confidence over the following year — a direct, specific application of the general VaR concept to regulatory capital setting.",
-                "explain": "This directly recalls SA1's, SA7's and SP5's VaR material — worth recognising the SCR's precise 99.5% one-year calibration as a concrete, memorable application of the general VaR concept this whole curriculum develops repeatedly."
-            },
-            {
-                "q": "What is 'Tail Value at Risk' (TVaR), and how does it address VaR's well-known weakness of saying nothing about losses <em>beyond</em> the VaR threshold, echoing this course's recurring material?",
-                "a": "TVaR (also called expected shortfall) measures the <em>average</em> loss <em>given that</em> the loss exceeds the VaR threshold, directly capturing genuine information about the <em>severity</em> of losses in the tail beyond VaR, addressing VaR's well-documented weakness of providing no information about how much worse losses could be once the threshold is breached.",
-                "explain": "This directly recalls SA1's, SA7's and SP5's VaR-limitation material — worth recognising TVaR as the genuine, direct <em>solution</em> to VaR's most commonly-cited weakness, now specifically applied to Solvency II capital and technical provisions context."
-            },
-            {
-                "q": "Why might TVaR be considered a more 'coherent' risk measure than VaR, echoing SA7's and CS2's material?",
-                "a": "TVaR satisfies the mathematical property of 'sub-additivity' (the risk measure of a combined portfolio is never greater than the sum of its individual components' risk measures, correctly reflecting genuine diversification benefit), while VaR can, in certain circumstances, <em>violate</em> this property, producing the counter-intuitive result that diversification appears to <em>increase</em> measured risk under VaR.",
-                "explain": "This directly recalls CS2's and SA7's coherent-risk-measure material — worth recognising sub-additivity as the specific, technical mathematical property distinguishing TVaR's genuine coherence advantage over VaR, not merely a vague sense that TVaR is 'better'."
-            },
-            {
-                "q": "Why might technical provisions (Module 5's material) also draw on VaR-style concepts, distinct from the SCR's own VaR-based calibration?",
-                "a": "The risk margin component of technical provisions can draw on VaR-based capital concepts (since it compensates for the cost of holding capital, itself calibrated using VaR-style risk measures) to determine the genuine capital cost being compensated for, showing how the <em>same</em> underlying risk-measurement concept (VaR) can feed into both the SCR calculation <em>and</em> the technical provisions calculation, via different but related mechanisms.",
-                "explain": "This directly recalls Module 5's technical-provisions material — worth recognising VaR-based thinking as <em>pervasive</em> across Solvency II's whole framework, connecting the SCR and technical provisions calculations rather than being confined to capital alone."
-            },
-            {
-                "q": "How do this module's VaR/TVaR material and Module 12's copula/diversification material together illustrate a coherent capital modelling process, connecting Module 11's model-choice material?",
-                "a": "Module 11 establishes the genuine choice of <em>model</em> (standard formula versus internal); Module 12 develops how <em>multiple</em> risk sources are aggregated within that chosen model using copulas, capturing genuine diversification benefit; this module shows how the resulting <em>aggregate</em> risk distribution is translated into concrete capital figures (SCR, technical provisions) using VaR/TVaR-based risk measures — together forming a coherent, end-to-end capital modelling process.",
-                "explain": "This closing card ties Modules 11-13 together explicitly, echoing Module 1's topic-weighting material — worth recognising this three-module sequence as tracing SP7's 'Capital modelling' topic area from initial model <em>choice</em>, through risk <em>aggregation</em>, to final capital <em>quantification</em>."
-            }
-        ]
-    },
-    {
-        "id": "m14",
-        "title": "Data validation and actuarial investigations",
-        "description": "Covers the use of data and key actuarial investigations in reserving and capital modelling, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why must data validation be the <em>first</em> step in any reserving or capital modelling exercise, echoing this course's recurring data-as-foundational-risk theme?",
-                "a": "Since every reserving method covered in this course (chain ladder, Bornhuetter-Ferguson, stochastic approaches) relies directly on the genuine accuracy and completeness of the underlying claims data, poor data quality can silently undermine even the most technically sophisticated reserving or capital calculation, making data validation an essential <em>precondition</em>, not an optional add-on step.",
-                "explain": "This directly recalls SP1's and SP2's data-as-foundational-risk material — worth recognising this same principle applying with particular force to reserving, given how directly reserving methods depend on the genuine accuracy of historical claims triangles."
-            },
-            {
-                "q": "What genuine checks might a reserving actuary perform as part of data validation before applying reserving methods to a claims triangle?",
-                "a": "Checks might include reconciling the claims data against the insurer's own financial accounting records, checking for genuine consistency in how claims have been coded and categorised over time, identifying any genuine large or unusual individual claims that might distort aggregate development patterns, and confirming genuine completeness of the data across all relevant accident and development periods.",
-                "explain": "Worth recognising these as <em>practical</em>, concrete validation steps — a strong exam answer discussing data validation should demonstrate awareness of specific, actionable checks, not merely assert that 'data should be validated'."
-            },
-            {
-                "q": "What genuine 'actuarial investigations' might a reserving actuary undertake to support and inform their reserving assumptions, beyond the mechanical application of a chosen method?",
-                "a": "Investigations might include analysing large claims individually to understand their specific drivers, investigating genuine changes in claims handling processes or case reserving philosophy that could distort development patterns, and comparing actual experience against previous reserving assumptions to identify genuine emerging trends requiring assumption revision.",
-                "explain": "This directly recalls Module 8's IBNR/IBNER material and Module 6's claims-handling-process-change material — worth recognising these investigations as directly supporting and validating the specific reserving concepts already covered earlier in this course."
-            },
-            {
-                "q": "Why might a reserving actuary investigate the <em>cause</em> of an observed experience variance, rather than simply adjusting future assumptions immediately after any single adverse deviation?",
-                "a": "A single period's adverse variance could reflect genuine random fluctuation, a genuine one-off event, or a persistent underlying trend, so investigating the underlying <em>cause</em> before revising assumptions avoids both over-reacting to noise and under-reacting to an important emerging trend, echoing this course's recurring statistical-significance judgement theme.",
-                "explain": "This directly recalls SP1's and SP2's random-fluctuation-versus-trend material — worth recognising this same judgement discipline applying directly to general insurance reserving investigations specifically."
-            },
-            {
-                "q": "How do genuine data validation and actuarial investigations feed directly into the capital modelling topic area covered in Modules 11-13?",
-                "a": "Since capital modelling depends on the same underlying reserving estimates and uncertainty measures this data-quality and investigation work supports, poor data quality or unvalidated reserving assumptions would directly propagate into an unreliable capital calculation, meaning sound data validation and investigation practice underpins the whole reserving-to-capital pipeline this course develops, not just the reserving topic area in isolation.",
-                "explain": "This closing card ties this module back to Modules 6-13 explicitly — worth recognising data validation and investigation as the genuine <em>foundation</em> supporting <em>both</em> this course's reserving topic area <em>and</em> its capital modelling topic area together, not a separate, standalone concern."
-            }
-        ]
-    },
-    {
-        "id": "m15",
-        "title": "Reinsurance programme modelling and counterparty default risk",
-        "description": "Covers modelling proportional and non-proportional reinsurance programmes, and counterparty default risk for general insurers, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why must a reserving actuary model reinsurance recoveries <em>explicitly</em>, rather than simply reserving for <em>gross</em> claims and treating reinsurance as a separate consideration, echoing SA3's material?",
-                "a": "Since reinsurance recoveries reduce the insurer's own <em>net</em> liability, and different reinsurance structures (quota share, surplus, excess of loss) recover in different ways relative to the underlying gross claims, explicitly modelling the reinsurance programme's genuine recovery mechanics is essential to producing an accurate <em>net</em> reserve estimate, not merely a gross one requiring separate, informal adjustment.",
-                "explain": "This directly recalls SA3's reinsurance-structure material — worth recognising <em>net</em> reserving as requiring genuine, explicit modelling of the specific reinsurance programme's recovery mechanics, not an afterthought applied loosely to a gross estimate."
-            },
-            {
-                "q": "Why might modelling a proportional reinsurance treaty's (e.g. quota share) recoveries be more straightforward than modelling a non-proportional treaty's (e.g. excess of loss) recoveries?",
-                "a": "A proportional treaty cedes a <em>fixed proportion</em> of every claim, so recoveries scale directly and predictably with gross claims, while a non-proportional treaty's recoveries depend on whether and by how much <em>aggregate</em> or <em>individual</em> claims exceed a specified threshold, requiring more complex modelling of the claims <em>distribution</em> (not just its total) to estimate recoveries accurately.",
-                "explain": "This directly recalls SA1's and SA3's reinsurance-structure-comparison material — worth recognising this same <em>proportional</em>-versus-<em>non-proportional</em> complexity distinction applying directly to reserving/recovery modelling, not just to the initial reinsurance purchasing decision."
-            },
-            {
-                "q": "Why might modelling a non-proportional treaty's recoveries require understanding the <em>full</em> claims severity distribution, not just the aggregate claims total?",
-                "a": "Since excess of loss recoveries depend on whether <em>individual</em> claims (or aggregate claims from a specific event) exceed a specified threshold, an actuary must understand how claims are distributed across different sizes (the severity distribution) to estimate how much of the total claims will fall above versus below the treaty's attachment point, information a simple aggregate total alone cannot provide.",
-                "explain": "This directly recalls SA3's catastrophe-modelling and severity-distribution material — worth recognising non-proportional reinsurance modelling as requiring <em>distributional</em>, not merely aggregate, claims information."
-            },
-            {
-                "q": "What is 'counterparty default risk' in the context of a general insurer's reinsurance programme, and why might it directly affect the insurer's genuine net reserve position, echoing SA1's material?",
-                "a": "Counterparty default risk is the genuine risk that a reinsurer fails to pay recoveries the ceding insurer is entitled to, meaning the insurer's <em>net</em> reserve position (assuming full recovery) could understate its <em>true</em> potential liability if a reinsurer's own financial weakness is not adequately reflected, requiring a genuine allowance for reinsurer credit risk when reserving on a net basis.",
-                "explain": "This directly recalls SA1's reinsurer-counterparty-risk material — worth recognising this same risk as directly affecting the <em>reserving</em> calculation itself, not merely a separate risk-management consideration decided independently of the reserve figure."
-            },
-            {
-                "q": "Why might an insurer diversify its reinsurance panel across multiple reinsurers, rather than concentrating its whole reinsurance programme with a single counterparty, echoing this course's recurring diversification theme?",
-                "a": "Diversifying across multiple reinsurers reduces the genuine concentration of counterparty default risk with any single reinsurer, echoing this course's recurring diversification-benefit principle now applied specifically to <em>reinsurer</em> counterparty risk rather than underlying insurance risk itself.",
-                "explain": "This directly recalls Module 12's diversification-benefit material — worth recognising this same underlying diversification principle applying to counterparty risk management specifically, a practical extension of the general diversification concept developed for capital aggregation."
-            }
-        ]
-    },
-    {
-        "id": "m16",
-        "title": "Investment and discounting considerations for reserving",
-        "description": "Covers investment and asset-liability management considerations, and the methods and principles of accounting relevant to reserving, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why might a general insurer consider discounting its technical provisions to reflect the time value of money, given claims may not be paid until many years after being reserved for, echoing this course's recurring material?",
-                "a": "Since claims (particularly for long-tail lines, per Module 3's material) may not be paid for years after the reserve is established, discounting reflects the genuine economic reality that a liability payable in the future is worth <em>less</em> today than its nominal, undiscounted amount, directly echoing CM1's foundational time-value-of-money principle.",
-                "explain": "This directly recalls CM1's time-value-of-money material and Module 3's long-tail-business material — worth recognising discounting as directly relevant to general insurance reserving specifically <em>because</em> of the long payment delays long-tail claims can involve."
-            },
-            {
-                "q": "Why might discounting technical provisions require genuine care in choosing an appropriate discount rate, rather than an arbitrary or overly optimistic assumption?",
-                "a": "An excessively high discount rate would understate technical provisions, potentially masking genuine reserve inadequacy, so the discount rate should reflect the actual investment return the insurer can reliably expect to earn on assets backing these liabilities, echoing this course's recurring theme of genuine, defensible assumption-setting rather than optimistic, unjustified figures.",
-                "explain": "This directly recalls SP1's and SP2's defensible-assumption-setting material — worth recognising discount rate selection as carrying the <em>same</em> genuine prudence and defensibility requirements this course applies to every other reserving and pricing assumption."
-            },
-            {
-                "q": "Why must a general insurer's investment strategy for assets backing its technical provisions reflect the specific <em>duration</em> and <em>certainty</em> of those liabilities, echoing CM2's material?",
-                "a": "Since different lines of business carry different claim payment timing and predictability (short-tail versus long-tail, per Module 3), investment strategy should match assets to the <em>specific</em> duration and liquidity needs of the liabilities being backed, rather than applying a single, undifferentiated investment approach across an insurer's whole reserve base.",
-                "explain": "This directly recalls CM2's asset-liability matching material and SA3's liability-duration-and-ALM material — worth recognising this same matching principle applying directly to how technical provisions should be backed by appropriately-matched investment assets."
-            },
-            {
-                "q": "What genuine methods and principles of accounting are relevant to how a general insurer reports its reserves and capital position, echoing SA3's multiple-reporting-bases material?",
-                "a": "Different accounting bases (e.g. statutory/regulatory reporting under Solvency II versus general purpose financial reporting under accounting standards like IFRS 17) can require different measurement approaches for the <em>same</em> underlying liabilities, meaning a reserving actuary must understand which basis is relevant for a given reporting purpose, rather than assuming a single reserve figure serves every genuine reporting need.",
-                "explain": "This directly recalls SA1's, SA2's and SA3's multiple-reporting-bases material — worth recognising this same principle applying to general insurance reserving specifically: different reporting <em>purposes</em> can warrant different measurement bases for the same underlying liability."
-            },
-            {
-                "q": "How do this module's investment/discounting and accounting material complete SP7's 'Data, investigations, reinsurance and investment' topic area, connecting back to Modules 14-15?",
-                "a": "Module 14 established sound data and investigation practice; Module 15 developed reinsurance programme modelling; this module completes the topic area by addressing how the <em>resulting</em> net, discounted reserve estimates interact with investment strategy and accounting reporting requirements, together forming SP7's final topic area covering the wider practical and financial context surrounding the reserving and capital work developed throughout this whole course.",
-                "explain": "This closing card ties Modules 14-16 together explicitly, echoing Module 1's topic-weighting material — worth recognising this three-module sequence as completing SP7's final topic area, moving from data quality (Module 14) through reinsurance (Module 15) to investment and accounting context (this module)."
-            }
-        ]
-    }
-    ]
-,
+      {
+          "id": "m01",
+          "title": "Insurance companies",
+          "description": "How general insurance companies operate: why insurance exists, insurable risks, the insurance cycle of premiums, claims, reserves and investment, types of insurer (proprietary, mutual, captive, Lloyd's syndicates), and the main functions and stakeholders in a GI company.",
+          "cards": [
+              {
+                  "q": "What makes a risk insurable?",
+                  "a": "Independent exposures, a clear definition of loss, quantifiable probability and severity, no moral hazard or anti-selection beyond control, a premium affordable to the buyer, and an insurable interest.",
+                  "explain": "Few real risks meet all conditions perfectly."
+              },
+              {
+                  "q": "How does a general insurer make profit?",
+                  "a": "Underwriting profit (premiums exceed claims and expenses) plus investment income on premiums and reserves held before claims are paid.",
+                  "explain": "Long-tail business earns more investment income."
+              },
+              {
+                  "q": "What is a proprietary insurer?",
+                  "a": "An insurer owned by shareholders who receive profits and provide capital.",
+                  "explain": "Contrast mutuals owned by policyholders."
+              },
+              {
+                  "q": "What is a mutual insurer?",
+                  "a": "An insurer owned by its policyholders, with profits retained or returned to members.",
+                  "explain": "Limited ways to raise capital."
+              },
+              {
+                  "q": "What is a captive insurer?",
+                  "a": "An insurer owned by a non-insurance company to insure the parent's own risks.",
+                  "explain": "Access to reinsurance, tax and cost benefits."
+              },
+              {
+                  "q": "What are the main functions in a GI company?",
+                  "a": "Underwriting, claims, actuarial (pricing, reserving, capital), finance, investment, reinsurance, risk management, compliance, distribution.",
+                  "explain": "Actuaries interact with most."
+              },
+              {
+                  "q": "What is the underwriting cycle?",
+                  "a": "Recurring periods of soft (falling rates, loose terms) and hard (rising rates, tight terms) markets.",
+                  "explain": "Driven by capacity and competition."
+              },
+              {
+                  "q": "Why do insurers hold reserves?",
+                  "a": "Claims are paid after premiums are received; reserves represent obligations for unexpired cover and outstanding claims.",
+                  "explain": "Chapter 14 onwards."
+              },
+              {
+                  "q": "What is the role of capital in a GI company?",
+                  "a": "To absorb unexpected losses and meet regulatory requirements, supporting policyholder security.",
+                  "explain": "Cost of capital is part of price."
+              },
+              {
+                  "q": "What are the main stakeholders of an insurer?",
+                  "a": "Policyholders, shareholders/members, regulators, brokers, reinsurers, employees, rating agencies, tax authorities.",
+                  "explain": "Conflicting interests."
+              },
+              {
+                  "q": "What is the difference between short-tail and long-tail business?",
+                  "a": "Short-tail claims are reported and settled quickly (e.g. property); long-tail take years (e.g. liability).",
+                  "explain": "Affects reserving and investment."
+              },
+              {
+                  "q": "What is an MGA?",
+                  "a": "A managing general agent — an intermediary with delegated authority to underwrite on an insurer's behalf.",
+                  "explain": "Delegated authority risk."
+              },
+              {
+                  "q": "How can an insurer's business plan affect actuarial work?",
+                  "a": "Growth targets, product mix and capital constraints shape pricing, reserving and reinsurance decisions.",
+                  "explain": "Actuaries support planning."
+              },
+              {
+                  "q": "What are the main risks to a general insurer?",
+                  "a": "Underwriting, reserving, catastrophe, market, credit (incl. reinsurance), operational, liquidity risks.",
+                  "explain": "Chapter 11."
+              },
+              {
+                  "q": "Why is investment income important in GI?",
+                  "a": "It can allow underwriting losses to be sustained while remaining profitable overall.",
+                  "explain": "Cash-flow underwriting in soft markets."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Insurance products – background",
+          "description": "Background to general insurance products: how products are classified, perils and hazards, types of cover and policy features (excess, limits, deductibles), policy bases (losses occurring, claims made), and factors that affect claim frequency and severity.",
+          "cards": [
+              {
+                  "q": "What is the difference between a peril and a hazard?",
+                  "a": "A peril is the cause of loss (e.g. fire); a hazard is a factor increasing the likelihood or severity of loss (e.g. poor wiring).",
+                  "explain": "Rating factors often measure hazards."
+              },
+              {
+                  "q": "What is an excess (deductible)?",
+                  "a": "The amount of each loss borne by the policyholder before the insurer pays.",
+                  "explain": "Removes small claims and encourages care."
+              },
+              {
+                  "q": "What is a policy limit?",
+                  "a": "The maximum amount the insurer will pay per claim or in aggregate.",
+                  "explain": "Caps exposure."
+              },
+              {
+                  "q": "What is a losses-occurring basis?",
+                  "a": "The policy covers losses that occur during the policy period, whenever reported.",
+                  "explain": "Creates IBNR for long-tail classes."
+              },
+              {
+                  "q": "What is a claims-made basis?",
+                  "a": "The policy covers claims first made during the policy period, regardless of when the loss occurred (subject to retroactive date).",
+                  "explain": "Reduces IBNR for the insurer."
+              },
+              {
+                  "q": "What is first-party cover?",
+                  "a": "Cover for the policyholder's own loss (e.g. property damage).",
+                  "explain": "Short-tail usually."
+              },
+              {
+                  "q": "What is third-party (liability) cover?",
+                  "a": "Cover for the policyholder's legal liability to others.",
+                  "explain": "Long-tail usually."
+              },
+              {
+                  "q": "What is indemnity?",
+                  "a": "Restoring the insured to the financial position they were in before the loss, no better.",
+                  "explain": "Principle of property insurance."
+              },
+              {
+                  "q": "What is 'new for old' cover?",
+                  "a": "Replacement cost without deduction for wear and tear.",
+                  "explain": "Beyond strict indemnity."
+              },
+              {
+                  "q": "What is average (underinsurance) clause?",
+                  "a": "Reduces claims proportionally if the sum insured is less than the value at risk.",
+                  "explain": "Encourages adequate sums insured."
+              },
+              {
+                  "q": "What is a franchise?",
+                  "a": "A threshold below which nothing is paid but above which the whole loss is paid.",
+                  "explain": "Contrast with a deductible."
+              },
+              {
+                  "q": "What drives claim frequency?",
+                  "a": "Exposure, hazards, policy terms, claimant behaviour, economic and legal conditions.",
+                  "explain": "Rating factors."
+              },
+              {
+                  "q": "What drives claim severity?",
+                  "a": "Values at risk, inflation (economic, social, legal), policy limits and excesses.",
+                  "explain": "Claims inflation."
+              },
+              {
+                  "q": "What is exposure measure?",
+                  "a": "A measure proportional to risk, e.g. vehicle-years, sum insured, payroll, turnover.",
+                  "explain": "Basis for pricing."
+              },
+              {
+                  "q": "What is social inflation?",
+                  "a": "Increase in claim costs from changing legal and social attitudes (e.g. higher court awards).",
+                  "explain": "Liability classes."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Insurance products – types",
+          "description": "The main classes of general insurance — motor, household, commercial property, business interruption, employers' and public liability, professional indemnity, D&O, product liability, marine, aviation and transport, credit and surety, travel, pet, extended warranty, cyber — with their perils, claim characteristics and tail length.",
+          "cards": [
+              {
+                  "q": "What are the main covers in private motor insurance?",
+                  "a": "Third-party liability (compulsory), fire and theft, comprehensive (own damage).",
+                  "explain": "Bodily injury drives long tail."
+              },
+              {
+                  "q": "What does household insurance cover?",
+                  "a": "Buildings and contents against perils like fire, flood, storm, theft, escape of water, often with accidental damage options.",
+                  "explain": "Short-tail, catastrophe exposed."
+              },
+              {
+                  "q": "What is business interruption insurance?",
+                  "a": "Covers loss of profits following insured damage that disrupts business.",
+                  "explain": "Indemnity period; linked to property damage."
+              },
+              {
+                  "q": "What is employers' liability insurance?",
+                  "a": "Covers employers' liability for injury or disease to employees.",
+                  "explain": "Long-tail; latent disease claims."
+              },
+              {
+                  "q": "What is public liability insurance?",
+                  "a": "Covers liability to the public for injury or property damage.",
+                  "explain": "Long-tail."
+              },
+              {
+                  "q": "What is professional indemnity insurance?",
+                  "a": "Covers professionals' liability for negligent advice or services.",
+                  "explain": "Claims-made basis common."
+              },
+              {
+                  "q": "What is D&O insurance?",
+                  "a": "Covers directors and officers against claims for wrongful acts in managing a company.",
+                  "explain": "Long-tail, volatile."
+              },
+              {
+                  "q": "What is product liability insurance?",
+                  "a": "Covers liability for injury or damage caused by products supplied.",
+                  "explain": "Series claims possible."
+              },
+              {
+                  "q": "What is marine hull insurance?",
+                  "a": "Covers physical damage to ships.",
+                  "explain": "Specialist market."
+              },
+              {
+                  "q": "What is cargo insurance?",
+                  "a": "Covers goods in transit.",
+                  "explain": "Short-tail."
+              },
+              {
+                  "q": "What is aviation insurance?",
+                  "a": "Covers aircraft hull and liabilities.",
+                  "explain": "High severity, low frequency."
+              },
+              {
+                  "q": "What is credit insurance?",
+                  "a": "Covers losses from non-payment of trade debts.",
+                  "explain": "Correlated with economic cycle."
+              },
+              {
+                  "q": "What is cyber insurance?",
+                  "a": "Covers losses from cyber incidents: data breach costs, business interruption, liability, extortion.",
+                  "explain": "Accumulation risk."
+              },
+              {
+                  "q": "What is extended warranty insurance?",
+                  "a": "Covers repair costs of goods after manufacturer's warranty expires.",
+                  "explain": "Short-tail, high frequency."
+              },
+              {
+                  "q": "Why does tail length matter by class?",
+                  "a": "Long-tail classes have more reserving uncertainty, more investment income and more inflation exposure.",
+                  "explain": "Reserving method choice."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Problem solving",
+          "description": "An early problem-solving chapter: approaching SP7/SP8 exam questions on insurance products and companies — identifying perils, claim characteristics and stakeholders for unfamiliar products, and structuring answers.",
+          "cards": [
+              {
+                  "q": "How should you analyse an unfamiliar GI product?",
+                  "a": "Identify insured, perils, cover triggers, exposure measure, claim frequency and severity drivers, tail length, catastrophe exposure, and policy features.",
+                  "explain": "Structured approach."
+              },
+              {
+                  "q": "Which frameworks help generate points?",
+                  "a": "Stakeholders, risks, products features, environment (PESTLE-style), control cycle.",
+                  "explain": "Breadth."
+              },
+              {
+                  "q": "How should marks guide answers?",
+                  "a": "Roughly one point per half-mark to mark.",
+                  "explain": "Breadth matters."
+              },
+              {
+                  "q": "Why consider claims inflation in product questions?",
+                  "a": "It affects both pricing and reserving.",
+                  "explain": "Economic and social."
+              },
+              {
+                  "q": "How do you identify catastrophe exposure?",
+                  "a": "Look for correlated perils (weather, pandemic, cyber) affecting many policies.",
+                  "explain": "Accumulation."
+              },
+              {
+                  "q": "What makes a good exam answer?",
+                  "a": "Relevant, specific points applied to the scenario.",
+                  "explain": "Avoid generic lists."
+              },
+              {
+                  "q": "How do you consider data availability?",
+                  "a": "Ask what data would be needed and whether it exists for the product.",
+                  "explain": "New products lack data."
+              },
+              {
+                  "q": "How do you assess tail length?",
+                  "a": "Consider reporting and settlement delays, liability vs property.",
+                  "explain": "Reserving implications."
+              },
+              {
+                  "q": "Why consider moral hazard?",
+                  "a": "Policy design can change behaviour.",
+                  "explain": "Excesses and conditions."
+              },
+              {
+                  "q": "How should calculations be presented?",
+                  "a": "Clear method and assumptions.",
+                  "explain": "Method marks."
+              },
+              {
+                  "q": "Why consider regulatory issues?",
+                  "a": "Compulsory covers, conduct rules, capital.",
+                  "explain": "Environment."
+              },
+              {
+                  "q": "How do you consider reinsurance in product questions?",
+                  "a": "Large or catastrophe exposures may require reinsurance.",
+                  "explain": "Chapter 24."
+              },
+              {
+                  "q": "How can examiners' reports help?",
+                  "a": "Show typical weaknesses and marking.",
+                  "explain": "Past papers."
+              },
+              {
+                  "q": "Why think about the insurer's objectives?",
+                  "a": "Profit, growth, risk appetite shape answers.",
+                  "explain": "Context."
+              },
+              {
+                  "q": "How to manage time?",
+                  "a": "Allocate by marks.",
+                  "explain": "Complete all parts."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "Reinsurance products – background",
+          "description": "Background to reinsurance: why insurers buy it, the parties and market, proportional versus non-proportional bases, treaty versus facultative placement, and key terms (retention, limit, layer, reinstatement, event, hours clause).",
+          "cards": [
+              {
+                  "q": "Why do insurers buy reinsurance?",
+                  "a": "Limit large and catastrophe losses, smooth results, increase capacity, provide capital relief, financial assistance, and access expertise.",
+                  "explain": "Purposes."
+              },
+              {
+                  "q": "What is proportional reinsurance?",
+                  "a": "Reinsurer shares premiums and claims in fixed proportions.",
+                  "explain": "Quota share, surplus."
+              },
+              {
+                  "q": "What is non-proportional reinsurance?",
+                  "a": "Reinsurer pays losses above a retention up to a limit.",
+                  "explain": "Excess of loss, stop loss."
+              },
+              {
+                  "q": "What is treaty reinsurance?",
+                  "a": "An agreement covering a defined portfolio automatically.",
+                  "explain": "Efficient."
+              },
+              {
+                  "q": "What is facultative reinsurance?",
+                  "a": "Reinsurance of individual risks, negotiated case by case.",
+                  "explain": "Large or unusual risks."
+              },
+              {
+                  "q": "What is a layer?",
+                  "a": "A band of cover between a retention (deductible) and an upper limit.",
+                  "explain": "E.g. £5m xs £5m."
+              },
+              {
+                  "q": "What is a reinstatement?",
+                  "a": "Restoring cover after a loss, often for an additional premium.",
+                  "explain": "Catastrophe XoL."
+              },
+              {
+                  "q": "What is an hours clause?",
+                  "a": "Defines the period within which losses count as one event.",
+                  "explain": "E.g. 72 hours for storms."
+              },
+              {
+                  "q": "What is reinsurance commission?",
+                  "a": "Payment from reinsurer to cedant under proportional treaties to cover acquisition costs.",
+                  "explain": "Sliding scale possible."
+              },
+              {
+                  "q": "What is retrocession?",
+                  "a": "Reinsurance bought by reinsurers.",
+                  "explain": "Spiral risk."
+              },
+              {
+                  "q": "What is a cedant?",
+                  "a": "The insurer ceding risk.",
+                  "explain": "Reinsured."
+              },
+              {
+                  "q": "What is burning cost?",
+                  "a": "Historical losses to a layer relative to premium.",
+                  "explain": "Pricing method."
+              },
+              {
+                  "q": "What is a broker's role in reinsurance?",
+                  "a": "Placing programmes, advice and market access.",
+                  "explain": "Most placements via brokers."
+              },
+              {
+                  "q": "What is capacity?",
+                  "a": "The amount of risk the market or insurer can accept.",
+                  "explain": "Reinsurance increases it."
+              },
+              {
+                  "q": "What is counterparty risk in reinsurance?",
+                  "a": "Reinsurer failing to pay.",
+                  "explain": "Security assessment."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Reinsurance products – types",
+          "description": "Types of reinsurance in detail: quota share, surplus, risk excess of loss, catastrophe excess of loss, aggregate excess of loss and stop loss, clash cover, financial and finite reinsurance, and alternative risk transfer (cat bonds, ILWs, sidecars, collateralised reinsurance).",
+          "cards": [
+              {
+                  "q": "What is quota share reinsurance?",
+                  "a": "A fixed percentage of every risk ceded.",
+                  "explain": "Capital relief, new portfolios."
+              },
+              {
+                  "q": "What is surplus reinsurance?",
+                  "a": "Cedes the part of each risk above a retention line, up to a number of lines.",
+                  "explain": "Varies proportion by risk size."
+              },
+              {
+                  "q": "What is risk excess of loss?",
+                  "a": "Covers losses on any one risk above a retention.",
+                  "explain": "Protects against large individual losses."
+              },
+              {
+                  "q": "What is catastrophe excess of loss?",
+                  "a": "Covers aggregated losses from one event above a retention.",
+                  "explain": "Natural catastrophes."
+              },
+              {
+                  "q": "What is aggregate excess of loss?",
+                  "a": "Covers total losses over a period above an aggregate retention.",
+                  "explain": "Frequency protection."
+              },
+              {
+                  "q": "What is stop loss?",
+                  "a": "Covers loss ratio above a threshold.",
+                  "explain": "Protects results."
+              },
+              {
+                  "q": "What is clash cover?",
+                  "a": "Covers multiple policies/classes affected by one event (e.g. liability).",
+                  "explain": "Accumulation."
+              },
+              {
+                  "q": "What is finite reinsurance?",
+                  "a": "Limited risk transfer, emphasising financing and time value.",
+                  "explain": "Regulatory scrutiny."
+              },
+              {
+                  "q": "What is a catastrophe bond?",
+                  "a": "Securitised catastrophe risk where investors lose principal on trigger.",
+                  "explain": "Alternative capital."
+              },
+              {
+                  "q": "What is an industry loss warranty?",
+                  "a": "Pays if industry losses exceed a trigger.",
+                  "explain": "Basis risk."
+              },
+              {
+                  "q": "What is a sidecar?",
+                  "a": "Vehicle letting investors share a reinsurer's portfolio.",
+                  "explain": "Capacity."
+              },
+              {
+                  "q": "What is collateralised reinsurance?",
+                  "a": "Reinsurance fully backed by collateral from capital market investors.",
+                  "explain": "Low credit risk."
+              },
+              {
+                  "q": "What is an adverse development cover?",
+                  "a": "Reinsurance of reserves against deterioration.",
+                  "explain": "Legacy management."
+              },
+              {
+                  "q": "What is a loss portfolio transfer?",
+                  "a": "Transfer of existing claim liabilities to a reinsurer.",
+                  "explain": "Finality."
+              },
+              {
+                  "q": "What are trigger types in ART?",
+                  "a": "Indemnity, industry index, parametric, modelled loss.",
+                  "explain": "Trade-off basis risk vs moral hazard."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "General insurance markets",
+          "description": "How GI markets are structured: personal, commercial and specialty lines, distribution (brokers, direct, aggregators, MGAs, bancassurance), the London and Lloyd's markets, reinsurance markets, and competitive dynamics and the underwriting cycle.",
+          "cards": [
+              {
+                  "q": "What are personal lines?",
+                  "a": "Insurance for individuals: motor, household, travel, pet.",
+                  "explain": "High volume, commoditised."
+              },
+              {
+                  "q": "What are commercial lines?",
+                  "a": "Insurance for businesses: property, liability, BI.",
+                  "explain": "Broker-led."
+              },
+              {
+                  "q": "What are specialty lines?",
+                  "a": "Complex or unusual risks: marine, aviation, energy, political risk.",
+                  "explain": "London market."
+              },
+              {
+                  "q": "What are the main distribution channels?",
+                  "a": "Brokers, direct (phone/web), aggregators, MGAs, affinity, bancassurance.",
+                  "explain": "Channel shapes pricing."
+              },
+              {
+                  "q": "How have aggregators changed personal lines?",
+                  "a": "Increased price competition, switching and price optimisation.",
+                  "explain": "Regulatory interventions on pricing."
+              },
+              {
+                  "q": "What is the London market?",
+                  "a": "Specialty and wholesale insurance and reinsurance centred on Lloyd's and London companies.",
+                  "explain": "Subscription market."
+              },
+              {
+                  "q": "What is a subscription market?",
+                  "a": "Several insurers each take a share of a risk, led by a lead underwriter.",
+                  "explain": "Lloyd's model."
+              },
+              {
+                  "q": "What drives the underwriting cycle?",
+                  "a": "Capital inflows/outflows, catastrophe losses, reserve releases, investment returns, competition.",
+                  "explain": "Soft and hard markets."
+              },
+              {
+                  "q": "What is market capacity?",
+                  "a": "Total capital available to write risk.",
+                  "explain": "Affects price."
+              },
+              {
+                  "q": "How do reinsurance markets affect primary markets?",
+                  "a": "Reinsurance cost and availability feed into primary pricing and capacity.",
+                  "explain": "Hard reinsurance markets."
+              },
+              {
+                  "q": "What is a delegated authority arrangement?",
+                  "a": "Coverholders/MGAs underwriting on behalf of insurers.",
+                  "explain": "Oversight needed."
+              },
+              {
+                  "q": "How does competition affect profitability?",
+                  "a": "Soft markets reduce premium adequacy.",
+                  "explain": "Pricing discipline."
+              },
+              {
+                  "q": "What are barriers to entry in GI?",
+                  "a": "Capital requirements, regulation, data, distribution, brand.",
+                  "explain": "Lower in some lines."
+              },
+              {
+                  "q": "What is the role of insurance brokers?",
+                  "a": "Advising clients, placing risks, negotiating terms.",
+                  "explain": "Commission or fees."
+              },
+              {
+                  "q": "What is market consolidation?",
+                  "a": "Mergers reducing number of insurers.",
+                  "explain": "Economies of scale."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "Regulation",
+          "description": "Regulation of general insurers relevant to reserving and capital: aims of regulation, Solvency II's three pillars, technical provisions and SCR/MCR, the actuarial function, ORSA, conduct regulation, and professional standards for reserving actuaries.",
+          "cards": [
+              {
+                  "q": "What are the three pillars of Solvency II?",
+                  "a": "Pillar 1 quantitative requirements (technical provisions, SCR, MCR); Pillar 2 governance and supervisory review (including ORSA); Pillar 3 disclosure and reporting.",
+                  "explain": "UK equivalent after Brexit: Solvency UK."
+              },
+              {
+                  "q": "What are Solvency II technical provisions?",
+                  "a": "Best estimate of liabilities (discounted probability-weighted cash flows) plus a risk margin.",
+                  "explain": "Premium and claims provisions."
+              },
+              {
+                  "q": "What is the SCR?",
+                  "a": "Solvency Capital Requirement: capital to withstand a 1-in-200 one-year loss (99.5% VaR).",
+                  "explain": "Standard formula or internal model."
+              },
+              {
+                  "q": "What is the MCR?",
+                  "a": "Minimum Capital Requirement — lower threshold triggering severe intervention.",
+                  "explain": "85% VaR roughly."
+              },
+              {
+                  "q": "What does the actuarial function do under Solvency II?",
+                  "a": "Coordinates technical provisions, assesses data quality, opines on underwriting policy and reinsurance, contributes to risk management.",
+                  "explain": "Key role for reserving actuaries."
+              },
+              {
+                  "q": "What is the ORSA?",
+                  "a": "Own Risk and Solvency Assessment — the insurer's assessment of its risks and capital needs over the business plan.",
+                  "explain": "Pillar 2."
+              },
+              {
+                  "q": "What is a premium provision?",
+                  "a": "Best estimate of future cash flows on unexpired cover (claims, expenses, less future premiums).",
+                  "explain": "Replaces UPR concept."
+              },
+              {
+                  "q": "What is a claims provision?",
+                  "a": "Best estimate of cash flows on claims already incurred (reported and IBNR).",
+                  "explain": "Discounted."
+              },
+              {
+                  "q": "How is the risk margin calculated?",
+                  "a": "Cost-of-capital approach: cost of holding SCR (non-hedgeable) over run-off, discounted.",
+                  "explain": "Reduced under Solvency UK reforms."
+              },
+              {
+                  "q": "What are ENIDs?",
+                  "a": "Events not in data — allowance for unusual events not captured in historical data.",
+                  "explain": "Best estimate completeness."
+              },
+              {
+                  "q": "Why does conduct regulation matter to GI?",
+                  "a": "Pricing practices, claims handling and fair value rules affect profitability and reserves.",
+                  "explain": "FCA rules."
+              },
+              {
+                  "q": "What professional standards apply to reserving?",
+                  "a": "TAS 100 and TAS 200 (insurance), actuarial codes.",
+                  "explain": "Documentation and communication."
+              },
+              {
+                  "q": "What is the role of the regulator in reserving?",
+                  "a": "Reviewing adequacy of technical provisions and challenging assumptions.",
+                  "explain": "Supervisory review."
+              },
+              {
+                  "q": "What are capital tiers?",
+                  "a": "Quality classification of own funds (Tier 1–3).",
+                  "explain": "Loss absorbency."
+              },
+              {
+                  "q": "What is Pillar 3 reporting?",
+                  "a": "SFCR (public) and RSR/QRTs (regulatory).",
+                  "explain": "Transparency."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "External environment",
+          "description": "The external environment for general insurers: legal and legislative changes, regulation and conduct, taxation, economic conditions and inflation, social and demographic trends, technology, climate change and emerging risks, and their effects on claims, pricing and reserving.",
+          "cards": [
+              {
+                  "q": "How can legal changes affect GI claims?",
+                  "a": "Changes in liability law, court awards, discount rates for personal injury (e.g. Ogden rate) can increase claims retrospectively.",
+                  "explain": "Reserving uncertainty."
+              },
+              {
+                  "q": "What is the Ogden discount rate?",
+                  "a": "The rate used in the UK to calculate lump sum personal injury awards; lower rates increase awards.",
+                  "explain": "Big effect on motor/EL reserves."
+              },
+              {
+                  "q": "How does economic inflation affect GI?",
+                  "a": "Increases claim costs (repairs, wages) and reserves.",
+                  "explain": "Claims inflation."
+              },
+              {
+                  "q": "How can recessions affect GI?",
+                  "a": "Fraud and some claims rise (e.g. theft, credit), exposures fall.",
+                  "explain": "Economic cycle."
+              },
+              {
+                  "q": "How does technology affect GI?",
+                  "a": "Telematics, data analytics, autonomous vehicles, cyber risks.",
+                  "explain": "New risks and pricing."
+              },
+              {
+                  "q": "How does climate change affect GI?",
+                  "a": "More frequent/severe weather events, changing flood risk, transition risks.",
+                  "explain": "Catastrophe modelling."
+              },
+              {
+                  "q": "What are emerging risks?",
+                  "a": "New or changing risks with uncertain effects (e.g. cyber, PFAS, AI liability).",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "How do conduct regulations affect GI?",
+                  "a": "Pricing practices rules (e.g. banning price walking), fair value, claims handling standards.",
+                  "explain": "Profit impact."
+              },
+              {
+                  "q": "How does taxation affect GI?",
+                  "a": "Insurance premium tax, corporation tax, reserve taxation.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "How do social trends affect claims?",
+                  "a": "Claims culture, compensation expectations, litigation funding.",
+                  "explain": "Social inflation."
+              },
+              {
+                  "q": "How does demography affect GI?",
+                  "a": "Ageing population, urbanisation, changing household structures.",
+                  "explain": "Exposure changes."
+              },
+              {
+                  "q": "What is PESTLE?",
+                  "a": "Political, economic, social, technological, legal, environmental analysis.",
+                  "explain": "Framework."
+              },
+              {
+                  "q": "How can government schemes affect GI?",
+                  "a": "Flood Re, terrorism pools, compulsory covers.",
+                  "explain": "Market structure."
+              },
+              {
+                  "q": "How can pandemics affect GI?",
+                  "a": "Business interruption, event cancellation, travel claims; reduced motor claims.",
+                  "explain": "COVID-19 BI test case."
+              },
+              {
+                  "q": "Why monitor the environment?",
+                  "a": "Changes affect pricing and reserving assumptions.",
+                  "explain": "Control cycle."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "The Lloyd's market",
+          "description": "The structure and operation of Lloyd's: Names and corporate members, syndicates and managing agents, the chain of security (syndicate assets, members' funds at Lloyd's, Central Fund), the franchise and its oversight, the three-year accounting history, reinsurance to close and run-off.",
+          "cards": [
+              {
+                  "q": "What is Lloyd's?",
+                  "a": "A market where members underwrite through syndicates managed by managing agents, not an insurance company.",
+                  "explain": "Subscription market."
+              },
+              {
+                  "q": "What is a syndicate?",
+                  "a": "A group of members providing capital to underwrite, managed by a managing agent, annually venturing.",
+                  "explain": "Year of account."
+              },
+              {
+                  "q": "What is a managing agent?",
+                  "a": "A company that manages syndicates' underwriting and operations.",
+                  "explain": "Lloyd's-approved."
+              },
+              {
+                  "q": "What is the chain of security?",
+                  "a": "Syndicate premium trust funds, members' funds at Lloyd's, the Central Fund.",
+                  "explain": "Three links."
+              },
+              {
+                  "q": "What is the Central Fund?",
+                  "a": "A mutual fund at Lloyd's to meet claims if members can't.",
+                  "explain": "Mutualisation."
+              },
+              {
+                  "q": "What is reinsurance to close (RITC)?",
+                  "a": "Closing a year of account by reinsuring its remaining liabilities into a later year (usually after three years).",
+                  "explain": "Key reserving event."
+              },
+              {
+                  "q": "Why is RITC a critical reserving exercise?",
+                  "a": "It transfers liabilities between different capital providers, so fairness requires an accurate estimate.",
+                  "explain": "Equity between years."
+              },
+              {
+                  "q": "What is a year of account?",
+                  "a": "The underwriting year for which a syndicate's results are determined.",
+                  "explain": "Closed after 3 years usually."
+              },
+              {
+                  "q": "What is the Lloyd's franchise?",
+                  "a": "Lloyd's as franchisor oversees syndicates' business plans, capital and performance.",
+                  "explain": "Performance management."
+              },
+              {
+                  "q": "How is capital set at Lloyd's?",
+                  "a": "Syndicate SCR via internal model, uplifted (e.g. +35%) to set members' capital.",
+                  "explain": "Economic capital assessment."
+              },
+              {
+                  "q": "What is a run-off year of account?",
+                  "a": "A year that cannot be closed by RITC due to uncertainty.",
+                  "explain": "Remains open."
+              },
+              {
+                  "q": "What are corporate members?",
+                  "a": "Companies providing capital to syndicates.",
+                  "explain": "Most capital today."
+              },
+              {
+                  "q": "What are Names?",
+                  "a": "Individual members with unlimited (historically) or limited liability.",
+                  "explain": "Declining share."
+              },
+              {
+                  "q": "What is a coverholder?",
+                  "a": "An intermediary authorised to bind cover on behalf of syndicates.",
+                  "explain": "Delegated authority."
+              },
+              {
+                  "q": "What is Lloyd's Performance Management?",
+                  "a": "Oversight of syndicate plans and results.",
+                  "explain": "Franchise board."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Risk and uncertainty",
+          "description": "Risks faced by a general insurer and sources of uncertainty: underwriting, reserving, catastrophe, market, credit, liquidity, operational, strategic and regulatory risks; model, parameter and process uncertainty; and how they affect pricing, reserving and capital.",
+          "cards": [
+              {
+                  "q": "List the main risks for a general insurer.",
+                  "a": "Underwriting (premium), reserving, catastrophe, market, credit (reinsurance, brokers), liquidity, operational, strategic, regulatory/legal, reputational.",
+                  "explain": "Risk categories."
+              },
+              {
+                  "q": "What is premium (underwriting) risk?",
+                  "a": "Risk that future claims on business written exceed premiums.",
+                  "explain": "Pricing adequacy."
+              },
+              {
+                  "q": "What is reserving risk?",
+                  "a": "Risk that reserves for existing claims prove inadequate.",
+                  "explain": "Deterioration."
+              },
+              {
+                  "q": "What is catastrophe risk?",
+                  "a": "Risk of large losses from single events affecting many policies.",
+                  "explain": "Accumulation."
+              },
+              {
+                  "q": "What is process uncertainty?",
+                  "a": "Randomness in outcomes even if the model and parameters are correct.",
+                  "explain": "Irreducible."
+              },
+              {
+                  "q": "What is parameter uncertainty?",
+                  "a": "Uncertainty in estimated parameters.",
+                  "explain": "Data limitations."
+              },
+              {
+                  "q": "What is model uncertainty?",
+                  "a": "Risk the model structure is wrong.",
+                  "explain": "Model risk."
+              },
+              {
+                  "q": "What is credit risk for a GI insurer?",
+                  "a": "Reinsurer default, broker default, bond default.",
+                  "explain": "Security."
+              },
+              {
+                  "q": "What is liquidity risk?",
+                  "a": "Inability to pay claims when due without loss.",
+                  "explain": "Catastrophes."
+              },
+              {
+                  "q": "What is operational risk?",
+                  "a": "Losses from failed processes, people, systems or external events.",
+                  "explain": "Cyber, fraud."
+              },
+              {
+                  "q": "What is systemic risk in GI?",
+                  "a": "Risks affecting many insurers simultaneously (e.g. legal changes, pandemics).",
+                  "explain": "Correlation."
+              },
+              {
+                  "q": "What is anti-selection in GI?",
+                  "a": "Higher risks buying cover disproportionately.",
+                  "explain": "Rating and underwriting."
+              },
+              {
+                  "q": "What is moral hazard?",
+                  "a": "Behaviour changes because of insurance.",
+                  "explain": "Excesses."
+              },
+              {
+                  "q": "What is uncertainty vs risk?",
+                  "a": "Risk can be quantified; uncertainty cannot reliably.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How can uncertainty be communicated?",
+                  "a": "Ranges, scenarios, sensitivities.",
+                  "explain": "Stakeholders."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Data",
+          "description": "Data for general insurance actuarial work: sources and types (policy, claims, exposure, external), data requirements for pricing and reserving, data quality checks and reconciliations, grouping and homogeneity, and dealing with data problems.",
+          "cards": [
+              {
+                  "q": "What policy data is needed?",
+                  "a": "Policy details, exposure, rating factors, premiums, cover details, dates.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "What claims data is needed?",
+                  "a": "Dates of loss, report, settlement; paid and incurred amounts; claim status; cause; reserves.",
+                  "explain": "Reserving triangles."
+              },
+              {
+                  "q": "What external data can be used?",
+                  "a": "Industry data, reinsurer data, census, weather, credit, geocoding.",
+                  "explain": "Enhance models."
+              },
+              {
+                  "q": "What data checks should be performed?",
+                  "a": "Reconciliation to accounts, consistency checks, reasonableness, duplicates, missing values, comparisons with previous data.",
+                  "explain": "Quality."
+              },
+              {
+                  "q": "Why group data into homogeneous cells?",
+                  "a": "To ensure similar risks are analysed together while keeping credible volumes.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "What is the trade-off in data grouping?",
+                  "a": "More granular = homogeneous but less credible; coarser = credible but heterogeneous.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What problems arise with claims data?",
+                  "a": "Changes in reserving practice, reopened claims, large claims, coding changes.",
+                  "explain": "Distort triangles."
+              },
+              {
+                  "q": "How do case reserving changes affect data?",
+                  "a": "Incurred triangles show changed development patterns.",
+                  "explain": "Adjust or use paid data."
+              },
+              {
+                  "q": "What is exposure data?",
+                  "a": "Measures of risk volume (e.g. vehicle-years).",
+                  "explain": "Frequency calculation."
+              },
+              {
+                  "q": "Why reconcile data to accounts?",
+                  "a": "Ensures completeness and consistency.",
+                  "explain": "Control."
+              },
+              {
+                  "q": "How are large claims handled in data?",
+                  "a": "Separated or capped to avoid distorting results.",
+                  "explain": "Large loss loading."
+              },
+              {
+                  "q": "What is data granularity?",
+                  "a": "Level of detail (individual vs aggregated).",
+                  "explain": "Model choice."
+              },
+              {
+                  "q": "What are data protection considerations?",
+                  "a": "Legal limits on using personal data.",
+                  "explain": "GDPR."
+              },
+              {
+                  "q": "How can poor data be mitigated?",
+                  "a": "Industry data, prudence, reviewing sources, improving systems.",
+                  "explain": "Disclose limitations."
+              },
+              {
+                  "q": "Why is data important for capital modelling?",
+                  "a": "Parameter estimation for distributions and dependencies.",
+                  "explain": "Tail data scarce."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Actuarial investigations and analyses",
+          "description": "The actuarial investigations a general insurer carries out — reserving reviews, pricing reviews, experience analyses, rate monitoring, claims and large-loss analyses — their purposes, the information they use and how results are communicated.",
+          "cards": [
+              {
+                  "q": "What is a reserving review?",
+                  "a": "An investigation to estimate outstanding liabilities and assess reserve adequacy.",
+                  "explain": "Regular (e.g. quarterly)."
+              },
+              {
+                  "q": "What is an actual vs expected analysis?",
+                  "a": "Comparing actual claims development with that expected from the previous review.",
+                  "explain": "Early warning."
+              },
+              {
+                  "q": "What is rate monitoring?",
+                  "a": "Tracking changes in premium rates on renewals relative to exposure and terms.",
+                  "explain": "Input to reserving loss ratios."
+              },
+              {
+                  "q": "Why does rate monitoring matter for reserving?",
+                  "a": "BF and ELR methods rely on expected loss ratios adjusted for rate changes.",
+                  "explain": "Soft market risk."
+              },
+              {
+                  "q": "What is a large loss analysis?",
+                  "a": "Separate investigation of large claims, often by individual review.",
+                  "explain": "Distort triangles."
+              },
+              {
+                  "q": "What is a claims analysis?",
+                  "a": "Examining frequency, severity, settlement patterns and trends.",
+                  "explain": "Understand drivers."
+              },
+              {
+                  "q": "What is an expense analysis?",
+                  "a": "Allocating expenses to classes and activities.",
+                  "explain": "ULAE reserves."
+              },
+              {
+                  "q": "Why involve claims and underwriting teams?",
+                  "a": "Soft information on case reserving practice and portfolio changes.",
+                  "explain": "Qualitative input."
+              },
+              {
+                  "q": "What is a peer review?",
+                  "a": "Independent review of actuarial work.",
+                  "explain": "Quality control."
+              },
+              {
+                  "q": "How should results be communicated?",
+                  "a": "Clear ranges, key assumptions, sensitivities, changes since last review.",
+                  "explain": "TAS requirements."
+              },
+              {
+                  "q": "What is a reserve adequacy review?",
+                  "a": "Assessing whether booked reserves are sufficient.",
+                  "explain": "Audit and board."
+              },
+              {
+                  "q": "What is an event-specific analysis?",
+                  "a": "Estimating losses from a catastrophe or major event.",
+                  "explain": "Exposure-based."
+              },
+              {
+                  "q": "What are qualitative inputs to investigations?",
+                  "a": "Changes in claims handling, legal environment, business mix.",
+                  "explain": "Adjust methods."
+              },
+              {
+                  "q": "How often are reserving investigations done?",
+                  "a": "Typically quarterly with a full annual review.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is a portfolio review?",
+                  "a": "Assessing profitability of lines/segments.",
+                  "explain": "Business decisions."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Reserving bases",
+          "description": "The bases on which reserves are held — best estimate versus prudent, discounted versus undiscounted, gross versus net — and the reserve components: case reserves, IBNR, IBNER, UPR, URR/AURR, ULAE, and technical provisions under Solvency II and IFRS 17.",
+          "cards": [
+              {
+                  "q": "What is a case reserve?",
+                  "a": "An estimate by claims handlers of the outstanding amount on an individual reported claim.",
+                  "explain": "Subjective."
+              },
+              {
+                  "q": "What is IBNR?",
+                  "a": "Incurred but not reported claims (and, broadly, IBNER as well).",
+                  "explain": "Estimated statistically."
+              },
+              {
+                  "q": "What is IBNER?",
+                  "a": "Incurred but not enough reported — future development on reported claims' case reserves.",
+                  "explain": "Part of broad IBNR."
+              },
+              {
+                  "q": "What is UPR?",
+                  "a": "Unearned premium reserve — premium relating to unexpired cover.",
+                  "explain": "Pro rata or other patterns."
+              },
+              {
+                  "q": "What is URR?",
+                  "a": "Unexpired risk reserve — expected claims and expenses on unexpired cover.",
+                  "explain": "If URR > UPR, hold AURR."
+              },
+              {
+                  "q": "What is AURR?",
+                  "a": "Additional unexpired risk reserve where UPR is insufficient.",
+                  "explain": "Premium deficiency."
+              },
+              {
+                  "q": "What is ULAE?",
+                  "a": "Unallocated loss adjustment expenses — claims handling costs not attributable to specific claims.",
+                  "explain": "Reserve needed."
+              },
+              {
+                  "q": "What is a best estimate reserve?",
+                  "a": "Mean of the distribution of outcomes, without deliberate margins.",
+                  "explain": "Solvency II basis."
+              },
+              {
+                  "q": "What is a prudent reserve?",
+                  "a": "Including margins for adverse deviation.",
+                  "explain": "Accounting practice."
+              },
+              {
+                  "q": "Why discount reserves?",
+                  "a": "Reflects time value of money; required under Solvency II and IFRS 17.",
+                  "explain": "Long-tail impact large."
+              },
+              {
+                  "q": "What is gross versus net reserving?",
+                  "a": "Gross is before reinsurance; net deducts reinsurance recoveries.",
+                  "explain": "Chapter 25."
+              },
+              {
+                  "q": "What is the IFRS 17 risk adjustment?",
+                  "a": "Compensation for non-financial risk uncertainty.",
+                  "explain": "Confidence level disclosure."
+              },
+              {
+                  "q": "What is the liability for incurred claims (IFRS 17)?",
+                  "a": "Fulfilment cash flows for past claims.",
+                  "explain": "Discounted + RA."
+              },
+              {
+                  "q": "What is a claims handling expense reserve approach?",
+                  "a": "E.g. percentage of paid claims, split open/closed claims.",
+                  "explain": "ULAE methods."
+              },
+              {
+                  "q": "How do reserve bases differ by purpose?",
+                  "a": "Accounting, regulatory, pricing, M&A — different margins and discounting.",
+                  "explain": "Purpose-driven."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Triangulation methods",
+          "description": "Deterministic reserving methods on claims triangles: chain ladder (paid and incurred), development factor selection and tail factors, inflation-adjusted chain ladder, average cost per claim, expected loss ratio, Bornhuetter-Ferguson and Cape Cod methods, and their strengths and weaknesses.",
+          "cards": [
+              {
+                  "q": "What is the chain ladder method?",
+                  "a": "Projects cumulative claims to ultimate using development factors derived from past development patterns.",
+                  "explain": "Assumes stable development."
+              },
+              {
+                  "q": "How is a volume-weighted development factor calculated?",
+                  "a": "$f_j = \\frac{\\sum_i C_{i,j+1}}{\\sum_i C_{i,j}}$ over origin years with both values.",
+                  "explain": "Standard estimator."
+              },
+              {
+                  "q": "What are the chain ladder's key assumptions?",
+                  "a": "Future development follows past patterns; each origin year develops similarly; consistent claims handling and reserving practice.",
+                  "explain": "Breaks down with changes."
+              },
+              {
+                  "q": "When is chain ladder unreliable?",
+                  "a": "Immature years (small base), changing case reserving, large claims, mix changes, inflation shifts.",
+                  "explain": "Use BF for recent years."
+              },
+              {
+                  "q": "What is the Bornhuetter-Ferguson method?",
+                  "a": "Ultimate = paid/incurred to date + (1 − 1/cumulative factor) × expected ultimate (premium × initial ELR).",
+                  "explain": "Blends data with prior."
+              },
+              {
+                  "q": "What is the BF credibility interpretation?",
+                  "a": "Credibility-weighted average of chain ladder and ELR ultimates, with weight = proportion developed.",
+                  "explain": "Stability for immature years."
+              },
+              {
+                  "q": "What is the Cape Cod method?",
+                  "a": "Like BF but estimates the expected loss ratio from the data using 'used-up' premium.",
+                  "explain": "Less subjective ELR."
+              },
+              {
+                  "q": "What is the expected loss ratio method?",
+                  "a": "Ultimate = premium × ELR, ignoring actual experience.",
+                  "explain": "New business/immature years."
+              },
+              {
+                  "q": "What is the average cost per claim (ACPC) method?",
+                  "a": "Projects claim numbers and average costs separately to ultimate.",
+                  "explain": "Useful when frequency/severity trends differ."
+              },
+              {
+                  "q": "What is an inflation-adjusted chain ladder?",
+                  "a": "Converts payments to current values, projects, then reinflates with future inflation.",
+                  "explain": "Explicit inflation."
+              },
+              {
+                  "q": "What is a tail factor?",
+                  "a": "Development beyond the triangle's last observed period.",
+                  "explain": "Curve fitting or benchmarks."
+              },
+              {
+                  "q": "Paid versus incurred chain ladder?",
+                  "a": "Paid is objective but slower; incurred uses case reserves, faster but affected by reserving practice changes.",
+                  "explain": "Compare both."
+              },
+              {
+                  "q": "What is Benktander's method?",
+                  "a": "An iterated BF using BF ultimate as the new prior.",
+                  "explain": "Between BF and chain ladder."
+              },
+              {
+                  "q": "How are large claims handled?",
+                  "a": "Removed and projected separately, or capped.",
+                  "explain": "Stability."
+              },
+              {
+                  "q": "Why compare methods?",
+                  "a": "Different assumptions; divergence reveals issues.",
+                  "explain": "Judgement in selection."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Stochastic reserving",
+          "description": "Stochastic reserving methods to quantify uncertainty: the Mack model and its standard error, the over-dispersed Poisson model and bootstrapping, Bayesian methods, and interpreting reserve distributions and percentiles.",
+          "cards": [
+              {
+                  "q": "Why use stochastic reserving?",
+                  "a": "To estimate the distribution (variability) of reserves, not just the central estimate.",
+                  "explain": "Capital and communication."
+              },
+              {
+                  "q": "What is the Mack model?",
+                  "a": "A distribution-free model underlying chain ladder, giving analytic standard errors of reserves.",
+                  "explain": "Mean equals chain ladder."
+              },
+              {
+                  "q": "What are Mack's assumptions?",
+                  "a": "$E[C_{i,j+1}|C_{i,j}] = f_j C_{i,j}$, $\\mathrm{Var}[C_{i,j+1}|C_{i,j}] = \\sigma_j^2 C_{i,j}$, independent origin years.",
+                  "explain": "Testable."
+              },
+              {
+                  "q": "What is the ODP model?",
+                  "a": "Incremental claims are over-dispersed Poisson with mean depending on origin and development factors; reproduces chain ladder.",
+                  "explain": "GLM framework."
+              },
+              {
+                  "q": "What is bootstrapping?",
+                  "a": "Resampling residuals to create pseudo-triangles, re-fitting, and adding process variance to get a predictive distribution.",
+                  "explain": "ODP bootstrap."
+              },
+              {
+                  "q": "What residuals are used in the ODP bootstrap?",
+                  "a": "Scaled Pearson residuals.",
+                  "explain": "Adjust for degrees of freedom."
+              },
+              {
+                  "q": "What is prediction error?",
+                  "a": "Combination of parameter (estimation) error and process error.",
+                  "explain": "Total uncertainty."
+              },
+              {
+                  "q": "What are limitations of stochastic methods?",
+                  "a": "Rely on model assumptions, may understate uncertainty (model risk, ENIDs), need stable data.",
+                  "explain": "Supplement with judgement."
+              },
+              {
+                  "q": "What is a Bayesian reserving method?",
+                  "a": "Uses prior distributions (e.g. for ELR) updated with data via Bayes' theorem.",
+                  "explain": "BF has Bayesian interpretation."
+              },
+              {
+                  "q": "How are one-year and ultimate views different?",
+                  "a": "Ultimate view: full run-off uncertainty; one-year: change in best estimate over next year (Solvency II).",
+                  "explain": "Capital purposes."
+              },
+              {
+                  "q": "How can bootstrap results be used?",
+                  "a": "Percentiles for capital, ranges for communication, reserve risk calibration.",
+                  "explain": "Uses."
+              },
+              {
+                  "q": "What is the coefficient of variation in reserving?",
+                  "a": "Standard deviation / mean of reserves.",
+                  "explain": "Comparing classes."
+              },
+              {
+                  "q": "Why might negative incremental claims be a problem?",
+                  "a": "ODP requires non-negative column sums; adjustments needed.",
+                  "explain": "Salvage and recoveries."
+              },
+              {
+                  "q": "How can stochastic results be checked?",
+                  "a": "Compare with Mack, reasonableness of percentiles, residual plots.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "What is model error?",
+                  "a": "Risk the chosen model is wrong.",
+                  "explain": "Not captured by bootstrap."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Assessment of reserving results",
+          "description": "Assessing and selecting reserving results: diagnostics and reasonableness checks (ultimate loss ratios, frequency and severity, paid-to-incurred, IBNR to case), actual versus expected, comparison of methods, back-testing, and documenting and communicating the selection.",
+          "cards": [
+              {
+                  "q": "What diagnostics check reserving results?",
+                  "a": "Implied loss ratios by year, average costs, claim frequencies, paid/incurred ratios, IBNR/case ratios, development trends.",
+                  "explain": "Reasonableness."
+              },
+              {
+                  "q": "Why review ultimate loss ratios by origin year?",
+                  "a": "Should be consistent with rate changes, market cycle and known events.",
+                  "explain": "Trend sense-check."
+              },
+              {
+                  "q": "What is back-testing?",
+                  "a": "Comparing past reserve estimates with subsequent actual development.",
+                  "explain": "Assesses methods."
+              },
+              {
+                  "q": "How is the final selection made?",
+                  "a": "Choosing methods by origin year and class, based on maturity, data quality and diagnostics.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What is an actual vs expected analysis?",
+                  "a": "Compares emerged claims to expected since last review.",
+                  "explain": "Early warning."
+              },
+              {
+                  "q": "What is the paid-to-incurred ratio check?",
+                  "a": "Changes signal case reserving or settlement speed shifts.",
+                  "explain": "Data diagnostic."
+              },
+              {
+                  "q": "How should large divergence between methods be handled?",
+                  "a": "Investigate causes (changes in practice, mix) before selecting.",
+                  "explain": "Don't average blindly."
+              },
+              {
+                  "q": "What is reserve strengthening?",
+                  "a": "Increasing reserves due to adverse development.",
+                  "explain": "Profit impact."
+              },
+              {
+                  "q": "What is reserve release?",
+                  "a": "Decreasing reserves due to favourable development.",
+                  "explain": "Earnings impact."
+              },
+              {
+                  "q": "How should results be documented?",
+                  "a": "Methods, assumptions, data, judgements, changes, sensitivities.",
+                  "explain": "TAS."
+              },
+              {
+                  "q": "How should results be communicated to the board?",
+                  "a": "Best estimate, range, key uncertainties, movements.",
+                  "explain": "Clear messages."
+              },
+              {
+                  "q": "What is the reserve range?",
+                  "a": "Plausible range of reserve estimates.",
+                  "explain": "Uncertainty."
+              },
+              {
+                  "q": "Why check consistency with pricing?",
+                  "a": "Pricing loss ratios and reserving loss ratios should reconcile.",
+                  "explain": "Feedback."
+              },
+              {
+                  "q": "How can external benchmarks help?",
+                  "a": "Industry development patterns and loss ratios.",
+                  "explain": "Sparse data."
+              },
+              {
+                  "q": "What is a reserving committee?",
+                  "a": "Governance body approving booked reserves.",
+                  "explain": "Oversight."
+              }
+          ]
+      },
+      {
+          "id": "m18",
+          "title": "Reserving uncertainty",
+          "description": "Sources of uncertainty in reserves — process, parameter and model uncertainty, data issues, legal and inflation changes, latent claims, catastrophes — and techniques for assessing and communicating it (sensitivity and scenario testing, ranges, stochastic methods).",
+          "cards": [
+              {
+                  "q": "List sources of reserving uncertainty.",
+                  "a": "Random fluctuation, parameter estimation, model choice, data quality, changes in claims handling, inflation, legal changes, latent claims, large claims, reinsurance recoveries.",
+                  "explain": "Broad list."
+              },
+              {
+                  "q": "What are latent claims?",
+                  "a": "Claims arising long after exposure (e.g. asbestos, industrial disease).",
+                  "explain": "Very uncertain."
+              },
+              {
+                  "q": "How can sensitivity testing help?",
+                  "a": "Shows impact of changing key assumptions (tail factors, ELRs, inflation).",
+                  "explain": "Communicate."
+              },
+              {
+                  "q": "What is scenario testing in reserving?",
+                  "a": "Assessing reserves under specific adverse scenarios (e.g. Ogden change).",
+                  "explain": "Concrete."
+              },
+              {
+                  "q": "How does inflation create uncertainty?",
+                  "a": "Unexpected claims inflation increases future payments.",
+                  "explain": "2022-23 inflation shock."
+              },
+              {
+                  "q": "How can legal changes affect reserves?",
+                  "a": "Court decisions or legislation change liability retrospectively.",
+                  "explain": "Unpredictable."
+              },
+              {
+                  "q": "Why are long-tail classes more uncertain?",
+                  "a": "More time for changes, larger proportion unreported.",
+                  "explain": "Liability classes."
+              },
+              {
+                  "q": "How do reinsurance recoveries create uncertainty?",
+                  "a": "Bad debt, disputes, complex layers.",
+                  "explain": "Net uncertainty."
+              },
+              {
+                  "q": "How is uncertainty communicated?",
+                  "a": "Ranges, percentiles, scenarios, key drivers.",
+                  "explain": "TAS 200."
+              },
+              {
+                  "q": "What is model risk in reserving?",
+                  "a": "Wrong method choice.",
+                  "explain": "Compare methods."
+              },
+              {
+                  "q": "How do periodic payment orders affect uncertainty?",
+                  "a": "Long-term annuity-like payments exposed to longevity and inflation.",
+                  "explain": "PPOs in UK motor."
+              },
+              {
+                  "q": "What is reserve risk in capital modelling?",
+                  "a": "Risk of adverse reserve development over one year.",
+                  "explain": "SCR component."
+              },
+              {
+                  "q": "How do claims handling changes affect uncertainty?",
+                  "a": "Distort development patterns.",
+                  "explain": "Adjust data."
+              },
+              {
+                  "q": "What is the effect of catastrophes on reserves?",
+                  "a": "Early estimates highly uncertain.",
+                  "explain": "Exposure-based methods."
+              },
+              {
+                  "q": "Why can uncertainty never be fully quantified?",
+                  "a": "Unknown unknowns, ENIDs, structural breaks.",
+                  "explain": "Judgement."
+              }
+          ]
+      },
+      {
+          "id": "m19",
+          "title": "Investment principles and asset liability matching",
+          "description": "Investment principles for general insurers: nature and term of GI liabilities, matching by term, currency and inflation sensitivity, liquidity needs, capital and regulatory constraints, and the ALM trade-off between return and risk.",
+          "cards": [
+              {
+                  "q": "What are the characteristics of GI liabilities?",
+                  "a": "Short to medium term (long for liability), uncertain amounts and timing, often inflation-linked, multiple currencies.",
+                  "explain": "Drives strategy."
+              },
+              {
+                  "q": "How should short-tail liabilities be matched?",
+                  "a": "Cash and short-term bonds for liquidity.",
+                  "explain": "Property claims."
+              },
+              {
+                  "q": "How should long-tail liabilities be matched?",
+                  "a": "Longer bonds, possibly index-linked for inflation-sensitive claims.",
+                  "explain": "Liability claims."
+              },
+              {
+                  "q": "Why is currency matching important?",
+                  "a": "Claims in foreign currencies create FX risk if assets are domestic.",
+                  "explain": "Match currency."
+              },
+              {
+                  "q": "Why is liquidity important for GI insurers?",
+                  "a": "Catastrophes can require large, sudden payments.",
+                  "explain": "Liquid asset buffer."
+              },
+              {
+                  "q": "What role do free assets play?",
+                  "a": "Allow investment in higher-return, riskier assets.",
+                  "explain": "Risk appetite."
+              },
+              {
+                  "q": "How do capital requirements affect investment?",
+                  "a": "Market risk charges make risky assets capital-intensive.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "How is claims inflation hedged?",
+                  "a": "Imperfectly — index-linked bonds hedge price inflation, not claims inflation.",
+                  "explain": "Basis risk."
+              },
+              {
+                  "q": "What is duration matching?",
+                  "a": "Matching asset and liability durations to reduce interest rate risk.",
+                  "explain": "Discounted reserves."
+              },
+              {
+                  "q": "Why might insurers hold equities?",
+                  "a": "Long-term return on free assets.",
+                  "explain": "Volatility."
+              },
+              {
+                  "q": "What is the effect of discounting on ALM?",
+                  "a": "Discounted reserves are rate-sensitive, increasing the need to match.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "How can ALM models help?",
+                  "a": "Projecting assets and liabilities under scenarios.",
+                  "explain": "Strategy choice."
+              },
+              {
+                  "q": "What are regulatory investment constraints?",
+                  "a": "Prudent person principle.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "How does reinsurance affect ALM?",
+                  "a": "Recoverables are assets with credit risk and timing.",
+                  "explain": "Net cash flows."
+              },
+              {
+                  "q": "What is a cash flow matching approach?",
+                  "a": "Assets whose cash flows match expected claim payments.",
+                  "explain": "Expected payment pattern."
+              }
+          ]
+      },
+      {
+          "id": "m20",
+          "title": "Capital modelling – methodologies",
+          "description": "Approaches to assessing capital for a general insurer: regulatory standard formula versus internal models, economic capital, one-year versus ultimate horizons, risk measures (VaR, TVaR), stochastic simulation and dynamic financial analysis, and uses of capital models.",
+          "cards": [
+              {
+                  "q": "What is the standard formula?",
+                  "a": "Prescribed factor/stress-based SCR calculation under Solvency II.",
+                  "explain": "Simple, not tailored."
+              },
+              {
+                  "q": "What is an internal model?",
+                  "a": "An insurer's own capital model, approved by the regulator.",
+                  "explain": "Tailored to risk profile."
+              },
+              {
+                  "q": "What is economic capital?",
+                  "a": "Capital an insurer judges it needs to meet its own risk appetite.",
+                  "explain": "May differ from regulatory."
+              },
+              {
+                  "q": "What risk measure does Solvency II use?",
+                  "a": "99.5% VaR over one year.",
+                  "explain": "1-in-200."
+              },
+              {
+                  "q": "What is TVaR?",
+                  "a": "Average loss beyond VaR.",
+                  "explain": "Coherent."
+              },
+              {
+                  "q": "What is a one-year horizon?",
+                  "a": "Losses emerging over the next year, including change in reserves.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "What is an ultimate horizon?",
+                  "a": "Losses over full run-off.",
+                  "explain": "Economic capital."
+              },
+              {
+                  "q": "What is DFA?",
+                  "a": "Dynamic financial analysis — stochastic simulation of the insurer's finances.",
+                  "explain": "Capital models."
+              },
+              {
+                  "q": "What are uses of capital models?",
+                  "a": "Regulatory capital, capital allocation, pricing, reinsurance decisions, business planning, risk appetite.",
+                  "explain": "Use test."
+              },
+              {
+                  "q": "What is the use test?",
+                  "a": "Requirement that an internal model is widely used in decision-making.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "What is a partial internal model?",
+                  "a": "Internal model for some risks, standard formula for others.",
+                  "explain": "Flexibility."
+              },
+              {
+                  "q": "What are the components of a capital model?",
+                  "a": "Premium, reserve, cat, market, credit, operational risk modules plus aggregation.",
+                  "explain": "Modular."
+              },
+              {
+                  "q": "How is capital allocated?",
+                  "a": "To lines by contribution to total risk (e.g. Euler, marginal).",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "What is an ESG in capital modelling?",
+                  "a": "Economic scenario generator for market risks.",
+                  "explain": "Consistent scenarios."
+              },
+              {
+                  "q": "What are limitations of capital models?",
+                  "a": "Tail data scarcity, dependency assumptions, model risk, expert judgement.",
+                  "explain": "Validation."
+              }
+          ]
+      },
+      {
+          "id": "m21",
+          "title": "Capital modelling – risk types",
+          "description": "Modelling each risk type in a GI capital model: premium (attritional and large loss) risk, catastrophe risk (cat models), reserve risk, market risk, credit risk (reinsurance and other counterparties) and operational risk, with calibration approaches.",
+          "cards": [
+              {
+                  "q": "How is attritional loss risk modelled?",
+                  "a": "Aggregate loss ratio distributions (e.g. lognormal) calibrated to history.",
+                  "explain": "Premium risk."
+              },
+              {
+                  "q": "How are large losses modelled?",
+                  "a": "Frequency-severity with Poisson/negative binomial frequency and Pareto severity.",
+                  "explain": "Heavy tails."
+              },
+              {
+                  "q": "How is catastrophe risk modelled?",
+                  "a": "Using catastrophe models (hazard, vulnerability, financial modules) producing event loss tables.",
+                  "explain": "Vendor models."
+              },
+              {
+                  "q": "How is reserve risk modelled?",
+                  "a": "Bootstrap/Mack distributions adjusted to one-year view.",
+                  "explain": "Calibration."
+              },
+              {
+                  "q": "How is market risk modelled?",
+                  "a": "ESG scenarios for interest rates, spreads, equities, FX applied to assets and discounted liabilities.",
+                  "explain": "Correlated."
+              },
+              {
+                  "q": "How is reinsurance credit risk modelled?",
+                  "a": "Default probabilities by rating, exposure at default, recovery rates, correlation with catastrophes.",
+                  "explain": "Wrong-way risk."
+              },
+              {
+                  "q": "How is operational risk modelled?",
+                  "a": "Scenario analysis and loss data with frequency-severity models.",
+                  "explain": "Expert judgement."
+              },
+              {
+                  "q": "What is an event loss table?",
+                  "a": "Catalogue of events with probabilities and losses.",
+                  "explain": "Cat model output."
+              },
+              {
+                  "q": "What is attritional vs large loss split?",
+                  "a": "Separating frequent small losses from rare large ones for modelling.",
+                  "explain": "Threshold choice."
+              },
+              {
+                  "q": "How is premium risk defined?",
+                  "a": "Risk that future claims from next year's business exceed expectations.",
+                  "explain": "One-year."
+              },
+              {
+                  "q": "How is expense risk modelled?",
+                  "a": "Variation in expenses relative to plan.",
+                  "explain": "Minor."
+              },
+              {
+                  "q": "What is emergence pattern?",
+                  "a": "How ultimate uncertainty emerges over time.",
+                  "explain": "One-year conversion."
+              },
+              {
+                  "q": "How is inflation risk captured?",
+                  "a": "Via ESG-linked claims inflation in premium/reserve risk.",
+                  "explain": "Dependency."
+              },
+              {
+                  "q": "How is pandemic risk modelled for GI?",
+                  "a": "Scenarios affecting BI, travel, event cancellation.",
+                  "explain": "Expert judgement."
+              },
+              {
+                  "q": "Why validate risk calibrations?",
+                  "a": "To ensure appropriateness and regulatory approval.",
+                  "explain": "Back-testing, benchmarking."
+              }
+          ]
+      },
+      {
+          "id": "m22",
+          "title": "Capital modelling – diversification",
+          "description": "Aggregating risks and diversification in capital models: correlation matrices, copulas and tail dependence, simulation-based aggregation, diversification benefits and their allocation, and the sensitivity of capital to dependency assumptions.",
+          "cards": [
+              {
+                  "q": "What is diversification benefit?",
+                  "a": "Total capital less than the sum of standalone capitals.",
+                  "explain": "Risks not perfectly correlated."
+              },
+              {
+                  "q": "How does the standard formula aggregate risks?",
+                  "a": "Correlation matrices applied to standalone capital amounts.",
+                  "explain": "Square root formula."
+              },
+              {
+                  "q": "What is a copula?",
+                  "a": "A function linking marginal distributions to form a joint distribution with a specified dependency.",
+                  "explain": "Separates marginals from dependence."
+              },
+              {
+                  "q": "What is tail dependence?",
+                  "a": "Tendency for extreme events to occur together.",
+                  "explain": "Gaussian copula has none."
+              },
+              {
+                  "q": "Which copulas have tail dependence?",
+                  "a": "t-copula (both tails), Gumbel (upper), Clayton (lower).",
+                  "explain": "Choice matters."
+              },
+              {
+                  "q": "Why is correlation calibration difficult?",
+                  "a": "Limited data in tails; relationships change in stress.",
+                  "explain": "Expert judgement."
+              },
+              {
+                  "q": "How are diversification benefits allocated?",
+                  "a": "Euler/marginal contribution, proportional, or other methods.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "What is the sensitivity of capital to dependencies?",
+                  "a": "Often large — capital can change significantly with correlation assumptions.",
+                  "explain": "Sensitivity testing."
+              },
+              {
+                  "q": "What are sources of dependency?",
+                  "a": "Common drivers (inflation, catastrophes, legal changes, economic cycle).",
+                  "explain": "Causal modelling."
+              },
+              {
+                  "q": "What is a causal dependency approach?",
+                  "a": "Modelling common drivers explicitly.",
+                  "explain": "Alternative to copulas."
+              },
+              {
+                  "q": "Why might linear correlation be misleading?",
+                  "a": "Doesn't capture non-linear or tail dependence.",
+                  "explain": "Rank correlation alternatives."
+              },
+              {
+                  "q": "What is geographical diversification?",
+                  "a": "Spreading exposure across regions to reduce cat accumulation.",
+                  "explain": "Business strategy."
+              },
+              {
+                  "q": "What is line-of-business diversification?",
+                  "a": "Writing uncorrelated classes.",
+                  "explain": "Capital efficiency."
+              },
+              {
+                  "q": "How can diversification be overstated?",
+                  "a": "Ignoring tail dependence or common shocks.",
+                  "explain": "Model risk."
+              },
+              {
+                  "q": "What is a correlation matrix positive definiteness issue?",
+                  "a": "Expert-set matrices may not be valid; need adjustment.",
+                  "explain": "Technical."
+              }
+          ]
+      },
+      {
+          "id": "m23",
+          "title": "Capital modelling – practical considerations",
+          "description": "Practical issues in building and using capital models: governance, validation, documentation, expert judgement, data limitations, parameter uncertainty, communication of results, and embedding the model in decision-making.",
+          "cards": [
+              {
+                  "q": "What governance is needed for capital models?",
+                  "a": "Board ownership, model change policy, independent validation, documentation.",
+                  "explain": "Solvency II requirements."
+              },
+              {
+                  "q": "What is model validation?",
+                  "a": "Independent testing of model appropriateness, including back-testing, sensitivity, benchmarking.",
+                  "explain": "Ongoing."
+              },
+              {
+                  "q": "What is expert judgement?",
+                  "a": "Informed opinion used where data is insufficient.",
+                  "explain": "Documented and validated."
+              },
+              {
+                  "q": "Why document the model?",
+                  "a": "For understanding, review, approval, maintenance.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "How can parameter uncertainty be allowed for?",
+                  "a": "Parameter uncertainty loadings or Bayesian approaches.",
+                  "explain": "Tail calibration."
+              },
+              {
+                  "q": "How should results be communicated?",
+                  "a": "Key drivers, sensitivities, limitations.",
+                  "explain": "Board understanding."
+              },
+              {
+                  "q": "What is a model change policy?",
+                  "a": "Rules for approving and reporting model changes.",
+                  "explain": "Regulatory."
+              },
+              {
+                  "q": "What is profit and loss attribution?",
+                  "a": "Explaining actual P&L with model risk drivers.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "What are stress and scenario tests used for?",
+                  "a": "Validating tail outcomes against plausible events.",
+                  "explain": "Reverse stress."
+              },
+              {
+                  "q": "How do business changes affect models?",
+                  "a": "Need recalibration for new lines or reinsurance.",
+                  "explain": "Keep current."
+              },
+              {
+                  "q": "What is the use test's practical meaning?",
+                  "a": "Model outputs used in pricing, reinsurance, planning, risk appetite.",
+                  "explain": "Embedding."
+              },
+              {
+                  "q": "What are computational considerations?",
+                  "a": "Run times, number of simulations, convergence.",
+                  "explain": "Efficiency."
+              },
+              {
+                  "q": "How is data limitation handled?",
+                  "a": "External data, expert judgement, prudence.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "Why involve the business?",
+                  "a": "Ensures realism and buy-in.",
+                  "explain": "Ownership."
+              },
+              {
+                  "q": "What is a model risk register?",
+                  "a": "Record of known model limitations and their impacts.",
+                  "explain": "Governance."
+              }
+          ]
+      },
+      {
+          "id": "m24",
+          "title": "Determining appropriate reinsurance",
+          "description": "Choosing a reinsurance programme: objectives and risk appetite, types and structures, retention and limit selection, cost-benefit analysis using capital models, security of reinsurers, and alternatives to traditional reinsurance.",
+          "cards": [
+              {
+                  "q": "What objectives drive reinsurance purchase?",
+                  "a": "Reduce volatility, protect capital, meet risk appetite, increase capacity, access expertise.",
+                  "explain": "Start from objectives."
+              },
+              {
+                  "q": "How are retentions chosen?",
+                  "a": "Based on risk appetite, capital, cost of reinsurance, and loss distributions.",
+                  "explain": "Modelling."
+              },
+              {
+                  "q": "How are catastrophe limits chosen?",
+                  "a": "To cover a return period (e.g. 1-in-200 PML) consistent with appetite and regulation.",
+                  "explain": "Cat models."
+              },
+              {
+                  "q": "How can capital models evaluate reinsurance?",
+                  "a": "Compare capital savings and volatility reduction against reinsurance cost (net cost of reinsurance vs cost of capital).",
+                  "explain": "Efficiency."
+              },
+              {
+                  "q": "What is the net cost of reinsurance?",
+                  "a": "Premium minus expected recoveries.",
+                  "explain": "Reinsurer margin."
+              },
+              {
+                  "q": "Why consider reinsurer security?",
+                  "a": "Recoveries depend on reinsurer solvency.",
+                  "explain": "Ratings, collateral."
+              },
+              {
+                  "q": "What alternatives to reinsurance exist?",
+                  "a": "Capital raising, cat bonds, diversification, underwriting changes.",
+                  "explain": "Compare costs."
+              },
+              {
+                  "q": "How does reinsurance affect pricing?",
+                  "a": "Reinsurance costs feed into gross pricing.",
+                  "explain": "Allocation."
+              },
+              {
+                  "q": "What is a reinsurance programme structure?",
+                  "a": "Combination of proportional and non-proportional covers by class.",
+                  "explain": "Layered."
+              },
+              {
+                  "q": "What is the effect of reinsurance on SCR?",
+                  "a": "Reduces underwriting risk, adds credit risk.",
+                  "explain": "Net effect."
+              },
+              {
+                  "q": "Why test reinsurance against scenarios?",
+                  "a": "Check performance in realistic events.",
+                  "explain": "Stress tests."
+              },
+              {
+                  "q": "How can quota share help growth?",
+                  "a": "Provides capital relief and commission.",
+                  "explain": "New business."
+              },
+              {
+                  "q": "What is the role of brokers in programme design?",
+                  "a": "Market access, structuring, pricing benchmarks.",
+                  "explain": "Advice."
+              },
+              {
+                  "q": "What contract wording issues matter?",
+                  "a": "Event definitions, exclusions, reinstatements.",
+                  "explain": "Basis risk."
+              },
+              {
+                  "q": "Why review reinsurance annually?",
+                  "a": "Changing risk profile, prices and appetite.",
+                  "explain": "Renewal cycle."
+              }
+          ]
+      },
+      {
+          "id": "m25",
+          "title": "Reinsurance reserving",
+          "description": "Reserving for reinsurance: estimating ceded recoveries and net reserves, gross-to-net approaches, applying treaty terms to large and catastrophe losses, reinstatement premiums, reinsurance bad debt, and reserving for inwards reinsurance business.",
+          "cards": [
+              {
+                  "q": "How are net reserves estimated?",
+                  "a": "Either by projecting net data directly or estimating gross and deducting projected recoveries.",
+                  "explain": "Choice depends on reinsurance structure."
+              },
+              {
+                  "q": "Why can net triangles be problematic?",
+                  "a": "Changing reinsurance programmes distort development.",
+                  "explain": "Use gross-to-net."
+              },
+              {
+                  "q": "How are XoL recoveries estimated?",
+                  "a": "Apply treaty terms to projected large claims individually or via distributions.",
+                  "explain": "Large loss modelling."
+              },
+              {
+                  "q": "What are reinstatement premiums?",
+                  "a": "Premiums payable to restore XoL cover after losses.",
+                  "explain": "Reserve for them."
+              },
+              {
+                  "q": "What is reinsurance bad debt?",
+                  "a": "Expected non-recovery due to reinsurer default or disputes.",
+                  "explain": "Provision."
+              },
+              {
+                  "q": "How is quota share netted?",
+                  "a": "Apply the ceded percentage.",
+                  "explain": "Simple."
+              },
+              {
+                  "q": "What are the challenges of inwards reinsurance reserving?",
+                  "a": "Reporting delays, limited data, heterogeneous contracts, long tails.",
+                  "explain": "Lags."
+              },
+              {
+                  "q": "What is ceded IBNR?",
+                  "a": "Expected recoveries on IBNR claims.",
+                  "explain": "Depends on layer."
+              },
+              {
+                  "q": "How does aggregation affect recoveries?",
+                  "a": "Event definitions determine whether losses aggregate to hit layers.",
+                  "explain": "Hours clauses."
+              },
+              {
+                  "q": "Why reserve for profit commission?",
+                  "a": "Profit-sharing terms on reinsurance may be payable.",
+                  "explain": "Contract terms."
+              },
+              {
+                  "q": "How do commutations affect reserves?",
+                  "a": "Settlement of reinsurance obligations for lump sum.",
+                  "explain": "Finality."
+              },
+              {
+                  "q": "What is the effect of discounting on reinsurance reserves?",
+                  "a": "Recoveries also discounted.",
+                  "explain": "Timing."
+              },
+              {
+                  "q": "What data is needed for reinsurance reserving?",
+                  "a": "Individual large claims, treaty details, programme history.",
+                  "explain": "Detail."
+              },
+              {
+                  "q": "How is catastrophe recovery reserved?",
+                  "a": "Apply cat XoL to event estimates.",
+                  "explain": "Exposure-based."
+              },
+              {
+                  "q": "What is a sliding scale commission?",
+                  "a": "Commission varying inversely with loss ratio.",
+                  "explain": "Reserve adjustment."
+              }
+          ]
+      },
+      {
+          "id": "m26",
+          "title": "Accounting methods",
+          "description": "Accounting for general insurance: earned premium and incurred claims, annual accounting, historical funded/three-year accounting at Lloyd's, deferred acquisition costs, IFRS 17 (premium allocation approach and general model), reinsurance accounting, and discounting.",
+          "cards": [
+              {
+                  "q": "What is earned premium?",
+                  "a": "Premium relating to the expired portion of cover.",
+                  "explain": "Written less change in UPR."
+              },
+              {
+                  "q": "What are incurred claims?",
+                  "a": "Paid claims plus change in outstanding reserves.",
+                  "explain": "Accounting period."
+              },
+              {
+                  "q": "What is annual accounting?",
+                  "a": "Recognising profit on the business earned in each financial year.",
+                  "explain": "Standard."
+              },
+              {
+                  "q": "What was three-year (funded) accounting?",
+                  "a": "Deferring profit recognition until a year of account closes (Lloyd's historically).",
+                  "explain": "Replaced."
+              },
+              {
+                  "q": "What are deferred acquisition costs?",
+                  "a": "Acquisition costs deferred in line with unearned premium.",
+                  "explain": "Matching."
+              },
+              {
+                  "q": "What is the IFRS 17 premium allocation approach (PAA)?",
+                  "a": "A simplified approach for short-duration contracts similar to unearned premium accounting.",
+                  "explain": "Most GI."
+              },
+              {
+                  "q": "What is the IFRS 17 general measurement model?",
+                  "a": "Fulfilment cash flows plus contractual service margin.",
+                  "explain": "Long contracts."
+              },
+              {
+                  "q": "What is the contractual service margin?",
+                  "a": "Unearned profit released over coverage.",
+                  "explain": "IFRS 17."
+              },
+              {
+                  "q": "How is reinsurance accounted under IFRS 17?",
+                  "a": "Separately from underlying contracts, with its own measurement.",
+                  "explain": "Mismatch possible."
+              },
+              {
+                  "q": "What is the effect of discounting on accounts?",
+                  "a": "Lowers reserves; unwind of discount in finance expense.",
+                  "explain": "IFRS 17."
+              },
+              {
+                  "q": "What is an onerous contract?",
+                  "a": "Where expected costs exceed premiums; loss recognised immediately.",
+                  "explain": "IFRS 17."
+              },
+              {
+                  "q": "What is the underwriting result?",
+                  "a": "Earned premium minus incurred claims and expenses.",
+                  "explain": "Before investment."
+              },
+              {
+                  "q": "What is the technical account?",
+                  "a": "Accounts showing underwriting results.",
+                  "explain": "UK GAAP format."
+              },
+              {
+                  "q": "How are prior-year movements reported?",
+                  "a": "Reserve releases or strengthening affect current-year results.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "How does accounting affect reserving?",
+                  "a": "Basis (undiscounted/discounted, margins) set by accounting rules.",
+                  "explain": "Purpose-specific."
+              }
+          ]
+      },
+      {
+          "id": "m27",
+          "title": "Interpreting accounts",
+          "description": "Interpreting a general insurer's financial statements and regulatory returns: key ratios (loss, expense, combined, operating), reserve development and prior-year releases, solvency ratios and SFCR, investment returns, and using accounts to assess an insurer's performance and strength.",
+          "cards": [
+              {
+                  "q": "What is the loss ratio?",
+                  "a": "Incurred claims / earned premium.",
+                  "explain": "Underwriting performance."
+              },
+              {
+                  "q": "What is the expense ratio?",
+                  "a": "Expenses / premium (written or earned).",
+                  "explain": "Efficiency."
+              },
+              {
+                  "q": "What is the combined ratio?",
+                  "a": "Loss ratio + expense ratio; below 100% means underwriting profit.",
+                  "explain": "Key metric."
+              },
+              {
+                  "q": "What is the operating ratio?",
+                  "a": "Combined ratio minus investment income ratio.",
+                  "explain": "Overall."
+              },
+              {
+                  "q": "What is the solvency ratio?",
+                  "a": "Own funds / SCR.",
+                  "explain": "Capital strength."
+              },
+              {
+                  "q": "What does reserve development show?",
+                  "a": "Whether prior-year reserves were adequate.",
+                  "explain": "Triangles in notes."
+              },
+              {
+                  "q": "Why can prior-year releases flatter results?",
+                  "a": "Releases boost profit without reflecting current-year performance.",
+                  "explain": "Quality of earnings."
+              },
+              {
+                  "q": "What is the SFCR?",
+                  "a": "Solvency and Financial Condition Report — public disclosure.",
+                  "explain": "Pillar 3."
+              },
+              {
+                  "q": "What can be learnt from accident-year loss ratios?",
+                  "a": "Underlying pricing adequacy.",
+                  "explain": "Versus calendar-year."
+              },
+              {
+                  "q": "How can premium growth be interpreted?",
+                  "a": "Rate increases vs volume growth vs mix.",
+                  "explain": "Rate monitoring."
+              },
+              {
+                  "q": "What indicates reserve weakness?",
+                  "a": "Adverse development, low IBNR ratios, falling paid-to-incurred.",
+                  "explain": "Red flags."
+              },
+              {
+                  "q": "How do reinsurance costs affect ratios?",
+                  "a": "Gross vs net ratios differ.",
+                  "explain": "Reinsurance dependency."
+              },
+              {
+                  "q": "Why compare with peers?",
+                  "a": "Benchmarks for performance.",
+                  "explain": "Context."
+              },
+              {
+                  "q": "What is return on equity?",
+                  "a": "Profit / shareholders' equity.",
+                  "explain": "Shareholder return."
+              },
+              {
+                  "q": "What are limitations of accounts?",
+                  "a": "Accounting choices, lagging information, aggregation.",
+                  "explain": "Use with other data."
+              }
+          ]
+      },
+      {
+          "id": "m28",
+          "title": "Principal terms",
+          "description": "Key SP7 terminology — reserving, capital, reinsurance, market and accounting terms — as a recall deck.",
+          "cards": [
+              {
+                  "q": "Define 'IBNR'.",
+                  "a": "Incurred but not reported claims.",
+                  "explain": "Reserving."
+              },
+              {
+                  "q": "Define 'development factor'.",
+                  "a": "Ratio of cumulative claims at successive development periods.",
+                  "explain": "Chain ladder."
+              },
+              {
+                  "q": "Define 'ultimate loss ratio'.",
+                  "a": "Ultimate claims / premium for an origin period.",
+                  "explain": "Reserving."
+              },
+              {
+                  "q": "Define 'RITC'.",
+                  "a": "Reinsurance to close — closing a Lloyd's year of account.",
+                  "explain": "Lloyd's."
+              },
+              {
+                  "q": "Define 'SCR'.",
+                  "a": "Solvency Capital Requirement at 99.5% one-year VaR.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "Define 'risk margin'.",
+                  "a": "Cost-of-capital addition to best estimate liabilities.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "Define 'Cape Cod'.",
+                  "a": "BF variant estimating ELR from data using used-up premium.",
+                  "explain": "Reserving."
+              },
+              {
+                  "q": "Define 'tail factor'.",
+                  "a": "Development beyond the triangle.",
+                  "explain": "Reserving."
+              },
+              {
+                  "q": "Define 'combined ratio'.",
+                  "a": "Loss ratio plus expense ratio.",
+                  "explain": "Accounts."
+              },
+              {
+                  "q": "Define 'copula'.",
+                  "a": "Function joining marginals into a joint distribution.",
+                  "explain": "Diversification."
+              },
+              {
+                  "q": "Define 'AURR'.",
+                  "a": "Additional unexpired risk reserve.",
+                  "explain": "Premium deficiency."
+              },
+              {
+                  "q": "Define 'reinstatement premium'.",
+                  "a": "Premium to restore XoL cover after a loss.",
+                  "explain": "Reinsurance."
+              },
+              {
+                  "q": "Define 'PML'.",
+                  "a": "Probable maximum loss.",
+                  "explain": "Catastrophe."
+              },
+              {
+                  "q": "Define 'ENIDs'.",
+                  "a": "Events not in data.",
+                  "explain": "Best estimate."
+              },
+              {
+                  "q": "Define 'ULAE'.",
+                  "a": "Unallocated loss adjustment expenses.",
+                  "explain": "Reserving."
+              }
+          ]
+      }
+  ],
   SP8: [
     {
         "id": "m01",

@@ -9200,7 +9200,7 @@ const QUESTIONS = {
     {
       id: "sp7-q1",
       title: "The underwriting cycle and long-tail business",
-      modules: "Modules 2, 3",
+      modules: "Modules 1, 3, 7",
       marks: 12,
       parts: [
         {
@@ -9248,7 +9248,7 @@ const QUESTIONS = {
     {
       id: "sp7-q2",
       title: "Reserving uncertainty and model risk",
-      modules: "Module 4",
+      modules: "Modules 11, 18",
       marks: 12,
       parts: [
         {
@@ -9296,7 +9296,7 @@ const QUESTIONS = {
     {
       id: "sp7-q3",
       title: "The chain ladder method",
-      modules: "Module 6",
+      modules: "Module 15",
       marks: 12,
       parts: [
         {
@@ -9344,7 +9344,7 @@ const QUESTIONS = {
     {
       id: "sp7-q4",
       title: "The Bornhuetter-Ferguson method",
-      modules: "Module 7",
+      modules: "Module 15",
       marks: 12,
       parts: [
         {
@@ -9392,7 +9392,7 @@ const QUESTIONS = {
     {
       id: "sp7-q5",
       title: "IBNR, IBNER and claims inflation",
-      modules: "Module 8",
+      modules: "Modules 14, 15",
       marks: 12,
       parts: [
         {
@@ -9440,7 +9440,7 @@ const QUESTIONS = {
     {
       id: "sp7-q6",
       title: "Stochastic reserving: Mack and ODP bootstrap",
-      modules: "Modules 9, 10",
+      modules: "Module 16",
       marks: 12,
       parts: [
         {
@@ -9488,7 +9488,7 @@ const QUESTIONS = {
     {
       id: "sp7-q7",
       title: "Internal models and the standard formula",
-      modules: "Module 11",
+      modules: "Modules 8, 20",
       marks: 12,
       parts: [
         {
@@ -9536,7 +9536,7 @@ const QUESTIONS = {
     {
       id: "sp7-q8",
       title: "Diversification benefit and capital allocation",
-      modules: "Module 12",
+      modules: "Module 22",
       marks: 12,
       parts: [
         {
@@ -9584,7 +9584,7 @@ const QUESTIONS = {
     {
       id: "sp7-q9",
       title: "Value at Risk and Tail Value at Risk",
-      modules: "Module 13",
+      modules: "Modules 20, 21",
       marks: 12,
       parts: [
         {
@@ -9595,7 +9595,7 @@ const QUESTIONS = {
             "An insurer's simulated aggregate loss distribution (5 equally likely outcomes, sorted ascending) is: £100,000, £200,000, £300,000, £400,000, £1,000,000. Calculate the 80% Value at Risk (VaR) and the 80% Tail Value at Risk (TVaR).",
           answer:
             "80% VaR is the 4th of 5 equally-likely, sorted outcomes = £400,000. 80% TVaR is the average of all outcomes at or above the VaR threshold: (£400,000 + £1,000,000) / 2 = £700,000.",
-          note: "Arithmetic check: VaR80=400,000; TVaR80=700,000. This is a simplified discrete illustration; marks are typically split across correctly identifying VaR and correctly averaging the tail outcomes for TVaR.",
+          note: "Arithmetic check: VaR80=400,000; TVaR80=700,000. Definitions matter with discrete outcomes: this answer uses TVaR = E[X | X &ge; VaR], which includes the VaR outcome itself. Under the expected-shortfall definition (the average of the worst 20% of outcomes) the answer would be &pound;1,000,000 &mdash; state which definition you use. This is a simplified discrete illustration; marks are typically split across correctly identifying VaR and correctly averaging the tail outcomes for TVaR.",
         },
         {
           label: "(ii)",
@@ -9632,7 +9632,7 @@ const QUESTIONS = {
     {
       id: "sp7-q10",
       title: "Reinsurance modelling, counterparty risk and discounting",
-      modules: "Modules 15, 16",
+      modules: "Modules 19, 24, 25",
       marks: 12,
       parts: [
         {
