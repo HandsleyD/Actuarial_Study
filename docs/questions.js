@@ -5344,7 +5344,7 @@ const QUESTIONS = {
     {
       id: "sa3-q1",
       title: "Pricing a large commercial property risk",
-      modules: "Modules 2, 4, 5, 6",
+      modules: "Modules 6, 7",
       marks: 12,
       parts: [
         {
@@ -5392,7 +5392,7 @@ const QUESTIONS = {
     {
       id: "sa3-q2",
       title: "The Lloyd's market and its regulatory regime",
-      modules: "Modules 3, 8",
+      modules: "Modules 2, 5",
       marks: 12,
       parts: [
         {
@@ -5440,7 +5440,7 @@ const QUESTIONS = {
     {
       id: "sa3-q3",
       title: "Catastrophe reinsurance layer design",
-      modules: "Modules 5, 6, 15",
+      modules: "Modules 7, 15",
       marks: 12,
       parts: [
         {
@@ -5488,7 +5488,7 @@ const QUESTIONS = {
     {
       id: "sa3-q4",
       title: "Solvency II capital requirements for a general insurer",
-      modules: "Module 7",
+      modules: "Modules 8, 9",
       marks: 12,
       parts: [
         {
@@ -5536,7 +5536,7 @@ const QUESTIONS = {
     {
       id: "sa3-q5",
       title: "Consumer protection and equality legislation",
-      modules: "Module 9",
+      modules: "Module 4",
       marks: 12,
       parts: [
         {
@@ -5584,7 +5584,7 @@ const QUESTIONS = {
     {
       id: "sa3-q6",
       title: "Reserving for latent and disease claims",
-      modules: "Modules 12, 13",
+      modules: "Module 11",
       marks: 12,
       parts: [
         {
@@ -5680,7 +5680,7 @@ const QUESTIONS = {
     {
       id: "sa3-q8",
       title: "Financial planning and modelling",
-      modules: "Modules 16, 17",
+      modules: "Module 10",
       marks: 12,
       parts: [
         {
@@ -5728,7 +5728,7 @@ const QUESTIONS = {
     {
       id: "sa3-q9",
       title: "Exiting a catastrophe-exposed property line",
-      modules: "Modules 18, 19",
+      modules: "Modules 12, 16",
       marks: 12,
       parts: [
         {
@@ -5776,7 +5776,7 @@ const QUESTIONS = {
     {
       id: "sa3-q10",
       title: "Cross-jurisdiction comparison and regulatory frameworks",
-      modules: "Modules 8, 11",
+      modules: "Modules 3, 4, 5",
       marks: 12,
       parts: [
         {

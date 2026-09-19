@@ -16789,653 +16789,1401 @@ const MODULES = {
       }
   ],
   SA3: [
-    {
-        "id": "m01",
-        "title": "What is Subject SA3 all about?",
-        "description": "An orientation chapter explaining SA3's role as the Specialist Advanced subject applying core actuarial techniques to complex general insurance scenarios, and how it builds on SP7 and SP8.",
-        "cards": [
-            {
-                "q": "What is the aim of Subject SA3, according to its official syllabus?",
-                "a": "To instil in successful candidates the ability to apply knowledge of the general insurance environment (in the United Kingdom and other jurisdictions) and the principles of actuarial practice to providers of general insurance in complex situations.",
-                "explain": "This is the genuine, official IFoA syllabus wording — worth reading closely: 'complex situations' signals the same applied-judgement exam philosophy running through every SA subject, now specifically for general (non-life) insurers."
-            },
-            {
-                "q": "What four competences does the SA3 syllabus state a successful candidate should be able to demonstrate?",
-                "a": "Understand the more complex aspects of actuarial practice within general insurance companies; apply the principles of actuarial practice to the management of general insurance under complex scenarios; compare the approaches by which the principles are applied in practice across different jurisdictions; and recommend coherent solutions and courses of action in relation to overall financial management.",
-                "explain": "These four competences map directly onto this course's own structure — worth treating them as a genuine checklist for what a strong SA3 answer must ultimately demonstrate, not just accurate technical content."
-            },
-            {
-                "q": "Which two Specialist Principles subjects does SA3 build directly on, according to its official links?",
-                "a": "SP7 (General Insurance Reserving and Capital Modelling Principles) and SP8 (General Insurance Pricing Principles) — SA3 assumes the technical foundation from both and applies it to complex, integrated management scenarios.",
-                "explain": "Worth treating SP7 and SP8 as the assumed technical toolkit SA3 does not re-teach from scratch — SA3's job is to apply that reserving/capital/pricing foundation to realistic, complex business situations."
-            },
-            {
-                "q": "What are the four main syllabus topic areas of SA3, and their approximate topic weightings, according to the official syllabus?",
-                "a": "General insurance products and general business environment (35%); regulatory, legislative and taxation environment (10%); reserving, ALM and reinsurance (30%); and financial management, monitoring and strategies (25%).",
-                "explain": "Worth memorising these weightings directly — the two largest areas (products/environment at 35%, and reserving/ALM/reinsurance at 30%) together make up almost two-thirds of the whole exam's marks."
-            },
-            {
-                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SA subjects like SA3?",
-                "a": "Approximately 20% knowledge (detailed understanding of the topic), 50% application (applying principles within a given context), and 30% higher-order skills (deeper analysis, judgement, comparing situations, and proposing solutions).",
-                "explain": "Worth taking as direct, practical revision guidance — the majority of marks (80%) require <em>applying</em> and <em>analysing</em>, not simply reciting knowledge, so revision should prioritise practising realistic scenario questions over pure memorisation."
-            },
-            {
-                "q": "Why does the official SA3 syllabus include a final 'Solving problems' topic area, distinct from the four main weighted topics?",
-                "a": "It explicitly tests the ability to analyse complex problems in terms of actuarial, economic and financial factors, assess and integrate the implications of such factors, evaluate results critically in a wider context, and propose solutions or actions based on that evaluation.",
-                "explain": "This directly previews this course's own closing complex-issues module — worth recognising this four-stage analyse/assess/evaluate/propose structure as a genuine answer-writing template for any complex, multi-topic SA3 question."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "General insurance markets and products",
-        "description": "Covers the main features of general insurance markets and products, drawing on the official syllabus's products and business environment topic area.",
-        "cards": [
-            {
-                "q": "What are the main features that distinguish general insurance markets from life insurance markets, echoing CB2's material?",
-                "a": "General insurance typically involves shorter-tail, more frequent, and more variable claims (e.g. motor, property) compared with life insurance's longer-duration, less frequent claims, and general insurance premiums are typically reviewed and reset annually rather than fixed for a long contract term.",
-                "explain": "This directly recalls CB2's general-versus-life-insurance material — worth recognising the shorter tail and annual repricing as the two structural features that most shape everything else in this course, from pricing to reserving to capital."
-            },
-            {
-                "q": "Why might general insurance products span a wide range of claim 'tail' lengths, from short-tail (e.g. motor damage) to very long-tail (e.g. asbestos-related disease claims)?",
-                "a": "Different perils and coverages have different reporting and settlement patterns — some claims are reported and settled within months, while others (e.g. latent disease or liability claims) may not even be reported until years or decades after the triggering event, requiring different reserving techniques for each.",
-                "explain": "This directly previews this course's later latent-claims-reserving module — worth recognising claim tail length as the single most important classifying feature of a general insurance product for actuarial purposes."
-            },
-            {
-                "q": "Why might commercial general insurance lines (e.g. large commercial property or liability risks) require different underwriting and pricing approaches than personal lines (e.g. motor, household)?",
-                "a": "Commercial risks are typically fewer in number, larger and more heterogeneous in size and exposure, meaning standard statistical rating techniques reliant on large, homogeneous portfolios are less directly applicable, requiring more bespoke, judgement-based rating approaches.",
-                "explain": "This directly previews this course's large-commercial-risk-pricing module — worth recognising portfolio <em>size</em> and <em>homogeneity</em>, not just product type, as the key driver of which pricing techniques are appropriate."
-            },
-            {
-                "q": "Why might a general insurer's product mix directly shape its exposure to catastrophe risk, echoing SA1's and CP1's material?",
-                "a": "Property and liability lines concentrated in catastrophe-exposed regions (e.g. windstorm, flood, earthquake zones) carry correlated risk across many policies simultaneously, unlike lines with more independent, idiosyncratic claim triggers, directly shaping the insurer's need for catastrophe modelling and reinsurance.",
-                "explain": "This directly previews this course's catastrophe-modelling modules — worth recognising catastrophe exposure as fundamentally a <em>product mix</em> and <em>geographic concentration</em> issue, not an unavoidable feature of general insurance as a whole."
-            },
-            {
-                "q": "Why might distribution channel choice (e.g. broker-intermediated versus direct) matter particularly for commercial general insurance lines?",
-                "a": "Complex, bespoke commercial risks often benefit from broker expertise in structuring appropriate cover and negotiating terms, while simpler, more standardised personal lines can be reasonably sold through direct or price-comparison channels without needing this same specialist intermediation.",
-                "explain": "This directly recalls CB1's and SA1's product-complexity-versus-distribution-channel material — worth recognising the same underlying principle applying here: channel suitability tracks product complexity, not general insurance versus other insurance sectors as such."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "The Lloyd's market",
-        "description": "Covers the key features and regulatory regime of the Lloyd's insurance market, drawing directly on the official syllabus's dedicated Lloyd's objectives.",
-        "cards": [
-            {
-                "q": "What is the Lloyd's market, and how does its underlying structure differ from a conventional general insurance company?",
-                "a": "Lloyd's is a marketplace where syndicates of underwriting members (historically individuals, now predominantly corporate capital providers) come together to underwrite insurance risk, rather than a single company underwriting risk on its own balance sheet.",
-                "explain": "Worth treating this <em>marketplace</em> structure as the single most important distinguishing feature of Lloyd's — it is not a single insurance company, which has direct knock-on implications for capital, regulation and reporting covered in the cards below."
-            },
-            {
-                "q": "Why might a syndicate at Lloyd's require its own distinct capital assessment, separate from any single member's own overall financial position?",
-                "a": "Since capital backing a syndicate's underwriting can come from many different members (each potentially also participating in other syndicates), Lloyd's and its regulators need syndicate-level and member-level capital assessments that together ensure genuine overall adequacy across this more complex, layered capital structure.",
-                "explain": "This directly previews Module 7's Solvency II material — worth recognising Lloyd's capital assessment as more layered than a conventional insurer's, given the marketplace structure just described."
-            },
-            {
-                "q": "Why does Lloyd's operate under a regulatory regime that combines its own internal oversight (the Council of Lloyd's) with external prudential regulation?",
-                "a": "Lloyd's internal oversight can apply market-specific rules and standards tailored to its unique syndicate structure, while external regulation (e.g. under Solvency II in the UK) ensures Lloyd's overall meets the same genuine prudential standards expected of any other insurance market participant.",
-                "explain": "This directly previews Module 8's Lloyd's-regulatory-regime material — worth recognising this dual-layer oversight as a direct structural consequence of Lloyd's being a marketplace rather than a single regulated company."
-            },
-            {
-                "q": "Why might Lloyd's syndicates and their members face distinct taxation considerations compared with a conventional general insurance company and its shareholders?",
-                "a": "Since underwriting profits and losses flow through to individual or corporate members according to their specific participation in each syndicate, the tax treatment must reflect this different profit-flow structure, rather than the more straightforward corporate taxation applicable to a conventional insurer's shareholders.",
-                "explain": "This directly previews Module 10's taxation material — worth recognising Lloyd's distinctive capital and profit-flow structure as creating distinct tax questions, not just a variation on standard corporate insurance taxation."
-            },
-            {
-                "q": "Why might Lloyd's continue to be an attractive market structure for underwriting complex or unusual commercial and specialty risks, despite its more complex capital and regulatory structure?",
-                "a": "The marketplace structure allows genuine specialisation and risk-sharing across many syndicates with different expertise, and its long-established reputation and broker network can provide access to complex, bespoke risks that might be harder for a single conventional insurer to source and underwrite independently.",
-                "explain": "This directly recalls Module 2's large-commercial-risk material — worth recognising Lloyd's marketplace structure as well-suited to exactly the kind of bespoke, heterogeneous commercial risk this course's earlier module identified as needing specialist underwriting approaches."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "Pricing large commercial risks",
-        "description": "Covers the particular pricing considerations for large commercial risks, including alternative rating approaches and incorporating the cost of capital, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why does pricing a large commercial risk require different considerations from pricing a standard, high-volume personal lines policy, echoing Module 2's material?",
-                "a": "Large commercial risks are typically few in number, heterogeneous, and individually significant, meaning standard statistical rating relying on the law of large numbers across a homogeneous portfolio is less directly applicable, requiring more bespoke, judgement-informed rating approaches.",
-                "explain": "This directly recalls Module 2's commercial-versus-personal-lines material — worth recognising this as the foundational reason every other card in this module matters: <em>Low volume</em> and <em>heterogeneity</em> are what distinguish large commercial pricing."
-            },
-            {
-                "q": "What alternative approaches might an actuary use to rate a large commercial risk where the insurer's own historical experience is too limited to be statistically credible, echoing CS1's material?",
-                "a": "Approaches include using industry-wide or market benchmark data, exposure-based rating (assessing risk from the underlying exposure characteristics rather than historical claims alone), and blending limited own experience with external data using credibility-theory-style weighting.",
-                "explain": "This directly recalls CS1's credibility theory material — worth recognising large commercial rating as one of the clearest real-world applications of blending limited own data with external sources, a recurring theme across this whole curriculum."
-            },
-            {
-                "q": "Why might a large commercial risk's premium rate need to explicitly incorporate the insurer's cost of capital, rather than relying purely on expected claims cost plus a standard margin?",
-                "a": "Large, heterogeneous risks can carry significant capital requirements (e.g. due to concentration or volatility), so pricing that ignored the specific capital cost of writing that risk could understate its true economic cost to the insurer, echoing CB1's risk-adjusted-return material.",
-                "explain": "This directly recalls CB1's cost-of-capital material — worth recognising this as the same underlying principle: a capital-intensive risk warrants a correspondingly higher required return, reflected explicitly in its premium rate."
-            },
-            {
-                "q": "Why might catastrophe modelling be a particularly important input specifically when pricing large commercial property risks, previewing this course's next two modules?",
-                "a": "Large commercial property risks are often concentrated in specific locations exposed to correlated catastrophe perils (e.g. windstorm, flood), so traditional actuarial rating based on historical average claims experience alone may not adequately capture the genuine tail risk a catastrophe model is specifically designed to quantify.",
-                "explain": "This directly previews Modules 5-6's catastrophe-modelling material — worth recognising large commercial property pricing as one of the clearest points of contact between this module's rating techniques and the catastrophe-modelling techniques covered next."
-            },
-            {
-                "q": "Why might pricing a large commercial risk require genuine actuarial judgement in a way that pricing a standard personal lines policy typically does not, echoing CP1's material?",
-                "a": "Given the limited own data, heterogeneity, and bespoke risk features of large commercial risks, no single mechanical formula can fully determine an appropriate rate, so genuine, well-reasoned professional judgement — blending statistical technique, benchmark data, and underwriting insight — is a necessary part of the pricing process.",
-                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising large commercial pricing as one of the clearest, most exam-relevant real-world examples of this principle across the whole actuarial curriculum."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Catastrophe modelling (1): structure and perils",
-        "description": "Covers the generic structure of catastrophe models, the key perils they model, and how catastrophe modelling differs from traditional actuarial rating methods, per the official syllabus.",
-        "cards": [
-            {
-                "q": "How does catastrophe modelling differ fundamentally from traditional actuarial rating methods, per the official syllabus objective?",
-                "a": "Traditional actuarial rating typically relies on statistical analysis of an insurer's own historical claims experience, while catastrophe modelling simulates a very large number of hypothetical events using scientific and engineering data, allowing estimation of extreme, rare losses that historical claims data alone (often too sparse for rare events) cannot reliably capture.",
-                "explain": "This directly recalls CS2's extreme-value and tail-risk material — worth recognising catastrophe modelling as addressing exactly the kind of rare, severe tail risk that standard historical-experience-based rating is poorly suited to quantify."
-            },
-            {
-                "q": "What is the generic structure of a catastrophe model, in terms of its main components?",
-                "a": "A hazard module (modelling the physical characteristics and probability of the peril itself, e.g. windspeed or ground shaking), a vulnerability module (modelling how exposed assets are damaged by a given hazard intensity), and a financial module (translating physical damage into insured financial loss, reflecting policy terms and conditions).",
-                "explain": "Worth memorising this three-part structure directly — hazard, vulnerability, and financial modules — as it is the standard way catastrophe models are described and is directly examinable."
-            },
-            {
-                "q": "What are the key perils typically modelled by catastrophe models, per the official syllabus objective?",
-                "a": "Natural perils such as windstorm (hurricanes, typhoons), earthquake, flood, and wildfire are among the most commonly modelled perils, reflecting the perils that pose the most significant correlated, catastrophic loss potential to insurers' property portfolios.",
-                "explain": "Worth recognising these as the perils that most directly threaten the kind of correlated, catastrophic loss accumulation this course's earlier module (large commercial property pricing) identified as a genuine pricing and capital concern."
-            },
-            {
-                "q": "Why might a catastrophe model's vulnerability module require detailed, location-specific building and construction data to produce reliable loss estimates?",
-                "a": "Damage from a given hazard intensity depends heavily on specific factors like construction material, building age, and local building codes, so a model relying only on generic, non-specific exposure data would produce far less reliable loss estimates than one incorporating detailed, location-specific vulnerability data.",
-                "explain": "This directly recalls SA1's data-quality-and-limitations material — worth recognising catastrophe model output quality as directly dependent on the quality of exposure data fed into it, a genuine practical limitation covered further in the next module."
-            },
-            {
-                "q": "Why might insurers use catastrophe models to estimate losses at very high return periods (e.g. a 1-in-200-year event), rather than relying solely on historical claims experience?",
-                "a": "Very severe, rare events may have occurred rarely or never within the insurer's own historical claims data, so a catastrophe model's simulation-based approach can estimate the genuine likelihood and severity of such extreme events even without direct historical precedent within the insurer's own experience.",
-                "explain": "This directly recalls CS2's extreme-value-theory material — worth recognising the 1-in-200-year return period specifically as a commonly used benchmark directly linked to Solvency II's SCR calibration (previewing Module 7's material)."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "Catastrophe modelling (2): uses and limitations",
-        "description": "Covers the key uses to which an actuary might put catastrophe model output, and the key considerations and limitations in using that output, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What are the key uses to which a general insurance actuary might put catastrophe model output, per the official syllabus objective?",
-                "a": "Pricing catastrophe-exposed risks, assessing overall portfolio accumulation risk, informing reinsurance purchasing decisions, and supporting Solvency II SCR capital calculations for catastrophe risk.",
-                "explain": "Worth recognising these four uses as spanning almost this whole course's later topic areas (pricing, reinsurance, capital) — catastrophe model output is a central input feeding into many different actuarial decisions, not a standalone technical exercise."
-            },
-            {
-                "q": "Why might catastrophe model output be a particularly important input to an insurer's reinsurance purchasing decisions?",
-                "a": "Understanding the modelled probability and severity of losses at different return periods (e.g. 1-in-100, 1-in-200 years) directly informs how much reinsurance cover to buy and at what attachment points, targeting the specific tail risk the insurer wants to transfer.",
-                "explain": "This directly previews this course's reinsurance module — worth recognising catastrophe modelling and reinsurance purchasing as tightly linked activities, with model output providing the genuine quantitative basis for reinsurance structuring decisions."
-            },
-            {
-                "q": "What are some key considerations an actuary should bear in mind when using catastrophe model output, per the official syllabus objective?",
-                "a": "Model uncertainty (different models or model versions can produce different loss estimates for the same portfolio), the quality and completeness of the exposure data fed into the model, and the fact that models are calibrated on historical and scientific data that may not fully capture emerging or changing risk (e.g. climate change).",
-                "explain": "Worth treating this as a genuine checklist of catastrophe-model <em>limitations</em> — a strong exam answer discussing catastrophe modelling should demonstrate awareness of these limitations, not just describe the model's mechanics uncritically."
-            },
-            {
-                "q": "Why might using output from multiple different catastrophe models (a 'multi-model' approach) provide a more robust view of an insurer's catastrophe risk than relying on a single model?",
-                "a": "Since different models can embed different scientific assumptions and calibrations, comparing output across multiple models reveals the genuine degree of model uncertainty, helping the insurer avoid over-reliance on any single model's specific assumptions.",
-                "explain": "This directly recalls SA1's model-limitation-awareness material — worth recognising a multi-model approach as a direct, practical response to the model-uncertainty limitation raised in the card above."
-            },
-            {
-                "q": "Why might catastrophe models need regular recalibration and updating, rather than being treated as a fixed, permanently accurate tool, echoing this course's recurring ongoing-review theme?",
-                "a": "Scientific understanding of perils, exposure data, and the underlying risk itself (e.g. climate change affecting windstorm or flood frequency and severity) all continue to evolve, so a model calibrated once and never updated would increasingly diverge from genuine current risk.",
-                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this same principle applying to catastrophe <em>models</em> themselves, not just to an insurer's own risk assessment process."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "Solvency II regulatory framework for general insurance",
-        "description": "Covers the Solvency II framework's background, structure, and governance and disclosure requirements as they apply to general insurers, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What are the three pillars of the Solvency II framework, echoing SA1's and SA2's material?",
-                "a": "Pillar 1 sets quantitative capital and technical provision requirements; Pillar 2 covers governance and risk management (including the insurer's own risk assessment); Pillar 3 covers public disclosure and reporting requirements.",
-                "explain": "This directly recalls SA1's and SA2's three-pillar Solvency II material — worth recognising this structure as identical across every insurance sector, general insurance included."
-            },
-            {
-                "q": "Why might calculating the SCR for a general insurer's book require materially different risk modules than for a life insurer's book, echoing SA1's and SA2's material?",
-                "a": "General insurance risks (premium risk, reserve risk, and catastrophe risk) have different drivers than life insurance's mortality, longevity, and lapse risk, requiring the standard formula or internal model to capture different, non-life-specific risk modules.",
-                "explain": "This directly recalls SA1's and SA2's product-specific-capital-modelling material — worth recognising catastrophe risk specifically (Modules 5-6's material) as a distinctive general insurance risk module not present in life insurance's risk categories."
-            },
-            {
-                "q": "Why might Solvency II's Pillar 2 governance requirements place particular emphasis on a general insurer's reserving process, given this course's later reserving material?",
-                "a": "Since general insurance reserves (particularly for longer-tail claims) involve genuine estimation uncertainty, sound governance around how reserves are set, reviewed, and challenged is essential to ensuring the reported technical provisions reflect the insurer's true liability position.",
-                "explain": "This directly previews this course's reserving modules — worth recognising Pillar 2 governance as directly supporting the reliability of the technical provisions calculated under Pillar 1, particularly for general insurance's more uncertain reserving process."
-            },
-            {
-                "q": "Why does Solvency II's Pillar 3 group reporting requirement matter particularly for a general insurance group operating across multiple jurisdictions or business lines?",
-                "a": "Group-level disclosure allows stakeholders to assess the genuine overall financial position and risk profile of the whole group, capturing diversification benefits and concentration risks that individual entity-level reporting alone might not reveal.",
-                "explain": "This directly recalls SA1's group-wide-risk-standards material — worth recognising group reporting as addressing a different stakeholder question (overall group soundness) than entity-level reporting alone."
-            },
-            {
-                "q": "How does this module's Solvency II material connect back to the catastrophe modelling material covered in Modules 5-6?",
-                "a": "Catastrophe model output (e.g. estimated 1-in-200-year losses) directly feeds into the Solvency II SCR's catastrophe risk module calculation, meaning Modules 5-6's technical material is a genuine, practical <em>input</em> to this module's regulatory capital calculation.",
-                "explain": "This closing card ties this module back to Modules 5-6 explicitly — worth recognising catastrophe modelling not as a standalone technical topic, but as feeding directly into this module's regulatory capital requirements."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Lloyd's regulatory regime and cross-jurisdiction comparison",
-        "description": "Covers the regulatory regime in place at Lloyd's, and comparing regulatory, legislative and taxation environments across different jurisdictions, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why does Lloyd's operate under a dual-layer regulatory regime, combining the Council of Lloyd's internal oversight with external UK prudential regulation, echoing Module 3's material?",
-                "a": "Lloyd's internal oversight applies market-specific rules tailored to its unique syndicate structure (capital allocation across members, syndicate-level monitoring), while external regulation ensures the whole market meets the same genuine prudential standards expected of any other UK insurer under Solvency II.",
-                "explain": "This directly recalls Module 3's Lloyd's-structure material — worth recognising this dual-layer regime as a direct structural consequence of Lloyd's marketplace structure, not a duplicative or redundant regulatory arrangement."
-            },
-            {
-                "q": "Why might comparing regulatory, legislative and taxation environments across different jurisdictions be an important skill for a general insurance actuary, rather than purely academic knowledge?",
-                "a": "An actuary advising an insurer operating across multiple jurisdictions, or assessing entry into a new market, needs to understand how different regulatory and tax environments would affect product design, pricing, and capital requirements in that specific market.",
-                "explain": "This directly recalls SA1's comparative-regulation material — worth recognising cross-jurisdiction comparison as a practically important skill for real multinational general insurance business, not an abstract academic exercise."
-            },
-            {
-                "q": "Why might a jurisdiction's regulatory approach to catastrophe-exposed general insurance differ from a jurisdiction with limited natural catastrophe exposure?",
-                "a": "A jurisdiction with significant catastrophe exposure may impose more detailed, prescriptive requirements around catastrophe modelling, reinsurance, and capital adequacy specifically for that risk, reflecting the greater systemic importance of getting catastrophe risk management right in that market.",
-                "explain": "This directly recalls Modules 5-7's catastrophe-risk material — worth recognising that regulatory intensity should track the actual risk profile of a market, not be applied uniformly regardless of local risk characteristics."
-            },
-            {
-                "q": "Why might the regulatory, legislative and taxation environment affect how general insurance companies carry out their business in practice, beyond simply setting compliance minimums?",
-                "a": "Regulatory capital requirements, permitted product features, and tax treatment can all directly shape which products are commercially viable to offer, how they are priced, and how the insurer structures its capital and reinsurance arrangements, making the environment a genuine determinant of practical business strategy, not just a compliance backdrop.",
-                "explain": "This directly recalls the official syllabus's explicit objective on this point — worth treating the regulatory/legislative/tax environment as a genuine <em>strategic constraint</em> shaping real business decisions, echoing this course's later financial-management material."
-            },
-            {
-                "q": "Why might actuarial professional standards apply consistently to actuaries practising in or advising general insurance companies across different jurisdictions, even where local regulation varies?",
-                "a": "Professional standards set out expected practice for sound, honest actuarial work that complements varying local regulation, ensuring a consistent baseline of technical and ethical practice regardless of how permissive or strict any particular jurisdiction's own regulatory requirements happen to be.",
-                "explain": "This directly recalls SA1's professional-standards-as-consistent-baseline material — worth recognising professional standards as providing genuine consistency precisely where regulatory requirements themselves can vary significantly by jurisdiction."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "Legislation: consumer protection and equality",
-        "description": "Covers the relevance of consumer protection and equality legislation to general insurance business, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why is consumer protection legislation particularly relevant to general insurance business, beyond general conduct regulation, echoing CP1's material?",
-                "a": "Consumer protection legislation typically sets specific legal rights and remedies for policyholders (e.g. around unfair contract terms or misleading sales practices), operating alongside and sometimes overlapping with regulatory conduct requirements, giving policyholders a further, legally enforceable layer of protection.",
-                "explain": "This directly recalls CP1's conduct-regulation material — worth recognising consumer protection <em>legislation</em> as a distinct layer from regulatory conduct <em>rules</em>, even though both pursue similar fair-treatment objectives."
-            },
-            {
-                "q": "Why might equality legislation be particularly relevant to how a general insurer sets its underwriting and rating factors?",
-                "a": "Equality legislation can restrict or prohibit the use of certain personal characteristics (e.g. protected characteristics under relevant law) as rating factors, even where those characteristics might otherwise be statistically correlated with risk, reflecting a genuine fairness objective that constrains purely risk-based rating.",
-                "explain": "This directly recalls SA1's genetic-testing-restriction material — worth recognising the same underlying principle applying here: legislation can restrict statistically useful rating factors on fairness grounds, a recurring tension across every insurance sector."
-            },
-            {
-                "q": "Why might a general insurer need to balance actuarially-justified risk differentiation against equality legislation's fairness constraints, rather than treating one as simply overriding the other?",
-                "a": "Actuarially sound, risk-reflective pricing supports genuine fairness between policyholders of different risk levels, while equality legislation protects against discrimination on certain grounds regardless of any genuine statistical correlation, meaning the insurer must design rating structures that are both actuarially sound <em>and</em> legally compliant.",
-                "explain": "This directly recalls SA1's fairness-versus-access-tension material — worth recognising this as a genuine, ongoing balance rather than a solved problem with one correct answer, echoing the same tension raised across multiple SA subjects."
-            },
-            {
-                "q": "Why might non-compliance with consumer protection or equality legislation pose a significant reputational, not just legal, risk to a general insurer?",
-                "a": "Publicised breaches of consumer protection or equality requirements can damage customer trust and brand reputation well beyond the direct legal or regulatory penalty involved, potentially affecting future business volumes and relationships with distributors and regulators alike.",
-                "explain": "This directly recalls CP1's reputational-risk material — worth recognising legal compliance and reputational risk management as linked, not two entirely separate considerations for a general insurer."
-            },
-            {
-                "q": "Why might a general insurance actuary need working knowledge of consumer protection and equality legislation, even though these areas are primarily legal rather than actuarial in nature?",
-                "a": "Since this legislation directly constrains permissible rating factors and product terms, an actuary designing pricing structures or product features must understand these constraints well enough to ensure proposed approaches are both actuarially sound and legally compliant from the outset.",
-                "explain": "This directly recalls this module's own official syllabus objective — worth recognising legal literacy in this specific area as a practical necessity for actuarial work, not an optional extra outside the actuary's remit."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Taxation of general insurance business",
-        "description": "Covers the implications of taxation for policyholders, general insurance companies (mutual and proprietary), and Lloyd's syndicates and members, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why might the tax treatment of general insurance premiums and claims payments directly affect a product's genuine attractiveness to policyholders, echoing SA1's and SA2's material?",
-                "a": "If premiums attract tax relief, or claims payments are tax-favoured, the effective cost or value of cover changes materially, directly affecting demand and the price the insurer can competitively charge for economically similar cover.",
-                "explain": "This directly recalls SA1's and SA2's taxation-affects-attractiveness material — worth recognising the same mechanism applying to general insurance, though tax-favoured treatment is generally less prominent here than for life insurance savings products."
-            },
-            {
-                "q": "Why might taxation of a mutual general insurance company (owned by its policyholders) differ from taxation of a proprietary company (owned by shareholders)?",
-                "a": "A mutual's surplus typically belongs to its policyholder-members collectively rather than external shareholders, so its tax treatment may reflect this different ownership and profit-distribution structure, distinct from a proprietary company's shareholder-focused profit and dividend taxation.",
-                "explain": "This directly recalls the official syllabus's explicit mutual-versus-proprietary distinction — worth recognising ownership <em>structure</em>, not just the underlying insurance business, as directly shaping appropriate tax treatment."
-            },
-            {
-                "q": "Why might Lloyd's syndicates and their members face distinct taxation considerations compared with a conventional general insurance company, echoing Module 3's material?",
-                "a": "Since underwriting profits and losses flow through to individual or corporate members according to their specific syndicate participation, tax treatment must reflect this different profit-flow structure, rather than the more straightforward corporate taxation applicable to a conventional insurer's shareholders.",
-                "explain": "This directly recalls Module 3's Lloyd's-profit-flow material — worth recognising Lloyd's distinctive capital and profit structure as creating distinct tax questions, not just a variant of standard corporate insurance taxation."
-            },
-            {
-                "q": "Why does an insurer's own corporate tax position affect its pricing and profit-margin decisions, beyond the policyholder-level tax treatment, echoing SA1's and SA2's material?",
-                "a": "Tax payable on the insurer's own profits reduces the genuine after-tax return achieved from a given pre-tax margin, so pricing and profit testing must incorporate the insurer's own tax position to assess whether a product achieves its true target return.",
-                "explain": "This directly recalls SA1's and SA2's after-tax profitability material — worth recognising this as a universal pricing consideration across every insurance sector this course covers."
-            },
-            {
-                "q": "Why might changes in tax legislation represent a genuine ongoing risk for general insurers, similar to the political risk raised for other insurance sectors?",
-                "a": "A change in how premiums, claims, or insurer profits are taxed can suddenly alter product attractiveness or profitability after a product has already been priced and sold, a risk the insurer cannot always fully anticipate or hedge against in advance.",
-                "explain": "This directly recalls SA1's political-and-tax-risk material — worth recognising tax risk as a specific, concrete manifestation of the wider political-risk category, deserving explicit ongoing monitoring across every insurance sector."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Regulatory frameworks and actuarial standards",
-        "description": "Covers the objectives of regulators, supervisory tools, statutory actuarial roles, and the transfer of liabilities between companies, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What are the typical objectives of a general insurance regulator, per the official syllabus's regulatory-frameworks objective?",
-                "a": "Protecting policyholders by ensuring insurers remain financially sound (prudential objective) and are treated fairly (conduct objective), while supporting the overall stability and proper functioning of the insurance market.",
-                "explain": "This directly recalls SA1's and CP1's regulatory-objectives material — worth recognising these objectives as universal across every insurance sector, applied here specifically to general insurance regulators."
-            },
-            {
-                "q": "What supervisory tools might a general insurance regulator use to monitor and enforce these objectives, per the official syllabus?",
-                "a": "Regulatory rulebooks setting detailed requirements, ongoing reporting requirements (e.g. regular financial and risk reporting), and powers to intervene (e.g. requiring additional capital or restricting new business) where an insurer's position gives genuine cause for concern.",
-                "explain": "Worth recognising rulebooks and reporting as the <em>routine</em> monitoring tools, with intervention powers as the <em>escalation</em> mechanism when routine monitoring reveals a genuine problem."
-            },
-            {
-                "q": "What is a 'statutory actuarial role' in the context of general insurance regulation, echoing SA1's material?",
-                "a": "A role (e.g. Chief Actuary or Actuarial Function Holder) carrying specific, personally-accountable regulatory responsibilities, such as providing a formal actuarial opinion on the adequacy of technical provisions, distinct from the actuary's general employment relationship with the insurer.",
-                "explain": "This directly recalls SA1's personal-accountability material — worth recognising statutory actuarial roles as creating genuine <em>personal</em> accountability, separate from and sometimes in tension with the insurer's own commercial interests."
-            },
-            {
-                "q": "Why might the transfer of a portfolio of insurance liabilities from one company to another require specific regulatory oversight, rather than being a purely private commercial transaction?",
-                "a": "Since policyholders did not choose the new insurer taking on their liabilities, regulatory oversight (e.g. requiring an independent expert's report and court approval in some jurisdictions) helps ensure the transfer does not materially disadvantage the affected policyholders' security or service.",
-                "explain": "This directly previews this course's exits-and-transfers module — worth recognising regulatory oversight of transfers as protecting policyholders precisely because they have no direct say in a transaction that materially affects who is responsible for meeting their claims."
-            },
-            {
-                "q": "Why might actuarial standards specifically require a statutory actuary to exercise independent professional judgement, even under commercial pressure, echoing SA1's ethical material?",
-                "a": "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement and the public interest, meaning commercial or managerial pressure to reach a particular conclusion (e.g. on reserve adequacy) does not override the actuary's own professional obligations.",
-                "explain": "This directly recalls SA1's professional-standards ethical material — worth recognising this as a universal principle recurring across every SA subject wherever a statutory actuarial role exists."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Valuing insurance liabilities",
-        "description": "Covers determining appropriate bases for valuing a general insurer's liabilities for annual accounting and statutory returns, and for management accounts, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why might a general insurer need to value its liabilities on different bases for statutory returns versus internal management accounts?",
-                "a": "Statutory returns typically require a prudent, regulator-mandated basis supporting solvency assessment, while management accounts can use a best-estimate or different basis better suited to internal decision-making, meaning the <em>same</em> underlying liabilities can be valued differently depending on the reporting purpose.",
-                "explain": "This directly recalls SA1's and SA2's multiple-reporting-bases material — worth recognising this same principle applying to general insurance liability valuation specifically."
-            },
-            {
-                "q": "Why does general insurance reserving typically involve greater estimation uncertainty than life insurance reserving for a comparable-sized book?",
-                "a": "General insurance claims (particularly longer-tail lines) can take years or decades to fully develop and settle, with genuine uncertainty about both the number and eventual size of claims, unlike life insurance's typically more predictable, mortality-table-driven cashflow patterns.",
-                "explain": "This directly recalls CS2's claims-reserving and reserving-uncertainty material — worth recognising this greater inherent uncertainty as the reason general insurance reserving methodology (chain-ladder, Bornhuetter-Ferguson, etc.) is such a substantial, distinct technical area."
-            },
-            {
-                "q": "Why might a general insurer's statutory technical provisions need to include a risk margin, echoing SA1's and Solvency II's material?",
-                "a": "The risk margin compensates for the cost of holding capital against non-hedgeable reserving risk over the liability's remaining settlement period, recognising that the genuine uncertainty in general insurance reserves (Module 12's material) itself represents a cost that must be reflected in technical provisions.",
-                "explain": "This directly recalls SA1's and Module 7's risk-margin material — worth recognising the risk margin as directly compensating for the <em>reserving uncertainty</em> this module has just identified as characteristic of general insurance."
-            },
-            {
-                "q": "Why might management accounts sometimes use a best-estimate (rather than prudent) basis for valuing liabilities, even though statutory returns require prudence?",
-                "a": "Management decision-making (e.g. assessing genuine underlying profitability or pricing adequacy) benefits from an unbiased, best-estimate view of expected liabilities, whereas statutory prudence deliberately builds in a margin for genuine policyholder protection, serving a different, more conservative purpose.",
-                "explain": "This directly recalls Module 12's multiple-basis material — worth recognising that <em>prudence</em> is a deliberate feature of statutory reporting, not simply a more 'accurate' version of the best-estimate basis used internally."
-            },
-            {
-                "q": "How does this module's liability-valuation material connect back to the Solvency II material covered in Module 7?",
-                "a": "Solvency II's technical provisions (best estimate plus risk margin) are a specific, regulator-mandated example of the statutory valuation basis this module develops generally, showing how the general principles of liability valuation are actually implemented under the current UK/EU regulatory regime.",
-                "explain": "This closing card ties this module back to Module 7 explicitly — worth recognising Solvency II's technical provisions as a <em>concrete application</em> of this module's general liability-valuation principles."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "Reserving for latent claims and disease claims",
-        "description": "Covers why different reserving techniques are required for latent claims and disease claims, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is a 'latent claim', and why does it require a different reserving approach from a standard, promptly-reported claim?",
-                "a": "A latent claim arises from an event or exposure (e.g. exposure to a harmful substance) that may not be reported as a claim until many years or even decades later, meaning standard reserving techniques relying on a reasonably short, observable reporting pattern are poorly suited to estimating these claims' eventual number and cost.",
-                "explain": "This directly recalls Module 2's very-long-tail-claims material — worth recognising latent claims as the most extreme example of the long-tail phenomenon this course has already flagged as a defining feature of some general insurance products."
-            },
-            {
-                "q": "Why might disease claims (e.g. industrial disease claims) present similar reserving challenges to latent claims from a single specific event?",
-                "a": "Disease claims often involve a long and uncertain latency period between exposure and diagnosis, combined with evolving medical understanding of causation and uncertain future claim volumes as awareness or diagnostic criteria change, echoing the same fundamental reporting-delay challenge latent claims present.",
-                "explain": "This directly recalls Module 13's own latent-claims material — worth recognising disease claims as sharing the <em>same</em> underlying reserving challenge (long, uncertain reporting delay) as latent claims from a discrete historical event."
-            },
-            {
-                "q": "Why might reserving for latent or disease claims need to draw on external data and expert judgement (e.g. medical or legal opinion), beyond the insurer's own historical claims experience?",
-                "a": "Given the limited own historical data available for slowly-emerging, rare claim types, reserving actuaries typically need to blend limited own experience with external data, scientific/medical understanding, and legal developments (e.g. changing case law on liability), echoing CS1's credibility-theory material.",
-                "explain": "This directly recalls CS1's credibility theory material and Module 4's large-commercial-risk-pricing material — worth recognising this as the same underlying principle of blending limited own data with external sources, now applied to reserving rather than pricing."
-            },
-            {
-                "q": "Why might reserves for latent or disease claims be particularly sensitive to changes in legal or regulatory environment, more so than reserves for standard, promptly-settled claims?",
-                "a": "Legal developments (e.g. court rulings expanding or narrowing insurer liability, or new disease-recognition criteria) can materially change the expected number and cost of latent or disease claims retrospectively, an important risk driver that standard, quickly-settled claim reserves are far less exposed to.",
-                "explain": "This directly recalls Module 9's legislation material — worth recognising legal and regulatory change as a material <em>reserving</em> risk driver specifically for latent and disease claims, not just a general business-environment consideration."
-            },
-            {
-                "q": "Why might an insurer's reserving actuary need to apply greater caution and wider ranges of estimates for latent and disease claims compared with standard reserving classes?",
-                "a": "Given the compounded uncertainty from long reporting delays, limited own data, and legal/scientific evolution, a single point-estimate reserve is less likely to be reliable, so presenting a genuine range of reasonable estimates (rather than false precision) better reflects the true underlying uncertainty.",
-                "explain": "This directly recalls CP1's judgement-under-genuine-uncertainty material — worth recognising the presentation of a <em>range</em>, not just a point estimate, as good professional practice specifically for these particularly uncertain reserve classes."
-            }
-        ]
-    },
-    {
-        "id": "m14",
-        "title": "Asset-liability management for general insurers",
-        "description": "Covers how general insurers manage the relationship between assets and liabilities, given their typically shorter-tail liabilities than life insurers.",
-        "cards": [
-            {
-                "q": "Why might asset-liability management for a general insurer's short-tail personal lines book differ from a life insurer's long-duration annuity ALM strategy, echoing SA1's and SA2's material?",
-                "a": "Short-tail liabilities are far less interest-rate sensitive over a long horizon, so ALM strategy can reasonably prioritise liquidity for near-term claims payment over the long-duration interest rate matching that dominates life insurance ALM.",
-                "explain": "This directly recalls SA1's and SA2's product-duration-and-ALM material — worth recognising ALM strategy as needing to differ by liability duration, not follow a single one-size-fits-all approach."
-            },
-            {
-                "q": "Why might a general insurer's ALM strategy for its long-tail liability book (e.g. latent or disease claims, per Module 13) need to resemble life insurance-style duration matching more closely than its short-tail personal lines book?",
-                "a": "Long-tail liabilities can extend over a long horizon similar to life insurance liabilities, making them similarly sensitive to interest rate movements over time, so duration matching (CM2's technique) becomes correspondingly more relevant than for the insurer's short-tail business.",
-                "explain": "This directly recalls Module 13's long-tail-claims material and CM2's matching material — worth recognising that a single general insurer can need <em>multiple</em> distinct ALM approaches across its different liability durations, echoing SA2's multi-product-line ALM material."
-            },
-            {
-                "q": "Why might a general insurer need to hold a meaningful allocation to highly liquid assets, given the more volatile and less predictable claims payment pattern of general insurance compared with life insurance?",
-                "a": "Since general insurance claims (especially from catastrophic events) can arrive suddenly and require prompt payment, genuine liquidity risk management requires holding sufficient liquid assets to meet these without being forced to sell less liquid assets at a potentially unfavourable time.",
-                "explain": "This directly recalls SA1's and SA2's liquidity-risk material — worth recognising this same principle applying with particular force to general insurance, given its more volatile and less predictable claim payment timing than life insurance."
-            },
-            {
-                "q": "Why might a general insurer's ALM strategy need to account for inflation risk, given that many general insurance claims (e.g. bodily injury, property repair) are directly exposed to cost inflation?",
-                "a": "If claims costs are exposed to general or claims-specific inflation, holding assets whose value also responds to inflation (e.g. inflation-linked bonds) helps protect the insurer against inflation eroding the real matching quality of a purely nominal asset portfolio, echoing SA1's medical-inflation-matching material.",
-                "explain": "This directly recalls SA1's inflation-matching material and Module 12's reserving-uncertainty material — worth recognising claims inflation as an important general insurance risk driver, with direct ALM implications parallel to health and care's medical inflation."
-            },
-            {
-                "q": "Why might a general insurer's ALM strategy require periodic review as its book of business and liability profile change over time, echoing this course's recurring ongoing-review theme?",
-                "a": "As the mix of short-tail and long-tail business changes, or as new latent/disease claim risks emerge, the insurer's overall liability profile shifts, so an ALM strategy set for a past liability profile may no longer provide appropriate matching for the current book.",
-                "explain": "This directly recalls SA1's and SA2's ALM-ongoing-review material — worth recognising this same ongoing-monitoring discipline applying identically to general insurance ALM."
-            }
-        ]
-    },
-    {
-        "id": "m15",
-        "title": "Reinsurance for general insurers",
-        "description": "Covers the role and forms of reinsurance in managing general insurance risk, including proportional, non-proportional, and catastrophe-specific structures.",
-        "cards": [
-            {
-                "q": "Why might a general insurer use quota share reinsurance across its whole personal lines book, echoing SA1's material?",
-                "a": "Quota share provides straightforward, proportional risk and capital relief across the whole book, ceding a fixed proportion of every policy's risk and premium, valuable for a newer or smaller insurer wanting broad-based support across its entire portfolio.",
-                "explain": "This directly recalls SA1's quota-share material — worth recognising the same underlying reinsurance structure applying identically across insurance sectors, here for general insurance personal lines."
-            },
-            {
-                "q": "Why might excess of loss reinsurance be particularly suited to protecting a general insurer against a catastrophic windstorm or flood event, echoing SA1's and this course's catastrophe-modelling material?",
-                "a": "Excess of loss reinsurance responds when aggregate claims from an event exceed a specified threshold, directly targeting the correlated, catastrophic loss pattern a natural catastrophe creates, informed directly by the catastrophe model output covered in Modules 5-6.",
-                "explain": "This directly recalls SA1's excess-of-loss material and Module 6's catastrophe-model-reinsurance-input material — worth recognising catastrophe excess of loss reinsurance as one of the clearest, most direct real-world applications of catastrophe model output."
-            },
-            {
-                "q": "Why might a general insurer use surplus reinsurance for its large commercial property book specifically, echoing SA1's and Module 4's material?",
-                "a": "Surplus reinsurance cedes only the portion of risk above a chosen retention level per policy, allowing the insurer to retain proportionally more of smaller, better-understood risks while ceding a larger share of unusually large individual commercial exposures, directly addressing the heterogeneity Module 4 identified in commercial risk.",
-                "explain": "This directly recalls SA1's surplus-reinsurance material and Module 4's commercial-risk-heterogeneity material — worth recognising surplus reinsurance as specifically well-suited to managing the <em>wide variation</em> in individual risk size that large commercial books present."
-            },
-            {
-                "q": "Why might a general insurer's choice of reinsurance retention level involve a genuine trade-off between expected profit and capital efficiency, echoing SA1's and CB1's material?",
-                "a": "A higher retention keeps more premium and expected profit potential with the insurer, but exposes it to greater volatility and capital strain from adverse claims experience; a lower retention (more reinsurance) reduces volatility and capital requirements but cedes more expected profit to the reinsurer.",
-                "explain": "This directly recalls SA1's and CB1's retention-level trade-off material — worth recognising this same genuine risk-return trade-off applying identically to general insurance reinsurance purchasing decisions."
-            },
-            {
-                "q": "Why might reinsurer counterparty risk be a particularly important consideration for a general insurer's catastrophe reinsurance programme specifically?",
-                "a": "A major catastrophic event affecting the insurer is likely to also affect its reinsurers' own exposures, so the insurer must assess whether its reinsurance panel remains able to pay recoveries even under the same severe, correlated event, diversifying across multiple reinsurers to manage this concentrated counterparty risk.",
-                "explain": "This directly recalls SA1's reinsurer-counterparty-risk material — worth recognising catastrophe reinsurance as raising a particularly acute version of this risk, since the very event triggering the reinsurance claim could also stress the reinsurer's own ability to pay it."
-            }
-        ]
-    },
-    {
-        "id": "m16",
-        "title": "Financial planning in general insurance management (1)",
-        "description": "Covers analysing the financial planning requirements of a general insurer and developing appropriate strategies, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What does 'financial planning' mean for a general insurer, in the sense the official syllabus intends?",
-                "a": "The process of setting and monitoring financial objectives (e.g. growth, profitability, capital adequacy) and developing coherent strategies to achieve them, integrating pricing, reserving, capital, and reinsurance decisions into a single, forward-looking plan.",
-                "explain": "Worth recognising financial planning as the genuine <em>integration</em> point for almost every technical topic covered earlier in this course — pricing, reserving, ALM, and reinsurance all feed into a coherent financial plan, not operate as separate silos."
-            },
-            {
-                "q": "Why might a general insurer's financial planning need to explicitly incorporate catastrophe risk (Modules 5-6's material), given its typically volatile, correlated nature?",
-                "a": "Catastrophe losses can be large and volatile relative to an insurer's typical annual result, so financial planning that ignored this risk (e.g. planning purely around an 'expected' loss year) could leave the insurer unprepared for a realistic adverse scenario.",
-                "explain": "This directly recalls Modules 5-6's catastrophe-modelling material — worth recognising that sound financial planning for a catastrophe-exposed insurer must incorporate the <em>full distribution</em> of possible outcomes, not just an average expected result."
-            },
-            {
-                "q": "Why might a general insurer's financial plan need to explicitly address its reinsurance strategy, rather than treating reinsurance purchasing as a separate, standalone decision?",
-                "a": "Reinsurance directly affects the insurer's expected profit, capital requirements, and volatility of results, so a coherent financial plan must treat reinsurance strategy as an integrated lever alongside pricing and underwriting decisions, not an afterthought decided independently.",
-                "explain": "This directly recalls Module 15's reinsurance material — worth recognising financial planning as the natural point where reinsurance strategy should be assessed <em>alongside</em>, not separately from, pricing and capital decisions."
-            },
-            {
-                "q": "Why might financial planning for a general insurer need to set realistic, rather than purely aspirational, growth targets?",
-                "a": "Overly aggressive growth targets can pressure underwriting standards and pricing discipline, potentially leading to adverse selection or under-pricing that only becomes apparent once claims emerge, so financial planning should balance growth ambition against maintaining sound underwriting standards.",
-                "explain": "This directly recalls CB1's and SA1's sustainable-growth-versus-underwriting-discipline material — worth recognising this same tension applying to general insurance financial planning specifically."
-            },
-            {
-                "q": "Why does financial planning require genuine actuarial judgement in weighing multiple, sometimes competing objectives (growth, profitability, capital adequacy), rather than optimising a single metric?",
-                "a": "These objectives can conflict (e.g. aggressive growth may reduce near-term profitability or increase capital strain), so financial planning requires balanced, well-reasoned judgement about the appropriate trade-off for the insurer's specific circumstances, not mechanical optimisation of one metric alone.",
-                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising financial planning as one of the clearest examples of genuine multi-objective actuarial judgement across this whole course."
-            }
-        ]
-    },
-    {
-        "id": "m17",
-        "title": "Financial planning in general insurance management (2)",
-        "description": "Covers evaluating appropriate models for financial planning at the corporate and product level, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why might a general insurer use financial projection models at both the corporate (whole-company) and product level, rather than relying on a single combined model?",
-                "a": "Corporate-level models help monitor overall solvency, profitability and strategic objectives, while product-level models help assess whether individual product lines are meeting their own profitability targets, revealing insight a purely aggregated corporate view could mask.",
-                "explain": "This directly recalls SA1's and SA2's surplus-analysis-by-product-line material — worth recognising the same principle applying to financial planning <em>models</em> specifically, not just retrospective analysis of past results."
-            },
-            {
-                "q": "Why might a financial planning model need to incorporate stochastic (rather than purely deterministic) projections for a catastrophe-exposed general insurer?",
-                "a": "A deterministic, single-scenario projection would only show one possible future outcome, while a stochastic model simulating many possible scenarios (including catastrophe events) reveals the genuine <em>range</em> of outcomes and associated risk the insurer's financial plan must be resilient against.",
-                "explain": "This directly recalls Modules 5-6's catastrophe-modelling material and CP2's stochastic-modelling material — worth recognising stochastic financial planning models as a genuine extension of catastrophe modelling techniques into the broader financial planning process."
-            },
-            {
-                "q": "Why might evaluating a financial planning model's appropriateness require assessing whether its underlying assumptions remain valid for the insurer's current book, echoing this course's recurring theme?",
-                "a": "A model built on assumptions appropriate to a past book composition or market environment may no longer produce reliable projections if the insurer's business mix or external environment has changed, so model appropriateness must be actively assessed, not assumed to remain valid indefinitely.",
-                "explain": "This directly recalls SA1's ongoing-review theme and Module 12's reserving-basis material — worth recognising that a financial planning <em>model</em> itself, not just the assumptions fed into it, needs periodic critical review."
-            },
-            {
-                "q": "Why might a general insurer's product-level financial planning model need to reflect the different capital intensity of different product lines (e.g. catastrophe-exposed property versus simpler motor business)?",
-                "a": "A model that allocated capital uniformly across product lines regardless of their genuine risk profile would misrepresent each line's true risk-adjusted profitability, potentially leading management to over-invest in an apparently attractive but capital-intensive line.",
-                "explain": "This directly recalls SA2's capital-allocation-by-product-line material — worth recognising the same principle applying to general insurance financial planning models specifically."
-            },
-            {
-                "q": "How does this module's financial planning models material connect back to Module 16's financial planning requirements material?",
-                "a": "Module 16 established <em>what</em> a financial plan needs to achieve (balanced, realistic objectives integrating pricing, reserving, capital and reinsurance); this module develops the <em>modelling tools</em> (corporate and product-level, stochastic where appropriate) used to actually build and monitor that plan in practice.",
-                "explain": "This closing card ties this module back to Module 16 explicitly — worth recognising Module 16's requirements and this module's modelling tools as two complementary halves of the same financial planning process."
-            }
-        ]
-    },
-    {
-        "id": "m18",
-        "title": "Exits and transfers",
-        "description": "Covers general insurance portfolio transfer alternatives, the reasons an insurer may wish to transfer business, and the alternative approaches available, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What are the main alternatives available to a general insurer wishing to exit a line of business or transfer a portfolio, per the official syllabus?",
-                "a": "A formal portfolio transfer (transferring the legal liabilities to another insurer, typically requiring regulatory and sometimes court approval), reinsurance-based exit (ceding substantially all the risk via reinsurance while retaining legal liability), or run-off (ceasing new business while managing existing liabilities to natural expiry).",
-                "explain": "Worth recognising these three distinct approaches as offering different combinations of speed, cost, and finality — a strong answer should distinguish between them clearly, not treat 'exit' as a single undifferentiated option."
-            },
-            {
-                "q": "Why might an insurer wish to transfer a portfolio of business to another insurer, per the official syllabus's objective on this point?",
-                "a": "Reasons include exiting a line of business no longer aligned with strategy, releasing capital tied up supporting a legacy book, reducing management attention and operational cost devoted to a non-core line, or as part of a wider corporate restructuring or acquisition.",
-                "explain": "Worth recognising these reasons as directly connecting to Module 16's financial planning material — a portfolio transfer is often the concrete <em>implementation</em> of a strategic decision to refocus the insurer's business."
-            },
-            {
-                "q": "Why might a formal portfolio transfer typically require independent expert review and regulatory or court approval, echoing Module 11's material?",
-                "a": "Since affected policyholders did not choose the new insurer taking on their liabilities, this oversight helps ensure the transfer does not materially disadvantage their security or service, a genuine policyholder protection safeguard given policyholders have no direct say in the transaction.",
-                "explain": "This directly recalls Module 11's transfer-oversight material — worth recognising this as the <em>same</em> regulatory protection principle, now developed in more practical detail specifically for portfolio transfers."
-            },
-            {
-                "q": "Why might run-off be a more suitable exit approach than a formal transfer for a book with highly uncertain, long-tail liabilities (e.g. latent claims, per Module 13)?",
-                "a": "The genuine uncertainty in valuing long-tail liabilities could make it difficult to agree a fair transfer price acceptable to both parties, whereas run-off avoids needing to crystallise this uncertain value upfront, instead managing the liabilities as they emerge over time.",
-                "explain": "This directly recalls Module 13's latent-claims-uncertainty material — worth recognising that the <em>choice</em> between transfer and run-off should reflect how confidently the liabilities in question can be valued."
-            },
-            {
-                "q": "Why might an insurer need to consider the genuine capital and management cost of maintaining a run-off book, rather than assuming run-off is always the lowest-cost exit option?",
-                "a": "A run-off book still requires ongoing capital support and specialist claims management attention for potentially many years, so while it avoids an upfront transfer price, its genuine total cost over the run-off period should be weighed against the alternative of a formal transfer with a clean, immediate exit.",
-                "explain": "This directly recalls this module's transfer-alternatives material — worth recognising that 'exit' options should be compared on a like-for-like <em>total cost</em> basis, not assumed to be automatically cheaper simply because run-off avoids an upfront price."
-            }
-        ]
-    },
-    {
-        "id": "m19",
-        "title": "Solving complex problems",
-        "description": "Covers applying the full range of SA3 knowledge and skills to complex, multi-dimensional general insurance problems, per the official syllabus's final topic area.",
-        "cards": [
-            {
-                "q": "What four skills does the official SA3 syllabus's 'Solving problems' topic area explicitly require, echoing Module 1's material?",
-                "a": "Analyse complex problems in terms of actuarial, economic and financial factors; assess the implications and relevance of such factors, integrating results into a coherent whole; evaluate results critically in a wider context, drawing appropriate conclusions; and propose solutions or actions based on that evaluation.",
-                "explain": "This directly recalls Module 1's own restatement of this official syllabus wording — worth memorising this four-stage analyse/assess/evaluate/propose structure as a genuine, examinable answer-writing template."
-            },
-            {
-                "q": "Why does SA3 include a dedicated focus on solving complex problems, beyond the four main weighted topic areas covered in earlier modules?",
-                "a": "Real strategic and technical problems in general insurance rarely fall neatly into a single topic area; a complex issue typically requires drawing on product/pricing knowledge, regulatory constraints, reserving/reinsurance considerations, and financial planning judgement simultaneously.",
-                "explain": "This directly recalls this course's earlier topic-weighting material — worth recognising this module as the course's deliberate integration point, combining skills the earlier modules mostly developed in isolation."
-            },
-            {
-                "q": "A general insurer must decide whether to withdraw from a catastrophe-exposed property line following several years of adverse experience. Discuss why this represents a complex issue.",
-                "a": "This decision involves competing considerations across multiple topic areas at once — the reliability of catastrophe model output informing whether adverse experience reflects genuine trend or random fluctuation (Modules 5-6), reinsurance and capital implications of continuing versus exiting (Modules 14-15), and the strategic/financial planning consequences of withdrawal (Modules 16-18) — requiring integrated judgement.",
-                "explain": "This directly recalls this module's integration theme — worth recognising that resolving this specific issue requires drawing on catastrophe modelling, reinsurance, capital, and strategic material together, not any single module in isolation."
-            },
-            {
-                "q": "Why might a complex general insurance issue require an actuary to state reasonable assumptions explicitly, given realistic scenarios rarely provide every fact needed for a definitive answer?",
-                "a": "A strong response explicitly states what assumptions are being made and how they affect the conclusion, rather than either ignoring genuine ambiguity or refusing to reach a conclusion at all, demonstrating the genuine judgement the 'Solving problems' skill area is designed to test.",
-                "explain": "This directly recalls SA1's assumption-stating-under-uncertainty material — worth recognising this as a valued exam skill across every SA subject, not an admission of weakness in the answer."
-            },
-            {
-                "q": "Why might practising complex, integrated problems be considered the most realistic preparation for the actual SA3 exam, more so than reviewing individual topic areas in isolation?",
-                "a": "Since the real exam typically presents scenarios requiring integrated analysis across several topic areas at once, practising this kind of integrated problem-solving directly mirrors the actual skill being examined, rather than just topic-by-topic recall.",
-                "explain": "This directly recalls SA1's exam-format material — worth treating this module's integrated-practice approach as directly analogous to genuine exam technique, not merely an academic exercise separate from actual exam preparation."
-            }
-        ]
-    },
-    {
-        "id": "m20",
-        "title": "Glossary",
-        "description": "Consolidates key terminology used throughout the SA3 syllabus, drawing precise definitions from across earlier modules.",
-        "cards": [
-            {
-                "q": "Why does the SA3 syllabus benefit from a dedicated glossary of terms, rather than relying purely on definitions embedded within each topic module, echoing SA1's material?",
-                "a": "A consolidated glossary ensures precise, consistent terminology is used and understood across the whole subject, which matters given how many technical terms (e.g. catastrophe model, matching adjustment-equivalent concepts, latent claim) recur across multiple modules and must be used accurately in exam answers.",
-                "explain": "This directly recalls SA1's glossary rationale — worth treating this closing module as a practical final revision tool, not a separate new topic."
-            },
-            {
-                "q": "What is a 'catastrophe model', as a precise, glossary-style restatement of Modules 5-6's material?",
-                "a": "A model simulating a large number of hypothetical events using scientific and engineering data (hazard, vulnerability, and financial modules), estimating extreme, rare losses that historical claims data alone cannot reliably capture, used to inform pricing, reinsurance, and capital decisions.",
-                "explain": "This directly recalls Modules 5-6's catastrophe-modelling material — worth treating this as the precise definition to reach for if an exam question asks you to explain or apply catastrophe modelling directly."
-            },
-            {
-                "q": "What is a 'latent claim', as a precise, glossary-style restatement of Module 13's material?",
-                "a": "A claim arising from an event or exposure that may not be reported until many years or decades later, requiring reserving techniques that blend limited own experience with external data, scientific/medical understanding, and legal developments, given the standard reporting-pattern-based techniques' poor suitability.",
-                "explain": "This directly recalls Module 13's latent-claims material — worth treating this as the precise definition to use if asked to explain why latent claims need different reserving techniques from standard claims."
-            },
-            {
-                "q": "What is 'run-off', as a precise, glossary-style restatement of Module 18's material?",
-                "a": "An exit approach where an insurer ceases writing new business in a line but continues to manage and pay existing liabilities to their natural expiry, avoiding the need to crystallise an upfront transfer price for uncertain long-tail liabilities.",
-                "explain": "This directly recalls Module 18's exit-alternatives material — worth treating this as the precise definition to use if asked to compare exit options for a general insurance portfolio."
-            },
-            {
-                "q": "Why does this closing glossary module deliberately draw its terms from across every earlier module, rather than introducing wholly new content, echoing SA1's approach?",
-                "a": "A glossary's purpose is consolidative, not additive — bringing together precise, exam-ready definitions of terms already developed in context throughout Modules 1-19, supporting confident, accurate terminology use in the actual exam.",
-                "explain": "This closing card confirms this module completes SA3's 20-module structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
-            }
-        ]
-    }
-    ]
-,
+      {
+          "id": "m01",
+          "title": "Introduction to Subject SA3",
+          "description": "SA3's aims and structure: applying general insurance principles to complex practical problems in the UK market and London/Lloyd's, the syllabus topics, the case-study chapters, and what examiners expect.",
+          "cards": [
+              {
+                  "q": "What is the aim of SA3?",
+                  "a": "To apply GI knowledge to complex practical situations, giving advice and recommendations in the context of the UK and international GI environment.",
+                  "explain": "Specialist Advanced."
+              },
+              {
+                  "q": "How does SA3 build on SP7 and SP8?",
+                  "a": "It assumes their reserving, capital and pricing techniques and applies them to business decisions.",
+                  "explain": "Integration."
+              },
+              {
+                  "q": "Why are case studies included?",
+                  "a": "To practise integrated problem-solving across reserving, reinsurance and strategy.",
+                  "explain": "Chapters 14–16."
+              },
+              {
+                  "q": "What market does SA3 focus on?",
+                  "a": "The UK, including the London market and Lloyd's.",
+                  "explain": "Context."
+              },
+              {
+                  "q": "What skills are tested?",
+                  "a": "Analysis, judgement, recommendations, communication.",
+                  "explain": "Higher-order."
+              },
+              {
+                  "q": "What topics feature strongly?",
+                  "a": "Legislation and regulation, pricing large risks, cat models, capital returns, valuation bases, latent claims, exit strategies.",
+                  "explain": "Chapters."
+              },
+              {
+                  "q": "Why is legislation a large chapter?",
+                  "a": "UK legal changes (e.g. Ogden, whiplash reforms, Insurance Act) strongly affect GI.",
+                  "explain": "74 pages."
+              },
+              {
+                  "q": "How should SA3 answers be structured?",
+                  "a": "Identify issues, stakeholders, options, analysis, recommendation.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "What role does the Lloyd's market play?",
+                  "a": "Many SA3 scenarios involve syndicates, RITC and Lloyd's oversight.",
+                  "explain": "Specialist."
+              },
+              {
+                  "q": "Why consider stakeholders?",
+                  "a": "Policyholders, shareholders, regulators, Names, brokers, reinsurers.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "What exam format applies?",
+                  "a": "Two papers with long scenario questions.",
+                  "explain": "Stamina."
+              },
+              {
+                  "q": "Why is commercial awareness important?",
+                  "a": "Advice must consider business realities.",
+                  "explain": "Practicality."
+              },
+              {
+                  "q": "What is the Core Reading date for 2025?",
+                  "a": "31 May 2024.",
+                  "explain": "Currency."
+              },
+              {
+                  "q": "What appendices support SA3?",
+                  "a": "Decision-making tools and insurance products appendices.",
+                  "explain": "Reference."
+              },
+              {
+                  "q": "Why read further material?",
+                  "a": "The course includes further reading on current issues.",
+                  "explain": "Topicality."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "The general insurance market",
+          "description": "The structure of the UK and international GI market: personal, commercial and London market business, Lloyd's, distribution and intermediaries, delegated authority, reinsurance and alternative capital, market cycles, and current market issues.",
+          "cards": [
+              {
+                  "q": "What are the main segments of the UK GI market?",
+                  "a": "Personal lines, commercial (SME and large corporate), London market specialty and reinsurance.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "What is the London market?",
+                  "a": "Wholesale specialty market including Lloyd's and company market in London.",
+                  "explain": "Global risks."
+              },
+              {
+                  "q": "What role do brokers play?",
+                  "a": "Place risks, advise clients, negotiate terms; major brokers have significant influence.",
+                  "explain": "Distribution."
+              },
+              {
+                  "q": "What is delegated authority?",
+                  "a": "Underwriting authority given to coverholders/MGAs.",
+                  "explain": "Oversight risk."
+              },
+              {
+                  "q": "What is alternative capital?",
+                  "a": "Capital from investors via ILS, cat bonds, sidecars, collateralised reinsurance.",
+                  "explain": "Reinsurance capacity."
+              },
+              {
+                  "q": "How do market cycles affect GI?",
+                  "a": "Hard and soft markets change pricing and capacity.",
+                  "explain": "Cycle management."
+              },
+              {
+                  "q": "What are current market issues?",
+                  "a": "Inflation, climate, cyber, pricing regulation, social inflation, reserve adequacy.",
+                  "explain": "Topical."
+              },
+              {
+                  "q": "What are captives?",
+                  "a": "Insurers owned by corporates to insure own risks.",
+                  "explain": "Risk financing."
+              },
+              {
+                  "q": "What are MGAs?",
+                  "a": "Managing general agents with underwriting authority.",
+                  "explain": "Growth area."
+              },
+              {
+                  "q": "What are aggregators?",
+                  "a": "Price comparison websites dominating personal lines distribution.",
+                  "explain": "Competition."
+              },
+              {
+                  "q": "How has the FCA intervened in personal lines pricing?",
+                  "a": "GIPP rules banning price walking (2022).",
+                  "explain": "Market change."
+              },
+              {
+                  "q": "What is facultative placement?",
+                  "a": "Individual risk reinsurance.",
+                  "explain": "Large risks."
+              },
+              {
+                  "q": "What is the subscription market?",
+                  "a": "Multiple insurers share large risks, with lead/follow roles.",
+                  "explain": "Lloyd's."
+              },
+              {
+                  "q": "What drives GI profitability?",
+                  "a": "Underwriting discipline, claims management, investment returns, expenses.",
+                  "explain": "Combined ratio."
+              },
+              {
+                  "q": "Why consider international markets?",
+                  "a": "Global risks, regulatory comparisons.",
+                  "explain": "Context."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Taxation",
+          "description": "Taxation affecting UK general insurers: insurance premium tax, corporation tax on insurers (technical provisions, discounting, equalisation), taxation at Lloyd's, VAT exemption, tax on captives and cross-border issues, and tax effects on pricing and strategy.",
+          "cards": [
+              {
+                  "q": "What is insurance premium tax (IPT)?",
+                  "a": "A tax on GI premiums: standard rate 12%, higher rate 20% on certain products (e.g. travel, some add-ons).",
+                  "explain": "Customer cost."
+              },
+              {
+                  "q": "How are GI companies taxed on profits?",
+                  "a": "Corporation tax (25% main rate) on profits including underwriting and investment results.",
+                  "explain": "Accounting-based."
+              },
+              {
+                  "q": "How are technical provisions treated for tax?",
+                  "a": "Generally deductible if calculated on a proper accounting basis.",
+                  "explain": "Timing."
+              },
+              {
+                  "q": "How are Lloyd's members taxed?",
+                  "a": "Profits taxed per year of account as members' income, with special rules.",
+                  "explain": "Corporate and individual."
+              },
+              {
+                  "q": "Why is VAT relevant?",
+                  "a": "Insurance is exempt from VAT, so insurers can't recover input VAT on costs.",
+                  "explain": "Cost."
+              },
+              {
+                  "q": "How does tax affect captive location?",
+                  "a": "Captives may be domiciled in low-tax jurisdictions, subject to anti-avoidance rules.",
+                  "explain": "CFC rules."
+              },
+              {
+                  "q": "How does IPT affect pricing?",
+                  "a": "Adds to customer price; may influence product structuring.",
+                  "explain": "Rates."
+              },
+              {
+                  "q": "What is double taxation relief?",
+                  "a": "Relief for foreign taxes on overseas profits.",
+                  "explain": "Cross-border."
+              },
+              {
+                  "q": "How does tax affect reinsurance?",
+                  "a": "Reinsurance premiums deductible; cross-border reinsurance tax considerations.",
+                  "explain": "Planning."
+              },
+              {
+                  "q": "How are claims equalisation reserves treated?",
+                  "a": "Historically tax-deductible; abolished under Solvency II framework in UK.",
+                  "explain": "Legacy."
+              },
+              {
+                  "q": "How does discounting of reserves affect tax?",
+                  "a": "Tax computations may follow accounting basis.",
+                  "explain": "IFRS 17."
+              },
+              {
+                  "q": "What is the effect of tax on reserve strengthening?",
+                  "a": "Deduction reduces tax on profits.",
+                  "explain": "Timing."
+              },
+              {
+                  "q": "How can tax changes affect insurers?",
+                  "a": "Rates, IPT changes affect demand and profits.",
+                  "explain": "Risk."
+              },
+              {
+                  "q": "What tax issues arise in M&A?",
+                  "a": "Losses carried forward, reserve adequacy, deferred tax.",
+                  "explain": "Due diligence."
+              },
+              {
+                  "q": "How do different jurisdictions tax insurers?",
+                  "a": "Varied approaches to reserves and profits.",
+                  "explain": "Comparison."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Legislation",
+          "description": "UK legislation affecting general insurance: compulsory covers (motor, employers' liability), the Insurance Act 2015 and CIDRA, personal injury law and the Ogden discount rate, the Civil Liability Act and whiplash reforms, periodical payment orders, third-party rights, equality and data law, flood and terrorism schemes, and legal developments' effect on reserving and pricing.",
+          "cards": [
+              {
+                  "q": "Which GI covers are compulsory in the UK?",
+                  "a": "Third-party motor liability and employers' liability.",
+                  "explain": "Legal minimums."
+              },
+              {
+                  "q": "What is the Insurance Act 2015?",
+                  "a": "Commercial insurance law introducing the duty of fair presentation and proportionate remedies.",
+                  "explain": "Replaced utmost good faith rules."
+              },
+              {
+                  "q": "What is CIDRA?",
+                  "a": "Consumer Insurance (Disclosure and Representations) Act 2012 — duty to take reasonable care not to misrepresent.",
+                  "explain": "Consumers."
+              },
+              {
+                  "q": "What is the Ogden discount rate?",
+                  "a": "Rate used to calculate lump sum personal injury awards; −0.25% from 2019 (as at the Core Reading date).",
+                  "explain": "Large reserving impact."
+              },
+              {
+                  "q": "How does the Ogden rate affect reserves?",
+                  "a": "Lower rates increase lump sum awards, particularly for young, seriously injured claimants.",
+                  "explain": "Motor and EL."
+              },
+              {
+                  "q": "What are periodical payment orders (PPOs)?",
+                  "a": "Court-ordered annual payments for future care costs, often indexed to ASHE 6115.",
+                  "explain": "Longevity and inflation risk."
+              },
+              {
+                  "q": "What did the Civil Liability Act 2018 do?",
+                  "a": "Introduced whiplash tariffs and a new process for setting the Ogden rate.",
+                  "explain": "Motor claims."
+              },
+              {
+                  "q": "What was the effect of whiplash reforms (2021)?",
+                  "a": "Fixed tariffs and raised small claims limit, reducing claim costs.",
+                  "explain": "Frequency and severity."
+              },
+              {
+                  "q": "What is the Third Parties (Rights against Insurers) Act 2010?",
+                  "a": "Allows claimants to proceed directly against insurers of insolvent insureds.",
+                  "explain": "Liability."
+              },
+              {
+                  "q": "What is Flood Re?",
+                  "a": "A reinsurance scheme making flood cover affordable for high-risk homes.",
+                  "explain": "Market intervention."
+              },
+              {
+                  "q": "What is Pool Re?",
+                  "a": "Government-backed terrorism reinsurer for commercial property.",
+                  "explain": "Terrorism."
+              },
+              {
+                  "q": "How does data law affect GI?",
+                  "a": "UK GDPR restricts personal data use in pricing and claims.",
+                  "explain": "Compliance."
+              },
+              {
+                  "q": "How can equality law affect pricing?",
+                  "a": "Prohibits gender-based pricing; other protected characteristics.",
+                  "explain": "Fairness."
+              },
+              {
+                  "q": "How do legal changes create reserving risk?",
+                  "a": "Retrospective effects on outstanding claims.",
+                  "explain": "Uncertainty."
+              },
+              {
+                  "q": "What is the Motor Insurers' Bureau?",
+                  "a": "Compensates victims of uninsured and untraced drivers, funded by insurers.",
+                  "explain": "Levy."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "Professional guidance",
+          "description": "Professional standards for GI actuaries: the Actuaries' Code, TAS 100 and TAS 200, IFoA APSs and guidance on reserving and pricing work, Lloyd's requirements for Statements of Actuarial Opinion, and communicating uncertainty.",
+          "cards": [
+              {
+                  "q": "What is TAS 200?",
+                  "a": "Technical Actuarial Standard for insurance work.",
+                  "explain": "GI and life."
+              },
+              {
+                  "q": "What does TAS 100 require?",
+                  "a": "Appropriate judgement, data, assumptions, models and communication in technical actuarial work.",
+                  "explain": "Generic."
+              },
+              {
+                  "q": "What is a Statement of Actuarial Opinion (SAO) at Lloyd's?",
+                  "a": "An opinion on the reasonableness of syndicate reserves, required annually.",
+                  "explain": "Lloyd's requirement."
+              },
+              {
+                  "q": "What must actuaries communicate about uncertainty?",
+                  "a": "Nature and extent of uncertainty in results.",
+                  "explain": "TAS."
+              },
+              {
+                  "q": "How should data limitations be handled?",
+                  "a": "Disclosed with their effect on results.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "What is the Actuaries' Code?",
+                  "a": "Ethical principles for IFoA members.",
+                  "explain": "Integrity."
+              },
+              {
+                  "q": "How should conflicts be managed?",
+                  "a": "Identify, disclose, manage or decline.",
+                  "explain": "Independence."
+              },
+              {
+                  "q": "What is peer review?",
+                  "a": "Independent review of work for quality.",
+                  "explain": "APS X2."
+              },
+              {
+                  "q": "How does guidance apply to pricing?",
+                  "a": "Pricing work must meet TAS standards on assumptions and communication.",
+                  "explain": "Consistency."
+              },
+              {
+                  "q": "What are Lloyd's reserving guidelines?",
+                  "a": "Requirements for syndicate reserving and SAOs.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "Why is documentation important?",
+                  "a": "Allows review and reproduction.",
+                  "explain": "TAS 100."
+              },
+              {
+                  "q": "What is the role of the actuarial function holder?",
+                  "a": "Senior responsibility for actuarial function under Solvency UK.",
+                  "explain": "SMF20."
+              },
+              {
+                  "q": "How should results be presented to boards?",
+                  "a": "Clear key messages and ranges.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "What is materiality in actuarial work?",
+                  "a": "Whether an item could influence decisions.",
+                  "explain": "Proportionality."
+              },
+              {
+                  "q": "Why follow professional guidance?",
+                  "a": "Protects users and profession's reputation.",
+                  "explain": "Trust."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Pricing large commercial risks",
+          "description": "Pricing large commercial and London market risks: data (submissions, loss histories, exposure information), experience and exposure rating, layers and deductibles, captives and alternative structures, underwriting judgement, broker negotiation, and pricing adequacy monitoring.",
+          "cards": [
+              {
+                  "q": "What data is typically in a large risk submission?",
+                  "a": "Loss history (often 5–10 years), exposure details, risk information, current terms, reinsurance, broker narrative.",
+                  "explain": "Varied quality."
+              },
+              {
+                  "q": "How is experience rating applied?",
+                  "a": "Trend and develop past losses, adjust for exposure, apply layer terms.",
+                  "explain": "Burning cost."
+              },
+              {
+                  "q": "How is exposure rating applied?",
+                  "a": "Using exposure curves or ILFs to allocate expected loss to layers.",
+                  "explain": "Sparse data."
+              },
+              {
+                  "q": "Why blend experience and exposure rates?",
+                  "a": "Balance credibility of the risk's own data with benchmarks.",
+                  "explain": "Credibility."
+              },
+              {
+                  "q": "How are deductibles priced?",
+                  "a": "Estimating loss elimination from the deductible via severity distributions.",
+                  "explain": "Loss elimination ratio."
+              },
+              {
+                  "q": "What is a large deductible programme?",
+                  "a": "Insured retains large deductible, insurer handles claims.",
+                  "explain": "Credit risk on reimbursement."
+              },
+              {
+                  "q": "How do captives affect pricing?",
+                  "a": "Insurer may front and reinsure to captive; pricing for fronting and credit risk.",
+                  "explain": "Structures."
+              },
+              {
+                  "q": "What role does underwriting judgement play?",
+                  "a": "Adjusting for risk quality, management, loss control.",
+                  "explain": "Schedule rating."
+              },
+              {
+                  "q": "How do brokers influence pricing?",
+                  "a": "Negotiate terms and market price; distinguish technical vs market price.",
+                  "explain": "Negotiation."
+              },
+              {
+                  "q": "What is a layered programme?",
+                  "a": "Multiple insurers taking different layers of cover.",
+                  "explain": "Tower."
+              },
+              {
+                  "q": "How is pricing adequacy monitored?",
+                  "a": "Comparing charged vs technical price, rate monitoring.",
+                  "explain": "Portfolio management."
+              },
+              {
+                  "q": "What are the challenges of pricing unique risks?",
+                  "a": "Little data, heterogeneous exposures, catastrophe potential.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How are multi-year policies priced?",
+                  "a": "Allowing for trend and uncertainty over longer terms.",
+                  "explain": "Rate guarantees."
+              },
+              {
+                  "q": "What is loss sensitivity analysis?",
+                  "a": "Testing price sensitivity to assumptions.",
+                  "explain": "Robustness."
+              },
+              {
+                  "q": "How is catastrophe exposure included?",
+                  "a": "Cat model loadings for property.",
+                  "explain": "Chapter 7."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "Catastrophe models",
+          "description": "Catastrophe models in practice: model structure, key outputs (AAL, OEP/AEP, PML), uses (pricing, reinsurance purchase, capital, accumulation management), limitations and uncertainty, model evaluation and adjustment, non-modelled risks and climate change.",
+          "cards": [
+              {
+                  "q": "What are the main uses of cat models?",
+                  "a": "Pricing, reinsurance purchasing, capital modelling, accumulation management, portfolio optimisation.",
+                  "explain": "Uses."
+              },
+              {
+                  "q": "What are cat model limitations?",
+                  "a": "Model uncertainty, data quality, non-modelled perils, secondary uncertainty, climate trends.",
+                  "explain": "Limitations."
+              },
+              {
+                  "q": "What is model evaluation?",
+                  "a": "Assessing a vendor model's suitability for the portfolio (validation, back-testing against events).",
+                  "explain": "Regulatory expectation."
+              },
+              {
+                  "q": "How can models be adjusted?",
+                  "a": "Loadings for non-modelled perils, blending models, adjusting vulnerability.",
+                  "explain": "Own view of risk."
+              },
+              {
+                  "q": "What is an own view of risk?",
+                  "a": "Insurer's adjusted view rather than raw vendor output.",
+                  "explain": "Lloyd's requirement."
+              },
+              {
+                  "q": "What is accumulation management?",
+                  "a": "Monitoring and limiting concentrated exposures.",
+                  "explain": "Realistic disaster scenarios."
+              },
+              {
+                  "q": "What are Lloyd's realistic disaster scenarios?",
+                  "a": "Prescribed catastrophe scenarios syndicates must estimate losses for.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "How does climate change affect models?",
+                  "a": "Historical catalogues may understate current and future risk.",
+                  "explain": "Adjustments."
+              },
+              {
+                  "q": "What is demand surge?",
+                  "a": "Post-event inflation in repair costs.",
+                  "explain": "Loss amplification."
+              },
+              {
+                  "q": "What are non-modelled perils?",
+                  "a": "Perils without vendor models (e.g. some floods, wildfire in some regions).",
+                  "explain": "Loadings."
+              },
+              {
+                  "q": "How do data quality issues affect models?",
+                  "a": "Poor geocoding or construction data mislead results.",
+                  "explain": "Garbage in."
+              },
+              {
+                  "q": "What is secondary uncertainty?",
+                  "a": "Uncertainty in damage given an event.",
+                  "explain": "Distribution."
+              },
+              {
+                  "q": "How are cat models used for reinsurance?",
+                  "a": "Setting retention and limit, pricing layers.",
+                  "explain": "Programme design."
+              },
+              {
+                  "q": "What is a PML?",
+                  "a": "Loss at a given return period.",
+                  "explain": "Capital."
+              },
+              {
+                  "q": "Why use multiple models?",
+                  "a": "Reduce model risk.",
+                  "explain": "Blending."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "Return on capital",
+          "description": "Measuring and targeting return on capital in GI: capital allocation to lines and policies, risk-adjusted pricing, target returns and hurdle rates, economic value added, and using return on capital in underwriting, reinsurance and strategic decisions.",
+          "cards": [
+              {
+                  "q": "Why measure return on capital?",
+                  "a": "To assess whether business earns adequate returns for the risk taken.",
+                  "explain": "Value."
+              },
+              {
+                  "q": "How is capital allocated to lines?",
+                  "a": "By contribution to total risk (Euler, marginal, proportional).",
+                  "explain": "Capital model."
+              },
+              {
+                  "q": "What is a hurdle rate?",
+                  "a": "Minimum required return on allocated capital.",
+                  "explain": "Cost of capital."
+              },
+              {
+                  "q": "How is return on capital used in pricing?",
+                  "a": "Premiums set to achieve target return on allocated capital.",
+                  "explain": "Risk-adjusted pricing."
+              },
+              {
+                  "q": "What is RAROC in GI?",
+                  "a": "Risk-adjusted profit / allocated capital.",
+                  "explain": "Performance."
+              },
+              {
+                  "q": "What is EVA?",
+                  "a": "Profit minus cost of capital.",
+                  "explain": "Value creation."
+              },
+              {
+                  "q": "How does reinsurance affect return on capital?",
+                  "a": "Reduces capital but costs premium; net effect assessed.",
+                  "explain": "Efficiency."
+              },
+              {
+                  "q": "How can returns differ by line?",
+                  "a": "Different risk profiles and margins.",
+                  "explain": "Portfolio."
+              },
+              {
+                  "q": "What is the effect of long-tail business?",
+                  "a": "Capital tied up for longer; investment income offset.",
+                  "explain": "Timing."
+              },
+              {
+                  "q": "How is capital measured over time?",
+                  "a": "Projecting capital requirements over run-off.",
+                  "explain": "Multi-period."
+              },
+              {
+                  "q": "What are limitations of return on capital?",
+                  "a": "Capital allocation subjectivity, model risk.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How are diversification benefits allocated?",
+                  "a": "Across lines by allocation method.",
+                  "explain": "Fairness."
+              },
+              {
+                  "q": "What is the cost of capital?",
+                  "a": "Return required by capital providers.",
+                  "explain": "CAPM or target."
+              },
+              {
+                  "q": "How does ROC inform strategy?",
+                  "a": "Grow lines exceeding hurdle, shrink others.",
+                  "explain": "Allocation."
+              },
+              {
+                  "q": "How do rating agencies influence capital?",
+                  "a": "Rating capital requirements may bind.",
+                  "explain": "Constraints."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Valuation bases",
+          "description": "Valuing GI liabilities for different purposes: Solvency UK technical provisions, IFRS 17, UK GAAP, Lloyd's RITC and SAOs, M&A, commutations and portfolio transfers, tax — and why methods, assumptions, discounting and margins differ between them.",
+          "cards": [
+              {
+                  "q": "Why do valuation bases differ?",
+                  "a": "Different purposes and users require different prudence, discounting and scope.",
+                  "explain": "Purpose-driven."
+              },
+              {
+                  "q": "What is the Solvency UK technical provisions basis?",
+                  "a": "Discounted best estimate (claims and premium provisions) plus risk margin, including ENIDs.",
+                  "explain": "Regulatory."
+              },
+              {
+                  "q": "What is the IFRS 17 basis?",
+                  "a": "Discounted fulfilment cash flows plus risk adjustment (PAA for most GI).",
+                  "explain": "Accounting."
+              },
+              {
+                  "q": "What is a best estimate for M&A?",
+                  "a": "Realistic view of reserves for pricing a transaction, possibly with buyer's margin.",
+                  "explain": "Negotiation."
+              },
+              {
+                  "q": "How are reserves valued for commutations?",
+                  "a": "Discounted expected liabilities plus risk loading, negotiated with counterparties.",
+                  "explain": "Settlement."
+              },
+              {
+                  "q": "How is RITC priced?",
+                  "a": "Estimated liabilities plus appropriate margin, fair between years of account.",
+                  "explain": "Lloyd's."
+              },
+              {
+                  "q": "What are ENIDs?",
+                  "a": "Events not in data included in Solvency II best estimates.",
+                  "explain": "Completeness."
+              },
+              {
+                  "q": "How are premium provisions calculated?",
+                  "a": "Expected claims and expenses on unexpired cover and bound but not incepted business, less future premiums.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "How does discounting differ?",
+                  "a": "Solvency II uses PRA risk-free curve; IFRS 17 may add illiquidity premium.",
+                  "explain": "Rates."
+              },
+              {
+                  "q": "What margins are held in accounting reserves?",
+                  "a": "Management margins above best estimate in some regimes.",
+                  "explain": "Prudence."
+              },
+              {
+                  "q": "How do bases differ for tax?",
+                  "a": "Follow accounting with adjustments.",
+                  "explain": "Timing."
+              },
+              {
+                  "q": "How is uncertainty reflected?",
+                  "a": "Risk margin (SII), risk adjustment (IFRS 17), margins (GAAP).",
+                  "explain": "Different."
+              },
+              {
+                  "q": "What is the role of the actuary in valuations?",
+                  "a": "Estimating liabilities and explaining differences.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "What is a portfolio transfer valuation?",
+                  "a": "Valuing liabilities for transfer to another insurer.",
+                  "explain": "Part VII."
+              },
+              {
+                  "q": "Why reconcile bases?",
+                  "a": "Explain differences to stakeholders.",
+                  "explain": "Transparency."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "Financial planning",
+          "description": "Business and financial planning for general insurers: business plans, premium and claims projections, capital and solvency projections, ORSA, stress and scenario testing, reinsurance and investment planning, and monitoring performance against plan.",
+          "cards": [
+              {
+                  "q": "What does a GI business plan include?",
+                  "a": "Premium volumes and rates, loss ratios, expenses, reinsurance, investment income, capital and solvency projections.",
+                  "explain": "Planning."
+              },
+              {
+                  "q": "What is the role of actuaries in planning?",
+                  "a": "Projecting loss ratios, reserves, capital, and assessing plan risks.",
+                  "explain": "Support."
+              },
+              {
+                  "q": "What is the ORSA's role in planning?",
+                  "a": "Assessing risks and capital needs over the plan horizon.",
+                  "explain": "Forward-looking."
+              },
+              {
+                  "q": "How are stress tests used?",
+                  "a": "Testing plan resilience to adverse scenarios.",
+                  "explain": "Capital adequacy."
+              },
+              {
+                  "q": "What is Lloyd's syndicate business planning (SBF)?",
+                  "a": "Syndicates submit business forecasts for approval by Lloyd's.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "How are plan loss ratios set?",
+                  "a": "From pricing, rate changes, trends, and reserving experience.",
+                  "explain": "Consistency."
+              },
+              {
+                  "q": "Why monitor performance against plan?",
+                  "a": "Early identification of deviations.",
+                  "explain": "Control."
+              },
+              {
+                  "q": "How does reinsurance planning fit?",
+                  "a": "Cost and structure affect net results and capital.",
+                  "explain": "Integrated."
+              },
+              {
+                  "q": "What is capital planning?",
+                  "a": "Ensuring sufficient capital for the plan and buffers.",
+                  "explain": "Risk appetite."
+              },
+              {
+                  "q": "How do market cycles affect plans?",
+                  "a": "Rate adequacy assumptions must reflect cycle.",
+                  "explain": "Realism."
+              },
+              {
+                  "q": "What is scenario analysis in planning?",
+                  "a": "Considering alternative futures.",
+                  "explain": "Strategy."
+              },
+              {
+                  "q": "How are expenses planned?",
+                  "a": "Budgets by function, allocation to lines.",
+                  "explain": "Ratios."
+              },
+              {
+                  "q": "What role does investment planning play?",
+                  "a": "Investment income projection and ALM.",
+                  "explain": "Returns."
+              },
+              {
+                  "q": "What is reverse stress testing?",
+                  "a": "Identifying scenarios that would break the plan.",
+                  "explain": "Required."
+              },
+              {
+                  "q": "Why involve underwriters in planning?",
+                  "a": "Realistic volume and rate assumptions.",
+                  "explain": "Buy-in."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Latent and disease claims",
+          "description": "Latent and disease claims: nature (asbestos, industrial deafness, other industrial diseases, abuse, emerging latent risks), legal and exposure drivers, reserving methods (exposure-based, survival ratio, benchmark, curve fitting to notifications), and uncertainty.",
+          "cards": [
+              {
+                  "q": "What are latent claims?",
+                  "a": "Claims from exposures long ago that manifest years later (e.g. asbestos-related disease).",
+                  "explain": "Long latency."
+              },
+              {
+                  "q": "Why are latent claims hard to reserve?",
+                  "a": "Long latency, legal changes, sparse data, uncertain exposure and disease incidence.",
+                  "explain": "Uncertainty."
+              },
+              {
+                  "q": "What asbestos-related diseases drive claims?",
+                  "a": "Mesothelioma, asbestosis, lung cancer, pleural thickening.",
+                  "explain": "Types."
+              },
+              {
+                  "q": "What is the survival ratio method?",
+                  "a": "Reserve = survival ratio × current annual payments (years of payments covered).",
+                  "explain": "Benchmark."
+              },
+              {
+                  "q": "What is an exposure-based method?",
+                  "a": "Modelling claims from exposed populations and disease incidence projections.",
+                  "explain": "Epidemiological."
+              },
+              {
+                  "q": "How are notification curves used?",
+                  "a": "Fitting curves to past notifications to project future claims.",
+                  "explain": "Projection."
+              },
+              {
+                  "q": "What is benchmarking?",
+                  "a": "Comparing to market share of industry estimates.",
+                  "explain": "Market share."
+              },
+              {
+                  "q": "What is noise-induced hearing loss?",
+                  "a": "Industrial deafness claims, affected by claims management behaviour.",
+                  "explain": "Latent-type."
+              },
+              {
+                  "q": "What legal factors affect latent claims?",
+                  "a": "Court rulings on liability allocation (e.g. Fairchild, Barker, Compensation Act 2006).",
+                  "explain": "Legal risk."
+              },
+              {
+                  "q": "What emerging latent risks exist?",
+                  "a": "PFAS, microplastics, EMF, social media harm.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "How does claims inflation affect latent claims?",
+                  "a": "Legal costs and award increases.",
+                  "explain": "Severity."
+              },
+              {
+                  "q": "Why is reinsurance important for latent claims?",
+                  "a": "Old policies may have reinsurance recoveries; disputes common.",
+                  "explain": "Recoveries."
+              },
+              {
+                  "q": "What is the role of coverage disputes?",
+                  "a": "Uncertain which policies respond.",
+                  "explain": "Allocation."
+              },
+              {
+                  "q": "How is uncertainty communicated?",
+                  "a": "Scenario ranges and sensitivity to disease projections.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "How can latent liabilities be exited?",
+                  "a": "LPTs, ADCs, Part VII transfers to run-off specialists.",
+                  "explain": "Chapter 12."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Exit strategies",
+          "description": "Exit strategies for general insurance business: run-off, sale of the company or portfolio, loss portfolio transfers, adverse development covers, Part VII transfers, schemes of arrangement, commutations, and the considerations for each.",
+          "cards": [
+              {
+                  "q": "What is run-off?",
+                  "a": "Continuing to manage and pay claims on business no longer written.",
+                  "explain": "Default exit."
+              },
+              {
+                  "q": "What is a loss portfolio transfer (LPT)?",
+                  "a": "Transferring reserves and risk of existing claims to a reinsurer for a premium.",
+                  "explain": "Finality."
+              },
+              {
+                  "q": "What is an adverse development cover (ADC)?",
+                  "a": "Reinsurance protecting against reserve deterioration above a level.",
+                  "explain": "Tail protection."
+              },
+              {
+                  "q": "What is a Part VII transfer?",
+                  "a": "Court-approved transfer of insurance business to another insurer.",
+                  "explain": "Legal finality."
+              },
+              {
+                  "q": "What is a scheme of arrangement?",
+                  "a": "Court-sanctioned compromise with creditors, often to crystallise liabilities and close.",
+                  "explain": "Solvent schemes."
+              },
+              {
+                  "q": "What are commutations?",
+                  "a": "Negotiated settlements of reinsurance or policy obligations for a lump sum.",
+                  "explain": "Finality."
+              },
+              {
+                  "q": "What are considerations in choosing an exit?",
+                  "a": "Cost, finality, capital release, policyholder protection, regulatory approval, timing, tax.",
+                  "explain": "Trade-offs."
+              },
+              {
+                  "q": "Who are run-off consolidators?",
+                  "a": "Specialist acquirers of legacy business.",
+                  "explain": "Market."
+              },
+              {
+                  "q": "What are the benefits of exiting legacy business?",
+                  "a": "Capital release, management focus, reduced volatility.",
+                  "explain": "Strategy."
+              },
+              {
+                  "q": "What are the risks of an LPT?",
+                  "a": "Counterparty risk, price, residual liability.",
+                  "explain": "Assessment."
+              },
+              {
+                  "q": "What does the independent expert consider in Part VII?",
+                  "a": "Security and fair treatment of policyholders.",
+                  "explain": "Court."
+              },
+              {
+                  "q": "What is an RITC at Lloyd's in exit context?",
+                  "a": "Closing a year into another; third-party RITC to run-off specialists.",
+                  "explain": "Lloyd's."
+              },
+              {
+                  "q": "How is an exit priced?",
+                  "a": "Best estimate liabilities plus risk margin and cost of capital.",
+                  "explain": "Valuation."
+              },
+              {
+                  "q": "Why might a buyer pay more than best estimate?",
+                  "a": "Investment income, expense efficiency, diversification.",
+                  "explain": "Economics."
+              },
+              {
+                  "q": "How do exits affect reinsurance?",
+                  "a": "Existing reinsurance may transfer or be commuted.",
+                  "explain": "Recoveries."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Problem solving",
+          "description": "Approaching SA3 questions: identifying the issues and stakeholders, applying reserving, pricing, capital and reinsurance knowledge to business problems, using decision-making tools, and making justified recommendations.",
+          "cards": [
+              {
+                  "q": "How should SA3 questions be approached?",
+                  "a": "Understand context, identify stakeholders and issues, analyse options, recommend.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "What decision-making tools can help?",
+                  "a": "Cost-benefit analysis, SWOT, PESTLE, scenario analysis, decision trees.",
+                  "explain": "Appendix."
+              },
+              {
+                  "q": "Why consider stakeholders?",
+                  "a": "Different interests (shareholders, regulators, policyholders, brokers).",
+                  "explain": "Breadth."
+              },
+              {
+                  "q": "How should recommendations be justified?",
+                  "a": "With clear reasoning, quantification where possible, and risks.",
+                  "explain": "Marks."
+              },
+              {
+                  "q": "What are common weaknesses?",
+                  "a": "Generic answers, missing UK/Lloyd's specifics, lack of breadth.",
+                  "explain": "Examiners."
+              },
+              {
+                  "q": "How to handle calculation parts?",
+                  "a": "State method and assumptions, check reasonableness.",
+                  "explain": "Method marks."
+              },
+              {
+                  "q": "Why consider practicalities?",
+                  "a": "Data, systems, time, cost, people.",
+                  "explain": "Realism."
+              },
+              {
+                  "q": "How can the control cycle help?",
+                  "a": "Frame problems as specify, develop, monitor.",
+                  "explain": "Framework."
+              },
+              {
+                  "q": "How to manage time?",
+                  "a": "Allocate by marks.",
+                  "explain": "Complete all."
+              },
+              {
+                  "q": "Why use headings?",
+                  "a": "Clarity and structure for markers.",
+                  "explain": "Presentation."
+              },
+              {
+                  "q": "How to discuss uncertainty?",
+                  "a": "Ranges, sensitivities, scenarios.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "How to address regulatory issues?",
+                  "a": "Consider PRA, FCA, Lloyd's requirements.",
+                  "explain": "Compliance."
+              },
+              {
+                  "q": "How to use the insurance products appendix?",
+                  "a": "Refresh product knowledge for scenarios.",
+                  "explain": "Reference."
+              },
+              {
+                  "q": "Why consider alternatives?",
+                  "a": "Shows judgement.",
+                  "explain": "Compare options."
+              },
+              {
+                  "q": "How to finish an answer?",
+                  "a": "Summarise recommendation and next steps.",
+                  "explain": "Conclusion."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Case study 1 – reserving",
+          "description": "A reserving case study: applying reserving methods and judgement to a realistic portfolio — data issues, method selection by class and year, allowing for changes in claims handling and inflation, large and latent claims, reinsurance, and communicating results and uncertainty to the board.",
+          "cards": [
+              {
+                  "q": "What are the first steps in a reserving case study?",
+                  "a": "Understand the portfolio, data, changes, and purpose of the review.",
+                  "explain": "Context."
+              },
+              {
+                  "q": "How should methods be selected?",
+                  "a": "Based on class tail, maturity, data quality and diagnostics.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How to handle a change in claims handling?",
+                  "a": "Adjust incurred data or rely on paid/BF methods.",
+                  "explain": "Diagnostics."
+              },
+              {
+                  "q": "How to allow for recent high inflation?",
+                  "a": "Explicit inflation adjustments, separating past and future inflation.",
+                  "explain": "Inflation-adjusted chain ladder."
+              },
+              {
+                  "q": "How to treat large claims?",
+                  "a": "Individual review and separate projection.",
+                  "explain": "Stability."
+              },
+              {
+                  "q": "How to reserve for new classes?",
+                  "a": "ELR/BF using pricing assumptions and benchmarks.",
+                  "explain": "Little data."
+              },
+              {
+                  "q": "How to allow for reinsurance?",
+                  "a": "Gross-to-net, considering programme changes and bad debt.",
+                  "explain": "Recoveries."
+              },
+              {
+                  "q": "What diagnostics should be reviewed?",
+                  "a": "Loss ratios, frequencies, severities, paid/incurred ratios.",
+                  "explain": "Checks."
+              },
+              {
+                  "q": "How to communicate results?",
+                  "a": "Best estimate, range, key drivers, changes since last review.",
+                  "explain": "Board."
+              },
+              {
+                  "q": "What if results differ from management expectations?",
+                  "a": "Explain evidence and uncertainty; maintain independence.",
+                  "explain": "Professionalism."
+              },
+              {
+                  "q": "How to address data errors discovered?",
+                  "a": "Correct, document, quantify impact.",
+                  "explain": "Quality."
+              },
+              {
+                  "q": "How to handle Ogden changes?",
+                  "a": "Scenario revaluation of large bodily injury claims.",
+                  "explain": "Legal."
+              },
+              {
+                  "q": "How to allow for PPOs?",
+                  "a": "Separate reserving with longevity and ASHE inflation assumptions.",
+                  "explain": "Specialist."
+              },
+              {
+                  "q": "How to set the Solvency UK best estimate?",
+                  "a": "Discounted cash flows with ENIDs and expenses.",
+                  "explain": "Regulatory."
+              },
+              {
+                  "q": "What lessons does the case study teach?",
+                  "a": "Integrate data, methods, judgement and communication.",
+                  "explain": "Practice."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Case study 2 – reinsurance",
+          "description": "A reinsurance case study: assessing an insurer's reinsurance needs, designing and pricing alternative programmes, using capital and cat models to compare options, counterparty security, cost-benefit and recommending a programme.",
+          "cards": [
+              {
+                  "q": "What is the starting point in reinsurance design?",
+                  "a": "Objectives and risk appetite (volatility, capital, cat protection).",
+                  "explain": "Needs."
+              },
+              {
+                  "q": "How are options compared?",
+                  "a": "Net cost, capital relief, volatility reduction, return on capital.",
+                  "explain": "Metrics."
+              },
+              {
+                  "q": "How are cat limits chosen?",
+                  "a": "Return period target (e.g. 1-in-200) from cat models.",
+                  "explain": "Appetite."
+              },
+              {
+                  "q": "How is retention chosen?",
+                  "a": "Balancing cost against retained risk and capital.",
+                  "explain": "Optimisation."
+              },
+              {
+                  "q": "How is reinsurance priced in the case study?",
+                  "a": "Experience and exposure rating, market quotes.",
+                  "explain": "Pricing."
+              },
+              {
+                  "q": "How is counterparty security assessed?",
+                  "a": "Ratings, collateral, diversification of panel.",
+                  "explain": "Credit risk."
+              },
+              {
+                  "q": "What is the effect on the SCR?",
+                  "a": "Reduced underwriting and cat risk, increased counterparty risk.",
+                  "explain": "Net effect."
+              },
+              {
+                  "q": "What alternatives might be considered?",
+                  "a": "Quota share for growth, ADC for reserves, cat bonds.",
+                  "explain": "Options."
+              },
+              {
+                  "q": "How does reinsurance affect pricing of direct business?",
+                  "a": "Cost passed into gross premiums.",
+                  "explain": "Allocation."
+              },
+              {
+                  "q": "How are results communicated?",
+                  "a": "Comparison tables and recommendation.",
+                  "explain": "Board."
+              },
+              {
+                  "q": "What market conditions matter?",
+                  "a": "Hard reinsurance market raises costs.",
+                  "explain": "Timing."
+              },
+              {
+                  "q": "What contract terms need attention?",
+                  "a": "Hours clauses, exclusions, reinstatements.",
+                  "explain": "Wording."
+              },
+              {
+                  "q": "How does reinsurance interact with investment strategy?",
+                  "a": "Liquidity after catastrophes.",
+                  "explain": "ALM."
+              },
+              {
+                  "q": "Why stress test the programme?",
+                  "a": "Check performance in realistic events.",
+                  "explain": "RDS."
+              },
+              {
+                  "q": "What is the final recommendation's basis?",
+                  "a": "Best balance of cost, risk reduction and capital efficiency within appetite.",
+                  "explain": "Justified."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Case study 3 – strategic decision-making",
+          "description": "A strategic decision case study: evaluating options such as entering a new line or market, acquiring a business, exiting legacy business or restructuring — using business planning, capital modelling, return on capital, regulatory and stakeholder analysis to reach a recommendation.",
+          "cards": [
+              {
+                  "q": "What frameworks support strategic decisions?",
+                  "a": "SWOT, PESTLE, capital and return analysis, scenario testing, stakeholder analysis.",
+                  "explain": "Tools."
+              },
+              {
+                  "q": "How should a new line be evaluated?",
+                  "a": "Market attractiveness, expertise, data, pricing adequacy, capital needs, distribution, reinsurance.",
+                  "explain": "Due diligence."
+              },
+              {
+                  "q": "How should an acquisition be evaluated?",
+                  "a": "Reserves adequacy, pricing quality, capital, integration, culture, price.",
+                  "explain": "M&A."
+              },
+              {
+                  "q": "What regulatory issues arise in strategy?",
+                  "a": "Approvals, capital requirements, conduct considerations.",
+                  "explain": "PRA/FCA/Lloyd's."
+              },
+              {
+                  "q": "How is return on capital used?",
+                  "a": "Compare expected returns against hurdle.",
+                  "explain": "Value."
+              },
+              {
+                  "q": "What risks accompany growth?",
+                  "a": "Underpricing, adverse selection, operational strain.",
+                  "explain": "Discipline."
+              },
+              {
+                  "q": "How are options compared?",
+                  "a": "Quantitative metrics plus qualitative factors.",
+                  "explain": "Balanced."
+              },
+              {
+                  "q": "How is uncertainty addressed?",
+                  "a": "Scenarios and sensitivities.",
+                  "explain": "Robustness."
+              },
+              {
+                  "q": "What role does reinsurance play in strategy?",
+                  "a": "Supports entry into new lines and capital efficiency.",
+                  "explain": "Enabler."
+              },
+              {
+                  "q": "How do stakeholders affect strategy?",
+                  "a": "Shareholders, regulators, brokers, employees.",
+                  "explain": "Buy-in."
+              },
+              {
+                  "q": "What practical issues arise?",
+                  "a": "Staff, systems, data, timescales.",
+                  "explain": "Implementation."
+              },
+              {
+                  "q": "How should recommendations be presented?",
+                  "a": "Clear preferred option with rationale and risks.",
+                  "explain": "Board paper."
+              },
+              {
+                  "q": "How can exit strategies feature?",
+                  "a": "Exiting underperforming lines or legacy.",
+                  "explain": "Chapter 12."
+              },
+              {
+                  "q": "Why consider timing?",
+                  "a": "Market cycle and capital conditions.",
+                  "explain": "Opportunity."
+              },
+              {
+                  "q": "What lessons does the case study teach?",
+                  "a": "Integrate technical analysis with business judgement.",
+                  "explain": "SA3 skill."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Principal terms",
+          "description": "Key SA3 terminology — UK legislation, Lloyd's, catastrophe modelling, valuation and exit terms — as a recall deck. (ActEd's Chapter 17, a further-reading list, is not turned into cards.)",
+          "cards": [
+              {
+                  "q": "Define 'Ogden rate'.",
+                  "a": "Discount rate for personal injury lump sums.",
+                  "explain": "UK."
+              },
+              {
+                  "q": "Define 'PPO'.",
+                  "a": "Periodical payment order.",
+                  "explain": "Bodily injury."
+              },
+              {
+                  "q": "Define 'IPT'.",
+                  "a": "Insurance premium tax.",
+                  "explain": "UK tax."
+              },
+              {
+                  "q": "Define 'duty of fair presentation'.",
+                  "a": "Commercial insured's disclosure duty under Insurance Act 2015.",
+                  "explain": "Law."
+              },
+              {
+                  "q": "Define 'LPT'.",
+                  "a": "Loss portfolio transfer.",
+                  "explain": "Exit."
+              },
+              {
+                  "q": "Define 'ADC'.",
+                  "a": "Adverse development cover.",
+                  "explain": "Exit."
+              },
+              {
+                  "q": "Define 'RDS'.",
+                  "a": "Realistic disaster scenario.",
+                  "explain": "Lloyd's."
+              },
+              {
+                  "q": "Define 'SAO'.",
+                  "a": "Statement of Actuarial Opinion.",
+                  "explain": "Lloyd's."
+              },
+              {
+                  "q": "Define 'own view of risk'.",
+                  "a": "Insurer's adjusted cat risk view.",
+                  "explain": "Cat models."
+              },
+              {
+                  "q": "Define 'survival ratio'.",
+                  "a": "Reserves ÷ annual payments.",
+                  "explain": "Latent claims."
+              },
+              {
+                  "q": "Define 'scheme of arrangement'.",
+                  "a": "Court-sanctioned compromise with creditors.",
+                  "explain": "Exit."
+              },
+              {
+                  "q": "Define 'Flood Re'.",
+                  "a": "UK flood reinsurance scheme.",
+                  "explain": "Market."
+              },
+              {
+                  "q": "Define 'hurdle rate'.",
+                  "a": "Minimum return on capital.",
+                  "explain": "ROC."
+              },
+              {
+                  "q": "Define 'third-party RITC'.",
+                  "a": "Reinsurance to close into a different syndicate/run-off specialist.",
+                  "explain": "Lloyd's."
+              },
+              {
+                  "q": "Define 'fronting'.",
+                  "a": "Insurer issuing policy and reinsuring most risk to another (e.g. captive).",
+                  "explain": "Structures."
+              }
+          ]
+      }
+  ],
   SA4: [
       {
           "id": "m01",
