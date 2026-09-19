@@ -13,6 +13,8 @@ No install, no sign-up required — just open the link.
 - **Flashcards** for every module of each subject, with a reveal-then-explain format: see the question, try to answer it, then reveal the answer alongside a short "why this matters" note that connects it to the wider syllabus.
 - **Practice exams** — original, IFoA-style question banks (multi-part questions, command verbs like *Calculate*, *Explain*, *Discuss*, mark allocations that add up) for exam-condition practice.
 - **Progress tracking** — a mastery star for every flashcard you've nailed, a study streak, and real Associate/Fellow tracking based on the actual IFoA qualification structure (not a made-up point scale). Mark a whole subject complete in one click if you already hold an exemption or a prior pass.
+- **Works offline** — after one visit the site (cards, questions, maths rendering) is cached, so you can review on a train with no signal; scores are saved on the device and upload when you're back online. On a phone, use "Add to Home Screen" to install it like an app.
+- **Keyboard shortcuts** — Space to reveal, 1/2 to grade, arrow keys to move.
 - **Light/dark theme**, and a mobile-friendly layout.
 
 Subjects currently covered span the Core Principles (CB, CM, CS), Core Practice (CP), Specialist Principles (SP) and Specialist Advanced (SA) parts of the IFoA syllabus — see the subject grid on the site for the full, current list.

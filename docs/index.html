@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Actuarial Study Progress</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#6d4aff">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
@@ -122,6 +126,15 @@
      new format either way -- see supabase/SETUP.md. -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
+<script>
+// Offline support: see sw.js. Registration failure (older browser, private
+// window, file://) just means the site works online-only, as before.
+if ("serviceWorker" in navigator && location.protocol !== "file:") {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  });
+}
+</script>
 <script src="srs.js?v=1"></script>
 <script src="store.js?v=3"></script>
 <script src="data.js?v=42"></script>
