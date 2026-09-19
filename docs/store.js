@@ -544,6 +544,22 @@ const Store = (function () {
     }
   }
 
+  /* ---------- exam pacing log (device-local) ---------- */
+  //
+  // One entry per timed practice question: how long it took against the
+  // allowance (marks x minutes-per-mark). Kept on this device only — it's a
+  // practice aid, not a study record worth a server table.
+
+  function getPaceLog() {
+    return readLS(lsKey("pace"), []);
+  }
+
+  function addPaceEntry(entry) {
+    const log = getPaceLog();
+    log.push(entry);
+    writeLS(lsKey("pace"), log.slice(-300));
+  }
+
   /* ---------- AI answer feedback (optional Supabase Edge Function) ---------- */
 
   // Grades a typed flashcard answer against the model answer using a
@@ -718,6 +734,8 @@ const Store = (function () {
     loadLastSession,
     getLastSessionCache,
     getActivityCache,
+    getPaceLog,
+    addPaceEntry,
     loadActivity,
     gradeAnswer,
     flushPending,

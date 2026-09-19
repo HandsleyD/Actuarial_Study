@@ -94,7 +94,84 @@ const mixedState = {
 
 /* ---------- practice exam question bank ---------- */
 
-const qbankState = { code: null, qIndex: 0, revealed: false, _lastKey: "" };
+const qbankState = { code: null, qIndex: 0, revealed: false, _lastKey: "", timers: {} };
+
+/* ---------- timed mode for the question bank ---------- */
+//
+// Optional per-question countdown: allowance = marks x minutes-per-mark. IFoA
+// papers allow very roughly 1.8-2 minutes per mark (e.g. ~100 marks in about
+// three and a quarter hours including reading time), and running out of time
+// is a common way to lose marks, so this trains pacing. The timer is manual
+// (Start/Pause), pauses itself when you leave the question, and stops when
+// you reveal the answers; the result goes to a device-local pacing log that
+// the dashboard summarises.
+
+const RATE_OPTIONS = [1.5, 1.8, 2.0];
+
+function timedPref() {
+  try {
+    return {
+      on: localStorage.getItem("actuarialStudyTimed") === "1",
+      rate: Number(localStorage.getItem("actuarialStudyRate")) || 1.8,
+    };
+  } catch {
+    return { on: false, rate: 1.8 };
+  }
+}
+
+function saveTimedPref(on, rate) {
+  try {
+    localStorage.setItem("actuarialStudyTimed", on ? "1" : "0");
+    localStorage.setItem("actuarialStudyRate", String(rate));
+  } catch {
+    /* preference just won't persist */
+  }
+}
+
+function fmtClock(ms) {
+  const neg = ms < 0;
+  const total = Math.floor(Math.abs(ms) / 1000);
+  const m = Math.floor(total / 60);
+  const sec = String(total % 60).padStart(2, "0");
+  return `${neg ? "\u2212" : ""}${m}:${sec}`;
+}
+
+function qTimer(code, qIndex) {
+  const key = `${code}:${qIndex}`;
+  if (!qbankState.timers[key]) qbankState.timers[key] = { elapsed: 0, since: null, done: false, allowed: 0 };
+  return qbankState.timers[key];
+}
+
+function qTimerElapsed(t) {
+  return t.elapsed + (t.since ? Date.now() - t.since : 0);
+}
+
+function pauseQTimer() {
+  Object.values(qbankState.timers).forEach((t) => {
+    if (t.since) {
+      t.elapsed += Date.now() - t.since;
+      t.since = null;
+    }
+  });
+}
+
+let qTimerInterval = null;
+
+function tickQTimer(code, qIndex) {
+  clearInterval(qTimerInterval);
+  qTimerInterval = setInterval(() => {
+    const readout = document.getElementById("timerReadout");
+    if (!readout || parseHash().view !== "questions") {
+      clearInterval(qTimerInterval);
+      return;
+    }
+    const t = qTimer(code, qIndex);
+    const left = t.allowed - qTimerElapsed(t);
+    readout.textContent = fmtClock(left);
+    readout.classList.toggle("over", left < 0);
+    readout.classList.toggle("low", left >= 0 && left < 0.2 * t.allowed);
+  }, 250);
+}
 
 function renderQuestionsView(code) {
   const el = document.getElementById("questionsView");
@@ -117,9 +194,38 @@ function renderQuestionsView(code) {
   const q = questions[idx];
   const revealed = qbankState.revealed;
 
+  const pref = timedPref();
+  const allowedMs = Math.round(q.marks * pref.rate * 60000);
+  const timer = qTimer(code, idx);
+  timer.allowed = allowedMs;
+
   const dots = questions
-    .map((qq, i) => `<button class="card-dot ${i === idx ? "active" : ""}" data-idx="${i}" title="Q${i + 1}: ${qq.title}">${i + 1}</button>`)
+    .map((qq, i) => {
+      const t = qbankState.timers[`${code}:${i}`];
+      const pace = t && t.done ? (t.elapsed <= t.allowed ? "in-time" : "over-time") : "";
+      const tip = t && t.done ? ` — ${fmtClock(t.elapsed)} of ${fmtClock(t.allowed)}` : "";
+      return `<button class="card-dot ${pace} ${i === idx ? "active" : ""}" data-idx="${i}" title="Q${i + 1}: ${qq.title}${tip}">${i + 1}</button>`;
+    })
     .join("");
+
+  const rateOpts = RATE_OPTIONS.map((r) => `<option value="${r}" ${r === pref.rate ? "selected" : ""}>${r} min/mark</option>`).join("");
+  let timerHtml = `
+    <div class="timer-bar">
+      <label class="timer-toggle"><input type="checkbox" id="timedToggle" ${pref.on ? "checked" : ""}> Timed mode</label>
+      <select id="timedRate" class="text-input timer-rate" aria-label="Minutes per mark" ${pref.on ? "" : "hidden"}>${rateOpts}</select>`;
+  if (pref.on) {
+    if (timer.done) {
+      const over = timer.elapsed > timer.allowed;
+      timerHtml += `<span class="timer-result ${over ? "over" : "ok"}">Took ${fmtClock(timer.elapsed)} of ${fmtClock(timer.allowed)} allowed${
+        over ? ` &mdash; ${fmtClock(timer.elapsed - timer.allowed)} over` : " &mdash; within time"
+      }</span>`;
+    } else {
+      timerHtml += `<span id="timerReadout" class="timer-readout">${fmtClock(allowedMs - qTimerElapsed(timer))}</span>
+        <button class="btn" id="timerBtn">${timer.since ? "Pause" : timer.elapsed ? "Resume" : "Start"}</button>
+        <span class="timer-note">${q.marks} marks &times; ${pref.rate} = ${(q.marks * pref.rate).toFixed(1)} min</span>`;
+    }
+  }
+  timerHtml += `</div>`;
 
   const partsHtml = q.parts
     .map(
@@ -156,6 +262,7 @@ function renderQuestionsView(code) {
     </div>
     <p class="qbank-note">Original questions written in the IFoA style and command-verb format — not reproduced from real papers. For the genuine article, see past ${code} papers and examiners' reports on the <a href="${IFOA_PAST_PAPERS_URL}" target="_blank" rel="noopener">IFoA's VLE</a> (student/member login required).</p>
     <div class="card-dots">${dots}</div>
+    ${timerHtml}
     <div class="${flashcardLayoutClass(explainCard, revealed)}">
       <div class="flashcard question-card">
         <div class="question-meta">${q.modules} &middot; ${q.marks} marks total</div>
@@ -177,32 +284,62 @@ function renderQuestionsView(code) {
 
   document.getElementById("backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
 
+  const goTo = (i) => {
+    pauseQTimer();
+    qbankState.qIndex = i;
+    qbankState.revealed = false;
+    renderQuestionsView(code);
+  };
+
   el.querySelectorAll(".card-dot").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      qbankState.qIndex = Number(btn.dataset.idx);
-      qbankState.revealed = false;
-      renderQuestionsView(code);
-    });
+    btn.addEventListener("click", () => goTo(Number(btn.dataset.idx)));
   });
 
   const revealBtn = document.getElementById("revealQBtn");
   if (revealBtn) {
     revealBtn.addEventListener("click", () => {
+      if (pref.on && !timer.done && (timer.since || timer.elapsed)) {
+        // stop the clock and log how the time compared with the allowance
+        pauseQTimer();
+        timer.done = true;
+        Store.addPaceEntry({
+          code,
+          qid: q.id,
+          marks: q.marks,
+          usedMs: timer.elapsed,
+          allowedMs,
+          rate: pref.rate,
+          date: SRS.today(),
+        });
+      }
       qbankState.revealed = true;
       renderQuestionsView(code);
     });
   }
 
-  document.getElementById("prevQ").addEventListener("click", () => {
-    qbankState.qIndex = Math.max(0, idx - 1);
-    qbankState.revealed = false;
+  document.getElementById("prevQ").addEventListener("click", () => goTo(Math.max(0, idx - 1)));
+  document.getElementById("nextQ").addEventListener("click", () => goTo(Math.min(questions.length - 1, idx + 1)));
+
+  const timedToggle = document.getElementById("timedToggle");
+  timedToggle.addEventListener("change", () => {
+    pauseQTimer();
+    saveTimedPref(timedToggle.checked, timedPref().rate);
     renderQuestionsView(code);
   });
-  document.getElementById("nextQ").addEventListener("click", () => {
-    qbankState.qIndex = Math.min(questions.length - 1, idx + 1);
-    qbankState.revealed = false;
+  const rateSel = document.getElementById("timedRate");
+  rateSel.addEventListener("change", () => {
+    saveTimedPref(true, Number(rateSel.value));
     renderQuestionsView(code);
   });
+  const timerBtn = document.getElementById("timerBtn");
+  if (timerBtn) {
+    timerBtn.addEventListener("click", () => {
+      if (timer.since) pauseQTimer();
+      else timer.since = Date.now();
+      renderQuestionsView(code);
+    });
+  }
+  if (timer.since && !timer.done) tickQTimer(code, idx);
 
   renderMath(el);
 }
@@ -1459,6 +1596,40 @@ function stripHtml(html) {
   return tmp.textContent || "";
 }
 
+// Timed practice questions (see the question bank's timed mode): how long
+// they took against the marks-based allowance.
+function paceSectionHtml() {
+  const log = Store.getPaceLog();
+  if (!log.length) return "";
+  const used = log.reduce((a, e) => a + e.usedMs, 0);
+  const allowed = log.reduce((a, e) => a + e.allowedMs, 0);
+  const inTime = log.filter((e) => e.usedMs <= e.allowedMs).length;
+  const ratio = allowed ? used / allowed : 0;
+  const recent = log.slice(-8).reverse();
+  const verdict =
+    ratio > 1.1
+      ? "You're running over the allowance on average &mdash; practise outlining answers rather than writing them in full, and move on when the time is up."
+      : ratio < 0.7
+        ? "You're finishing well inside the allowance &mdash; check you're giving enough breadth for the marks."
+        : "Your pacing is close to the allowance.";
+  return `
+    <section class="dash-section">
+      <div class="dash-section-head"><h3>Exam pacing</h3></div>
+      <p class="dash-note">From timed practice questions on this device. ${log.length} question${log.length === 1 ? "" : "s"}: ${inTime} finished within time; on average you used ${Math.round(ratio * 100)}% of the allowance. ${verdict}</p>
+      <div class="dash-table">${recent
+        .map((e) => {
+          const over = e.usedMs > e.allowedMs;
+          return `
+          <div class="dash-row pace-row">
+            <span class="dash-row-name"><span class="dash-tag">${e.code}</span> ${escapeHtml(e.qid)} &middot; ${e.marks} marks</span>
+            <span class="dash-row-meta">${e.date}</span>
+            <span class="dash-row-bar"><span class="pace-figure ${over ? "over" : "ok"}">${fmtClock(e.usedMs)} / ${fmtClock(e.allowedMs)}</span></span>
+          </div>`;
+        })
+        .join("")}</div>
+    </section>`;
+}
+
 function renderDashboardView() {
   const el = document.getElementById("dashboardView");
   const today = SRS.today();
@@ -1630,6 +1801,8 @@ function renderDashboardView() {
       <div class="heat-grid">${heat.join("")}</div>
       <div class="heat-legend">Less <span class="heat-cell l0"></span><span class="heat-cell l1"></span><span class="heat-cell l2"></span><span class="heat-cell l3"></span><span class="heat-cell l4"></span> More</div>
     </section>
+
+    ${paceSectionHtml()}
 
     <section class="dash-section">
       <div class="dash-section-head"><h3>Mastery by subject</h3></div>
@@ -1931,6 +2104,7 @@ function renderRoute() {
   document.getElementById("reviewView").hidden = r.view !== "review";
   document.getElementById("dashboardView").hidden = r.view !== "dashboard";
   document.getElementById("searchView").hidden = r.view !== "search";
+  if (r.view !== "questions") pauseQTimer();
   document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
 

@@ -1539,3 +1539,44 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
   border-radius: 3px;
   padding: 0 2px;
 }
+
+/* ---------- timed question mode ---------- */
+
+.timer-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+}
+
+.timer-toggle { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; cursor: pointer; }
+.timer-rate { width: auto; margin: 0; padding: 6px 10px; }
+.timer-note { font-size: 0.75rem; color: var(--text-muted); }
+
+.timer-readout {
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  min-width: 4.2ch;
+}
+.timer-readout.low { color: var(--progress); }
+.timer-readout.over { color: var(--weak); }
+
+.timer-result { font-weight: 700; }
+.timer-result.ok { color: var(--done); }
+.timer-result.over { color: var(--weak); }
+
+.card-dot.in-time { box-shadow: inset 0 -3px 0 var(--done); }
+.card-dot.over-time { box-shadow: inset 0 -3px 0 var(--weak); }
+
+.pace-row { cursor: default; }
+.pace-row:hover { background: none; }
+.pace-figure { font-weight: 800; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+.pace-figure.ok { color: var(--done); }
+.pace-figure.over { color: var(--weak); }
