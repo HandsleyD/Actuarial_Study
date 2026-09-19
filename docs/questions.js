@@ -5161,7 +5161,7 @@ const QUESTIONS = {
             "A life insurer's protection business has net assets of &pound;4,000,000 and is expected to generate future profits of &pound;1,500,000, &pound;1,800,000 and &pound;2,100,000 in the next three years respectively. Using a risk discount rate of 7% per annum, calculate the present value of future profits (PVFP) and the resulting embedded value.",
           answer:
             "PVFP = &pound;1,500,000/1.07 + &pound;1,800,000/1.07&sup2; + &pound;2,100,000/1.07&sup3; = &pound;1,401,869 + &pound;1,572,301 + &pound;1,714,114 = &pound;4,688,284 (to the nearest pound). Embedded value = net assets + PVFP = &pound;4,000,000 + &pound;4,688,284 = &pound;8,688,284.",
-          note: "Arithmetic check: PVFP=4,688,284.41; EV=8,688,284.41 (, rounded to nearest pound in the model answer). Marks are typically split between the PVFP calculation and the final embedded value figure.",
+          note: "Arithmetic check: PVFP=4,688,284.41; EV=8,688,284.41 (rounded to nearest pound in the model answer). Marks are typically split between the PVFP calculation and the final embedded value figure.",
         },
         {
           label: "(ii)",
@@ -6627,7 +6627,7 @@ const QUESTIONS = {
             "An actively-managed portfolio's active returns (portfolio return minus benchmark return) over five periods were: 2.0%, -1.0%, 1.5%, 0.5%, and -0.8%. Calculate the mean active return and the tracking error (sample standard deviation of the active returns).",
           answer:
             "Mean active return = (2.0% &minus; 1.0% + 1.5% + 0.5% &minus; 0.8%) / 5 = 0.44%. Tracking error (sample standard deviation) &asymp; 1.34%.",
-          note: "Arithmetic check: mean=0.44%, sample stdev≈1.339% (, using n-1 divisor). Accept answers using either sample (n-1) or population (n) standard deviation provided the method is stated.",
+          note: "Arithmetic check: mean=0.44%, sample stdev≈1.339% (using n-1 divisor). Accept answers using either sample (n-1) or population (n) standard deviation provided the method is stated.",
         },
         {
           label: "(iv)",
@@ -8873,7 +8873,7 @@ const QUESTIONS = {
             "A non-dividend-paying stock trades at £100, with volatility 20% per annum. The risk-free rate is 5% per annum (continuously compounded). Using the Black-Scholes formula, calculate the price of a one-year European call option with strike price £100, given $d_1 = 0.3500$ and $d_2 = 0.1500$, and $N(d_1) = 0.6368$, $N(d_2) = 0.5596$.",
           answer:
             "$C = S_0 N(d_1) - Ke^{-rT}N(d_2) = 100 \\times 0.6368 - 100 \\times e^{-0.05} \\times 0.5596 = 63.68 - 95.12 \\times 0.5596 = 63.68 - 53.23 = £10.45$ (to the nearest penny).",
-          note: "Arithmetic check: C=10.4506 (, using the given d1/d2/N values). Full marks require correctly substituting into the Black-Scholes formula, not just stating the final figure.",
+          note: "Arithmetic check: C=10.4506 (using the given d1/d2/N values). Full marks require correctly substituting into the Black-Scholes formula, not just stating the final figure.",
         },
         {
           label: "(ii)",
@@ -10164,7 +10164,7 @@ const QUESTIONS = {
     {
       id: "sp9-q1",
       title: "ERM concepts, governance and the use test",
-      modules: "Modules 1-3",
+      modules: "Modules 1, 2, 4, 12",
       marks: 12,
       parts: [
         {
@@ -10202,7 +10202,7 @@ const QUESTIONS = {
     {
       id: "sp9-q2",
       title: "The ERM process and risk appetite, capacity and tolerance",
-      modules: "Modules 4-5",
+      modules: "Modules 8, 9",
       marks: 12,
       parts: [
         {
@@ -10240,7 +10240,7 @@ const QUESTIONS = {
     {
       id: "sp9-q3",
       title: "Risk categories, heat maps and the four Ts",
-      modules: "Modules 5-6",
+      modules: "Modules 3, 10, 13, 26",
       marks: 12,
       parts: [
         {
@@ -10278,7 +10278,7 @@ const QUESTIONS = {
     {
       id: "sp9-q4",
       title: "Diversification benefit from risk aggregation",
-      modules: "Modules 7, 12",
+      modules: "Modules 15, 18, 30",
       marks: 12,
       parts: [
         {
@@ -10289,7 +10289,7 @@ const QUESTIONS = {
             "An organisation's stand-alone economic capital requirements are £40m for market risk and £25m for credit risk. The correlation between the two risks is estimated at 0.25. Assuming aggregate capital is given by $C_{\\text{agg}} = \\sqrt{C_M^2 + C_C^2 + 2 \\rho C_M C_C}$, calculate the aggregate capital requirement and the resulting diversification benefit.",
           answer:
             "$C_{\\text{agg}} = \\sqrt{40^2 + 25^2 + 2 \\times 0.25 \\times 40 \\times 25} = \\sqrt{1600 + 625 + 500} = \\sqrt{2725} = £52.20m$ (to 2 decimal places). The diversification benefit is the sum of stand-alone capital less the aggregate capital: £40m + £25m &minus; £52.20m = £12.80m.",
-          note: "Arithmetic check: sqrt(1600+625+500)=52.2015...; 65-52.2015=12.7985 (, rounds to £52.20m and £12.80m). Full marks require both the aggregate capital figure and the diversification benefit, correctly derived.",
+          note: "Arithmetic check: sqrt(1600+625+500)=52.2015...; 65-52.2015=12.7985 (rounds to £52.20m and £12.80m). Full marks require both the aggregate capital figure and the diversification benefit, correctly derived.",
         },
         {
           label: "(ii)",
@@ -10316,7 +10316,7 @@ const QUESTIONS = {
     {
       id: "sp9-q5",
       title: "Value at Risk and Tail Value at Risk",
-      modules: "Module 9",
+      modules: "Module 14",
       marks: 12,
       parts: [
         {
@@ -10327,7 +10327,7 @@ const QUESTIONS = {
             "A CRO's risk model produces the following discrete aggregate loss distribution for next year: L = £0m with probability 0.70; L = £10m with probability 0.15; L = £30m with probability 0.08; L = £80m with probability 0.05; L = £150m with probability 0.02. Calculate the Value at Risk (VaR) at the 90% confidence level, and the Tail Value at Risk (TVaR) at the 90% confidence level.",
           answer:
             "Cumulative probabilities are: L &le; £0m: 0.70; L &le; £10m: 0.85; L &le; £30m: 0.93; L &le; £80m: 0.98; L &le; £150m: 1.00. VaR at the 90% confidence level is the smallest loss level with cumulative probability at least 0.90, which is L = £30m. The losses exceeding this VaR threshold are £80m (probability 0.05) and £150m (probability 0.02), with combined probability 0.07. TVaR90 is the probability-weighted average of these tail losses: (£80m &times; 0.05 + £150m &times; 0.02) / 0.07 = (£4m + £3m) / 0.07 = £100m.",
-          note: "Arithmetic check: cumulative probabilities 0.70/0.85/0.93/0.98/1.00; VaR90=£30m; TVaR90=(80*0.05+150*0.02)/0.07=100 exactly. Full marks require correctly identifying the VaR threshold from the cumulative distribution and correctly computing the conditional tail average for TVaR.",
+          note: "Arithmetic check: cumulative probabilities 0.70/0.85/0.93/0.98/1.00; VaR90=£30m; TVaR90=(80*0.05+150*0.02)/0.07=100 exactly. This uses TVaR = E[L | L &gt; VaR]. Under the expected-shortfall definition (the average of the worst 10% of outcomes, which takes 0.03 of probability from the &pound;30m outcome) the answer is (150&times;0.02 + 80&times;0.05 + 30&times;0.03)/0.10 = &pound;79m &mdash; with discrete distributions, state the definition you use. Full marks require correctly identifying the VaR threshold from the cumulative distribution and correctly computing the conditional tail average for TVaR.",
         },
         {
           label: "(ii)",
@@ -10354,7 +10354,7 @@ const QUESTIONS = {
     {
       id: "sp9-q6",
       title: "Extreme value theory and stress testing",
-      modules: "Module 8",
+      modules: "Modules 20, 21",
       marks: 12,
       parts: [
         {
@@ -10392,7 +10392,7 @@ const QUESTIONS = {
     {
       id: "sp9-q7",
       title: "Risk management tools and alternative risk transfer",
-      modules: "Modules 10-11",
+      modules: "Modules 26, 27, 28, 29",
       marks: 12,
       parts: [
         {
@@ -10430,7 +10430,7 @@ const QUESTIONS = {
     {
       id: "sp9-q8",
       title: "Euler capital allocation",
-      modules: "Module 12",
+      modules: "Module 30",
       marks: 12,
       parts: [
         {
@@ -10441,7 +10441,7 @@ const QUESTIONS = {
             "An organisation has two business units, A and B, with stand-alone economic capital of £60m and £20m respectively, and a correlation of 0.4 between their risks. Using the Euler allocation formula $C_i = \\dfrac{C_i^2 + \\rho C_A C_B}{C_{\\text{agg}}}$ (applied to each unit in turn, with $C_{\\text{agg}} = \\sqrt{C_A^2 + C_B^2 + 2 \\rho C_A C_B}$), calculate the aggregate capital requirement and the Euler-allocated capital for each business unit.",
           answer:
             "$C_{\\text{agg}} = \\sqrt{60^2 + 20^2 + 2 \\times 0.4 \\times 60 \\times 20} = \\sqrt{3600 + 400 + 960} = \\sqrt{4960} = £70.43m$ (to 2 decimal places). Euler allocation to A: $(60^2 + 0.4 \\times 60 \\times 20) / 70.43 = (3600 + 480) / 70.43 = 4080 / 70.43 = £57.93m$. Euler allocation to B: $(20^2 + 0.4 \\times 60 \\times 20) / 70.43 = (400 + 480) / 70.43 = 880 / 70.43 = £12.50m$. As a check, £57.93m + £12.50m = £70.43m, matching the aggregate capital requirement exactly.",
-          note: "Arithmetic check: sqrt(3600+400+960)=70.4273; Euler A=57.93, Euler B=12.50, sum=70.43 (, full allocation property holds exactly). Full marks require both individual allocations <em>and</em> the confirming check that they sum to the aggregate figure.",
+          note: "Arithmetic check: sqrt(3600+400+960)=70.4273; Euler A=57.93, Euler B=12.50, sum=70.43 (full allocation property holds exactly). Full marks require both individual allocations <em>and</em> the confirming check that they sum to the aggregate figure.",
         },
         {
           label: "(ii)",
@@ -10468,7 +10468,7 @@ const QUESTIONS = {
     {
       id: "sp9-q9",
       title: "RAROC and Economic Value Added",
-      modules: "Module 13",
+      modules: "Modules 26, 30",
       marks: 12,
       parts: [
         {
@@ -10506,7 +10506,7 @@ const QUESTIONS = {
     {
       id: "sp9-q10",
       title: "Solvency II, ORSA and the regulatory landscape for ERM",
-      modules: "Module 13",
+      modules: "Modules 5, 6",
       marks: 12,
       parts: [
         {

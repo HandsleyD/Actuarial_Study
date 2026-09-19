@@ -33619,522 +33619,2711 @@ const MODULES = {
       }
   ],
   SP9: [
-    {
-        "id": "m01",
-        "title": "What is Subject SP9 all about?",
-        "description": "An orientation chapter explaining SP9's role as the Specialist Principles subject introducing enterprise risk management, and its distinctive position as the qualifying subject for CERA membership.",
-        "cards": [
-            {
-                "q": "What is the genuine aim of Subject SP9, echoing the SP-subject template established across this whole curriculum?",
-                "a": "To provide students with an introduction to the key principles and concepts of Enterprise Risk Management (ERM), how it is applied within an organisation, and how external and regulatory risk frameworks can influence an organisation's approach to ERM.",
-                "explain": "Worth recognising this as <em>broader</em> in scope than most other SP subjects — rather than focusing on a single insurance sector's products and technique, SP9 develops a <em>cross-cutting</em> risk management discipline applicable across any type of organisation."
-            },
-            {
-                "q": "What is distinctive about SP9 compared with every other SP subject in terms of the wider professional qualification it supports?",
-                "a": "SP9 is the specific qualifying subject supporting the Chartered Enterprise Risk Actuary (CERA) designation, an internationally-recognised risk management credential distinct from the core Fellowship pathway, reflecting ERM's cross-industry relevance beyond traditional actuarial practice areas.",
-                "explain": "Worth recognising SP9 as occupying a <em>unique</em> position in the curriculum — while other SP subjects feed toward sector-specific SA subjects, SP9 additionally supports this distinct, internationally-portable CERA qualification."
-            },
-            {
-                "q": "What are the seven official syllabus topic areas of SP9, and their approximate topic weightings?",
-                "a": "ERM concept and framework (15%); ERM process (10%); Risk categories and identification (10%); Risk modelling and aggregation of risks (15%); Risk measurement and assessment (15%); Risk management tools and techniques (20%); and Capital management (15%).",
-                "explain": "Worth memorising these weightings directly — 'Risk management tools and techniques' at 20% is the single largest topic area, meaning fluency with the practical toolkit for actually <em>managing</em> identified and measured risk deserves the greatest concentrated revision effort."
-            },
-            {
-                "q": "Why might SP9's broad, cross-cutting scope require drawing together material from across <em>multiple</em> earlier subjects in this curriculum, more so than most other SP subjects?",
-                "a": "Since ERM synthesises risk identification, measurement, aggregation, and management technique developed separately across insurance-specific subjects (SA1's, SA3's and SP7's reserving/capital risk material, SA7's and SP5's investment risk material, SP6's derivative risk material), SP9 explicitly draws these threads together into a single, <em>unified</em> risk management framework applicable across any organisation, not just insurance.",
-                "explain": "Worth recognising SP9 as this whole curriculum's genuine <em>synthesis</em> point — much of what this subject covers directly recalls and generalises material already developed in a more sector-specific form across earlier subjects."
-            },
-            {
-                "q": "According to the official SP-subject template, what is the approximate split of assessment across knowledge, application, and higher-order skills for SP9?",
-                "a": "Approximately 25% knowledge, 50% application, and 25% higher order — the same standard split shared across SP1, SP2, SP4 and SP7, reflecting SP9's blend of conceptual/qualitative material (ERM frameworks, governance) alongside its more quantitative risk measurement and capital content.",
-                "explain": "Worth recognising this standard split as applying even to a subject spanning both <em>qualitative</em> (governance, frameworks) and <em>quantitative</em> (risk measures, capital) content — SP9's genuine breadth doesn't change the fundamental knowledge/application/higher-order emphasis shared across the SP-subject template."
-            },
-            {
-                "q": "Why might understanding SP9's seven topic areas as a coherent sequence (framework → process → identification → modelling → measurement → tools → capital) help structure revision, echoing this course's recurring lifecycle-sequencing theme?",
-                "a": "This sequence mirrors ERM's real practical lifecycle — first establishing the genuine organisational <em>framework</em> and <em>process</em> for managing risk, then identifying and classifying specific risks, then modelling and measuring their genuine scale and interaction, then applying practical management tools, and finally connecting this whole process to genuine capital adequacy — each stage building on genuine understanding from the one before.",
-                "explain": "This directly recalls SP1's, SP2's, SP4's and SP7's identical lifecycle-sequencing material — worth recognising this same coherent-sequence principle applying to SP9's seven topic areas, just broader in scope than any single subject's product-specific lifecycle."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "ERM concepts, the control cycle and governance structure",
-        "description": "Covers core ERM concepts and definitions, the risk management control cycle, the three lines of defence, and the Chief Risk Officer role, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is 'Enterprise Risk Management' (ERM), and how does it differ from managing individual risks in isolation, echoing this course's recurring holistic-assessment theme?",
-                "a": "ERM manages <em>all</em> of an organisation's material risks <em>together</em>, in a coordinated, organisation-wide way, explicitly considering how different risks <em>interact</em> and <em>aggregate</em> (rather than each risk being managed independently by a separate department or function with no genuine coordination), providing a more complete, holistic view of the organisation's overall risk position.",
-                "explain": "This directly recalls SA1's and SP7's holistic-versus-additive-risk-assessment material — worth recognising ERM's whole genuine value proposition as precisely this <em>integrated</em>, organisation-wide perspective, rather than siloed, risk-by-risk management."
-            },
-            {
-                "q": "What is the genuine 'risk management control cycle', and why does it echo this course's recurring actuarial control cycle theme?",
-                "a": "The risk management control cycle describes the recurring, cyclical process of identifying risks, assessing and measuring them, deciding on and implementing management responses, and monitoring outcomes — feeding back into revised risk identification and assessment, directly paralleling SP4's identically-structured Actuarial Control Cycle, just applied at the whole-organisation ERM level rather than to a single pension scheme's assumptions.",
-                "explain": "This directly recalls SP4's Actuarial Control Cycle material — worth recognising this <em>same</em> recurring, cyclical control-process <em>structure</em> applying to ERM specifically, not merely a coincidental similarity in name."
-            },
-            {
-                "q": "What is the genuine 'three lines of defence' model for risk governance, and how does each 'line' differ in its role?",
-                "a": "The first line comprises genuine operational management, who own and manage risk directly in their day-to-day activities; the second line comprises risk management and compliance functions, who provide oversight, challenge, and set genuine risk policy; the third line comprises internal audit, who provide independent assurance that the first two lines are operating effectively.",
-                "explain": "Worth recognising these three lines as providing <em>layered</em>, <em>increasingly independent</em> oversight — each successive line stands more removed from day-to-day risk-taking, providing an escalating series of checks on the line(s) before it."
-            },
-            {
-                "q": "Why might the genuine <em>independence</em> of the third line (internal audit) from the first and second lines be particularly important for the whole three-lines-of-defence model's credibility?",
-                "a": "If internal audit were not independent of the functions it is meant to assess, its assurance would carry little genuine value, since it could be influenced by the same pressures or incentives affecting the very risk-taking and oversight functions it is meant to independently evaluate, undermining the whole model's genuine purpose.",
-                "explain": "This directly recalls CP1's and SA1's independent-review-and-challenge material — worth recognising genuine independence as the whole <em>foundation</em> the third line's value rests upon, not merely a nice-to-have organisational feature."
-            },
-            {
-                "q": "What is the genuine role of a Chief Risk Officer (CRO), and why does this role typically sit within (or closely alongside) the second line of defence?",
-                "a": "A CRO holds organisation-wide responsibility for overseeing and coordinating risk management across the whole enterprise, setting risk policy, and reporting risk information to senior management and the board; this aligns with the second line's oversight-and-challenge function, distinct from both first-line operational risk-taking and third-line independent audit assurance.",
-                "explain": "Worth recognising the CRO as the genuine, senior <em>embodiment</em> of the second line's coordinating and oversight function — a specific, named leadership role occupying that layer of the three-lines-of-defence structure."
-            },
-            {
-                "q": "Why might an effective CRO need both strong technical risk expertise <em>and</em> genuine organisational influence/seniority, rather than technical expertise alone?",
-                "a": "Since sound ERM requires embedding risk considerations into strategic and operational decision-making across the whole organisation (previewing Module 3's use-test material), a CRO lacking genuine organisational seniority and influence may struggle to ensure risk considerations are actually HEEDED in practice, regardless of how technically sound their risk analysis itself is.",
-                "explain": "This directly previews Module 3's use-test material — worth recognising that <em>technical</em> competence alone is insufficient for the CRO role; genuine organisational <em>standing</em> is equally necessary for ERM to be actually effective in practice, not merely theoretically sound."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "ERM frameworks, the use test and embedding ERM in decision-making",
-        "description": "Covers the COSO ERM and ISO 31000 frameworks, the genuine 'use test', and embedding ERM in strategy and decision-making, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the genuine purpose of a formal ERM framework like COSO ERM or ISO 31000, rather than each organisation developing its own entirely bespoke risk management approach?",
-                "a": "A formal framework provides a well-established, tested structure and common terminology for organising an organisation's ERM activities, supporting genuine comparability and communication (both internally and with external stakeholders like regulators and investors), while still typically allowing genuine flexibility in how the framework's principles are specifically implemented for a given organisation's own circumstances.",
-                "explain": "Worth recognising formal frameworks as providing a useful <em>structural foundation</em> and common language, not a rigid, one-size-fits-all prescription — organisations still exercise genuine judgement in applying framework principles to their own specific context."
-            },
-            {
-                "q": "What is the genuine 'use test', and why is it considered a particularly important, practical indicator of whether ERM is embedded in an organisation, rather than merely a formal, box-ticking exercise?",
-                "a": "The use test assesses whether an organisation's risk models and risk management outputs are <em>actually used</em> in real, material business decisions (e.g. pricing, capital allocation, strategic planning), rather than being produced purely for regulatory compliance purposes and then ignored in actual decision-making, providing a concrete, practical test of whether ERM has taken root.",
-                "explain": "This directly recalls SA1's genuine-versus-superficial-compliance material — worth recognising the use test as a <em>practical</em>, verifiable indicator distinguishing authentic ERM embedding from mere formal compliance."
-            },
-            {
-                "q": "Why might an ERM framework <em>fail</em> to be effective even if it is technically well-designed on paper, connecting back to Module 2's CRO-organisational-influence material?",
-                "a": "If risk considerations are not embedded into actual strategic and operational decision-making processes (e.g. senior management continuing to make major decisions without consulting risk analysis), even a technically excellent ERM framework would fail to deliver its intended genuine value, since risk management's real purpose is influencing actual decisions, not producing reports that go unused.",
-                "explain": "This directly recalls Module 2's CRO-organisational-influence material — worth recognising this same genuine embedding challenge recurring here specifically in the context of the <em>overall</em> ERM framework, not just the CRO's individual role."
-            },
-            {
-                "q": "Why might embedding ERM into an organisation's <em>strategic</em> planning process (not just operational risk management) be particularly valuable, echoing SA1's strategic-assessment material?",
-                "a": "Major strategic decisions (e.g. entering a new market, launching a new product line) often carry the largest, most consequential risk implications for an organisation, so embedding ERM considerations directly into strategic decision-making ensures these significant risks are properly assessed <em>before</em> major commitments are made, rather than only managing smaller, operational-level risks after strategic decisions have already been taken.",
-                "explain": "This directly recalls SA1's strategic-assessment material — worth recognising strategic-level ERM embedding as addressing the <em>largest</em>, most consequential risk decisions an organisation makes, not merely routine, smaller-scale operational risk management."
-            },
-            {
-                "q": "Why might genuine cultural and behavioural factors, beyond formal frameworks and processes alone, significantly determine whether ERM is truly embedded in an organisation?",
-                "a": "Even a well-designed formal framework can fail if the organisation's actual <em>culture</em> does not support open, honest risk discussion (e.g. if raising risk concerns is discouraged or penalised), so genuine ERM embedding requires supportive organisational culture and behaviour alongside formal structures, not formal frameworks alone.",
-                "explain": "This directly recalls CP1's ethical-culture-and-psychological-safety material — worth recognising that <em>formal structures</em> (frameworks, the CRO role, three lines of defence) require a <em>supportive culture</em> to actually function as intended, not operate effectively in isolation from culture."
-            },
-            {
-                "q": "How do this module's use-test and embedding material connect back to Module 2's control-cycle material, completing SP9's opening topic area?",
-                "a": "Module 2 established the genuine <em>structure</em> (control cycle, three lines of defence, CRO role) through which ERM operates; this module shows how that structure must be <em>made real</em> through actual use in decision-making and supportive organisational culture, together completing SP9's 'ERM concept and framework' topic area's full coverage.",
-                "explain": "This closing card ties Modules 2-3 together explicitly, echoing Module 1's topic-weighting material — worth recognising these two modules as together addressing SP9's first syllabus topic area: the genuine <em>structure</em> (Module 2) and its genuine <em>practical realisation</em> (Module 3)."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "The ERM process",
-        "description": "Covers the genuine, recurring process through which enterprise risk management is actually carried out, per the official syllabus's second topic area.",
-        "cards": [
-            {
-                "q": "What genuine, recurring <em>stages</em> does the ERM process typically comprise, echoing Module 2's control-cycle material?",
-                "a": "The ERM process comprises risk <em>identification</em> (recognising what risks the organisation faces), risk <em>assessment</em> (understanding their genuine likelihood and impact), risk <em>response/management</em> (deciding how to address identified risks), and <em>monitoring</em> (tracking outcomes and feeding insight back into the cycle) — the same genuine control-cycle structure Module 2 introduced, now developed as its own dedicated syllabus topic area.",
-                "explain": "This directly recalls Module 2's control-cycle material — worth recognising this module as taking that earlier <em>structural</em> introduction and developing each specific <em>stage</em> in greater practical detail."
-            },
-            {
-                "q": "Why must the ERM process's risk <em>identification</em> stage be conducted on an organisation-<em>wide</em> basis, rather than each department identifying risks purely within its own silo?",
-                "a": "Since ERM's whole genuine value lies in its <em>integrated</em>, organisation-wide perspective (Module 2's material), risk identification conducted purely within departmental silos would miss risks that only become apparent when considering how different parts of the organisation interact, or risks that fall between departmental boundaries with no single owner.",
-                "explain": "This directly recalls Module 2's ERM-integrated-perspective material — worth recognising organisation-wide identification as the genuine, practical <em>starting point</em> ensuring ERM's later stages actually deliver on its integrated, holistic promise."
-            },
-            {
-                "q": "Why does the ERM process's <em>assessment</em> stage require considering both <em>likelihood</em> and <em>impact</em> together, rather than either dimension in isolation, previewing this course's later heat-map material?",
-                "a": "A low-likelihood but high-impact risk (e.g. a rare catastrophic event) may warrant materially different management attention than a high-likelihood but low-impact risk (e.g. routine, minor operational errors), so assessing <em>both</em> dimensions together provides more useful prioritisation insight than either measure alone.",
-                "explain": "This directly previews this course's later heat-map material — worth recognising the likelihood-and-impact combination as the genuine, foundational logic underlying that visual prioritisation tool covered in more detail later in this course."
-            },
-            {
-                "q": "Why must the ERM process's <em>response</em> stage involve a deliberate <em>choice</em> among different possible management approaches, rather than a single, universally 'correct' response applying to every identified risk?",
-                "a": "Different risks warrant different management responses depending on their specific likelihood, impact, and the organisation's own risk appetite (previewing this course's later risk-management-tools material covering avoidance, retention, mitigation, and transfer as distinct response options), so the response stage requires genuine, deliberate <em>judgement</em> selecting the most appropriate approach for each specific risk, not a single default response.",
-                "explain": "This directly previews this course's later risk-management-tools-and-techniques material — worth recognising the response stage as requiring genuine, case-by-case <em>judgement</em>, not a single, mechanically-applied default response."
-            },
-            {
-                "q": "Why must the ERM process's <em>monitoring</em> stage feed <em>back</em> into renewed risk identification, rather than being a final, one-off check at the end of the process, echoing this course's recurring ongoing-review theme?",
-                "a": "Since an organisation's risk landscape evolves continuously (new risks emerging, existing risks changing in likelihood or impact), monitoring must feed its findings back into a <em>renewed</em> identification and assessment cycle, making the ERM process <em>continuous</em> and cyclical, not a single, linear sequence completed once and never revisited.",
-                "explain": "This directly recalls this course's recurring ongoing-review theme (developed across SP1, SP2, SP4 and SP7) — worth recognising this same principle applying to the ERM process as a whole: monitoring closes the loop, making the whole process cyclical rather than linear."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Risk categories, identification and risk appetite",
-        "description": "Covers the genuine range of risk categories an organisation faces, techniques for identifying risks, and risk appetite, capacity and tolerance, per the official syllabus's third topic area.",
-        "cards": [
-            {
-                "q": "What genuine, broad <em>categories</em> of risk does an organisation typically need to consider under ERM, beyond purely financial risks?",
-                "a": "Market risk, credit/counterparty risk, liquidity risk, insurance/underwriting risk, and operational risk form the 'core' financial and operational categories, but a <em>complete</em> ERM view also considers strategic risk, reputational risk, legal and regulatory risk, political risk, environmental risk, and demographic risk — reflecting ERM's broader, whole-organisation scope beyond narrowly financial risk types.",
-                "explain": "Worth recognising this <em>broad</em> list as distinguishing ERM from narrower financial risk management — a complete risk inventory must span well beyond market, credit and insurance risk alone."
-            },
-            {
-                "q": "What is 'operational risk', and why might it be <em>harder</em> to identify and quantify than market or credit risk?",
-                "a": "Operational risk is the genuine risk of loss from inadequate or failed internal processes, people, and systems, or from external events (e.g. fraud, IT failure, human error); it is harder to quantify than market or credit risk because it lacks the rich historical market-price or default data available for financial risks, and its causes are more varied and organisation-specific.",
-                "explain": "This directly recalls SA1's and SP7's operational-risk-data-scarcity material — worth recognising operational risk's genuine <em>data-quality</em> challenge as a recurring theme distinguishing it from more readily-quantifiable financial risk categories."
-            },
-            {
-                "q": "What is 'reputational risk', and why might it be considered a <em>consequence</em> of other risk categories materialising poorly, rather than an entirely independent risk category?",
-                "a": "Reputational risk is the genuine risk of damage to an organisation's standing with customers, regulators or the public; it often arises as a genuine <em>knock-on consequence</em> of other risks crystallising badly (e.g. a poorly-handled operational failure or a mis-selling scandal), meaning effective management of the <em>underlying</em> risk categories is often the most effective way to manage reputational risk, rather than managing reputation in isolation.",
-                "explain": "Worth recognising reputational risk's <em>derivative</em> nature — it frequently amplifies the consequences of failures elsewhere, rather than arising as a wholly separate, independent risk source."
-            },
-            {
-                "q": "What genuine practical techniques might an organisation use to <em>identify</em> its material risks, echoing SA1's risk-identification material?",
-                "a": "Techniques include workshops and brainstorming sessions with staff across different functions, reviewing genuine historical loss data and near-miss incidents, benchmarking against genuine industry peer experience, scenario analysis, and structured checklists or risk taxonomies ensuring systematic coverage across all relevant risk categories.",
-                "explain": "This directly recalls SA1's risk-identification-technique material — worth recognising these same practical techniques (workshops, historical data review, benchmarking, scenario analysis) recurring here specifically in the ERM context."
-            },
-            {
-                "q": "What is 'risk appetite', and how does it differ from 'risk capacity'?",
-                "a": "Risk appetite is the genuine <em>amount</em> and <em>type</em> of risk an organisation is <em>willing</em> to accept in pursuit of its objectives (a genuine strategic <em>choice</em>, reflecting organisational preference); risk capacity is the maximum risk an organisation is <em>able</em> to bear given its financial resources (a genuine <em>constraint</em>, reflecting objective capability) — appetite should always sit within capacity, but the two concepts are distinct.",
-                "explain": "Worth drawing this genuine <em>choice</em>-versus-<em>constraint</em> distinction carefully — appetite reflects what an organisation <em>wants</em> to accept, capacity reflects what it <em>can</em> survive; conflating the two is a common, genuine error."
-            },
-            {
-                "q": "What is 'risk tolerance', and how does it relate to risk appetite as a more granular, operational concept?",
-                "a": "Risk tolerance translates the organisation's high-level risk appetite into more granular, specific, and typically measurable limits or thresholds for particular risk categories or business units (e.g. a specific VaR limit for a trading desk), providing <em>operational</em> boundaries that give practical effect to the broader, more strategic risk appetite statement.",
-                "explain": "Worth recognising tolerance as <em>operationalising</em> appetite — appetite sets the genuine high-level, strategic <em>direction</em>, while tolerance sets specific, measurable, day-to-day <em>limits</em> giving that direction practical effect."
-            },
-            {
-                "q": "Why must an organisation's risk appetite be <em>set</em> and <em>approved</em> by the board, rather than determined purely by operational management, echoing this course's recurring governance-oversight theme?",
-                "a": "Since risk appetite reflects a fundamental strategic choice about how much risk the organisation should accept in pursuit of its objectives, and materially affects stakeholders' interests (shareholders, policyholders, members), genuine board-level ownership ensures this choice receives appropriately senior, accountable oversight, rather than being set unilaterally by management closer to day-to-day operations.",
-                "explain": "This directly recalls CP1's and SA1's board-governance-oversight material — worth recognising risk appetite as a <em>board-level</em> strategic decision, not an operational or purely technical determination."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "Heat maps, risk limits and emerging risk",
-        "description": "Covers heat maps and the four Ts of risk response, setting and cascading risk limits, and emerging, concentration and strategic risk, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is a genuine 'risk heat map', and how does it visually combine likelihood and impact, connecting back to Module 4's assessment-stage material?",
-                "a": "A heat map plots identified risks on a two-dimensional grid, typically with <em>likelihood</em> on one axis and <em>impact</em> on the other, using colour-coding (e.g. green/amber/red) to visually highlight which risks are highest priority (high likelihood <em>and</em> high impact) versus lower priority, providing an intuitive, visual summary of an organisation's overall risk profile.",
-                "explain": "This directly recalls Module 4's likelihood-and-impact assessment material — worth recognising the heat map as the <em>practical</em>, <em>visual</em> tool putting that two-dimensional assessment logic into an easily-communicated form for senior management and the board."
-            },
-            {
-                "q": "What are the genuine 'four Ts' of risk response, and how does each represent a distinct strategic choice?",
-                "a": "<em>Tolerate</em> (accept the risk as within appetite, taking no further action); <em>treat</em> (take action to reduce likelihood or impact, e.g. via controls or mitigation); <em>transfer</em> (pass the risk to a third party, e.g. via insurance or reinsurance); and <em>terminate</em> (stop the activity giving rise to the risk entirely) — together spanning the full genuine range of strategic responses available once a risk has been identified and assessed.",
-                "explain": "Worth memorising these four Ts directly as an <em>exhaustive</em>, standard classification of risk response — this directly previews this course's later, more detailed risk-management-tools-and-techniques material, which develops <em>treat</em> and <em>transfer</em> in much greater depth."
-            },
-            {
-                "q": "Why might a <em>low</em>-likelihood, <em>high</em>-impact risk (e.g. sitting in the heat map's upper-left) still warrant serious management attention, despite its low likelihood?",
-                "a": "Since a catastrophic impact could threaten the organisation's continued existence even if it occurs rarely, low-likelihood, high-impact risks often warrant <em>disproportionate</em> attention relative to their likelihood alone — echoing this course's earlier VaR-versus-tail-risk material, where rare but severe outcomes can matter more than their low probability alone might suggest.",
-                "explain": "This directly recalls SA1's and SP7's tail-risk-materiality material — worth recognising that heat-map <em>prioritisation</em> must weigh genuine <em>severity</em> alongside likelihood, not treat likelihood as the dominant factor alone."
-            },
-            {
-                "q": "What does it mean to 'cascade' risk limits through an organisation, connecting back to Module 5's appetite-versus-tolerance distinction?",
-                "a": "Cascading means translating the board's high-level risk appetite into progressively more granular, specific limits and tolerances at each successive organisational level (e.g. divisional limits, then business-unit limits, then individual trading-desk limits), ensuring genuine <em>consistency</em> between day-to-day operational decision-making and the organisation's overall, board-approved risk appetite.",
-                "explain": "This directly recalls Module 5's appetite-versus-tolerance material — worth recognising cascading as the genuine, practical <em>mechanism</em> by which high-level appetite is translated into specific, operational tolerance limits at every level of the organisation."
-            },
-            {
-                "q": "What is 'concentration risk', and why might it arise even when an organisation believes it holds a well-<em>diversified</em> portfolio of exposures?",
-                "a": "Concentration risk is the genuine risk of excessive exposure to a single counterparty, sector, geography, or risk factor; it can arise even in an apparently diversified portfolio if <em>hidden</em> correlations exist between exposures that appear independent on the surface (e.g. multiple counterparties all exposed to the same underlying economic driver), echoing this course's recurring hidden-correlation theme.",
-                "explain": "This directly recalls SA1's and SP7's hidden-correlation-and-diversification-benefit-overstatement material — worth recognising concentration risk as often <em>surprising</em> precisely because superficial diversification can mask shared, underlying risk drivers."
-            },
-            {
-                "q": "What is 'emerging risk', and why does it pose a distinctive challenge for the standard risk identification techniques covered in Module 5?",
-                "a": "Emerging risk is a <em>new</em> or evolving risk (e.g. climate change, cyber risk, pandemic risk) not yet fully understood or reflected in historical data, meaning Module 5's standard identification techniques (historical loss data review, benchmarking against past peer experience) are <em>less effective</em> for emerging risks, requiring instead more forward-looking techniques like horizon-scanning, expert judgement, and scenario analysis.",
-                "explain": "This directly recalls Module 5's identification-technique material — worth recognising emerging risk as specifically exposing the <em>limits</em> of historically-grounded identification techniques, requiring more forward-looking, judgement-based approaches instead."
-            },
-            {
-                "q": "How does this module's heat-map, limit-cascading and emerging-risk material connect back to Modules 4 and 5, completing SP9's third syllabus topic area?",
-                "a": "Modules 4 and 5 established the genuine <em>process</em> (identify, assess) and the genuine <em>categories</em> and <em>appetite/tolerance</em> concepts underlying risk management; this module shows how that process is made <em>practical</em> and <em>operational</em> through visual prioritisation (heat maps), structured response choices (the four Ts), and cascaded limits, together completing SP9's 'Risk categories and identification' topic area.",
-                "explain": "This closing card ties Modules 4-6 together explicitly — worth recognising these three modules as together addressing SP9's third syllabus topic area, moving from abstract <em>process</em> through to <em>practical</em>, <em>operational</em> risk management tools."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "Risk modelling: correlation, dependence and copulas",
-        "description": "Covers risk modelling and aggregation of risks, including correlation, dependence structures, and copulas, per the official syllabus's fourth topic area.",
-        "cards": [
-            {
-                "q": "Why can a <em>naive</em> aggregation of individual risk measures (e.g. simply summing each risk's individual VaR) <em>overstate</em> an organisation's true combined risk, echoing SP7's diversification-benefit material?",
-                "a": "Since different risks are rarely <em>perfectly</em> correlated (i.e. rarely all materialise simultaneously at their worst), simply summing individual risk measures ignores the <em>diversification benefit</em> arising from imperfect correlation, meaning a properly-modelled <em>aggregate</em> risk measure is typically <em>lower</em> than the naive sum of individual risk measures.",
-                "explain": "This directly recalls SP7's diversification-benefit material — worth recognising this same genuine principle (aggregate risk is usually less than the sum of individual risks) recurring here at the whole-<em>enterprise</em> level, not just within a single insurer's reserving risk."
-            },
-            {
-                "q": "What is 'correlation', and why might relying <em>solely</em> on linear (Pearson) correlation <em>understate</em> genuine dependence between risks in extreme, tail scenarios?",
-                "a": "Correlation measures the <em>linear</em> association between two risks; however, many genuine risk pairs exhibit 'tail dependence' — a tendency to become <em>more</em> correlated specifically in extreme, tail scenarios (e.g. a market crash triggering simultaneous credit defaults) — which simple linear correlation, calculated primarily from typical, non-extreme historical data, can fail to capture.",
-                "explain": "This directly recalls SA1's tail-dependence material — worth recognising this genuine <em>limitation</em> of linear correlation as a key motivation for the more sophisticated <em>copula</em> modelling this same card set develops next."
-            },
-            {
-                "q": "What is a genuine 'copula', and what distinctive modelling problem does it solve, addressing correlation's tail-dependence limitation directly?",
-                "a": "A copula is a genuine mathematical function that separately models the <em>dependence structure</em> between two or more risks from their individual (marginal) probability distributions, allowing <em>flexible</em> modelling of how risks interact — including genuine tail dependence — beyond what simple linear correlation alone can capture.",
-                "explain": "Worth recognising the copula's genuine, distinctive <em>value proposition</em>: it separates 'how bad can each risk individually be' (the marginals) from 'how do they move together, especially in extremes' (the dependence structure), addressing linear correlation's genuine tail-dependence limitation directly."
-            },
-            {
-                "q": "What is a 'Gaussian copula', and why might it be <em>criticised</em> for underestimating tail dependence, despite its common practical use?",
-                "a": "A Gaussian copula models dependence using the multivariate normal distribution's correlation structure; it has been criticised (notably following the 2008 financial crisis) for underestimating <em>genuine</em> tail dependence, since the normal distribution's tails are 'thin', meaning it can understate the true likelihood of multiple risks materialising simultaneously in extreme scenarios.",
-                "explain": "This directly recalls SA7's and SP5's fat-tails-versus-normal-distribution material — worth recognising the Gaussian copula's genuine practical popularity (mathematically tractable) alongside its genuine, well-documented <em>weakness</em> in extreme tail scenarios specifically."
-            },
-            {
-                "q": "What genuine alternative to the Gaussian copula might better capture tail dependence, and why?",
-                "a": "A 't-copula' (based on the multivariate Student's t-distribution) has FATTER <em>tails</em> than the Gaussian copula, meaning it can better capture genuine tail dependence — the tendency for risks to become more strongly correlated specifically in extreme scenarios — at the cost of requiring an additional parameter (degrees of freedom) to be estimated or judgementally set.",
-                "explain": "This directly recalls SA7's fat-tailed-distribution material — worth recognising the genuine trade-off: better tail-dependence capture requires additional model complexity and parameter estimation, echoing this course's recurring complexity-versus-tractability theme."
-            },
-            {
-                "q": "Why might an actuary need to exercise genuine, careful <em>judgement</em> when selecting a copula and its parameters, rather than relying purely on historical data-fitting, echoing this course's recurring model-risk theme?",
-                "a": "Since extreme, tail-dependence scenarios are by definition <em>rare</em>, historical data alone is insufficient to reliably estimate tail-dependence parameters with confidence, meaning genuine expert judgement, stress testing, and sensitivity analysis around the chosen copula and parameters are essential, rather than treating any single fitted copula as definitively 'correct'.",
-                "explain": "This directly recalls SA1's and SP7's model-risk-and-data-scarcity-in-tails material — worth recognising copula selection as a <em>judgement-laden</em> exercise, not a purely mechanical statistical fitting procedure."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Extreme value theory, stress testing and reverse stress testing",
-        "description": "Covers extreme value theory and stress and reverse stress testing as tools for understanding extreme risk outcomes, completing the official syllabus's risk modelling and aggregation topic area.",
-        "cards": [
-            {
-                "q": "What is 'Extreme Value Theory' (EVT), and why does it focus specifically on the <em>tail</em> of a distribution rather than fitting a single distribution to the <em>whole</em> dataset?",
-                "a": "EVT is a genuine branch of statistics specifically focused on modelling the behaviour of <em>extreme</em>, tail observations, on the basis that a single distribution fitted to capture an <em>entire</em> dataset's typical, central behaviour may fit the tail poorly, whereas EVT-specific distributions (e.g. the Generalised Pareto Distribution for exceedances above a threshold) are designed to fit tail behaviour more accurately.",
-                "explain": "This directly recalls SA7's fat-tails material — worth recognising EVT's genuine, distinctive approach: rather than compromising a single whole-distribution fit between central and tail accuracy, EVT specialises in modelling the tail alone, on its own terms."
-            },
-            {
-                "q": "Why might EVT still face genuine <em>data limitations</em> despite its specialised tail-focused approach, echoing this course's recurring extreme-event-data-scarcity theme?",
-                "a": "Since EVT is modelling <em>extreme</em>, rare observations by definition, even a long historical dataset will typically contain relatively <em>few</em> extreme observations to calibrate the tail model against, meaning EVT parameter estimates often carry genuine, material uncertainty, and genuine judgement remains essential even when using this more specialised technique.",
-                "explain": "This directly recalls SA1's and Module 7's extreme-scenario-data-scarcity material — worth recognising that EVT's genuine <em>specialisation</em> in tail modelling does not eliminate the fundamental data-scarcity challenge inherent to studying rare, extreme events."
-            },
-            {
-                "q": "What is 'stress testing', and how does it differ from probabilistic risk measures like VaR, previewing this course's later risk-measurement material?",
-                "a": "Stress testing assesses the impact of a <em>specific</em>, predefined adverse scenario (e.g. a severe market crash or pandemic) on the organisation's financial position, <em>without</em> necessarily attaching a genuine <em>probability</em> to that scenario — complementing probabilistic measures like VaR by providing insight into <em>specific</em>, plausible adverse outcomes rather than a probability-weighted summary statistic.",
-                "explain": "This directly previews this course's later VaR/TVaR risk-measurement material — worth recognising stress testing's <em>different</em> purpose: illuminating <em>specific</em> plausible scenarios in concrete detail, rather than summarising the whole loss distribution probabilistically."
-            },
-            {
-                "q": "What is 'reverse stress testing', and how does its genuine <em>starting point</em> differ fundamentally from ordinary stress testing?",
-                "a": "Reverse stress testing starts from a <em>defined</em>, severe <em>outcome</em> (e.g. the organisation's failure or breach of a critical threshold) and works <em>backwards</em> to identify what genuine <em>combination</em> of circumstances could plausibly cause that outcome, rather than ordinary stress testing's forward approach of starting from a <em>specified</em> scenario and calculating its consequences.",
-                "explain": "Worth drawing this genuine <em>directional</em> distinction carefully: ordinary stress testing goes <em>scenario</em> → <em>outcome</em>, while reverse stress testing goes <em>outcome</em> → SCENARIO(S), each providing different, complementary risk insight."
-            },
-            {
-                "q": "Why might reverse stress testing be particularly valuable for uncovering <em>unanticipated</em> risk combinations that ordinary, forward-looking stress testing might miss?",
-                "a": "Since ordinary stress testing requires the risk manager to first <em>imagine</em> a plausible adverse scenario before testing it, it can miss risk combinations that were never considered in the first place; reverse stress testing's backwards approach can reveal <em>surprising</em>, previously-unconsidered combinations of circumstances capable of causing severe outcomes, precisely because it works back from the outcome rather than requiring the scenario to be imagined upfront.",
-                "explain": "This directly recalls SA1's unknown-unknowns material — worth recognising reverse stress testing's <em>distinctive</em> value: it can surface risk combinations that conventional, forward scenario-imagination would never have generated in the first place."
-            },
-            {
-                "q": "How does this module's EVT and stress-testing material connect back to Module 7's copula material, completing SP9's fourth syllabus topic area?",
-                "a": "Module 7 established how risks <em>aggregate</em> and interact via correlation and copula modelling under relatively 'normal' conditions; this module shows how EVT and stress/reverse stress testing extend that understanding specifically into <em>extreme</em>, tail scenarios where copula-based aggregation itself carries the greatest genuine model-risk and data-scarcity uncertainty, together completing SP9's 'Risk modelling and aggregation of risks' topic area.",
-                "explain": "This closing card ties Modules 7-8 together explicitly — worth recognising these two modules as together addressing SP9's fourth syllabus topic area: genuine everyday <em>aggregation</em> (Module 7) and its genuine <em>extension</em> into extreme, tail scenarios (Module 8)."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "Risk measures: VaR, TVaR, coherence and simulation-based capital models",
-        "description": "Covers Value at Risk, Tail Value at Risk, coherent risk measures, and stochastic and nested simulation approaches to capital modelling, per the official syllabus's fifth topic area.",
-        "cards": [
-            {
-                "q": "What is 'Value at Risk' (VaR), and how is it formally defined at a given confidence level $\\alpha$?",
-                "a": "VaR at confidence level $\\alpha$ is the loss $L$ such that the probability of losses exceeding $L$ is no more than $1-\\alpha$: $\\text{VaR}_\\alpha = \\inf\\{ l : P(L > l) \\le 1-\\alpha \\}$, i.e. the $\\alpha$-quantile of the loss distribution.",
-                "explain": "This directly recalls SP7's and SA1's VaR-quantile material — worth recognising VaR as just a specific <em>percentile</em> of the loss distribution, expressed formally here in the standard actuarial notation."
-            },
-            {
-                "q": "What is the key genuine <em>limitation</em> of VaR as a risk measure, specifically regarding what it says about losses <em>beyond</em> the VaR threshold itself?",
-                "a": "VaR says <em>nothing</em> about the <em>severity</em> of losses beyond the threshold itself — two distributions could share an identical VaR at a given confidence level while having very different tail severity beyond that point (one with a modest excess, one with a catastrophic excess), meaning VaR alone can understate true tail risk.",
-                "explain": "This directly recalls SP7's VaR-versus-TVaR material — worth recognising this genuine <em>blind-spot-beyond-the-threshold</em> limitation as VaR's single most important weakness, motivating TVaR's development as a genuine improvement."
-            },
-            {
-                "q": "What is 'Tail Value at Risk' (TVaR, also called Expected Shortfall or CTE), and how does its formula address VaR's blind-spot-beyond-threshold limitation?",
-                "a": "TVaR at confidence level $\\alpha$ is the genuine <em>average</em> loss, <em>given</em> that the loss exceeds the VaR threshold: $\\text{TVaR}_\\alpha = E[L \\mid L > \\text{VaR}_\\alpha]$, meaning it incorporates information about the <em>severity</em> of losses beyond the threshold (unlike VaR, which only marks the threshold itself), directly addressing VaR's key limitation.",
-                "explain": "This directly recalls SP7's TVaR material — worth recognising the conditional-expectation formula as the genuine mathematical mechanism by which TVaR captures tail severity that VaR alone misses entirely."
-            },
-            {
-                "q": "What are the four genuine axioms defining a 'coherent' risk measure, and why does this matter for choosing between VaR and TVaR?",
-                "a": "A coherent risk measure satisfies: <em>Monotonicity</em> (higher losses imply higher risk measure), <em>subadditivity</em> (the risk measure of a combined portfolio is no greater than the sum of its parts' individual risk measures, reflecting genuine diversification benefit), <em>positive homogeneity</em> (scaling a position scales the risk measure proportionally), and <em>translation invariance</em> (adding a certain amount of cash reduces risk by exactly that amount); VaR <em>fails</em> subadditivity in some cases, while TVaR satisfies all four axioms.",
-                "explain": "This directly recalls SP7's coherent-risk-measure material — worth recognising VaR's genuine subadditivity <em>failure</em> as a serious theoretical weakness (it can understate diversified portfolios' true combined risk), while TVaR's full coherence makes it the generally <em>preferred</em> risk measure academically, despite VaR's continued widespread regulatory use (e.g. Solvency II's SCR)."
-            },
-            {
-                "q": "Why might VaR remain the <em>dominant</em> risk measure in regulatory practice (e.g. Solvency II's SCR calibration) despite TVaR's superior theoretical coherence properties?",
-                "a": "VaR is simpler to calculate, communicate, and calibrate consistently across firms than TVaR (which requires modelling the <em>full</em> tail beyond the threshold, not just the threshold itself), and regulators have generally judged VaR's practical, communicative advantages to outweigh its theoretical subadditivity weakness for genuine regulatory capital-setting purposes.",
-                "explain": "This directly recalls SP7's regulatory-VaR-preference material — worth recognising this as a genuine, recurring <em>practicality</em>-versus-<em>theoretical</em>-PURITY trade-off, echoing this course's broader complexity-versus-tractability theme."
-            },
-            {
-                "q": "What is a genuine 'stochastic simulation' approach to capital modelling, and why does it typically require simulating a very large number of scenarios?",
-                "a": "Stochastic simulation models an organisation's future financial position by simulating a large number (often tens or hundreds of thousands) of random future economic and risk scenarios, deriving the organisation's loss <em>distribution</em> empirically from the simulated outcomes; a large number of simulations is needed to obtain sufficiently <em>stable</em> estimates of tail risk measures like VaR and TVaR, which depend specifically on the (relatively sparse) <em>extreme</em> tail of the simulated distribution.",
-                "explain": "This directly recalls SA1's and SP7's Monte-Carlo-simulation material — worth recognising that <em>tail</em> risk measures specifically demand a <em>larger</em> number of simulations than measures of central tendency, since relatively few simulated scenarios fall in the extreme tail region being measured."
-            },
-            {
-                "q": "What is a genuine 'nested simulation', and why is it computationally <em>much</em> more demanding than a single-level stochastic simulation?",
-                "a": "Nested simulation runs an <em>outer</em> set of simulated scenarios (representing possible future states of the world at a future valuation date), and then <em>within</em> each outer scenario, runs a further <em>inner</em> set of simulations to value the organisation's assets and liabilities AS AT that future date — meaning the total number of simulations required is the <em>outer</em> count <em>multiplied</em> by the <em>inner</em> count, making nested simulation computationally far more demanding than a single-level approach.",
-                "explain": "This directly recalls SA7's and SP5's nested-stochastic-model computational-burden material — worth recognising the genuine <em>multiplicative</em> (not additive) growth in computation as nested simulation's defining, practically limiting characteristic."
-            },
-            {
-                "q": "What genuine practical techniques might reduce nested simulation's substantial computational burden, echoing this course's recurring proxy-model theme?",
-                "a": "Genuine techniques include using <em>proxy models</em> or <em>curve-fitting</em> (e.g. least-squares Monte Carlo, or replicating portfolios) to approximate the inner-simulation valuation without running full inner simulations at every outer scenario, and variance reduction techniques (e.g. importance sampling) to reduce the number of simulations needed for a given level of statistical precision.",
-                "explain": "This directly recalls SA7's replicating-portfolio and proxy-model material — worth recognising these same computational-shortcut techniques recurring here specifically in the ERM capital-modelling context, not merely coincidentally similar to earlier subjects' material."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Risk management tools: avoidance, retention and mitigation",
-        "description": "Covers risk avoidance, retention and mitigation as practical risk management techniques, developing the 'treat' and 'terminate' responses from Module 6's four Ts in greater depth, per the official syllabus's sixth topic area.",
-        "cards": [
-            {
-                "q": "What does genuine 'risk avoidance' mean in practice, and how does it relate to Module 6's 'terminate' response?",
-                "a": "Risk avoidance means declining to undertake an activity altogether specifically because of the risk it would introduce (e.g. an insurer declining to write a particular class of business), directly corresponding to Module 6's '<em>terminate</em>' response — the most extreme of the four Ts, eliminating the risk entirely by eliminating the underlying activity.",
-                "explain": "This directly recalls Module 6's four-Ts material — worth recognising avoidance as simply the practical <em>name</em> given to the 'terminate' response when applied specifically to a not-yet-undertaken activity."
-            },
-            {
-                "q": "Why might genuine risk avoidance carry a significant, genuine <em>opportunity cost</em>, even though it eliminates the specific risk in question entirely?",
-                "a": "Since many risk-bearing activities also offer genuine expected <em>return</em> or strategic value (e.g. writing a profitable but volatile insurance class, or entering a new but uncertain market), avoiding the risk entirely also means forgoing that genuine potential upside, meaning avoidance is rarely costless even when it succeeds in eliminating the specific risk.",
-                "explain": "This directly recalls SA1's and SP5's risk-return-trade-off material — worth recognising that genuine risk avoidance is a <em>genuine</em> trade-off, not a free lunch — the foregone expected return is itself a real, if less visible, cost."
-            },
-            {
-                "q": "What does genuine 'risk retention' mean, and why might an organisation deliberately choose to retain a risk rather than transfer or mitigate it?",
-                "a": "Risk retention means consciously choosing to bear a risk's financial consequences internally, rather than transferring it elsewhere; an organisation might choose retention when the risk sits comfortably within its risk appetite and capacity (Module 5's material), when transfer would be prohibitively expensive relative to the risk's expected cost, or when the organisation has genuine comparative expertise in managing that specific risk internally.",
-                "explain": "This directly recalls Module 5's appetite-and-capacity material and Module 6's 'tolerate' response — worth recognising retention as a <em>deliberate</em>, reasoned choice, not merely a default arising from failing to arrange transfer."
-            },
-            {
-                "q": "What is a genuine 'deductible' or 'excess', and how does it represent a <em>partial</em> form of risk retention combined with risk transfer?",
-                "a": "A deductible means the policyholder (or ceding insurer, in a reinsurance context) retains losses up to a specified threshold, with only losses <em>above</em> that threshold transferred to the insurer (or reinsurer); this combines <em>retention</em> (of smaller, more predictable losses) with <em>transfer</em> (of larger, less predictable losses), often at lower overall cost than transferring the whole risk.",
-                "explain": "This directly recalls SA3's and SP8's excess-of-loss-reinsurance material — worth recognising deductibles as a <em>practical blend</em> of retention and transfer, not a purely binary choice between the two."
-            },
-            {
-                "q": "What does genuine 'risk mitigation' mean, and how does it differ from both avoidance and transfer in its fundamental approach?",
-                "a": "Risk mitigation means taking action to reduce a risk's <em>likelihood</em> or <em>impact</em> (e.g. improving internal controls, diversifying a portfolio, or strengthening IT security), while still undertaking the underlying activity (unlike avoidance) and still bearing the residual risk internally (unlike transfer) — directly corresponding to Module 6's '<em>treat</em>' response.",
-                "explain": "This directly recalls Module 6's 'treat' response material — worth recognising mitigation's distinctive position: it neither eliminates the activity (avoidance) nor passes the risk elsewhere (transfer), but <em>reduces</em> the risk while keeping both the activity and its residual risk in-house."
-            },
-            {
-                "q": "Why might genuine <em>diversification</em> be considered a specific, powerful <em>form</em> of risk mitigation, echoing this course's recurring diversification-benefit theme?",
-                "a": "Diversification mitigates risk by spreading exposure across multiple, imperfectly-correlated risk sources (e.g. different product lines, geographies, or counterparties), so that adverse outcomes in one area are less likely to be fully replicated across all areas simultaneously — directly applying Module 7's correlation-and-aggregation logic as a <em>practical</em> risk <em>management</em> tool, not merely a modelling consideration.",
-                "explain": "This directly recalls Module 7's correlation-and-diversification-benefit material — worth recognising diversification as the genuine <em>practical application</em> of that earlier, more theoretical modelling concept — actively engineering <em>lower</em> correlation into an organisation's risk exposures, not merely measuring existing correlation."
-            },
-            {
-                "q": "Why must a genuine cost-benefit assessment underpin the choice between mitigation, retention, transfer and avoidance for any given risk, rather than defaulting to whichever tool seems most intuitively 'safe'?",
-                "a": "Each of the four Ts carries its own cost (mitigation's control costs, transfer's premium cost, avoidance's opportunity cost, retention's genuine capital cost of bearing the risk), so a <em>sound</em> risk management decision must weigh each tool's cost against the genuine reduction in risk it achieves, relative to the organisation's risk appetite — rather than reflexively choosing the most conservative-seeming option regardless of cost.",
-                "explain": "This directly recalls SA1's and SP5's cost-benefit-of-risk-management material — worth recognising that <em>effective</em> risk management requires balancing cost against benefit for <em>each</em> risk individually, not applying a single default response uniformly across all risks."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Risk management tools: hedging, insurance and alternative risk transfer",
-        "description": "Covers hedging, insurance and alternative risk transfer as risk transfer techniques, completing the official syllabus's sixth topic area's coverage of practical risk management tools.",
-        "cards": [
-            {
-                "q": "What does genuine 'hedging' mean, and how does it typically use derivative instruments to reduce risk, echoing SP6's material?",
-                "a": "Hedging means taking an offsetting position (often using derivative instruments like futures, options or swaps) whose value moves in the <em>opposite</em> direction to an existing exposure, so that losses on the original exposure are offset, at least partially, by gains on the hedging position.",
-                "explain": "This directly recalls SP6's derivative-hedging-and-Greeks material — worth recognising hedging as the <em>practical</em>, ERM-level application of SP6's more technical, instrument-specific hedging mechanics."
-            },
-            {
-                "q": "Why is a hedge rarely 'perfect' in practice, echoing SP5's and SP6's basis-risk material?",
-                "a": "A genuine hedge is rarely perfect because of <em>basis risk</em> — the hedging instrument's value may not move in <em>exactly</em> the opposite direction to the underlying exposure (e.g. differing maturities, differing underlying reference assets, or genuine liquidity constraints), meaning genuine <em>residual</em> risk typically remains even after hedging.",
-                "explain": "This directly recalls SP5's and SP6's basis-risk material — worth recognising basis risk as a <em>recurring</em> limitation on hedging effectiveness across this whole curriculum, not a concern unique to any single subject."
-            },
-            {
-                "q": "What does genuine 'insurance' mean as a risk transfer tool from the <em>purchaser</em>'s perspective, and how does it differ from hedging in its typical payoff structure?",
-                "a": "Insurance transfers a <em>specific</em>, typically insurable risk (e.g. property damage, liability) to an insurer in exchange for a premium, with the insurer paying out only if a specified insured <em>event</em> occurs; unlike many hedging instruments (which typically pay out based on a continuously-varying market price), insurance payoffs are <em>contingent</em> on a discrete, specified event occurring, rather than tracking a continuous underlying variable.",
-                "explain": "Worth recognising this genuine <em>structural</em> distinction — insurance responds to discrete, insurable <em>events</em>, while most hedging instruments respond to continuous <em>market price</em> movements, even though both serve the same underlying risk-transfer purpose."
-            },
-            {
-                "q": "What is 'Alternative Risk Transfer' (ART), and why might an organisation use ART instruments (e.g. catastrophe bonds, insurance-linked securities) rather than conventional insurance or reinsurance?",
-                "a": "ART refers to non-traditional risk transfer mechanisms that transfer risk to <em>capital markets</em> investors rather than conventional (re)insurers (e.g. catastrophe bonds, where investors lose some or all of their principal if a specified catastrophic event occurs); organisations might use ART to access capital markets' much <em>larger</em> capacity than the traditional (re)insurance market can offer, particularly for very large, infrequent, catastrophic risks.",
-                "explain": "This directly recalls SA3's catastrophe-bond material — worth recognising ART's genuine, distinctive <em>value proposition</em>: tapping the vast scale of global capital markets for risks whose sheer <em>size</em> could otherwise exceed traditional reinsurance market capacity."
-            },
-            {
-                "q": "What is a 'catastrophe bond', and how does its genuine payoff structure transfer risk from the issuing organisation to bond investors?",
-                "a": "A catastrophe bond pays investors an attractive coupon in exchange for investors' capital being <em>at risk</em> — if a predefined catastrophic trigger event occurs (e.g. a hurricane exceeding a specified magnitude), the bond's principal is reduced or forfeited, with the freed-up funds used by the issuing organisation to cover its own catastrophe losses, meaning investors bear the catastrophe risk in exchange for the enhanced coupon.",
-                "explain": "This directly recalls SA3's catastrophe-bond mechanics material — worth recognising the genuine <em>trade</em> investors are making: accepting genuine principal-at-risk in exchange for an enhanced yield, effectively taking on the insurer's catastrophe exposure."
-            },
-            {
-                "q": "What is genuine 'basis risk' specifically within an ART/catastrophe-bond context (e.g. an <em>index</em>-based trigger), and why might it be a <em>more</em> significant genuine concern for ART instruments than for traditional, indemnity-based reinsurance?",
-                "a": "An index-based (parametric) catastrophe bond pays out based on an independently-measured <em>index</em> (e.g. modelled industry-wide losses, or a physical parameter like wind speed) rather than the issuing organisation's <em>own</em> actual losses, meaning the issuer bears the risk that the index-based payout may not precisely match its own actual loss experience — a more significant basis-risk concern than traditional indemnity reinsurance, which pays based on the cedant's own actual, incurred losses directly.",
-                "explain": "This directly recalls SA3's parametric-versus-indemnity-trigger material — worth recognising this genuine trade-off: index-based ART triggers offer <em>faster</em>, more <em>objective</em> payouts (avoiding lengthy claims assessment) at the cost of <em>greater</em> basis risk relative to the issuer's own actual experience."
-            },
-            {
-                "q": "How does this module's hedging, insurance and ART material connect back to Module 10, completing SP9's sixth syllabus topic area (risk management tools and techniques)?",
-                "a": "Module 10 developed the <em>avoidance</em>, <em>retention</em> and <em>mitigation</em> responses (three of Module 6's four Ts); this module completes the picture by developing <em>transfer</em> in depth — through hedging, conventional insurance, and alternative risk transfer — together giving comprehensive coverage of all four Ts' practical implementation, completing SP9's largest (20%-weighted) syllabus topic area.",
-                "explain": "This closing card ties Modules 10-11 together explicitly, echoing Module 1's topic-weighting material — worth recognising these two modules as together addressing SP9's single <em>largest</em> syllabus topic area, reflecting its central importance to the whole ERM discipline."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Economic capital, diversification benefit and capital allocation",
-        "description": "Covers economic capital, the diversification benefit arising from risk aggregation, and capital allocation techniques including the Euler principle, per the official syllabus's seventh and final topic area.",
-        "cards": [
-            {
-                "q": "What is genuine 'economic capital', and how does it differ from <em>regulatory</em> capital, echoing SP7's material?",
-                "a": "Economic capital is the genuine amount of capital an organisation's <em>own</em> internal risk assessment determines is needed to remain solvent at a chosen confidence level, reflecting the organisation's <em>own</em> view of its risk profile; regulatory capital is the amount <em>prescribed</em> by a regulator (e.g. via a standard formula or approved internal model), which may differ from the organisation's own internal economic capital view if the regulatory calibration doesn't fully reflect the organisation's specific risk profile.",
-                "explain": "This directly recalls SP7's internal-model-versus-standard-formula material — worth recognising economic capital as the internally-<em>driven</em> measure, while regulatory capital is the <em>externally-prescribed</em> measure — the two can diverge even for the same organisation."
-            },
-            {
-                "q": "How is the genuine 'diversification benefit' at the whole-organisation level typically <em>calculated</em>, connecting back to Module 7's aggregation material?",
-                "a": "The diversification benefit is calculated as the difference between the <em>sum</em> of each individual risk's stand-alone capital requirement and the organisation's <em>aggregate</em> capital requirement (properly modelled to reflect genuine correlation and dependence between risks, per Module 7's copula material): $\\text{Diversification benefit} = \\sum_i C_i - C_{\\text{agg}}$, where $C_i$ is risk $i$'s stand-alone capital and $C_{\\text{agg}}$ is the aggregate capital requirement.",
-                "explain": "This directly recalls Module 7's aggregation material and SP7's diversification-benefit formula — worth recognising this same genuine <em>sum-minus-aggregate</em> calculation recurring here at the whole-ERM level, using the same underlying logic SP7 developed for insurance capital specifically."
-            },
-            {
-                "q": "What genuine <em>problem</em> does 'capital allocation' solve, given that the diversification benefit means the aggregate capital requirement is <em>less</em> than the sum of individual risks' stand-alone capital?",
-                "a": "Since the organisation's aggregate capital requirement is <em>less</em> than the sum of individual business units' or risk categories' stand-alone capital, capital allocation addresses <em>how</em> to fairly divide the (smaller) aggregate capital amount <em>back</em> across individual business units or risk categories — a non-trivial problem, since there is no single, uniquely 'correct' way to share out a diversification benefit that arose only from the risks' <em>combined</em> interaction.",
-                "explain": "Worth recognising capital allocation's genuine, distinctive <em>challenge</em>: fairly dividing a benefit (diversification) that mathematically only exists at the <em>combined</em>, aggregate level, not attributable to any single business unit in isolation."
-            },
-            {
-                "q": "What is the genuine 'Euler allocation principle', and why is it considered a theoretically <em>attractive</em> method for capital allocation?",
-                "a": "The Euler principle allocates capital to business unit $i$ as its marginal contribution to the <em>total</em> aggregate risk measure, formally $C_i = \\frac{\\partial C_{\\text{agg}}}{\\partial w_i} \\times w_i$ (the partial derivative of aggregate capital with respect to unit $i$'s exposure, scaled by that exposure); it is attractive because, for risk measures satisfying certain mathematical properties (positive homogeneity), the Euler allocations <em>sum exactly</em> to the total aggregate capital, with no residual left over or double-counted.",
-                "explain": "Worth recognising the Euler principle's genuine key <em>property</em>: it is 'full allocation' — the individually-allocated amounts add up <em>exactly</em> to the total, avoiding the awkward under- or over-allocation that cruder, non-marginal allocation methods can produce."
-            },
-            {
-                "q": "Why might a business unit's genuine Euler-allocated capital be <em>lower</em> than its stand-alone capital requirement, and what does this reward?",
-                "a": "A business unit's Euler allocation reflects its <em>marginal</em> contribution to aggregate risk, which is typically lower than its stand-alone capital if the unit's risks are imperfectly correlated with the rest of the organisation's risk (i.e. the unit contributes to overall diversification); this <em>rewards</em> business units that diversify the organisation's overall risk profile, giving them a lower allocated capital charge than they would face operating in isolation.",
-                "explain": "This directly recalls SA1's and SP7's diversification-reward material — worth recognising the Euler principle as <em>incentivising</em> business units toward risk profiles that diversify well with the rest of the organisation, not merely a neutral, mechanical accounting exercise."
-            },
-            {
-                "q": "What genuine practical <em>difficulty</em> might arise in applying the Euler principle in practice, despite its attractive full-allocation theoretical property?",
-                "a": "Calculating the genuine marginal contribution (the partial derivative) typically requires a fully-specified, <em>granular</em> aggregate risk model capturing how each business unit's risk correlates with every other (Module 7's copula-modelling challenge), meaning the Euler principle's practical application inherits all of aggregate risk modelling's genuine data, correlation-estimation, and computational challenges, rather than being a simple, purely mechanical formula to apply.",
-                "explain": "This directly recalls Module 7's copula-modelling-judgement material — worth recognising that the Euler principle's elegant <em>theoretical</em> formula still depends entirely on the genuine <em>quality</em> of the underlying aggregate risk model feeding into it."
-            },
-            {
-                "q": "Why might an organisation choose a <em>simpler</em>, non-Euler allocation method (e.g. pro-rata allocation based on stand-alone capital) despite the Euler principle's superior theoretical properties, echoing this course's recurring practicality-versus-theoretical-purity theme?",
-                "a": "A simpler, pro-rata method is easier to calculate, explain to business unit managers, and apply consistently, even though it lacks the Euler principle's precise marginal-contribution interpretation; an organisation might judge that this practical <em>simplicity</em> and <em>transparency</em> outweighs the more theoretically 'correct' but more complex and less easily-communicated Euler approach for its own specific internal management purposes.",
-                "explain": "This directly recalls Module 9's VaR-versus-TVaR regulatory-practicality material — worth recognising this same, recurring <em>practicality</em>-versus-<em>theoretical</em>-PURITY trade-off appearing yet again here specifically in the capital-allocation context."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "RAROC, EVA and the regulatory landscape for ERM",
-        "description": "Covers risk-adjusted performance measures (RAROC, EVA) and the regulatory frameworks shaping ERM practice, including Solvency II, Basel and ORSA, completing the official syllabus's seventh and final topic area.",
-        "cards": [
-            {
-                "q": "What is 'RAROC' (Risk-Adjusted Return on Capital), and why does it provide a <em>fairer</em> basis for comparing business units' performance than a simple, unadjusted return on capital?",
-                "a": "RAROC is calculated as $\\text{RAROC} = \\frac{\\text{Risk-adjusted return}}{\\text{Economic capital allocated}}$, dividing a business unit's return by the genuine <em>economic capital</em> allocated to it (e.g. via the Euler principle); this provides a <em>fairer</em> comparison across business units than raw return alone, since a unit generating high returns purely by taking on disproportionate <em>risk</em> is appropriately penalised by its correspondingly higher allocated capital in the denominator.",
-                "explain": "This directly recalls SA1's and SP5's risk-adjusted-performance-measure material — worth recognising RAROC's genuine <em>purpose</em>: preventing business units from appearing artificially attractive purely by taking on more risk, which a purely return-based comparison would fail to penalise."
-            },
-            {
-                "q": "What is 'Economic Value Added' (EVA), and how does its genuine calculation differ conceptually from RAROC's <em>ratio</em>-based approach?",
-                "a": "EVA is calculated as a monetary <em>amount</em> — $\\text{EVA} = \\text{Return} - (\\text{Cost of capital rate} \\times \\text{Economic capital allocated})$ — measuring the genuine monetary <em>value</em> a business unit creates above and beyond its cost of capital, whereas RAROC produces a <em>ratio</em> (a percentage return figure); EVA's genuine advantage is that it directly reflects the genuine monetary <em>scale</em> of value creation, which RAROC's pure ratio can obscure (a small unit with a high RAROC percentage may create less genuine absolute value than a larger unit with a lower percentage).",
-                "explain": "Worth drawing this genuine <em>ratio</em>-versus-<em>absolute-amount</em> distinction carefully — RAROC and EVA can give <em>different</em> rankings of business units, since a high percentage return on a small capital base may represent less genuine absolute value creation than a lower percentage return on a much larger capital base."
-            },
-            {
-                "q": "Why might using RAROC or EVA to guide capital allocation and business-unit incentives <em>reinforce</em> the diversification-rewarding behaviour Module 12's Euler principle already encourages?",
-                "a": "Since RAROC and EVA both use <em>economic capital</em> (potentially Euler-allocated) in their calculation, a business unit that diversifies the organisation's overall risk profile receives a <em>lower</em> capital allocation (Module 12's material), which mechanically produces a <em>higher</em> RAROC or EVA for the same underlying return — meaning these performance measures <em>reinforce</em>, rather than work against, the diversification-rewarding incentive Module 12 already established.",
-                "explain": "This directly recalls Module 12's Euler-allocation-diversification-reward material — worth recognising these performance measures as <em>completing</em> the incentive chain: Euler allocation rewards diversifying business units with lower capital, which then mechanically flows through into <em>better</em>-looking RAROC/EVA performance figures for those same units."
-            },
-            {
-                "q": "What is 'Solvency II', and how does its genuine <em>three-pillar</em> structure connect to this whole module's ERM material, echoing SA1's material?",
-                "a": "Solvency II is the genuine EU (and UK, via its retained/onshored form) insurance regulatory regime, structured around three pillars: Pillar 1 (<em>quantitative</em> capital requirements, e.g. the SCR, connecting to Module 9's risk-measure and Module 12's capital-allocation material), Pillar 2 (genuine <em>governance</em> and risk management requirements, including the ORSA, connecting to Modules 2-3's governance material), and Pillar 3 (genuine <em>disclosure</em> and reporting requirements to regulators and the market).",
-                "explain": "This directly recalls SA1's Solvency-II-three-pillar material — worth recognising Solvency II's whole three-pillar structure as <em>mirroring</em> this entire SP9 module's scope: quantitative measurement (Pillar 1), governance and process (Pillar 2), and transparency (Pillar 3)."
-            },
-            {
-                "q": "What is the 'ORSA' (Own Risk and Solvency Assessment), and why does it embody the 'use test' principle Module 3 introduced?",
-                "a": "The ORSA is a genuine, regular, forward-looking internal assessment an insurer must conduct of its <em>own</em> overall solvency needs, considering its own specific risk profile (not merely the regulatory standard formula's generic calibration); it embodies Module 3's use-test principle because it explicitly requires the organisation to <em>use</em> its own risk assessment and models in a real governance process, rather than relying purely on a mechanically-applied regulatory capital formula.",
-                "explain": "This directly recalls Module 3's use-test material — worth recognising the ORSA as a <em>concrete</em>, <em>regulatory embodiment</em> of the use-test principle: a regulator explicitly requiring genuine evidence that risk management is actually integrated into real organisational decision-making, not merely a compliance formality."
-            },
-            {
-                "q": "What is the 'Basel' framework, and how does its genuine <em>application</em> differ from Solvency II's, despite both sharing a broadly similar three-pillar structure?",
-                "a": "Basel (currently Basel III/IV) is the genuine international regulatory framework for <em>banks</em>, sharing Solvency II's broad three-pillar structure (capital requirements, supervisory review, market discipline/disclosure) but calibrated to <em>banking</em>-specific risks (e.g. credit risk from loan portfolios, and short-term <em>liquidity</em> risk from deposit withdrawals) rather than insurance-specific risks (e.g. long-term underwriting and reserving risk), reflecting each sector's different risk profile.",
-                "explain": "Worth recognising Basel and Solvency II as sharing a <em>similar regulatory architecture</em> (both three-pillar frameworks) while being <em>calibrated differently</em> to their respective sectors' distinct risk profiles — the structure generalises across ERM more broadly, even where the specific risk content differs by sector."
-            },
-            {
-                "q": "How does this module's RAROC, EVA and regulatory material connect back to Module 12, and how does the whole of Modules 12-13 connect back to SP9's <em>opening</em> modules, completing the whole subject's coherent arc?",
-                "a": "Module 12 established <em>how</em> capital is allocated (Euler principle); this module shows how that <em>allocated</em> capital feeds into genuine <em>performance measurement</em> (RAROC, EVA) and sits within the wider <em>regulatory</em> landscape (Solvency II, Basel, ORSA) — and this regulatory material's governance and use-test themes explicitly loop back to Modules 2-3's opening ERM-framework-and-governance material, completing SP9's full arc from foundational <em>concepts</em> through <em>process</em>, <em>identification</em>, <em>modelling</em>, <em>measurement</em> and <em>tools</em>, to this final <em>capital management</em> topic area.",
-                "explain": "This closing card ties the whole of SP9 together explicitly, echoing Module 1's topic-sequence material — worth recognising SP9's full thirteen-module arc as a <em>coherent</em>, <em>cyclical</em> whole: governance and use-test themes introduced at the start (Modules 2-3) return here, at the very end, embodied concretely in real regulatory requirements like the ORSA."
-            }
-        ]
-    }
-
-  ]
+      {
+          "id": "m01",
+          "title": "What is ERM?",
+          "description": "Defining enterprise risk management: risk as uncertainty of outcomes, the move from silo to enterprise-wide risk management, the components of an ERM framework, and SP9's link to the CERA credential.",
+          "cards": [
+              {
+                  "q": "What is ERM?",
+                  "a": "A structured, enterprise-wide approach to identifying, assessing, managing and monitoring all risks in pursuit of an organisation's objectives.",
+                  "explain": "Holistic rather than silo-based."
+              },
+              {
+                  "q": "How does ERM differ from traditional risk management?",
+                  "a": "It considers all risks together, including interactions and aggregation, and links risk to strategy and value, rather than managing each risk in isolation.",
+                  "explain": "Portfolio view of risk."
+              },
+              {
+                  "q": "What is 'risk' in ERM?",
+                  "a": "Uncertainty in outcomes that may be adverse or favourable relative to objectives.",
+                  "explain": "Upside risk matters too."
+              },
+              {
+                  "q": "What are the main components of ERM?",
+                  "a": "Governance and culture, risk appetite, risk identification, assessment and measurement, management/response, monitoring and reporting.",
+                  "explain": "The ERM cycle."
+              },
+              {
+                  "q": "What is the CERA credential?",
+                  "a": "Chartered Enterprise Risk Actuary — a global ERM qualification; SP9 is required for it.",
+                  "explain": "CERA Global Association syllabus."
+              },
+              {
+                  "q": "What are SP9's topic weightings?",
+                  "a": "ERM concept and framework 15%; ERM process 10%; risk categories and identification 10%; risk modelling and aggregation 15%; risk measurement and assessment 15%; risk management tools 20%; capital management 15%.",
+                  "explain": "Tools is largest."
+              },
+              {
+                  "q": "Why is ERM relevant beyond financial services?",
+                  "a": "All organisations face strategic, operational and financial risks that interact.",
+                  "explain": "Non-financial firms too."
+              },
+              {
+                  "q": "What is a holistic view of risk?",
+                  "a": "Considering all risk types and their interdependencies across the organisation.",
+                  "explain": "Aggregation."
+              },
+              {
+                  "q": "What is risk culture?",
+                  "a": "Shared values and behaviours influencing risk decisions.",
+                  "explain": "Tone from the top."
+              },
+              {
+                  "q": "What is the relationship between risk and return?",
+                  "a": "Taking risk is necessary to earn return; ERM aims for optimal risk-return.",
+                  "explain": "Value creation."
+              },
+              {
+                  "q": "What is a silo approach's weakness?",
+                  "a": "Misses correlations, concentrations and gaps between risk areas.",
+                  "explain": "ERM fixes."
+              },
+              {
+                  "q": "What is risk management's role in strategy?",
+                  "a": "Informs strategic choices and ensures they fit risk appetite.",
+                  "explain": "Integrated."
+              },
+              {
+                  "q": "What is the role of the board in ERM?",
+                  "a": "Setting risk appetite, overseeing framework, and challenging management.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "How has ERM evolved?",
+                  "a": "From insurance/hedging of specific risks to integrated, strategic enterprise-wide frameworks, driven by crises and regulation.",
+                  "explain": "History."
+              },
+              {
+                  "q": "What does SP9 require candidates to read beyond Core Reading?",
+                  "a": "Material in textbooks (e.g. Sweeting's Financial Enterprise Risk Management).",
+                  "explain": "Study guide note."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Why (E)RM?",
+          "description": "The rationale for risk management and ERM: value creation (reducing costs of financial distress, taxes, agency costs), stakeholder demands, regulatory requirements, rating agency expectations, and the limits of ERM.",
+          "cards": [
+              {
+                  "q": "Why should firms manage risk if shareholders can diversify?",
+                  "a": "Frictional costs — financial distress costs, tax convexity, agency costs, cost of external capital — mean reducing volatility can add value.",
+                  "explain": "Modigliani-Miller violations."
+              },
+              {
+                  "q": "How can ERM reduce financial distress costs?",
+                  "a": "Lower probability of insolvency reduces costs like lost customers, supplier terms and bankruptcy costs.",
+                  "explain": "Value."
+              },
+              {
+                  "q": "How can ERM reduce tax costs?",
+                  "a": "Smoothing profits reduces expected taxes when tax schedules are convex.",
+                  "explain": "Tax convexity."
+              },
+              {
+                  "q": "How can ERM help with agency problems?",
+                  "a": "Aligns managers' incentives with shareholders by clarifying risk-taking.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What do regulators expect?",
+                  "a": "Robust risk management frameworks, ORSA, stress testing.",
+                  "explain": "Solvency II, Basel."
+              },
+              {
+                  "q": "What do rating agencies expect?",
+                  "a": "Evidence of ERM strength in ratings assessments.",
+                  "explain": "Better ratings, lower costs."
+              },
+              {
+                  "q": "What do other stakeholders want?",
+                  "a": "Customers want security; employees want stability; creditors want repayment.",
+                  "explain": "Stakeholder value."
+              },
+              {
+                  "q": "What are limits of ERM?",
+                  "a": "Can't eliminate risk; models can fail; costs of implementation; false sense of security.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How does ERM support strategic decisions?",
+                  "a": "Risk-adjusted performance measures allocate capital to best opportunities.",
+                  "explain": "RAROC."
+              },
+              {
+                  "q": "How can ERM improve capital efficiency?",
+                  "a": "Understanding diversification allows holding capital where needed.",
+                  "explain": "Capital management."
+              },
+              {
+                  "q": "What is the business case for ERM?",
+                  "a": "Reduced earnings volatility, better decisions, lower capital costs, regulatory compliance.",
+                  "explain": "Benefits."
+              },
+              {
+                  "q": "How can ERM help avoid disasters?",
+                  "a": "Identifying concentrations and emerging risks early.",
+                  "explain": "Case studies."
+              },
+              {
+                  "q": "What costs does ERM impose?",
+                  "a": "Systems, staff, governance, model development.",
+                  "explain": "Proportionality."
+              },
+              {
+                  "q": "Why do ERM failures occur?",
+                  "a": "Poor culture, ignoring warnings, model overreliance, incentives.",
+                  "explain": "Chapter 32."
+              },
+              {
+                  "q": "What is the upside of risk?",
+                  "a": "Opportunities pursued with understanding of risk.",
+                  "explain": "Not just loss avoidance."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Risk taxonomy",
+          "description": "Classifying risks: market, credit, liquidity, insurance, operational, strategic, reputational, regulatory, conduct, climate and emerging risks; systematic versus diversifiable risk; and concentration and interdependence of risks.",
+          "cards": [
+              {
+                  "q": "List the main risk categories in a taxonomy.",
+                  "a": "Market, credit, liquidity, insurance/demographic, operational, strategic, business, reputational, regulatory/legal, conduct, climate/environmental, emerging risks.",
+                  "explain": "Comprehensive list."
+              },
+              {
+                  "q": "What is market risk?",
+                  "a": "Losses from changes in market prices: interest rates, equities, FX, property, spreads.",
+                  "explain": "Financial."
+              },
+              {
+                  "q": "What is credit risk?",
+                  "a": "Loss from a counterparty failing to meet obligations, including downgrade and spread risk.",
+                  "explain": "Default."
+              },
+              {
+                  "q": "What is liquidity risk?",
+                  "a": "Inability to meet obligations as they fall due or to sell assets without loss.",
+                  "explain": "Funding and market liquidity."
+              },
+              {
+                  "q": "What is operational risk?",
+                  "a": "Loss from inadequate or failed processes, people, systems or external events.",
+                  "explain": "Basel definition."
+              },
+              {
+                  "q": "What is strategic risk?",
+                  "a": "Risk from poor business decisions or failure to adapt.",
+                  "explain": "Hard to quantify."
+              },
+              {
+                  "q": "What is reputational risk?",
+                  "a": "Loss from damage to reputation.",
+                  "explain": "Often consequential."
+              },
+              {
+                  "q": "What is systematic risk?",
+                  "a": "Risk that cannot be diversified away (market-wide).",
+                  "explain": "Priced."
+              },
+              {
+                  "q": "What is diversifiable (specific) risk?",
+                  "a": "Risk unique to an entity that can be diversified.",
+                  "explain": "Not rewarded."
+              },
+              {
+                  "q": "What is concentration risk?",
+                  "a": "Excessive exposure to a single source of risk.",
+                  "explain": "Aggregation."
+              },
+              {
+                  "q": "What is conduct risk?",
+                  "a": "Risk of poor customer outcomes from firm behaviour.",
+                  "explain": "Regulatory focus."
+              },
+              {
+                  "q": "What are emerging risks?",
+                  "a": "New or evolving risks with uncertain impact (e.g. AI, cyber).",
+                  "explain": "Horizon scanning."
+              },
+              {
+                  "q": "What is climate risk?",
+                  "a": "Physical, transition and liability risks from climate change.",
+                  "explain": "Cross-cutting."
+              },
+              {
+                  "q": "Why is a taxonomy useful?",
+                  "a": "Ensures consistent identification, reporting and aggregation.",
+                  "explain": "Common language."
+              },
+              {
+                  "q": "What is model risk?",
+                  "a": "Loss from errors in models or their use.",
+                  "explain": "Operational subset."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "How to do ERM – internal risk frameworks",
+          "description": "Designing an internal ERM framework: governance structures, risk appetite and policies, the ERM process cycle, three lines of defence, risk ownership, reporting and culture, and embedding ERM in decision-making.",
+          "cards": [
+              {
+                  "q": "What are the elements of an internal ERM framework?",
+                  "a": "Governance, risk appetite, policies, processes (identify, assess, respond, monitor), infrastructure (data, systems), culture.",
+                  "explain": "Framework."
+              },
+              {
+                  "q": "What are the three lines of defence?",
+                  "a": "1st: business units owning risks; 2nd: risk management and compliance oversight; 3rd: internal audit assurance.",
+                  "explain": "Separation of duties."
+              },
+              {
+                  "q": "What is risk ownership?",
+                  "a": "Assigning each risk to an accountable individual.",
+                  "explain": "Accountability."
+              },
+              {
+                  "q": "What is a risk policy?",
+                  "a": "Document setting rules and limits for managing a risk type.",
+                  "explain": "Chapter 9."
+              },
+              {
+                  "q": "What is embedding ERM?",
+                  "a": "Making risk considerations part of everyday decisions and incentives.",
+                  "explain": "Use test."
+              },
+              {
+                  "q": "What role does the CRO play?",
+                  "a": "Leads the risk function and provides independent oversight.",
+                  "explain": "Chapter 12."
+              },
+              {
+                  "q": "What is a risk committee?",
+                  "a": "Board or executive committee overseeing risk.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What infrastructure supports ERM?",
+                  "a": "Data, systems, models, reporting tools.",
+                  "explain": "Enablers."
+              },
+              {
+                  "q": "Why is risk culture important?",
+                  "a": "Frameworks fail if behaviours don't follow.",
+                  "explain": "Tone from top."
+              },
+              {
+                  "q": "How are incentives linked to ERM?",
+                  "a": "Remuneration adjusted for risk (e.g. deferral, clawback).",
+                  "explain": "Aligns behaviour."
+              },
+              {
+                  "q": "What is proportionality in ERM?",
+                  "a": "Framework complexity matched to organisation's size and risk.",
+                  "explain": "Regulators expect."
+              },
+              {
+                  "q": "How is ERM integrated with strategy?",
+                  "a": "Risk appetite informs business plans; plans assessed against appetite.",
+                  "explain": "Integration."
+              },
+              {
+                  "q": "What is risk reporting?",
+                  "a": "Regular information on risk profile vs appetite to management and board.",
+                  "explain": "Chapter 10."
+              },
+              {
+                  "q": "What is ERM maturity?",
+                  "a": "Stages of development from basic to advanced integrated ERM.",
+                  "explain": "Assessment."
+              },
+              {
+                  "q": "How should an ERM framework be reviewed?",
+                  "a": "Periodically by internal audit and externally.",
+                  "explain": "Continuous improvement."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "External risk frameworks (mandatory)",
+          "description": "Mandatory external frameworks: Solvency II/UK for insurers, Basel III for banks, pension regulation, and their requirements for capital, governance, ORSA/ICAAP, and disclosure.",
+          "cards": [
+              {
+                  "q": "What is Solvency II's approach?",
+                  "a": "Risk-based capital (SCR at 99.5% VaR), governance requirements (system of governance, ORSA), and disclosure.",
+                  "explain": "Three pillars."
+              },
+              {
+                  "q": "What is Basel III?",
+                  "a": "Banking framework with minimum capital ratios, capital buffers, leverage ratio, liquidity ratios (LCR, NSFR).",
+                  "explain": "Three pillars."
+              },
+              {
+                  "q": "What is the ICAAP?",
+                  "a": "Internal Capital Adequacy Assessment Process for banks.",
+                  "explain": "Pillar 2."
+              },
+              {
+                  "q": "What is the ORSA?",
+                  "a": "Own Risk and Solvency Assessment for insurers.",
+                  "explain": "Forward-looking."
+              },
+              {
+                  "q": "What is the LCR?",
+                  "a": "Liquidity Coverage Ratio: high-quality liquid assets covering 30-day stressed outflows.",
+                  "explain": "Basel III."
+              },
+              {
+                  "q": "What is the NSFR?",
+                  "a": "Net Stable Funding Ratio: available stable funding vs required over one year.",
+                  "explain": "Basel III."
+              },
+              {
+                  "q": "What is the leverage ratio?",
+                  "a": "Tier 1 capital / total exposure, non-risk-based backstop.",
+                  "explain": "Basel III."
+              },
+              {
+                  "q": "What governance does Solvency II require?",
+                  "a": "Risk management, compliance, internal audit and actuarial functions; fit and proper requirements.",
+                  "explain": "Key functions."
+              },
+              {
+                  "q": "What disclosure does Solvency II require?",
+                  "a": "SFCR (public) and regulatory reporting.",
+                  "explain": "Pillar 3."
+              },
+              {
+                  "q": "How do pension schemes face mandatory frameworks?",
+                  "a": "Funding regulations, governance codes, risk management requirements (e.g. ESOG in UK).",
+                  "explain": "Effective system of governance."
+              },
+              {
+                  "q": "What are the pros of mandatory frameworks?",
+                  "a": "Consistency, minimum standards, comparability.",
+                  "explain": "Protection."
+              },
+              {
+                  "q": "What are the cons?",
+                  "a": "Box-ticking, procyclicality, may not reflect firm-specific risks.",
+                  "explain": "Limitations."
+              },
+              {
+                  "q": "What is procyclicality?",
+                  "a": "Rules amplifying economic cycles (e.g. forced selling in downturns).",
+                  "explain": "Counter-cyclical buffers."
+              },
+              {
+                  "q": "What is the countercyclical capital buffer?",
+                  "a": "Extra bank capital built in good times.",
+                  "explain": "Basel III."
+              },
+              {
+                  "q": "How do mandatory frameworks relate to internal ERM?",
+                  "a": "Set minimum requirements; good ERM goes beyond them.",
+                  "explain": "Complementary."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "External risk frameworks (non-mandatory)",
+          "description": "Voluntary ERM standards and guidance: COSO ERM, ISO 31000, rating agency ERM criteria, IAIS ICPs, and industry best practice, with their structures and uses.",
+          "cards": [
+              {
+                  "q": "What is COSO ERM?",
+                  "a": "A framework (Enterprise Risk Management – Integrating with Strategy and Performance) with components: governance and culture; strategy and objective-setting; performance; review and revision; information, communication and reporting.",
+                  "explain": "2017 update."
+              },
+              {
+                  "q": "What is ISO 31000?",
+                  "a": "International standard with principles, framework and process for risk management.",
+                  "explain": "Generic."
+              },
+              {
+                  "q": "How do rating agencies assess ERM?",
+                  "a": "Evaluate risk culture, controls, emerging risk management, strategic risk management, and capital models.",
+                  "explain": "Affects ratings."
+              },
+              {
+                  "q": "What are IAIS ICPs?",
+                  "a": "Insurance Core Principles from the International Association of Insurance Supervisors.",
+                  "explain": "Global standards."
+              },
+              {
+                  "q": "Why adopt voluntary frameworks?",
+                  "a": "Best practice structure, credibility with stakeholders, benchmarking.",
+                  "explain": "Benefits."
+              },
+              {
+                  "q": "What is the ISO 31000 risk process?",
+                  "a": "Communication, scope/context/criteria, assessment (identify, analyse, evaluate), treatment, monitoring, recording.",
+                  "explain": "Cycle."
+              },
+              {
+                  "q": "What does COSO emphasise?",
+                  "a": "Link between risk, strategy and performance.",
+                  "explain": "Value focus."
+              },
+              {
+                  "q": "How can frameworks be tailored?",
+                  "a": "Adapting to the organisation's size, sector and culture.",
+                  "explain": "Proportionality."
+              },
+              {
+                  "q": "What are limitations of generic frameworks?",
+                  "a": "May lack detail for financial risks; risk of box-ticking.",
+                  "explain": "Supplement."
+              },
+              {
+                  "q": "What is the role of industry bodies?",
+                  "a": "Issue guidance and share practice (e.g. IRM, CRO Forum).",
+                  "explain": "Knowledge."
+              },
+              {
+                  "q": "How do frameworks support board oversight?",
+                  "a": "Clear structures for reporting and accountability.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is a maturity model?",
+                  "a": "Assessing ERM development against defined levels.",
+                  "explain": "Improvement."
+              },
+              {
+                  "q": "How do frameworks treat risk appetite?",
+                  "a": "Central element linking strategy and risk-taking.",
+                  "explain": "Common."
+              },
+              {
+                  "q": "How do rating agencies use ERM scores?",
+                  "a": "Adjust capital adequacy expectations and ratings.",
+                  "explain": "Incentive."
+              },
+              {
+                  "q": "Why compare mandatory and voluntary frameworks?",
+                  "a": "Understand gaps and design internal frameworks.",
+                  "explain": "Exam theme."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "Financial statements",
+          "description": "Using financial statements in ERM: the balance sheet, income statement and cash flow statement, accounting versus economic and regulatory views, key ratios, and how accounting choices can hide or reveal risk.",
+          "cards": [
+              {
+                  "q": "What are the three main financial statements?",
+                  "a": "Balance sheet, income statement (P&L), cash flow statement.",
+                  "explain": "Plus notes."
+              },
+              {
+                  "q": "How can the balance sheet reveal risk?",
+                  "a": "Leverage, liquidity, asset quality, concentrations, off-balance sheet items.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "How can the cash flow statement reveal risk?",
+                  "a": "Reliance on financing, operating cash generation versus profit.",
+                  "explain": "Liquidity."
+              },
+              {
+                  "q": "What is an economic balance sheet?",
+                  "a": "Assets and liabilities at market-consistent values.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "Why can accounting profit mislead?",
+                  "a": "Accruals, valuation choices, smoothing, off-balance sheet items.",
+                  "explain": "Earnings quality."
+              },
+              {
+                  "q": "What ratios indicate liquidity risk?",
+                  "a": "Current ratio, quick ratio, cash ratio.",
+                  "explain": "Short-term."
+              },
+              {
+                  "q": "What ratios indicate leverage?",
+                  "a": "Debt/equity, interest cover, gearing.",
+                  "explain": "Solvency."
+              },
+              {
+                  "q": "What are off-balance sheet exposures?",
+                  "a": "Guarantees, derivatives, SPVs, commitments.",
+                  "explain": "Hidden risk."
+              },
+              {
+                  "q": "How do regulatory balance sheets differ?",
+                  "a": "Prescribed valuation and capital rules.",
+                  "explain": "Solvency view."
+              },
+              {
+                  "q": "How can financial statements be used in credit analysis?",
+                  "a": "Assess counterparties' ability to pay.",
+                  "explain": "Credit risk."
+              },
+              {
+                  "q": "What is fair value accounting?",
+                  "a": "Measuring assets/liabilities at market-based values.",
+                  "explain": "Volatility."
+              },
+              {
+                  "q": "How can accounting mismatches create risk?",
+                  "a": "Assets and liabilities measured differently creating P&L volatility.",
+                  "explain": "IFRS 17/9."
+              },
+              {
+                  "q": "What is earnings management?",
+                  "a": "Using accounting discretion to smooth or inflate profits.",
+                  "explain": "Red flag."
+              },
+              {
+                  "q": "Why is the notes section important?",
+                  "a": "Contains risk disclosures, sensitivities, contingent liabilities.",
+                  "explain": "Detail."
+              },
+              {
+                  "q": "How can ERM use financial statements?",
+                  "a": "Identifying risks, setting metrics and monitoring.",
+                  "explain": "Integration."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "ERM processes and structures",
+          "description": "Organising ERM: the ERM process cycle, organisational structures (centralised, decentralised, hub-and-spoke), roles and responsibilities, risk committees, and integrating ERM into planning and performance management.",
+          "cards": [
+              {
+                  "q": "What is the ERM process cycle?",
+                  "a": "Establish context → identify → assess → respond → monitor and report → review.",
+                  "explain": "Continuous."
+              },
+              {
+                  "q": "What is a centralised ERM structure?",
+                  "a": "Risk management concentrated in a central function.",
+                  "explain": "Consistency."
+              },
+              {
+                  "q": "What is a decentralised structure?",
+                  "a": "Risk managed within business units.",
+                  "explain": "Closer to risks."
+              },
+              {
+                  "q": "What is hub-and-spoke?",
+                  "a": "Central risk function with embedded risk staff in business units.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "What roles do business units play?",
+                  "a": "Own and manage their risks within appetite (first line).",
+                  "explain": "Ownership."
+              },
+              {
+                  "q": "What is the role of internal audit?",
+                  "a": "Independent assurance on effectiveness of risk management.",
+                  "explain": "Third line."
+              },
+              {
+                  "q": "How is ERM integrated with planning?",
+                  "a": "Risk assessment of business plans and capital projections.",
+                  "explain": "Strategy."
+              },
+              {
+                  "q": "What is a risk management function?",
+                  "a": "Second-line function designing frameworks and challenging risks.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "What committees support ERM?",
+                  "a": "Board risk committee, executive risk committee, ALCO, underwriting committees.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "How does ERM relate to performance management?",
+                  "a": "Risk-adjusted performance measures and incentives.",
+                  "explain": "RAROC."
+              },
+              {
+                  "q": "What are key risk indicators?",
+                  "a": "Metrics providing early warning of rising risk.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "What is escalation?",
+                  "a": "Process for raising breaches or issues to appropriate levels.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "How is ERM documented?",
+                  "a": "Framework documents, policies, risk registers.",
+                  "explain": "Evidence."
+              },
+              {
+                  "q": "How can structures fail?",
+                  "a": "Unclear responsibilities, lack of independence, poor communication.",
+                  "explain": "Case studies."
+              },
+              {
+                  "q": "Why must ERM be resourced adequately?",
+                  "a": "Effective oversight needs skilled staff and systems.",
+                  "explain": "Proportionality."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Risk policy",
+          "description": "Risk appetite, tolerance and limits: articulating risk appetite statements, quantitative and qualitative measures, cascading into limits, risk policies by risk type, and the desired risk profile and risk objectives.",
+          "cards": [
+              {
+                  "q": "What is risk appetite?",
+                  "a": "The amount and type of risk an organisation is willing to accept in pursuit of its objectives.",
+                  "explain": "Board-set."
+              },
+              {
+                  "q": "What is risk tolerance?",
+                  "a": "The acceptable variation around objectives or limits for specific risks.",
+                  "explain": "Operational."
+              },
+              {
+                  "q": "What is a risk limit?",
+                  "a": "A quantitative boundary on exposure (e.g. VaR limit, counterparty limit).",
+                  "explain": "Cascaded from appetite."
+              },
+              {
+                  "q": "What makes a good risk appetite statement?",
+                  "a": "Linked to strategy, measurable, covers all material risks, understood, cascaded, monitored.",
+                  "explain": "Qualities."
+              },
+              {
+                  "q": "Give examples of risk appetite metrics.",
+                  "a": "Solvency ratio target, earnings volatility, probability of ruin, rating target, liquidity coverage.",
+                  "explain": "Quantitative."
+              },
+              {
+                  "q": "What are qualitative appetite statements?",
+                  "a": "E.g. zero tolerance for regulatory breaches or reputational damage.",
+                  "explain": "Non-quantifiable risks."
+              },
+              {
+                  "q": "What is the desired risk profile?",
+                  "a": "The mix of risks the organisation wants to hold.",
+                  "explain": "Strategy."
+              },
+              {
+                  "q": "What is a risk policy?",
+                  "a": "Rules for managing a risk type, including limits, responsibilities, reporting.",
+                  "explain": "Implementation."
+              },
+              {
+                  "q": "How is appetite cascaded?",
+                  "a": "From enterprise level to business units and risk types via limits.",
+                  "explain": "Consistency."
+              },
+              {
+                  "q": "What happens when limits are breached?",
+                  "a": "Escalation and remedial action per policy.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "Why link appetite to capital?",
+                  "a": "Capital determines capacity to absorb losses.",
+                  "explain": "Risk capacity."
+              },
+              {
+                  "q": "What is risk capacity?",
+                  "a": "Maximum risk that can be borne before breaching constraints.",
+                  "explain": "Upper bound."
+              },
+              {
+                  "q": "How often is appetite reviewed?",
+                  "a": "At least annually or on strategic change.",
+                  "explain": "Dynamic."
+              },
+              {
+                  "q": "What stakeholders influence appetite?",
+                  "a": "Shareholders, regulators, rating agencies, policyholders.",
+                  "explain": "Expectations."
+              },
+              {
+                  "q": "What are risk objectives?",
+                  "a": "Targets for managing risk to support business goals.",
+                  "explain": "Alignment."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "Monitoring and communication of risk",
+          "description": "Monitoring the risk profile against appetite and communicating risk: key risk indicators, risk dashboards, risk reporting to boards and stakeholders, disclosure, and tailoring communications to the audience.",
+          "cards": [
+              {
+                  "q": "What is risk monitoring?",
+                  "a": "Ongoing tracking of risks and controls against appetite and limits.",
+                  "explain": "Early warning."
+              },
+              {
+                  "q": "What are key risk indicators (KRIs)?",
+                  "a": "Metrics signalling changes in risk levels (e.g. lapse rates, staff turnover).",
+                  "explain": "Leading indicators."
+              },
+              {
+                  "q": "What is a risk dashboard?",
+                  "a": "A summary report of key risks, metrics and trends.",
+                  "explain": "Board reporting."
+              },
+              {
+                  "q": "What should board risk reports include?",
+                  "a": "Risk profile vs appetite, breaches, emerging risks, key changes, actions.",
+                  "explain": "Decision-useful."
+              },
+              {
+                  "q": "How should communications vary by audience?",
+                  "a": "Technical detail for risk specialists; key messages for board; public disclosures for investors.",
+                  "explain": "Tailoring."
+              },
+              {
+                  "q": "What are external risk disclosures?",
+                  "a": "Annual report risk sections, SFCR, Pillar 3 reports.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "Why is timeliness important?",
+                  "a": "Late information limits response.",
+                  "explain": "Frequency."
+              },
+              {
+                  "q": "What is a heat map?",
+                  "a": "Visual display of risks by likelihood and impact.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "What are limitations of heat maps?",
+                  "a": "Oversimplify, ignore correlations and tails.",
+                  "explain": "Use with care."
+              },
+              {
+                  "q": "What is escalation reporting?",
+                  "a": "Reporting significant issues outside regular cycles.",
+                  "explain": "Urgency."
+              },
+              {
+                  "q": "How can risk communication fail?",
+                  "a": "Too complex, too late, overly optimistic.",
+                  "explain": "Case studies."
+              },
+              {
+                  "q": "What is the role of the CRO in communication?",
+                  "a": "Presents independent view of risk to board.",
+                  "explain": "Challenge."
+              },
+              {
+                  "q": "How are emerging risks communicated?",
+                  "a": "Horizon scanning reports and scenario narratives.",
+                  "explain": "Uncertainty."
+              },
+              {
+                  "q": "What is risk transparency?",
+                  "a": "Clear, honest reporting of risks.",
+                  "explain": "Culture."
+              },
+              {
+                  "q": "How can KRIs be chosen?",
+                  "a": "Relevance, predictiveness, measurability, thresholds.",
+                  "explain": "Design."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Stakeholders",
+          "description": "Stakeholders in ERM — shareholders, policyholders and customers, employees, management, creditors, regulators, rating agencies, auditors, government and society — their interests in the organisation's risk management and how ERM responds.",
+          "cards": [
+              {
+                  "q": "List the main ERM stakeholders.",
+                  "a": "Shareholders, debt holders, customers/policyholders, employees, management, board, regulators, rating agencies, auditors, government, society.",
+                  "explain": "Broad."
+              },
+              {
+                  "q": "What do shareholders want from ERM?",
+                  "a": "Value creation, optimal risk-return, avoidance of ruin.",
+                  "explain": "Return focus."
+              },
+              {
+                  "q": "What do debt holders want?",
+                  "a": "Low default risk, protective covenants.",
+                  "explain": "Downside focus."
+              },
+              {
+                  "q": "What do policyholders want?",
+                  "a": "Security of claims and fair treatment.",
+                  "explain": "Protection."
+              },
+              {
+                  "q": "What do regulators want?",
+                  "a": "Solvency, market stability, consumer protection.",
+                  "explain": "Minimum standards."
+              },
+              {
+                  "q": "What do rating agencies want?",
+                  "a": "Strong capital and ERM to support ratings.",
+                  "explain": "Creditworthiness."
+              },
+              {
+                  "q": "What do employees want?",
+                  "a": "Job security, fair incentives.",
+                  "explain": "Stability."
+              },
+              {
+                  "q": "How can stakeholder interests conflict?",
+                  "a": "Shareholders may prefer risk for return; debt holders and regulators prefer safety.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "What is agency risk?",
+                  "a": "Managers acting in their own interests rather than owners'.",
+                  "explain": "Incentives."
+              },
+              {
+                  "q": "How does ERM manage stakeholder conflicts?",
+                  "a": "Clear appetite, transparent reporting, governance.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "What is the role of auditors?",
+                  "a": "Assurance on financial statements and controls.",
+                  "explain": "Independence."
+              },
+              {
+                  "q": "What is the role of government?",
+                  "a": "Legislation, bailouts, taxation.",
+                  "explain": "Systemic."
+              },
+              {
+                  "q": "Why consider society as a stakeholder?",
+                  "a": "ESG expectations and reputational risk.",
+                  "explain": "Licence to operate."
+              },
+              {
+                  "q": "How do stakeholders affect risk appetite?",
+                  "a": "Their expectations define acceptable risk.",
+                  "explain": "Appetite setting."
+              },
+              {
+                  "q": "How can communication address stakeholder needs?",
+                  "a": "Tailored disclosures.",
+                  "explain": "Chapter 10."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Governance functions and the role of the CRO",
+          "description": "Governance of risk: the board and its committees, key functions (risk management, compliance, internal audit, actuarial), the Chief Risk Officer's role, independence and reporting lines, and remuneration and culture.",
+          "cards": [
+              {
+                  "q": "What is the board's role in risk governance?",
+                  "a": "Set strategy and appetite, oversee framework, ensure adequate resources and culture.",
+                  "explain": "Ultimate responsibility."
+              },
+              {
+                  "q": "What does a board risk committee do?",
+                  "a": "Oversees risk profile, appetite, framework and CRO.",
+                  "explain": "Non-executive."
+              },
+              {
+                  "q": "What is the CRO's role?",
+                  "a": "Lead the risk function, provide independent oversight and challenge, report to board.",
+                  "explain": "Second line."
+              },
+              {
+                  "q": "Why must the CRO be independent?",
+                  "a": "To challenge business decisions without conflicts.",
+                  "explain": "Reporting line to board/risk committee."
+              },
+              {
+                  "q": "What is the compliance function?",
+                  "a": "Ensures adherence to laws and regulations.",
+                  "explain": "Second line."
+              },
+              {
+                  "q": "What is the actuarial function (insurers)?",
+                  "a": "Oversees technical provisions and opines on underwriting and reinsurance.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "What is internal audit?",
+                  "a": "Independent assurance on governance, risk and controls.",
+                  "explain": "Third line."
+              },
+              {
+                  "q": "How should remuneration support governance?",
+                  "a": "Risk-adjusted, deferred, with malus/clawback.",
+                  "explain": "Incentives."
+              },
+              {
+                  "q": "What is tone from the top?",
+                  "a": "Leadership demonstrating commitment to risk management.",
+                  "explain": "Culture."
+              },
+              {
+                  "q": "What is the risk of a weak CRO?",
+                  "a": "Risk function ignored, excessive risk-taking.",
+                  "explain": "Case studies."
+              },
+              {
+                  "q": "What should the CRO report on?",
+                  "a": "Risk profile, breaches, emerging risks, capital adequacy.",
+                  "explain": "Board."
+              },
+              {
+                  "q": "What skills does a CRO need?",
+                  "a": "Technical risk knowledge, business understanding, communication, independence.",
+                  "explain": "Profile."
+              },
+              {
+                  "q": "What are fit and proper requirements?",
+                  "a": "Senior individuals must be competent and honest.",
+                  "explain": "Regulation."
+              },
+              {
+                  "q": "What is the senior managers regime?",
+                  "a": "UK accountability regime assigning responsibilities to individuals.",
+                  "explain": "SM&CR."
+              },
+              {
+                  "q": "How can governance fail?",
+                  "a": "Groupthink, dominant CEO, weak challenge.",
+                  "explain": "Chapter 32."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Business analysis, risk id and initial assessment",
+          "description": "Identifying and initially assessing risks: business analysis (PESTLE, SWOT, Porter), risk identification tools (brainstorming, checklists, interviews, process mapping, scenario workshops), risk registers, qualitative assessment and emerging risk identification.",
+          "cards": [
+              {
+                  "q": "What is PESTLE analysis?",
+                  "a": "Examining political, economic, social, technological, legal and environmental factors.",
+                  "explain": "External risks."
+              },
+              {
+                  "q": "What is SWOT analysis?",
+                  "a": "Strengths, weaknesses, opportunities, threats.",
+                  "explain": "Strategic."
+              },
+              {
+                  "q": "What is Porter's five forces?",
+                  "a": "Competitive rivalry, supplier power, buyer power, threat of substitutes, threat of new entrants.",
+                  "explain": "Industry risk."
+              },
+              {
+                  "q": "List risk identification techniques.",
+                  "a": "Brainstorming, checklists, interviews, questionnaires, process mapping, scenario analysis, Delphi, fault trees, HAZOP, SWIFT.",
+                  "explain": "Toolkit."
+              },
+              {
+                  "q": "What is the Delphi technique?",
+                  "a": "Anonymous expert opinions refined over rounds to reach consensus.",
+                  "explain": "Reduces groupthink."
+              },
+              {
+                  "q": "What is a risk register?",
+                  "a": "Record of risks with owners, assessments, controls and actions.",
+                  "explain": "Central tool."
+              },
+              {
+                  "q": "What is initial (qualitative) assessment?",
+                  "a": "Rating risks by likelihood and impact on scales.",
+                  "explain": "Prioritisation."
+              },
+              {
+                  "q": "What is a fault tree?",
+                  "a": "Diagram tracing causes leading to an event.",
+                  "explain": "Operational risk."
+              },
+              {
+                  "q": "What is an event tree?",
+                  "a": "Diagram tracing consequences following an event.",
+                  "explain": "Scenario."
+              },
+              {
+                  "q": "How are emerging risks identified?",
+                  "a": "Horizon scanning, expert panels, external research.",
+                  "explain": "Uncertainty."
+              },
+              {
+                  "q": "What is gross vs net risk?",
+                  "a": "Before and after controls.",
+                  "explain": "Assessment."
+              },
+              {
+                  "q": "What is a risk bow-tie?",
+                  "a": "Diagram of causes, event, consequences, with preventive and mitigating controls.",
+                  "explain": "Visualisation."
+              },
+              {
+                  "q": "Why involve many staff in identification?",
+                  "a": "Broader knowledge and ownership.",
+                  "explain": "Completeness."
+              },
+              {
+                  "q": "What is process mapping?",
+                  "a": "Charting processes to find failure points.",
+                  "explain": "Operational."
+              },
+              {
+                  "q": "How often should risk identification occur?",
+                  "a": "Continuously and at least annually.",
+                  "explain": "Dynamic."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Introduction to risk measurement",
+          "description": "Measuring risk: deviation measures (standard deviation, tracking error), tail measures (VaR, TVaR/expected shortfall, probability of ruin), coherence properties, time horizons and confidence levels, and choosing measures for different purposes.",
+          "cards": [
+              {
+                  "q": "What is standard deviation as a risk measure?",
+                  "a": "Dispersion around the mean; penalises upside and downside.",
+                  "explain": "Symmetric."
+              },
+              {
+                  "q": "What is Value at Risk?",
+                  "a": "Loss level not exceeded with probability α over a horizon.",
+                  "explain": "Quantile."
+              },
+              {
+                  "q": "What is TVaR (expected shortfall)?",
+                  "a": "Expected loss given loss exceeds VaR.",
+                  "explain": "Tail average."
+              },
+              {
+                  "q": "What are the coherence properties?",
+                  "a": "Monotonicity, sub-additivity, positive homogeneity, translation invariance.",
+                  "explain": "Artzner et al."
+              },
+              {
+                  "q": "Is VaR coherent?",
+                  "a": "No — it can fail sub-additivity.",
+                  "explain": "Diversification issue."
+              },
+              {
+                  "q": "Is TVaR coherent?",
+                  "a": "Yes.",
+                  "explain": "Preferred."
+              },
+              {
+                  "q": "What is probability of ruin?",
+                  "a": "Probability that surplus falls below zero.",
+                  "explain": "Solvency."
+              },
+              {
+                  "q": "What is tracking error?",
+                  "a": "Standard deviation of returns relative to a benchmark.",
+                  "explain": "Relative risk."
+              },
+              {
+                  "q": "How is the time horizon chosen?",
+                  "a": "Reflecting how long to recognise and respond to losses (e.g. one year for insurers, 10 days for trading).",
+                  "explain": "Purpose."
+              },
+              {
+                  "q": "How is the confidence level chosen?",
+                  "a": "Reflecting risk appetite or rating target (e.g. 99.5%).",
+                  "explain": "Calibration."
+              },
+              {
+                  "q": "What is semi-variance?",
+                  "a": "Variance of outcomes below the mean.",
+                  "explain": "Downside."
+              },
+              {
+                  "q": "What is a spectral risk measure?",
+                  "a": "Weighted average of quantiles with increasing weights for worse outcomes.",
+                  "explain": "Generalisation."
+              },
+              {
+                  "q": "What are limitations of VaR?",
+                  "a": "Ignores tail beyond quantile, not sub-additive, estimation error.",
+                  "explain": "Supplement."
+              },
+              {
+                  "q": "What is a stress test as a measure?",
+                  "a": "Loss under a specified scenario.",
+                  "explain": "Complement."
+              },
+              {
+                  "q": "What is expected loss vs unexpected loss?",
+                  "a": "Expected covered by pricing/provisions; unexpected by capital.",
+                  "explain": "Credit risk."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Introduction to risk modelling",
+          "description": "Modelling risk: deterministic versus stochastic models, correlation measures (Pearson, Spearman, Kendall), their properties and limitations, model building process, choice of distributions, and the advantages and disadvantages of different modelling approaches.",
+          "cards": [
+              {
+                  "q": "What is Pearson correlation?",
+                  "a": "Measure of linear dependence between two variables.",
+                  "explain": "Sensitive to outliers."
+              },
+              {
+                  "q": "What is Spearman's rho?",
+                  "a": "Correlation of ranks.",
+                  "explain": "Monotonic dependence."
+              },
+              {
+                  "q": "What is Kendall's tau?",
+                  "a": "Concordance-based rank correlation.",
+                  "explain": "Copula-friendly."
+              },
+              {
+                  "q": "What are limitations of linear correlation?",
+                  "a": "Only captures linear dependence; not invariant to transformations; zero correlation doesn't imply independence; misleading in tails.",
+                  "explain": "Use rank measures."
+              },
+              {
+                  "q": "What is a deterministic model?",
+                  "a": "Single projection with fixed assumptions.",
+                  "explain": "Simple."
+              },
+              {
+                  "q": "What is a stochastic model?",
+                  "a": "Uses random variables to produce distributions of outcomes.",
+                  "explain": "Captures variability."
+              },
+              {
+                  "q": "What are the steps in building a model?",
+                  "a": "Define objectives, choose structure, collect data, fit parameters, validate, document, use and review.",
+                  "explain": "Process."
+              },
+              {
+                  "q": "How are distributions chosen?",
+                  "a": "Based on data features (skew, tails), theory, fit tests.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What is a factor-based model?",
+                  "a": "Outcomes driven by common factors.",
+                  "explain": "Dimension reduction."
+              },
+              {
+                  "q": "What is historical simulation?",
+                  "a": "Using past data directly as scenarios.",
+                  "explain": "No distribution assumption."
+              },
+              {
+                  "q": "What is Monte Carlo simulation?",
+                  "a": "Generating random scenarios from fitted distributions.",
+                  "explain": "Flexible."
+              },
+              {
+                  "q": "What is model risk?",
+                  "a": "Wrong model or misuse.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "What is parameter risk?",
+                  "a": "Uncertainty in fitted parameters.",
+                  "explain": "Estimation."
+              },
+              {
+                  "q": "What is a correlation matrix?",
+                  "a": "Matrix of pairwise correlations; must be positive semi-definite.",
+                  "explain": "Aggregation."
+              },
+              {
+                  "q": "Why might correlations change in stress?",
+                  "a": "Common shocks cause assets to fall together.",
+                  "explain": "Tail dependence."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Statistical distributions",
+          "description": "Distributions used in risk modelling: normal and lognormal, Student's t, heavy-tailed distributions (Pareto, generalised Pareto), gamma and Weibull, discrete distributions for counts, multivariate distributions, and choosing and fitting distributions.",
+          "cards": [
+              {
+                  "q": "Why is the normal distribution often inadequate?",
+                  "a": "Financial returns show fat tails and skewness.",
+                  "explain": "Underestimates extremes."
+              },
+              {
+                  "q": "What is the lognormal distribution used for?",
+                  "a": "Asset prices and claim sizes (positive, skewed).",
+                  "explain": "Log is normal."
+              },
+              {
+                  "q": "What is Student's t used for?",
+                  "a": "Returns with fat tails; degrees of freedom control tail weight.",
+                  "explain": "Heavier than normal."
+              },
+              {
+                  "q": "What is the Pareto distribution?",
+                  "a": "Heavy-tailed distribution for large losses.",
+                  "explain": "Power-law tail."
+              },
+              {
+                  "q": "What is the generalised Pareto distribution?",
+                  "a": "Distribution for exceedances over a high threshold.",
+                  "explain": "EVT."
+              },
+              {
+                  "q": "What is the gamma distribution used for?",
+                  "a": "Positive skewed quantities like claim amounts.",
+                  "explain": "Flexible."
+              },
+              {
+                  "q": "What is the Weibull distribution?",
+                  "a": "Flexible distribution for positive values (e.g. lifetimes, losses).",
+                  "explain": "Tail shape."
+              },
+              {
+                  "q": "Which distributions model counts?",
+                  "a": "Poisson, binomial, negative binomial.",
+                  "explain": "Frequency."
+              },
+              {
+                  "q": "What is the multivariate normal?",
+                  "a": "Joint normal distribution defined by means and covariance matrix.",
+                  "explain": "Elliptical."
+              },
+              {
+                  "q": "What is a mixture distribution?",
+                  "a": "Combining distributions to capture regimes or heterogeneity.",
+                  "explain": "Fat tails."
+              },
+              {
+                  "q": "How are distributions fitted?",
+                  "a": "Maximum likelihood, method of moments.",
+                  "explain": "Estimation."
+              },
+              {
+                  "q": "How is fit assessed?",
+                  "a": "Q-Q plots, goodness-of-fit tests, AIC/BIC.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "What is skewness?",
+                  "a": "Asymmetry of a distribution.",
+                  "explain": "Third moment."
+              },
+              {
+                  "q": "What is kurtosis?",
+                  "a": "Tail heaviness relative to normal.",
+                  "explain": "Fourth moment."
+              },
+              {
+                  "q": "Why use multivariate t?",
+                  "a": "Captures joint fat tails and tail dependence.",
+                  "explain": "Better than normal."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Time series analysis",
+          "description": "Time series in risk modelling: stationarity, autoregressive and moving average models, random walks, volatility clustering and GARCH models, cointegration, and using time series to project economic and financial variables.",
+          "cards": [
+              {
+                  "q": "What is stationarity?",
+                  "a": "Statistical properties (mean, variance, autocorrelation) constant over time.",
+                  "explain": "Required for many models."
+              },
+              {
+                  "q": "What is an AR(1) model?",
+                  "a": "$X_t = \\mu + \\phi(X_{t-1} - \\mu) + \\varepsilon_t$.",
+                  "explain": "Stationary if $|\\phi| \\lt 1$."
+              },
+              {
+                  "q": "What is a random walk?",
+                  "a": "$X_t = X_{t-1} + \\varepsilon_t$ — non-stationary.",
+                  "explain": "Share prices (log)."
+              },
+              {
+                  "q": "What is an MA(q) model?",
+                  "a": "Current value depends on current and past q shocks.",
+                  "explain": "Short memory."
+              },
+              {
+                  "q": "What is ARIMA?",
+                  "a": "AR and MA models applied to differenced data.",
+                  "explain": "Non-stationary series."
+              },
+              {
+                  "q": "What is volatility clustering?",
+                  "a": "Large changes tend to be followed by large changes.",
+                  "explain": "Financial returns."
+              },
+              {
+                  "q": "What is a GARCH model?",
+                  "a": "Variance depends on past squared shocks and past variances: $\\sigma_t^2 = \\omega + \\alpha\\varepsilon_{t-1}^2 + \\beta\\sigma_{t-1}^2$.",
+                  "explain": "Captures clustering."
+              },
+              {
+                  "q": "What is cointegration?",
+                  "a": "Non-stationary series with a stationary linear combination.",
+                  "explain": "Long-run relationship."
+              },
+              {
+                  "q": "What is autocorrelation?",
+                  "a": "Correlation of a series with its lagged values.",
+                  "explain": "ACF."
+              },
+              {
+                  "q": "How are time series models used in ERM?",
+                  "a": "Projecting interest rates, inflation, returns for scenario generation.",
+                  "explain": "ESGs."
+              },
+              {
+                  "q": "What is mean reversion?",
+                  "a": "Tendency to revert to a long-run level.",
+                  "explain": "Interest rates."
+              },
+              {
+                  "q": "What is the Wilkie model?",
+                  "a": "A cascade stochastic model for UK economic variables (inflation, yields, equities).",
+                  "explain": "Actuarial ESG."
+              },
+              {
+                  "q": "What are limitations of time series models?",
+                  "a": "Structural breaks, parameter instability, fat tails.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What is a structural break?",
+                  "a": "A sudden change in the underlying process.",
+                  "explain": "Regime shifts."
+              },
+              {
+                  "q": "What is a regime-switching model?",
+                  "a": "Parameters switch between states (e.g. calm/crisis).",
+                  "explain": "Captures fat tails."
+              }
+          ]
+      },
+      {
+          "id": "m18",
+          "title": "Copulas",
+          "description": "Modelling dependence with copulas: Sklar's theorem, Gaussian and t copulas, Archimedean copulas (Clayton, Gumbel, Frank), tail dependence, fitting copulas, simulation, and their use in aggregating risks.",
+          "cards": [
+              {
+                  "q": "What is Sklar's theorem?",
+                  "a": "Any joint distribution can be written as a copula applied to its marginal distributions.",
+                  "explain": "Separates marginals from dependence."
+              },
+              {
+                  "q": "What is the Gaussian copula?",
+                  "a": "Copula implied by the multivariate normal.",
+                  "explain": "No tail dependence."
+              },
+              {
+                  "q": "What is the t copula?",
+                  "a": "Copula from the multivariate t; symmetric tail dependence.",
+                  "explain": "Degrees of freedom."
+              },
+              {
+                  "q": "What is the Clayton copula?",
+                  "a": "Archimedean copula with lower tail dependence.",
+                  "explain": "Joint crashes."
+              },
+              {
+                  "q": "What is the Gumbel copula?",
+                  "a": "Archimedean copula with upper tail dependence.",
+                  "explain": "Joint extreme losses."
+              },
+              {
+                  "q": "What is the Frank copula?",
+                  "a": "Archimedean copula with no tail dependence.",
+                  "explain": "Symmetric."
+              },
+              {
+                  "q": "What is tail dependence?",
+                  "a": "Probability of extreme outcome in one variable given extreme in another.",
+                  "explain": "Coefficient λ."
+              },
+              {
+                  "q": "How are copulas fitted?",
+                  "a": "Maximum likelihood (full or pseudo), inference functions for margins, rank correlation matching.",
+                  "explain": "Estimation."
+              },
+              {
+                  "q": "How is a copula simulated?",
+                  "a": "Generate dependent uniforms from the copula, then transform with inverse marginals.",
+                  "explain": "Simulation."
+              },
+              {
+                  "q": "Why use copulas in ERM?",
+                  "a": "Aggregate risks with realistic dependence, especially in tails.",
+                  "explain": "Capital."
+              },
+              {
+                  "q": "What was the criticism of the Gaussian copula in 2008?",
+                  "a": "Underestimated joint defaults due to no tail dependence.",
+                  "explain": "CDO pricing."
+              },
+              {
+                  "q": "What is the empirical copula?",
+                  "a": "Copula estimated directly from ranked data.",
+                  "explain": "Diagnostics."
+              },
+              {
+                  "q": "What are limitations of copulas?",
+                  "a": "Parameter uncertainty, limited tail data, choice of family.",
+                  "explain": "Model risk."
+              },
+              {
+                  "q": "What is a vine copula?",
+                  "a": "Building high-dimensional dependence from bivariate copulas.",
+                  "explain": "Flexibility."
+              },
+              {
+                  "q": "How does Kendall's tau relate to copulas?",
+                  "a": "Depends only on the copula, not marginals.",
+                  "explain": "Calibration."
+              }
+          ]
+      },
+      {
+          "id": "m19",
+          "title": "Fitting models",
+          "description": "Fitting and validating risk models: data preparation, estimation methods (MLE, method of moments, Bayesian), model selection criteria (AIC, BIC), goodness-of-fit, back-testing, parameter and model uncertainty, and expert judgement.",
+          "cards": [
+              {
+                  "q": "What is maximum likelihood estimation?",
+                  "a": "Choosing parameters that maximise the probability of observed data.",
+                  "explain": "Efficient."
+              },
+              {
+                  "q": "What is the method of moments?",
+                  "a": "Equating sample and theoretical moments.",
+                  "explain": "Simple."
+              },
+              {
+                  "q": "What is Bayesian estimation?",
+                  "a": "Combining prior beliefs with data to get a posterior distribution.",
+                  "explain": "Parameter uncertainty."
+              },
+              {
+                  "q": "What is AIC?",
+                  "a": "$2k - 2\\ln L$ — trades off fit and complexity.",
+                  "explain": "Lower is better."
+              },
+              {
+                  "q": "What is BIC?",
+                  "a": "$k\\ln n - 2\\ln L$ — heavier penalty for complexity.",
+                  "explain": "Parsimony."
+              },
+              {
+                  "q": "What is back-testing?",
+                  "a": "Comparing model predictions to actual outcomes (e.g. VaR exceedances).",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "What is a Q-Q plot?",
+                  "a": "Plot of sample vs theoretical quantiles.",
+                  "explain": "Tail fit."
+              },
+              {
+                  "q": "What is parameter uncertainty?",
+                  "a": "Uncertainty in fitted parameters due to limited data.",
+                  "explain": "Bootstrap, Bayesian."
+              },
+              {
+                  "q": "What is model uncertainty?",
+                  "a": "Uncertainty about model form.",
+                  "explain": "Compare models."
+              },
+              {
+                  "q": "How is data prepared?",
+                  "a": "Cleaning, adjusting for inflation/changes, checking consistency.",
+                  "explain": "Quality."
+              },
+              {
+                  "q": "What is overfitting?",
+                  "a": "Model captures noise.",
+                  "explain": "Out-of-sample tests."
+              },
+              {
+                  "q": "What is expert judgement?",
+                  "a": "Using expertise where data is insufficient.",
+                  "explain": "Documented."
+              },
+              {
+                  "q": "What is the Kupiec test?",
+                  "a": "Test of VaR exceedance frequency.",
+                  "explain": "Back-testing."
+              },
+              {
+                  "q": "How can small tail data be handled?",
+                  "a": "EVT, external data, expert judgement.",
+                  "explain": "Tails."
+              },
+              {
+                  "q": "Why document model fitting?",
+                  "a": "Transparency and validation.",
+                  "explain": "Governance."
+              }
+          ]
+      },
+      {
+          "id": "m20",
+          "title": "Extreme value theory",
+          "description": "Extreme value theory for tail risk: block maxima and the GEV distribution, peaks-over-threshold and the generalised Pareto distribution, threshold selection, estimating extreme quantiles, and modelling events with low probability.",
+          "cards": [
+              {
+                  "q": "What is extreme value theory?",
+                  "a": "Statistical theory for modelling the tails of distributions.",
+                  "explain": "Rare events."
+              },
+              {
+                  "q": "What is the block maxima approach?",
+                  "a": "Modelling maxima of blocks (e.g. annual maxima) with the GEV distribution.",
+                  "explain": "Fisher-Tippett."
+              },
+              {
+                  "q": "What are the GEV types?",
+                  "a": "Gumbel (light tail), Fréchet (heavy tail), Weibull (bounded).",
+                  "explain": "Shape parameter."
+              },
+              {
+                  "q": "What is peaks-over-threshold?",
+                  "a": "Modelling exceedances above a high threshold with the GPD.",
+                  "explain": "Uses more data."
+              },
+              {
+                  "q": "How is the threshold chosen?",
+                  "a": "Mean excess plots, stability of parameter estimates.",
+                  "explain": "Bias-variance trade-off."
+              },
+              {
+                  "q": "What is a mean excess plot?",
+                  "a": "Mean excess over threshold vs threshold; linear for GPD.",
+                  "explain": "Diagnostic."
+              },
+              {
+                  "q": "What does a positive GPD shape parameter imply?",
+                  "a": "Heavy (Pareto-type) tail.",
+                  "explain": "Infinite moments possible."
+              },
+              {
+                  "q": "How are extreme quantiles estimated?",
+                  "a": "From fitted GPD tail formula.",
+                  "explain": "VaR at high levels."
+              },
+              {
+                  "q": "What are limitations of EVT?",
+                  "a": "Little data, threshold choice, assumes iid, non-stationarity.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How is EVT used in ERM?",
+                  "a": "Estimating tail risk for capital, stress testing.",
+                  "explain": "Operational and market risk."
+              },
+              {
+                  "q": "What is the return level?",
+                  "a": "Value expected to be exceeded once per return period.",
+                  "explain": "Catastrophe."
+              },
+              {
+                  "q": "Why not just use normal distributions?",
+                  "a": "They understate extremes.",
+                  "explain": "Fat tails."
+              },
+              {
+                  "q": "How does EVT link to stress testing?",
+                  "a": "Helps calibrate severity of extreme scenarios.",
+                  "explain": "Integration."
+              },
+              {
+                  "q": "What is the Hill estimator?",
+                  "a": "Estimator of tail index for heavy tails.",
+                  "explain": "EVT."
+              },
+              {
+                  "q": "What is a low-probability, high-impact event?",
+                  "a": "Event with tiny probability but severe consequences.",
+                  "explain": "Syllabus 4.6."
+              }
+          ]
+      },
+      {
+          "id": "m21",
+          "title": "Use of models in ERM",
+          "description": "How models support ERM decisions — capital, pricing, strategy, risk appetite — and model risk and parameter risk: sources, governance and validation, the limitations of models, and the role of judgement.",
+          "cards": [
+              {
+                  "q": "How are models used in ERM?",
+                  "a": "Capital assessment, risk aggregation, pricing, strategic planning, stress testing, hedging.",
+                  "explain": "Decisions."
+              },
+              {
+                  "q": "What is model risk?",
+                  "a": "Losses from incorrect models or inappropriate use.",
+                  "explain": "Syllabus 4.7."
+              },
+              {
+                  "q": "What is parameter risk?",
+                  "a": "Risk from uncertain parameter values.",
+                  "explain": "Syllabus 4.7."
+              },
+              {
+                  "q": "How is model risk managed?",
+                  "a": "Model governance, validation, documentation, inventory, limits on use, challenger models.",
+                  "explain": "Framework."
+              },
+              {
+                  "q": "What is a model inventory?",
+                  "a": "Register of all models with owners and status.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is independent validation?",
+                  "a": "Review by staff not involved in building the model.",
+                  "explain": "Challenge."
+              },
+              {
+                  "q": "What is a challenger model?",
+                  "a": "Alternative model to test the main one.",
+                  "explain": "Benchmark."
+              },
+              {
+                  "q": "What are limitations of models?",
+                  "a": "Simplifications, data limits, assumptions, can't foresee structural change.",
+                  "explain": "Humility."
+              },
+              {
+                  "q": "What is the role of judgement?",
+                  "a": "Interpreting and overriding models where appropriate.",
+                  "explain": "Documented."
+              },
+              {
+                  "q": "How can model outputs be misused?",
+                  "a": "False precision, used outside intended purpose.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "What is model drift?",
+                  "a": "Model becoming inaccurate as conditions change.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "How can sensitivity analysis reduce model risk?",
+                  "a": "Shows dependence on assumptions.",
+                  "explain": "Robustness."
+              },
+              {
+                  "q": "What is the use test?",
+                  "a": "Models used in actual decisions.",
+                  "explain": "Embedding."
+              },
+              {
+                  "q": "What is model documentation?",
+                  "a": "Description of purpose, methodology, assumptions, limitations.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "Why are simple models sometimes better?",
+                  "a": "Transparent, robust, easier to understand.",
+                  "explain": "Parsimony."
+              }
+          ]
+      },
+      {
+          "id": "m22",
+          "title": "Assessment of market risks",
+          "description": "Assessing market risks: interest rate risk (duration, convexity, key rates, yield curve models), equity, property, currency and commodity risk, spread risk, asset-liability mismatch, and the use of scenarios and stochastic models.",
+          "cards": [
+              {
+                  "q": "How is interest rate risk measured?",
+                  "a": "Duration, convexity, PV01, key rate durations.",
+                  "explain": "Sensitivity."
+              },
+              {
+                  "q": "What is key rate duration?",
+                  "a": "Sensitivity to specific points on the yield curve.",
+                  "explain": "Non-parallel shifts."
+              },
+              {
+                  "q": "How is equity risk assessed?",
+                  "a": "Volatility, beta, VaR, stress tests.",
+                  "explain": "Market."
+              },
+              {
+                  "q": "How is currency risk assessed?",
+                  "a": "Net FX exposures, VaR, stress tests.",
+                  "explain": "Mismatch."
+              },
+              {
+                  "q": "What is spread risk?",
+                  "a": "Risk from changes in credit spreads.",
+                  "explain": "Corporate bonds."
+              },
+              {
+                  "q": "What is asset-liability mismatch risk?",
+                  "a": "Assets and liabilities responding differently to market changes.",
+                  "explain": "ALM."
+              },
+              {
+                  "q": "How are yield curve models used?",
+                  "a": "Simulate rate scenarios for risk assessment.",
+                  "explain": "Stochastic."
+              },
+              {
+                  "q": "What is basis risk?",
+                  "a": "Hedge and exposure not moving together.",
+                  "explain": "Imperfect hedges."
+              },
+              {
+                  "q": "What is property risk?",
+                  "a": "Changes in property values.",
+                  "explain": "Illiquid."
+              },
+              {
+                  "q": "What is commodity risk?",
+                  "a": "Exposure to commodity price changes.",
+                  "explain": "Non-financial firms."
+              },
+              {
+                  "q": "How are market risks aggregated?",
+                  "a": "Correlation matrices or joint simulation.",
+                  "explain": "Diversification."
+              },
+              {
+                  "q": "What is a principal component analysis for yield curves?",
+                  "a": "Decomposing curve moves into level, slope, curvature.",
+                  "explain": "Dimension reduction."
+              },
+              {
+                  "q": "Why are scenarios useful for market risk?",
+                  "a": "Capture joint moves and extreme events.",
+                  "explain": "Stress."
+              },
+              {
+                  "q": "How do embedded options affect market risk?",
+                  "a": "Guarantees create non-linear exposure.",
+                  "explain": "Greeks."
+              },
+              {
+                  "q": "What is inflation risk?",
+                  "a": "Changes in inflation affecting real values.",
+                  "explain": "Index-linked."
+              }
+          ]
+      },
+      {
+          "id": "m23",
+          "title": "Assessment of credit risks",
+          "description": "Assessing credit risk: default probability, loss given default and exposure at default, credit ratings, structural (Merton) and reduced-form models, credit portfolio models (CreditMetrics, CreditRisk+), counterparty risk, and concentration.",
+          "cards": [
+              {
+                  "q": "What are the components of credit loss?",
+                  "a": "PD × LGD × EAD.",
+                  "explain": "Expected loss."
+              },
+              {
+                  "q": "What is a structural credit model?",
+                  "a": "Default occurs when asset value falls below liabilities (Merton).",
+                  "explain": "Equity as option."
+              },
+              {
+                  "q": "What is a reduced-form model?",
+                  "a": "Default as a random event with hazard rate.",
+                  "explain": "Market spreads."
+              },
+              {
+                  "q": "What is CreditMetrics?",
+                  "a": "A portfolio model using rating migrations and correlations.",
+                  "explain": "Mark-to-market."
+              },
+              {
+                  "q": "What is CreditRisk+?",
+                  "a": "An actuarial default-mode model using Poisson-type default counts.",
+                  "explain": "Default only."
+              },
+              {
+                  "q": "What is a credit rating transition matrix?",
+                  "a": "Probabilities of moving between ratings.",
+                  "explain": "Migration risk."
+              },
+              {
+                  "q": "What is counterparty risk?",
+                  "a": "Risk counterparty fails on obligations (e.g. derivatives, reinsurance).",
+                  "explain": "Exposure varies."
+              },
+              {
+                  "q": "What is concentration risk in credit?",
+                  "a": "Large exposures to single names or sectors.",
+                  "explain": "Limits."
+              },
+              {
+                  "q": "What is default correlation?",
+                  "a": "Tendency of defaults to cluster.",
+                  "explain": "Portfolio risk."
+              },
+              {
+                  "q": "What is recovery risk?",
+                  "a": "Uncertainty in LGD.",
+                  "explain": "Collateral."
+              },
+              {
+                  "q": "What is wrong-way risk?",
+                  "a": "Exposure rises as counterparty credit worsens.",
+                  "explain": "Correlation."
+              },
+              {
+                  "q": "How are credit spreads decomposed?",
+                  "a": "Expected loss, risk premium, liquidity premium.",
+                  "explain": "Valuation."
+              },
+              {
+                  "q": "What is the KMV approach?",
+                  "a": "Distance-to-default from equity prices.",
+                  "explain": "Structural."
+              },
+              {
+                  "q": "How are credit risks stressed?",
+                  "a": "Downgrade and default scenarios, spread widening.",
+                  "explain": "Stress tests."
+              },
+              {
+                  "q": "What data is used for credit risk?",
+                  "a": "Ratings, spreads, default histories, financial statements.",
+                  "explain": "Inputs."
+              }
+          ]
+      },
+      {
+          "id": "m24",
+          "title": "Assessment of operational risks",
+          "description": "Assessing operational risk: categories (people, process, systems, external events), loss data collection, scenario analysis, risk and control self-assessment, KRIs, quantification via loss distribution approach, and limitations.",
+          "cards": [
+              {
+                  "q": "What are the categories of operational risk?",
+                  "a": "Internal fraud, external fraud, employment practices, clients/products, damage to assets, business disruption/systems, execution/process management.",
+                  "explain": "Basel categories."
+              },
+              {
+                  "q": "What is a loss distribution approach?",
+                  "a": "Modelling frequency and severity of operational losses, aggregated by simulation.",
+                  "explain": "Quantification."
+              },
+              {
+                  "q": "What is risk and control self-assessment (RCSA)?",
+                  "a": "Business units assess their risks and control effectiveness.",
+                  "explain": "Qualitative."
+              },
+              {
+                  "q": "What is scenario analysis for operational risk?",
+                  "a": "Expert estimation of plausible severe events.",
+                  "explain": "Tail data."
+              },
+              {
+                  "q": "Why is operational risk data limited?",
+                  "a": "Rare large losses, underreporting.",
+                  "explain": "External databases."
+              },
+              {
+                  "q": "What are KRIs for operational risk?",
+                  "a": "Staff turnover, system outages, complaints, error rates.",
+                  "explain": "Early warning."
+              },
+              {
+                  "q": "What is cyber risk?",
+                  "a": "Losses from cyber attacks or IT failures.",
+                  "explain": "Growing."
+              },
+              {
+                  "q": "What is conduct risk?",
+                  "a": "Losses from poor treatment of customers.",
+                  "explain": "Redress."
+              },
+              {
+                  "q": "How is external loss data used?",
+                  "a": "Supplements internal data for severity.",
+                  "explain": "Scaling."
+              },
+              {
+                  "q": "What is outsourcing risk?",
+                  "a": "Failure of third parties.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "What is business continuity risk?",
+                  "a": "Disruption to operations.",
+                  "explain": "BCP."
+              },
+              {
+                  "q": "What are limitations of op risk quantification?",
+                  "a": "Heavy tails, poor data, subjectivity.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "How can near misses help?",
+                  "a": "Reveal control weaknesses before losses.",
+                  "explain": "Learning."
+              },
+              {
+                  "q": "What is people risk?",
+                  "a": "Errors, key person dependency, misconduct.",
+                  "explain": "HR."
+              },
+              {
+                  "q": "What is legal risk?",
+                  "a": "Losses from legal actions or unenforceable contracts.",
+                  "explain": "Op risk subset."
+              }
+          ]
+      },
+      {
+          "id": "m25",
+          "title": "Assessment of other risks",
+          "description": "Assessing other risks: insurance and demographic risks, liquidity risk, strategic and business risks, reputational risk, regulatory and political risk, climate and ESG risks, and contagion and systemic risks.",
+          "cards": [
+              {
+                  "q": "How are insurance risks assessed?",
+                  "a": "Frequency-severity models, mortality/longevity models, catastrophe models.",
+                  "explain": "Underwriting risk."
+              },
+              {
+                  "q": "How is liquidity risk assessed?",
+                  "a": "Cash flow projections, liquidity stress tests, coverage ratios.",
+                  "explain": "Funding."
+              },
+              {
+                  "q": "What is funding liquidity vs market liquidity?",
+                  "a": "Funding: ability to raise cash; market: ability to sell assets without loss.",
+                  "explain": "Two types."
+              },
+              {
+                  "q": "How is strategic risk assessed?",
+                  "a": "Scenario analysis, business plan stress testing.",
+                  "explain": "Qualitative."
+              },
+              {
+                  "q": "How is reputational risk assessed?",
+                  "a": "Scenarios, media monitoring, stakeholder surveys.",
+                  "explain": "Hard to quantify."
+              },
+              {
+                  "q": "What is contagion risk?",
+                  "a": "Distress spreading between entities or markets.",
+                  "explain": "Syllabus 5.4."
+              },
+              {
+                  "q": "What is systemic risk?",
+                  "a": "Risk of failure of the financial system.",
+                  "explain": "Interconnectedness."
+              },
+              {
+                  "q": "How are climate risks assessed?",
+                  "a": "Scenario analysis (e.g. NGFS scenarios), carbon footprinting.",
+                  "explain": "Long horizon."
+              },
+              {
+                  "q": "What is political risk?",
+                  "a": "Losses from political events (expropriation, sanctions).",
+                  "explain": "International."
+              },
+              {
+                  "q": "What is regulatory risk?",
+                  "a": "Changes in regulation affecting business.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "What is longevity risk?",
+                  "a": "People living longer than expected.",
+                  "explain": "Pensions/annuities."
+              },
+              {
+                  "q": "What is pandemic risk?",
+                  "a": "Mortality/morbidity and economic disruption from pandemics.",
+                  "explain": "Scenario."
+              },
+              {
+                  "q": "How can group risk arise?",
+                  "a": "Intra-group exposures and contagion.",
+                  "explain": "Group structure."
+              },
+              {
+                  "q": "What is sustainability risk?",
+                  "a": "ESG events causing value loss.",
+                  "explain": "Regulation."
+              },
+              {
+                  "q": "How are interactions between risks considered?",
+                  "a": "Scenarios linking multiple risks.",
+                  "explain": "Holistic."
+              }
+          ]
+      },
+      {
+          "id": "m26",
+          "title": "Risk optimisation and risk responses",
+          "description": "Responding to risk: accept/retain, avoid, reduce/mitigate, transfer and exploit; risk optimisation using risk-adjusted return measures; cost-benefit analysis of responses; and managing an organisation's overall risk profile.",
+          "cards": [
+              {
+                  "q": "List the main risk responses.",
+                  "a": "Accept/retain, avoid, reduce (mitigate), transfer (insure, hedge), exploit (take more).",
+                  "explain": "4Ts plus exploit."
+              },
+              {
+                  "q": "When should a risk be avoided?",
+                  "a": "When outside appetite and not worth the return.",
+                  "explain": "Exit activity."
+              },
+              {
+                  "q": "When should a risk be retained?",
+                  "a": "When within appetite, cheap to hold, or diversifiable internally.",
+                  "explain": "Capital."
+              },
+              {
+                  "q": "What is risk transfer?",
+                  "a": "Shifting risk to another party via insurance, reinsurance, derivatives, securitisation.",
+                  "explain": "Cost and counterparty risk."
+              },
+              {
+                  "q": "What is risk reduction?",
+                  "a": "Controls, diversification, limits.",
+                  "explain": "Mitigation."
+              },
+              {
+                  "q": "What is risk optimisation?",
+                  "a": "Choosing the risk profile that maximises value subject to appetite.",
+                  "explain": "Risk-return."
+              },
+              {
+                  "q": "How is cost-benefit analysis used?",
+                  "a": "Comparing cost of response with reduction in expected loss and capital.",
+                  "explain": "Efficiency."
+              },
+              {
+                  "q": "What is RAROC?",
+                  "a": "Risk-adjusted return on capital: risk-adjusted profit / economic capital.",
+                  "explain": "Performance."
+              },
+              {
+                  "q": "What is EVA?",
+                  "a": "Economic value added: profit minus cost of capital.",
+                  "explain": "Value."
+              },
+              {
+                  "q": "How is the overall risk profile managed?",
+                  "a": "Aggregating exposures and adjusting via responses to stay within appetite.",
+                  "explain": "Portfolio view."
+              },
+              {
+                  "q": "What is diversification as a response?",
+                  "a": "Spreading exposures to reduce aggregate risk.",
+                  "explain": "Uncorrelated risks."
+              },
+              {
+                  "q": "What is hedging?",
+                  "a": "Taking offsetting positions.",
+                  "explain": "Market risk."
+              },
+              {
+                  "q": "What is residual risk?",
+                  "a": "Risk remaining after responses.",
+                  "explain": "Monitor."
+              },
+              {
+                  "q": "Why might a firm exploit a risk?",
+                  "a": "Competitive advantage in understanding or managing it.",
+                  "explain": "Upside."
+              },
+              {
+                  "q": "What is a natural hedge?",
+                  "a": "Offsetting exposures within the business (e.g. life vs annuity).",
+                  "explain": "Internal."
+              }
+          ]
+      },
+      {
+          "id": "m27",
+          "title": "Management of market risk",
+          "description": "Managing market risk: asset-liability matching and immunisation, hedging with derivatives (swaps, futures, options), dynamic hedging, diversification, limits, liability-driven investment, and managing interest rate, equity, currency and inflation risks.",
+          "cards": [
+              {
+                  "q": "What is immunisation?",
+                  "a": "Matching duration and ensuring asset convexity ≥ liability convexity.",
+                  "explain": "Redington."
+              },
+              {
+                  "q": "How can interest rate risk be hedged?",
+                  "a": "Matching bonds, interest rate swaps, swaptions.",
+                  "explain": "LDI."
+              },
+              {
+                  "q": "How can equity risk be hedged?",
+                  "a": "Futures, put options, collars.",
+                  "explain": "Downside."
+              },
+              {
+                  "q": "How can currency risk be hedged?",
+                  "a": "Forwards, currency swaps, options.",
+                  "explain": "FX."
+              },
+              {
+                  "q": "How can inflation risk be hedged?",
+                  "a": "Index-linked bonds, inflation swaps.",
+                  "explain": "Real liabilities."
+              },
+              {
+                  "q": "What is dynamic hedging?",
+                  "a": "Continuously rebalancing hedges (e.g. delta hedging).",
+                  "explain": "Guarantees."
+              },
+              {
+                  "q": "What is static hedging?",
+                  "a": "Set-and-forget hedges matching exposures.",
+                  "explain": "Simple."
+              },
+              {
+                  "q": "What are the costs of hedging?",
+                  "a": "Premiums, transaction costs, collateral, basis risk, reduced upside.",
+                  "explain": "Trade-offs."
+              },
+              {
+                  "q": "What is LDI?",
+                  "a": "Investment strategy hedging liabilities' rate and inflation exposure.",
+                  "explain": "Pensions."
+              },
+              {
+                  "q": "What limits control market risk?",
+                  "a": "VaR limits, sensitivity limits, concentration limits.",
+                  "explain": "Policies."
+              },
+              {
+                  "q": "How does diversification manage market risk?",
+                  "a": "Across asset classes, regions, sectors.",
+                  "explain": "Reduces specific risk."
+              },
+              {
+                  "q": "What is a CPPI strategy?",
+                  "a": "Dynamic allocation protecting a floor.",
+                  "explain": "Portfolio insurance."
+              },
+              {
+                  "q": "What is collateral risk in hedging?",
+                  "a": "Need to post collateral on derivatives.",
+                  "explain": "Liquidity."
+              },
+              {
+                  "q": "How can product design manage market risk?",
+                  "a": "Reducing guarantees, sharing risk with customers.",
+                  "explain": "Insurers."
+              },
+              {
+                  "q": "What is ALM governance?",
+                  "a": "ALCO oversight of matching and hedging.",
+                  "explain": "Structure."
+              }
+          ]
+      },
+      {
+          "id": "m28",
+          "title": "Management of credit risk",
+          "description": "Managing credit and counterparty risk: credit limits and diversification, collateral and netting, credit derivatives, securitisation, credit insurance, covenants, monitoring and early warning, and managing reinsurance counterparty risk.",
+          "cards": [
+              {
+                  "q": "How can credit risk be reduced?",
+                  "a": "Limits, diversification, collateral, netting, guarantees, credit derivatives, covenants.",
+                  "explain": "Toolkit."
+              },
+              {
+                  "q": "What are credit limits?",
+                  "a": "Maximum exposure to a counterparty, sector or rating.",
+                  "explain": "Concentration."
+              },
+              {
+                  "q": "How does collateral reduce credit risk?",
+                  "a": "Provides recovery on default.",
+                  "explain": "Haircuts."
+              },
+              {
+                  "q": "How does netting reduce credit risk?",
+                  "a": "Offsets exposures on default.",
+                  "explain": "ISDA."
+              },
+              {
+                  "q": "How can CDS manage credit risk?",
+                  "a": "Buying protection transfers default risk.",
+                  "explain": "Counterparty risk remains."
+              },
+              {
+                  "q": "How does securitisation manage credit risk?",
+                  "a": "Transfers loan risk to investors.",
+                  "explain": "Originator."
+              },
+              {
+                  "q": "What is credit insurance?",
+                  "a": "Insurance against non-payment.",
+                  "explain": "Trade credit."
+              },
+              {
+                  "q": "What are covenants?",
+                  "a": "Contractual protections in loans/bonds.",
+                  "explain": "Early warning."
+              },
+              {
+                  "q": "How is reinsurance counterparty risk managed?",
+                  "a": "Rating requirements, diversification, collateral, funds withheld.",
+                  "explain": "Insurers."
+              },
+              {
+                  "q": "What is credit monitoring?",
+                  "a": "Tracking ratings, spreads, financials.",
+                  "explain": "Early action."
+              },
+              {
+                  "q": "What is a credit rating trigger?",
+                  "a": "Contract term requiring action if rating falls.",
+                  "explain": "Collateral calls."
+              },
+              {
+                  "q": "What is central clearing's effect?",
+                  "a": "Replaces bilateral with CCP exposure.",
+                  "explain": "Standardisation."
+              },
+              {
+                  "q": "How can pricing reflect credit risk?",
+                  "a": "Risk-based pricing of loans.",
+                  "explain": "Expected loss."
+              },
+              {
+                  "q": "What is a credit portfolio management function?",
+                  "a": "Active management of aggregate credit exposure.",
+                  "explain": "Banks."
+              },
+              {
+                  "q": "How can concentration be addressed?",
+                  "a": "Selling exposures, hedging, limits.",
+                  "explain": "Diversify."
+              }
+          ]
+      },
+      {
+          "id": "m29",
+          "title": "Management of operational and other risks",
+          "description": "Managing operational, liquidity, insurance and other risks: controls, process design, business continuity, insurance, outsourcing oversight, liquidity management, underwriting and reinsurance, and remediation of customer harm.",
+          "cards": [
+              {
+                  "q": "How can operational risk be managed?",
+                  "a": "Controls, segregation of duties, automation, training, insurance, business continuity plans.",
+                  "explain": "Toolkit."
+              },
+              {
+                  "q": "What is a business continuity plan?",
+                  "a": "Plan to maintain critical operations during disruption.",
+                  "explain": "Resilience."
+              },
+              {
+                  "q": "How can cyber risk be managed?",
+                  "a": "Security controls, testing, incident response, cyber insurance.",
+                  "explain": "Defence."
+              },
+              {
+                  "q": "How is liquidity risk managed?",
+                  "a": "Liquidity buffers, contingency funding plans, stress testing, diverse funding.",
+                  "explain": "Cash."
+              },
+              {
+                  "q": "How are insurance risks managed?",
+                  "a": "Underwriting, pricing, reinsurance, diversification, product design.",
+                  "explain": "Insurers."
+              },
+              {
+                  "q": "How is outsourcing risk managed?",
+                  "a": "Due diligence, contracts, SLAs, monitoring, exit plans.",
+                  "explain": "Third parties."
+              },
+              {
+                  "q": "What is customer remediation?",
+                  "a": "Correcting harm to customers from failures, including compensation.",
+                  "explain": "Syllabus 6.4."
+              },
+              {
+                  "q": "How is reputational risk managed?",
+                  "a": "Strong culture, crisis communication, ethical conduct.",
+                  "explain": "Prevention."
+              },
+              {
+                  "q": "How is strategic risk managed?",
+                  "a": "Scenario planning, diversification, governance.",
+                  "explain": "Board."
+              },
+              {
+                  "q": "How is legal risk managed?",
+                  "a": "Legal review, contract standards, compliance.",
+                  "explain": "Controls."
+              },
+              {
+                  "q": "How is fraud managed?",
+                  "a": "Controls, whistleblowing, audits, analytics.",
+                  "explain": "Detection."
+              },
+              {
+                  "q": "What is operational resilience?",
+                  "a": "Ability to prevent, adapt and recover from disruption to important services.",
+                  "explain": "Regulatory focus."
+              },
+              {
+                  "q": "How is people risk managed?",
+                  "a": "Succession planning, training, culture.",
+                  "explain": "HR."
+              },
+              {
+                  "q": "How can insurance mitigate operational risk?",
+                  "a": "Transferring losses (e.g. fidelity, cyber, D&O).",
+                  "explain": "Transfer."
+              },
+              {
+                  "q": "Why test controls?",
+                  "a": "Ensure they work as intended.",
+                  "explain": "Assurance."
+              }
+          ]
+      },
+      {
+          "id": "m30",
+          "title": "Capital management",
+          "description": "Capital management: purposes of capital, regulatory, economic and rating agency capital, capital calculations (VaR, TVaR, standard formula, internal models), capital allocation methods (proportional, marginal, Euler), capital planning and sources of capital.",
+          "cards": [
+              {
+                  "q": "What are the purposes of capital?",
+                  "a": "Absorb unexpected losses, meet regulatory requirements, support ratings and growth.",
+                  "explain": "Security."
+              },
+              {
+                  "q": "What is economic capital?",
+                  "a": "Capital needed to meet the firm's own risk appetite (e.g. 99.5% one-year).",
+                  "explain": "Internal view."
+              },
+              {
+                  "q": "What is regulatory capital?",
+                  "a": "Capital required by regulators (e.g. SCR).",
+                  "explain": "Minimum."
+              },
+              {
+                  "q": "What is rating agency capital?",
+                  "a": "Capital needed for a target rating under agency models.",
+                  "explain": "Often binding."
+              },
+              {
+                  "q": "How is capital calculated?",
+                  "a": "Risk measures (VaR/TVaR) applied to aggregate loss distributions or stress-based formulas.",
+                  "explain": "Syllabus 7.1."
+              },
+              {
+                  "q": "What is capital allocation?",
+                  "a": "Assigning total capital to business units or risks.",
+                  "explain": "Syllabus 7.2."
+              },
+              {
+                  "q": "What is proportional allocation?",
+                  "a": "Allocating in proportion to standalone capital.",
+                  "explain": "Simple."
+              },
+              {
+                  "q": "What is marginal allocation?",
+                  "a": "Allocating based on change in total capital when a unit is removed.",
+                  "explain": "May not add up."
+              },
+              {
+                  "q": "What is Euler allocation?",
+                  "a": "Allocation via partial derivatives of risk measure; sums to total for homogeneous measures.",
+                  "explain": "Theoretically sound."
+              },
+              {
+                  "q": "What are sources of capital?",
+                  "a": "Equity, retained earnings, subordinated debt, contingent capital, reinsurance.",
+                  "explain": "Tiers."
+              },
+              {
+                  "q": "What is capital planning?",
+                  "a": "Projecting capital needs and resources over the business plan.",
+                  "explain": "ORSA."
+              },
+              {
+                  "q": "What is contingent capital?",
+                  "a": "Capital available on trigger events (e.g. CoCos).",
+                  "explain": "Flexibility."
+              },
+              {
+                  "q": "How does diversification affect allocation?",
+                  "a": "Allocated capital reflects contribution to diversified total.",
+                  "explain": "Benefit sharing."
+              },
+              {
+                  "q": "What is return on risk-adjusted capital?",
+                  "a": "Profit relative to allocated capital.",
+                  "explain": "Performance."
+              },
+              {
+                  "q": "How can capital be released?",
+                  "a": "Reinsurance, securitisation, run-off, sales.",
+                  "explain": "Efficiency."
+              }
+          ]
+      },
+      {
+          "id": "m31",
+          "title": "ERM implementation",
+          "description": "Implementing ERM in practice: developing the framework, gaining buy-in, phasing implementation, systems and data, embedding in culture and incentives, measuring ERM effectiveness, and adapting to changes including emerging risks and cyber.",
+          "cards": [
+              {
+                  "q": "What are the steps to implement ERM?",
+                  "a": "Secure board sponsorship, define framework and appetite, assign responsibilities, build processes and systems, embed culture, monitor and refine.",
+                  "explain": "Phased."
+              },
+              {
+                  "q": "Why is buy-in important?",
+                  "a": "ERM fails without management and staff engagement.",
+                  "explain": "Culture."
+              },
+              {
+                  "q": "What are common implementation challenges?",
+                  "a": "Silos, data gaps, resistance, cost, complexity.",
+                  "explain": "Barriers."
+              },
+              {
+                  "q": "How can ERM be embedded?",
+                  "a": "Link to planning, incentives, decision-making and performance measures.",
+                  "explain": "Use test."
+              },
+              {
+                  "q": "How is ERM effectiveness measured?",
+                  "a": "Maturity assessments, audit findings, incidents, achievement of objectives.",
+                  "explain": "Evaluation."
+              },
+              {
+                  "q": "What role do systems play?",
+                  "a": "Data aggregation, reporting, modelling.",
+                  "explain": "Infrastructure."
+              },
+              {
+                  "q": "How should ERM adapt to emerging risks?",
+                  "a": "Horizon scanning and flexible frameworks.",
+                  "explain": "Cyber, climate."
+              },
+              {
+                  "q": "What is the importance of communication in implementation?",
+                  "a": "Explaining purpose and roles.",
+                  "explain": "Engagement."
+              },
+              {
+                  "q": "How can quick wins help?",
+                  "a": "Demonstrate value early.",
+                  "explain": "Momentum."
+              },
+              {
+                  "q": "What is ERM integration in M&A?",
+                  "a": "Assessing and aligning risk frameworks of merged entities.",
+                  "explain": "Due diligence."
+              },
+              {
+                  "q": "How can ERM be proportionate for small firms?",
+                  "a": "Simpler processes and tools.",
+                  "explain": "Proportionality."
+              },
+              {
+                  "q": "What training is needed?",
+                  "a": "Risk awareness for all staff, specialist training for risk functions.",
+                  "explain": "Capability."
+              },
+              {
+                  "q": "What is the role of internal audit in implementation?",
+                  "a": "Assessing framework design and operation.",
+                  "explain": "Assurance."
+              },
+              {
+                  "q": "How is cyber risk incorporated?",
+                  "a": "Specific appetite, controls, scenarios.",
+                  "explain": "Syllabus 2.4."
+              },
+              {
+                  "q": "Why review ERM continuously?",
+                  "a": "Changing business and environment.",
+                  "explain": "Evolution."
+              }
+          ]
+      },
+      {
+          "id": "m32",
+          "title": "Case studies",
+          "description": "Learning from risk management failures and successes — banking crises, insurer failures, rogue trading, operational disasters and conduct scandals — identifying the ERM lessons, how better risk management might have prevented them, and proposing ERM processes that create value.",
+          "cards": [
+              {
+                  "q": "What ERM lessons came from the 2008 financial crisis?",
+                  "a": "Excessive leverage, liquidity risk, model overreliance, poor incentives, concentration in mortgage-related assets, weak governance.",
+                  "explain": "Syllabus 2.8."
+              },
+              {
+                  "q": "What was the lesson from Barings?",
+                  "a": "Lack of segregation of duties and oversight allowed rogue trading.",
+                  "explain": "Operational risk."
+              },
+              {
+                  "q": "What was the lesson from AIG?",
+                  "a": "Concentrated credit derivative exposures and collateral triggers created a liquidity crisis.",
+                  "explain": "Counterparty/liquidity."
+              },
+              {
+                  "q": "What was the lesson from Equitable Life?",
+                  "a": "Unhedged guaranteed annuity rates and inadequate reserving.",
+                  "explain": "Guarantees."
+              },
+              {
+                  "q": "What was the lesson from LTCM?",
+                  "a": "Leverage and model reliance with liquidity and correlation breakdown.",
+                  "explain": "Model risk."
+              },
+              {
+                  "q": "What was the lesson from Northern Rock?",
+                  "a": "Reliance on wholesale funding exposed liquidity risk.",
+                  "explain": "Funding."
+              },
+              {
+                  "q": "What was the lesson from the UK LDI crisis (2022)?",
+                  "a": "Leverage and collateral liquidity risk in pension hedging.",
+                  "explain": "Liquidity."
+              },
+              {
+                  "q": "What was the lesson from Enron?",
+                  "a": "Governance failures and accounting manipulation.",
+                  "explain": "Culture."
+              },
+              {
+                  "q": "What common themes appear in failures?",
+                  "a": "Poor culture, weak governance, incentives, concentration, liquidity, model overreliance, ignoring warnings.",
+                  "explain": "Patterns."
+              },
+              {
+                  "q": "What lessons came from PPI mis-selling?",
+                  "a": "Conduct risk and incentive-driven sales.",
+                  "explain": "Remediation."
+              },
+              {
+                  "q": "How could better ERM have helped?",
+                  "a": "Stronger challenge, limits, stress testing, liquidity planning.",
+                  "explain": "Syllabus 2.8."
+              },
+              {
+                  "q": "What is an ERM process that creates value?",
+                  "a": "Integrating risk into strategy, capital allocation and pricing.",
+                  "explain": "Syllabus 2.9."
+              },
+              {
+                  "q": "What was the lesson from Silicon Valley Bank (2023)?",
+                  "a": "Interest rate risk on bond holdings and concentrated, flighty deposits.",
+                  "explain": "ALM."
+              },
+              {
+                  "q": "How can case studies be used in exams?",
+                  "a": "Apply lessons to new scenarios.",
+                  "explain": "Application."
+              },
+              {
+                  "q": "What is the role of culture in failures?",
+                  "a": "Risk-taking rewarded, challenge discouraged.",
+                  "explain": "Recurring."
+              }
+          ]
+      },
+      {
+          "id": "m33",
+          "title": "Principal terms",
+          "description": "Key SP9 terminology — ERM, risk measure, modelling and capital terms — as a recall deck.",
+          "cards": [
+              {
+                  "q": "Define 'risk appetite'.",
+                  "a": "Amount and type of risk an organisation is willing to accept.",
+                  "explain": "Board-set."
+              },
+              {
+                  "q": "Define 'three lines of defence'.",
+                  "a": "Business, risk oversight, internal audit.",
+                  "explain": "Governance model."
+              },
+              {
+                  "q": "Define 'VaR'.",
+                  "a": "Loss not exceeded with given probability over a horizon.",
+                  "explain": "Quantile."
+              },
+              {
+                  "q": "Define 'TVaR'.",
+                  "a": "Expected loss beyond VaR.",
+                  "explain": "Coherent."
+              },
+              {
+                  "q": "Define 'copula'.",
+                  "a": "Function linking marginals to a joint distribution.",
+                  "explain": "Dependence."
+              },
+              {
+                  "q": "Define 'tail dependence'.",
+                  "a": "Joint extreme behaviour.",
+                  "explain": "Copulas."
+              },
+              {
+                  "q": "Define 'RAROC'.",
+                  "a": "Risk-adjusted return on capital.",
+                  "explain": "Performance."
+              },
+              {
+                  "q": "Define 'Euler allocation'.",
+                  "a": "Capital allocation via risk measure gradients.",
+                  "explain": "Adds up."
+              },
+              {
+                  "q": "Define 'KRI'.",
+                  "a": "Key risk indicator.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "Define 'ORSA'.",
+                  "a": "Own Risk and Solvency Assessment.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "Define 'GPD'.",
+                  "a": "Generalised Pareto distribution for exceedances.",
+                  "explain": "EVT."
+              },
+              {
+                  "q": "Define 'model risk'.",
+                  "a": "Loss from model errors or misuse.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "Define 'economic capital'.",
+                  "a": "Capital required per firm's own risk assessment.",
+                  "explain": "Internal."
+              },
+              {
+                  "q": "Define 'risk register'.",
+                  "a": "Record of identified risks and controls.",
+                  "explain": "Identification."
+              },
+              {
+                  "q": "Define 'contagion'.",
+                  "a": "Spread of distress between entities.",
+                  "explain": "Systemic."
+              }
+          ]
+      }
+  ],
 };
