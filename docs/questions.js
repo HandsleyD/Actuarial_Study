@@ -106,7 +106,7 @@ const QUESTIONS = {
           question:
             "Discuss two reasons a regulator might tolerate &mdash; or even encourage &mdash; some monopoly power in a market, despite the usual efficiency criticisms of monopoly.",
           answer:
-            "(1) Natural monopoly cost structure (as in part (iii)) &mdash; where one firm genuinely can supply at lower cost than several, forcing competition would be inefficient; the regulator's job becomes managing (e.g. price-capping) the monopoly rather than breaking it up. (2) Dynamic efficiency/innovation &mdash; supernormal profits earned under monopoly can fund research and development that a competitive firm earning only normal profit could not afford, potentially delivering long-run benefits (new products, lower future costs) that offset the static efficiency loss from higher prices today.",
+            "(1) Natural monopoly cost structure (as in part (iii)) &mdash; where one firm can supply at lower cost than several, forcing competition would be inefficient; the regulator's job becomes managing (e.g. price-capping) the monopoly rather than breaking it up. (2) Dynamic efficiency/innovation &mdash; supernormal profits earned under monopoly can fund research and development that a competitive firm earning only normal profit could not afford, potentially delivering long-run benefits (new products, lower future costs) that offset the static efficiency loss from higher prices today.",
           note: "'Discuss' invites weighing a benefit against the standard monopoly criticism from Module 6 (deadweight loss, allocative inefficiency) &mdash; the strongest answers briefly acknowledge that tolerance is conditional (e.g. regulated pricing, or genuine ongoing innovation) rather than presenting monopoly power as unambiguously fine.",
         },
       ],
@@ -172,7 +172,7 @@ const QUESTIONS = {
             "Verdania experiences a sharp, sustained rise in global energy prices, significantly raising firms' production costs across the economy. Using the AS-AD framework, explain the effect on Verdania's price level and output in the short run.",
           answer:
             "A sharp rise in production costs shifts the short-run aggregate supply curve to the left (upward): firms are willing to supply less output at every price level than before, since it now costs more to produce the same amount. With aggregate demand unchanged, the new AS-AD intersection sits at a higher price level and a lower level of output than before &mdash; the economy experiences both rising prices and falling output simultaneously.",
-          note: "Candidates should be explicit that it's aggregate SUPPLY that shifts here (not demand) &mdash; a common error is describing this as a demand-side shock. A sketch or clear verbal description of the leftward AS shift and the resulting new equilibrium earns the marks; simply asserting 'prices rise and output falls' without the AS-AD mechanism loses credit.",
+          note: "Candidates should be explicit that it's aggregate <em>supply</em> that shifts here (not demand) &mdash; a common error is describing this as a demand-side shock. A sketch or clear verbal description of the leftward AS shift and the resulting new equilibrium earns the marks; simply asserting 'prices rise and output falls' without the AS-AD mechanism loses credit.",
         },
         {
           label: "(ii)",
@@ -275,7 +275,7 @@ const QUESTIONS = {
             "Meridia's currency comes under sustained selling pressure. Explain two actions the central bank could take to defend the peg, and state one risk associated with each.",
           answer:
             "(1) Direct intervention: the central bank buys its own currency using its foreign exchange reserves. Risk: this depletes the central bank's reserves, which are finite &mdash; if selling pressure is sustained, the bank could run out of reserves and be forced to abandon the peg regardless. (2) Raise interest rates: higher rates make Meridia's currency more attractive to foreign capital seeking a better return, supporting demand for the currency. Risk: this conflicts with domestic objectives (per part (i)'s trilemma) &mdash; a rate rise aimed purely at defending the currency may be inappropriate for domestic conditions (e.g. if the domestic economy is already weak, a rate rise could tip it into a deeper downturn).",
-          note: "Each action needs both a correct mechanism AND a genuine associated risk for full marks &mdash; simply listing 'intervene' and 'raise rates' without the risks attached only scores half credit.",
+          note: "Each action needs both a correct mechanism <em>and</em> a genuine associated risk for full marks &mdash; simply listing 'intervene' and 'raise rates' without the risks attached only scores half credit.",
         },
         {
           label: "(iii)",
@@ -322,7 +322,7 @@ const QUESTIONS = {
             "'Northshire Bank' relies heavily on short-term wholesale funding to finance longer-term mortgage lending. Explain, with reference to maturity transformation, why a sudden loss of confidence in Northshire Bank could cause it to fail even if its mortgage loan book is fundamentally sound.",
           answer:
             "Northshire is performing maturity transformation: funding long-term assets (mortgages, which are repaid over many years) with short-term liabilities (wholesale funding that must be regularly rolled over). If confidence in the bank suddenly falls, wholesale lenders may refuse to renew that short-term funding. Northshire cannot quickly call in its mortgage loans to raise cash, so even though the loans themselves are perfectly good (the bank is solvent &mdash; its assets are worth more than its liabilities), it can become unable to meet its immediate funding obligations &mdash; a liquidity crisis distinct from an underlying solvency problem, which can force the bank to fail purely on a loss of confidence.",
-          note: "The key distinction examiners are testing is liquidity risk versus solvency risk &mdash; a good answer explicitly notes the loan book being 'fundamentally sound' means this is NOT a solvency problem, and explains precisely why liquidity risk alone is sufficient to cause failure. Answers that muddle the two risks together lose marks for imprecision.",
+          note: "The key distinction examiners are testing is liquidity risk versus solvency risk &mdash; a good answer explicitly notes the loan book being 'fundamentally sound' means this is <em>not</em> a solvency problem, and explains precisely why liquidity risk alone is sufficient to cause failure. Answers that muddle the two risks together lose marks for imprecision.",
         },
         {
           label: "(iii)",
@@ -330,7 +330,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain one policy tool that could reduce the risk of Northshire Bank's difficulties spreading to other banks (contagion).",
           answer:
-            "A deposit insurance scheme guarantees deposits up to a limit, removing depositors' incentive to panic-withdraw from OTHER banks purely out of fear that Northshire's problems might be a sign of trouble across the wider banking system &mdash; by reassuring depositors elsewhere that their own money is safe regardless, it helps prevent a loss of confidence in one bank spreading into a wider bank run and contagion across the interconnected banking sector.",
+            "A deposit insurance scheme guarantees deposits up to a limit, removing depositors' incentive to panic-withdraw from <em>other</em> banks purely out of fear that Northshire's problems might be a sign of trouble across the wider banking system &mdash; by reassuring depositors elsewhere that their own money is safe regardless, it helps prevent a loss of confidence in one bank spreading into a wider bank run and contagion across the interconnected banking sector.",
           note: "Alternative valid answers include capital adequacy requirements (ensuring other banks hold enough of a buffer to remain solvent even if exposed to Northshire) or central bank 'lender of last resort' facilities (providing emergency liquidity to solvent-but-illiquid banks) &mdash; any one tool, correctly explained and linked to preventing contagion specifically (not just 'making banks safer' in general), earns full marks.",
         },
         {
@@ -341,7 +341,7 @@ const QUESTIONS = {
             "Using the concept of rational expectations, discuss whether an interest rate rise that financial markets had fully anticipated in advance is likely to have as large an effect on inflation as an unanticipated rise of the same size.",
           answer:
             "Under the New Classical/rational expectations view, if markets fully anticipate the rate rise, prices, wages and financial asset values may already adjust in advance of the announcement, meaning much of the real economic effect (on spending, investment, the exchange rate) has already been 'priced in' before the rise actually takes effect &mdash; so an anticipated rise may have a smaller additional effect on inflation at the moment it happens than an unanticipated rise of the same size, which catches households, firms and markets by surprise and forces a genuine behavioural adjustment. Keynesians would push back on this, arguing that sticky wages/prices and imperfect information mean even anticipated policy retains meaningful real short-run effects, so the difference between anticipated and unanticipated policy may be smaller in practice than the strict rational expectations view suggests.",
-          note: "This deliberately draws on Module 19's New Classical vs Keynesian debate and applies it to a fresh scenario rather than asking for the theory in the abstract. The strongest answers, as here, present both the rational-expectations conclusion AND the Keynesian counterargument, since 'discuss' explicitly rewards weighing both sides rather than picking one school's view as simply correct.",
+          note: "This deliberately draws on Module 19's New Classical vs Keynesian debate and applies it to a fresh scenario rather than asking for the theory in the abstract. The strongest answers, as here, present both the rational-expectations conclusion <em>and</em> the Keynesian counterargument, since 'discuss' explicitly rewards weighing both sides rather than picking one school's view as simply correct.",
         },
       ],
     },
@@ -358,7 +358,7 @@ const QUESTIONS = {
           question:
             "Alland and Borvia each produce Textiles and Machinery using labour as their only input. Alland's workers can produce either 8 units of Textiles or 4 units of Machinery per worker-day. Borvia's workers can produce either 6 units of Textiles or 2 units of Machinery per worker-day. State which country has an absolute advantage in each good.",
           answer:
-            "Alland has an absolute advantage in both goods: it can produce more Textiles per worker-day (8 vs 6) AND more Machinery per worker-day (4 vs 2) than Borvia.",
+            "Alland has an absolute advantage in both goods: it can produce more Textiles per worker-day (8 vs 6) <em>and</em> more Machinery per worker-day (4 vs 2) than Borvia.",
           note: "This sets up the comparative-advantage twist in part (iii) &mdash; the question is deliberately designed so one country dominates on absolute advantage in everything, which is the classic setup for testing whether candidates understand that absolute advantage alone doesn't determine the pattern of beneficial trade.",
         },
         {
@@ -379,7 +379,7 @@ const QUESTIONS = {
             "Explain, referring to your answer to part (ii), how Alland and Borvia could both gain from specialising and trading, even though Alland has an absolute advantage in both goods.",
           answer:
             "Gains from trade depend on comparative (relative), not absolute, advantage. Even though Alland is more productive at everything, its resources are better used producing Machinery (where its relative efficiency advantage over Borvia is largest) and trading for Textiles, while Borvia specialises in Textiles (where its relative disadvantage is smallest) and trades for Machinery. If each country specialises according to comparative advantage and trades at a price between the two countries' opportunity costs (between 2 and 3 units of Textiles per unit of Machinery), both can end up consuming more of both goods combined than if each tried to produce everything itself.",
-          note: "This is the single most commonly misunderstood result in the whole trade topic, and examiners specifically reward candidates who can explain WHY absolute advantage doesn't determine the trade pattern, not just assert that it doesn't. Reference back to the specific numbers from part (ii) (rather than a purely generic explanation) earns the strongest marks.",
+          note: "This is the single most commonly misunderstood result in the whole trade topic, and examiners specifically reward candidates who can explain <em>why</em> absolute advantage doesn't determine the trade pattern, not just assert that it doesn't. Reference back to the specific numbers from part (ii) (rather than a purely generic explanation) earns the strongest marks.",
         },
         {
           label: "(iv)",
@@ -407,7 +407,7 @@ const QUESTIONS = {
             "Astora enters a deep recession following a crisis in its banking sector, triggered by a prolonged boom in mortgage lending that turned bad. Explain how a Classical economist and a Keynesian economist would differ in their view of how quickly Astora's economy will recover without government intervention.",
           answer:
             "A Classical economist would argue that prices and wages will adjust flexibly, allowing markets (including the labour market) to clear relatively quickly on their own, so the recession should be relatively short-lived without needing intervention. A Keynesian economist would argue that wages and prices can be 'sticky' &mdash; particularly wages, which don't easily fall even when labour demand drops &mdash; so the economy could settle into a prolonged period of high unemployment and low output (demand deficiency) without active government intervention to boost aggregate demand.",
-          note: "Candidates should give BOTH perspectives with roughly equal depth, since the command word is 'explain how they differ' &mdash; an answer that only covers one school in detail and mentions the other in passing loses marks for imbalance.",
+          note: "Candidates should give <em>both</em> perspectives with roughly equal depth, since the command word is 'explain how they differ' &mdash; an answer that only covers one school in detail and mentions the other in passing loses marks for imbalance.",
         },
         {
           label: "(ii)",
@@ -436,7 +436,7 @@ const QUESTIONS = {
           question: "Explain why 'moral hazard' might be a concern if Astora's government bails out its largest banks following the crisis.",
           answer:
             "Moral hazard arises when a party takes on more risk because it doesn't bear the full consequences of that risk. If Astora's largest banks are bailed out, they (and other large banks observing this) may conclude that future excessive risk-taking will similarly be rescued if it goes wrong &mdash; being treated as 'too big to fail' &mdash; which could encourage exactly the kind of reckless lending behaviour (like the mortgage boom described in part (ii)) that caused this crisis in the first place, undermining the incentive for prudent risk management going forward.",
-          note: "The answer needs to state the general definition of moral hazard AND explicitly connect it to the specific 'too big to fail' bailout scenario and its effect on FUTURE risk-taking incentives &mdash; a definition alone, without the forward-looking behavioural consequence, typically only scores partial credit.",
+          note: "The answer needs to state the general definition of moral hazard <em>and</em> explicitly connect it to the specific 'too big to fail' bailout scenario and its effect on <em>future</em> risk-taking incentives &mdash; a definition alone, without the forward-looking behavioural consequence, typically only scores partial credit.",
         },
       ],
     },
@@ -601,7 +601,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Calculate the outstanding loan balance immediately after the 4th instalment, using the prospective method.",
           answer: "$Balance = X \\times a_{\\overline{6}|} = 6{,}475.23 \\times 5.0757 = \\pounds 32{,}866.27$ (6 years of instalments remaining).",
-          note: "The prospective method needs the REMAINING term (6 years, not 4 or 10) &mdash; using the wrong term for the annuity factor is the most common error here.",
+          note: "The prospective method needs the <em>remaining</em> term (6 years, not 4 or 10) &mdash; using the wrong term for the annuity factor is the most common error here.",
         },
         {
           label: "(iv)",
@@ -686,7 +686,7 @@ const QUESTIONS = {
             "A bond of nominal value &pound;100 pays annual coupons of 6% in arrears and is redeemable at par in exactly 10 years. Calculate the price to give a purchaser a redemption yield of 7% per annum effective.",
           answer:
             "$Price = 6 \\times a_{\\overline{10}|7\\%} + 100 \\times v^{10}_{7\\%} = 6(7.0236) + 100(0.50835) = 42.14 + 50.84 = \\pounds 92.98$ per &pound;100 nominal.",
-          note: "This is a direct application of the bond pricing equation of value &mdash; the coupon annuity and the redemption lump sum must both be discounted at the SAME required yield (7%), not the coupon rate (6%).",
+          note: "This is a direct application of the bond pricing equation of value &mdash; the coupon annuity and the redemption lump sum must both be discounted at the <em>same</em> required yield (7%), not the coupon rate (6%).",
         },
         {
           label: "(iii)",
@@ -731,7 +731,7 @@ const QUESTIONS = {
           question:
             "The 1-year spot rate is 4% and the 2-year spot rate is 5% per annum effective. Calculate the 1-year forward rate applicable from time 1 to time 2, $f_{1,2}$.",
           answer: "$(1+y_2)^2=(1+y_1)(1+f_{1,2}) \\Rightarrow (1.05)^2 = (1.04)(1+f_{1,2}) \\Rightarrow f_{1,2} = \\frac{1.1025}{1.04}-1 = 6.01\\%$",
-          note: "A common error is forgetting to square the 2-year rate before dividing &mdash; the no-arbitrage relationship compares TOTAL 2-year growth on the left with the CHAINED 1-year rates on the right.",
+          note: "A common error is forgetting to square the 2-year rate before dividing &mdash; the no-arbitrage relationship compares <em>total</em> 2-year growth on the left with the <em>chained</em> 1-year rates on the right.",
         },
         {
           label: "(iii)",
@@ -741,7 +741,7 @@ const QUESTIONS = {
             "A liability of &pound;10,000 is due in exactly 3 years. State its Macaulay duration, and explain what asset structure would satisfy Redington's first two immunisation conditions if a single zero-coupon bond is used to back this liability.",
           answer:
             "For a single cashflow, its Macaulay duration equals its own term, i.e. 3 years, since the present-value-weighted average payment time trivially reduces to the time of the one payment itself. To satisfy Redington's first two conditions, hold a single 3-year zero-coupon bond with present value exactly equal to the liability's present value: this automatically matches the present values (condition 1), and since a single zero-coupon bond's duration equals its own term (3 years, matching the liability's duration), condition 2 is also satisfied.",
-          note: "Candidates should recognise this as a DEGENERATE (simplest possible) case of Redington's theory, not attempt unnecessary summation/integration &mdash; a single cashflow's duration calculation is trivial once recognised as such.",
+          note: "Candidates should recognise this as a <em>degenerate</em> (simplest possible) case of Redington's theory, not attempt unnecessary summation/integration &mdash; a single cashflow's duration calculation is trivial once recognised as such.",
         },
         {
           label: "(iv)",
@@ -750,8 +750,8 @@ const QUESTIONS = {
           question:
             "Explain why, in this single-cashflow case, Redington's third condition (convexity) is automatically satisfied, and what this implies for the fund's protection against interest rate changes.",
           answer:
-            "Since the asset (the 3-year zero-coupon bond) and the liability are both single cashflows of the same amount at the same time, their present values move identically for ANY change in the interest rate, not just a small one &mdash; their convexities are therefore exactly equal (not merely asset convexity exceeding liability convexity). This means the fund is perfectly matched, not just approximately immunised against small rate changes as Redington's theory guarantees in the general case.",
-          note: "The key insight is that exact cashflow matching is strictly stronger than Redington immunisation &mdash; it protects against interest rate changes of ANY size, whereas Redington's conditions (in the general, non-matched case) only guarantee protection against small changes.",
+            "Since the asset (the 3-year zero-coupon bond) and the liability are both single cashflows of the same amount at the same time, their present values move identically for <em>any</em> change in the interest rate, not just a small one &mdash; their convexities are therefore exactly equal (not merely asset convexity exceeding liability convexity). This means the fund is perfectly matched, not just approximately immunised against small rate changes as Redington's theory guarantees in the general case.",
+          note: "The key insight is that exact cashflow matching is strictly stronger than Redington immunisation &mdash; it protects against interest rate changes of <em>any</em> size, whereas Redington's conditions (in the general, non-matched case) only guarantee protection against small changes.",
         },
       ],
     },
@@ -769,7 +769,7 @@ const QUESTIONS = {
             "You are given the following extract from a life table: $l_{60}=97{,}000$, $l_{61}=96{,}500$, $l_{62}=95{,}900$, $l_{63}=95{,}200$, $l_{64}=94{,}400$, $l_{65}=93{,}500$. Calculate $q_{61}$ and $q_{63}$.",
           answer:
             "$q_{61} = \\dfrac{l_{61}-l_{62}}{l_{61}} = \\dfrac{600}{96{,}500} = 0.622\\%$. $q_{63} = \\dfrac{l_{63}-l_{64}}{l_{63}} = \\dfrac{800}{95{,}200} = 0.840\\%$",
-          note: "Each $q_x$ must be divided by the STARTING population at that age ($l_{61}$ and $l_{63}$ respectively), not a common base like $l_{60}$ &mdash; a frequent early-syllabus error.",
+          note: "Each $q_x$ must be divided by the <em>starting</em> population at that age ($l_{61}$ and $l_{63}$ respectively), not a common base like $l_{60}$ &mdash; a frequent early-syllabus error.",
         },
         {
           label: "(ii)",
@@ -777,7 +777,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Using the same table, calculate $_2p_{61}$, the probability that a life aged 61 survives to age 63.",
           answer: "$_2p_{61} = \\dfrac{l_{63}}{l_{61}} = \\dfrac{95{,}200}{96{,}500} = 0.98653$",
-          note: "This is a direct ratio of $l$ values spanning 2 years &mdash; candidates should NOT attempt to multiply $p_{61}\\times p_{62}$ from separately-rounded one-year probabilities, which introduces avoidable rounding error versus the direct ratio.",
+          note: "This is a direct ratio of $l$ values spanning 2 years &mdash; candidates should <em>not</em> attempt to multiply $p_{61}\\times p_{62}$ from separately-rounded one-year probabilities, which introduces avoidable rounding error versus the direct ratio.",
         },
         {
           label: "(iii)",
@@ -787,7 +787,7 @@ const QUESTIONS = {
             "Calculate the expected present value of a 3-year term assurance of &pound;50,000, payable at the end of the year of death, to a life aged 61, i.e. $50{,}000 \\times A^1_{61:\\overline{3}|}$, at an effective interest rate of 4% per annum.",
           answer:
             "Deaths: age 61&ndash;62: 600, age 62&ndash;63: 700, age 63&ndash;64: 800. $A^1_{61:\\overline{3}|} = \\frac{600}{96{,}500}v + \\frac{700}{96{,}500}v^2 + \\frac{800}{96{,}500}v^3 = 0.005978+0.006707+0.007370 = 0.020055$. $EPV = 50{,}000 \\times 0.020055 = \\pounds 1{,}002.75$",
-          note: "Each year's death probability is calculated relative to $l_{61}$ (the life's age at the START of the policy), not re-based each year &mdash; this is the standard term-assurance summation technique and should be shown as three explicit terms, not just a final answer.",
+          note: "Each year's death probability is calculated relative to $l_{61}$ (the life's age at the <em>start</em> of the policy), not re-based each year &mdash; this is the standard term-assurance summation technique and should be shown as three explicit terms, not just a final answer.",
         },
         {
           label: "(iv)",
@@ -824,7 +824,7 @@ const QUESTIONS = {
             "An insurer issues a whole life assurance of &pound;80,000 to a life aged 61, with level annual premiums payable in advance for life. Initial expenses are &pound;500 and renewal expenses are 5% of each premium from the second policy year onward. Calculate the level annual premium $P$ using the equivalence principle.",
           answer:
             "$P\\,\\ddot{a}_{61} = 80{,}000\\,A_{61} + 500 + 0.05P(\\ddot{a}_{61}-1)$. $P(17.68) = 80{,}000(0.320)+500+0.05P(16.68)$. $P(17.68-0.834)=26{,}100 \\Rightarrow P(16.846)=26{,}100 \\Rightarrow P = \\pounds 1{,}549.33$",
-          note: "Renewal expenses apply from the SECOND premium onward, i.e. to $(\\ddot{a}_{61}-1)$ premiums, not all $\\ddot{a}_{61}$ of them &mdash; a common error is applying the 5% loading to the full annuity factor including the first premium.",
+          note: "Renewal expenses apply from the <em>second</em> premium onward, i.e. to $(\\ddot{a}_{61}-1)$ premiums, not all $\\ddot{a}_{61}$ of them &mdash; a common error is applying the 5% loading to the full annuity factor including the first premium.",
         },
         {
           label: "(iii)",
@@ -860,7 +860,7 @@ const QUESTIONS = {
           question: "Define 'death strain at risk' for a policy, and state how expected death strain (EDS) is calculated for a portfolio.",
           answer:
             "Death strain at risk is the extra amount an insurer must pay out on death beyond what it has already reserved for that policy (benefit minus reserve held). Expected death strain is the death strain at risk multiplied by the assumed probability of death, summed across all policies in the portfolio.",
-          note: "Both definitions should reference the RESERVE explicitly &mdash; a common error defines death strain at risk as simply \"the sum assured\", omitting the crucial \"minus the reserve already held\" that makes it a strain rather than the full benefit.",
+          note: "Both definitions should reference the <em>reserve</em> explicitly &mdash; a common error defines death strain at risk as simply \"the sum assured\", omitting the crucial \"minus the reserve already held\" that makes it a strain rather than the full benefit.",
         },
         {
           label: "(ii)",
@@ -870,7 +870,7 @@ const QUESTIONS = {
             "An insurer has 1,000 in-force whole life policies on lives aged 70 at the start of a year, each with sum assured &pound;20,000. The reserve held per policy at the start of the year is &pound;9,000, and the assumed mortality rate is $q_{70}=0.02$. During the year, 18 deaths actually occurred. Calculate the expected death strain and the actual death strain for the portfolio.",
           answer:
             "Death strain at risk per policy $= 20{,}000-9{,}000=\\pounds 11{,}000$. Expected death strain $= 1{,}000 \\times 0.02 \\times 11{,}000 = \\pounds 220{,}000$. Actual death strain $=18 \\times 11{,}000 = \\pounds 198{,}000$.",
-          note: "EDS is summed over the WHOLE portfolio (using the assumed probability), while ADS only involves the policies where death actually occurred &mdash; the two use different \"how many policies\" bases, which is the key distinction being tested.",
+          note: "EDS is summed over the <em>whole</em> portfolio (using the assumed probability), while ADS only involves the policies where death actually occurred &mdash; the two use different \"how many policies\" bases, which is the key distinction being tested.",
         },
         {
           label: "(iii)",
@@ -904,7 +904,7 @@ const QUESTIONS = {
           marks: 2,
           question: "Define $\\ddot{a}_{xy}$ and $\\ddot{a}_{\\overline{xy}}$, the joint life and last survivor annuity functions for two lives $(x)$ and $(y)$.",
           answer:
-            "$\\ddot{a}_{xy}$ is the expected present value of an annuity of 1 per year, paid annually in advance, while BOTH lives $(x)$ and $(y)$ are alive, ceasing on the first death. $\\ddot{a}_{\\overline{xy}}$ is the expected present value of an annuity of 1 per year, paid annually in advance, continuing as long as AT LEAST ONE of the two lives is alive, ceasing only on the second (later) death.",
+            "$\\ddot{a}_{xy}$ is the expected present value of an annuity of 1 per year, paid annually in advance, while <em>both</em> lives $(x)$ and $(y)$ are alive, ceasing on the first death. $\\ddot{a}_{\\overline{xy}}$ is the expected present value of an annuity of 1 per year, paid annually in advance, continuing as long as <em>at least one</em> of the two lives is alive, ceasing only on the second (later) death.",
           note: "The bar/no-bar distinction (first death vs last survivor) must be stated explicitly and correctly &mdash; this exact distinction is what part (iv) later depends on candidates being fluent with.",
         },
         {
@@ -931,7 +931,7 @@ const QUESTIONS = {
           question:
             "The scheme rules instead specify the annuity reduces to &pound;9,000 per year after the first death, continuing at that lower rate to the survivor. Explain, without carrying out the full calculation, how you would adapt the approach in part (iii) to value this revised benefit.",
           answer:
-            "Split the benefit into two pieces. First, &pound;15,000 per year while BOTH lives are alive, valued using the joint life annuity: $15{,}000 \\times \\ddot{a}_{65:62}$. Second, an additional &pound;9,000 per year continuing to whichever life survives after the first death, valued using the 'survivor only' period $\\left(\\ddot{a}_{\\overline{65:62}}-\\ddot{a}_{65:62}\\right)$ &mdash; the portion of the last-survivor annuity representing 'exactly one life alive'. The total value is $15{,}000\\,\\ddot{a}_{65:62} + 9{,}000\\left(\\ddot{a}_{\\overline{65:62}}-\\ddot{a}_{65:62}\\right)$.",
+            "Split the benefit into two pieces. First, &pound;15,000 per year while <em>both</em> lives are alive, valued using the joint life annuity: $15{,}000 \\times \\ddot{a}_{65:62}$. Second, an additional &pound;9,000 per year continuing to whichever life survives after the first death, valued using the 'survivor only' period $\\left(\\ddot{a}_{\\overline{65:62}}-\\ddot{a}_{65:62}\\right)$ &mdash; the portion of the last-survivor annuity representing 'exactly one life alive'. The total value is $15{,}000\\,\\ddot{a}_{65:62} + 9{,}000\\left(\\ddot{a}_{\\overline{65:62}}-\\ddot{a}_{65:62}\\right)$.",
           note: "The key insight is recognising $\\left(\\ddot{a}_{\\overline{xy}}-\\ddot{a}_{xy}\\right)$ as exactly the 'exactly one life alive' period &mdash; candidates who instead try to value the full &pound;15,000 for life plus a separate reduction have overcomplicated the structure relative to this clean decomposition.",
         },
       ],
@@ -995,7 +995,7 @@ const QUESTIONS = {
           question:
             "Two discrete random variables $X,Y \\in \\{1,2\\}$ have joint probabilities $f(1,1)=0.1$, $f(1,2)=0.3$, $f(2,1)=0.3$, $f(2,2)=0.3$. Determine the marginal distributions of $X$ and $Y$, and state, with justification, whether $X$ and $Y$ are independent.",
           answer:
-            "$P(X=1)=0.1+0.3=0.4$, $P(X=2)=0.3+0.3=0.6$. $P(Y=1)=0.1+0.3=0.4$, $P(Y=2)=0.3+0.3=0.6$. $X$ and $Y$ are NOT independent: if they were, $f(1,1)$ would equal $P(X=1)P(Y=1) = 0.4\\times0.4 = 0.16$, but the actual value is $f(1,1)=0.1 \\neq 0.16$.",
+            "$P(X=1)=0.1+0.3=0.4$, $P(X=2)=0.3+0.3=0.6$. $P(Y=1)=0.1+0.3=0.4$, $P(Y=2)=0.3+0.3=0.6$. $X$ and $Y$ are <em>not</em> independent: if they were, $f(1,1)$ would equal $P(X=1)P(Y=1) = 0.4\\times0.4 = 0.16$, but the actual value is $f(1,1)=0.1 \\neq 0.16$.",
           note: "Checking independence requires testing the factorisation condition at (at least) one specific point and finding it fails &mdash; simply asserting dependence without a numerical check loses marks.",
         },
         {
@@ -1059,7 +1059,7 @@ const QUESTIONS = {
           question:
             "Explain what would change about your approach in part (ii) if you were instead told that individual claim amounts are known to be exactly normally distributed, rather than of unspecified shape.",
           answer:
-            "The numerical answer would be unchanged, since with $n=100$ the CLT approximation is already very accurate. However, the calculation would no longer be an APPROXIMATION at all: if the underlying claim amounts are exactly normal, the sample mean's distribution is exactly $N(\\mu,\\sigma^2/n)$ for any sample size, not just approximately so for large $n$.",
+            "The numerical answer would be unchanged, since with $n=100$ the CLT approximation is already very accurate. However, the calculation would no longer be an <em>approximation</em> at all: if the underlying claim amounts are exactly normal, the sample mean's distribution is exactly $N(\\mu,\\sigma^2/n)$ for any sample size, not just approximately so for large $n$.",
           note: "The key distinction examiners want is 'exact vs approximate', not just 'the answer would be the same' &mdash; candidates should explicitly reference Module 7's exact-normality result for samples from a normal population.",
         },
         {
@@ -1070,7 +1070,7 @@ const QUESTIONS = {
             "The insurer instead wants a 95% confidence interval for the true mean claim amount, based on a sample of 100 claims with sample mean &pound;820 and sample standard deviation &pound;240 (population variance unknown). Calculate the interval.",
           answer:
             "With $n=100$ large, the $t$-distribution with 99 df is very close to standard normal, so $z\\approx1.96$ is used. Standard error $= 240/\\sqrt{100}=24$. Margin $=1.96\\times24=47.04$. 95% CI $= 820 \\pm 47.04 = [\\pounds772.96, \\pounds867.04]$.",
-          note: "Candidates should note WHY the normal quantile is an acceptable substitute for the $t$ quantile here specifically (large $n$, so $t_{99}\\approx z$) rather than using it without justification.",
+          note: "Candidates should note <em>why</em> the normal quantile is an acceptable substitute for the $t$ quantile here specifically (large $n$, so $t_{99}\\approx z$) rather than using it without justification.",
         },
       ],
     },
@@ -1201,7 +1201,7 @@ const QUESTIONS = {
           question:
             "The data appear to follow a consistently increasing but slightly curved (not perfectly straight-line) pattern. Explain how you would check whether Spearman's rank correlation supports the same conclusion, and what result you would expect if the relationship is strongly monotonic despite the curve.",
           answer:
-            "Recalculate the correlation using the RANKS of $x$ and $y$ in place of their raw values (Spearman's is exactly Pearson's formula applied to ranks). Since a strongly monotonic relationship preserves the ordering of observations almost perfectly even when curved, Spearman's rank correlation would be expected to come out very high &mdash; likely even higher than the Pearson value found in part (ii), since rank correlation isn't penalised by the curvature the way Pearson's linear measure is.",
+            "Recalculate the correlation using the <em>ranks</em> of $x$ and $y$ in place of their raw values (Spearman's is exactly Pearson's formula applied to ranks). Since a strongly monotonic relationship preserves the ordering of observations almost perfectly even when curved, Spearman's rank correlation would be expected to come out very high &mdash; likely even higher than the Pearson value found in part (ii), since rank correlation isn't penalised by the curvature the way Pearson's linear measure is.",
           note: "The key insight examiners want is the specific prediction (Spearman's $\\geq$ Pearson's here) with a stated reason (rank correlation is insensitive to curvature as long as monotonicity holds), not just 'calculate Spearman's too'.",
         },
       ],
@@ -1235,7 +1235,7 @@ const QUESTIONS = {
           question: "Calculate $R^2$ for the fitted model, and interpret its value.",
           answer:
             "Fitted values: 3.0, 4.1, 5.2, 6.3, 7.4. $SS_{res}=\\sum(y_i-\\hat y_i)^2 = 2.70$. $SS_{tot}=\\sum(y_i-\\bar y)^2=14.80$. $R^2 = 1-\\frac{2.70}{14.80} = 0.818$. This means approximately 81.8% of the variability in $y$ is explained by the fitted linear relationship with $x$.",
-          note: "The interpretation sentence (what the number actually MEANS, not just its value) is what the 'interpret' instruction is asking for &mdash; a bare numerical answer without interpretation loses part of the available credit.",
+          note: "The interpretation sentence (what the number actually <em>means</em>, not just its value) is what the 'interpret' instruction is asking for &mdash; a bare numerical answer without interpretation loses part of the available credit.",
         },
         {
           label: "(iv)",
@@ -1281,7 +1281,7 @@ const QUESTIONS = {
             "Model A (age band only) has deviance 340 on 296 degrees of freedom. Model B (age band plus vehicle type, adding 2 further parameters) has deviance 322 on 294 degrees of freedom. Test whether vehicle type significantly improves the fit.",
           answer:
             "Deviance difference $=340-322=18$, on $296-294=2$ degrees of freedom. Comparing to the chi-square critical value $\\chi^2_{0.05,2}=5.991$: since $18 > 5.991$, the improvement in fit from adding vehicle type is statistically significant at the 5% level, so vehicle type should be retained in the model.",
-          note: "Candidates must correctly identify the degrees of freedom for the comparison as the DIFFERENCE in parameters (2), not either model's own degrees of freedom, and state a clear retain/reject conclusion.",
+          note: "Candidates must correctly identify the degrees of freedom for the comparison as the <em>difference</em> in parameters (2), not either model's own degrees of freedom, and state a clear retain/reject conclusion.",
         },
         {
           label: "(iv)",
@@ -1335,7 +1335,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain why this exact match between the Bayesian posterior mean and the linear credibility formula is a special property of this particular prior/likelihood pairing, rather than a general result.",
           answer:
-            "This is the 'exact credibility' property specific to conjugate prior/likelihood pairs such as Gamma/Poisson (and Beta/Binomial) &mdash; for these particular families, the posterior mean happens to reduce algebraically to exactly the linear credibility-weighted form. For other, non-conjugate prior/likelihood combinations, the true Bayesian posterior mean generally does NOT simplify to a simple linear formula, and a classical credibility premium would then only be an approximation to the full Bayesian answer, not an exact match.",
+            "This is the 'exact credibility' property specific to conjugate prior/likelihood pairs such as Gamma/Poisson (and Beta/Binomial) &mdash; for these particular families, the posterior mean happens to reduce algebraically to exactly the linear credibility-weighted form. For other, non-conjugate prior/likelihood combinations, the true Bayesian posterior mean generally does <em>not</em> simplify to a simple linear formula, and a classical credibility premium would then only be an approximation to the full Bayesian answer, not an exact match.",
           note: "The key distinction examiners want is 'special to conjugate pairs, not universal' &mdash; a common error is implying the Bayesian and classical credibility approaches always agree exactly, which is only true for these specific conjugate cases.",
         },
       ],
@@ -1379,7 +1379,7 @@ const QUESTIONS = {
           marks: 2,
           question: "Calculate the credibility premium for Risk 1 (own mean 11), and comment on why it is close to that risk's own observed mean.",
           answer:
-            "Credibility premium $= Z\\bar X_1 + (1-Z)\\bar X = 0.937(11)+0.063(15.333) = 10.31+0.97 = 11.27$. This is close to Risk 1's own mean of 11 because $Z$ is very high (0.937): the estimated between-risk variance is large relative to the process variance, meaning risks in this portfolio genuinely differ a lot from one another, so each risk's own experience is treated as highly informative and given correspondingly heavy weight.",
+            "Credibility premium $= Z\\bar X_1 + (1-Z)\\bar X = 0.937(11)+0.063(15.333) = 10.31+0.97 = 11.27$. This is close to Risk 1's own mean of 11 because $Z$ is very high (0.937): the estimated between-risk variance is large relative to the process variance, meaning risks in this portfolio differ a lot from one another, so each risk's own experience is treated as highly informative and given correspondingly heavy weight.",
           note: "The comment should connect the numerical closeness to the underlying reason (high $Z$ because between-risk variance dominates process variance), not just restate that the numbers happen to be close.",
         },
       ],
@@ -1409,7 +1409,7 @@ const QUESTIONS = {
             "An individual's preferences are described by the exponential utility function $u(w) = 1 - e^{-aw}$ with $a=0.1$ (wealth in &pound;'000s). Their current wealth is &pound;50,000, and they face a 20% chance of a &pound;10,000 loss. Calculate their expected utility if they do not insure against this risk.",
           answer:
             "$u(50) = 1-e^{-5} = 0.9933$. $u(40) = 1-e^{-4} = 0.9817$. $E[u] = 0.8(0.9933) + 0.2(0.9817) = 0.9909$",
-          note: "Wealth must be substituted in the SAME units as $a$ is calibrated to (here, &pound;'000s) &mdash; mixing units (e.g. using $w=50{,}000$ directly with $a=0.1$) gives a meaningless, saturated result.",
+          note: "Wealth must be substituted in the <em>same</em> units as $a$ is calibrated to (here, &pound;'000s) &mdash; mixing units (e.g. using $w=50{,}000$ directly with $a=0.1$) gives a meaningless, saturated result.",
         },
         {
           label: "(iii)",
@@ -1427,7 +1427,7 @@ const QUESTIONS = {
           question: "Calculate the certainty equivalent wealth of the uninsured position from part (ii), and use it to explain your conclusion in part (iii) without directly comparing utility values.",
           answer:
             "$CE = -\\dfrac{1}{a}\\ln(1-E[u]) = -\\dfrac{1}{0.1}\\ln(1-0.9909) = -10\\ln(0.0091) = 47.05$ (&pound;'000s). Since the certainty equivalent (&pound;47,050) is less than the guaranteed wealth after insurance (&pound;47,500), the individual is better off accepting the insurer's guaranteed outcome than facing the risky uninsured prospect, confirming insurance should be bought.",
-          note: "The certainty equivalent is the guaranteed wealth level giving the SAME expected utility as the risky prospect &mdash; comparing it directly to the insured wealth level is a cleaner, more intuitive way to reach the same conclusion as part (iii) without needing to interpret raw utility numbers.",
+          note: "The certainty equivalent is the guaranteed wealth level giving the <em>same</em> expected utility as the risky prospect &mdash; comparing it directly to the insured wealth level is a cleaner, more intuitive way to reach the same conclusion as part (iii) without needing to interpret raw utility numbers.",
         },
       ],
     },
@@ -1453,7 +1453,7 @@ const QUESTIONS = {
           question:
             "A portfolio's one-year loss $L$ is assumed to be normally distributed with mean &pound;100,000 and standard deviation &pound;40,000. Calculate the 95% VaR (using $z_{0.95}=1.645$).",
           answer: "$VaR_{95\\%} = \\mu + z_{0.95}\\,\\sigma = 100{,}000 + 1.645(40{,}000) = \\pounds165{,}800$",
-          note: "This is a direct normal-quantile calculation &mdash; candidates should be comfortable that VaR here is a quantile of the LOSS distribution, not of a return distribution, so no sign-flip is needed.",
+          note: "This is a direct normal-quantile calculation &mdash; candidates should be comfortable that VaR here is a quantile of the <em>loss</em> distribution, not of a return distribution, so no sign-flip is needed.",
         },
         {
           label: "(iii)",
@@ -1471,7 +1471,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on why TailVaR exceeds VaR in this example, and explain one advantage TailVaR has over VaR for a general insurer's capital-setting purposes.",
           answer:
-            "TailVaR averages over ALL losses beyond the VaR threshold, including the most extreme ones, while VaR only marks where that tail begins &mdash; since the tail necessarily contains losses larger than the VaR threshold itself, TailVaR must exceed VaR. TailVaR is a coherent risk measure (satisfying sub-additivity, among other properties) and better reflects the severity of losses in the tail, making it more appropriate than VaR for setting capital to withstand genuinely extreme outcomes.",
+            "TailVaR averages over <em>all</em> losses beyond the VaR threshold, including the most extreme ones, while VaR only marks where that tail begins &mdash; since the tail necessarily contains losses larger than the VaR threshold itself, TailVaR must exceed VaR. TailVaR is a coherent risk measure (satisfying sub-additivity, among other properties) and better reflects the severity of losses in the tail, making it more appropriate than VaR for setting capital to withstand extreme outcomes.",
           note: "The coherence/sub-additivity point is the key technical advantage worth naming specifically, not just 'TailVaR captures more information' in vague terms.",
         },
       ],
@@ -1498,7 +1498,7 @@ const QUESTIONS = {
             "Asset 1 has expected return 8% and standard deviation 20%; Asset 2 has expected return 12% and standard deviation 30%. The correlation between them is $-0.2$. Calculate the expected return and standard deviation of a portfolio with 60% in Asset 1 and 40% in Asset 2.",
           answer:
             "Expected return $= 0.6(8\\%)+0.4(12\\%) = 9.6\\%$. $\\text{Cov} = (-0.2)(0.20)(0.30) = -0.012$. $\\sigma_p^2 = 0.6^2(0.20)^2+0.4^2(0.30)^2+2(0.6)(0.4)(-0.012) = 0.0144+0.0144-0.00576=0.02304$. $\\sigma_p = 15.18\\%$",
-          note: "Note the portfolio standard deviation (15.18%) is below the SIMPLE weighted average of the individual standard deviations (0.6(20%)+0.4(30%)=24%) &mdash; this gap is the diversification benefit, worth flagging explicitly.",
+          note: "Note the portfolio standard deviation (15.18%) is below the <em>simple</em> weighted average of the individual standard deviations (0.6(20%)+0.4(30%)=24%) &mdash; this gap is the diversification benefit, worth flagging explicitly.",
         },
         {
           label: "(iii)",
@@ -1515,8 +1515,8 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on why the minimum variance portfolio's standard deviation (14.98%) is lower than that of the 60/40 portfolio (15.18%) found in part (ii), referencing the correlation between the two assets.",
           answer:
-            "Because the correlation is negative ($\\rho=-0.2$), the two assets' returns tend to partially offset each other, and there exists a SPECIFIC weighting (the minimum variance weights) that maximises this offsetting effect. The 60/40 split in part (ii) is a reasonable but not optimal mix for risk minimisation; the minimum variance weights (66.2%/33.8%) are specifically chosen to minimise portfolio variance, so by construction no other weighting (including 60/40) can achieve a lower variance.",
-          note: "The key insight is that diversification benefit exists across a RANGE of weightings, but is only MAXIMISED at one specific point (the minimum variance portfolio) &mdash; candidates should avoid implying 60/40 was a poor choice, just that it isn't the variance-minimising one.",
+            "Because the correlation is negative ($\\rho=-0.2$), the two assets' returns tend to partially offset each other, and there exists a <em>specific</em> weighting (the minimum variance weights) that maximises this offsetting effect. The 60/40 split in part (ii) is a reasonable but not optimal mix for risk minimisation; the minimum variance weights (66.2%/33.8%) are specifically chosen to minimise portfolio variance, so by construction no other weighting (including 60/40) can achieve a lower variance.",
+          note: "The key insight is that diversification benefit exists across a <em>range</em> of weightings, but is only <em>maximised</em> at one specific point (the minimum variance portfolio) &mdash; candidates should avoid implying 60/40 was a poor choice, just that it isn't the variance-minimising one.",
         },
       ],
     },
@@ -1548,8 +1548,8 @@ const QUESTIONS = {
           marks: 3,
           question: "Analysts forecast the stock's actual expected return at 11%. State whether the stock plots above or below the security market line, and what this implies.",
           answer:
-            "Since the forecast return (11%) is below the CAPM-required return (11.4%) from part (ii), the stock plots BELOW the security market line. This implies the stock appears overvalued for its level of systematic risk &mdash; it is not offering sufficient expected return to compensate for its beta, and CAPM would predict its price should fall (raising its expected return) until it is correctly priced on the line.",
-          note: "Candidates commonly reverse this comparison &mdash; below the line means LOWER than required return, implying overvaluation (you're paying too much for too little expected compensation), not the reverse.",
+            "Since the forecast return (11%) is below the CAPM-required return (11.4%) from part (ii), the stock plots <em>below</em> the security market line. This implies the stock appears overvalued for its level of systematic risk &mdash; it is not offering sufficient expected return to compensate for its beta, and CAPM would predict its price should fall (raising its expected return) until it is correctly priced on the line.",
+          note: "Candidates commonly reverse this comparison &mdash; below the line means <em>lower</em> than required return, implying overvaluation (you're paying too much for too little expected compensation), not the reverse.",
         },
         {
           label: "(iv)",
@@ -1557,7 +1557,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain how a single-index model's decomposition of the stock's return variance differs from CAPM's central claim about which risk is rewarded.",
           answer:
-            "The single-index model decomposes total return variance into systematic variance (from the common market factor) plus idiosyncratic variance &mdash; this is a purely statistical, descriptive decomposition. CAPM makes the stronger ECONOMIC claim that only the systematic portion should be compensated with extra expected return, since idiosyncratic risk can be diversified away at no cost; the single-index model alone does not assert this economic conclusion, it merely describes the variance split.",
+            "The single-index model decomposes total return variance into systematic variance (from the common market factor) plus idiosyncratic variance &mdash; this is a purely statistical, descriptive decomposition. CAPM makes the stronger <em>economic</em> claim that only the systematic portion should be compensated with extra expected return, since idiosyncratic risk can be diversified away at no cost; the single-index model alone does not assert this economic conclusion, it merely describes the variance split.",
           note: "The key distinction is 'descriptive statistical decomposition' (single-index model) versus 'normative economic claim about pricing' (CAPM) &mdash; candidates who treat the two as interchangeable miss this important conceptual difference.",
         },
       ],
@@ -1645,7 +1645,7 @@ const QUESTIONS = {
           question:
             "A trader delta-hedges a short position of 2,000 of these call options, where the call's Delta is 0.65. State how many shares the trader must hold and in what direction, and explain why this hedge will need rebalancing if the stock price moves, referencing Gamma.",
           answer:
-            "The trader must hold $0.65\\times2{,}000 = 1{,}300$ shares LONG, offsetting the negative Delta exposure created by being short the calls. This hedge will need rebalancing because Delta itself changes as the stock price moves (the rate of change of Delta is Gamma); once the stock price moves, the option's actual Delta will differ from 0.65, so 1,300 shares will no longer exactly offset the position, requiring the share holding to be adjusted (rebalanced) to match the new Delta.",
+            "The trader must hold $0.65\\times2{,}000 = 1{,}300$ shares <em>long</em>, offsetting the negative Delta exposure created by being short the calls. This hedge will need rebalancing because Delta itself changes as the stock price moves (the rate of change of Delta is Gamma); once the stock price moves, the option's actual Delta will differ from 0.65, so 1,300 shares will no longer exactly offset the position, requiring the share holding to be adjusted (rebalanced) to match the new Delta.",
           note: "Both the direction (long shares to offset a short call position) and the Gamma-based rebalancing explanation are needed for full marks &mdash; stating only the share count without the rebalancing rationale is an incomplete answer.",
         },
       ],
@@ -1680,7 +1680,7 @@ const QUESTIONS = {
           question: "A European call option with strike &pound;100 matures in one year. Calculate its price using risk-neutral valuation.",
           answer:
             "$S_u=115$, $S_d=90$. Payoff$_u=\\max(115-100,0)=15$; Payoff$_d=\\max(90-100,0)=0$. Price $= e^{-0.04}[0.563(15)+0.437(0)] = e^{-0.04}(8.45) = 0.9608(8.45) = \\pounds8.12$",
-          note: "The expected payoff must be discounted at the RISK-FREE rate using the risk-neutral probabilities, not the real-world probabilities (which aren't given, and aren't needed).",
+          note: "The expected payoff must be discounted at the <em>risk-free</em> rate using the risk-neutral probabilities, not the real-world probabilities (which aren't given, and aren't needed).",
         },
         {
           label: "(iv)",
@@ -1724,7 +1724,7 @@ const QUESTIONS = {
           question: "Explain what $N(d_2)$ represents, and comment on whether this option is likely to finish in the money.",
           answer:
             "$N(d_2)$ is (approximately) the risk-neutral probability that the option finishes in the money. Since $N(d_2)=0.573>0.5$ here, the option is more likely than not to finish in the money under the risk-neutral measure, consistent with the stock price (&pound;50) already exceeding the strike (&pound;48) at the outset.",
-          note: "The word 'approximately' or a similar qualifier is worth including, since $N(d_2)$ is the EXACT risk-neutral in-the-money probability, but it's easy to conflate with $N(d_1)$ (Delta) if not careful.",
+          note: "The word 'approximately' or a similar qualifier is worth including, since $N(d_2)$ is the <em>exact</em> risk-neutral in-the-money probability, but it's easy to conflate with $N(d_1)$ (Delta) if not careful.",
         },
         {
           label: "(iv)",
@@ -1733,7 +1733,7 @@ const QUESTIONS = {
           question:
             "Explain, in general terms (no calculation required), how the 5-step method's numeraire choice could simplify pricing an option to exchange one risky asset for another, compared with a standard Black-Scholes-style approach.",
           answer:
-            "Priced directly in cash terms, an exchange option depends on TWO sources of randomness (the movements of both underlying assets). By choosing one of the two assets itself as the numeraire, that asset's own randomness is effectively absorbed into the reference unit, reducing the problem to depending on only the RELATIVE movement between the two assets &mdash; a simpler, one-dimensional problem that can then often be solved using Black-Scholes-style machinery under the new measure.",
+            "Priced directly in cash terms, an exchange option depends on <em>two</em> sources of randomness (the movements of both underlying assets). By choosing one of the two assets itself as the numeraire, that asset's own randomness is effectively absorbed into the reference unit, reducing the problem to depending on only the <em>relative</em> movement between the two assets &mdash; a simpler, one-dimensional problem that can then often be solved using Black-Scholes-style machinery under the new measure.",
           note: "This tests conceptual understanding of the numeraire's role, not a memorised exchange-option formula &mdash; a strong answer explains the dimensionality reduction specifically, not just 'it makes it easier' in vague terms.",
         },
       ],
@@ -1759,7 +1759,7 @@ const QUESTIONS = {
           question: "Explain how the Cox-Ingersoll-Ross (CIR) model addresses this limitation, and how the Hull-White model differs in its own approach to improving on Vasicek.",
           answer:
             "CIR replaces the constant diffusion term with $\\sigma\\sqrt{r_t}$, so volatility shrinks toward zero as $r_t$ approaches zero, keeping rates non-negative under suitable conditions. Hull-White instead keeps Vasicek's basic structure but allows the mean-reversion level (and potentially other parameters) to be time-dependent, so the model can be calibrated to exactly fit the current observed yield curve &mdash; a different kind of improvement, addressing yield-curve consistency rather than the negative-rate problem directly.",
-          note: "Both models 'improve on' Vasicek in genuinely different ways &mdash; candidates should not conflate CIR's negative-rate fix with Hull-White's yield-curve-fitting fix, since they address different limitations.",
+          note: "Both models 'improve on' Vasicek in different ways &mdash; candidates should not conflate CIR's negative-rate fix with Hull-White's yield-curve-fitting fix, since they address different limitations.",
         },
         {
           label: "(iii)",
@@ -1777,7 +1777,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain how the Merton (structural) model would instead assess this firm's default risk, and give one advantage this approach has over the intensity-based calculation in part (iii).",
           answer:
-            "The Merton model treats the firm's equity as a European call option on the firm's total assets, with strike equal to the face value of its debt; default occurs if asset value falls below the debt's face value at maturity, letting Black-Scholes-style option pricing techniques estimate the default probability from the firm's asset value and volatility. Its advantage over the reduced-form calculation in part (iii) is that it provides an economic EXPLANATION for why default might occur (declining or volatile asset value relative to leverage), rather than simply assuming a constant statistical default intensity with no underlying economic story.",
+            "The Merton model treats the firm's equity as a European call option on the firm's total assets, with strike equal to the face value of its debt; default occurs if asset value falls below the debt's face value at maturity, letting Black-Scholes-style option pricing techniques estimate the default probability from the firm's asset value and volatility. Its advantage over the reduced-form calculation in part (iii) is that it provides an economic <em>explanation</em> for why default might occur (declining or volatile asset value relative to leverage), rather than simply assuming a constant statistical default intensity with no underlying economic story.",
           note: "The key contrast to draw out is 'explains why' (structural/Merton) versus 'describes how often, statistically' (reduced-form, as used in part (iii)) &mdash; both are valid, but for different purposes.",
         },
       ],
@@ -1795,7 +1795,7 @@ const QUESTIONS = {
           question: "State Lundberg's inequality, defining each symbol used.",
           answer:
             "The probability of ultimate ruin $\\psi(u) \\leq e^{-Ru}$, where $u$ is the insurer's initial surplus and $R>0$ is the adjustment coefficient, determined by the premium loading and the claim size distribution.",
-          note: "Candidates should note this is an upper BOUND, not an exact formula for the ruin probability.",
+          note: "Candidates should note this is an upper <em>bound</em>, not an exact formula for the ruin probability.",
         },
         {
           label: "(ii)",
@@ -1814,7 +1814,7 @@ const QUESTIONS = {
           question: "Explain two distinct ways the insurer could reduce this bound on the probability of ruin, referencing the formula used in part (ii).",
           answer:
             "(1) Increase initial surplus $u$: since the bound is $e^{-Ru}$, a larger $u$ directly and exponentially reduces the bound, without needing to change anything about the claims process itself. (2) Increase the premium loading $\\theta$ (e.g. by raising premiums) or purchase reinsurance to reduce claims variability: either raises the adjustment coefficient $R$, which also reduces the bound $e^{-Ru}$, though a higher $\\theta$ may reduce competitiveness and reinsurance carries its own cost.",
-          note: "Both routes (increasing $u$ directly, or increasing $R$ via the premium loading/claims variability) should be identified as genuinely distinct levers, each with a real-world trade-off worth mentioning.",
+          note: "Both routes (increasing $u$ directly, or increasing $R$ via the premium loading/claims variability) should be identified as distinct levers, each with a real-world trade-off worth mentioning.",
         },
         {
           label: "(iv)",
@@ -1824,7 +1824,7 @@ const QUESTIONS = {
             "A run-off triangle shows cumulative claims (&pound;'000s) as follows: Origin year 1: 100, 150, 165 (development years 1, 2, 3). Origin year 2: 120, 175 (development years 1, 2). Origin year 3: 130 (development year 1). Using the basic chain ladder method, calculate the total outstanding claims across origin years 2 and 3.",
           answer:
             "Development factor $f_{1\\to2} = \\dfrac{150+175}{100+120} = \\dfrac{325}{220} = 1.477$. Development factor $f_{2\\to3} = \\dfrac{165}{150} = 1.100$. Origin year 2 ultimate $= 175\\times1.100 = 192.50$; outstanding $=192.50-175=17.50$. Origin year 3 projected to dev. year 2 $=130\\times1.477=192.05$; ultimate $=192.05\\times1.100=211.25$; outstanding $=211.25-130=81.25$. Total outstanding $=17.50+81.25=\\pounds98.75$ ('000s), i.e. &pound;98,750.",
-          note: "Origin year 3 needs TWO development factors applied in sequence (dev. year 1 to 2, then 2 to 3) since it only has one data point so far, while origin year 2 only needs one (dev. year 2 to 3) &mdash; applying the wrong number of factors to each origin year is the most common error in this style of question.",
+          note: "Origin year 3 needs <em>two</em> development factors applied in sequence (dev. year 1 to 2, then 2 to 3) since it only has one data point so far, while origin year 2 only needs one (dev. year 2 to 3) &mdash; applying the wrong number of factors to each origin year is the most common error in this style of question.",
         },
       ],
     },
@@ -1843,7 +1843,7 @@ const QUESTIONS = {
           question: "Define the Markov property for a discrete-time stochastic process, and explain what it means for a chain to be time-homogeneous.",
           answer:
             "The Markov property states that, given the present state, the future evolution of the process is independent of its past states: $P(X_{n+1}=j \\mid X_n=i, X_{n-1}, \\dots, X_0) = P(X_{n+1}=j \\mid X_n=i)$. A chain is time-homogeneous if this one-step transition probability does not depend on $n$ &mdash; the same transition matrix applies at every step.",
-          note: "Candidates should state the conditional independence precisely (conditioning on the FULL history collapsing to conditioning on just the current state), not just say 'the future depends only on the present' without the formal statement.",
+          note: "Candidates should state the conditional independence precisely (conditioning on the <em>full</em> history collapsing to conditioning on just the current state), not just say 'the future depends only on the present' without the formal statement.",
         },
         {
           label: "(ii)",
@@ -1871,7 +1871,7 @@ const QUESTIONS = {
           question: "Comment on how the stationary distribution found in part (iii) should be interpreted, and on one limitation of this model for representing real policyholder behaviour.",
           answer:
             "The stationary distribution represents the long-run proportion of time the chain spends in each state (or, across a large population started from any mix of states, the long-run proportion Active/Suspended), regardless of the starting distribution &mdash; here, 80% Active and 20% Suspended in the long run. A key limitation is the time-homogeneity assumption: real transition probabilities (e.g. probability of suspension) likely change with policy duration, claims experience, or calendar time, none of which this simple constant-matrix model captures.",
-          note: "Candidates should distinguish the stationary distribution's TWO valid interpretations (long-run time average for one chain, or long-run population proportions for many independent chains) rather than conflating them carelessly, and should give a concrete, specific limitation rather than a vague 'the model is too simple'.",
+          note: "Candidates should distinguish the stationary distribution's <em>two</em> valid interpretations (long-run time average for one chain, or long-run population proportions for many independent chains) rather than conflating them carelessly, and should give a concrete, specific limitation rather than a vague 'the model is too simple'.",
         },
       ],
     },
@@ -1933,7 +1933,7 @@ const QUESTIONS = {
           question: "State the Kolmogorov forward equations for a time-inhomogeneous Markov jump process with generator matrix $A(t)$, and explain what distinguishes a time-inhomogeneous process from a time-homogeneous one.",
           answer:
             "The Kolmogorov forward equations are $\\dfrac{d}{dt}P(s,t) = P(s,t)A(t)$, where $P(s,t)$ is the matrix of transition probabilities from time $s$ to time $t$. In a time-homogeneous process, the generator (transition intensity) matrix $A$ is constant, so transition probabilities depend only on the elapsed time $t-s$; in a time-inhomogeneous process, $A(t)$ varies with $t$ itself (e.g. with age), so transition probabilities depend on the specific times $s$ and $t$, not just their difference.",
-          note: "Candidates should note the equation holds with $A(t)$ evaluated at the LATER time $t$, post-multiplying $P(s,t)$ &mdash; this is the forward equation convention, distinct from the backward equations.",
+          note: "Candidates should note the equation holds with $A(t)$ evaluated at the <em>later</em> time $t$, post-multiplying $P(s,t)$ &mdash; this is the forward equation convention, distinct from the backward equations.",
         },
         {
           label: "(ii)",
@@ -1943,7 +1943,7 @@ const QUESTIONS = {
             "A time-inhomogeneous force of mortality follows Gompertz's law, $\\mu_x = Bc^x$ with $B=0.0001$ and $c=1.1$. Using $_tp_x = \\exp\\left(-\\displaystyle\\int_0^t \\mu_{x+s}\\,ds\\right)$ and $\\displaystyle\\int_0^t Bc^{x+s}\\,ds = \\dfrac{Bc^x(c^t-1)}{\\ln c}$, calculate $_{10}p_{50}$.",
           answer:
             "$\\displaystyle\\int_0^{10}\\mu_{50+s}\\,ds = \\dfrac{0.0001(1.1^{50})(1.1^{10}-1)}{\\ln 1.1} = \\dfrac{0.0001(117.391)(1.5937-1)}{0.09531} = \\dfrac{0.0001(117.391)(0.5937)}{0.09531} = 0.19630$. $_{10}p_{50} = e^{-0.19630} = 0.8218$",
-          note: "This is exactly the time-inhomogeneous analogue of the constant-force survival formula $_tp_x=e^{-\\mu t}$ from earlier CM1/CS2 material &mdash; the only difference is that the constant $\\mu t$ in the exponent is replaced by the INTEGRAL of the age-varying $\\mu_{x+s}$ over the period, using the given closed-form result for a Gompertz force.",
+          note: "This is exactly the time-inhomogeneous analogue of the constant-force survival formula $_tp_x=e^{-\\mu t}$ from earlier CM1/CS2 material &mdash; the only difference is that the constant $\\mu t$ in the exponent is replaced by the <em>integral</em> of the age-varying $\\mu_{x+s}$ over the period, using the given closed-form result for a Gompertz force.",
         },
         {
           label: "(iii)",
@@ -1978,7 +1978,7 @@ const QUESTIONS = {
           question: "Define right-censoring and explain why the Kaplan-Meier estimator, rather than a simple empirical proportion, is used to estimate a survival function from censored data.",
           answer:
             "A right-censored observation is one where the individual's true event (e.g. death) time is only known to exceed some observed value &mdash; e.g. because the individual is still alive when the study ends, or withdraws early. A simple empirical proportion of survivors would treat censored individuals as if their status at censoring were their final outcome, discarding the partial survival information they do provide; the Kaplan-Meier estimator instead uses each individual's observed period at risk, correctly incorporating that information without assuming an event occurred.",
-          note: "The key point is that censored individuals are NOT discarded entirely and are NOT treated as deaths &mdash; they contribute exposure up to their censoring time, then leave the risk set, which is exactly what the Kaplan-Meier construction in part (ii) reflects.",
+          note: "The key point is that censored individuals are <em>not</em> discarded entirely and are <em>not</em> treated as deaths &mdash; they contribute exposure up to their censoring time, then leave the risk set, which is exactly what the Kaplan-Meier construction in part (ii) reflects.",
         },
         {
           label: "(ii)",
@@ -2023,7 +2023,7 @@ const QUESTIONS = {
           question: "Define the proportional hazards assumption underlying the Cox model, and explain the interpretation of a fitted coefficient $\\beta$ for a binary covariate.",
           answer:
             "The Cox proportional hazards model assumes each individual's hazard is a fixed multiple of a common baseline hazard: $h(t\\mid \\mathbf{z}) = h_0(t)e^{\\boldsymbol{\\beta}^T\\mathbf{z}}$, so the ratio of hazards between any two individuals is constant over time, regardless of the (unspecified) baseline hazard's shape. For a binary covariate $z$ (e.g. smoker=1, non-smoker=0) with coefficient $\\beta$, $e^{\\beta}$ is the hazard ratio &mdash; the multiplicative factor by which the hazard changes for $z=1$ relative to $z=0$.",
-          note: "The 'proportional' in proportional hazards refers specifically to the hazard RATIO being constant over time, not to the hazard itself being constant &mdash; the baseline hazard $h_0(t)$ is left completely unspecified and can vary with $t$ in any shape.",
+          note: "The 'proportional' in proportional hazards refers specifically to the hazard <em>ratio</em> being constant over time, not to the hazard itself being constant &mdash; the baseline hazard $h_0(t)$ is left completely unspecified and can vary with $t$ in any shape.",
         },
         {
           label: "(ii)",
@@ -2042,7 +2042,7 @@ const QUESTIONS = {
             "A mortality investigation covers exact age 50 to exact age 51, over calendar year 2020. Life A turns exact age 50 on 1 March 2020 and survives the full period. Life B is already exact age 50 at 1 January 2020 and dies on 1 July 2020 (exact age 50.5). Life C is exact age 50 at 1 January 2020 and withdraws from observation on 1 October 2020 (exact age 50.75). Calculate the total central exposed to risk (in years) across all three lives.",
           answer:
             "Life A: observed from 1 March to 31 December 2020, i.e. 10 months $=10/12=0.8333$ years. Life B: observed from 1 January to death on 1 July, i.e. 6 months $=0.5$ years. Life C: observed from 1 January to withdrawal on 1 October, i.e. 9 months $=0.75$ years. Total central exposed to risk $=0.8333+0.5+0.75=2.0833$ years.",
-          note: "Each life's exposure runs only over the period they are actually both alive AND under observation within the age 50-51 rate interval &mdash; Life A only enters the interval on 1 March (turning 50), while Lives B and C are already in it from 1 January, and each life's exposure ends at death, withdrawal, or the period end, whichever comes first.",
+          note: "Each life's exposure runs only over the period they are actually both alive <em>and</em> under observation within the age 50-51 rate interval &mdash; Life A only enters the interval on 1 March (turning 50), while Lives B and C are already in it from 1 January, and each life's exposure ends at death, withdrawal, or the period end, whichever comes first.",
         },
         {
           label: "(iv)",
@@ -2051,7 +2051,7 @@ const QUESTIONS = {
           question: "Using the total exposure from part (iii) and the single death observed (Life B), calculate the central mortality rate $m_{50}$, and comment on the reliability of this estimate.",
           answer:
             "$m_{50} = \\dfrac{\\text{deaths}}{\\text{central exposed to risk}} = \\dfrac{1}{2.0833} = 0.480$. This estimate is based on only 3 lives and 1 death, so it is subject to very high sampling variability and should not be treated as a reliable estimate of the true underlying mortality rate &mdash; a credible estimate would require a far larger exposed-to-risk investigation.",
-          note: "The formula divides the observed death COUNT by the exposure in years, giving units of 'deaths per life-year' &mdash; candidates should flag the tiny sample size explicitly rather than just quoting the number without comment.",
+          note: "The formula divides the observed death <em>count</em> by the exposure in years, giving units of 'deaths per life-year' &mdash; candidates should flag the tiny sample size explicitly rather than just quoting the number without comment.",
         },
       ],
     },
@@ -2068,7 +2068,7 @@ const QUESTIONS = {
           question: "State two distinct purposes served by applying statistical tests to a graduated mortality table.",
           answer:
             "(1) To check overall goodness of fit &mdash; whether the graduated rates are, in aggregate, consistent with the crude (observed) data (e.g. via a chi-square test). (2) To check for the presence of systematic features not captured by the graduation, such as bias in a particular direction across ages (e.g. via the signs test or cumulative deviations test) or dependence between adjacent ages' deviations (e.g. via the serial correlations test).",
-          note: "The two purposes are genuinely distinct: an overall chi-square test can pass even while a systematic pattern (e.g. consistent over-estimation at younger ages, under-estimation at older ages) goes undetected, which is exactly why the additional tests exist.",
+          note: "The two purposes are distinct: an overall chi-square test can pass even while a systematic pattern (e.g. consistent over-estimation at younger ages, under-estimation at older ages) goes undetected, which is exactly why the additional tests exist.",
         },
         {
           label: "(ii)",
@@ -2114,7 +2114,7 @@ const QUESTIONS = {
           question: "Define the 'reduction factor' approach to mortality projection.",
           answer:
             "The reduction factor approach projects future mortality rates by applying a multiplicative annual improvement factor to a base-year mortality rate: $q_x^{(t)} = q_x^{(0)}\\times RF(x,t)$, where $RF(x,t)$ (often of the form $(1-r_x)^t$ for an age-specific annual reduction rate $r_x$) declines below 1 as $t$ increases, reflecting assumed continuing mortality improvement.",
-          note: "The reduction factor is applied MULTIPLICATIVELY to the base rate, and typically compounds year-on-year (i.e. raised to the power of the number of years projected), not simply subtracted once.",
+          note: "The reduction factor is applied <em>multiplicatively</em> to the base rate, and typically compounds year-on-year (i.e. raised to the power of the number of years projected), not simply subtracted once.",
         },
         {
           label: "(ii)",
@@ -2123,7 +2123,7 @@ const QUESTIONS = {
           question: "A base mortality rate is $q_{65}^{2000}=0.012$, with an assumed constant annual reduction factor of 1.5%. Calculate the projected rate $q_{65}^{2030}$.",
           answer:
             "$q_{65}^{2030} = 0.012\\times(1-0.015)^{30} = 0.012\\times(0.985)^{30} = 0.012\\times0.6354 = 0.007625$",
-          note: "The exponent is the number of YEARS projected (30, from 2000 to 2030), applied to the single-year reduction factor $(1-0.015)$ &mdash; using 0.015 directly as a one-off percentage reduction, rather than compounding it over 30 years, is a common error.",
+          note: "The exponent is the number of <em>years</em> projected (30, from 2000 to 2030), applied to the single-year reduction factor $(1-0.015)$ &mdash; using 0.015 directly as a one-off percentage reduction, rather than compounding it over 30 years, is a common error.",
         },
         {
           label: "(iii)",
@@ -2158,7 +2158,7 @@ const QUESTIONS = {
           question: "Explain, in terms of the hazard rate, why the Pareto distribution is described as 'heavy-tailed', and why this makes it a common choice for modelling large general insurance losses.",
           answer:
             "The Pareto distribution has a decreasing hazard rate as $x\\to\\infty$, meaning that, conditional on a loss already being large, the 'resistance' to it becoming even larger diminishes rather than increases &mdash; this produces a slowly-decaying, power-law tail. This makes it a natural choice for modelling large losses, since it does not understate the probability of extreme, catastrophic claims the way a lighter-tailed distribution (e.g. exponential or normal) would.",
-          note: "The defining feature to state explicitly is the DECREASING hazard rate (linking back to the general tail-weight measures of EVT), not simply 'it has a long tail', which is imprecise.",
+          note: "The defining feature to state explicitly is the <em>decreasing</em> hazard rate (linking back to the general tail-weight measures of EVT), not simply 'it has a long tail', which is imprecise.",
         },
         {
           label: "(ii)",
@@ -2177,7 +2177,7 @@ const QUESTIONS = {
             "For this Pareto distribution ($\\alpha=3$, $\\lambda=2{,}000$), the mean is $E[X]=\\dfrac{\\lambda}{\\alpha-1}$ and the expected amount retained by the insurer under excess of loss reinsurance with retention $M$ is $E[\\min(X,M)] = \\dfrac{\\lambda}{\\alpha-1}\\left[1-\\left(\\dfrac{\\lambda}{\\lambda+M}\\right)^{\\alpha-1}\\right]$. Calculate $E[X]$ and, for a retention of $M=\\pounds3{,}000$, the reinsurer's expected payout per claim.",
           answer:
             "$E[X] = \\dfrac{2{,}000}{3-1} = \\pounds1{,}000$. $E[\\min(X,3{,}000)] = \\dfrac{2{,}000}{2}\\left[1-\\left(\\dfrac{2{,}000}{5{,}000}\\right)^{2}\\right] = 1{,}000\\left[1-(0.4)^2\\right] = 1{,}000(1-0.16) = \\pounds840$. Reinsurer's expected payout $= E[X]-E[\\min(X,M)] = 1{,}000-840 = \\pounds160$ per claim.",
-          note: "The exponent in $E[\\min(X,M)]$ is $\\alpha-1=2$, NOT $\\alpha=3$ &mdash; using the wrong exponent (matching the survival function's exponent from part (ii) instead) is the most common error here.",
+          note: "The exponent in $E[\\min(X,M)]$ is $\\alpha-1=2$, <em>not</em> $\\alpha=3$ &mdash; using the wrong exponent (matching the survival function's exponent from part (ii) instead) is the most common error here.",
         },
         {
           label: "(iv)",
@@ -2203,7 +2203,7 @@ const QUESTIONS = {
           question: "State Sklar's theorem, and explain what is meant by 'upper tail dependence' between two risks.",
           answer:
             "Sklar's theorem states that any joint distribution can be decomposed into its marginal distributions together with a copula function describing the dependence structure between them, independently of what those marginals are. Upper tail dependence is the tendency for both risks to take extremely high (bad, for losses) values simultaneously, more than an assumption of independence (or a dependence structure like the Gaussian copula) would suggest.",
-          note: "Candidates should be precise that Sklar's theorem allows the marginals and the dependence structure to be specified SEPARATELY and then combined &mdash; it doesn't say marginals and dependence are unrelated in general, just that they can always be decomposed this way.",
+          note: "Candidates should be precise that Sklar's theorem allows the marginals and the dependence structure to be specified <em>separately</em> and then combined &mdash; it doesn't say marginals and dependence are unrelated in general, just that they can always be decomposed this way.",
         },
         {
           label: "(ii)",
@@ -2212,7 +2212,7 @@ const QUESTIONS = {
           question: "Discuss why using a Gaussian copula to model the dependence between an insurer's property and business-interruption claims (both of which can be triggered by the same storm event) could understate the insurer's true aggregate risk.",
           answer:
             "The Gaussian copula has zero tail dependence by construction, regardless of its correlation parameter &mdash; even with a high overall correlation, it implies that jointly extreme losses on both lines become vanishingly unlikely relative to what physically correlated risks (like storm-driven property and business-interruption claims) would actually produce. An Archimedean copula with genuine upper tail dependence (e.g. Gumbel) would better reflect the real risk of both lines producing extreme losses from the same catastrophic event simultaneously, and would imply a higher, more realistic aggregate capital requirement.",
-          note: "The key technical point is that the Gaussian copula's flaw is structural (zero tail dependence at ANY correlation level), not simply that its correlation parameter might be mis-estimated &mdash; this is the same limitation historically implicated in underestimating correlated risk in the 2008 financial crisis.",
+          note: "The key technical point is that the Gaussian copula's flaw is structural (zero tail dependence at <em>any</em> correlation level), not simply that its correlation parameter might be mis-estimated &mdash; this is the same limitation historically implicated in underestimating correlated risk in the 2008 financial crisis.",
         },
         {
           label: "(iii)",
@@ -2229,7 +2229,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on how quota share reinsurance (part (iii)) and the choice of copula (part (ii)) address different aspects of the insurer's overall risk.",
           answer:
-            "Quota share reinsurance reduces the insurer's retained mean and variance on EACH individual line proportionally, regardless of how that line relates to any other; it does nothing, by itself, to address dependence BETWEEN lines. The copula, by contrast, governs how extreme outcomes on different lines co-occur, and matters specifically for assessing and managing AGGREGATE risk across the whole portfolio &mdash; an insurer could reduce each line's individual variance via proportional reinsurance and still be badly exposed to a correlated catastrophic event across both lines if the dependence structure between them is misspecified.",
+            "Quota share reinsurance reduces the insurer's retained mean and variance on <em>each</em> individual line proportionally, regardless of how that line relates to any other; it does nothing, by itself, to address dependence <em>between</em> lines. The copula, by contrast, governs how extreme outcomes on different lines co-occur, and matters specifically for assessing and managing <em>aggregate</em> risk across the whole portfolio &mdash; an insurer could reduce each line's individual variance via proportional reinsurance and still be badly exposed to a correlated catastrophic event across both lines if the dependence structure between them is misspecified.",
           note: "The distinction to draw out clearly is per-line risk reduction (reinsurance) versus cross-line dependence modelling (copulas) &mdash; both matter for overall capital adequacy, but neither substitutes for the other.",
         },
       ],
@@ -2248,7 +2248,7 @@ const QUESTIONS = {
             "A portfolio generates claims as a compound Poisson process with annual claim frequency $\\lambda=50$ and individual claim sizes exponentially distributed with mean &pound;800 (so $E[X^2]=2(800)^2$ for an exponential distribution). Calculate $E[S]$ and $\\text{Var}(S)$ for annual aggregate claims $S$.",
           answer:
             "$E[S] = \\lambda E[X] = 50(800) = \\pounds40{,}000$. $E[X^2] = 2(800)^2 = 1{,}280{,}000$. $\\text{Var}(S) = \\lambda E[X^2] = 50(1{,}280{,}000) = \\pounds^2\\,64{,}000{,}000$ (SD $=\\pounds8{,}000$).",
-          note: "The compound Poisson variance formula $\\text{Var}(S)=\\lambda E[X^2]$ uses the SECOND MOMENT of the severity distribution, not its variance alone &mdash; for the exponential distribution, $E[X^2]=2(\\text{mean})^2$, which is easy to substitute incorrectly as just $(\\text{mean})^2$.",
+          note: "The compound Poisson variance formula $\\text{Var}(S)=\\lambda E[X^2]$ uses the <em>second moment</em> of the severity distribution, not its variance alone &mdash; for the exponential distribution, $E[X^2]=2(\\text{mean})^2$, which is easy to substitute incorrectly as just $(\\text{mean})^2$.",
         },
         {
           label: "(ii)",
@@ -2267,7 +2267,7 @@ const QUESTIONS = {
             "A machine learning model is used to flag potentially fraudulent claims. Tested against 1,000 claims with known outcomes, it produces: 80 true positives, 20 false positives, 30 false negatives, and 870 true negatives. Calculate the model's precision, recall, and $F_1$ score.",
           answer:
             "Precision $=\\dfrac{TP}{TP+FP}=\\dfrac{80}{100}=0.800$. Recall $=\\dfrac{TP}{TP+FN}=\\dfrac{80}{110}=0.7273$. $F_1 = \\dfrac{2\\times\\text{Precision}\\times\\text{Recall}}{\\text{Precision}+\\text{Recall}} = \\dfrac{2(0.800)(0.7273)}{0.800+0.7273} = \\dfrac{1.1636}{1.5273} = 0.7619$",
-          note: "Precision's denominator is ALL predicted positives ($TP+FP=100$), while recall's denominator is ALL actual positives ($TP+FN=110$) &mdash; mixing these two denominators up is the most common error in this type of calculation.",
+          note: "Precision's denominator is <em>all</em> predicted positives ($TP+FP=100$), while recall's denominator is <em>all</em> actual positives ($TP+FN=110$) &mdash; mixing these two denominators up is the most common error in this type of calculation.",
         },
         {
           label: "(iv)",
@@ -2276,7 +2276,7 @@ const QUESTIONS = {
           question: "Discuss why recall might be prioritised over precision when tuning this fraud-detection classifier's threshold, despite the resulting increase in false positives.",
           answer:
             "A missed fraudulent claim (a false negative) directly costs the insurer the full fraudulent payout, whereas a false positive (a genuine claim incorrectly flagged) typically only costs the resource of a manual review before being paid correctly &mdash; given this asymmetry in the cost of the two error types, prioritising recall (catching more true fraud, even at the cost of more false alarms) can be the more economically sensible choice, provided the manual review capacity can absorb the extra false positives.",
-          note: "The strongest answers explicitly weigh the asymmetric COSTS of the two error types for this specific business context, rather than asserting recall is 'just better' in general &mdash; the right threshold choice is a business trade-off, not a universal rule.",
+          note: "The strongest answers explicitly weigh the asymmetric <em>costs</em> of the two error types for this specific business context, rather than asserting recall is 'just better' in general &mdash; the right threshold choice is a business trade-off, not a universal rule.",
         },
       ],
     },
@@ -2306,7 +2306,7 @@ const QUESTIONS = {
             "Using a PESTLE-style framework, discuss two external environment factors (other than regulation) the company should consider before launching this travel insurance product.",
           answer:
             "Economic: exchange rates and global economic conditions affect both claims costs (e.g. medical treatment costs abroad) and demand for travel (and hence travel insurance) itself. Technological: the company's existing technology strength could be a genuine competitive advantage (e.g. app-based instant claims, dynamic pricing using real-time travel data), but also means underwriting/claims processes must be built essentially from scratch, unlike an established insurer. Other valid factors include social (changing travel/risk attitudes) or environmental (climate-driven disruption to travel patterns).",
-          note: "Any two genuinely distinct PESTLE categories (excluding legal/regulatory, covered in part (iii)) should be accepted if well-justified and specific to this scenario, not generic statements.",
+          note: "Any two distinct PESTLE categories (excluding legal/regulatory, covered in part (iii)) should be accepted if well-justified and specific to this scenario, not generic statements.",
         },
         {
           label: "(iii)",
@@ -2315,7 +2315,7 @@ const QUESTIONS = {
           question:
             "Explain the difference between prudential and conduct regulation, and identify which is likely to be the company's more immediate practical concern when designing and launching this new product.",
           answer:
-            "Prudential regulation ensures firms are financially sound and able to meet obligations (e.g. capital/solvency requirements); conduct regulation governs how firms treat customers (fair treatment, disclosure, appropriate product design/sale). As a genuinely new insurer with limited scale initially, conduct regulation is likely the more immediate practical concern at product launch, since getting product design, disclosure and sales practices right for this specific customer base (potentially first-time insurance buyers via an app) is central to a technology-first entrant, though prudential requirements (e.g. minimum capital to be authorised at all) must also be met before writing any business.",
+            "Prudential regulation ensures firms are financially sound and able to meet obligations (e.g. capital/solvency requirements); conduct regulation governs how firms treat customers (fair treatment, disclosure, appropriate product design/sale). As a new insurer with limited scale initially, conduct regulation is likely the more immediate practical concern at product launch, since getting product design, disclosure and sales practices right for this specific customer base (potentially first-time insurance buyers via an app) is central to a technology-first entrant, though prudential requirements (e.g. minimum capital to be authorised at all) must also be met before writing any business.",
           note: "A strong answer acknowledges both matter, while still making and justifying a genuine judgement about relative immediate priority for this specific scenario, rather than refusing to choose.",
         },
         {
@@ -2325,7 +2325,7 @@ const QUESTIONS = {
           question:
             "Comment on why the actuary's advice should identify genuine alternative approaches to entering this market, rather than simply validating the company's proposed travel insurance product.",
           answer:
-            "Providing balanced advice that considers real alternatives (e.g. entering via a different product line, partnering with an established insurer, or a phased regional launch) helps the client make a genuinely informed decision, rather than the actuary simply rubber-stamping a predetermined plan &mdash; this is part of the actuary's professional duty to give substantively useful advice, not merely technically correct validation of an already-chosen course of action.",
+            "Providing balanced advice that considers real alternatives (e.g. entering via a different product line, partnering with an established insurer, or a phased regional launch) helps the client make an informed decision, rather than the actuary simply rubber-stamping a predetermined plan &mdash; this is part of the actuary's professional duty to give substantively useful advice, not merely technically correct validation of an already-chosen course of action.",
           note: "This connects directly to the advice-process principle that good advice weighs genuine alternatives, not just the option presented by the client.",
         },
       ],
@@ -2364,7 +2364,7 @@ const QUESTIONS = {
             "The insurer is deciding whether to structure the savings element as unit-linked or with-profits. Explain the key difference in risk-sharing between these two structures.",
           answer:
             "In a unit-linked structure, the policyholder's benefits are directly linked to the value of units in an underlying investment fund, so investment risk is passed largely to the policyholder. In a with-profits structure, the policyholder receives smoothed investment returns via bonuses reflecting the insurer's overall investment performance, meaning the insurer retains more investment risk (and administers smoothing) on the policyholder's behalf.",
-          note: "The key distinguishing concept is WHO bears the investment risk and volatility &mdash; unit-linked passes it through directly, with-profits smooths and partially retains it.",
+          note: "The key distinguishing concept is <em>who</em> bears the investment risk and volatility &mdash; unit-linked passes it through directly, with-profits smooths and partially retains it.",
         },
         {
           label: "(iv)",
@@ -2392,7 +2392,7 @@ const QUESTIONS = {
             "Explain why bonds and equities are both commonly held within an institutional investment portfolio, despite their very different risk/return characteristics.",
           answer:
             "Bonds offer relatively predictable cashflows and lower volatility, well-suited to matching predictable liabilities and preserving capital, while equities offer higher expected long-term returns in exchange for greater volatility. Holding both allows a portfolio to be positioned along the risk/return spectrum appropriate to the investor's objectives and liabilities, and because bond and equity returns are not perfectly correlated, combining them can also reduce overall portfolio risk for a given expected return relative to holding either asset class alone.",
-          note: "A full answer covers both the individual risk/return rationale AND the diversification/correlation rationale for holding both asset classes together.",
+          note: "A full answer covers both the individual risk/return rationale <em>and</em> the diversification/correlation rationale for holding both asset classes together.",
         },
         {
           label: "(ii)",
@@ -2402,7 +2402,7 @@ const QUESTIONS = {
             "A portfolio holds 60% in equities (expected return 8%, standard deviation 18%) and 40% in bonds (expected return 4%, standard deviation 8%), with a correlation of &minus;0.1 between the two. Calculate the portfolio's expected return and standard deviation.",
           answer:
             "Expected return $= 0.6(8\\%) + 0.4(4\\%) = 6.4\\%$. Covariance $= -0.1(0.18)(0.08) = -0.00144$. Portfolio variance $= 0.6^2(0.18)^2 + 0.4^2(0.08)^2 + 2(0.6)(0.4)(-0.00144) = 0.011664 + 0.001024 - 0.000691 = 0.011997$. Portfolio standard deviation $= \\sqrt{0.011997} = 10.95\\%$.",
-          note: "The negative correlation term REDUCES the portfolio variance below what a simple weighted average of the two standard deviations would suggest &mdash; this is the diversification effect referenced in part (i), now shown numerically.",
+          note: "The negative correlation term <em>reduces</em> the portfolio variance below what a simple weighted average of the two standard deviations would suggest &mdash; this is the diversification effect referenced in part (i), now shown numerically.",
         },
         {
           label: "(iii)",
@@ -2458,7 +2458,7 @@ const QUESTIONS = {
           question:
             "Explain why duration matching alone only protects the scheme against small changes in interest rates, and name the additional Redington immunisation condition needed for stronger protection.",
           answer:
-            "Duration matching equalises the FIRST-order (linear) sensitivity of assets and liabilities to interest rate changes, which is a good approximation only for small rate movements. For larger movements, the CURVATURE of how present values respond to rate changes (convexity) also matters; full Redington immunisation additionally requires the asset portfolio's convexity to be at least as great as the liability's convexity, to protect against larger interest rate shifts as well.",
+            "Duration matching equalises the <em>first</em>-order (linear) sensitivity of assets and liabilities to interest rate changes, which is a good approximation only for small rate movements. For larger movements, the <em>curvature</em> of how present values respond to rate changes (convexity) also matters; full Redington immunisation additionally requires the asset portfolio's convexity to be at least as great as the liability's convexity, to protect against larger interest rate shifts as well.",
           note: "Candidates should name convexity explicitly as the additional condition, not just say 'more precise matching is needed' vaguely.",
         },
         {
@@ -2495,8 +2495,8 @@ const QUESTIONS = {
           question:
             "Discuss why a deterministic model may be less appropriate than a stochastic model for assessing the capital this health insurer needs to hold against this product.",
           answer:
-            "A deterministic model produces a single, fixed output for a given set of inputs, showing only one possible future path, whereas capital-setting specifically needs to understand the TAIL of possible adverse outcomes (e.g. a 1-in-200 year adverse scenario). A stochastic model, which explicitly incorporates randomness and produces a range/distribution of outcomes, is much better suited to quantifying this kind of tail risk, which a single deterministic figure cannot represent.",
-          note: "Candidates should connect this explicitly to the CAPITAL-setting use case specified in the question, not give a generic deterministic-versus-stochastic answer.",
+            "A deterministic model produces a single, fixed output for a given set of inputs, showing only one possible future path, whereas capital-setting specifically needs to understand the <em>tail</em> of possible adverse outcomes (e.g. a 1-in-200 year adverse scenario). A stochastic model, which explicitly incorporates randomness and produces a range/distribution of outcomes, is much better suited to quantifying this kind of tail risk, which a single deterministic figure cannot represent.",
+          note: "Candidates should connect this explicitly to the <em>capital</em>-setting use case specified in the question, not give a generic deterministic-versus-stochastic answer.",
         },
         {
           label: "(iii)",
@@ -2533,8 +2533,8 @@ const QUESTIONS = {
           question:
             "An insurer is launching a new annuity product. Explain why uncertainty in future mortality improvement is a particularly significant risk for this product, more so than for a term assurance product.",
           answer:
-            "For an annuity, the insurer pays income for as long as the annuitant lives, so if mortality improves faster than assumed (people living longer than priced/reserved for), the insurer's costs increase because payments continue for longer than expected. This is the opposite exposure to term assurance, where the insurer's risk is people dying SOONER than assumed (triggering an earlier-than-expected payout) &mdash; making mortality improvement uncertainty a direct, ongoing cost risk for annuities but a comparatively minor consideration for term assurance.",
-          note: "Candidates should explicitly contrast the DIRECTION of mortality risk between annuities and term assurance, not just assert annuities are 'riskier'.",
+            "For an annuity, the insurer pays income for as long as the annuitant lives, so if mortality improves faster than assumed (people living longer than priced/reserved for), the insurer's costs increase because payments continue for longer than expected. This is the opposite exposure to term assurance, where the insurer's risk is people dying <em>sooner</em> than assumed (triggering an earlier-than-expected payout) &mdash; making mortality improvement uncertainty a direct, ongoing cost risk for annuities but a comparatively minor consideration for term assurance.",
+          note: "Candidates should explicitly contrast the <em>direction</em> of mortality risk between annuities and term assurance, not just assert annuities are 'riskier'.",
         },
         {
           label: "(ii)",
@@ -2544,7 +2544,7 @@ const QUESTIONS = {
             "The insurer's total annual expenses for this new annuity book are &pound;2,400,000, covering 20,000 in-force policies. &pound;600,000 of this is a fixed cost allocated per policy in force; the remaining &pound;1,800,000 is allocated in proportion to total premium income, which is &pound;10,000,000. Calculate the per-policy expense assumption and the variable expense rate (as a percentage of premium) implied by this allocation.",
           answer:
             "Per-policy fixed expense $= \\pounds600{,}000 / 20{,}000 = \\pounds30$ per policy. Variable expense rate $= \\pounds1{,}800{,}000 / \\pounds10{,}000{,}000 = 18\\%$ of premium. (Check: $\\pounds600{,}000 + \\pounds1{,}800{,}000 = \\pounds2{,}400{,}000$, matching the total.)",
-          note: "This is a straightforward two-part allocation calculation &mdash; candidates should keep the FIXED (per-policy) and VARIABLE (per-premium) components clearly separate rather than blending them into a single average.",
+          note: "This is a straightforward two-part allocation calculation &mdash; candidates should keep the <em>fixed</em> (per-policy) and <em>variable</em> (per-premium) components clearly separate rather than blending them into a single average.",
         },
         {
           label: "(iii)",
@@ -2553,7 +2553,7 @@ const QUESTIONS = {
           question: "Discuss why this expense allocation, calculated from a new and rapidly growing book, might not be a reliable guide to the book's future steady-state expense level.",
           answer:
             "In a rapidly growing book, initial (acquisition) expenses tend to dominate relative to the (still small) in-force policy count, potentially overstating the ongoing, steady-state per-policy expense level that will apply once the book matures and its expense base becomes dominated by renewal/maintenance costs instead.",
-          note: "This is a genuinely important and commonly tested trap: growth-period expense experience is not directly comparable to a mature book's expense experience."
+          note: "This is an important and commonly tested trap: growth-period expense experience is not directly comparable to a mature book's expense experience."
         },
         {
           label: "(iv)",
@@ -2562,7 +2562,7 @@ const QUESTIONS = {
           question: "Comment on why underestimating expenses in this product's pricing could undermine profitability, even if the mortality assumption in part (i) turns out to be accurate.",
           answer:
             "Pricing under the equivalence principle must cover benefits, expenses, and any profit margin; if expenses are understated, the actual cost of writing and servicing the business will exceed what premiums were designed to cover, eroding or eliminating profitability regardless of how accurately other assumptions (like mortality) were set &mdash; a single mis-set assumption can undermine an otherwise sound pricing exercise.",
-          note: "The key point is that ALL major assumptions must be accurate for a product to be genuinely well-priced; accuracy in one area doesn't compensate for inaccuracy in another."
+          note: "The key point is that <em>all</em> major assumptions must be accurate for a product to be well-priced; accuracy in one area doesn't compensate for inaccuracy in another."
         },
       ],
     },
@@ -2580,7 +2580,7 @@ const QUESTIONS = {
             "An insurer is designing a new critical illness product and considering whether to offer reviewable or guaranteed premiums. Explain the trade-off this choice creates between the insurer and the policyholder.",
           answer:
             "Reviewable premiums let the insurer adjust rates if future experience (e.g. claims incidence) diverges from original pricing assumptions, managing the insurer's risk over a long contract term, but this introduces uncertainty for the policyholder, who cannot be fully certain of their future costs. Guaranteed premiums give the policyholder full certainty but mean the insurer bears the full risk that future experience is worse than assumed, with no ability to reprice in response.",
-          note: "A complete answer names the risk transfer explicitly in BOTH directions, not just one side of the trade-off.",
+          note: "A complete answer names the risk transfer explicitly in <em>both</em> directions, not just one side of the trade-off.",
         },
         {
           label: "(ii)",
@@ -2590,7 +2590,7 @@ const QUESTIONS = {
             "For a single-premium version of this product, the present value of expected benefit and expense outgo is &pound;9,000. The insurer requires a profit margin equal to 5% of the premium charged. Using the equivalence principle, calculate the premium the insurer should charge.",
           answer:
             "Under the equivalence principle, $P = PV(\\text{outgo}) + 0.05P \\Rightarrow P(1 - 0.05) = 9{,}000 \\Rightarrow P = 9{,}000 / 0.95 = \\pounds9{,}473.68$.",
-          note: "Since the profit margin is expressed as a percentage of the PREMIUM (not of the outgo), it must be solved for algebraically rather than simply added on top of the &pound;9,000 &mdash; a common error is to compute $9{,}000 \\times 1.05$ instead.",
+          note: "Since the profit margin is expressed as a percentage of the <em>premium</em> (not of the outgo), it must be solved for algebraically rather than simply added on top of the &pound;9,000 &mdash; a common error is to compute $9{,}000 \\times 1.05$ instead.",
         },
         {
           label: "(iii)",
@@ -2599,7 +2599,7 @@ const QUESTIONS = {
           question: "Explain what 'new business strain' means, and why it is likely to arise when this product is sold, even though the pricing in part (ii) is profitable overall.",
           answer:
             "New business strain is the initial capital cost/loss an insurer incurs when writing new business, typically because upfront expenses (e.g. commission, underwriting costs) are incurred immediately, while premium income and profit emerge only gradually. Even though the policy is profitable over its full lifetime (as confirmed by the pricing in part (ii)), the timing mismatch between the immediate upfront cost and the gradually-emerging profit still creates an initial capital drain.",
-          note: "The key insight is that lifetime profitability and new business strain are not contradictory &mdash; strain is fundamentally a TIMING issue, not a profitability issue.",
+          note: "The key insight is that lifetime profitability and new business strain are not contradictory &mdash; strain is fundamentally a <em>timing</em> issue, not a profitability issue.",
         },
         {
           label: "(iv)",
@@ -2625,7 +2625,7 @@ const QUESTIONS = {
           question:
             "A newly authorised general insurer is setting up its risk management framework. Explain the 'three lines of defence' model it should adopt, and identify which line the underwriting function itself belongs to.",
           answer:
-            "The three lines are: (1) business functions that own and manage risk day-to-day; (2) risk management/compliance functions providing independent oversight; (3) internal audit providing independent assurance. The underwriting function belongs to the FIRST line, since it is a business function directly taking on and managing insurance risk as part of day-to-day operations, subject to oversight from the second-line risk function.",
+            "The three lines are: (1) business functions that own and manage risk day-to-day; (2) risk management/compliance functions providing independent oversight; (3) internal audit providing independent assurance. The underwriting function belongs to the <em>first</em> line, since it is a business function directly taking on and managing insurance risk as part of day-to-day operations, subject to oversight from the second-line risk function.",
           note: "Candidates should correctly place underwriting in the first line, not the second &mdash; a common error is to think of any risk-related function as automatically 'the risk function' (second line).",
         },
         {
@@ -2636,7 +2636,7 @@ const QUESTIONS = {
             "Discuss why 'concentration risk' and 'accumulation risk' are particularly important considerations for this new insurer to identify and manage as it builds its book of business.",
           answer:
             "Concentration risk (excessive exposure to a single counterparty, sector, or geography) and accumulation risk (many individually accepted risks turning out to be correlated, e.g. same peril or geography) both undermine the usual assumption of largely independent claims underlying standard pricing. For a new insurer building its book from scratch, there's a genuine risk of inadvertently writing a geographically or sectorally concentrated portfolio (e.g. if early growth comes disproportionately from one region or broker), which could expose it to a much larger-than-expected aggregate loss from a single event than its capital is prepared for.",
-          note: "A strong answer explains WHY these risks specifically matter for a NEW insurer building a book (as opposed to an established, already-diversified one), not just define the terms generically.",
+          note: "A strong answer explains <em>why</em> these risks specifically matter for a <em>new</em> insurer building a book (as opposed to an established, already-diversified one), not just define the terms generically.",
         },
         {
           label: "(iii)",
@@ -2645,7 +2645,7 @@ const QUESTIONS = {
           question:
             "Explain how the underwriting process helps ensure the risks the insurer actually accepts remain consistent with the assumptions underlying its pricing.",
           answer:
-            "Underwriting assesses and classifies each risk before deciding whether, and on what terms, to accept it &mdash; using rating factors to group applicants into categories of similar risk level, so that a given premium is only charged to applicants whose risk genuinely matches the assumptions that premium was calculated on. Risks assessed as higher than standard can be accepted at loaded (adjusted) terms, or declined, rather than being accepted at a standard price that wouldn't reflect their true risk, preventing a mismatch between actual accepted risk and the population the pricing basis assumed.",
+            "Underwriting assesses and classifies each risk before deciding whether, and on what terms, to accept it &mdash; using rating factors to group applicants into categories of similar risk level, so that a given premium is only charged to applicants whose risk matches the assumptions that premium was calculated on. Risks assessed as higher than standard can be accepted at loaded (adjusted) terms, or declined, rather than being accepted at a standard price that wouldn't reflect their true risk, preventing a mismatch between actual accepted risk and the population the pricing basis assumed.",
           note: "This connects the underwriting process directly back to the pricing/assumption-setting material &mdash; underwriting is the practical mechanism keeping the two consistent.",
         },
         {
@@ -2656,7 +2656,7 @@ const QUESTIONS = {
             "The insurer is considering using automated/algorithmic underwriting for straightforward, low-value policies. Comment on the advantages and a key risk of this approach.",
           answer:
             "Automated underwriting can process large volumes of standard applications quickly and consistently, reserving more detailed manual underwriting resource for complex or high-value cases, and reduces the risk of inconsistent human underwriting decisions undermining the pricing basis. A key risk is that the automated model itself is a source of model risk (Module 18) &mdash; if its underlying logic or rating factors are flawed, or it's applied outside the range of risks it was designed/validated for, it could systematically mis-classify risk at scale before the error is detected, unlike a single human underwriter's isolated error.",
-          note: "The strongest answers recognise automation doesn't eliminate underwriting risk, it changes its NATURE &mdash; from scattered individual errors to a potentially systematic, large-scale error if the model itself is flawed.",
+          note: "The strongest answers recognise automation doesn't eliminate underwriting risk, it changes its <em>nature</em> &mdash; from scattered individual errors to a potentially systematic, large-scale error if the model itself is flawed.",
         },
       ],
     },
@@ -2674,7 +2674,7 @@ const QUESTIONS = {
             "An insurer's annual aggregate claims for a portfolio are assumed to be normally distributed with mean &pound;5,000,000 and standard deviation &pound;1,200,000. Calculate the 99.5% Value at Risk (VaR) for this portfolio, and the capital required in excess of the best estimate (mean) liability, using $z_{0.995}=2.576$.",
           answer:
             "$VaR_{99.5\\%} = \\mu + z_{0.995}\\sigma = 5{,}000{,}000 + 2.576(1{,}200{,}000) = \\pounds8{,}091{,}200$. Capital required in excess of the best estimate $= VaR_{99.5\\%} - \\mu = 2.576(1{,}200{,}000) = \\pounds3{,}091{,}200$.",
-          note: "The best estimate (mean) is already assumed to be reserved for separately &mdash; the CAPITAL requirement is specifically the additional buffer above that best estimate, not the full VaR figure itself.",
+          note: "The best estimate (mean) is already assumed to be reserved for separately &mdash; the <em>capital</em> requirement is specifically the additional buffer above that best estimate, not the full VaR figure itself.",
         },
         {
           label: "(ii)",
@@ -2682,7 +2682,7 @@ const QUESTIONS = {
           marks: 2,
           question: "Explain one limitation of using VaR alone (as calculated in part (i)) to assess this portfolio's risk.",
           answer:
-            "VaR indicates only the loss threshold that won't be exceeded with the given confidence level &mdash; it doesn't indicate the potential severity of losses BEYOND that threshold. Two portfolios could share an identical VaR figure yet have very different tail severity beyond it, a distinction VaR alone cannot reveal; TailVaR (Expected Shortfall) addresses this by measuring the expected loss given that the VaR threshold is exceeded.",
+            "VaR indicates only the loss threshold that won't be exceeded with the given confidence level &mdash; it doesn't indicate the potential severity of losses <em>beyond</em> that threshold. Two portfolios could share an identical VaR figure yet have very different tail severity beyond it, a distinction VaR alone cannot reveal; TailVaR (Expected Shortfall) addresses this by measuring the expected loss given that the VaR threshold is exceeded.",
           note: "Candidates should name TailVaR/Expected Shortfall as the measure that addresses this specific limitation, not just describe the limitation in isolation.",
         },
         {
@@ -2692,8 +2692,8 @@ const QUESTIONS = {
           question:
             "The insurer is considering purchasing excess of loss reinsurance to reduce the capital requirement calculated in part (i). Discuss how this would affect the calculation, and one cost the insurer must weigh against the resulting capital saving.",
           answer:
-            "Excess of loss reinsurance caps the insurer's exposure to individual large claims above a chosen retention, which reduces the variance (and hence the standard deviation) of the insurer's RETAINED aggregate claims relative to the gross figures used in part (i), directly reducing both the retained VaR and the required capital. The cost to weigh against this saving is the reinsurance premium itself: risk transfer isn't free, so the insurer must judge whether the price charged by the reinsurer for taking on this risk is worth the resulting reduction in retained risk and capital.",
-          note: "A complete answer identifies BOTH the mechanism (reduced retained variance lowering VaR/capital) AND the genuine cost trade-off (reinsurance premium), not just one side.",
+            "Excess of loss reinsurance caps the insurer's exposure to individual large claims above a chosen retention, which reduces the variance (and hence the standard deviation) of the insurer's <em>retained</em> aggregate claims relative to the gross figures used in part (i), directly reducing both the retained VaR and the required capital. The cost to weigh against this saving is the reinsurance premium itself: risk transfer isn't free, so the insurer must judge whether the price charged by the reinsurer for taking on this risk is worth the resulting reduction in retained risk and capital.",
+          note: "A complete answer identifies <em>both</em> the mechanism (reduced retained variance lowering VaR/capital) <em>and</em> the genuine cost trade-off (reinsurance premium), not just one side.",
         },
         {
           label: "(iv)",
@@ -2702,7 +2702,7 @@ const QUESTIONS = {
           question: "Comment on why the insurer should use multiple reinsurers for this programme, rather than placing the whole reinsurance arrangement with a single reinsurer.",
           answer:
             "Using multiple reinsurers diversifies counterparty risk &mdash; the risk that the party to whom risk was transferred fails to honour its obligations when called upon &mdash; so the financial failure of a single reinsurer counterparty doesn't undermine the whole risk transfer programme (and leave the insurer suddenly exposed to losses it believed were reinsured). This is the same concentration risk principle discussed in part (iii) of a related question, now applied specifically to the reinsurance counterparties themselves rather than the underlying insured risks.",
-          note: "Candidates should recognise that risk transfer itself introduces a NEW risk (counterparty/credit risk) that must be separately managed, ideally via diversification across several reinsurers.",
+          note: "Candidates should recognise that risk transfer itself introduces a <em>new</em> risk (counterparty/credit risk) that must be separately managed, ideally via diversification across several reinsurers.",
         },
       ],
     },
@@ -2720,7 +2720,7 @@ const QUESTIONS = {
             "A run-off triangle shows cumulative claims (&pound;'000s) as follows: Origin year 1: 200, 260, 280 (development years 1, 2, 3). Origin year 2: 210, 270 (development years 1, 2). Origin year 3: 220 (development year 1). Using the basic chain ladder method, calculate the total outstanding claims (IBNR plus claims development) across origin years 2 and 3.",
           answer:
             "Development factor $f_{1\\to2} = \\dfrac{260+270}{200+210} = \\dfrac{530}{410} = 1.293$. Development factor $f_{2\\to3} = \\dfrac{280}{260} = 1.077$. Origin year 2 ultimate $= 270 \\times 1.077 = 290.77$; outstanding $= 290.77 - 270 = 20.77$. Origin year 3 projected to dev. year 2 $= 220 \\times 1.293 = 284.39$; ultimate $= 284.39 \\times 1.077 = 306.27$; outstanding $= 306.27 - 220 = 86.27$. Total outstanding $= 20.77 + 86.27 = 107.04$ ('000s), i.e. &pound;107,040.",
-          note: "Origin year 3 needs TWO development factors applied in sequence (dev. year 1 to 2, then 2 to 3), while origin year 2 only needs one (dev. year 2 to 3) &mdash; applying the wrong number of factors to each origin year is the most common error in this style of question.",
+          note: "Origin year 3 needs <em>two</em> development factors applied in sequence (dev. year 1 to 2, then 2 to 3), while origin year 2 only needs one (dev. year 2 to 3) &mdash; applying the wrong number of factors to each origin year is the most common error in this style of question.",
         },
         {
           label: "(ii)",
@@ -2728,8 +2728,8 @@ const QUESTIONS = {
           marks: 2,
           question: "Explain why the outstanding claims calculated in part (i) are subject to considerably more uncertainty than a 'claims outstanding' provision for claims already reported and being processed.",
           answer:
-            "The figures in part (i) include an allowance for claims incurred but not yet reported (IBNR), for which the insurer has no direct record at all, so the estimate relies entirely on statistical patterns inferred from historical development. A claims outstanding provision, by contrast, covers claims that are already known and reported, even if the final settlement amount remains somewhat uncertain, making it generally more reliably estimable than the genuinely unknown IBNR component.",
-          note: "The key distinction is between claims that are KNOWN to exist (reported, awaiting settlement) versus claims that are entirely UNKNOWN to the insurer (not yet reported at all).",
+            "The figures in part (i) include an allowance for claims incurred but not yet reported (IBNR), for which the insurer has no direct record at all, so the estimate relies entirely on statistical patterns inferred from historical development. A claims outstanding provision, by contrast, covers claims that are already known and reported, even if the final settlement amount remains somewhat uncertain, making it generally more reliably estimable than the unknown IBNR component.",
+          note: "The key distinction is between claims that are <em>known</em> to exist (reported, awaiting settlement) versus claims that are entirely <em>unknown</em> to the insurer (not yet reported at all).",
         },
         {
           label: "(iii)",
@@ -2738,7 +2738,7 @@ const QUESTIONS = {
           question: "Discuss why the discount rate used to value these outstanding claims as a liability could be a particularly sensitive assumption.",
           answer:
             "For longer-tail claims (which take longer to fully develop and settle), a small change in the discount rate can have a large effect on the present value of the liability cashflows, since the compounding effect of discounting grows with the time horizon over which cashflows are expected to emerge &mdash; making the discount rate choice especially significant for exactly the kind of long-tail, slow-developing claims this triangle exhibits.",
-          note: "This connects the general discount-rate-sensitivity principle to the SPECIFIC long-tail characteristics evident in the run-off triangle from part (i).",
+          note: "This connects the general discount-rate-sensitivity principle to the <em>specific</em> long-tail characteristics evident in the run-off triangle from part (i).",
         },
         {
           label: "(iv)",
@@ -2747,7 +2747,7 @@ const QUESTIONS = {
           question: "Explain why this liability might need to be valued on more than one basis (e.g. a best estimate basis and a regulatory solvency basis).",
           answer:
             "Different purposes require different levels of prudence or prescribed methodologies: a best estimate basis reflects the actuary's unbiased, most-likely view for internal management purposes, while a regulatory solvency basis may prescribe additional margins or specific methodologies to ensure a degree of comparability and appropriate prudence across the industry for solvency assessment purposes.",
-          note: "Candidates should name the genuinely different PURPOSES driving the need for multiple bases, not just assert that 'different bases exist'.",
+          note: "Candidates should name the different <em>purposes</em> driving the need for multiple bases, not just assert that 'different bases exist'.",
         },
       ],
     },
@@ -2774,7 +2774,7 @@ const QUESTIONS = {
           question: "Discuss why transparency about the assumptions underlying these reported results is particularly important for the board in this scenario.",
           answer:
             "Without transparency about what changed, the board risks misinterpreting a genuine assumption-driven change in reported profit as a sign of deteriorating underlying business performance (or vice versa), leading to poorly-targeted management action. Clear disclosure of the assumptions and methods used allows the board to understand and appropriately interpret the reported results, rather than taking the headline profit figure at face value without the context needed to judge what's actually driving it.",
-          note: "The strongest answers link transparency directly to avoiding a specific, plausible MISINTERPRETATION risk in this scenario, not just asserting transparency is 'good practice' generically.",
+          note: "The strongest answers link transparency directly to avoiding a specific, plausible <em>misinterpretation</em> risk in this scenario, not just asserting transparency is 'good practice' generically.",
         },
         {
           label: "(iii)",
@@ -2830,7 +2830,7 @@ const QUESTIONS = {
             "Discuss why the insurer might choose to use an internal model rather than a regulatory standard formula to calculate its capital requirement, and one disadvantage of doing so.",
           answer:
             "An internal model can more accurately reflect the insurer's own specific risk profile (e.g. its genuine diversification benefits and risk correlations, as calculated in part (i)), potentially avoiding over- or under-stating capital needs relative to its actual risk, unlike a standardised formula applied uniformly across the industry. A key disadvantage is that internal models are more complex and costly to build, maintain, and validate, and require regulatory approval before they can be used to replace the standard formula, unlike the standard formula's comparative simplicity and industry-wide comparability.",
-          note: "A complete answer weighs both the accuracy advantage AND the cost/approval-burden disadvantage, not just one side of the trade-off.",
+          note: "A complete answer weighs both the accuracy advantage <em>and</em> the cost/approval-burden disadvantage, not just one side of the trade-off.",
         },
         {
           label: "(iv)",
@@ -2914,7 +2914,7 @@ const QUESTIONS = {
           question: "Explain what 'hard-coding' means in this context, and why the actuary should avoid it when entering the product's assumed loss ratio into the model.",
           answer:
             "Hard-coding means typing a fixed numeric value directly into a formula rather than referencing a labelled input cell. If the loss ratio assumption is hard-coded into every formula that uses it, updating the assumption later would require finding and editing every one of those formulas individually, risking an inconsistent, partially-updated model if any occurrence is missed.",
-          note: "A strong answer explains the CONSEQUENCE of hard-coding (inconsistent updates), not just defines the term.",
+          note: "A strong answer explains the <em>consequence</em> of hard-coding (inconsistent updates), not just defines the term.",
         },
         {
           label: "(iii)",
@@ -2932,7 +2932,7 @@ const QUESTIONS = {
           question: "Explain why planning the model's overall structure before building it is likely to save time overall, even though it delays starting the actual calculations.",
           answer:
             "Planning the input area, calculation flow, and output layout upfront reduces the risk of needing a disruptive, error-prone restructure partway through once the model has already grown complex &mdash; under exam time pressure, a few minutes spent planning can save far more time than it costs by avoiding a costly rebuild later.",
-          note: "This is genuinely practical exam-technique advice, not just an abstract principle &mdash; candidates should frame the answer around the time trade-off explicitly.",
+          note: "This is practical exam-technique advice, not just an abstract principle &mdash; candidates should frame the answer around the time trade-off explicitly.",
         },
       ],
     },
@@ -2994,7 +2994,7 @@ const QUESTIONS = {
           question: "A pricing model has been in use for two years, with several actuaries making small adjustments to it over that time. Explain why this history creates a genuine documentation risk.",
           answer:
             "Incremental changes made by different people over time, without a corresponding rebuild or update of the model's original documentation, can leave the documentation out of step with the model's actual current logic &mdash; and documentation that no longer matches the model is arguably worse than no documentation at all, since a reviewer would trust it without realising it's stale.",
-          note: "The key insight is that OUTDATED documentation is actively misleading, not merely unhelpful &mdash; a reviewer has no way to know it's stale just from reading it.",
+          note: "The key insight is that <em>outdated</em> documentation is actively misleading, not merely unhelpful &mdash; a reviewer has no way to know it's stale just from reading it.",
         },
         {
           label: "(ii)",
@@ -3012,7 +3012,7 @@ const QUESTIONS = {
           question:
             "Discuss the risk of saving multiple, informally-named copies of the model (e.g. 'pricing_final', 'pricing_final_v2', 'pricing_final_v2_USE_THIS') instead of using a disciplined version control approach.",
           answer:
-            "It becomes genuinely unclear which copy is the authoritative, current version, risking that outdated or incorrect results are used, or that a fix applied to one copy isn't reflected in others still in circulation &mdash; a clear naming convention or centralised change log avoids this ambiguity by making the current, correct version unambiguous.",
+            "It becomes unclear which copy is the authoritative, current version, risking that outdated or incorrect results are used, or that a fix applied to one copy isn't reflected in others still in circulation &mdash; a clear naming convention or centralised change log avoids this ambiguity by making the current, correct version unambiguous.",
           note: "This is a very common, easily recognisable real-world failure mode worth describing concretely rather than abstractly.",
         },
         {
@@ -3021,7 +3021,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on why documentation is described as something that should be updated whenever the model changes, rather than written once at initial build and left alone.",
           answer:
-            "A model's logic evolves as it's adjusted over its two years of use, so documentation frozen at the original build date will increasingly diverge from what the model actually does &mdash; keeping documentation current alongside every change is what preserves its usefulness as a genuinely accurate guide for future reviewers.",
+            "A model's logic evolves as it's adjusted over its two years of use, so documentation frozen at the original build date will increasingly diverge from what the model actually does &mdash; keeping documentation current alongside every change is what preserves its usefulness as an accurate guide for future reviewers.",
           note: "This closing comment should tie back explicitly to the risk identified in part (i) &mdash; documentation discipline is an ongoing commitment, not a one-off task.",
         },
       ],
@@ -3049,7 +3049,7 @@ const QUESTIONS = {
           question: "Explain what a 'data table' is in Excel, and why using one is more reliable than manually changing the lapse rate input and re-recording the result three times.",
           answer:
             "A data table is a built-in Excel feature that automatically recalculates a model's output across a range of values for one or two selected input cells, without the user needing to manually change and re-record the input each time. Manual repetition is slower and more prone to error &mdash; e.g. forgetting to reset a previous change, or mis-recording a result &mdash; whereas a data table performs the recalculation and recording automatically and consistently.",
-          note: "The key distinction is reliability of the SENSITIVITY-TESTING PROCESS itself, separate from whether the underlying model is correct.",
+          note: "The key distinction is reliability of the <em>sensitivity-testing process</em> itself, separate from whether the underlying model is correct.",
         },
         {
           label: "(iii)",
@@ -3057,7 +3057,7 @@ const QUESTIONS = {
           marks: 2,
           question: "Comment on why the &pound;50,000 spread between the best and worst case in part (i) is a useful finding in its own right, beyond the three individual figures.",
           answer:
-            "The spread quantifies exactly how much renewal income is genuinely at risk from lapse rate uncertainty, giving a decision-maker a clear sense of the assumption's materiality to this result &mdash; a single best-estimate figure alone would convey no information about this underlying sensitivity.",
+            "The spread quantifies exactly how much renewal income is at risk from lapse rate uncertainty, giving a decision-maker a clear sense of the assumption's materiality to this result &mdash; a single best-estimate figure alone would convey no information about this underlying sensitivity.",
           note: "This connects to CP1's assumption-uncertainty material &mdash; presenting a range, not just a point estimate, communicates genuine uncertainty honestly.",
         },
         {
@@ -3092,7 +3092,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain how the 'three lines of defence' model applies to governance of this reserving model, identifying which line the model's day-to-day builder/user belongs to.",
           answer:
-            "The model's builder/user is the FIRST line, responsible for building and using the model correctly day-to-day; a separate risk or actuarial oversight function acts as the SECOND line, providing independent review/challenge; internal audit forms the THIRD line, periodically assessing the overall control environment around the model's use.",
+            "The model's builder/user is the <em>first</em> line, responsible for building and using the model correctly day-to-day; a separate risk or actuarial oversight function acts as the <em>second</em> line, providing independent review/challenge; internal audit forms the <em>third</em> line, periodically assessing the overall control environment around the model's use.",
           note: "Candidates should correctly place the model's day-to-day user in the first line, not mistake them for 'the risk function' simply because the topic is risk-related.",
         },
         {
@@ -3101,8 +3101,8 @@ const QUESTIONS = {
           marks: 3,
           question: "Discuss why independent peer review of this model is a valuable control, even though its builder is an experienced, careful actuary confident it's correct.",
           answer:
-            "A model's own author can become blind to their own errors through over-familiarity with the model's logic, since they naturally see what they expect to see rather than testing it fresh; an independent reviewer approaches the model without that familiarity, genuinely testing its logic rather than confirming the author's existing expectations &mdash; confidence in one's own work is not the same as verified correctness.",
-          note: "The strongest answers explicitly separate CONFIDENCE from VERIFICATION &mdash; these are not the same thing, however experienced the model's builder is.",
+            "A model's own author can become blind to their own errors through over-familiarity with the model's logic, since they naturally see what they expect to see rather than testing it fresh; an independent reviewer approaches the model without that familiarity, testing its logic rather than confirming the author's existing expectations &mdash; confidence in one's own work is not the same as verified correctness.",
+          note: "The strongest answers explicitly separate <em>confidence</em> from <em>verification</em> &mdash; these are not the same thing, however experienced the model's builder is.",
         },
         {
           label: "(iv)",
@@ -3129,7 +3129,7 @@ const QUESTIONS = {
             "A model calculates the accumulated value of a &pound;20,000 investment growing at 6% per annum over 4 years, using a single compound interest formula. As an independent check, recalculate the accumulated value year by year, and confirm it matches the single-formula result of &pound;25,249.54.",
           answer:
             "Year 1: $20{,}000 \\times 1.06 = \\pounds21{,}200.00$. Year 2: $21{,}200 \\times 1.06 = \\pounds22{,}472.00$. Year 3: $22{,}472 \\times 1.06 = \\pounds23{,}820.32$. Year 4: $23{,}820.32 \\times 1.06 = \\pounds25{,}249.54$. This matches the single-formula result of $20{,}000 \\times 1.06^4 = \\pounds25{,}249.54$, confirming the formula is correct.",
-          note: "This is a genuine independent recalculation using a DIFFERENT method (year-by-year multiplication versus a single exponent formula) &mdash; both should agree if the model's logic is structurally sound.",
+          note: "This is a genuine independent recalculation using a <em>different</em> method (year-by-year multiplication versus a single exponent formula) &mdash; both should agree if the model's logic is structurally sound.",
         },
         {
           label: "(ii)",
@@ -3137,8 +3137,8 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain why this kind of independent recalculation is a more rigorous check than simply re-reading the original formula a second time.",
           answer:
-            "Re-reading the same formula again risks simply confirming the same (possibly flawed) logic a second time, since the reviewer's attention follows the same reasoning path as before. Recalculating via a genuinely different method is far more likely to catch an underlying error, since the two approaches don't share the same potential blind spot.",
-          note: "The key distinction is between merely REVIEWING existing logic versus genuinely INDEPENDENTLY verifying the result via a different route.",
+            "Re-reading the same formula again risks simply confirming the same (possibly flawed) logic a second time, since the reviewer's attention follows the same reasoning path as before. Recalculating via a different method is far more likely to catch an underlying error, since the two approaches don't share the same potential blind spot.",
+          note: "The key distinction is between merely <em>reviewing</em> existing logic versus <em>independently</em> verifying the result via a different route.",
         },
         {
           label: "(iii)",
@@ -3155,8 +3155,8 @@ const QUESTIONS = {
           marks: 2,
           question: "Comment on why the checker should document that this specific check was performed, rather than simply performing it and moving on.",
           answer:
-            "Documenting the check provides evidence to a reviewer or later user that appropriate checking has genuinely taken place, and specifies exactly what was and wasn't tested &mdash; an unrecorded assumption that 'this must have been checked' is itself a source of risk, since it can't be verified or relied upon later.",
-          note: "This connects checking (this module) directly to documentation (Module 4) and sign-off (Module 6) &mdash; a documented check is what a sign-off decision should genuinely be based on.",
+            "Documenting the check provides evidence to a reviewer or later user that appropriate checking has taken place, and specifies exactly what was and wasn't tested &mdash; an unrecorded assumption that 'this must have been checked' is itself a source of risk, since it can't be verified or relied upon later.",
+          note: "This connects checking (this module) directly to documentation (Module 4) and sign-off (Module 6) &mdash; a documented check is what a sign-off decision should be based on.",
         },
       ],
     },
@@ -3174,7 +3174,7 @@ const QUESTIONS = {
             "An actuary needs to run a pricing model across 50 different scenarios and collate the results into a summary table. Explain why this is a reasonable candidate task for VBA/macro automation.",
           answer:
             "Running the model 50 times and collating results manually would be extremely tedious and error-prone (e.g. forgetting to reset an input, or mis-transcribing a result), whereas this kind of repetitive, mechanical task is exactly where automation adds genuine value &mdash; freeing the actuary from manual repetition while reducing the risk of a transcription error.",
-          note: "The key justification is that this is a REPETITIVE, MECHANICAL task, in contrast to core calculation logic that's often better left as transparent, auditable formulas.",
+          note: "The key justification is that this is a <em>repetitive</em>, <em>mechanical</em> task, in contrast to core calculation logic that's often better left as transparent, auditable formulas.",
         },
         {
           label: "(ii)",
@@ -3183,7 +3183,7 @@ const QUESTIONS = {
           question: "Discuss why the resulting macro's code should be commented clearly, and why VBA code is generally considered harder to audit than an equivalent spreadsheet formula.",
           answer:
             "VBA code is hidden behind the spreadsheet interface in a separate code editor, requiring a reviewer to actively open and read it and understand programming logic rather than visible, clickable spreadsheet formulas &mdash; clear code comments explain what each section does and why, serving the same purpose code comments serve for spreadsheet documentation, without which the macro becomes a genuine black box even to a technically capable reviewer.",
-          note: "A complete answer covers both the AUDIT DIFFICULTY of VBA generally and the specific role comments play in mitigating it.",
+          note: "A complete answer covers both the <em>audit difficulty</em> of VBA generally and the specific role comments play in mitigating it.",
         },
         {
           label: "(iii)",
@@ -3201,7 +3201,7 @@ const QUESTIONS = {
           question: "Comment on why the actuary should still test this macro's output using the checking techniques covered elsewhere in this course, rather than trusting it simply because it's automated.",
           answer:
             "Automation doesn't exempt a model from needing genuine verification &mdash; code is just as capable of containing a logical error as a formula is, and VBA's reduced visibility arguably makes thorough checking even more important, not less, since an error hidden inside unreviewed code is harder to spot than one visible in a spreadsheet formula.",
-          note: "The key misconception to correct is that 'automated' implies 'more reliable' &mdash; automation changes HOW a task is performed, not whether its output still needs to be checked.",
+          note: "The key misconception to correct is that 'automated' implies 'more reliable' &mdash; automation changes <em>how</em> a task is performed, not whether its output still needs to be checked.",
         },
       ],
     },
@@ -3218,7 +3218,7 @@ const QUESTIONS = {
           question: "A claims data extract used to set a pricing assumption contains a small number of records with obviously implausible values (e.g. a negative claim amount). Explain a reasonable approach to handling these records.",
           answer:
             "The obviously erroneous records should be investigated where practical to understand their cause, and the treatment applied (e.g. correcting, excluding, or flagging them) should be clearly documented &mdash; silently ignoring or including clearly erroneous records without any record of the decision undermines the resulting assumption's reliability and transparency.",
-          note: "The key point is that the DECISION about how to handle outliers matters and should be documented, not simply that outliers exist and should be removed.",
+          note: "The key point is that the <em>decision</em> about how to handle outliers matters and should be documented, not simply that outliers exist and should be removed.",
         },
         {
           label: "(ii)",
@@ -3227,7 +3227,7 @@ const QUESTIONS = {
           question: "Explain why simply excluding all records with any missing field, without further investigation, could introduce bias into the resulting assumption.",
           answer:
             "If the missingness isn't random (e.g. certain policy types or claim circumstances are systematically more likely to have an incomplete record), excluding those records entirely could skew the remaining data set away from being representative of the true underlying population, biasing any assumption derived from it.",
-          note: "This directly echoes CP1's point about missing data adjustments &mdash; exclusion is only safe if the missingness is genuinely random, which shouldn't simply be assumed.",
+          note: "This directly echoes CP1's point about missing data adjustments &mdash; exclusion is only safe if the missingness is random, which shouldn't simply be assumed.",
         },
         {
           label: "(iii)",
@@ -3235,7 +3235,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Discuss why raw imported claims data should be kept on a separate sheet from the model's working calculations, rather than cleaned and used in place.",
           answer:
-            "Keeping raw data distinct preserves an unaltered record of the original source data, makes clear which cells are genuinely sourced externally versus derived/cleaned within the model, and allows the cleaning steps themselves to be inspected and re-run if needed &mdash; directly supporting the input/calculation/output structural separation that underpins good model design generally.",
+            "Keeping raw data distinct preserves an unaltered record of the original source data, makes clear which cells are sourced externally versus derived/cleaned within the model, and allows the cleaning steps themselves to be inspected and re-run if needed &mdash; directly supporting the input/calculation/output structural separation that underpins good model design generally.",
           note: "This connects Module 2's structural design principle specifically to data handling &mdash; raw data is effectively another category of 'input' deserving the same clear, protected treatment.",
         },
         {
@@ -3245,7 +3245,7 @@ const QUESTIONS = {
           question: "Comment on why an unexpectedly extreme result from a sensitivity analysis on this model might actually indicate a data quality issue, rather than a genuine finding about the underlying risk.",
           answer:
             "An implausible or extreme sensitivity result can sometimes be traced back to a data error (e.g. one erroneous record with an extreme value skewing an assumption) rather than a genuine feature of the underlying risk exposure &mdash; sensitivity testing can therefore double as a useful data-quality check, not just a way of exploring genuine risk sensitivity.",
-          note: "This connects Module 5's sensitivity analysis material to Module 9's data-quality material, showing the two are genuinely complementary techniques.",
+          note: "This connects Module 5's sensitivity analysis material to Module 9's data-quality material, showing the two are complementary techniques.",
         },
       ],
     },
@@ -3262,7 +3262,7 @@ const QUESTIONS = {
           question:
             "An actuary has built a model projecting the financial impact of a proposed change to a pension scheme's benefits, and must now write a report for the scheme's trustees, who have no actuarial training. Explain why the report should avoid unexplained actuarial jargon.",
           answer:
-            "A reader without actuarial training won't understand specialist terms without explanation, and unexplained jargon undermines the whole purpose of the report &mdash; communicating results clearly enough that the trustees can genuinely understand the findings and use them to make an informed decision about the proposed change.",
+            "A reader without actuarial training won't understand specialist terms without explanation, and unexplained jargon undermines the whole purpose of the report &mdash; communicating results clearly enough that the trustees can understand the findings and use them to make an informed decision about the proposed change.",
           note: "This directly echoes CP1's principle of tailoring communication to the recipient's ability to understand it.",
         },
         {
@@ -3271,7 +3271,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Discuss how the report's structure should be organised to serve these trustees effectively, given they may not read the full document in detail.",
           answer:
-            "The report should typically open with a clear, concise summary of the key findings and conclusions, before (or separately from) more detailed supporting explanation &mdash; allowing a busy trustee who only reads the opening summary to still grasp the genuinely important message, with fuller detail available for anyone who wants to go further.",
+            "The report should typically open with a clear, concise summary of the key findings and conclusions, before (or separately from) more detailed supporting explanation &mdash; allowing a busy trustee who only reads the opening summary to still grasp the important message, with fuller detail available for anyone who wants to go further.",
           note: "This connects to the model's own dashboard/summary-sheet design principle (Module 2) &mdash; the same audience-first logic applies to report structure.",
         },
         {
@@ -3289,7 +3289,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on why building the model with a non-technical reader's eventual report in mind can improve the quality of the model itself, not just the report.",
           answer:
-            "Knowing the model's results will need to be explained clearly to a non-technical audience encourages the actuary to keep the model's structure, assumptions, and logic genuinely clear and well-organised from the outset, rather than allowing avoidable complexity to creep in &mdash; anticipating the need to explain a model to someone else is a strong forcing function for keeping the model itself clear and well-structured.",
+            "Knowing the model's results will need to be explained clearly to a non-technical audience encourages the actuary to keep the model's structure, assumptions, and logic clear and well-organised from the outset, rather than allowing avoidable complexity to creep in &mdash; anticipating the need to explain a model to someone else is a strong forcing function for keeping the model itself clear and well-structured.",
           note: "This closing comment ties the whole subject together &mdash; the discipline of communication (CP2.2) reinforces good practice in model-building (CP2.1), rather than the two being unrelated skills.",
         },
       ],
@@ -3327,15 +3327,15 @@ const QUESTIONS = {
           question: "Explain why a company's reported profit after tax is not the same thing as the cash it actually generated over the same period, giving one specific example of a cost that illustrates this.",
           answer:
             "The income statement uses accruals accounting, recognising revenue and costs when they're earned/incurred rather than when cash actually changes hands, so profit can differ substantially from actual cash movement. Depreciation is a clear example: it's charged as an expense reducing reported profit each period, but involves no actual cash outflow in that period &mdash; the cash was paid when the asset was originally purchased.",
-          note: "The depreciation example should be explained precisely: the cash outflow happened at PURCHASE, not when the expense is later charged in the income statement.",
+          note: "The depreciation example should be explained precisely: the cash outflow happened at <em>purchase</em>, not when the expense is later charged in the income statement.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 3,
-          question: "A company reports strong profit after tax but its finance director is concerned about the business's cash position. Comment on why this combination is genuinely possible, and name the financial statement that would reveal the concern directly.",
+          question: "A company reports strong profit after tax but its finance director is concerned about the business's cash position. Comment on why this combination is possible, and name the financial statement that would reveal the concern directly.",
           answer:
-            "Because profit and cash can diverge substantially (per part (iii)), a company can be genuinely profitable on an accounting basis while still facing a cash shortfall, e.g. due to growing receivables or inventory tying up cash faster than profitable trading generates it. The cash flow statement would reveal this directly, since it reports actual cash inflows and outflows rather than accruals-based profit.",
+            "Because profit and cash can diverge substantially (per part (iii)), a company can be profitable on an accounting basis while still facing a cash shortfall, e.g. due to growing receivables or inventory tying up cash faster than profitable trading generates it. The cash flow statement would reveal this directly, since it reports actual cash inflows and outflows rather than accruals-based profit.",
           note: "This tests whether candidates can apply the profit-versus-cash distinction to a realistic scenario, not just recite the definition.",
         },
       ],
@@ -3372,7 +3372,7 @@ const QUESTIONS = {
           question: "Explain how an increase in trade receivables during the period would affect operating cash flow relative to reported profit, and why.",
           answer:
             "An increase in trade receivables reduces operating cash flow relative to profit, since the corresponding revenue has already been recognised in profit but the cash hasn't yet actually been collected from customers &mdash; the sale is 'on the books' as profit before the cash physically arrives.",
-          note: "Candidates should be clear on the DIRECTION of the adjustment (receivables UP means cash flow LOWER relative to profit), a common point of confusion.",
+          note: "Candidates should be clear on the <em>direction</em> of the adjustment (receivables UP means cash flow <em>lower</em> relative to profit), a common point of confusion.",
         },
         {
           label: "(iv)",
@@ -3380,7 +3380,7 @@ const QUESTIONS = {
           marks: 2,
           question: "Discuss why a rapidly growing, profitable company might still experience a cash flow crisis (overtrading).",
           answer:
-            "Growth often requires increasing investment in working capital (more inventory, more receivables as sales grow) and non-current assets, which can consume cash faster than profitable trading generates it &mdash; a genuinely profitable company can still run out of cash purely from this timing mismatch.",
+            "Growth often requires increasing investment in working capital (more inventory, more receivables as sales grow) and non-current assets, which can consume cash faster than profitable trading generates it &mdash; a profitable company can still run out of cash purely from this timing mismatch.",
           note: "This is a well-known, important real-world phenomenon worth being able to explain confidently and concisely.",
         },
       ],
@@ -3397,7 +3397,7 @@ const QUESTIONS = {
           marks: 3,
           question: "A company's cost of sales for the year was &pound;2,400,000, and its average inventory held during the year was &pound;300,000. Calculate inventory days.",
           answer: "Inventory days $= (300{,}000 / 2{,}400{,}000) \\times 365 = 45.63$ days.",
-          note: "The formula uses COST OF SALES (not revenue) in the denominator &mdash; using revenue instead is a common error for this specific ratio.",
+          note: "The formula uses <em>cost of sales</em> (not revenue) in the denominator &mdash; using revenue instead is a common error for this specific ratio.",
         },
         {
           label: "(ii)",
@@ -3414,7 +3414,7 @@ const QUESTIONS = {
           question: "Explain why a company with a gearing ratio of 40% is generally considered riskier for shareholders than an otherwise identical company with a gearing ratio of 10%.",
           answer:
             "Interest on debt must be paid regardless of how the business performs, so higher gearing means a greater proportion of profit is committed to fixed interest payments, amplifying the volatility of what's left over for shareholders &mdash; a magnifying effect known as financial risk. The 40%-geared company has substantially more of this fixed commitment relative to its capital base than the 10%-geared company.",
-          note: "A strong answer explains the MECHANISM (fixed interest amplifying profit volatility for shareholders), not just asserts that higher gearing is 'riskier'.",
+          note: "A strong answer explains the <em>mechanism</em> (fixed interest amplifying profit volatility for shareholders), not just asserts that higher gearing is 'riskier'.",
         },
         {
           label: "(iv)",
@@ -3439,7 +3439,7 @@ const QUESTIONS = {
           marks: 3,
           question: "A company has inventory days of 45, receivables days of 60, and payables days of 40. Calculate its working capital cycle (cash conversion cycle).",
           answer: "Working capital cycle $= 45 + 60 - 40 = 65$ days.",
-          note: "Payables days is SUBTRACTED (not added) &mdash; forgetting the subtraction is the most common error in this calculation.",
+          note: "Payables days is <em>subtracted</em> (not added) &mdash; forgetting the subtraction is the most common error in this calculation.",
         },
         {
           label: "(ii)",
@@ -3448,7 +3448,7 @@ const QUESTIONS = {
           question: "Explain what the 65-day cycle calculated in part (i) means in practical terms, and why a shorter cycle is generally preferable.",
           answer:
             "It means, on average, 65 days pass between the company paying cash out for its inputs and receiving cash in from customers for the resulting sales. A shorter cycle is generally preferable because it means less cash is tied up in the business for a shorter period, freeing up capital that could otherwise be used productively elsewhere (reflecting the opportunity cost of capital tied up in working capital).",
-          note: "A complete answer explains both WHAT the figure represents and WHY shorter is better (the opportunity cost argument), not just one or the other.",
+          note: "A complete answer explains both <em>what</em> the figure represents and <em>why</em> shorter is better (the opportunity cost argument), not just one or the other.",
         },
         {
           label: "(iii)",
@@ -3457,7 +3457,7 @@ const QUESTIONS = {
           question: "Discuss two distinct techniques the company could use to reduce its working capital cycle.",
           answer:
             "Reducing inventory days: implementing just-in-time ordering or better demand forecasting to hold less stock. Reducing receivables days: offering an early payment discount or tightening credit control to collect from customers faster. (Increasing payables days, within agreed supplier terms, would also reduce the cycle, though this must be balanced against supplier relationship risk.)",
-          note: "Any two genuinely distinct techniques targeting different components of the cycle (inventory, receivables, or payables) should be credited if clearly explained.",
+          note: "Any two distinct techniques targeting different components of the cycle (inventory, receivables, or payables) should be credited if clearly explained.",
         },
         {
           label: "(iv)",
@@ -3466,7 +3466,7 @@ const QUESTIONS = {
           question: "Comment on why aggressively extending payables days beyond agreed supplier terms, purely to shorten the working capital cycle, could be a poor strategy despite the mechanical improvement it would show.",
           answer:
             "Deliberately delaying payment beyond agreed terms can damage supplier relationships, risk losing favourable credit terms or discounts, and harm the company's reputation and ability to negotiate good terms in future &mdash; the short-term working capital improvement could be outweighed by these longer-term costs.",
-          note: "This tests whether candidates recognise the difference between efficiently using AGREED credit terms and damagingly abusing supplier goodwill.",
+          note: "This tests whether candidates recognise the difference between efficiently using <em>agreed</em> credit terms and damagingly abusing supplier goodwill.",
         },
       ],
     },
@@ -3483,7 +3483,7 @@ const QUESTIONS = {
           question: "A company is planning a rights issue. Explain what a rights issue is, and why it's typically priced at a discount to the current market share price.",
           answer:
             "A rights issue is an offer of new shares to existing shareholders, in proportion to their current shareholding, typically at a discount to the current market price. The discount makes the offer attractive enough to encourage existing shareholders to take up their entitlement (providing new capital), while the proportional nature of the issue protects them from being diluted if they do so.",
-          note: "Candidates should explain WHY the proportional structure specifically protects against dilution, not just describe the discount in isolation.",
+          note: "Candidates should explain <em>why</em> the proportional structure specifically protects against dilution, not just describe the discount in isolation.",
         },
         {
           label: "(ii)",
@@ -3501,7 +3501,7 @@ const QUESTIONS = {
           question: "Discuss why equity investors generally require a higher expected return than debt investors in the same company.",
           answer:
             "Equity holders bear more risk than debt holders &mdash; they're paid only after debt obligations are met (a residual claim), have no guaranteed return, and no fixed repayment date, whereas debt holders have a priority, contractual claim to interest and principal. Investors require greater compensation for bearing this additional risk, which is precisely why equity is generally a more expensive source of finance than debt.",
-          note: "A strong answer explicitly connects the RISK difference (priority of claim, certainty of payment) to the RETURN difference, rather than simply asserting equity is 'riskier'.",
+          note: "A strong answer explicitly connects the <em>risk</em> difference (priority of claim, certainty of payment) to the <em>return</em> difference, rather than simply asserting equity is 'riskier'.",
         },
         {
           label: "(iv)",
@@ -3528,7 +3528,7 @@ const QUESTIONS = {
             "A company's current dividend ($D_0$) is &pound;0.25 per share, expected to grow at a constant rate of 5% per year indefinitely. Its current share price is &pound;4.00. Using the dividend growth model, calculate the company's cost of equity.",
           answer:
             "$k_e = \\dfrac{D_0(1+g)}{P_0} + g = \\dfrac{0.25(1.05)}{4.00} + 0.05 = \\dfrac{0.2625}{4.00} + 0.05 = 0.065625 + 0.05 = 11.56\\%$.",
-          note: "The numerator must use $D_0(1+g)$ (the NEXT dividend expected), not $D_0$ itself &mdash; using $D_0$ directly is the most common error in this formula.",
+          note: "The numerator must use $D_0(1+g)$ (the <em>next</em> dividend expected), not $D_0$ itself &mdash; using $D_0$ directly is the most common error in this formula.",
         },
         {
           label: "(ii)",
@@ -3554,7 +3554,7 @@ const QUESTIONS = {
           question: "Explain one circumstance in which CAPM would be the only viable method of the two for estimating a company's cost of equity.",
           answer:
             "If the company pays no dividend at all (e.g. a young, high-growth company retaining all profit for reinvestment), the dividend growth model cannot be applied at all, since it relies entirely on a dividend stream &mdash; CAPM, which doesn't depend on dividends, remains applicable in this situation.",
-          note: "This is a genuinely important, commonly tested limitation of the dividend growth model worth remembering precisely.",
+          note: "This is an important, commonly tested limitation of the dividend growth model worth remembering precisely.",
         },
       ],
     },
@@ -3581,7 +3581,7 @@ const QUESTIONS = {
           question: "Explain why market values (rather than balance sheet book values) of equity and debt are used to calculate WACC.",
           answer:
             "Market values reflect what investors would actually require today for the risk they're bearing, whereas book values are historical accounting figures that may bear little relation to current economic value &mdash; WACC is fundamentally a forward-looking, market-based figure representing the company's true current cost of capital, not a backward-looking accounting one.",
-          note: "Candidates should connect this to the broader principle (also seen in business valuation) that market values are preferred wherever genuinely available, for objectivity and relevance.",
+          note: "Candidates should connect this to the broader principle (also seen in business valuation) that market values are preferred wherever available, for objectivity and relevance.",
         },
         {
           label: "(iii)",
@@ -3617,7 +3617,7 @@ const QUESTIONS = {
             "A project requires an initial investment of &pound;80,000 and is expected to generate cash inflows of &pound;25,000, &pound;30,000, &pound;35,000 and &pound;20,000 in years 1 to 4 respectively. Calculate the project's payback period.",
           answer:
             "Cumulative cashflows: Year 1 &pound;25,000; Year 2 &pound;55,000; Year 3 &pound;90,000. Payback occurs during year 3: remaining amount needed after year 2 $= 80{,}000 - 55{,}000 = \\pounds25{,}000$; fraction of year 3 $= 25{,}000/35{,}000 = 0.71$. Payback period $= 2 + 0.71 = 2.71$ years.",
-          note: "Candidates should identify the correct year in which cumulative cashflow first exceeds the initial investment, then calculate the FRACTION of that year needed, not round to a whole number of years.",
+          note: "Candidates should identify the correct year in which cumulative cashflow first exceeds the initial investment, then calculate the <em>fraction</em> of that year needed, not round to a whole number of years.",
         },
         {
           label: "(ii)",
@@ -3627,13 +3627,13 @@ const QUESTIONS = {
             "The project's asset is depreciated on a straight-line basis to zero residual value over its 4-year life. Using the average investment basis, calculate the project's accounting rate of return (ARR).",
           answer:
             "Annual depreciation $= 80{,}000/4 = \\pounds20{,}000$. Accounting profit each year (cash inflow minus depreciation): Year 1 $= \\pounds5{,}000$; Year 2 $=\\pounds10{,}000$; Year 3 $=\\pounds15{,}000$; Year 4 $=\\pounds0$. Average annual profit $= (5{,}000+10{,}000+15{,}000+0)/4 = \\pounds7{,}500$. Average investment $= (80{,}000+0)/2 = \\pounds40{,}000$. $ARR = 7{,}500/40{,}000 = 18.75\\%$.",
-          note: "Candidates must first convert cash inflows into accounting PROFIT by deducting depreciation, before calculating the average &mdash; using the cash inflows directly (without deducting depreciation) is a common error.",
+          note: "Candidates must first convert cash inflows into accounting <em>profit</em> by deducting depreciation, before calculating the average &mdash; using the cash inflows directly (without deducting depreciation) is a common error.",
         },
         {
           label: "(iii)",
           command: "Explain",
           marks: 1,
-          question: "State the ARR that would result if the INITIAL investment (rather than average investment) were used as the denominator instead.",
+          question: "State the ARR that would result if the <em>initial</em> investment (rather than average investment) were used as the denominator instead.",
           answer: "$ARR = 7{,}500/80{,}000 = 9.38\\%$.",
           note: "Roughly half the average-investment-basis figure, illustrating why the choice of denominator must always be stated explicitly alongside any ARR result.",
         },
@@ -3662,7 +3662,7 @@ const QUESTIONS = {
             "Using the same project as the previous question (initial investment &pound;80,000; cash inflows &pound;25,000, &pound;30,000, &pound;35,000, &pound;20,000 in years 1-4), calculate the project's NPV using a discount rate of 8%.",
           answer:
             "Discount factors: year 1 $=0.9259$; year 2 $=0.8573$; year 3 $=0.7938$; year 4 $=0.7350$. Present values: $25{,}000(0.9259)=\\pounds23{,}148$; $30{,}000(0.8573)=\\pounds25{,}720$; $35{,}000(0.7938)=\\pounds27{,}784$; $20{,}000(0.7350)=\\pounds14{,}701$. Sum of present values $= \\pounds91{,}353$. $NPV = 91{,}353 - 80{,}000 = \\pounds11{,}353$.",
-          note: "Candidates should keep the time-0 initial investment UNDISCOUNTED, deducting it directly from the sum of the discounted inflows.",
+          note: "Candidates should keep the time-0 initial investment <em>undiscounted</em>, deducting it directly from the sum of the discounted inflows.",
         },
         {
           label: "(ii)",
@@ -3688,7 +3688,7 @@ const QUESTIONS = {
           marks: 2,
           question: "Explain what a 'sunk cost' is, and why it should never be included in an NPV calculation.",
           answer:
-            "A sunk cost is a cost that has already been incurred and cannot be recovered regardless of the current decision. It should be excluded from NPV because it doesn't change based on whether the project proceeds or not, so it's entirely irrelevant to the decision at hand &mdash; only cashflows that genuinely change as a result of the decision belong in the calculation.",
+            "A sunk cost is a cost that has already been incurred and cannot be recovered regardless of the current decision. It should be excluded from NPV because it doesn't change based on whether the project proceeds or not, so it's entirely irrelevant to the decision at hand &mdash; only cashflows that change as a result of the decision belong in the calculation.",
           note: "This is one of the most commonly tested sources of error in NPV questions &mdash; a strong answer states the general principle (only relevant, incremental cashflows) alongside the specific sunk-cost definition.",
         },
       ],
@@ -3707,7 +3707,7 @@ const QUESTIONS = {
             "Using the same project (initial investment &pound;80,000; cash inflows &pound;25,000, &pound;30,000, &pound;35,000, &pound;20,000 in years 1-4), NPV at 13% is &pound;2,141 and NPV at 14% is &pound;479. Using linear interpolation, estimate the project's IRR.",
           answer:
             "$IRR \\approx 13\\% + \\dfrac{2{,}141}{2{,}141 - 479} \\times (14\\%-13\\%) = 13\\% + \\dfrac{2{,}141}{1{,}662} \\times 1\\% = 13\\% + 1.29\\% = 14.29\\%$. (The precise IRR, found by iteration, is approximately 14.30%, confirming the interpolation is a close approximation.)",
-          note: "The interpolation formula adds the LOWER rate's proportional share of the gap between the two NPVs &mdash; candidates should double-check the sign and direction of the calculation, since NPV is falling as the rate rises here.",
+          note: "The interpolation formula adds the <em>lower</em> rate's proportional share of the gap between the two NPVs &mdash; candidates should double-check the sign and direction of the calculation, since NPV is falling as the rate rises here.",
         },
         {
           label: "(ii)",
@@ -3724,7 +3724,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain why NPV and IRR can give conflicting rankings when choosing between two mutually exclusive projects, and which method's recommendation should generally be followed if they disagree.",
           answer:
-            "The two methods can rank projects differently when the projects have different cashflow patterns or scales, because IRR measures a RATE of return while NPV measures an absolute VALUE created &mdash; a smaller project can have a higher IRR but a lower NPV than a larger one. NPV should generally be followed, since it directly measures the absolute increase in shareholder wealth, the company's actual financial objective.",
+            "The two methods can rank projects differently when the projects have different cashflow patterns or scales, because IRR measures a <em>rate</em> of return while NPV measures an absolute <em>value</em> created &mdash; a smaller project can have a higher IRR but a lower NPV than a larger one. NPV should generally be followed, since it directly measures the absolute increase in shareholder wealth, the company's actual financial objective.",
           note: "This is one of the most important theoretical points in investment appraisal &mdash; candidates should state clearly that NPV wins when the two methods conflict for mutually exclusive projects.",
         },
         {
@@ -3769,7 +3769,7 @@ const QUESTIONS = {
           question: "Explain what 'capital allowances' are, and why they are relevant when appraising an investment involving a new asset purchase.",
           answer:
             "Capital allowances are tax relief given on the cost of qualifying capital expenditure (broadly analogous to depreciation, but calculated under tax rules rather than accounting rules). They reduce the company's taxable profit and hence its tax payable, meaning they should be incorporated into the post-tax cashflows used in an NPV calculation involving a new asset purchase.",
-          note: "Candidates should recognise capital allowances as the TAX equivalent of accounting depreciation, both reducing the cash tax actually paid.",
+          note: "Candidates should recognise capital allowances as the <em>tax</em> equivalent of accounting depreciation, both reducing the cash tax actually paid.",
         },
         {
           label: "(iv)",
@@ -3778,7 +3778,7 @@ const QUESTIONS = {
           question: "Discuss why the timing of a tax cashflow (e.g. tax paid one year after the profit is earned) can materially affect a project's calculated NPV.",
           answer:
             "Since NPV explicitly accounts for the time value of money, a tax payment delayed by a year is worth less in present value terms than an equivalent payment made immediately, so the exact timing assumption used for tax cashflows can materially affect the calculated NPV &mdash; a correctly-sized cashflow placed in the wrong year will still produce an incorrect NPV.",
-          note: "This reinforces that NPV is sensitive to WHEN a cashflow occurs, not just its amount.",
+          note: "This reinforces that NPV is sensitive to <em>when</em> a cashflow occurs, not just its amount.",
         },
       ],
     },
@@ -3796,7 +3796,7 @@ const QUESTIONS = {
             "A company's current dividend is &pound;0.30 per share, expected to grow at 4% per year indefinitely, and its cost of equity is 10%. Using the dividend growth model, calculate the theoretical value of one share. Separately, a comparable listed company trades on a P/E ratio of 15, and the target company's EPS is &pound;0.40 &mdash; calculate the implied share value using this earnings-based approach.",
           answer:
             "Dividend growth model: $P_0 = \\dfrac{D_0(1+g)}{k_e-g} = \\dfrac{0.30(1.04)}{0.10-0.04} = \\dfrac{0.312}{0.06} = \\pounds5.20$. P/E-based value: $15 \\times \\pounds0.40 = \\pounds6.00$ per share.",
-          note: "Two genuinely different valuation methods applied to the same company can (and often do) give different results &mdash; both figures should be calculated and left as they are, not artificially reconciled.",
+          note: "Two different valuation methods applied to the same company can (and often do) give different results &mdash; both figures should be calculated and left as they are, not artificially reconciled.",
         },
         {
           label: "(ii)",
@@ -3814,7 +3814,7 @@ const QUESTIONS = {
           question: "Explain the 'signalling effect' of a dividend cut, and why a company might be reluctant to cut its dividend even if retaining the cash would be financially sound.",
           answer:
             "Because managers typically have better information about a company's prospects than outside shareholders, a dividend cut is often interpreted by the market as a negative signal about management's genuine view of future prospects, causing the share price to fall &mdash; regardless of whether the underlying financial logic for the cut (e.g. funding a good investment opportunity) is actually sound. This negative market reaction is exactly why companies are often very reluctant to cut dividends.",
-          note: "A strong answer distinguishes the genuine financial logic (which might favour retention) from the market's SIGNALLING interpretation (which can react negatively regardless).",
+          note: "A strong answer distinguishes the genuine financial logic (which might favour retention) from the market's <em>signalling</em> interpretation (which can react negatively regardless).",
         },
         {
           label: "(iv)",
@@ -3823,7 +3823,7 @@ const QUESTIONS = {
           question: "Discuss two distinct reasons why mergers and acquisitions often fail to create the value originally anticipated.",
           answer:
             "Overpaying: an excessive takeover premium, or overestimating achievable synergies, means the price paid exceeds the genuine value created by the combination. Poor integration and agency motives: difficulty integrating the two companies' operations and cultures, or management being driven by empire-building motives (a form of the agency problem) rather than genuine shareholder value creation, can both prevent anticipated benefits from actually being realised.",
-          note: "Any two genuinely distinct reasons (overpaying/overestimating synergies, poor integration, empire-building/agency motives) should be credited if clearly explained.",
+          note: "Any two distinct reasons (overpaying/overestimating synergies, poor integration, empire-building/agency motives) should be credited if clearly explained.",
         },
       ],
     },
@@ -3842,8 +3842,8 @@ const QUESTIONS = {
           question:
             "A trainee actuary has produced a technically flawless piece of analysis but struggles to explain it clearly to the client who commissioned it. Explain why this represents only 'half' of a complete piece of actuarial work.",
           answer:
-            "Even the most rigorous, correct technical analysis has limited practical value until it's successfully communicated to the people who need to understand and act on it. If the client cannot understand or act on the analysis, the work has not genuinely achieved its purpose, regardless of how sound the underlying technical content is &mdash; communication is the essential 'last mile' that determines whether good analysis actually achieves anything.",
-          note: "A strong answer names communication as a genuinely distinct, necessary skill, not merely a nice-to-have addition to technical competence.",
+            "Even the most rigorous, correct technical analysis has limited practical value until it's successfully communicated to the people who need to understand and act on it. If the client cannot understand or act on the analysis, the work has not achieved its purpose, regardless of how sound the underlying technical content is &mdash; communication is the essential 'last mile' that determines whether good analysis actually achieves anything.",
+          note: "A strong answer names communication as a distinct, necessary skill, not merely a nice-to-have addition to technical competence.",
         },
         {
           label: "(ii)",
@@ -3851,7 +3851,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain why CP3 is typically assessed by producing a finished written document, rather than through essay-style questions about communication theory.",
           answer:
-            "CP3 tests the practical skill of producing genuinely clear, well-structured, appropriately-toned communication, which can only be properly assessed by evaluating an actual finished document, not by testing whether a candidate can describe communication principles in the abstract.",
+            "CP3 tests the practical skill of producing clear, well-structured, appropriately-toned communication, which can only be properly assessed by evaluating an actual finished document, not by testing whether a candidate can describe communication principles in the abstract.",
           note: "This distinguishes CP3's assessment style from CP1's scenario-analysis essays and connects to CP2's similarly practical, artefact-based assessment approach.",
         },
         {
@@ -3860,7 +3860,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Discuss why a CP3 exam question might deliberately specify an audience the candidate must write for, rather than leaving the audience for the candidate to infer or choose freely.",
           answer:
-            "Specifying the audience directly determines what counts as a good answer, since the same technical content written appropriately for an actuarial colleague would very likely be an inappropriate, jargon-heavy answer for a specified non-technical audience such as a policyholder. This tests whether the candidate can genuinely tailor communication to a stated audience, not just write generically well.",
+            "Specifying the audience directly determines what counts as a good answer, since the same technical content written appropriately for an actuarial colleague would very likely be an inappropriate, jargon-heavy answer for a specified non-technical audience such as a policyholder. This tests whether the candidate can tailor communication to a stated audience, not just write generically well.",
           note: "Candidates should recognise that a technically accurate answer written for the wrong audience can still lose significant marks under this exam style.",
         },
         {
@@ -3869,7 +3869,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on why strong CP3 skills remain valuable to an actuary throughout their career, beyond the immediate goal of passing the exam.",
           answer:
-            "Actuaries regularly need to explain complex analysis to clients, boards, regulators and the public throughout their working life, so the ability to communicate clearly is a genuinely core, continuously-used professional skill, not a one-off exam hurdle to be cleared and then forgotten.",
+            "Actuaries regularly need to explain complex analysis to clients, boards, regulators and the public throughout their working life, so the ability to communicate clearly is a core, continuously-used professional skill, not a one-off exam hurdle to be cleared and then forgotten.",
           note: "This closing comment should connect CP3's practical, real-world value to its status as a mandatory Core Practice subject.",
         },
       ],
@@ -3896,7 +3896,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain what is meant by a document's 'key message', and why it should typically be identified before the document is drafted in detail.",
           answer:
-            "The key message is the single most important point the communication needs to convey. Identifying it clearly beforehand helps ensure the document's structure and content genuinely support and highlight that message, rather than the message emerging only incidentally after everything else has already been written and organised around less important detail.",
+            "The key message is the single most important point the communication needs to convey. Identifying it clearly beforehand helps ensure the document's structure and content support and highlight that message, rather than the message emerging only incidentally after everything else has already been written and organised around less important detail.",
           note: "Candidates should connect the key message to structure directly &mdash; it is the thing the whole document should be organised around.",
         },
         {
@@ -3905,7 +3905,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Discuss why this document, given its mixed audience of technical and non-technical trustees, presents a genuine communication challenge, and one general technique for addressing it.",
           answer:
-            "A single document read by a genuinely mixed readership must serve both readers who want full technical detail and readers who need the essential message in accessible terms, which a single undifferentiated version is unlikely to do well for either group. A layered approach &mdash; e.g. a plain-language executive summary alongside more detailed technical sections &mdash; lets each reader engage with the document at their own appropriate level.",
+            "A single document read by a mixed readership must serve both readers who want full technical detail and readers who need the essential message in accessible terms, which a single undifferentiated version is unlikely to do well for either group. A layered approach &mdash; e.g. a plain-language executive summary alongside more detailed technical sections &mdash; lets each reader engage with the document at their own appropriate level.",
           note: "This previews the executive summary technique developed further in the structuring module; candidates need not describe it in full detail here, just identify it as a valid approach.",
         },
         {
@@ -3915,7 +3915,7 @@ const QUESTIONS = {
           question: "Comment on why correctly identifying the audience and purpose at the very start of the writing process is difficult to fully correct later, if done incorrectly.",
           answer:
             "Structure, language, and level of detail are all built around the assumed audience and purpose from the very beginning of drafting, so a fundamental misidentification typically requires substantially rewriting the document, rather than a simple, quick edit near the end &mdash; making it far more efficient to get this right upfront.",
-          note: "This is genuinely important, practical guidance worth remembering: a brief planning step before drafting is a small investment that avoids a much larger correction later.",
+          note: "This is important, practical guidance worth remembering: a brief planning step before drafting is a small investment that avoids a much larger correction later.",
         },
       ],
     },
@@ -3942,7 +3942,7 @@ const QUESTIONS = {
           question: "Explain what an executive summary is, and what it should typically contain if added to the front of this report.",
           answer:
             "An executive summary is a brief, self-contained overview at the start of a longer document, summarising the key findings, conclusions and recommendations in plain language. For this report, it should state the recommended change to investment strategy, the key reason supporting it, and any major risk or caveat, allowing a busy board reader to grasp the essential message without reading the full technical report.",
-          note: "A strong answer states both the general definition and applies it specifically to what THIS report's summary should contain.",
+          note: "A strong answer states both the general definition and applies it specifically to what <em>this</em> report's summary should contain.",
         },
         {
           label: "(iii)",
@@ -3951,7 +3951,7 @@ const QUESTIONS = {
           question: "Discuss how the report should be restructured, describing a logical order of sections from start to finish.",
           answer:
             "A logical structure would run: (1) executive summary, stating the recommendation and key reasons upfront; (2) background/context, explaining what prompted the review of investment strategy; (3) analysis, presenting the detailed technical calculations and reasoning; (4) conclusions and recommendations, restating and justifying the recommended action in light of the analysis; (5) appendices, for any detailed supporting calculations not essential to the main narrative.",
-          note: "Candidates should present a genuinely logical flow (context before analysis, analysis before conclusion, with the executive summary leading) rather than simply relisting the original sections in a different order without justification.",
+          note: "Candidates should present a logical flow (context before analysis, analysis before conclusion, with the executive summary leading) rather than simply relisting the original sections in a different order without justification.",
         },
         {
           label: "(iv)",
@@ -3977,8 +3977,8 @@ const QUESTIONS = {
           question:
             "A draft letter to a policyholder states: 'Your policy's surrender value has been calculated net of the applicable market value reduction, reflecting prevailing asset share conditions.' Explain what is wrong with this sentence for its intended non-technical audience.",
           answer:
-            "The sentence uses multiple pieces of unexplained technical jargon ('surrender value', 'market value reduction', 'asset share') that a policyholder without actuarial or insurance background is very unlikely to understand, undermining the whole purpose of the letter, which is for the policyholder to genuinely understand their position.",
-          note: "Candidates should identify the SPECIFIC jargon terms causing the problem, not just assert generically that the sentence is 'too technical'.",
+            "The sentence uses multiple pieces of unexplained technical jargon ('surrender value', 'market value reduction', 'asset share') that a policyholder without actuarial or insurance background is very unlikely to understand, undermining the whole purpose of the letter, which is for the policyholder to understand their position.",
+          note: "Candidates should identify the <em>specific</em> jargon terms causing the problem, not just assert generically that the sentence is 'too technical'.",
         },
         {
           label: "(ii)",
@@ -3993,9 +3993,9 @@ const QUESTIONS = {
           label: "(iii)",
           command: "Explain",
           marks: 3,
-          question: "Explain why plain language must never be used as an excuse to omit or distort genuinely important information, even when writing very simply.",
+          question: "Explain why plain language must never be used as an excuse to omit or distort important information, even when writing very simply.",
           answer:
-            "Plain language is about HOW something is expressed, not about removing or distorting WHAT is actually true &mdash; a well-written plain-language explanation should convey the same genuine substance as a technical version, just in more accessible form. Simplifying language should never come at the cost of accuracy or completeness of genuinely important information.",
+            "Plain language is about <em>how</em> something is expressed, not about removing or distorting <em>what</em> is actually true &mdash; a well-written plain-language explanation should convey the same genuine substance as a technical version, just in more accessible form. Simplifying language should never come at the cost of accuracy or completeness of important information.",
           note: "This is a key distinction candidates should draw explicitly: simplicity of language versus accuracy/completeness of substance are two separate things.",
         },
         {
@@ -4004,7 +4004,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on why asking someone unfamiliar with the topic to read a draft can help identify remaining plain-language problems that the original writer might miss.",
           answer:
-            "The writer, having worked closely with the material, can easily forget which concepts are genuinely unfamiliar to someone encountering them for the first time. A reader without that background creates genuine distance from the writer's own familiarity, helping reveal passages that are unclear or assume knowledge the intended reader wouldn't actually have.",
+            "The writer, having worked closely with the material, can easily forget which concepts are unfamiliar to someone encountering them for the first time. A reader without that background creates genuine distance from the writer's own familiarity, helping reveal passages that are unclear or assume knowledge the intended reader wouldn't actually have.",
           note: "This connects to the broader review/editing theme developed later in the course &mdash; independent perspective catches what self-review alone often misses.",
         },
       ],
@@ -4020,19 +4020,19 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "A draft report states a projected reserve figure as '&pound;4,827,341.62' for a long-term liability with genuinely significant underlying uncertainty. Explain why this level of precision is likely to be inappropriate.",
+            "A draft report states a projected reserve figure as '&pound;4,827,341.62' for a long-term liability with significant underlying uncertainty. Explain why this level of precision is likely to be inappropriate.",
           answer:
-            "Presenting a figure with more precision than is genuinely meaningful, given the significant underlying uncertainty in a long-term projection, can mislead the reader about how confident they should be in it. Sensible rounding (e.g. to the nearest &pound;100,000 or &pound;1m) would convey a more honest impression of the figure's genuine reliability.",
+            "Presenting a figure with more precision than is meaningful, given the significant underlying uncertainty in a long-term projection, can mislead the reader about how confident they should be in it. Sensible rounding (e.g. to the nearest &pound;100,000 or &pound;1m) would convey a more honest impression of the figure's genuine reliability.",
           note: "Candidates should connect excessive precision directly to the risk of implying false confidence, not just assert that the figure 'looks odd'.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
-          question: "Explain one genuinely useful purpose a well-designed table could serve if the report needs to present this reserve figure alongside the equivalent figures for the previous three years.",
+          question: "Explain one useful purpose a well-designed table could serve if the report needs to present this reserve figure alongside the equivalent figures for the previous three years.",
           answer:
             "A table lets a reader compare the four years' figures systematically and at a glance, which is far harder to do when the same figures are embedded within continuous prose &mdash; comparison across multiple related figures is exactly the kind of task a table serves well.",
-          note: "A strong answer explicitly names COMPARISON across multiple figures as the specific benefit, not just 'tables are clearer' in general terms.",
+          note: "A strong answer explicitly names <em>comparison</em> across multiple figures as the specific benefit, not just 'tables are clearer' in general terms.",
         },
         {
           label: "(iii)",
@@ -4040,8 +4040,8 @@ const QUESTIONS = {
           marks: 3,
           question: "Discuss whether a chart or a table would better communicate a rising trend in this reserve figure over the four years, and why.",
           answer:
-            "A chart would likely better communicate a rising TREND, since a chart can reveal a pattern visually and immediately in a way that can be harder to perceive from a table of raw numbers alone, especially for a non-technical reader. A table would remain more useful if the reader instead needs to look up specific, precise individual figures rather than grasp the overall pattern.",
-          note: "Candidates should recognise that the right choice depends on whether the point being made is a PATTERN (favouring a chart) or precise individual VALUES (favouring a table).",
+            "A chart would likely better communicate a rising <em>trend</em>, since a chart can reveal a pattern visually and immediately in a way that can be harder to perceive from a table of raw numbers alone, especially for a non-technical reader. A table would remain more useful if the reader instead needs to look up specific, precise individual figures rather than grasp the overall pattern.",
+          note: "Candidates should recognise that the right choice depends on whether the point being made is a <em>pattern</em> (favouring a chart) or precise individual <em>values</em> (favouring a table).",
         },
         {
           label: "(iv)",
@@ -4049,7 +4049,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Comment on why the chart or table should be accompanied by a brief written explanation of what it shows and why it matters, rather than left to 'speak for itself'.",
           answer:
-            "A visual or tabular presentation alone may not make its intended significance obvious to every reader, so a brief accompanying explanation helps ensure the reader draws the genuinely intended conclusion (e.g. that the rising trend reflects a specific, named cause) rather than an unintended or unclear one.",
+            "A visual or tabular presentation alone may not make its intended significance obvious to every reader, so a brief accompanying explanation helps ensure the reader draws the intended conclusion (e.g. that the rising trend reflects a specific, named cause) rather than an unintended or unclear one.",
           note: "This tests whether candidates understand that visuals rarely fully substitute for a clear, explicit statement of the key takeaway.",
         },
       ],
@@ -4068,7 +4068,7 @@ const QUESTIONS = {
             "A report states a single best-estimate figure for a company's projected profit next year, with no further context. Explain why this could be insufficient for a board making a significant strategic decision based on it.",
           answer:
             "A single figure conveys no information about how much the actual outcome might reasonably differ from that estimate, which can matter significantly for a decision where the consequences of being wrong in either direction are meaningfully different &mdash; the board cannot properly weigh the risk of the decision without some sense of the genuine uncertainty involved.",
-          note: "Candidates should connect the missing uncertainty information directly to the board's ability to make a genuinely informed decision.",
+          note: "Candidates should connect the missing uncertainty information directly to the board's ability to make an informed decision.",
         },
         {
           label: "(ii)",
@@ -4085,7 +4085,7 @@ const QUESTIONS = {
           marks: 3,
           question: "Explain why the report should avoid stating that the projected profit 'will' be achieved, in favour of language such as 'is expected to be'.",
           answer:
-            "Language implying certainty ('will') misrepresents the genuinely uncertain, assumption-based nature of most actuarial projections, potentially misleading the board about how reliable the stated figure actually is. 'Is expected to be' more honestly conveys that the figure is a projection subject to genuine uncertainty, not a guaranteed outcome.",
+            "Language implying certainty ('will') misrepresents the uncertain, assumption-based nature of most actuarial projections, potentially misleading the board about how reliable the stated figure actually is. 'Is expected to be' more honestly conveys that the figure is a projection subject to genuine uncertainty, not a guaranteed outcome.",
           note: "This is a subtle but important point about word choice alone communicating a level of confidence, independent of the actual figures presented.",
         },
         {
@@ -4095,7 +4095,7 @@ const QUESTIONS = {
           question: "Comment on why the report should avoid the opposite failure of including so many caveats and qualifications that the board struggles to identify the genuine headline message.",
           answer:
             "A document so hedged with caveats that its genuine message becomes unclear fails just as much as one presenting false certainty &mdash; the goal is honest, proportionate acknowledgement of genuine uncertainty, not endless qualification that obscures the actual conclusion the board needs to act on.",
-          note: "A strong answer recognises this as the OTHER side of the central balance in this module, not a separate, unrelated concern from overstating certainty.",
+          note: "A strong answer recognises this as the <em>other</em> side of the central balance in this module, not a separate, unrelated concern from overstating certainty.",
         },
       ],
     },
@@ -4113,7 +4113,7 @@ const QUESTIONS = {
             "A senior actuary needs to quickly inform a director of an urgent, single finding from an ongoing investigation. Explain why a brief briefing note would likely be more appropriate than a full formal report for this purpose.",
           answer:
             "A briefing note conveys key information or a recommendation concisely, suited to a reader who needs the essential point quickly, and is usually much shorter than a full report, often omitting extensive background or detailed appendices &mdash; exactly matching the urgent, single-finding nature of this communication need.",
-          note: "Candidates should connect the URGENCY and SINGLE-FINDING nature of the scenario directly to why the briefing note format specifically fits, not just assert it's 'shorter and therefore better'.",
+          note: "Candidates should connect the <em>urgency</em> and <em>single-finding</em> nature of the scenario directly to why the briefing note format specifically fits, not just assert it's 'shorter and therefore better'.",
         },
         {
           label: "(ii)",
@@ -4128,10 +4128,10 @@ const QUESTIONS = {
           label: "(iii)",
           command: "Discuss",
           marks: 3,
-          question: "The finding must also be presented to a wider group at an upcoming meeting. Discuss why presentation slides would require a genuinely different writing approach from the written report covering the same material.",
+          question: "The finding must also be presented to a wider group at an upcoming meeting. Discuss why presentation slides would require a different writing approach from the written report covering the same material.",
           answer:
             "Slides are typically viewed alongside a live spoken explanation, so they should generally contain concise key points and visual support rather than dense prose, with the accompanying spoken commentary providing the fuller explanation &mdash; a slide as dense with prose as a written report would generally be considered a poor presentation slide, since slides and speech are meant to work together, not duplicate each other.",
-          note: "A strong answer explains WHY slides differ (they're paired with live speech), not just asserts that slides should be 'shorter'.",
+          note: "A strong answer explains <em>why</em> slides differ (they're paired with live speech), not just asserts that slides should be 'shorter'.",
         },
         {
           label: "(iv)",
@@ -4140,7 +4140,7 @@ const QUESTIONS = {
           question: "Comment on why correctly identifying the specific document type required by an exam question is itself an important part of answering it well.",
           answer:
             "Each document type carries its own conventions for structure, length, and tone, so producing the wrong type of document (e.g. a full formal report when a brief note was specifically requested) would likely be marked down, regardless of how well-written the content itself is &mdash; following the specified format is part of the actual instruction given, not an optional stylistic choice.",
-          note: "This is genuinely important, practical exam guidance worth stating explicitly and directly.",
+          note: "This is important, practical exam guidance worth stating explicitly and directly.",
         },
       ],
     },
@@ -4158,7 +4158,7 @@ const QUESTIONS = {
             "A draft letter informing a policyholder that their claim has been declined states, bluntly: 'Your claim does not meet the policy conditions and has therefore been rejected.' Explain why the tone of this sentence is likely to be inappropriate, even though it may be factually accurate.",
           answer:
             "The reader is likely to be personally and emotionally affected by this outcome, so an unnecessarily blunt, clinical tone can cause genuine additional distress, even though the underlying factual content is communicated accurately. Tone matters most precisely in situations where the content itself is already difficult for the reader to receive.",
-          note: "Candidates should recognise that factual accuracy alone does not make a communication appropriate &mdash; tone is a genuinely separate dimension that must also be judged carefully.",
+          note: "Candidates should recognise that factual accuracy alone does not make a communication appropriate &mdash; tone is a separate dimension that must also be judged carefully.",
         },
         {
           label: "(ii)",
@@ -4167,7 +4167,7 @@ const QUESTIONS = {
           question: "Explain how the sentence could be rewritten to convey the same accurate outcome with a more appropriately sensitive tone.",
           answer:
             "For example: 'We have carefully reviewed your claim against the terms of your policy, and unfortunately we are unable to approve it on this occasion, as it does not meet the specific conditions set out in your policy documents. We understand this may be disappointing news.' (Any answer that preserves the accurate outcome &mdash; the claim is declined &mdash; while adopting a more sensitive, less abrupt tone should be credited.)",
-          note: "Markers should credit any genuinely more sensitive rewrite that still accurately and clearly conveys the claim has been declined, without becoming vague or misleading about the actual outcome.",
+          note: "Markers should credit any more sensitive rewrite that still accurately and clearly conveys the claim has been declined, without becoming vague or misleading about the actual outcome.",
         },
         {
           label: "(iii)",
@@ -4200,10 +4200,10 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "A draft report states in its text that 'reserves increased by 8% over the year', but the accompanying table shows reserves rising from &pound;10.5m to &pound;11.5m (an increase of approximately 9.5%). Explain why this kind of inconsistency is a genuinely serious problem, even if it's simply a transcription slip.",
+            "A draft report states in its text that 'reserves increased by 8% over the year', but the accompanying table shows reserves rising from &pound;10.5m to &pound;11.5m (an increase of approximately 9.5%). Explain why this kind of inconsistency is a serious problem, even if it's simply a transcription slip.",
           answer:
             "An inconsistency between the text and an accompanying table can seriously undermine a reader's confidence in the whole document's accuracy, even if it's a simple transcription slip rather than a genuine analytical error &mdash; the reader has no way of knowing which figure (if either) is correct, and the discrepancy itself raises doubt about the document's overall reliability.",
-          note: "Candidates should recognise that the SEVERITY of the problem (undermining trust in the whole document) doesn't depend on whether the underlying cause was a minor slip or a genuine analytical error.",
+          note: "Candidates should recognise that the <em>severity</em> of the problem (undermining trust in the whole document) doesn't depend on whether the underlying cause was a minor slip or a genuine analytical error.",
         },
         {
           label: "(ii)",
@@ -4212,7 +4212,7 @@ const QUESTIONS = {
           question: "Explain why this kind of numerical inconsistency is a specific item worth checking deliberately during a review pass, rather than assuming it would be caught by checking for clarity or tone alone.",
           answer:
             "Accuracy, clarity, tone, and structure can each independently succeed or fail, so a thorough review should check each dimension deliberately &mdash; a document could be clearly written and appropriately toned while still containing an internal numerical inconsistency that a clarity or tone check alone would not necessarily catch.",
-          note: "This tests whether candidates understand review as covering several genuinely distinct dimensions, not a single, undifferentiated check.",
+          note: "This tests whether candidates understand review as covering several distinct dimensions, not a single, undifferentiated check.",
         },
         {
           label: "(iii)",
@@ -4247,8 +4247,8 @@ const QUESTIONS = {
           question:
             "A client asks an actuary to omit a significant negative finding from a report, arguing it would 'only confuse' the board. Explain why the actuary should not simply comply with this request.",
           answer:
-            "Withholding or obscuring a genuine limitation or negative finding to make a document appear more favourable than is genuinely warranted would mislead the board about the true position, which is a professional integrity failure, not merely a stylistic choice &mdash; professional standards require honest, accurate communication regardless of a client's preferences.",
-          note: "Candidates should recognise the client's stated justification ('it would only confuse the board') as insufficient grounds to omit genuinely material information.",
+            "Withholding or obscuring a genuine limitation or negative finding to make a document appear more favourable than is warranted would mislead the board about the true position, which is a professional integrity failure, not merely a stylistic choice &mdash; professional standards require honest, accurate communication regardless of a client's preferences.",
+          note: "Candidates should recognise the client's stated justification ('it would only confuse the board') as insufficient grounds to omit material information.",
         },
         {
           label: "(ii)",
@@ -4265,8 +4265,8 @@ const QUESTIONS = {
           marks: 3,
           question: "Discuss why an actuary's duty in this situation extends beyond simply satisfying the immediate client's request.",
           answer:
-            "Actuarial work often has consequences extending beyond the immediate client (e.g. affecting the board's ability to make a genuinely informed decision, and potentially wider stakeholders relying on that decision), so professional standards require considering this broader responsibility, not just satisfying the client's stated preference for what to include.",
-          note: "This connects to the actuary's public interest duty, extending beyond the immediate paying client to those genuinely affected by the resulting decisions.",
+            "Actuarial work often has consequences extending beyond the immediate client (e.g. affecting the board's ability to make an informed decision, and potentially wider stakeholders relying on that decision), so professional standards require considering this broader responsibility, not just satisfying the client's stated preference for what to include.",
+          note: "This connects to the actuary's public interest duty, extending beyond the immediate paying client to those affected by the resulting decisions.",
         },
         {
           label: "(iv)",
@@ -4314,8 +4314,8 @@ const QUESTIONS = {
           question:
             "Discuss two reasons why long-term care (LTC) insurance is generally considered a materially riskier product for an insurer to price and reserve for than either IP or CI.",
           answer:
-            "First, LTC combines longevity risk and care-need incidence risk, and both are genuinely long-term and compounding &mdash; an error in either assumption compounds over a potentially very long claim duration, unlike a single-trigger product. Second, LTC is highly sensitive to future medical advances and economic/care-cost inflation over a very long time horizon, both of which are genuinely difficult to project decades ahead with confidence, unlike a shorter-tail product where such assumptions need only hold over a shorter window.",
-          note: "Any two genuinely distinct, well-explained reasons should be accepted, including ADL-trigger subjectivity or the moral hazard point, provided they are properly justified rather than merely asserted.",
+            "First, LTC combines longevity risk and care-need incidence risk, and both are long-term and compounding &mdash; an error in either assumption compounds over a potentially very long claim duration, unlike a single-trigger product. Second, LTC is highly sensitive to future medical advances and economic/care-cost inflation over a very long time horizon, both of which are difficult to project decades ahead with confidence, unlike a shorter-tail product where such assumptions need only hold over a shorter window.",
+          note: "Any two distinct, well-explained reasons should be accepted, including ADL-trigger subjectivity or the moral hazard point, provided they are properly justified rather than merely asserted.",
         },
         {
           label: "(iv)",
@@ -4324,7 +4324,7 @@ const QUESTIONS = {
           question:
             "Comment on why this new entrant should expect underwriting and pricing for these products to require more actuarial judgement than the general insurance products it already writes.",
           answer:
-            "Health and care products involve genuinely long-term, medically-driven risk drivers with limited own historical data available to a new entrant, so pricing and reserving cannot rely purely on established statistical technique; genuine actuarial judgement, blended with external data and professional standards, is required to a materially greater extent than for many general insurance lines.",
+            "Health and care products involve long-term, medically-driven risk drivers with limited own historical data available to a new entrant, so pricing and reserving cannot rely purely on established statistical technique; genuine actuarial judgement, blended with external data and professional standards, is required to a materially greater extent than for many general insurance lines.",
           note: "This connects directly to the credibility-theory and new-product-pricing-judgement themes developed across this course.",
         },
       ],
@@ -4363,7 +4363,7 @@ const QUESTIONS = {
             "A health and care insurer is analysing its PMI product against customer needs in a market with comprehensive, free-at-point-of-use State healthcare provision. Discuss what this product analysis needs to establish about the genuine value proposition of PMI in this market.",
           answer:
             "The analysis needs to establish precisely what gap PMI fills given the State provision already available &mdash; typically speed of access, choice of provider/consultant, and comfort/privacy of treatment, rather than access to care that would otherwise be entirely unavailable. This matters because a product's genuine value proposition, and hence its appropriate pricing and marketing, depends directly on what customers cannot already obtain for free through the State system.",
-          note: "This directly tests the State-provision-interaction theme; a strong answer explicitly connects product value to what the State does NOT provide, not just what the product itself contains.",
+          note: "This directly tests the State-provision-interaction theme; a strong answer explicitly connects product value to what the State does <em>not</em> provide, not just what the product itself contains.",
         },
         {
           label: "(iv)",
@@ -4372,7 +4372,7 @@ const QUESTIONS = {
           question:
             "Comment on why a bundled product combining PMI and health cash plan benefits might require more than simply adding the two products' standalone prices together.",
           answer:
-            "Bundled benefits can have genuine interactions (e.g. overlapping benefit triggers, or combined risk correlation) that a naive sum-of-standalone-prices approach would miss, so the combined product should genuinely be priced holistically rather than as two independent components simply added together.",
+            "Bundled benefits can have genuine interactions (e.g. overlapping benefit triggers, or combined risk correlation) that a naive sum-of-standalone-prices approach would miss, so the combined product should be priced holistically rather than as two independent components simply added together.",
           note: "This connects to the general bundling-pricing principle developed for other product combinations (e.g. CI and life cover) elsewhere in this course.",
         },
       ],
@@ -4390,7 +4390,7 @@ const QUESTIONS = {
           question:
             "Explain why the roles of the State and employers in providing health and care benefits directly shape how a private insurer should design its distribution strategy.",
           answer:
-            "Where the State provides comprehensive baseline provision, private products typically need to be marketed as supplementary; where employers play a large role as group purchasers, employer relationships become a genuinely central distribution channel distinct from direct-to-individual sales. The insurer's distribution strategy must therefore be tailored to the specific balance of State, employer and private provision in its target market, not designed generically.",
+            "Where the State provides comprehensive baseline provision, private products typically need to be marketed as supplementary; where employers play a large role as group purchasers, employer relationships become a central distribution channel distinct from direct-to-individual sales. The insurer's distribution strategy must therefore be tailored to the specific balance of State, employer and private provision in its target market, not designed generically.",
           note: "A strong answer explicitly connects the market's State/employer balance to concrete distribution-channel implications, not just described in the abstract.",
         },
         {
@@ -4401,7 +4401,7 @@ const QUESTIONS = {
             "Explain why many jurisdictions restrict insurers from using genetic test results in underwriting, and identify one other underwriting-related regulatory restriction relevant to health and care insurance.",
           answer:
             "Restricting genetic test results aims to prevent discrimination based on predictive information the applicant may not have fully processed themselves, and to avoid discouraging people from taking medically valuable genetic tests out of fear of losing insurability &mdash; a public-interest and fairness objective beyond pure risk assessment. Another relevant restriction is limits on the underwriting factors that can be used more generally (e.g. restrictions on using certain demographic characteristics), reflecting the same broader fairness objective.",
-          note: "Any genuinely valid second restriction should be accepted provided it's properly explained, not merely named.",
+          note: "Any valid second restriction should be accepted provided it's properly explained, not merely named.",
         },
         {
           label: "(iii)",
@@ -4410,8 +4410,8 @@ const QUESTIONS = {
           question:
             "Discuss why a pandemic represents a particularly severe risk for a health and care insurer specifically, compared with many other external business-environment shocks.",
           answer:
-            "A pandemic can cause significant, correlated deviations in both mortality and morbidity across a whole population simultaneously, directly affecting multiple product lines (IP, CI, PMI) at once, unlike a shock confined to a single risk driver or product line. This correlated, multi-product impact is not well captured by assumptions of independent risk across policyholders, meaning standard diversification benefits an insurer might otherwise rely on can genuinely fail precisely when they are most needed.",
-          note: "Candidates should explicitly identify the CORRELATED, multi-product nature of pandemic risk as the distinguishing feature, not just describe pandemics generically as 'bad for business'.",
+            "A pandemic can cause significant, correlated deviations in both mortality and morbidity across a whole population simultaneously, directly affecting multiple product lines (IP, CI, PMI) at once, unlike a shock confined to a single risk driver or product line. This correlated, multi-product impact is not well captured by assumptions of independent risk across policyholders, meaning standard diversification benefits an insurer might otherwise rely on can fail precisely when they are most needed.",
+          note: "Candidates should explicitly identify the <em>correlated</em>, multi-product nature of pandemic risk as the distinguishing feature, not just describe pandemics generically as 'bad for business'.",
         },
         {
           label: "(iv)",
@@ -4458,7 +4458,7 @@ const QUESTIONS = {
           question:
             "Discuss why this insurer should conduct profit testing before finalising this product's pricing, rather than relying solely on the equivalence-principle premium calculated in part (i).",
           answer:
-            "Profit testing projects the product's expected cashflows over its full lifetime (including expenses, lapses, and any embedded options) to confirm the pricing genuinely achieves the insurer's target profitability, which a single equivalence-principle calculation covering only expected benefit cost and expenses does not fully verify &mdash; particularly important given the genuine complexity of real product cashflow patterns.",
+            "Profit testing projects the product's expected cashflows over its full lifetime (including expenses, lapses, and any embedded options) to confirm the pricing achieves the insurer's target profitability, which a single equivalence-principle calculation covering only expected benefit cost and expenses does not fully verify &mdash; particularly important given the genuine complexity of real product cashflow patterns.",
           note: "Candidates should recognise profit testing as a verification step distinct from, and following on from, the initial equivalence-principle premium calculation.",
         },
         {
@@ -4468,7 +4468,7 @@ const QUESTIONS = {
           question:
             "Comment on why this product's expense assumption may need particular care compared with a simple term life insurance product.",
           answer:
-            "Health and care products like this often involve genuinely significant claims-handling and medical assessment costs (e.g. verifying a claimed condition against policy definitions) beyond standard policy administration, which must be appropriately captured in the expense assumption, unlike a simpler term life product with a more straightforward claims process.",
+            "Health and care products like this often involve significant claims-handling and medical assessment costs (e.g. verifying a claimed condition against policy definitions) beyond standard policy administration, which must be appropriately captured in the expense assumption, unlike a simpler term life product with a more straightforward claims process.",
           note: "This connects to the claims-handling-expense theme developed for health and care products specifically elsewhere in this course.",
         },
       ],
@@ -4486,7 +4486,7 @@ const QUESTIONS = {
           question:
             "Explain why the tax treatment of premiums and benefits directly affects the attractiveness of a health and care product to customers.",
           answer:
-            "If premiums are tax-deductible or benefits are received tax-free, the effective cost to the customer or value of the benefit changes, directly affecting demand and the price the insurer can competitively charge &mdash; the same underlying cover can be genuinely more or less attractive purely because of how it is taxed.",
+            "If premiums are tax-deductible or benefits are received tax-free, the effective cost to the customer or value of the benefit changes, directly affecting demand and the price the insurer can competitively charge &mdash; the same underlying cover can be more or less attractive purely because of how it is taxed.",
           note: "A complete answer explains the mechanism (effective cost/value changes), not just asserts that tax 'matters'.",
         },
         {
@@ -4496,7 +4496,7 @@ const QUESTIONS = {
           question:
             "Explain why employer-paid group health and care premiums might receive different tax treatment from individually purchased premiums, and why this matters for product strategy.",
           answer:
-            "Many jurisdictions treat employer-provided benefits as a form of remuneration with their own specific tax rules (e.g. benefit-in-kind charges or employer deductibility), distinct from individually purchased cover. This matters because the same underlying cover can carry genuinely different net cost depending purely on the purchase channel, directly affecting which distribution channel (Module 5) is most attractive to a given customer segment.",
+            "Many jurisdictions treat employer-provided benefits as a form of remuneration with their own specific tax rules (e.g. benefit-in-kind charges or employer deductibility), distinct from individually purchased cover. This matters because the same underlying cover can carry different net cost depending purely on the purchase channel, directly affecting which distribution channel (Module 5) is most attractive to a given customer segment.",
           note: "A strong answer connects this back to distribution-channel strategy, not just describes the tax difference in isolation.",
         },
         {
@@ -4544,7 +4544,7 @@ const QUESTIONS = {
           question:
             "Explain why the risk margin calculated in part (i) is likely to represent a proportionately larger share of total technical provisions for this long-term care book than it would for a short-tail PMI book.",
           answer:
-            "The risk margin compensates for the cost of holding capital against non-hedgeable risks over the liability's remaining lifetime, and a long-duration product like LTC carries this capital cost for far longer than a short-tail product like PMI, making the risk margin proportionately larger for LTC given its genuinely extended time horizon.",
+            "The risk margin compensates for the cost of holding capital against non-hedgeable risks over the liability's remaining lifetime, and a long-duration product like LTC carries this capital cost for far longer than a short-tail product like PMI, making the risk margin proportionately larger for LTC given its extended time horizon.",
           note: "A strong answer explicitly connects duration to the capital-cost-over-time mechanism, not just asserts LTC is 'riskier'.",
         },
         {
@@ -4555,7 +4555,7 @@ const QUESTIONS = {
             "Discuss one reason this insurer might choose to develop an internal model rather than use the Solvency II standard formula to calculate its SCR.",
           answer:
             "An internal model can better reflect the insurer's own genuine risk profile (e.g. its specific correlation structure between morbidity risks) than a generic standard formula calibrated across the whole industry, potentially producing a more risk-sensitive and possibly lower capital requirement, though this requires regulatory approval and significant development investment.",
-          note: "Any one genuinely valid, well-explained reason should be accepted.",
+          note: "Any one valid, well-explained reason should be accepted.",
         },
         {
           label: "(iv)",
@@ -4564,8 +4564,8 @@ const QUESTIONS = {
           question:
             "Comment on why this insurer's Own Risk and Solvency Assessment (ORSA) should include forward-looking stress testing, in addition to the point-in-time calculations in part (i).",
           answer:
-            "The calculations in part (i) capture the insurer's current risk position, but not how its solvency might evolve under future adverse scenarios (e.g. a pandemic or medical inflation shock), so forward-looking stress testing provides genuinely additional insight into resilience over time that a single point-in-time calculation cannot.",
-          note: "This connects the numeric SCR/MCR calculation directly to the ORSA's genuinely forward-looking purpose.",
+            "The calculations in part (i) capture the insurer's current risk position, but not how its solvency might evolve under future adverse scenarios (e.g. a pandemic or medical inflation shock), so forward-looking stress testing provides additional insight into resilience over time that a single point-in-time calculation cannot.",
+          note: "This connects the numeric SCR/MCR calculation directly to the ORSA's forward-looking purpose.",
         },
       ],
     },
@@ -4582,7 +4582,7 @@ const QUESTIONS = {
           question:
             "Explain why a health and care insurer operating outside the Solvency II framework might still be subject to a broadly similar risk-based capital regime.",
           answer:
-            "Different jurisdictions have developed their own risk-based capital frameworks (e.g. risk-based capital, RBC, systems used elsewhere) that share Solvency II's broad goal of ensuring adequate capital relative to risk, but differ in technical detail, calibration, and structure, reflecting genuinely different regulatory traditions pursuing a similar underlying objective.",
+            "Different jurisdictions have developed their own risk-based capital frameworks (e.g. risk-based capital, RBC, systems used elsewhere) that share Solvency II's broad goal of ensuring adequate capital relative to risk, but differ in technical detail, calibration, and structure, reflecting different regulatory traditions pursuing a similar underlying objective.",
           note: "A strong answer recognises Solvency II as one example of a risk-based capital regime, not the only possible approach.",
         },
         {
@@ -4592,7 +4592,7 @@ const QUESTIONS = {
           question:
             "Discuss why an SA1 candidate should focus on understanding general regulatory principles, rather than memorising the detail of a single specific regulatory regime.",
           answer:
-            "SA1 exam scenarios often present unfamiliar or fictional regulatory regimes, so understanding the underlying principles different approaches share (e.g. prudential soundness, fair conduct) equips candidates to reason about genuinely novel regulatory contexts, whereas memorised detail specific to one real regime may not transfer directly to an unfamiliar scenario.",
+            "SA1 exam scenarios often present unfamiliar or fictional regulatory regimes, so understanding the underlying principles different approaches share (e.g. prudential soundness, fair conduct) equips candidates to reason about novel regulatory contexts, whereas memorised detail specific to one real regime may not transfer directly to an unfamiliar scenario.",
           note: "This connects directly to SA1's stated exam-format approach of testing applied judgement over memorised, jurisdiction-specific detail.",
         },
         {
@@ -4612,7 +4612,7 @@ const QUESTIONS = {
           question:
             "The insurer's finance director asks the Chief Actuary to adopt more optimistic long-term care morbidity assumptions to improve reported profit. Comment on how the Chief Actuary should respond.",
           answer:
-            "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement, meaning commercial pressure to adopt a particular assumption does not override this obligation; the Chief Actuary should maintain assumptions genuinely supported by the evidence, clearly document the reasoning, and escalate through appropriate channels if pressure continues, rather than adjusting the assumption simply to satisfy the request.",
+            "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement, meaning commercial pressure to adopt a particular assumption does not override this obligation; the Chief Actuary should maintain assumptions supported by the evidence, clearly document the reasoning, and escalate through appropriate channels if pressure continues, rather than adjusting the assumption simply to satisfy the request.",
           note: "This is a directly testable ethical scenario; a strong answer explicitly refuses to simply comply while describing a constructive, professional path forward.",
         },
       ],
@@ -4641,7 +4641,7 @@ const QUESTIONS = {
             "Explain why excess of loss reinsurance is particularly well suited to protecting this insurer against a pandemic-driven morbidity shock, compared with quota share reinsurance.",
           answer:
             "Excess of loss reinsurance responds when aggregate claims from an event exceed a specified threshold, directly targeting the correlated, catastrophic loss pattern a pandemic creates, whereas quota share cedes a fixed proportion of every individual policy's risk regardless of whether losses are correlated, providing less targeted protection against this specific type of aggregate, correlated shock.",
-          note: "Candidates should explicitly distinguish the AGGREGATE, CORRELATED nature of the risk excess of loss targets, not just describe both structures generically.",
+          note: "Candidates should explicitly distinguish the <em>aggregate</em>, <em>correlated</em> nature of the risk excess of loss targets, not just describe both structures generically.",
         },
         {
           label: "(iii)",
@@ -4698,7 +4698,7 @@ const QUESTIONS = {
           question:
             "Discuss why inflation-linked assets might be a valuable component of this insurer's ALM strategy for its LTC book specifically.",
           answer:
-            "If LTC benefit payments are linked to care-cost inflation, holding assets whose value also responds to inflation helps protect the insurer against inflation eroding the real matching quality of a purely nominal asset portfolio, directly addressing the genuinely important medical/care-cost inflation risk driver identified elsewhere for this product.",
+            "If LTC benefit payments are linked to care-cost inflation, holding assets whose value also responds to inflation helps protect the insurer against inflation eroding the real matching quality of a purely nominal asset portfolio, directly addressing the important medical/care-cost inflation risk driver identified elsewhere for this product.",
           note: "A strong answer connects this directly to the specific inflation-sensitivity of LTC benefits, not inflation-linked assets in the abstract.",
         },
         {
@@ -4736,7 +4736,7 @@ const QUESTIONS = {
           question:
             "Explain why the insurer should investigate whether this variance reflects genuine random fluctuation or a persistent trend, before deciding whether to revise its incidence assumption.",
           answer:
-            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts &mdash; revising the assumption based on noise alone could introduce unnecessary pricing or reserving change, while ignoring a genuine trend could leave the insurer under-reserved or mispriced going forward.",
+            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching important shifts &mdash; revising the assumption based on noise alone could introduce unnecessary pricing or reserving change, while ignoring a genuine trend could leave the insurer under-reserved or mispriced going forward.",
           note: "A strong answer explicitly frames this as a statistical-significance judgement, not simply 'more data is needed' without explaining why.",
         },
         {
@@ -4746,7 +4746,7 @@ const QUESTIONS = {
           question:
             "Discuss why the insurer's overall surplus analysis should separately identify the 'expected' release of margins from experience variances such as the one in part (i).",
           answer:
-            "The expected component reflects prudent margins built into original pricing/reserving assumptions that are expected to emerge as profit purely through the passage of time, forming a predictable baseline; separately identifying experience variances (like the adverse claims variance above) reveals genuinely unexpected deviations from that baseline, which is what actually informs sound management action &mdash; conflating the two would obscure whether results moved as planned or due to a genuine, unexpected issue.",
+            "The expected component reflects prudent margins built into original pricing/reserving assumptions that are expected to emerge as profit purely through the passage of time, forming a predictable baseline; separately identifying experience variances (like the adverse claims variance above) reveals unexpected deviations from that baseline, which is what actually informs sound management action &mdash; conflating the two would obscure whether results moved as planned or due to a genuine, unexpected issue.",
           note: "A strong answer explicitly explains why conflating expected release and experience variance would reduce the analysis's diagnostic value.",
         },
         {
@@ -4756,8 +4756,8 @@ const QUESTIONS = {
           question:
             "Comment on why this experience finding should feed back into both the insurer's pricing and reserving assumptions, not just one of the two.",
           answer:
-            "The same underlying experience (higher-than-assumed incidence) affects both the pricing of new business going forward and the adequacy of reserves already held for existing business, so a genuinely complete response to this finding must consider both applications together, not address only pricing or only reserving in isolation.",
-          note: "This connects directly to the theme that experience analysis is a genuinely central activity feeding into multiple other technical areas.",
+            "The same underlying experience (higher-than-assumed incidence) affects both the pricing of new business going forward and the adequacy of reserves already held for existing business, so a complete response to this finding must consider both applications together, not address only pricing or only reserving in isolation.",
+          note: "This connects directly to the theme that experience analysis is a central activity feeding into multiple other technical areas.",
         },
       ],
     },
@@ -4774,8 +4774,8 @@ const QUESTIONS = {
           question:
             "A health and care insurer with an established PMI book is considering entering the long-term care insurance market. Discuss two factors the insurer should consider when assessing this strategic option.",
           answer:
-            "First, capital impact: LTC is a materially more capital-intensive product than PMI (given its larger risk margin and long-duration risk), so the insurer must assess whether it has, or can raise, sufficient capital to support this new business. Second, risk profile fit: LTC introduces genuinely new, compounded longevity and care-need risk drivers the insurer has no existing experience managing, unlike its established, shorter-tail PMI risk, so the insurer must assess whether it has or can build the necessary underwriting, pricing and reserving expertise.",
-          note: "Any two genuinely distinct, well-justified factors should be accepted, provided they are assessed against this insurer's SPECIFIC circumstances, not stated generically.",
+            "First, capital impact: LTC is a materially more capital-intensive product than PMI (given its larger risk margin and long-duration risk), so the insurer must assess whether it has, or can raise, sufficient capital to support this new business. Second, risk profile fit: LTC introduces new, compounded longevity and care-need risk drivers the insurer has no existing experience managing, unlike its established, shorter-tail PMI risk, so the insurer must assess whether it has or can build the necessary underwriting, pricing and reserving expertise.",
+          note: "Any two distinct, well-justified factors should be accepted, provided they are assessed against this insurer's <em>specific</em> circumstances, not stated generically.",
         },
         {
           label: "(ii)",
@@ -4785,7 +4785,7 @@ const QUESTIONS = {
             "Assuming the insurer has adequate capital headroom but limited in-house LTC expertise, recommend a course of action for entering this market, with justification.",
           answer:
             "A phased entry via a reinsurance-supported launch is recommended: partnering with a reinsurer experienced in LTC provides access to pricing expertise, data and capital support the insurer currently lacks, while a phased rollout (e.g. starting with a single simplified product variant before broader expansion) limits the insurer's exposure while it builds its own capability, rather than launching a full, complex product range immediately based on borrowed expertise alone.",
-          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the stated capability gap, not just a plausible-sounding conclusion asserted without justification.",
+          note: "Credit should be given for any well-justified, reasoned recommendation that explicitly addresses the stated capability gap, not just a plausible-sounding conclusion asserted without justification.",
         },
         {
           label: "(iii)",
@@ -4804,7 +4804,7 @@ const QUESTIONS = {
           question:
             "Comment on why this recommendation should specify how its success will be monitored going forward, rather than treating the decision as final once implemented.",
           answer:
-            "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics) shows the recommendation is genuinely designed to be verified and adjusted over time, rather than a one-off, unchecked decision.",
+            "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics) shows the recommendation is designed to be verified and adjusted over time, rather than a one-off, unchecked decision.",
           note: "This connects directly to this course's recurring ongoing-monitoring theme, applied specifically to strategic decision-making.",
         },
       ],
@@ -4832,7 +4832,7 @@ const QUESTIONS = {
           question:
             "Discuss why identifying 'best practice' in health and care insurance requires genuine judgement about context, rather than assuming one market's approach transfers directly to another.",
           answer:
-            "An approach that works well in one market's specific regulatory, cultural, and healthcare-system context may not transfer straightforwardly to a genuinely different context, so identifying best practice requires assessing WHY an approach works in its original context, not just copying it directly &mdash; 'best practice' genuinely means best-for-context, not a single universal standard.",
+            "An approach that works well in one market's specific regulatory, cultural, and healthcare-system context may not transfer straightforwardly to a different context, so identifying best practice requires assessing <em>why</em> an approach works in its original context, not just copying it directly &mdash; 'best practice' means best-for-context, not a single universal standard.",
           note: "A strong answer explicitly explains why context-blind copying is risky, not just asserts that context 'matters'.",
         },
         {
@@ -4850,9 +4850,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why solving a genuinely complex health and care strategic issue like this one typically requires drawing on multiple SA1 topic areas simultaneously, rather than a single technique in isolation.",
+            "Comment on why solving a complex health and care strategic issue like this one typically requires drawing on multiple SA1 topic areas simultaneously, rather than a single technique in isolation.",
           answer:
-            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific trade-off genuinely required drawing on product and market understanding, regulatory constraints, and conduct/fairness principles together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific trade-off required drawing on product and market understanding, regulatory constraints, and conduct/fairness principles together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
           note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA1 syllabus.",
         },
       ],
@@ -4892,7 +4892,7 @@ const QUESTIONS = {
           question:
             "Discuss why this insurer might offer a convertible term assurance option, and why it should price this option explicitly rather than folding its cost into the base premium's general margin.",
           answer:
-            "A convertible option gives valuable protection against future health deterioration making later cover difficult to obtain, but since policyholders are more likely to exercise it when financially advantageous (health has genuinely worsened), it carries a genuine anti-selective cost that should be priced explicitly, rather than assumed to be self-funding within a generic margin.",
+            "A convertible option gives valuable protection against future health deterioration making later cover difficult to obtain, but since policyholders are more likely to exercise it when financially advantageous (health has worsened), it carries a genuine anti-selective cost that should be priced explicitly, rather than assumed to be self-funding within a generic margin.",
           note: "A strong answer explicitly names the anti-selection mechanism, not just asserts that options 'have a cost'.",
         },
         {
@@ -4902,7 +4902,7 @@ const QUESTIONS = {
           question:
             "Comment on why profit testing should be carried out before finalising this product's pricing, beyond the equivalence-principle calculation in part (i).",
           answer:
-            "Profit testing projects the product's expected cashflows over its full lifetime (including expenses, lapses, and any embedded options) to confirm the pricing genuinely achieves the insurer's target profitability, which a single equivalence-principle calculation covering only expected mortality cost and expenses does not fully verify.",
+            "Profit testing projects the product's expected cashflows over its full lifetime (including expenses, lapses, and any embedded options) to confirm the pricing achieves the insurer's target profitability, which a single equivalence-principle calculation covering only expected mortality cost and expenses does not fully verify.",
           note: "This connects profit testing as a verification step distinct from, and following on from, the initial pricing calculation.",
         },
       ],
@@ -4930,8 +4930,8 @@ const QUESTIONS = {
           question:
             "Discuss why with-profits bonus-setting raises a genuine inter-generational fairness issue that most other life insurance pricing decisions do not.",
           answer:
-            "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. overly generous bonuses now could disadvantage future policyholders' claims), requiring the insurer to genuinely balance fairness across the whole fund over time, not just between the insurer and a single policyholder as in most other pricing decisions.",
-          note: "Candidates should explicitly identify the MULTI-GENERATION aspect as the distinguishing feature, not just restate that fairness matters generally.",
+            "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. overly generous bonuses now could disadvantage future policyholders' claims), requiring the insurer to balance fairness across the whole fund over time, not just between the insurer and a single policyholder as in most other pricing decisions.",
+          note: "Candidates should explicitly identify the <em>multi-generation</em> aspect as the distinguishing feature, not just restate that fairness matters generally.",
         },
         {
           label: "(iii)",
@@ -4941,7 +4941,7 @@ const QUESTIONS = {
             "Explain why a guaranteed annuity option (GAO) embedded in an older with-profits pension policy could become severely costly to the insurer decades after the policy was sold.",
           answer:
             "A GAO guarantees conversion of the fund into an annuity at a specified rate; if market annuity rates fall well below the guaranteed rate (driven by falling interest rates and improving longevity), the guarantee becomes deeply valuable to policyholders and correspondingly costly to the insurer, even though it may have looked unlikely to bite when originally priced.",
-          note: "A strong answer explains WHY the option's cost can crystallise decades later, not just that GAOs exist.",
+          note: "A strong answer explains <em>why</em> the option's cost can crystallise decades later, not just that GAOs exist.",
         },
         {
           label: "(iv)",
@@ -4950,7 +4950,7 @@ const QUESTIONS = {
           question:
             "Comment on why conduct regulation for with-profits business specifically emphasises transparent governance of bonus-setting discretion.",
           answer:
-            "Since with-profits bonus-setting inherently involves genuine insurer discretion affecting different generations of policyholders differently, conduct regulation requires clear governance and disclosure of how that discretion is exercised, addressing a genuinely specific risk not present in products with no comparable discretionary element.",
+            "Since with-profits bonus-setting inherently involves genuine insurer discretion affecting different generations of policyholders differently, conduct regulation requires clear governance and disclosure of how that discretion is exercised, addressing a specific risk not present in products with no comparable discretionary element.",
           note: "This connects directly to the inter-generational fairness theme raised in part (ii).",
         },
       ],
@@ -4988,8 +4988,8 @@ const QUESTIONS = {
           question:
             "Discuss why the Solvency II matching adjustment is particularly relevant to this insurer's annuity book, and one condition it must satisfy to use it.",
           answer:
-            "The matching adjustment allows discounting long-term, predictable annuity liabilities using a higher rate reflecting the return on assets held to back them, recognising the illiquidity premium available on a held-to-maturity matched portfolio; to use it, the insurer must demonstrate genuinely strict cashflow matching between assets and liabilities, since inappropriate use could materially overstate financial strength.",
-          note: "A strong answer explains both why it's relevant AND the strict matching condition required to use it, not just one or the other.",
+            "The matching adjustment allows discounting long-term, predictable annuity liabilities using a higher rate reflecting the return on assets held to back them, recognising the illiquidity premium available on a held-to-maturity matched portfolio; to use it, the insurer must demonstrate strict cashflow matching between assets and liabilities, since inappropriate use could materially overstate financial strength.",
+          note: "A strong answer explains both why it's relevant <em>and</em> the strict matching condition required to use it, not just one or the other.",
         },
         {
           label: "(iv)",
@@ -4998,7 +4998,7 @@ const QUESTIONS = {
           question:
             "Comment on why this insurer might combine reinsurance with the matching adjustment to manage its annuity book's risk, rather than relying on a single technique.",
           answer:
-            "Reinsurance transfers longevity risk to a specialist counterparty, while the matching adjustment addresses interest rate risk through genuine asset-liability matching; each technique addresses a genuinely different risk driver, so combining them can achieve more efficient, diversified risk management than either alone.",
+            "Reinsurance transfers longevity risk to a specialist counterparty, while the matching adjustment addresses interest rate risk through genuine asset-liability matching; each technique addresses a different risk driver, so combining them can achieve more efficient, diversified risk management than either alone.",
           note: "This connects directly to the best-practice theme of combining complementary risk management tools rather than relying on a single approach.",
         },
       ],
@@ -5046,7 +5046,7 @@ const QUESTIONS = {
           question:
             "Comment on why the insurer might use derivatives to hedge the cost of this guarantee, rather than relying purely on the charges collected to fund it.",
           answer:
-            "Derivatives (e.g. equity put options) can efficiently and directly offset the guarantee's payoff pattern under adverse market scenarios, providing a more targeted and reliable risk management tool than simply hoping collected charges are sufficient to cover the guarantee's genuinely uncertain, path-dependent cost.",
+            "Derivatives (e.g. equity put options) can efficiently and directly offset the guarantee's payoff pattern under adverse market scenarios, providing a more targeted and reliable risk management tool than simply hoping collected charges are sufficient to cover the guarantee's uncertain, path-dependent cost.",
           note: "This connects directly to CM2's derivative-hedging material applied to a genuine embedded-guarantee context.",
         },
       ],
@@ -5064,7 +5064,7 @@ const QUESTIONS = {
           question:
             "Explain why the tax treatment of a with-profits fund's investment returns must be reflected in the fund's bonus-setting philosophy.",
           answer:
-            "Tax charged on the fund's investment income and gains directly reduces the returns available to support bonuses, so bonus-setting must genuinely account for the fund's after-tax investment performance, not its gross returns, or bonuses could be set at an unsustainable level relative to what is genuinely available to distribute.",
+            "Tax charged on the fund's investment income and gains directly reduces the returns available to support bonuses, so bonus-setting must account for the fund's after-tax investment performance, not its gross returns, or bonuses could be set at an unsustainable level relative to what is available to distribute.",
           note: "A strong answer explicitly distinguishes gross from after-tax performance, not just asserts that 'tax matters'.",
         },
         {
@@ -5084,7 +5084,7 @@ const QUESTIONS = {
           question:
             "Distinguish between prudential and conduct regulation, and explain why with-profits business raises a conduct-regulation concern that most other life insurance products do not.",
           answer:
-            "Prudential regulation focuses on an insurer's financial soundness and ability to meet obligations, while conduct regulation focuses on how insurers treat customers, including fair and transparent treatment. With-profits business raises a genuinely distinct conduct concern because bonus-setting inherently involves insurer discretion affecting different policyholder generations differently, requiring specific governance and disclosure not needed for products with fixed, contractually-determined benefits.",
+            "Prudential regulation focuses on an insurer's financial soundness and ability to meet obligations, while conduct regulation focuses on how insurers treat customers, including fair and transparent treatment. With-profits business raises a distinct conduct concern because bonus-setting inherently involves insurer discretion affecting different policyholder generations differently, requiring specific governance and disclosure not needed for products with fixed, contractually-determined benefits.",
           note: "A strong answer gives precise definitions of both regulatory types before correctly identifying the with-profits-specific conduct concern.",
         },
         {
@@ -5120,7 +5120,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why longevity risk and mortality risk are modelled as genuinely distinct, and potentially offsetting, risk modules under Solvency II for an insurer writing both annuity and protection business.",
+            "Explain why longevity risk and mortality risk are modelled as distinct, and potentially offsetting, risk modules under Solvency II for an insurer writing both annuity and protection business.",
           answer:
             "Longevity risk (annuitants living longer than expected) and mortality risk (policyholders dying sooner than expected) move in opposite directions for the insurer's balance sheet, so an insurer with both business types has some natural diversification benefit that a pure single-product insurer would not have, which Solvency II's capital calculation should reflect.",
           note: "A strong answer explicitly explains the inverted relationship, not just names both risk types.",
@@ -5133,7 +5133,7 @@ const QUESTIONS = {
             "Discuss one reason this insurer might develop an internal model to calculate its SCR for this annuity book, rather than using the standard formula.",
           answer:
             "An internal model can better reflect the insurer's own genuine policyholder behaviour and mortality experience (e.g. specific to its annuitant population) than a generic standard formula calibrated across the industry, potentially producing a more risk-sensitive capital requirement, though this requires regulatory approval and significant development investment.",
-          note: "Any one genuinely valid, well-explained reason should be accepted.",
+          note: "Any one valid, well-explained reason should be accepted.",
         },
         {
           label: "(iv)",
@@ -5142,8 +5142,8 @@ const QUESTIONS = {
           question:
             "Comment on why this insurer's ORSA should consider combined, correlated stress scenarios (e.g. falling interest rates alongside worsening lapse experience), rather than assessing each risk module in isolation.",
           answer:
-            "These risks can interact in genuinely important ways under stress, so a forward-looking assessment of overall solvency needs must consider combined, correlated scenarios relevant to the insurer's specific risk profile, not just each standard formula risk module's standalone impact.",
-          note: "This connects the numeric SCR/MCR calculation directly to the ORSA's genuinely forward-looking, combined-scenario purpose.",
+            "These risks can interact in important ways under stress, so a forward-looking assessment of overall solvency needs must consider combined, correlated scenarios relevant to the insurer's specific risk profile, not just each standard formula risk module's standalone impact.",
+          note: "This connects the numeric SCR/MCR calculation directly to the ORSA's forward-looking, combined-scenario purpose.",
         },
       ],
     },
@@ -5170,8 +5170,8 @@ const QUESTIONS = {
           question:
             "Explain why this insurer's statutory reported profit for this protection business might appear materially lower than the embedded value calculated in part (i) would suggest, particularly in the years immediately following a period of strong new business growth.",
           answer:
-            "Statutory reporting requires prudent reserves to be set up at the point of sale (new business strain), depressing reported early profit even though embedded value, capturing the full expected future profit stream in present-value terms, may already be genuinely positive from inception.",
-          note: "A strong answer explains this as consistent, not contradictory, results from two genuinely different reporting bases.",
+            "Statutory reporting requires prudent reserves to be set up at the point of sale (new business strain), depressing reported early profit even though embedded value, capturing the full expected future profit stream in present-value terms, may already be positive from inception.",
+          note: "A strong answer explains this as consistent, not contradictory, results from two different reporting bases.",
         },
         {
           label: "(iii)",
@@ -5180,8 +5180,8 @@ const QUESTIONS = {
           question:
             "Discuss why the contractual service margin (CSM) under IFRS 17 is likely to be a more significant reporting concept for this insurer's annuity business than for its protection business.",
           answer:
-            "The CSM represents unearned future profit released gradually as service is provided, directly shaping how a product's total expected profit is spread across future reporting periods; since annuity business typically has a genuinely much longer duration than protection business, its total expected profit is spread across many more future periods, making the CSM's role in shaping the reported profit PATTERN correspondingly more significant.",
-          note: "A strong answer explicitly connects the CSM's significance to product DURATION, not just names the CSM generically.",
+            "The CSM represents unearned future profit released gradually as service is provided, directly shaping how a product's total expected profit is spread across future reporting periods; since annuity business typically has a much longer duration than protection business, its total expected profit is spread across many more future periods, making the CSM's role in shaping the reported profit <em>pattern</em> correspondingly more significant.",
+          note: "A strong answer explicitly connects the CSM's significance to product <em>duration</em>, not just names the CSM generically.",
         },
         {
           label: "(iv)",
@@ -5190,7 +5190,7 @@ const QUESTIONS = {
           question:
             "Comment on why an analysis of embedded value movement broken down by product line (protection, with-profits, annuity) is more useful to this insurer's management than a single combined total.",
           answer:
-            "Decomposing the year-on-year embedded value change by product line reveals which specific parts of a diversified book are genuinely driving value creation or destruction, more actionable for management decision-making than a single aggregated whole-company figure that could mask offsetting movements between product lines.",
+            "Decomposing the year-on-year embedded value change by product line reveals which specific parts of a diversified book are driving value creation or destruction, more actionable for management decision-making than a single aggregated whole-company figure that could mask offsetting movements between product lines.",
           note: "This connects directly to the surplus-analysis decomposition theme developed elsewhere in this course.",
         },
       ],
@@ -5218,7 +5218,7 @@ const QUESTIONS = {
           question:
             "Explain why the insurer should investigate whether this lapse variance reflects genuine random fluctuation or a persistent trend before revising its lapse assumption.",
           answer:
-            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts that should inform revised pricing and reserving assumptions.",
+            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching important shifts that should inform revised pricing and reserving assumptions.",
           note: "A strong answer frames this explicitly as a statistical-significance judgement, not simply 'more data is needed'.",
         },
         {
@@ -5228,7 +5228,7 @@ const QUESTIONS = {
           question:
             "Discuss why the insurer's overall surplus analysis should separately identify the 'expected' release of margins from the lapse experience variance calculated in part (i).",
           answer:
-            "The expected component reflects prudent margins built into original pricing/reserving assumptions that are expected to emerge as profit purely through the passage of time, forming a predictable baseline; separately identifying the lapse experience variance reveals a genuinely unexpected deviation from that baseline, which is what actually informs sound management action, rather than conflating planned and unplanned sources of surplus movement.",
+            "The expected component reflects prudent margins built into original pricing/reserving assumptions that are expected to emerge as profit purely through the passage of time, forming a predictable baseline; separately identifying the lapse experience variance reveals an unexpected deviation from that baseline, which is what actually informs sound management action, rather than conflating planned and unplanned sources of surplus movement.",
           note: "A strong answer explicitly explains why conflating expected release and experience variance would reduce the analysis's diagnostic value.",
         },
         {
@@ -5238,8 +5238,8 @@ const QUESTIONS = {
           question:
             "Comment on why this lapse experience finding should feed back into both the insurer's pricing and reserving assumptions, not just one of the two.",
           answer:
-            "The same underlying experience (higher-than-assumed lapses) affects both the pricing of new business going forward and the adequacy of reserves already held for existing business, so a genuinely complete response to this finding must consider both applications together.",
-          note: "This connects directly to the theme that experience analysis is a genuinely central activity feeding into multiple other technical areas.",
+            "The same underlying experience (higher-than-assumed lapses) affects both the pricing of new business going forward and the adequacy of reserves already held for existing business, so a complete response to this finding must consider both applications together.",
+          note: "This connects directly to the theme that experience analysis is a central activity feeding into multiple other technical areas.",
         },
       ],
     },
@@ -5256,8 +5256,8 @@ const QUESTIONS = {
           question:
             "A life insurer with strong protection business but no prior annuity experience is considering entering the bulk annuity market (taking on pension schemes' liabilities). Discuss two factors the insurer should consider when assessing this strategic option.",
           answer:
-            "First, capital impact: bulk annuity business is materially more capital-intensive than protection business (given its long-duration longevity and interest rate risk), so the insurer must assess whether it has, or can raise, sufficient capital. Second, risk profile fit: bulk annuities introduce genuinely new longevity and interest rate risk drivers the insurer has no existing experience managing, unlike its established, shorter-tail protection risk, so the insurer must assess whether it has or can build the necessary pricing, ALM and reserving expertise.",
-          note: "Any two genuinely distinct, well-justified factors should be accepted, provided they are assessed against this insurer's SPECIFIC circumstances.",
+            "First, capital impact: bulk annuity business is materially more capital-intensive than protection business (given its long-duration longevity and interest rate risk), so the insurer must assess whether it has, or can raise, sufficient capital. Second, risk profile fit: bulk annuities introduce new longevity and interest rate risk drivers the insurer has no existing experience managing, unlike its established, shorter-tail protection risk, so the insurer must assess whether it has or can build the necessary pricing, ALM and reserving expertise.",
+          note: "Any two distinct, well-justified factors should be accepted, provided they are assessed against this insurer's <em>specific</em> circumstances.",
         },
         {
           label: "(ii)",
@@ -5267,7 +5267,7 @@ const QUESTIONS = {
             "Assuming the insurer has adequate capital headroom but limited in-house annuity and ALM expertise, recommend a course of action for entering this market, with justification.",
           answer:
             "A phased entry supported by longevity reinsurance is recommended: partnering with a reinsurer experienced in longevity risk provides access to pricing expertise and risk transfer the insurer currently lacks, while a phased rollout (starting with smaller bulk transactions before larger ones) limits exposure while the insurer builds its own ALM and pricing capability, rather than writing large transactions immediately based on borrowed expertise alone.",
-          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the stated capability gap.",
+          note: "Credit should be given for any well-justified, reasoned recommendation that explicitly addresses the stated capability gap.",
         },
         {
           label: "(iii)",
@@ -5286,7 +5286,7 @@ const QUESTIONS = {
           question:
             "Comment on why this recommendation should specify how its success will be monitored going forward, rather than treating the decision as final once implemented.",
           answer:
-            "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics for the new bulk annuity book) shows the recommendation is genuinely designed to be verified and adjusted over time, rather than a one-off, unchecked decision.",
+            "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics for the new bulk annuity book) shows the recommendation is designed to be verified and adjusted over time, rather than a one-off, unchecked decision.",
           note: "This connects directly to this course's recurring ongoing-monitoring theme, applied specifically to strategic decision-making.",
         },
       ],
@@ -5304,7 +5304,7 @@ const QUESTIONS = {
           question:
             "Discuss why identifying best practice in with-profits fund governance requires genuine judgement about context, rather than assuming one market's approach transfers directly to another.",
           answer:
-            "An approach that works well in one market's specific regulatory, cultural, and product-design context may not transfer straightforwardly to a genuinely different context, so identifying best practice requires assessing WHY an approach works in its original context, not just copying it directly &mdash; 'best practice' genuinely means best-for-context, not a single universal standard.",
+            "An approach that works well in one market's specific regulatory, cultural, and product-design context may not transfer straightforwardly to a different context, so identifying best practice requires assessing <em>why</em> an approach works in its original context, not just copying it directly &mdash; 'best practice' means best-for-context, not a single universal standard.",
           note: "A strong answer explicitly explains why context-blind copying is risky, not just asserts that context 'matters'.",
         },
         {
@@ -5314,7 +5314,7 @@ const QUESTIONS = {
           question:
             "Explain why a life insurer operating outside the Solvency II framework might still be subject to a broadly similar risk-based capital regime.",
           answer:
-            "Different jurisdictions have developed their own risk-based capital frameworks (e.g. risk-based capital, RBC, systems used elsewhere) that share Solvency II's broad goal of ensuring adequate capital relative to risk, but differ in technical detail, calibration, and structure, reflecting genuinely different regulatory traditions pursuing a similar underlying objective.",
+            "Different jurisdictions have developed their own risk-based capital frameworks (e.g. risk-based capital, RBC, systems used elsewhere) that share Solvency II's broad goal of ensuring adequate capital relative to risk, but differ in technical detail, calibration, and structure, reflecting different regulatory traditions pursuing a similar underlying objective.",
           note: "A strong answer recognises Solvency II as one example of a risk-based capital regime, not the only possible approach.",
         },
         {
@@ -5322,19 +5322,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "A life insurer must decide whether to close its with-profits fund to new business while managing existing policyholders' fair treatment. Discuss why this represents a genuinely complex issue requiring integrated judgement.",
+            "A life insurer must decide whether to close its with-profits fund to new business while managing existing policyholders' fair treatment. Discuss why this represents a complex issue requiring integrated judgement.",
           answer:
-            "This decision genuinely involves competing considerations across multiple topic areas at once &mdash; conduct obligations to existing policyholders (requiring continued fair bonus-setting despite a shrinking fund), capital implications of an ageing, closed fund with no new business to dilute legacy guarantee costs, and strategic implications for the insurer's wider business and reputation &mdash; requiring integrated judgement across conduct, capital and strategy rather than a single-dimension analysis.",
-          note: "A strong answer explicitly draws on multiple topic areas together (conduct, capital, strategy), not just one in isolation, reflecting the genuinely integrated nature of complex real-world issues.",
+            "This decision involves competing considerations across multiple topic areas at once &mdash; conduct obligations to existing policyholders (requiring continued fair bonus-setting despite a shrinking fund), capital implications of an ageing, closed fund with no new business to dilute legacy guarantee costs, and strategic implications for the insurer's wider business and reputation &mdash; requiring integrated judgement across conduct, capital and strategy rather than a single-dimension analysis.",
+          note: "A strong answer explicitly draws on multiple topic areas together (conduct, capital, strategy), not just one in isolation, reflecting the integrated nature of complex real-world issues.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why solving a genuinely complex issue like this typically requires drawing on multiple SA2 topic areas simultaneously, rather than a single technique in isolation.",
+            "Comment on why solving a complex issue like this typically requires drawing on multiple SA2 topic areas simultaneously, rather than a single technique in isolation.",
           answer:
-            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on conduct regulation, capital management, and strategic assessment together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue required drawing on conduct regulation, capital management, and strategic assessment together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
           note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA2 syllabus.",
         },
       ],
@@ -5374,15 +5374,15 @@ const QUESTIONS = {
           question:
             "Discuss why the insurer's premium rate for this risk should explicitly incorporate its cost of capital, and one limitation of catastrophe model output the insurer should bear in mind when doing so.",
           answer:
-            "This risk carries genuinely significant capital requirements given its concentration and catastrophe exposure, so pricing that ignored the specific capital cost of writing it could understate its true economic cost to the insurer &mdash; a risk-adjusted return should be explicitly built into the rate. One limitation is model uncertainty: different catastrophe models or model versions can produce genuinely different loss estimates for the same risk, so the insurer should not rely on a single model's output without considering this uncertainty (e.g. by comparing multiple models).",
-          note: "A strong answer addresses both the capital-cost point AND a genuine model limitation, not just one half of the question.",
+            "This risk carries significant capital requirements given its concentration and catastrophe exposure, so pricing that ignored the specific capital cost of writing it could understate its true economic cost to the insurer &mdash; a risk-adjusted return should be explicitly built into the rate. One limitation is model uncertainty: different catastrophe models or model versions can produce different loss estimates for the same risk, so the insurer should not rely on a single model's output without considering this uncertainty (e.g. by comparing multiple models).",
+          note: "A strong answer addresses both the capital-cost point <em>and</em> a genuine model limitation, not just one half of the question.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why pricing this risk genuinely requires actuarial judgement, beyond applying a formula.",
+            "Comment on why pricing this risk requires actuarial judgement, beyond applying a formula.",
           answer:
             "Given the limited own data, heterogeneity, and bespoke risk features of this large commercial risk, no single mechanical formula can fully determine an appropriate rate, so genuine, well-reasoned professional judgement blending statistical technique, benchmark data, catastrophe model output, and underwriting insight is a necessary part of the pricing process.",
           note: "This connects directly to the theme that large commercial pricing is one of the clearest real-world examples of judgement-based actuarial work.",
@@ -5400,7 +5400,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain how the Lloyd's market's underlying structure differs from a conventional general insurance company, and why this creates a genuinely more layered capital assessment.",
+            "Explain how the Lloyd's market's underlying structure differs from a conventional general insurance company, and why this creates a more layered capital assessment.",
           answer:
             "Lloyd's is a marketplace where syndicates of underwriting members come together to underwrite risk, rather than a single company underwriting on its own balance sheet. Since capital backing a syndicate can come from many different members (each potentially participating in other syndicates too), Lloyd's and its regulators need both syndicate-level and member-level capital assessments to ensure genuine overall adequacy across this layered structure.",
           note: "A strong answer explicitly connects the marketplace structure to the layered capital assessment consequence, not just describes Lloyd's generically.",
@@ -5420,10 +5420,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why Lloyd's syndicates and their members face genuinely distinct taxation considerations compared with a conventional general insurance company and its shareholders.",
+            "Discuss why Lloyd's syndicates and their members face distinct taxation considerations compared with a conventional general insurance company and its shareholders.",
           answer:
-            "Since underwriting profits and losses flow through to individual or corporate members according to their specific participation in each syndicate, the tax treatment must reflect this genuinely different profit-flow structure, rather than the more straightforward corporate taxation applicable to a conventional insurer's shareholders. This requires tax rules that can attribute profit and loss at the level of each member's syndicate participation, a materially more complex structure than taxing a single corporate entity's overall profit.",
-          note: "A strong answer explains WHY the profit-flow structure differs (member-level participation versus single corporate entity), not just asserts that taxation is 'different'.",
+            "Since underwriting profits and losses flow through to individual or corporate members according to their specific participation in each syndicate, the tax treatment must reflect this different profit-flow structure, rather than the more straightforward corporate taxation applicable to a conventional insurer's shareholders. This requires tax rules that can attribute profit and loss at the level of each member's syndicate participation, a materially more complex structure than taxing a single corporate entity's overall profit.",
+          note: "A strong answer explains <em>why</em> the profit-flow structure differs (member-level participation versus single corporate entity), not just asserts that taxation is 'different'.",
         },
         {
           label: "(iv)",
@@ -5470,8 +5470,8 @@ const QUESTIONS = {
           question:
             "Discuss why reinsurer counterparty risk is a particularly important consideration for this catastrophe reinsurance programme specifically.",
           answer:
-            "A major catastrophic event affecting the insurer is likely to also affect its reinsurers' own exposures, so the insurer must genuinely assess whether its reinsurance panel remains able to pay recoveries even under the same severe, correlated event, diversifying across multiple reinsurers to manage this concentrated counterparty risk.",
-          note: "A strong answer explains why this risk is especially acute HERE, not just that counterparty risk exists generally.",
+            "A major catastrophic event affecting the insurer is likely to also affect its reinsurers' own exposures, so the insurer must assess whether its reinsurance panel remains able to pay recoveries even under the same severe, correlated event, diversifying across multiple reinsurers to manage this concentrated counterparty risk.",
+          note: "A strong answer explains why this risk is especially acute <em>here</em>, not just that counterparty risk exists generally.",
         },
         {
           label: "(iv)",
@@ -5480,7 +5480,7 @@ const QUESTIONS = {
           question:
             "Comment on why the insurer should not rely on a single catastrophe model's output alone when designing this reinsurance layer structure.",
           answer:
-            "Different catastrophe models can embed genuinely different scientific assumptions and calibrations, so comparing output across multiple models reveals the genuine degree of model uncertainty, helping the insurer avoid over-reliance on any single model's specific assumptions when setting its retention and layer limits.",
+            "Different catastrophe models can embed different scientific assumptions and calibrations, so comparing output across multiple models reveals the genuine degree of model uncertainty, helping the insurer avoid over-reliance on any single model's specific assumptions when setting its retention and layer limits.",
           note: "This connects directly to the model-uncertainty limitation developed in this course's catastrophe-modelling material.",
         },
       ],
@@ -5508,7 +5508,7 @@ const QUESTIONS = {
           question:
             "Explain why a general insurer's SCR percentage of BEL is often materially higher than a life insurer's equivalent percentage, referencing the risk modules involved.",
           answer:
-            "General insurance risk (premium risk, reserve risk, and catastrophe risk) tends to carry genuinely greater volatility and estimation uncertainty than life insurance's more predictable mortality/longevity-driven risk, particularly given the correlated, catastrophic loss potential and long-tail reserving uncertainty general insurance can carry, requiring a correspondingly higher capital requirement relative to the liability base.",
+            "General insurance risk (premium risk, reserve risk, and catastrophe risk) tends to carry greater volatility and estimation uncertainty than life insurance's more predictable mortality/longevity-driven risk, particularly given the correlated, catastrophic loss potential and long-tail reserving uncertainty general insurance can carry, requiring a correspondingly higher capital requirement relative to the liability base.",
           note: "A strong answer names the specific GI risk modules (premium, reserve, catastrophe) rather than asserting GI is simply 'riskier' without explanation.",
         },
         {
@@ -5519,14 +5519,14 @@ const QUESTIONS = {
             "Discuss one reason this insurer might develop an internal model to calculate its SCR, rather than using the standard formula.",
           answer:
             "An internal model can better reflect the insurer's own genuine risk profile (e.g. its specific catastrophe exposure or reserving volatility) than a generic standard formula calibrated across the whole industry, potentially producing a more risk-sensitive capital requirement, though this requires regulatory approval and significant development investment.",
-          note: "Any one genuinely valid, well-explained reason should be accepted.",
+          note: "Any one valid, well-explained reason should be accepted.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why this insurer's technical provisions genuinely need a risk margin, given the reserving uncertainty inherent in general insurance business.",
+            "Comment on why this insurer's technical provisions need a risk margin, given the reserving uncertainty inherent in general insurance business.",
           answer:
             "The risk margin compensates for the cost of holding capital against non-hedgeable reserving risk over the liability's remaining settlement period, recognising that general insurance reserves carry genuine estimation uncertainty (particularly for longer-tail claims) that itself represents a cost requiring reflection in technical provisions.",
           note: "This connects the numeric risk margin calculation directly to the genuine reserving uncertainty developed elsewhere in this course.",
@@ -5544,7 +5544,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why consumer protection legislation is genuinely distinct from regulatory conduct requirements, even though both pursue similar fair-treatment objectives.",
+            "Explain why consumer protection legislation is distinct from regulatory conduct requirements, even though both pursue similar fair-treatment objectives.",
           answer:
             "Consumer protection legislation typically sets specific legal rights and remedies for policyholders (e.g. around unfair contract terms or misleading sales practices), operating alongside and sometimes overlapping with regulatory conduct requirements, giving policyholders a further, legally enforceable layer of protection distinct from regulatory rules.",
           note: "A strong answer explicitly distinguishes legislation (legal rights/remedies) from regulation (regulatory rules), not just treats them as interchangeable.",
@@ -5564,9 +5564,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss how a general insurer should genuinely balance actuarially-justified risk differentiation against equality legislation's fairness constraints when designing a new rating structure.",
+            "Discuss how a general insurer should balance actuarially-justified risk differentiation against equality legislation's fairness constraints when designing a new rating structure.",
           answer:
-            "Actuarially sound, risk-reflective pricing supports genuine fairness between policyholders of different risk levels, while equality legislation protects against discrimination on certain grounds regardless of any genuine statistical correlation. The insurer should design rating structures that are both actuarially sound AND legally compliant, for example by identifying genuinely permissible proxy factors that capture real risk differentiation without relying on prohibited characteristics, rather than treating one consideration as simply overriding the other.",
+            "Actuarially sound, risk-reflective pricing supports genuine fairness between policyholders of different risk levels, while equality legislation protects against discrimination on certain grounds regardless of any genuine statistical correlation. The insurer should design rating structures that are both actuarially sound <em>and</em> legally compliant, for example by identifying permissible proxy factors that capture real risk differentiation without relying on prohibited characteristics, rather than treating one consideration as simply overriding the other.",
           note: "A strong answer explicitly frames this as a genuine, ongoing balance requiring judgement, not a solved problem with one universally correct answer.",
         },
         {
@@ -5574,10 +5574,10 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why non-compliance with consumer protection or equality legislation could pose a genuinely significant reputational risk to this insurer, beyond the direct legal penalty.",
+            "Comment on why non-compliance with consumer protection or equality legislation could pose a significant reputational risk to this insurer, beyond the direct legal penalty.",
           answer:
             "Publicised breaches of consumer protection or equality requirements can damage customer trust and brand reputation well beyond the direct legal or regulatory penalty involved, potentially affecting future business volumes and relationships with distributors and regulators alike.",
-          note: "This connects legal compliance and reputational risk management as genuinely linked considerations.",
+          note: "This connects legal compliance and reputational risk management as linked considerations.",
         },
       ],
     },
@@ -5605,7 +5605,7 @@ const QUESTIONS = {
             "Explain why this chain-ladder-style development factor approach would be poorly suited to reserving for a latent disease claim exposure arising from the same accident year.",
           answer:
             "A latent claim may not be reported until many years or decades later, meaning the standard, reasonably short observable reporting pattern a chain-ladder development factor relies on does not exist for this exposure, making such a mechanical development-factor approach unreliable for estimating the eventual number and cost of latent claims.",
-          note: "Candidates should explicitly connect the failure of chain-ladder-style methods to the genuinely long, unobservable reporting delay latent claims present.",
+          note: "Candidates should explicitly connect the failure of chain-ladder-style methods to the long, unobservable reporting delay latent claims present.",
         },
         {
           label: "(iii)",
@@ -5614,7 +5614,7 @@ const QUESTIONS = {
           question:
             "Discuss why reserving for this latent disease exposure should draw on external data and expert judgement, beyond the insurer's own historical claims experience.",
           answer:
-            "Given the genuinely limited own historical data available for a slowly-emerging, rare claim type, the reserving actuary should blend limited own experience with external data, medical/scientific understanding, and legal developments (e.g. changing case law on liability), applying credibility-theory-style judgement rather than relying on own experience alone.",
+            "Given the limited own historical data available for a slowly-emerging, rare claim type, the reserving actuary should blend limited own experience with external data, medical/scientific understanding, and legal developments (e.g. changing case law on liability), applying credibility-theory-style judgement rather than relying on own experience alone.",
           note: "This connects directly to CS1's credibility theory material applied to a genuine reserving context.",
         },
         {
@@ -5690,7 +5690,7 @@ const QUESTIONS = {
           question:
             "Explain why a general insurer's financial plan should explicitly incorporate catastrophe risk, rather than being built purely around an 'expected' loss year.",
           answer:
-            "Catastrophe losses can be genuinely large and volatile relative to an insurer's typical annual result, so financial planning that ignored this risk could leave the insurer genuinely unprepared for a realistic adverse scenario, undermining the plan's usefulness as a genuine guide to the insurer's likely range of outcomes.",
+            "Catastrophe losses can be large and volatile relative to an insurer's typical annual result, so financial planning that ignored this risk could leave the insurer unprepared for a realistic adverse scenario, undermining the plan's usefulness as a genuine guide to the insurer's likely range of outcomes.",
           note: "A strong answer explicitly connects catastrophe volatility to the failure of a purely 'expected value' planning approach.",
         },
         {
@@ -5700,7 +5700,7 @@ const QUESTIONS = {
           question:
             "Explain why this insurer's financial planning models should be built at both the corporate and product level, rather than relying on a single combined model.",
           answer:
-            "Corporate-level models help monitor overall solvency, profitability and strategic objectives, while product-level models help assess whether individual product lines are genuinely meeting their own profitability targets, revealing insight a purely aggregated corporate view could mask, particularly given genuinely different capital intensity across product lines.",
+            "Corporate-level models help monitor overall solvency, profitability and strategic objectives, while product-level models help assess whether individual product lines are meeting their own profitability targets, revealing insight a purely aggregated corporate view could mask, particularly given different capital intensity across product lines.",
           note: "This connects directly to the surplus-analysis-by-product-line theme developed elsewhere in this course.",
         },
         {
@@ -5720,7 +5720,7 @@ const QUESTIONS = {
           question:
             "Comment on why this insurer's financial plan should treat reinsurance strategy as an integrated lever alongside pricing and underwriting decisions, rather than a separate, standalone decision.",
           answer:
-            "Reinsurance directly affects the insurer's expected profit, capital requirements, and volatility of results, so a genuinely coherent financial plan must treat reinsurance strategy as an integrated lever alongside pricing and underwriting decisions, not an afterthought decided independently.",
+            "Reinsurance directly affects the insurer's expected profit, capital requirements, and volatility of results, so a coherent financial plan must treat reinsurance strategy as an integrated lever alongside pricing and underwriting decisions, not an afterthought decided independently.",
           note: "This connects directly to the integration theme running through this course's financial planning material.",
         },
       ],
@@ -5738,8 +5738,8 @@ const QUESTIONS = {
           question:
             "A general insurer is considering withdrawing from a catastrophe-exposed property line following several years of adverse experience. Discuss two factors the insurer should consider before deciding whether to formally transfer the portfolio or manage it in run-off.",
           answer:
-            "First, valuation uncertainty: if the remaining liabilities are genuinely uncertain (e.g. long-tail exposure or unresolved catastrophe claims), it may be difficult to agree a fair transfer price acceptable to both parties, favouring run-off. Second, ongoing cost: run-off still requires capital support and specialist claims management for potentially many years, so its genuine total cost over the run-off period should be weighed against a formal transfer's clean, immediate exit, rather than assuming run-off is automatically cheaper.",
-          note: "Any two genuinely distinct, well-justified factors should be accepted, provided they are assessed against this SPECIFIC scenario.",
+            "First, valuation uncertainty: if the remaining liabilities are uncertain (e.g. long-tail exposure or unresolved catastrophe claims), it may be difficult to agree a fair transfer price acceptable to both parties, favouring run-off. Second, ongoing cost: run-off still requires capital support and specialist claims management for potentially many years, so its genuine total cost over the run-off period should be weighed against a formal transfer's clean, immediate exit, rather than assuming run-off is automatically cheaper.",
+          note: "Any two distinct, well-justified factors should be accepted, provided they are assessed against this <em>specific</em> scenario.",
         },
         {
           label: "(ii)",
@@ -5749,7 +5749,7 @@ const QUESTIONS = {
             "Assuming the remaining liabilities are reasonably well understood and a willing acquirer is available, recommend a course of action for this insurer, with justification.",
           answer:
             "A formal portfolio transfer is recommended: given the liabilities are reasonably well understood, an acceptable transfer price should be achievable, providing a clean, immediate exit that releases capital and management attention for the insurer's core business, rather than continuing to bear run-off's ongoing capital and management cost for a line the insurer has already decided is no longer strategically core.",
-          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the stated facts (well-understood liabilities, willing acquirer available).",
+          note: "Credit should be given for any well-justified, reasoned recommendation that explicitly addresses the stated facts (well-understood liabilities, willing acquirer available).",
         },
         {
           label: "(iii)",
@@ -5766,9 +5766,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why this decision represents a genuinely complex issue requiring judgement across multiple SA3 topic areas, not a single-dimension analysis.",
+            "Comment on why this decision represents a complex issue requiring judgement across multiple SA3 topic areas, not a single-dimension analysis.",
           answer:
-            "This decision genuinely involves competing considerations across multiple topic areas at once &mdash; the reliability of catastrophe model output informing whether adverse experience reflects genuine trend or random fluctuation, reinsurance and capital implications of continuing versus exiting, and the strategic/financial planning consequences of withdrawal &mdash; requiring integrated judgement rather than a single-dimension analysis.",
+            "This decision involves competing considerations across multiple topic areas at once &mdash; the reliability of catastrophe model output informing whether adverse experience reflects genuine trend or random fluctuation, reinsurance and capital implications of continuing versus exiting, and the strategic/financial planning consequences of withdrawal &mdash; requiring integrated judgement rather than a single-dimension analysis.",
           note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA3 syllabus.",
         },
       ],
@@ -5784,7 +5784,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why a general insurer operating across multiple jurisdictions needs to understand how genuinely different regulatory and taxation environments affect its business in each specific market.",
+            "Explain why a general insurer operating across multiple jurisdictions needs to understand how different regulatory and taxation environments affect its business in each specific market.",
           answer:
             "Regulatory capital requirements, permitted product features, and tax treatment can all directly shape which products are commercially viable to offer, how they are priced, and how the insurer structures its capital and reinsurance arrangements in each specific market, making the environment a genuine determinant of practical business strategy, not just a compliance backdrop.",
           note: "A strong answer connects environmental differences directly to concrete business-strategy consequences, not just asserts that 'regulation varies by country'.",
@@ -5806,7 +5806,7 @@ const QUESTIONS = {
           question:
             "The insurer's finance director asks the Chief Actuary to adopt a more optimistic reserving basis for a long-tail liability account to improve reported profit. Discuss how the Chief Actuary should respond.",
           answer:
-            "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement, meaning commercial pressure to adopt a particular reserving basis does not override this obligation; the Chief Actuary should maintain a basis genuinely supported by the evidence (including the genuine reserving uncertainty inherent in long-tail claims), clearly document the reasoning, and escalate through appropriate channels if pressure continues, rather than adjusting the basis simply to satisfy the request.",
+            "Professional standards and codes of conduct place the actuary's overriding duty on sound, honest technical judgement, meaning commercial pressure to adopt a particular reserving basis does not override this obligation; the Chief Actuary should maintain a basis supported by the evidence (including the genuine reserving uncertainty inherent in long-tail claims), clearly document the reasoning, and escalate through appropriate channels if pressure continues, rather than adjusting the basis simply to satisfy the request.",
           note: "This is a directly testable ethical scenario; a strong answer explicitly refuses to simply comply while describing a constructive, professional path forward.",
         },
         {
@@ -5844,10 +5844,10 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why a career average revalued earnings (CARE) scheme design would reduce the sponsor's exposure to a 'final salary spike' risk compared with the final salary design in part (i).",
+            "Explain why a career average revalued earnings (<em>care</em>) scheme design would reduce the sponsor's exposure to a 'final salary spike' risk compared with the final salary design in part (i).",
           answer:
-            "A CARE scheme accrues a pension each year based on that year's salary, revalued up to retirement, spreading the salary-linkage risk more evenly across a member's career rather than concentrating it at the end, unlike final salary where a large late-career pay rise disproportionately increases pension cost relative to contributions paid over the member's whole career.",
-          note: "A strong answer explicitly names the 'final salary spike' mechanism, not just asserts that CARE is 'less risky'.",
+            "A <em>care</em> scheme accrues a pension each year based on that year's salary, revalued up to retirement, spreading the salary-linkage risk more evenly across a member's career rather than concentrating it at the end, unlike final salary where a large late-career pay rise disproportionately increases pension cost relative to contributions paid over the member's whole career.",
+          note: "A strong answer explicitly names the 'final salary spike' mechanism, not just asserts that <em>care</em> is 'less risky'.",
         },
         {
           label: "(iii)",
@@ -5857,7 +5857,7 @@ const QUESTIONS = {
             "Discuss why the scheme's design of pension increases in payment (fixed rate versus inflation-linked) represents a genuine, deliberate risk-allocation choice, not just an administrative detail.",
           answer:
             "Inflation-linked increases directly expose the sponsor to genuine, open-ended inflation risk over a potentially long payment period, whereas fixed-rate increases cap this risk at a known level. This is a deliberate choice about who bears inflation risk &mdash; the sponsor (if the increase basis tracks inflation, however high it turns out to be) or effectively the member (if increases are capped and inflation erodes the pension's real value), directly affecting both the scheme's genuine risk profile and members' retirement income security.",
-          note: "A strong answer explicitly frames this as a RISK-ALLOCATION decision between sponsor and member, not merely a description of the two increase types.",
+          note: "A strong answer explicitly frames this as a <em>risk-allocation</em> decision between sponsor and member, not merely a description of the two increase types.",
         },
         {
           label: "(iv)",
@@ -5894,7 +5894,7 @@ const QUESTIONS = {
           question:
             "Explain why the design of this scheme's default investment strategy carries outsized real-world importance, given that most members do not actively choose their own investments.",
           answer:
-            "Since most members in practice remain in the default option, its design directly shapes the retirement outcomes of the majority of the scheme's membership, so it should genuinely reflect an appropriate risk/return balance and glide path toward retirement for a typical member, not just a technically available but rarely-used default.",
+            "Since most members in practice remain in the default option, its design directly shapes the retirement outcomes of the majority of the scheme's membership, so it should reflect an appropriate risk/return balance and glide path toward retirement for a typical member, not just a technically available but rarely-used default.",
           note: "A strong answer explicitly connects default design to its outsized real-world reach, not just describes what a default strategy is.",
         },
         {
@@ -5902,10 +5902,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why 'sequencing risk' is a genuinely distinct concern for this member in the years immediately before retirement, compared with earlier in their 25-year saving period.",
+            "Discuss why 'sequencing risk' is a distinct concern for this member in the years immediately before retirement, compared with earlier in their 25-year saving period.",
           answer:
-            "A market downturn shortly before retirement gives the member far less time to recover before needing to convert their pot into retirement income, unlike an equivalent downturn earlier in their career when ongoing contributions and time can help recover lost value, making sequencing risk a genuinely distinct late-career concern requiring a de-risking glide path as retirement approaches.",
-          note: "A strong answer explains WHY timing matters (limited recovery time near retirement), not just that market downturns are bad.",
+            "A market downturn shortly before retirement gives the member far less time to recover before needing to convert their pot into retirement income, unlike an equivalent downturn earlier in their career when ongoing contributions and time can help recover lost value, making sequencing risk a distinct late-career concern requiring a de-risking glide path as retirement approaches.",
+          note: "A strong answer explains <em>why</em> timing matters (limited recovery time near retirement), not just that market downturns are bad.",
         },
         {
           label: "(iv)",
@@ -5914,7 +5914,7 @@ const QUESTIONS = {
           question:
             "Comment on why clear member communication is particularly important for this DC scheme, more so than it might be for an equivalent DB scheme.",
           answer:
-            "Since DC members bear genuine investment and longevity risk and must often make their own decisions (contribution levels, investment choices, retirement income options), clear, accessible communication is essential to support genuinely informed member decision-making, more so than for a DB scheme where the sponsor bears the risk and makes most of the relevant decisions.",
+            "Since DC members bear genuine investment and longevity risk and must often make their own decisions (contribution levels, investment choices, retirement income options), clear, accessible communication is essential to support informed member decision-making, more so than for a DB scheme where the sponsor bears the risk and makes most of the relevant decisions.",
           note: "This connects directly to CP3's audience-tailored-communication material applied to a genuine DC-specific context.",
         },
       ],
@@ -5932,17 +5932,17 @@ const QUESTIONS = {
           question:
             "Explain why a death-in-service benefit should be designed and priced with genuine awareness of the pension scheme's own death benefits, rather than in isolation.",
           answer:
-            "A death-in-service benefit is typically provided alongside or integrated with any pension scheme death benefits, together forming the employee's overall protection package; designing it in isolation risks either genuinely unnecessary duplication of cover or an unintended gap in overall protection.",
-          note: "A strong answer explicitly frames this as a genuine INTEGRATION issue, not two independent benefits that happen to coexist.",
+            "A death-in-service benefit is typically provided alongside or integrated with any pension scheme death benefits, together forming the employee's overall protection package; designing it in isolation risks either unnecessary duplication of cover or an unintended gap in overall protection.",
+          note: "A strong answer explicitly frames this as a genuine <em>integration</em> issue, not two independent benefits that happen to coexist.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the actuarial pricing considerations for an employer-provided income protection benefit are genuinely the same as for a directly-purchased income protection policy.",
+            "Explain why the actuarial pricing considerations for an employer-provided income protection benefit are the same as for a directly-purchased income protection policy.",
           answer:
-            "The underlying risk (incapacity preventing an employee from working) and its actuarial drivers (incidence, recovery rates, deferred period) are genuinely the same regardless of whether the cover is purchased directly or provided as an employee benefit, so the same technical pricing and design principles apply &mdash; the distribution channel does not change the underlying risk being covered.",
+            "The underlying risk (incapacity preventing an employee from working) and its actuarial drivers (incidence, recovery rates, deferred period) are the same regardless of whether the cover is purchased directly or provided as an employee benefit, so the same technical pricing and design principles apply &mdash; the distribution channel does not change the underlying risk being covered.",
           note: "This connects directly to the general principle that product complexity and risk drivers, not distribution channel, determine appropriate pricing technique.",
         },
         {
@@ -5952,8 +5952,8 @@ const QUESTIONS = {
           question:
             "Discuss why an employer should assess the combined cost and risk of its whole employee benefits package (pension, death-in-service, ill-health, medical) together, rather than assessing each benefit independently.",
           answer:
-            "These benefits can genuinely interact &mdash; for example, a death-in-service payout can reduce the need for an ongoing ill-health benefit for the same event, while medical cover can reduce genuine ill-health incidence through earlier treatment and diagnosis &mdash; so a holistic view of the whole package's combined cost and risk gives a more accurate picture of the employer's true benefits spend and risk exposure than assessing each benefit in isolation, which could double-count some interacting risks or miss genuine offsetting effects.",
-          note: "A strong answer identifies at least one genuine INTERACTION between benefits, not just asserts that a holistic view is 'better' in general.",
+            "These benefits can interact &mdash; for example, a death-in-service payout can reduce the need for an ongoing ill-health benefit for the same event, while medical cover can reduce genuine ill-health incidence through earlier treatment and diagnosis &mdash; so a holistic view of the whole package's combined cost and risk gives a more accurate picture of the employer's true benefits spend and risk exposure than assessing each benefit in isolation, which could double-count some interacting risks or miss genuine offsetting effects.",
+          note: "A strong answer identifies at least one genuine <em>interaction</em> between benefits, not just asserts that a holistic view is 'better' in general.",
         },
         {
           label: "(iv)",
@@ -5978,9 +5978,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain what is meant by a DB scheme's 'sponsor covenant', and why it is a genuinely distinctive risk not present in a standalone insurance product.",
+            "Explain what is meant by a DB scheme's 'sponsor covenant', and why it is a distinctive risk not present in a standalone insurance product.",
           answer:
-            "The sponsor covenant is the sponsoring employer's financial ability and willingness to support the pension scheme (e.g. through ongoing contributions) over time. Unlike an insurance policyholder relying on the insurer's own balance sheet, a pension scheme member's security depends directly on a third party's (the sponsor's) ongoing financial health, a genuinely distinctive risk unique to DB pensions.",
+            "The sponsor covenant is the sponsoring employer's financial ability and willingness to support the pension scheme (e.g. through ongoing contributions) over time. Unlike an insurance policyholder relying on the insurer's own balance sheet, a pension scheme member's security depends directly on a third party's (the sponsor's) ongoing financial health, a distinctive risk unique to DB pensions.",
           note: "A strong answer explicitly contrasts this with the insurance-company-centred risk model, not just describes covenant in isolation.",
         },
         {
@@ -5990,7 +5990,7 @@ const QUESTIONS = {
           question:
             "Explain why demographic change (improving longevity) poses a similar risk direction to DB pension schemes as it does to an insurer's annuity business.",
           answer:
-            "Improving longevity directly increases the cost of DB pension promises, since members draw their pension for longer than assumed, exactly the same inverted mortality-improvement sensitivity that increases annuity cost for an insurer &mdash; the risk direction is genuinely the same because both pay income for as long as someone survives.",
+            "Improving longevity directly increases the cost of DB pension promises, since members draw their pension for longer than assumed, exactly the same inverted mortality-improvement sensitivity that increases annuity cost for an insurer &mdash; the risk direction is the same because both pay income for as long as someone survives.",
           note: "Candidates should connect this directly to the inverted mortality-improvement sensitivity theme developed for annuity business elsewhere in this course.",
         },
         {
@@ -6001,7 +6001,7 @@ const QUESTIONS = {
             "A scheme's sponsor is showing signs of financial distress. Discuss why this represents a particularly acute risk to scheme members, and one action trustees might reasonably consider.",
           answer:
             "If the sponsor becomes insolvent, the scheme may be left with an underfunded position and no ongoing ability to recover the shortfall through future contributions, potentially requiring entry into a statutory pension protection arrangement that may not fully replace members' original promised benefits. Trustees might reasonably consider negotiating additional security (e.g. a charge over sponsor assets) or accelerating de-risking of the scheme's investment strategy to reduce reliance on the weakening sponsor's ongoing support.",
-          note: "A strong answer explains WHY the risk is acute (potential benefit reduction via statutory protection) and proposes at least one genuinely reasonable trustee action.",
+          note: "A strong answer explains <em>why</em> the risk is acute (potential benefit reduction via statutory protection) and proposes at least one reasonable trustee action.",
         },
         {
           label: "(iv)",
@@ -6010,7 +6010,7 @@ const QUESTIONS = {
           question:
             "Comment on why trustees should monitor sponsor covenant strength on an ongoing basis, rather than only at the point of each formal funding valuation.",
           answer:
-            "Sponsor financial health can change materially between valuations, so ongoing covenant monitoring helps trustees identify a genuinely weakening covenant early enough to adjust funding or investment strategy before the sponsor's ability to support the scheme deteriorates further.",
+            "Sponsor financial health can change materially between valuations, so ongoing covenant monitoring helps trustees identify a weakening covenant early enough to adjust funding or investment strategy before the sponsor's ability to support the scheme deteriorates further.",
           note: "This connects directly to the ongoing-monitoring theme developed elsewhere in this course.",
         },
       ],
@@ -6038,7 +6038,7 @@ const QUESTIONS = {
           question:
             "Distinguish between a pensions regulator's funding/solvency oversight role and its member-protection/conduct-style oversight role.",
           answer:
-            "Funding oversight focuses on whether a scheme (and its sponsor) can genuinely meet its promised benefits over time, while conduct-style oversight focuses on whether trustees and administrators treat members fairly (e.g. in communications, transfer advice, and administration), addressing genuinely distinct risks to members.",
+            "Funding oversight focuses on whether a scheme (and its sponsor) can meet its promised benefits over time, while conduct-style oversight focuses on whether trustees and administrators treat members fairly (e.g. in communications, transfer advice, and administration), addressing distinct risks to members.",
           note: "This directly mirrors the prudential-versus-conduct distinction developed for insurance regulation elsewhere in this course.",
         },
         {
@@ -6048,7 +6048,7 @@ const QUESTIONS = {
           question:
             "Discuss why legislation requiring independent financial advice before a large DB-to-DC transfer was introduced, and why auto-enrolment legislation has increased the practical importance of default DC investment strategy design.",
           answer:
-            "Transfer advice legislation responds to the genuinely significant, often irreversible nature of giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a DC transfer value, ensuring members receive genuinely informed advice before making a decision with serious, hard-to-reverse consequences for retirement security. Auto-enrolment legislation automatically enrols eligible employees into a qualifying (typically DC) scheme unless they opt out, directly increasing scheme membership among largely passive members who rarely engage with fund choice, making the DEFAULT investment strategy's design disproportionately important for the outcomes of the majority of the membership.",
+            "Transfer advice legislation responds to the significant, often irreversible nature of giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a DC transfer value, ensuring members receive informed advice before making a decision with serious, hard-to-reverse consequences for retirement security. Auto-enrolment legislation automatically enrols eligible employees into a qualifying (typically DC) scheme unless they opt out, directly increasing scheme membership among largely passive members who rarely engage with fund choice, making the <em>default</em> investment strategy's design disproportionately important for the outcomes of the majority of the membership.",
           note: "A strong answer addresses both pieces of legislation and explains the genuine rationale behind each, not just describes what they require.",
         },
         {
@@ -6087,7 +6087,7 @@ const QUESTIONS = {
             "Explain why the discount rate used to calculate this scheme's technical provisions requires genuine actuarial judgement, rather than a single universally correct rate.",
           answer:
             "The discount rate should reflect the expected return on the scheme's actual (or intended) investment strategy and its genuine level of prudence, so different schemes with different investment strategies and risk appetites can reasonably adopt different discount rates, without there being one single objectively correct answer.",
-          note: "A strong answer connects the discount rate directly to the scheme's OWN investment strategy and prudence level, not just asserts that judgement is required.",
+          note: "A strong answer connects the discount rate directly to the scheme's <em>own</em> investment strategy and prudence level, not just asserts that judgement is required.",
         },
         {
           label: "(iii)",
@@ -6096,7 +6096,7 @@ const QUESTIONS = {
           question:
             "Discuss the genuine trade-off in choosing an 8-year recovery period, as opposed to a shorter or longer period.",
           answer:
-            "A longer recovery period spreads the additional contributions over more years, easing the sponsor's near-term cash burden, but leaves the scheme underfunded for longer, genuinely increasing the risk that adverse experience or sponsor distress could prevent the shortfall ever being fully addressed; a shorter period reduces this risk but places a greater near-term cash burden on the sponsor.",
+            "A longer recovery period spreads the additional contributions over more years, easing the sponsor's near-term cash burden, but leaves the scheme underfunded for longer, increasing the risk that adverse experience or sponsor distress could prevent the shortfall ever being fully addressed; a shorter period reduces this risk but places a greater near-term cash burden on the sponsor.",
           note: "A strong answer explicitly frames this as a genuine trade-off between sponsor affordability and member security, not a straightforward 'shorter is always better' conclusion.",
         },
         {
@@ -6106,7 +6106,7 @@ const QUESTIONS = {
           question:
             "Comment on why the scheme actuary should assess the sponsor's covenant strength when advising trustees on an appropriate recovery plan length.",
           answer:
-            "A weaker sponsor covenant may genuinely justify requiring a shorter recovery period or higher near-term contributions (since the scheme cannot rely on the sponsor's ongoing support with the same confidence), while a stronger covenant may reasonably support a longer, more gradual recovery plan.",
+            "A weaker sponsor covenant may justify requiring a shorter recovery period or higher near-term contributions (since the scheme cannot rely on the sponsor's ongoing support with the same confidence), while a stronger covenant may reasonably support a longer, more gradual recovery plan.",
           note: "This connects the numeric recovery plan calculation directly to the sponsor covenant material developed elsewhere in this course.",
         },
       ],
@@ -6124,7 +6124,7 @@ const QUESTIONS = {
           question:
             "Explain why a maturing DB scheme typically 'de-risks' its investment strategy over time, shifting from growth assets toward more matching assets.",
           answer:
-            "As a scheme matures, its investment time horizon shortens (benefits need to be paid sooner) and its tolerance for short-term volatility genuinely reduces, so shifting toward more matching, lower-volatility assets reduces the risk of a poorly-timed market downturn coinciding with when the scheme most needs to pay benefits.",
+            "As a scheme matures, its investment time horizon shortens (benefits need to be paid sooner) and its tolerance for short-term volatility reduces, so shifting toward more matching, lower-volatility assets reduces the risk of a poorly-timed market downturn coinciding with when the scheme most needs to pay benefits.",
           note: "A strong answer explicitly connects maturity to shortened time horizon and reduced volatility tolerance, not just asserts that de-risking is 'safer'.",
         },
         {
@@ -6135,7 +6135,7 @@ const QUESTIONS = {
             "Explain how a liability-driven investment (LDI) strategy using interest rate and inflation swaps helps a scheme manage its funding volatility, and one genuine risk this introduces.",
           answer:
             "Derivatives can efficiently adjust the scheme's sensitivity to interest rate and inflation movements without needing to buy or sell large quantities of underlying bonds directly, providing a flexible, capital-efficient tool for closely matching the scheme's specific liability profile. One genuine risk this introduces is the need for liquid assets to meet collateral calls on the derivative positions, particularly during periods of market stress when collateral requirements can increase sharply.",
-          note: "A strong answer explains both the matching benefit AND names the genuine collateral/liquidity risk LDI introduces, not just describes the matching benefit alone.",
+          note: "A strong answer explains both the matching benefit <em>and</em> names the genuine collateral/liquidity risk LDI introduces, not just describes the matching benefit alone.",
         },
         {
           label: "(iii)",
@@ -6144,7 +6144,7 @@ const QUESTIONS = {
           question:
             "Discuss why a sponsor's covenant strength should directly influence the scheme's appropriate level of investment risk.",
           answer:
-            "A scheme backed by a strong sponsor covenant can reasonably tolerate more investment risk, since the sponsor can support a temporary funding shortfall through additional contributions if needed, while a scheme with a weaker covenant may need a genuinely more cautious, closely-matched investment strategy to avoid relying on sponsor support that may not be reliably available, so investment strategy should reflect covenant strength rather than being decided purely on financial-market grounds in isolation.",
+            "A scheme backed by a strong sponsor covenant can reasonably tolerate more investment risk, since the sponsor can support a temporary funding shortfall through additional contributions if needed, while a scheme with a weaker covenant may need a more cautious, closely-matched investment strategy to avoid relying on sponsor support that may not be reliably available, so investment strategy should reflect covenant strength rather than being decided purely on financial-market grounds in isolation.",
           note: "A strong answer explicitly connects covenant strength to appropriate risk tolerance in both directions (strong covenant supports more risk, weak covenant requires less), not just one direction.",
         },
         {
@@ -6152,7 +6152,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why the scheme should hold sufficient liquid assets even though its overall investment horizon is genuinely long-term.",
+            "Comment on why the scheme should hold sufficient liquid assets even though its overall investment horizon is long-term.",
           answer:
             "Even a long-horizon scheme has near-term cashflow needs (benefit payments, expenses, and potentially collateral calls on derivative positions), so genuine liquidity risk management requires holding sufficient liquid assets to meet these without being forced to sell less liquid assets at a potentially unfavourable time.",
           note: "This connects directly to the liquidity-risk theme developed elsewhere across the SA subjects.",
@@ -6183,7 +6183,7 @@ const QUESTIONS = {
             "Explain why a longevity swap or buy-in might be used to manage longevity risk specifically, rather than relying purely on investment strategy.",
           answer:
             "Investment strategy can manage market and interest rate risk, but does little to address genuine uncertainty in how long members will live; a longevity swap or buy-in directly transfers this specific risk to a reinsurer or insurer, addressing a risk driver investment strategy alone cannot manage.",
-          note: "A strong answer explains WHY investment strategy alone is insufficient for longevity risk specifically, not just names longevity swaps as an option.",
+          note: "A strong answer explains <em>why</em> investment strategy alone is insufficient for longevity risk specifically, not just names longevity swaps as an option.",
         },
         {
           label: "(iii)",
@@ -6192,8 +6192,8 @@ const QUESTIONS = {
           question:
             "Discuss why an 'integrated risk management' (IRM) framework linking funding, investment, and covenant strategy together is more valuable than managing each area independently.",
           answer:
-            "These three areas are genuinely interdependent &mdash; for example, a stronger covenant can support a riskier investment strategy, which in turn affects the appropriate funding target and discount rate &mdash; so managing them through a single, integrated framework helps ensure decisions in one area appropriately reflect the current position in the other two, rather than being set independently and potentially inconsistently with each other.",
-          note: "A strong answer explicitly identifies at least one genuine INTERDEPENDENCY (e.g. covenant strength affecting appropriate investment risk), not just asserts that integration is 'better'.",
+            "These three areas are interdependent &mdash; for example, a stronger covenant can support a riskier investment strategy, which in turn affects the appropriate funding target and discount rate &mdash; so managing them through a single, integrated framework helps ensure decisions in one area appropriately reflect the current position in the other two, rather than being set independently and potentially inconsistently with each other.",
+          note: "A strong answer explicitly identifies at least one genuine <em>interdependency</em> (e.g. covenant strength affecting appropriate investment risk), not just asserts that integration is 'better'.",
         },
         {
           label: "(iv)",
@@ -6202,7 +6202,7 @@ const QUESTIONS = {
           question:
             "Comment on why a scheme's risk management strategy should be reviewed periodically, rather than set once and left unchanged.",
           answer:
-            "As funding position, membership profile, and sponsor covenant evolve over time, a risk management strategy set for a past position may no longer be genuinely appropriate for the scheme's current circumstances, so ongoing review ensures the strategy remains aligned with the scheme's actual, current risk profile.",
+            "As funding position, membership profile, and sponsor covenant evolve over time, a risk management strategy set for a past position may no longer be appropriate for the scheme's current circumstances, so ongoing review ensures the strategy remains aligned with the scheme's actual, current risk profile.",
           note: "This connects directly to the ongoing-review theme developed elsewhere across every SA subject.",
         },
       ],
@@ -6231,7 +6231,7 @@ const QUESTIONS = {
             "Explain the difference between a buy-in and a buy-out, and why a buy-in is often pursued as a step before an eventual buy-out.",
           answer:
             "A buy-in involves the scheme purchasing an insurance policy matching a specified group of members' benefits, with the policy held as a scheme asset while the scheme itself remains responsible for paying members; a buy-out goes further, fully transferring the legal liability for those members' benefits to the insurer. A buy-in is often pursued first because it can be executed for a subset of membership without requiring the scheme to be immediately fully funded for a complete buy-out and wind-up.",
-          note: "A strong answer explains both the structural difference AND why a phased buy-in-then-buy-out approach is often practically useful.",
+          note: "A strong answer explains both the structural difference <em>and</em> why a phased buy-in-then-buy-out approach is often practically useful.",
         },
         {
           label: "(iii)",
@@ -6240,7 +6240,7 @@ const QUESTIONS = {
           question:
             "Discuss why legislation requiring independent financial advice before a large DB-to-DC transfer is particularly important in the context of a scheme heading toward wind-up.",
           answer:
-            "Giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a DC transfer value is a genuinely significant, often irreversible decision shifting investment and longevity risk onto the member; as a scheme approaches wind-up, members may face pressure or a limited window to decide, making independent advice particularly important to ensure they genuinely understand the consequences before an effectively final decision.",
+            "Giving up a DB scheme's guaranteed, sponsor-backed benefits in exchange for a DC transfer value is a significant, often irreversible decision shifting investment and longevity risk onto the member; as a scheme approaches wind-up, members may face pressure or a limited window to decide, making independent advice particularly important to ensure they understand the consequences before an effectively final decision.",
           note: "A strong answer connects the advice requirement's importance directly to the wind-up context's time pressure and irreversibility.",
         },
         {
@@ -6250,7 +6250,7 @@ const QUESTIONS = {
           question:
             "Comment on why a scheme facing sponsor insolvency might need to consider a statutory pension protection arrangement rather than proceeding with a standard buy-out.",
           answer:
-            "If the scheme is insufficiently funded and the sponsor cannot provide additional contributions due to insolvency, a standard buy-out (requiring full funding to purchase members' benefits) may not be achievable, making a statutory protection arrangement (providing a safety-net level of benefit, potentially lower than originally promised) the genuinely necessary alternative.",
+            "If the scheme is insufficiently funded and the sponsor cannot provide additional contributions due to insolvency, a standard buy-out (requiring full funding to purchase members' benefits) may not be achievable, making a statutory protection arrangement (providing a safety-net level of benefit, potentially lower than originally promised) the necessary alternative.",
           note: "This connects directly to the sponsor-insolvency material developed elsewhere in this course.",
         },
       ],
@@ -6268,8 +6268,8 @@ const QUESTIONS = {
           question:
             "Explain why a corporate acquisition of a scheme's sponsor could directly affect the scheme's sponsor covenant, in either direction.",
           answer:
-            "The acquiring company's own financial strength and strategic priorities become the scheme's new effective covenant support, which could genuinely strengthen the scheme's security (if the acquirer is financially stronger and supportive) or weaken it (if the acquirer is less committed to the scheme or has weaker finances) depending on the acquirer's own position and intentions.",
-          note: "A strong answer explains BOTH possible directions of covenant change, not just assumes acquisitions are always negative or always positive for the scheme.",
+            "The acquiring company's own financial strength and strategic priorities become the scheme's new effective covenant support, which could strengthen the scheme's security (if the acquirer is financially stronger and supportive) or weaken it (if the acquirer is less committed to the scheme or has weaker finances) depending on the acquirer's own position and intentions.",
+          note: "A strong answer explains <em>both</em> possible directions of covenant change, not just assumes acquisitions are always negative or always positive for the scheme.",
         },
         {
           label: "(ii)",
@@ -6286,19 +6286,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "A DB scheme's sponsor is being acquired, and the scheme is significantly underfunded. Discuss why this represents a genuinely complex issue for the trustees, requiring integrated judgement across multiple topic areas.",
+            "A DB scheme's sponsor is being acquired, and the scheme is significantly underfunded. Discuss why this represents a complex issue for the trustees, requiring integrated judgement across multiple topic areas.",
           answer:
-            "This decision genuinely involves competing considerations across multiple topic areas at once &mdash; assessing the acquirer's covenant strength, negotiating appropriate funding or security protections as part of the transaction, and considering longer-term strategic options like accelerated de-risking or eventual buy-out &mdash; requiring integrated judgement across covenant, funding, investment and strategic areas rather than a single-dimension analysis.",
-          note: "A strong answer explicitly draws on multiple topic areas together (covenant, funding, investment, strategy), not just one in isolation, reflecting the genuinely integrated nature of complex real-world issues.",
+            "This decision involves competing considerations across multiple topic areas at once &mdash; assessing the acquirer's covenant strength, negotiating appropriate funding or security protections as part of the transaction, and considering longer-term strategic options like accelerated de-risking or eventual buy-out &mdash; requiring integrated judgement across covenant, funding, investment and strategic areas rather than a single-dimension analysis.",
+          note: "A strong answer explicitly draws on multiple topic areas together (covenant, funding, investment, strategy), not just one in isolation, reflecting the integrated nature of complex real-world issues.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why solving a genuinely complex pensions issue like this typically requires drawing on multiple SA4 topic areas simultaneously, rather than a single technique in isolation.",
+            "Comment on why solving a complex pensions issue like this typically requires drawing on multiple SA4 topic areas simultaneously, rather than a single technique in isolation.",
           answer:
-            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on covenant assessment, funding strategy, investment strategy, and strategic risk-transfer options together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue required drawing on covenant assessment, funding strategy, investment strategy, and strategic risk-transfer options together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once, not a single isolated calculation or rule.",
           note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA4 syllabus.",
         },
       ],
@@ -6318,7 +6318,7 @@ const QUESTIONS = {
           question:
             "Explain why a pension scheme typically uses an independent custodian to hold its investment assets, rather than allowing its asset manager to hold them directly.",
           answer:
-            "Separating asset management (decision-making) from custody (safekeeping) reduces the risk of a single party having both control over investment decisions AND physical/legal control of the assets, providing a genuine safeguard against fraud or error.",
+            "Separating asset management (decision-making) from custody (safekeeping) reduces the risk of a single party having both control over investment decisions <em>and</em> physical/legal control of the assets, providing a genuine safeguard against fraud or error.",
           note: "A strong answer explicitly names the segregation-of-duties rationale, not just asserts that custodians 'keep assets safe'.",
         },
         {
@@ -6326,9 +6326,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why an investment mandate must set a genuinely clear and specific benchmark, agreed independently in advance, rather than allowing the manager to select or change its own performance comparison after the fact.",
+            "Explain why an investment mandate must set a clear and specific benchmark, agreed independently in advance, rather than allowing the manager to select or change its own performance comparison after the fact.",
           answer:
-            "A benchmark set independently and in advance provides an objective, unbiased basis for assessing whether the manager has genuinely added value, whereas a benchmark chosen or changed by the manager itself after seeing results could be selected specifically to flatter poor performance.",
+            "A benchmark set independently and in advance provides an objective, unbiased basis for assessing whether the manager has added value, whereas a benchmark chosen or changed by the manager itself after seeing results could be selected specifically to flatter poor performance.",
           note: "This connects directly to the independent-assessment/governance-safeguard theme developed in this course.",
         },
         {
@@ -6338,8 +6338,8 @@ const QUESTIONS = {
           question:
             "Discuss why potential conflicts of interest might arise within the investment management industry's multi-party structure (managers, custodians, consultants), and one way a pension scheme's governance could mitigate this.",
           answer:
-            "An asset manager's fee structure, a consultant's relationships with multiple asset managers, or a custodian offering additional services could all create genuine incentives that may not perfectly align with the underlying investor's best interests. A governing body could mitigate this by requiring genuine disclosure of any such relationships or incentives, and periodically reviewing whether advice or services received remain genuinely independent and in the scheme's best interests.",
-          note: "A strong answer identifies a genuine, specific conflict source (not just asserts conflicts 'can arise') and proposes a genuinely workable mitigation.",
+            "An asset manager's fee structure, a consultant's relationships with multiple asset managers, or a custodian offering additional services could all create genuine incentives that may not perfectly align with the underlying investor's best interests. A governing body could mitigate this by requiring genuine disclosure of any such relationships or incentives, and periodically reviewing whether advice or services received remain independent and in the scheme's best interests.",
+          note: "A strong answer identifies a genuine, specific conflict source (not just asserts conflicts 'can arise') and proposes a workable mitigation.",
         },
         {
           label: "(iv)",
@@ -6366,8 +6366,8 @@ const QUESTIONS = {
           question:
             "Explain why an investment manager's process typically separates 'research' from 'portfolio construction', rather than allowing a single individual to move directly from a market view to a trade.",
           answer:
-            "Separating these stages allows genuine specialisation and provides a check that a compelling research view is actually translated into a genuinely appropriate, risk-controlled portfolio position, rather than an unconstrained bet based purely on one individual's conviction.",
-          note: "A strong answer explicitly names the CHECK-AND-BALANCE this separation provides, not just describes the two stages.",
+            "Separating these stages allows genuine specialisation and provides a check that a compelling research view is actually translated into an appropriate, risk-controlled portfolio position, rather than an unconstrained bet based purely on one individual's conviction.",
+          note: "A strong answer explicitly names the <em>check-and-balance</em> this separation provides, not just describes the two stages.",
         },
         {
           label: "(ii)",
@@ -6376,8 +6376,8 @@ const QUESTIONS = {
           question:
             "Discuss one genuine advantage and one genuine limitation of a systematic, rules-based investment process compared with a purely discretionary process.",
           answer:
-            "Advantage: a systematic process can apply its rules consistently across a large universe of assets without emotional or behavioural bias. Limitation: a fixed model calibrated on historical data may fail to anticipate genuinely novel market conditions not represented in that historical data, a form of model risk that a skilled discretionary manager might be better placed to respond to.",
-          note: "A strong answer addresses BOTH sides explicitly, not just one.",
+            "Advantage: a systematic process can apply its rules consistently across a large universe of assets without emotional or behavioural bias. Limitation: a fixed model calibrated on historical data may fail to anticipate novel market conditions not represented in that historical data, a form of model risk that a skilled discretionary manager might be better placed to respond to.",
+          note: "A strong answer addresses <em>both</em> sides explicitly, not just one.",
         },
         {
           label: "(iii)",
@@ -6394,9 +6394,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why implementation quality (efficient trade execution) is a genuinely distinct skill from investment decision-making quality.",
+            "Comment on why implementation quality (efficient trade execution) is a distinct skill from investment decision-making quality.",
           answer:
-            "Trading costs and execution risk can genuinely erode the value of an otherwise sound investment decision, so a good decision poorly implemented can still produce a disappointing outcome, meaning efficient implementation is itself a genuinely important, distinct skill rather than a mechanical afterthought.",
+            "Trading costs and execution risk can erode the value of an otherwise sound investment decision, so a good decision poorly implemented can still produce a disappointing outcome, meaning efficient implementation is itself an important, distinct skill rather than a mechanical afterthought.",
           note: "This connects directly to the performance-attribution material developed later in this course.",
         },
       ],
@@ -6414,8 +6414,8 @@ const QUESTIONS = {
           question:
             "Explain why a DB pension scheme's investment objectives differ fundamentally from a DC pension scheme's.",
           answer:
-            "A DB scheme invests to meet a defined set of promised liabilities, so its objectives centre on funding adequacy relative to those specific liabilities, while a DC scheme's objectives centre on maximising genuinely appropriate risk-adjusted returns for individual members' own accumulating pots, a fundamentally different investment problem reflecting who bears the investment risk in each case.",
-          note: "A strong answer explicitly connects the objective difference to WHO bears the investment risk (sponsor versus member), not just describes DB and DC generically.",
+            "A DB scheme invests to meet a defined set of promised liabilities, so its objectives centre on funding adequacy relative to those specific liabilities, while a DC scheme's objectives centre on maximising appropriate risk-adjusted returns for individual members' own accumulating pots, a fundamentally different investment problem reflecting who bears the investment risk in each case.",
+          note: "A strong answer explicitly connects the objective difference to <em>who</em> bears the investment risk (sponsor versus member), not just describes DB and DC generically.",
         },
         {
           label: "(ii)",
@@ -6424,7 +6424,7 @@ const QUESTIONS = {
           question:
             "Explain why a life insurer's annuity business typically favours long-dated matching assets, while a general insurer typically emphasises liquidity more heavily.",
           answer:
-            "A life insurer's annuity business has genuinely long-duration, interest-rate-sensitive liabilities favouring long-dated matching assets, while a general insurer's typically shorter-tail, more volatile and less predictable claims payment pattern favours a different balance emphasising liquidity and capital preservation over long-duration matching.",
+            "A life insurer's annuity business has long-duration, interest-rate-sensitive liabilities favouring long-dated matching assets, while a general insurer's typically shorter-tail, more volatile and less predictable claims payment pattern favours a different balance emphasising liquidity and capital preservation over long-duration matching.",
           note: "This connects directly to the ALM-duration material developed for life and general insurance elsewhere in this course.",
         },
         {
@@ -6432,9 +6432,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why an individual investor's investment advice needs to be genuinely more personalised than the more standardised frameworks often applicable to institutional investors.",
+            "Discuss why an individual investor's investment advice needs to be more personalised than the more standardised frameworks often applicable to institutional investors.",
           answer:
-            "An individual investor typically has a genuinely more concentrated, personal set of goals (e.g. their own retirement, a specific purchase) and may have less capacity to bear risk or absorb losses than a large institution with diversified objectives and a longer collective time horizon, requiring genuinely more personalised, risk-tolerance-sensitive advice rather than a standardised institutional template.",
+            "An individual investor typically has a more concentrated, personal set of goals (e.g. their own retirement, a specific purchase) and may have less capacity to bear risk or absorb losses than a large institution with diversified objectives and a longer collective time horizon, requiring more personalised, risk-tolerance-sensitive advice rather than a standardised institutional template.",
           note: "A strong answer explicitly contrasts individual and institutional circumstances (concentrated goals, lower risk capacity), not just asserts individuals need 'more personal' advice.",
         },
         {
@@ -6442,9 +6442,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why a manager must genuinely understand a specific investor's objectives and constraints before proposing an investment strategy, rather than applying a generic 'best practice' template.",
+            "Comment on why a manager must understand a specific investor's objectives and constraints before proposing an investment strategy, rather than applying a generic 'best practice' template.",
           answer:
-            "The same asset allocation or strategy could be genuinely excellent for one investor type and genuinely unsuitable for another, depending entirely on their specific liabilities, risk tolerance, and objectives, so sound strategy proposals must be anchored in the specific investor's circumstances.",
+            "The same asset allocation or strategy could be excellent for one investor type and unsuitable for another, depending entirely on their specific liabilities, risk tolerance, and objectives, so sound strategy proposals must be anchored in the specific investor's circumstances.",
           note: "This connects directly to the context-specific-assessment theme developed across every SA subject.",
         },
       ],
@@ -6463,7 +6463,7 @@ const QUESTIONS = {
             "A pension scheme has liabilities valued at &pound;100,000,000 with an effective duration of 18 years, and hedges 75% of its interest rate exposure using an LDI strategy. If interest rates fall by 1%, calculate (a) the increase in the value of the scheme's liabilities, (b) the increase in the value of the hedged assets (assuming they move in line with the hedged portion of the liability), and (c) the net impact on the scheme's funding position.",
           answer:
             "(a) Liability increase = &pound;100,000,000 &times; 18 &times; 1% = &pound;18,000,000. (b) Hedged asset increase = (&pound;100,000,000 &times; 75%) &times; 18 &times; 1% = &pound;75,000,000 &times; 18 &times; 1% = &pound;13,500,000. (c) Net impact on funding position = &pound;13,500,000 &minus; &pound;18,000,000 = &minus;&pound;4,500,000 (the funding position worsens by &pound;4,500,000 due to the unhedged 25% exposure).",
-          note: "Verified: 100,000,000×18×0.01=18,000,000; 75,000,000×18×0.01=13,500,000; 13,500,000-18,000,000=-4,500,000 (Node-verified). Marks are typically split across all three sub-calculations, with credit for correctly identifying the funding position WORSENS.",
+          note: "Verified: 100,000,000×18×0.01=18,000,000; 75,000,000×18×0.01=13,500,000; 13,500,000-18,000,000=-4,500,000 (Node-verified). Marks are typically split across all three sub-calculations, with credit for correctly identifying the funding position <em>worsens</em>.",
         },
         {
           label: "(ii)",
@@ -6482,7 +6482,7 @@ const QUESTIONS = {
           question:
             "Discuss why this scheme's hedge ratio should be reviewed periodically, rather than set once and left unchanged.",
           answer:
-            "The scheme's funding position, sponsor covenant, and the wider market environment can all change materially over time, so a hedge ratio set for a past set of circumstances may no longer be genuinely appropriate, requiring periodic reassessment rather than indefinite persistence.",
+            "The scheme's funding position, sponsor covenant, and the wider market environment can all change materially over time, so a hedge ratio set for a past set of circumstances may no longer be appropriate, requiring periodic reassessment rather than indefinite persistence.",
           note: "This connects directly to the ongoing-review theme developed throughout this course.",
         },
         {
@@ -6511,14 +6511,14 @@ const QUESTIONS = {
             "Explain why an institutional investor might allocate to infrastructure as an alternative asset class specifically, beyond simply seeking a higher expected return.",
           answer:
             "Infrastructure assets can offer genuine diversification benefits (returns less correlated with traditional listed markets) and, in some cases, inflation-linked revenue streams whose cashflow characteristics can usefully match specific liability profiles, not merely provide a higher-risk version of traditional equity returns.",
-          note: "A strong answer names the genuinely DIFFERENT cashflow/correlation characteristics, not just asserts alternatives offer 'higher returns'.",
+          note: "A strong answer names the <em>different</em> cashflow/correlation characteristics, not just asserts alternatives offer 'higher returns'.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why valuing an illiquid private equity holding requires genuinely different techniques from valuing a listed equity holding.",
+            "Explain why valuing an illiquid private equity holding requires different techniques from valuing a listed equity holding.",
           answer:
             "Illiquid assets typically lack a continuously observable market price, so valuation relies on periodic appraisals, comparable transaction analysis, or discounted cashflow techniques involving genuine estimation uncertainty, unlike listed assets whose market price is directly and continuously observable.",
           note: "This connects directly to the valuation-technique material developed elsewhere across the actuarial curriculum.",
@@ -6528,10 +6528,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why an investor's governance process should genuinely scrutinise a private equity manager's 'two and twenty' fee structure, and why this allocation should be assessed within the context of the whole portfolio rather than in isolation.",
+            "Discuss why an investor's governance process should scrutinise a private equity manager's 'two and twenty' fee structure, and why this allocation should be assessed within the context of the whole portfolio rather than in isolation.",
           answer:
-            "Higher, performance-linked fee structures directly reduce the net return delivered to the investor, so governance should genuinely assess whether the manager's demonstrated skill and the asset class's genuine diversification benefit justify this higher cost relative to lower-cost traditional alternatives. The allocation should also be assessed within the whole portfolio because alternative assets' genuine diversification value depends on how their returns interact with the rest of the portfolio, not on their standalone characteristics alone.",
-          note: "A strong answer addresses BOTH the fee-scrutiny point AND the whole-portfolio-context point, not just one half of the question.",
+            "Higher, performance-linked fee structures directly reduce the net return delivered to the investor, so governance should assess whether the manager's demonstrated skill and the asset class's genuine diversification benefit justify this higher cost relative to lower-cost traditional alternatives. The allocation should also be assessed within the whole portfolio because alternative assets' genuine diversification value depends on how their returns interact with the rest of the portfolio, not on their standalone characteristics alone.",
+          note: "A strong answer addresses <em>both</em> the fee-scrutiny point <em>and</em> the whole-portfolio-context point, not just one half of the question.",
         },
         {
           label: "(iv)",
@@ -6540,7 +6540,7 @@ const QUESTIONS = {
           question:
             "Comment on why an investor with genuine near-term liquidity needs should limit its allocation to illiquid alternative assets.",
           answer:
-            "Illiquid assets cannot be readily sold to meet near-term cashflow needs, so an investor with genuine near-term liquidity requirements must ensure sufficient allocation remains in liquid assets, reserving illiquid alternatives for genuinely long-term, patient capital.",
+            "Illiquid assets cannot be readily sold to meet near-term cashflow needs, so an investor with genuine near-term liquidity requirements must ensure sufficient allocation remains in liquid assets, reserving illiquid alternatives for long-term, patient capital.",
           note: "This connects directly to the liquidity-risk theme developed elsewhere across the SA subjects.",
         },
       ],
@@ -6556,9 +6556,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why ESG considerations can be understood as genuinely relevant to investment risk and return, not solely as an ethical overlay.",
+            "Explain why ESG considerations can be understood as relevant to investment risk and return, not solely as an ethical overlay.",
           answer:
-            "Environmental, social, and governance factors can genuinely affect a company's or asset's long-term financial performance and risk (e.g. climate transition risk, poor governance leading to fraud), making ESG analysis a genuine extension of fundamental investment analysis, not solely a values-based consideration layered on top.",
+            "Environmental, social, and governance factors can affect a company's or asset's long-term financial performance and risk (e.g. climate transition risk, poor governance leading to fraud), making ESG analysis a genuine extension of fundamental investment analysis, not solely a values-based consideration layered on top.",
           note: "A strong answer explicitly makes the dual-framing argument (financial materiality, not just ethics), not just asserts that ESG 'matters'.",
         },
         {
@@ -6568,7 +6568,7 @@ const QUESTIONS = {
           question:
             "Distinguish between 'exclusion' and 'stewardship' as responsible investment approaches, and explain one genuine trade-off between them.",
           answer:
-            "Exclusion removes certain assets from the portfolio entirely, while stewardship retains an ownership stake and uses that position to genuinely engage with and influence company behaviour. The trade-off is that exclusion removes an investor's ability to influence a company's practices entirely, while stewardship retains this influence but requires genuine, sustained engagement effort and does not guarantee the company will actually change its behaviour.",
+            "Exclusion removes certain assets from the portfolio entirely, while stewardship retains an ownership stake and uses that position to engage with and influence company behaviour. The trade-off is that exclusion removes an investor's ability to influence a company's practices entirely, while stewardship retains this influence but requires genuine, sustained engagement effort and does not guarantee the company will actually change its behaviour.",
           note: "A strong answer explicitly names the trade-off (lost influence versus effort without guaranteed outcome), not just describes the two approaches.",
         },
         {
@@ -6576,10 +6576,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why different ESG rating providers might produce genuinely inconsistent assessments of the same company, and why this matters for an investor relying on a single provider's rating.",
+            "Discuss why different ESG rating providers might produce inconsistent assessments of the same company, and why this matters for an investor relying on a single provider's rating.",
           answer:
-            "Different ESG rating providers can use genuinely different methodologies and weightings for various ESG factors (e.g. how much weight is given to carbon emissions versus board diversity), producing inconsistent scores for the same company. This matters because an investor relying on a single provider's rating without awareness of this genuine methodological variation could treat that score as an objective, universally agreed truth, when it in fact reflects one provider's specific, contestable methodology.",
-          note: "A strong answer explains WHY inconsistency arises (differing methodology/weightings) and the genuine practical consequence of over-reliance on a single source.",
+            "Different ESG rating providers can use different methodologies and weightings for various ESG factors (e.g. how much weight is given to carbon emissions versus board diversity), producing inconsistent scores for the same company. This matters because an investor relying on a single provider's rating without awareness of this genuine methodological variation could treat that score as an objective, universally agreed truth, when it in fact reflects one provider's specific, contestable methodology.",
+          note: "A strong answer explains <em>why</em> inconsistency arises (differing methodology/weightings) and the genuine practical consequence of over-reliance on a single source.",
         },
         {
           label: "(iv)",
@@ -6614,9 +6614,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain one genuine limitation of the VaR figure calculated in part (i), and why stress testing provides genuinely complementary insight.",
+            "Explain one genuine limitation of the VaR figure calculated in part (i), and why stress testing provides complementary insight.",
           answer:
-            "VaR says nothing about how much WORSE losses could be beyond the stated threshold (i.e. in the 5% of outcomes worse than the VaR figure), potentially understating genuine tail risk. Stress testing directly reveals how the portfolio would perform under specific, named adverse scenarios, providing more concrete, interpretable insight into the portfolio's genuine vulnerabilities than a single probabilistic VaR figure alone.",
+            "VaR says nothing about how much <em>worse</em> losses could be beyond the stated threshold (i.e. in the 5% of outcomes worse than the VaR figure), potentially understating genuine tail risk. Stress testing directly reveals how the portfolio would perform under specific, named adverse scenarios, providing more concrete, interpretable insight into the portfolio's genuine vulnerabilities than a single probabilistic VaR figure alone.",
           note: "A strong answer explicitly names the 'beyond the threshold' limitation, not just asserts VaR is 'imperfect'.",
         },
         {
@@ -6636,7 +6636,7 @@ const QUESTIONS = {
           question:
             "Comment on why tracking error is a more mandate-relevant risk measure than absolute portfolio volatility for this actively-managed portfolio.",
           answer:
-            "Since an active manager's mandate is typically judged against a specified benchmark, tracking error directly measures how much the manager's actual portfolio has genuinely deviated from that benchmark, a more mandate-relevant risk measure than absolute volatility alone for assessing whether the manager is operating within agreed risk parameters.",
+            "Since an active manager's mandate is typically judged against a specified benchmark, tracking error directly measures how much the manager's actual portfolio has deviated from that benchmark, a more mandate-relevant risk measure than absolute volatility alone for assessing whether the manager is operating within agreed risk parameters.",
           note: "This connects the numeric tracking error calculation directly to the mandate-governance material developed elsewhere in this course.",
         },
       ],
@@ -6664,15 +6664,15 @@ const QUESTIONS = {
           question:
             "Explain why decomposing the 1.7% total active return calculated in part (i) into asset allocation and security selection components is more informative to trustees than the single 1.7% figure alone.",
           answer:
-            "Performance attribution reveals genuinely WHY the manager outperformed, rather than just confirming THAT they did, allowing trustees to assess whether the outperformance came from decisions genuinely within the manager's mandate (e.g. security selection within agreed asset classes) or from asset allocation deviations that may raise mandate compliance questions.",
-          note: "A strong answer explicitly explains the WHY-versus-THAT distinction, not just asserts that decomposition is 'more detailed'.",
+            "Performance attribution reveals <em>why</em> the manager outperformed, rather than just confirming <em>that</em> they did, allowing trustees to assess whether the outperformance came from decisions within the manager's mandate (e.g. security selection within agreed asset classes) or from asset allocation deviations that may raise mandate compliance questions.",
+          note: "A strong answer explicitly explains the <em>why</em>-versus-<em>that</em> distinction, not just asserts that decomposition is 'more detailed'.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why the governing body should investigate whether the 1.0% asset allocation effect in part (i) reflected decisions genuinely authorised by the manager's mandate.",
+            "Discuss why the governing body should investigate whether the 1.0% asset allocation effect in part (i) reflected decisions authorised by the manager's mandate.",
           answer:
             "If the manager's mandate specified a fixed strategic asset allocation with security selection delegated for implementation only, a 1.0% asset allocation effect could reveal the manager made unauthorised allocation deviations beyond its intended mandate, which even if favourable this time raises a genuine governance concern about whether the manager is operating within agreed limits.",
           note: "A strong answer explicitly connects the attribution finding to a genuine mandate-compliance concern, not just treats the favourable outcome as unambiguously good news.",
@@ -6682,7 +6682,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why this portfolio's performance should be assessed over a genuinely longer time horizon before drawing firm conclusions about the manager's skill.",
+            "Comment on why this portfolio's performance should be assessed over a longer time horizon before drawing firm conclusions about the manager's skill.",
           answer:
             "Short-term performance can be heavily influenced by genuine random market fluctuation rather than manager skill, so assessing performance over a longer, more statistically meaningful period gives a more reliable picture of the manager's true, sustained skill than a single year's result alone.",
           note: "This connects directly to the statistical-significance-versus-random-fluctuation theme developed elsewhere across the actuarial curriculum.",
@@ -6702,7 +6702,7 @@ const QUESTIONS = {
           question:
             "Explain why regulation of investment management typically emphasises conduct requirements particularly heavily, given the agency relationship between manager and client.",
           answer:
-            "Since the manager acts on behalf of, but does not itself bear the risk of, the client's assets, conduct regulation aims to ensure the manager genuinely acts in the client's best interests despite this separation of decision-making from risk-bearing, addressing the genuine potential for misaligned incentives this agency structure creates.",
+            "Since the manager acts on behalf of, but does not itself bear the risk of, the client's assets, conduct regulation aims to ensure the manager acts in the client's best interests despite this separation of decision-making from risk-bearing, addressing the genuine potential for misaligned incentives this agency structure creates.",
           note: "A strong answer explicitly connects conduct regulation's emphasis to the specific agency-relationship risk, not just asserts that conduct 'matters'.",
         },
         {
@@ -6712,27 +6712,27 @@ const QUESTIONS = {
           question:
             "Explain what is meant by 'key-person risk' for an investment management firm, and one mitigant against it.",
           answer:
-            "Key-person risk arises where a firm's investment process and client relationships depend heavily on one individual's expertise or judgement, so that individual's departure, illness, or error could cause genuinely significant disruption. Well-documented, genuinely repeatable investment processes are a direct mitigant, reducing the firm's dependence on any single individual's undocumented, tacit expertise.",
-          note: "A strong answer names a genuinely specific mitigant (documented process), not just asserts that firms should 'reduce key-person risk' generically.",
+            "Key-person risk arises where a firm's investment process and client relationships depend heavily on one individual's expertise or judgement, so that individual's departure, illness, or error could cause significant disruption. Well-documented, repeatable investment processes are a direct mitigant, reducing the firm's dependence on any single individual's undocumented, tacit expertise.",
+          note: "A strong answer names a specific mitigant (documented process), not just asserts that firms should 'reduce key-person risk' generically.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why an investment management firm's governance structure should include a genuinely independent risk management function, separate from its portfolio management teams.",
+            "Discuss why an investment management firm's governance structure should include an independent risk management function, separate from its portfolio management teams.",
           answer:
             "An independent risk function can objectively monitor and challenge portfolio managers' risk-taking against agreed limits without the same incentive to prioritise short-term performance that portfolio managers themselves might have, providing a genuine check-and-balance within the firm's internal governance. Without this independence, risk oversight could be compromised by the same incentives (e.g. performance fees, career advancement tied to short-term results) that drive the risk-taking behaviour it is meant to oversee.",
-          note: "A strong answer explains WHY independence specifically matters here (avoiding conflicted incentives), not just asserts that risk management is 'important'.",
+          note: "A strong answer explains <em>why</em> independence specifically matters here (avoiding conflicted incentives), not just asserts that risk management is 'important'.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why cyber-security has become a genuinely growing operational risk concern for investment management firms specifically.",
+            "Comment on why cyber-security has become a growing operational risk concern for investment management firms specifically.",
           answer:
-            "Investment managers hold and process genuinely sensitive client data and control significant client assets, making them an attractive target for cyber-attacks that could result in financial loss, data breaches, or disruption to critical trading and settlement systems, a risk that has grown as reliance on digital systems has increased.",
+            "Investment managers hold and process sensitive client data and control significant client assets, making them an attractive target for cyber-attacks that could result in financial loss, data breaches, or disruption to critical trading and settlement systems, a risk that has grown as reliance on digital systems has increased.",
           note: "This connects directly to the contemporary, evolving operational risk theme developed in this course.",
         },
       ],
@@ -6748,10 +6748,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "A DB pension scheme's investment manager has significantly outperformed its benchmark, but attribution analysis reveals this came primarily from unauthorised asset allocation deviations beyond the agreed mandate. Discuss why this represents a genuinely complex issue for the scheme's governing body.",
+            "A DB pension scheme's investment manager has significantly outperformed its benchmark, but attribution analysis reveals this came primarily from unauthorised asset allocation deviations beyond the agreed mandate. Discuss why this represents a complex issue for the scheme's governing body.",
           answer:
-            "This situation genuinely involves competing considerations across multiple topic areas at once &mdash; the manager has delivered a strong financial outcome, but the attribution finding reveals a mandate compliance failure, raising genuine governance and conduct questions about whether the manager can be trusted to operate within agreed limits going forward, even though the specific outcome this time happened to be favourable. A purely outcome-focused view would celebrate the result, while a purely compliance-focused view would treat it as a serious breach; the governing body must genuinely weigh both.",
-          note: "A strong answer explicitly draws on both performance attribution AND mandate governance material together, not treating the favourable outcome as unambiguously good news or the breach as automatically disqualifying regardless of outcome.",
+            "This situation involves competing considerations across multiple topic areas at once &mdash; the manager has delivered a strong financial outcome, but the attribution finding reveals a mandate compliance failure, raising genuine governance and conduct questions about whether the manager can be trusted to operate within agreed limits going forward, even though the specific outcome this time happened to be favourable. A purely outcome-focused view would celebrate the result, while a purely compliance-focused view would treat it as a serious breach; the governing body must weigh both.",
+          note: "A strong answer explicitly draws on both performance attribution <em>and</em> mandate governance material together, not treating the favourable outcome as unambiguously good news or the breach as automatically disqualifying regardless of outcome.",
         },
         {
           label: "(ii)",
@@ -6760,8 +6760,8 @@ const QUESTIONS = {
           question:
             "Recommend a course of action for the governing body in response to this finding, with justification.",
           answer:
-            "The governing body should require the manager to explain the unauthorised deviations and provide reassurance (e.g. enhanced reporting or tighter risk limits monitoring) that future decisions will remain within the agreed mandate, rather than either ignoring the breach because the outcome was favourable, or immediately terminating the mandate without investigating whether this was a genuine one-off lapse or a pattern of behaviour. A formal review period with more frequent attribution and compliance monitoring would allow the governing body to assess whether trust in the manager's mandate adherence can genuinely be restored.",
-          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the tension between the favourable outcome and the compliance failure, rather than dismissing either consideration.",
+            "The governing body should require the manager to explain the unauthorised deviations and provide reassurance (e.g. enhanced reporting or tighter risk limits monitoring) that future decisions will remain within the agreed mandate, rather than either ignoring the breach because the outcome was favourable, or immediately terminating the mandate without investigating whether this was a genuine one-off lapse or a pattern of behaviour. A formal review period with more frequent attribution and compliance monitoring would allow the governing body to assess whether trust in the manager's mandate adherence can be restored.",
+          note: "Credit should be given for any well-justified, reasoned recommendation that explicitly addresses the tension between the favourable outcome and the compliance failure, rather than dismissing either consideration.",
         },
         {
           label: "(iii)",
@@ -6770,7 +6770,7 @@ const QUESTIONS = {
           question:
             "Explain why the governing body should specify how the manager's future mandate adherence will be monitored, rather than treating this decision as final once made.",
           answer:
-            "Whether the manager genuinely changes its behaviour is rarely fully knowable at the point of the decision, so specifying how future adherence will be tracked (e.g. through enhanced attribution reporting) shows the decision is genuinely designed to be verified and adjusted over time, rather than a one-off, unchecked judgement.",
+            "Whether the manager changes its behaviour is rarely fully knowable at the point of the decision, so specifying how future adherence will be tracked (e.g. through enhanced attribution reporting) shows the decision is designed to be verified and adjusted over time, rather than a one-off, unchecked judgement.",
           note: "This connects directly to the ongoing-monitoring-of-decisions theme developed across every SA subject.",
         },
         {
@@ -6780,7 +6780,7 @@ const QUESTIONS = {
           question:
             "Comment on why solving this issue required drawing on multiple SA7 topic areas simultaneously, rather than a single technique in isolation.",
           answer:
-            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on performance attribution, mandate and governance material, and conduct/regulatory considerations together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once.",
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue required drawing on performance attribution, mandate and governance material, and conduct/regulatory considerations together, reflecting how complex issues in practice typically require integrated judgement across several technical areas at once.",
           note: "This connects directly to the integrated, capstone nature of complex problem-solving as tested throughout the later parts of the SA7 syllabus.",
         },
       ],
@@ -6798,9 +6798,9 @@ const QUESTIONS = {
           command: "Define",
           marks: 3,
           question:
-            "Define 'deferred period' in the context of income protection insurance, and state which two other named health and care products in the SP1 syllabus most closely resemble income protection in requiring genuinely long-term incidence assumptions.",
+            "Define 'deferred period' in the context of income protection insurance, and state which two other named health and care products in the SP1 syllabus most closely resemble income protection in requiring long-term incidence assumptions.",
           answer:
-            "The deferred period is the waiting period between the start of incapacity and when IP benefit payments begin, during which no benefit is paid. Critical illness insurance and long term care insurance most closely resemble income protection in requiring genuinely long-term incidence assumptions.",
+            "The deferred period is the waiting period between the start of incapacity and when IP benefit payments begin, during which no benefit is paid. Critical illness insurance and long term care insurance most closely resemble income protection in requiring long-term incidence assumptions.",
           note: "A complete answer states the definition precisely and correctly names both comparable long-term products.",
         },
         {
@@ -6810,7 +6810,7 @@ const QUESTIONS = {
           question:
             "Explain why the genuine scope and generosity of State healthcare provision directly shapes what a private health and care insurer's products need to achieve in a given market.",
           answer:
-            "Where the State provides comprehensive baseline provision, private products typically need to be marketed as supplementary (speed, choice, comfort), while in markets with minimal State provision, private products must be positioned as primary, comprehensive cover — the same private product concept can have a genuinely different real-world role depending on the State backdrop.",
+            "Where the State provides comprehensive baseline provision, private products typically need to be marketed as supplementary (speed, choice, comfort), while in markets with minimal State provision, private products must be positioned as primary, comprehensive cover — the same private product concept can have a different real-world role depending on the State backdrop.",
           note: "A strong answer explicitly connects State provision to concrete product positioning, not just states that 'the State matters'.",
         },
         {
@@ -6818,17 +6818,17 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss two operating-environment factors (other than the role of the State) that could genuinely affect whether a new critical illness product succeeds in a given market.",
+            "Discuss two operating-environment factors (other than the role of the State) that could affect whether a new critical illness product succeeds in a given market.",
           answer:
             "Distribution channels: if the market lacks advisers experienced in explaining CI's condition-specific definitions, direct/online distribution may lead to poor customer understanding and higher complaint or non-disclosure rates. Regulatory and taxation regime: if benefits are not tax-favoured or regulation imposes onerous disclosure/underwriting requirements, the product's effective cost and complexity could reduce its genuine attractiveness relative to alternative uses of a customer's money.",
-          note: "Any two genuinely distinct, well-justified operating-environment factors should be accepted, provided they are applied to this specific CI product scenario, not stated generically.",
+          note: "Any two distinct, well-justified operating-environment factors should be accepted, provided they are applied to this specific CI product scenario, not stated generically.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why economic and political influences might be genuinely harder for an insurer to anticipate than regulatory or taxation changes.",
+            "Comment on why economic and political influences might be harder for an insurer to anticipate than regulatory or taxation changes.",
           answer:
             "Regulatory and tax rules are typically published and change through a known, formal process, while economic conditions and political shifts can move less predictably and with less formal advance notice, requiring genuine ongoing vigilance rather than a one-off compliance check.",
           note: "This connects directly to the procedural-predictability distinction developed in this course.",
@@ -6846,19 +6846,19 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "An insurer is designing a new long term care insurance product. Explain why policyholders, distributors, the insurer, and shareholders might genuinely have different interests in how this product is designed.",
+            "An insurer is designing a new long term care insurance product. Explain why policyholders, distributors, the insurer, and shareholders might have different interests in how this product is designed.",
           answer:
-            "Policyholders want genuine value and appropriate cover for their care needs, distributors want a product that is straightforward to sell and adequately remunerated, the insurer wants a product that is profitable and manageable from a risk perspective given LTC's genuinely long-term, compounding risk, and shareholders want an adequate return on the capital this capital-intensive product requires.",
-          note: "A strong answer names all four stakeholder groups and their genuinely distinct interests, not just one or two.",
+            "Policyholders want genuine value and appropriate cover for their care needs, distributors want a product that is straightforward to sell and adequately remunerated, the insurer wants a product that is profitable and manageable from a risk perspective given LTC's long-term, compounding risk, and shareholders want an adequate return on the capital this capital-intensive product requires.",
+          note: "A strong answer names all four stakeholder groups and their distinct interests, not just one or two.",
         },
         {
           label: "(ii)",
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why determining a 'suitable design' for this LTC product genuinely depends on the specific market it will be sold in, rather than following one universally best template.",
+            "Discuss why determining a 'suitable design' for this LTC product depends on the specific market it will be sold in, rather than following one universally best template.",
           answer:
-            "The same underlying product concept could be genuinely well-suited to one market (e.g. a fully-underwritten product in a market with sophisticated advice-based distribution and high care-cost awareness) and poorly suited to another (e.g. that same design in a market needing simpler, more accessible cover with less individual underwriting), so the design decision must be anchored in the specific market's distribution capability, customer sophistication, and State-provision backdrop.",
+            "The same underlying product concept could be well-suited to one market (e.g. a fully-underwritten product in a market with sophisticated advice-based distribution and high care-cost awareness) and poorly suited to another (e.g. that same design in a market needing simpler, more accessible cover with less individual underwriting), so the design decision must be anchored in the specific market's distribution capability, customer sophistication, and State-provision backdrop.",
           note: "A strong answer explicitly connects design suitability to at least two specific market characteristics, not just asserts that context 'matters' in the abstract.",
         },
         {
@@ -6878,7 +6878,7 @@ const QUESTIONS = {
           question:
             "Comment on why this product's premium, benefit, and charge structure should be designed together as an integrated whole, rather than each element decided independently.",
           answer:
-            "The premium a customer is willing to pay, the benefits genuinely delivered, and any charges levied are all interconnected — a benefit-rich design typically requires a correspondingly higher premium or charge structure to remain viable, so these elements must be designed coherently together rather than in isolation.",
+            "The premium a customer is willing to pay, the benefits delivered, and any charges levied are all interconnected — a benefit-rich design typically requires a correspondingly higher premium or charge structure to remain viable, so these elements must be designed coherently together rather than in isolation.",
           note: "This connects directly to the integrated-design-and-pricing theme developed in this course.",
         },
       ],
@@ -6897,16 +6897,16 @@ const QUESTIONS = {
             "List six genuine sources of risk to a health and care insurance company named in the official syllabus, other than claim rates and claim amounts.",
           answer:
             "Any six of: data, investment performance, expenses and inflation, persistency, mix of new business, volume of new business, guarantees and options, competition, actions of management, actions of distributors, counterparties, legal/regulatory/tax developments, reputation, internal audit failures/fraud, physical risks, aggregation and concentration of risk, catastrophes, non-disclosure and anti-selection.",
-          note: "A complete answer names six genuinely distinct sources from the official list, not vague restatements of the same underlying idea.",
+          note: "A complete answer names six distinct sources from the official list, not vague restatements of the same underlying idea.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why 'aggregation and concentration of risk' and 'catastrophes' are genuinely distinct risk sources, despite both relating to correlated, large-scale losses.",
+            "Explain why 'aggregation and concentration of risk' and 'catastrophes' are distinct risk sources, despite both relating to correlated, large-scale losses.",
           answer:
-            "Aggregation/concentration risk concerns the insurer's own portfolio structure (e.g. too much business concentrated in one region or risk type, creating vulnerability even without any single triggering event), while catastrophe risk concerns a specific, discrete event (e.g. a pandemic) capable of triggering correlated claims across that concentrated exposure — the underlying structural vulnerability and the triggering event are genuinely separate concepts.",
+            "Aggregation/concentration risk concerns the insurer's own portfolio structure (e.g. too much business concentrated in one region or risk type, creating vulnerability even without any single triggering event), while catastrophe risk concerns a specific, discrete event (e.g. a pandemic) capable of triggering correlated claims across that concentrated exposure — the underlying structural vulnerability and the triggering event are separate concepts.",
           note: "A strong answer explicitly distinguishes the underlying structural vulnerability from the triggering event, not just describes both as 'big risks'.",
         },
         {
@@ -6914,10 +6914,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why 'non-disclosure and anti-selection' is a genuinely distinct risk source from 'data' quality, and one way each risk might be managed differently.",
+            "Discuss why 'non-disclosure and anti-selection' is a distinct risk source from 'data' quality, and one way each risk might be managed differently.",
           answer:
-            "Data quality risk concerns unintentional errors, gaps or inaccuracies in the insurer's own records, managed through data governance and quality checks. Non-disclosure and anti-selection concern a genuinely different mechanism — applicants deliberately withholding or misrepresenting information because they have a financial incentive to do so, a behavioural risk managed through underwriting rigour and pricing safeguards rather than data governance alone.",
-          note: "A strong answer explains both the conceptual distinction AND names a genuinely different management response for each.",
+            "Data quality risk concerns unintentional errors, gaps or inaccuracies in the insurer's own records, managed through data governance and quality checks. Non-disclosure and anti-selection concern a different mechanism — applicants deliberately withholding or misrepresenting information because they have a financial incentive to do so, a behavioural risk managed through underwriting rigour and pricing safeguards rather than data governance alone.",
+          note: "A strong answer explains both the conceptual distinction <em>and</em> names a different management response for each.",
         },
         {
           label: "(iv)",
@@ -6972,7 +6972,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why underwriting and reinsurance are genuinely complementary, rather than substitute, risk management techniques.",
+            "Comment on why underwriting and reinsurance are complementary, rather than substitute, risk management techniques.",
           answer:
             "Underwriting manages risk at the point of individual policy selection (deciding who to insure and at what price), while reinsurance manages risk after that selection has been made (transferring some of the resulting portfolio risk to a third party) — together they address different stages of the risk management process, not the same underlying problem twice.",
           note: "This connects directly to the complementary-techniques theme developed in this course.",
@@ -6992,15 +6992,15 @@ const QUESTIONS = {
           question:
             "Explain why an insurer with both a PMI book and a long term care book should categorise its liabilities into different types before setting an asset-liability matching strategy.",
           answer:
-            "Different liability types (short-tail PMI claims versus long-tail LTC benefit payments) have genuinely different duration and cashflow certainty characteristics, so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually — categorisation is the essential precursor to sound matching strategy.",
-          note: "A strong answer explicitly explains WHY categorisation is necessary before matching, not just states that liabilities should be categorised.",
+            "Different liability types (short-tail PMI claims versus long-tail LTC benefit payments) have different duration and cashflow certainty characteristics, so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually — categorisation is the essential precursor to sound matching strategy.",
+          note: "A strong answer explicitly explains <em>why</em> categorisation is necessary before matching, not just states that liabilities should be categorised.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the PMI book's matching strategy should genuinely differ from the LTC book's.",
+            "Explain why the PMI book's matching strategy should differ from the LTC book's.",
           answer:
             "PMI's short claim tail and annual repricing mean its liabilities are far less interest-rate sensitive over a long horizon, so its matching strategy can reasonably prioritise liquidity for near-term claims payment, while LTC's long-duration liabilities require genuine long-duration matching (e.g. long-dated bonds) to protect against interest rate risk over a much longer horizon.",
           note: "A strong answer explicitly contrasts the two books' duration characteristics and resulting strategy implications.",
@@ -7012,8 +7012,8 @@ const QUESTIONS = {
           question:
             "Discuss two further ways (beyond reinsurance, underwriting, and asset-liability matching) this insurer could manage the risks it faces across its mixed book.",
           answer:
-            "Claims management: sound claims handling processes (e.g. rigorous validation of claimed conditions against policy definitions) can genuinely reduce the risk of overpayment or fraud. Data checks: robust data quality controls reduce the genuine foundational risk that poor data undermines pricing, reserving, and experience monitoring across the whole book. Product design itself (e.g. Module 4's material) is also a genuine risk management tool, shaping the risk the insurer takes on before it is even written.",
-          note: "Any two genuinely distinct, well-explained further risk management approaches should be accepted from the official syllabus list.",
+            "Claims management: sound claims handling processes (e.g. rigorous validation of claimed conditions against policy definitions) can reduce the risk of overpayment or fraud. Data checks: robust data quality controls reduce the genuine foundational risk that poor data undermines pricing, reserving, and experience monitoring across the whole book. Product design itself (e.g. Module 4's material) is also a genuine risk management tool, shaping the risk the insurer takes on before it is even written.",
+          note: "Any two distinct, well-explained further risk management approaches should be accepted from the official syllabus list.",
         },
         {
           label: "(iv)",
@@ -7022,7 +7022,7 @@ const QUESTIONS = {
           question:
             "Comment on why the genuine principles of investment for this insurer should balance security against return, rather than simply maximising expected return.",
           answer:
-            "Investment strategy should genuinely reflect the nature, term and currency of the insurer's liabilities, balancing security against return and providing sufficient liquidity to meet claims and expenses as they fall due, since maximising expected return alone (ignoring liability matching) could expose the insurer to genuine solvency risk if asset values and liability values move unfavourably out of step.",
+            "Investment strategy should reflect the nature, term and currency of the insurer's liabilities, balancing security against return and providing sufficient liquidity to meet claims and expenses as they fall due, since maximising expected return alone (ignoring liability matching) could expose the insurer to genuine solvency risk if asset values and liability values move unfavourably out of step.",
           note: "This connects directly to CM2's core matching-versus-return-maximisation principle.",
         },
       ],
@@ -7050,7 +7050,7 @@ const QUESTIONS = {
           question:
             "Explain why a multi-state model, rather than a single formula-based equation of value, would be needed to price a longer-term version of this IP product with duration-dependent recovery rates.",
           answer:
-            "A multi-state model represents a policyholder as moving between distinct states (e.g. healthy, claiming, recovered) with defined transition probabilities that can genuinely vary by duration since claim onset, capturing this complexity in a way a simple, closed-form equation of value cannot, since IP claims genuinely involve multiple possible states and transitions, not a single binary trigger.",
+            "A multi-state model represents a policyholder as moving between distinct states (e.g. healthy, claiming, recovered) with defined transition probabilities that can vary by duration since claim onset, capturing this complexity in a way a simple, closed-form equation of value cannot, since IP claims involve multiple possible states and transitions, not a single binary trigger.",
           note: "This connects directly to CS2's multi-state modelling material applied to a genuine IP pricing context.",
         },
         {
@@ -7060,7 +7060,7 @@ const QUESTIONS = {
           question:
             "Discuss why sensitivity analysis should be carried out alongside the pricing calculation in part (i), rather than treating the calculated premium as a single, fixed answer.",
           answer:
-            "Sensitivity analysis reveals how much the calculated premium genuinely changes when key assumptions (e.g. the incidence rate or expense loading) are varied, showing which assumptions the result is most exposed to — without this, a single-point premium could give false confidence, since the premium is only as reliable as the assumptions used to calculate it.",
+            "Sensitivity analysis reveals how much the calculated premium changes when key assumptions (e.g. the incidence rate or expense loading) are varied, showing which assumptions the result is most exposed to — without this, a single-point premium could give false confidence, since the premium is only as reliable as the assumptions used to calculate it.",
           note: "A strong answer explicitly connects sensitivity analysis to the genuine uncertainty in the underlying assumptions, not just asserts it is 'good practice'.",
         },
         {
@@ -7068,7 +7068,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why this same underlying model might need genuinely different assumptions if it were being used to project solvency rather than to price this product.",
+            "Comment on why this same underlying model might need different assumptions if it were being used to project solvency rather than to price this product.",
           answer:
             "Pricing typically uses best-estimate or lightly-margined assumptions to determine a competitive, sustainable premium, while solvency projection typically requires more prudent assumptions reflecting genuine concern for policyholder protection under adverse conditions, so the same model structure can require different assumption inputs depending on its specific purpose.",
           note: "This connects the numeric pricing calculation directly to the assumption-purpose material developed later in this course.",
@@ -7098,17 +7098,17 @@ const QUESTIONS = {
           question:
             "Explain the difference between the purpose of the &pound;15,000,000 best estimate reserve and the &pound;3,091,200 solvency capital requirement calculated in part (i).",
           answer:
-            "The reserve ensures the insurer holds sufficient assets to meet its genuine expected liabilities, while the solvency capital requirement provides an additional buffer protecting against the genuine risk that actual experience diverges adversely from that expectation — the two figures address genuinely different levels of protection.",
-          note: "A strong answer explicitly distinguishes the EXPECTED liability cover from the ADDITIONAL buffer against adverse deviation.",
+            "The reserve ensures the insurer holds sufficient assets to meet its genuine expected liabilities, while the solvency capital requirement provides an additional buffer protecting against the genuine risk that actual experience diverges adversely from that expectation — the two figures address different levels of protection.",
+          note: "A strong answer explicitly distinguishes the <em>expected</em> liability cover from the <em>additional</em> buffer against adverse deviation.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 2,
           question:
-            "Discuss why the strength of this insurer's reserving basis and the level of solvency capital required genuinely interact, rather than being determined in complete isolation from each other.",
+            "Discuss why the strength of this insurer's reserving basis and the level of solvency capital required interact, rather than being determined in complete isolation from each other.",
           answer:
-            "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital genuinely depends on how prudent the reserving basis already is — the two figures interact rather than being determined independently.",
+            "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital depends on how prudent the reserving basis already is — the two figures interact rather than being determined independently.",
           note: "This directly tests the official syllabus's explicit interplay objective.",
         },
         {
@@ -7136,7 +7136,7 @@ const QUESTIONS = {
           question:
             "Distinguish between the genuine purpose of assumptions used for pricing, for determining liabilities, and for determining embedded value, for the same underlying health and care risk.",
           answer:
-            "Pricing assumptions must recover the insurer's cost of capital and target margin to be commercially sustainable, so they typically include an explicit profit requirement. Liability (reserving) assumptions are typically set with genuine prudence to protect policyholders, reflecting what the insurer genuinely expects to pay out plus a margin. Embedded value assumptions should be genuinely realistic, best-estimate expectations of future experience, since embedded value aims to capture the true expected economic value of in-force business, which prudent reserving assumptions would understate.",
+            "Pricing assumptions must recover the insurer's cost of capital and target margin to be commercially sustainable, so they typically include an explicit profit requirement. Liability (reserving) assumptions are typically set with genuine prudence to protect policyholders, reflecting what the insurer expects to pay out plus a margin. Embedded value assumptions should be realistic, best-estimate expectations of future experience, since embedded value aims to capture the true expected economic value of in-force business, which prudent reserving assumptions would understate.",
           note: "A complete answer distinguishes all three purposes clearly (profit-inclusive, prudent, and best-estimate respectively), not just contrasts two of the three.",
         },
         {
@@ -7144,7 +7144,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why setting assumptions for a genuinely new health and care product with limited own claims experience requires particular judgement.",
+            "Explain why setting assumptions for a new health and care product with limited own claims experience requires particular judgement.",
           answer:
             "Without substantial own experience data, assumption-setting must rely more heavily on external data, comparable products, and genuine actuarial judgement, blending limited own information with external sources according to credibility-theory principles rather than relying on a purely statistical, own-experience-based estimate.",
           note: "This connects directly to CS1's credibility theory material applied to a genuine assumption-setting context.",
@@ -7156,7 +7156,7 @@ const QUESTIONS = {
           question:
             "Discuss why an actuary should be able to justify their assumption choices with genuine, documented reasoning, rather than simply asserting a figure.",
           answer:
-            "Since assumption-setting genuinely involves judgement rather than purely mechanical calculation, transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work and helping ensure the assumption is genuinely sound rather than arbitrary.",
+            "Since assumption-setting involves judgement rather than purely mechanical calculation, transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work and helping ensure the assumption is sound rather than arbitrary.",
           note: "A strong answer connects documentation to genuine professional accountability, not just describes it as good administrative practice.",
         },
         {
@@ -7166,7 +7166,7 @@ const QUESTIONS = {
           question:
             "Comment on why reserving assumptions for a health and care insurer may be different from those used in pricing for the same product.",
           answer:
-            "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the same underlying risk can genuinely warrant a more cautious figure for reserving than for pricing.",
+            "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the same underlying risk can warrant a more cautious figure for reserving than for pricing.",
           note: "This connects directly to the reserving-versus-pricing-purpose distinction developed in this module.",
         },
       ],
@@ -7182,9 +7182,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why it is genuinely important for a health and care insurer to monitor its actual claims experience against its pricing and reserving assumptions.",
+            "Explain why it is important for a health and care insurer to monitor its actual claims experience against its pricing and reserving assumptions.",
           answer:
-            "Comparing actual experience against the assumptions used in pricing and reserving reveals whether those assumptions remain genuinely appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
+            "Comparing actual experience against the assumptions used in pricing and reserving reveals whether those assumptions remain appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
           note: "This directly recalls the assumption-verification purpose of experience monitoring.",
         },
         {
@@ -7194,8 +7194,8 @@ const QUESTIONS = {
           question:
             "Explain why this insurer's experience monitoring should track incidence rates separately for each covered CI condition, rather than a single combined incidence rate.",
           answer:
-            "Different conditions can experience genuinely different trends (e.g. medical advances improving cancer survival while other conditions remain stable), so a single combined rate could mask offsetting movements that each individually warrant distinct assumption review.",
-          note: "A strong answer explains WHY aggregation can mislead, not just asserts that granular monitoring is 'better'.",
+            "Different conditions can experience different trends (e.g. medical advances improving cancer survival while other conditions remain stable), so a single combined rate could mask offsetting movements that each individually warrant distinct assumption review.",
+          note: "A strong answer explains <em>why</em> aggregation can mislead, not just asserts that granular monitoring is 'better'.",
         },
         {
           label: "(iii)",
@@ -7204,7 +7204,7 @@ const QUESTIONS = {
           question:
             "Discuss why this insurer should investigate whether an observed adverse incidence variance reflects genuine random fluctuation or a persistent trend, before deciding whether to revise its pricing assumption.",
           answer:
-            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching genuinely important shifts — revising the assumption based on noise alone could introduce unnecessary pricing change, while ignoring a genuine trend could leave the insurer mispriced going forward. This requires genuine statistical judgement about the significance of the observed variance relative to what random fluctuation alone would typically produce.",
+            "A single period's adverse experience could be genuine random noise around an unchanged underlying rate, so distinguishing genuine trend change from random fluctuation avoids over-reacting to noise while still catching important shifts — revising the assumption based on noise alone could introduce unnecessary pricing change, while ignoring a genuine trend could leave the insurer mispriced going forward. This requires genuine statistical judgement about the significance of the observed variance relative to what random fluctuation alone would typically produce.",
           note: "A strong answer explicitly frames this as a statistical-significance judgement, connecting to CS1's hypothesis-testing material.",
         },
         {
@@ -7214,7 +7214,7 @@ const QUESTIONS = {
           question:
             "Comment on why poor data quality could undermine this whole experience monitoring exercise.",
           answer:
-            "Since experience monitoring's conclusions depend entirely on the underlying exposure and claims data, poor data quality can produce genuinely misleading conclusions about whether assumptions need revision, regardless of how sound the statistical analysis technique applied to that data actually is.",
+            "Since experience monitoring's conclusions depend entirely on the underlying exposure and claims data, poor data quality can produce misleading conclusions about whether assumptions need revision, regardless of how sound the statistical analysis technique applied to that data actually is.",
           note: "This connects directly to data as the foundational risk source identified elsewhere in this course.",
         },
       ],
@@ -7242,7 +7242,7 @@ const QUESTIONS = {
           question:
             "Explain why the &pound;500,000 expected surplus in part (i) typically represents the largest, most predictable component of a surplus analysis.",
           answer:
-            "Prudent pricing and reserving assumptions build in margins that are expected to emerge as surplus over time purely through the passage of time and survival of the assumptions, forming a genuinely predictable baseline against which actual variances can be meaningfully compared.",
+            "Prudent pricing and reserving assumptions build in margins that are expected to emerge as surplus over time purely through the passage of time and survival of the assumptions, forming a predictable baseline against which actual variances can be meaningfully compared.",
           note: "A strong answer connects the expected component to prudent margins built into the original assumptions.",
         },
         {
@@ -7250,7 +7250,7 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why the &pound;80,000 assumption change and the &pound;40,000 experience variance calculated in part (i) should be reported as genuinely distinct components, rather than a single combined 'unexpected' figure.",
+            "Discuss why the &pound;80,000 assumption change and the &pound;40,000 experience variance calculated in part (i) should be reported as distinct components, rather than a single combined 'unexpected' figure.",
           answer:
             "An experience variance reflects a single period's actual outcome differing from assumption (which may or may not persist), while an assumption change reflects a genuine, deliberate revision to future expectations — conflating them would obscure whether the total unexpected movement is a one-off (experience variance) or a persistent, forward-looking change (assumption change), reducing the analysis's diagnostic value for management.",
           note: "A strong answer explicitly explains why conflating these two components would reduce the analysis's usefulness, not just states they should be kept separate.",
@@ -7260,9 +7260,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on how the results of this surplus analysis could genuinely be used by the insurer's management.",
+            "Comment on how the results of this surplus analysis could be used by the insurer's management.",
           answer:
-            "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business genuinely requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
+            "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
           note: "This connects the numeric decomposition directly to its genuine, practical management value.",
         },
       ],
@@ -7292,18 +7292,18 @@ const QUESTIONS = {
           question:
             "Explain why understanding a life insurance product requires seeing it from both the consumer's needs and the insurer's risks simultaneously, rather than describing the product purely from the customer's perspective.",
           answer:
-            "A genuinely complete understanding of any product requires seeing it from both sides at once — what genuine need it meets for the customer, and what genuine risk exposure it creates for the insurer — since these two perspectives directly shape appropriate design, pricing and risk management decisions.",
-          note: "A strong answer explicitly frames this as a DUAL perspective requirement, not just describes the product's customer-facing features.",
+            "A complete understanding of any product requires seeing it from both sides at once — what genuine need it meets for the customer, and what genuine risk exposure it creates for the insurer — since these two perspectives directly shape appropriate design, pricing and risk management decisions.",
+          note: "A strong answer explicitly frames this as a <em>dual</em> perspective requirement, not just describes the product's customer-facing features.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss two operating-environment factors (from the official syllabus's list) that could genuinely affect the success of a new with-profits savings product launched in an unfamiliar market.",
+            "Discuss two operating-environment factors (from the official syllabus's list) that could affect the success of a new with-profits savings product launched in an unfamiliar market.",
           answer:
-            "Local culture: if the target market has limited cultural familiarity with pooled, discretionary-bonus savings products, take-up could be genuinely lower than in a market with an established with-profits tradition, regardless of the product's technical merits. Remuneration of sales channels: if the local distribution market's commission structures do not adequately reward the genuine effort involved in explaining a with-profits product's smoothing mechanism, distributors may be incentivised to favour simpler, easier-to-sell alternatives instead.",
-          note: "Any two genuinely distinct, well-justified operating-environment factors should be accepted, provided they are applied to this specific with-profits scenario.",
+            "Local culture: if the target market has limited cultural familiarity with pooled, discretionary-bonus savings products, take-up could be lower than in a market with an established with-profits tradition, regardless of the product's technical merits. Remuneration of sales channels: if the local distribution market's commission structures do not adequately reward the genuine effort involved in explaining a with-profits product's smoothing mechanism, distributors may be incentivised to favour simpler, easier-to-sell alternatives instead.",
+          note: "Any two distinct, well-justified operating-environment factors should be accepted, provided they are applied to this specific with-profits scenario.",
         },
         {
           label: "(iv)",
@@ -7312,7 +7312,7 @@ const QUESTIONS = {
           question:
             "Comment on why professional guidance is listed as a distinct environmental influence from the regulatory environment.",
           answer:
-            "Professional guidance sets expected standards of actuarial practice that complement, but are genuinely distinct from, statutory regulation — an actuary must comply with both the legal regulatory framework and the profession's own guidance, which can sometimes set a higher or more specific bar than regulation alone requires.",
+            "Professional guidance sets expected standards of actuarial practice that complement, but are distinct from, statutory regulation — an actuary must comply with both the legal regulatory framework and the profession's own guidance, which can sometimes set a higher or more specific bar than regulation alone requires.",
           note: "This connects directly to the professional-standards-as-distinct-layer theme developed in this course.",
         },
       ],
@@ -7340,7 +7340,7 @@ const QUESTIONS = {
           question:
             "Explain why the asset share calculated in part (i) does not automatically determine the exact bonus this policyholder receives.",
           answer:
-            "Bonus-setting must genuinely balance paying a fair reflection of the policy's own asset share against smoothing volatility across different years and maintaining fund solvency for remaining policyholders, so the insurer exercises genuine discretion rather than mechanically paying out the calculated asset share figure precisely.",
+            "Bonus-setting must balance paying a fair reflection of the policy's own asset share against smoothing volatility across different years and maintaining fund solvency for remaining policyholders, so the insurer exercises genuine discretion rather than mechanically paying out the calculated asset share figure precisely.",
           note: "A strong answer explicitly names the genuine discretion involved, not just restates that asset shares are 'used' for bonus-setting.",
         },
         {
@@ -7350,7 +7350,7 @@ const QUESTIONS = {
           question:
             "Discuss why bonus-setting for this with-profits fund raises a genuine inter-generational fairness issue.",
           answer:
-            "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. overly generous bonuses now could disadvantage future policyholders' claims), requiring the insurer to genuinely balance fairness across the whole fund over time.",
+            "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. overly generous bonuses now could disadvantage future policyholders' claims), requiring the insurer to balance fairness across the whole fund over time.",
           note: "This connects directly to the inter-generational fairness theme developed in this course.",
         },
         {
@@ -7360,7 +7360,7 @@ const QUESTIONS = {
           question:
             "Comment on why this product's premium, benefit, and charge structure should be designed together as an integrated whole, rather than each element decided independently.",
           answer:
-            "The premium a customer is willing to pay, the benefit genuinely delivered, and any charges levied are all interconnected — a benefit-rich design typically requires a correspondingly higher premium or charge structure to remain commercially viable, so these elements cannot be soundly decided in isolation from each other.",
+            "The premium a customer is willing to pay, the benefit delivered, and any charges levied are all interconnected — a benefit-rich design typically requires a correspondingly higher premium or charge structure to remain commercially viable, so these elements cannot be soundly decided in isolation from each other.",
           note: "This connects directly to the integrated-design theme developed in this course.",
         },
       ],
@@ -7378,17 +7378,17 @@ const QUESTIONS = {
           question:
             "Explain why unit pricing for an internal unit-linked fund must be applied consistently and fairly across policyholders, and why a bid-offer spread might be used.",
           answer:
-            "Unit pricing must ensure that policyholders buying or selling units at any given time receive a genuinely fair price reflecting the fund's true current value, protecting both entering and existing policyholders from unfair dilution or advantage. A bid-offer spread reflects genuine dealing costs incurred when the fund manager buys or sells underlying assets to accommodate transacting policyholders, ensuring those causing the dealing activity bear its genuine cost rather than spreading it unfairly across all fund policyholders.",
-          note: "A strong answer addresses both the fairness principle AND the specific bid-offer spread mechanism.",
+            "Unit pricing must ensure that policyholders buying or selling units at any given time receive a fair price reflecting the fund's true current value, protecting both entering and existing policyholders from unfair dilution or advantage. A bid-offer spread reflects genuine dealing costs incurred when the fund manager buys or sells underlying assets to accommodate transacting policyholders, ensuring those causing the dealing activity bear its genuine cost rather than spreading it unfairly across all fund policyholders.",
+          note: "A strong answer addresses both the fairness principle <em>and</em> the specific bid-offer spread mechanism.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why discontinuance terms for a without-profits contract must genuinely reflect the insurer's changed financial position on early exit, rather than simply returning premiums paid.",
+            "Explain why discontinuance terms for a without-profits contract must reflect the insurer's changed financial position on early exit, rather than simply returning premiums paid.",
           answer:
-            "Discontinuing early genuinely changes the insurer's expected future cashflows and expense recovery (since expenses are typically front-loaded relative to premium income), so discontinuance terms must be set using genuine, defensible principles that fairly reflect this change, not simply return premiums paid regardless of the insurer's actual altered position.",
+            "Discontinuing early changes the insurer's expected future cashflows and expense recovery (since expenses are typically front-loaded relative to premium income), so discontinuance terms must be set using genuine, defensible principles that fairly reflect this change, not simply return premiums paid regardless of the insurer's actual altered position.",
           note: "This connects directly to CB1's expense-recovery material applied to a genuine discontinuance context.",
         },
         {
@@ -7398,8 +7398,8 @@ const QUESTIONS = {
           question:
             "Discuss why discontinuance terms should be set with genuine care to avoid creating an incentive for anti-selective early discontinuance.",
           answer:
-            "If surrender terms are genuinely more generous than the policy's true remaining value, healthier or lower-risk policyholders might be incentivised to surrender and re-purchase more advantageous new cover elsewhere, leaving the insurer with a genuinely worse-than-average remaining book. This requires the insurer to set surrender values genuinely reflecting the policy's true remaining economic value (e.g. via reserves or equating policy values) rather than an overly generous formula that could be exploited by policyholders whose own circumstances have genuinely changed.",
-          note: "A strong answer explains the genuine anti-selection MECHANISM, not just asserts that terms should be 'fair'.",
+            "If surrender terms are more generous than the policy's true remaining value, healthier or lower-risk policyholders might be incentivised to surrender and re-purchase more advantageous new cover elsewhere, leaving the insurer with a worse-than-average remaining book. This requires the insurer to set surrender values reflecting the policy's true remaining economic value (e.g. via reserves or equating policy values) rather than an overly generous formula that could be exploited by policyholders whose own circumstances have changed.",
+          note: "A strong answer explains the genuine anti-selection <em>mechanism</em>, not just asserts that terms should be 'fair'.",
         },
         {
           label: "(iv)",
@@ -7408,7 +7408,7 @@ const QUESTIONS = {
           question:
             "Comment on why the syllabus requires discussing the extent to which discontinuance calculation methods meet their underlying principles, rather than simply describing the methods.",
           answer:
-            "This tests a genuinely higher-order skill — critically evaluating whether a specific calculation method actually achieves the underlying fairness and defensibility principles it is meant to serve, not merely being able to perform the calculation mechanically without judging its adequacy.",
+            "This tests a higher-order skill — critically evaluating whether a specific calculation method actually achieves the underlying fairness and defensibility principles it is meant to serve, not merely being able to perform the calculation mechanically without judging its adequacy.",
           note: "This connects directly to SP2's higher-order skill requirement.",
         },
       ],
@@ -7427,14 +7427,14 @@ const QUESTIONS = {
             "List six genuine sources of risk to a life insurance company named in the official syllabus, other than mortality rates and investment performance.",
           answer:
             "Any six of: policy and other data, expenses (including the effect of inflation), persistency, mix of new business, volume of new business, guarantees and options, competition, actions of the board of directors, actions of distributors, failure of appropriate management systems and controls, counterparties, legal/regulatory/tax developments, fraud, aggregation and concentration of risk, climate risks.",
-          note: "A complete answer names six genuinely distinct sources from the official list.",
+          note: "A complete answer names six distinct sources from the official list.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why mortality rate risk points in genuinely opposite directions for a life insurer's protection business and its annuity business.",
+            "Explain why mortality rate risk points in opposite directions for a life insurer's protection business and its annuity business.",
           answer:
             "Mortality improving faster than assumed reduces protection-business cost (fewer deaths than priced for) but increases annuity-business cost (annuitants living longer than priced for), meaning the same underlying mortality trend risk can be a genuine tailwind for one product line and a headwind for the other within the same insurer.",
           note: "A strong answer explicitly explains the inverted relationship, not just names both product lines.",
@@ -7444,9 +7444,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why climate risks have become an explicitly named risk source for life insurers, and how they might affect the insurer through two genuinely different channels.",
+            "Discuss why climate risks have become an explicitly named risk source for life insurers, and how they might affect the insurer through two different channels.",
           answer:
-            "Climate risk reflects the actuarial profession's genuinely evolving understanding of emerging risk categories. It can affect a life insurer through physical risk (e.g. climate change affecting mortality via extreme weather or heat-related illness, directly affecting the liability side) and transition risk (e.g. affecting the value of the insurer's own investment portfolio as economies shift away from carbon-intensive activities, affecting the asset side), two genuinely distinct channels through which the same underlying climate trend can reach the insurer's balance sheet.",
+            "Climate risk reflects the actuarial profession's evolving understanding of emerging risk categories. It can affect a life insurer through physical risk (e.g. climate change affecting mortality via extreme weather or heat-related illness, directly affecting the liability side) and transition risk (e.g. affecting the value of the insurer's own investment portfolio as economies shift away from carbon-intensive activities, affecting the asset side), two distinct channels through which the same underlying climate trend can reach the insurer's balance sheet.",
           note: "A strong answer identifies both channels (physical and transition risk) explicitly, not just asserts that climate change 'matters'.",
         },
         {
@@ -7454,9 +7454,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why 'failure of appropriate management systems and controls' is a genuinely distinct risk source from 'actions of the board of directors'.",
+            "Comment on why 'failure of appropriate management systems and controls' is a distinct risk source from 'actions of the board of directors'.",
           answer:
-            "Board actions concern genuine strategic or governance decisions, while failure of management systems and controls concerns a genuinely different, more operational risk — the insurer's internal processes failing to detect or prevent problems, even where board-level strategic decisions were themselves entirely sound.",
+            "Board actions concern genuine strategic or governance decisions, while failure of management systems and controls concerns a different, more operational risk — the insurer's internal processes failing to detect or prevent problems, even where board-level strategic decisions were themselves entirely sound.",
           note: "This connects directly to the strategic-versus-operational risk distinction developed in this course.",
         },
       ],
@@ -7484,7 +7484,7 @@ const QUESTIONS = {
           question:
             "Explain why this insurer, having limited own experience with this new product, might particularly value reinsurance beyond its risk-transfer purpose.",
           answer:
-            "Reinsurers often hold significant mortality pricing expertise and data pooled across many insurers' experience, making them a genuinely valuable partner for pricing this new or unusual mortality risk, not merely a pure risk-transfer counterparty, given the insurer's own limited experience with this specific product.",
+            "Reinsurers often hold significant mortality pricing expertise and data pooled across many insurers' experience, making them a valuable partner for pricing this new or unusual mortality risk, not merely a pure risk-transfer counterparty, given the insurer's own limited experience with this specific product.",
           note: "This connects directly to the reinsurer-as-expertise-source theme developed in this course.",
         },
         {
@@ -7522,17 +7522,17 @@ const QUESTIONS = {
           question:
             "Explain why an insurer with both annuity business and unit-linked business should categorise its liabilities into different types before setting an asset-liability matching strategy.",
           answer:
-            "Different liability types have genuinely different duration, cashflow certainty, and risk-bearing characteristics — annuity liabilities are long-duration and insurer-borne, while unit-linked liabilities pass investment risk directly to the policyholder — so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually.",
-          note: "A strong answer explicitly explains WHY categorisation is necessary before matching, not just states that liabilities should be categorised.",
+            "Different liability types have different duration, cashflow certainty, and risk-bearing characteristics — annuity liabilities are long-duration and insurer-borne, while unit-linked liabilities pass investment risk directly to the policyholder — so a single, undifferentiated matching strategy applied to all liabilities together would fail to appropriately match any of them individually.",
+          note: "A strong answer explicitly explains <em>why</em> categorisation is necessary before matching, not just states that liabilities should be categorised.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the unit-linked book requires a genuinely different ALM approach from the annuity book.",
+            "Explain why the unit-linked book requires a different ALM approach from the annuity book.",
           answer:
-            "Since unit-linked investment risk and return pass directly to the policyholder, the insurer's own ALM concern is largely limited to managing charges, expenses, and any embedded guarantees, rather than managing a large pool of insurer-owned assets against insurer-owned liabilities, unlike the annuity book where the insurer itself genuinely bears the long-duration interest rate risk.",
+            "Since unit-linked investment risk and return pass directly to the policyholder, the insurer's own ALM concern is largely limited to managing charges, expenses, and any embedded guarantees, rather than managing a large pool of insurer-owned assets against insurer-owned liabilities, unlike the annuity book where the insurer itself bears the long-duration interest rate risk.",
           note: "A strong answer explicitly contrasts the two books' risk-bearing structures.",
         },
         {
@@ -7542,8 +7542,8 @@ const QUESTIONS = {
           question:
             "Discuss two further ways (beyond reinsurance, underwriting, and asset-liability matching) this insurer could manage the risks it faces.",
           answer:
-            "Choice of with-profits bonus method: for any with-profits business, the bonus-setting approach itself is a genuine risk management lever affecting both member fairness and fund solvency. Policy retention activity: proactive retention activity directly manages persistency risk, since higher-than-assumed lapses can genuinely damage profitability given typically front-loaded expenses relative to premium income.",
-          note: "Any two genuinely distinct, well-explained further risk management approaches should be accepted from the official syllabus list.",
+            "Choice of with-profits bonus method: for any with-profits business, the bonus-setting approach itself is a genuine risk management lever affecting both member fairness and fund solvency. Policy retention activity: proactive retention activity directly manages persistency risk, since higher-than-assumed lapses can damage profitability given typically front-loaded expenses relative to premium income.",
+          note: "Any two distinct, well-explained further risk management approaches should be accepted from the official syllabus list.",
         },
         {
           label: "(iv)",
@@ -7552,7 +7552,7 @@ const QUESTIONS = {
           question:
             "Comment on why the genuine principles of investment for this insurer should balance security against return, rather than simply maximising expected return.",
           answer:
-            "Investment strategy should genuinely reflect the nature, term and currency of the insurer's liabilities, balancing security against return and providing sufficient liquidity to meet claims and expenses as they fall due, since maximising expected return alone could expose the insurer to genuine solvency risk if asset and liability values move unfavourably out of step.",
+            "Investment strategy should reflect the nature, term and currency of the insurer's liabilities, balancing security against return and providing sufficient liquidity to meet claims and expenses as they fall due, since maximising expected return alone could expose the insurer to genuine solvency risk if asset and liability values move unfavourably out of step.",
           note: "This connects directly to CM2's core matching principle.",
         },
       ],
@@ -7580,7 +7580,7 @@ const QUESTIONS = {
           question:
             "Explain why this insurer might use stochastic simulation, rather than the deterministic calculation in part (i), if this product included a guaranteed minimum investment-linked benefit.",
           answer:
-            "An investment guarantee only genuinely bites under certain, adverse future market outcomes, so its true cost depends on the full probability-weighted range of possible future market paths, which stochastic simulation and option-pricing techniques are specifically designed to capture, unlike the single deterministic calculation used for the fixed-benefit product in part (i).",
+            "An investment guarantee only bites under certain, adverse future market outcomes, so its true cost depends on the full probability-weighted range of possible future market paths, which stochastic simulation and option-pricing techniques are specifically designed to capture, unlike the single deterministic calculation used for the fixed-benefit product in part (i).",
           note: "This connects directly to CM2's option-pricing material applied to a genuine guarantee-costing context.",
         },
         {
@@ -7590,7 +7590,7 @@ const QUESTIONS = {
           question:
             "Discuss why sensitivity analysis should be carried out alongside the pricing calculation in part (i).",
           answer:
-            "Sensitivity analysis reveals how much the calculated premium genuinely changes when key assumptions (e.g. the mortality rate or expense loading) are varied, showing which assumptions the result is most exposed to — without this, a single-point premium could give false confidence, since the premium is only as reliable as the assumptions used to calculate it.",
+            "Sensitivity analysis reveals how much the calculated premium changes when key assumptions (e.g. the mortality rate or expense loading) are varied, showing which assumptions the result is most exposed to — without this, a single-point premium could give false confidence, since the premium is only as reliable as the assumptions used to calculate it.",
           note: "A strong answer explicitly connects sensitivity analysis to the genuine uncertainty in underlying assumptions.",
         },
         {
@@ -7598,9 +7598,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why this same underlying model might need genuinely different assumptions if used to calculate embedded value rather than to price this product.",
+            "Comment on why this same underlying model might need different assumptions if used to calculate embedded value rather than to price this product.",
           answer:
-            "Pricing typically uses best-estimate or lightly-margined assumptions (including a profit requirement) to determine a competitive, sustainable premium, while embedded value calculation requires genuinely realistic, best-estimate assumptions reflecting the true expected value of in-force business, so the same model structure can require different assumption inputs depending on its specific purpose.",
+            "Pricing typically uses best-estimate or lightly-margined assumptions (including a profit requirement) to determine a competitive, sustainable premium, while embedded value calculation requires realistic, best-estimate assumptions reflecting the true expected value of in-force business, so the same model structure can require different assumption inputs depending on its specific purpose.",
           note: "This connects the numeric pricing calculation directly to the assumption-purpose material developed in this course.",
         },
       ],
@@ -7626,19 +7626,19 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain what a 'non-unit reserve' is, and why this concept is genuinely specific to unit-linked business.",
+            "Explain what a 'non-unit reserve' is, and why this concept is specific to unit-linked business.",
           answer:
             "A non-unit reserve is an additional reserve held for a unit-linked contract's non-unit-linked elements (e.g. mortality risk cover, or the risk that future charges won't cover future expenses), needed because the unit-linked fund value itself only covers the investment-linked element of the contract, not these additional non-investment risk elements.",
-          note: "A strong answer explicitly explains WHY the unit fund alone is insufficient, not just names the term.",
+          note: "A strong answer explicitly explains <em>why</em> the unit fund alone is insufficient, not just names the term.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 2,
           question:
-            "Discuss why the strength of this insurer's reserving basis and the level of solvency capital required genuinely interact, rather than being determined in complete isolation from each other.",
+            "Discuss why the strength of this insurer's reserving basis and the level of solvency capital required interact, rather than being determined in complete isolation from each other.",
           answer:
-            "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital genuinely depends on how prudent the reserving basis already is.",
+            "A more prudently-set reserve already provides some of the genuine protection against adverse deviation that solvency capital is otherwise meant to provide, so the appropriate level of solvency capital depends on how prudent the reserving basis already is.",
           note: "This directly tests the official syllabus's explicit interplay objective.",
         },
         {
@@ -7666,7 +7666,7 @@ const QUESTIONS = {
           question:
             "Distinguish between the genuine purpose of assumptions used for pricing, for determining liabilities, and for determining embedded value, for the same underlying life insurance mortality risk.",
           answer:
-            "Pricing assumptions must recover the insurer's cost of capital and target margin to be commercially sustainable, so they typically include an explicit profit requirement. Liability (reserving) assumptions are typically set with genuine prudence to protect policyholders, reflecting what the insurer genuinely expects to pay out plus a margin. Embedded value assumptions should be genuinely realistic, best-estimate expectations of future experience, since embedded value aims to capture the true expected economic value of in-force business, which prudent reserving assumptions would understate.",
+            "Pricing assumptions must recover the insurer's cost of capital and target margin to be commercially sustainable, so they typically include an explicit profit requirement. Liability (reserving) assumptions are typically set with genuine prudence to protect policyholders, reflecting what the insurer expects to pay out plus a margin. Embedded value assumptions should be realistic, best-estimate expectations of future experience, since embedded value aims to capture the true expected economic value of in-force business, which prudent reserving assumptions would understate.",
           note: "A complete answer distinguishes all three purposes clearly.",
         },
         {
@@ -7674,9 +7674,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why mortality assumption-setting for a life insurer's annuity book requires genuinely opposite caution to its protection book.",
+            "Explain why mortality assumption-setting for a life insurer's annuity book requires opposite caution to its protection book.",
           answer:
-            "Since annuity cost increases the longer annuitants survive, understating future mortality improvement would understate annuity cost, exactly the opposite pricing risk to a protection product where understating improvement would overstate cost — the direction of assumption-setting caution genuinely inverts between the two product lines.",
+            "Since annuity cost increases the longer annuitants survive, understating future mortality improvement would understate annuity cost, exactly the opposite pricing risk to a protection product where understating improvement would overstate cost — the direction of assumption-setting caution inverts between the two product lines.",
           note: "This connects directly to the inverted-mortality-improvement theme developed in this course.",
         },
         {
@@ -7686,7 +7686,7 @@ const QUESTIONS = {
           question:
             "Discuss why an actuary should be able to justify their assumption choices with genuine, documented reasoning, rather than simply asserting a figure.",
           answer:
-            "Since assumption-setting genuinely involves judgement rather than purely mechanical calculation, transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work and helping ensure the assumption is genuinely sound rather than arbitrary.",
+            "Since assumption-setting involves judgement rather than purely mechanical calculation, transparent, well-documented reasoning allows the assumption to be reviewed, challenged, and understood by others (e.g. peer reviewers, auditors, regulators), supporting the professional accountability expected of actuarial work and helping ensure the assumption is sound rather than arbitrary.",
           note: "A strong answer connects documentation to genuine professional accountability.",
         },
         {
@@ -7694,9 +7694,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why supervisory reserve assumptions may genuinely differ from pricing assumptions for the same product.",
+            "Comment on why supervisory reserve assumptions may differ from pricing assumptions for the same product.",
           answer:
-            "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the same underlying risk can genuinely warrant a more cautious figure for reserving than for pricing.",
+            "Supervisory reserves are typically set with genuine prudence to protect policyholders under a regulator's oversight, while pricing assumptions are typically best-estimate (or lightly margined) to remain competitive, so the same underlying risk can warrant a more cautious figure for reserving than for pricing.",
           note: "This connects directly to the reserving-versus-pricing-purpose distinction developed in this module.",
         },
       ],
@@ -7724,7 +7724,7 @@ const QUESTIONS = {
           question:
             "Explain why the &pound;800,000 expected surplus typically represents the largest, most predictable component of a surplus analysis.",
           answer:
-            "Prudent pricing and reserving assumptions build in margins that are expected to emerge as surplus over time purely through the passage of time and survival of the assumptions, forming a genuinely predictable baseline against which actual variances can be meaningfully compared.",
+            "Prudent pricing and reserving assumptions build in margins that are expected to emerge as surplus over time purely through the passage of time and survival of the assumptions, forming a predictable baseline against which actual variances can be meaningfully compared.",
           note: "A strong answer connects the expected component to prudent margins built into the original assumptions.",
         },
         {
@@ -7732,7 +7732,7 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why the &pound;60,000 assumption change and the &pound;90,000 experience variance should be reported as genuinely distinct components, rather than a single combined 'unexpected' figure.",
+            "Discuss why the &pound;60,000 assumption change and the &pound;90,000 experience variance should be reported as distinct components, rather than a single combined 'unexpected' figure.",
           answer:
             "An experience variance reflects a single period's actual outcome differing from assumption (which may or may not persist), while an assumption change reflects a genuine, deliberate revision to future expectations — conflating them would obscure whether the total unexpected movement is a one-off or a persistent, forward-looking change, reducing the analysis's diagnostic value for management.",
           note: "A strong answer explicitly explains why conflating these two components would reduce the analysis's usefulness.",
@@ -7742,9 +7742,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on how the results of this surplus analysis could genuinely be used by the insurer's management.",
+            "Comment on how the results of this surplus analysis could be used by the insurer's management.",
           answer:
-            "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business genuinely requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
+            "The results can inform whether pricing or reserving assumptions need revision, highlight areas of the business requiring closer management attention, support the ongoing solvency and capital assessment process, and provide genuine evidence supporting decisions about strategy and product mix going forward.",
           note: "This connects the numeric decomposition directly to its genuine, practical management value.",
         },
       ],
@@ -7772,7 +7772,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why trustees must be understood as occupying a genuinely distinct role from the employer that sponsors a pension scheme.",
+            "Explain why trustees must be understood as occupying a distinct role from the employer that sponsors a pension scheme.",
           answer:
             "Trustees typically hold a genuine fiduciary duty to act in the best interests of scheme members and beneficiaries, which can require them to exercise independent judgement (e.g. on funding, investment strategy) that may not always align with the sponsoring employer's own commercial interests, a structurally distinct role from the employer's own management.",
           note: "A strong answer explicitly names the fiduciary duty concept, not just asserts that trustees and employers are 'different'.",
@@ -7784,8 +7784,8 @@ const QUESTIONS = {
           question:
             "Discuss what 'sponsor covenant' means, and why its integration with a scheme's funding and investment strategy matters.",
           answer:
-            "Sponsor covenant is the sponsoring employer's financial ability and willingness to support a pension scheme over time. Covenant strength should genuinely inform both funding strategy (e.g. how quickly a shortfall should be recovered) and investment strategy (e.g. how much investment risk the scheme can reasonably tolerate given the covenant's ability to absorb any resulting shortfall), meaning covenant assessment is only genuinely useful when actively connected to these other decisions, not conducted in isolation. A scheme with a strong covenant can reasonably support a longer recovery period and more investment risk than an identical scheme with a weak covenant.",
-          note: "A strong answer defines covenant AND explains the genuine integration principle with a concrete example, not just one or the other.",
+            "Sponsor covenant is the sponsoring employer's financial ability and willingness to support a pension scheme over time. Covenant strength should inform both funding strategy (e.g. how quickly a shortfall should be recovered) and investment strategy (e.g. how much investment risk the scheme can reasonably tolerate given the covenant's ability to absorb any resulting shortfall), meaning covenant assessment is only useful when actively connected to these other decisions, not conducted in isolation. A scheme with a strong covenant can reasonably support a longer recovery period and more investment risk than an identical scheme with a weak covenant.",
+          note: "A strong answer defines covenant <em>and</em> explains the genuine integration principle with a concrete example, not just one or the other.",
         },
         {
           label: "(iv)",
@@ -7794,7 +7794,7 @@ const QUESTIONS = {
           question:
             "Comment on why public sector pension provision might be financed on an unfunded, pay-as-you-go basis while most private sector schemes are funded.",
           answer:
-            "Public sector schemes are sometimes financed on an unfunded basis, backed by the State's ongoing taxation power, while private sector schemes are typically funded, requiring assets to be genuinely accumulated in advance to meet promised benefits, reflecting the different underlying financial backing available to each sector.",
+            "Public sector schemes are sometimes financed on an unfunded basis, backed by the State's ongoing taxation power, while private sector schemes are typically funded, requiring assets to be accumulated in advance to meet promised benefits, reflecting the different underlying financial backing available to each sector.",
           note: "This connects directly to the public-versus-private financing distinction developed in this course.",
         },
       ],
@@ -7832,7 +7832,7 @@ const QUESTIONS = {
           question:
             "Discuss the six genuine design factors this employer should consider when determining a suitable benefit design, per the official syllabus.",
           answer:
-            "Type of pension scheme (e.g. DB, DC, risk-sharing), governance requirements, level and form of benefits and/or contributions, method of financing the benefits, how risk is shared between parties, and choice of assets (when benefits are to be funded and when assets are to be invested) — all six should genuinely be considered together, since they interact (e.g. scheme type strongly shapes risk-sharing, and financing method shapes asset choice timing).",
+            "Type of pension scheme (e.g. DB, DC, risk-sharing), governance requirements, level and form of benefits and/or contributions, method of financing the benefits, how risk is shared between parties, and choice of assets (when benefits are to be funded and when assets are to be invested) — all six should be considered together, since they interact (e.g. scheme type strongly shapes risk-sharing, and financing method shapes asset choice timing).",
           note: "A complete answer names all six factors and shows awareness that they interact, not just lists them independently.",
         },
         {
@@ -7840,9 +7840,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why a 'risk-sharing' scheme design might be considered a genuinely distinct category alongside pure DB and pure DC.",
+            "Comment on why a 'risk-sharing' scheme design might be considered a distinct category alongside pure DB and pure DC.",
           answer:
-            "A risk-sharing scheme genuinely splits investment and/or longevity risk between the sponsor and members, rather than allocating it entirely to one side as pure DB (sponsor bears risk) or pure DC (member bears risk) do.",
+            "A risk-sharing scheme splits investment and/or longevity risk between the sponsor and members, rather than allocating it entirely to one side as pure DB (sponsor bears risk) or pure DC (member bears risk) do.",
           note: "This connects directly to the risk-sharing-as-genuine-third-category theme developed in this course.",
         },
       ],
@@ -7868,7 +7868,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why 'the extent to which assets are exhausted during a member's lifetime' is a genuinely distinctive risk primarily relevant to DC arrangements, rather than DB schemes.",
+            "Explain why 'the extent to which assets are exhausted during a member's lifetime' is a distinctive risk primarily relevant to DC arrangements, rather than DB schemes.",
           answer:
             "A DC member drawing down their own accumulated pot faces genuine longevity risk that their assets could run out before they die (unless converted to a guaranteed income), while a DB scheme's promised benefit is paid for as long as the member lives regardless of any underlying asset exhaustion, since the sponsor bears this risk in a DB arrangement.",
           note: "A strong answer explicitly connects this risk to DC's individual-risk-bearing structure.",
@@ -7878,19 +7878,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss which of these five risks can genuinely be mitigated through insurance products, and one genuine limitation of insurance-based mitigation.",
+            "Discuss which of these five risks can be mitigated through insurance products, and one genuine limitation of insurance-based mitigation.",
           answer:
-            "Longevity risk (via annuity purchase or longevity swap) and death-in-service risk (via life insurance) can genuinely be mitigated through insurance products, transferring these specific risks to a specialist insurer. A genuine limitation is that this transfer introduces new counterparty/credit risk — the insurer must itself remain financially able to honour the transferred obligation — so insurance mitigation transforms rather than eliminates risk, and not every listed risk (e.g. some investment or inflation risks) has a readily available insurance solution.",
-          note: "A strong answer names at least one genuinely insurable risk AND explains the counterparty-risk limitation, not just asserts that insurance 'helps'.",
+            "Longevity risk (via annuity purchase or longevity swap) and death-in-service risk (via life insurance) can be mitigated through insurance products, transferring these specific risks to a specialist insurer. A genuine limitation is that this transfer introduces new counterparty/credit risk — the insurer must itself remain financially able to honour the transferred obligation — so insurance mitigation transforms rather than eliminates risk, and not every listed risk (e.g. some investment or inflation risks) has a readily available insurance solution.",
+          note: "A strong answer names at least one insurable risk <em>and</em> explains the counterparty-risk limitation, not just asserts that insurance 'helps'.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why 'overall security of benefits' should be assessed as a genuinely distinct, higher-level risk category beyond simply summing the other four listed risks.",
+            "Comment on why 'overall security of benefits' should be assessed as a distinct, higher-level risk category beyond simply summing the other four listed risks.",
           answer:
-            "Overall security genuinely depends on how these individual risks interact and are backed by the wider provider's financial strength, so a scheme could have well-managed individual risk components yet still face genuine overall security concerns if the sponsor backing those components is itself financially weak.",
+            "Overall security depends on how these individual risks interact and are backed by the wider provider's financial strength, so a scheme could have well-managed individual risk components yet still face genuine overall security concerns if the sponsor backing those components is itself financially weak.",
           note: "This connects directly to the holistic-versus-additive risk assessment theme developed in this course.",
         },
       ],
@@ -7908,7 +7908,7 @@ const QUESTIONS = {
           question:
             "Explain the genuine purpose of accounting standards for pension and other benefit provision.",
           answer:
-            "Accounting standards ensure a sponsoring employer's financial statements genuinely and consistently reflect the cost and obligations arising from its benefit arrangements, allowing stakeholders to assess the sponsor's true financial position on a comparable basis across different companies and reporting periods.",
+            "Accounting standards ensure a sponsoring employer's financial statements and consistently reflect the cost and obligations arising from its benefit arrangements, allowing stakeholders to assess the sponsor's true financial position on a comparable basis across different companies and reporting periods.",
           note: "A strong answer explicitly names the comparability/transparency purpose.",
         },
         {
@@ -7916,9 +7916,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the accounting basis used to value a sponsor's pension obligation might genuinely differ from the scheme's own funding basis.",
+            "Explain why the accounting basis used to value a sponsor's pension obligation might differ from the scheme's own funding basis.",
           answer:
-            "Accounting standards aim for a genuinely consistent, comparable measurement basis across companies (often using a prescribed discount rate methodology), while the funding basis reflects the scheme's own specific investment strategy and prudence requirements, so the same underlying liability can genuinely be measured differently under each basis.",
+            "Accounting standards aim for a consistent, comparable measurement basis across companies (often using a prescribed discount rate methodology), while the funding basis reflects the scheme's own specific investment strategy and prudence requirements, so the same underlying liability can be measured differently under each basis.",
           note: "This connects directly to the multiple-reporting-bases theme developed elsewhere in this course.",
         },
         {
@@ -7926,10 +7926,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "A scheme is considering the terms it should offer members exercising a large transfer-value option. Discuss why setting these terms genuinely requires balancing member interests against the interests of the wider scheme.",
+            "A scheme is considering the terms it should offer members exercising a large transfer-value option. Discuss why setting these terms requires balancing member interests against the interests of the wider scheme.",
           answer:
-            "Terms must consider the genuine risk and reward for all stakeholders affected, not just the member exercising the option — terms that are unfairly generous could create genuine anti-selection risk to the scheme (members with weaker health or lower expected longevity being more likely to transfer), while unfairly restrictive terms would fail to serve genuine member interests. This is why schemes often require independent financial advice before a large transfer, since giving up guaranteed benefits is a genuinely significant, often irreversible decision shifting investment and longevity risk onto the member.",
-          note: "A strong answer identifies the genuine anti-selection concern AND the member-protection rationale for advice requirements, not just one or the other.",
+            "Terms must consider the genuine risk and reward for all stakeholders affected, not just the member exercising the option — terms that are unfairly generous could create genuine anti-selection risk to the scheme (members with weaker health or lower expected longevity being more likely to transfer), while unfairly restrictive terms would fail to serve genuine member interests. This is why schemes often require independent financial advice before a large transfer, since giving up guaranteed benefits is a significant, often irreversible decision shifting investment and longevity risk onto the member.",
+          note: "A strong answer identifies the genuine anti-selection concern <em>and</em> the member-protection rationale for advice requirements, not just one or the other.",
         },
         {
           label: "(iv)",
@@ -7938,7 +7938,7 @@ const QUESTIONS = {
           question:
             "Comment on why a maturing DB scheme's investment strategy might need to change over time, even without any change in sponsor covenant.",
           answer:
-            "As a scheme matures, its investment time horizon genuinely shortens and its tolerance for short-term volatility reduces, so investment strategy should evolve in response to this genuine change in the scheme's own liability profile over time, independent of any other change in circumstances.",
+            "As a scheme matures, its investment time horizon shortens and its tolerance for short-term volatility reduces, so investment strategy should evolve in response to this genuine change in the scheme's own liability profile over time, independent of any other change in circumstances.",
           note: "This connects directly to the de-risking-as-scheme-matures theme developed in this course.",
         },
       ],
@@ -7977,7 +7977,7 @@ const QUESTIONS = {
             "Discuss why the choice of discount rate assumption for valuing this member's pension requires genuine judgement, rather than a single universally correct rate.",
           answer:
             "The discount rate should reflect the expected return on the scheme's actual (or intended) investment strategy and its genuine level of prudence, so different schemes with different investment strategies and risk appetites can reasonably adopt different discount rates. It must also reflect the requirements for prudence and the objectives of stakeholders (trustees prioritising member security may prefer more prudent assumptions, while sponsors prioritising affordability may prefer less prudent ones), meaning discount rate setting is a genuine, multi-factor judgement, not a single mechanically correct calculation.",
-          note: "A strong answer connects the discount rate to BOTH investment strategy AND stakeholder-objective/prudence considerations.",
+          note: "A strong answer connects the discount rate to <em>both</em> investment strategy <em>and</em> stakeholder-objective/prudence considerations.",
         },
         {
           label: "(iv)",
@@ -7986,7 +7986,7 @@ const QUESTIONS = {
           question:
             "Comment on why sensitivity analysis should be carried out alongside the pension calculation in part (i) if it were extended into a full funding projection.",
           answer:
-            "Sensitivity analysis reveals how much the projected outcome genuinely changes when key assumptions (e.g. salary growth, investment return) are varied, showing which assumptions the result is most exposed to — without this, a single-point projection could give false confidence, since the projection is only as reliable as the assumptions used.",
+            "Sensitivity analysis reveals how much the projected outcome changes when key assumptions (e.g. salary growth, investment return) are varied, showing which assumptions the result is most exposed to — without this, a single-point projection could give false confidence, since the projection is only as reliable as the assumptions used.",
           note: "This connects directly to the sensitivity-analysis theme developed in this course.",
         },
       ],
@@ -8014,7 +8014,7 @@ const QUESTIONS = {
           question:
             "Explain why the recovery plan length in part (i) involves a genuine trade-off between sponsor affordability and member security.",
           answer:
-            "A longer recovery period spreads the additional contributions over more years, easing the sponsor's near-term cash burden, but leaves the scheme underfunded for longer, genuinely increasing the risk that adverse experience or sponsor distress could prevent the shortfall ever being fully addressed.",
+            "A longer recovery period spreads the additional contributions over more years, easing the sponsor's near-term cash burden, but leaves the scheme underfunded for longer, increasing the risk that adverse experience or sponsor distress could prevent the shortfall ever being fully addressed.",
           note: "A strong answer explicitly frames this as a genuine trade-off, not a straightforward 'shorter is always better' conclusion.",
         },
         {
@@ -8024,7 +8024,7 @@ const QUESTIONS = {
           question:
             "Discuss why the actuary should consider the sponsor's covenant strength when advising on this recovery plan's length.",
           answer:
-            "A weaker sponsor covenant may genuinely justify requiring a shorter recovery period or higher near-term contributions (since the scheme cannot rely on the sponsor's ongoing support with the same confidence), while a stronger covenant may reasonably support a longer, more gradual recovery plan.",
+            "A weaker sponsor covenant may justify requiring a shorter recovery period or higher near-term contributions (since the scheme cannot rely on the sponsor's ongoing support with the same confidence), while a stronger covenant may reasonably support a longer, more gradual recovery plan.",
           note: "This connects the numeric recovery plan calculation directly to the covenant material developed elsewhere in this course.",
         },
         {
@@ -8032,9 +8032,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why the data used to calculate the &pound;40,000,000 technical provisions figure must be genuinely accurate for this valuation to be reliable.",
+            "Comment on why the data used to calculate the &pound;40,000,000 technical provisions figure must be accurate for this valuation to be reliable.",
           answer:
-            "Since the valuation's genuine reliability depends directly on accurate membership data, scheme rules, and asset values, poor-quality or incomplete data can produce genuinely misleading valuation results regardless of how sound the calculation technique applied to that data otherwise is.",
+            "Since the valuation's genuine reliability depends directly on accurate membership data, scheme rules, and asset values, poor-quality or incomplete data can produce misleading valuation results regardless of how sound the calculation technique applied to that data otherwise is.",
           note: "This connects directly to the data-as-foundational-input theme developed in this course.",
         },
       ],
@@ -8070,9 +8070,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why valuing guarantees or options that might be added to this DC arrangement (e.g. a guaranteed minimum fund value at retirement) would require genuinely different techniques from the straightforward accumulation calculation in part (i).",
+            "Discuss why valuing guarantees or options that might be added to this DC arrangement (e.g. a guaranteed minimum fund value at retirement) would require different techniques from the straightforward accumulation calculation in part (i).",
           answer:
-            "A guarantee only genuinely bites under certain, adverse future market outcomes, so its true cost depends on the full probability-weighted range of possible future market paths, requiring stochastic modelling or option-pricing techniques capturing this genuine range, unlike the single deterministic accumulation calculation used in part (i) which assumes one fixed growth rate throughout.",
+            "A guarantee only bites under certain, adverse future market outcomes, so its true cost depends on the full probability-weighted range of possible future market paths, requiring stochastic modelling or option-pricing techniques capturing this genuine range, unlike the single deterministic accumulation calculation used in part (i) which assumes one fixed growth rate throughout.",
           note: "This connects directly to CM2's option-pricing material applied to a genuine pension guarantee-costing context.",
         },
         {
@@ -8098,7 +8098,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "A DB scheme is discontinuing following its sponsor's insolvency. Explain why the 'rights and expectations of beneficiaries' must genuinely constrain the discontinuance terms offered, rather than being set purely for administrative convenience.",
+            "A DB scheme is discontinuing following its sponsor's insolvency. Explain why the 'rights and expectations of beneficiaries' must constrain the discontinuance terms offered, rather than being set purely for administrative convenience.",
           answer:
             "Beneficiaries have genuine, often legally-protected rights to accrued benefits, and their reasonable expectations (formed based on how the arrangement was originally communicated and administered) carry genuine weight in determining fair discontinuance treatment, meaning discontinuance terms cannot simply be set to minimise administrative cost regardless of beneficiary interests.",
           note: "A strong answer explicitly frames rights and expectations as a genuine constraint, not a secondary consideration.",
@@ -8108,9 +8108,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the level of available assets might genuinely constrain which discontinuance method is actually feasible for this scheme.",
+            "Explain why the level of available assets might constrain which discontinuance method is actually feasible for this scheme.",
           answer:
-            "If the scheme's available assets are genuinely insufficient to fully fund the preferred discontinuance method (e.g. a full buy-out requiring complete funding), the provider may need to consider a more modest method, or accept a shortfall requiring some other resolution, making available assets a genuine, binding constraint on method selection, not an afterthought.",
+            "If the scheme's available assets are insufficient to fully fund the preferred discontinuance method (e.g. a full buy-out requiring complete funding), the provider may need to consider a more modest method, or accept a shortfall requiring some other resolution, making available assets a genuine, binding constraint on method selection, not an afterthought.",
           note: "This connects directly to the asset-adequacy-as-constraint theme developed in this course.",
         },
         {
@@ -8118,9 +8118,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why the actuary would need genuine professional judgement, not just mechanical calculation, to determine how a genuinely limited pool of available assets should be allocated across different beneficiary groups (e.g. pensioners in payment versus deferred members).",
+            "Discuss why the actuary would need genuine professional judgement, not just mechanical calculation, to determine how a limited pool of available assets should be allocated across different beneficiary groups (e.g. pensioners in payment versus deferred members).",
           answer:
-            "Allocating a genuinely limited pool of assets fairly across different beneficiary groups involves genuine, difficult trade-offs with no single objectively correct answer, requiring the actuary's professional judgement to propose a fair, defensible allocation approach reflecting the arrangement's rules and beneficiaries' genuine relative positions, rather than a purely mechanical, formulaic split.",
+            "Allocating a limited pool of assets fairly across different beneficiary groups involves genuine, difficult trade-offs with no single objectively correct answer, requiring the actuary's professional judgement to propose a fair, defensible allocation approach reflecting the arrangement's rules and beneficiaries' genuine relative positions, rather than a purely mechanical, formulaic split.",
           note: "A strong answer explicitly names this as a genuine judgement call requiring professional reasoning, not a calculation with one correct numeric answer.",
         },
         {
@@ -8130,7 +8130,7 @@ const QUESTIONS = {
           question:
             "Comment on why discontinuance for a DC arrangement is typically more straightforward than for a DB arrangement.",
           answer:
-            "A DC arrangement's discontinuance is typically more straightforward — the member's own accumulated pot value is genuinely clear and can usually be transferred or paid out directly — while a DB arrangement requires genuinely valuing complex, uncertain future benefit promises and determining how any funding shortfall across the whole membership should be allocated.",
+            "A DC arrangement's discontinuance is typically more straightforward — the member's own accumulated pot value is clear and can usually be transferred or paid out directly — while a DB arrangement requires valuing complex, uncertain future benefit promises and determining how any funding shortfall across the whole membership should be allocated.",
           note: "This connects directly to the DB-versus-DC discontinuance-complexity theme developed in this course.",
         },
       ],
@@ -8158,8 +8158,8 @@ const QUESTIONS = {
           question:
             "Explain why the &pound;90,000 investment variance and the &pound;20,000 remaining variance in part (i) should be reported separately, rather than combined into a single 'total experience variance' figure.",
           answer:
-            "Different experience sources can move in genuinely offsetting or reinforcing directions and require genuinely different management responses (e.g. an investment variance might prompt reviewing investment strategy, while a mortality variance might prompt reviewing longevity assumptions), so combining them would obscure which specific underlying driver actually requires attention.",
-          note: "A strong answer explains WHY separate reporting matters for management response, not just that decomposition is 'more detailed'.",
+            "Different experience sources can move in offsetting or reinforcing directions and require different management responses (e.g. an investment variance might prompt reviewing investment strategy, while a mortality variance might prompt reviewing longevity assumptions), so combining them would obscure which specific underlying driver actually requires attention.",
+          note: "A strong answer explains <em>why</em> separate reporting matters for management response, not just that decomposition is 'more detailed'.",
         },
         {
           label: "(iii)",
@@ -8194,10 +8194,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "A DB scheme's sponsor covenant has genuinely weakened, and the scheme is significantly underfunded. Discuss why this represents a genuinely complex issue requiring integrated judgement across multiple areas.",
+            "A DB scheme's sponsor covenant has weakened, and the scheme is significantly underfunded. Discuss why this represents a complex issue requiring integrated judgement across multiple areas.",
           answer:
-            "This situation genuinely involves competing considerations across multiple topic areas at once — reassessing sponsor covenant strength and its integration with funding and investment strategy, evaluating the genuine risks to overall benefit security given the weakened covenant, and considering whether discontinuance-related protections might eventually be needed if the sponsor's position deteriorates further — requiring integrated judgement across covenant, risk-management and discontinuance-planning material, not a single-dimension analysis.",
-          note: "A strong answer explicitly draws on covenant, risk, and discontinuance material together, reflecting the genuinely integrated nature of complex real-world pension issues.",
+            "This situation involves competing considerations across multiple topic areas at once — reassessing sponsor covenant strength and its integration with funding and investment strategy, evaluating the genuine risks to overall benefit security given the weakened covenant, and considering whether discontinuance-related protections might eventually be needed if the sponsor's position deteriorates further — requiring integrated judgement across covenant, risk-management and discontinuance-planning material, not a single-dimension analysis.",
+          note: "A strong answer explicitly draws on covenant, risk, and discontinuance material together, reflecting the integrated nature of complex real-world pension issues.",
         },
         {
           label: "(ii)",
@@ -8206,8 +8206,8 @@ const QUESTIONS = {
           question:
             "Recommend a course of action for the trustees in response to this situation, with justification.",
           answer:
-            "The trustees should reassess the appropriate funding and investment strategy in light of the weakened covenant (likely favouring a shorter recovery period and more cautious investment approach, per Module 3's integration principle), while also proactively engaging with the sponsor to understand its genuine prospects and negotiate any additional security available (e.g. contingent assets), rather than continuing with the scheme's existing funding and investment plan unchanged despite the genuinely altered circumstances.",
-          note: "Credit should be given for any well-justified, genuinely reasoned recommendation that explicitly addresses the weakened covenant, not a generic response.",
+            "The trustees should reassess the appropriate funding and investment strategy in light of the weakened covenant (likely favouring a shorter recovery period and more cautious investment approach, per Module 3's integration principle), while also proactively engaging with the sponsor to understand its genuine prospects and negotiate any additional security available (e.g. contingent assets), rather than continuing with the scheme's existing funding and investment plan unchanged despite the altered circumstances.",
+          note: "Credit should be given for any well-justified, reasoned recommendation that explicitly addresses the weakened covenant, not a generic response.",
         },
         {
           label: "(iii)",
@@ -8226,7 +8226,7 @@ const QUESTIONS = {
           question:
             "Comment on why solving this issue required drawing on multiple SP4 topic areas simultaneously, rather than a single technique in isolation.",
           answer:
-            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue genuinely required drawing on sponsor covenant assessment, funding and investment strategy, and risk management material together, reflecting how complex pension issues in practice typically require integrated judgement across several technical areas at once.",
+            "Real strategic problems rarely fall neatly into a single topic area; resolving this specific issue required drawing on sponsor covenant assessment, funding and investment strategy, and risk management material together, reflecting how complex pension issues in practice typically require integrated judgement across several technical areas at once.",
           note: "This connects directly to the integrated nature of complex problem-solving as tested throughout the later parts of this course.",
         },
       ],
@@ -8244,9 +8244,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why central bank actions can genuinely affect investment markets across multiple asset classes simultaneously, rather than a single, isolated effect.",
+            "Explain why central bank actions can affect investment markets across multiple asset classes simultaneously, rather than a single, isolated effect.",
           answer:
-            "Interest rate changes directly affect bond valuations (via discount rates), can influence equity valuations (via the relative attractiveness of bonds versus equities and via corporate borrowing costs), and affect currency values (via relative interest rate differentials), giving central bank policy a genuinely broad, cross-asset-class impact.",
+            "Interest rate changes directly affect bond valuations (via discount rates), can influence equity valuations (via the relative attractiveness of bonds versus equities and via corporate borrowing costs), and affect currency values (via relative interest rate differentials), giving central bank policy a broad, cross-asset-class impact.",
           note: "A strong answer names the impact channel for at least two distinct asset classes, not just asserts that central banks 'matter'.",
         },
         {
@@ -8257,17 +8257,17 @@ const QUESTIONS = {
             "List six genuine considerations named in the official syllabus as part of the legislative and regulatory framework affecting investment management practice.",
           answer:
             "Any six of: corporate governance, role of the listings authority, environmental/social/governance (ESG) factors, ethical issues, competition and fair trading controls, monopolies regulators, investment restrictions in investment agreements, provision of financial services, institutional investment practices, development of international accounting standards.",
-          note: "A complete answer names six genuinely distinct considerations from the official list.",
+          note: "A complete answer names six distinct considerations from the official list.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why 'investment restrictions in investment agreements' represent a genuinely different layer of constraint from general securities market regulation.",
+            "Discuss why 'investment restrictions in investment agreements' represent a different layer of constraint from general securities market regulation.",
           answer:
-            "These restrictions arise from the specific, negotiated terms of an individual investment mandate or agreement (e.g. permitted asset classes, concentration limits) rather than from broader, market-wide statutory regulation, representing a genuinely more bespoke, contract-specific layer of constraint an investment manager must operate within, on top of general market regulation which applies uniformly to all managers regardless of any specific client agreement.",
-          note: "A strong answer explicitly distinguishes the CONTRACTUAL, client-specific nature of these restrictions from the STATUTORY, market-wide nature of general regulation.",
+            "These restrictions arise from the specific, negotiated terms of an individual investment mandate or agreement (e.g. permitted asset classes, concentration limits) rather than from broader, market-wide statutory regulation, representing a more bespoke, contract-specific layer of constraint an investment manager must operate within, on top of general market regulation which applies uniformly to all managers regardless of any specific client agreement.",
+          note: "A strong answer explicitly distinguishes the <em>contractual</em>, client-specific nature of these restrictions from the <em>statutory</em>, market-wide nature of general regulation.",
         },
         {
           label: "(iv)",
@@ -8276,7 +8276,7 @@ const QUESTIONS = {
           question:
             "Comment on why ESG factors might be considered part of the genuine regulatory framework in some jurisdictions, rather than purely a voluntary investment consideration.",
           answer:
-            "Many jurisdictions now impose genuine regulatory disclosure and conduct requirements around ESG considerations, making ESG a genuinely regulatory, not purely voluntary or values-based, consideration in at least some markets.",
+            "Many jurisdictions now impose genuine regulatory disclosure and conduct requirements around ESG considerations, making ESG a regulatory, not purely voluntary or values-based, consideration in at least some markets.",
           note: "This connects directly to the ESG-as-evolving-regulatory-consideration theme developed in this course.",
         },
       ],
@@ -8292,10 +8292,10 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain what insurance-linked securities (ILS) are, and why they might offer investors genuinely valuable diversification.",
+            "Explain what insurance-linked securities (ILS) are, and why they might offer investors valuable diversification.",
           answer:
-            "ILS (e.g. catastrophe bonds) transfer insurance-related risk (e.g. natural catastrophe risk) to capital markets investors in exchange for a return, offering genuinely valuable diversification since insurance losses are typically driven by genuinely different underlying factors (weather, seismic activity) than traditional financial market risk factors.",
-          note: "A strong answer explains WHY diversification benefit arises (different underlying risk drivers), not just that ILS exist.",
+            "ILS (e.g. catastrophe bonds) transfer insurance-related risk (e.g. natural catastrophe risk) to capital markets investors in exchange for a return, offering valuable diversification since insurance losses are typically driven by different underlying factors (weather, seismic activity) than traditional financial market risk factors.",
+          note: "A strong answer explains <em>why</em> diversification benefit arises (different underlying risk drivers), not just that ILS exist.",
         },
         {
           label: "(ii)",
@@ -8304,7 +8304,7 @@ const QUESTIONS = {
           question:
             "Explain the genuine trade-off between exchange-traded and over-the-counter (OTC) derivative trading.",
           answer:
-            "Exchange-traded derivatives offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC derivatives offer genuinely greater flexibility to tailor contract terms to a specific investor's precise needs, at the cost of typically greater counterparty risk and reduced price transparency.",
+            "Exchange-traded derivatives offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC derivatives offer greater flexibility to tailor contract terms to a specific investor's precise needs, at the cost of typically greater counterparty risk and reduced price transparency.",
           note: "A strong answer names both sides of the genuine trade-off, not just describes one venue favourably.",
         },
         {
@@ -8324,7 +8324,7 @@ const QUESTIONS = {
           question:
             "Comment on why a structured product might require particularly careful analysis by an investor before purchase.",
           answer:
-            "A structured product combines a traditional investment with a derivative overlay to create a genuinely customised risk/return payoff, but the genuine underlying risk and cost structure can be less transparent than a simple, standalone investment, potentially embedding fees or risks not immediately obvious to the investor.",
+            "A structured product combines a traditional investment with a derivative overlay to create a customised risk/return payoff, but the genuine underlying risk and cost structure can be less transparent than a simple, standalone investment, potentially embedding fees or risks not immediately obvious to the investor.",
           note: "This connects directly to the customisation-versus-transparency trade-off theme developed in this course.",
         },
       ],
@@ -8352,7 +8352,7 @@ const QUESTIONS = {
           question:
             "Explain why this bond's present value exceeds its face value, given the coupon rate (5%) is higher than the discount rate used (4%).",
           answer:
-            "Since the bond's coupon rate (5%) exceeds the discount rate applied to value it (4%), the bond pays more income than the market currently requires for a bond of this risk, making it genuinely more valuable than its face value — this relationship between coupon rate and discount/yield rate directly determines whether a bond trades above or below par.",
+            "Since the bond's coupon rate (5%) exceeds the discount rate applied to value it (4%), the bond pays more income than the market currently requires for a bond of this risk, making it more valuable than its face value — this relationship between coupon rate and discount/yield rate directly determines whether a bond trades above or below par.",
           note: "A strong answer explicitly connects the coupon-versus-discount-rate relationship to the premium-versus-par pricing outcome.",
         },
         {
@@ -8362,7 +8362,7 @@ const QUESTIONS = {
           question:
             "Discuss why an investor might not rely solely on an external credit rating agency's assessment of this bond's issuer before investing.",
           answer:
-            "While rating agencies provide a genuinely useful standardised assessment, an investor may conduct independent credit analysis since rating agencies can be slow to reflect genuinely emerging changes in issuer creditworthiness, and different investors may have genuinely different views on appropriate risk assessment given their own specific circumstances and risk tolerance.",
+            "While rating agencies provide a useful standardised assessment, an investor may conduct independent credit analysis since rating agencies can be slow to reflect emerging changes in issuer creditworthiness, and different investors may have different views on appropriate risk assessment given their own specific circumstances and risk tolerance.",
           note: "A strong answer treats rating agency output as useful but not sufficient, not as either fully reliable or worthless.",
         },
         {
@@ -8372,7 +8372,7 @@ const QUESTIONS = {
           question:
             "Comment on why understanding the empirical characteristics of asset prices matters when valuing bonds and other investments, beyond applying theoretical pricing models alone.",
           answer:
-            "Real-world asset prices can genuinely deviate from theoretical model predictions, so genuine practical valuation and risk assessment should be informed by how asset prices actually behave empirically, not solely by how theoretical models predict they should behave.",
+            "Real-world asset prices can deviate from theoretical model predictions, so genuine practical valuation and risk assessment should be informed by how asset prices actually behave empirically, not solely by how theoretical models predict they should behave.",
           note: "This connects directly to the empirical-versus-theoretical caution developed in this course.",
         },
       ],
@@ -8410,7 +8410,7 @@ const QUESTIONS = {
           question:
             "Discuss what the 'efficient frontier' represents, and how this portfolio might relate to it.",
           answer:
-            "The efficient frontier consists of the portfolios offering the genuinely highest expected return for each given level of risk, excluding all other achievable portfolios that are dominated by a more efficient alternative. This specific 60/40 portfolio may or may not lie on the efficient frontier — it lies on the frontier only if no other combination of these two assets (or other available assets) offers a higher return for the same 10.42% risk level, or the same 6.8% return for lower risk.",
+            "The efficient frontier consists of the portfolios offering the highest expected return for each given level of risk, excluding all other achievable portfolios that are dominated by a more efficient alternative. This specific 60/40 portfolio may or may not lie on the efficient frontier — it lies on the frontier only if no other combination of these two assets (or other available assets) offers a higher return for the same 10.42% risk level, or the same 6.8% return for lower risk.",
           note: "A strong answer explains what would need to be true for this specific portfolio to lie ON the frontier, not just defines the frontier generically.",
         },
         {
@@ -8418,9 +8418,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why 'sustainability risk' might be considered a genuinely distinct risk category for this portfolio, beyond the market and credit risk already reflected in the standard deviation calculation.",
+            "Comment on why 'sustainability risk' might be considered a distinct risk category for this portfolio, beyond the market and credit risk already reflected in the standard deviation calculation.",
           answer:
-            "Sustainability risk concerns the genuine risk that environmental, social or governance factors materially affect an investment's value or the wider portfolio's risk profile in ways not necessarily captured by historical volatility and correlation figures alone, representing a genuinely forward-looking risk dimension beyond backward-looking statistical risk measures.",
+            "Sustainability risk concerns the genuine risk that environmental, social or governance factors materially affect an investment's value or the wider portfolio's risk profile in ways not necessarily captured by historical volatility and correlation figures alone, representing a forward-looking risk dimension beyond backward-looking statistical risk measures.",
           note: "This connects directly to the sustainability-risk-as-distinct-category theme developed in this course.",
         },
       ],
@@ -8436,10 +8436,10 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain what 'loss aversion' is, and how it might genuinely lead an investor to make suboptimal decisions.",
+            "Explain what 'loss aversion' is, and how it might lead an investor to make suboptimal decisions.",
           answer:
-            "Loss aversion describes the genuine tendency for investors to feel the pain of a loss more intensely than the pleasure of an equivalent gain, which can lead to genuinely suboptimal behaviour such as holding onto losing investments too long (hoping to avoid crystallising the loss) or selling winning investments too early.",
-          note: "A strong answer explains both the psychological mechanism AND a concrete behavioural consequence.",
+            "Loss aversion describes the genuine tendency for investors to feel the pain of a loss more intensely than the pleasure of an equivalent gain, which can lead to suboptimal behaviour such as holding onto losing investments too long (hoping to avoid crystallising the loss) or selling winning investments too early.",
+          note: "A strong answer explains both the psychological mechanism <em>and</em> a concrete behavioural consequence.",
         },
         {
           label: "(ii)",
@@ -8449,17 +8449,17 @@ const QUESTIONS = {
             "List the genuine steps involved in financial planning for an individual investor, per the official syllabus.",
           answer:
             "Establishing the investor's genuine objectives and constraints, assessing their current financial position, developing an appropriate strategy to meet their objectives, implementing that strategy, and monitoring and reviewing progress over time.",
-          note: "A complete answer names all five steps in a genuinely sequential order.",
+          note: "A complete answer names all five steps in a sequential order.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why the taxation of investment returns genuinely affects investor behaviour, beyond simply reducing net returns, and give one example.",
+            "Discuss why the taxation of investment returns affects investor behaviour, beyond simply reducing net returns, and give one example.",
           answer:
-            "Different tax treatments of income versus capital gains, or different tax-favoured account wrappers, can genuinely incentivise investors to prefer certain asset types, holding periods, or account structures purely for tax efficiency reasons, meaning genuine investor behaviour is directly shaped by tax rules, not solely by underlying investment merit. For example, an investor might hold a growth-oriented (low-dividend) investment in a taxable account and an income-oriented (high-dividend) investment in a tax-favoured account specifically to minimise their overall tax liability, even if this is not the allocation that would otherwise best reflect their genuine investment preferences alone.",
-          note: "A strong answer explains the general principle AND provides a genuinely concrete example of tax-driven behaviour.",
+            "Different tax treatments of income versus capital gains, or different tax-favoured account wrappers, can incentivise investors to prefer certain asset types, holding periods, or account structures purely for tax efficiency reasons, meaning genuine investor behaviour is directly shaped by tax rules, not solely by underlying investment merit. For example, an investor might hold a growth-oriented (low-dividend) investment in a taxable account and an income-oriented (high-dividend) investment in a tax-favoured account specifically to minimise their overall tax liability, even if this is not the allocation that would otherwise best reflect their genuine investment preferences alone.",
+          note: "A strong answer explains the general principle <em>and</em> provides a concrete example of tax-driven behaviour.",
         },
         {
           label: "(iv)",
@@ -8468,7 +8468,7 @@ const QUESTIONS = {
           question:
             "Comment on why an investor's time horizon, liquidity needs, behavioural tendencies, and tax position should all be understood together before recommending an investment strategy.",
           answer:
-            "These characteristics genuinely interact — a behaviourally loss-averse investor with a genuinely short time horizon may need a materially more conservative strategy than the same behavioural profile paired with a long time horizon, so a sound recommendation must integrate all of an investor's genuine characteristics together, not consider any single dimension in isolation.",
+            "These characteristics interact — a behaviourally loss-averse investor with a short time horizon may need a materially more conservative strategy than the same behavioural profile paired with a long time horizon, so a sound recommendation must integrate all of an investor's genuine characteristics together, not consider any single dimension in isolation.",
           note: "This connects directly to the holistic-investor-characterisation theme developed in this course.",
         },
       ],
@@ -8496,7 +8496,7 @@ const QUESTIONS = {
           question:
             "Explain what asset/liability modelling achieves for an investor with genuine liability obligations, echoing CM2's material.",
           answer:
-            "Asset/liability modelling projects how a specific investor's assets and liabilities would jointly evolve under a range of future scenarios, revealing whether a proposed investment strategy is genuinely likely to meet the investor's specific liability obligations with acceptable risk, directly applying CM2's matching principles in a genuinely forward-looking, scenario-based way.",
+            "Asset/liability modelling projects how a specific investor's assets and liabilities would jointly evolve under a range of future scenarios, revealing whether a proposed investment strategy is likely to meet the investor's specific liability obligations with acceptable risk, directly applying CM2's matching principles in a forward-looking, scenario-based way.",
           note: "This connects directly to CM2's ALM material applied to a genuine strategy-development context.",
         },
         {
@@ -8504,10 +8504,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why a dynamic liability benchmark might be genuinely more useful than a static, fixed benchmark for an investor with evolving liability obligations.",
+            "Discuss why a dynamic liability benchmark might be more useful than a static, fixed benchmark for an investor with evolving liability obligations.",
           answer:
-            "A dynamic liability benchmark adjusts over time to reflect the genuine, evolving characteristics of the investor's actual liabilities (e.g. as they mature or their duration changes), providing a more genuinely relevant ongoing performance comparison than a static benchmark that might quickly become misaligned with the investor's real, evolving liability profile. A static benchmark set at one point in time could become genuinely misleading as a comparison point precisely because the investor's own liabilities have moved on, while the benchmark has not.",
-          note: "A strong answer explains WHY a static benchmark becomes misleading over time, not just asserts that dynamic benchmarks are 'better'.",
+            "A dynamic liability benchmark adjusts over time to reflect the genuine, evolving characteristics of the investor's actual liabilities (e.g. as they mature or their duration changes), providing a more relevant ongoing performance comparison than a static benchmark that might quickly become misaligned with the investor's real, evolving liability profile. A static benchmark set at one point in time could become misleading as a comparison point precisely because the investor's own liabilities have moved on, while the benchmark has not.",
+          note: "A strong answer explains <em>why</em> a static benchmark becomes misleading over time, not just asserts that dynamic benchmarks are 'better'.",
         },
         {
           label: "(iv)",
@@ -8535,7 +8535,7 @@ const QUESTIONS = {
             "Distinguish between 'value' and 'momentum' active management styles, including the genuine underlying belief each rests on.",
           answer:
             "Value investing seeks securities trading below their genuine intrinsic or fundamental worth, resting on the belief that market prices can temporarily diverge from true fundamental value and will eventually converge back toward it. Momentum investing buys securities that have recently performed well (and sells those performing poorly), resting on the belief that recent price trends tend to persist for some period — a philosophically opposite approach, since value seeks underperformers relative to fundamentals while momentum seeks recent outperformers.",
-          note: "A strong answer explicitly identifies these as philosophically OPPOSITE approaches, not just describes each independently.",
+          note: "A strong answer explicitly identifies these as philosophically <em>opposite</em> approaches, not just describes each independently.",
         },
         {
           label: "(ii)",
@@ -8552,19 +8552,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why 'transition management' is genuinely important when a large institutional investor makes a significant change to its portfolio allocation.",
+            "Discuss why 'transition management' is important when a large institutional investor makes a significant change to its portfolio allocation.",
           answer:
-            "Transition management is the specialist process of executing a large-scale change in a portfolio's asset allocation efficiently, minimising genuine transaction costs and market impact; without careful management, a large, poorly-executed transition could incur genuinely significant hidden costs from market impact and prolonged exposure to unintended interim risk during the transition period, potentially undermining even a well-justified strategic reallocation decision.",
-          note: "A strong answer explains WHY poor execution could undermine an otherwise sound strategic decision, not just that transitions should be 'managed carefully'.",
+            "Transition management is the specialist process of executing a large-scale change in a portfolio's asset allocation efficiently, minimising genuine transaction costs and market impact; without careful management, a large, poorly-executed transition could incur significant hidden costs from market impact and prolonged exposure to unintended interim risk during the transition period, potentially undermining even a well-justified strategic reallocation decision.",
+          note: "A strong answer explains <em>why</em> poor execution could undermine an otherwise sound strategic decision, not just that transitions should be 'managed carefully'.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why a multifactor model provides genuinely richer insight than a single-factor asset pricing model when constructing a portfolio.",
+            "Comment on why a multifactor model provides richer insight than a single-factor asset pricing model when constructing a portfolio.",
           answer:
-            "A multifactor model explains genuine asset returns using multiple systematic risk factors simultaneously, rather than a single risk-return relationship, providing a genuinely richer, more nuanced framework for understanding what drives returns and for revealing a portfolio's genuine exposure to specific risk factors that a single-factor model would not show.",
+            "A multifactor model explains genuine asset returns using multiple systematic risk factors simultaneously, rather than a single risk-return relationship, providing a richer, more nuanced framework for understanding what drives returns and for revealing a portfolio's genuine exposure to specific risk factors that a single-factor model would not show.",
           note: "This connects directly to the multifactor-model-extension theme developed in this course.",
         },
       ],
@@ -8592,7 +8592,7 @@ const QUESTIONS = {
           question:
             "Explain what a 'risk budget' is, and how it might be used alongside the VaR figure calculated in part (i).",
           answer:
-            "A risk budget allocates a genuine, explicit amount of acceptable risk (e.g. measured via VaR or tracking error) across different components of a portfolio or investment decisions, ensuring the total portfolio's aggregate risk remains within a genuinely intended overall limit. The &pound;13,160,000 VaR figure could be checked against the scheme's overall risk budget to confirm the portfolio remains within its intended aggregate risk tolerance, and could be further decomposed to check individual position-level risk budgets.",
+            "A risk budget allocates a genuine, explicit amount of acceptable risk (e.g. measured via VaR or tracking error) across different components of a portfolio or investment decisions, ensuring the total portfolio's aggregate risk remains within an intended overall limit. The &pound;13,160,000 VaR figure could be checked against the scheme's overall risk budget to confirm the portfolio remains within its intended aggregate risk tolerance, and could be further decomposed to check individual position-level risk budgets.",
           note: "A strong answer connects the numeric VaR result directly to the risk-budget governance concept.",
         },
         {
@@ -8600,9 +8600,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why tracking error would provide genuinely complementary insight to the VaR figure calculated in part (i) for an actively-managed portfolio.",
+            "Discuss why tracking error would provide complementary insight to the VaR figure calculated in part (i) for an actively-managed portfolio.",
           answer:
-            "VaR measures genuine absolute downside risk in monetary terms, while tracking error measures genuine relative risk against a benchmark; using both together provides a more complete risk picture, since a portfolio could have low tracking error (closely following its benchmark) while the benchmark itself carries genuinely significant absolute VaR, or vice versa, so neither measure alone gives a fully complete risk picture.",
+            "VaR measures genuine absolute downside risk in monetary terms, while tracking error measures genuine relative risk against a benchmark; using both together provides a more complete risk picture, since a portfolio could have low tracking error (closely following its benchmark) while the benchmark itself carries significant absolute VaR, or vice versa, so neither measure alone gives a fully complete risk picture.",
           note: "A strong answer explains the genuine difference between absolute and relative risk, not just asserts both measures are 'useful'.",
         },
         {
@@ -8610,9 +8610,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why risk attribution is a genuinely valuable additional step beyond simply calculating the portfolio's total VaR figure.",
+            "Comment on why risk attribution is a valuable additional step beyond simply calculating the portfolio's total VaR figure.",
           answer:
-            "Risk attribution decomposes where the portfolio's genuine risk actually comes from (e.g. which specific positions or factor exposures contribute most), revealing genuinely important concentration insights that a single aggregate VaR number alone would not show, since correlated or highly volatile positions can dominate overall risk even while representing a modest proportion of total portfolio value.",
+            "Risk attribution decomposes where the portfolio's genuine risk actually comes from (e.g. which specific positions or factor exposures contribute most), revealing important concentration insights that a single aggregate VaR number alone would not show, since correlated or highly volatile positions can dominate overall risk even while representing a modest proportion of total portfolio value.",
           note: "This connects the numeric VaR calculation directly to the risk-attribution material developed in this course.",
         },
       ],
@@ -8638,20 +8638,20 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why sector allocation and stock selection should be assessed as genuinely separate skills, rather than combined into the single 1.9% active return figure calculated in part (i).",
+            "Explain why sector allocation and stock selection should be assessed as separate skills, rather than combined into the single 1.9% active return figure calculated in part (i).",
           answer:
-            "Sector allocation and stock selection are genuinely separate skills that can offset each other — being right about which sectors to favour doesn't guarantee genuine skill in choosing the best individual stocks within those correctly-favoured sectors, so overall performance depends on both skills together, and only decomposing them reveals which specific skill genuinely drove the result.",
-          note: "A strong answer explains why the two skills are genuinely distinct and can diverge, not just asserts that decomposition is 'more detailed'.",
+            "Sector allocation and stock selection are separate skills that can offset each other — being right about which sectors to favour doesn't guarantee genuine skill in choosing the best individual stocks within those correctly-favoured sectors, so overall performance depends on both skills together, and only decomposing them reveals which specific skill drove the result.",
+          note: "A strong answer explains why the two skills are distinct and can diverge, not just asserts that decomposition is 'more detailed'.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why this portfolio's performance might look genuinely different when compared against a peer group of similar managers rather than against the market index used in part (i).",
+            "Discuss why this portfolio's performance might look different when compared against a peer group of similar managers rather than against the market index used in part (i).",
           answer:
-            "The whole peer group could genuinely outperform or underperform the broad market together (e.g. due to a shared style tilt that happened to be in or out of favour), meaning this manager could genuinely beat the market index while still underperforming their peer group, or vice versa, since these two comparisons answer genuinely different relative-performance questions.",
-          note: "A strong answer explicitly explains why the two comparisons can genuinely diverge, not just asserts they are 'different'.",
+            "The whole peer group could outperform or underperform the broad market together (e.g. due to a shared style tilt that happened to be in or out of favour), meaning this manager could beat the market index while still underperforming their peer group, or vice versa, since these two comparisons answer different relative-performance questions.",
+          note: "A strong answer explicitly explains why the two comparisons can diverge, not just asserts they are 'different'.",
         },
         {
           label: "(iv)",
@@ -8660,7 +8660,7 @@ const QUESTIONS = {
           question:
             "Comment on why a risk-adjusted performance measure should be considered alongside the raw 1.9% active return figure calculated in part (i).",
           answer:
-            "A risk-adjusted measure assesses whether this genuine outperformance reflects genuine skill or simply reflects taking on genuinely more risk than the mandate intended; a manager achieving a higher raw return by accepting materially more risk has not necessarily demonstrated genuine skill superior to one achieving a slightly lower return with materially less risk.",
+            "A risk-adjusted measure assesses whether this genuine outperformance reflects genuine skill or simply reflects taking on more risk than the mandate intended; a manager achieving a higher raw return by accepting materially more risk has not necessarily demonstrated genuine skill superior to one achieving a slightly lower return with materially less risk.",
           note: "This connects the numeric attribution result directly to the risk-adjusted-performance theme developed in this course.",
         },
       ],
@@ -8676,17 +8676,17 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why NAV (net asset value) might be a genuinely more appropriate performance measure than a market-price-based measure for a fund holding illiquid assets.",
+            "Explain why NAV (net asset value) might be a more appropriate performance measure than a market-price-based measure for a fund holding illiquid assets.",
           answer:
-            "NAV directly reflects the genuine underlying value of a fund's holdings (assets minus liabilities), providing a meaningful valuation even where no continuous, liquid market price exists for the fund itself, unlike a market-price-based approach which would require a genuinely observable trading price that illiquid asset funds often lack.",
-          note: "A strong answer explains WHY NAV solves the illiquid-asset valuation problem, not just defines NAV.",
+            "NAV directly reflects the genuine underlying value of a fund's holdings (assets minus liabilities), providing a meaningful valuation even where no continuous, liquid market price exists for the fund itself, unlike a market-price-based approach which would require an observable trading price that illiquid asset funds often lack.",
+          note: "A strong answer explains <em>why</em> NAV solves the illiquid-asset valuation problem, not just defines NAV.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why constructing a genuinely representative index for unlisted or illiquid assets is materially more difficult than for listed equities.",
+            "Explain why constructing a representative index for unlisted or illiquid assets is materially more difficult than for listed equities.",
           answer:
             "Unlisted or illiquid assets lack continuously observable market prices, so an index tracking them must rely on periodic appraisals or modelled valuations rather than genuine, real-time transaction prices, introducing genuine valuation lag and smoothing effects that can distort the index's apparent volatility and correlation with other, more liquid asset classes.",
           note: "This connects directly to the illiquid-asset-valuation-challenge theme developed in this course.",
@@ -8698,7 +8698,7 @@ const QUESTIONS = {
           question:
             "Discuss the genuine limitations of performance measurement techniques that an actuary should bear in mind when interpreting a fund's reported performance figures.",
           answer:
-            "Performance measures can be genuinely distorted by the timing of cashflows into and out of a portfolio, can depend heavily on the specific period chosen for measurement (a genuinely different period could tell a materially different story), and may not fully capture genuine risk taken to achieve the reported return, meaning raw performance figures require careful, critical interpretation rather than being taken at face value.",
+            "Performance measures can be distorted by the timing of cashflows into and out of a portfolio, can depend heavily on the specific period chosen for measurement (a different period could tell a materially different story), and may not fully capture genuine risk taken to achieve the reported return, meaning raw performance figures require careful, critical interpretation rather than being taken at face value.",
           note: "A strong answer names multiple genuine limitations, not just one, demonstrating critical awareness rather than uncritical acceptance of reported figures.",
         },
         {
@@ -8706,7 +8706,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why the same investment index might serve genuinely different purposes depending on whether it is used as a performance benchmark or as the basis for an index-tracking product.",
+            "Comment on why the same investment index might serve different purposes depending on whether it is used as a performance benchmark or as the basis for an index-tracking product.",
           answer:
             "As a benchmark, an index provides a genuine, independent comparison point for assessing active manager performance; as the basis for a tracking product, the same index instead becomes the genuine, direct investment target itself, meaning index construction methodology decisions can matter differently depending on which of these two purposes is primary.",
           note: "This connects directly to the dual-purpose-of-indices theme developed in this course.",
@@ -8728,15 +8728,15 @@ const QUESTIONS = {
           question:
             "Distinguish between hedgers, speculators and arbitrageurs as users of derivatives.",
           answer:
-            "Hedgers use derivatives to genuinely reduce an existing risk exposure; speculators use derivatives to take on genuine new exposure in the hope of profiting from an anticipated market movement; arbitrageurs use derivatives to exploit genuine, temporary pricing discrepancies between related instruments, aiming for a risk-free profit.",
-          note: "A complete answer distinguishes all three genuinely distinct motivations, not just names them.",
+            "Hedgers use derivatives to reduce an existing risk exposure; speculators use derivatives to take on genuine new exposure in the hope of profiting from an anticipated market movement; arbitrageurs use derivatives to exploit genuine, temporary pricing discrepancies between related instruments, aiming for a risk-free profit.",
+          note: "A complete answer distinguishes all three distinct motivations, not just names them.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why a central counterparty clearing house (CCP) genuinely reduces counterparty risk in exchange-traded derivative markets.",
+            "Explain why a central counterparty clearing house (CCP) reduces counterparty risk in exchange-traded derivative markets.",
           answer:
             "A CCP interposes itself between the two original parties to a trade, becoming the genuine buyer to every seller and seller to every buyer, so each party's counterparty risk is against the CCP itself (typically very well-capitalised and margined) rather than against the original, potentially less creditworthy counterparty directly.",
           note: "A strong answer explicitly names the interposition mechanism, not just asserts that CCPs 'reduce risk'.",
@@ -8748,7 +8748,7 @@ const QUESTIONS = {
           question:
             "Discuss the genuine trade-off between exchange-traded and over-the-counter (OTC) derivative contracts.",
           answer:
-            "Exchange-traded contracts offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC contracts offer genuinely greater flexibility to tailor contract terms to specific needs, at the cost of typically greater counterparty risk and reduced price transparency. A party requiring a bespoke hedge (e.g. a specific maturity or notional not available on-exchange) may genuinely need to accept OTC's greater counterparty risk to achieve the precise exposure required.",
+            "Exchange-traded contracts offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC contracts offer greater flexibility to tailor contract terms to specific needs, at the cost of typically greater counterparty risk and reduced price transparency. A party requiring a bespoke hedge (e.g. a specific maturity or notional not available on-exchange) may need to accept OTC's greater counterparty risk to achieve the precise exposure required.",
           note: "A strong answer names both sides of the trade-off and gives a genuine example of when OTC's flexibility might be worth its added risk.",
         },
         {
@@ -8756,9 +8756,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why margining and settlement processes for exchange-traded futures are genuinely distinct from a contract's theoretical payoff structure.",
+            "Comment on why margining and settlement processes for exchange-traded futures are distinct from a contract's theoretical payoff structure.",
           answer:
-            "Exchange-traded futures typically require posting and maintaining margin that is marked-to-market daily, with genuine cashflow implications for the holder distinct from the contract's eventual payoff at expiry, so understanding market mechanics is genuinely separate from understanding the contract's theoretical payoff.",
+            "Exchange-traded futures typically require posting and maintaining margin that is marked-to-market daily, with genuine cashflow implications for the holder distinct from the contract's eventual payoff at expiry, so understanding market mechanics is separate from understanding the contract's theoretical payoff.",
           note: "This connects directly to the mechanics-versus-payoff distinction developed in this course.",
         },
       ],
@@ -8784,9 +8784,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why any forward price genuinely deviating from the figure calculated in part (i) would allow a risk-free arbitrage profit.",
+            "Explain why any forward price deviating from the figure calculated in part (i) would allow a risk-free arbitrage profit.",
           answer:
-            "If the forward price were genuinely higher than $F = S_0 e^{rT}$, an arbitrageur could sell the forward, simultaneously buy the stock (financed by borrowing at the risk-free rate), and lock in a risk-free profit at maturity; if genuinely lower, the reverse strategy (buy the forward, short the stock, invest the proceeds) would achieve the same. Either way, this arbitrage activity would push the forward price back toward its no-arbitrage level.",
+            "If the forward price were higher than $F = S_0 e^{rT}$, an arbitrageur could sell the forward, simultaneously buy the stock (financed by borrowing at the risk-free rate), and lock in a risk-free profit at maturity; if lower, the reverse strategy (buy the forward, short the stock, invest the proceeds) would achieve the same. Either way, this arbitrage activity would push the forward price back toward its no-arbitrage level.",
           note: "A strong answer explains the arbitrage mechanism in at least one direction explicitly, not just asserts that arbitrage 'would occur'.",
         },
         {
@@ -8794,9 +8794,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why the payoff of the forward contract priced in part (i) is genuinely linear and symmetric, unlike an option's payoff.",
+            "Discuss why the payoff of the forward contract priced in part (i) is linear and symmetric, unlike an option's payoff.",
           answer:
-            "The forward's payoff at maturity is $S_T - F$, a genuinely linear function of the underlying's price with unbounded upside AND unbounded downside for the long holder, unlike an option's payoff of $\\max(S_T - K, 0)$ or $\\max(K - S_T, 0)$, which caps the holder's downside at the premium paid while retaining upside potential — a fundamentally different, asymmetric risk profile.",
+            "The forward's payoff at maturity is $S_T - F$, a linear function of the underlying's price with unbounded upside <em>and</em> unbounded downside for the long holder, unlike an option's payoff of $\\max(S_T - K, 0)$ or $\\max(K - S_T, 0)$, which caps the holder's downside at the premium paid while retaining upside potential — a fundamentally different, asymmetric risk profile.",
           note: "A strong answer explicitly contrasts the mathematical payoff structures, not just asserts they are 'different'.",
         },
         {
@@ -8806,7 +8806,7 @@ const QUESTIONS = {
           question:
             "Comment on how an investor holding this stock could use a futures contract to hedge against a price fall over the next 6 months.",
           answer:
-            "Selling (going short) a futures contract on the same underlying stock creates a genuinely offsetting position — if the stock's price falls, the loss on the physical holding is offset by the genuine gain on the short futures position, effectively locking in the stock's current value regardless of subsequent price movements.",
+            "Selling (going short) a futures contract on the same underlying stock creates an offsetting position — if the stock's price falls, the loss on the physical holding is offset by the genuine gain on the short futures position, effectively locking in the stock's current value regardless of subsequent price movements.",
           note: "This connects directly to the hedging-with-futures material developed in this course.",
         },
       ],
@@ -8834,8 +8834,8 @@ const QUESTIONS = {
           question:
             "Explain why the risk-neutral probability calculated in part (i) is used to price the option, rather than the market's genuine real-world assessment of the probability of an up-move.",
           answer:
-            "Under the martingale (risk-neutral) probability measure, discounted asset prices genuinely behave as martingales, allowing the option's fair price to be calculated as the discounted expected payoff under this artificial measure, genuinely avoiding the need to know or estimate the underlying asset's true, real-world expected return — a genuinely powerful simplification since real-world probabilities are far harder to estimate reliably than risk-neutral ones, which are derived purely from observable market prices.",
-          note: "A strong answer explains WHY risk-neutral pricing avoids needing the real-world probability, not just that it does.",
+            "Under the martingale (risk-neutral) probability measure, discounted asset prices behave as martingales, allowing the option's fair price to be calculated as the discounted expected payoff under this artificial measure, avoiding the need to know or estimate the underlying asset's true, real-world expected return — a powerful simplification since real-world probabilities are far harder to estimate reliably than risk-neutral ones, which are derived purely from observable market prices.",
+          note: "A strong answer explains <em>why</em> risk-neutral pricing avoids needing the real-world probability, not just that it does.",
         },
         {
           label: "(iii)",
@@ -8854,7 +8854,7 @@ const QUESTIONS = {
           question:
             "Comment on why extending this one-step model to many genuine time steps (a multi-step tree) would provide a more refined price estimate.",
           answer:
-            "A multi-step tree captures a genuinely richer range of possible price paths and converges toward the continuous-time Black-Scholes result as the number of steps increases and each step's time interval shrinks, providing a more refined approximation than a single, coarse one-step model.",
+            "A multi-step tree captures a richer range of possible price paths and converges toward the continuous-time Black-Scholes result as the number of steps increases and each step's time interval shrinks, providing a more refined approximation than a single, coarse one-step model.",
           note: "This connects directly to the tree-as-multi-step-extension material developed in this course.",
         },
       ],
@@ -8892,7 +8892,7 @@ const QUESTIONS = {
           question:
             "Explain why $N(d_1)$ in part (i) can also be interpreted as the option's delta.",
           answer:
-            "Delta measures how much the option's price genuinely changes per unit change in the underlying's price ($\\Delta = \\frac{\\partial C}{\\partial S}$); differentiating the Black-Scholes call formula with respect to $S_0$ shows this partial derivative equals exactly $N(d_1)$, so $N(d_1)$ serves the dual role of both a probability term in the pricing formula and the option's genuine hedge ratio.",
+            "Delta measures how much the option's price changes per unit change in the underlying's price ($\\Delta = \\frac{\\partial C}{\\partial S}$); differentiating the Black-Scholes call formula with respect to $S_0$ shows this partial derivative equals exactly $N(d_1)$, so $N(d_1)$ serves the dual role of both a probability term in the pricing formula and the option's genuine hedge ratio.",
           note: "A strong answer connects the mathematical differentiation to the practical hedging interpretation.",
         },
         {
@@ -8920,7 +8920,7 @@ const QUESTIONS = {
           question:
             "Explain why Monte Carlo simulation is particularly well-suited to pricing an Asian option, but historically struggled with pricing American options.",
           answer:
-            "Monte Carlo simulation naturally handles path-dependent payoffs like an Asian option's average-price payoff, since each simulation genuinely tracks a full price path, not just a final value. It historically struggled with American options because standard forward-simulation Monte Carlo only evaluates payoffs at final maturity, but American options require determining, at each point, whether immediate exercise is more valuable than continuing to hold — a genuinely different 'optimal stopping' problem forward simulation alone cannot directly solve.",
+            "Monte Carlo simulation naturally handles path-dependent payoffs like an Asian option's average-price payoff, since each simulation tracks a full price path, not just a final value. It historically struggled with American options because standard forward-simulation Monte Carlo only evaluates payoffs at final maturity, but American options require determining, at each point, whether immediate exercise is more valuable than continuing to hold — a different 'optimal stopping' problem forward simulation alone cannot directly solve.",
           note: "A strong answer explains both the genuine strength (path-dependency) and the genuine historical limitation (early exercise), not just one.",
         },
         {
@@ -8930,7 +8930,7 @@ const QUESTIONS = {
           question:
             "Explain how the Longstaff-Schwartz least-squares approach adapts Monte Carlo simulation to price American options.",
           answer:
-            "The Longstaff-Schwartz approach uses regression at each simulated time step to estimate the genuine expected value of continuing to hold the option, comparing this against the value of exercising immediately at that point, allowing a genuinely informed, backward-looking optimal exercise decision to be estimated within an otherwise forward-simulating Monte Carlo framework.",
+            "The Longstaff-Schwartz approach uses regression at each simulated time step to estimate the genuine expected value of continuing to hold the option, comparing this against the value of exercising immediately at that point, allowing an informed, backward-looking optimal exercise decision to be estimated within an otherwise forward-simulating Monte Carlo framework.",
           note: "This connects directly to the Longstaff-Schwartz solution material developed in this course.",
         },
         {
@@ -8940,7 +8940,7 @@ const QUESTIONS = {
           question:
             "Discuss the genuine relative strengths of binomial/trinomial trees, Monte Carlo simulation, and finite difference methods for derivative pricing.",
           answer:
-            "Trees are genuinely intuitive and handle American-style early exercise naturally through backward induction. Monte Carlo excels at high-dimensional and path-dependent problems but historically struggled with early exercise until adaptations like Longstaff-Schwartz. Finite difference methods directly solve the governing Black-Scholes-Merton PDE and handle certain boundary conditions well but can become genuinely computationally expensive in high dimensions. The choice of method should genuinely reflect the specific derivative's structural features (path-dependency, early exercise, dimensionality).",
+            "Trees are intuitive and handle American-style early exercise naturally through backward induction. Monte Carlo excels at high-dimensional and path-dependent problems but historically struggled with early exercise until adaptations like Longstaff-Schwartz. Finite difference methods directly solve the governing Black-Scholes-Merton PDE and handle certain boundary conditions well but can become computationally expensive in high dimensions. The choice of method should reflect the specific derivative's structural features (path-dependency, early exercise, dimensionality).",
           note: "A strong answer names a genuine relative strength/weakness for each of the three methods, not just describes what each method is.",
         },
         {
@@ -8968,7 +8968,7 @@ const QUESTIONS = {
           question:
             "Explain how an interest rate swap can be valued by treating it as the difference between a fixed-rate bond and a floating-rate bond.",
           answer:
-            "An interest rate swap's value can be determined by treating it as the genuine difference between a fixed-rate bond (valuing the fixed leg) and a floating-rate bond (valuing the floating leg), each discounted using the appropriate zero-rate curve, with the swap's fair fixed rate set so the two legs have genuinely equal value at initiation.",
+            "An interest rate swap's value can be determined by treating it as the genuine difference between a fixed-rate bond (valuing the fixed leg) and a floating-rate bond (valuing the floating leg), each discounted using the appropriate zero-rate curve, with the swap's fair fixed rate set so the two legs have equal value at initiation.",
           note: "A strong answer explicitly names the bond-decomposition technique, not just asserts that swaps 'can be valued using discounting'.",
         },
         {
@@ -8978,8 +8978,8 @@ const QUESTIONS = {
           question:
             "Explain what the Black model is, and why it provides a practical framework for pricing interest rate derivatives despite genuine known limitations.",
           answer:
-            "The Black model adapts the Black-Scholes framework's mathematical structure to price options on forward prices or rates, providing a genuinely practical, widely-used pricing approach for bond options, caps/floors and swaptions, even though its underlying lognormality assumption for interest rates is a genuine simplification not perfectly matching real interest rate behaviour.",
-          note: "A strong answer explains both the practical value AND acknowledges the genuine simplifying assumption's limitation.",
+            "The Black model adapts the Black-Scholes framework's mathematical structure to price options on forward prices or rates, providing a practical, widely-used pricing approach for bond options, caps/floors and swaptions, even though its underlying lognormality assumption for interest rates is a genuine simplification not perfectly matching real interest rate behaviour.",
+          note: "A strong answer explains both the practical value <em>and</em> acknowledges the genuine simplifying assumption's limitation.",
         },
         {
           label: "(iii)",
@@ -8988,8 +8988,8 @@ const QUESTIONS = {
           question:
             "Discuss how a cap can be decomposed into individual caplets, and how this decomposition is used within the Black model to price the whole cap.",
           answer:
-            "A cap protects the holder against rising interest rates by paying out if a reference rate exceeds a specified strike level at each of a series of future dates; a cap can genuinely be decomposed into a portfolio of individual caplets, each a simple interest-rate call option applying to a single future period. The Black model prices EACH caplet as an option on the relevant forward interest rate for its specific period, then sums these individual caplet values to obtain the whole cap's total price.",
-          note: "A strong answer explains both the conceptual decomposition AND how the Black model uses it practically, not just one or the other.",
+            "A cap protects the holder against rising interest rates by paying out if a reference rate exceeds a specified strike level at each of a series of future dates; a cap can be decomposed into a portfolio of individual caplets, each a simple interest-rate call option applying to a single future period. The Black model prices <em>each</em> caplet as an option on the relevant forward interest rate for its specific period, then sums these individual caplet values to obtain the whole cap's total price.",
+          note: "A strong answer explains both the conceptual decomposition <em>and</em> how the Black model uses it practically, not just one or the other.",
         },
         {
           label: "(iv)",
@@ -8998,7 +8998,7 @@ const QUESTIONS = {
           question:
             "Comment on why an actuary applying the Black model should explicitly acknowledge its underlying assumptions, rather than applying it uncritically.",
           answer:
-            "The Black model genuinely assumes the relevant forward rate is lognormally distributed with constant volatility, an assumption that, like Black-Scholes's own assumptions, may not perfectly hold in reality (e.g. genuine volatility smile effects), so a sound actuarial application should genuinely acknowledge these limitations rather than treating the model's output as unquestionably precise.",
+            "The Black model assumes the relevant forward rate is lognormally distributed with constant volatility, an assumption that, like Black-Scholes's own assumptions, may not perfectly hold in reality (e.g. genuine volatility smile effects), so a sound actuarial application should acknowledge these limitations rather than treating the model's output as unquestionably precise.",
           note: "This connects directly to the critical-model-awareness theme developed throughout this course.",
         },
       ],
@@ -9016,17 +9016,17 @@ const QUESTIONS = {
           question:
             "Distinguish between 'equilibrium' and 'no-arbitrage' term structure models, naming one example of each.",
           answer:
-            "Equilibrium models (e.g. Vasicek) genuinely derive the term structure's shape from underlying economic assumptions about interest rate behaviour, potentially producing a model-implied curve that does not exactly match today's observed market curve. No-arbitrage models (e.g. Hull-White) are genuinely calibrated to exactly fit today's observed market curve by construction, prioritising consistency with current market prices.",
-          note: "A complete answer distinguishes both categories AND names a correct example of each.",
+            "Equilibrium models (e.g. Vasicek) derive the term structure's shape from underlying economic assumptions about interest rate behaviour, potentially producing a model-implied curve that does not exactly match today's observed market curve. No-arbitrage models (e.g. Hull-White) are calibrated to exactly fit today's observed market curve by construction, prioritising consistency with current market prices.",
+          note: "A complete answer distinguishes both categories <em>and</em> names a correct example of each.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain how the Cox-Ingersoll-Ross (CIR) model genuinely differs from the Vasicek model.",
+            "Explain how the Cox-Ingersoll-Ross (CIR) model differs from the Vasicek model.",
           answer:
-            "The CIR model's interest rate volatility genuinely depends on the current level of interest rates themselves (higher rates produce higher volatility), while Vasicek assumes constant volatility regardless of the rate level; CIR's structure also genuinely ensures interest rates cannot become negative, an advantage over Vasicek which theoretically permits negative rates.",
+            "The CIR model's interest rate volatility depends on the current level of interest rates themselves (higher rates produce higher volatility), while Vasicek assumes constant volatility regardless of the rate level; CIR's structure also ensures interest rates cannot become negative, an advantage over Vasicek which theoretically permits negative rates.",
           note: "A strong answer names both distinguishing features (rate-dependent volatility and non-negativity), not just one.",
         },
         {
@@ -9034,19 +9034,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss how the Heath-Jarrow-Morton (HJM) and LIBOR market models genuinely extend single-factor short-rate models like Hull-White, and one genuine problem with calibrating the LIBOR market model using Black's model.",
+            "Discuss how the Heath-Jarrow-Morton (HJM) and LIBOR market models extend single-factor short-rate models like Hull-White, and one genuine problem with calibrating the LIBOR market model using Black's model.",
           answer:
-            "HJM and LIBOR market models genuinely model the evolution of the whole forward rate curve (or a discrete set of forward LIBOR rates) simultaneously, rather than a single short-rate process, allowing genuinely richer, multi-factor modelling of how different parts of the yield curve can move independently. Calibrating the LIBOR market model using Black-implied volatilities (a practical market convention) can create genuine internal inconsistencies, since the LIBOR market model's own underlying dynamics don't necessarily support Black's simplifying lognormality assumption exactly.",
-          note: "A strong answer explains both the genuine multi-factor extension AND the genuine calibration tension, not just one.",
+            "HJM and LIBOR market models model the evolution of the whole forward rate curve (or a discrete set of forward LIBOR rates) simultaneously, rather than a single short-rate process, allowing richer, multi-factor modelling of how different parts of the yield curve can move independently. Calibrating the LIBOR market model using Black-implied volatilities (a practical market convention) can create genuine internal inconsistencies, since the LIBOR market model's own underlying dynamics don't necessarily support Black's simplifying lognormality assumption exactly.",
+          note: "A strong answer explains both the genuine multi-factor extension <em>and</em> the genuine calibration tension, not just one.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why correlation plays a genuinely critical role in pricing a multi-name credit derivative (e.g. an nth-to-default basket) but not a single-name CDS.",
+            "Comment on why correlation plays a critical role in pricing a multi-name credit derivative (e.g. an nth-to-default basket) but not a single-name CDS.",
           answer:
-            "A single-name CDS's payoff depends only on one reference entity's default, requiring no correlation assumption, while a multi-name basket's payoff depends on the JOINT, not just individual, default behaviour of multiple names, making the genuine correlation between different reference entities' default probabilities critically important for pricing.",
+            "A single-name CDS's payoff depends only on one reference entity's default, requiring no correlation assumption, while a multi-name basket's payoff depends on the <em>joint</em>, not just individual, default behaviour of multiple names, making the genuine correlation between different reference entities' default probabilities critically important for pricing.",
           note: "This connects directly to the correlation-critical-for-multi-name-instruments theme developed in this course.",
         },
       ],
@@ -9064,7 +9064,7 @@ const QUESTIONS = {
           question:
             "Explain why an investor must assess how derivative use changes a portfolio's overall risk profile, rather than assessing each derivative position in isolation.",
           answer:
-            "A derivative position's risk effect depends genuinely on how it interacts with the rest of the portfolio (e.g. a hedge reduces overall risk only if it genuinely offsets an existing exposure), so assessing derivative impact requires a genuinely portfolio-level view, not evaluating each derivative's standalone risk in isolation from everything else held.",
+            "A derivative position's risk effect depends on how it interacts with the rest of the portfolio (e.g. a hedge reduces overall risk only if it offsets an existing exposure), so assessing derivative impact requires a portfolio-level view, not evaluating each derivative's standalone risk in isolation from everything else held.",
           note: "A strong answer explicitly explains why portfolio-level assessment is necessary, not just asserts that it should be done.",
         },
         {
@@ -9074,8 +9074,8 @@ const QUESTIONS = {
           question:
             "Explain what 'delta' measures, and why a delta-hedged position requires genuine ongoing rebalancing.",
           answer:
-            "Delta ($\\Delta = \\frac{\\partial C}{\\partial S}$) genuinely quantifies how much the derivative's price changes per unit change in the underlying's price, so holding a genuinely offsetting position of $\\Delta$ units of the underlying creates a delta-neutral hedge; since delta itself changes as the underlying's price and time to expiry change, this hedge requires genuine ongoing rebalancing to remain effective (dynamic hedging).",
-          note: "A strong answer explains both what delta measures AND why the hedge requires rebalancing, not just one.",
+            "Delta ($\\Delta = \\frac{\\partial C}{\\partial S}$) quantifies how much the derivative's price changes per unit change in the underlying's price, so holding an offsetting position of $\\Delta$ units of the underlying creates a delta-neutral hedge; since delta itself changes as the underlying's price and time to expiry change, this hedge requires genuine ongoing rebalancing to remain effective (dynamic hedging).",
+          note: "A strong answer explains both what delta measures <em>and</em> why the hedge requires rebalancing, not just one.",
         },
         {
           label: "(iii)",
@@ -9084,7 +9084,7 @@ const QUESTIONS = {
           question:
             "Discuss why exotic derivatives might require particular care when assessing their risk management characteristics, compared with standard vanilla options.",
           answer:
-            "Exotic derivatives' genuinely more complex, sometimes discontinuous payoff structures (e.g. a barrier option's payoff jumping discontinuously when the barrier is touched) can produce Greeks that behave in genuinely unstable or non-intuitive ways near critical price levels, requiring particular care and more sophisticated risk management technique than a standard vanilla option's more smoothly-behaving Greeks.",
+            "Exotic derivatives' more complex, sometimes discontinuous payoff structures (e.g. a barrier option's payoff jumping discontinuously when the barrier is touched) can produce Greeks that behave in unstable or non-intuitive ways near critical price levels, requiring particular care and more sophisticated risk management technique than a standard vanilla option's more smoothly-behaving Greeks.",
           note: "A strong answer connects the exotic payoff's structural complexity directly to the resulting Greeks-behaviour challenge.",
         },
         {
@@ -9092,7 +9092,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why scenario analysis provides genuinely complementary insight to the Greeks when managing a portfolio of derivatives.",
+            "Comment on why scenario analysis provides complementary insight to the Greeks when managing a portfolio of derivatives.",
           answer:
             "Scenario analysis projects a genuine portfolio's value under a range of specified future market conditions, revealing how the portfolio's Greeks-based sensitivities translate into genuine potential outcomes under realistic, combined market moves that a single Greek in isolation might not fully capture.",
           note: "This connects directly to the scenario-analysis-as-portfolio-level-complement theme developed in this course.",
@@ -9122,7 +9122,7 @@ const QUESTIONS = {
           question:
             "Explain one genuine weakness of the delta-normal VaR approach used in part (i) when applied to a portfolio containing options.",
           answer:
-            "The delta-normal approach treats the portfolio's exposure as genuinely linear via its delta, but an options portfolio's true payoff is genuinely non-linear (the delta itself changes as the underlying moves), so this linear approximation can materially misstate genuine risk for large market moves, understating the portfolio's true tail risk compared with a method that properly captures this non-linearity (e.g. full Monte Carlo revaluation).",
+            "The delta-normal approach treats the portfolio's exposure as linear via its delta, but an options portfolio's true payoff is non-linear (the delta itself changes as the underlying moves), so this linear approximation can materially misstate genuine risk for large market moves, understating the portfolio's true tail risk compared with a method that properly captures this non-linearity (e.g. full Monte Carlo revaluation).",
           note: "A strong answer explicitly names the linear-approximation-versus-non-linear-payoff mismatch, not just asserts that VaR has 'limitations'.",
         },
         {
@@ -9130,9 +9130,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss what 'basis risk' means in the context of a derivatives hedge, and why it could genuinely undermine this portfolio's risk management even after implementing a theoretically sound delta hedge.",
+            "Discuss what 'basis risk' means in the context of a derivatives hedge, and why it could undermine this portfolio's risk management even after implementing a theoretically sound delta hedge.",
           answer:
-            "Basis risk arises when the derivative used to hedge a specific exposure does not genuinely, perfectly match that exposure, meaning the hedge's value may not move in perfect lockstep with the underlying exposure being hedged. Even a theoretically sound delta hedge calculated precisely (as in part (i)) could leave genuine residual risk if the actual hedging instrument's underlying doesn't perfectly correspond to the true exposure being managed.",
+            "Basis risk arises when the derivative used to hedge a specific exposure does not perfectly match that exposure, meaning the hedge's value may not move in perfect lockstep with the underlying exposure being hedged. Even a theoretically sound delta hedge calculated precisely (as in part (i)) could leave genuine residual risk if the actual hedging instrument's underlying doesn't perfectly correspond to the true exposure being managed.",
           note: "A strong answer explains why basis risk persists even given a technically correct delta calculation.",
         },
         {
@@ -9140,9 +9140,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why ISDA agreements and collateral management address counterparty risk through genuinely different mechanisms.",
+            "Comment on why ISDA agreements and collateral management address counterparty risk through different mechanisms.",
           answer:
-            "ISDA agreements provide genuinely standardised legal documentation governing OTC derivative relationships, including provisions for netting offsetting exposures, while collateral management requires counterparties to genuinely post collateral reflecting their current mark-to-market exposure, reducing the genuine loss if a counterparty were to default — legal netting/standardisation versus genuine, tangible financial security.",
+            "ISDA agreements provide standardised legal documentation governing OTC derivative relationships, including provisions for netting offsetting exposures, while collateral management requires counterparties to post collateral reflecting their current mark-to-market exposure, reducing the genuine loss if a counterparty were to default — legal netting/standardisation versus genuine, tangible financial security.",
           note: "This connects directly to the complementary-counterparty-risk-mechanisms theme developed in this course.",
         },
       ],
@@ -9160,8 +9160,8 @@ const QUESTIONS = {
           question:
             "Explain what a Limited Price Indexation (LPI) swap is, and why it might provide a more precisely-matched hedge for a pension scheme than a simple, uncapped inflation swap.",
           answer:
-            "An LPI swap exchanges cashflows linked to inflation subject to a cap and floor, genuinely matching many pension schemes' actual benefit increase structure (which is typically similarly capped and floored), providing a more precisely-matched hedge than a simple, uncapped inflation swap would, since the hedge's payoff structure directly mirrors the genuine liability structure being hedged.",
-          note: "A strong answer explains WHY the capped/floored structure provides a better match, not just describes what an LPI swap is.",
+            "An LPI swap exchanges cashflows linked to inflation subject to a cap and floor, matching many pension schemes' actual benefit increase structure (which is typically similarly capped and floored), providing a more precisely-matched hedge than a simple, uncapped inflation swap would, since the hedge's payoff structure directly mirrors the genuine liability structure being hedged.",
+          note: "A strong answer explains <em>why</em> the capped/floored structure provides a better match, not just describes what an LPI swap is.",
         },
         {
           label: "(ii)",
@@ -9170,18 +9170,18 @@ const QUESTIONS = {
           question:
             "Explain how a special purpose vehicle (SPV) can be used as part of a risk transfer mechanism, and the genuine role a credit enhancement agency might play.",
           answer:
-            "An SPV is a genuinely separate legal entity created specifically to hold and isolate certain assets or risks (e.g. issuing insurance-linked securities or securitised debt), ring-fencing this specific risk from the sponsoring institution's own broader balance sheet; a credit enhancement agency may provide additional genuine guarantees or support improving the SPV-issued securities' creditworthiness, making them more attractive to investors.",
-          note: "A strong answer explains both the SPV's genuine risk-isolation role AND the credit enhancement agency's role.",
+            "An SPV is a separate legal entity created specifically to hold and isolate certain assets or risks (e.g. issuing insurance-linked securities or securitised debt), ring-fencing this specific risk from the sponsoring institution's own broader balance sheet; a credit enhancement agency may provide additional genuine guarantees or support improving the SPV-issued securities' creditworthiness, making them more attractive to investors.",
+          note: "A strong answer explains both the SPV's genuine risk-isolation role <em>and</em> the credit enhancement agency's role.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why a credit default swap (CDS) can be understood as functioning like an insurance contract, and how its fair premium (spread) is genuinely determined.",
+            "Discuss why a credit default swap (CDS) can be understood as functioning like an insurance contract, and how its fair premium (spread) is determined.",
           answer:
-            "A CDS pays the protection buyer a genuine compensating payment if a specified reference entity experiences a credit event, in exchange for the buyer paying a regular premium (the CDS spread) to the protection seller — functioning genuinely like an insurance contract against credit risk. A single-name CDS is genuinely priced by setting its premium such that the expected present value of premium payments equals the expected present value of the contingent default payment, given assumed default probabilities and recovery rates, directly echoing the equivalence-principle pricing logic used across the actuarial curriculum.",
-          note: "A strong answer explains both the insurance analogy AND the genuine equivalence-principle-style pricing mechanism.",
+            "A CDS pays the protection buyer a genuine compensating payment if a specified reference entity experiences a credit event, in exchange for the buyer paying a regular premium (the CDS spread) to the protection seller — functioning like an insurance contract against credit risk. A single-name CDS is priced by setting its premium such that the expected present value of premium payments equals the expected present value of the contingent default payment, given assumed default probabilities and recovery rates, directly echoing the equivalence-principle pricing logic used across the actuarial curriculum.",
+          note: "A strong answer explains both the insurance analogy <em>and</em> the genuine equivalence-principle-style pricing mechanism.",
         },
         {
           label: "(iv)",
@@ -9190,7 +9190,7 @@ const QUESTIONS = {
           question:
             "Comment on why an investor should not rely solely on external credit ratings when assessing counterparty risk on an OTC derivative position.",
           answer:
-            "Credit ratings can genuinely be slow to reflect emerging changes in a counterparty's creditworthiness, and rating agencies' methodologies may not fully capture the specific counterparty risk profile relevant to a particular derivative exposure, so genuine independent assessment alongside rating agency output provides a more robust basis for managing counterparty risk.",
+            "Credit ratings can be slow to reflect emerging changes in a counterparty's creditworthiness, and rating agencies' methodologies may not fully capture the specific counterparty risk profile relevant to a particular derivative exposure, so genuine independent assessment alongside rating agency output provides a more robust basis for managing counterparty risk.",
           note: "This connects directly to the credit-rating-agency-limitation theme developed elsewhere in this course.",
         },
       ],
@@ -9210,8 +9210,8 @@ const QUESTIONS = {
           question:
             "Explain what the underwriting cycle is, and why historical claims experience must be interpreted in light of which cycle phase it was written in.",
           answer:
-            "The underwriting cycle describes the genuine, recurring pattern of insurance market conditions moving between 'soft' phases (intense competition, lower premium rates, looser terms) and 'hard' phases (reduced competition, higher premium rates, tighter terms), meaning historical claims experience must genuinely be interpreted in light of WHICH cycle phase it was written in, not treated as a uniform, comparable series across time.",
-          note: "A strong answer explains both cycle phases and why this genuinely affects data interpretation, not just names the concept.",
+            "The underwriting cycle describes the genuine, recurring pattern of insurance market conditions moving between 'soft' phases (intense competition, lower premium rates, looser terms) and 'hard' phases (reduced competition, higher premium rates, tighter terms), meaning historical claims experience must be interpreted in light of <em>which</em> cycle phase it was written in, not treated as a uniform, comparable series across time.",
+          note: "A strong answer explains both cycle phases and why this affects data interpretation, not just names the concept.",
         },
         {
           label: "(ii)",
@@ -9220,7 +9220,7 @@ const QUESTIONS = {
           question:
             "Explain the genuine difference between an 'occurrence' and a 'claims-made' policy wording, and why this distinction directly affects reserving.",
           answer:
-            "An occurrence policy covers claims arising from an event that occurred during the policy period, regardless of when the claim is eventually reported, while a claims-made policy covers claims reported during the policy period, regardless of when the underlying event occurred; this genuinely affects which policy period bears responsibility for a given claim, directly shaping how reserves should be allocated across accident/underwriting years.",
+            "An occurrence policy covers claims arising from an event that occurred during the policy period, regardless of when the claim is eventually reported, while a claims-made policy covers claims reported during the policy period, regardless of when the underlying event occurred; this affects which policy period bears responsibility for a given claim, directly shaping how reserves should be allocated across accident/underwriting years.",
           note: "A strong answer explains the reserving implication, not just the definitional difference.",
         },
         {
@@ -9228,10 +9228,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why a latent claim represents one of the genuinely most challenging reserving problems in general insurance, and why claims-made wordings might reduce an insurer's exposure to this challenge.",
+            "Discuss why a latent claim represents one of the most challenging reserving problems in general insurance, and why claims-made wordings might reduce an insurer's exposure to this challenge.",
           answer:
-            "A latent claim arises from an event or exposure that may not be reported until many years or decades later, meaning standard reserving techniques relying on a reasonably short, observable reporting pattern are poorly suited to estimating these claims' eventual number and cost, requiring genuinely different, more judgement-based reserving approaches. Since a claims-made policy only covers claims reported during its own policy period (plus any extended reporting period), the insurer's exposure for that policy year is genuinely capped, unlike occurrence wordings where claims from events occurring in a given year could still emerge decades later.",
-          note: "A strong answer explains both the genuine latent-claims challenge AND the claims-made mitigation mechanism, not just one.",
+            "A latent claim arises from an event or exposure that may not be reported until many years or decades later, meaning standard reserving techniques relying on a reasonably short, observable reporting pattern are poorly suited to estimating these claims' eventual number and cost, requiring different, more judgement-based reserving approaches. Since a claims-made policy only covers claims reported during its own policy period (plus any extended reporting period), the insurer's exposure for that policy year is capped, unlike occurrence wordings where claims from events occurring in a given year could still emerge decades later.",
+          note: "A strong answer explains both the genuine latent-claims challenge <em>and</em> the claims-made mitigation mechanism, not just one.",
         },
         {
           label: "(iv)",
@@ -9240,7 +9240,7 @@ const QUESTIONS = {
           question:
             "Comment on why competitive pressure during a soft market phase might create reserving risk that only becomes apparent years later.",
           answer:
-            "Competitive pressure during a soft market can genuinely lead to looser underwriting standards or broader policy terms being accepted to retain market share, potentially creating genuinely worse-than-historical claims experience on business written during that period, a risk that may not become fully apparent until claims from that period mature years later.",
+            "Competitive pressure during a soft market can lead to looser underwriting standards or broader policy terms being accepted to retain market share, potentially creating worse-than-historical claims experience on business written during that period, a risk that may not become fully apparent until claims from that period mature years later.",
           note: "This connects directly to the delayed-reserving-risk-from-soft-market-business theme developed in this course.",
         },
       ],
@@ -9258,7 +9258,7 @@ const QUESTIONS = {
           question:
             "Distinguish between systematic and independent reserving uncertainty.",
           answer:
-            "Systematic uncertainty reflects genuine, correlated sources of error affecting an insurer's whole reserving estimate simultaneously, while independent uncertainty reflects genuine, uncorrelated random variation specific to individual claims or accident years that would genuinely average out to some degree across a larger, more diversified book.",
+            "Systematic uncertainty reflects genuine, correlated sources of error affecting an insurer's whole reserving estimate simultaneously, while independent uncertainty reflects genuine, uncorrelated random variation specific to individual claims or accident years that would average out to some degree across a larger, more diversified book.",
           note: "A complete answer distinguishes both types clearly, not just names them.",
         },
         {
@@ -9266,9 +9266,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why systematic reserving uncertainty is genuinely more concerning to an insurer's overall solvency than independent uncertainty of a similar apparent magnitude.",
+            "Explain why systematic reserving uncertainty is more concerning to an insurer's overall solvency than independent uncertainty of a similar apparent magnitude.",
           answer:
-            "Since systematic uncertainty affects the whole reserve estimate in a correlated way, it cannot be diversified away across a larger book of business, meaning it directly translates into genuine, undiluted risk to the insurer's overall reserve adequacy, unlike independent uncertainty which genuinely reduces in relative significance as the book of business grows larger.",
+            "Since systematic uncertainty affects the whole reserve estimate in a correlated way, it cannot be diversified away across a larger book of business, meaning it directly translates into genuine, undiluted risk to the insurer's overall reserve adequacy, unlike independent uncertainty which reduces in relative significance as the book of business grows larger.",
           note: "A strong answer explains the diversification mechanism explicitly.",
         },
         {
@@ -9278,8 +9278,8 @@ const QUESTIONS = {
           question:
             "Distinguish between model risk and parameter risk in general insurance reserving, with an example of each.",
           answer:
-            "Model risk is the genuine risk that the chosen reserving method (e.g. chain ladder versus Bornhuetter-Ferguson) is itself inappropriate for the specific data or situation — for example, applying a chain ladder to an immature accident year where development factors are highly unreliable. Parameter risk is the genuine risk that the specific parameter values used within an otherwise appropriately-chosen method are estimated inaccurately — for example, a genuinely mis-estimated development factor within a correctly-chosen chain ladder approach.",
-          note: "A complete answer distinguishes both risk types AND provides a genuine, distinct example of each.",
+            "Model risk is the genuine risk that the chosen reserving method (e.g. chain ladder versus Bornhuetter-Ferguson) is itself inappropriate for the specific data or situation — for example, applying a chain ladder to an immature accident year where development factors are highly unreliable. Parameter risk is the genuine risk that the specific parameter values used within an otherwise appropriately-chosen method are estimated inaccurately — for example, a mis-estimated development factor within a correctly-chosen chain ladder approach.",
+          note: "A complete answer distinguishes both risk types <em>and</em> provides a genuine, distinct example of each.",
         },
         {
           label: "(iv)",
@@ -9288,7 +9288,7 @@ const QUESTIONS = {
           question:
             "Comment on why a sound reserving process requires an explicit risk appetite, rather than simply aiming to minimise uncertainty as much as possible.",
           answer:
-            "Since reserving uncertainty can never genuinely be eliminated entirely, a sound reserving process requires an explicit, deliberate decision about how much residual uncertainty and what level of prudence is genuinely acceptable, balancing the cost of excessive prudence against the risk of inadequate reserves.",
+            "Since reserving uncertainty can never be eliminated entirely, a sound reserving process requires an explicit, deliberate decision about how much residual uncertainty and what level of prudence is acceptable, balancing the cost of excessive prudence against the risk of inadequate reserves.",
           note: "This connects directly to the risk-appetite-as-deliberate-balance theme developed in this course.",
         },
       ],
@@ -9316,17 +9316,17 @@ const QUESTIONS = {
           question:
             "Explain the genuine core assumption underlying the chain ladder calculation in part (i).",
           answer:
-            "The chain ladder genuinely assumes that claims development patterns (the proportional relationship between cumulative claims at successive development periods) are consistent across different accident years, even though the absolute level of claims may genuinely differ between years.",
-          note: "A strong answer explicitly distinguishes consistent development PATTERN from consistent claims LEVEL.",
+            "The chain ladder assumes that claims development patterns (the proportional relationship between cumulative claims at successive development periods) are consistent across different accident years, even though the absolute level of claims may differ between years.",
+          note: "A strong answer explicitly distinguishes consistent development <em>pattern</em> from consistent claims <em>level</em>.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 2,
           question:
-            "Discuss why this chain ladder estimate might be genuinely less reliable if this accident year is the most recent, least mature year in the triangle.",
+            "Discuss why this chain ladder estimate might be less reliable if this accident year is the most recent, least mature year in the triangle.",
           answer:
-            "The most recent accident years have genuinely fewer development periods of observed data, meaning their projection to ultimate relies on applying larger development factors to a genuinely smaller, less mature base of observed claims, amplifying the genuine impact of any random fluctuation or estimation error in those later development factors.",
+            "The most recent accident years have fewer development periods of observed data, meaning their projection to ultimate relies on applying larger development factors to a smaller, less mature base of observed claims, amplifying the genuine impact of any random fluctuation or estimation error in those later development factors.",
           note: "This connects the numeric calculation directly to the chain ladder's known limitation for immature years.",
         },
         {
@@ -9334,9 +9334,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why the underwriting cycle could genuinely threaten the reliability of the development factors used in part (i).",
+            "Comment on why the underwriting cycle could threaten the reliability of the development factors used in part (i).",
           answer:
-            "If underwriting conditions have genuinely shifted materially between accident years (e.g. tighter terms in a hard market altering claims development speed), the historical development pattern used to derive these factors may no longer genuinely represent how this specific, differently-underwritten year will develop.",
+            "If underwriting conditions have shifted materially between accident years (e.g. tighter terms in a hard market altering claims development speed), the historical development pattern used to derive these factors may no longer represent how this specific, differently-underwritten year will develop.",
           note: "This connects directly to the underwriting-cycle-threatens-chain-ladder-assumptions theme developed in this course.",
         },
       ],
@@ -9364,8 +9364,8 @@ const QUESTIONS = {
           question:
             "Explain why the chain ladder ultimate calculated in the previous question (&pound;7,560,000) differs from the Bornhuetter-Ferguson ultimate calculated in part (i) (&pound;6,354,497), and which is likely to be more reliable for this accident year.",
           answer:
-            "The chain ladder relies purely on this accident year's own claims-based projection (applying development factors to observed claims), while BF blends this with an independent a priori estimate, weighting the a priori estimate more heavily for immature years where chain-ladder-implied development factors are least reliable. Since a chain ladder ultimate derived from applying a genuinely large development factor (1.89) to a relatively immature year is more exposed to estimation error, the BF estimate, which dampens this exposure by blending in the a priori view, is likely to be more reliable here.",
-          note: "A strong answer explains WHY the figures differ (the blending mechanism) AND makes a genuine, justified judgement about relative reliability.",
+            "The chain ladder relies purely on this accident year's own claims-based projection (applying development factors to observed claims), while BF blends this with an independent a priori estimate, weighting the a priori estimate more heavily for immature years where chain-ladder-implied development factors are least reliable. Since a chain ladder ultimate derived from applying a large development factor (1.89) to a relatively immature year is more exposed to estimation error, the BF estimate, which dampens this exposure by blending in the a priori view, is likely to be more reliable here.",
+          note: "A strong answer explains <em>why</em> the figures differ (the blending mechanism) <em>and</em> makes a genuine, justified judgement about relative reliability.",
         },
         {
           label: "(iii)",
@@ -9374,7 +9374,7 @@ const QUESTIONS = {
           question:
             "Discuss why the quality of the &pound;5,000,000 a priori estimate used in part (i) matters more for this accident year than it would for a much more mature accident year.",
           answer:
-            "Since BF weights the a priori estimate most heavily precisely for immature years, a genuinely poor a priori estimate would have its greatest distorting effect on exactly this kind of immature year, while for a mature year (where the chain-ladder-based component dominates the blend) a poor a priori estimate would have comparatively little effect on the final result.",
+            "Since BF weights the a priori estimate most heavily precisely for immature years, a poor a priori estimate would have its greatest distorting effect on exactly this kind of immature year, while for a mature year (where the chain-ladder-based component dominates the blend) a poor a priori estimate would have comparatively little effect on the final result.",
           note: "This connects the numeric example directly to BF's own weighting-mechanism logic.",
         },
         {
@@ -9382,7 +9382,7 @@ const QUESTIONS = {
           command: "Comment",
           marks: 1,
           question:
-            "Comment on how the Cape Cod method would genuinely derive its a priori estimate differently from the Bornhuetter-Ferguson approach used in part (i).",
+            "Comment on how the Cape Cod method would derive its a priori estimate differently from the Bornhuetter-Ferguson approach used in part (i).",
           answer:
             "Rather than using an externally-supplied a priori estimate (as BF does), the Cape Cod method derives its a priori loss ratio directly from the insurer's own historical claims and premium data, reducing reliance on a purely external assumption.",
           note: "This connects directly to the Cape Cod-as-hybrid-method material developed in this course.",
@@ -9400,9 +9400,9 @@ const QUESTIONS = {
           command: "Distinguish",
           marks: 4,
           question:
-            "Distinguish between IBNR and IBNER, and explain why these represent two genuinely different reserving gaps.",
+            "Distinguish between IBNR and IBNER, and explain why these represent two different reserving gaps.",
           answer:
-            "IBNR stands for 'Incurred But Not Reported' — claims that have genuinely already occurred but which the insurer has not yet been notified of, representing a genuine, entirely unknown future liability. IBNER stands for 'Incurred But Not Enough Reported' (or 'Reserved') — claims the insurer genuinely already knows about and has an existing case reserve for, but where that existing reserve may prove genuinely insufficient as the claim continues to develop. IBNR concerns claims the insurer doesn't yet KNOW about at all, while IBNER concerns claims already known but potentially under-RESERVED.",
+            "IBNR stands for 'Incurred But Not Reported' — claims that have already occurred but which the insurer has not yet been notified of, representing a genuine, entirely unknown future liability. IBNER stands for 'Incurred But Not Enough Reported' (or 'Reserved') — claims the insurer already knows about and has an existing case reserve for, but where that existing reserve may prove insufficient as the claim continues to develop. IBNR concerns claims the insurer doesn't yet <em>know</em> about at all, while IBNER concerns claims already known but potentially under-<em>reserved</em>.",
           note: "A complete answer distinguishes both concepts precisely, not just expands the acronyms.",
         },
         {
@@ -9410,9 +9410,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain what a tail factor is, and why it might be particularly important for a genuinely long-tail line of business.",
+            "Explain what a tail factor is, and why it might be particularly important for a long-tail line of business.",
           answer:
-            "A tail factor extends a chain-ladder-style projection beyond the last development period actually observed in the data, capturing genuine, further expected claims development that the triangle's own limited historical data does not yet show, particularly important for genuinely long-tail lines where claims can continue developing for many years beyond the observed data window.",
+            "A tail factor extends a chain-ladder-style projection beyond the last development period actually observed in the data, capturing genuine, further expected claims development that the triangle's own limited historical data does not yet show, particularly important for long-tail lines where claims can continue developing for many years beyond the observed data window.",
           note: "This connects directly to the long-tail-business material developed elsewhere in this course.",
         },
         {
@@ -9422,7 +9422,7 @@ const QUESTIONS = {
           question:
             "Discuss why the average cost per claim (ACPC) method's decomposition into frequency and severity might reveal insight the chain ladder's aggregate approach could miss.",
           answer:
-            "Frequency and severity can genuinely be driven by different underlying factors and can move in genuinely different directions (e.g. claim frequency falling while average severity rises due to claims inflation), so decomposing them allows a reserving actuary to genuinely investigate and understand each driver separately, rather than seeing only their combined, potentially offsetting net effect in an aggregate figure.",
+            "Frequency and severity can be driven by different underlying factors and can move in different directions (e.g. claim frequency falling while average severity rises due to claims inflation), so decomposing them allows a reserving actuary to investigate and understand each driver separately, rather than seeing only their combined, potentially offsetting net effect in an aggregate figure.",
           note: "A strong answer gives a genuine, concrete example of frequency and severity moving in offsetting directions.",
         },
         {
@@ -9432,7 +9432,7 @@ const QUESTIONS = {
           question:
             "Comment on why claims inflation must be explicitly and separately incorporated into reserving projections, rather than assumed to be implicitly captured within standard development factors.",
           answer:
-            "If claims inflation genuinely varies over time, development factors calculated from historical periods with different inflation experience may not genuinely reflect the inflation rate expected to apply to future claims payments, requiring explicit, separate treatment rather than assuming historical development factors implicitly and correctly capture future inflation trends.",
+            "If claims inflation varies over time, development factors calculated from historical periods with different inflation experience may not reflect the inflation rate expected to apply to future claims payments, requiring explicit, separate treatment rather than assuming historical development factors implicitly and correctly capture future inflation trends.",
           note: "This connects directly to the explicit-inflation-treatment theme developed in this course.",
         },
       ],
@@ -9450,7 +9450,7 @@ const QUESTIONS = {
           question:
             "Explain the genuine relationship between the Mack model's reserve estimates and the standard chain ladder's reserve estimates.",
           answer:
-            "The Mack model genuinely reproduces the same central reserve estimates as the standard chain ladder method, while additionally providing a genuine estimate of the standard error (and hence a measure of uncertainty) around those chain ladder estimates, without requiring a full distributional assumption for the underlying claims.",
+            "The Mack model reproduces the same central reserve estimates as the standard chain ladder method, while additionally providing a genuine estimate of the standard error (and hence a measure of uncertainty) around those chain ladder estimates, without requiring a full distributional assumption for the underlying claims.",
           note: "A strong answer explains the additive (not replacing) relationship between Mack and the standard chain ladder.",
         },
         {
@@ -9458,20 +9458,20 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain what 'over-dispersion' means in the context of the ODP bootstrap model, and why it is genuinely necessary.",
+            "Explain what 'over-dispersion' means in the context of the ODP bootstrap model, and why it is necessary.",
           answer:
-            "A standard Poisson distribution genuinely assumes its variance equals its mean, but real claims data typically exhibits greater variance than a standard Poisson would predict (genuine over-dispersion), so the ODP model introduces an additional scaling parameter allowing variance to exceed the mean, providing a genuinely more realistic fit to actual claims data's typically greater-than-Poisson variability.",
-          note: "A strong answer explains WHY over-dispersion is needed (real data's greater variability), not just defines the term.",
+            "A standard Poisson distribution assumes its variance equals its mean, but real claims data typically exhibits greater variance than a standard Poisson would predict (genuine over-dispersion), so the ODP model introduces an additional scaling parameter allowing variance to exceed the mean, providing a more realistic fit to actual claims data's typically greater-than-Poisson variability.",
+          note: "A strong answer explains <em>why</em> over-dispersion is needed (real data's greater variability), not just defines the term.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss how bootstrapping is applied within the ODP bootstrap reserving method, and why this method might be considered genuinely more flexible than the Mack model.",
+            "Discuss how bootstrapping is applied within the ODP bootstrap reserving method, and why this method might be considered more flexible than the Mack model.",
           answer:
-            "Bootstrapping genuinely resamples (with replacement) from residuals of an initial ODP model fit to the claims triangle to generate many simulated alternative 'pseudo-triangles', each producing its own chain-ladder-style reserve estimate; repeating this process many times builds up a genuine, empirical distribution of possible reserve outcomes. This is genuinely more flexible than Mack because it directly provides percentiles and full distributional shape information, while Mack's analytical approach genuinely provides only the mean and variance without a full distributional picture.",
-          note: "A strong answer explains both the genuine bootstrapping mechanism AND the flexibility comparison against Mack.",
+            "Bootstrapping resamples (with replacement) from residuals of an initial ODP model fit to the claims triangle to generate many simulated alternative 'pseudo-triangles', each producing its own chain-ladder-style reserve estimate; repeating this process many times builds up a genuine, empirical distribution of possible reserve outcomes. This is more flexible than Mack because it directly provides percentiles and full distributional shape information, while Mack's analytical approach provides only the mean and variance without a full distributional picture.",
+          note: "A strong answer explains both the genuine bootstrapping mechanism <em>and</em> the flexibility comparison against Mack.",
         },
         {
           label: "(iv)",
@@ -9480,7 +9480,7 @@ const QUESTIONS = {
           question:
             "Comment on why residuals from the initial ODP model fit might require adjustment before being used in the bootstrap resampling process.",
           answer:
-            "Raw residuals from a fitted model can genuinely understate the true underlying variability, since fitting a model to data inherently uses up some of that variability in estimating the model's own parameters, so an adjustment helps ensure the bootstrap resampling process produces a genuinely realistic, not artificially narrow, range of simulated outcomes.",
+            "Raw residuals from a fitted model can understate the true underlying variability, since fitting a model to data inherently uses up some of that variability in estimating the model's own parameters, so an adjustment helps ensure the bootstrap resampling process produces a realistic, not artificially narrow, range of simulated outcomes.",
           note: "This connects directly to the residual-adjustment-for-degrees-of-freedom theme developed in this course.",
         },
       ],
@@ -9508,7 +9508,7 @@ const QUESTIONS = {
           question:
             "Explain why the standard formula's genuine, industry-wide calibration might be particularly poorly suited to capturing a specific general insurer's catastrophe risk exposure.",
           answer:
-            "The standard formula's catastrophe risk module reflects genuinely generic, industry-average assumptions about catastrophe exposure, while a specific insurer's actual geographic concentration and specific perils covered can genuinely differ materially from this industry average, making an internal model's more tailored catastrophe assessment particularly valuable for insurers with genuinely unusual or concentrated catastrophe exposure profiles.",
+            "The standard formula's catastrophe risk module reflects generic, industry-average assumptions about catastrophe exposure, while a specific insurer's actual geographic concentration and specific perils covered can differ materially from this industry average, making an internal model's more tailored catastrophe assessment particularly valuable for insurers with unusual or concentrated catastrophe exposure profiles.",
           note: "This connects directly to the catastrophe-risk-as-clearest-example theme developed elsewhere in this course.",
         },
         {
@@ -9518,8 +9518,8 @@ const QUESTIONS = {
           question:
             "Discuss why a smaller general insurer might reasonably choose to remain on the standard formula, and what a 'partial internal model' might offer as a middle ground.",
           answer:
-            "Developing and maintaining an internal model requires genuinely significant actuarial and technical resources, so for a smaller insurer whose risk profile does not diverge dramatically from industry-average assumptions, the genuine cost of internal model development may reasonably outweigh the potential benefit. A partial internal model allows an insurer to develop genuinely tailored internal modelling for specific risk modules where its own risk profile most diverges from standard formula assumptions (e.g. catastrophe risk), while continuing to use the standard formula for other, less distinctive risk modules, balancing genuine development effort against where tailored modelling adds most value.",
-          note: "A strong answer explains both the proportionality rationale for staying on the standard formula AND the genuine middle-ground value of a partial internal model.",
+            "Developing and maintaining an internal model requires significant actuarial and technical resources, so for a smaller insurer whose risk profile does not diverge dramatically from industry-average assumptions, the genuine cost of internal model development may reasonably outweigh the potential benefit. A partial internal model allows an insurer to develop tailored internal modelling for specific risk modules where its own risk profile most diverges from standard formula assumptions (e.g. catastrophe risk), while continuing to use the standard formula for other, less distinctive risk modules, balancing genuine development effort against where tailored modelling adds most value.",
+          note: "A strong answer explains both the proportionality rationale for staying on the standard formula <em>and</em> the genuine middle-ground value of a partial internal model.",
         },
         {
           label: "(iv)",
@@ -9528,7 +9528,7 @@ const QUESTIONS = {
           question:
             "Comment on why an internal model requires genuine, ongoing validation and governance, beyond the initial regulatory approval process.",
           answer:
-            "An internal model's genuine reliability depends on its underlying assumptions and calibration remaining appropriate over time, so ongoing validation and sound governance around model changes are genuinely essential, since a model's genuine value depends on ongoing maintenance, not simply on achieving initial regulatory approval.",
+            "An internal model's genuine reliability depends on its underlying assumptions and calibration remaining appropriate over time, so ongoing validation and sound governance around model changes are essential, since a model's genuine value depends on ongoing maintenance, not simply on achieving initial regulatory approval.",
           note: "This connects directly to the ongoing-model-validation theme developed elsewhere in this course.",
         },
       ],
@@ -9554,9 +9554,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the diversified capital requirement calculated in part (i) is genuinely lower than the simple sum of the two lines' standalone capital requirements.",
+            "Explain why the diversified capital requirement calculated in part (i) is lower than the simple sum of the two lines' standalone capital requirements.",
           answer:
-            "Since the two business lines are not genuinely perfectly correlated (correlation of 0.4, less than 1), adverse outcomes across both lines simultaneously at their individual worst-case levels are genuinely less likely than each line's own individual worst case occurring in isolation, so the insurer's genuine aggregate capital requirement is typically lower than the simple sum of each line's standalone capital requirement.",
+            "Since the two business lines are not perfectly correlated (correlation of 0.4, less than 1), adverse outcomes across both lines simultaneously at their individual worst-case levels are less likely than each line's own individual worst case occurring in isolation, so the insurer's genuine aggregate capital requirement is typically lower than the simple sum of each line's standalone capital requirement.",
           note: "A strong answer explicitly connects the diversification benefit to the correlation being less than 1.",
         },
         {
@@ -9566,7 +9566,7 @@ const QUESTIONS = {
           question:
             "Discuss why a copula might be used instead of a simple correlation coefficient when aggregating these two risk sources in a genuine capital model.",
           answer:
-            "A copula genuinely models the dependence structure between multiple risk sources separately from each variable's own individual distribution, allowing a capital model to genuinely combine risks with realistic, potentially non-linear dependence patterns (including genuine tail dependence, where risks become more correlated in extreme scenarios) rather than assuming a simple, constant linear correlation throughout.",
+            "A copula models the dependence structure between multiple risk sources separately from each variable's own individual distribution, allowing a capital model to combine risks with realistic, potentially non-linear dependence patterns (including genuine tail dependence, where risks become more correlated in extreme scenarios) rather than assuming a simple, constant linear correlation throughout.",
           note: "This connects the numeric correlation-based example directly to the more sophisticated copula material developed in this course.",
         },
         {
@@ -9604,7 +9604,7 @@ const QUESTIONS = {
           question:
             "Explain why the TVaR figure calculated in part (i) reveals genuine information the VaR figure alone does not.",
           answer:
-            "VaR alone says nothing about how much worse losses could be beyond its threshold — here, VaR of £400,000 gives no indication that the worst outcome is actually £1,000,000. TVaR genuinely captures the average severity of losses beyond the threshold, directly revealing that the genuine tail risk (£700,000 average, driven by the £1,000,000 outcome) is materially worse than the £400,000 VaR figure alone would suggest.",
+            "VaR alone says nothing about how much worse losses could be beyond its threshold — here, VaR of £400,000 gives no indication that the worst outcome is actually £1,000,000. TVaR captures the average severity of losses beyond the threshold, directly revealing that the genuine tail risk (£700,000 average, driven by the £1,000,000 outcome) is materially worse than the £400,000 VaR figure alone would suggest.",
           note: "A strong answer uses the specific numbers from part (i) to illustrate the genuine information gap VaR leaves.",
         },
         {
@@ -9612,9 +9612,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why TVaR is considered a genuinely more 'coherent' risk measure than VaR.",
+            "Discuss why TVaR is considered a more 'coherent' risk measure than VaR.",
           answer:
-            "TVaR genuinely satisfies the mathematical property of sub-additivity (the risk measure of a combined portfolio is never greater than the sum of its individual components' risk measures, correctly reflecting genuine diversification benefit), while VaR can, in certain circumstances, genuinely violate this property, producing the counter-intuitive result that diversification appears to increase measured risk under VaR.",
+            "TVaR satisfies the mathematical property of sub-additivity (the risk measure of a combined portfolio is never greater than the sum of its individual components' risk measures, correctly reflecting genuine diversification benefit), while VaR can, in certain circumstances, violate this property, producing the counter-intuitive result that diversification appears to increase measured risk under VaR.",
           note: "A strong answer names sub-additivity specifically as the technical property distinguishing TVaR's coherence.",
         },
         {
@@ -9622,9 +9622,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on how Solvency II's SCR calculation genuinely applies the VaR concept.",
+            "Comment on how Solvency II's SCR calculation applies the VaR concept.",
           answer:
-            "Solvency II's SCR is genuinely calibrated to a 99.5% VaR over a one-year horizon, meaning the SCR represents the capital genuinely needed so that the insurer's basic own funds would remain non-negative with 99.5% confidence over the following year.",
+            "Solvency II's SCR is calibrated to a 99.5% VaR over a one-year horizon, meaning the SCR represents the capital needed so that the insurer's basic own funds would remain non-negative with 99.5% confidence over the following year.",
           note: "This connects directly to the SCR's precise VaR calibration developed in this course.",
         },
       ],
@@ -9640,10 +9640,10 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why modelling a non-proportional (excess of loss) reinsurance treaty's recoveries genuinely requires understanding the full claims severity distribution, not just the aggregate claims total.",
+            "Explain why modelling a non-proportional (excess of loss) reinsurance treaty's recoveries requires understanding the full claims severity distribution, not just the aggregate claims total.",
           answer:
-            "Since excess of loss recoveries depend on whether individual claims (or aggregate claims from a specific event) exceed a specified threshold, an actuary must genuinely understand how claims are distributed across different sizes to estimate how much of the total claims will genuinely fall above versus below the treaty's attachment point, information a simple aggregate total alone cannot provide.",
-          note: "A strong answer explains WHY the distribution (not just the total) is needed, connecting to the attachment-point mechanism.",
+            "Since excess of loss recoveries depend on whether individual claims (or aggregate claims from a specific event) exceed a specified threshold, an actuary must understand how claims are distributed across different sizes to estimate how much of the total claims will fall above versus below the treaty's attachment point, information a simple aggregate total alone cannot provide.",
+          note: "A strong answer explains <em>why</em> the distribution (not just the total) is needed, connecting to the attachment-point mechanism.",
         },
         {
           label: "(ii)",
@@ -9652,7 +9652,7 @@ const QUESTIONS = {
           question:
             "Explain what counterparty default risk means for a general insurer's reinsurance programme, and why it could directly affect the insurer's genuine net reserve position.",
           answer:
-            "Counterparty default risk is the genuine risk that a reinsurer fails to pay recoveries the ceding insurer is genuinely entitled to, meaning the insurer's net reserve position (assuming full recovery) could understate its true potential liability if a reinsurer's own financial weakness is not adequately reflected, requiring a genuine allowance for reinsurer credit risk when reserving on a net basis.",
+            "Counterparty default risk is the genuine risk that a reinsurer fails to pay recoveries the ceding insurer is entitled to, meaning the insurer's net reserve position (assuming full recovery) could understate its true potential liability if a reinsurer's own financial weakness is not adequately reflected, requiring a genuine allowance for reinsurer credit risk when reserving on a net basis.",
           note: "This connects directly to the reserving-level impact of reinsurer counterparty risk developed in this course.",
         },
         {
@@ -9660,19 +9660,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why a general insurer might genuinely discount its technical provisions to reflect the time value of money, and why the choice of discount rate requires genuine care.",
+            "Discuss why a general insurer might discount its technical provisions to reflect the time value of money, and why the choice of discount rate requires genuine care.",
           answer:
-            "Since claims (particularly for long-tail lines) may genuinely not be paid for years after the reserve is established, discounting reflects the genuine economic reality that a liability payable in the future is worth less today than its nominal, undiscounted amount. The discount rate requires genuine care because an excessively high rate would understate technical provisions, potentially masking genuine reserve inadequacy, so the rate should genuinely reflect the actual investment return the insurer can reliably expect to earn on assets backing these liabilities, rather than an arbitrary or overly optimistic assumption.",
-          note: "A strong answer explains both WHY discounting is applied AND why the rate choice requires genuine prudence.",
+            "Since claims (particularly for long-tail lines) may not be paid for years after the reserve is established, discounting reflects the genuine economic reality that a liability payable in the future is worth less today than its nominal, undiscounted amount. The discount rate requires genuine care because an excessively high rate would understate technical provisions, potentially masking genuine reserve inadequacy, so the rate should reflect the actual investment return the insurer can reliably expect to earn on assets backing these liabilities, rather than an arbitrary or overly optimistic assumption.",
+          note: "A strong answer explains both <em>why</em> discounting is applied <em>and</em> why the rate choice requires genuine prudence.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why an insurer's investment strategy for assets backing its technical provisions should genuinely reflect the specific duration and certainty of the underlying liabilities.",
+            "Comment on why an insurer's investment strategy for assets backing its technical provisions should reflect the specific duration and certainty of the underlying liabilities.",
           answer:
-            "Since different lines of business carry genuinely different claim payment timing and predictability (short-tail versus long-tail), investment strategy should genuinely match assets to the specific duration and liquidity needs of the liabilities being backed, rather than applying a single, undifferentiated investment approach across an insurer's whole reserve base.",
+            "Since different lines of business carry different claim payment timing and predictability (short-tail versus long-tail), investment strategy should match assets to the specific duration and liquidity needs of the liabilities being backed, rather than applying a single, undifferentiated investment approach across an insurer's whole reserve base.",
           note: "This connects directly to CM2's and SA3's asset-liability matching material.",
         },
       ],
@@ -9700,9 +9700,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the pure risk premium must genuinely be calculated before the expense and profit margin loadings can meaningfully be added.",
+            "Explain why the pure risk premium must be calculated before the expense and profit margin loadings can meaningfully be added.",
           answer:
-            "The pure risk premium represents the genuine expected cost of claims alone; since expenses and profit margin are typically expressed as loadings ON TOP of this underlying risk cost, the pure risk premium must genuinely be estimated first as the foundational building block the rest of the premium structure is built upon.",
+            "The pure risk premium represents the genuine expected cost of claims alone; since expenses and profit margin are typically expressed as loadings <em>on top</em> of this underlying risk cost, the pure risk premium must be estimated first as the foundational building block the rest of the premium structure is built upon.",
           note: "A strong answer explains the foundational/sequential relationship, not just names the components.",
         },
         {
@@ -9712,7 +9712,7 @@ const QUESTIONS = {
           question:
             "Discuss why an insurer might reasonably allow for investment income when setting this rating basis, and how this could affect the calculation in part (i).",
           answer:
-            "Since premiums are typically genuinely received before claims are eventually paid, the insurer earns genuine investment income on this float in the intervening period, so a fully sound rating basis may reasonably allow for this genuine investment income as an offset reducing the required premium loading — in this case, potentially reducing the profit margin loading needed below 8%, since some of the required return would already come from investment income on the premium float.",
+            "Since premiums are typically received before claims are eventually paid, the insurer earns genuine investment income on this float in the intervening period, so a fully sound rating basis may reasonably allow for this genuine investment income as an offset reducing the required premium loading — in this case, potentially reducing the profit margin loading needed below 8%, since some of the required return would already come from investment income on the premium float.",
           note: "A strong answer explains the genuine mechanism (investment income on premium float) and how it could offset the calculated loading.",
         },
         {
@@ -9720,9 +9720,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why the pure risk premium calculation should genuinely combine claim frequency and severity, rather than being estimated as a single aggregate figure.",
+            "Comment on why the pure risk premium calculation should combine claim frequency and severity, rather than being estimated as a single aggregate figure.",
           answer:
-            "The basic rating methodology genuinely estimates expected claims cost as the product of claim frequency (the expected number of claims) and claim severity (the expected average cost per claim), since these two components can be driven by genuinely different underlying factors and understanding them separately provides more actionable insight than a single combined figure.",
+            "The basic rating methodology estimates expected claims cost as the product of claim frequency (the expected number of claims) and claim severity (the expected average cost per claim), since these two components can be driven by different underlying factors and understanding them separately provides more actionable insight than a single combined figure.",
           note: "This connects directly to the frequency-times-severity decomposition theme developed in this course.",
         },
       ],
@@ -9748,9 +9748,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the burning cost approach might be genuinely well-suited to rating this large commercial risk, given its limited own claims history.",
+            "Explain why the burning cost approach might be well-suited to rating this large commercial risk, given its limited own claims history.",
           answer:
-            "For a large commercial risk with genuinely limited own claims data, a simple, aggregated burning cost ratio (rather than attempting a more granular, data-intensive frequency-severity decomposition the limited data cannot reliably support) can provide a genuinely practical, defensible starting point for rating.",
+            "For a large commercial risk with limited own claims data, a simple, aggregated burning cost ratio (rather than attempting a more granular, data-intensive frequency-severity decomposition the limited data cannot reliably support) can provide a practical, defensible starting point for rating.",
           note: "A strong answer connects burning cost's simplicity directly to the genuine data limitation this specific risk presents.",
         },
         {
@@ -9758,9 +9758,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss how credibility theory might genuinely be used to refine the projected burning cost rate calculated in part (i).",
+            "Discuss how credibility theory might be used to refine the projected burning cost rate calculated in part (i).",
           answer:
-            "Credibility theory would genuinely blend this risk's own limited burning cost experience with a broader, more statistically stable external benchmark (e.g. an industry-wide or portfolio-wide rate for similar risks), weighting the own experience by a genuine credibility factor reflecting how statistically reliable the own experience actually is, producing a more robust final rate than the burning cost figure alone.",
+            "Credibility theory would blend this risk's own limited burning cost experience with a broader, more statistically stable external benchmark (e.g. an industry-wide or portfolio-wide rate for similar risks), weighting the own experience by a genuine credibility factor reflecting how statistically reliable the own experience actually is, producing a more robust final rate than the burning cost figure alone.",
           note: "A strong answer explicitly connects burning cost's own-experience-only limitation to credibility theory's blending solution.",
         },
         {
@@ -9770,7 +9770,7 @@ const QUESTIONS = {
           question:
             "Comment on why the burning cost approach does not explicitly decompose experience into frequency and severity components.",
           answer:
-            "The burning cost approach genuinely calculates historical claims experience as a simple ratio of claims to exposure over a past period, projecting this historical ratio forward WITHOUT explicitly decomposing it into separate frequency and severity components, trading some analytical insight for genuine calculation simplicity.",
+            "The burning cost approach calculates historical claims experience as a simple ratio of claims to exposure over a past period, projecting this historical ratio forward <em>without</em> explicitly decomposing it into separate frequency and severity components, trading some analytical insight for genuine calculation simplicity.",
           note: "This connects directly to the burning-cost-as-simpler-alternative theme developed in this course.",
         },
       ],
@@ -9788,7 +9788,7 @@ const QUESTIONS = {
           question:
             "Explain what a frequency-severity model is, and how it develops the basic frequency-times-severity decomposition into a more sophisticated statistical framework.",
           answer:
-            "A frequency-severity model genuinely fits separate statistical distributions to claim frequency (e.g. a Poisson or negative binomial distribution) and claim severity (e.g. a gamma or lognormal distribution), allowing rating factors to be estimated for each component separately using appropriate statistical technique.",
+            "A frequency-severity model fits separate statistical distributions to claim frequency (e.g. a Poisson or negative binomial distribution) and claim severity (e.g. a gamma or lognormal distribution), allowing rating factors to be estimated for each component separately using appropriate statistical technique.",
           note: "A strong answer names genuine example distributions for both frequency and severity, not just describes the general concept.",
         },
         {
@@ -9798,7 +9798,7 @@ const QUESTIONS = {
           question:
             "Explain why assessing rating factors one at a time (univariate analysis) can produce systematically misleading results, and how a GLM addresses this.",
           answer:
-            "If two rating factors are genuinely correlated with each other, a univariate analysis of either factor alone would genuinely confound that factor's own true effect with the correlated factor's effect, while a multivariate GLM can genuinely isolate each factor's own distinct, independent contribution, controlling for the other correlated factors simultaneously.",
+            "If two rating factors are correlated with each other, a univariate analysis of either factor alone would confound that factor's own true effect with the correlated factor's effect, while a multivariate GLM can isolate each factor's own distinct, independent contribution, controlling for the other correlated factors simultaneously.",
           note: "A strong answer explicitly names the confounding mechanism, not just asserts that GLMs are 'more accurate'.",
         },
         {
@@ -9806,10 +9806,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss what an original loss curve technique is, and why it might be genuinely useful for pricing different limit or excess structures for the same underlying risk.",
+            "Discuss what an original loss curve technique is, and why it might be useful for pricing different limit or excess structures for the same underlying risk.",
           answer:
-            "An original loss curve describes the genuine relationship between a policy's limit of indemnity (or excess/retention level) and the expected proportion of ground-up losses that a given limit would cover, allowing an actuary to genuinely price different limit or excess structures for the same underlying risk using a single, calibrated curve, rather than requiring entirely separate pricing exercises for each different limit structure considered.",
-          note: "A strong answer explains both what the curve represents AND why it enables efficient pricing across multiple structures.",
+            "An original loss curve describes the genuine relationship between a policy's limit of indemnity (or excess/retention level) and the expected proportion of ground-up losses that a given limit would cover, allowing an actuary to price different limit or excess structures for the same underlying risk using a single, calibrated curve, rather than requiring entirely separate pricing exercises for each different limit structure considered.",
+          note: "A strong answer explains both what the curve represents <em>and</em> why it enables efficient pricing across multiple structures.",
         },
         {
           label: "(iv)",
@@ -9818,7 +9818,7 @@ const QUESTIONS = {
           question:
             "Comment on the genuine trade-off between using machine learning techniques and traditional GLMs for general insurance pricing.",
           answer:
-            "Machine learning techniques can genuinely capture more complex, non-linear relationships and interactions between rating factors than a standard GLM's typically more constrained functional form allows, potentially improving genuine predictive accuracy, though often at some cost to the interpretability that GLMs typically offer more readily when needing to explain and justify the resulting rates.",
+            "Machine learning techniques can capture more complex, non-linear relationships and interactions between rating factors than a standard GLM's typically more constrained functional form allows, potentially improving genuine predictive accuracy, though often at some cost to the interpretability that GLMs typically offer more readily when needing to explain and justify the resulting rates.",
           note: "This connects directly to the accuracy-versus-interpretability trade-off theme developed in this course.",
         },
       ],
@@ -9834,19 +9834,19 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why a rating actuary must genuinely understand a product's core features before applying rating technique to it.",
+            "Explain why a rating actuary must understand a product's core features before applying rating technique to it.",
           answer:
-            "Different products carry genuinely different claim frequency, severity, and development characteristics, so the specific rating factors, data requirements, and appropriate technique choice genuinely depend on the specific product being priced, meaning product understanding is a genuine precursor to sound rating, not a separate, unrelated topic.",
-          note: "A strong answer explains WHY product understanding is necessary, not just that it is.",
+            "Different products carry different claim frequency, severity, and development characteristics, so the specific rating factors, data requirements, and appropriate technique choice depend on the specific product being priced, meaning product understanding is a genuine precursor to sound rating, not a separate, unrelated topic.",
+          note: "A strong answer explains <em>why</em> product understanding is necessary, not just that it is.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why pricing a reinsurance product genuinely requires different considerations from pricing the underlying direct insurance product it sits above.",
+            "Explain why pricing a reinsurance product requires different considerations from pricing the underlying direct insurance product it sits above.",
           answer:
-            "A reinsurance treaty's genuine payoff depends on whether aggregate or individual underlying claims exceed a specified attachment point, requiring the reinsurance pricing actuary to understand the full severity distribution of the underlying direct business, a genuinely more complex pricing problem than pricing the direct policies themselves.",
+            "A reinsurance treaty's genuine payoff depends on whether aggregate or individual underlying claims exceed a specified attachment point, requiring the reinsurance pricing actuary to understand the full severity distribution of the underlying direct business, a more complex pricing problem than pricing the direct policies themselves.",
           note: "This connects directly to the reinsurance-requires-severity-distribution theme developed in this course.",
         },
         {
@@ -9854,19 +9854,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why a rating actuary must genuinely understand an insurer's aggregate portfolio-level exposure, beyond simply calculating adequate premiums for each individual policy.",
+            "Discuss why a rating actuary must understand an insurer's aggregate portfolio-level exposure, beyond simply calculating adequate premiums for each individual policy.",
           answer:
-            "Individually well-priced policies can still genuinely aggregate into concerning concentration risk, since many policies might all be genuinely exposed to the same underlying peril or geographic concentration (e.g. many property policies all exposed to the same flood plain). Understanding the insurer's genuine portfolio-level exposure, not just individual policy adequacy, is essential for sound overall pricing and risk management strategy, connecting directly to reinsurance purchasing and capital adequacy decisions.",
-          note: "A strong answer explicitly explains WHY individual adequacy doesn't guarantee aggregate soundness, giving a concrete example.",
+            "Individually well-priced policies can still aggregate into concerning concentration risk, since many policies might all be exposed to the same underlying peril or geographic concentration (e.g. many property policies all exposed to the same flood plain). Understanding the insurer's genuine portfolio-level exposure, not just individual policy adequacy, is essential for sound overall pricing and risk management strategy, connecting directly to reinsurance purchasing and capital adequacy decisions.",
+          note: "A strong answer explicitly explains <em>why</em> individual adequacy doesn't guarantee aggregate soundness, giving a concrete example.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why customer requirements must genuinely be considered alongside technical claim cost drivers when setting a premium.",
+            "Comment on why customer requirements must be considered alongside technical claim cost drivers when setting a premium.",
           answer:
-            "Since a premium must genuinely be commercially viable (customers willing to pay it) as well as technically adequate (covering expected costs), understanding what customers genuinely value directly shapes both product design and the acceptable range within which a technically-derived rate must genuinely fall to remain commercially competitive.",
+            "Since a premium must be commercially viable (customers willing to pay it) as well as technically adequate (covering expected costs), understanding what customers value directly shapes both product design and the acceptable range within which a technically-derived rate must fall to remain commercially competitive.",
           note: "This connects directly to the dual technical-and-commercial-perspective theme developed in this course.",
         },
       ],
@@ -9882,9 +9882,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why claims inflation requires genuinely different treatment in pricing compared with its treatment in reserving.",
+            "Explain why claims inflation requires different treatment in pricing compared with its treatment in reserving.",
           answer:
-            "While reserving addresses claims inflation's effect on already-incurred claims still developing, pricing must genuinely project claims inflation forward across the future policy period being priced, requiring a genuinely forward-looking inflation assumption distinct from (though informed by) the historical inflation experience reserving analysis reveals.",
+            "While reserving addresses claims inflation's effect on already-incurred claims still developing, pricing must project claims inflation forward across the future policy period being priced, requiring a forward-looking inflation assumption distinct from (though informed by) the historical inflation experience reserving analysis reveals.",
           note: "A strong answer explains the direction of the assumption (forward-looking for pricing versus backward-informed) explicitly.",
         },
         {
@@ -9892,9 +9892,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain the two genuinely distinct channels through which regulatory and legal developments can affect general insurance pricing.",
+            "Explain the two distinct channels through which regulatory and legal developments can affect general insurance pricing.",
           answer:
-            "Regulatory and legal changes can genuinely alter the underlying claims cost itself (e.g. changing court awards for bodily injury, or new consumer protection requirements affecting claims handling costs), directly affecting the genuine pure risk premium calculation, AND they can constrain which rating factors an insurer is permitted to use, affecting how that premium can genuinely be differentiated across customers.",
+            "Regulatory and legal changes can alter the underlying claims cost itself (e.g. changing court awards for bodily injury, or new consumer protection requirements affecting claims handling costs), directly affecting the genuine pure risk premium calculation, <em>and</em> they can constrain which rating factors an insurer is permitted to use, affecting how that premium can be differentiated across customers.",
           note: "A strong answer identifies both distinct channels, not just one.",
         },
         {
@@ -9902,10 +9902,10 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why climate change has become a genuinely important pricing consideration for general insurers, and why historical weather data alone may no longer be a reliable guide.",
+            "Discuss why climate change has become an important pricing consideration for general insurers, and why historical weather data alone may no longer be a reliable guide.",
           answer:
-            "Climate change can genuinely alter the frequency and severity of weather-related perils, directly affecting the catastrophe risk assumptions underlying pricing for exposed property and other lines. This requires genuinely forward-looking climate-adjusted assumptions because relying purely on historical weather patterns may no longer reliably represent genuine future risk, since the underlying climate conditions driving those historical patterns are themselves genuinely changing over time.",
-          note: "A strong answer explains WHY historical reliance specifically breaks down, not just that climate change 'matters'.",
+            "Climate change can alter the frequency and severity of weather-related perils, directly affecting the catastrophe risk assumptions underlying pricing for exposed property and other lines. This requires forward-looking climate-adjusted assumptions because relying purely on historical weather patterns may no longer reliably represent genuine future risk, since the underlying climate conditions driving those historical patterns are themselves changing over time.",
+          note: "A strong answer explains <em>why</em> historical reliance specifically breaks down, not just that climate change 'matters'.",
         },
         {
           label: "(iv)",
@@ -9914,7 +9914,7 @@ const QUESTIONS = {
           question:
             "Comment on why social and technological trends can affect both claim frequency and severity, sometimes in opposite directions.",
           answer:
-            "Social trends can genuinely affect claim frequency (e.g. changing driving behaviours) or severity (e.g. changing attitudes toward litigation), while technological developments can genuinely affect both frequency (e.g. autonomous vehicle safety features reducing accidents) and severity (e.g. more expensive vehicle repair costs from advanced sensor technology), requiring pricing assumptions to genuinely evolve alongside these ongoing external trends.",
+            "Social trends can affect claim frequency (e.g. changing driving behaviours) or severity (e.g. changing attitudes toward litigation), while technological developments can affect both frequency (e.g. autonomous vehicle safety features reducing accidents) and severity (e.g. more expensive vehicle repair costs from advanced sensor technology), requiring pricing assumptions to evolve alongside these ongoing external trends.",
           note: "This connects directly to the PESTLE-style external-factor theme developed in this course.",
         },
       ],
@@ -9933,16 +9933,16 @@ const QUESTIONS = {
             "Distinguish between process, parameter and model uncertainty in general insurance pricing, with a brief example of each.",
           answer:
             "Process uncertainty is genuine random variation in actual future claims experience even given perfectly correct assumptions (e.g. the natural year-to-year variability in claim counts). Parameter uncertainty is genuine imprecision in estimating the rating model's own parameters from limited historical data (e.g. an imprecisely estimated frequency rate from a small sample). Model uncertainty is the genuine risk that the chosen rating approach itself is inappropriate (e.g. using a burning cost approach when a more granular frequency-severity model would be more suitable).",
-          note: "A complete answer distinguishes all three types AND gives a genuine, distinct example of each.",
+          note: "A complete answer distinguishes all three types <em>and</em> gives a genuine, distinct example of each.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why pricing uncertainty is genuinely greater for a new or unusual risk with limited own historical experience.",
+            "Explain why pricing uncertainty is greater for a new or unusual risk with limited own historical experience.",
           answer:
-            "Without substantial own experience data, pricing must rely more heavily on external data, comparable risks, and genuine actuarial judgement, introducing genuinely greater parameter and model uncertainty than pricing a well-established, high-volume risk with abundant own historical data supporting more statistically reliable estimation.",
+            "Without substantial own experience data, pricing must rely more heavily on external data, comparable risks, and genuine actuarial judgement, introducing greater parameter and model uncertainty than pricing a well-established, high-volume risk with abundant own historical data supporting more statistically reliable estimation.",
           note: "This connects directly to the new-risk-limited-data-uncertainty theme developed in this course.",
         },
         {
@@ -9950,7 +9950,7 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why a rating actuary must genuinely assess data quality, not just data availability, before relying on data for pricing.",
+            "Discuss why a rating actuary must assess data quality, not just data availability, before relying on data for pricing.",
           answer:
             "Since every rating technique depends directly on the genuine accuracy and completeness of underlying data, poor-quality data (e.g. inconsistent rating factor recording, incomplete exposure records) can silently undermine even the most technically sophisticated rating model, making genuine data quality assessment an essential precondition for sound pricing, not merely confirming that data exists in sufficient volume.",
           note: "A strong answer distinguishes availability from quality explicitly, not treating them as the same thing.",
@@ -9962,7 +9962,7 @@ const QUESTIONS = {
           question:
             "Comment on why data quality issues might be particularly acute for a newly-introduced rating factor.",
           answer:
-            "A newly-introduced rating factor typically has genuinely less historical data available, meaning statistical estimation of that factor's genuine effect is inherently based on a smaller, potentially less reliable dataset than more long-established rating factors with genuinely deeper historical records.",
+            "A newly-introduced rating factor typically has less historical data available, meaning statistical estimation of that factor's genuine effect is inherently based on a smaller, potentially less reliable dataset than more long-established rating factors with deeper historical records.",
           note: "This connects directly to the new-rating-factor-data-limitation theme developed in this course.",
         },
       ],
@@ -9978,9 +9978,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why a rating actuary must genuinely monitor actual experience against pricing assumptions after a rate has been implemented.",
+            "Explain why a rating actuary must monitor actual experience against pricing assumptions after a rate has been implemented.",
           answer:
-            "Comparing actual claims experience against the assumptions used in setting a rate reveals whether those pricing assumptions remain genuinely appropriate, allowing timely correction before mispriced business accumulates to a materially damaging scale.",
+            "Comparing actual claims experience against the assumptions used in setting a rate reveals whether those pricing assumptions remain appropriate, allowing timely correction before mispriced business accumulates to a materially damaging scale.",
           note: "This connects directly to the experience-monitoring-purpose theme developed elsewhere in this course.",
         },
         {
@@ -9988,9 +9988,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why a rating actuary should genuinely investigate whether an observed pricing variance reflects random fluctuation or a persistent trend, before revising rates.",
+            "Explain why a rating actuary should investigate whether an observed pricing variance reflects random fluctuation or a persistent trend, before revising rates.",
           answer:
-            "A single period's adverse variance could reflect genuine random noise or a genuine one-off event, so investigating the underlying cause before revising rates avoids both over-reacting to noise (unnecessarily disrupting competitive positioning) and under-reacting to a genuinely important emerging trend requiring genuine rate correction.",
+            "A single period's adverse variance could reflect genuine random noise or a genuine one-off event, so investigating the underlying cause before revising rates avoids both over-reacting to noise (unnecessarily disrupting competitive positioning) and under-reacting to an important emerging trend requiring genuine rate correction.",
           note: "A strong answer explains both risks of premature action (over-reacting and under-reacting).",
         },
         {
@@ -9998,9 +9998,9 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why investigating pricing results at a granular level (by rating factor or segment), rather than only at the aggregate level, might reveal genuinely important information.",
+            "Discuss why investigating pricing results at a granular level (by rating factor or segment), rather than only at the aggregate level, might reveal important information.",
           answer:
-            "An aggregate loss ratio genuinely consistent with expectations could still mask offsetting variances across different segments (e.g. one segment performing better than expected while another performs worse, netting out to an apparently unremarkable aggregate figure), so granular investigation by segment or rating factor is genuinely necessary to reveal these individually important, offsetting patterns that would otherwise go undetected.",
+            "An aggregate loss ratio consistent with expectations could still mask offsetting variances across different segments (e.g. one segment performing better than expected while another performs worse, netting out to an apparently unremarkable aggregate figure), so granular investigation by segment or rating factor is necessary to reveal these individually important, offsetting patterns that would otherwise go undetected.",
           note: "A strong answer gives a concrete example of how offsetting variances could hide at the aggregate level.",
         },
         {
@@ -10010,7 +10010,7 @@ const QUESTIONS = {
           question:
             "Comment on how the results of a pricing investigation should feed back into the GLM rating model.",
           answer:
-            "Where a genuine, persistent variance is identified for a specific rating factor or segment, this should genuinely inform a revision to that factor's estimated effect within the pricing GLM, closing the actuarial control cycle loop between investigation and model refinement, rather than treating pricing investigation as a standalone, disconnected activity.",
+            "Where a genuine, persistent variance is identified for a specific rating factor or segment, this should inform a revision to that factor's estimated effect within the pricing GLM, closing the actuarial control cycle loop between investigation and model refinement, rather than treating pricing investigation as a standalone, disconnected activity.",
           note: "This connects directly to the investigation-feeds-back-into-model theme developed in this course.",
         },
       ],
@@ -10036,17 +10036,17 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why deriving the exact aggregate claims distribution analytically is often genuinely difficult, and why stochastic simulation provides a practical alternative.",
+            "Explain why deriving the exact aggregate claims distribution analytically is often difficult, and why stochastic simulation provides a practical alternative.",
           answer:
-            "Combining a genuinely realistic frequency distribution with a genuinely realistic severity distribution typically does not produce a mathematically tractable, closed-form aggregate claims distribution. Stochastic simulation genuinely repeats a two-step process many thousands of times — simulating a random claim count, then simulating that many random claim severities and summing them — building up a genuine, empirical distribution of simulated aggregate claims outcomes.",
-          note: "A strong answer explains both the genuine analytical difficulty AND how simulation practically addresses it.",
+            "Combining a realistic frequency distribution with a realistic severity distribution typically does not produce a mathematically tractable, closed-form aggregate claims distribution. Stochastic simulation repeats a two-step process many thousands of times — simulating a random claim count, then simulating that many random claim severities and summing them — building up a genuine, empirical distribution of simulated aggregate claims outcomes.",
+          note: "A strong answer explains both the genuine analytical difficulty <em>and</em> how simulation practically addresses it.",
         },
         {
           label: "(iii)",
           command: "Discuss",
           marks: 2,
           question:
-            "Discuss why a rating actuary might genuinely value having the full simulated aggregate claims distribution, rather than just the mean calculated in part (i).",
+            "Discuss why a rating actuary might value having the full simulated aggregate claims distribution, rather than just the mean calculated in part (i).",
           answer:
             "The full distribution reveals genuine information about the spread and tail risk of possible aggregate outcomes, informing capital requirements or reinsurance purchasing decisions, insight a single mean figure (the pure risk premium alone) cannot provide.",
           note: "This connects the numeric mean calculation directly to the broader value of the full distribution.",
@@ -10056,9 +10056,9 @@ const QUESTIONS = {
           command: "Comment",
           marks: 2,
           question:
-            "Comment on how the collective risk model genuinely differs from a simpler individual-risk-model approach.",
+            "Comment on how the collective risk model differs from a simpler individual-risk-model approach.",
           answer:
-            "The collective risk model genuinely represents total aggregate claims as the sum of a random number of individual claims, rather than a simpler individual-risk-model approach summing a fixed number of individual policy outcomes, providing a genuinely more flexible framework better suited to lines where claim count itself is uncertain.",
+            "The collective risk model represents total aggregate claims as the sum of a random number of individual claims, rather than a simpler individual-risk-model approach summing a fixed number of individual policy outcomes, providing a more flexible framework better suited to lines where claim count itself is uncertain.",
           note: "This connects directly to the collective-risk-model-versus-individual-risk-model theme developed in this course.",
         },
       ],
@@ -10084,9 +10084,9 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why classical credibility is genuinely described as a 'threshold-based' approach, and how this differs from Bayesian credibility's approach to setting Z.",
+            "Explain why classical credibility is described as a 'threshold-based' approach, and how this differs from Bayesian credibility's approach to setting Z.",
           answer:
-            "Classical credibility genuinely sets a credibility factor based on whether the own data has reached a specified minimum volume considered sufficient to limit random fluctuation to an acceptable level, applying full credibility once this threshold is reached and partial credibility below it. Bayesian credibility instead genuinely derives the credibility weighting from formal Bayesian statistical principles, updating a prior belief with observed data, with the weighting emerging from the relative statistical precision of the prior and data, rather than a fixed volume threshold.",
+            "Classical credibility sets a credibility factor based on whether the own data has reached a specified minimum volume considered sufficient to limit random fluctuation to an acceptable level, applying full credibility once this threshold is reached and partial credibility below it. Bayesian credibility instead derives the credibility weighting from formal Bayesian statistical principles, updating a prior belief with observed data, with the weighting emerging from the relative statistical precision of the prior and data, rather than a fixed volume threshold.",
           note: "A strong answer explicitly contrasts the threshold mechanism against the Bayesian precision-based mechanism.",
         },
         {
@@ -10094,19 +10094,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 3,
           question:
-            "Discuss why Bayesian credibility might be considered genuinely more theoretically elegant than classical credibility, despite classical credibility's practical simplicity.",
+            "Discuss why Bayesian credibility might be considered more theoretically elegant than classical credibility, despite classical credibility's practical simplicity.",
           answer:
-            "Bayesian credibility genuinely derives its credibility weighting directly from the underlying statistical properties of the prior and data, rather than an essentially arbitrary volume threshold, providing a more theoretically justified blending weight, though classical credibility's genuine simplicity and ease of practical application can make it a reasonable, pragmatic choice in many real-world pricing contexts.",
-          note: "A strong answer acknowledges both the theoretical advantage AND the practical trade-off, not just one side.",
+            "Bayesian credibility derives its credibility weighting directly from the underlying statistical properties of the prior and data, rather than an essentially arbitrary volume threshold, providing a more theoretically justified blending weight, though classical credibility's genuine simplicity and ease of practical application can make it a reasonable, pragmatic choice in many real-world pricing contexts.",
+          note: "A strong answer acknowledges both the theoretical advantage <em>and</em> the practical trade-off, not just one side.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why credibility theory is genuinely useful for pricing a genuinely new rating factor with limited own data.",
+            "Comment on why credibility theory is useful for pricing a new rating factor with limited own data.",
           answer:
-            "Credibility theory allows a rating actuary to genuinely blend a new rating factor's limited own data with broader portfolio or market benchmark experience, producing a genuinely more statistically robust rate than relying on either the limited own data alone or an entirely generic market rate ignoring the factor's own genuine, specific experience.",
+            "Credibility theory allows a rating actuary to blend a new rating factor's limited own data with broader portfolio or market benchmark experience, producing a more statistically robust rate than relying on either the limited own data alone or an entirely generic market rate ignoring the factor's own genuine, specific experience.",
           note: "This connects directly to the credibility-for-limited-data theme developed in this course.",
         },
       ],
@@ -10122,19 +10122,19 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why pricing a non-proportional reinsurance treaty is genuinely more complex than pricing a proportional treaty.",
+            "Explain why pricing a non-proportional reinsurance treaty is more complex than pricing a proportional treaty.",
           answer:
-            "A proportional treaty's premium and claims genuinely scale directly with the underlying direct business, so pricing largely involves agreeing the appropriate ceding commission and any risk margin, while a non-proportional treaty's pricing genuinely requires understanding the full severity distribution of underlying claims to price the specific layer being reinsured, a materially more complex exercise.",
-          note: "A strong answer explains WHY the non-proportional case requires distributional information, not just that it is 'more complex'.",
+            "A proportional treaty's premium and claims scale directly with the underlying direct business, so pricing largely involves agreeing the appropriate ceding commission and any risk margin, while a non-proportional treaty's pricing requires understanding the full severity distribution of underlying claims to price the specific layer being reinsured, a materially more complex exercise.",
+          note: "A strong answer explains <em>why</em> the non-proportional case requires distributional information, not just that it is 'more complex'.",
         },
         {
           label: "(ii)",
           command: "Explain",
           marks: 3,
           question:
-            "Explain why a reinsurer's pricing margin might genuinely need to reflect a higher risk-adjusted return than a direct insurer's margin for economically similar business.",
+            "Explain why a reinsurer's pricing margin might need to reflect a higher risk-adjusted return than a direct insurer's margin for economically similar business.",
           answer:
-            "A reinsurer often takes on genuinely more concentrated, correlated risk (e.g. providing catastrophe cover across many direct insurers' exposures to the same peril), requiring a genuinely higher risk-adjusted margin to compensate for this concentrated risk exposure, compared with a direct insurer's typically more diversified, individual-policy-level risk pool.",
+            "A reinsurer often takes on more concentrated, correlated risk (e.g. providing catastrophe cover across many direct insurers' exposures to the same peril), requiring a higher risk-adjusted margin to compensate for this concentrated risk exposure, compared with a direct insurer's typically more diversified, individual-policy-level risk pool.",
           note: "This connects directly to the risk-adjusted-margin theme developed elsewhere in this course.",
         },
         {
@@ -10142,19 +10142,19 @@ const QUESTIONS = {
           command: "Discuss",
           marks: 4,
           question:
-            "Discuss why catastrophe model output must genuinely be incorporated alongside, not instead of, traditional frequency-severity rating technique when pricing a catastrophe-exposed property risk.",
+            "Discuss why catastrophe model output must be incorporated alongside, not instead of, traditional frequency-severity rating technique when pricing a catastrophe-exposed property risk.",
           answer:
-            "Catastrophe model output specifically addresses the catastrophe peril component of a property risk's total expected cost, while frequency-severity technique remains genuinely necessary for pricing the non-catastrophe (attritional) claims that risk also generates, meaning a complete pricing approach genuinely combines both catastrophe model output and traditional frequency-severity technique, addressing genuinely different components of the same risk's total cost. Ignoring either component would leave a genuine gap in the overall pricing approach.",
-          note: "A strong answer explains that the two techniques address genuinely DIFFERENT components of total cost, not competing approaches to the same problem.",
+            "Catastrophe model output specifically addresses the catastrophe peril component of a property risk's total expected cost, while frequency-severity technique remains necessary for pricing the non-catastrophe (attritional) claims that risk also generates, meaning a complete pricing approach combines both catastrophe model output and traditional frequency-severity technique, addressing different components of the same risk's total cost. Ignoring either component would leave a genuine gap in the overall pricing approach.",
+          note: "A strong answer explains that the two techniques address <em>different</em> components of total cost, not competing approaches to the same problem.",
         },
         {
           label: "(iv)",
           command: "Comment",
           marks: 2,
           question:
-            "Comment on why a rating actuary should genuinely acknowledge catastrophe model uncertainty rather than treating a single model's output as unquestionably precise.",
+            "Comment on why a rating actuary should acknowledge catastrophe model uncertainty rather than treating a single model's output as unquestionably precise.",
           answer:
-            "Different catastrophe models or model versions can produce genuinely different loss estimates for the same portfolio, so a rating actuary should genuinely acknowledge this model uncertainty, for example by comparing multiple models or applying genuine judgement-based adjustment, rather than treating a single model's output as unquestionably precise.",
+            "Different catastrophe models or model versions can produce different loss estimates for the same portfolio, so a rating actuary should acknowledge this model uncertainty, for example by comparing multiple models or applying genuine judgement-based adjustment, rather than treating a single model's output as unquestionably precise.",
           note: "This connects directly to the critical-model-awareness theme developed throughout this course.",
         },
       ],
@@ -10172,10 +10172,10 @@ const QUESTIONS = {
           command: "Define",
           marks: 3,
           question:
-            "Define Enterprise Risk Management (ERM), and explain how it genuinely differs from managing an organisation's risks separately, in isolation from one another.",
+            "Define Enterprise Risk Management (ERM), and explain how it differs from managing an organisation's risks separately, in isolation from one another.",
           answer:
-            "ERM is the coordinated, organisation-wide management of ALL of an organisation's material risks together, explicitly considering how different risks interact and aggregate. This genuinely differs from managing risks in isolation (e.g. each department managing its own risks independently with no coordination), since ERM provides a genuinely more complete, holistic view of the organisation's overall risk position, including risk interactions that a siloed approach would miss entirely.",
-          note: "A strong answer emphasises the INTEGRATED, cross-organisational nature of ERM as its defining feature, not merely a list of risk types covered.",
+            "ERM is the coordinated, organisation-wide management of <em>all</em> of an organisation's material risks together, explicitly considering how different risks interact and aggregate. This differs from managing risks in isolation (e.g. each department managing its own risks independently with no coordination), since ERM provides a more complete, holistic view of the organisation's overall risk position, including risk interactions that a siloed approach would miss entirely.",
+          note: "A strong answer emphasises the <em>integrated</em>, cross-organisational nature of ERM as its defining feature, not merely a list of risk types covered.",
         },
         {
           label: "(ii)",
@@ -10184,8 +10184,8 @@ const QUESTIONS = {
           question:
             "Explain the 'three lines of defence' model for risk governance, describing the distinct role played by each line.",
           answer:
-            "The first line comprises operational management, who own and manage risk directly in their day-to-day activities. The second line comprises risk management and compliance functions, who provide oversight, challenge, and set risk policy across the organisation. The third line comprises internal audit, who provide genuinely independent assurance that the first two lines are operating effectively. Each successive line stands more removed from day-to-day risk-taking, providing an escalating series of independent checks.",
-          note: "Full marks require describing all three lines AND explaining the genuine logic of increasing independence, not simply naming the three lines.",
+            "The first line comprises operational management, who own and manage risk directly in their day-to-day activities. The second line comprises risk management and compliance functions, who provide oversight, challenge, and set risk policy across the organisation. The third line comprises internal audit, who provide independent assurance that the first two lines are operating effectively. Each successive line stands more removed from day-to-day risk-taking, providing an escalating series of independent checks.",
+          note: "Full marks require describing all three lines <em>and</em> explaining the genuine logic of increasing independence, not simply naming the three lines.",
         },
         {
           label: "(iii)",
@@ -10194,7 +10194,7 @@ const QUESTIONS = {
           question:
             "A large insurer has recently implemented a formal ERM framework, including a detailed economic capital model. However, senior management continues to make major strategic decisions (such as entering new markets) without referring to the risk model's output. Discuss what this suggests about the insurer's ERM framework, and how this could be assessed and addressed.",
           answer:
-            "This scenario suggests the insurer's ERM framework would genuinely FAIL the 'use test' — the practical test of whether risk models and risk management outputs are actually used in real, material business decisions, rather than being produced purely for compliance purposes and then ignored. A technically well-designed framework delivers little genuine value if senior management does not actually consult it when making consequential decisions. This could be assessed by reviewing board and executive committee minutes and decision papers for genuine evidence that risk analysis was considered, and addressed by ensuring the CRO holds sufficient organisational seniority and influence to require risk input into strategic decision-making, and by embedding a genuine risk-aware culture (e.g. via training, incentives and tone from the top) rather than relying on formal process alone.",
+            "This scenario suggests the insurer's ERM framework would <em>fail</em> the 'use test' — the practical test of whether risk models and risk management outputs are actually used in real, material business decisions, rather than being produced purely for compliance purposes and then ignored. A technically well-designed framework delivers little genuine value if senior management does not actually consult it when making consequential decisions. This could be assessed by reviewing board and executive committee minutes and decision papers for genuine evidence that risk analysis was considered, and addressed by ensuring the CRO holds sufficient organisational seniority and influence to require risk input into strategic decision-making, and by embedding a genuine risk-aware culture (e.g. via training, incentives and tone from the top) rather than relying on formal process alone.",
           note: "A strong answer explicitly identifies the use-test failure, links it to the CRO's organisational standing and culture, and proposes concrete remedial steps, not just a generic description of the use test.",
         },
       ],
@@ -10213,7 +10213,7 @@ const QUESTIONS = {
             "List the four genuine, recurring stages of the ERM process.",
           answer:
             "Risk identification (recognising what risks the organisation faces); risk assessment (understanding their likelihood and impact); risk response/management (deciding how to address identified risks); and monitoring (tracking outcomes and feeding insight back into renewed identification).",
-          note: "Full marks require all four stages in a genuinely coherent, cyclical order.",
+          note: "Full marks require all four stages in a coherent, cyclical order.",
         },
         {
           label: "(ii)",
@@ -10222,7 +10222,7 @@ const QUESTIONS = {
           question:
             "Distinguish between risk appetite, risk capacity and risk tolerance.",
           answer:
-            "Risk appetite is the amount and type of risk an organisation is WILLING to accept in pursuit of its objectives — a strategic choice reflecting organisational preference. Risk capacity is the maximum risk the organisation is genuinely ABLE to bear given its financial resources — an objective constraint. Risk tolerance translates the high-level appetite into more granular, specific, measurable limits or thresholds for particular risk categories or business units, giving the broader appetite practical, operational effect. Appetite should always sit within capacity.",
+            "Risk appetite is the amount and type of risk an organisation is <em>willing</em> to accept in pursuit of its objectives — a strategic choice reflecting organisational preference. Risk capacity is the maximum risk the organisation is <em>able</em> to bear given its financial resources — an objective constraint. Risk tolerance translates the high-level appetite into more granular, specific, measurable limits or thresholds for particular risk categories or business units, giving the broader appetite practical, operational effect. Appetite should always sit within capacity.",
           note: "A strong answer draws the choice-versus-constraint distinction between appetite and capacity explicitly, and explains tolerance as the operational translation of appetite, not merely define the three terms in isolation.",
         },
         {
@@ -10230,10 +10230,10 @@ const QUESTIONS = {
           command: "Explain",
           marks: 5,
           question:
-            "Explain why an organisation's risk appetite should genuinely be set and approved by the board, rather than being determined purely by operational management.",
+            "Explain why an organisation's risk appetite should be set and approved by the board, rather than being determined purely by operational management.",
           answer:
             "Risk appetite reflects a fundamental strategic choice about how much risk the organisation should accept in pursuit of its objectives, and materially affects the interests of stakeholders such as shareholders, policyholders and members. Board-level ownership ensures this choice receives appropriately senior, accountable oversight, reflecting the board's ultimate responsibility for the organisation's strategic direction and long-term sustainability, rather than being set unilaterally by management closer to day-to-day operations, who may face incentives (such as short-term performance targets) that could bias appetite-setting if left unchecked by senior, independent oversight.",
-          note: "A strong answer explains WHY board ownership matters (accountability, stakeholder protection, avoiding potential management bias), not just asserts that the board should be involved.",
+          note: "A strong answer explains <em>why</em> board ownership matters (accountability, stakeholder protection, avoiding potential management bias), not just asserts that the board should be involved.",
         },
       ],
     },
@@ -10248,9 +10248,9 @@ const QUESTIONS = {
           command: "Define",
           marks: 3,
           question:
-            "Define operational risk, and explain why it may genuinely be harder to identify and quantify than market or credit risk.",
+            "Define operational risk, and explain why it may be harder to identify and quantify than market or credit risk.",
           answer:
-            "Operational risk is the risk of loss from inadequate or failed internal processes, people, and systems, or from external events (e.g. fraud, IT failure, human error). It is harder to quantify than market or credit risk because it lacks the rich historical market-price or default data available for financial risks, and its causes are more varied and organisation-specific, making statistical modelling genuinely more difficult.",
+            "Operational risk is the risk of loss from inadequate or failed internal processes, people, and systems, or from external events (e.g. fraud, IT failure, human error). It is harder to quantify than market or credit risk because it lacks the rich historical market-price or default data available for financial risks, and its causes are more varied and organisation-specific, making statistical modelling more difficult.",
           note: "Full marks require both the definition and a genuine explanation of the data-scarcity reason, not just a list of example causes.",
         },
         {
@@ -10261,16 +10261,16 @@ const QUESTIONS = {
             "Explain what a risk heat map is, and describe the 'four Ts' of risk response.",
           answer:
             "A heat map plots identified risks on a two-dimensional grid, typically with likelihood on one axis and impact on the other, using colour-coding to visually highlight which risks are highest priority. The four Ts of risk response are: Tolerate (accept the risk as within appetite); Treat (take action to reduce likelihood or impact); Transfer (pass the risk to a third party, e.g. via insurance); and Terminate (stop the activity giving rise to the risk entirely).",
-          note: "Full marks require explaining the heat map's two dimensions AND naming and briefly describing all four Ts.",
+          note: "Full marks require explaining the heat map's two dimensions <em>and</em> naming and briefly describing all four Ts.",
         },
         {
           label: "(iii)",
           command: "Comment",
           marks: 5,
           question:
-            "A risk manager proposes deprioritising a particular risk on the basis that its heat-map position shows low likelihood. Comment on this proposal, given that the risk in question also carries a genuinely catastrophic potential impact.",
+            "A risk manager proposes deprioritising a particular risk on the basis that its heat-map position shows low likelihood. Comment on this proposal, given that the risk in question also carries a catastrophic potential impact.",
           answer:
-            "This proposal is questionable: a genuinely low-likelihood but high-impact risk can still warrant serious, even disproportionate, management attention relative to its likelihood alone, since a genuinely catastrophic impact could threaten the organisation's continued existence even if it occurs rarely. Prioritisation based on likelihood alone ignores the genuine severity dimension entirely. The risk manager should instead weigh likelihood AND impact together (as the heat map's two-dimensional structure is designed to support), and should also consider whether reverse stress testing or scenario analysis might reveal the risk's true materiality more fully than likelihood-based prioritisation alone.",
+            "This proposal is questionable: a low-likelihood but high-impact risk can still warrant serious, even disproportionate, management attention relative to its likelihood alone, since a catastrophic impact could threaten the organisation's continued existence even if it occurs rarely. Prioritisation based on likelihood alone ignores the genuine severity dimension entirely. The risk manager should instead weigh likelihood <em>and</em> impact together (as the heat map's two-dimensional structure is designed to support), and should also consider whether reverse stress testing or scenario analysis might reveal the risk's true materiality more fully than likelihood-based prioritisation alone.",
           note: "A strong answer explicitly challenges the likelihood-only reasoning and connects to the general principle that severity can outweigh low probability for tail risks, rather than simply agreeing or disagreeing without justification.",
         },
       ],
@@ -10296,7 +10296,7 @@ const QUESTIONS = {
           command: "Explain",
           marks: 3,
           question:
-            "Explain why the aggregate capital requirement calculated in part (i) is genuinely lower than the simple sum of the two risks' stand-alone capital requirements.",
+            "Explain why the aggregate capital requirement calculated in part (i) is lower than the simple sum of the two risks' stand-alone capital requirements.",
           answer:
             "Since the two risks are imperfectly correlated ($\\rho = 0.25$, well below 1), they are unlikely to both materialise at their worst simultaneously. A properly modelled aggregate capital requirement reflects this genuine diversification benefit, whereas simply summing the stand-alone requirements would implicitly assume perfect correlation between the risks, overstating the organisation's true combined risk.",
           note: "A strong answer explicitly connects the diversification benefit to the correlation being below 1, not just asserts that diversification exists.",
@@ -10336,7 +10336,7 @@ const QUESTIONS = {
           question:
             "Explain the key difference between what VaR and TVaR each tell a risk manager about the loss distribution in part (i).",
           answer:
-            "VaR only identifies the loss THRESHOLD itself (£30m) that is exceeded with 10% probability; it says nothing about how severe losses beyond that threshold might be. TVaR instead gives the AVERAGE loss, given that the threshold is exceeded (£100m here), so it genuinely incorporates the severity of the tail beyond the threshold, providing materially more information about the potential scale of extreme losses than VaR alone.",
+            "VaR only identifies the loss <em>threshold</em> itself (£30m) that is exceeded with 10% probability; it says nothing about how severe losses beyond that threshold might be. TVaR instead gives the <em>average</em> loss, given that the threshold is exceeded (£100m here), so it incorporates the severity of the tail beyond the threshold, providing materially more information about the potential scale of extreme losses than VaR alone.",
           note: "A strong answer explicitly contrasts VaR's threshold-only nature with TVaR's severity-incorporating nature, referencing the specific figures from part (i).",
         },
         {
@@ -10364,8 +10364,8 @@ const QUESTIONS = {
           question:
             "Define Extreme Value Theory (EVT), and explain its genuine purpose relative to fitting a single distribution across a whole dataset.",
           answer:
-            "EVT is a branch of statistics specifically focused on modelling the behaviour of extreme, tail observations. Its purpose is to address the fact that a single distribution fitted to capture an entire dataset's typical, central behaviour may fit the tail poorly, whereas EVT-specific distributions are designed to fit tail behaviour more accurately, since the tail is what matters most for assessing genuinely extreme risk outcomes.",
-          note: "Full marks require explaining WHY EVT exists (the whole-distribution fit's tail weakness), not just stating that EVT models tails.",
+            "EVT is a branch of statistics specifically focused on modelling the behaviour of extreme, tail observations. Its purpose is to address the fact that a single distribution fitted to capture an entire dataset's typical, central behaviour may fit the tail poorly, whereas EVT-specific distributions are designed to fit tail behaviour more accurately, since the tail is what matters most for assessing extreme risk outcomes.",
+          note: "Full marks require explaining <em>why</em> EVT exists (the whole-distribution fit's tail weakness), not just stating that EVT models tails.",
         },
         {
           label: "(ii)",
@@ -10374,7 +10374,7 @@ const QUESTIONS = {
           question:
             "Distinguish between stress testing and reverse stress testing.",
           answer:
-            "Stress testing starts from a specified, predefined adverse scenario and calculates its impact on the organisation's financial position, without necessarily attaching a probability to that scenario. Reverse stress testing instead starts from a defined, severe OUTCOME (such as the organisation's failure) and works backwards to identify what combination of circumstances could plausibly cause that outcome. Ordinary stress testing therefore proceeds scenario-to-outcome, while reverse stress testing proceeds outcome-to-scenario.",
+            "Stress testing starts from a specified, predefined adverse scenario and calculates its impact on the organisation's financial position, without necessarily attaching a probability to that scenario. Reverse stress testing instead starts from a defined, severe <em>outcome</em> (such as the organisation's failure) and works backwards to identify what combination of circumstances could plausibly cause that outcome. Ordinary stress testing therefore proceeds scenario-to-outcome, while reverse stress testing proceeds outcome-to-scenario.",
           note: "A strong answer explicitly identifies the reversed direction of reasoning as the key distinction, not just that both relate to adverse scenarios.",
         },
         {
@@ -10384,7 +10384,7 @@ const QUESTIONS = {
           question:
             "Discuss why reverse stress testing may be particularly valuable for uncovering risk combinations that ordinary, forward-looking stress testing might miss.",
           answer:
-            "Ordinary stress testing requires the risk manager to first imagine a plausible adverse scenario before testing it, so it can miss risk combinations that were never considered in the first place. Reverse stress testing's backwards approach can reveal surprising, previously unconsidered combinations of circumstances capable of causing a severe outcome, precisely because it works back from the defined outcome rather than requiring the scenario to be imagined upfront. This makes it a genuinely valuable complement to forward stress testing, helping surface unknown-unknowns that conventional scenario-imagination would likely never generate, though it can still be limited by the imagination and expertise of those conducting the exercise in working backwards from the outcome.",
+            "Ordinary stress testing requires the risk manager to first imagine a plausible adverse scenario before testing it, so it can miss risk combinations that were never considered in the first place. Reverse stress testing's backwards approach can reveal surprising, previously unconsidered combinations of circumstances capable of causing a severe outcome, precisely because it works back from the defined outcome rather than requiring the scenario to be imagined upfront. This makes it a valuable complement to forward stress testing, helping surface unknown-unknowns that conventional scenario-imagination would likely never generate, though it can still be limited by the imagination and expertise of those conducting the exercise in working backwards from the outcome.",
           note: "A strong answer explains the specific mechanism by which reverse stress testing surfaces unanticipated combinations, and may note that it is not immune to its own judgement limitations.",
         },
       ],
@@ -10412,8 +10412,8 @@ const QUESTIONS = {
           question:
             "Explain how a catastrophe bond transfers risk from the issuing insurer to bond investors, and explain the genuine basis risk that can arise from an index-based (parametric) trigger.",
           answer:
-            "A catastrophe bond pays investors an attractive coupon in exchange for investors' capital being genuinely at risk: if a predefined catastrophic trigger event occurs, the bond's principal is reduced or forfeited, and the freed-up funds are used by the issuing insurer to cover its own catastrophe losses. Where the trigger is index-based (e.g. modelled industry-wide losses or a physical parameter such as wind speed) rather than based on the issuer's own actual losses, the issuer bears basis risk: the risk that the index-based payout may not precisely match its own actual loss experience, potentially leaving a shortfall (or windfall) relative to its real losses.",
-          note: "Full marks require explaining the coupon-for-principal-at-risk mechanism AND the specific index-versus-own-losses basis risk.",
+            "A catastrophe bond pays investors an attractive coupon in exchange for investors' capital being at risk: if a predefined catastrophic trigger event occurs, the bond's principal is reduced or forfeited, and the freed-up funds are used by the issuing insurer to cover its own catastrophe losses. Where the trigger is index-based (e.g. modelled industry-wide losses or a physical parameter such as wind speed) rather than based on the issuer's own actual losses, the issuer bears basis risk: the risk that the index-based payout may not precisely match its own actual loss experience, potentially leaving a shortfall (or windfall) relative to its real losses.",
+          note: "Full marks require explaining the coupon-for-principal-at-risk mechanism <em>and</em> the specific index-versus-own-losses basis risk.",
         },
         {
           label: "(iii)",
@@ -10423,7 +10423,7 @@ const QUESTIONS = {
             "An insurer faces frequent, modest-sized claims from a well-understood peril, and separately faces rare but potentially catastrophic losses from a large-scale natural catastrophe. Recommend, with justification, an appropriate risk management approach for each of these two exposures.",
           answer:
             "For the frequent, modest-sized, well-understood claims, retention (potentially via a deductible or excess) is likely appropriate: these losses are relatively predictable, and the insurer can typically absorb them from ongoing operations more cheaply than paying a risk-transfer premium loaded for the transferee's own costs and profit margin. For the rare but potentially catastrophic natural catastrophe exposure, transfer via reinsurance or alternative risk transfer (such as a catastrophe bond) is likely more appropriate: the insurer's own capacity to bear such a severe, low-frequency loss may be limited relative to its risk appetite and capacity, and catastrophe bonds in particular can access capital markets' substantially larger capacity than traditional reinsurance alone, at the cost of accepting some basis risk if an index-based trigger is used.",
-          note: "A strong answer recommends genuinely different tools for the two exposures and justifies each recommendation by reference to the exposure's specific characteristics (frequency/severity, predictability, capacity), not a generic list of available tools.",
+          note: "A strong answer recommends different tools for the two exposures and justifies each recommendation by reference to the exposure's specific characteristics (frequency/severity, predictability, capacity), not a generic list of available tools.",
         },
       ],
     },
@@ -10441,7 +10441,7 @@ const QUESTIONS = {
             "An organisation has two business units, A and B, with stand-alone economic capital of £60m and £20m respectively, and a correlation of 0.4 between their risks. Using the Euler allocation formula $C_i = \\dfrac{C_i^2 + \\rho C_A C_B}{C_{\\text{agg}}}$ (applied to each unit in turn, with $C_{\\text{agg}} = \\sqrt{C_A^2 + C_B^2 + 2 \\rho C_A C_B}$), calculate the aggregate capital requirement and the Euler-allocated capital for each business unit.",
           answer:
             "$C_{\\text{agg}} = \\sqrt{60^2 + 20^2 + 2 \\times 0.4 \\times 60 \\times 20} = \\sqrt{3600 + 400 + 960} = \\sqrt{4960} = £70.43m$ (to 2 decimal places). Euler allocation to A: $(60^2 + 0.4 \\times 60 \\times 20) / 70.43 = (3600 + 480) / 70.43 = 4080 / 70.43 = £57.93m$. Euler allocation to B: $(20^2 + 0.4 \\times 60 \\times 20) / 70.43 = (400 + 480) / 70.43 = 880 / 70.43 = £12.50m$. As a check, £57.93m + £12.50m = £70.43m, matching the aggregate capital requirement exactly.",
-          note: "Verified: sqrt(3600+400+960)=70.4273 (Node-verified); Euler A=57.93, Euler B=12.50, sum=70.43 (Node-verified, full allocation property holds exactly). Full marks require both individual allocations AND the confirming check that they sum to the aggregate figure.",
+          note: "Verified: sqrt(3600+400+960)=70.4273 (Node-verified); Euler A=57.93, Euler B=12.50, sum=70.43 (Node-verified, full allocation property holds exactly). Full marks require both individual allocations <em>and</em> the confirming check that they sum to the aggregate figure.",
         },
         {
           label: "(ii)",
@@ -10460,7 +10460,7 @@ const QUESTIONS = {
           question:
             "Comment on a genuine practical difficulty an organisation might face in applying the Euler allocation approach used in part (i) across many more than two business units.",
           answer:
-            "Calculating each unit's genuine marginal contribution requires a fully specified, granular aggregate risk model capturing how every business unit's risk correlates with every other unit, not just a single pairwise correlation as used in this simplified two-unit example. With many business units, this requires estimating a genuinely large correlation (or copula) structure, which inherits all the data scarcity, correlation-estimation and computational challenges of aggregate risk modelling more broadly, making the Euler principle's elegant formula considerably harder to apply reliably in practice than this stylised example suggests.",
+            "Calculating each unit's genuine marginal contribution requires a fully specified, granular aggregate risk model capturing how every business unit's risk correlates with every other unit, not just a single pairwise correlation as used in this simplified two-unit example. With many business units, this requires estimating a large correlation (or copula) structure, which inherits all the data scarcity, correlation-estimation and computational challenges of aggregate risk modelling more broadly, making the Euler principle's elegant formula considerably harder to apply reliably in practice than this stylised example suggests.",
           note: "A strong answer connects the difficulty specifically to the scaling burden of estimating a full correlation/dependence structure across many units, not just a generic 'it's complicated' comment.",
         },
       ],
@@ -10488,7 +10488,7 @@ const QUESTIONS = {
           question:
             "Explain why RAROC provides a fairer basis for comparing business units' performance than a simple, unadjusted return on capital.",
           answer:
-            "RAROC divides a business unit's return by the economic capital allocated to it, which reflects the genuine risk taken on to generate that return. A simple, unadjusted return figure would allow a unit generating high returns purely by taking on disproportionate risk to appear more attractive than it genuinely is; RAROC appropriately penalises such a unit through its correspondingly higher allocated capital in the denominator, giving a genuinely risk-adjusted, and therefore fairer, basis for comparison.",
+            "RAROC divides a business unit's return by the economic capital allocated to it, which reflects the genuine risk taken on to generate that return. A simple, unadjusted return figure would allow a unit generating high returns purely by taking on disproportionate risk to appear more attractive than it is; RAROC appropriately penalises such a unit through its correspondingly higher allocated capital in the denominator, giving a risk-adjusted, and therefore fairer, basis for comparison.",
           note: "A strong answer explicitly explains the risk-penalisation mechanism via the capital denominator, not just states that RAROC is 'risk-adjusted' without explaining how.",
         },
         {
@@ -10498,8 +10498,8 @@ const QUESTIONS = {
           question:
             "Distinguish between RAROC and EVA as performance measures, and explain how they could give different rankings when comparing a small business unit against a much larger one.",
           answer:
-            "RAROC produces a ratio (a percentage return figure), while EVA produces a monetary amount, measuring the genuine value created above and beyond the cost of capital. A small business unit could have a high RAROC percentage (a high return relative to its own, small allocated capital) while creating relatively little absolute value in monetary terms, whereas a much larger unit with a lower RAROC percentage could still generate a substantially larger EVA, since its much bigger capital base means even a modest percentage return translates into a genuinely larger absolute monetary surplus above the cost of capital. The two measures can therefore rank business units differently, and using RAROC alone risks understating the genuine value created by larger units.",
-          note: "Full marks require the ratio-versus-absolute-amount distinction AND a genuine worked-through explanation of why rankings can differ (small-high-percentage versus large-lower-percentage-but-bigger-absolute-value), not just an assertion that they can differ.",
+            "RAROC produces a ratio (a percentage return figure), while EVA produces a monetary amount, measuring the genuine value created above and beyond the cost of capital. A small business unit could have a high RAROC percentage (a high return relative to its own, small allocated capital) while creating relatively little absolute value in monetary terms, whereas a much larger unit with a lower RAROC percentage could still generate a substantially larger EVA, since its much bigger capital base means even a modest percentage return translates into a larger absolute monetary surplus above the cost of capital. The two measures can therefore rank business units differently, and using RAROC alone risks understating the genuine value created by larger units.",
+          note: "Full marks require the ratio-versus-absolute-amount distinction <em>and</em> a genuine worked-through explanation of why rankings can differ (small-high-percentage versus large-lower-percentage-but-bigger-absolute-value), not just an assertion that they can differ.",
         },
       ],
     },
@@ -10526,7 +10526,7 @@ const QUESTIONS = {
           question:
             "Explain what the ORSA is, and explain how it embodies the 'use test' principle.",
           answer:
-            "The ORSA is a regular, forward-looking internal assessment an insurer must conduct of its own overall solvency needs, considering its own specific risk profile rather than relying purely on a generic regulatory formula's calibration. It embodies the use test because it explicitly requires the organisation to genuinely use its own risk assessment and models in a real governance process — feeding into actual business planning and decision-making — rather than treating regulatory capital as a purely mechanical, compliance-only calculation divorced from how the business is actually run.",
+            "The ORSA is a regular, forward-looking internal assessment an insurer must conduct of its own overall solvency needs, considering its own specific risk profile rather than relying purely on a generic regulatory formula's calibration. It embodies the use test because it explicitly requires the organisation to use its own risk assessment and models in a real governance process — feeding into actual business planning and decision-making — rather than treating regulatory capital as a purely mechanical, compliance-only calculation divorced from how the business is actually run.",
           note: "A strong answer explicitly draws the connection to the use test, not just describes the ORSA in isolation.",
         },
         {
@@ -10537,7 +10537,7 @@ const QUESTIONS = {
             "Distinguish between the Solvency II and Basel regulatory frameworks, noting both their structural similarity and a key difference in what each is calibrated to address.",
           answer:
             "Solvency II (for insurers) and Basel (for banks) share a broadly similar three-pillar structure: quantitative capital requirements, supervisory review of governance and risk management, and market discipline through disclosure. However, each is calibrated to its own sector's distinct risk profile: Solvency II is calibrated to insurance-specific risks such as long-term underwriting and reserving risk, while Basel is calibrated to banking-specific risks such as credit risk from loan portfolios and short-term liquidity risk arising from deposit withdrawals.",
-          note: "Full marks require identifying both the shared three-pillar architecture AND the sector-specific calibration difference, not just naming the two frameworks.",
+          note: "Full marks require identifying both the shared three-pillar architecture <em>and</em> the sector-specific calibration difference, not just naming the two frameworks.",
         },
       ],
     },
