@@ -4439,7 +4439,7 @@ const QUESTIONS = {
             "A health and care insurer is pricing a one-year renewable critical illness rider with a sum insured of £50,000. The assumed annual incidence rate is 0.004, and expenses are assumed to be 10% of the gross premium, with no other loadings and no discounting within the one-year term. Using the equivalence principle, calculate the required annual premium.",
           answer:
             "Expected cost of benefits = 0.004 &times; &pound;50,000 = &pound;200. Setting gross premium P such that P &times; (1 &minus; 0.10) = &pound;200 gives P = &pound;200 / 0.90 = &pound;222.22 (to the nearest penny).",
-          note: "Verified: 0.004 × 50000 = 200; 200 / 0.9 = 222.22 (Node-verified). Full marks require setting up the equivalence-principle equation explicitly, not just stating the final figure.",
+          note: "Arithmetic check: 0.004 × 50000 = 200; 200 / 0.9 = 222.22. Full marks require setting up the equivalence-principle equation explicitly, not just stating the final figure.",
         },
         {
           label: "(ii)",
@@ -4535,7 +4535,7 @@ const QUESTIONS = {
             "A health and care insurer's long-term care book has a best estimate liability (BEL) of &pound;10,000,000. The risk margin is assessed as 6% of BEL. The Solvency Capital Requirement (SCR) is assessed as 15% of BEL, and the Minimum Capital Requirement (MCR) is 25% of the SCR. Calculate (a) the total technical provisions, (b) the SCR, and (c) the MCR.",
           answer:
             "(a) Risk margin = 6% &times; &pound;10,000,000 = &pound;600,000, so total technical provisions = &pound;10,000,000 + &pound;600,000 = &pound;10,600,000. (b) SCR = 15% &times; &pound;10,000,000 = &pound;1,500,000. (c) MCR = 25% &times; &pound;1,500,000 = &pound;375,000.",
-          note: "Verified: 0.06×10,000,000=600,000; TP=10,600,000; 0.15×10,000,000=1,500,000; 0.25×1,500,000=375,000 (Node-verified). Marks are typically split across the three sub-calculations.",
+          note: "Arithmetic check: 0.06×10,000,000=600,000; TP=10,600,000; 0.15×10,000,000=1,500,000; 0.25×1,500,000=375,000. Marks are typically split across the three sub-calculations.",
         },
         {
           label: "(ii)",
@@ -4727,7 +4727,7 @@ const QUESTIONS = {
             "A health and care insurer expected 500 critical illness claims in the year, each averaging &pound;2,000 in expected cost, but actually experienced 540 claims at the same average cost. Calculate the expected total claims cost, the actual total claims cost, and the resulting experience variance, stating whether it is favourable or adverse from the insurer's perspective.",
           answer:
             "Expected total claims cost = 500 &times; &pound;2,000 = &pound;1,000,000. Actual total claims cost = 540 &times; &pound;2,000 = &pound;1,080,000. The variance is &pound;1,080,000 &minus; &pound;1,000,000 = &pound;80,000, which is adverse (a loss relative to assumption) since actual claims cost exceeded the expected amount.",
-          note: "Verified: 500×2000=1,000,000; 540×2000=1,080,000; difference=80,000 (Node-verified). Marks are typically split across the expected figure, actual figure, and correctly labelling the variance as adverse.",
+          note: "Arithmetic check: 500×2000=1,000,000; 540×2000=1,080,000; difference=80,000. Marks are typically split across the expected figure, actual figure, and correctly labelling the variance as adverse.",
         },
         {
           label: "(ii)",
@@ -4873,7 +4873,7 @@ const QUESTIONS = {
             "A life insurer is pricing a one-year renewable term assurance policy with a sum insured of &pound;100,000. The assumed annual mortality rate is 0.003, and expenses are assumed to be 8% of the gross premium, with no discounting within the one-year term. Using the equivalence principle, calculate the required annual premium.",
           answer:
             "Expected cost of benefits = 0.003 &times; &pound;100,000 = &pound;300. Setting gross premium P such that P &times; (1 &minus; 0.08) = &pound;300 gives P = &pound;300 / 0.92 = &pound;326.09 (to the nearest penny).",
-          note: "Verified: 0.003 × 100000 = 300; 300 / 0.92 = 326.09 (Node-verified). Full marks require setting up the equivalence-principle equation explicitly.",
+          note: "Arithmetic check: 0.003 × 100000 = 300; 300 / 0.92 = 326.09. Full marks require setting up the equivalence-principle equation explicitly.",
         },
         {
           label: "(ii)",
@@ -4969,7 +4969,7 @@ const QUESTIONS = {
             "A pension policy with an accumulated fund of &pound;100,000 carries a guaranteed annuity option offering a guaranteed annuity rate of 10% per annum. Current market annuity rates for an equivalent annuity would provide only 6.5% per annum. Calculate the guaranteed annual income, the market-rate annual income, and the extra annual cost to the insurer of honouring the guarantee.",
           answer:
             "Guaranteed income = 10% &times; &pound;100,000 = &pound;10,000 per annum. Market-rate income = 6.5% &times; &pound;100,000 = &pound;6,500 per annum. Extra annual cost = &pound;10,000 &minus; &pound;6,500 = &pound;3,500 per annum, payable for as long as the annuitant survives.",
-          note: "Verified: 100000×0.10=10,000; 100000×0.065=6,500; difference=3,500 (Node-verified). Marks are typically split across the three sub-calculations.",
+          note: "Arithmetic check: 100000×0.10=10,000; 100000×0.065=6,500; difference=3,500. Marks are typically split across the three sub-calculations.",
         },
         {
           label: "(ii)",
@@ -5113,7 +5113,7 @@ const QUESTIONS = {
             "A life insurer's annuity book has a best estimate liability (BEL) of &pound;20,000,000. The risk margin is assessed as 5% of BEL. The Solvency Capital Requirement (SCR) is assessed as 12% of BEL, and the Minimum Capital Requirement (MCR) is 25% of the SCR. Calculate (a) the total technical provisions, (b) the SCR, and (c) the MCR.",
           answer:
             "(a) Risk margin = 5% &times; &pound;20,000,000 = &pound;1,000,000, so total technical provisions = &pound;20,000,000 + &pound;1,000,000 = &pound;21,000,000. (b) SCR = 12% &times; &pound;20,000,000 = &pound;2,400,000. (c) MCR = 25% &times; &pound;2,400,000 = &pound;600,000.",
-          note: "Verified: 0.05×20,000,000=1,000,000; TP=21,000,000; 0.12×20,000,000=2,400,000; 0.25×2,400,000=600,000 (Node-verified).",
+          note: "Arithmetic check: 0.05×20,000,000=1,000,000; TP=21,000,000; 0.12×20,000,000=2,400,000; 0.25×2,400,000=600,000.",
         },
         {
           label: "(ii)",
@@ -5161,7 +5161,7 @@ const QUESTIONS = {
             "A life insurer's protection business has net assets of &pound;4,000,000 and is expected to generate future profits of &pound;1,500,000, &pound;1,800,000 and &pound;2,100,000 in the next three years respectively. Using a risk discount rate of 7% per annum, calculate the present value of future profits (PVFP) and the resulting embedded value.",
           answer:
             "PVFP = &pound;1,500,000/1.07 + &pound;1,800,000/1.07&sup2; + &pound;2,100,000/1.07&sup3; = &pound;1,401,869 + &pound;1,572,301 + &pound;1,714,114 = &pound;4,688,284 (to the nearest pound). Embedded value = net assets + PVFP = &pound;4,000,000 + &pound;4,688,284 = &pound;8,688,284.",
-          note: "Verified: PVFP=4,688,284.41; EV=8,688,284.41 (Node-verified, rounded to nearest pound in the model answer). Marks are typically split between the PVFP calculation and the final embedded value figure.",
+          note: "Arithmetic check: PVFP=4,688,284.41; EV=8,688,284.41 (, rounded to nearest pound in the model answer). Marks are typically split between the PVFP calculation and the final embedded value figure.",
         },
         {
           label: "(ii)",
@@ -5209,7 +5209,7 @@ const QUESTIONS = {
             "A life insurer's protection book of 1,000 policies had an assumed annual lapse rate of 8%, but actually experienced a lapse rate of 9.5% over the year. Calculate the expected number of lapses, the actual number of lapses, and the resulting experience variance in the number of lapses.",
           answer:
             "Expected lapses = 1,000 &times; 8% = 80. Actual lapses = 1,000 &times; 9.5% = 95. The variance is 95 &minus; 80 = 15 additional lapses above the assumed level, an adverse variance given the new-business-strain implications of higher-than-expected early lapses.",
-          note: "Verified: 1000×0.08=80; 1000×0.095=95; difference=15 (Node-verified). Marks are typically split across the expected figure, actual figure, and correctly labelling the variance.",
+          note: "Arithmetic check: 1000×0.08=80; 1000×0.095=95; difference=15. Marks are typically split across the expected figure, actual figure, and correctly labelling the variance.",
         },
         {
           label: "(ii)",
@@ -5451,7 +5451,7 @@ const QUESTIONS = {
             "A general insurer's catastrophe model estimates a 1-in-200-year windstorm event would cause a ground-up loss of &pound;45,000,000 to its property portfolio. The insurer retains the first &pound;10,000,000 of any such loss and has purchased an excess of loss reinsurance layer of &pound;30,000,000 excess of &pound;10,000,000. Calculate the reinsurance recovery and the insurer's net retained loss from this event.",
           answer:
             "The loss above the &pound;10,000,000 retention is &pound;45,000,000 &minus; &pound;10,000,000 = &pound;35,000,000, but the reinsurance layer is limited to &pound;30,000,000, so the reinsurance recovery is &pound;30,000,000. The insurer's net retained loss is &pound;45,000,000 &minus; &pound;30,000,000 = &pound;15,000,000 (equal to its &pound;10,000,000 retention plus the &pound;5,000,000 of loss above the layer's limit).",
-          note: "Verified: min(max(45,000,000-10,000,000,0),30,000,000)=30,000,000; net loss=45,000,000-30,000,000=15,000,000 (Node-verified). Marks are typically split across identifying the layer mechanics and both final figures.",
+          note: "Arithmetic check: min(max(45,000,000-10,000,000,0),30,000,000)=30,000,000; net loss=45,000,000-30,000,000=15,000,000. Marks are typically split across identifying the layer mechanics and both final figures.",
         },
         {
           label: "(ii)",
@@ -5499,7 +5499,7 @@ const QUESTIONS = {
             "A general insurer's motor account has a best estimate liability (BEL) of &pound;15,000,000. The risk margin is assessed as 7% of BEL. The Solvency Capital Requirement (SCR) is assessed as 30% of BEL (reflecting premium, reserve and catastrophe risk), and the Minimum Capital Requirement (MCR) is 25% of the SCR. Calculate (a) the total technical provisions, (b) the SCR, and (c) the MCR.",
           answer:
             "(a) Risk margin = 7% &times; &pound;15,000,000 = &pound;1,050,000, so total technical provisions = &pound;15,000,000 + &pound;1,050,000 = &pound;16,050,000. (b) SCR = 30% &times; &pound;15,000,000 = &pound;4,500,000. (c) MCR = 25% &times; &pound;4,500,000 = &pound;1,125,000.",
-          note: "Verified: 0.07×15,000,000=1,050,000; TP=16,050,000; 0.30×15,000,000=4,500,000; 0.25×4,500,000=1,125,000 (Node-verified).",
+          note: "Arithmetic check: 0.07×15,000,000=1,050,000; TP=16,050,000; 0.30×15,000,000=4,500,000; 0.25×4,500,000=1,125,000.",
         },
         {
           label: "(ii)",
@@ -5595,7 +5595,7 @@ const QUESTIONS = {
             "A general insurer's liability account has paid claims to date of &pound;6,000,000 for a particular accident year, and the actuary estimates a chain-ladder development factor to ultimate of 1.25. Calculate the estimated ultimate claims cost and the resulting outstanding claims reserve.",
           answer:
             "Ultimate claims cost = &pound;6,000,000 &times; 1.25 = &pound;7,500,000. Outstanding claims reserve = &pound;7,500,000 &minus; &pound;6,000,000 = &pound;1,500,000.",
-          note: "Verified: 6,000,000×1.25=7,500,000; reserve=1,500,000 (Node-verified).",
+          note: "Arithmetic check: 6,000,000×1.25=7,500,000; reserve=1,500,000.",
         },
         {
           label: "(ii)",
@@ -5643,7 +5643,7 @@ const QUESTIONS = {
             "A general insurer writes &pound;5,000,000 of gross premium on a commercial property account and cedes 40% under a quota share reinsurance treaty. Calculate the ceded premium and the retained premium.",
           answer:
             "Ceded premium = 40% &times; &pound;5,000,000 = &pound;2,000,000. Retained premium = &pound;5,000,000 &minus; &pound;2,000,000 = &pound;3,000,000.",
-          note: "Verified: 5,000,000×0.40=2,000,000; retained=3,000,000 (Node-verified).",
+          note: "Arithmetic check: 5,000,000×0.40=2,000,000; retained=3,000,000.",
         },
         {
           label: "(ii)",
@@ -5837,7 +5837,7 @@ const QUESTIONS = {
             "A member of a final salary DB scheme retires with 20 years of pensionable service and a final salary of &pound;45,000. The scheme's accrual rate is 1/60ths. Calculate the member's annual pension.",
           answer:
             "Annual pension = &pound;45,000 &times; (1/60) &times; 20 = &pound;15,000 per annum.",
-          note: "Verified: 45000 × (1/60) × 20 = 15,000 (Node-verified).",
+          note: "Arithmetic check: 45000 × (1/60) × 20 = 15,000.",
         },
         {
           label: "(ii)",
@@ -5885,7 +5885,7 @@ const QUESTIONS = {
             "A DC scheme member contributes &pound;3,000 per annum (combined employer and employee contributions) for 25 years, with the fund assumed to grow at 5% per annum net investment return and contributions paid at the start of each year. Calculate the accumulated fund value at retirement (to the nearest &pound;100), given the fund value follows F(y) = (F(y-1) + 3,000) &times; 1.05 with F(0) = 0.",
           answer:
             "Applying the recursive growth formula for 25 years gives an accumulated fund value of approximately &pound;150,300 (&pound;150,340 to the nearest pound).",
-          note: "Verified via iterative calculation: F(25) = 150,340.36 (Node-verified). Full marks require showing the recursive/compounding approach, not just stating the final figure.",
+          note: "Check by iterating year by year: F(25) = 150,340.36. Full marks require showing the recursive/compounding approach, not just stating the final figure.",
         },
         {
           label: "(ii)",
@@ -6077,7 +6077,7 @@ const QUESTIONS = {
             "A DB scheme's funding valuation assesses technical provisions of &pound;80,000,000, against scheme assets of &pound;68,000,000. Trustees and the sponsor agree a recovery plan to eliminate the shortfall via equal annual contributions over 8 years. Calculate (a) the funding shortfall, and (b) the required annual recovery contribution.",
           answer:
             "(a) Funding shortfall = &pound;80,000,000 &minus; &pound;68,000,000 = &pound;12,000,000. (b) Required annual recovery contribution = &pound;12,000,000 / 8 = &pound;1,500,000 per annum.",
-          note: "Verified: 80,000,000-68,000,000=12,000,000; 12,000,000/8=1,500,000 (Node-verified). This is a simplified calculation ignoring investment return on the recovery contributions and discounting, for illustrative purposes.",
+          note: "Arithmetic check: 80,000,000-68,000,000=12,000,000; 12,000,000/8=1,500,000. This is a simplified calculation ignoring investment return on the recovery contributions and discounting, for illustrative purposes.",
         },
         {
           label: "(ii)",
@@ -6221,7 +6221,7 @@ const QUESTIONS = {
             "A pension scheme is considering a buy-in for a group of pensioner members whose technical provisions are valued at &pound;47,000,000. An insurer quotes a buy-in premium of &pound;52,000,000 for this group. Calculate the excess of the buy-in premium over the technical provisions, and explain in one sentence what this excess broadly represents.",
           answer:
             "Excess = &pound;52,000,000 &minus; &pound;47,000,000 = &pound;5,000,000. This excess broadly represents the additional prudence, profit margin, and risk premium the insurer requires to take on the longevity, investment and expense risk of this group of members, beyond the scheme's own best-estimate-plus-margin technical provisions basis.",
-          note: "Verified: 52,000,000-47,000,000=5,000,000 (Node-verified). Full marks require both the calculation and a genuine explanation of what the excess represents.",
+          note: "Arithmetic check: 52,000,000-47,000,000=5,000,000. Full marks require both the calculation and a genuine explanation of what the excess represents.",
         },
         {
           label: "(ii)",
@@ -6463,7 +6463,7 @@ const QUESTIONS = {
             "A pension scheme has liabilities valued at &pound;100,000,000 with an effective duration of 18 years, and hedges 75% of its interest rate exposure using an LDI strategy. If interest rates fall by 1%, calculate (a) the increase in the value of the scheme's liabilities, (b) the increase in the value of the hedged assets (assuming they move in line with the hedged portion of the liability), and (c) the net impact on the scheme's funding position.",
           answer:
             "(a) Liability increase = &pound;100,000,000 &times; 18 &times; 1% = &pound;18,000,000. (b) Hedged asset increase = (&pound;100,000,000 &times; 75%) &times; 18 &times; 1% = &pound;75,000,000 &times; 18 &times; 1% = &pound;13,500,000. (c) Net impact on funding position = &pound;13,500,000 &minus; &pound;18,000,000 = &minus;&pound;4,500,000 (the funding position worsens by &pound;4,500,000 due to the unhedged 25% exposure).",
-          note: "Verified: 100,000,000×18×0.01=18,000,000; 75,000,000×18×0.01=13,500,000; 13,500,000-18,000,000=-4,500,000 (Node-verified). Marks are typically split across all three sub-calculations, with credit for correctly identifying the funding position <em>worsens</em>.",
+          note: "Arithmetic check: 100,000,000×18×0.01=18,000,000; 75,000,000×18×0.01=13,500,000; 13,500,000-18,000,000=-4,500,000. Marks are typically split across all three sub-calculations, with credit for correctly identifying the funding position <em>worsens</em>.",
         },
         {
           label: "(ii)",
@@ -6607,7 +6607,7 @@ const QUESTIONS = {
             "A &pound;50,000,000 portfolio has an annual return volatility of 12%. Assuming returns are normally distributed, calculate the 1-year 95% Value at Risk (VaR), using a z-score of 1.645 for the 95% confidence level.",
           answer:
             "VaR = &pound;50,000,000 &times; 12% &times; 1.645 = &pound;9,870,000 (to the nearest &pound;10,000, approximately &pound;9.87 million). This means there is a 5% chance the portfolio loses more than approximately &pound;9.87 million over the year.",
-          note: "Verified: 50,000,000×0.12×1.645=9,870,000 (Node-verified). Full marks require both the calculation and a correct statement of what the resulting VaR figure represents.",
+          note: "Arithmetic check: 50,000,000×0.12×1.645=9,870,000. Full marks require both the calculation and a correct statement of what the resulting VaR figure represents.",
         },
         {
           label: "(ii)",
@@ -6627,7 +6627,7 @@ const QUESTIONS = {
             "An actively-managed portfolio's active returns (portfolio return minus benchmark return) over five periods were: 2.0%, -1.0%, 1.5%, 0.5%, and -0.8%. Calculate the mean active return and the tracking error (sample standard deviation of the active returns).",
           answer:
             "Mean active return = (2.0% &minus; 1.0% + 1.5% + 0.5% &minus; 0.8%) / 5 = 0.44%. Tracking error (sample standard deviation) &asymp; 1.34%.",
-          note: "Verified: mean=0.44%, sample stdev≈1.339% (Node-verified, using n-1 divisor). Accept answers using either sample (n-1) or population (n) standard deviation provided the method is stated.",
+          note: "Arithmetic check: mean=0.44%, sample stdev≈1.339% (, using n-1 divisor). Accept answers using either sample (n-1) or population (n) standard deviation provided the method is stated.",
         },
         {
           label: "(iv)",
@@ -6655,7 +6655,7 @@ const QUESTIONS = {
             "A portfolio returned 8.2% over a year, against a benchmark return of 6.5%. Attribution analysis identifies an asset allocation effect of 1.0%. Calculate the total active return and the resulting security selection effect.",
           answer:
             "Total active return = 8.2% &minus; 6.5% = 1.7%. Security selection effect = 1.7% &minus; 1.0% (asset allocation effect) = 0.7%.",
-          note: "Verified: 8.2%-6.5%=1.7%; 1.7%-1.0%=0.7% (Node-verified).",
+          note: "Arithmetic check: 8.2%-6.5%=1.7%; 1.7%-1.0%=0.7%.",
         },
         {
           label: "(ii)",
@@ -6945,7 +6945,7 @@ const QUESTIONS = {
             "A health and care insurer writes &pound;2,000,000 of gross premium on a critical illness account and retains 65% under a quota share reinsurance treaty. Calculate the retained premium and the ceded premium.",
           answer:
             "Retained premium = &pound;2,000,000 &times; 65% = &pound;1,300,000. Ceded premium = &pound;2,000,000 &minus; &pound;1,300,000 = &pound;700,000.",
-          note: "Verified: 2,000,000×0.65=1,300,000; ceded=700,000 (Node-verified).",
+          note: "Arithmetic check: 2,000,000×0.65=1,300,000; ceded=700,000.",
         },
         {
           label: "(ii)",
@@ -7041,7 +7041,7 @@ const QUESTIONS = {
             "An insurer is pricing a one-year renewable income protection rider with an annual benefit of &pound;20,000 payable on claim. The assumed annual claim incidence rate is 0.006, and expenses are assumed to be 12% of the gross premium, with no discounting within the one-year term. Using the equation of value, calculate the required annual premium.",
           answer:
             "Expected cost of benefits = 0.006 &times; &pound;20,000 = &pound;120. Setting gross premium P such that P &times; (1 &minus; 0.12) = &pound;120 gives P = &pound;120 / 0.88 = &pound;136.36 (to the nearest penny).",
-          note: "Verified: 0.006×20000=120; 120/0.88=136.36 (Node-verified). Full marks require setting up the equation of value explicitly.",
+          note: "Arithmetic check: 0.006×20000=120; 120/0.88=136.36. Full marks require setting up the equation of value explicitly.",
         },
         {
           label: "(ii)",
@@ -7089,7 +7089,7 @@ const QUESTIONS = {
             "A health and care insurer's best estimate reserve for a block of business is &pound;15,000,000, with an assumed standard deviation of outcomes of 8% of the reserve. Using a Value at Risk approach with a 99.5% confidence level (z-score of 2.576), calculate the solvency capital requirement.",
           answer:
             "Standard deviation = 8% &times; &pound;15,000,000 = &pound;1,200,000. Solvency capital requirement = &pound;1,200,000 &times; 2.576 = &pound;3,091,200 (to the nearest &pound;100).",
-          note: "Verified: 15,000,000×0.08=1,200,000; 1,200,000×2.576=3,091,200 (Node-verified). Marks are typically split across identifying the standard deviation and the final VaR-based capital figure.",
+          note: "Arithmetic check: 15,000,000×0.08=1,200,000; 1,200,000×2.576=3,091,200. Marks are typically split across identifying the standard deviation and the final VaR-based capital figure.",
         },
         {
           label: "(ii)",
@@ -7233,7 +7233,7 @@ const QUESTIONS = {
             "A health and care insurer's total surplus for the year was &pound;620,000, against an expected surplus of &pound;500,000 under its original assumptions. Of the total variance, &pound;80,000 is attributed to a deliberate assumption change made during the year. Calculate the total variance and the resulting experience variance.",
           answer:
             "Total variance = &pound;620,000 &minus; &pound;500,000 = &pound;120,000. Experience variance = &pound;120,000 &minus; &pound;80,000 (assumption change) = &pound;40,000.",
-          note: "Verified: 620,000-500,000=120,000; 120,000-80,000=40,000 (Node-verified).",
+          note: "Arithmetic check: 620,000-500,000=120,000; 120,000-80,000=40,000.",
         },
         {
           label: "(ii)",
@@ -7331,7 +7331,7 @@ const QUESTIONS = {
             "A with-profits policy has a starting asset share of &pound;0. Each year, a premium of &pound;2,000 is received. Expenses of &pound;300 are deducted in year 1 and &pound;100 in year 2 (deducted before applying investment return). The fund achieves an investment return of 6% per annum. Using the recursive formula AS(t) = (AS(t-1) + premium - expenses) &times; (1 + investment return), calculate the asset share at the end of year 1 and at the end of year 2.",
           answer:
             "AS(1) = (&pound;0 + &pound;2,000 &minus; &pound;300) &times; 1.06 = &pound;1,700 &times; 1.06 = &pound;1,802.00. AS(2) = (&pound;1,802.00 + &pound;2,000 &minus; &pound;100) &times; 1.06 = &pound;3,702.00 &times; 1.06 = &pound;3,924.12.",
-          note: "Verified: AS(1)=1,802.00; AS(2)=3,924.12 (Node-verified). Marks are typically split across correctly applying the recursion for each year.",
+          note: "Arithmetic check: AS(1)=1,802.00; AS(2)=3,924.12. Marks are typically split across correctly applying the recursion for each year.",
         },
         {
           label: "(ii)",
@@ -7475,7 +7475,7 @@ const QUESTIONS = {
             "A life insurer writes &pound;3,000,000 of gross premium on a new term assurance account and retains 70% under a quota share reinsurance treaty. Calculate the retained premium and the ceded premium.",
           answer:
             "Retained premium = &pound;3,000,000 &times; 70% = &pound;2,100,000. Ceded premium = &pound;3,000,000 &minus; &pound;2,100,000 = &pound;900,000.",
-          note: "Verified: 3,000,000×0.70=2,100,000; ceded=900,000 (Node-verified).",
+          note: "Arithmetic check: 3,000,000×0.70=2,100,000; ceded=900,000.",
         },
         {
           label: "(ii)",
@@ -7571,7 +7571,7 @@ const QUESTIONS = {
             "A life insurer is pricing a one-year renewable term assurance policy with a sum insured of &pound;150,000. The assumed annual mortality rate is 0.0025, and expenses are assumed to be 9% of the gross premium, with no discounting within the one-year term. Using the equation of value, calculate the required annual premium.",
           answer:
             "Expected cost of benefits = 0.0025 &times; &pound;150,000 = &pound;375. Setting gross premium P such that P &times; (1 &minus; 0.09) = &pound;375 gives P = &pound;375 / 0.91 = &pound;412.09 (to the nearest penny).",
-          note: "Verified: 0.0025×150000=375; 375/0.91=412.09 (Node-verified).",
+          note: "Arithmetic check: 0.0025×150000=375; 375/0.91=412.09.",
         },
         {
           label: "(ii)",
@@ -7619,7 +7619,7 @@ const QUESTIONS = {
             "A life insurer's best estimate reserve for a block of business is &pound;25,000,000, with an assumed standard deviation of outcomes of 6% of the reserve. Using a Value at Risk approach with a 99.5% confidence level (z-score of 2.576), calculate the solvency capital requirement.",
           answer:
             "Standard deviation = 6% &times; &pound;25,000,000 = &pound;1,500,000. Solvency capital requirement = &pound;1,500,000 &times; 2.576 = &pound;3,864,000.",
-          note: "Verified: 25,000,000×0.06=1,500,000; 1,500,000×2.576=3,864,000 (Node-verified).",
+          note: "Arithmetic check: 25,000,000×0.06=1,500,000; 1,500,000×2.576=3,864,000.",
         },
         {
           label: "(ii)",
@@ -7715,7 +7715,7 @@ const QUESTIONS = {
             "A life insurer's total surplus for the year was &pound;950,000, against an expected surplus of &pound;800,000 under its original assumptions. Of the total variance, &pound;60,000 is attributed to a deliberate assumption change made during the year. Calculate the total variance and the resulting experience variance.",
           answer:
             "Total variance = &pound;950,000 &minus; &pound;800,000 = &pound;150,000. Experience variance = &pound;150,000 &minus; &pound;60,000 (assumption change) = &pound;90,000.",
-          note: "Verified: 950,000-800,000=150,000; 150,000-60,000=90,000 (Node-verified).",
+          note: "Arithmetic check: 950,000-800,000=150,000; 150,000-60,000=90,000.",
         },
         {
           label: "(ii)",
@@ -7957,7 +7957,7 @@ const QUESTIONS = {
             "A member of a final salary DB scheme retires with 25 years of pensionable service and a final salary of &pound;60,000. The scheme's accrual rate is 1/80ths. Calculate the member's annual pension.",
           answer:
             "Annual pension = &pound;60,000 &times; (1/80) &times; 25 = &pound;18,750 per annum.",
-          note: "Verified: 60000 × (1/80) × 25 = 18,750 (Node-verified).",
+          note: "Arithmetic check: 60000 × (1/80) × 25 = 18,750.",
         },
         {
           label: "(ii)",
@@ -8005,7 +8005,7 @@ const QUESTIONS = {
             "A DB scheme's funding valuation assesses technical provisions of &pound;40,000,000, against scheme assets of &pound;34,000,000. Trustees and the sponsor agree a recovery plan to eliminate the shortfall via equal annual contributions over 6 years. Calculate (a) the funding shortfall, and (b) the required annual recovery contribution.",
           answer:
             "(a) Funding shortfall = &pound;40,000,000 &minus; &pound;34,000,000 = &pound;6,000,000. (b) Required annual recovery contribution = &pound;6,000,000 / 6 = &pound;1,000,000 per annum.",
-          note: "Verified: 40,000,000-34,000,000=6,000,000; 6,000,000/6=1,000,000 (Node-verified). This is a simplified calculation ignoring investment return on recovery contributions and discounting, for illustrative purposes.",
+          note: "Arithmetic check: 40,000,000-34,000,000=6,000,000; 6,000,000/6=1,000,000. This is a simplified calculation ignoring investment return on recovery contributions and discounting, for illustrative purposes.",
         },
         {
           label: "(ii)",
@@ -8053,7 +8053,7 @@ const QUESTIONS = {
             "A DC scheme member contributes &pound;4,000 per annum (combined employer and employee contributions) for 20 years, with the fund assumed to grow at 4.5% per annum net investment return, contributions paid at the start of each year. Using the recursive relationship F(y) = (F(y-1) + 4,000) &times; 1.045 with F(0) = 0, calculate the accumulated fund value at the end of year 20 (to the nearest &pound;100).",
           answer:
             "Applying the recursive growth formula for 20 years gives an accumulated fund value of approximately &pound;131,100 (&pound;131,132.55 to the nearest penny).",
-          note: "Verified via iterative calculation: F(20) = 131,132.55 (Node-verified). Full marks require showing the recursive/compounding approach, not just stating the final figure.",
+          note: "Check by iterating year by year: F(20) = 131,132.55. Full marks require showing the recursive/compounding approach, not just stating the final figure.",
         },
         {
           label: "(ii)",
@@ -8149,7 +8149,7 @@ const QUESTIONS = {
             "A pension scheme's actual surplus for the year was &pound;410,000, against an expected surplus of &pound;300,000 under its original assumptions. Of the total variance, &pound;90,000 is attributed to favourable investment experience. Calculate the total variance and the resulting variance attributable to other (e.g. mortality) sources.",
           answer:
             "Total variance = &pound;410,000 &minus; &pound;300,000 = &pound;110,000. Variance attributable to other sources = &pound;110,000 &minus; &pound;90,000 (investment) = &pound;20,000.",
-          note: "Verified: 410,000-300,000=110,000; 110,000-90,000=20,000 (Node-verified).",
+          note: "Arithmetic check: 410,000-300,000=110,000; 110,000-90,000=20,000.",
         },
         {
           label: "(ii)",
@@ -8343,7 +8343,7 @@ const QUESTIONS = {
             "A bond has a face value of &pound;100,000, pays an annual coupon of &pound;5,000 at the end of each of the next 3 years, and redeems at par (&pound;100,000) at the end of year 3. Using a discount rate of 4% per annum, calculate the bond's present value.",
           answer:
             "PV = &pound;5,000/1.04 + &pound;5,000/1.04&sup2; + &pound;5,000/1.04&sup3; + &pound;100,000/1.04&sup3; = &pound;4,807.69 + &pound;4,622.78 + &pound;4,445.94 + &pound;88,899.64 = &pound;102,775.09 (to the nearest penny).",
-          note: "Verified: PV=102,775.09 (Node-verified). Marks are typically split across correctly discounting the coupons and the redemption value.",
+          note: "Arithmetic check: PV=102,775.09. Marks are typically split across correctly discounting the coupons and the redemption value.",
         },
         {
           label: "(ii)",
@@ -8391,7 +8391,7 @@ const QUESTIONS = {
             "A two-asset portfolio invests 60% in Asset A (expected return 8%, standard deviation 15%) and 40% in Asset B (expected return 5%, standard deviation 8%), with a correlation of 0.3 between the two assets. Calculate the portfolio's expected return and standard deviation.",
           answer:
             "Expected return = (0.6 &times; 8%) + (0.4 &times; 5%) = 4.8% + 2.0% = 6.8%. Variance = (0.6&sup2; &times; 0.15&sup2;) + (0.4&sup2; &times; 0.08&sup2;) + (2 &times; 0.6 &times; 0.4 &times; 0.15 &times; 0.08 &times; 0.3) = 0.0081 + 0.001024 + 0.001728 = 0.010852. Standard deviation = &radic;0.010852 &asymp; 10.42%.",
-          note: "Verified: expected return=6.80%; variance=0.010852; sd≈10.42% (Node-verified). Marks are typically split across the expected return, variance, and standard deviation calculations.",
+          note: "Arithmetic check: expected return=6.80%; variance=0.010852; sd≈10.42%. Marks are typically split across the expected return, variance, and standard deviation calculations.",
         },
         {
           label: "(ii)",
@@ -8583,7 +8583,7 @@ const QUESTIONS = {
             "An &pound;80,000,000 institutional portfolio has an annual return volatility of 10%. Assuming returns are normally distributed, calculate the 1-year 95% Value at Risk (VaR), using a z-score of 1.645 for the 95% confidence level.",
           answer:
             "VaR = &pound;80,000,000 &times; 10% &times; 1.645 = &pound;13,160,000. This means there is a 5% chance the portfolio loses more than approximately &pound;13.16 million over the year.",
-          note: "Verified: 80,000,000×0.10×1.645=13,160,000 (Node-verified). Full marks require both the calculation and a correct statement of what the resulting VaR figure represents.",
+          note: "Arithmetic check: 80,000,000×0.10×1.645=13,160,000. Full marks require both the calculation and a correct statement of what the resulting VaR figure represents.",
         },
         {
           label: "(ii)",
@@ -8631,7 +8631,7 @@ const QUESTIONS = {
             "A portfolio returned 9.1% over a year, against a benchmark return of 7.2%. Attribution analysis identifies a sector allocation effect of 1.2%. Calculate the total active return and the resulting stock selection effect.",
           answer:
             "Total active return = 9.1% &minus; 7.2% = 1.9%. Stock selection effect = 1.9% &minus; 1.2% (allocation effect) = 0.7%.",
-          note: "Verified: 9.1%-7.2%=1.9%; 1.9%-1.2%=0.7% (Node-verified).",
+          note: "Arithmetic check: 9.1%-7.2%=1.9%; 1.9%-1.2%=0.7%.",
         },
         {
           label: "(ii)",
@@ -8777,7 +8777,7 @@ const QUESTIONS = {
             "A non-dividend-paying stock currently trades at £50. The continuously-compounded risk-free rate is 5% per annum. Calculate the fair forward price for delivery in 6 months.",
           answer:
             "$F = S_0 e^{rT} = 50 \\times e^{0.05 \\times 0.5} = 50 \\times e^{0.025} = £51.27$ (to the nearest penny).",
-          note: "Verified: 50×e^(0.05×0.5)=51.2658 (Node-verified). Full marks require setting up the no-arbitrage forward pricing formula explicitly.",
+          note: "Arithmetic check: 50×e^(0.05×0.5)=51.2658. Full marks require setting up the no-arbitrage forward pricing formula explicitly.",
         },
         {
           label: "(ii)",
@@ -8825,7 +8825,7 @@ const QUESTIONS = {
             "A non-dividend-paying stock currently trades at £100. Over the next year, its price will either rise to £110 (an 'up' move, $u = 1.1$) or fall to £90 (a 'down' move, $d = 0.9$). The continuously-compounded risk-free rate is 4% per annum. Using a one-step binomial model, calculate the risk-neutral probability of an up-move, and hence the fair price of a one-year European call option with strike price £100.",
           answer:
             "Risk-neutral probability $p = \\frac{e^{rT} - d}{u - d} = \\frac{e^{0.04} - 0.9}{1.1 - 0.9} = \\frac{1.0408 - 0.9}{0.2} = 0.7041$. Option payoffs: $C_u = \\max(110-100, 0) = £10$; $C_d = \\max(90-100, 0) = £0$. Fair price $= e^{-rT}(p \\times C_u + (1-p) \\times C_d) = e^{-0.04} \\times (0.7041 \\times 10 + 0.2959 \\times 0) = 0.9608 \\times 7.041 = £6.76$ (to the nearest penny).",
-          note: "Verified: p=0.7041, C0=6.7645 (Node-verified). Marks are typically split across the risk-neutral probability calculation, the payoff calculation, and the final discounted expected payoff.",
+          note: "Arithmetic check: p=0.7041, C0=6.7645. Marks are typically split across the risk-neutral probability calculation, the payoff calculation, and the final discounted expected payoff.",
         },
         {
           label: "(ii)",
@@ -8873,7 +8873,7 @@ const QUESTIONS = {
             "A non-dividend-paying stock trades at £100, with volatility 20% per annum. The risk-free rate is 5% per annum (continuously compounded). Using the Black-Scholes formula, calculate the price of a one-year European call option with strike price £100, given $d_1 = 0.3500$ and $d_2 = 0.1500$, and $N(d_1) = 0.6368$, $N(d_2) = 0.5596$.",
           answer:
             "$C = S_0 N(d_1) - Ke^{-rT}N(d_2) = 100 \\times 0.6368 - 100 \\times e^{-0.05} \\times 0.5596 = 63.68 - 95.12 \\times 0.5596 = 63.68 - 53.23 = £10.45$ (to the nearest penny).",
-          note: "Verified: C=10.4506 (Node-verified, using the given d1/d2/N values). Full marks require correctly substituting into the Black-Scholes formula, not just stating the final figure.",
+          note: "Arithmetic check: C=10.4506 (, using the given d1/d2/N values). Full marks require correctly substituting into the Black-Scholes formula, not just stating the final figure.",
         },
         {
           label: "(ii)",
@@ -8883,7 +8883,7 @@ const QUESTIONS = {
             "Using put-call parity, calculate the price of the equivalent European put option with the same strike and expiry.",
           answer:
             "Put-call parity: $P = C - S_0 + Ke^{-rT} = 10.4506 - 100 + 100 \\times e^{-0.05} = 10.4506 - 100 + 95.1229 = £5.57$ (to the nearest penny).",
-          note: "Verified: P=5.5735 (Node-verified).",
+          note: "Arithmetic check: P=5.5735.",
         },
         {
           label: "(iii)",
@@ -9113,7 +9113,7 @@ const QUESTIONS = {
             "A £30,000,000 derivatives portfolio has a delta of 0.65 relative to its underlying, and the underlying has an annual return volatility of 18%. Using a delta-normal approach with a 99% confidence level (z-score of 2.326), calculate the portfolio's 1-year 99% Value at Risk.",
           answer:
             "VaR = &#36;30,000,000 &times; 0.65 &times; 18% &times; 2.326 = &#36;8,164,260 (to the nearest &#36;10). This means there is a 1% chance the portfolio loses more than approximately &#36;8.16 million over the year, based on this simplified delta-normal approximation.",
-          note: "Verified: 30,000,000×0.65×0.18×2.326=8,164,260 (Node-verified). This is a simplified delta-normal VaR approximation, treating the portfolio's exposure as linear via its delta, for illustrative purposes.",
+          note: "Arithmetic check: 30,000,000×0.65×0.18×2.326=8,164,260. This is a simplified delta-normal VaR approximation, treating the portfolio's exposure as linear via its delta, for illustrative purposes.",
         },
         {
           label: "(ii)",
@@ -9307,7 +9307,7 @@ const QUESTIONS = {
             "An accident year's cumulative claims stand at &pound;4,000,000 at the latest observed development period. The remaining development factors to ultimate for this year are 1.50, 1.20 and 1.05 (applied successively). Calculate the estimated ultimate claims and the resulting chain ladder reserve for this accident year.",
           answer:
             "Combined development factor to ultimate = 1.50 &times; 1.20 &times; 1.05 = 1.89. Estimated ultimate claims = &pound;4,000,000 &times; 1.89 = &pound;7,560,000. Chain ladder reserve = &pound;7,560,000 &minus; &pound;4,000,000 = &pound;3,560,000.",
-          note: "Verified: 1.5×1.2×1.05=1.89; 4,000,000×1.89=7,560,000; reserve=3,560,000 (Node-verified). Marks are typically split across the combined development factor and the final reserve figure.",
+          note: "Arithmetic check: 1.5×1.2×1.05=1.89; 4,000,000×1.89=7,560,000; reserve=3,560,000. Marks are typically split across the combined development factor and the final reserve figure.",
         },
         {
           label: "(ii)",
@@ -9355,7 +9355,7 @@ const QUESTIONS = {
             "For the same accident year as the previous question (cumulative claims of &pound;4,000,000 at latest development, combined development factor to ultimate of 1.89), an independent a priori estimate of ultimate claims is &pound;5,000,000. Using the Bornhuetter-Ferguson method, calculate the percentage developed, the BF reserve, and the resulting BF estimate of ultimate claims.",
           answer:
             "Percentage developed = 1 / 1.89 = 52.91%. BF reserve = a priori ultimate &times; (1 &minus; % developed) = &pound;5,000,000 &times; (1 &minus; 0.5291) = &pound;5,000,000 &times; 0.4709 = &pound;2,354,497. BF ultimate = &pound;4,000,000 + &pound;2,354,497 = &pound;6,354,497 (to the nearest pound).",
-          note: "Verified: pctDeveloped=52.91%; bfReserve=2,354,497.35; bfUltimate=6,354,497.35 (Node-verified). Marks are typically split across the percentage-developed calculation, the BF reserve, and the final BF ultimate.",
+          note: "Arithmetic check: pctDeveloped=52.91%; bfReserve=2,354,497.35; bfUltimate=6,354,497.35. Marks are typically split across the percentage-developed calculation, the BF reserve, and the final BF ultimate.",
         },
         {
           label: "(ii)",
@@ -9547,7 +9547,7 @@ const QUESTIONS = {
             "An insurer's two business lines have standalone capital requirements of &pound;8,000,000 (Line A) and &pound;6,000,000 (Line B), with an assumed correlation of 0.4 between them. Using the formula $\\sqrt{C_A^2 + C_B^2 + 2\\rho C_A C_B}$, calculate the diversified aggregate capital requirement and the resulting diversification benefit.",
           answer:
             "Diversified capital = $\\sqrt{8,000,000^2 + 6,000,000^2 + 2 \\times 0.4 \\times 8,000,000 \\times 6,000,000} = \\sqrt{64,000,000,000,000 + 36,000,000,000,000 + 38,400,000,000,000} = \\sqrt{138,400,000,000,000} \\approx £11,764,353$. Diversification benefit = (£8,000,000 + £6,000,000) &minus; £11,764,353 = £2,235,647 (to the nearest pound).",
-          note: "Verified: diversifiedCap≈11,764,352.94; benefit≈2,235,647.06 (Node-verified). Marks are typically split across the diversified capital calculation and the final benefit figure.",
+          note: "Arithmetic check: diversifiedCap≈11,764,352.94; benefit≈2,235,647.06. Marks are typically split across the diversified capital calculation and the final benefit figure.",
         },
         {
           label: "(ii)",
@@ -9595,7 +9595,7 @@ const QUESTIONS = {
             "An insurer's simulated aggregate loss distribution (5 equally likely outcomes, sorted ascending) is: £100,000, £200,000, £300,000, £400,000, £1,000,000. Calculate the 80% Value at Risk (VaR) and the 80% Tail Value at Risk (TVaR).",
           answer:
             "80% VaR is the 4th of 5 equally-likely, sorted outcomes = £400,000. 80% TVaR is the average of all outcomes at or above the VaR threshold: (£400,000 + £1,000,000) / 2 = £700,000.",
-          note: "Verified: VaR80=400,000; TVaR80=700,000 (Node-verified). This is a simplified discrete illustration; marks are typically split across correctly identifying VaR and correctly averaging the tail outcomes for TVaR.",
+          note: "Arithmetic check: VaR80=400,000; TVaR80=700,000. This is a simplified discrete illustration; marks are typically split across correctly identifying VaR and correctly averaging the tail outcomes for TVaR.",
         },
         {
           label: "(ii)",
@@ -9693,7 +9693,7 @@ const QUESTIONS = {
             "A rating actuary estimates a pure risk premium of £320 for a given risk. The rating basis includes an expense loading of 20% of gross premium and a profit margin loading of 8% of gross premium. Calculate the required gross premium.",
           answer:
             "Setting gross premium P such that P &times; (1 &minus; 0.20 &minus; 0.08) = £320 gives P = £320 / 0.72 = £444.44 (to the nearest penny).",
-          note: "Verified: 320/(1-0.20-0.08)=444.44 (Node-verified). Full marks require setting up the equation explicitly, not just stating the final figure.",
+          note: "Arithmetic check: 320/(1-0.20-0.08)=444.44. Full marks require setting up the equation explicitly, not just stating the final figure.",
         },
         {
           label: "(ii)",
@@ -9741,7 +9741,7 @@ const QUESTIONS = {
             "A large commercial risk had total historical claims of £2,400,000 over a period with total exposure of 12,000 exposure units. An inflation/trend factor of 1.05 is assumed to project this experience forward to the future policy period. Using the burning cost approach, calculate the historical burning cost rate and the projected burning cost rate.",
           answer:
             "Historical burning cost = £2,400,000 / 12,000 = £200.00 per exposure unit. Projected burning cost = £200.00 &times; 1.05 = £210.00 per exposure unit.",
-          note: "Verified: 2,400,000/12,000=200.00; 200.00×1.05=210.00 (Node-verified).",
+          note: "Arithmetic check: 2,400,000/12,000=200.00; 200.00×1.05=210.00.",
         },
         {
           label: "(ii)",
@@ -10029,7 +10029,7 @@ const QUESTIONS = {
             "A portfolio's claim count follows a Poisson-like distribution with expected value 400. Claim severity has mean £1,500 and variance £900,000. For a compound distribution, the aggregate claims variance is given by $\\text{Var}(S) = E[N] \\times E[X^2]$, where $E[X^2] = \\text{Var}(X) + (E[X])^2$. Calculate the mean aggregate claims, and the aggregate claims standard deviation.",
           answer:
             "Mean aggregate claims = $E[N] \\times E[X] = 400 \\times £1,500 = £600,000$. $E[X^2] = 900,000 + 1,500^2 = 900,000 + 2,250,000 = 3,150,000$. Variance of aggregate claims = $400 \\times 3,150,000 = 1,260,000,000$. Standard deviation = $\\sqrt{1,260,000,000} \\approx £35,496$ (to the nearest pound).",
-          note: "Verified: meanAggregate=600,000; varAggregate=1,260,000,000; sdAggregate≈35,496.48 (Node-verified). Marks are typically split across the mean, the E[X²] calculation, and the final standard deviation.",
+          note: "Arithmetic check: meanAggregate=600,000; varAggregate=1,260,000,000; sdAggregate≈35,496.48. Marks are typically split across the mean, the E[X²] calculation, and the final standard deviation.",
         },
         {
           label: "(ii)",
@@ -10077,7 +10077,7 @@ const QUESTIONS = {
             "A risk has 850 own claims, against a full credibility standard of 1,082 claims. Using classical credibility with $Z = \\sqrt{n / n_{full}}$, calculate the credibility factor Z. The own experience indicates a loss ratio of 62%, while the external/portfolio benchmark loss ratio is 55%. Calculate the credibility-weighted loss ratio.",
           answer:
             "$Z = \\sqrt{850/1082} = \\sqrt{0.7856} = 0.8863$. Credibility-weighted loss ratio = $(0.8863 \\times 62\\%) + ((1-0.8863) \\times 55\\%) = 54.95\\% + 6.25\\% = 61.20\\%$ (to 2 decimal places).",
-          note: "Verified: Z=0.8863; credibilityWeightedRate=0.6120 (61.20%) (Node-verified). Marks are typically split across the Z calculation and the final weighted rate.",
+          note: "Arithmetic check: Z=0.8863; credibilityWeightedRate=0.6120 (61.20%). Marks are typically split across the Z calculation and the final weighted rate.",
         },
         {
           label: "(ii)",
@@ -10289,7 +10289,7 @@ const QUESTIONS = {
             "An organisation's stand-alone economic capital requirements are £40m for market risk and £25m for credit risk. The correlation between the two risks is estimated at 0.25. Assuming aggregate capital is given by $C_{\\text{agg}} = \\sqrt{C_M^2 + C_C^2 + 2 \\rho C_M C_C}$, calculate the aggregate capital requirement and the resulting diversification benefit.",
           answer:
             "$C_{\\text{agg}} = \\sqrt{40^2 + 25^2 + 2 \\times 0.25 \\times 40 \\times 25} = \\sqrt{1600 + 625 + 500} = \\sqrt{2725} = £52.20m$ (to 2 decimal places). The diversification benefit is the sum of stand-alone capital less the aggregate capital: £40m + £25m &minus; £52.20m = £12.80m.",
-          note: "Verified: sqrt(1600+625+500)=52.2015...; 65-52.2015=12.7985 (Node-verified, rounds to £52.20m and £12.80m). Full marks require both the aggregate capital figure and the diversification benefit, correctly derived.",
+          note: "Arithmetic check: sqrt(1600+625+500)=52.2015...; 65-52.2015=12.7985 (, rounds to £52.20m and £12.80m). Full marks require both the aggregate capital figure and the diversification benefit, correctly derived.",
         },
         {
           label: "(ii)",
@@ -10327,7 +10327,7 @@ const QUESTIONS = {
             "A CRO's risk model produces the following discrete aggregate loss distribution for next year: L = £0m with probability 0.70; L = £10m with probability 0.15; L = £30m with probability 0.08; L = £80m with probability 0.05; L = £150m with probability 0.02. Calculate the Value at Risk (VaR) at the 90% confidence level, and the Tail Value at Risk (TVaR) at the 90% confidence level.",
           answer:
             "Cumulative probabilities are: L &le; £0m: 0.70; L &le; £10m: 0.85; L &le; £30m: 0.93; L &le; £80m: 0.98; L &le; £150m: 1.00. VaR at the 90% confidence level is the smallest loss level with cumulative probability at least 0.90, which is L = £30m. The losses exceeding this VaR threshold are £80m (probability 0.05) and £150m (probability 0.02), with combined probability 0.07. TVaR90 is the probability-weighted average of these tail losses: (£80m &times; 0.05 + £150m &times; 0.02) / 0.07 = (£4m + £3m) / 0.07 = £100m.",
-          note: "Verified: cumulative probabilities 0.70/0.85/0.93/0.98/1.00 (Node-verified); VaR90=£30m; TVaR90=(80*0.05+150*0.02)/0.07=100 exactly (Node-verified). Full marks require correctly identifying the VaR threshold from the cumulative distribution and correctly computing the conditional tail average for TVaR.",
+          note: "Arithmetic check: cumulative probabilities 0.70/0.85/0.93/0.98/1.00; VaR90=£30m; TVaR90=(80*0.05+150*0.02)/0.07=100 exactly. Full marks require correctly identifying the VaR threshold from the cumulative distribution and correctly computing the conditional tail average for TVaR.",
         },
         {
           label: "(ii)",
@@ -10441,7 +10441,7 @@ const QUESTIONS = {
             "An organisation has two business units, A and B, with stand-alone economic capital of £60m and £20m respectively, and a correlation of 0.4 between their risks. Using the Euler allocation formula $C_i = \\dfrac{C_i^2 + \\rho C_A C_B}{C_{\\text{agg}}}$ (applied to each unit in turn, with $C_{\\text{agg}} = \\sqrt{C_A^2 + C_B^2 + 2 \\rho C_A C_B}$), calculate the aggregate capital requirement and the Euler-allocated capital for each business unit.",
           answer:
             "$C_{\\text{agg}} = \\sqrt{60^2 + 20^2 + 2 \\times 0.4 \\times 60 \\times 20} = \\sqrt{3600 + 400 + 960} = \\sqrt{4960} = £70.43m$ (to 2 decimal places). Euler allocation to A: $(60^2 + 0.4 \\times 60 \\times 20) / 70.43 = (3600 + 480) / 70.43 = 4080 / 70.43 = £57.93m$. Euler allocation to B: $(20^2 + 0.4 \\times 60 \\times 20) / 70.43 = (400 + 480) / 70.43 = 880 / 70.43 = £12.50m$. As a check, £57.93m + £12.50m = £70.43m, matching the aggregate capital requirement exactly.",
-          note: "Verified: sqrt(3600+400+960)=70.4273 (Node-verified); Euler A=57.93, Euler B=12.50, sum=70.43 (Node-verified, full allocation property holds exactly). Full marks require both individual allocations <em>and</em> the confirming check that they sum to the aggregate figure.",
+          note: "Arithmetic check: sqrt(3600+400+960)=70.4273; Euler A=57.93, Euler B=12.50, sum=70.43 (, full allocation property holds exactly). Full marks require both individual allocations <em>and</em> the confirming check that they sum to the aggregate figure.",
         },
         {
           label: "(ii)",
@@ -10479,7 +10479,7 @@ const QUESTIONS = {
             "A business unit generates a risk-adjusted return of £8m for the year, and has been allocated economic capital of £50m. The organisation's cost of capital rate is 10% per annum. Calculate the business unit's RAROC and its Economic Value Added (EVA) for the year.",
           answer:
             "RAROC = risk-adjusted return / economic capital allocated = £8m / £50m = 16%. EVA = return &minus; (cost of capital rate &times; economic capital allocated) = £8m &minus; (0.10 &times; £50m) = £8m &minus; £5m = £3m.",
-          note: "Verified: 8/50=0.16 (16%); 8-0.10*50=3 (Node-verified). Full marks require both RAROC and EVA correctly calculated, with EVA expressed as a monetary amount and RAROC as a percentage.",
+          note: "Arithmetic check: 8/50=0.16 (16%); 8-0.10*50=3. Full marks require both RAROC and EVA correctly calculated, with EVA expressed as a monetary amount and RAROC as a percentage.",
         },
         {
           label: "(ii)",
