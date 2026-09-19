@@ -28119,529 +28119,1401 @@ const MODULES = {
       }
   ],
   SP6: [
-    {
-        "id": "m01",
-        "title": "What is Subject SP6 all about?",
-        "description": "An orientation chapter explaining SP6's role as the Specialist Principles subject developing derivative understanding beyond CM2's level, and how it complements SP5 and feeds into SA7.",
-        "cards": [
-            {
-                "q": "What is the aim of Subject SP6, according to its official syllabus?",
-                "a": "To instil in successful candidates the ability, at a higher level of detail and ability than in CM2, to understand different types of financial derivatives and their uses, the markets in which they are traded, methods of valuation of financial derivatives, and the assessment and management of risks associated with a portfolio of derivatives.",
-                "explain": "This is the genuine, official IFoA syllabus wording — worth reading closely: 'higher level of detail and ability than in CM2' explicitly signals SP6 as building directly on, and materially deepening, CM2's derivative-pricing foundation."
-            },
-            {
-                "q": "Which two subjects does SP6 build directly on, according to its official links?",
-                "a": "CM2 (Financial Engineering and Loss Reserving), which provides the foundational derivative-pricing and stochastic-modelling technique, and CP1 (Actuarial Practice), which provides general risk-management and practice principles.",
-                "explain": "Worth recognising CM2 as SP6's genuine <em>technical foundation</em> — SP6 does not re-teach Itô calculus or the binomial model from scratch, it develops CM2's own material to materially greater depth and sophistication."
-            },
-            {
-                "q": "What are the four official syllabus topic areas of SP6, and their approximate topic weightings?",
-                "a": "Derivative markets (5%); Derivative types and uses (20%); Derivative pricing and valuation methods, including interest rate models (50%); and Management of derivatives (25%).",
-                "explain": "Worth memorising these weightings directly — 'Derivative pricing and valuation methods' at fully 50% is the dominant topic area, meaning this subject is overwhelmingly focused on the mathematical and modelling technique of <em>valuing</em> derivatives, more so than any other SP subject's single topic weighting."
-            },
-            {
-                "q": "How does SP6 fit alongside SP5 (Investment and Finance Principles) and SA7 (Investment and Finance Advanced) as a genuine 'trio' of subjects, echoing SP5's own material?",
-                "a": "SP5 develops broad investment management concepts applied to meeting different investor needs; SP6 focuses in detail on the technical aspects of derivatives and their use, at a deeper mathematical level than SP5 covers; SA7 develops both sets of concepts further via more complex 'real world' problems at Specialist Advanced level.",
-                "explain": "This directly recalls SP5's trio-structure material — worth recognising SP6 as the <em>technical</em>, mathematically-deep counterpart within this trio, distinct from SP5's broader, more principles-based investment management coverage."
-            },
-            {
-                "q": "According to the official syllabus, what is the approximate split of assessment across knowledge, application, and higher-order skills in SP6?",
-                "a": "Approximately 25% knowledge, 50% application, and 25% higher order — the same standard SP-subject split shared with SP1, SP2 and SP4, despite SP6's more mathematical, technique-heavy subject matter.",
-                "explain": "Worth recognising that even a mathematical subject like SP6 still places the <em>majority</em> of its assessment weight on <em>application</em> (using techniques in context) rather than pure knowledge recall — worth prioritising practice applying formulas to scenarios over memorising derivations alone."
-            },
-            {
-                "q": "Why might SP6's heavy weighting toward 'Derivative pricing and valuation methods' (50%) make genuine, repeated practice with the underlying mathematical techniques especially important for exam success?",
-                "a": "Since half of the entire exam's marks concentrate on this single topic area, genuine fluency with techniques like the binomial model, Black-Scholes, and interest rate derivative pricing is essential — a candidate who understands these topics only superficially would be at a severe, structural disadvantage compared with a candidate who has practised these techniques extensively.",
-                "explain": "Worth treating this weighting as direct, practical revision guidance — Modules covering derivative pricing and valuation (this course's largest module block) deserve proportionately the greatest revision time and practice."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "Derivative markets",
-        "description": "Covers the basic characteristics of derivatives markets, exchange-traded versus over-the-counter contracts, and the operation of central counterparty clearing houses, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What are the genuine characteristics of exchange-traded contracts versus over-the-counter (OTC) contracts, per the official syllabus objective 1.2?",
-                "a": "Exchange-traded contracts offer genuine standardisation, transparency, and reduced counterparty risk (via central clearing), while OTC contracts offer greater flexibility to tailor contract terms to specific needs, at the cost of typically greater counterparty risk and reduced price transparency.",
-                "explain": "This directly recalls SA7's and SP5's exchange-versus-OTC material — worth recognising this as an important, recurring foundational distinction examined at every level of the investment/derivatives curriculum."
-            },
-            {
-                "q": "What are the three genuine types of derivative market participant named in the official syllabus (objective 1.3), and how does each use forwards, futures and options differently?",
-                "a": "Hedgers use derivatives to reduce an existing risk exposure; speculators use derivatives to take on genuine new exposure in the hope of profiting from an anticipated market movement; arbitrageurs use derivatives to exploit genuine, temporary pricing discrepancies between related instruments, aiming for a risk-free profit.",
-                "explain": "Worth memorising these three participant types precisely — each represents a <em>different</em> motivation for trading the <em>same</em> instrument, a distinction that recurs throughout this whole subject's later pricing and risk material."
-            },
-            {
-                "q": "Why might understanding 'how futures and options markets work' (per the official syllabus objective 1.4) require genuine knowledge of margining and settlement processes, not just contract payoff structures?",
-                "a": "Exchange-traded futures typically require posting and maintaining margin (collateral) that is marked-to-market daily, with genuine cashflow implications for the holder distinct from the contract's eventual payoff at expiry, so understanding market <em>mechanics</em> is separate from understanding the contract's theoretical payoff.",
-                "explain": "Worth recognising a genuine distinction between a derivative's <em>theoretical payoff structure</em> (covered in later modules) and its <em>practical market mechanics</em> (margining, settlement) — both are necessary for complete understanding, not interchangeable."
-            },
-            {
-                "q": "What is a 'central counterparty clearing house' (CCP), and why does its operation reduce counterparty risk in exchange-traded derivative markets, per the official syllabus objective 1.5?",
-                "a": "A CCP interposes itself between the two original parties to a trade, becoming the genuine buyer to every seller and seller to every buyer, so each party's counterparty risk is against the CCP itself (typically very well-capitalised and margined) rather than against the original, potentially less creditworthy counterparty directly.",
-                "explain": "Worth recognising the CCP mechanism as directly addressing exchange-traded derivatives' genuine counterparty-risk <em>advantage</em> over OTC contracts — this module's central card explaining <em>why</em> exchange trading is typically safer."
-            },
-            {
-                "q": "Why might the regulatory environment surrounding CCPs be particularly important, given how much counterparty risk concentrates within a single CCP?",
-                "a": "Since a CCP absorbs the counterparty risk of essentially the whole exchange-traded market it clears, its own genuine financial soundness and risk management practices become systemically important, meaning CCPs are typically subject to particularly close regulatory oversight to ensure they can honour their central role even under severely stressed market conditions.",
-                "explain": "This directly recalls SA3's and SA7's systemic-risk-concentration material — worth recognising the CCP as a genuine example of risk <em>concentration</em> requiring correspondingly intensive regulatory oversight, precisely because so much of the market's counterparty risk now flows through this single entity."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "Derivative payoffs and forward/futures pricing",
-        "description": "Covers the payoffs of forwards, futures, calls and puts, forward and futures pricing, and how futures contracts are used for hedging, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the payoff of a forward or futures contract at maturity, for the long position, echoing CM2's material?",
-                "a": "The payoff is $S_T - K$, where $S_T$ is the underlying asset's price at maturity and $K$ is the agreed forward/futures price — a linear, symmetric payoff exposing the holder to both unlimited upside and unlimited downside.",
-                "explain": "This directly recalls CM2's forward-payoff material — worth recognising the <em>linear</em>, <em>symmetric</em> nature of this payoff as the key distinguishing feature versus an option's asymmetric payoff, covered next."
-            },
-            {
-                "q": "What are the payoffs of European call and put options at expiry, for the holder, echoing CM2's material?",
-                "a": "A European call option's payoff is $\\max(S_T - K, 0)$, and a European put option's payoff is $\\max(K - S_T, 0)$ — both <em>asymmetric</em> payoffs, capping the holder's downside at the premium paid while retaining upside potential.",
-                "explain": "This directly recalls CM2's option-payoff material — worth recognising the $\\max(\\cdot, 0)$ structure as the defining mathematical feature of an option's payoff, distinguishing it from a forward or future's unbounded, symmetric exposure."
-            },
-            {
-                "q": "How does an American option's payoff structure differ from a European option's, per the official syllabus objective 2.1?",
-                "a": "A European option can only be exercised at its specified expiry date, while an American option can be exercised at <em>any</em> time up to and including expiry, giving the holder greater flexibility, which correspondingly means an American option's value must be at least as great as an equivalent European option's value.",
-                "explain": "Worth recognising this <em>greater flexibility</em> as the genuine source of any American option's additional value over an equivalent European option — a theme this course's numerical-methods module develops in more valuation detail."
-            },
-            {
-                "q": "How is the fair forward price of an asset determined under the no-arbitrage principle, echoing CM2's material?",
-                "a": "The forward price is set such that $F = S_0 e^{rT}$ (for a non-dividend-paying asset), reflecting the genuine cost of carrying the underlying asset to maturity (financed at the risk-free rate); any forward price deviating from this would allow a risk-free arbitrage profit through buying/selling the underlying and simultaneously entering an offsetting forward position.",
-                "explain": "This directly recalls CM2's no-arbitrage forward-pricing material — worth recognising this as the genuine <em>foundational</em> application of the arbitrage-free pricing principle this whole subject repeatedly relies upon."
-            },
-            {
-                "q": "Why might a genuine difference between forward and futures prices arise in practice, despite both theoretically pricing the same underlying exposure?",
-                "a": "Futures require daily marking-to-market and margin settlement, while forwards typically settle only at maturity, so if interest rates are correlated with the underlying asset's price movements, this difference in cashflow timing can create a small but genuine difference between otherwise theoretically equivalent forward and futures prices.",
-                "explain": "Worth recognising this as a subtle but real distinction — in most simplified exam contexts forward and futures prices are treated as equal, but genuine practical differences can arise from the margining mechanism covered in Module 2."
-            },
-            {
-                "q": "How might an investor use a futures contract to hedge an existing long position in the underlying asset, per the official syllabus objective 2.3?",
-                "a": "Selling (going short) a futures contract on the same underlying asset creates an offsetting position — if the underlying asset's price falls, the loss on the physical holding is offset by the genuine gain on the short futures position, effectively locking in the asset's current value regardless of subsequent price movements.",
-                "explain": "This directly recalls this course's later hedging material — worth recognising this as the genuine, foundational example of a <em>hedge</em>: an offsetting derivative position specifically designed to reduce, not increase, overall risk exposure."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "Traded derivative contracts and interest rate derivatives",
-        "description": "Covers stock, currency and index options, warrants, convertibles, property derivatives, and the range of interest rates and interest rate derivatives, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine traded derivative contracts does the official syllabus (objective 2.4) require candidates to describe, beyond basic calls and puts?",
-                "a": "Stock options, currency options, index options, options on futures, warrants, and convertibles — six distinct instrument types, each applying the general option concept to a different underlying or embedding it within a different structure.",
-                "explain": "Worth memorising this exact list — note 'options on futures' as a distinct concept: an option whose <em>underlying</em> is itself a futures contract, not the physical asset directly."
-            },
-            {
-                "q": "What is a 'warrant', and how does it differ from an exchange-traded call option on the same underlying stock?",
-                "a": "A warrant is typically issued directly BY the company itself (rather than traded independently between third parties), and exercising a warrant creates new shares (diluting existing shareholders), unlike an exchange-traded call option which settles by transferring already-existing shares between the option's counterparties.",
-                "explain": "Worth recognising the genuine <em>dilution</em> effect as the key distinguishing feature of a warrant — exercising a warrant changes the company's own share count, unlike a standard option's settlement between two third parties."
-            },
-            {
-                "q": "What is a 'convertible' bond, and why does it combine features of both debt and equity derivatives?",
-                "a": "A convertible bond pays regular coupon interest like a standard bond, but embeds the holder's option to convert the bond into a specified number of the issuer's shares, combining a fixed-income instrument with an embedded equity call option, giving the holder genuine downside protection (bond floor) alongside equity upside potential.",
-                "explain": "Worth recognising convertibles as a <em>hybrid</em> instrument — understanding their value requires combining bond valuation technique with option valuation technique, a recurring theme this whole subject develops."
-            },
-            {
-                "q": "What genuine interest rates and interest rate derivatives does the official syllabus (objective 2.6) require candidates to describe?",
-                "a": "Treasury rates, LIBOR rates, repo rates, zero rates, forward rates, forward rate agreements, interest rate futures, Treasury bond futures, interest rate swaps, European swap options (swaptions), caps and caplets, floors and floorlets, and Bermudan swaptions.",
-                "explain": "Worth memorising this exact, extensive list — it defines the genuine breadth of interest-rate-derivative instrument knowledge SP6 expects, spanning basic rate definitions through to complex swaption structures."
-            },
-            {
-                "q": "What is an 'interest rate cap', and how does it function as a portfolio of simpler options, echoing this course's later Black-model material?",
-                "a": "An interest rate cap protects the holder against rising interest rates by paying out if a reference rate exceeds a specified strike level at each of a series of future dates; a cap can be decomposed into a portfolio of individual 'caplets', each a simple interest-rate call option applying to a single future period, allowing the whole cap to be valued by summing the value of its individual caplet components.",
-                "explain": "This directly previews this course's Black-model-for-caps-and-floors material — worth recognising the cap-as-portfolio-of-caplets decomposition as the genuine <em>key insight</em> making cap valuation tractable, reducing a complex multi-period instrument to a sum of simpler, individually-valuable components."
-            },
-            {
-                "q": "What is a 'Bermudan swaption', and why does it sit between a European and an American swaption in terms of exercise flexibility?",
-                "a": "A Bermudan swaption can be exercised on any of a specified, discrete set of dates (rather than only at a single expiry date, as European, or continuously, as American), giving the holder intermediate exercise flexibility between these two extremes, with an intermediate valuation complexity to match.",
-                "explain": "Worth recognising 'Bermudan' exercise style as a distinct <em>third</em> category, named for sitting geographically 'between' Europe and America — a memorable way to recall its intermediate exercise flexibility."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Exotic derivatives, structured securities and credit derivatives",
-        "description": "Covers exotic equity and foreign exchange derivatives, structured securities and OTC contracts used for hedging, and the types and application of credit derivatives, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is a 'barrier option', and how does its payoff differ from a standard call or put option?",
-                "a": "A barrier option's payoff depends on whether the underlying asset's price touches a specified barrier level at any point during the option's life, either activating ('knock-in') or extinguishing ('knock-out') the option's payoff, unlike a standard option whose payoff depends only on the underlying's price at expiry.",
-                "explain": "Worth recognising barrier options as <em>path-dependent</em> — their value depends on the underlying's whole price <em>path</em> during the option's life, not merely its final value, a more complex valuation problem than a standard European option."
-            },
-            {
-                "q": "What is an 'Asian option', and why might it be valuable to a corporate hedger managing regular, ongoing currency exposure?",
-                "a": "An Asian option's payoff depends on the <em>average</em> price of the underlying over a specified period (rather than a single point-in-time price), making it well-suited to a corporate hedger with regular, ongoing exposure (e.g. monthly foreign currency receipts), since averaging reduces the genuine risk of the option's payoff being distorted by a single, potentially unrepresentative price observation.",
-                "explain": "Worth recognising the <em>averaging</em> feature as directly matching a genuine real-world hedging need — a corporate with regular, recurring exposure benefits from a hedge reflecting <em>average</em> conditions, not a single, potentially atypical spot price."
-            },
-            {
-                "q": "What is a 'quanto option', and why does it combine both an equity/index exposure and a currency exposure within a single instrument?",
-                "a": "A quanto option pays out based on a foreign underlying asset's performance, but settles in a <em>different</em> (typically domestic) currency at a <em>fixed</em> exchange rate, eliminating currency risk from the payoff while retaining the foreign asset's price exposure, combining two distinct risk factors' management within one instrument.",
-                "explain": "Worth recognising the quanto structure as an elegant solution to a real hedging problem: gaining foreign asset exposure <em>without</em> the accompanying currency risk that a simple, unhedged foreign investment would otherwise carry."
-            },
-            {
-                "q": "What is a Limited Price Indexation (LPI) swap, and how might it be used to hedge a pension scheme's inflation-linked liabilities, echoing SA4's material?",
-                "a": "An LPI swap exchanges cashflows linked to inflation subject to a <em>cap and floor</em> (e.g. inflation between 0% and 5% per annum), matching many UK pension schemes' actual benefit increase structure (which is typically similarly capped and floored), providing a more precisely-matched hedge than a simple, uncapped inflation swap would.",
-                "explain": "This directly recalls SA4's pension-benefit-increase-structure material — worth recognising LPI swaps as a <em>precise</em> hedging tool, matching the exact capped/floored structure of real pension liabilities rather than a simpler, less precisely-matched alternative."
-            },
-            {
-                "q": "How might a longevity swap be understood as a genuine structured security hedging a non-economic risk, echoing SA2's and SA4's material?",
-                "a": "A longevity swap exchanges genuine payments linked to actual mortality/survival experience of a specified population for fixed payments, allowing a pension scheme or annuity provider to hedge genuine longevity risk (a fundamentally demographic, non-economic risk) using a structured financial instrument, directly extending derivative-hedging technique beyond purely economic/market risk factors.",
-                "explain": "This directly recalls SA2's and SA4's longevity-swap material — worth recognising this as an important example of derivative technique extending beyond pure market risk into demographic risk hedging."
-            },
-            {
-                "q": "What is a 'credit default swap' (CDS), and what genuine payoff does it provide the protection buyer?",
-                "a": "A CDS pays the protection buyer a genuine compensating payment if a specified reference entity experiences a credit event (e.g. default), in exchange for the buyer paying a regular premium (the CDS spread) to the protection seller — effectively genuine insurance against a specific issuer's credit deterioration or default.",
-                "explain": "Worth recognising a CDS as functioning like an <em>insurance contract</em> against credit risk — the buyer pays a regular premium for protection against a genuine, specified adverse credit event."
-            },
-            {
-                "q": "Why does the genuine relationship between CDS spreads and corporate bond credit spreads provide a useful market-based cross-check on credit risk pricing, per the official syllabus objective 2.10.2?",
-                "a": "Both a CDS spread and a corporate bond's credit spread over the risk-free rate compensate for the <em>same</em> underlying credit risk, so under normal market conditions these two measures should be closely related (via arbitrage arguments), and any material, sustained divergence between them can reveal important information about market liquidity or risk-pricing anomalies.",
-                "explain": "Worth recognising this relationship as a genuine <em>practical cross-check</em> — comparing CDS spreads against bond credit spreads for the same issuer provides a useful consistency check on credit risk pricing, similar in spirit to the no-arbitrage pricing principle underlying Module 3's forward pricing."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "Option pricing factors and the binomial model",
-        "description": "Covers the factors affecting option prices, and the theory underpinning derivative pricing and hedging using the binomial model, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What six genuine factors does the official syllabus (objective 3.1) require understanding of, as affecting option prices?",
-                "a": "Stock price, strike price, term to expiry, volatility, risk-free rate, and dividends — six distinct inputs, each affecting call and put option values in specific, sometimes opposite, directions.",
-                "explain": "Worth memorising this exact six-factor list — it forms the direct input set to the Black-Scholes formula developed in Module 7, so genuine fluency with how each factor affects option value is essential foundational understanding."
-            },
-            {
-                "q": "Why does higher volatility increase the value of <em>both</em> a call <em>and</em> a put option, unlike most of the other five pricing factors which affect calls and puts in opposite directions?",
-                "a": "Since both calls and puts have asymmetric, capped-downside payoffs (the holder's maximum loss is the premium paid, regardless of how far the underlying moves against them), greater volatility increases the <em>chance</em> of a large favourable move without a corresponding increase in downside risk, making higher volatility valuable to the holder of <em>either</em> option type.",
-                "explain": "Worth recognising this as an important, distinctive insight — volatility's <em>uniformly positive</em> effect on both calls and puts follows directly from options' asymmetric payoff structure (Module 3's material), unlike factors like stock price which help calls and hurt puts."
-            },
-            {
-                "q": "What is the 'binomial model' for derivative pricing, and what genuine assumption does it make about the underlying asset's price movement over each time step?",
-                "a": "The binomial model assumes the underlying asset's price can only move to one of two genuine possible values (an 'up' or 'down' move) over each discrete time step, allowing derivative prices to be determined by working backward through a tree of these possible future price paths.",
-                "explain": "This directly recalls CM2's binomial-model foundation — worth recognising the <em>simplified</em> two-outcome assumption per step as what makes the model mathematically tractable, while still capturing genuine price uncertainty through the accumulation of many such steps."
-            },
-            {
-                "q": "What is a 'replicating strategy' in the binomial model, and why is it the genuine key to deriving an option's fair price?",
-                "a": "A replicating strategy is a genuine portfolio of the underlying asset and risk-free borrowing/lending that exactly reproduces the option's payoff in <em>every</em> possible future state; since this replicating portfolio and the option must therefore have the same genuine value today (otherwise a risk-free arbitrage would exist), the option's fair price is determined as the cost of constructing this replicating portfolio.",
-                "explain": "This directly recalls CM2's replication-based-pricing material — worth recognising replication as the genuine <em>conceptual foundation</em> of derivative pricing throughout this whole subject: an instrument is priced by finding what it costs to construct an equivalent, replicating alternative."
-            },
-            {
-                "q": "What is 'pricing under the martingale measure', and why does this simplify option pricing compared with using real-world probabilities?",
-                "a": "Under the martingale (risk-neutral) probability measure, discounted asset prices behave as martingales (their expected future value equals their current value), allowing an option's fair price to be calculated as the <em>discounted expected payoff</em> under this artificial measure, avoiding the need to know or estimate the underlying asset's true, real-world expected return.",
-                "explain": "This directly recalls CM2's risk-neutral-valuation material — worth recognising the martingale measure as a powerful <em>simplification</em>: pricing no longer requires estimating the asset's real-world expected return, only its volatility and the risk-free rate."
-            },
-            {
-                "q": "What does the 'Binomial Representation Theorem' establish, and why is 'previsibility' a necessary condition within it?",
-                "a": "The Binomial Representation Theorem establishes that any genuine derivative payoff can be replicated by a self-financing trading strategy in the underlying asset and risk-free asset, provided the trading strategy is 'previsible' (the number of units held over each time step must be decided using only information available at the <em>start</em> of that step, not information revealed during it) — a genuine requirement ensuring the strategy is actually implementable in real time.",
-                "explain": "Worth recognising 'previsibility' as an important <em>technical condition</em>, not a mere formality — a trading strategy that could 'see the future' within each step would not represent a realistic, implementable hedging strategy."
-            },
-            {
-                "q": "Why must a genuine replicating or hedging strategy be 'self-financing', and what would happen if this condition were not satisfied?",
-                "a": "A self-financing strategy requires that any change in the portfolio's composition over time is funded entirely from within the portfolio itself (buying more of one asset by selling another, with no external cash injected or withdrawn); without this condition, the replicating portfolio's value would not track the derivative's value purely through market movements, undermining the whole replication-based pricing argument.",
-                "explain": "Worth recognising self-financing as an essential technical requirement — without it, any observed difference between the replicating portfolio and the derivative's payoff could simply reflect external cash flows rather than genuine market-driven value changes, breaking the replication argument entirely."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "The Black-Scholes model",
-        "description": "Covers the theory underpinning the Black-Scholes model for derivative pricing and hedging, including Brownian motion, Itô calculus, and the martingale approach, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is 'Brownian motion', and why does it provide a genuine mathematical foundation for modelling continuous-time asset price movements, echoing CM2's material?",
-                "a": "Brownian motion is a continuous-time stochastic process with independent, normally-distributed increments, providing a genuine mathematical building block for modelling asset prices as evolving continuously and randomly through time, extending the binomial model's discrete-time, two-outcome-per-step framework into continuous time.",
-                "explain": "This directly recalls CM2's Brownian motion material — worth recognising Brownian motion as the genuine <em>continuous-time analogue</em> of the binomial model's discrete up/down steps, taken to the limit as the time step shrinks toward zero."
-            },
-            {
-                "q": "What is 'Itô's Lemma', and why is it essential for working with functions of a stochastic process like an asset price?",
-                "a": "Itô's Lemma provides the genuine chain rule for differentiating a function of a stochastic process (like an option's value, which is a function of the underlying's random price), correctly accounting for the process's random, non-smooth path behaviour through an additional term absent from ordinary calculus's chain rule.",
-                "explain": "This directly recalls CM2's Itô calculus material — worth recognising Itô's Lemma as the genuine <em>mathematical tool</em> making it possible to analyse how a derivative's value changes as its underlying stochastic asset price changes, a foundational technique underlying the whole Black-Scholes derivation."
-            },
-            {
-                "q": "What does the 'Cameron-Martin-Girsanov Theorem' allow an actuary to do when pricing derivatives, echoing the martingale-measure material from Module 6?",
-                "a": "The Cameron-Martin-Girsanov Theorem provides the genuine mathematical justification for changing from the real-world probability measure to the risk-neutral (martingale) measure in continuous time, the direct continuous-time analogue of the discrete-time martingale-measure pricing developed in the binomial model.",
-                "explain": "This directly recalls Module 6's martingale-measure material — worth recognising this theorem as the genuine <em>continuous-time justification</em> for the same change-of-measure pricing technique already introduced discretely in the binomial model."
-            },
-            {
-                "q": "What is the 'Radon-Nikodym derivative', and what genuine role does it play in changing probability measures?",
-                "a": "The Radon-Nikodym derivative provides the genuine mathematical 'exchange rate' converting probabilities (or expectations) calculated under one probability measure into the equivalent probabilities (or expectations) under a different, related measure, the precise technical mechanism underlying the change of measure from real-world to risk-neutral probabilities.",
-                "explain": "Worth recognising the Radon-Nikodym derivative as the genuine <em>technical mechanism</em> implementing the change-of-measure concept — not just an abstract idea that measures can be changed, but the specific mathematical tool for actually doing so correctly."
-            },
-            {
-                "q": "What does the Black-Scholes formula for a non-dividend-paying stock's European call option state, echoing CM2's material?",
-                "a": "The Black-Scholes call price is $C = S_0 N(d_1) - Ke^{-rT}N(d_2)$, where $N(\\cdot)$ is the standard normal cumulative distribution function, $S_0$ is the current stock price, $K$ is the strike price, $r$ is the risk-free rate, $T$ is time to expiry, and $d_1, d_2$ are specific functions of these inputs plus volatility.",
-                "explain": "This directly recalls CM2's Black-Scholes formula material — worth recognising this closed-form formula as the genuine, practical <em>payoff</em> of the whole theoretical apparatus (Brownian motion, Itô's Lemma, martingale pricing) developed throughout this module: a single, directly usable pricing equation."
-            },
-            {
-                "q": "Why does the Black-Scholes formula's construction rely on 'continuous-time portfolio strategies' and 'self-financing portfolios in continuous time', echoing Module 6's self-financing material?",
-                "a": "Just as the binomial model's discrete-time replication argument required a self-financing, previsible trading strategy (Module 6's material), the continuous-time Black-Scholes derivation requires the <em>same</em> underlying replication logic, now expressed using continuous-time stochastic calculus rather than discrete time steps.",
-                "explain": "This directly recalls Module 6's self-financing-and-previsibility material — worth recognising the Black-Scholes derivation as <em>extending</em>, not replacing, the binomial model's core replication argument into continuous time, using more sophisticated but conceptually parallel mathematical machinery."
-            },
-            {
-                "q": "How does the 'construction of replicating strategies using the martingale approach' connect the Black-Scholes formula back to the fundamental no-arbitrage pricing principle established in Module 3?",
-                "a": "The Black-Scholes formula's price is justified because a specific, continuously-rebalanced replicating portfolio of the underlying stock and risk-free bond can be constructed that exactly reproduces the option's payoff in every future state, so the option's fair price must equal this replicating portfolio's cost, directly applying Module 3's no-arbitrage principle in a continuous-time setting.",
-                "explain": "This closing card ties this module back to Module 3's foundational no-arbitrage material — worth recognising the whole sophisticated Black-Scholes apparatus as ultimately resting on the <em>same</em> simple no-arbitrage logic this subject introduced right at the start, just requiring more advanced mathematics to apply it in continuous time."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Advanced application of the Black-Scholes model",
-        "description": "Covers pricing foreign-exchange and dividend-paying index options, deriving the Black-Scholes-Merton PDE, the market price of risk, and the role of volatility including implied volatility and the smile effect, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why must the standard Black-Scholes formula be adapted to price foreign-exchange options, rather than applied directly using the domestic risk-free rate alone?",
-                "a": "An FX option's underlying (a foreign currency) earns its <em>own</em> foreign risk-free rate of interest, similar to a dividend-paying stock earning dividends, so the martingale approach must be adapted to reflect this genuine 'carry' return the underlying currency itself earns, adjusting the standard formula's drift term accordingly.",
-                "explain": "Worth recognising the foreign interest rate as playing an <em>analogous</em> role to a dividend yield — both represent a return the underlying itself earns that must be accounted for separately from the option's own discounting."
-            },
-            {
-                "q": "Why does pricing an option on a dividend-paying stock index require adapting the Black-Scholes formula similarly to the FX-option adaptation just described?",
-                "a": "A continuously dividend-paying index reduces the option holder's benefit from holding the underlying directly (since the option holder does not receive the dividends the index itself pays out), requiring the martingale approach to be adapted to reflect this continuous dividend yield, exactly paralleling the foreign-interest-rate adaptation for FX options.",
-                "explain": "This directly recalls this module's FX-option-adaptation material — worth recognising both adaptations (FX and dividend-paying index) as applying the <em>same</em> underlying principle: adjusting for a continuous 'yield' the underlying earns that the option holder does not directly receive."
-            },
-            {
-                "q": "What is the Black-Scholes-Merton partial differential equation (PDE), and what genuine role does it play alongside the closed-form Black-Scholes formula?",
-                "a": "The Black-Scholes-Merton PDE is the genuine differential equation that any derivative's price (as a function of the underlying's price and time) must satisfy under the no-arbitrage, replication argument; the closed-form Black-Scholes formula is one specific <em>solution</em> to this PDE for a European call option, while other derivatives with different payoff structures satisfy the same PDE but require different boundary conditions and potentially different (or no closed-form) solutions.",
-                "explain": "Worth recognising the PDE as the more <em>fundamental</em> result — the closed-form Black-Scholes formula is just one particular solution (for a standard European call) to this more general governing equation, which other derivatives must also satisfy."
-            },
-            {
-                "q": "What is the 'market price of risk', and what genuine role does it play in the transfer between real-world and risk-neutral probability measures, per the official syllabus objective 3.4.3?",
-                "a": "The market price of risk quantifies the genuine extra expected return investors require per unit of risk taken in the real world; it appears explicitly in the mathematical relationship connecting the real-world probability measure to the risk-neutral measure, even though the risk-neutral pricing formula itself does not require <em>knowing</em> this real-world risk premium directly to price the derivative.",
-                "explain": "Worth recognising a subtle but important point — the market price of risk <em>explains</em> the mathematical relationship between the two measures, even though the whole elegance of risk-neutral pricing is that you don't need to actually <em>estimate</em> it to price a derivative correctly."
-            },
-            {
-                "q": "What is 'implied volatility', and why is it calculated by working <em>backwards</em> from an observed market option price, per the official syllabus objective 3.4.4?",
-                "a": "Implied volatility is the volatility figure that, when substituted into the Black-Scholes formula, produces a theoretical price exactly matching an option's <em>observed</em> market price; since volatility cannot be directly observed in the market the way a stock price can, implied volatility <em>inverts</em> the pricing formula, extracting the market's own collective volatility assessment from the price it has actually set.",
-                "explain": "Worth recognising implied volatility as the genuine <em>reverse</em> of standard option pricing — instead of using an assumed volatility to calculate a theoretical price, you use the market's <em>actual</em> price to back out what volatility assumption is implicitly consistent with it."
-            },
-            {
-                "q": "What is the 'volatility smile' effect, and why does it challenge the Black-Scholes model's core assumption of constant volatility?",
-                "a": "The volatility smile describes the genuine empirical pattern where implied volatility varies systematically across different strike prices for options on the <em>same</em> underlying and expiry (often higher for deep in- or out-of-the-money options than for at-the-money options), directly contradicting Black-Scholes's assumption that volatility is a single, constant parameter applicable across all strikes.",
-                "explain": "This directly recalls Module 5's empirical-characteristics-of-asset-prices material from SP5 — worth recognising the volatility smile as a genuine, well-documented real-world <em>deviation</em> from the Black-Scholes model's simplifying assumptions, not a theoretical curiosity."
-            },
-            {
-                "q": "Why might approaches to valuing options on discrete dividend-paying securities need to differ from the continuous-dividend adaptation covered earlier in this module, per the official syllabus objective 3.4.5?",
-                "a": "A stock paying discrete, lumpy dividends at specific known dates creates a different mathematical problem from a continuously and smoothly dividend-paying index, typically requiring the stock price to be adjusted downward by the present value of known future discrete dividends before applying the standard formula, rather than the smooth, continuous-yield adjustment used for continuously dividend-paying underlyings.",
-                "explain": "Worth recognising discrete and continuous dividend treatment as <em>different</em> technical approaches, even though both address the same underlying economic reality (dividends reduce the value available to the option holder) — the specific <em>mechanics</em> of the adjustment differ."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "Numerical methods for derivative pricing",
-        "description": "Covers alternative numerical methods for determining derivative prices and hedging strategies, including trees, Monte Carlo techniques, finite difference methods, and pricing American options, per the official syllabus.",
-        "cards": [
-            {
-                "q": "Why might a genuine derivative pricing problem require numerical methods, rather than relying on a closed-form formula like Black-Scholes, per the official syllabus objective 3.5?",
-                "a": "Many realistic derivatives (e.g. those with path-dependent payoffs, early-exercise features, or complex multi-factor underlyings) do not have a simple, closed-form pricing solution, requiring numerical techniques to approximate their fair value where an exact formula is unavailable or impractical to derive.",
-                "explain": "Worth recognising numerical methods as addressing a genuine, practical <em>gap</em> — closed-form formulas like Black-Scholes exist only for a relatively limited set of simpler derivative structures, while numerical methods can handle far more complex, realistic instruments."
-            },
-            {
-                "q": "What are 'binomial and trinomial trees' as numerical pricing methods, and how do they extend the single-step binomial model covered in Module 6?",
-                "a": "Binomial and trinomial trees extend the binomial model's single-step replication logic across <em>many</em> genuine discrete time steps (with each node branching into two or three possible outcomes respectively), building up a more refined approximation of continuous-time price movement as the number of steps increases and each step's time interval shrinks.",
-                "explain": "This directly recalls Module 6's single-step binomial model material — worth recognising trees as the genuine <em>practical extension</em> of that single-step logic into a multi-step numerical pricing tool, converging toward the continuous-time Black-Scholes result as the number of steps grows large."
-            },
-            {
-                "q": "What are 'Monte Carlo techniques' for derivative pricing, and why are they particularly well-suited to complex, path-dependent derivatives like the Asian and barrier options covered in Module 5?",
-                "a": "Monte Carlo techniques simulate a large number of possible random future price paths for the underlying asset, calculate the derivative's payoff along each simulated path, and average these payoffs (discounted to present value) to estimate the derivative's fair price; this approach naturally handles path-dependent payoffs (like Asian or barrier options) since each simulation tracks a full price path, not just a final value.",
-                "explain": "This directly recalls Module 5's path-dependent-derivative material — worth recognising Monte Carlo's genuine <em>suitability</em> for path-dependent instruments as a key practical advantage over methods (like the standard Black-Scholes formula) that only consider the underlying's price at a single point in time."
-            },
-            {
-                "q": "What are 'finite difference methods' for derivative pricing, and how do they relate to the Black-Scholes-Merton PDE covered in Module 8?",
-                "a": "Finite difference methods numerically solve the Black-Scholes-Merton PDE directly, by discretising the underlying's price and time into a genuine grid and approximating the PDE's derivatives using differences between adjacent grid points, providing a numerical solution where a closed-form analytical solution is unavailable.",
-                "explain": "This directly recalls Module 8's Black-Scholes-Merton PDE material — worth recognising finite difference methods as directly solving that same governing PDE <em>numerically</em>, for derivatives whose specific boundary conditions don't admit the closed-form Black-Scholes formula solution."
-            },
-            {
-                "q": "Why does pricing an American option require a fundamentally different numerical approach from pricing an equivalent European option, echoing Module 3's exercise-flexibility material?",
-                "a": "Since an American option can be exercised at <em>any</em> time before expiry, its numerical pricing method must, at each point, determine whether <em>immediate</em> exercise is more valuable than continuing to hold the option, a more complex 'optimal stopping' problem that standard forward-simulation Monte Carlo (which only evaluates payoffs at final maturity) cannot directly handle.",
-                "explain": "This directly recalls Module 3's American-versus-European exercise-flexibility material — worth recognising the American option's early-exercise feature as creating a distinct <em>optimal stopping</em> problem, requiring specialised numerical technique beyond simple path simulation."
-            },
-            {
-                "q": "What is the Longstaff-Schwartz least-squares approach, and how does it adapt Monte Carlo simulation to handle American options' early-exercise feature, per the official syllabus objective 3.5.2?",
-                "a": "The Longstaff-Schwartz approach uses regression (least-squares) at each simulated time step to estimate the genuine expected value of <em>continuing</em> to hold the option, comparing this against the value of exercising <em>immediately</em> at that point, allowing an informed, backward-looking optimal exercise decision to be estimated within an otherwise forward-simulating Monte Carlo framework.",
-                "explain": "This directly recalls this module's American-option-challenge material — worth recognising Longstaff-Schwartz as the genuine, practical <em>solution</em> making Monte Carlo simulation usable for American options, adding a regression-based continuation-value estimate at each step to handle the early-exercise decision."
-            },
-            {
-                "q": "How do binomial/trinomial trees, Monte Carlo simulation, and finite difference methods differ in their suitability for different derivative pricing problems?",
-                "a": "Trees are intuitive and handle American-style early exercise naturally through backward induction; Monte Carlo excels at high-dimensional and path-dependent problems but historically struggled with early exercise (until adaptations like Longstaff-Schwartz); finite difference methods directly solve the governing PDE and handle certain boundary conditions well but can become computationally expensive in high dimensions — so the <em>choice</em> of numerical method should reflect the specific derivative's structural features.",
-                "explain": "This closing card ties this module's three numerical methods together — worth recognising that no single numerical method is universally best; a sound choice depends on the <em>specific</em> derivative's features (path-dependency, early exercise, dimensionality) being priced."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Interest rate derivative pricing and the Black model",
-        "description": "Covers the yield curve and forward rates, the relationship between swap quotes and LIBOR zero rates, and using the Black model to price bond options, caps/floors and swaptions, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine relationship connects the yield curve, zero rates, forward rates and bond prices, per the official syllabus objective 3.6.1?",
-                "a": "Zero rates (the genuine yield on a zero-coupon bond of a given maturity) collectively form the yield curve, bond prices can be derived by discounting each of a coupon bond's cashflows at the appropriate zero rate for its own maturity, and forward rates (the genuine interest rate implied for a future period) can be derived from the relationship between zero rates of different maturities via a no-arbitrage argument.",
-                "explain": "This directly recalls CM1's and CM2's yield-curve and forward-rate material — worth recognising these four concepts as <em>interconnected</em>: knowing any one of the zero-rate curve, bond prices, or forward rates allows the others to be derived via no-arbitrage relationships."
-            },
-            {
-                "q": "What is the genuine relationship between forward rates and futures rates, and why might they differ in practice, echoing Module 3's forward-versus-futures material?",
-                "a": "Forward rates and futures rates theoretically represent the same underlying expected future interest rate, but can differ due to 'convexity adjustment' — since futures are marked-to-market daily while forwards settle only at maturity, and interest rate movements correlate with the value of holding a futures position, this creates a small but genuine, systematic difference between the two.",
-                "explain": "This directly recalls Module 3's forward-versus-futures-price-difference material — worth recognising this same margining-driven divergence principle applying specifically to <em>interest rate</em> forwards and futures, where the effect can be more material than for equity forwards/futures."
-            },
-            {
-                "q": "How is the genuine value of an interest rate swap determined, drawing on the yield curve relationships covered in this module?",
-                "a": "An interest rate swap's value can be determined by treating it as the genuine difference between a fixed-rate bond (valuing the fixed leg) and a floating-rate bond (valuing the floating leg), each discounted using the appropriate zero-rate curve, with the swap's fair fixed rate set so the two legs have equal value at initiation.",
-                "explain": "This directly recalls CM2's swap-valuation-as-bond-difference material — worth recognising this <em>decomposition</em> approach (swap = fixed bond minus floating bond) as the genuine, standard technique for swap valuation, converting an unfamiliar instrument into two familiar bond valuations."
-            },
-            {
-                "q": "What is the genuine relationship between swap quotes and LIBOR zero rates, per the official syllabus objective 3.6.2?",
-                "a": "Market-observed swap rates (the fixed rates at which swaps of various maturities are quoted) can be used to derive (or 'bootstrap') the underlying LIBOR zero-rate curve, since each swap's fair fixed rate is itself determined by, and therefore reveals information about, the underlying zero-rate curve.",
-                "explain": "Worth recognising swap quotes as a <em>practical</em>, widely-used market data source for constructing the zero-rate curve — since swaps trade in large, liquid volumes across many maturities, they provide useful, directly observable market information for this purpose."
-            },
-            {
-                "q": "What is the 'Black model', and why does it provide a practical, Black-Scholes-like framework for pricing interest rate derivatives despite interest rates not literally following the same lognormal price process as a stock, per the official syllabus objective 3.6.3?",
-                "a": "The Black model adapts the Black-Scholes framework's mathematical structure to price options on <em>forward</em> prices or rates (rather than spot prices directly), providing a practical, widely-used pricing approach for bond options, caps/floors and swaptions, even though its underlying lognormality assumption for interest rates is a genuine simplification not perfectly matching real interest rate behaviour.",
-                "explain": "This directly recalls Module 6's and Module 7's Black-Scholes foundation — worth recognising the Black model as a <em>pragmatic adaptation</em> of Black-Scholes machinery to interest rate derivatives, valued for its practical tractability despite known theoretical limitations."
-            },
-            {
-                "q": "How does the Black model price a cap using the caplet-decomposition principle introduced in Module 4?",
-                "a": "Since a cap can be decomposed into a portfolio of individual caplets (Module 4's material), the Black model prices <em>each</em> caplet as an option on the relevant forward interest rate for its specific period, then sums these individual caplet values to obtain the whole cap's total price.",
-                "explain": "This directly recalls Module 4's cap-as-portfolio-of-caplets material — worth recognising this module's Black-model pricing technique as the genuine, practical <em>completion</em> of that earlier conceptual decomposition: now you know both <em>what</em> a cap decomposes into, and <em>how</em> to price each resulting component."
-            },
-            {
-                "q": "What genuine assumptions underpin the Black model, and why must an actuary using it 'comment on' these assumptions rather than applying it uncritically, per the official syllabus objective 3.6.4?",
-                "a": "The Black model assumes the relevant forward rate (or forward price) is lognormally distributed with constant volatility, an assumption that, like Black-Scholes's own assumptions, may not perfectly hold in reality (e.g. genuine volatility smile effects, per Module 8's material), so a sound actuarial application should acknowledge these limitations rather than treating the model's output as unquestionably precise.",
-                "explain": "This directly recalls Module 8's volatility-smile-as-genuine-model-limitation material — worth recognising the Black model as sharing Black-Scholes's own genuine simplifying-assumption limitations, requiring the <em>same</em> critical awareness this course has emphasised throughout."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Term structure models, property swaps and credit derivative pricing",
-        "description": "Covers models of the term structure of interest rates, approaches to pricing property swaps, and demonstrating an understanding of pricing credit derivatives, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is the genuine difference between 'equilibrium' and 'no-arbitrage' term structure models, per the official syllabus objective 3.7.1?",
-                "a": "Equilibrium models (e.g. Vasicek, Cox-Ingersoll-Ross) derive the term structure's shape from underlying economic assumptions about interest rate behaviour, potentially producing a model-implied curve that does not exactly match today's observed market curve; no-arbitrage models (e.g. Hull-White) are calibrated to exactly fit today's observed market curve by construction, prioritising consistency with current market prices over deriving the curve from first economic principles.",
-                "explain": "Worth recognising this as a genuine, important trade-off — equilibrium models offer more economically-motivated <em>insight</em> into what drives rates, while no-arbitrage models offer more practically <em>useful</em> consistency with today's actual observed market prices, valuable for pricing other instruments consistently."
-            },
-            {
-                "q": "What is the Hull-White model for the term structure of interest rates, and how does it relate to the Vasicek model, per the official syllabus objectives 3.7.2-3.7.3?",
-                "a": "The Hull-White model extends the Vasicek model's mean-reverting interest rate structure by allowing <em>time-dependent</em> parameters, enabling the model to be exactly calibrated (as a no-arbitrage model) to today's observed yield curve, while the simpler Vasicek model uses constant parameters and is typically classified as an equilibrium model that may not exactly fit today's curve.",
-                "explain": "This directly recalls this module's equilibrium-versus-no-arbitrage distinction — worth recognising Hull-White as <em>extending</em> Vasicek's mathematical structure specifically to achieve no-arbitrage consistency with observed market data, illustrating the practical difference between these two model categories concretely."
-            },
-            {
-                "q": "How does the Cox-Ingersoll-Ross (CIR) model differ from the Vasicek model, per the official syllabus objective 3.7.3?",
-                "a": "The CIR model's interest rate volatility depends on the current level of interest rates themselves (higher rates produce higher volatility), while Vasicek assumes constant volatility regardless of the rate level; CIR's structure also ensures interest rates cannot become negative, an advantage over Vasicek which theoretically permits negative rates.",
-                "explain": "Worth recognising CIR's rate-<em>dependent</em> volatility and its non-negativity property as its two distinguishing features versus Vasicek — worth memorising both as concrete, contrasting characteristics rather than a vague sense that CIR is simply 'more advanced'."
-            },
-            {
-                "q": "What are the Heath-Jarrow-Morton (HJM) and LIBOR market models, and how do they extend single-factor models like Hull-White, per the official syllabus objectives 3.7.7-3.7.8?",
-                "a": "HJM and LIBOR market models model the <em>evolution</em> of the <em>whole</em> forward rate curve (or a discrete set of forward LIBOR rates) simultaneously, rather than a single short-rate process as in Hull-White/Vasicek/CIR, allowing richer, multi-factor modelling of how different parts of the yield curve can move independently of each other.",
-                "explain": "This directly recalls Module 7's multifactor-model-extension material — worth recognising HJM and LIBOR market models as extending single-factor short-rate models in essentially the <em>same</em> spirit SA7's multifactor equity models extend single-factor asset pricing models: capturing richer, multi-dimensional behaviour."
-            },
-            {
-                "q": "Why might Black's model be used to <em>calibrate</em> the LIBOR market model despite the two models resting on different theoretical foundations, and what genuine problems does this calibration approach create, per the official syllabus objective 3.7.10?",
-                "a": "Since market cap and swaption prices are quoted using Black-model-implied volatilities as a market convention, calibrating the LIBOR market model to match these Black-implied volatilities provides a practical way to align the more sophisticated model with observed market prices; however, this can create genuine internal inconsistencies since the LIBOR market model's own underlying dynamics don't necessarily support Black's simplifying lognormality assumption exactly.",
-                "explain": "Worth recognising this as an important, <em>practical</em> tension in real-world derivative pricing — market convention and theoretical model consistency don't always align perfectly, requiring practitioners to navigate this tension rather than assuming a single 'correct' theoretical framework always prevails in practice."
-            },
-            {
-                "q": "What genuine approaches might be taken to price a property swap, per the official syllabus objective 3.8, given property's characteristically illiquid, infrequently-traded nature?",
-                "a": "Since property indices (echoing SA7's material) can suffer from genuine valuation lag and smoothing due to infrequent, appraisal-based underlying valuations, pricing a property swap requires genuine care in selecting an appropriate reference index and adjusting for these known distortions, rather than applying standard derivative pricing techniques (which typically assume continuously-observable, liquid underlying prices) without adaptation.",
-                "explain": "This directly recalls SA7's illiquid-index-construction-challenge material — worth recognising property swap pricing as directly inheriting the genuine index-construction challenges that illiquid asset classes create, a recurring theme across this whole curriculum."
-            },
-            {
-                "q": "How is a credit default swap (CDS) priced, and what role does correlation play in pricing more complex, multi-name credit derivatives, per the official syllabus objectives 3.9.1-3.9.2?",
-                "a": "A single-name CDS is priced by setting its premium (spread) such that the expected present value of premium payments equals the expected present value of the contingent default payment, given assumed default probabilities and recovery rates; for multi-name credit derivatives (e.g. nth-to-default baskets, per Module 5), the genuine <em>correlation</em> between different reference entities' default probabilities becomes critically important, since a basket's payoff depends on the <em>joint</em>, not just individual, default behaviour of multiple names.",
-                "explain": "This directly recalls Module 5's credit-derivative-types material and CS2's copula/dependence material — worth recognising correlation as playing a <em>critical</em> role specifically for <em>multi-name</em> credit derivatives, a consideration entirely absent from single-name CDS pricing."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "How investors use derivatives, and hedging with the Greeks",
-        "description": "Covers how derivatives help investors meet objectives, the change in portfolio risk profile from derivative use, and hedging using the Greeks and scenario analysis, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What genuine objectives might an investor achieve through derivative use, per the official syllabus objective 4.1.1?",
-                "a": "Derivatives can help investors hedge existing risk exposures, gain efficient market exposure without directly trading the underlying, express a specific market view (speculation), or exploit genuine pricing anomalies (arbitrage) — directly echoing Module 2's hedger/speculator/arbitrageur categorisation now applied to genuine investor objective-setting.",
-                "explain": "This directly recalls Module 2's market-participant-types material — worth recognising this module as taking that earlier categorisation and developing it into practical <em>investor objectives</em> a portfolio manager might explicitly pursue."
-            },
-            {
-                "q": "Why must an investor assess how derivative use changes a portfolio's <em>overall</em> risk profile, rather than assessing each derivative position in isolation, per the official syllabus objective 4.1.2?",
-                "a": "A derivative position's risk effect depends on how it interacts with the <em>rest</em> of the portfolio (e.g. a hedge reduces overall risk only if it offsets an existing exposure), so assessing derivative impact requires a <em>portfolio-level</em> view, not evaluating each derivative's standalone risk in isolation from everything else held.",
-                "explain": "This directly recalls Module 6's mean-variance-portfolio-theory material from SP5 — worth recognising this same portfolio-level (not position-by-position) risk assessment principle applying directly to derivative use specifically."
-            },
-            {
-                "q": "What genuine practical issues and limitations might arise from derivative use, per the official syllabus objective 4.1.3?",
-                "a": "Practical issues can include genuine basis risk (the hedge not perfectly matching the exposure being hedged, covered further in Module 13), liquidity constraints on entering or exiting positions, operational complexity in managing derivative positions, and genuine model risk in valuing more complex instruments.",
-                "explain": "Worth recognising this as an important <em>caution</em> alongside derivatives' theoretical benefits — a strong exam answer discussing derivative use should demonstrate awareness of these genuine practical limitations, not just describe derivatives' benefits uncritically."
-            },
-            {
-                "q": "What are 'the Greeks', and why does calculating them (per the official syllabus objective 4.2.1) provide essential information for hedging a derivative position?",
-                "a": "The Greeks are the partial derivatives of a derivative's price with respect to its various pricing inputs (e.g. delta $\\frac{\\partial C}{\\partial S}$ with respect to the underlying price, vega with respect to volatility, theta with respect to time), each quantifying how sensitive the derivative's value is to a small change in that specific input, directly informing how much of the underlying (or other instruments) must be held to hedge that specific sensitivity.",
-                "explain": "This directly recalls CM2's Greeks material — worth recognising the Greeks as the genuine, practical <em>measurement tool</em> translating the theoretical Black-Scholes/binomial pricing machinery (Modules 6-9) into concrete, actionable hedging quantities."
-            },
-            {
-                "q": "How does 'delta' specifically enable hedging of an individual derivative, and why might a hedger need to continuously <em>rebalance</em> this hedge over time?",
-                "a": "Delta ($\\Delta = \\frac{\\partial C}{\\partial S}$) quantifies how much the derivative's price changes per unit change in the underlying's price, so holding an offsetting position of $\\Delta$ units of the underlying creates a delta-neutral hedge; since delta itself changes as the underlying's price and time to expiry change, this hedge requires genuine ongoing rebalancing to remain effective (dynamic hedging).",
-                "explain": "This directly recalls Module 6's and Module 7's continuous-time replicating-portfolio material — worth recognising delta hedging as the genuine, <em>practical</em> implementation of the same continuous-time replication logic underlying the Black-Scholes derivation itself."
-            },
-            {
-                "q": "How might a portfolio manager use 'scenario analysis' to manage a portfolio of derivatives, per the official syllabus objective 4.2.4?",
-                "a": "Scenario analysis projects a genuine portfolio's value under a range of specified future market conditions (e.g. a sharp market fall combined with a volatility spike), revealing how the portfolio's Greeks-based sensitivities translate into genuine potential outcomes under realistic, combined market moves that a single Greek in isolation might not fully capture.",
-                "explain": "This directly recalls SA1's and SA3's stress-testing material — worth recognising scenario analysis as this course's genuine, portfolio-level <em>complement</em> to the Greeks' more granular, single-sensitivity measures, providing a more holistic risk picture."
-            },
-            {
-                "q": "Why might exotic derivatives (Module 5's material) require particular care when assessing their risk management characteristics, per the official syllabus objective 4.2.5?",
-                "a": "Exotic derivatives' more complex, sometimes discontinuous payoff structures (e.g. a barrier option's payoff jumping discontinuously when the barrier is touched) can produce Greeks that behave in unstable or non-intuitive ways near critical price levels, requiring particular care and more sophisticated risk management technique than a standard vanilla option's more smoothly-behaving Greeks.",
-                "explain": "This directly recalls Module 5's exotic-derivative material — worth recognising that a derivative's genuine <em>structural complexity</em> (covered in Module 5) directly translates into more complex <em>risk management</em> challenges (covered here), not two unrelated considerations."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "Risks in the use of derivatives",
-        "description": "Covers basis risk, market/credit/liquidity risk in derivative use, Value at Risk, credit ratings, techniques for managing counterparty risk, and the role of special purpose vehicles, per the official syllabus.",
-        "cards": [
-            {
-                "q": "What is 'basis risk', and why does it undermine even a carefully-constructed hedge, per the official syllabus objective 4.3?",
-                "a": "Basis risk arises when the derivative used to hedge a specific exposure does not perfectly match that exposure (e.g. hedging a specific corporate bond's credit risk using a standardised CDS index rather than a single-name CDS on that exact issuer), meaning the hedge's value may not move in perfect lockstep with the underlying exposure, leaving genuine residual risk even after 'hedging'.",
-                "explain": "Worth recognising basis risk as an important, <em>practical</em> caveat to this whole subject's theoretical hedging material — even a technically well-constructed hedge using the Greeks (Module 12) can leave genuine residual risk if the hedging instrument doesn't perfectly match the exposure being hedged."
-            },
-            {
-                "q": "How do market risk, credit (counterparty) risk and liquidity risk, per the official syllabus objectives 4.4.1-4.4.2, differ when they arise specifically in the context of derivative use?",
-                "a": "Market risk reflects genuine exposure to adverse underlying price movements (partially managed via the Greeks, Module 12); credit/counterparty risk reflects the genuine risk that the derivative's other party fails to honour its obligations (particularly relevant for OTC contracts, per Module 2); liquidity risk reflects the genuine risk of being unable to exit or adjust a derivative position at a reasonable price when needed.",
-                "explain": "This directly recalls Module 2's exchange-versus-OTC material — worth recognising these three risk types as <em>distinct</em> dimensions requiring different management responses, even though a single derivative position can be exposed to all three simultaneously."
-            },
-            {
-                "q": "What genuine methods might be used to establish Value at Risk (VaR) on a derivatives portfolio, and what genuine weaknesses does the VaR measure carry, per the official syllabus objectives 4.4.4-4.4.5?",
-                "a": "VaR can be established via historical simulation (using past price movements), variance-covariance methods (using assumed statistical distributions), or Monte Carlo simulation (Module 9's material); its genuine weaknesses include saying nothing about the genuine <em>severity</em> of losses beyond the VaR threshold, and potentially being unreliable for portfolios containing non-linear payoffs like options, where simple statistical assumptions may not hold well.",
-                "explain": "This directly recalls SA1's, SA7's and SP5's VaR-limitation material — worth recognising VaR's genuine weaknesses as particularly acute for <em>derivative</em> portfolios specifically, given options' characteristically non-linear payoff structures that can undermine VaR's typically linear/normal-distribution-based assumptions."
-            },
-            {
-                "q": "Why might an investor not rely solely on external credit ratings when assessing counterparty risk on OTC derivative positions, per the official syllabus objective 4.4.6, echoing SP5's material?",
-                "a": "Credit ratings can be slow to reflect emerging changes in a counterparty's creditworthiness, and rating agencies' methodologies may not fully capture the <em>specific</em> counterparty risk profile relevant to a particular derivative exposure, so genuine independent assessment alongside rating agency output provides a more robust basis for managing counterparty risk.",
-                "explain": "This directly recalls SP5's credit-rating-agency-limitation material — worth recognising this same caution (ratings as useful but not sufficient) applying specifically to derivative counterparty risk assessment."
-            },
-            {
-                "q": "What genuine techniques does the official syllabus (objective 4.4.7) name for measuring and managing counterparty risk on derivatives, and how does each function?",
-                "a": "ISDA (International Swaps and Derivatives Association) agreements provide standardised legal documentation governing OTC derivative relationships, including provisions for netting offsetting exposures; collateral management requires counterparties to post collateral reflecting their current mark-to-market exposure, reducing the genuine loss if a counterparty were to default.",
-                "explain": "Worth recognising ISDA agreements and collateral management as addressing counterparty risk through <em>different</em> mechanisms — legal netting/standardisation versus genuine, tangible financial security — often used together for more comprehensive protection."
-            },
-            {
-                "q": "How might a Special Purpose Vehicle (SPV) be used as part of a risk transfer mechanism, and what role does a credit enhancement agency play, per the official syllabus objective 4.5, echoing this subject's structured-securities material?",
-                "a": "An SPV is a separate legal entity created specifically to hold and isolate certain assets or risks (e.g. issuing insurance-linked securities or securitised debt, per Module 5), ring-fencing this specific risk from the sponsoring institution's own broader balance sheet; a credit enhancement agency may provide additional genuine guarantees or support improving the SPV-issued securities' creditworthiness, making them more attractive to investors.",
-                "explain": "This directly recalls Module 5's insurance-linked-securities and securitisation material — worth recognising the SPV as the genuine <em>structural mechanism</em> underlying much of this subject's structured product material, isolating specific risks into a dedicated legal entity for cleaner risk transfer."
-            },
-            {
-                "q": "How do this module's derivative-use risks connect back to this whole subject's earlier pricing and hedging material, completing SP6's overall structure?",
-                "a": "This module's genuine risks (basis, market, credit, liquidity) represent the practical, real-world <em>consequences</em> of using the pricing and hedging techniques (Modules 6-12) this subject has developed throughout — a sound derivatives practitioner must understand not just <em>how</em> to price and hedge a derivative theoretically, but also the genuine practical risks that remain even after applying these techniques carefully.",
-                "explain": "This closing card ties SP6's whole structure together — worth recognising this final module as this subject's genuine <em>reality check</em>, completing the journey from theoretical pricing (Modules 6-11) and hedging technique (Module 12) to the genuine practical risks that remain even for a technically sound derivatives practitioner."
-            }
-        ]
-    }
-    ]
-,
+      {
+          "id": "m01",
+          "title": "Background to derivatives",
+          "description": "What derivatives are, the markets they trade in (exchange and OTC), the participants (hedgers, speculators, arbitrageurs), basic payoffs, and the uses and risks of derivatives for institutions.",
+          "cards": [
+              {
+                  "q": "What is a derivative?",
+                  "a": "A contract whose value depends on the value of an underlying asset, rate or index.",
+                  "explain": "Forwards, futures, swaps, options."
+              },
+              {
+                  "q": "Name the three types of derivative market participant.",
+                  "a": "Hedgers (reduce risk), speculators (take on risk for profit), arbitrageurs (exploit mispricing).",
+                  "explain": "Arbitrageurs keep prices consistent."
+              },
+              {
+                  "q": "What is the difference between exchange-traded and OTC derivatives?",
+                  "a": "Exchange-traded are standardised, cleared centrally with margin; OTC are bilateral, customised, with counterparty risk (often collateralised or centrally cleared).",
+                  "explain": "Trade-off: flexibility vs liquidity/security."
+              },
+              {
+                  "q": "What is the payoff of a long European call at expiry?",
+                  "a": "$\\max(S_T - K, 0)$.",
+                  "explain": "Unlimited upside, premium lost if out of the money."
+              },
+              {
+                  "q": "What is the payoff of a long European put at expiry?",
+                  "a": "$\\max(K - S_T, 0)$.",
+                  "explain": "Protects against falls."
+              },
+              {
+                  "q": "What is a short position?",
+                  "a": "Having sold a contract (or asset) — gains if the price falls.",
+                  "explain": "Short options have unlimited or large potential losses."
+              },
+              {
+                  "q": "Why do institutions use derivatives?",
+                  "a": "To hedge risks, adjust exposures cheaply, gain leverage, create tailored payoffs, and reduce transaction costs.",
+                  "explain": "Efficient portfolio management."
+              },
+              {
+                  "q": "What is leverage in derivatives?",
+                  "a": "Exposure to a large notional for a small initial outlay.",
+                  "explain": "Magnifies gains and losses."
+              },
+              {
+                  "q": "What is counterparty risk?",
+                  "a": "The risk that the other party fails to perform.",
+                  "explain": "Mitigated by collateral and clearing."
+              },
+              {
+                  "q": "What is the law of one price?",
+                  "a": "Assets with identical payoffs must have the same price, otherwise arbitrage exists.",
+                  "explain": "Foundation of derivative pricing."
+              },
+              {
+                  "q": "What is an arbitrage opportunity?",
+                  "a": "A strategy with zero cost, no risk of loss and a positive probability of profit.",
+                  "explain": "Assumed not to exist in pricing."
+              },
+              {
+                  "q": "What are the main underlyings for derivatives?",
+                  "a": "Equities, indices, interest rates, bonds, currencies, commodities, credit, inflation, weather/insurance.",
+                  "explain": "Wide range."
+              },
+              {
+                  "q": "Why did OTC reforms follow the 2008 crisis?",
+                  "a": "Opaque bilateral exposures amplified contagion; reforms mandated central clearing, reporting and margin.",
+                  "explain": "Systemic risk reduction."
+              },
+              {
+                  "q": "What is notional principal?",
+                  "a": "The reference amount used to calculate payments, not usually exchanged in swaps.",
+                  "explain": "Overstates actual exposure."
+              },
+              {
+                  "q": "What is a derivative's replicating portfolio?",
+                  "a": "A portfolio of traded assets reproducing the derivative's payoff.",
+                  "explain": "Basis for pricing."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Forwards and futures",
+          "description": "Pricing forwards and futures by no-arbitrage (cost of carry with income, storage and convenience yield), the difference between forward and futures prices, margining, basis risk, and hedging with futures including the optimal hedge ratio.",
+          "cards": [
+              {
+                  "q": "What is the forward price of a non-income-paying asset?",
+                  "a": "$F_0 = S_0 e^{rT}$.",
+                  "explain": "Cash-and-carry arbitrage enforces it."
+              },
+              {
+                  "q": "What is the forward price with a known continuous income yield $q$?",
+                  "a": "$F_0 = S_0 e^{(r-q)T}$.",
+                  "explain": "Dividends reduce the forward price."
+              },
+              {
+                  "q": "What is the forward price with known cash income $I$ (PV)?",
+                  "a": "$F_0 = (S_0 - I)e^{rT}$.",
+                  "explain": "Subtract PV of income."
+              },
+              {
+                  "q": "What is the forward exchange rate relationship?",
+                  "a": "$F_0 = S_0 e^{(r - r_f)T}$ (interest rate parity).",
+                  "explain": "Foreign rate acts like a yield."
+              },
+              {
+                  "q": "What is convenience yield?",
+                  "a": "The benefit of holding the physical commodity, reducing the forward price below full cost of carry.",
+                  "explain": "Commodities."
+              },
+              {
+                  "q": "How does a futures contract differ from a forward?",
+                  "a": "Standardised, exchange-traded, daily settled (marked to market), minimal counterparty risk.",
+                  "explain": "Daily settlement creates interim cash flows."
+              },
+              {
+                  "q": "When do futures and forward prices differ?",
+                  "a": "When interest rates are stochastic and correlated with the underlying price.",
+                  "explain": "Usually small difference."
+              },
+              {
+                  "q": "What is basis?",
+                  "a": "Spot price minus futures price (or vice versa) of the hedged asset.",
+                  "explain": "Basis risk from imperfect hedges."
+              },
+              {
+                  "q": "What is the minimum-variance hedge ratio?",
+                  "a": "$h^* = \\rho \\frac{\\sigma_S}{\\sigma_F}$.",
+                  "explain": "Minimises variance of hedged position."
+              },
+              {
+                  "q": "How many futures contracts are needed for a hedge?",
+                  "a": "$N^* = h^* \\frac{Q_A}{Q_F}$ (exposure over contract size).",
+                  "explain": "Adjust for tailing."
+              },
+              {
+                  "q": "How can equity index futures change portfolio beta?",
+                  "a": "Number of contracts $= (\\beta^* - \\beta)\\frac{P}{F}$.",
+                  "explain": "Quick beta adjustment."
+              },
+              {
+                  "q": "What is the value of an existing forward contract?",
+                  "a": "$f = (F_0 - K)e^{-rT}$ for a long position.",
+                  "explain": "Mark to market."
+              },
+              {
+                  "q": "What is a short hedge?",
+                  "a": "Selling futures to protect against a fall in the value of an asset held.",
+                  "explain": "E.g. producer."
+              },
+              {
+                  "q": "What is a long hedge?",
+                  "a": "Buying futures to lock in the cost of a future purchase.",
+                  "explain": "E.g. consumer."
+              },
+              {
+                  "q": "What is rolling a hedge?",
+                  "a": "Replacing expiring futures with longer-dated ones.",
+                  "explain": "Roll risk."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Traded derivatives contracts",
+          "description": "Specifications and practicalities of exchange-traded derivatives: equity index and single-stock futures and options, interest rate futures (short-term and bond futures, cheapest-to-deliver), currency and commodity contracts, margin systems and clearing houses.",
+          "cards": [
+              {
+                  "q": "What is a clearing house?",
+                  "a": "An entity that becomes counterparty to both sides of exchange trades, guaranteeing performance.",
+                  "explain": "Reduces counterparty risk."
+              },
+              {
+                  "q": "What is initial margin?",
+                  "a": "Collateral deposited when opening a futures position.",
+                  "explain": "Covers potential losses."
+              },
+              {
+                  "q": "What is variation margin?",
+                  "a": "Daily settlement of gains and losses.",
+                  "explain": "Marking to market."
+              },
+              {
+                  "q": "What is a maintenance margin?",
+                  "a": "Minimum balance; falling below triggers a margin call to restore initial margin.",
+                  "explain": "Margin mechanics."
+              },
+              {
+                  "q": "What is a short-term interest rate future?",
+                  "a": "A future on a short-term rate, quoted as 100 minus the rate.",
+                  "explain": "Hedges borrowing costs."
+              },
+              {
+                  "q": "What is a bond future?",
+                  "a": "A future on a notional government bond, settled by delivery of eligible bonds.",
+                  "explain": "Conversion factors."
+              },
+              {
+                  "q": "What is the cheapest-to-deliver bond?",
+                  "a": "The deliverable bond minimising cost to the short (quoted price − futures price × conversion factor).",
+                  "explain": "Drives futures price."
+              },
+              {
+                  "q": "What is a conversion factor?",
+                  "a": "A factor adjusting deliverable bond prices to the notional coupon.",
+                  "explain": "Approximate equalisation."
+              },
+              {
+                  "q": "What are equity index futures?",
+                  "a": "Futures on an equity index, cash-settled.",
+                  "explain": "Used for asset allocation."
+              },
+              {
+                  "q": "What are traded options?",
+                  "a": "Standardised exchange-listed options on shares, indices, futures.",
+                  "explain": "Liquidity."
+              },
+              {
+                  "q": "What is open interest?",
+                  "a": "Number of outstanding contracts.",
+                  "explain": "Liquidity measure."
+              },
+              {
+                  "q": "Why are index futures cash-settled?",
+                  "a": "Delivering all index constituents is impractical.",
+                  "explain": "Cash settlement."
+              },
+              {
+                  "q": "What are commodity futures features?",
+                  "a": "Physical delivery options, storage, seasonality.",
+                  "explain": "Convenience yield."
+              },
+              {
+                  "q": "What is a position limit?",
+                  "a": "Maximum contracts a trader can hold.",
+                  "explain": "Market integrity."
+              },
+              {
+                  "q": "What are currency futures?",
+                  "a": "Standardised contracts to exchange currencies at a set rate.",
+                  "explain": "Less used than OTC forwards."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Binomial trees",
+          "description": "Pricing derivatives with binomial trees: one-step replication and risk-neutral valuation, multi-step trees, choosing u and d from volatility, American options and early exercise, and options on assets with dividends, currencies and futures.",
+          "cards": [
+              {
+                  "q": "What is the one-step risk-neutral probability?",
+                  "a": "$q = \\frac{e^{r\\Delta t} - d}{u - d}$.",
+                  "explain": "Requires $d \\lt e^{r\\Delta t} \\lt u$ for no arbitrage."
+              },
+              {
+                  "q": "How is a derivative priced in one step?",
+                  "a": "$V_0 = e^{-r\\Delta t}\\,[q V_u + (1-q) V_d]$.",
+                  "explain": "Risk-neutral expectation discounted."
+              },
+              {
+                  "q": "What is the replicating portfolio in a one-step tree?",
+                  "a": "Hold $\\Delta = \\frac{V_u - V_d}{S_0(u-d)}$ shares plus a bond.",
+                  "explain": "Delta hedge."
+              },
+              {
+                  "q": "How are u and d often set?",
+                  "a": "$u = e^{\\sigma\\sqrt{\\Delta t}}$, $d = 1/u$ (Cox-Ross-Rubinstein).",
+                  "explain": "Matches volatility."
+              },
+              {
+                  "q": "How are American options valued in a tree?",
+                  "a": "At each node take the maximum of the continuation value and immediate exercise value.",
+                  "explain": "Backward induction."
+              },
+              {
+                  "q": "When is early exercise of an American call on a non-dividend stock optimal?",
+                  "a": "Never — it is worth more alive.",
+                  "explain": "Dividends can change this."
+              },
+              {
+                  "q": "How are dividends handled in trees?",
+                  "a": "Use $e^{(r-q)\\Delta t}$ in place of $e^{r\\Delta t}$ for a continuous yield, or adjust stock price for discrete dividends.",
+                  "explain": "Recombination issues."
+              },
+              {
+                  "q": "How do trees for currency options work?",
+                  "a": "Replace $q$ by the foreign rate: $p = \\frac{e^{(r-r_f)\\Delta t}-d}{u-d}$.",
+                  "explain": "Foreign interest as yield."
+              },
+              {
+                  "q": "How do trees for futures options work?",
+                  "a": "Risk-neutral probability $p = \\frac{1-d}{u-d}$.",
+                  "explain": "Futures cost nothing to enter."
+              },
+              {
+                  "q": "Why is risk-neutral valuation valid?",
+                  "a": "Replication means the price doesn't depend on investors' risk preferences, so we can assume risk neutrality.",
+                  "explain": "Key insight."
+              },
+              {
+                  "q": "What happens as the number of steps increases?",
+                  "a": "Binomial prices converge to Black-Scholes for European options.",
+                  "explain": "Convergence."
+              },
+              {
+                  "q": "Worked example: S=100, u=1.1, d=0.9, r=4% continuous, one year. Risk-neutral q?",
+                  "a": "$q = (e^{0.04} - 0.9)/0.2 = 0.7040$.",
+                  "explain": "Arithmetic: e^0.04 = 1.04081."
+              },
+              {
+                  "q": "Using that tree, the price of a 1-year call with K=100?",
+                  "a": "$e^{-0.04}\\times 0.7040 \\times 10 = 6.76$.",
+                  "explain": "Down payoff is zero."
+              },
+              {
+                  "q": "What is a recombining tree?",
+                  "a": "Up-then-down equals down-then-up, keeping nodes manageable.",
+                  "explain": "Efficient."
+              },
+              {
+                  "q": "What are the limitations of binomial trees?",
+                  "a": "Discrete approximation, many steps needed for accuracy, path-dependent options harder.",
+                  "explain": "Numerical methods chapter."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "Stochastic calculus",
+          "description": "Stochastic calculus for derivative pricing: Brownian motion and its properties, stochastic differential equations, Itô's lemma, geometric Brownian motion for share prices, and the lognormal distribution of prices.",
+          "cards": [
+              {
+                  "q": "What are the properties of standard Brownian motion $W_t$?",
+                  "a": "$W_0=0$; independent increments; $W_t - W_s \\sim N(0, t-s)$; continuous paths.",
+                  "explain": "Nowhere differentiable."
+              },
+              {
+                  "q": "What is geometric Brownian motion?",
+                  "a": "$dS_t = \\mu S_t\\,dt + \\sigma S_t\\,dW_t$.",
+                  "explain": "Standard share price model."
+              },
+              {
+                  "q": "What is Itô's lemma?",
+                  "a": "For $f(t,X_t)$ with $dX = a\\,dt + b\\,dW$: $df = \\left(f_t + a f_x + \\tfrac12 b^2 f_{xx}\\right)dt + b f_x\\,dW$.",
+                  "explain": "Chain rule with a second-order term."
+              },
+              {
+                  "q": "What is the solution of GBM?",
+                  "a": "$S_t = S_0 \\exp\\left((\\mu - \\tfrac12\\sigma^2)t + \\sigma W_t\\right)$.",
+                  "explain": "Lognormal prices."
+              },
+              {
+                  "q": "What is the distribution of $\\ln S_T$ under GBM?",
+                  "a": "$N\\left(\\ln S_0 + (\\mu - \\tfrac12\\sigma^2)T,\\ \\sigma^2 T\\right)$.",
+                  "explain": "Lognormal."
+              },
+              {
+                  "q": "What is the multiplication table for Itô calculus?",
+                  "a": "$(dW)^2 = dt$, $dW\\,dt = 0$, $(dt)^2 = 0$.",
+                  "explain": "Heuristic rules."
+              },
+              {
+                  "q": "What is quadratic variation of Brownian motion?",
+                  "a": "Over $[0,t]$ it equals $t$.",
+                  "explain": "Why the extra Itô term."
+              },
+              {
+                  "q": "What is an Itô integral?",
+                  "a": "A stochastic integral with respect to Brownian motion, defined as a limit with left-endpoint evaluation.",
+                  "explain": "Martingale property."
+              },
+              {
+                  "q": "What is a martingale?",
+                  "a": "A process with $E[X_t | \\mathcal{F}_s] = X_s$ for $s \\lt t$.",
+                  "explain": "Fair game."
+              },
+              {
+                  "q": "Why is the $-\tfrac12\\sigma^2$ term there?",
+                  "a": "Itô correction: convexity of the log function.",
+                  "explain": "Median vs mean."
+              },
+              {
+                  "q": "What is an Ornstein-Uhlenbeck process?",
+                  "a": "$dX = -\\alpha X\\,dt + \\sigma\\,dW$, mean-reverting.",
+                  "explain": "Used in interest rate models (Vasicek)."
+              },
+              {
+                  "q": "What is the expected value of $S_T$ under GBM?",
+                  "a": "$S_0 e^{\\mu T}$.",
+                  "explain": "Mean of lognormal."
+              },
+              {
+                  "q": "What is a stochastic differential equation?",
+                  "a": "An equation describing a process's evolution with deterministic drift and random diffusion terms.",
+                  "explain": "SDE."
+              },
+              {
+                  "q": "Why is Brownian motion used in finance?",
+                  "a": "Models random, continuous price movements with independent increments.",
+                  "explain": "Limit of random walks."
+              },
+              {
+                  "q": "What are limitations of GBM for prices?",
+                  "a": "Constant volatility, no jumps, lognormal tails too thin.",
+                  "explain": "Empirical fat tails."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Probability measures and risk-neutral pricing",
+          "description": "Real-world versus risk-neutral probability measures, the martingale approach to pricing, Girsanov's theorem and change of drift, the market price of risk, and the risk-neutral valuation formula.",
+          "cards": [
+              {
+                  "q": "What is the risk-neutral measure $Q$?",
+                  "a": "A probability measure under which discounted asset prices are martingales.",
+                  "explain": "Used for pricing."
+              },
+              {
+                  "q": "What is the risk-neutral pricing formula?",
+                  "a": "$V_0 = E_Q\\left[e^{-rT} V_T\\right]$.",
+                  "explain": "Expectation under Q, discounted."
+              },
+              {
+                  "q": "What does Girsanov's theorem do?",
+                  "a": "Changes the drift of Brownian motion when changing measure: $\\tilde W_t = W_t + \\int_0^t \\gamma_s\\,ds$ is Brownian under the new measure.",
+                  "explain": "Removes the risk premium from the drift."
+              },
+              {
+                  "q": "What is the market price of risk?",
+                  "a": "$\\gamma = (\\mu - r)/\\sigma$.",
+                  "explain": "Excess return per unit volatility."
+              },
+              {
+                  "q": "Under Q, what is the share price drift?",
+                  "a": "$r$: $dS = rS\\,dt + \\sigma S\\,d\\tilde W$.",
+                  "explain": "Growth at the risk-free rate."
+              },
+              {
+                  "q": "What is the martingale representation theorem used for?",
+                  "a": "Showing any claim can be replicated by trading the share and bond (completeness).",
+                  "explain": "Justifies pricing."
+              },
+              {
+                  "q": "What is a complete market?",
+                  "a": "Every derivative can be replicated.",
+                  "explain": "Unique prices."
+              },
+              {
+                  "q": "Why is the real-world drift irrelevant for pricing?",
+                  "a": "Replication removes dependence on investor preferences.",
+                  "explain": "Hedging argument."
+              },
+              {
+                  "q": "What is a numeraire?",
+                  "a": "An asset in terms of which prices are measured; changing numeraire changes the measure.",
+                  "explain": "E.g. forward measure."
+              },
+              {
+                  "q": "What is the forward measure?",
+                  "a": "Measure using a zero-coupon bond as numeraire, making forward prices martingales.",
+                  "explain": "Interest rate derivatives."
+              },
+              {
+                  "q": "What is the Radon-Nikodym derivative?",
+                  "a": "The density relating two equivalent probability measures.",
+                  "explain": "Change of measure."
+              },
+              {
+                  "q": "What is the equivalence of measures?",
+                  "a": "They agree on which events have zero probability.",
+                  "explain": "Required for Girsanov."
+              },
+              {
+                  "q": "How are real-world probabilities used?",
+                  "a": "For risk management and projection, not pricing.",
+                  "explain": "Two measures, two purposes."
+              },
+              {
+                  "q": "What is the state-price deflator?",
+                  "a": "A process that, multiplied by payoffs, gives prices under real-world expectation.",
+                  "explain": "Equivalent approach."
+              },
+              {
+                  "q": "Why do discounted prices need to be martingales?",
+                  "a": "Otherwise arbitrage would exist (fundamental theorem of asset pricing).",
+                  "explain": "No-arbitrage."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "Black-Scholes and the Greeks",
+          "description": "The Black-Scholes PDE and formula for European options, extensions for dividends, currencies and futures (Black's model), implied volatility, and the Greeks (delta, gamma, vega, theta, rho) with their interpretation.",
+          "cards": [
+              {
+                  "q": "What is the Black-Scholes price of a European call?",
+                  "a": "$c = S_0 N(d_1) - Ke^{-rT} N(d_2)$, $d_{1,2} = \\frac{\\ln(S_0/K) + (r \\pm \\tfrac12\\sigma^2)T}{\\sigma\\sqrt T}$.",
+                  "explain": "No dividends."
+              },
+              {
+                  "q": "What is the Black-Scholes put price?",
+                  "a": "$p = Ke^{-rT}N(-d_2) - S_0 N(-d_1)$.",
+                  "explain": "Consistent with put-call parity."
+              },
+              {
+                  "q": "What is the Black-Scholes PDE?",
+                  "a": "$\\frac{\\partial V}{\\partial t} + rS\\frac{\\partial V}{\\partial S} + \\tfrac12\\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} = rV$.",
+                  "explain": "Derived by delta hedging."
+              },
+              {
+                  "q": "How are dividends allowed for (continuous yield $q$)?",
+                  "a": "Replace $S_0$ by $S_0 e^{-qT}$ (Garman-Kohlhagen for FX with $q=r_f$).",
+                  "explain": "Merton's extension."
+              },
+              {
+                  "q": "What is Black's model for futures options?",
+                  "a": "$c = e^{-rT}[F_0 N(d_1) - K N(d_2)]$ with $d_1 = \\frac{\\ln(F_0/K) + \\tfrac12\\sigma^2T}{\\sigma\\sqrt T}$.",
+                  "explain": "Used for interest rate options."
+              },
+              {
+                  "q": "What is delta for a call?",
+                  "a": "$N(d_1)$ (no dividends).",
+                  "explain": "Sensitivity to share price."
+              },
+              {
+                  "q": "What is gamma?",
+                  "a": "$\\frac{N'(d_1)}{S_0\\sigma\\sqrt T}$ — rate of change of delta.",
+                  "explain": "Same for call and put."
+              },
+              {
+                  "q": "What is vega?",
+                  "a": "$S_0\\sqrt T\\,N'(d_1)$ — sensitivity to volatility.",
+                  "explain": "Always positive for long options."
+              },
+              {
+                  "q": "What is theta?",
+                  "a": "Rate of change of option value with time, usually negative for long options.",
+                  "explain": "Time decay."
+              },
+              {
+                  "q": "What is rho?",
+                  "a": "Sensitivity to interest rate: $KTe^{-rT}N(d_2)$ for a call.",
+                  "explain": "Small for short options."
+              },
+              {
+                  "q": "What is implied volatility?",
+                  "a": "The volatility that equates the Black-Scholes price with the market price.",
+                  "explain": "Volatility smile shows model limits."
+              },
+              {
+                  "q": "What is the volatility smile?",
+                  "a": "Implied volatility varying with strike, contradicting constant-volatility assumptions.",
+                  "explain": "Fat tails, skew."
+              },
+              {
+                  "q": "Worked example: S=K=100, r=5%, σ=20%, T=1, d1=0.35, d2=0.15, N(d1)=0.6368, N(d2)=0.5596. Call price?",
+                  "a": "$100(0.6368) - 100e^{-0.05}(0.5596) = 10.45$.",
+                  "explain": "Arithmetic check: 100e^-0.05 = 95.123."
+              },
+              {
+                  "q": "What is the relationship between theta, delta and gamma?",
+                  "a": "$\\Theta + rS\\Delta + \\tfrac12\\sigma^2S^2\\Gamma = rV$.",
+                  "explain": "From the PDE."
+              },
+              {
+                  "q": "What are key Black-Scholes assumptions?",
+                  "a": "Lognormal prices, constant r and σ, no transaction costs, continuous trading, no arbitrage.",
+                  "explain": "Real markets violate these."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "Trading strategies and hedging",
+          "description": "Option trading strategies (spreads, straddles, strangles, collars, covered calls, protective puts), delta, gamma and vega hedging, hedging costs and discrete rebalancing, and portfolio insurance.",
+          "cards": [
+              {
+                  "q": "What is a bull spread?",
+                  "a": "Buy a call at a lower strike and sell a call at a higher strike.",
+                  "explain": "Limited profit and loss."
+              },
+              {
+                  "q": "What is a bear spread?",
+                  "a": "Buy a put at a higher strike, sell a put at a lower strike.",
+                  "explain": "Profits from falls."
+              },
+              {
+                  "q": "What is a straddle?",
+                  "a": "Buy a call and put at the same strike and expiry.",
+                  "explain": "Profits from large moves."
+              },
+              {
+                  "q": "What is a strangle?",
+                  "a": "Buy a call and put at different strikes (out of the money).",
+                  "explain": "Cheaper than straddle."
+              },
+              {
+                  "q": "What is a butterfly spread?",
+                  "a": "Buy calls at low and high strikes, sell two at the middle strike.",
+                  "explain": "Profits if price stays near middle."
+              },
+              {
+                  "q": "What is a collar?",
+                  "a": "Buy a put and sell a call to limit downside and upside.",
+                  "explain": "Low or zero cost protection."
+              },
+              {
+                  "q": "What is delta hedging?",
+                  "a": "Holding −delta units of the underlying per option to neutralise small price moves.",
+                  "explain": "Requires rebalancing."
+              },
+              {
+                  "q": "What is gamma hedging?",
+                  "a": "Using other options to make portfolio gamma zero, reducing rebalancing needs.",
+                  "explain": "Then re-delta-hedge."
+              },
+              {
+                  "q": "What is vega hedging?",
+                  "a": "Using options to neutralise volatility exposure.",
+                  "explain": "Needs traded options."
+              },
+              {
+                  "q": "What are the costs of dynamic hedging?",
+                  "a": "Transaction costs, discrete rebalancing errors, volatility misestimation.",
+                  "explain": "Hedging is imperfect."
+              },
+              {
+                  "q": "What is portfolio insurance?",
+                  "a": "Strategies (buying puts or replicating them dynamically) to protect portfolio value below a floor.",
+                  "explain": "1987 crash lessons."
+              },
+              {
+                  "q": "What is a calendar spread?",
+                  "a": "Options with same strike, different expiries.",
+                  "explain": "Theta and vega exposure."
+              },
+              {
+                  "q": "What is a covered call?",
+                  "a": "Long stock, short call.",
+                  "explain": "Income, capped upside."
+              },
+              {
+                  "q": "What is a protective put?",
+                  "a": "Long stock, long put.",
+                  "explain": "Floor on losses."
+              },
+              {
+                  "q": "Why is a delta-neutral portfolio still risky?",
+                  "a": "Gamma and vega exposures mean large moves or volatility changes create P&L.",
+                  "explain": "Higher-order risks."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Exotic options",
+          "description": "Exotic options — Asian, barrier, lookback, digital (binary), compound, chooser, basket and rainbow, forward-start and cliquet options — their payoffs, uses, pricing approaches and hedging difficulties.",
+          "cards": [
+              {
+                  "q": "What is an Asian option?",
+                  "a": "An option whose payoff depends on the average price of the underlying over a period.",
+                  "explain": "Cheaper than vanilla; reduces manipulation risk."
+              },
+              {
+                  "q": "What is a barrier option?",
+                  "a": "An option that comes into existence (knock-in) or ceases (knock-out) if the underlying hits a barrier.",
+                  "explain": "Cheaper than vanilla."
+              },
+              {
+                  "q": "What is in-out parity for barriers?",
+                  "a": "Knock-in + knock-out (same barrier) = vanilla option.",
+                  "explain": "Useful identity."
+              },
+              {
+                  "q": "What is a lookback option?",
+                  "a": "Payoff depends on the maximum or minimum price over the life.",
+                  "explain": "Expensive."
+              },
+              {
+                  "q": "What is a digital (binary) option?",
+                  "a": "Pays a fixed amount if the underlying ends above (or below) the strike.",
+                  "explain": "Cash-or-nothing call worth $e^{-rT}N(d_2)$ per unit."
+              },
+              {
+                  "q": "What is a compound option?",
+                  "a": "An option on an option.",
+                  "explain": "Used for contingent hedging."
+              },
+              {
+                  "q": "What is a chooser option?",
+                  "a": "Holder chooses at a future date whether it is a call or a put.",
+                  "explain": "Value via put-call parity."
+              },
+              {
+                  "q": "What is a basket option?",
+                  "a": "An option on a weighted portfolio of assets.",
+                  "explain": "Correlation matters."
+              },
+              {
+                  "q": "What is a rainbow option?",
+                  "a": "Payoff depends on best or worst of several assets.",
+                  "explain": "Correlation sensitive."
+              },
+              {
+                  "q": "What is a forward-start option?",
+                  "a": "An option whose strike is set at a future date (e.g. at-the-money then).",
+                  "explain": "Employee options, cliquets."
+              },
+              {
+                  "q": "What is a cliquet (ratchet)?",
+                  "a": "A series of forward-start options locking in gains periodically.",
+                  "explain": "Guaranteed products."
+              },
+              {
+                  "q": "Why are exotics harder to hedge?",
+                  "a": "Discontinuities (barriers, digitals) create large gammas near triggers; path dependence.",
+                  "explain": "Model risk."
+              },
+              {
+                  "q": "How are exotics priced?",
+                  "a": "Closed forms where available, otherwise Monte Carlo, trees or PDE methods.",
+                  "explain": "Numerical methods chapter."
+              },
+              {
+                  "q": "Why might an insurer embed exotic options?",
+                  "a": "Guarantees in products (e.g. ratchets, averages) resemble exotic options.",
+                  "explain": "Valuation and hedging needed."
+              },
+              {
+                  "q": "What is a quanto option?",
+                  "a": "Option on a foreign asset paid in domestic currency at a fixed exchange rate.",
+                  "explain": "Correlation adjustment."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "Numerical methods",
+          "description": "Numerical methods for pricing derivatives: Monte Carlo simulation and variance reduction, binomial and trinomial trees, finite difference methods for PDEs, and their suitability for path-dependent and American options.",
+          "cards": [
+              {
+                  "q": "What is Monte Carlo pricing?",
+                  "a": "Simulating many risk-neutral paths, computing payoffs, averaging and discounting.",
+                  "explain": "Handles path dependence."
+              },
+              {
+                  "q": "What is the standard error of a Monte Carlo estimate?",
+                  "a": "$\\sigma/\\sqrt{n}$ — halving error needs four times the simulations.",
+                  "explain": "Slow convergence."
+              },
+              {
+                  "q": "Name two variance reduction techniques.",
+                  "a": "Antithetic variates, control variates, importance sampling, stratified sampling, moment matching.",
+                  "explain": "Improve accuracy."
+              },
+              {
+                  "q": "What are antithetic variates?",
+                  "a": "Using each random draw $Z$ and its negative $-Z$ to reduce variance.",
+                  "explain": "Negatively correlated pairs."
+              },
+              {
+                  "q": "What is a control variate?",
+                  "a": "Using a similar derivative with known price to correct simulation error.",
+                  "explain": "E.g. geometric Asian for arithmetic Asian."
+              },
+              {
+                  "q": "Why is Monte Carlo hard for American options?",
+                  "a": "Early exercise requires knowing continuation values at each point (backward information).",
+                  "explain": "Least-squares Monte Carlo solves this."
+              },
+              {
+                  "q": "What is least-squares Monte Carlo?",
+                  "a": "Estimating continuation values by regression on simulated paths (Longstaff-Schwartz).",
+                  "explain": "American options."
+              },
+              {
+                  "q": "What are finite difference methods?",
+                  "a": "Solving the pricing PDE on a grid of asset price and time.",
+                  "explain": "Explicit, implicit, Crank-Nicolson."
+              },
+              {
+                  "q": "What is the explicit method's weakness?",
+                  "a": "Stability requires small time steps.",
+                  "explain": "Implicit methods are unconditionally stable."
+              },
+              {
+                  "q": "What is Crank-Nicolson?",
+                  "a": "A finite difference scheme averaging explicit and implicit methods, second-order accurate.",
+                  "explain": "Common choice."
+              },
+              {
+                  "q": "When are trees preferred?",
+                  "a": "For American options and simple path-independent payoffs.",
+                  "explain": "Intuitive."
+              },
+              {
+                  "q": "What is a trinomial tree?",
+                  "a": "A tree with up, middle and down moves, equivalent to explicit finite differences.",
+                  "explain": "More flexible."
+              },
+              {
+                  "q": "How are Greeks estimated numerically?",
+                  "a": "Finite differences of prices with bumped inputs, using common random numbers.",
+                  "explain": "Pathwise methods too."
+              },
+              {
+                  "q": "What is quasi-Monte Carlo?",
+                  "a": "Using low-discrepancy sequences for faster convergence.",
+                  "explain": "Sobol sequences."
+              },
+              {
+                  "q": "What are the trade-offs among numerical methods?",
+                  "a": "Accuracy, speed, handling of early exercise and path dependence, dimensionality.",
+                  "explain": "Monte Carlo suits high dimensions."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Interest rate markets",
+          "description": "Interest rate markets: spot and forward rates, the yield curve and its theories, government and corporate bonds, money markets, reference rates (LIBOR transition to risk-free rates such as SONIA), repo, and duration and convexity.",
+          "cards": [
+              {
+                  "q": "What is a spot rate?",
+                  "a": "The yield on a zero-coupon bond for a given maturity.",
+                  "explain": "Discounting."
+              },
+              {
+                  "q": "What is a forward rate?",
+                  "a": "Rate agreed now for a future period, implied by spot rates.",
+                  "explain": "$(1+s_2)^2 = (1+s_1)(1+f_{1,2})$."
+              },
+              {
+                  "q": "What are the theories of the yield curve?",
+                  "a": "Expectations, liquidity preference, market segmentation (preferred habitat).",
+                  "explain": "Explain shape."
+              },
+              {
+                  "q": "What is LIBOR's replacement in sterling markets?",
+                  "a": "SONIA, an overnight risk-free rate compounded in arrears.",
+                  "explain": "LIBOR discontinued due to manipulation and thin markets."
+              },
+              {
+                  "q": "What is a repo rate?",
+                  "a": "The rate on secured borrowing via repurchase agreements.",
+                  "explain": "Close to risk-free."
+              },
+              {
+                  "q": "What is modified duration?",
+                  "a": "$-\\frac{1}{P}\\frac{dP}{dy}$.",
+                  "explain": "Price sensitivity."
+              },
+              {
+                  "q": "What is convexity?",
+                  "a": "$\\frac{1}{P}\\frac{d^2P}{dy^2}$.",
+                  "explain": "Second-order."
+              },
+              {
+                  "q": "What is a par yield?",
+                  "a": "Coupon rate at which a bond prices at par.",
+                  "explain": "Swap rates are par rates."
+              },
+              {
+                  "q": "How are spot rates derived from coupon bonds?",
+                  "a": "Bootstrapping.",
+                  "explain": "Sequential solving."
+              },
+              {
+                  "q": "What is the term premium?",
+                  "a": "Extra yield for holding longer bonds.",
+                  "explain": "Liquidity preference."
+              },
+              {
+                  "q": "What is an inverted yield curve?",
+                  "a": "Short rates exceed long rates.",
+                  "explain": "Often precedes recession."
+              },
+              {
+                  "q": "What is a swap rate?",
+                  "a": "Fixed rate that makes an interest rate swap worth zero.",
+                  "explain": "Swap curve."
+              },
+              {
+                  "q": "What is credit spread?",
+                  "a": "Yield over risk-free rate for credit risk.",
+                  "explain": "Corporate bonds."
+              },
+              {
+                  "q": "What is the OIS curve used for?",
+                  "a": "Discounting collateralised derivatives.",
+                  "explain": "Risk-free proxy."
+              },
+              {
+                  "q": "What is key rate duration?",
+                  "a": "Sensitivity to specific points on the yield curve.",
+                  "explain": "Non-parallel shifts."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Interest rate derivatives",
+          "description": "Interest rate derivatives: FRAs, interest rate futures, swaps (valuation as bonds or FRAs), caps, floors and collars, swaptions, bond options, and their pricing with Black's model and uses in hedging.",
+          "cards": [
+              {
+                  "q": "What is a forward rate agreement (FRA)?",
+                  "a": "An agreement fixing the interest rate on a notional for a future period, settled in cash.",
+                  "explain": "Hedges future borrowing costs."
+              },
+              {
+                  "q": "How is an interest rate swap valued?",
+                  "a": "Difference between a fixed-rate bond and a floating-rate bond, or as a portfolio of FRAs.",
+                  "explain": "Worth zero at inception."
+              },
+              {
+                  "q": "What is an interest rate cap?",
+                  "a": "A series of caplets paying when the reference rate exceeds the cap rate.",
+                  "explain": "Protects borrowers."
+              },
+              {
+                  "q": "What is a floor?",
+                  "a": "A series of floorlets paying when rate falls below the floor rate.",
+                  "explain": "Protects lenders/investors."
+              },
+              {
+                  "q": "What is a collar?",
+                  "a": "Long cap and short floor.",
+                  "explain": "Limits rate range."
+              },
+              {
+                  "q": "How is a caplet priced with Black's model?",
+                  "a": "As a call on the forward rate: $L\\,\\delta\\, P(0,t_{k+1})[F_k N(d_1) - R_K N(d_2)]$.",
+                  "explain": "Market standard."
+              },
+              {
+                  "q": "What is a swaption?",
+                  "a": "An option to enter a swap at a fixed rate.",
+                  "explain": "Payer or receiver."
+              },
+              {
+                  "q": "How is a swaption priced?",
+                  "a": "Black's model on the forward swap rate with an annuity factor.",
+                  "explain": "Market convention."
+              },
+              {
+                  "q": "How can insurers use receiver swaptions?",
+                  "a": "Hedge guarantees that bite when rates fall (e.g. GARs).",
+                  "explain": "Downside protection."
+              },
+              {
+                  "q": "What is cap-floor parity?",
+                  "a": "Cap − floor = swap (same strike).",
+                  "explain": "Arbitrage relationship."
+              },
+              {
+                  "q": "What is a bond option?",
+                  "a": "Option on a bond price.",
+                  "explain": "Black's model on forward bond price."
+              },
+              {
+                  "q": "What is an amortising swap?",
+                  "a": "Swap with a declining notional.",
+                  "explain": "Matches amortising loans."
+              },
+              {
+                  "q": "What is a basis swap?",
+                  "a": "Exchanging two floating rates.",
+                  "explain": "Basis risk management."
+              },
+              {
+                  "q": "How do pension schemes use swaps?",
+                  "a": "LDI hedging of interest rate and inflation risk.",
+                  "explain": "Collateral needs."
+              },
+              {
+                  "q": "What is the annuity factor in swap valuation?",
+                  "a": "Sum of discount factors times accrual periods.",
+                  "explain": "Swap PV01."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Interest rate models",
+          "description": "Term structure models for pricing interest rate derivatives: short-rate models (Vasicek, Cox-Ingersoll-Ross, Hull-White), equilibrium versus no-arbitrage models, the Heath-Jarrow-Morton framework and the LIBOR market model, and desirable model properties.",
+          "cards": [
+              {
+                  "q": "What is the Vasicek model?",
+                  "a": "$dr = a(b - r)dt + \\sigma dW$ — mean-reverting, normal rates.",
+                  "explain": "Rates can go negative."
+              },
+              {
+                  "q": "What is the CIR model?",
+                  "a": "$dr = a(b - r)dt + \\sigma\\sqrt{r}\\,dW$.",
+                  "explain": "Rates stay non-negative."
+              },
+              {
+                  "q": "What is the Hull-White model?",
+                  "a": "Vasicek with time-dependent mean: $dr = (\\theta(t) - ar)dt + \\sigma dW$.",
+                  "explain": "Fits the initial curve."
+              },
+              {
+                  "q": "What is the difference between equilibrium and no-arbitrage models?",
+                  "a": "Equilibrium models derive the curve from parameters; no-arbitrage models fit the current curve exactly.",
+                  "explain": "Pricing needs no-arbitrage."
+              },
+              {
+                  "q": "What is the HJM framework?",
+                  "a": "Models the evolution of the whole forward rate curve; drift is determined by volatility under no-arbitrage.",
+                  "explain": "General framework."
+              },
+              {
+                  "q": "What is the LIBOR market model?",
+                  "a": "Models discrete forward rates as lognormal, consistent with Black's cap pricing.",
+                  "explain": "Market model."
+              },
+              {
+                  "q": "What properties should an interest rate model have?",
+                  "a": "No-arbitrage, fit to current curve, realistic dynamics (mean reversion, positive rates if needed), tractability, calibration to volatilities.",
+                  "explain": "Trade-offs."
+              },
+              {
+                  "q": "What is mean reversion?",
+                  "a": "Rates tend to move back towards a long-term level.",
+                  "explain": "Parameter a."
+              },
+              {
+                  "q": "What is a one-factor model's limitation?",
+                  "a": "All rates perfectly correlated; can't capture twists.",
+                  "explain": "Multi-factor models."
+              },
+              {
+                  "q": "How are models calibrated?",
+                  "a": "Fitting parameters to market prices of caps and swaptions.",
+                  "explain": "Implied volatilities."
+              },
+              {
+                  "q": "Why can negative rates matter?",
+                  "a": "Some models (lognormal) can't produce them; recent markets had negative rates.",
+                  "explain": "Shifted models."
+              },
+              {
+                  "q": "What is the short rate?",
+                  "a": "The instantaneous risk-free interest rate.",
+                  "explain": "Short-rate models."
+              },
+              {
+                  "q": "What is affine term structure?",
+                  "a": "Bond prices of the form $P(t,T) = e^{A(t,T) - B(t,T)r_t}$.",
+                  "explain": "Vasicek, CIR."
+              },
+              {
+                  "q": "How are models used by insurers?",
+                  "a": "Valuing guarantees and scenario generation.",
+                  "explain": "Market-consistent valuation."
+              },
+              {
+                  "q": "What is the Black-Karasinski model?",
+                  "a": "Lognormal short rate model with mean reversion.",
+                  "explain": "Positive rates."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Structured derivatives",
+          "description": "Structured derivatives and products: capital-protected notes, equity-linked and index-linked products, range accruals, credit-linked notes, their construction from bonds and options, pricing and the risks to issuers and investors.",
+          "cards": [
+              {
+                  "q": "What is a structured product?",
+                  "a": "A packaged investment combining a bond with derivatives to give a tailored payoff.",
+                  "explain": "Retail and institutional."
+              },
+              {
+                  "q": "How is a capital-protected note constructed?",
+                  "a": "A zero-coupon bond guaranteeing principal plus call options for upside participation.",
+                  "explain": "Participation rate depends on option cost."
+              },
+              {
+                  "q": "What determines the participation rate?",
+                  "a": "Funds left after buying the zero-coupon bond divided by option cost.",
+                  "explain": "Lower rates → less participation."
+              },
+              {
+                  "q": "What is a reverse convertible?",
+                  "a": "A note paying a high coupon but repaying in shares if the price falls below a level.",
+                  "explain": "Investor sells a put."
+              },
+              {
+                  "q": "What is a range accrual?",
+                  "a": "Pays coupons for days a reference rate stays within a range.",
+                  "explain": "Embedded digitals."
+              },
+              {
+                  "q": "What is a credit-linked note?",
+                  "a": "A note whose repayment depends on credit events of a reference entity.",
+                  "explain": "Embedded CDS."
+              },
+              {
+                  "q": "What risks do investors in structured products face?",
+                  "a": "Issuer credit risk, complexity, liquidity, hidden fees, market risk.",
+                  "explain": "Mis-selling concerns."
+              },
+              {
+                  "q": "What risks does the issuer face?",
+                  "a": "Hedging risk, model risk, correlation and volatility exposures.",
+                  "explain": "Dynamic hedging."
+              },
+              {
+                  "q": "Why are structured products popular?",
+                  "a": "Tailored risk/return, capital protection appeal.",
+                  "explain": "Behavioural appeal."
+              },
+              {
+                  "q": "How is fair value of a structured product assessed?",
+                  "a": "Decomposing into components and pricing each.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "What is an autocallable?",
+                  "a": "A note that redeems early if the underlying is above a level on observation dates.",
+                  "explain": "Popular retail product."
+              },
+              {
+                  "q": "What is a CPPI strategy?",
+                  "a": "Constant proportion portfolio insurance — dynamically allocating to risky assets based on cushion above floor.",
+                  "explain": "Alternative to options."
+              },
+              {
+                  "q": "What is gap risk in CPPI?",
+                  "a": "Sudden falls breaching the floor before rebalancing.",
+                  "explain": "Tail risk."
+              },
+              {
+                  "q": "How do low rates affect capital protection?",
+                  "a": "Zero-coupon bonds cost more, leaving less for options.",
+                  "explain": "Lower participation."
+              },
+              {
+                  "q": "What is secondary market risk?",
+                  "a": "Difficulty selling before maturity at fair value.",
+                  "explain": "Liquidity."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Risk management",
+          "description": "Managing derivative risks: market risk and Greeks-based limits, VaR and expected shortfall, stress testing, counterparty credit risk and CVA, collateral and netting, liquidity and model risk, and governance of derivative use.",
+          "cards": [
+              {
+                  "q": "How can derivative portfolios' market risk be measured?",
+                  "a": "Greeks, VaR, expected shortfall, stress tests.",
+                  "explain": "Complementary."
+              },
+              {
+                  "q": "What is VaR?",
+                  "a": "Loss not exceeded with a given confidence over a period.",
+                  "explain": "Doesn't capture tail severity."
+              },
+              {
+                  "q": "What is expected shortfall?",
+                  "a": "Average loss beyond VaR.",
+                  "explain": "Coherent measure."
+              },
+              {
+                  "q": "What are the methods for calculating VaR?",
+                  "a": "Historical simulation, variance-covariance (parametric), Monte Carlo.",
+                  "explain": "Pros and cons."
+              },
+              {
+                  "q": "What is counterparty credit risk?",
+                  "a": "Risk counterparty defaults when derivative has positive value.",
+                  "explain": "Exposure changes over time."
+              },
+              {
+                  "q": "What is CVA?",
+                  "a": "Credit valuation adjustment — market value of counterparty credit risk.",
+                  "explain": "Reduces derivative value."
+              },
+              {
+                  "q": "How does netting reduce risk?",
+                  "a": "Offsetting positive and negative values with the same counterparty on default.",
+                  "explain": "ISDA master agreements."
+              },
+              {
+                  "q": "How does collateral reduce risk?",
+                  "a": "Posting margin covering exposure.",
+                  "explain": "CSA agreements."
+              },
+              {
+                  "q": "What is wrong-way risk?",
+                  "a": "Exposure increasing when counterparty's credit worsens.",
+                  "explain": "Correlation risk."
+              },
+              {
+                  "q": "What is model risk?",
+                  "a": "Losses due to model errors or mis-specification.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "What is liquidity risk in derivatives?",
+                  "a": "Inability to meet collateral calls or unwind positions.",
+                  "explain": "2022 LDI episode."
+              },
+              {
+                  "q": "What is stress testing?",
+                  "a": "Evaluating losses under extreme scenarios.",
+                  "explain": "Beyond VaR."
+              },
+              {
+                  "q": "What governance is needed for derivatives?",
+                  "a": "Clear policies, limits, independent risk oversight, valuation controls, board understanding.",
+                  "explain": "Regulatory expectations."
+              },
+              {
+                  "q": "What is potential future exposure?",
+                  "a": "A high percentile of future exposure to a counterparty.",
+                  "explain": "Credit limits."
+              },
+              {
+                  "q": "What are Greeks limits?",
+                  "a": "Limits on delta, gamma, vega exposures.",
+                  "explain": "Risk control."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Credit derivatives",
+          "description": "Credit derivatives: credit default swaps and their pricing from hazard rates and recovery, CDS indices, total return swaps, credit-linked notes, CDOs and correlation, and structural (Merton) and reduced-form credit models.",
+          "cards": [
+              {
+                  "q": "How is a CDS priced?",
+                  "a": "Set the spread so PV of premium payments equals PV of expected protection payments, using default probabilities and recovery.",
+                  "explain": "Hazard rate model."
+              },
+              {
+                  "q": "What is the credit triangle?",
+                  "a": "Spread $\\approx \\lambda (1 - R)$ where $\\lambda$ is hazard rate and $R$ recovery.",
+                  "explain": "Approximation."
+              },
+              {
+                  "q": "What is the Merton model?",
+                  "a": "Equity is a call option on firm assets; default when assets fall below debt at maturity.",
+                  "explain": "Structural model."
+              },
+              {
+                  "q": "What is a reduced-form credit model?",
+                  "a": "Default modelled as a random event with a hazard rate, not tied to firm value.",
+                  "explain": "Intensity models."
+              },
+              {
+                  "q": "What is a CDS index?",
+                  "a": "A standardised CDS on a basket of names (e.g. iTraxx, CDX).",
+                  "explain": "Liquid credit exposure."
+              },
+              {
+                  "q": "What is a total return swap?",
+                  "a": "Exchanging total return on an asset for a floating rate.",
+                  "explain": "Transfers credit and market risk."
+              },
+              {
+                  "q": "What is a synthetic CDO?",
+                  "a": "Tranches referencing a portfolio of CDS rather than cash bonds.",
+                  "explain": "Correlation product."
+              },
+              {
+                  "q": "What is default correlation?",
+                  "a": "Tendency of defaults to occur together.",
+                  "explain": "Key for tranches."
+              },
+              {
+                  "q": "What is the Gaussian copula model?",
+                  "a": "A model for joint default times using correlated normals.",
+                  "explain": "Criticised after 2008."
+              },
+              {
+                  "q": "What are risks of credit derivatives?",
+                  "a": "Counterparty, correlation, model, liquidity, basis risks.",
+                  "explain": "Complexity."
+              },
+              {
+                  "q": "How do investors use CDS?",
+                  "a": "Hedge credit exposure, gain synthetic exposure, relative value trades.",
+                  "explain": "Flexibility."
+              },
+              {
+                  "q": "What is recovery risk?",
+                  "a": "Uncertainty in recovery rates affecting payouts.",
+                  "explain": "Pricing sensitivity."
+              },
+              {
+                  "q": "What is jump-to-default risk?",
+                  "a": "Sudden loss on default not captured by spread sensitivity.",
+                  "explain": "Tail risk."
+              },
+              {
+                  "q": "What is a first-to-default basket?",
+                  "a": "Pays on the first default in a basket.",
+                  "explain": "Correlation sensitive."
+              },
+              {
+                  "q": "How did credit derivatives contribute to 2008?",
+                  "a": "Opaque exposures, mispriced correlation, counterparty concentration (e.g. AIG).",
+                  "explain": "Reforms followed."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Practical derivative management",
+          "description": "Practical issues in using derivatives: documentation (ISDA, CSA), collateral management, valuation and accounting, operational processes, regulatory requirements (clearing, reporting, margin), and how pension schemes and insurers implement hedging programmes.",
+          "cards": [
+              {
+                  "q": "What is an ISDA master agreement?",
+                  "a": "Standard legal framework for OTC derivatives, including netting and default provisions.",
+                  "explain": "Industry standard."
+              },
+              {
+                  "q": "What is a CSA?",
+                  "a": "Credit Support Annex setting collateral terms.",
+                  "explain": "Eligible collateral, thresholds."
+              },
+              {
+                  "q": "What does collateral management involve?",
+                  "a": "Calculating exposures, making and receiving margin calls, eligible assets, disputes.",
+                  "explain": "Operational."
+              },
+              {
+                  "q": "What are EMIR/Dodd-Frank style requirements?",
+                  "a": "Mandatory clearing, trade reporting, margin for uncleared trades.",
+                  "explain": "Post-crisis reforms."
+              },
+              {
+                  "q": "How are derivatives valued in practice?",
+                  "a": "Mark-to-market using market prices or models with observable inputs.",
+                  "explain": "Independent price verification."
+              },
+              {
+                  "q": "What accounting issues arise?",
+                  "a": "Fair value through P&L, hedge accounting to reduce volatility.",
+                  "explain": "Documentation needed."
+              },
+              {
+                  "q": "How do pension schemes implement hedging?",
+                  "a": "Via LDI managers, pooled funds or segregated mandates with swaps and gilt repos.",
+                  "explain": "Collateral buffers."
+              },
+              {
+                  "q": "How do insurers implement hedging programmes?",
+                  "a": "Dynamic hedging of guarantees, static hedges, governance frameworks.",
+                  "explain": "Hedge effectiveness monitoring."
+              },
+              {
+                  "q": "What is hedge effectiveness?",
+                  "a": "How well a hedge offsets the hedged item's changes.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "What operational risks arise?",
+                  "a": "Trade errors, settlement failures, collateral mismanagement.",
+                  "explain": "Controls."
+              },
+              {
+                  "q": "What is a liquidity waterfall?",
+                  "a": "Ordering assets to meet collateral calls.",
+                  "explain": "LDI practice."
+              },
+              {
+                  "q": "Why is counterparty diversification important?",
+                  "a": "Limits exposure to any one bank.",
+                  "explain": "Concentration."
+              },
+              {
+                  "q": "How should derivative use be governed?",
+                  "a": "Board-approved policy, limits, reporting, expertise.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "What are uncleared margin rules?",
+                  "a": "Requirement to exchange initial and variation margin on non-cleared OTC trades.",
+                  "explain": "Phased in."
+              },
+              {
+                  "q": "What is novation?",
+                  "a": "Transferring a derivative to a new counterparty.",
+                  "explain": "Clearing, restructuring."
+              }
+          ]
+      }
+  ],
   SP7: [
     {
         "id": "m01",

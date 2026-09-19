@@ -8718,7 +8718,7 @@ const QUESTIONS = {
     {
       id: "sp6-q1",
       title: "Derivative markets and market participants",
-      modules: "Modules 2, 3",
+      modules: "Modules 1, 3",
       marks: 12,
       parts: [
         {
@@ -8766,7 +8766,7 @@ const QUESTIONS = {
     {
       id: "sp6-q2",
       title: "Forward pricing and hedging",
-      modules: "Module 3",
+      modules: "Module 2",
       marks: 12,
       parts: [
         {
@@ -8814,7 +8814,7 @@ const QUESTIONS = {
     {
       id: "sp6-q3",
       title: "Binomial option pricing",
-      modules: "Module 6",
+      modules: "Module 4",
       marks: 12,
       parts: [
         {
@@ -8862,7 +8862,7 @@ const QUESTIONS = {
     {
       id: "sp6-q4",
       title: "The Black-Scholes formula",
-      modules: "Module 7",
+      modules: "Modules 5, 6, 7",
       marks: 12,
       parts: [
         {
@@ -8910,7 +8910,7 @@ const QUESTIONS = {
     {
       id: "sp6-q5",
       title: "Numerical methods for derivative pricing",
-      modules: "Module 9",
+      modules: "Module 10",
       marks: 12,
       parts: [
         {
@@ -8958,7 +8958,7 @@ const QUESTIONS = {
     {
       id: "sp6-q6",
       title: "Interest rate derivatives and the Black model",
-      modules: "Module 10",
+      modules: "Modules 11, 12",
       marks: 12,
       parts: [
         {
@@ -9006,7 +9006,7 @@ const QUESTIONS = {
     {
       id: "sp6-q7",
       title: "Term structure models",
-      modules: "Module 11",
+      modules: "Module 13",
       marks: 12,
       parts: [
         {
@@ -9054,7 +9054,7 @@ const QUESTIONS = {
     {
       id: "sp6-q8",
       title: "Using derivatives and hedging with the Greeks",
-      modules: "Module 12",
+      modules: "Module 8",
       marks: 12,
       parts: [
         {
@@ -9102,7 +9102,7 @@ const QUESTIONS = {
     {
       id: "sp6-q9",
       title: "Risks in the use of derivatives",
-      modules: "Module 13",
+      modules: "Modules 15, 17",
       marks: 12,
       parts: [
         {
@@ -9112,7 +9112,7 @@ const QUESTIONS = {
           question:
             "A £30,000,000 derivatives portfolio has a delta of 0.65 relative to its underlying, and the underlying has an annual return volatility of 18%. Using a delta-normal approach with a 99% confidence level (z-score of 2.326), calculate the portfolio's 1-year 99% Value at Risk.",
           answer:
-            "VaR = &#36;30,000,000 &times; 0.65 &times; 18% &times; 2.326 = &#36;8,164,260 (to the nearest &#36;10). This means there is a 1% chance the portfolio loses more than approximately &#36;8.16 million over the year, based on this simplified delta-normal approximation.",
+            "VaR = &pound;30,000,000 &times; 0.65 &times; 18% &times; 2.326 = &pound;8,164,260 (to the nearest &pound;10). This means there is a 1% chance the portfolio loses more than approximately &pound;8.16 million over the year, based on this simplified delta-normal approximation.",
           note: "Arithmetic check: 30,000,000×0.65×0.18×2.326=8,164,260. This is a simplified delta-normal VaR approximation, treating the portfolio's exposure as linear via its delta, for illustrative purposes.",
         },
         {
@@ -9150,7 +9150,7 @@ const QUESTIONS = {
     {
       id: "sp6-q10",
       title: "Structured securities and special purpose vehicles",
-      modules: "Modules 5, 13",
+      modules: "Modules 14, 16",
       marks: 12,
       parts: [
         {
