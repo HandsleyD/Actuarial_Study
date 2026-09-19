@@ -7272,7 +7272,7 @@ const QUESTIONS = {
     {
       id: "sp2-q1",
       title: "Life insurance products and the operating environment",
-      modules: "Modules 2, 3",
+      modules: "Modules 1, 2, 8, 9",
       marks: 12,
       parts: [
         {
@@ -7320,7 +7320,7 @@ const QUESTIONS = {
     {
       id: "sp2-q2",
       title: "Product design and asset shares for a with-profits contract",
-      modules: "Modules 4, 5",
+      modules: "Modules 5, 16",
       marks: 12,
       parts: [
         {
@@ -7368,7 +7368,7 @@ const QUESTIONS = {
     {
       id: "sp2-q3",
       title: "Unit pricing and discontinuance terms",
-      modules: "Module 6",
+      modules: "Modules 13, 21",
       marks: 12,
       parts: [
         {
@@ -7416,7 +7416,7 @@ const QUESTIONS = {
     {
       id: "sp2-q4",
       title: "Identifying sources of risk in life insurance",
-      modules: "Module 7",
+      modules: "Modules 10, 11, 12",
       marks: 12,
       parts: [
         {
@@ -7464,7 +7464,7 @@ const QUESTIONS = {
     {
       id: "sp2-q5",
       title: "Reinsurance and underwriting for a new protection product",
-      modules: "Modules 8, 9",
+      modules: "Modules 24, 25, 26",
       marks: 12,
       parts: [
         {
@@ -7512,7 +7512,7 @@ const QUESTIONS = {
     {
       id: "sp2-q6",
       title: "Asset-liability matching for a mixed life insurance book",
-      modules: "Module 10",
+      modules: "Module 28",
       marks: 12,
       parts: [
         {
@@ -7560,7 +7560,7 @@ const QUESTIONS = {
     {
       id: "sp2-q7",
       title: "Pricing and modelling a term assurance product",
-      modules: "Modules 11, 12",
+      modules: "Modules 14, 15",
       marks: 12,
       parts: [
         {
@@ -7608,7 +7608,7 @@ const QUESTIONS = {
     {
       id: "sp2-q8",
       title: "Supervisory reserves and solvency capital",
-      modules: "Module 12",
+      modules: "Modules 19, 20",
       marks: 12,
       parts: [
         {
@@ -7656,7 +7656,7 @@ const QUESTIONS = {
     {
       id: "sp2-q9",
       title: "Setting assumptions for pricing, reserving and embedded value",
-      modules: "Module 13",
+      modules: "Modules 17, 18",
       marks: 12,
       parts: [
         {
@@ -7704,7 +7704,7 @@ const QUESTIONS = {
     {
       id: "sp2-q10",
       title: "Monitoring experience and analysis of surplus",
-      modules: "Module 14",
+      modules: "Module 30",
       marks: 12,
       parts: [
         {
