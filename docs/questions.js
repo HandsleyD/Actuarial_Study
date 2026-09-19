@@ -5826,7 +5826,7 @@ const QUESTIONS = {
     {
       id: "sa4-q1",
       title: "Designing a DB scheme benefit structure",
-      modules: "Modules 1, 2",
+      modules: "Modules 7, 8",
       marks: 12,
       parts: [
         {
@@ -5874,7 +5874,7 @@ const QUESTIONS = {
     {
       id: "sa4-q2",
       title: "DC scheme design and the default investment strategy",
-      modules: "Module 3",
+      modules: "Modules 7, 8, 14",
       marks: 12,
       parts: [
         {
@@ -5882,7 +5882,7 @@ const QUESTIONS = {
           command: "Calculate",
           marks: 4,
           question:
-            "A DC scheme member contributes &pound;3,000 per annum (combined employer and employee contributions) for 25 years, with contributions assumed to grow at 5% per annum net investment return, added at the end of each year and then growing with the fund for the remaining years. Calculate the accumulated fund value at retirement (to the nearest &pound;100), given the fund value follows F(y) = (F(y-1) + 3,000) &times; 1.05 with F(0) = 0.",
+            "A DC scheme member contributes &pound;3,000 per annum (combined employer and employee contributions) for 25 years, with the fund assumed to grow at 5% per annum net investment return and contributions paid at the start of each year. Calculate the accumulated fund value at retirement (to the nearest &pound;100), given the fund value follows F(y) = (F(y-1) + 3,000) &times; 1.05 with F(0) = 0.",
           answer:
             "Applying the recursive growth formula for 25 years gives an accumulated fund value of approximately &pound;150,300 (&pound;150,340 to the nearest pound).",
           note: "Verified via iterative calculation: F(25) = 150,340.36 (Node-verified). Full marks require showing the recursive/compounding approach, not just stating the final figure.",
@@ -5922,7 +5922,7 @@ const QUESTIONS = {
     {
       id: "sa4-q3",
       title: "Other employee benefits alongside a pension scheme",
-      modules: "Module 4",
+      modules: "Modules 6, 8",
       marks: 12,
       parts: [
         {
@@ -5970,7 +5970,7 @@ const QUESTIONS = {
     {
       id: "sa4-q4",
       title: "Sponsor covenant and the business environment",
-      modules: "Module 5",
+      modules: "Modules 6, 12",
       marks: 12,
       parts: [
         {
@@ -6018,7 +6018,7 @@ const QUESTIONS = {
     {
       id: "sa4-q5",
       title: "Taxation and the regulatory/legislative environment",
-      modules: "Modules 6, 7, 8",
+      modules: "Modules 3, 4, 5",
       marks: 12,
       parts: [
         {
@@ -6066,7 +6066,7 @@ const QUESTIONS = {
     {
       id: "sa4-q6",
       title: "Funding valuation and recovery plan",
-      modules: "Modules 9, 10",
+      modules: "Modules 11, 15, 16, 18",
       marks: 12,
       parts: [
         {
@@ -6114,7 +6114,7 @@ const QUESTIONS = {
     {
       id: "sa4-q7",
       title: "Investment strategy and de-risking",
-      modules: "Module 11",
+      modules: "Modules 13, 14",
       marks: 12,
       parts: [
         {
@@ -6162,7 +6162,7 @@ const QUESTIONS = {
     {
       id: "sa4-q8",
       title: "Integrated risk management",
-      modules: "Module 12",
+      modules: "Modules 10, 12, 24",
       marks: 12,
       parts: [
         {
@@ -6210,7 +6210,7 @@ const QUESTIONS = {
     {
       id: "sa4-q9",
       title: "Buy-in, buy-out and scheme wind-up",
-      modules: "Module 14",
+      modules: "Modules 24, 26",
       marks: 12,
       parts: [
         {
@@ -6258,7 +6258,7 @@ const QUESTIONS = {
     {
       id: "sa4-q10",
       title: "Mergers, restructuring and solving a complex pensions issue",
-      modules: "Modules 15, 16",
+      modules: "Modules 22, 23, 27",
       marks: 12,
       parts: [
         {
