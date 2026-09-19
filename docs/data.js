@@ -14737,629 +14737,2057 @@ const MODULES = {
     }
 ],
   SA2: [
-    {
-        "id": "m01",
-        "title": "What is Subject SA2 all about?",
-        "description": "An orientation chapter explaining SA2's role as the Specialist Advanced subject applying core actuarial techniques to complex life insurance scenarios, and how it builds on SP2.",
-        "cards": [
-            {
-                "q": "What is the aim of Subject SA2?",
-                "a": "To develop a candidate's ability to apply actuarial techniques and knowledge of the life insurance environment, including regulatory, legislative, taxation, financial management, monitoring and strategic considerations, to complex scenarios concerning the management of life insurance companies.",
-                "explain": "This mirrors SA1's aim almost word for word, just for life insurance instead of health and care — worth recognising that all SA subjects share a near-identical template: applied judgement in complex, realistic scenarios, not bookwork recall."
-            },
-            {
-                "q": "How does SA2 relate to Subject SP2 (Life Insurance Specialist Principles)?",
-                "a": "SP2 introduces the main principles and knowledge required in life insurance and how they apply in simple scenarios; SA2 builds on those same skills and knowledge, applied to much more complex scenarios and in greater depth.",
-                "explain": "This directly mirrors SA1's relationship to SP1 — worth treating SP2 as the assumed technical foundation SA2 does not re-teach."
-            },
-            {
-                "q": "What broad syllabus topic areas does SA2 cover, echoing SA1's five-area structure?",
-                "a": "Life insurance products and the general business environment; product design and pricing; the regulatory, legislative and taxation environment (including Solvency II); financial management, profit and value reporting; and monitoring experience and assessing/recommending strategies.",
-                "explain": "This is worth comparing directly against SA1's own topic list — the underlying skeleton (products, environment, pricing, regulation, reporting, strategy) recurs across every SA subject, just applied to a different insurance sector each time."
-            },
-            {
-                "q": "What skills, beyond technical knowledge, does the SA2 syllabus expect candidates to demonstrate?",
-                "a": "Candidates must analyse a scenario, assess the implications of relevant factors, evaluate results critically in a wider context, and propose solutions or courses of action — the same analyse/assess/evaluate/propose progression used across every SA subject.",
-                "explain": "This directly recalls SA1's skill-progression material — worth memorising this four-stage structure as a genuine answer-writing template applicable across all Specialist Advanced subjects, not just SA2."
-            },
-            {
-                "q": "Why might a SA2 exam question present an unfamiliar or fictional life insurance market, rather than only the candidate's home market?",
-                "a": "This tests whether candidates can apply the underlying principles and skills developed throughout the course to any given set of facts, rather than simply recalling memorised knowledge about one specific, familiar real-world market.",
-                "explain": "This directly recalls SA1's fictional-scenario exam-format material — worth recognising this as a deliberate, shared SA-subject design choice testing transferable judgement, not jurisdiction-specific memorisation."
-            },
-            {
-                "q": "Why does SA2 build directly on subjects like CP1, CM1, CM2 and CS2, even though it does not re-teach their content explicitly?",
-                "a": "SA2's pricing, reserving and risk-management material all depend on the general actuarial modelling, financial mathematics, and survival modelling techniques developed in those earlier subjects, applied specifically to the life insurance context.",
-                "explain": "This directly recalls SA1's equivalent card — worth treating this whole course as CP1's risk-management principles and CM1/CM2/CS2's technical toolkit, specifically specialised to life insurance products."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "Protection products",
-        "description": "Covers the main life insurance protection products — term assurance, whole of life assurance, and their variants — and their key features.",
-        "cards": [
-            {
-                "q": "What is 'term assurance', and what is its core purpose?",
-                "a": "A life insurance product paying a benefit only if the life assured dies within a specified term, with no benefit payable if the policyholder survives the term — providing pure protection against the financial consequences of an early death.",
-                "explain": "This directly recalls CB1's protection-versus-savings product categorisation — worth recognising term assurance as the clearest example of pure protection with no savings element at all."
-            },
-            {
-                "q": "What is 'whole of life assurance', and how does it differ from term assurance in its guarantee of paying out?",
-                "a": "Whole of life assurance pays a benefit on death whenever it occurs, with no fixed term, so (barring lapse) it is certain to eventually pay a benefit — unlike term assurance, which only pays if death occurs within the specified term.",
-                "explain": "Worth contrasting directly against term assurance's card above — the <em>certainty</em> of eventual payment (subject to persistency) is the key structural difference, with direct consequences for pricing and reserving."
-            },
-            {
-                "q": "Why might whole of life assurance require a materially different pricing and reserving approach than term assurance?",
-                "a": "Since a payment is certain to eventually be made (absent lapse), whole of life pricing and reserving must reflect the long, open-ended payment horizon, unlike term assurance where mortality risk is confined to a fixed, bounded period.",
-                "explain": "This directly recalls CM1's whole-of-life versus term-assurance actuarial present value material — worth recognising this as CM1's foundational technique now applied within a genuine product-management and business context."
-            },
-            {
-                "q": "Why might a life insurer offer 'convertible term assurance', allowing conversion to a whole of life or endowment policy without further medical underwriting?",
-                "a": "This gives the policyholder valuable protection against future health deterioration making later cover difficult or expensive to obtain, echoing SA1's guaranteed-insurability-option material but for life insurance specifically.",
-                "explain": "This directly recalls SA1's guaranteed-insurability-option material — worth recognising the same anti-selective-option-cost principle applying here: the insurer must price for the fact that policyholders whose health has worsened are more likely to exercise the conversion option."
-            },
-            {
-                "q": "Why might a life insurer need to model mortality improvement trends when pricing and reserving long-duration protection products, echoing CS2's survival-modelling material?",
-                "a": "A long-duration product's true cost depends on mortality rates over many future decades, and mortality has historically improved over time, so ignoring this trend could materially misprice or under-reserve a long-term liability.",
-                "explain": "This directly recalls CS2's mortality-improvement and projection-modelling material — worth recognising life insurance protection products as one of the clearest real-world applications of CS2's mortality-trend techniques."
-            },
-            {
-                "q": "Why might critical illness and income protection riders sold alongside a core life protection product need to be priced with genuine care for their interaction with the core benefit?",
-                "a": "As SA1's competing-risks material establishes, CI and mortality compete for the same life, so a combined product's pricing must jointly model these interacting risks rather than pricing each rider as if fully independent of the core life cover.",
-                "explain": "This directly recalls SA1's competing-risks material — worth recognising that life insurers selling combined protection products face exactly the same interaction risk SA1 develops for standalone health and care products."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "Savings and investment products",
-        "description": "Covers with-profits and unit-linked savings and investment products, their bonus and charging structures, and their key features.",
-        "cards": [
-            {
-                "q": "What is a 'with-profits' policy, and how does its bonus mechanism work?",
-                "a": "A with-profits policy shares in the profits of the insurer's with-profits fund through bonuses added to the policy value, typically a combination of regular (reversionary) bonuses added periodically and a final (terminal) bonus paid on claim, smoothing investment returns over time relative to the fund's actual experience.",
-                "explain": "Worth treating 'smoothing' as the defining feature of with-profits — it deliberately dampens the volatility a policyholder would otherwise experience from directly-invested returns, at the cost of some complexity and insurer discretion in bonus-setting."
-            },
-            {
-                "q": "Why does with-profits bonus-setting involve genuine actuarial judgement, rather than a purely mechanical formula?",
-                "a": "The insurer must balance fair treatment of policyholders (paying out broadly what the underlying assets have earned over time) against smoothing volatility and maintaining fund solvency, a genuine judgement call with no single mechanically correct answer.",
-                "explain": "This directly recalls CP1's judgement-beyond-calculation material — worth recognising with-profits bonus-setting as one of the clearest genuine examples of actuarial judgement operating within a defined but flexible framework."
-            },
-            {
-                "q": "What is a 'unit-linked' policy, and how does its charging structure typically work?",
-                "a": "A unit-linked policy directly invests premiums (net of charges) into notional 'units' of one or more investment funds, with the policy value moving directly with the fund's unit price; charges (e.g. bid-offer spread, annual management charge, policy fee) are deducted explicitly rather than smoothed.",
-                "explain": "Worth contrasting directly against with-profits — unit-linked passes investment risk and return <em>directly</em> to the policyholder, with charges made explicit and transparent rather than implicitly absorbed into a smoothed bonus mechanism."
-            },
-            {
-                "q": "Why might a unit-linked policy's charging structure need to cover both the insurer's expenses and its cost of capital, not just recoup administrative costs?",
-                "a": "Since unit-linked business typically carries lower guarantees and risk than with-profits, its profit largely derives from charges, so the charging structure must be set with the same equivalence-principle-style rigour as any other pricing exercise, covering both expenses and a genuine required return.",
-                "explain": "This directly recalls CB1's and SA1's equivalence-principle material — worth recognising unit-linked charge-setting as pricing in substance, even though it takes the form of ongoing deductions rather than a single upfront premium calculation."
-            },
-            {
-                "q": "Why might a with-profits fund's investment strategy need to differ from a unit-linked fund's strategy, even holding similar underlying assets?",
-                "a": "A with-profits fund must manage assets to support smoothing and guarantee obligations across the whole fund collectively, while unit-linked assets are managed to directly track a specific fund's stated investment objective for individual policyholders, a different risk and governance structure.",
-                "explain": "This directly previews this course's asset-liability management module — worth recognising that 'life insurance investment' is not a single undifferentiated activity; the underlying product structure shapes appropriate investment strategy."
-            },
-            {
-                "q": "Why might guarantees embedded in older-style with-profits policies (e.g. guaranteed annuity options) pose a genuine, sometimes severe, risk to an insurer decades after the policy was sold?",
-                "a": "A guarantee that seemed unlikely to bite when interest rates and mortality assumptions were set at outset can become deeply in-the-money if rates fall or longevity improves significantly over the following decades, echoing CM2's embedded-option material but realised over a very long time horizon.",
-                "explain": "This directly recalls CM2's and CB1's embedded-option-cost material — worth recognising long-duration with-profits guarantees as a real-world case where an option that looked cheap at pricing can become severely costly decades later, a recurring theme in actual UK life insurance history."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "Retirement and annuity products",
-        "description": "Covers annuity products and other retirement-related life insurance products, their risks, and their interaction with pension provision.",
-        "cards": [
-            {
-                "q": "What is a 'life annuity', and what is its core longevity-risk characteristic?",
-                "a": "A life annuity pays a regular income for as long as the annuitant survives, transferring longevity risk from the individual to the insurer — the insurer, not the individual, bears the risk of the annuitant living longer than expected.",
-                "explain": "Worth contrasting directly with protection products (Module 2), where the insurer's risk is triggered by <em>death</em> — for annuities, the insurer's risk is triggered by <em>survival</em>, an inverted risk exposure with direct implications for pricing and reserving assumptions."
-            },
-            {
-                "q": "Why does pricing a life annuity require careful mortality improvement assumptions, given the inverted risk exposure just described?",
-                "a": "Since the insurer's cost increases the longer the annuitant survives, understating future mortality improvement would understate the annuity's true cost, exactly the opposite pricing risk to a protection product where understating improvement would OVERstate cost.",
-                "explain": "This directly recalls CS2's mortality-improvement material and Module 2's protection-product material — worth recognising this genuine, important asymmetry: the <em>same</em> mortality-improvement trend that reduces protection-product cost <em>increases</em> annuity cost."
-            },
-            {
-                "q": "What is a 'guaranteed annuity option' (GAO), and why did such options prove so costly for some UK life insurers historically?",
-                "a": "A GAO guarantees a policyholder the right to convert an accumulated fund into an annuity at a specified, guaranteed rate; when market annuity rates fell well below the guaranteed rate (driven by falling interest rates and improving longevity), the guarantee became deeply valuable to policyholders and extremely costly to insurers.",
-                "explain": "This directly recalls Module 3's guarantee-becoming-costly-decades-later material — worth treating GAOs as the single most commonly cited real-world UK life insurance example of this exact risk crystallising."
-            },
-            {
-                "q": "Why might an insurer offering annuities need to hold assets whose cashflows are closely matched to the annuity's long-term payment profile, echoing CM2's immunisation material?",
-                "a": "Annuity liabilities are highly sensitive to interest rate movements over a very long horizon, so holding assets (e.g. long-dated bonds) whose value moves similarly protects the insurer's balance sheet from adverse rate changes, directly applying CM2's matching/immunisation principle.",
-                "explain": "This directly recalls CM2's asset-liability matching material and SA1's LTC-ALM material — worth recognising annuities as one of the clearest, most textbook real-world applications of duration matching in the whole actuarial curriculum."
-            },
-            {
-                "q": "Why might 'enhanced' or 'impaired life' annuities (offering higher income to annuitants with reduced life expectancy) require careful underwriting?",
-                "a": "Accurately assessing reduced life expectancy (e.g. due to smoking, specific medical conditions) allows the insurer to offer a fair, competitively-priced higher income without taking on excessive anti-selection risk from over- or under-estimating an applicant's true reduced life expectancy.",
-                "explain": "This directly recalls SA1's underwriting-and-anti-selection material — worth recognising enhanced annuities as applying that same underwriting discipline in the <em>opposite</em> direction to standard life underwriting: here, <em>worse</em> health qualifies for a better rate."
-            },
-            {
-                "q": "Why might annuity products interact directly with a country's State pension and private pension system, echoing SA1's State-provision-interaction material?",
-                "a": "The scope and generosity of State pension provision and whether private pension savings must (or can voluntarily) be converted into an annuity at retirement directly shapes the size and nature of the private annuity market a life insurer operates within.",
-                "explain": "This directly recalls SA1's State-provision-interaction material — worth recognising the same principle applying to retirement products specifically: annuity demand is shaped by the wider pension and State-provision system, not determined by the product alone."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Product analysis",
-        "description": "Covers how to analyse and compare life insurance products in terms of customer needs, distribution, and interaction with State and employer provision.",
-        "cards": [
-            {
-                "q": "What three broad categories of customer financial need do life insurance products typically address, echoing CP1's material?",
-                "a": "Protection against risk (e.g. death, illness), saving/investment for the future, and income provision (e.g. in retirement) — with many real products combining more than one of these categories in a single contract.",
-                "explain": "This directly recalls CP1's three-category customer-need framework — worth using this as a genuine analytical checklist when assessing any life insurance product's true purpose and target market."
-            },
-            {
-                "q": "Why might a complete product analysis need to consider how a product interacts with State pension and welfare provision, not just its own stated features?",
-                "a": "A product's genuine value proposition depends on what State provision does <em>not</em> already cover, so the same product could be essential in one market and largely redundant in another purely due to differences in State provision, not the product's own design.",
-                "explain": "This directly recalls SA1's State-provision-interaction material — worth recognising the same analytical principle applying to life insurance products just as much as to health and care products."
-            },
-            {
-                "q": "Why might distribution channel choice materially affect which life insurance products are suitable to offer through it?",
-                "a": "Complex products with significant guarantees or investment choices (e.g. with-profits, unit-linked with fund selection) may benefit from adviser guidance, while simpler, standardised protection products can be reasonably sold through direct or online channels without extensive advice.",
-                "explain": "This directly recalls CB1's and SA1's product-complexity-versus-distribution-channel material — worth recognising this same principle recurring here: channel suitability depends on product <em>complexity</em>, not product category as such."
-            },
-            {
-                "q": "Why might bundling protection and savings elements into a single life insurance contract create genuine analytical complexity when comparing it against two separate standalone products?",
-                "a": "A bundled product can have genuine interactions (e.g. a with-profits savings element combined with a guaranteed protection benefit) that a naive comparison against two standalone products would miss, requiring the combined product to be analysed holistically.",
-                "explain": "This directly recalls SA1's bundling-analysis material — worth recognising the same principle applying to combined life insurance products, not just combined health and care products."
-            },
-            {
-                "q": "Why might a thorough product analysis need to consider a customer's full life stage and evolving needs, rather than assessing a product against a single static need?",
-                "a": "A customer's protection, savings, and income needs typically evolve significantly over their lifetime (e.g. from pure protection when young with dependants, to savings in mid-career, to income needs in retirement), so a product's genuine suitability should be assessed against this evolving trajectory, not a single snapshot.",
-                "explain": "This directly recalls SA1's life-stage-analysis material — worth recognising life-stage thinking as a portable analytical tool across insurance sectors, not specific to health and care."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "General business environment",
-        "description": "Covers how life insurance products are distributed, the roles of reinsurers and other counterparties, and wider external influences on life insurers.",
-        "cards": [
-            {
-                "q": "Why might a life insurer's distribution strategy need to reflect whether it primarily sells protection, savings, or retirement products?",
-                "a": "Different product types often suit different channels (e.g. simple protection via direct/online, complex with-profits/unit-linked via advisers, bulk annuities via specialist brokers to pension schemes), so a single, undifferentiated distribution strategy is unlikely to serve all product lines equally well.",
-                "explain": "This directly recalls Module 5's channel-suitability material — worth recognising that a life insurer with a diverse product range may need multiple, distinct distribution strategies operating in parallel."
-            },
-            {
-                "q": "Why might reinsurance play a particularly significant role in the life insurance protection market specifically, beyond its general risk-management purpose?",
-                "a": "Reinsurers often hold significant mortality/morbidity pricing expertise and data across many insurers' experience, making them a valuable partner for pricing new or unusual protection risks, not just a pure risk-transfer counterparty.",
-                "explain": "This directly recalls SA1's reinsurer-as-expertise-source material — worth recognising the same principle applying with particular force in life protection, where reinsurer mortality data pooling is a long-established, important market feature."
-            },
-            {
-                "q": "Why might demographic change (e.g. an ageing population) affect a life insurer's annuity and protection business in opposite directions?",
-                "a": "An ageing population with improving longevity increases the cost of annuity business (more years of payment) while potentially reducing near-term mortality-related protection claims, meaning the <em>same</em> demographic trend can be a genuine headwind for one product line and a tailwind for another within the same insurer.",
-                "explain": "This directly recalls Module 4's inverted-risk-exposure material — worth recognising this as an important portfolio-level insight: a life insurer with both annuity and protection business has some natural, partial diversification against demographic risk."
-            },
-            {
-                "q": "Why might economic conditions (e.g. low interest rates) pose a particularly severe risk to with-profits and annuity business specifically?",
-                "a": "Low interest rates directly reduce investment returns available to back with-profits bonuses and annuity guarantees, while simultaneously increasing the discounted value of long-term guaranteed liabilities, a genuine double impact on these specific product lines' solvency position.",
-                "explain": "This directly recalls Module 3's and Module 4's guarantee-cost material — worth recognising interest rate risk as hitting <em>guarantee-heavy</em> product lines (with-profits, annuities) with particular severity, more so than simpler protection or unit-linked business."
-            },
-            {
-                "q": "Why does treating customers fairly (TCF) carry particular significance for with-profits business specifically, beyond general conduct regulation?",
-                "a": "With-profits bonus-setting involves genuine insurer discretion (Module 3's material), so TCF requires the insurer to exercise that discretion fairly and transparently across different generations of policyholders in the fund, a distinct conduct challenge from products with no comparable discretionary element.",
-                "explain": "This directly recalls SA1's TCF material and Module 3's bonus-judgement material — worth recognising with-profits TCF as specifically about fair exercise of <em>discretion</em>, not just fair treatment in sales and claims handling generally."
-            },
-            {
-                "q": "Why might monitoring the external business environment need to be an ongoing exercise for a life insurer, echoing SA1's recurring theme?",
-                "a": "Demographic, economic, and regulatory factors all continue to evolve over time, so an assessment conducted once and never revisited would quickly become outdated, leaving pricing and strategy based on a stale picture of the insurer's actual operating environment.",
-                "explain": "This directly recalls SA1's ongoing-review theme — worth recognising this principle as universal across every SA subject, not specific to health and care."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "Product design and pricing (1)",
-        "description": "Covers pricing principles for protection products and the with-profits bonus philosophy, applying the equivalence principle to life insurance.",
-        "cards": [
-            {
-                "q": "How does the equivalence principle apply to pricing a term assurance product, echoing CB1's and SA1's core pricing material?",
-                "a": "The premium is set so the expected present value of premium income equals the expected present value of death benefit outgo plus expenses, using mortality, lapse and expense assumptions appropriate to the specific product and market.",
-                "explain": "This is CB1's and SA1's equivalence principle recalled directly — worth recognising life insurance pricing as fundamentally the same technique as health and care pricing, just with mortality (not morbidity) as the primary decrement."
-            },
-            {
-                "q": "Why might mortality assumptions for term assurance pricing need to reflect both current mortality levels and expected future improvement, echoing CS2's material?",
-                "a": "A multi-year term assurance contract's cost depends on mortality rates throughout the whole term, and mortality has historically improved over time, so pricing that used only current, unprojected mortality rates could materially overstate the product's true expected cost.",
-                "explain": "This directly recalls CS2's mortality-projection material and Module 2's protection-product material — worth recognising this as the direct pricing application of CS2's mortality-improvement modelling techniques."
-            },
-            {
-                "q": "Why does setting a with-profits bonus rate require balancing the interests of different generations of policyholders in the same fund, rather than simply reflecting current investment returns?",
-                "a": "A with-profits fund pools assets across policyholders who joined at different times, so bonus decisions can transfer value between generations (e.g. paying overly generous bonuses now could disadvantage future policyholders' claims), requiring genuine fairness judgement across the whole fund over time.",
-                "explain": "This directly recalls Module 3's bonus-judgement material — worth recognising this <em>inter-generational</em> fairness dimension as a distinctive feature of with-profits pricing, not present in most other product pricing decisions."
-            },
-            {
-                "q": "Why might an insurer need to set aside an explicit allowance for smoothing costs when pricing a with-profits product?",
-                "a": "Smoothing investment returns (Module 3's material) means the insurer sometimes pays out more than the underlying assets currently support (in poor years) and sometimes less (in good years), so pricing needs to anticipate the genuine net cost of providing this smoothing over the product's life.",
-                "explain": "This directly recalls Module 3's smoothing-mechanism material — worth recognising smoothing as a genuine cost to be priced for, not simply a free administrative feature of with-profits products."
-            },
-            {
-                "q": "Why might profit testing (CB1's technique) be particularly important for a with-profits product, given its embedded discretion and smoothing?",
-                "a": "Profit testing projects the product's cashflows under the insurer's actual bonus and smoothing policy to confirm the pricing achieves target profitability, which is especially important given how much of a with-profits product's economics depends on discretionary decisions not fixed at outset.",
-                "explain": "This directly recalls CB1's profit-testing material and SA1's equivalent card — worth recognising profit testing as the practical verification step needed precisely because with-profits pricing cannot be fully captured by a single closed-form equivalence-principle calculation."
-            },
-            {
-                "q": "Why might expense assumptions for with-profits products need particular care, given their typically longer duration and higher administrative complexity than term assurance?",
-                "a": "With-profits products often involve ongoing bonus calculation, fund management, and communication with policyholders over a long duration, so their expense assumption must reflect this higher, sustained administrative burden rather than a simpler protection product's more limited ongoing servicing needs.",
-                "explain": "This directly recalls CB1's expense-category material — worth recognising that different life insurance product types carry different expense profiles, not a single generic 'life insurance expense' assumption applicable everywhere."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Product design and pricing (2)",
-        "description": "Covers pricing considerations for unit-linked products, embedded guarantees and options, and pricing for group life business.",
-        "cards": [
-            {
-                "q": "Why might setting a unit-linked policy's annual management charge require genuine equivalence-principle-style analysis, even though it looks like a simple percentage fee?",
-                "a": "The charge must be set so the expected present value of charge income covers the expected present value of expenses and required profit margin over the policy's expected lifetime, exactly the same underlying pricing logic as a traditional premium calculation, just expressed as an ongoing deduction rather than an upfront premium.",
-                "explain": "This directly recalls Module 3's unit-linked-charging material — worth recognising that charge-setting is genuine <em>pricing</em> in substance, even though its everyday presentation (a simple annual percentage) can make this less obvious than a traditional premium calculation."
-            },
-            {
-                "q": "Why might a unit-linked product's persistency (lapse) assumption be particularly important to its profitability, echoing CB1's and SA1's material?",
-                "a": "Since unit-linked profit largely derives from ongoing charges rather than an upfront margin, higher-than-assumed early lapses directly reduce the insurer's opportunity to recoup initial expenses and earn its intended margin, potentially turning an expected-profitable policy into a loss-making one.",
-                "explain": "This directly recalls SA1's and CB1's lapse-and-new-business-strain material — worth recognising that this same principle applies with particular force to unit-linked business, where ongoing charges (not an upfront margin) are the primary profit source."
-            },
-            {
-                "q": "Why might a unit-linked product embedding a guaranteed minimum death benefit require materially more complex pricing than a pure unit-linked product with no guarantee?",
-                "a": "The guarantee only bites if the fund value falls below the guaranteed level at the point of claim, so pricing it requires modelling the genuine, path-dependent probability and cost of this scenario across many possible future market outcomes, echoing CM2's option-pricing material.",
-                "explain": "This directly recalls CM2's embedded-option-pricing material and Module 3's guarantee-cost material — worth recognising that adding even a simple-sounding guarantee can require materially more sophisticated pricing techniques than the base unit-linked product alone."
-            },
-            {
-                "q": "Why might pricing for group life assurance (e.g. employer-sponsored death-in-service benefits) differ structurally from individual life pricing, echoing SA1's group-pricing material?",
-                "a": "Group pricing often reflects the specific risk profile of the employer's workforce and may use experience rating for larger groups, applying credibility-weighted pricing (CS1's material) rather than purely individual medical underwriting.",
-                "explain": "This directly recalls SA1's and CS1's group/credibility-rating material — worth recognising the same underlying principle recurring here: a large group's own claims experience carries genuine statistical credibility that a single individual's history cannot."
-            },
-            {
-                "q": "Why might a life insurer offering guaranteed insurability options (Module 2's material) need to price the option's cost explicitly, rather than folding it into the base product's general margin?",
-                "a": "Since policyholders are more likely to exercise the option when it is financially advantageous (health has deteriorated), the option carries a genuine anti-selective cost that should be identified and priced for explicitly, rather than assumed to be self-funding within a generic margin.",
-                "explain": "This directly recalls Module 2's and CM2's anti-selective-option-cost material — worth recognising explicit option pricing as good practice precisely because folding it into a generic margin risks systematically underpricing the option's true cost."
-            },
-            {
-                "q": "How does this module's pricing material connect back to Module 7's core pricing principles?",
-                "a": "Module 7 established the equivalence principle and with-profits bonus philosophy for core protection and savings pricing; this module extends the same underlying pricing discipline to unit-linked charges, embedded guarantees, and group business, showing the principle's genuine breadth of application.",
-                "explain": "This closing card ties this module back to Module 7 explicitly — worth recognising both modules as applying the <em>same</em> underlying equivalence-principle discipline to different product structures, not two unrelated pricing topics."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "Taxation and the general regulatory environment",
-        "description": "Covers how taxation affects life insurers and policyholders, and the general purposes and approaches to regulation of life insurance business.",
-        "cards": [
-            {
-                "q": "Why does the tax treatment of life insurance premiums and benefits directly affect a product's genuine attractiveness to customers, echoing SA1's material?",
-                "a": "If premiums attract tax relief or benefits are received tax-free (or tax-favoured), the effective cost or value of the product changes materially, directly affecting demand and the price the insurer can competitively charge for economically similar cover.",
-                "explain": "This directly recalls SA1's taxation-affects-attractiveness material — worth recognising the same mechanism applying to life insurance, where tax-favoured savings and pension-linked products are a particularly significant real-world example."
-            },
-            {
-                "q": "Why might the taxation of a with-profits fund's investment returns need particular care, given the fund pools assets across many policyholders?",
-                "a": "Tax charged on the fund's investment income and gains directly reduces the returns available to support bonuses, so bonus-setting (Module 7's material) must account for the fund's after-tax investment performance, not its gross returns.",
-                "explain": "This directly recalls Module 7's bonus-setting material — worth recognising that with-profits bonus philosophy must be understood on an <em>after-tax</em> basis, since gross investment performance overstates what is available to distribute."
-            },
-            {
-                "q": "Why does an insurer's own corporate tax position affect its pricing and profit-margin decisions, beyond the policyholder-level tax treatment, echoing SA1's material?",
-                "a": "Tax payable on the insurer's own profits reduces the genuine after-tax return achieved from a given pre-tax margin, so pricing and profit testing must incorporate the insurer's own tax position to assess whether a product achieves its true target return.",
-                "explain": "This directly recalls SA1's and CB1's after-tax profitability material — worth recognising this as a universal pricing consideration across every insurance sector, not specific to life insurance."
-            },
-            {
-                "q": "Why does insurance regulation typically distinguish between prudential and conduct regulation, echoing SA1's and CP1's material?",
-                "a": "Prudential regulation focuses on financial soundness and ability to meet obligations, while conduct regulation focuses on fair customer treatment, addressing distinct risks — a life insurer can be prudentially sound while still treating customers unfairly, or vice versa.",
-                "explain": "This directly recalls SA1's and CP1's prudential-versus-conduct distinction — worth recognising this as a universal regulatory framework applying identically across every insurance sector this course covers."
-            },
-            {
-                "q": "Why might conduct regulation for with-profits business specifically focus on the fairness of insurer discretion, echoing Module 7's inter-generational fairness material?",
-                "a": "Since with-profits bonus-setting inherently involves genuine insurer discretion affecting different generations of policyholders differently, conduct regulation in this area typically requires clear governance and disclosure of how that discretion is exercised, a more targeted concern than for products with no comparable discretionary element.",
-                "explain": "This directly recalls Module 7's inter-generational-fairness material — worth recognising with-profits conduct regulation as addressing a <em>specific</em> risk (fair exercise of discretion), distinct from the broader conduct regulation applying across all products."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Solvency II (1)",
-        "description": "Covers the structure and purpose of the Solvency II regulatory regime as it applies to life insurers, including the three-pillar framework and technical provisions.",
-        "cards": [
-            {
-                "q": "What are the three pillars of the Solvency II framework, echoing SA1's and CP1's material?",
-                "a": "Pillar 1 sets quantitative capital and technical provision requirements; Pillar 2 covers governance and risk management; Pillar 3 covers public disclosure and reporting requirements, together forming a comprehensive prudential regime.",
-                "explain": "This directly recalls SA1's three-pillar Solvency II material — worth recognising this structure as identical across every insurance sector Solvency II applies to, life insurance included."
-            },
-            {
-                "q": "Why might calculating the SCR for a life insurer's book require materially different risk modules than for a health and care insurer's book, echoing SA1's material?",
-                "a": "Life insurance risks (mortality, longevity, lapse, and market risk from guarantees) have different drivers and correlation structures than morbidity-driven health and care risk, requiring the standard formula or internal model to capture life-specific risk modules.",
-                "explain": "This directly recalls SA1's product-specific-capital-modelling material — worth recognising that Solvency II's <em>capital</em> calculation must reflect whichever risk drivers are material to the specific book being assessed, life or health and care."
-            },
-            {
-                "q": "Why might 'longevity risk' and 'mortality risk' be modelled as distinct, and sometimes offsetting, risk modules under Solvency II for a life insurer with both annuity and protection business?",
-                "a": "Longevity risk (annuitants living longer than expected) and mortality risk (policyholders dying sooner than expected) move in opposite directions for the insurer's balance sheet, so a life insurer with both business types has some natural diversification benefit that a pure single-product insurer would not have.",
-                "explain": "This directly recalls Module 6's inverted-risk-exposure material — worth recognising this natural diversification as a genuine, quantifiable capital benefit under Solvency II, not just a qualitative business-mix observation."
-            },
-            {
-                "q": "Why might Solvency II's technical provisions for a with-profits fund be particularly complex to calculate, given the fund's embedded discretion?",
-                "a": "Valuing with-profits liabilities requires modelling the insurer's own future discretionary bonus decisions under a market-consistent framework, a more complex exercise than valuing a liability with fixed, contractually-determined cashflows.",
-                "explain": "This directly recalls Module 7's with-profits-discretion material — worth recognising that market-consistent valuation of discretionary benefits requires explicitly modelling the insurer's own future decision-making, not just projecting fixed cashflows."
-            },
-            {
-                "q": "Why might the risk margin component of technical provisions be particularly significant for long-duration annuity business, echoing SA1's LTC-risk-margin material?",
-                "a": "The risk margin compensates for the cost of holding capital against non-hedgeable risks over the liability's remaining lifetime, and annuity business carries this capital cost for a potentially very long payment horizon, making the risk margin a proportionately larger component of its provisions.",
-                "explain": "This directly recalls SA1's LTC-risk-margin material — worth recognising the same duration-driven risk margin principle applying to annuities as the clearest life insurance parallel to SA1's long-term care example."
-            },
-            {
-                "q": "How does this module's Solvency II material connect back to the general regulatory-approaches material covered in Module 9?",
-                "a": "Module 9 established that prudential regulation aims to protect insurer financial soundness through capital and reporting requirements; Solvency II is the concrete regulatory regime through which that general prudential objective is actually implemented for life insurers in practice.",
-                "explain": "This closing card ties this module back to Module 9 explicitly — worth recognising Solvency II as the practical implementation of Module 9's general prudential-regulation objective, echoing SA1's identical framing."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Solvency II (2)",
-        "description": "Covers further Solvency II considerations for life insurers, including the matching adjustment, volatility adjustment, ORSA, and internal models.",
-        "cards": [
-            {
-                "q": "What is the 'matching adjustment' under Solvency II, and why is it particularly relevant to annuity business specifically?",
-                "a": "The matching adjustment allows an insurer to discount certain long-term, predictable liabilities (like annuities) using a higher rate reflecting the return on assets held to back them, where those assets are closely cashflow-matched to the liabilities, recognising the genuine illiquidity premium available on a held-to-maturity matched portfolio.",
-                "explain": "This directly recalls Module 4's ALM/matching material — worth recognising the matching adjustment as the <em>specific</em> Solvency II mechanism rewarding genuine cashflow matching (CM2's technique) with a more favourable discount rate for reserving purposes."
-            },
-            {
-                "q": "Why does using the matching adjustment require an insurer to demonstrate strict asset-liability matching criteria, rather than being available to any annuity book?",
-                "a": "Since the matching adjustment relies on assets being reliably held to maturity with predictable cashflows closely matching the liabilities, using it inappropriately (e.g. with mismatched or illiquid assets) could materially overstate the insurer's genuine financial strength, so strict eligibility criteria and ongoing monitoring apply.",
-                "explain": "This directly recalls CM2's matching-quality material — worth recognising the matching adjustment as a genuine <em>reward</em> for demonstrably sound ALM practice, not a free capital benefit available regardless of actual asset quality."
-            },
-            {
-                "q": "What is the 'volatility adjustment' under Solvency II, and how does it differ in purpose from the matching adjustment?",
-                "a": "The volatility adjustment provides a smaller, more broadly-applicable adjustment to the discount rate reflecting general market volatility, reducing the impact of short-term market noise on technical provisions, without requiring the strict matching criteria the matching adjustment demands.",
-                "explain": "Worth contrasting directly against the matching adjustment above — the volatility adjustment is a <em>broader</em>, less stringent tool addressing general market-noise volatility, while the matching adjustment specifically rewards demonstrated, strict cashflow matching."
-            },
-            {
-                "q": "Why might a life insurer's ORSA need to consider the combined impact of mortality, longevity, lapse and market risk together, rather than assessing each in isolation?",
-                "a": "These risks can interact in important ways (e.g. a market downturn combined with unfavourable lapse experience), so a forward-looking assessment of overall solvency needs must consider combined, correlated stress scenarios, not just each risk module's standalone impact.",
-                "explain": "This directly recalls SA1's ORSA material — worth recognising that a useful ORSA goes beyond simply re-running the standard formula's risk modules individually; it should explore combined, correlated stresses relevant to the insurer's specific risk profile."
-            },
-            {
-                "q": "Why might a life insurer developing an internal model need particular focus on modelling policyholder behaviour (e.g. lapse rates) under stressed conditions?",
-                "a": "Policyholder behaviour can change under stress (e.g. lapse rates rising or falling in response to market conditions or product guarantees becoming valuable), and a standard formula may not adequately capture an insurer's own specific book's behavioural dynamics, making this a common area where internal models add genuine value.",
-                "explain": "This directly recalls SA1's internal-model-versus-standard-formula material — worth recognising policyholder behaviour modelling as an important, life-insurance-specific area where bespoke internal modelling can meaningfully improve on generic standard formula assumptions."
-            },
-            {
-                "q": "How do the matching adjustment and volatility adjustment together illustrate a genuine theme running through this whole Solvency II topic area?",
-                "a": "Both mechanisms show that Solvency II is not a single rigid formula but a framework offering different tools calibrated to different circumstances (strict long-term matching versus general market-noise smoothing), rewarding insurers whose practices reduce risk with correspondingly favourable regulatory treatment.",
-                "explain": "This closing card ties Modules 10-11 together — worth recognising Solvency II's genuine underlying philosophy: regulatory treatment that responds to an insurer's <em>actual</em> risk-reducing practices, not a one-size-fits-all capital calculation."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Profit and value reporting",
-        "description": "Covers how life insurers measure and report profit and value, including embedded value and IFRS 17 reporting approaches.",
-        "cards": [
-            {
-                "q": "Why might a life insurer report profit under multiple different bases (statutory, IFRS 17, embedded value), echoing SA1's material?",
-                "a": "Different bases serve different purposes — statutory reporting supports regulatory solvency assessment, IFRS 17 provides comparable financial statements for investors, and embedded value captures the discounted value of in-force business — each answering a different stakeholder question.",
-                "explain": "This directly recalls SA1's multiple-reporting-bases material — worth recognising this as a universal life-and-health-insurance reporting principle, not specific to either sector alone."
-            },
-            {
-                "q": "Why is embedded value particularly important for assessing a life insurer's true economic value, given the long-duration nature of many life products?",
-                "a": "Embedded value captures the present value of future profits expected to emerge from existing in-force business, which is essential for long-duration products (annuities, with-profits, whole of life) whose true economic value is heavily weighted toward future profit emergence not yet visible in current-year statutory profit.",
-                "explain": "This directly recalls SA1's embedded-value material — worth recognising life insurance, with its especially long product durations, as arguably the sector where embedded value reporting is <em>most</em> essential across the whole insurance industry."
-            },
-            {
-                "q": "Why might a new annuity or with-profits policy's statutory profit appear low or negative in its early years, despite a positive embedded value contribution, echoing SA1's new-business-strain material?",
-                "a": "Statutory reporting requires prudent reserves to be set up at the point of sale, depressing reported early profit even though embedded value (capturing the full expected future profit stream) may already be positive from inception.",
-                "explain": "This directly recalls SA1's new-business-strain material — worth recognising this apparent conflict as entirely consistent: the two bases measure the <em>same</em> underlying economics differently, not contradictory results."
-            },
-            {
-                "q": "Why does IFRS 17's contractual service margin (CSM) matter particularly for with-profits and long-duration annuity business, echoing SA1's material?",
-                "a": "The CSM represents unearned future profit released gradually as service is provided, directly shaping how a long-duration product's total expected profit is spread across many future reporting periods, which matters especially for products whose profit emerges over decades rather than a few years.",
-                "explain": "This directly recalls SA1's CSM material — worth recognising that the CSM's importance scales directly with product <em>duration</em>, making it especially significant for life insurance's characteristically very long-duration products."
-            },
-            {
-                "q": "Why might an 'analysis of embedded value movement' be a particularly valuable management tool for a life insurer with mixed protection, savings and annuity business?",
-                "a": "Decomposing the year-on-year embedded value change into components (new business, expected unwind, experience variances, assumption changes) by product line reveals which specific parts of a diversified book are driving value creation or destruction, more actionable than a single combined total.",
-                "explain": "This directly previews this course's analysis-of-surplus module — worth recognising that a diversified life insurer's embedded value analysis is most useful when broken down by product <em>line</em>, not just reported as one aggregated whole-company figure."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "Professional standards, capital management and reinsurance",
-        "description": "Covers professional standards and ethics for life actuaries, capital management strategy, and the role of reinsurance in life insurance.",
-        "cards": [
-            {
-                "q": "Why might an actuary holding a statutory reporting role (e.g. Chief Actuary or With-Profits Actuary) at a life insurer carry personal professional responsibilities distinct from the insurer's corporate obligations, echoing SA1's material?",
-                "a": "A statutory actuarial role typically carries personal accountability for specific technical opinions (e.g. on with-profits bonus fairness or reserve adequacy), meaning the individual actuary can face professional consequences distinct from, and sometimes in tension with, the insurer's own commercial interests.",
-                "explain": "This directly recalls SA1's personal-accountability material — worth recognising the With-Profits Actuary role specifically as a distinctive, life-insurance-specific example of this general principle, given the fairness-of-discretion issues raised in Module 7."
-            },
-            {
-                "q": "Why might a life insurer's finance director pressuring the actuary to adopt optimistic mortality improvement assumptions for annuity reserving present a genuine ethical conflict, echoing SA1's material?",
-                "a": "Understating future mortality improvement would understate annuity reserves and flatter near-term reported profit, but professional standards require the actuary to maintain assumptions supported by the evidence rather than adjusted to satisfy commercial pressure.",
-                "explain": "This directly recalls SA1's professional-standards ethical-scenario material — worth recognising this as the life-insurance mirror of SA1's LTC-assumption-pressure scenario, with annuity mortality improvement playing the equivalent role."
-            },
-            {
-                "q": "Why might a life insurer hold capital buffers above its calculated SCR, rather than managing capital exactly to the regulatory minimum, echoing SA1's material?",
-                "a": "A buffer provides genuine resilience against adverse experience (e.g. a pandemic mortality shock, or a sharp fall in interest rates affecting guarantee costs) without immediately breaching regulatory thresholds, giving the insurer time and flexibility to respond.",
-                "explain": "This directly recalls SA1's capital-buffer material — worth recognising the same underlying principle applying to life insurers, with interest-rate-driven guarantee cost shocks as a particularly relevant life-insurance-specific stress scenario."
-            },
-            {
-                "q": "Why might a life insurer use reinsurance for both mortality risk on protection business and longevity risk on annuity business, using different reinsurance structures for each?",
-                "a": "Mortality risk reinsurance typically resembles quota share or surplus arrangements ceding a share of individual policy risk, while longevity risk reinsurance (e.g. longevity swaps) typically transfers the aggregate risk that a whole annuity book's mortality experience improves faster than assumed, a different risk transfer mechanism.",
-                "explain": "This directly recalls SA1's reinsurance-structure material — worth recognising that life insurance reinsurance spans both traditional individual-risk structures <em>and</em> newer aggregate, index-based longevity risk transfer instruments."
-            },
-            {
-                "q": "Why might raising new capital to support a bulk annuity transaction (taking on a pension scheme's liabilities) carry genuine strategic significance beyond the immediate transaction, echoing CB1's material?",
-                "a": "A large bulk annuity transaction can materially change the insurer's overall risk profile and capital requirements, so the capital-raising decision should be assessed against the insurer's wider strategy and risk appetite, not evaluated purely as a standalone transaction.",
-                "explain": "This directly recalls CB1's capital-raising and SA1's strategy-assessment material — worth recognising bulk annuity transactions as a significant, real-world example of a strategic decision with material capital management consequences."
-            }
-        ]
-    },
-    {
-        "id": "m14",
-        "title": "Asset-liability management",
-        "description": "Covers how life insurers manage the relationship between assets and liabilities across with-profits, unit-linked and annuity business.",
-        "cards": [
-            {
-                "q": "Why is asset-liability management particularly important for annuity business specifically, echoing CM2's and SA1's material?",
-                "a": "A long-duration annuity liability's value is highly sensitive to interest rate changes over a very long horizon, so holding duration-matched assets (e.g. long-dated bonds, potentially supported by the matching adjustment) protects the insurer's balance sheet from adverse rate movements.",
-                "explain": "This directly recalls CM2's immunisation material and Module 11's matching-adjustment material — worth recognising annuity ALM as the clearest, most textbook real-world example of CM2's matching principle in the whole life insurance sector."
-            },
-            {
-                "q": "Why might a with-profits fund's ALM strategy need to balance matching guarantee liabilities against pursuing growth assets to support bonus generation, echoing Module 7's material?",
-                "a": "Guarantees within a with-profits fund benefit from matching to reduce risk, while genuine bonus generation typically requires some allocation to growth assets (e.g. equities) whose expected returns exceed matched bond yields, creating a genuine tension the fund's ALM strategy must balance.",
-                "explain": "This directly recalls Module 7's with-profits-bonus material — worth recognising with-profits ALM as involving a genuine trade-off (safety of matching versus growth potential) that annuity ALM, focused purely on matching, does not face in the same way."
-            },
-            {
-                "q": "Why does unit-linked business require a different ALM approach from with-profits or annuity business?",
-                "a": "Since unit-linked investment risk and return pass directly to the policyholder, the insurer's own ALM concern is largely limited to managing charges, expenses, and any embedded guarantees, rather than managing a large pool of insurer-owned assets against insurer-owned liabilities.",
-                "explain": "This directly recalls Module 3's unit-linked-risk-transfer material — worth recognising that 'ALM' means something different across a life insurer's different product lines, not a single uniform activity."
-            },
-            {
-                "q": "Why might a life insurer use derivatives (e.g. interest rate swaps or equity options) as part of its ALM strategy, echoing CM2's material?",
-                "a": "Derivatives can efficiently adjust interest rate or equity exposure without needing to buy or sell large quantities of the underlying assets directly, providing a flexible tool for fine-tuning matching or hedging embedded guarantee costs (Module 8's material).",
-                "explain": "This directly recalls CM2's derivative-hedging material and Module 8's guarantee-cost material — worth recognising derivatives as a practical tool for hedging embedded option risk that would be difficult or inefficient to manage through the underlying assets alone."
-            },
-            {
-                "q": "Why might a life insurer's ALM strategy need periodic review as its book of business changes over time, echoing SA1's recurring theme?",
-                "a": "As new business is written and existing policies mature, lapse, or claim, the insurer's overall liability profile shifts, so an ALM strategy set for a past liability profile may no longer provide appropriate matching for the current book.",
-                "explain": "This directly recalls SA1's ALM-ongoing-review material — worth recognising this same ongoing-monitoring discipline applying identically to life insurance ALM."
-            }
-        ]
-    },
-    {
-        "id": "m15",
-        "title": "Analysis of experience and surplus",
-        "description": "Covers how life insurers monitor actual experience against assumptions and decompose movements in surplus, embedded value and profit.",
-        "cards": [
-            {
-                "q": "Why does a life insurer need to regularly analyse actual mortality, longevity, lapse and expense experience against assumptions, echoing SA1's and CS2's material?",
-                "a": "Comparing actual experience against assumptions reveals whether pricing and reserving assumptions remain appropriate, allowing timely correction before mispriced or under-reserved business accumulates to a materially damaging scale.",
-                "explain": "This directly recalls SA1's and CS2's experience-monitoring material — worth recognising this as a universal actuarial discipline applying identically across life and health and care insurance."
-            },
-            {
-                "q": "Why might an annuity insurer's experience analysis need to separately monitor mortality improvement by cause of death or socioeconomic group, rather than a single aggregate longevity trend?",
-                "a": "Different subgroups of annuitants can experience different mortality improvement trends (e.g. driven by differential access to medical advances), so an aggregated single trend could mask offsetting or diverging patterns that separate analysis would reveal.",
-                "explain": "This directly recalls SA1's condition-level-granularity material — worth recognising the same principle applying to longevity experience analysis: analysing at too aggregated a level can hide important subgroup-specific trends."
-            },
-            {
-                "q": "Why does distinguishing 'experience variances' from 'assumption changes' matter within a life insurer's surplus analysis, echoing SA1's material?",
-                "a": "An experience variance reflects a single period's actual outcome differing from assumption, while an assumption change reflects a deliberate, forward-looking revision to future expectations — conflating them would obscure whether a result is a one-off or a persistent, forward-looking change.",
-                "explain": "This directly recalls SA1's surplus-analysis decomposition material — worth recognising this distinction as equally essential for life insurance surplus analysis as for health and care."
-            },
-            {
-                "q": "Why might new business strain typically appear as a distinct component within a life insurer's surplus analysis, echoing SA1's and CB1's material?",
-                "a": "New business strain reflects a deliberate, expected reduction in surplus from writing new business (due to upfront reserving and acquisition costs), and isolating it prevents this expected, growth-related drag from being confused with adverse experience elsewhere in the book.",
-                "explain": "This directly recalls SA1's and CB1's new-business-strain material — worth recognising the same principle applying identically to life insurance, where new business strain is a particularly well-known, long-established feature of the industry."
-            },
-            {
-                "q": "Why might an 'unwind of discount' component be particularly significant within an embedded value movement analysis for annuity business specifically?",
-                "a": "Since annuity liabilities and their supporting assets are typically very long-duration, simply moving one year closer to when future profits emerge mechanically increases embedded value by a larger amount than for a shorter-duration product, purely as a function of the discount unwinding over a longer remaining horizon.",
-                "explain": "This directly recalls SA1's and Module 12's unwind-of-discount material — worth recognising that this mechanical effect scales directly with liability <em>duration</em>, making it especially significant for annuity business specifically."
-            }
-        ]
-    },
-    {
-        "id": "m16",
-        "title": "Assessing, recommending and implementing strategies",
-        "description": "Covers the skills of assessing strategic options, making a justified recommendation, and working through its downstream implications for a life insurer.",
-        "cards": [
-            {
-                "q": "Why must assessing a proposed strategy for a life insurer (e.g. entering the bulk annuity market) start from that insurer's own specific objectives, capital position and risk appetite, echoing SA1's material?",
-                "a": "The same strategic option could be excellent for one insurer and unsuitable for another depending entirely on its specific capital position, existing product mix, and risk appetite, making context-specific assessment essential rather than a generic checklist.",
-                "explain": "This directly recalls SA1's context-specific-assessment material — worth recognising this principle as identical across every SA subject: a strong answer is always anchored in the <em>specific</em> scenario given."
-            },
-            {
-                "q": "A life insurer with strong annuity expertise but no with-profits experience is considering acquiring a closed with-profits book. Discuss one factor the insurer should assess.",
-                "a": "The insurer should assess whether it has, or can build, the genuine governance and actuarial expertise needed to exercise fair bonus discretion (Module 7's material) across a closed fund with no new business to dilute legacy guarantee costs, a materially different skill set from its existing annuity expertise.",
-                "explain": "This is a complex strategic assessment drawing on Module 7's with-profits-discretion material — worth recognising that a strong answer identifies the <em>specific</em> capability gap (with-profits governance) rather than assessing the acquisition generically."
-            },
-            {
-                "q": "Why should a strategic recommendation for a life insurer explicitly acknowledge genuine trade-offs, rather than presenting the chosen option as unambiguously best, echoing SA1's material?",
-                "a": "Real strategic decisions almost always involve genuine trade-offs (e.g. capital efficiency versus diversification benefit), so acknowledging these demonstrates a balanced, realistic understanding rather than an oversimplified, one-sided justification.",
-                "explain": "This directly recalls SA1's balanced-recommendation material — worth recognising that examiners typically reward candidates who show awareness of a recommendation's downsides, not just those who present only supporting arguments."
-            },
-            {
-                "q": "Why might entering the bulk annuity market have genuine capital and reinsurance implications beyond the immediate transaction, echoing SA1's implications material?",
-                "a": "A large bulk annuity transaction directly increases the insurer's longevity risk exposure and SCR, potentially requiring additional capital raising or increased use of longevity reinsurance to manage the resulting risk concentration, implications that should be worked through explicitly rather than assumed away.",
-                "explain": "This directly recalls SA1's implications-of-strategies material and Module 13's reinsurance material — worth recognising that a complete answer traces a strategic decision through to its concrete capital and reinsurance consequences."
-            },
-            {
-                "q": "Why might a recommendation need to specify how its success will be monitored going forward, rather than treating the decision as final once implemented, echoing SA1's material?",
-                "a": "A strategy's success is rarely fully knowable at the point of recommendation, so specifying how outcomes will be tracked (e.g. against experience-analysis and surplus-analysis metrics) shows the recommendation is designed to be verified and adjusted over time.",
-                "explain": "This directly recalls SA1's ongoing-monitoring-of-strategy material — worth recognising this as a universal closing principle for any SA-subject strategic recommendation, life insurance included."
-            }
-        ]
-    },
-    {
-        "id": "m17",
-        "title": "International comparison and best practice",
-        "description": "Covers comparing life insurance markets and regulatory approaches across jurisdictions, and identifying transferable best practice.",
-        "cards": [
-            {
-                "q": "Why might comparing life insurance markets across jurisdictions reveal transferable insight, rather than being purely descriptive background, echoing SA1's material?",
-                "a": "Observing how other markets have addressed similar challenges (e.g. managing legacy with-profits guarantees, or structuring bulk annuity regulation) can surface approaches not obvious from studying a single market in isolation, informing better strategic decisions.",
-                "explain": "This directly recalls SA1's national-systems-comparison material — worth recognising the same analytical value applying to comparing life insurance markets specifically, not just health and care systems."
-            },
-            {
-                "q": "Why might a life insurer operating outside the Solvency II framework still be subject to a broadly similar risk-based capital regime, echoing SA1's material?",
-                "a": "Different jurisdictions have developed their own risk-based capital frameworks (e.g. US risk-based capital) sharing Solvency II's broad goal of ensuring adequate capital relative to risk, but differing in technical detail and calibration, reflecting different regulatory traditions.",
-                "explain": "This directly recalls SA1's comparative-regulation material — worth recognising Solvency II as one example of a risk-based capital regime, not the only possible approach even within life insurance specifically."
-            },
-            {
-                "q": "Why might best practice in with-profits governance increasingly emphasise transparent, documented bonus-setting processes, echoing Module 7's fairness material?",
-                "a": "Clear documentation and transparency around how bonus decisions are made helps demonstrate fair treatment of different policyholder generations and supports genuine accountability, directly addressing the inter-generational fairness challenge with-profits business inherently carries.",
-                "explain": "This directly recalls Module 7's inter-generational-fairness material — worth recognising transparent governance as a specific, concrete example of best practice responding directly to with-profits' most distinctive conduct risk."
-            },
-            {
-                "q": "Why might best practice in longevity risk management increasingly favour a combination of reinsurance, matching adjustment-eligible assets, and longevity hedging instruments, rather than relying on a single technique?",
-                "a": "Each technique addresses the risk differently (reinsurance transfers risk to a specialist counterparty, matching adjustment rewards genuine asset-liability matching, hedging instruments target specific longevity trend risk), so combining them can achieve more efficient, diversified risk management than relying on any single approach alone.",
-                "explain": "This directly recalls Module 11's matching-adjustment material and Module 13's reinsurance material — worth recognising best practice as often <em>combining</em> multiple risk management tools, not choosing a single 'best' technique in isolation."
-            },
-            {
-                "q": "Why might identifying best practice be considered an ongoing, evolving exercise rather than a fixed body of knowledge, echoing SA1's recurring theme?",
-                "a": "As regulation, mortality/longevity trends, and market conditions evolve, what counts as best practice evolves too, meaning best-practice knowledge itself requires periodic review rather than being treated as permanently fixed.",
-                "explain": "This directly recalls SA1's ongoing-review theme applied to best practice specifically — worth recognising this as a universal closing principle recurring across every SA subject's best-practice material."
-            }
-        ]
-    },
-    {
-        "id": "m18",
-        "title": "Solving complex issues and glossary",
-        "description": "Covers applying the full range of SA2 knowledge and skills to complex, multi-dimensional life insurance problems, and consolidates key syllabus terminology.",
-        "cards": [
-            {
-                "q": "Why does SA2 include a dedicated focus on solving complex issues, drawing on every earlier module, echoing SA1's material?",
-                "a": "Real strategic and technical problems in life insurance rarely fall neatly into a single topic area; a complex issue typically requires drawing on product knowledge, pricing, regulation, reporting, and strategic judgement simultaneously.",
-                "explain": "This directly recalls SA1's complex-issue-integration material — worth recognising this module as this course's deliberate integration point, combining skills the earlier modules mostly developed in isolation."
-            },
-            {
-                "q": "A life insurer must decide whether to close its with-profits fund to new business while managing existing policyholders' fair treatment. Discuss why this represents a complex issue.",
-                "a": "This decision involves competing considerations across multiple topic areas at once — conduct obligations to existing policyholders (Module 9), capital implications of a shrinking, ageing fund (Module 13), and strategic implications for the insurer's wider business (Module 16) — requiring integrated judgement rather than a single-dimension analysis.",
-                "explain": "This directly recalls this module's integration theme — worth recognising that resolving this specific issue requires drawing on conduct, capital, and strategy material together, not any single module in isolation."
-            },
-            {
-                "q": "What is the 'matching adjustment' under Solvency II, as a glossary-style precise restatement of Module 11's material?",
-                "a": "A mechanism allowing an insurer to discount certain long-term, predictable liabilities (like annuities) using a higher rate reflecting the return on assets held to back them, where those assets are closely cashflow-matched to the liabilities and held to maturity.",
-                "explain": "This directly recalls Module 11's matching-adjustment material — worth treating this as the precise definition to reach for if an exam question asks you to explain or apply the matching adjustment directly."
-            },
-            {
-                "q": "What is a 'guaranteed annuity option' (GAO), as a glossary-style precise restatement of Module 4's material?",
-                "a": "A guarantee giving a policyholder the right to convert an accumulated fund into an annuity at a specified, guaranteed rate, which can become severely costly to the insurer if market annuity rates fall well below the guaranteed rate.",
-                "explain": "This directly recalls Module 4's GAO material — worth treating this as the precise definition to use if asked to explain why legacy guarantees can pose severe long-term risk to a life insurer."
-            },
-            {
-                "q": "Why does this closing module deliberately draw its content from across every earlier module, rather than introducing wholly new material, echoing SA1's glossary approach?",
-                "a": "This module's purpose is consolidative and integrative, bringing together precise terminology and complex, multi-topic problem-solving practice using material already developed throughout the course, supporting confident, accurate application in the actual exam.",
-                "explain": "This closing card confirms this module completes SA2's structure exactly as previewed in Module 1 — worth returning to this whole deck for a final, holistic review before attempting the practice question bank."
-            }
-        ]
-    }
-    ]
-,
+      {
+          "id": "m01",
+          "title": "Introduction to Subject SA2",
+          "description": "ActEd's Chapter 0: SA2's aims, its four syllabus topics and weightings, the UK context of the Core Reading, and how SA2 builds on SP2 towards advising on complex life insurance problems.",
+          "cards": [
+              {
+                  "q": "What are SA2's four syllabus topics?",
+                  "a": "Products and business environment (20%); regulatory, legislative and taxation environment (25%); reporting and management of capital and profit (25%); business management (30%).",
+                  "explain": "Business management is largest."
+              },
+              {
+                  "q": "How does SA2 differ from SP2?",
+                  "a": "SA2 applies principles to complex, practical problems in a specific (mainly UK) environment, requiring recommendations.",
+                  "explain": "Application."
+              },
+              {
+                  "q": "What jurisdiction does SA2 focus on?",
+                  "a": "Primarily the UK, with comparisons to other jurisdictions (syllabus 2.5, 3.1.2, 3.3.2).",
+                  "explain": "Know UK rules."
+              },
+              {
+                  "q": "What skills does SA2 test?",
+                  "a": "Analysing complex problems, integrating factors, evaluating critically, proposing solutions.",
+                  "explain": "Higher-order."
+              },
+              {
+                  "q": "Why is regulation heavily weighted?",
+                  "a": "Life insurance is highly regulated; regulation drives capital, products and conduct.",
+                  "explain": "25%."
+              },
+              {
+                  "q": "What is the Core Reading date for 2025 exams?",
+                  "a": "31 May 2024.",
+                  "explain": "Later changes not required."
+              },
+              {
+                  "q": "What are typical SA2 exam scenarios?",
+                  "a": "Product launches, capital actions, with-profits management, M&A, closed funds, regulatory changes.",
+                  "explain": "Strategic."
+              },
+              {
+                  "q": "Why must SA2 answers consider stakeholders?",
+                  "a": "Policyholders, shareholders, regulators, distributors and staff are affected differently.",
+                  "explain": "Balance."
+              },
+              {
+                  "q": "What role does Solvency UK play?",
+                  "a": "Framework for capital and governance of UK insurers post-Brexit (reformed Solvency II).",
+                  "explain": "Chapters 9–10."
+              },
+              {
+                  "q": "What is the role of the Consumer Duty?",
+                  "a": "FCA rules requiring good customer outcomes.",
+                  "explain": "Chapter 12."
+              },
+              {
+                  "q": "Why are with-profits chapters significant?",
+                  "a": "Legacy with-profits business remains material in UK insurers.",
+                  "explain": "Chapters 18–20."
+              },
+              {
+                  "q": "What is the link between capital and profit?",
+                  "a": "Profit emerges from releasing capital and margins; capital constrains growth.",
+                  "explain": "Topic 3."
+              },
+              {
+                  "q": "How should SA2 answers be structured?",
+                  "a": "Identify issues, analyse with frameworks, recommend with justification.",
+                  "explain": "Chapter 23."
+              },
+              {
+                  "q": "What is the importance of UK tax in SA2?",
+                  "a": "Tax affects product design and profitability.",
+                  "explain": "Chapters 6–7."
+              },
+              {
+                  "q": "Why know other jurisdictions?",
+                  "a": "Syllabus asks for comparisons of regimes.",
+                  "explain": "Principles."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Life insurance products (1)",
+          "description": "Protection and flexible products: individual and group term assurance, income protection, critical illness and universal life — benefits, features, purpose, and key risks to policyholder and insurer.",
+          "cards": [
+              {
+                  "q": "What is group life insurance?",
+                  "a": "Employer-arranged death-in-service cover, typically a multiple of salary, often via trust with free cover limits.",
+                  "explain": "Annually renewable, experience-rated."
+              },
+              {
+                  "q": "What is income protection?",
+                  "a": "Regular income during incapacity after a deferred period.",
+                  "explain": "Morbidity risk."
+              },
+              {
+                  "q": "What is critical illness insurance?",
+                  "a": "Lump sum on diagnosis of specified conditions.",
+                  "explain": "Definitional risk."
+              },
+              {
+                  "q": "What is universal life?",
+                  "a": "Flexible-premium policy with an account value credited with interest, from which cost of insurance and charges are deducted.",
+                  "explain": "US-style."
+              },
+              {
+                  "q": "What are key insurer risks on level-premium term?",
+                  "a": "Mortality/anti-selection, lapse (esp. selective), reviewable vs guaranteed rates.",
+                  "explain": "Reinsurance common."
+              },
+              {
+                  "q": "What are key policyholder risks on protection?",
+                  "a": "Claim not meeting definitions, premium increases, lapsing when cover needed.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "Why might term cover be reviewable?",
+                  "a": "Transfers trend risk to policyholders, reducing price.",
+                  "explain": "Conduct scrutiny."
+              },
+              {
+                  "q": "What is a relevant life policy?",
+                  "a": "Employer-paid individual death-in-service cover for an employee, outside the pension regime.",
+                  "explain": "Tax efficiency."
+              },
+              {
+                  "q": "What are group IP features?",
+                  "a": "Benefit % of salary after deferred period, rehabilitation services, rate guarantees.",
+                  "explain": "Employer benefit."
+              },
+              {
+                  "q": "What is the insurer's risk in universal life?",
+                  "a": "Interest guarantees, cost of insurance changes, persistency.",
+                  "explain": "Guarantees."
+              },
+              {
+                  "q": "How do protection products use reinsurance?",
+                  "a": "Heavy reinsurance (often quota share/risk premium) for capacity and expertise.",
+                  "explain": "UK market."
+              },
+              {
+                  "q": "What is the purpose of protection products for insurers?",
+                  "a": "Profitable, capital-light business diversifying longevity exposure.",
+                  "explain": "Natural hedge."
+              },
+              {
+                  "q": "What drives protection pricing competition?",
+                  "a": "Aggregators and advisers, commission levels.",
+                  "explain": "Price-sensitive."
+              },
+              {
+                  "q": "What is family income benefit?",
+                  "a": "Decreasing term paying income until term end.",
+                  "explain": "Income replacement."
+              },
+              {
+                  "q": "What are key risks on CI to the insurer?",
+                  "a": "Medical advances increasing claims, definitional changes.",
+                  "explain": "Trend risk."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Life insurance products (2)",
+          "description": "Savings, retirement and specialist products: endowments, investment bonds, individual and group pensions, annuities and income drawdown, wraps, variable annuities, equity release, Takaful and microinsurance — features, purpose and key risks.",
+          "cards": [
+              {
+                  "q": "What is an investment bond?",
+                  "a": "Single-premium unit-linked (or with-profits) life policy for investment, with small death benefit.",
+                  "explain": "UK tax wrapper."
+              },
+              {
+                  "q": "What are individual and group pension products?",
+                  "a": "Personal pensions, group personal pensions, SIPPs, workplace DC schemes (master trusts).",
+                  "explain": "Tax-advantaged."
+              },
+              {
+                  "q": "What is income drawdown?",
+                  "a": "Drawing income from an invested pension fund.",
+                  "explain": "Member bears risk."
+              },
+              {
+                  "q": "What is a wrap/platform?",
+                  "a": "An administration service holding a range of investments and tax wrappers in one account.",
+                  "explain": "Charges and flexibility."
+              },
+              {
+                  "q": "What is a variable annuity?",
+                  "a": "Unit-linked product with guarantees (e.g. GMDB, GMAB, GMIB, GMWB).",
+                  "explain": "Hedging needed."
+              },
+              {
+                  "q": "What is a GMWB?",
+                  "a": "Guaranteed minimum withdrawal benefit — guaranteed withdrawals regardless of fund performance.",
+                  "explain": "Longevity and market risk."
+              },
+              {
+                  "q": "What is equity release?",
+                  "a": "Products releasing home equity, mainly lifetime mortgages repaid on death or care entry.",
+                  "explain": "Long-term assets for annuity backing."
+              },
+              {
+                  "q": "What is the no-negative-equity guarantee?",
+                  "a": "Borrower never owes more than the house value.",
+                  "explain": "Put option on property."
+              },
+              {
+                  "q": "What is Takaful?",
+                  "a": "Sharia-compliant cooperative insurance where participants contribute to a fund managed by an operator.",
+                  "explain": "Wakala, mudaraba models."
+              },
+              {
+                  "q": "What is microinsurance?",
+                  "a": "Low-cost insurance for low-income populations, with simple products and distribution.",
+                  "explain": "Financial inclusion."
+              },
+              {
+                  "q": "What are bulk annuities?",
+                  "a": "Buy-ins and buy-outs of pension scheme liabilities.",
+                  "explain": "Major UK market."
+              },
+              {
+                  "q": "What is the insurer's risk on annuities?",
+                  "a": "Longevity, credit, reinvestment, expenses.",
+                  "explain": "Matching adjustment."
+              },
+              {
+                  "q": "What is an enhanced annuity?",
+                  "a": "Higher payments for impaired lives, underwritten.",
+                  "explain": "Selection."
+              },
+              {
+                  "q": "What risks do equity release products bring?",
+                  "a": "NNEG (property risk), longevity, prepayment, interest rate.",
+                  "explain": "Valuation."
+              },
+              {
+                  "q": "Why do insurers value wraps/platforms?",
+                  "a": "Fee income and customer relationships.",
+                  "explain": "Scale economics."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Life insurance bases",
+          "description": "The product bases — conventional with-profits, accumulating (unitised) with-profits, unit-linked and index-linked — their key features, purpose and key risks to policyholders and insurers.",
+          "cards": [
+              {
+                  "q": "What is conventional with-profits?",
+                  "a": "Guaranteed sum assured plus reversionary and terminal bonuses.",
+                  "explain": "Smoothing and discretion."
+              },
+              {
+                  "q": "What is accumulating with-profits?",
+                  "a": "Units growing with regular bonus rates, terminal bonus, MVR on exit.",
+                  "explain": "Unitised."
+              },
+              {
+                  "q": "What is unit-linked?",
+                  "a": "Benefits linked to unit fund values; policyholder bears investment risk.",
+                  "explain": "Charges."
+              },
+              {
+                  "q": "What is index-linked?",
+                  "a": "Benefits linked to an index (e.g. RPI annuities or equity index bonds).",
+                  "explain": "Hedging."
+              },
+              {
+                  "q": "What are the policyholder risks of with-profits?",
+                  "a": "Discretion, bonus cuts, MVRs, opacity.",
+                  "explain": "PPFM."
+              },
+              {
+                  "q": "What are the insurer risks of with-profits?",
+                  "a": "Guarantees biting, estate depletion, PRE compliance.",
+                  "explain": "Capital."
+              },
+              {
+                  "q": "What are the policyholder risks of unit-linked?",
+                  "a": "Investment risk, charges.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "What are the insurer risks of unit-linked?",
+                  "a": "Expense, persistency, unit pricing, guarantees if any.",
+                  "explain": "Operational."
+              },
+              {
+                  "q": "Why have with-profits sales declined?",
+                  "a": "Low interest rates, opacity, capital intensity, regulatory scrutiny.",
+                  "explain": "Legacy books."
+              },
+              {
+                  "q": "What is an MVR?",
+                  "a": "Market value reduction on surrender of accumulating with-profits.",
+                  "explain": "Protects remaining."
+              },
+              {
+                  "q": "What is smoothing?",
+                  "a": "Limiting payout volatility relative to asset shares.",
+                  "explain": "Estate supports."
+              },
+              {
+                  "q": "What is the purpose of index-linked annuities?",
+                  "a": "Protection against inflation.",
+                  "explain": "Matched with index-linked gilts."
+              },
+              {
+                  "q": "How does the basis affect capital?",
+                  "a": "Guaranteed bases need more capital.",
+                  "explain": "Solvency."
+              },
+              {
+                  "q": "What is a hybrid basis?",
+                  "a": "Unit-linked with guarantees.",
+                  "explain": "Variable annuities."
+              },
+              {
+                  "q": "How is PRE relevant to bases?",
+                  "a": "Governs with-profits discretion.",
+                  "explain": "Regulation."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "General business environment",
+          "description": "The business environment for UK life insurers: competition and new business, distribution, outsourcing, corporate finance (M&A, closed funds, consolidators), climate change, pandemics and data science, and their effect on managing life business.",
+          "cards": [
+              {
+                  "q": "How does competition affect life insurers?",
+                  "a": "Price pressure, product innovation, margins.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "What distribution channels are used?",
+                  "a": "IFAs, restricted advisers, direct/digital, workplace, bancassurance, platforms.",
+                  "explain": "RDR banned commission on advised investments."
+              },
+              {
+                  "q": "What was the Retail Distribution Review?",
+                  "a": "UK reform (2013) banning commission on advised investment products and raising adviser standards.",
+                  "explain": "Fee-based advice."
+              },
+              {
+                  "q": "Why do insurers outsource?",
+                  "a": "Cost reduction, expertise, scalability (administration, IT, investment).",
+                  "explain": "Oversight still needed."
+              },
+              {
+                  "q": "What are risks of outsourcing?",
+                  "a": "Service failure, data protection, concentration, loss of control.",
+                  "explain": "Regulatory expectations."
+              },
+              {
+                  "q": "What are closed funds?",
+                  "a": "Blocks of business no longer writing new policies.",
+                  "explain": "Run-off."
+              },
+              {
+                  "q": "What are consolidators?",
+                  "a": "Firms acquiring closed books to achieve scale efficiencies.",
+                  "explain": "E.g. heritage books."
+              },
+              {
+                  "q": "How do M&A affect life insurers?",
+                  "a": "Part VII transfers, integration, capital synergies.",
+                  "explain": "Corporate finance."
+              },
+              {
+                  "q": "How does climate change affect life insurers?",
+                  "a": "Investment transition risk, mortality changes, disclosure requirements.",
+                  "explain": "Syllabus 1.2."
+              },
+              {
+                  "q": "How did COVID-19 affect life insurers?",
+                  "a": "Excess mortality, market volatility, operational disruption, uncertainty in longevity assumptions.",
+                  "explain": "Pandemic."
+              },
+              {
+                  "q": "How is data science used?",
+                  "a": "Underwriting, pricing, retention, fraud detection, customer insights.",
+                  "explain": "Ethics and regulation."
+              },
+              {
+                  "q": "What are new business considerations?",
+                  "a": "Profitability, capital strain, strategic fit, distribution.",
+                  "explain": "Growth."
+              },
+              {
+                  "q": "What is the bulk annuity market's driver?",
+                  "a": "DB pension schemes de-risking.",
+                  "explain": "Growth area."
+              },
+              {
+                  "q": "How do interest rates affect the business?",
+                  "a": "Guarantees costs, annuity pricing, demand for savings.",
+                  "explain": "Economic."
+              },
+              {
+                  "q": "How does technology change distribution?",
+                  "a": "Digital sales, robo-advice, platforms.",
+                  "explain": "Disruption."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Legislation",
+          "description": "Legislation relevant to UK life insurance: consumer protection (contract law, misrepresentation, cancellation rights, ombudsman and compensation schemes), equality legislation (gender-neutral pricing, disability), and data protection regulation (UK GDPR).",
+          "cards": [
+              {
+                  "q": "What consumer protection applies to life insurance?",
+                  "a": "Insurance Act/CIDRA disclosure rules, cancellation rights, Financial Ombudsman Service, FSCS.",
+                  "explain": "Syllabus 2.1."
+              },
+              {
+                  "q": "What is CIDRA?",
+                  "a": "Consumer Insurance (Disclosure and Representations) Act 2012 — consumers must take reasonable care not to misrepresent; remedies proportionate.",
+                  "explain": "Replaced strict disclosure duty."
+              },
+              {
+                  "q": "What does the FSCS cover for life insurance?",
+                  "a": "100% of claims for long-term insurance if insurer fails.",
+                  "explain": "Protection."
+              },
+              {
+                  "q": "What is the Financial Ombudsman Service?",
+                  "a": "Free dispute resolution for consumers.",
+                  "explain": "Binding on firms."
+              },
+              {
+                  "q": "How does equality legislation affect pricing?",
+                  "a": "Gender-neutral pricing required since 2012 (Test-Achats); disability considerations.",
+                  "explain": "Syllabus 2.1."
+              },
+              {
+                  "q": "What is the effect of gender-neutral pricing?",
+                  "a": "Unisex rates; mix risk if sales skew by gender.",
+                  "explain": "Pricing risk."
+              },
+              {
+                  "q": "How does UK GDPR affect insurers?",
+                  "a": "Rules on processing personal and health data, consent, rights of individuals.",
+                  "explain": "Data regulations."
+              },
+              {
+                  "q": "What is special category data?",
+                  "a": "Sensitive data like health information requiring extra protection.",
+                  "explain": "Underwriting."
+              },
+              {
+                  "q": "How can genetic testing be regulated?",
+                  "a": "Code on Genetic Testing restricts insurers' use of predictive tests.",
+                  "explain": "UK code."
+              },
+              {
+                  "q": "What is a cooling-off period?",
+                  "a": "Right to cancel within a period (e.g. 30 days) after purchase.",
+                  "explain": "Consumer protection."
+              },
+              {
+                  "q": "How does legislation affect claims?",
+                  "a": "Proportionate remedies for misrepresentation.",
+                  "explain": "CIDRA."
+              },
+              {
+                  "q": "What is data subject access?",
+                  "a": "Right of individuals to see their data.",
+                  "explain": "GDPR."
+              },
+              {
+                  "q": "How do trusts interact with life policies?",
+                  "a": "Policies written in trust avoid probate and IHT.",
+                  "explain": "Legal structure."
+              },
+              {
+                  "q": "Why comply with legislation proactively?",
+                  "a": "Avoid fines, redress and reputational damage.",
+                  "explain": "Risk management."
+              },
+              {
+                  "q": "What legislation governs unfair terms?",
+                  "a": "Consumer Rights Act 2015.",
+                  "explain": "Fairness."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "Taxation (1)",
+          "description": "General principles of life insurance taxation from the perspectives of government, policyholders and insurers: the aims of taxing savings, tax treatment of premiums, benefits and funds, and how tax shapes product design and consumer behaviour.",
+          "cards": [
+              {
+                  "q": "What are the government's objectives in taxing life insurance?",
+                  "a": "Raise revenue, encourage saving and protection, fairness between savings vehicles, prevent avoidance.",
+                  "explain": "Syllabus 2.2."
+              },
+              {
+                  "q": "How can tax encourage pension saving?",
+                  "a": "Relief on contributions, tax-free growth, tax-free lump sum.",
+                  "explain": "EET."
+              },
+              {
+                  "q": "How are UK investment bonds taxed for policyholders?",
+                  "a": "Chargeable event gains taxed as income, with a basic-rate credit for onshore bonds and top-slicing relief.",
+                  "explain": "Deferral."
+              },
+              {
+                  "q": "What is top-slicing relief?",
+                  "a": "Spreading a chargeable gain over the years held to determine the rate band.",
+                  "explain": "Reduces higher-rate tax."
+              },
+              {
+                  "q": "What is the 5% withdrawal allowance?",
+                  "a": "Policyholders can withdraw up to 5% of premiums per year tax-deferred.",
+                  "explain": "Investment bonds."
+              },
+              {
+                  "q": "How are protection benefits taxed?",
+                  "a": "Generally tax-free lump sums; policies in trust avoid IHT.",
+                  "explain": "Individual IP benefits tax-free."
+              },
+              {
+                  "q": "How do offshore bonds differ?",
+                  "a": "Gross roll-up without insurer tax; full income tax on gains.",
+                  "explain": "No basic-rate credit."
+              },
+              {
+                  "q": "How does tax affect product design?",
+                  "a": "Products structured to fit favourable tax treatments.",
+                  "explain": "Tax-driven."
+              },
+              {
+                  "q": "What is tax neutrality?",
+                  "a": "Tax not distorting choices between savings vehicles.",
+                  "explain": "Policy aim."
+              },
+              {
+                  "q": "How are pension annuities taxed?",
+                  "a": "As income.",
+                  "explain": "PAYE."
+              },
+              {
+                  "q": "How are purchased life annuities taxed?",
+                  "a": "Only the interest element is taxed.",
+                  "explain": "Capital element exempt."
+              },
+              {
+                  "q": "What is the policyholder perspective on tax?",
+                  "a": "After-tax return and flexibility matter.",
+                  "explain": "Behaviour."
+              },
+              {
+                  "q": "How can tax change risk affect insurers?",
+                  "a": "Products become uncompetitive, in-force profits change.",
+                  "explain": "Risk."
+              },
+              {
+                  "q": "Why might tax differ between onshore and offshore?",
+                  "a": "Different fund taxation.",
+                  "explain": "Competition."
+              },
+              {
+                  "q": "How do ISAs compete with bonds?",
+                  "a": "Tax-free returns, simple, limited allowance.",
+                  "explain": "Alternatives."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "Taxation (2)",
+          "description": "Taxation of UK life insurance companies: the I−E basis for basic life assurance and general annuity business (BLAGAB), trading profits basis, policyholder and shareholder tax, deferred tax and its effect on pricing, reserving and profitability.",
+          "cards": [
+              {
+                  "q": "What is the I−E basis?",
+                  "a": "Taxing investment income and gains less expenses on BLAGAB, representing policyholder tax.",
+                  "explain": "UK specific."
+              },
+              {
+                  "q": "What is BLAGAB?",
+                  "a": "Basic life assurance and general annuity business — mainly non-pension life business.",
+                  "explain": "I−E applies."
+              },
+              {
+                  "q": "How is pensions business taxed in the insurer?",
+                  "a": "Gross roll-up: no tax on policyholder returns.",
+                  "explain": "Trading profits for shareholders."
+              },
+              {
+                  "q": "What is the minimum profits test?",
+                  "a": "Ensures I−E tax is at least equal to tax on trading profits of BLAGAB.",
+                  "explain": "Anti-avoidance."
+              },
+              {
+                  "q": "What is the policyholder rate of tax?",
+                  "a": "Basic rate (20%) on BLAGAB policyholder income/gains.",
+                  "explain": "Credited on bond gains."
+              },
+              {
+                  "q": "How is shareholder profit taxed?",
+                  "a": "Corporation tax on trading profits.",
+                  "explain": "Shareholder share."
+              },
+              {
+                  "q": "How does tax affect pricing?",
+                  "a": "Tax on investment returns reduces net yields in BLAGAB pricing.",
+                  "explain": "Assumptions."
+              },
+              {
+                  "q": "What is excess expenses (XSE)?",
+                  "a": "Expenses exceeding income under I−E carried forward.",
+                  "explain": "Tax asset."
+              },
+              {
+                  "q": "What is deferred tax?",
+                  "a": "Tax on timing differences between accounting and tax profits.",
+                  "explain": "Balance sheet."
+              },
+              {
+                  "q": "How does tax affect with-profits funds?",
+                  "a": "Tax charged to the fund affects asset shares.",
+                  "explain": "Allocation."
+              },
+              {
+                  "q": "What is the effect of IFRS 17 on tax?",
+                  "a": "Transition adjustments spread for tax.",
+                  "explain": "Implementation."
+              },
+              {
+                  "q": "How does tax treatment affect reserving?",
+                  "a": "Tax on future profits reflected in reserves/EV.",
+                  "explain": "Assumptions."
+              },
+              {
+                  "q": "What is the role of the actuary in tax?",
+                  "a": "Estimating tax on projections, allocating to funds.",
+                  "explain": "Modelling."
+              },
+              {
+                  "q": "How can tax changes affect in-force business?",
+                  "a": "Changes in rates alter future profits.",
+                  "explain": "EV sensitivity."
+              },
+              {
+                  "q": "How does tax vary between jurisdictions?",
+                  "a": "Some tax only shareholders; others policyholders.",
+                  "explain": "Comparison."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Regulatory environment",
+          "description": "UK regulatory framework for life insurers: PRA and FCA objectives, rulebooks and supervisory tools, reporting requirements, statutory actuarial roles (chief actuary, with-profits actuary), Part VII transfers, comparison with other jurisdictions, and practical effects on business.",
+          "cards": [
+              {
+                  "q": "What are the PRA's objectives for insurers?",
+                  "a": "Safety and soundness of firms; appropriate protection for policyholders; secondary competitiveness and growth objectives.",
+                  "explain": "Prudential."
+              },
+              {
+                  "q": "What are the FCA's objectives?",
+                  "a": "Consumer protection, market integrity, competition.",
+                  "explain": "Conduct."
+              },
+              {
+                  "q": "What supervisory tools do regulators use?",
+                  "a": "Rulebooks, supervisory statements, reporting, stress tests, skilled person reviews, enforcement.",
+                  "explain": "Syllabus 2.3."
+              },
+              {
+                  "q": "What is the chief actuary role?",
+                  "a": "Senior Management Function (SMF20) responsible for actuarial function advice.",
+                  "explain": "Statutory role."
+              },
+              {
+                  "q": "What is the with-profits actuary?",
+                  "a": "Advises on the fair treatment of with-profits policyholders and exercise of discretion.",
+                  "explain": "SMF20a."
+              },
+              {
+                  "q": "What is a Part VII transfer?",
+                  "a": "Court-approved transfer of insurance business between firms, with an independent expert report.",
+                  "explain": "Liability transfers."
+              },
+              {
+                  "q": "What does the independent expert assess?",
+                  "a": "Whether policyholders' security and benefit expectations are adversely affected.",
+                  "explain": "Report to court."
+              },
+              {
+                  "q": "What is the Senior Managers & Certification Regime?",
+                  "a": "Accountability framework assigning responsibilities to senior individuals.",
+                  "explain": "SM&CR."
+              },
+              {
+                  "q": "What reporting is required?",
+                  "a": "QRTs, SFCR, RSR, ORSA reports.",
+                  "explain": "Solvency UK."
+              },
+              {
+                  "q": "How do regulators compare across jurisdictions?",
+                  "a": "Risk-based (Solvency II/UK), rules-based (e.g. US statutory RBC), principles vs prescription.",
+                  "explain": "Syllabus 2.5."
+              },
+              {
+                  "q": "What is US RBC?",
+                  "a": "Risk-based capital formula from statutory accounts.",
+                  "explain": "Comparison."
+              },
+              {
+                  "q": "How does regulation affect business in practice?",
+                  "a": "Capital requirements shape products; conduct rules shape sales and servicing.",
+                  "explain": "Syllabus 2.6."
+              },
+              {
+                  "q": "What is a skilled person review?",
+                  "a": "Regulator-commissioned independent review of an issue.",
+                  "explain": "Supervisory tool."
+              },
+              {
+                  "q": "What are PRA stress tests?",
+                  "a": "Insurance stress tests (e.g. LIST) assessing resilience.",
+                  "explain": "Industry-wide."
+              },
+              {
+                  "q": "What is the Bermuda regime used for?",
+                  "a": "Reinsurance of UK annuities; regulatory arbitrage concerns.",
+                  "explain": "Funded re."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "Solvency assessment (1)",
+          "description": "The Solvency II / Solvency UK framework: background and scope, the three-pillar structure, Pillar 2 governance (system of governance, key functions, ORSA, prudent person principle), Pillar 3 disclosure and reporting, group supervision, and impact on culture and strategy.",
+          "cards": [
+              {
+                  "q": "What is the background of Solvency II?",
+                  "a": "EU risk-based regime from 2016 replacing Solvency I; UK version reformed as Solvency UK.",
+                  "explain": "Harmonisation."
+              },
+              {
+                  "q": "What are the three pillars?",
+                  "a": "Quantitative requirements; governance and supervisory review; disclosure.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "What are the key functions under Pillar 2?",
+                  "a": "Risk management, compliance, internal audit, actuarial.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is the ORSA?",
+                  "a": "Own Risk and Solvency Assessment of risks and capital over the business plan.",
+                  "explain": "Forward-looking."
+              },
+              {
+                  "q": "What is the prudent person principle?",
+                  "a": "Invest only in assets whose risks can be properly identified, measured and managed.",
+                  "explain": "Investment."
+              },
+              {
+                  "q": "What are Pillar 3 reports?",
+                  "a": "SFCR (public), RSR (private), QRTs.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "What is group supervision?",
+                  "a": "Solvency assessment of insurance groups, including group SCR and governance.",
+                  "explain": "Consolidation."
+              },
+              {
+                  "q": "How did Solvency II change culture?",
+                  "a": "Risk-based decision-making, use test, stronger governance.",
+                  "explain": "Strategy."
+              },
+              {
+                  "q": "What is the use test?",
+                  "a": "Internal model must be used in decision-making.",
+                  "explain": "Embedding."
+              },
+              {
+                  "q": "What are fit and proper requirements?",
+                  "a": "Key persons must be competent and honest.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is the system of governance?",
+                  "a": "Structures, policies and controls ensuring sound management.",
+                  "explain": "Pillar 2."
+              },
+              {
+                  "q": "How did Solvency UK reform reporting?",
+                  "a": "Reduced some reporting burdens.",
+                  "explain": "Reforms."
+              },
+              {
+                  "q": "What is the scope of Solvency II?",
+                  "a": "Insurers and reinsurers above size thresholds.",
+                  "explain": "Exemptions small firms."
+              },
+              {
+                  "q": "How does Solvency II affect strategy?",
+                  "a": "Capital-efficient products, reinsurance, asset choice.",
+                  "explain": "Behaviour."
+              },
+              {
+                  "q": "What is supervisory review process?",
+                  "a": "Regulator evaluation of risk, governance and capital.",
+                  "explain": "Pillar 2."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Solvency assessment (2)",
+          "description": "Solvency II / UK valuation and capital: market-consistent valuation of assets and liabilities, best estimate liabilities and risk margin, matching and volatility adjustments, transitional measures, SCR by standard formula or internal model, MCR, own funds, and solvency approaches in other jurisdictions.",
+          "cards": [
+              {
+                  "q": "How are assets valued under Solvency II?",
+                  "a": "At market value (fair value).",
+                  "explain": "Market-consistent."
+              },
+              {
+                  "q": "What are technical provisions?",
+                  "a": "Best estimate liability plus risk margin.",
+                  "explain": "Liabilities."
+              },
+              {
+                  "q": "What is the best estimate liability?",
+                  "a": "Probability-weighted present value of future cash flows using the risk-free curve.",
+                  "explain": "No prudence."
+              },
+              {
+                  "q": "What is the risk margin?",
+                  "a": "Cost of capital for non-hedgeable risks; reduced by Solvency UK reforms.",
+                  "explain": "Transfer value."
+              },
+              {
+                  "q": "What is the matching adjustment?",
+                  "a": "An addition to the discount rate for liabilities matched by eligible fixed cash flow assets held to maturity.",
+                  "explain": "Annuities."
+              },
+              {
+                  "q": "What is the volatility adjustment?",
+                  "a": "An addition to the discount rate reflecting spread movements.",
+                  "explain": "Less used in UK."
+              },
+              {
+                  "q": "What is TMTP?",
+                  "a": "Transitional measure on technical provisions smoothing the move from Solvency I.",
+                  "explain": "Runs off to 2032."
+              },
+              {
+                  "q": "How is the SCR calculated?",
+                  "a": "Standard formula (modular stresses and correlations) or approved internal model, at 99.5% one-year VaR.",
+                  "explain": "Capital."
+              },
+              {
+                  "q": "What is the MCR?",
+                  "a": "Minimum capital requirement, ultimate intervention point.",
+                  "explain": "Lower."
+              },
+              {
+                  "q": "What are own funds?",
+                  "a": "Capital resources, tiered by quality.",
+                  "explain": "Tier 1–3."
+              },
+              {
+                  "q": "What is the solvency ratio?",
+                  "a": "Own funds / SCR.",
+                  "explain": "Key metric."
+              },
+              {
+                  "q": "How do other jurisdictions assess solvency?",
+                  "a": "US RBC, Bermuda BSCR, ICS globally, Asian regimes.",
+                  "explain": "Syllabus 3.1.2."
+              },
+              {
+                  "q": "What is the fundamental spread?",
+                  "a": "Deduction from asset spread for default and downgrade risk in MA.",
+                  "explain": "PRA-prescribed."
+              },
+              {
+                  "q": "What is the effect of MA on annuity business?",
+                  "a": "Reduces BEL significantly, releasing capital.",
+                  "explain": "Business model."
+              },
+              {
+                  "q": "What is a contract boundary?",
+                  "a": "Limits future premiums/cash flows recognised.",
+                  "explain": "Valuation."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Professional standards and guidance",
+          "description": "Actuarial standards for actuaries in or advising UK life insurers: the Actuaries' Code, FRC TAS 100 and TAS 200, IFoA APS (including those for with-profits and chief actuaries), and their practical effect on actuarial work and communication.",
+          "cards": [
+              {
+                  "q": "What is TAS 100?",
+                  "a": "Generic technical actuarial standard covering judgement, data, assumptions, models and communication.",
+                  "explain": "All work."
+              },
+              {
+                  "q": "What is TAS 200?",
+                  "a": "Insurance technical actuarial standard.",
+                  "explain": "Life and GI."
+              },
+              {
+                  "q": "What is the Actuaries' Code?",
+                  "a": "IFoA principles: integrity, competence, impartiality, compliance, speaking up, communication.",
+                  "explain": "Ethics."
+              },
+              {
+                  "q": "What do IFoA APSs cover for life actuaries?",
+                  "a": "Duties of actuaries in statutory roles (e.g. chief actuary, with-profits actuary).",
+                  "explain": "Practice standards."
+              },
+              {
+                  "q": "What is the whistleblowing duty?",
+                  "a": "Actuaries must report material concerns to regulators where required.",
+                  "explain": "Speaking up."
+              },
+              {
+                  "q": "Why is communication important?",
+                  "a": "Users must understand results, uncertainty and limitations.",
+                  "explain": "TAS."
+              },
+              {
+                  "q": "What is peer review?",
+                  "a": "Independent check of actuarial work.",
+                  "explain": "APS X2."
+              },
+              {
+                  "q": "How should conflicts be handled?",
+                  "a": "Identify, disclose, manage.",
+                  "explain": "Code."
+              },
+              {
+                  "q": "How do standards affect Part VII work?",
+                  "a": "Independent expert reports follow specific requirements.",
+                  "explain": "Rigour."
+              },
+              {
+                  "q": "What documentation is required?",
+                  "a": "Sufficient for another actuary to understand and reproduce work.",
+                  "explain": "TAS 100."
+              },
+              {
+                  "q": "What is materiality?",
+                  "a": "Whether an issue could affect users' decisions.",
+                  "explain": "Proportionality."
+              },
+              {
+                  "q": "How do standards apply to EV work?",
+                  "a": "Assumptions and methods must be appropriate and documented.",
+                  "explain": "Reporting."
+              },
+              {
+                  "q": "Why is independence important for the with-profits actuary?",
+                  "a": "To advise fairly on policyholder interests.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is CPD?",
+                  "a": "Continuing professional development requirements.",
+                  "explain": "Competence."
+              },
+              {
+                  "q": "How do standards interact with regulation?",
+                  "a": "Complementary — regulators rely on actuarial standards.",
+                  "explain": "Framework."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Treating customers fairly",
+          "description": "Fair treatment of customers in UK life insurance: TCF outcomes, the FCA Consumer Duty (products and services, price and value, consumer understanding, consumer support), fair value assessments, vulnerable customers, legacy book fairness and remediation.",
+          "cards": [
+              {
+                  "q": "What is the Consumer Duty?",
+                  "a": "FCA rule (from July 2023) requiring firms to deliver good outcomes for retail customers.",
+                  "explain": "Higher standard."
+              },
+              {
+                  "q": "What are the four Consumer Duty outcomes?",
+                  "a": "Products and services; price and value; consumer understanding; consumer support.",
+                  "explain": "Framework."
+              },
+              {
+                  "q": "What is a fair value assessment?",
+                  "a": "Assessing whether product benefits are reasonable relative to price.",
+                  "explain": "Price and value."
+              },
+              {
+                  "q": "How does the Duty apply to closed books?",
+                  "a": "Applies to existing products from July 2024.",
+                  "explain": "Legacy fairness."
+              },
+              {
+                  "q": "What are vulnerable customers?",
+                  "a": "Customers susceptible to harm due to circumstances.",
+                  "explain": "Extra care."
+              },
+              {
+                  "q": "What actions support fair treatment?",
+                  "a": "Product governance, clear communication, fair charges, good claims handling, monitoring outcomes.",
+                  "explain": "Syllabus 4.1."
+              },
+              {
+                  "q": "What was TCF?",
+                  "a": "Treating Customers Fairly — earlier FCA initiative with six outcomes.",
+                  "explain": "Predecessor."
+              },
+              {
+                  "q": "How can legacy products be unfair?",
+                  "a": "High charges, outdated features, poor value.",
+                  "explain": "Remediation."
+              },
+              {
+                  "q": "What is remediation?",
+                  "a": "Correcting past harm, including compensation.",
+                  "explain": "Conduct risk."
+              },
+              {
+                  "q": "How does TCF apply to with-profits?",
+                  "a": "Fair discretion, PPFM adherence, communication.",
+                  "explain": "COBS 20."
+              },
+              {
+                  "q": "How is consumer understanding tested?",
+                  "a": "Communications testing, comprehension checks.",
+                  "explain": "Evidence."
+              },
+              {
+                  "q": "What is consumer support?",
+                  "a": "Making it easy to use products, switch, claim, complain.",
+                  "explain": "No sludge."
+              },
+              {
+                  "q": "What is the board's responsibility?",
+                  "a": "Annual Consumer Duty report and champion.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "How can data monitor outcomes?",
+                  "a": "MI on complaints, claims, lapses, value.",
+                  "explain": "Evidence."
+              },
+              {
+                  "q": "What are penalties for failures?",
+                  "a": "Fines, redress, restrictions.",
+                  "explain": "Enforcement."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Capital management",
+          "description": "Capital management in life insurers: types of capital assessment (regulatory, economic, rating agency), sources of capital, ongoing solvency assessment and practical modelling, the link between risk, capital and value, and techniques such as reinsurance, securitisation, debt issuance and hedging.",
+          "cards": [
+              {
+                  "q": "What types of capital assessment are there?",
+                  "a": "Regulatory (SCR), economic capital, rating agency capital, ORSA view.",
+                  "explain": "Syllabus 3.2.1."
+              },
+              {
+                  "q": "What are sources of capital?",
+                  "a": "Shareholder equity, retained profits, subordinated debt, contingent capital, reinsurance, value of in-force securitisation.",
+                  "explain": "Syllabus 3.2.2."
+              },
+              {
+                  "q": "What is capital management?",
+                  "a": "Managing capital levels and uses to support strategy and solvency.",
+                  "explain": "Syllabus 3.2.5."
+              },
+              {
+                  "q": "Give capital management techniques.",
+                  "a": "Reinsurance (including financial reinsurance), securitisation, hedging, debt issuance, product redesign, reducing new business strain, management actions, dividends policy.",
+                  "explain": "Toolkit."
+              },
+              {
+                  "q": "How can reinsurance manage capital?",
+                  "a": "Transfers risk (e.g. longevity) reducing SCR; financial reinsurance funds strain.",
+                  "explain": "Common."
+              },
+              {
+                  "q": "What is VIF securitisation?",
+                  "a": "Monetising value of in-force business by selling future profits.",
+                  "explain": "Capital raising."
+              },
+              {
+                  "q": "What is the link between risk, capital and value?",
+                  "a": "Capital supports risk; value created if returns exceed cost of capital.",
+                  "explain": "Syllabus 3.2.4."
+              },
+              {
+                  "q": "What is ongoing solvency assessment?",
+                  "a": "Projecting solvency over the business plan under base and stress scenarios.",
+                  "explain": "ORSA."
+              },
+              {
+                  "q": "What are practical modelling considerations?",
+                  "a": "Model points, run times, proxy models, management actions, dynamic policyholder behaviour.",
+                  "explain": "Syllabus 3.2.3."
+              },
+              {
+                  "q": "What is a proxy model?",
+                  "a": "Simplified model (e.g. curve fitting, LSMC) approximating full model outputs.",
+                  "explain": "Speed."
+              },
+              {
+                  "q": "What is a capital buffer?",
+                  "a": "Capital above SCR held to withstand stress without breaching.",
+                  "explain": "Risk appetite."
+              },
+              {
+                  "q": "What is Tier 2 capital?",
+                  "a": "Subordinated debt and similar instruments of lower loss-absorbency.",
+                  "explain": "Own funds."
+              },
+              {
+                  "q": "How do dividends relate to capital management?",
+                  "a": "Dividends paid from surplus above target capital.",
+                  "explain": "Policy."
+              },
+              {
+                  "q": "How can hedging reduce capital?",
+                  "a": "Reduces market risk SCR.",
+                  "explain": "Derivatives."
+              },
+              {
+                  "q": "What is return on capital?",
+                  "a": "Profit relative to capital employed.",
+                  "explain": "Performance."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Asset-liability management",
+          "description": "ALM for life insurers: principles of matching, liability categorisation, cash flow and duration matching, the matching adjustment portfolio, use of derivatives (swaps, options, inflation swaps), liquidity risk management and ALM governance.",
+          "cards": [
+              {
+                  "q": "What are the principles of ALM?",
+                  "a": "Match assets to liabilities by nature, term and currency; manage mismatches within appetite.",
+                  "explain": "Syllabus 3.2.6."
+              },
+              {
+                  "q": "How are annuities matched?",
+                  "a": "Long bonds, illiquid assets (MA portfolio), inflation swaps for indexed annuities.",
+                  "explain": "Cash flow matching."
+              },
+              {
+                  "q": "How are unit-linked liabilities matched?",
+                  "a": "Holding the unit fund assets.",
+                  "explain": "Minimal ALM."
+              },
+              {
+                  "q": "How are with-profits liabilities matched?",
+                  "a": "Mix reflecting guarantees and smoothing; derivatives to hedge guarantees.",
+                  "explain": "Discretion."
+              },
+              {
+                  "q": "How are derivatives used in ALM?",
+                  "a": "Interest rate swaps, swaptions, inflation swaps, equity options, currency hedges.",
+                  "explain": "Syllabus 3.2.6."
+              },
+              {
+                  "q": "What is the MA portfolio requirement?",
+                  "a": "Assets with fixed cash flows matched to eligible liabilities, held to maturity.",
+                  "explain": "Solvency UK."
+              },
+              {
+                  "q": "What is liquidity risk in ALM?",
+                  "a": "Collateral calls on derivatives, mass lapses.",
+                  "explain": "Liquidity buffer."
+              },
+              {
+                  "q": "What is duration matching?",
+                  "a": "Equating asset and liability durations.",
+                  "explain": "Interest rate risk."
+              },
+              {
+                  "q": "What is convexity management?",
+                  "a": "Ensuring asset convexity sufficient relative to liabilities.",
+                  "explain": "Second-order."
+              },
+              {
+                  "q": "What is reinvestment risk?",
+                  "a": "Future cash must be reinvested at unknown rates.",
+                  "explain": "Mismatch."
+              },
+              {
+                  "q": "How does ALM relate to capital?",
+                  "a": "Mismatches increase market risk SCR.",
+                  "explain": "Efficiency."
+              },
+              {
+                  "q": "What is ALM governance?",
+                  "a": "ALCO, policies, limits, reporting.",
+                  "explain": "Oversight."
+              },
+              {
+                  "q": "What are illiquid assets used in annuity backing?",
+                  "a": "Equity release mortgages, infrastructure debt, private placements, commercial real estate loans.",
+                  "explain": "Yield."
+              },
+              {
+                  "q": "What is dynamic hedging?",
+                  "a": "Adjusting hedges as markets move (e.g. for VA guarantees).",
+                  "explain": "Delta."
+              },
+              {
+                  "q": "Why consider collateral in hedging?",
+                  "a": "Derivatives require margin, creating liquidity needs.",
+                  "explain": "2022 lessons."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Analysis of surplus",
+          "description": "Analysing supervisory surplus arising over a period, including under Solvency II/UK: sources (expected return, experience variances, assumption changes, new business strain, economic variances), method, and actions following the analysis.",
+          "cards": [
+              {
+                  "q": "What is an analysis of surplus?",
+                  "a": "Breaking down the change in surplus into sources.",
+                  "explain": "Syllabus 3.4.1."
+              },
+              {
+                  "q": "What are sources of Solvency II surplus change?",
+                  "a": "Expected release of risk margin and SCR, unwind, experience variances, assumption changes, new business, economic variances, model changes.",
+                  "explain": "Own funds movement."
+              },
+              {
+                  "q": "What is new business strain under Solvency II?",
+                  "a": "Often a day-one gain or loss depending on BEL, risk margin and SCR.",
+                  "explain": "Capital strain."
+              },
+              {
+                  "q": "How is the analysis carried out?",
+                  "a": "Stepwise changes from opening to closing with one factor changed at a time.",
+                  "explain": "Order matters."
+              },
+              {
+                  "q": "What actions might follow an analysis?",
+                  "a": "Reprice, change assumptions, redesign products, improve expense control, change investment strategy, retention activity.",
+                  "explain": "Syllabus 3.4.3."
+              },
+              {
+                  "q": "What is an experience variance?",
+                  "a": "Difference between actual and expected experience.",
+                  "explain": "Mortality, lapses, expenses."
+              },
+              {
+                  "q": "What is an economic variance?",
+                  "a": "Effect of market movements differing from assumptions.",
+                  "explain": "Interest rates, equities."
+              },
+              {
+                  "q": "Why analyse surplus?",
+                  "a": "Validate assumptions and models, explain results, inform management.",
+                  "explain": "Control cycle."
+              },
+              {
+                  "q": "What is surplus emergence?",
+                  "a": "Pattern over time of surplus arising from business.",
+                  "explain": "Capital generation."
+              },
+              {
+                  "q": "What is capital generation?",
+                  "a": "Surplus arising above SCR requirements available for dividends.",
+                  "explain": "Key metric."
+              },
+              {
+                  "q": "How are management actions reflected?",
+                  "a": "Separate item in analysis.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "What is the role of the actuarial function?",
+                  "a": "Oversees technical provisions movements.",
+                  "explain": "Solvency II."
+              },
+              {
+                  "q": "How does MA affect surplus analysis?",
+                  "a": "Spread movements and MA changes produce economic variances.",
+                  "explain": "Annuities."
+              },
+              {
+                  "q": "What is the unexplained residual?",
+                  "a": "Portion not attributed to identified sources.",
+                  "explain": "Should be small."
+              },
+              {
+                  "q": "How can results inform pricing?",
+                  "a": "Persistent variances suggest pricing assumptions need change.",
+                  "explain": "Feedback."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Profit reporting",
+          "description": "Profit reporting for life insurers: IFRS 17 (general measurement model, VFA, PAA, CSM, risk adjustment), US GAAP (LDTI), local statutory approaches in other jurisdictions, and the implications for how profit emerges.",
+          "cards": [
+              {
+                  "q": "What is IFRS 17's general measurement model?",
+                  "a": "Fulfilment cash flows (PV future cash flows + risk adjustment) plus contractual service margin.",
+                  "explain": "Default model."
+              },
+              {
+                  "q": "What is the CSM?",
+                  "a": "Unearned profit recognised over coverage.",
+                  "explain": "No day-one profit."
+              },
+              {
+                  "q": "What is the variable fee approach (VFA)?",
+                  "a": "IFRS 17 model for direct participating contracts (e.g. with-profits, unit-linked).",
+                  "explain": "Shareholder fee."
+              },
+              {
+                  "q": "What is the premium allocation approach?",
+                  "a": "Simplified model for short contracts.",
+                  "explain": "Group protection."
+              },
+              {
+                  "q": "What is the IFRS 17 risk adjustment?",
+                  "a": "Compensation for non-financial risk.",
+                  "explain": "Confidence level disclosure."
+              },
+              {
+                  "q": "What are onerous contracts?",
+                  "a": "Contracts with expected losses — recognised immediately.",
+                  "explain": "Loss component."
+              },
+              {
+                  "q": "What is US GAAP LDTI?",
+                  "a": "Long-duration targeted improvements: updated assumptions, market risk benefits at fair value.",
+                  "explain": "US standard."
+              },
+              {
+                  "q": "How does profit emergence differ under IFRS 17?",
+                  "a": "Profits released via CSM over time, smoother than some prior regimes.",
+                  "explain": "Pattern."
+              },
+              {
+                  "q": "What is the contract group level?",
+                  "a": "Portfolios split by cohort and profitability.",
+                  "explain": "Aggregation."
+              },
+              {
+                  "q": "What are profit reporting approaches in other jurisdictions?",
+                  "a": "Statutory accounting bases (e.g. US STAT), local GAAPs.",
+                  "explain": "Syllabus 3.3.2."
+              },
+              {
+                  "q": "How is IFRS 17 different from Solvency II?",
+                  "a": "IFRS 17 has CSM (no day-one gain); Solvency II recognises future profits in own funds.",
+                  "explain": "Different purposes."
+              },
+              {
+                  "q": "What is insurance revenue under IFRS 17?",
+                  "a": "Release of expected claims, expenses, RA, CSM — not premiums.",
+                  "explain": "Presentation."
+              },
+              {
+                  "q": "What is insurance finance income/expense?",
+                  "a": "Effect of time value and financial risk.",
+                  "explain": "OCI option."
+              },
+              {
+                  "q": "Why did IFRS 17 matter for comparability?",
+                  "a": "Consistent global accounting for insurance.",
+                  "explain": "Transparency."
+              },
+              {
+                  "q": "How does reinsurance accounting work under IFRS 17?",
+                  "a": "Separate reinsurance contracts held measured with own CSM.",
+                  "explain": "Mismatch."
+              }
+          ]
+      },
+      {
+          "id": "m18",
+          "title": "Embedded value",
+          "description": "Embedded value reporting: traditional EV, European Embedded Value and Market-Consistent Embedded Value, components (net worth, VIF, cost of capital, time value of options), EV under Solvency II (own funds-based metrics), value of new business, and analysis of change in EV.",
+          "cards": [
+              {
+                  "q": "What is embedded value?",
+                  "a": "Shareholders' interest in the in-force business: adjusted net worth plus value of in-force less cost of capital.",
+                  "explain": "Excludes future new business."
+              },
+              {
+                  "q": "What is traditional EV?",
+                  "a": "Uses a risk discount rate to value future profits.",
+                  "explain": "Subjective."
+              },
+              {
+                  "q": "What is EEV?",
+                  "a": "European Embedded Value principles adding explicit time value of options and frictional costs.",
+                  "explain": "CFO Forum."
+              },
+              {
+                  "q": "What is MCEV?",
+                  "a": "Market-consistent EV using risk-free rates and allowances for non-hedgeable risks.",
+                  "explain": "Consistent."
+              },
+              {
+                  "q": "What are EV components?",
+                  "a": "Free surplus, required capital, PV future profits, time value of options, frictional costs, cost of non-hedgeable risks.",
+                  "explain": "Build-up."
+              },
+              {
+                  "q": "How is EV related to Solvency II?",
+                  "a": "Own funds include future profits, so insurers report Solvency II-based EV metrics.",
+                  "explain": "Syllabus 3.3.3."
+              },
+              {
+                  "q": "What is value of new business?",
+                  "a": "PV of future profits from new business less cost of capital.",
+                  "explain": "Sales value."
+              },
+              {
+                  "q": "What is analysis of change in EV?",
+                  "a": "Expected return, experience and assumption variances, new business, economic variances, capital movements.",
+                  "explain": "Syllabus 3.4.2."
+              },
+              {
+                  "q": "What is free surplus?",
+                  "a": "Net worth above required capital.",
+                  "explain": "Distributable."
+              },
+              {
+                  "q": "What is the cost of capital in EV?",
+                  "a": "Cost of holding required capital (frictional costs).",
+                  "explain": "Tax and investment costs."
+              },
+              {
+                  "q": "What is the time value of options?",
+                  "a": "Additional cost of guarantees from market volatility.",
+                  "explain": "Stochastic."
+              },
+              {
+                  "q": "How is EV used?",
+                  "a": "Valuing companies, M&A, management performance.",
+                  "explain": "Investors."
+              },
+              {
+                  "q": "What are EV limitations?",
+                  "a": "Assumption sensitivity, excludes franchise value.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What is expected return on EV?",
+                  "a": "Unwind of discount and expected profit.",
+                  "explain": "Analysis item."
+              },
+              {
+                  "q": "What is appraisal value?",
+                  "a": "EV plus value of future new business (goodwill).",
+                  "explain": "M&A."
+              }
+          ]
+      },
+      {
+          "id": "m19",
+          "title": "Asset shares",
+          "description": "Asset shares in with-profits management: components of an asset share calculation (premiums, expenses, investment return, cost of guarantees, charges for capital, mortality, tax, miscellaneous profits and losses), data and approximations, and uses in setting payouts.",
+          "cards": [
+              {
+                  "q": "What are the components of an asset share?",
+                  "a": "Premiums less expenses and commission, plus investment return, less cost of death benefits and guarantees, less tax, less charges for capital support, plus/minus miscellaneous surplus.",
+                  "explain": "Syllabus 4.3.1."
+              },
+              {
+                  "q": "Why charge asset shares for guarantees?",
+                  "a": "To reflect the cost of guarantees borne by the estate.",
+                  "explain": "Fairness."
+              },
+              {
+                  "q": "What is a charge for capital support?",
+                  "a": "A deduction compensating the estate/shareholders for capital supporting the policy.",
+                  "explain": "Estate use."
+              },
+              {
+                  "q": "How are miscellaneous profits allocated?",
+                  "a": "Profits from non-profit business or other sources may be credited to asset shares.",
+                  "explain": "Policy choice."
+              },
+              {
+                  "q": "What investment return is used?",
+                  "a": "Actual return on the with-profits fund's assets (possibly by asset mix).",
+                  "explain": "Hypothecation."
+              },
+              {
+                  "q": "What data is needed?",
+                  "a": "Historical premiums, expenses, returns, tax, mortality.",
+                  "explain": "Model points."
+              },
+              {
+                  "q": "How are asset shares approximated?",
+                  "a": "Using model points and average experience.",
+                  "explain": "Practical."
+              },
+              {
+                  "q": "How are asset shares used?",
+                  "a": "Setting terminal bonuses, surrender values, testing bonus sustainability, assessing the estate.",
+                  "explain": "Uses."
+              },
+              {
+                  "q": "What is the relationship between asset shares and the estate?",
+                  "a": "Estate = assets − (asset shares + other liabilities).",
+                  "explain": "Surplus."
+              },
+              {
+                  "q": "Why might payouts differ from asset shares?",
+                  "a": "Smoothing, guarantees, estate distribution.",
+                  "explain": "Target range."
+              },
+              {
+                  "q": "What is a target payout range?",
+                  "a": "E.g. payouts within 80–120% of asset share.",
+                  "explain": "PPFM."
+              },
+              {
+                  "q": "How does tax enter asset shares?",
+                  "a": "Tax on investment return and I−E charged.",
+                  "explain": "UK."
+              },
+              {
+                  "q": "What is hypothecation?",
+                  "a": "Allocating specific assets to groups of policies.",
+                  "explain": "Investment returns."
+              },
+              {
+                  "q": "How are expenses allocated?",
+                  "a": "Actual expenses allocated by policy type and duration.",
+                  "explain": "Fairness."
+              },
+              {
+                  "q": "Why is PRE relevant?",
+                  "a": "Asset share methods must meet reasonable expectations.",
+                  "explain": "Governance."
+              }
+          ]
+      },
+      {
+          "id": "m20",
+          "title": "Surplus distribution",
+          "description": "Distributing with-profits surplus: smoothing concepts and costs, bonus distribution approaches (reversionary, terminal, accumulating), bonus-setting investigations, shareholder transfers, and fairness between generations.",
+          "cards": [
+              {
+                  "q": "What is smoothing?",
+                  "a": "Limiting changes in payouts over time relative to asset shares.",
+                  "explain": "Syllabus 4.3.2."
+              },
+              {
+                  "q": "What is the cost of smoothing?",
+                  "a": "Difference between smoothed payouts and asset shares, borne by estate.",
+                  "explain": "Neutral long-term."
+              },
+              {
+                  "q": "What investigations inform bonus setting?",
+                  "a": "Asset share projections, guarantee tests, estate analysis, stochastic projections, smoothing account.",
+                  "explain": "Syllabus 4.3.3."
+              },
+              {
+                  "q": "What bonus approaches exist?",
+                  "a": "Reversionary (simple, compound, super-compound), terminal, accumulating regular bonus rates.",
+                  "explain": "Syllabus 4.3.4."
+              },
+              {
+                  "q": "What is a smoothing account?",
+                  "a": "Running record of smoothing costs/profits.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "How are shareholder transfers determined?",
+                  "a": "Typically a fixed proportion (e.g. 1/9th of bonuses) in proprietary funds.",
+                  "explain": "90:10."
+              },
+              {
+                  "q": "What is fairness between generations?",
+                  "a": "Avoid one cohort subsidising another.",
+                  "explain": "Estate use."
+              },
+              {
+                  "q": "What is an inherited estate?",
+                  "a": "Surplus built up over past generations.",
+                  "explain": "Distribution policy."
+              },
+              {
+                  "q": "How are regular bonuses set?",
+                  "a": "At levels sustainable given guarantees and expected returns.",
+                  "explain": "Prudence."
+              },
+              {
+                  "q": "How are terminal bonuses set?",
+                  "a": "To bring payouts close to smoothed asset shares.",
+                  "explain": "Target range."
+              },
+              {
+                  "q": "What is a special distribution?",
+                  "a": "Distributing excess estate to policyholders.",
+                  "explain": "Orphan estates."
+              },
+              {
+                  "q": "How do market falls affect bonuses?",
+                  "a": "Terminal bonus cuts, possible MVRs, smoothing limits.",
+                  "explain": "Communication."
+              },
+              {
+                  "q": "What role does the with-profits committee play?",
+                  "a": "Independent oversight of fairness.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What constraints apply to bonus changes?",
+                  "a": "PPFM limits, PRE, regulatory rules.",
+                  "explain": "COBS 20."
+              },
+              {
+                  "q": "Why use stochastic projections?",
+                  "a": "To test sustainability of bonuses and guarantees.",
+                  "explain": "Risk."
+              }
+          ]
+      },
+      {
+          "id": "m21",
+          "title": "Management of with-profits business",
+          "description": "General with-profits management: regulatory requirements (COBS 20, PPFM, with-profits committee, with-profits actuary), policyholder protection, management actions in stress, investment strategy, and managing closed with-profits funds (tontine risk, run-off planning, reattribution).",
+          "cards": [
+              {
+                  "q": "What is COBS 20?",
+                  "a": "FCA rules for with-profits business covering fair treatment, PPFM, distributions, closed funds.",
+                  "explain": "UK regulation."
+              },
+              {
+                  "q": "What is the PPFM?",
+                  "a": "Principles and Practices of Financial Management — how the firm runs its with-profits fund.",
+                  "explain": "Public document."
+              },
+              {
+                  "q": "What are management actions?",
+                  "a": "Planned actions in adverse scenarios (e.g. cutting bonuses, changing asset mix).",
+                  "explain": "Modelled in capital."
+              },
+              {
+                  "q": "How are closed with-profits funds managed?",
+                  "a": "Run-off plans, distribution of estate over remaining policies, cost control, avoiding tontine effects.",
+                  "explain": "Syllabus 4.3.5."
+              },
+              {
+                  "q": "What is the tontine effect?",
+                  "a": "Last policyholders receiving excessive estate distributions.",
+                  "explain": "Avoid."
+              },
+              {
+                  "q": "What is a reattribution?",
+                  "a": "Transfer of part of the inherited estate to shareholders in return for payments to policyholders.",
+                  "explain": "Rare now."
+              },
+              {
+                  "q": "What policyholder protections exist?",
+                  "a": "PRE, PPFM, committees, regulatory oversight, Part VII safeguards.",
+                  "explain": "Syllabus 4.3.5."
+              },
+              {
+                  "q": "How is investment strategy set for with-profits?",
+                  "a": "Balancing return and guarantee protection, considering estate size.",
+                  "explain": "Equity backing ratio."
+              },
+              {
+                  "q": "What is the equity backing ratio?",
+                  "a": "Proportion of with-profits assets in equities/property.",
+                  "explain": "Risk."
+              },
+              {
+                  "q": "What issues arise in with-profits mergers?",
+                  "a": "Ring-fencing funds, fairness to both sets of policyholders.",
+                  "explain": "Part VII."
+              },
+              {
+                  "q": "How are expenses managed in closed funds?",
+                  "a": "Per-policy costs rise; outsourcing, fixed-price contracts.",
+                  "explain": "Expense risk."
+              },
+              {
+                  "q": "What is a with-profits committee's role?",
+                  "a": "Independent judgement on fairness of discretion.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "How are guarantees managed?",
+                  "a": "Hedging, capital, bonus policy.",
+                  "explain": "Risk."
+              },
+              {
+                  "q": "When might a fund be converted?",
+                  "a": "Offer policyholders conversion to unit-linked or other products.",
+                  "explain": "Run-off acceleration."
+              },
+              {
+                  "q": "How should changes be communicated?",
+                  "a": "Clear, timely information on bonus changes and fund plans.",
+                  "explain": "Consumer Duty."
+              }
+          ]
+      },
+      {
+          "id": "m22",
+          "title": "Risk management and controls",
+          "description": "Risk management for life insurers: a risk management framework, key risk types (credit, market, liquidity, operational incl. conduct, model and unit pricing risk, insurance incl. longevity, group risk) and appropriate strategies and controls for each.",
+          "cards": [
+              {
+                  "q": "What is an appropriate risk management framework?",
+                  "a": "Governance, appetite, identification, measurement, management, monitoring, reporting, culture.",
+                  "explain": "Syllabus 4.2.1."
+              },
+              {
+                  "q": "How is credit risk managed?",
+                  "a": "Limits, diversification, collateral, rating requirements, credit derivatives.",
+                  "explain": "Annuity assets."
+              },
+              {
+                  "q": "How is market risk managed?",
+                  "a": "ALM, hedging, limits, diversification.",
+                  "explain": "Guarantees."
+              },
+              {
+                  "q": "How is liquidity risk managed?",
+                  "a": "Buffers, contingency funding, collateral management, stress testing.",
+                  "explain": "Derivatives."
+              },
+              {
+                  "q": "What is conduct risk?",
+                  "a": "Risk of poor customer outcomes.",
+                  "explain": "Consumer Duty."
+              },
+              {
+                  "q": "What is model risk?",
+                  "a": "Errors in models used for valuation, pricing or capital.",
+                  "explain": "Validation."
+              },
+              {
+                  "q": "What is unit pricing risk?",
+                  "a": "Errors in unit prices harming customers.",
+                  "explain": "Controls and compensation."
+              },
+              {
+                  "q": "How is longevity risk managed?",
+                  "a": "Reinsurance, longevity swaps, pricing, diversification with protection.",
+                  "explain": "Annuities."
+              },
+              {
+                  "q": "What is group risk?",
+                  "a": "Risks arising from membership of a group (contagion, intra-group exposures).",
+                  "explain": "Syllabus 4.2.2."
+              },
+              {
+                  "q": "How is operational risk controlled?",
+                  "a": "Process controls, business continuity, outsourcing oversight.",
+                  "explain": "Resilience."
+              },
+              {
+                  "q": "How is insurance risk managed?",
+                  "a": "Underwriting, reinsurance, pricing reviews.",
+                  "explain": "Mortality/morbidity."
+              },
+              {
+                  "q": "What are key risk indicators?",
+                  "a": "Metrics signalling increasing risk.",
+                  "explain": "Monitoring."
+              },
+              {
+                  "q": "What is a stress and scenario testing programme?",
+                  "a": "Regular testing of adverse conditions.",
+                  "explain": "ORSA."
+              },
+              {
+                  "q": "What is reverse stress testing?",
+                  "a": "Identifying scenarios causing business failure.",
+                  "explain": "Required."
+              },
+              {
+                  "q": "How are controls tested?",
+                  "a": "Internal audit, second-line reviews.",
+                  "explain": "Assurance."
+              }
+          ]
+      },
+      {
+          "id": "m23",
+          "title": "Product design and pricing",
+          "description": "Designing and pricing life products in practice: design factors (customer needs, Consumer Duty, distribution, capital, risk, tax, regulation), pricing methods (profit testing, market-consistent pricing, cost of capital, IRR/VNB criteria), and bases for different products.",
+          "cards": [
+              {
+                  "q": "What factors affect product design?",
+                  "a": "Customer needs and outcomes, distribution, competition, capital and risk, tax, regulation, reinsurance, systems, profitability.",
+                  "explain": "Syllabus 4.4.1."
+              },
+              {
+                  "q": "How does the Consumer Duty affect design?",
+                  "a": "Products must meet target market needs and offer fair value.",
+                  "explain": "Product governance."
+              },
+              {
+                  "q": "What pricing methods are used?",
+                  "a": "Profit testing with risk discount rate, market-consistent pricing, cost-of-capital approaches.",
+                  "explain": "Syllabus 4.4.2."
+              },
+              {
+                  "q": "What profit criteria are used?",
+                  "a": "IRR, VNB margin, payback period, return on capital.",
+                  "explain": "Criteria."
+              },
+              {
+                  "q": "How are annuities priced?",
+                  "a": "Mortality, expenses, investment yield (including MA and illiquidity), capital, reinsurance.",
+                  "explain": "Competitive."
+              },
+              {
+                  "q": "How is protection priced?",
+                  "a": "Reinsurance rates, underwriting, lapse, commission.",
+                  "explain": "Aggregators."
+              },
+              {
+                  "q": "How is a unit-linked product priced?",
+                  "a": "Charges to cover expenses and profit, non-unit reserves, persistency.",
+                  "explain": "Charges."
+              },
+              {
+                  "q": "How does Solvency II affect pricing?",
+                  "a": "Day-one gains/losses, risk margin and SCR costs.",
+                  "explain": "Capital efficiency."
+              },
+              {
+                  "q": "How are guarantees priced?",
+                  "a": "Market-consistent option costs and hedging.",
+                  "explain": "Variable annuities."
+              },
+              {
+                  "q": "How is the pricing basis chosen?",
+                  "a": "Best estimate plus margins reflecting risk and competition.",
+                  "explain": "Judgement."
+              },
+              {
+                  "q": "What is marginal pricing?",
+                  "a": "Covering incremental costs only.",
+                  "explain": "Competitive risk."
+              },
+              {
+                  "q": "Why test sensitivity in pricing?",
+                  "a": "Identify key risks and robustness.",
+                  "explain": "Stress."
+              },
+              {
+                  "q": "How does reinsurance affect pricing?",
+                  "a": "Cost and capital relief incorporated.",
+                  "explain": "Protection."
+              },
+              {
+                  "q": "What is the role of distribution costs?",
+                  "a": "Commission or adviser charges affect product economics.",
+                  "explain": "Channel."
+              },
+              {
+                  "q": "How is product performance monitored?",
+                  "a": "Sales, profitability, customer outcomes vs expectations.",
+                  "explain": "Control cycle."
+              }
+          ]
+      },
+      {
+          "id": "m24",
+          "title": "Problem solving",
+          "description": "Applying the SA2 course to exam scenarios: identifying the issues, using frameworks (stakeholders, risks, capital, regulation, customers), making justified recommendations, and handling calculations and communication questions.",
+          "cards": [
+              {
+                  "q": "How should SA2 questions be approached?",
+                  "a": "Identify client, issues and constraints; apply frameworks; recommend and justify.",
+                  "explain": "Structure."
+              },
+              {
+                  "q": "Which frameworks help SA2 answers?",
+                  "a": "Stakeholders, risk types, capital/solvency impact, regulatory and conduct, tax, practicalities.",
+                  "explain": "Breadth."
+              },
+              {
+                  "q": "Why consider the Consumer Duty in answers?",
+                  "a": "Customer outcomes must be considered in most decisions.",
+                  "explain": "Current regime."
+              },
+              {
+                  "q": "How should capital impacts be discussed?",
+                  "a": "Effects on BEL, risk margin, SCR, own funds, solvency ratio.",
+                  "explain": "Quantitative."
+              },
+              {
+                  "q": "How should recommendations be made?",
+                  "a": "Clear, justified, with alternatives and next steps.",
+                  "explain": "Marks."
+              },
+              {
+                  "q": "What are common weaknesses?",
+                  "a": "Generic answers, missing UK specifics, insufficient breadth.",
+                  "explain": "Examiners."
+              },
+              {
+                  "q": "How should calculations be presented?",
+                  "a": "Clear assumptions and interpretation.",
+                  "explain": "Method."
+              },
+              {
+                  "q": "How to manage time?",
+                  "a": "Allocate by marks.",
+                  "explain": "Two papers."
+              },
+              {
+                  "q": "Why consider practicalities?",
+                  "a": "Systems, data, timescales, costs.",
+                  "explain": "Realism."
+              },
+              {
+                  "q": "How to handle M&A questions?",
+                  "a": "Part VII, due diligence, capital, policyholder fairness, integration.",
+                  "explain": "Frameworks."
+              },
+              {
+                  "q": "How to handle with-profits questions?",
+                  "a": "PRE, PPFM, fairness, estate, governance.",
+                  "explain": "Specialist."
+              },
+              {
+                  "q": "How to handle product questions?",
+                  "a": "Customer needs, design, pricing, capital, distribution.",
+                  "explain": "Chapter 22."
+              },
+              {
+                  "q": "What is the role of communication questions?",
+                  "a": "Drafting advice clearly to specified audience.",
+                  "explain": "Tone."
+              },
+              {
+                  "q": "Why read the question carefully?",
+                  "a": "Details signal key issues.",
+                  "explain": "Relevance."
+              },
+              {
+                  "q": "How can past papers help?",
+                  "a": "Show scenarios and marking.",
+                  "explain": "Practice."
+              }
+          ]
+      },
+      {
+          "id": "m25",
+          "title": "Glossary",
+          "description": "Key SA2 terminology — UK regulation, Solvency UK, with-profits, accounting and embedded value terms — as a recall deck.",
+          "cards": [
+              {
+                  "q": "Define 'matching adjustment'.",
+                  "a": "Discount rate uplift for matched illiquid liabilities.",
+                  "explain": "Solvency UK."
+              },
+              {
+                  "q": "Define 'TMTP'.",
+                  "a": "Transitional measure on technical provisions.",
+                  "explain": "Runs off to 2032."
+              },
+              {
+                  "q": "Define 'CSM'.",
+                  "a": "Contractual service margin under IFRS 17.",
+                  "explain": "Unearned profit."
+              },
+              {
+                  "q": "Define 'MCEV'.",
+                  "a": "Market-consistent embedded value.",
+                  "explain": "EV."
+              },
+              {
+                  "q": "Define 'PPFM'.",
+                  "a": "Principles and Practices of Financial Management.",
+                  "explain": "With-profits."
+              },
+              {
+                  "q": "Define 'Part VII transfer'.",
+                  "a": "Court-approved transfer of insurance business.",
+                  "explain": "UK."
+              },
+              {
+                  "q": "Define 'BLAGAB'.",
+                  "a": "Basic life assurance and general annuity business.",
+                  "explain": "Tax."
+              },
+              {
+                  "q": "Define 'I−E basis'.",
+                  "a": "Taxing income less expenses for BLAGAB.",
+                  "explain": "UK tax."
+              },
+              {
+                  "q": "Define 'Consumer Duty'.",
+                  "a": "FCA rule requiring good customer outcomes.",
+                  "explain": "Conduct."
+              },
+              {
+                  "q": "Define 'NNEG'.",
+                  "a": "No-negative-equity guarantee.",
+                  "explain": "Equity release."
+              },
+              {
+                  "q": "Define 'VNB'.",
+                  "a": "Value of new business.",
+                  "explain": "EV."
+              },
+              {
+                  "q": "Define 'smoothing'.",
+                  "a": "Limiting payout volatility relative to asset shares.",
+                  "explain": "With-profits."
+              },
+              {
+                  "q": "Define 'fundamental spread'.",
+                  "a": "Allowance for default/downgrade in MA.",
+                  "explain": "Solvency UK."
+              },
+              {
+                  "q": "Define 'Takaful'.",
+                  "a": "Sharia-compliant cooperative insurance.",
+                  "explain": "Products."
+              },
+              {
+                  "q": "Define 'GMWB'.",
+                  "a": "Guaranteed minimum withdrawal benefit.",
+                  "explain": "Variable annuities."
+              }
+          ]
+      }
+  ],
   SA3: [
     {
         "id": "m01",

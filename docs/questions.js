@@ -4862,7 +4862,7 @@ const QUESTIONS = {
     {
       id: "sa2-q1",
       title: "Pricing a term assurance product",
-      modules: "Modules 1, 2, 7",
+      modules: "Modules 2, 23",
       marks: 12,
       parts: [
         {
@@ -4910,7 +4910,7 @@ const QUESTIONS = {
     {
       id: "sa2-q2",
       title: "With-profits bonus philosophy and pricing",
-      modules: "Modules 3, 7",
+      modules: "Modules 19, 20, 21",
       marks: 12,
       parts: [
         {
@@ -4958,7 +4958,7 @@ const QUESTIONS = {
     {
       id: "sa2-q3",
       title: "Annuity pricing and the guaranteed annuity option",
-      modules: "Modules 4, 11",
+      modules: "Modules 3, 11, 23",
       marks: 12,
       parts: [
         {
@@ -5006,7 +5006,7 @@ const QUESTIONS = {
     {
       id: "sa2-q4",
       title: "Unit-linked charging and embedded guarantees",
-      modules: "Module 8",
+      modules: "Modules 4, 23",
       marks: 12,
       parts: [
         {
@@ -5054,7 +5054,7 @@ const QUESTIONS = {
     {
       id: "sa2-q5",
       title: "Taxation and the regulatory environment",
-      modules: "Module 9",
+      modules: "Modules 7, 8, 9",
       marks: 12,
       parts: [
         {
@@ -5150,7 +5150,7 @@ const QUESTIONS = {
     {
       id: "sa2-q7",
       title: "Profit and value reporting for a diversified life insurer",
-      modules: "Module 12",
+      modules: "Modules 17, 18",
       marks: 12,
       parts: [
         {
@@ -5198,7 +5198,7 @@ const QUESTIONS = {
     {
       id: "sa2-q8",
       title: "Analysis of experience and surplus",
-      modules: "Module 15",
+      modules: "Module 16",
       marks: 12,
       parts: [
         {
@@ -5246,7 +5246,7 @@ const QUESTIONS = {
     {
       id: "sa2-q9",
       title: "Strategic decision: entering the bulk annuity market",
-      modules: "Modules 13, 16",
+      modules: "Modules 5, 14, 15",
       marks: 12,
       parts: [
         {
@@ -5294,7 +5294,7 @@ const QUESTIONS = {
     {
       id: "sa2-q10",
       title: "International comparison and complex problem-solving",
-      modules: "Modules 17, 18",
+      modules: "Modules 9, 11, 24",
       marks: 12,
       parts: [
         {
