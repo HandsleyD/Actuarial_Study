@@ -133,6 +133,7 @@ const Store = (function () {
         client.auth.onAuthStateChange((_event, session) => {
           const wasSignedOut = !currentUser;
           currentUser = session ? session.user : null;
+          srsAuthoritative.clear(); // a different account's schedules must be re-fetched before seeding
           if (wasSignedOut && currentUser) adoptAnonymousData();
           authListeners.forEach((cb) => cb(currentUser));
           notifySync();
