@@ -3299,7 +3299,7 @@ const QUESTIONS = {
     {
       id: "cb1-q1",
       title: "The finance function, the balance sheet, and the income statement",
-      modules: "Modules 1, 2, 3",
+      modules: "Modules 1, 10",
       marks: 12,
       parts: [
         {
@@ -3343,7 +3343,7 @@ const QUESTIONS = {
     {
       id: "cb1-q2",
       title: "Liquidity and cash flow analysis",
-      modules: "Modules 4, 5",
+      modules: "Modules 10, 13",
       marks: 12,
       parts: [
         {
@@ -3388,7 +3388,7 @@ const QUESTIONS = {
     {
       id: "cb1-q3",
       title: "Efficiency and gearing ratios",
-      modules: "Module 6",
+      modules: "Module 14",
       marks: 12,
       parts: [
         {
@@ -3473,7 +3473,7 @@ const QUESTIONS = {
     {
       id: "cb1-q5",
       title: "Choosing between sources of equity and debt finance",
-      modules: "Modules 8, 9",
+      modules: "Modules 5, 6, 7",
       marks: 12,
       parts: [
         {
@@ -3517,7 +3517,7 @@ const QUESTIONS = {
     {
       id: "cb1-q6",
       title: "Estimating the cost of equity",
-      modules: "Module 10",
+      modules: "Module 17",
       marks: 12,
       parts: [
         {
@@ -3561,7 +3561,7 @@ const QUESTIONS = {
     {
       id: "cb1-q7",
       title: "Weighted average cost of capital",
-      modules: "Module 11",
+      modules: "Module 17",
       marks: 12,
       parts: [
         {
@@ -3606,7 +3606,7 @@ const QUESTIONS = {
     {
       id: "cb1-q8",
       title: "Payback period and accounting rate of return",
-      modules: "Module 12",
+      modules: "Module 19",
       marks: 12,
       parts: [
         {
@@ -3651,7 +3651,7 @@ const QUESTIONS = {
     {
       id: "cb1-q9",
       title: "Net present value",
-      modules: "Module 13",
+      modules: "Module 19",
       marks: 12,
       parts: [
         {
@@ -3696,7 +3696,7 @@ const QUESTIONS = {
     {
       id: "cb1-q10",
       title: "Internal rate of return",
-      modules: "Module 14",
+      modules: "Module 20",
       marks: 12,
       parts: [
         {
@@ -3741,7 +3741,7 @@ const QUESTIONS = {
     {
       id: "cb1-q11",
       title: "Inflation and taxation in investment appraisal",
-      modules: "Module 15",
+      modules: "Modules 4, 19",
       marks: 12,
       parts: [
         {
@@ -3785,7 +3785,7 @@ const QUESTIONS = {
     {
       id: "cb1-q12",
       title: "Business valuation, dividend policy, and mergers and acquisitions",
-      modules: "Modules 16, 17, 18, 19",
+      modules: "Modules 16, 18",
       marks: 12,
       parts: [
         {

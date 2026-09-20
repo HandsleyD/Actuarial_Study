@@ -11170,1440 +11170,1652 @@ const MODULES = {
     }
 ],
   CB1: [
-    {
-        "id": "m01",
-        "title": "Introduction to business finance",
-        "description": "Orients the subject: the role of the finance function within a business, the key stakeholders it serves, and the broad areas of business finance the rest of the course develops.",
-        "cards": [
-            {
-                "q": "What is the primary purpose of the finance function within a business?",
-                "a": "To manage the business's money — raising funds, allocating them to the best uses, and reporting on financial performance and position — in support of the organisation's objectives.",
-                "explain": "This opening card sets up the whole course's structure — the rest of CB1 develops exactly these three activities in turn: understanding financial position and performance (Modules 2-5), raising funds (Modules 8-9), and allocating them (Modules 12-16)."
-            },
-            {
-                "q": "What are the three broad areas of decision-making that business finance is typically organised around?",
-                "a": "The investment decision (what to spend money on), the financing decision (how to raise the money), and the dividend/distribution decision (what to do with any surplus).",
-                "explain": "This three-way split is worth treating as the course's map — it recurs directly as the investment appraisal modules (13-16), the sources-of-finance and cost-of-capital modules (8-11), and the dividend policy module (18) later in this course."
-            },
-            {
-                "q": "Who are the main stakeholders a business's financial decisions and reporting need to serve?",
-                "a": "Shareholders/owners, lenders/creditors, employees, management, customers and suppliers, government/regulators, and the wider public.",
-                "explain": "This is CB2's stakeholder concept applied specifically to financial decision-making — worth previewing the tension this creates: different stakeholders often want different things from the same set of financial statements or decisions, which the next few cards explore directly."
-            },
-            {
-                "q": "What is commonly assumed to be the primary financial objective of a company run for its shareholders?",
-                "a": "To maximise shareholder wealth, typically represented by maximising the market value of the company's shares.",
-                "explain": "This single objective is what makes investment appraisal (Modules 13-16) and cost of capital (Modules 10-11) tractable as decision-making tools — every technique later in this course is ultimately justified by whether it helps achieve exactly this goal."
-            },
-            {
-                "q": "Why might 'profit maximisation' be a less complete objective for a company than 'shareholder wealth maximisation'?",
-                "a": "Profit maximisation can ignore the timing of returns, the risk taken to achieve them, and cashflow, whereas shareholder wealth (share price) reflects the market's assessment of all three.",
-                "explain": "This is worth remembering as the reason NPV (Module 14) — which explicitly discounts for timing and risk via the discount rate — is preferred over simpler, profit-based appraisal methods like accounting rate of return (Module 12)."
-            },
-            {
-                "q": "What is the 'agency problem' in the context of a company's shareholders and its managers?",
-                "a": "Managers (agents) may pursue their own interests rather than those of shareholders (principals), since ownership and control are separated in most companies of any size.",
-                "explain": "This is a foundational concept worth carrying through the rest of the course — it resurfaces directly when considering why dividend policy (Module 18) and takeover activity (Module 19) can be shaped as much by managerial incentives as by pure shareholder-wealth logic."
-            },
-            {
-                "q": "Give one mechanism companies use to reduce the agency problem between managers and shareholders.",
-                "a": "Linking management remuneration to share price/performance (e.g. share options or bonuses tied to targets), or strengthening board oversight and disclosure requirements.",
-                "explain": "This directly previews Module 20's corporate governance material — worth recognising these mechanisms as the practical toolkit corporate governance frameworks formalise, rather than one-off ad hoc fixes."
-            },
-            {
-                "q": "What is meant by a company's 'stakeholders' as distinct from its 'shareholders'?",
-                "a": "Stakeholders are any party affected by or with an interest in the business (employees, customers, suppliers, government, community), a broader group than just the shareholder-owners.",
-                "explain": "Worth keeping this distinction precise for exam purposes — 'shareholders' is a strict subset of 'stakeholders', and conflating the two terms is a common, easily avoidable error."
-            },
-            {
-                "q": "Why might a company need to balance shareholder wealth maximisation against the interests of other stakeholders in practice?",
-                "a": "Pursuing shareholder returns at the expense of employees, customers, or the wider community can damage the business's reputation, workforce, and long-term sustainability, ultimately harming shareholder value too.",
-                "explain": "This is worth reading as a genuine reconciliation, not a contradiction — treating stakeholders well is often argued to be entirely <em>consistent</em> with long-run shareholder wealth maximisation, not opposed to it, since reputational and operational damage eventually shows up in share price too."
-            },
-            {
-                "q": "What are the three main financial statements a business produces to report its performance and position?",
-                "a": "The balance sheet (statement of financial position), the income statement (profit and loss account), and the cash flow statement.",
-                "explain": "This directly previews Modules 2-4, each of which develops one of these three statements in full — worth treating this card as the syllabus for the whole of the course's opening technical block."
-            },
-            {
-                "q": "What is the difference between a 'sole trader', a 'partnership', and a 'limited company' as business structures?",
-                "a": "A sole trader is owned and run by one individual with unlimited personal liability; a partnership is owned by two or more people (often also with unlimited liability); a limited company is a separate legal entity whose owners' (shareholders') liability is limited to their investment.",
-                "explain": "This progression (from unlimited personal liability toward a separate legal entity with limited liability) is worth understanding as a genuine trade-off — simpler structures are cheaper and easier to set up, but expose the owner's personal assets, which is exactly the risk the limited company structure exists to remove."
-            },
-            {
-                "q": "What does 'limited liability' mean for a shareholder in a limited company?",
-                "a": "A shareholder's potential loss is limited to the amount they invested in the company's shares — their personal assets beyond that investment are not at risk if the company fails.",
-                "explain": "This directly previews Module 19's insolvency-adjacent material — worth noting the flip side of this protection for shareholders: it's exactly why lenders (who don't enjoy this protection) often require additional security or covenants when lending to a limited company."
-            },
-            {
-                "q": "Why is limited liability considered important for encouraging investment in companies?",
-                "a": "It caps an investor's downside risk at their initial investment, making it more attractive to invest in a business whose full extent of potential liabilities the investor cannot control or fully assess.",
-                "explain": "This is an important economic justification worth remembering — without this cap, a passive shareholder with no management role could theoretically lose far more than they invested, which would make equity investment in large, complex businesses far less attractive."
-            },
-            {
-                "q": "What is the difference between a 'private' limited company and a 'public' limited company?",
-                "a": "A private limited company cannot offer its shares for sale to the general public; a public limited company can, and its shares may be listed and traded on a stock exchange.",
-                "explain": "This distinction matters directly for Module 8's sources-of-equity-finance material and Module 21's financial markets material — only a public company (specifically, one with a stock exchange listing) can raise equity finance directly from the general investing public via a share issue."
-            },
-            {
-                "q": "Why is business finance a relevant subject for an actuary, even outside a specialist corporate finance role?",
-                "a": "Actuaries routinely need to understand company accounts, valuations, and financing decisions when assessing an insurer's or pension sponsor's financial strength, valuing investments, or advising on business decisions with financial consequences.",
-                "explain": "This closing card sets the tone for why CB1 sits in the Core Business stage of the curriculum alongside CB2 — every actuarial specialism eventually needs to interpret a company's accounts or assess its financial strength, making this course's content foundational, not a detour from actuarial work."
-            }
-        ]
-    },
-    {
-        "id": "m02",
-        "title": "The balance sheet",
-        "description": "Covers the balance sheet (statement of financial position) — its structure, the accounting equation underlying it, and how it represents a business's assets, liabilities and equity at a point in time.",
-        "cards": [
-            {
-                "q": "What does a 'balance sheet' (statement of financial position) show?",
-                "a": "A snapshot of what a business owns (assets) and owes (liabilities), and the resulting owners' equity, at a single point in time.",
-                "explain": "This is the first of the three financial statements previewed in Module 1 — worth holding onto the word 'snapshot' specifically, since it's exactly what distinguishes the balance sheet from the income statement (Module 3) and cash flow statement (Module 4), both of which cover a <em>period</em> rather than an instant."
-            },
-            {
-                "q": "What is the fundamental accounting equation underlying every balance sheet?",
-                "a": "Assets = Liabilities + Equity (what the business owns equals what it owes to lenders plus what it owes to its owners).",
-                "explain": "This equation is worth memorising precisely, since it's the structural backbone this entire module builds on — every other card here is really just elaborating on what belongs in each of these three categories."
-            },
-            {
-                "q": "What is a 'non-current' (fixed) asset?",
-                "a": "An asset held for long-term use in the business (e.g. property, plant, equipment) rather than for resale in the normal course of trade.",
-                "explain": "This directly connects to Module 13's investment appraisal material — a proposed purchase of a non-current asset (e.g. new machinery) is exactly the kind of decision NPV and IRR are used to evaluate."
-            },
-            {
-                "q": "What is a 'current asset'?",
-                "a": "An asset expected to be converted into cash, sold, or used up within the business's normal operating cycle, typically within one year (e.g. inventory, receivables, cash).",
-                "explain": "This directly previews Module 5's liquidity ratios and Module 7's working capital management — current assets are exactly the resources a business relies on to meet its short-term obligations, which is precisely what liquidity ratios are designed to assess."
-            },
-            {
-                "q": "What is a 'current liability'?",
-                "a": "An amount owed by the business that is due to be settled within one year (e.g. trade payables, short-term borrowing).",
-                "explain": "Worth pairing directly with the current asset card above — the current ratio (Module 5) and quick ratio compare exactly these two categories against each other to assess short-term financial health."
-            },
-            {
-                "q": "What is a 'non-current liability'?",
-                "a": "An amount owed by the business that is due to be settled more than one year from the balance sheet date (e.g. long-term loans, bonds issued).",
-                "explain": "This directly previews Module 9's sources of debt finance — a non-current liability is typically the balance sheet trace of exactly the kind of long-term borrowing decision that module discusses."
-            },
-            {
-                "q": "What does 'equity' represent on a company's balance sheet?",
-                "a": "The owners' (shareholders') residual claim on the business's assets after all liabilities have been deducted — effectively, the net assets attributable to shareholders.",
-                "explain": "The word 'residual' is worth taking literally — shareholders are paid only after every other liability has been satisfied, which is exactly why equity is inherently riskier than debt, a theme Module 8 and Module 11's cost-of-capital material both return to."
-            },
-            {
-                "q": "What are 'retained earnings', as a component of equity?",
-                "a": "The cumulative profits the business has earned and kept (not distributed as dividends) over its life, reinvested back into the business.",
-                "explain": "This directly links Module 3's income statement to this module's balance sheet, and previews Module 18's dividend policy material — retained earnings is precisely the accumulated record of every past year's decision to reinvest rather than distribute profit."
-            },
-            {
-                "q": "What is 'share capital', as a component of equity?",
-                "a": "The amount raised by a company from issuing shares to shareholders, representing their direct capital contribution.",
-                "explain": "This directly previews Module 8's equity-finance material — share capital is the balance sheet record of exactly the kind of share issue that module discusses as a source of new finance."
-            },
-            {
-                "q": "Why is inventory (stock) classified as a current asset rather than a non-current asset?",
-                "a": "Inventory is held for sale in the ordinary course of business and is expected to be converted into cash (via sale) within the normal operating cycle, typically well under a year.",
-                "explain": "This directly previews Module 7's working capital management — inventory is one of the three core working capital components (alongside receivables and payables) that module discusses managing efficiently."
-            },
-            {
-                "q": "What is 'trade receivables' (debtors)?",
-                "a": "Amounts owed to the business by its customers for goods or services already delivered but not yet paid for.",
-                "explain": "This connects directly to Module 4's discussion of why profit and cash diverge — revenue from a credit sale is recognised in the income statement immediately, while the cash arrives only later, once the receivable is actually collected."
-            },
-            {
-                "q": "What is 'trade payables' (creditors)?",
-                "a": "Amounts the business owes to its suppliers for goods or services already received but not yet paid for.",
-                "explain": "This is the mirror image of trade receivables from the other side of a transaction — worth noting a business's payables are effectively short-term, interest-free finance provided by its suppliers, a genuine working capital management lever explored further in Module 7."
-            },
-            {
-                "q": "Why must a balance sheet, by construction, always balance?",
-                "a": "Because it's built directly from the accounting equation (Assets = Liabilities + Equity) — every transaction affects at least two elements in a way that preserves this equality, so the two sides are mechanically forced to match.",
-                "explain": "This is worth understanding as a structural <em>guarantee</em>, not just an observed pattern — if a balance sheet doesn't balance, that's proof of an error in how the underlying transactions were recorded, not a valid alternative outcome."
-            },
-            {
-                "q": "What is 'depreciation', and how does it affect a non-current asset's value on the balance sheet over time?",
-                "a": "Depreciation systematically allocates the cost of a non-current asset over its useful life, reducing the asset's carrying (net book) value on the balance sheet each period as it's charged.",
-                "explain": "This directly previews Module 3's income statement and Module 4's cash flow statement — depreciation is charged as an expense in the income statement each period, yet (as Module 4 explains) involves no actual cash outflow when it's charged, only when the asset was originally purchased."
-            },
-            {
-                "q": "Why does a balance sheet only show a business's financial position at a single point in time, rather than its performance over a period?",
-                "a": "It is explicitly a snapshot — to see how the business has performed over a period (income earned, cash generated), you need the income statement and cash flow statement instead, which cover a period rather than an instant.",
-                "explain": "This closing card is the module's direct hand-off to Modules 3 and 4 — worth treating the three financial statements as complementary views of the same underlying business, each answering a different question (position, performance, cash) that the others cannot."
-            }
-        ]
-    },
-    {
-        "id": "m03",
-        "title": "The income statement",
-        "description": "Covers the income statement (profit and loss account) — how it measures a business's financial performance over a period, and the distinction between profit and cash.",
-        "cards": [
-            {
-                "q": "What does the 'income statement' (profit and loss account) show?",
-                "a": "A business's financial performance over a period of time — the revenue earned, costs incurred, and resulting profit or loss.",
-                "explain": "This is the second of the three financial statements previewed in Module 1 — worth contrasting directly with Module 2's balance sheet: the balance sheet is a snapshot at an instant, while the income statement covers everything that happened over an entire period."
-            },
-            {
-                "q": "What is 'revenue' (turnover)?",
-                "a": "The total income generated from a business's ordinary trading activities, before deducting any costs.",
-                "explain": "This is the starting figure for the whole income statement, and it's the denominator used throughout Module 5's margin ratios (gross, operating, net profit margin) — every profitability ratio in that module measures something 'as a percentage of revenue'."
-            },
-            {
-                "q": "What is 'cost of sales' (cost of goods sold)?",
-                "a": "The direct costs attributable to producing the goods or services sold during the period, e.g. materials and direct labour.",
-                "explain": "This is the first cost deducted from revenue, and it's worth distinguishing clearly from <em>operating</em> expenses (the next few cards) — cost of sales is specifically tied to the units actually produced/sold, while operating expenses are more general running costs of the business."
-            },
-            {
-                "q": "What is 'gross profit'?",
-                "a": "Revenue minus cost of sales — the profit remaining before deducting other operating expenses.",
-                "explain": "This directly feeds Module 5's gross profit margin ratio — worth noting gross profit specifically isolates trading profitability <em>before</em> the effect of a company's administrative/overhead cost structure, which is deducted next to reach operating profit."
-            },
-            {
-                "q": "What is 'operating profit'?",
-                "a": "Gross profit minus operating expenses (e.g. administrative and selling costs), before interest and tax — profit from the business's core trading operations.",
-                "explain": "This is the key figure used in Module 5's ROCE calculation — worth noting operating profit deliberately excludes interest and tax, since it's meant to measure the profitability of the business's <em>operations</em>, independent of how that business happens to be financed."
-            },
-            {
-                "q": "What is 'profit before tax'?",
-                "a": "Operating profit adjusted for non-operating items such as interest income/expense, arriving at the profit figure before the tax charge is deducted.",
-                "explain": "This is exactly where financing decisions (Modules 8-11) start to show up in the income statement — interest expense on debt directly reduces profit before tax, which is precisely why capital structure (Module 11) affects reported profitability, not just the balance sheet."
-            },
-            {
-                "q": "What is 'profit after tax' (net profit)?",
-                "a": "Profit before tax minus the tax charge for the period — the final profit figure attributable to shareholders.",
-                "explain": "This directly feeds Module 5's net profit margin and return on equity ratios, and Module 3's own earnings-per-share card — it's the bottom-line figure ultimately available to be retained (Module 2) or distributed as dividends (Module 18)."
-            },
-            {
-                "q": "Why is profit not the same thing as cash generated during the period?",
-                "a": "The income statement uses accruals accounting, recognising revenue and costs when they're earned/incurred rather than when cash actually changes hands, so profit can differ substantially from the period's actual cash movement.",
-                "explain": "This is the single most important idea in this module, directly previewing Module 4's whole cash flow statement — worth remembering this distinction explicitly whenever profit and cash figures for the same company appear to disagree."
-            },
-            {
-                "q": "What is the 'accruals' (matching) concept in accounting?",
-                "a": "Revenue and costs are recognised in the period they relate to economically, not necessarily when the cash is received or paid, so that income is matched against the costs incurred to generate it.",
-                "explain": "This is the formal accounting principle underlying the previous card's profit-versus-cash distinction — worth recognising 'matching' as the deliberate goal: pairing revenue with the specific costs incurred to generate it, in the <em>same</em> period, regardless of cash timing."
-            },
-            {
-                "q": "Give an example of a cost recognised in the income statement that doesn't involve a cash payment in that period.",
-                "a": "Depreciation of a non-current asset — the cash was paid when the asset was purchased, but the cost is spread across the income statement over the asset's useful life.",
-                "explain": "This is Module 2's depreciation concept recalled directly — worth previewing Module 4's cash flow statement here explicitly: depreciation is exactly the adjustment added <em>back</em> to profit when reconciling profit to actual operating cash flow."
-            },
-            {
-                "q": "What are 'exceptional' or 'one-off' items sometimes separately disclosed within the income statement?",
-                "a": "Significant, non-recurring items (e.g. a large restructuring cost or asset disposal gain) separately identified so users can distinguish underlying trading performance from unusual, one-off events.",
-                "explain": "This connects directly to Module 5's point about trends over multiple periods — a one-off item can distort a single period's ratios significantly, which is exactly why analysts often adjust for or separately flag exceptional items when assessing genuine underlying performance."
-            },
-            {
-                "q": "What is 'earnings per share' (EPS)?",
-                "a": "Profit after tax attributable to ordinary shareholders, divided by the number of ordinary shares in issue — a widely used measure of profitability per share.",
-                "explain": "This directly previews Module 17's business valuation material — EPS (and its growth over time) is one of the most commonly used inputs to earnings-based valuation approaches and the price/earnings ratio."
-            },
-            {
-                "q": "Why might two companies with identical operating profit report very different profit after tax?",
-                "a": "Differences in financing structure (interest expense on debt), tax position, or non-operating items can all cause profit after tax to diverge even where underlying trading profitability is the same.",
-                "explain": "This is worth connecting directly to Module 11's capital structure material — two operationally identical companies with different levels of debt will report different profit after tax purely because of their differing interest expense, which is exactly why comparing companies on operating profit (rather than profit after tax) can sometimes give a fairer like-for-like comparison."
-            },
-            {
-                "q": "How does the income statement relate to the balance sheet's retained earnings?",
-                "a": "The profit after tax for the period (less any dividends paid) increases the retained earnings balance carried forward on the balance sheet, directly linking performance over the period to the year-end financial position.",
-                "explain": "This is the explicit mechanical link between this module and Module 2 — worth recognising the three financial statements as <em>interconnected</em>, not three independent, unrelated documents, since a single period's profit flows directly into the following balance sheet."
-            },
-            {
-                "q": "Why is understanding the income statement important before analysing a company's profitability ratios?",
-                "a": "Profitability ratios (covered later in this course) are built directly from income statement figures (revenue, gross profit, operating profit), so correctly understanding what each line represents is essential to interpreting the ratios calculated from them.",
-                "explain": "This closing card directly hands off to Module 5 — every profitability ratio that module develops (gross margin, operating margin, net margin, ROCE, ROE) is simply a specific combination of figures introduced in this module, so genuine fluency here is a direct prerequisite there."
-            }
-        ]
-    },
-    {
-        "id": "m04",
-        "title": "The cash flow statement",
-        "description": "Covers the cash flow statement — how it reconciles reported profit to actual cash movement, and its three standard sections: operating, investing and financing activities.",
-        "cards": [
-            {
-                "q": "What does the 'cash flow statement' show?",
-                "a": "The actual cash inflows and outflows of a business over a period, reconciling the change in its cash balance, in contrast to the accruals-based income statement.",
-                "explain": "This is the third and final financial statement previewed in Module 1 — worth treating this module as the direct resolution of Module 3's central warning: since profit isn't the same as cash, this statement exists specifically to show what actually happened to the business's cash."
-            },
-            {
-                "q": "Why is the cash flow statement considered an important complement to the income statement, not a duplicate of it?",
-                "a": "Because accruals accounting means reported profit can diverge substantially from actual cash generated — a profitable business can still run out of cash, and the cash flow statement reveals that risk directly.",
-                "explain": "This is an important, sobering point worth remembering precisely — a company can report healthy profit right up until the point it becomes insolvent from a genuine cash shortage, which is exactly the scenario the overtrading card later in this module describes concretely."
-            },
-            {
-                "q": "What are the three standard sections a cash flow statement is divided into?",
-                "a": "Cash flows from operating activities, cash flows from investing activities, and cash flows from financing activities.",
-                "explain": "This three-way split maps directly onto Module 1's three decision areas — operating cash flow relates to day-to-day trading, investing cash flow to the investment decision (Modules 13-16), and financing cash flow to the financing decision (Modules 8-11)."
-            },
-            {
-                "q": "What does 'cash flow from operating activities' represent?",
-                "a": "Cash generated or used by the business's core, day-to-day trading operations.",
-                "explain": "This is the section most directly comparable to the income statement's operating profit — the difference between the two (explored in the next few cards) is exactly the accruals adjustments this module's technique cards develop."
-            },
-            {
-                "q": "What does 'cash flow from investing activities' represent?",
-                "a": "Cash spent on or received from acquiring or disposing of long-term assets, such as purchasing equipment or selling a subsidiary.",
-                "explain": "This is the cash-statement trace of exactly the non-current asset purchases Module 2 introduced and Module 13's investment appraisal material evaluates in detail — a capital project's cash outflow, once actually approved and undertaken, shows up here."
-            },
-            {
-                "q": "What does 'cash flow from financing activities' represent?",
-                "a": "Cash raised from or repaid to providers of finance, such as issuing shares, borrowing, repaying debt, or paying dividends.",
-                "explain": "This directly previews Modules 8-9's sources-of-finance material — every financing decision those modules discuss (issuing shares, taking on debt) shows up concretely in this section of the cash flow statement."
-            },
-            {
-                "q": "How is operating cash flow typically derived from profit under the 'indirect method'?",
-                "a": "Starting from operating profit, non-cash items (e.g. depreciation) are added back, and changes in working capital (inventory, receivables, payables) are adjusted for, to arrive at the actual cash generated from operations.",
-                "explain": "This is the practical, step-by-step recipe that resolves Module 3's profit-versus-cash distinction concretely — worth treating this as the master formula the next several cards each explain one piece of individually."
-            },
-            {
-                "q": "Why is depreciation added back to profit when calculating operating cash flow?",
-                "a": "Depreciation is a non-cash expense that reduced reported profit but involved no actual cash outflow in the period, so it must be added back to reconcile profit to cash generated.",
-                "explain": "This is exactly Module 3's depreciation card resolved in full — the cash was already accounted for when the asset was purchased (appearing in investing cash flow at that time), so charging it again as a cash cost here would double-count it."
-            },
-            {
-                "q": "How does an increase in trade receivables during a period affect operating cash flow, relative to reported profit?",
-                "a": "It reduces operating cash flow relative to profit, since the corresponding revenue has been recognised in profit but the cash hasn't yet actually been collected from customers.",
-                "explain": "This is Module 2's trade receivables concept given its cash flow consequence — a growing receivables balance means the business is 'owed more', which is good for the balance sheet's asset total but bad for actual cash in hand this period."
-            },
-            {
-                "q": "How does an increase in trade payables during a period affect operating cash flow, relative to reported profit?",
-                "a": "It increases operating cash flow relative to profit, since costs have been recognised in profit but the corresponding cash hasn't yet actually been paid out to suppliers.",
-                "explain": "This is the exact mirror image of the receivables card above — worth noting the two together as an important pattern: a <em>growing</em> receivables balance drags cash flow down, while a <em>growing</em> payables balance pushes cash flow up, both relative to reported profit."
-            },
-            {
-                "q": "Why might a rapidly growing, profitable business still experience a cash flow crisis?",
-                "a": "Growth often requires increasing investment in working capital (more inventory, more receivables as sales grow) and non-current assets, which can consume cash faster than profitable trading generates it — a phenomenon known as overtrading.",
-                "explain": "This is the real-world, high-stakes consequence of the two cards above combined — a profitable, fast-growing business can fail purely from cash exhaustion, which is exactly why Module 7's working capital management material matters so much during a period of rapid growth specifically."
-            },
-            {
-                "q": "What is 'free cash flow', broadly speaking?",
-                "a": "Cash generated from operations after deducting the capital expenditure needed to maintain/grow the business, representing cash available to distribute to providers of finance.",
-                "explain": "This directly previews Module 17's valuation material — free cash flow is precisely the cashflow stream discounted-cashflow-based business valuation methods use, making this concept a direct bridge from this module into later valuation technique."
-            },
-            {
-                "q": "Why might an investor or lender place particular weight on the cash flow statement when assessing a company?",
-                "a": "Ultimately, a business needs cash (not just accounting profit) to pay its debts, interest, and dividends, so cash flow gives a more direct read on genuine financial health and repayment capacity than profit alone.",
-                "explain": "This is worth connecting to Module 9's debt-finance material — a lender's primary concern is whether the business can generate enough <em>cash</em> to service its debt, which is exactly why cash flow (not just profit) is central to credit assessment."
-            },
-            {
-                "q": "How do the three sections of the cash flow statement together explain the overall change in a company's cash balance?",
-                "a": "Summing the net cash flow from operating, investing, and financing activities gives the total change in cash over the period, reconciling the opening and closing cash balances shown on the balance sheet.",
-                "explain": "This is the explicit mechanical link between this module and Module 2 — worth recognising this as completing the full circle of interconnection between all three financial statements: profit (Module 3) reconciles to cash (this module), which reconciles to the balance sheet's cash figure (Module 2)."
-            },
-            {
-                "q": "Why is understanding the cash flow statement particularly important background for the investment appraisal techniques covered later in this course?",
-                "a": "Investment appraisal (NPV, IRR) is built entirely on projected <em>cash</em> flows, not accounting profit, so understanding the profit-versus-cash distinction developed in this module is essential preparation for correctly identifying the relevant cashflows in an investment decision.",
-                "explain": "This closing card is a direct, explicit hand-off to Modules 13-16 — every investment appraisal technique in this course discounts <em>cashflows</em>, never accounting profit, which is exactly why this module's profit-versus-cash distinction is essential groundwork, not incidental detail."
-            }
-        ]
-    },
-    {
-        "id": "m05",
-        "title": "Financial statement analysis: profitability and liquidity ratios",
-        "description": "Covers ratio analysis techniques for assessing a company's profitability and liquidity from its financial statements.",
-        "cards": [
-            {
-                "q": "What is the general purpose of financial ratio analysis?",
-                "a": "To standardise and interpret figures from the financial statements, enabling meaningful comparison of a company's performance over time or against other companies.",
-                "explain": "This module puts Modules 2-4's financial statements to practical use — worth treating every ratio in this module as a specific, named combination of figures already introduced, now recombined to answer a useful comparative question."
-            },
-            {
-                "q": "Why is a ratio often more informative than a raw financial statement figure alone?",
-                "a": "A raw figure (e.g. £10m profit) has little meaning without context; expressing it relative to another figure (e.g. as a percentage of revenue or capital employed) allows comparison across companies of different sizes or across different time periods.",
-                "explain": "This is worth remembering as ratio analysis's whole justification — a £10m profit means something very different for a small company than a multinational, and a ratio strips out this scale effect, enabling fair comparison."
-            },
-            {
-                "q": "What does 'gross profit margin' measure, and how is it calculated?",
-                "a": "The proportion of revenue retained after direct costs of production; calculated as gross profit divided by revenue, expressed as a percentage.",
-                "explain": "This is Module 3's gross profit figure expressed relative to revenue — worth noting this margin specifically reflects pricing power and direct production efficiency, before any of the business's overhead cost structure is even considered."
-            },
-            {
-                "q": "What does 'operating profit margin' measure, and how is it calculated?",
-                "a": "The proportion of revenue retained after both direct and operating costs; calculated as operating profit divided by revenue, expressed as a percentage.",
-                "explain": "This is Module 3's operating profit expressed relative to revenue — comparing this margin to the gross margin above reveals how much of a company's gross profitability is being eaten up by its administrative and overhead cost base."
-            },
-            {
-                "q": "What does 'net profit margin' measure?",
-                "a": "The proportion of revenue that ultimately becomes profit after tax attributable to shareholders, calculated as profit after tax divided by revenue.",
-                "explain": "This is Module 3's profit after tax expressed relative to revenue — worth remembering this margin is affected by financing structure and tax (per Module 3's card on why two similar companies can report different profit after tax), unlike the operating margin above."
-            },
-            {
-                "q": "What is 'return on capital employed' (ROCE), and what does it measure?",
-                "a": "Operating profit divided by capital employed (total assets less current liabilities, or equivalently equity plus non-current liabilities) — it measures how efficiently a company generates profit from the capital invested in it.",
-                "explain": "This directly connects Module 3's operating profit to Module 2's balance sheet — worth previewing Module 10-11's cost-of-capital material here: ROCE is often compared directly against a company's cost of capital to judge whether it's creating value for its capital providers."
-            },
-            {
-                "q": "Why is ROCE often considered a particularly useful overall measure of business performance?",
-                "a": "It combines both profitability (the numerator) and how much capital was needed to achieve it (the denominator), unlike a margin ratio alone, which says nothing about how much capital was tied up generating that profit.",
-                "explain": "This is worth contrasting directly with the margin ratios above — a business could have a high margin but be highly capital-intensive (needing enormous investment to generate that profit), and ROCE is precisely the ratio that captures this capital-efficiency dimension the margins alone miss."
-            },
-            {
-                "q": "What is 'return on equity' (ROE), and how does it differ from ROCE?",
-                "a": "Profit after tax divided by shareholders' equity — unlike ROCE (which considers total capital employed, including debt), ROE measures the return generated specifically for shareholders on their own investment.",
-                "explain": "This directly previews Module 11's capital structure material — worth noting ROE can be inflated by taking on more debt (a leverage effect), even without genuine improvement in underlying operating performance, which is exactly the nuance that module explores in depth."
-            },
-            {
-                "q": "What does the 'current ratio' measure, and how is it calculated?",
-                "a": "A company's ability to meet its short-term obligations from its short-term assets; calculated as current assets divided by current liabilities.",
-                "explain": "This is Module 2's current assets and current liabilities directly combined — worth recognising this as the headline <em>liquidity</em> ratio, in contrast to the profitability ratios developed earlier in this module, testing a different dimension of financial health."
-            },
-            {
-                "q": "What is generally considered a 'healthy' current ratio, and why should this benchmark be applied with caution?",
-                "a": "A ratio comfortably above 1 (often cited around 1.5-2) is often considered healthy, but the appropriate level varies significantly by industry — a supermarket with fast-moving inventory and little credit sales can operate safely with a much lower ratio than a manufacturer with slow-moving stock.",
-                "explain": "This directly previews the industry-comparison card later in this module — worth treating this caveat as important exam guidance: quoting a generic benchmark without acknowledging its industry-dependence is a common way to give an incomplete answer."
-            },
-            {
-                "q": "What is the 'quick ratio' (acid-test ratio), and how does it differ from the current ratio?",
-                "a": "It excludes inventory from current assets before dividing by current liabilities, since inventory is often the least liquid current asset and may not be readily convertible to cash to meet an immediate obligation.",
-                "explain": "This is an important refinement of the current ratio above — worth recognising the quick ratio as answering a stricter question: 'could this company meet its short-term obligations <em>without</em> having to sell inventory', which matters especially for businesses with slow-moving or hard-to-liquidate stock."
-            },
-            {
-                "q": "Why might a very high current ratio not necessarily be a good sign for a company?",
-                "a": "It could indicate the company is holding excessive cash or inventory inefficiently, rather than deploying capital productively — liquidity strength has to be balanced against the opportunity cost of holding idle current assets.",
-                "explain": "This is worth connecting to CB2's opportunity cost concept — cash sitting idle earns little or no return, so an unnecessarily high current ratio can itself represent a genuine cost to shareholders, not an unambiguous strength."
-            },
-            {
-                "q": "Why is comparing a company's ratios against industry norms generally more meaningful than assessing them in isolation?",
-                "a": "Different industries have structurally different working capital needs, margins, and capital intensity, so a ratio that looks concerning in one industry (e.g. a low current ratio) may be entirely normal and healthy in another.",
-                "explain": "This resolves the earlier card's caution about generic benchmarks explicitly — worth treating industry comparison as the default, expected practice for any useful ratio interpretation, not an optional extra."
-            },
-            {
-                "q": "Why should ratio analysis typically look at trends over several periods, rather than a single year's figures alone?",
-                "a": "A single period's ratios can be distorted by one-off events or normal year-to-year fluctuation; examining the trend over several years gives a clearer, more reliable picture of genuine underlying performance and direction.",
-                "explain": "This directly echoes Module 3's point about exceptional items distorting a single period's figures — worth recognising trend analysis as a natural extension of that same caution, applied across ratios rather than to a single line item."
-            },
-            {
-                "q": "What is a key limitation of ratio analysis based purely on published financial statements?",
-                "a": "Financial statements reflect historical, accounting-based figures (which can be affected by accounting policy choices) rather than necessarily reflecting current market values or future prospects, limiting how forward-looking ratio analysis alone can be.",
-                "explain": "This closing card is worth previewing against Module 17's valuation material — ratio analysis tells you about <em>past</em> accounting performance, while valuation techniques try to capture the market's forward-looking view, and the two can diverge, especially for a company whose prospects are changing rapidly."
-            }
-        ]
-    },
-    {
-        "id": "m06",
-        "title": "Financial statement analysis: efficiency and gearing ratios",
-        "description": "Covers ratio analysis techniques for assessing how efficiently a company manages its working capital and assets, and how heavily it relies on debt finance.",
-        "cards": [
-            {
-                "q": "What does 'inventory turnover' measure, and how is it commonly calculated?",
-                "a": "How many times a company sells and replaces its inventory over a period; commonly calculated as cost of sales divided by average inventory.",
-                "explain": "This is worth reading alongside the 'inventory days' figure in the next card — turnover and days are two ways of expressing the same underlying efficiency, and both feed directly into Module 7's working capital cycle calculation."
-            },
-            {
-                "q": "What does 'inventory days' (days inventory outstanding) measure?",
-                "a": "The average number of days inventory is held before being sold, calculated as (average inventory / cost of sales) × 365.",
-                "explain": "A <em>lower</em> figure generally indicates more efficient inventory management, but worth remembering the caveat from Module 5's healthy-benchmark card — the appropriate level varies enormously by industry, since a fashion retailer and a wine merchant have structurally different inventory holding needs."
-            },
-            {
-                "q": "What does 'receivables days' (days sales outstanding) measure?",
-                "a": "The average number of days it takes a company to collect payment from its credit customers, calculated as (average trade receivables / revenue) × 365.",
-                "explain": "This directly quantifies exactly the timing gap Module 4 described between recognising revenue and actually collecting the cash — a rising receivables days figure over time is often an early warning sign worth investigating, since it suggests customers are taking longer to pay."
-            },
-            {
-                "q": "What does 'payables days' (days purchases outstanding) measure?",
-                "a": "The average number of days a company takes to pay its suppliers, calculated as (average trade payables / cost of sales) × 365.",
-                "explain": "This is the mirror image of receivables days from the supplier's perspective — a longer payables period effectively means the company is using supplier credit as a source of short-term, interest-free finance, directly relevant to Module 7's working capital management."
-            },
-            {
-                "q": "How do inventory days, receivables days and payables days combine to form the 'working capital cycle' (cash conversion cycle)?",
-                "a": "Working capital cycle = inventory days + receivables days − payables days — the number of days between paying cash out for inputs and receiving cash in from customers.",
-                "explain": "This directly previews Module 7's working capital management — worth noting a <em>longer</em> cycle means more cash is tied up in the business for longer, which is exactly the vulnerability described in Module 4's overtrading card."
-            },
-            {
-                "q": "What does 'asset turnover' measure, and how is it calculated?",
-                "a": "How efficiently a company uses its assets to generate revenue; calculated as revenue divided by total assets (or capital employed).",
-                "explain": "This is worth connecting to Module 5's ROCE — ROCE can actually be decomposed into operating profit margin multiplied by asset turnover, showing that a company can achieve a strong ROCE either through high margins or through efficient asset use (high turnover), or some combination of both."
-            },
-            {
-                "q": "What is the 'gearing ratio' (leverage ratio), and how is it commonly calculated?",
-                "a": "A measure of how much a company relies on debt relative to equity finance; commonly calculated as debt divided by (debt plus equity), or sometimes debt divided by equity alone.",
-                "explain": "This directly previews Module 11's capital structure material — gearing is the single most important ratio for assessing a company's financing mix, and it's worth being comfortable with both common formula variants, since exam questions may specify either."
-            },
-            {
-                "q": "Why is a highly geared company generally considered riskier than a lowly geared one, from a shareholder's perspective?",
-                "a": "Interest on debt must be paid regardless of how the business performs, so higher gearing means a greater proportion of profit is committed to fixed interest payments, amplifying the volatility of what's left over for shareholders (a magnifying effect known as financial risk).",
-                "explain": "This 'magnifying' effect is worth picturing concretely — if operating profit falls, fixed interest still has to be paid in full, so a much larger proportion of the (now smaller) remaining profit swing hits shareholders, exactly the mechanism Module 11's capital structure material develops as financial gearing risk."
-            },
-            {
-                "q": "What is 'interest cover', and what does it measure?",
-                "a": "A measure of how comfortably a company can meet its interest obligations from operating profit; calculated as operating profit divided by interest expense.",
-                "explain": "This is worth reading as gearing's practical, income-statement-based companion — gearing measures the <em>structural</em> reliance on debt from the balance sheet, while interest cover measures whether current <em>profit</em> is actually sufficient to service that debt comfortably."
-            },
-            {
-                "q": "Why might a lender place particular weight on a company's interest cover ratio when assessing a loan application?",
-                "a": "A low interest cover indicates the company has little buffer if profit falls before it would struggle to meet its interest payments, directly signalling default risk to a prospective lender.",
-                "explain": "This connects directly to Module 9's debt-finance material — a lender's whole assessment of creditworthiness centres on exactly this kind of ratio, since their primary concern is being repaid, not sharing in the company's upside."
-            },
-            {
-                "q": "Why might a company with strong profitability ratios (Module 5) still be considered financially risky overall?",
-                "a": "Profitability ratios say nothing about how that profit is financed — a highly geared company could show strong ROE (partly inflated by leverage) while carrying substantial financial risk that profitability ratios alone wouldn't reveal.",
-                "explain": "This is worth remembering as an important exam point — a full assessment of a company's financial health requires looking across profitability, liquidity, efficiency <em>and</em> gearing ratios together, since each reveals a different, non-overlapping dimension of risk."
-            },
-            {
-                "q": "Why might a company choose to increase its gearing deliberately, despite the added financial risk?",
-                "a": "Debt is often cheaper than equity (Module 10-11) and interest payments are typically tax-deductible, so moderate gearing can reduce a company's overall cost of capital and boost returns to shareholders, provided the added risk is judged acceptable.",
-                "explain": "This directly previews Module 11's capital structure theory — worth recognising gearing as a genuine trade-off (cheaper finance and a tax shield, against higher financial risk), not simply something to be minimised at all costs."
-            },
-            {
-                "q": "How might efficiency ratios (inventory, receivables, payables days) help explain a change in a company's liquidity ratios (Module 5) over time?",
-                "a": "A lengthening working capital cycle (e.g. slower receivables collection or rising inventory days) directly consumes cash, which can explain a deteriorating current or quick ratio even if reported profit remains stable.",
-                "explain": "This connects this module directly back to Module 5's liquidity ratios and Module 4's cash flow material — a thorough ratio analysis traces <em>why</em> a liquidity ratio has changed, not just that it has, and efficiency ratios are often exactly where that explanation is found."
-            },
-            {
-                "q": "Why should gearing be assessed relative to industry norms, similar to the liquidity ratio caution in Module 5?",
-                "a": "Capital-intensive industries with stable, predictable cashflows (e.g. utilities) can typically sustain much higher gearing safely than industries with volatile earnings (e.g. technology start-ups), so an appropriate gearing level depends on the nature of the business.",
-                "explain": "This is exactly the same industry-comparison caution Module 5 raised for the current ratio, now applied to gearing — worth remembering both ratios share this limitation: a benchmark that ignores industry context risks flagging a perfectly normal, safe company as concerning, or vice versa."
-            },
-            {
-                "q": "How do efficiency and gearing ratios together complete the overall picture of financial statement analysis developed across this course?",
-                "a": "Combined with Module 5's profitability and liquidity ratios, they give a rounded assessment covering how profitable a company is, how efficiently it operates, how easily it can meet short-term obligations, and how much financial risk it carries through its financing structure.",
-                "explain": "This closing card ties Module 5 and this module together explicitly — worth treating profitability, liquidity, efficiency and gearing as four distinct, complementary lenses, all needed together for a complete financial statement analysis rather than any single category alone."
-            }
-        ]
-    },
-    {
-        "id": "m07",
-        "title": "Working capital management",
-        "description": "Covers the practical management of a business's short-term assets and liabilities — inventory, receivables, payables and cash — to balance liquidity against profitability.",
-        "cards": [
-            {
-                "q": "What is 'working capital'?",
-                "a": "The capital tied up in a business's short-term operating cycle, typically defined as current assets minus current liabilities.",
-                "explain": "This is precisely Module 5's current ratio numerator and denominator combined into a single monetary figure rather than a ratio — worth recognising working capital as the pound amount, and the current ratio as the equivalent expressed relatively."
-            },
-            {
-                "q": "Why does working capital management involve a genuine trade-off between liquidity and profitability?",
-                "a": "Holding more working capital (e.g. more inventory or cash, or offering generous customer credit terms) improves liquidity and reduces the risk of running short of cash, but ties up capital that could otherwise earn a return elsewhere, reducing overall profitability.",
-                "explain": "This is CB2's opportunity cost concept applied directly to working capital — every pound tied up in excess inventory or receivables is a pound not earning a return in some more productive use, which is exactly the tension this whole module explores."
-            },
-            {
-                "q": "What is 'overtrading', and why is it a genuine risk for a growing business?",
-                "a": "A situation where a business expands sales rapidly without a corresponding increase in working capital finance, running out of cash despite being profitable on paper.",
-                "explain": "This is Module 4's overtrading card developed in full — worth remembering the mechanism precisely: growth increases the cash tied up in inventory and receivables faster than profit generates new cash, exactly the trap this module's management techniques exist to avoid."
-            },
-            {
-                "q": "What is 'overcapitalisation', as the opposite problem to overtrading?",
-                "a": "A situation where a business holds excessive working capital relative to its needs, tying up capital unproductively and reducing overall returns to shareholders.",
-                "explain": "This directly echoes Module 5's high-current-ratio caution — worth recognising overcapitalisation and overtrading as the two opposite failure modes this whole module is trying to help a business avoid, sitting on either side of an appropriate working capital level."
-            },
-            {
-                "q": "What techniques might a business use to manage inventory more efficiently?",
-                "a": "Just-in-time ordering, better demand forecasting, and periodic stock reviews to identify and reduce slow-moving or obsolete inventory.",
-                "explain": "Each of these techniques targets Module 6's inventory days ratio directly — worth treating this card as the practical toolkit behind that ratio: better forecasting and JIT reduce how much stock is held at all, while stock reviews clear out inventory that's silently inflating the ratio without genuine business need."
-            },
-            {
-                "q": "What is 'just-in-time' (JIT) inventory management?",
-                "a": "An approach where inventory is ordered and received only as needed for production/sale, minimising the amount of inventory held at any time.",
-                "explain": "This directly targets Module 6's inventory days ratio — successfully implemented JIT should show up as a materially lower inventory days figure, though it also introduces a genuine risk: less buffer against supply disruption."
-            },
-            {
-                "q": "What techniques might a business use to manage trade receivables more efficiently?",
-                "a": "Setting clear credit terms and credit limits, offering early payment discounts, and actively chasing overdue accounts (credit control).",
-                "explain": "These techniques all target Module 6's receivables days ratio directly — worth grouping them into two types: <em>Preventive</em> controls set before a sale (credit terms, credit limits) and <em>active</em> recovery after the sale (chasing overdue accounts, or discounts to encourage early payment)."
-            },
-            {
-                "q": "Why might offering a discount for early payment be worthwhile for a business, despite receiving a smaller amount from the customer?",
-                "a": "Collecting cash sooner reduces the working capital tied up in receivables and the associated risk of bad debts, which can outweigh the cost of the discount if the business has a genuine need for faster cash generation.",
-                "explain": "This is CB2's opportunity cost logic applied directly to a pricing decision — the discount has a genuine cost, but so does leaving cash tied up in receivables for longer, and this card's judgement call is really about which cost is larger for this specific business."
-            },
-            {
-                "q": "What is 'factoring', as a technique for managing receivables?",
-                "a": "Selling trade receivables to a third party (a factor) at a discount, in exchange for receiving cash immediately rather than waiting for customers to pay.",
-                "explain": "This directly previews Module 9's sources-of-finance material — factoring is effectively a form of short-term financing secured against receivables, trading away some profit margin (the discount) for immediate cash and reduced collection risk."
-            },
-            {
-                "q": "How might a business manage its trade payables as part of working capital management?",
-                "a": "Taking the full credit period offered by suppliers before paying (without breaching agreed terms), effectively using supplier credit as a free source of short-term finance.",
-                "explain": "This directly targets Module 6's payables days ratio — worth noting the careful qualifier 'without breaching agreed terms', since the next card explores exactly what goes wrong if a business pushes this tactic too far, beyond what suppliers have agreed to."
-            },
-            {
-                "q": "Why should a business be cautious about deliberately delaying payment to suppliers beyond agreed terms as a working capital tactic?",
-                "a": "It can damage supplier relationships, risk losing favourable credit terms or discounts, and harm the business's reputation and ability to negotiate good terms in future.",
-                "explain": "This is worth reading as a caution against taking the payables-days logic (Module 6) too far — there's a genuine difference between efficiently using <em>agreed</em> credit terms and damagingly abusing supplier goodwill by paying late."
-            },
-            {
-                "q": "Why does cash itself need to be actively managed as part of working capital, rather than simply held?",
-                "a": "Holding cash has an opportunity cost (it earns little or no return), so cash management involves balancing holding enough for operational needs and unexpected requirements against investing surplus cash productively.",
-                "explain": "This is CB2's opportunity cost concept recurring for the second time in this module — cash is the most liquid current asset, but that liquidity comes at the price of forgone return, exactly the same trade-off this module's opening card raised for working capital generally."
-            },
-            {
-                "q": "What is a 'cash budget', and how does it support working capital management?",
-                "a": "A forecast of a business's expected cash inflows and outflows over a future period, used to identify likely cash surpluses or shortfalls in advance.",
-                "explain": "This is a practical, forward-looking tool worth connecting to Module 4's cash flow statement — where the cash flow statement reports what already happened, a cash budget projects what's expected to happen, giving management time to arrange finance or investment before a shortfall or surplus actually arises."
-            },
-            {
-                "q": "How does effective working capital management directly support the liquidity ratios covered in Module 5?",
-                "a": "By managing inventory, receivables and payables to an appropriate level (avoiding both overtrading and overcapitalisation), a business maintains a healthy current and quick ratio, rather than the ratios simply being outcomes to observe after the fact.",
-                "explain": "This closing card ties this module directly back to Module 5 and Module 6 — working capital management is really the practical, hands-on <em>activity</em> that determines what those earlier modules' ratios end up measuring, not a separate, unrelated topic."
-            }
-        ]
-    },
-    {
-        "id": "m08",
-        "title": "Sources of finance: equity",
-        "description": "Covers how companies raise equity finance — ordinary and preference shares, retained earnings, and the mechanisms (IPOs, rights issues) used to issue new shares.",
-        "cards": [
-            {
-                "q": "What is 'ordinary share' (common stock) finance?",
-                "a": "Capital raised by issuing shares that give holders ownership rights, including voting rights and a residual claim on profits (via dividends) and assets.",
-                "explain": "This is Module 2's equity/share capital concept given its full financing treatment — ordinary shareholders are the ultimate risk-bearers described in that module's 'residual claim' card, paid only after every other claim on the business has been satisfied."
-            },
-            {
-                "q": "What are 'preference shares', and how do they differ from ordinary shares?",
-                "a": "Shares that typically receive a fixed dividend rate and rank ahead of ordinary shares for dividends and on liquidation, but usually carry no voting rights.",
-                "explain": "Worth thinking of preference shares as sitting <em>between</em> debt and ordinary equity in terms of risk and priority — a fixed, priority dividend feels debt-like, but (unlike debt) that dividend generally isn't a contractual obligation the company must legally pay in a bad year."
-            },
-            {
-                "q": "Why might a preference dividend not being paid in a particular year not constitute a default, unlike a missed interest payment on debt?",
-                "a": "Preference dividends (unless specifically stated as 'cumulative' and enforceable) are generally at the company's discretion, similar to ordinary dividends, whereas interest on debt is a contractual obligation that must be paid regardless of profitability.",
-                "explain": "This is an important distinction worth remembering precisely for exam purposes — it's exactly why preference shares are classified as equity (not debt) for most purposes, despite their fixed, debt-like dividend rate."
-            },
-            {
-                "q": "What are 'retained earnings' as a source of finance, and why are they often considered the most convenient source?",
-                "a": "Profit the company has generated and chosen to reinvest rather than distribute as dividends; they're convenient because they involve no issue costs, no dilution of existing ownership, and no need for external approval.",
-                "explain": "This directly recalls Module 2's retained earnings concept and previews Module 18's dividend policy material — the decision to retain rather than distribute profit is precisely the dividend policy decision that module examines in depth."
-            },
-            {
-                "q": "What is an 'initial public offering' (IPO)?",
-                "a": "The process by which a private company first offers its shares for sale to the public, typically becoming listed on a stock exchange in the process.",
-                "explain": "This directly connects to Module 1's private-versus-public company distinction — an IPO is precisely the event that converts a company from private to public, opening up access to the much larger pool of public equity capital."
-            },
-            {
-                "q": "What is a 'rights issue'?",
-                "a": "An offer of new shares to existing shareholders, in proportion to their current shareholding, typically at a discount to the current market price.",
-                "explain": "Worth noting this is specifically designed to protect existing shareholders' proportional ownership (their 'right' to maintain their stake) — a shareholder who takes up their full entitlement suffers no dilution of their percentage ownership, unlike a share issue offered to new, external investors."
-            },
-            {
-                "q": "Why is a rights issue typically priced at a discount to the current market share price?",
-                "a": "The discount makes the offer attractive enough to encourage existing shareholders to take up their entitlement (providing new capital), while the proportional nature of the issue protects them from being diluted if they do so.",
-                "explain": "Worth noting the discount itself doesn't disadvantage a shareholder who takes up their full entitlement — since they're buying <em>more</em> shares at the lower price in proportion to their existing stake, the theoretical ex-rights price (next card) ensures their overall wealth is unaffected either way."
-            },
-            {
-                "q": "What happens to a company's share price, in theory, immediately after a rights issue is announced and completed?",
-                "a": "The share price is expected to fall to a theoretical ex-rights price, reflecting the dilution effect of issuing new shares at a discount, blended with the existing shares' prior price.",
-                "explain": "This is a straightforward weighted-average calculation — the new (lower) theoretical price is simply the value of the combined old and new shares divided by the new total share count, and it's worth being comfortable calculating this figure directly given a rights issue's terms."
-            },
-            {
-                "q": "What is 'venture capital', as a source of equity finance?",
-                "a": "Equity finance provided by specialist investors to early-stage or high-growth-potential private companies, typically in exchange for a significant ownership stake and often board involvement.",
-                "explain": "This is an important source specifically for companies too young or risky to access public equity markets (an IPO) or conventional bank debt — venture capital investors accept higher risk in exchange for a higher expected return and active involvement in the business."
-            },
-            {
-                "q": "What is a key advantage of equity finance over debt finance, from the company's perspective?",
-                "a": "Equity carries no obligatory fixed payment — dividends are discretionary — reducing financial risk (Module 6) compared with debt's contractual interest obligations, and equity has no fixed repayment date.",
-                "explain": "This directly connects to Module 6's financial risk/gearing material — the absence of a fixed, mandatory payment is exactly what makes equity a genuine <em>shock absorber</em> for a business, unlike debt, which keeps demanding its interest payment even in a bad year."
-            },
-            {
-                "q": "What is a key disadvantage of equity finance compared with debt finance, from an existing shareholder's perspective?",
-                "a": "Issuing new equity dilutes existing shareholders' proportional ownership and control (unless a rights issue is used), and equity is generally more expensive than debt (Module 10-11), since equity investors demand a higher return for bearing more risk.",
-                "explain": "This is the direct trade-off against the advantage in the previous card — worth remembering both together, since a strong exam answer on financing choice should weigh the reduced financial risk of equity against its dilution and cost disadvantages, not present equity as a one-sided improvement over debt."
-            },
-            {
-                "q": "Why do equity investors generally require a higher expected return than debt investors in the same company?",
-                "a": "Equity holders bear more risk than debt holders — they're paid only after debt obligations are met, have no guaranteed return, and no fixed repayment date — so they require greater compensation for this additional risk.",
-                "explain": "This directly previews Module 10's cost of equity material — this risk-based intuition is precisely what the dividend growth model and CAPM formalise mathematically into an actual, quantified cost of equity figure."
-            },
-            {
-                "q": "Why might a company's choice between issuing equity, using retained earnings, or borrowing depend on prevailing market conditions?",
-                "a": "Share prices, investor sentiment, and interest rates all affect the relative cost and feasibility of each financing route at a given time — e.g. a depressed share price makes new equity issuance relatively unattractive, favouring debt or retained earnings instead.",
-                "explain": "This connects to Module 3's PESTLE-style external environment thinking from CB2 — financing decisions aren't made in a vacuum; the same company might rationally choose a completely different financing route at different points in the economic cycle, purely because market conditions have changed."
-            },
-            {
-                "q": "How does the choice between equity sources of finance ultimately connect to the capital structure decision covered later in this course?",
-                "a": "Each equity financing decision (retain profit, issue new shares, use preference shares) incrementally shapes the company's overall mix of equity and debt, which is precisely the capital structure question Module 11 examines directly.",
-                "explain": "This closing card hands off directly to Module 11 — worth recognising that every individual financing decision covered in this and the next module cumulatively determines the company's overall gearing (Module 6), rather than capital structure being a separate, abstract topic."
-            }
-        ]
-    },
-    {
-        "id": "m09",
-        "title": "Sources of finance: debt and other instruments",
-        "description": "Covers how companies raise debt finance — bank loans, bonds, leasing and trade credit — and the key features that distinguish different debt instruments.",
-        "cards": [
-            {
-                "q": "What is 'debt finance', in general terms?",
-                "a": "Capital borrowed by a company, typically requiring contractual interest payments and eventual repayment of the principal, without giving the lender an ownership stake.",
-                "explain": "This is worth contrasting directly with Module 8's equity finance — debt holders have no ownership or voting rights, but their interest and principal claims rank <em>ahead</em> of equity holders' claims, exactly the priority difference Module 2's residual-claim concept described."
-            },
-            {
-                "q": "What is a 'bank loan', as a source of business finance?",
-                "a": "Finance provided directly by a bank, typically with a set repayment schedule, interest rate, and often specific conditions (covenants) the borrower must adhere to.",
-                "explain": "This is the most common, straightforward form of debt finance for most businesses — worth noting the covenants mentioned here get their own dedicated treatment in the next card, since they're an important feature distinguishing debt finance from equity's lack of comparable restrictions."
-            },
-            {
-                "q": "What is a 'loan covenant'?",
-                "a": "A condition attached to a loan agreement, restricting the borrower's actions (e.g. limiting further borrowing) or requiring certain financial ratios to be maintained, protecting the lender's position.",
-                "explain": "This is worth connecting directly to Module 6's gearing and interest cover ratios — a covenant very commonly specifies a minimum interest cover or maximum gearing level, giving the lender an early trigger to intervene if the borrower's financial position starts to deteriorate."
-            },
-            {
-                "q": "What is a 'bond' (debenture), as a source of debt finance?",
-                "a": "A tradeable debt security issued by a company, promising to pay the holder periodic interest (coupon) payments and to repay the principal at a specified maturity date.",
-                "explain": "This is worth connecting to CM1's fixed-interest bond material — a corporate bond is structurally identical to the government bonds studied there, just issued by a company rather than a government, and priced with a credit spread reflecting the company's default risk."
-            },
-            {
-                "q": "What is the difference between 'secured' and 'unsecured' debt?",
-                "a": "Secured debt is backed by specific collateral (assets the lender can claim if the borrower defaults); unsecured debt has no specific asset backing, relying only on the borrower's general creditworthiness.",
-                "explain": "This is worth connecting to Module 2's non-current assets — property, plant and equipment are exactly the kind of assets commonly pledged as collateral, since they retain a resale value the lender can realise if the borrower defaults."
-            },
-            {
-                "q": "Why does secured debt typically carry a lower interest rate than unsecured debt from the same borrower?",
-                "a": "The collateral reduces the lender's risk of loss in the event of default (since they have a specific asset claim to fall back on), so lenders require less compensation (a lower interest rate) for bearing less risk.",
-                "explain": "This is exactly the same risk-versus-return principle recurring throughout this course — a lower-risk lending position (backed by collateral) commands a lower required return, the debt-market analogue of Module 8's point that riskier equity investors require higher returns."
-            },
-            {
-                "q": "What is 'leasing', as a source of business finance for acquiring an asset?",
-                "a": "An arrangement where a business pays regular rentals to use an asset owned by another party (the lessor), rather than purchasing it outright.",
-                "explain": "This is worth thinking of as an alternative route to Module 2's non-current assets — rather than an outright purchase (typically financed by cash, equity or a loan), leasing lets a business access and use an asset without the large upfront capital outlay a purchase would require."
-            },
-            {
-                "q": "What is the difference between an 'operating lease' and a 'finance lease'?",
-                "a": "An operating lease is essentially a short-term rental, with the lessor retaining most of the asset's risks and rewards; a finance lease transfers substantially all the risks and rewards of ownership to the lessee, economically resembling a purchase financed by debt.",
-                "explain": "This distinction matters directly for Module 6's gearing ratio — a finance lease is economically closer to debt-financed ownership and is typically reflected as such on the balance sheet, while an operating lease has historically been treated more like an ordinary running cost, with different implications for reported gearing."
-            },
-            {
-                "q": "What is 'trade credit', as an implicit source of short-term finance?",
-                "a": "Credit extended by suppliers, allowing a business to pay for goods/services some time after receiving them — effectively a short-term, often interest-free source of working capital finance.",
-                "explain": "This is exactly Module 2's trade payables and Module 7's payables-management material recalled directly — trade credit is worth recognising as a genuine, if informal, source of finance, distinct from a formal bank loan or bond issue."
-            },
-            {
-                "q": "What is a 'convertible bond'?",
-                "a": "A bond that gives the holder the option to convert it into a specified number of the issuing company's ordinary shares, instead of receiving cash repayment at maturity.",
-                "explain": "This is worth recognising as a hybrid instrument, combining features of both debt (fixed coupons, priority claim) and equity (the conversion option) — its embedded option typically lets the company offer a lower coupon rate than an equivalent plain bond, since investors value the conversion right."
-            },
-            {
-                "q": "Why might a company choose to issue convertible debt rather than straight debt or straight equity?",
-                "a": "It can typically be issued at a lower interest cost than straight debt (since investors value the conversion option), while avoiding immediate dilution of existing shareholders, which only occurs later if and when the bonds are actually converted.",
-                "explain": "This closes the loop on the hybrid-instrument idea from the previous card — worth recognising convertible debt as offering a genuine middle path between Module 8's equity (immediate dilution, no fixed obligation) and straight debt (higher cost, no dilution), deferring the dilution question until conversion actually happens, if it ever does."
-            },
-            {
-                "q": "What is a key advantage of debt finance over equity finance, from the company's perspective?",
-                "a": "Debt is typically cheaper than equity (lenders require a lower return than shareholders, given their lower risk and higher priority), and interest payments are usually tax-deductible, further reducing the effective cost.",
-                "explain": "This directly previews Module 11's capital structure material — the tax deductibility of interest ('the tax shield') is one of the central reasons that module gives for why moderate gearing can reduce a company's overall cost of capital, not just a minor side benefit."
-            },
-            {
-                "q": "What is a key disadvantage of debt finance compared with equity finance, from the company's perspective?",
-                "a": "Interest and principal repayments are contractual obligations that must be met regardless of the company's profitability, increasing financial risk (Module 6) and potentially leading to default if cashflow is insufficient.",
-                "explain": "This is the direct trade-off against the advantage above, and it's the same financial-risk theme raised throughout Module 6 — worth remembering both cards together whenever asked to compare debt and equity, since presenting cheaper cost without this genuine risk downside would be an incomplete answer."
-            },
-            {
-                "q": "Why might a company diversify its sources of debt finance (e.g. combining bank loans and bonds), rather than relying on a single lender?",
-                "a": "It reduces dependence on any single lender or instrument, provides flexibility, and can access different pools of capital with potentially different terms suited to different needs.",
-                "explain": "This echoes the diversification-of-counterparty logic seen elsewhere in actuarial practice — relying on a single source of finance concentrates a company's exposure to that lender's own willingness and ability to continue providing funds."
-            },
-            {
-                "q": "How does the choice between the debt instruments covered in this module, combined with Module 8's equity sources, ultimately determine a company's overall capital structure?",
-                "a": "Every individual financing decision made across both modules cumulatively shapes the company's overall mix of debt and equity, which directly determines its gearing (Module 6) and is the central question Module 11's capital structure theory examines.",
-                "explain": "This closing card completes the hand-off to Module 11 begun in Module 8 — worth treating Modules 8 and 9 together as the full menu of financing options a company chooses from, with Module 11 addressing how that overall mix should be decided."
-            }
-        ]
-    },
-    {
-        "id": "m10",
-        "title": "Cost of capital: cost of equity",
-        "description": "Covers how to estimate a company's cost of equity — the return shareholders require — using the dividend growth model and the Capital Asset Pricing Model (CAPM).",
-        "cards": [
-            {
-                "q": "What is meant by the 'cost of equity'?",
-                "a": "The return shareholders require for investing in a company's shares, given the risk they're bearing — the minimum return the company must offer to attract and retain equity investment.",
-                "explain": "This directly formalises the intuition from Module 8's closing cards — equity investors require a higher return than debt investors because they bear more risk, and cost of equity is precisely the quantified figure representing that required return."
-            },
-            {
-                "q": "What is the 'dividend growth model' (Gordon growth model) used to estimate?",
-                "a": "The cost of equity, based on the idea that a share's value equals the present value of its expected future dividends, assumed to grow at a constant rate.",
-                "explain": "This is CM1's perpetuity-with-growth valuation formula applied directly to share valuation — worth recognising the model's logic as fundamentally the same present-value machinery used throughout actuarial work, just applied to a specific cashflow stream (dividends)."
-            },
-            {
-                "q": "What is the dividend growth model formula for the cost of equity, and what does each symbol represent?",
-                "a": "$k_e = \\dfrac{D_0(1+g)}{P_0} + g$, where $D_0$ is the current dividend, $g$ is the assumed constant dividend growth rate, and $P_0$ is the current share price.",
-                "explain": "Worth being careful to use $D_0(1+g)$ (next year's expected dividend), not $D_0$ itself, in the numerator — using the wrong dividend figure is one of the most common errors in applying this formula."
-            },
-            {
-                "q": "What is a key limitation of the dividend growth model as a way of estimating cost of equity?",
-                "a": "It assumes dividends grow at a constant rate indefinitely, which is a strong simplifying assumption, and it cannot be applied to companies that pay no dividend at all.",
-                "explain": "This is worth remembering as a genuine practical constraint — many growth companies deliberately pay no dividend, retaining all profit for reinvestment, making this model entirely inapplicable to them despite their shares clearly having value."
-            },
-            {
-                "q": "How might the dividend growth rate 'g' be estimated in practice?",
-                "a": "From the historical average growth rate of the company's past dividends, or estimated as the product of the company's retention ratio and its return on equity (the 'sustainable growth rate').",
-                "explain": "The 'sustainable growth rate' formula is worth connecting directly to Module 5's ROE — it captures an intuitive idea: a company can only grow its dividends as fast as it grows its underlying equity base, which happens exactly through retained (reinvested) profit earning the company's own ROE."
-            },
-            {
-                "q": "What does the 'Capital Asset Pricing Model' (CAPM) estimate, and what is its basic formula?",
-                "a": "The required return on an investment (here, cost of equity); $k_e = r_f + \\beta(r_m - r_f)$, where $r_f$ is the risk-free rate, $r_m$ is the expected return on the market, and $\\beta$ is the investment's systematic risk relative to the market.",
-                "explain": "This is CM2's CAPM formula recalled directly, applied here specifically to estimating a company's cost of equity — worth remembering the same formula and interpretation transfer completely between the two subjects."
-            },
-            {
-                "q": "What does a company's 'beta' represent in the CAPM?",
-                "a": "A measure of how sensitive the company's share returns are to movements in the overall market — a beta greater than 1 indicates more volatility than the market, less than 1 indicates less.",
-                "explain": "This is exactly CM2's beta concept recalled directly — worth remembering it captures specifically <em>systematic</em> risk (the portion tied to overall market movements), not the company's total risk, which is exactly why CAPM's cost of equity depends on beta rather than on the share's own standalone volatility."
-            },
-            {
-                "q": "What is the 'equity risk premium' (market risk premium) in the CAPM formula?",
-                "a": "$r_m - r_f$, the extra return investors require for holding the risky market portfolio rather than a risk-free asset.",
-                "explain": "This is worth reading alongside Module 8's closing cards on why equity investors demand higher returns than debt investors — the equity risk premium is precisely that extra required compensation, quantified and applied consistently across every company via the CAPM formula."
-            },
-            {
-                "q": "Why might CAPM be preferred over the dividend growth model for estimating cost of equity in some situations?",
-                "a": "CAPM can be applied to companies that don't pay dividends (since it doesn't rely on a dividend stream), and it explicitly links the required return to a formal measure of risk (beta) rather than relying on an assumed constant growth rate.",
-                "explain": "This directly resolves the dividend growth model's own limitation card from earlier in this module — a young, high-growth company retaining all its profit (no dividends at all) simply cannot be valued using the dividend growth model, making CAPM the only viable option of the two."
-            },
-            {
-                "q": "What is a key practical challenge in applying CAPM to estimate a specific company's cost of equity?",
-                "a": "Beta, the risk-free rate, and the equity risk premium all need to be estimated, and different reasonable estimation choices (e.g. which historical period, which market index) can produce meaningfully different cost of equity figures.",
-                "explain": "This is worth remembering as a genuine practical limitation, mirroring the dividend growth model's own estimation challenges (estimating 'g') — CAPM isn't a magic formula that removes judgement from the process, it just relocates <em>where</em> that judgement is needed."
-            },
-            {
-                "q": "Why might the dividend growth model and CAPM give different estimates of the cost of equity for the same company?",
-                "a": "They rely on different underlying assumptions and data (historical dividend growth versus market risk and beta), so in practice the two methods will rarely agree exactly, and judgement is needed in choosing or reconciling between them.",
-                "explain": "This is worth treating as a realistic exam scenario — rather than mechanically picking one method, a strong answer might calculate both, comment on why they differ, and use judgement (perhaps averaging, or favouring whichever model's assumptions better fit the specific company) to reach a final view."
-            },
-            {
-                "q": "Why is cost of equity considered a component of, rather than the whole of, a company's overall cost of capital?",
-                "a": "Most companies are financed by a mix of equity and debt, so the overall cost of capital needs to combine the cost of equity with the cost of debt (Module 11), weighted by their respective proportions in the company's financing.",
-                "explain": "This directly previews Module 11's WACC material — worth recognising cost of equity as one of exactly two inputs (alongside cost of debt) that combine into a single overall discount rate used throughout Modules 13-16's investment appraisal material."
-            },
-            {
-                "q": "Why does a higher-risk company generally have a higher cost of equity than a lower-risk one?",
-                "a": "Both the dividend growth model (implicitly, via the market's required return reflected in share price) and CAPM (explicitly, via beta) capture the principle that investors demand greater compensation for bearing greater risk.",
-                "explain": "This closing card ties both estimation methods covered in this module back to the same underlying economic principle — however the cost of equity is actually calculated, it should always increase with the genuine riskiness of the company's shares, which is a useful sense-check on any calculated figure."
-            }
-        ]
-    },
-    {
-        "id": "m11",
-        "title": "Capital structure",
-        "description": "Covers how a company's mix of debt and equity finance affects its overall cost of capital (WACC), including Modigliani-Miller theory and practical considerations in choosing an appropriate capital structure.",
-        "cards": [
-            {
-                "q": "What is the 'weighted average cost of capital' (WACC)?",
-                "a": "A company's overall cost of capital, combining its cost of equity and cost of debt, each weighted by their proportion in the company's total financing.",
-                "explain": "This directly resolves Module 10's closing card — WACC is exactly the single figure formed by combining cost of equity (Module 10) with cost of debt, and it's the discount rate used throughout Modules 13-16's investment appraisal material."
-            },
-            {
-                "q": "What is the formula for WACC, in terms of the cost and proportion of equity and debt?",
-                "a": "$WACC = \\dfrac{E}{E+D}k_e + \\dfrac{D}{E+D}k_d(1-t)$, where $E$ and $D$ are the market values of equity and debt, $k_e$ and $k_d$ are their respective costs, and $t$ is the corporate tax rate.",
-                "explain": "The $(1-t)$ adjustment on the cost of debt is worth remembering precisely — it reflects the tax deductibility of interest flagged in Module 9, meaning the company's genuine, after-tax cost of debt is lower than the interest rate it actually pays."
-            },
-            {
-                "q": "Why is WACC calculated using the market values of equity and debt, rather than their book (balance sheet) values?",
-                "a": "Market values reflect what investors would actually require today for the risk they're bearing, whereas book values are historical accounting figures that may bear little relation to current economic value.",
-                "explain": "This is exactly Module 13's market-value valuation argument (from the balance sheet material) applied to capital structure — worth remembering WACC is fundamentally a forward-looking, market-based figure, not a backward-looking accounting one."
-            },
-            {
-                "q": "Why is a company's WACC typically used as the discount rate in investment appraisal?",
-                "a": "It represents the minimum return required by the company's providers of finance overall, so a project earning at least the WACC is expected to satisfy those providers and create value for shareholders.",
-                "explain": "This directly previews Module 13's NPV material — worth recognising WACC as the natural 'hurdle rate' precisely because it reflects what the company's <em>own</em> capital costs, making it the appropriate benchmark a new project's return must clear."
-            },
-            {
-                "q": "What does the traditional view of capital structure suggest about the relationship between gearing and WACC?",
-                "a": "WACC initially falls as gearing increases (since cheaper debt is substituted for more expensive equity), reaches a minimum at an optimal gearing level, then rises again as financial risk becomes excessive.",
-                "explain": "This directly connects to Module 6's financial risk material — worth recognising this as a genuine trade-off theory: debt is cheaper (lowering WACC), but too much debt raises financial risk enough that both debt and equity holders demand higher returns, eventually reversing the initial benefit."
-            },
-            {
-                "q": "What does the Modigliani-Miller (MM) 'irrelevance proposition' state, in a world with no taxes?",
-                "a": "In a perfect capital market with no taxes, a company's overall value (and WACC) is independent of its capital structure — how a company is financed doesn't affect its total value.",
-                "explain": "This is a deliberately counter-intuitive theoretical starting point worth understanding as a <em>baseline</em> — MM's own later refinement (the next card) shows exactly what real-world factor (tax) breaks this irrelevance result, which is precisely why capital structure matters in practice."
-            },
-            {
-                "q": "How does introducing corporate tax change the Modigliani-Miller conclusion about capital structure?",
-                "a": "With corporate tax, the tax deductibility of interest creates a genuine 'tax shield' benefit to debt, meaning company value increases (and WACC falls) as gearing increases, at least up to a point.",
-                "explain": "This is precisely the tax-shield benefit flagged in Module 9's advantage-of-debt card, now given its formal theoretical grounding — worth recognising MM-with-tax as the theoretical justification for the traditional view's initial downward-sloping WACC region."
-            },
-            {
-                "q": "Why does MM's tax-adjusted theory suggest an optimal capital structure isn't simply '100% debt'?",
-                "a": "In practice, very high gearing introduces significant costs of financial distress (increased risk of default, higher borrowing costs, potential bankruptcy costs), which eventually outweigh the tax benefit of additional debt.",
-                "explain": "This directly connects to the traditional view's rising WACC region at high gearing — worth recognising financial distress costs as the practical, real-world factor that stops companies pursuing debt finance indefinitely, even though the pure tax shield benefit alone would seem to favour ever more debt."
-            },
-            {
-                "q": "What is 'pecking order theory', as an alternative perspective on capital structure decisions?",
-                "a": "The theory that companies prefer to finance new investment first from retained earnings, then debt, and only turn to new equity issuance as a last resort, rather than targeting a specific optimal gearing ratio.",
-                "explain": "This is worth contrasting directly with the trade-off theory (traditional view/MM-with-tax) — pecking order theory suggests companies aren't actively targeting an 'optimal' gearing level at all, but instead follow a preference <em>order</em> driven by relative cost and information asymmetry considerations."
-            },
-            {
-                "q": "Why might retained earnings be the most preferred source of finance under pecking order theory?",
-                "a": "It avoids the issue costs, dilution, and negative signalling effects (discussed next) associated with raising external finance, making it the most convenient and least costly option where sufficient retained profit is available.",
-                "explain": "This directly recalls Module 8's point about retained earnings' convenience — worth recognising pecking order theory as essentially formalising that earlier intuition into a complete, ranked financing preference order."
-            },
-            {
-                "q": "Why might issuing new equity be interpreted negatively by the market, according to pecking order theory?",
-                "a": "Managers are assumed to have better information about the company's true prospects than outside investors; choosing to issue new equity rather than debt can signal that managers believe the shares are currently overvalued, causing the share price to fall on announcement.",
-                "explain": "This is an important information-asymmetry argument worth remembering explicitly — it's precisely why pecking order theory places new equity issuance <em>last</em> in the preference order, behind both retained earnings and debt."
-            },
-            {
-                "q": "What practical factors might a company consider when deciding on its target capital structure, beyond pure theory?",
-                "a": "Industry norms and comparable companies' gearing levels, the stability and predictability of its cashflows, the availability and cost of different financing sources, and the views of lenders/credit rating agencies.",
-                "explain": "This directly echoes Module 6's industry-comparison caution — worth recognising that real capital structure decisions blend theoretical principles (trade-off theory, pecking order) with these practical, company-specific and industry-specific considerations."
-            },
-            {
-                "q": "Why might a company with highly volatile, unpredictable cashflows generally maintain lower gearing than a company with stable, predictable cashflows?",
-                "a": "Volatile cashflows increase the risk of being unable to meet fixed interest obligations in a bad period, so lower gearing provides a more prudent buffer against this financial risk, consistent with Module 6's interest cover material.",
-                "explain": "This is a direct, practical application of Module 6's interest cover and financial risk concepts — worth using this reasoning explicitly whenever asked to assess whether a specific company's gearing level appears appropriate given the nature of its business."
-            },
-            {
-                "q": "How does the choice of capital structure ultimately connect back to the investment appraisal techniques covered in the next few modules?",
-                "a": "The company's capital structure directly determines its WACC, which is the discount rate typically used to appraise potential investment projects — a change in capital structure can therefore change which projects appear worthwhile.",
-                "explain": "This closing card is the module's direct hand-off to Modules 13-16 — worth recognising WACC as the genuine link between this module and everything that follows: an investment decision (Module 13's NPV) can't be properly evaluated without first having a genuine discount rate, which capital structure decisions ultimately determine."
-            }
-        ]
-    },
-    {
-        "id": "m12",
-        "title": "Investment appraisal: payback and accounting rate of return",
-        "description": "Covers two simple, widely-used investment appraisal techniques — payback period and accounting rate of return — along with their decision rules and key limitations.",
-        "cards": [
-            {
-                "q": "What does the 'payback period' method measure?",
-                "a": "How long it takes for a project's cumulative cash inflows to equal (pay back) the initial investment outlay.",
-                "explain": "This is the simplest of all investment appraisal techniques, and it's worth treating this module as establishing a baseline against which Module 13's NPV (a much more theoretically sound method) will later be compared."
-            },
-            {
-                "q": "What is the typical decision rule under the payback period method?",
-                "a": "Accept the project if its payback period is shorter than a specified target/maximum period set by the company; when comparing mutually exclusive projects, prefer the one with the shorter payback.",
-                "explain": "Worth noting the target period itself is a somewhat arbitrary, company-chosen benchmark — unlike NPV's zero threshold (Module 13), which is theoretically grounded in whether value is created at all, payback's cut-off is really just a policy choice reflecting the company's own risk appetite."
-            },
-            {
-                "q": "Give one advantage of the payback period method.",
-                "a": "It is simple to calculate and understand, and it provides a rough measure of a project's liquidity risk by favouring projects that recover their investment quickly.",
-                "explain": "This liquidity-focused advantage is worth connecting to Module 4's cash flow material — a shorter payback period means the company's cash is tied up for less time, which can matter for a company with its own working capital or liquidity constraints (Module 7)."
-            },
-            {
-                "q": "Give one key limitation of the payback period method.",
-                "a": "It ignores the time value of money (cashflows in different years are simply added together without discounting) and ignores all cashflows occurring after the payback period, however large they might be.",
-                "explain": "This is the method's most serious theoretical flaw, worth stating precisely — a project could have a very short payback but a poor total return, or a longer payback with an excellent total return, and payback alone cannot distinguish between these two very different situations."
-            },
-            {
-                "q": "What is 'discounted payback period', and how does it address one of payback's limitations?",
-                "a": "A variant of payback that discounts the cashflows to present value before calculating how long it takes to recover the initial investment, addressing the standard method's failure to account for the time value of money.",
-                "explain": "This directly previews Module 13's discounting technique — worth noting discounted payback still shares the ordinary payback method's other limitation (ignoring cashflows after the payback point), so it's only a partial fix, not a complete solution."
-            },
-            {
-                "q": "What does the 'accounting rate of return' (ARR) method measure?",
-                "a": "A project's average annual accounting profit expressed as a percentage of the investment required, typically calculated as average annual profit divided by average (or initial) investment.",
-                "explain": "This is worth contrasting sharply with every other method in this and later modules — ARR is the only investment appraisal technique built on accounting <em>profit</em> rather than cashflow, reintroducing exactly the profit-versus-cash distinction Module 3 and Module 4 warned about."
-            },
-            {
-                "q": "What is the typical decision rule under the ARR method?",
-                "a": "Accept the project if its ARR exceeds a specified target rate of return set by the company; when comparing mutually exclusive projects, prefer the one with the higher ARR.",
-                "explain": "As with payback's target period, this benchmark rate is a company-set policy choice rather than a theoretically-grounded threshold — worth contrasting directly with Module 14's IRR, which also produces a percentage but is compared against the company's actual cost of capital (WACC), an economically meaningful figure."
-            },
-            {
-                "q": "Give one advantage of the ARR method.",
-                "a": "It is relatively simple to calculate, uses familiar accounting profit figures, and produces a percentage return that's easy to compare against a target rate or against other investment opportunities.",
-                "explain": "The familiarity of accounting profit is worth noting as a genuine, if double-edged, advantage — managers and boards are often more comfortable interpreting a profit-based percentage return than a discounted cashflow figure, even though (as the next card explains) this familiarity comes at a real theoretical cost."
-            },
-            {
-                "q": "Give one key limitation of the ARR method.",
-                "a": "It is based on accounting profit rather than cashflow (subject to the accruals distortions discussed in Module 3), and it ignores the time value of money entirely, treating profit earned in year 1 the same as profit earned in year 10.",
-                "explain": "Worth noting this is a more serious flaw than payback's limitations — ARR combines <em>both</em> of payback's problems (no discounting) with an entirely new one (using profit rather than cash), making it arguably the weakest of the appraisal techniques covered across this course."
-            },
-            {
-                "q": "Why might different reasonable definitions of 'investment' (average versus initial) in the ARR formula produce different results for the same project?",
-                "a": "Average investment (typically the mean of initial cost and residual value) gives a different denominator than using the initial investment cost alone, so the choice of definition directly affects the calculated ARR and must be applied consistently.",
-                "explain": "This is an important exam-technique point worth remembering explicitly — always state which definition of investment is being used when quoting an ARR figure, since the average-investment basis roughly doubles the resulting percentage compared with the initial-investment basis for a typical project with zero residual value."
-            },
-            {
-                "q": "Why do payback and ARR remain widely used in practice, despite their theoretical limitations relative to NPV?",
-                "a": "They are simple to calculate and communicate to non-technical managers, and can provide a useful quick screen or complement to more sophisticated techniques like NPV, even if they shouldn't be relied upon as the sole basis for a major investment decision.",
-                "explain": "This is worth remembering as balanced, practical guidance rather than dismissing these methods entirely — a good answer acknowledges their continued practical value as a <em>quick</em>, easy-to-communicate check, used alongside (not instead of) NPV for significant decisions."
-            },
-            {
-                "q": "Why might a company use payback as an initial screening tool before applying more rigorous techniques like NPV to a shortlist of projects?",
-                "a": "Payback quickly filters out projects that would tie up cash for an unacceptably long period, avoiding the effort of a full NPV analysis on projects unlikely to be pursued anyway for liquidity reasons.",
-                "explain": "This is worth recognising as a sensible two-stage process — a cheap, fast filter (payback) narrows a large set of possible projects down to a manageable shortlist, before the more effortful, theoretically superior technique (NPV, Module 13) is applied to the survivors."
-            },
-            {
-                "q": "How does the shared weakness of ignoring the time value of money link payback and ARR together, in contrast to the techniques covered in the next two modules?",
-                "a": "Both methods add or compare cashflows/profits from different time periods without discounting, treating money received in different years as equally valuable — a flaw directly corrected by NPV (Module 13) and IRR (Module 14), both of which explicitly discount future cashflows.",
-                "explain": "This closing card sets up the direct contrast with Modules 13-14 — worth treating this whole module as establishing exactly what's <em>wrong</em> with simple appraisal methods, motivating why NPV and IRR (which fix these specific flaws) are generally preferred for significant investment decisions."
-            }
-        ]
-    },
-    {
-        "id": "m13",
-        "title": "Investment appraisal: net present value",
-        "description": "Covers the net present value (NPV) method of investment appraisal — its calculation, decision rule, and why it's considered the theoretically superior appraisal technique.",
-        "cards": [
-            {
-                "q": "What does 'net present value' (NPV) measure?",
-                "a": "The present value of a project's expected future cash inflows minus the present value of its cash outflows (including the initial investment), discounted at an appropriate rate reflecting the project's risk.",
-                "explain": "This is CM1's whole present-value discounting machinery applied directly to a business investment decision — worth recognising NPV as fundamentally the same technique used throughout the actuarial curriculum, just applied here to evaluating a company project."
-            },
-            {
-                "q": "What is the NPV decision rule for a single, independent project?",
-                "a": "Accept the project if its NPV is positive (it's expected to increase shareholder wealth); reject it if NPV is negative.",
-                "explain": "Unlike Module 12's payback and ARR decision rules, this threshold (zero) isn't an arbitrary company policy choice — it's theoretically grounded: a zero NPV means the project exactly earns its required return, so anything below that destroys value relative to the alternative uses of that capital."
-            },
-            {
-                "q": "Why does a positive NPV indicate that a project is expected to increase shareholder wealth?",
-                "a": "A positive NPV means the project's discounted cash inflows exceed its cost, generating a return greater than what was required (the discount rate) — this genuine surplus value accrues to shareholders.",
-                "explain": "This directly connects to Module 1's shareholder-wealth-maximisation objective — worth recognising NPV as the technique most directly aligned with that stated objective, which is precisely why it's considered theoretically superior to payback and ARR (Module 12)."
-            },
-            {
-                "q": "What discount rate is typically used to calculate a project's NPV?",
-                "a": "The company's weighted average cost of capital (WACC), or a project-specific risk-adjusted rate if the project's risk differs materially from the company's average risk.",
-                "explain": "This directly recalls Module 11's WACC material — worth previewing Module 15's risk-adjustment material here: using the company's average WACC for an unusually risky or safe project would be a mismatch, which that later module addresses directly."
-            },
-            {
-                "q": "How should mutually exclusive projects be ranked using NPV?",
-                "a": "Select the project with the highest positive NPV, since this represents the greatest addition to shareholder wealth among the available alternatives.",
-                "explain": "Worth previewing Module 14 here explicitly — this simple ranking rule is exactly where NPV and IRR can disagree for mutually exclusive projects, and that module explains precisely why NPV's ranking should be trusted over IRR's whenever the two methods conflict."
-            },
-            {
-                "q": "Why is NPV generally considered theoretically superior to both payback and ARR?",
-                "a": "NPV explicitly accounts for the time value of money (unlike both alternatives) and is based on cashflow rather than accounting profit (unlike ARR), and it directly measures the project's expected contribution to shareholder wealth.",
-                "explain": "This is worth treating as the module's central claim, directly resolving Module 12's closing card — NPV fixes both of the specific flaws identified there simultaneously, which is exactly why it's the benchmark technique this whole course builds toward."
-            },
-            {
-                "q": "What does the 'additivity' property of NPV mean, and why is it useful?",
-                "a": "The NPVs of independent projects can simply be summed to give the combined NPV of undertaking them together, since present values in the same currency and time basis are directly comparable and combinable.",
-                "explain": "This is a useful practical property — it means a company can evaluate a whole <em>portfolio</em> of independent projects by simply summing their individual NPVs, without needing any special combined calculation."
-            },
-            {
-                "q": "How does NPV analysis typically treat the initial investment outlay?",
-                "a": "As a cash outflow occurring at time 0 (today), which is not discounted (since it's already at present value) and is deducted from the present value of subsequent inflows.",
-                "explain": "Worth remembering this explicitly as a common source of a small but easy-to-avoid error — discounting the time-0 outflow by mistake (rather than leaving it undiscounted) would understate the true cost of the project and overstate its NPV."
-            },
-            {
-                "q": "Why must only relevant, incremental cashflows be included in an NPV calculation?",
-                "a": "Only cashflows that change as a direct result of the investment decision should be included — irrelevant costs (e.g. sunk costs already incurred, or costs that would be incurred regardless of the decision) would distort the appraisal if wrongly included.",
-                "explain": "Worth flagging this principle as one of the most commonly tested sources of error in NPV exam questions: including a cost that shouldn't be attributed to the decision at hand, discussed further in the sunk-cost card that follows."
-            },
-            {
-                "q": "What is a 'sunk cost', and why should it be excluded from an NPV calculation?",
-                "a": "A cost that has already been incurred and cannot be recovered regardless of the current decision; it should be excluded because it doesn't change based on whether the project proceeds or not, so it's irrelevant to the decision.",
-                "explain": "This is worth remembering as CB2's opportunity cost concept viewed from its opposite side — a sunk cost has NO opportunity cost associated with the current decision, precisely because it's already gone regardless of what's decided now."
-            },
-            {
-                "q": "What is a key practical limitation of NPV, despite its theoretical superiority?",
-                "a": "It requires forecasting future cashflows and an appropriate discount rate, both of which involve genuine uncertainty and judgement — an NPV calculation is only as reliable as the assumptions feeding it.",
-                "explain": "This directly echoes CP1's 'garbage in, garbage out' modelling principle — worth remembering NPV's theoretical elegance doesn't remove the genuine forecasting uncertainty inherent in projecting a project's future cashflows years into the future."
-            },
-            {
-                "q": "Why might NPV be less intuitive to communicate to a non-technical manager than payback or ARR?",
-                "a": "NPV produces an absolute monetary figure derived through discounting, which can be less immediately intuitive than a simple time period (payback) or percentage return (ARR/IRR), even though it's the more theoretically robust measure.",
-                "explain": "This is worth connecting to CP2's communication material — even the theoretically best technique still needs to be explained clearly to whoever is making the final decision, which is exactly why IRR (Module 14), expressed as a percentage, often accompanies NPV in practice despite NPV's technical superiority."
-            },
-            {
-                "q": "How does the NPV method connect directly back to the cost of capital techniques covered in Modules 10-11?",
-                "a": "NPV calculations require a discount rate, and that rate is typically the company's WACC (Module 11), which is itself built from the cost of equity (Module 10) and cost of debt (Module 9) — making NPV the point where all of this course's financing material feeds directly into investment decision-making.",
-                "explain": "This closing card makes explicit the dependency running through this whole course — worth recognising Modules 8-11 (financing) and Modules 12-16 (investing) as connected, not two separate topics: the <em>output</em> of the financing modules (WACC) is a direct <em>input</em> to the investment appraisal modules."
-            }
-        ]
-    },
-    {
-        "id": "m14",
-        "title": "Investment appraisal: internal rate of return",
-        "description": "Covers the internal rate of return (IRR) method of investment appraisal, its decision rule, and the circumstances in which IRR and NPV can give conflicting recommendations.",
-        "cards": [
-            {
-                "q": "What does the 'internal rate of return' (IRR) measure?",
-                "a": "The discount rate at which a project's NPV equals exactly zero — the break-even rate of return the project is expected to generate.",
-                "explain": "This is worth recognising as using <em>exactly</em> the same discounting mechanics as Module 13's NPV, just solving for the discount rate that makes NPV zero, rather than calculating NPV at a pre-specified rate."
-            },
-            {
-                "q": "What is the IRR decision rule for a single, independent project?",
-                "a": "Accept the project if its IRR exceeds the company's required rate of return (typically its WACC); reject it if IRR is below that required rate.",
-                "explain": "This is worth comparing directly with Module 13's NPV decision rule — a project with IRR above WACC will always have a positive NPV at the WACC discount rate, and vice versa, since both tests are really asking the same underlying question in different units (a rate versus a monetary amount)."
-            },
-            {
-                "q": "How is IRR typically calculated when an exact formula isn't available?",
-                "a": "By calculating NPV at two different discount rates (one giving a positive NPV, one giving a negative NPV) and interpolating linearly between them to estimate the rate at which NPV would equal zero.",
-                "explain": "Worth remembering this interpolation is only an <em>approximation</em>, since the true NPV-versus-discount-rate relationship is curved, not a straight line — the closer together the two chosen rates are, the more accurate the linear interpolation estimate becomes."
-            },
-            {
-                "q": "Why is IRR often considered more intuitive to communicate than NPV, despite NPV's theoretical superiority?",
-                "a": "IRR is expressed as a simple percentage return, which is often easier for non-technical stakeholders to interpret and compare against other rates of return (e.g. a company's cost of capital or alternative investment opportunities) than an absolute monetary NPV figure.",
-                "explain": "This directly echoes Module 13's communication card — worth recognising this as precisely why IRR remains widely used in practice alongside NPV, despite the technical problems (developed in the rest of this module) that can make it an unreliable decision-making tool on its own."
-            },
-            {
-                "q": "Why can NPV and IRR give conflicting rankings when choosing between two mutually exclusive projects?",
-                "a": "The two methods can rank projects differently when the projects have different cashflow patterns or scales, because IRR measures a <em>rate</em> of return while NPV measures an absolute <em>value</em> created, and a smaller project can have a higher IRR but a lower NPV than a larger one.",
-                "explain": "This is worth remembering as the single most important limitation of IRR — it's possible for two methods considered together to disagree, in which case NPV should generally be preferred, since it directly measures shareholder wealth creation (Module 13), which is the ultimate objective."
-            },
-            {
-                "q": "When NPV and IRR give conflicting rankings for mutually exclusive projects, which method's recommendation should generally be followed, and why?",
-                "a": "NPV, because it directly measures the absolute increase in shareholder wealth, which is the company's stated financial objective (Module 1) — a higher IRR on a smaller project doesn't necessarily create more genuine value than a lower IRR on a larger one.",
-                "explain": "This resolves the conflict raised in the previous card explicitly — worth remembering this as a definitive exam answer: when the two methods disagree for mutually exclusive projects, NPV wins, precisely because Module 1 established shareholder wealth (not rate of return) as the actual objective being pursued."
-            },
-            {
-                "q": "What is the 'multiple IRR' problem, and when can it arise?",
-                "a": "A project with unconventional cashflows (e.g. an initial outflow, followed by inflows, followed by a further large outflow) can have more than one discount rate at which NPV equals zero, making IRR ambiguous or meaningless as a single figure.",
-                "explain": "This is an important technical limitation worth being able to recognise — it typically arises when a project's cashflow signs change more than once over its life (e.g. a project requiring a significant decommissioning cost at the end), unlike the simple 'one outflow then several inflows' pattern most textbook examples assume."
-            },
-            {
-                "q": "What assumption does IRR implicitly make about the rate at which interim cashflows can be reinvested?",
-                "a": "IRR implicitly assumes interim cashflows can be reinvested at the IRR itself, which can be an unrealistic assumption, especially for a project with a very high calculated IRR.",
-                "explain": "This is worth contrasting directly with NPV's more realistic assumption — NPV implicitly assumes reinvestment at the discount rate used (typically WACC), which is generally a far more defensible, achievable rate than an unusually high project-specific IRR."
-            },
-            {
-                "q": "Why might a project with no conventional single IRR (due to the multiple IRR problem) still be evaluated using NPV without difficulty?",
-                "a": "NPV doesn't require solving for a break-even rate at all — it simply calculates the project's value at the company's chosen discount rate directly, so unconventional cashflow patterns that break IRR don't cause any equivalent problem for NPV.",
-                "explain": "This is worth remembering as a further point in NPV's favour — the multiple IRR problem is entirely an artefact of <em>how</em> IRR is defined (solving an equation that can have multiple roots), not a genuine ambiguity about the project's actual value, which NPV calculates directly and unambiguously."
-            },
-            {
-                "q": "Why might a company still calculate and report IRR alongside NPV for a project, despite IRR's limitations?",
-                "a": "IRR provides useful supplementary information (e.g. a margin of safety showing how much the discount rate could rise before the project became unattractive) and is often more familiar and intuitive to non-technical stakeholders reviewing the appraisal.",
-                "explain": "This 'margin of safety' interpretation is worth remembering as a useful, distinct use of IRR — the <em>gap</em> between a project's IRR and the company's WACC indicates how much cushion there is before rising interest rates or a higher required return would flip the investment decision."
-            },
-            {
-                "q": "How does the choice between NPV and IRR ultimately reflect a broader theme running throughout this course about communicating technical results?",
-                "a": "The theoretically superior method (NPV) and the more intuitively communicable method (IRR) aren't always the same, echoing the recurring tension between technical rigour and clear communication that appears throughout business finance and actuarial practice more broadly.",
-                "explain": "This closing card connects directly to CP2's report-writing material — worth recognising this NPV-versus-IRR tension as a specific instance of a general theme: the most technically correct answer isn't always the easiest one to communicate persuasively to a non-technical decision-maker."
-            }
-        ]
-    },
-    {
-        "id": "m15",
-        "title": "Investment appraisal: risk, inflation and taxation",
-        "description": "Covers how investment appraisal techniques need to be adapted to account for project risk, inflation, and taxation, extending the basic NPV and IRR methods from earlier modules.",
-        "cards": [
-            {
-                "q": "Why might using a company's overall WACC be inappropriate for appraising a project whose risk differs materially from the company's average risk?",
-                "a": "WACC reflects the company's <em>average</em> risk across all its existing activities; applying it to a materially riskier or safer project would misprice that project's genuine risk, potentially accepting projects that are too risky or rejecting ones that are appropriately safe.",
-                "explain": "This directly resolves the risk-adjustment point flagged in Module 13 — worth recognising this as CM2's whole risk-adjusted discount rate logic applied to corporate investment decisions, not just financial asset pricing."
-            },
-            {
-                "q": "What is a 'risk-adjusted discount rate', in the context of investment appraisal?",
-                "a": "A discount rate adjusted upward (for higher-risk projects) or downward (for lower-risk projects) from the company's WACC, to reflect the specific risk of the project being appraised rather than the company's average risk.",
-                "explain": "This is CM2's CAPM logic (a higher beta/risk demanding a higher required return) applied at the individual <em>project</em> level rather than the whole-company level Module 10 used it for."
-            },
-            {
-                "q": "What is 'sensitivity analysis', as applied to investment appraisal?",
-                "a": "Testing how a project's NPV changes in response to changes in individual assumptions (e.g. sales volume, costs, discount rate), to identify which assumptions the result is most sensitive to.",
-                "explain": "This is precisely CP2's sensitivity analysis material applied specifically to investment appraisal — worth recognising this as the same general technique (vary one input, observe the effect) recurring across both subjects."
-            },
-            {
-                "q": "Why is identifying which assumption a project's NPV is most sensitive to particularly useful for decision-makers?",
-                "a": "It highlights where forecasting accuracy and ongoing monitoring matter most, and can prompt further investigation or risk mitigation specifically targeted at the assumption(s) the decision is most exposed to.",
-                "explain": "This directly echoes CP1's assumption-materiality material — worth recognising sensitivity analysis's practical value as focusing limited analytical effort on the <em>few</em> assumptions that matter most, rather than treating every input as equally important."
-            },
-            {
-                "q": "What is the difference between a 'real' cashflow/discount rate and a 'money' (nominal) cashflow/discount rate?",
-                "a": "A real cashflow/rate is expressed in constant (today's) purchasing power terms, excluding the effect of general inflation; a money (nominal) cashflow/rate includes the actual expected effect of inflation.",
-                "explain": "This is CM1's real-versus-nominal interest rate distinction applied directly to investment appraisal — worth remembering this as the exact same concept already introduced there, just relabelled for this course's context."
-            },
-            {
-                "q": "What is the Fisher equation relating real and money (nominal) interest rates?",
-                "a": "$(1 + \\text{money rate}) = (1 + \\text{real rate})(1 + \\text{inflation rate})$.",
-                "explain": "This is precisely CM1's Fisher equation recalled directly — worth remembering the multiplicative (not simply additive) relationship, since approximating it as money rate ≈ real rate + inflation is only an approximation, not exact."
-            },
-            {
-                "q": "Why must real cashflows be discounted at a real discount rate, and money cashflows at a money discount rate, rather than mixing the two?",
-                "a": "Mixing a real cashflow with a money discount rate (or vice versa) would inconsistently double-count or omit the effect of inflation, distorting the resulting NPV — the cashflows and discount rate must be consistently on the same (either both real or both money) basis.",
-                "explain": "This is an important, commonly tested consistency principle — worth treating this as one of the most frequent sources of error in this topic: always checking that cashflows and the discount rate are expressed on the <em>same</em> inflation basis before discounting."
-            },
-            {
-                "q": "How does corporation tax typically affect the cashflows used in an NPV calculation?",
-                "a": "Post-tax cashflows (rather than pre-tax cashflows) should generally be used, deducting the tax payable on the project's taxable profit, since tax is a genuine cash outflow the company must pay.",
-                "explain": "This directly echoes Module 11's tax-shield material — worth recognising tax as a relevant cashflow (not to be ignored), consistent with the earlier principle that only cashflows affected by the decision should be included."
-            },
-            {
-                "q": "What are 'capital allowances', and why are they relevant to appraising an investment involving a new asset purchase?",
-                "a": "Tax relief given on the cost of qualifying capital expenditure (broadly analogous to depreciation, but calculated under tax rules rather than accounting rules), reducing the company's taxable profit and hence its tax payable.",
-                "explain": "This directly connects to Module 3's depreciation material and Module 2's non-current assets — worth recognising capital allowances as the <em>tax</em> equivalent of accounting depreciation, similarly reducing taxable profit (and hence cash tax paid) even though the underlying asset purchase was itself a one-off cash outflow at the start."
-            },
-            {
-                "q": "Why does the timing of a tax cashflow (e.g. tax paid one year after profit is earned) matter for an NPV calculation?",
-                "a": "Since NPV explicitly accounts for the time value of money, a tax payment delayed by a year is worth less in present value terms than an equivalent payment made immediately, so the exact timing assumption used for tax cashflows can materially affect the calculated NPV.",
-                "explain": "This is CM1's discounting principle applied specifically to tax timing — worth remembering that even a correctly-sized cashflow, placed in the <em>wrong</em> year, will produce an incorrect NPV, since discounting is highly sensitive to timing as well as amount."
-            },
-            {
-                "q": "Why might a company incorporate a scenario analysis (testing several assumptions together) alongside single-variable sensitivity analysis for a major investment decision?",
-                "a": "Sensitivity analysis varies one assumption at a time and can miss the combined effect of several assumptions moving together in a coherent way (e.g. a recession affecting both sales volume and costs simultaneously), which scenario analysis captures directly.",
-                "explain": "This directly echoes CP1's and CP2's distinction between sensitivity and scenario analysis — worth recognising this as exactly the same technique-pairing recurring across the whole curriculum, here applied specifically to a single investment decision rather than a whole company's risk profile."
-            },
-            {
-                "q": "How does this module's treatment of risk, inflation and taxation ultimately refine, rather than replace, the basic NPV technique from Module 13?",
-                "a": "The core NPV mechanism (discounting expected cashflows at an appropriate rate) remains unchanged — this module simply develops how to identify the <em>right</em> discount rate (risk-adjusted) and the <em>right</em> cashflows (post-tax, consistently real or money) to feed into that same fundamental calculation.",
-                "explain": "This closing card ties Modules 13-15 together explicitly — worth recognising that nothing in this module changes the underlying NPV formula itself; it only refines the <em>inputs</em> (cashflows and discount rate) to make the resulting NPV a more accurate, realistic reflection of a genuine investment decision."
-            }
-        ]
-    },
-    {
-        "id": "m16",
-        "title": "Business valuation methods",
-        "description": "Covers the main approaches to valuing a whole business or its shares — asset-based, earnings-based, dividend-based, and cashflow-based valuation methods.",
-        "cards": [
-            {
-                "q": "Why might a business need to be formally valued?",
-                "a": "For purposes such as a takeover or merger (Module 18), a share sale, raising new finance, tax purposes, or resolving a dispute between shareholders.",
-                "explain": "This module directly previews Module 18's mergers and acquisitions material — a proposed takeover is one of the single most common, high-stakes reasons a business valuation is needed, since both parties must agree (or dispute) a fair price."
-            },
-            {
-                "q": "What is 'asset-based valuation', as an approach to valuing a business?",
-                "a": "Valuing a business as the net value of its underlying assets (typically at market value) minus its liabilities, broadly equivalent to a market-value-adjusted balance sheet.",
-                "explain": "This is Module 2's balance sheet recalled directly, but restated using <em>market</em> values rather than accounting book values — worth remembering the balance sheet's book values (e.g. depreciated cost) can diverge substantially from what those same assets would fetch if sold today."
-            },
-            {
-                "q": "Why might asset-based valuation understate the true value of a profitable, ongoing business?",
-                "a": "It ignores the business's ability to generate future profits and cashflows beyond simply liquidating its assets — a highly profitable business with modest physical assets (e.g. a services company) could be worth far more as a going concern than its net asset value alone suggests.",
-                "explain": "This is worth remembering as the central limitation motivating every other valuation approach in this module — asset-based valuation is really best suited to a business being wound up or one with few genuine future earning prospects beyond its physical assets."
-            },
-            {
-                "q": "What is the 'price/earnings' (P/E) ratio, and how is it used in earnings-based valuation?",
-                "a": "A company's share price divided by its earnings per share (EPS); a target company can be valued by applying a suitable comparable P/E ratio (e.g. from similar listed companies) to its own earnings.",
-                "explain": "This is Module 3's EPS concept given its direct valuation application — worth recognising this method as fundamentally a <em>comparables</em> approach: it values a company relative to how the market prices similar, already-known companies, rather than building a valuation from first principles."
-            },
-            {
-                "q": "Why might choosing an appropriate comparable P/E ratio for a private (unlisted) company be challenging?",
-                "a": "Private companies typically lack directly comparable listed peers with identical risk, growth, and size characteristics, and a private company's shares are also less liquid than listed shares, often warranting a discount to any comparable P/E used.",
-                "explain": "This is worth connecting to Module 1's private-versus-public distinction — the earnings-based method's reliability depends heavily on finding a comparable listed company, which is often harder than it first appears for a smaller or more specialised private business."
-            },
-            {
-                "q": "How does the dividend valuation model (dividend growth model) value a share, and how does this connect to its earlier use in this course?",
-                "a": "It values a share as the present value of its expected future dividends, using $P_0 = \\dfrac{D_0(1+g)}{k_e - g}$ — exactly the same formula Module 10 used to <em>estimate</em> cost of equity, now rearranged to solve for the share price instead.",
-                "explain": "This is worth recognising explicitly as the same formula from Module 10 used in reverse — there, share price was known and the formula solved for $k_e$; here, $k_e$ is assumed known (e.g. from CAPM) and the formula solves for the share's theoretical value $P_0$ instead."
-            },
-            {
-                "q": "What is a key limitation of the dividend valuation model shared with its earlier use in Module 10?",
-                "a": "It relies on the constant-growth assumption and cannot meaningfully value a company that pays no dividend, exactly the same limitations flagged when the model was first introduced for estimating cost of equity.",
-                "explain": "This is worth remembering as a direct callback rather than a new idea — since the underlying formula is identical to Module 10's, its limitations transfer over completely unchanged."
-            },
-            {
-                "q": "What is 'discounted cashflow' (DCF) valuation, as applied to valuing a whole business?",
-                "a": "Valuing a business as the present value of its expected future free cashflows, discounted at an appropriate rate (typically WACC).",
-                "explain": "This is Module 4's free cash flow concept and Module 13's NPV discounting machinery combined directly — worth recognising DCF business valuation as essentially treating the <em>whole</em> business as a single giant investment project, valued using exactly the same NPV logic Module 13 developed for a single project."
-            },
-            {
-                "q": "Why is DCF valuation often considered the most theoretically robust of the valuation methods covered in this module?",
-                "a": "It's grounded directly in the same present-value, cashflow-based logic underlying NPV (Module 13), which this course has established as the theoretically superior approach to valuing any investment or asset.",
-                "explain": "Worth connecting this explicitly to Module 13's closing arguments for NPV's superiority over payback and ARR — the same reasoning (cashflow-based, time-value-of-money-adjusted) that made NPV the preferred project appraisal technique makes DCF the preferred whole-business valuation technique too."
-            },
-            {
-                "q": "What is a key practical challenge in applying DCF valuation to a real business?",
-                "a": "It requires forecasting cashflows many years into the future and choosing an appropriate discount rate and terminal value assumption, all of which involve substantial estimation uncertainty that can materially affect the resulting valuation.",
-                "explain": "This directly echoes Module 13's own practical-limitation card about NPV generally — worth recognising the same forecasting uncertainty concern scales up considerably when projecting an entire business's cashflows over many years, rather than a single, more contained project."
-            },
-            {
-                "q": "What is a 'terminal value', in the context of a multi-year DCF business valuation?",
-                "a": "An estimate of the business's value at the end of the explicit forecast period, representing all cashflows beyond that point, often calculated using a perpetuity-based formula similar to the dividend growth model.",
-                "explain": "This is worth connecting directly to CM1's perpetuity valuation techniques — since forecasting cashflows indefinitely into the future isn't practical, a terminal value effectively 'caps off' the explicit forecast with a single, simplified present-value figure representing everything beyond it."
-            },
-            {
-                "q": "Why might a business's market capitalisation (for a listed company) differ from a valuation derived using asset-based, earnings-based, or DCF methods?",
-                "a": "Market capitalisation reflects the actual price at which the market currently trades the company's shares, which incorporates the market's own (possibly different) expectations, sentiment, and information, and may not exactly match any single valuation model's theoretical output.",
-                "explain": "This directly connects to CM2's market efficiency material — worth recognising market price as itself just one more 'estimate' of value, informed by all publicly available information (under semi-strong efficiency), which different valuation models are essentially trying to independently replicate or challenge."
-            },
-            {
-                "q": "Why might a valuer use several different methods together, rather than relying on a single valuation approach?",
-                "a": "Each method has different strengths and weaknesses and relies on different assumptions, so triangulating across several methods (asset-based, earnings-based, DCF) gives a more robust, cross-checked view of a business's likely value range than any single method alone.",
-                "explain": "This directly echoes CP2's independent-recalculation checking principle — using multiple, different valuation methods that broadly agree gives far more confidence in the resulting valuation than relying on a single method's output in isolation."
-            },
-            {
-                "q": "How does the choice of valuation method typically depend on the purpose of the valuation and the nature of the business being valued?",
-                "a": "A business being wound up may be valued primarily on an asset basis; a stable, profitable going concern might be valued primarily on earnings or DCF; a company with volatile or no current profits might need a DCF approach built around future potential rather than current earnings.",
-                "explain": "This closing card ties the whole module together — worth treating valuation method selection itself as a judgement call (echoing CP1's recurring theme), matched to the specific business and purpose at hand, rather than a single universally 'correct' technique."
-            }
-        ]
-    },
-    {
-        "id": "m17",
-        "title": "Dividend policy",
-        "description": "Covers the theory and practical considerations behind a company's decision on how much profit to distribute as dividends versus retain for reinvestment.",
-        "cards": [
-            {
-                "q": "What is 'dividend policy'?",
-                "a": "A company's approach to deciding how much of its profit to distribute to shareholders as dividends, versus how much to retain for reinvestment in the business.",
-                "explain": "This directly recalls Module 8's retained-earnings material and Module 1's dividend/distribution decision — worth recognising dividend policy as the direct resolution of that third fundamental financing decision named right at the start of this course."
-            },
-            {
-                "q": "What does the Modigliani-Miller 'dividend irrelevance' theory state, in a world with no taxes or transaction costs?",
-                "a": "In a perfect capital market, a company's dividend policy has no effect on its share value — shareholders are indifferent between receiving dividends now or the company retaining and reinvesting the profit (which should increase future share price/capital gains instead).",
-                "explain": "This is exactly the same MM 'irrelevance' logic from Module 11's capital structure material, now applied to dividend policy rather than financing mix — worth recognising both as MM's characteristic theoretical starting point: in a perfect market, a particular financial <em>decision</em> doesn't matter, only the company's underlying cashflows do."
-            },
-            {
-                "q": "Why might dividend policy matter in practice, despite MM's theoretical irrelevance result?",
-                "a": "Real markets have taxes, transaction costs, and information asymmetries that MM's theory assumes away, meaning dividend decisions can affect shareholder wealth and share price in practice.",
-                "explain": "This is worth reading exactly like Module 11's tax-adjusted MM refinement — the theoretical baseline (irrelevance) gets modified once real-world frictions are introduced, and the rest of this module explores precisely which frictions make dividend policy matter."
-            },
-            {
-                "q": "What is the 'signalling effect' of a dividend change?",
-                "a": "Because managers typically have better information about a company's prospects than outside shareholders, a change in dividend (especially a cut) is often interpreted by the market as a signal about management's genuine view of future prospects.",
-                "explain": "This is exactly the same information-asymmetry logic from Module 8's pecking order theory card, now applied to dividends rather than financing choices — worth recognising this as the <em>same</em> underlying market-signalling mechanism recurring in a different corporate finance context."
-            },
-            {
-                "q": "Why might a dividend cut typically cause a company's share price to fall, even if the cash saved is reinvested productively?",
-                "a": "The market often interprets a dividend cut as a negative signal about management's confidence in future cashflows, causing share price to fall due to this signalling effect, regardless of the (potentially sound) underlying financial logic for the cut.",
-                "explain": "This is an important practical consequence worth remembering — it's precisely why companies are often very reluctant to cut dividends even when retaining the cash might be the theoretically sound decision, since the market's negative reaction to the <em>signal</em> can outweigh the benefit of the retained cash."
-            },
-            {
-                "q": "What is the 'clientele effect', as it relates to dividend policy?",
-                "a": "Different groups of investors (clienteles) have different preferences for dividend income versus capital gains (e.g. due to differing tax situations or income needs), so a company's dividend policy can attract a particular clientele of investors suited to that policy.",
-                "explain": "Worth recognising the practical implication: a company that suddenly and significantly changes its dividend policy risks disappointing its existing shareholder clientele (who chose the shares partly <em>because</em> of the prior policy), even if the new policy is otherwise reasonable."
-            },
-            {
-                "q": "Why might a company prefer a stable, consistent dividend policy over one that fluctuates with each year's actual profit?",
-                "a": "Shareholders (and the clientele effect above) often value predictability, and volatile dividends can send confusing or negative signals (the signalling effect above) even when driven purely by normal year-to-year profit fluctuation rather than any genuine change in prospects.",
-                "explain": "This directly connects the clientele effect and signalling effect cards together — worth recognising dividend <em>stability</em> as an important, distinct objective in its own right, not simply a byproduct of choosing an appropriate overall payout level."
-            },
-            {
-                "q": "What is a 'residual dividend policy'?",
-                "a": "A policy where a company first funds all its positive-NPV investment opportunities from available profit, then distributes whatever profit remains (the residual) as dividends.",
-                "explain": "This directly connects Module 13's NPV decision rule to dividend policy — worth recognising this as a principled approach: investment decisions (funding every positive-NPV project) take priority, and dividends are simply whatever's left over once all worthwhile investment has been funded."
-            },
-            {
-                "q": "What is a 'scrip dividend' (stock dividend)?",
-                "a": "A dividend paid in the form of additional shares rather than cash, allowing a company to reward shareholders without an equivalent cash outflow.",
-                "explain": "This is worth connecting to Module 4's cash flow material — a scrip dividend preserves the company's cash (relevant if it's facing a cash constraint per Module 7) while still providing shareholders with something of value, though it doesn't fundamentally increase the total value of what each shareholder holds."
-            },
-            {
-                "q": "Why might a company facing a temporary cash shortage prefer to offer a scrip dividend rather than cut its cash dividend entirely?",
-                "a": "It can preserve cash within the business while avoiding (or softening) the negative signalling effect that an outright dividend cut would likely trigger.",
-                "explain": "This directly combines two earlier cards in this module — worth recognising a scrip dividend as a genuine compromise solution addressing both the cash-preservation need (Module 7's working capital concerns) and the signalling/clientele concerns raised earlier in this module."
-            },
-            {
-                "q": "How might a company's dividend policy interact with the capital structure decisions covered in Module 11?",
-                "a": "Retaining more profit (paying lower dividends) increases equity finance from retained earnings, potentially reducing the need for external financing and affecting the company's overall gearing level over time.",
-                "explain": "This connects directly back to Module 8's retained-earnings material and Module 11's capital structure theory — worth recognising dividend policy and capital structure as <em>interlinked</em> decisions, not two entirely separate topics, since retaining profit is itself a financing choice."
-            },
-            {
-                "q": "Why is dividend policy ultimately considered a genuine judgement call for a company's board, rather than a decision with one theoretically 'correct' answer?",
-                "a": "It must balance MM's theoretical irrelevance baseline against real-world signalling effects, clientele preferences, cash needs, and investment opportunities, none of which point to a single universally optimal policy for every company.",
-                "explain": "This closing card ties the whole module together — worth recognising dividend policy as another genuine instance of CP1's recurring theme: technical theory (MM irrelevance) provides a useful starting point, but real decisions require weighing multiple, sometimes competing, practical considerations through professional judgement."
-            }
-        ]
-    },
-    {
-        "id": "m18",
-        "title": "Mergers, acquisitions and corporate restructuring",
-        "description": "Covers why and how companies combine through mergers and acquisitions, how a target company might be valued and paid for, and common reasons M&A activity fails to create value.",
-        "cards": [
-            {
-                "q": "What is the difference between a 'merger' and an 'acquisition' (takeover)?",
-                "a": "A merger is a combination of two companies of broadly similar size, typically on mutually agreed terms; an acquisition (takeover) is where one company (the acquirer) purchases a controlling stake in another (the target), which may be agreed or contested.",
-                "explain": "This distinction matters more in practice than in strict legal terms — worth noting the underlying financial evaluation techniques (valuation, methods of payment) covered in this module apply broadly the same way to both, even though the negotiating dynamics can differ considerably."
-            },
-            {
-                "q": "What is a 'horizontal merger'?",
-                "a": "A merger between two companies operating in the same industry at the same stage of production, often direct competitors.",
-                "explain": "This is worth connecting to CB2's market structure material — a horizontal merger directly reduces the number of competitors in a market, which is exactly why such mergers often attract close regulatory (competition authority) scrutiny."
-            },
-            {
-                "q": "What is a 'vertical merger'?",
-                "a": "A merger between two companies at different stages of the same supply chain, e.g. a manufacturer merging with one of its key suppliers or distributors.",
-                "explain": "Worth connecting this to Module 7's working capital and Module 9's trade credit material — a vertical merger can directly reduce reliance on external suppliers/customers, potentially improving control over the working capital cycle discussed in that earlier module."
-            },
-            {
-                "q": "What is a 'conglomerate merger'?",
-                "a": "A merger between two companies in unrelated industries, with little or no direct operational overlap.",
-                "explain": "This is worth contrasting with the diversification logic seen elsewhere in this curriculum — while diversification can reduce risk for an <em>investor</em> holding a portfolio of separate shares, a conglomerate merger diversifying a single <em>company</em>'s operations doesn't necessarily create similar value, since shareholders could typically diversify more cheaply themselves by holding separate shares directly."
-            },
-            {
-                "q": "What is 'synergy', as a commonly cited motivation for mergers and acquisitions?",
-                "a": "The idea that the combined company will be worth more than the sum of the two separate companies' individual values, e.g. through cost savings, increased market power, or complementary capabilities.",
-                "explain": "This is worth remembering as the central economic <em>justification</em> most M&A deals are built around — worth being appropriately sceptical of it too, since (as a later card explores) realising claimed synergies in practice is notoriously difficult."
-            },
-            {
-                "q": "How might a bidding company estimate an appropriate value to offer for a target company?",
-                "a": "Using the valuation methods covered in Module 16 (asset-based, earnings-based, DCF) applied to the target, often incorporating an estimate of expected synergy value on top of the target's standalone value.",
-                "explain": "This is Module 16's whole valuation toolkit applied directly to a specific, high-stakes application — worth recognising the target's value to the <em>acquirer</em> can exceed its standalone value precisely because of the synergy benefits the previous card described."
-            },
-            {
-                "q": "What is a 'takeover premium'?",
-                "a": "The amount by which the offer price for a target company exceeds its pre-bid market value, often reflecting the bidder's expected synergy value and the need to persuade existing shareholders to sell.",
-                "explain": "Worth connecting this directly to the synergy card above — a premium is only justified if the anticipated synergies are real and achievable; an excessive premium paid for synergies that never materialise is a common, well-documented cause of M&A value destruction, explored further later in this module."
-            },
-            {
-                "q": "What is the difference between a 'cash' offer and a 'share exchange' offer as methods of payment in an acquisition?",
-                "a": "A cash offer pays target shareholders in cash for their shares; a share exchange offer gives target shareholders new shares in the combined/acquiring company instead of (or alongside) cash.",
-                "explain": "This connects directly to Module 8's equity finance material — a share exchange offer is effectively the acquirer financing the deal with newly issued equity, which dilutes the acquirer's existing shareholders, exactly the dilution concern raised in that earlier module."
-            },
-            {
-                "q": "Why might target shareholders prefer a cash offer over a share exchange offer?",
-                "a": "Cash provides certain, immediate value, whereas shares in the combined company carry ongoing risk and uncertainty about the future performance and value of that combined entity.",
-                "explain": "This is worth reading as the direct mirror image of Module 8's risk-based argument for why equity investors require higher returns than debt investors — cash is the certain, risk-free option here, while accepting shares means continuing to bear genuine risk in the combined entity's future performance."
-            },
-            {
-                "q": "Why might an acquiring company prefer to finance a takeover using shares rather than cash?",
-                "a": "It avoids the need to raise or use large amounts of cash (or debt), and effectively shares the risk of the acquisition with the target's former shareholders, who become shareholders in the combined entity going forward.",
-                "explain": "This is the acquirer's side of the same trade-off explored in the previous card — worth recognising this as a genuine risk-sharing mechanism: if the anticipated synergies don't materialise, former target shareholders (now holding shares in the combined company) bear part of that disappointment alongside the acquirer's original shareholders, rather than the acquirer alone."
-            },
-            {
-                "q": "What is a 'defensive tactic' a target company's management might use to resist an unwanted takeover bid?",
-                "a": "Actions such as seeking a more favourable alternative bidder (a 'white knight'), making the company less attractive to the bidder, or appealing directly to shareholders to reject the offer.",
-                "explain": "This directly connects to Module 1's agency problem material — worth being appropriately critical here: management resisting a takeover isn't always acting in shareholders' best interests, since a hostile bid at a fair premium might benefit shareholders even if it threatens management's own job security."
-            },
-            {
-                "q": "Why do many mergers and acquisitions fail to create the value originally anticipated?",
-                "a": "Common reasons include overpaying (an excessive takeover premium), overestimating achievable synergies, poor integration of the two companies' operations and cultures, and management being driven by empire-building motives rather than genuine shareholder value creation.",
-                "explain": "This directly connects back to Module 1's agency problem — worth recognising 'empire-building' as an important, well-documented example of managers pursuing their own interests (running a larger, more prestigious company) rather than shareholders' interests, exactly the tension that module first introduced."
-            },
-            {
-                "q": "How should a proposed acquisition ultimately be evaluated using the investment appraisal principles developed earlier in this course?",
-                "a": "In principle, an acquisition is just a very large investment decision and can be evaluated using NPV (Module 13) — comparing the present value of the expected incremental cashflows/synergies against the price paid (including any premium), applying the same relevant-cashflow and risk-adjustment principles covered in Modules 13-15.",
-                "explain": "This closing card ties the whole module back to the investment appraisal material — worth recognising that, despite all the additional strategic and behavioural complexity M&A introduces, the underlying financial evaluation is fundamentally the same NPV logic used throughout this course, just applied at a much larger and more complex scale."
-            }
-        ]
-    },
-    {
-        "id": "m19",
-        "title": "Financial markets, risk management and the finance function's role",
-        "description": "Covers the role of financial markets and institutions in business finance, an introduction to corporate risk management/hedging, and how the finance function supports overall business strategy.",
-        "cards": [
-            {
-                "q": "What is the general economic function of financial markets?",
-                "a": "To channel funds from those with surplus capital (savers/investors) to those who need capital (businesses/borrowers), enabling investment and economic activity that wouldn't otherwise be possible.",
-                "explain": "This is worth connecting directly to every source-of-finance module in this course (8-9) — financial markets are precisely the mechanism through which companies actually access the equity and debt finance those modules describe, connecting individual company decisions to the wider economy."
-            },
-            {
-                "q": "What is the difference between a 'primary' market and a 'secondary' market?",
-                "a": "A primary market is where new securities are first issued (e.g. an IPO or rights issue), raising new capital for the issuer; a secondary market is where existing securities are subsequently traded between investors, with no new capital raised for the issuing company.",
-                "explain": "This directly connects to Module 8's IPO and rights issue material — worth recognising that once shares from an IPO start trading on a stock exchange day-to-day, that ongoing trading is entirely <em>secondary</em> market activity, generating no further direct cash for the company itself."
-            },
-            {
-                "q": "What is the Efficient Markets Hypothesis (EMH), and how does it relate to a company's shares?",
-                "a": "The theory that share prices fully reflect available information, so a company's share price at any time represents the market's best estimate of its true underlying value given that information.",
-                "explain": "This is CM2's whole EMH material recalled directly — worth connecting to Module 16's valuation methods here: under semi-strong efficiency, a company's market capitalisation should already reflect a well-informed valuation, which is exactly why the various valuation methods in that module are often cross-checked against actual market price."
-            },
-            {
-                "q": "What is 'hedging', as a risk management technique available to a business?",
-                "a": "Using financial instruments (e.g. forward contracts, futures, options) to reduce or offset exposure to a specific financial risk, such as interest rate, currency, or commodity price movements.",
-                "explain": "This is CM2's derivatives material and CP1's risk transfer material both recalled directly — worth recognising a business using hedging as doing exactly what an insurer does with reinsurance (CP1 Module 30): deliberately transferring away a specific risk it would rather not bear itself."
-            },
-            {
-                "q": "What is a 'forward contract', in the context of a business hedging a future currency payment?",
-                "a": "An agreement to buy or sell a specified amount of currency at a fixed exchange rate on a specified future date, removing uncertainty about the exchange rate that will apply to that future transaction.",
-                "explain": "This is CM2's forward contract material applied directly to a genuine business use case — worth recognising why an exporting or importing business would use this: it converts an uncertain future cash amount (in domestic currency terms) into a certain, known one, at the cost of giving up any potential upside if the exchange rate moves favourably instead."
-            },
-            {
-                "q": "Why might a business choose not to hedge a particular risk, despite hedging instruments being available?",
-                "a": "Hedging has a cost (the price of the instrument, or the opportunity cost of forgone favourable movements), and a business may judge the risk to be small, well-diversified elsewhere in its operations, or not worth the cost and complexity of hedging.",
-                "explain": "This directly echoes CP1's cost-of-risk-transfer material — worth remembering hedging isn't automatically the right choice for every risk; it's a genuine cost-benefit decision, exactly like the reinsurance cost trade-off covered in that earlier subject."
-            },
-            {
-                "q": "What role does the finance function typically play in supporting a company's overall strategy, beyond routine accounting and reporting?",
-                "a": "Providing financial analysis and appraisal to support strategic decisions (e.g. investment appraisal, M&A evaluation, financing choices), managing financial risk, and ensuring the business has adequate capital and liquidity to pursue its strategic objectives.",
-                "explain": "This closing-section card ties together almost every module in this course — worth recognising the finance function as the genuine <em>practitioner</em> of everything this course has covered: financial statement analysis (2-6), financing decisions (8-11), investment appraisal (12-16), and risk management (this module)."
-            },
-            {
-                "q": "Why might the finance function be considered a strategic, rather than purely administrative, part of a business?",
-                "a": "Major strategic decisions (which investments to pursue, how to finance growth, whether to acquire another company) all fundamentally depend on financial analysis and judgement, making finance integral to strategy formulation, not just its after-the-fact reporting.",
-                "explain": "This directly echoes Module 1's opening framing of business finance's importance — worth recognising this as the course coming full circle: the finance function's strategic role is precisely why every technical topic covered since Module 1 matters for genuine business decision-making, not just for producing accurate financial statements."
-            },
-            {
-                "q": "How does corporate governance (introduced via the agency problem in Module 1) relate to the finance function's role within a company?",
-                "a": "Strong governance structures (e.g. board oversight, audit committees, transparent financial reporting) help ensure the finance function's analysis and decisions serve shareholders' interests, rather than being distorted by the agency problems Module 1 identified.",
-                "explain": "This closes the loop back to Module 1's agency problem material — worth recognising governance as the structural safeguard ensuring everything this course has covered (financial reporting, investment appraisal, M&A evaluation) is conducted with genuine integrity, rather than being manipulated to serve managers' own interests."
-            },
-            {
-                "q": "Why is understanding financial markets and institutions relevant background for interpreting a company's financing choices (Modules 8-9)?",
-                "a": "The availability, cost, and terms of both equity and debt finance are directly shaped by prevailing conditions in financial markets, so a company's financing decisions can't be understood in isolation from the market context they're made within.",
-                "explain": "This directly recalls the market-conditions card from Module 8 — worth recognising financial markets not as a separate, background topic, but as the genuine environment within which every financing decision covered earlier in this course actually takes place."
-            },
-            {
-                "q": "Why might an actuary working outside a specialist corporate finance role still need to understand financial markets and corporate risk management?",
-                "a": "Actuaries routinely assess counterparty and market risk when valuing investments or advising on an insurer's or pension scheme's asset strategy, and many of the hedging techniques used by businesses (forwards, options) are the same instruments actuaries use in an investment or risk management context.",
-                "explain": "This connects directly back to Module 1's closing card on why CB1 matters for actuaries — worth recognising this whole module as bringing that opening justification full circle, now grounded in the specific financial markets and risk management concepts developed throughout the rest of the course."
-            },
-            {
-                "q": "How does this closing module tie together the recurring themes of business objectives, financing, investment, and risk developed across the whole of CB1?",
-                "a": "Financial markets provide the mechanism through which financing decisions (Modules 8-11) are actually executed, risk management techniques manage the uncertainty surrounding investment decisions (Modules 12-16) and M&A (Module 18), and the finance function coordinates all of this in service of the shareholder wealth objective established in Module 1.",
-                "explain": "This closing card is worth treating as CB1's own summary of itself — every module in this course has ultimately been developing one part of a single, coherent picture: how a business raises capital, decides where to invest it, manages the risks involved, and reports honestly on the results, all in service of the objective Module 1 established at the very start."
-            }
-        ]
-    }
-],
+      {
+          "id": "m01",
+          "title": "Key principles of finance",
+          "description": "What finance is for: the link between real resources, finance and an organisation's objectives, the stakeholders (owners, lenders, managers), the role of capital markets, shareholder wealth maximisation, its practical problems (agency, social responsibility, divergent objectives) and what determines a company's value.",
+          "cards": [
+              {
+                  "q": "What is the relationship between finance and real resources?",
+                  "a": "Finance is the means of acquiring real resources (land, labour, capital, technology) that an organisation uses to pursue its objectives; funds raised are only worth what the real investments they buy can earn.",
+                  "explain": "Money is not productive by itself — it is the claim on resources that matters."
+              },
+              {
+                  "q": "What is the usual primary financial objective of a company?",
+                  "a": "To maximise shareholder wealth, i.e. the market value of the ordinary shares, through share price growth and dividends.",
+                  "explain": "Other objectives (profit, growth, market share) are usually means to this end."
+              },
+              {
+                  "q": "Why is profit maximisation an inadequate objective?",
+                  "a": "It ignores timing (a profit today is worth more than one later), risk, the scale of capital employed, and which profit measure is meant, and it can be manipulated by accounting choices.",
+                  "explain": "Shareholder wealth deals with all of these because market value reflects timing and risk."
+              },
+              {
+                  "q": "What does the capital market do for companies and investors?",
+                  "a": "It brings together those with surplus funds and those needing funds, sets a price (the cost of capital) reflecting risk, provides liquidity for securities and reveals information through prices.",
+                  "explain": "The primary market raises new funds; the secondary market trades existing securities."
+              },
+              {
+                  "q": "What is the agency problem?",
+                  "a": "Managers (agents) may pursue their own interests rather than those of shareholders (principals), because ownership and control are separated and information is asymmetric.",
+                  "explain": "Examples: empire building, excessive perks, avoiding risk to protect jobs."
+              },
+              {
+                  "q": "Name three ways of reducing agency problems.",
+                  "a": "Linking managers' pay to shareholder returns (share options, bonuses), monitoring by non-executive directors and auditors, and the discipline of the market for corporate control (takeover threat) and of lenders' covenants.",
+                  "explain": "Each has costs and can create new distortions, e.g. short-termism."
+              },
+              {
+                  "q": "What conflicts can arise between shareholders and lenders?",
+                  "a": "Shareholders may favour riskier projects (they gain the upside, lenders bear the downside) or higher dividends that reduce assets available to repay debt; lenders respond with covenants and security.",
+                  "explain": "This is why debt terms often restrict dividends and further borrowing."
+              },
+              {
+                  "q": "What is social responsibility in a corporate context, and why might it conflict with shareholder wealth?",
+                  "a": "Considering the interests of employees, customers, communities and the environment. It may impose costs that reduce short-term returns, though good conduct can protect reputation and long-term value.",
+                  "explain": "Increasingly seen as part of managing long-term value."
+              },
+              {
+                  "q": "Who are a company's main stakeholders?",
+                  "a": "Shareholders, lenders, employees, managers, customers, suppliers, government and the wider community.",
+                  "explain": "Their objectives may diverge, so management must balance them."
+              },
+              {
+                  "q": "What determines a company's value?",
+                  "a": "The size, timing and risk of its expected future cash flows: value is the present value of those flows at a rate reflecting their risk.",
+                  "explain": "Managers influence value by choosing investments, financing and dividend policy and by managing risk."
+              },
+              {
+                  "q": "What actions can managers take to increase shareholder value?",
+                  "a": "Invest in projects with positive net present value, cut costs, improve working capital, adopt an appropriate capital structure, grow sales profitably and communicate credibly with the market.",
+                  "explain": "Value is created only when returns exceed the cost of the capital used."
+              },
+              {
+                  "q": "What is the difference between the primary and secondary market?",
+                  "a": "In the primary market new securities are issued and the company receives the proceeds; in the secondary market existing securities are traded between investors and the company receives nothing.",
+                  "explain": "A liquid secondary market makes investors willing to buy in the primary market."
+              },
+              {
+                  "q": "Why does risk matter in finance?",
+                  "a": "Investors demand higher expected returns for bearing more risk, so the cost of finance and the required return on projects rise with risk.",
+                  "explain": "Risk-return trade-off underlies all later cost-of-capital work."
+              },
+              {
+                  "q": "What is meant by 'divergent objectives' within an organisation?",
+                  "a": "Different departments or individuals pursue different goals (e.g. sales maximise revenue, production minimise cost), which may not add up to shareholder value maximisation.",
+                  "explain": "Good governance and incentive design try to align them."
+              },
+              {
+                  "q": "How does the time value of money underpin corporate finance?",
+                  "a": "A pound received sooner can be invested to earn a return, so cash flows at different times must be compared by discounting to a common date.",
+                  "explain": "It is the basis of NPV, cost of capital and share valuation."
+              }
+          ]
+      },
+      {
+          "id": "m02",
+          "title": "Key principles of corporate governance and ethics",
+          "description": "Corporate governance: regulation of financial reporting, the role of the board and non-executive directors, codes such as the UK Corporate Governance Code, the auditor, shareholder rights, and the ethical responsibilities of owners and managers.",
+          "cards": [
+              {
+                  "q": "What is corporate governance?",
+                  "a": "The system by which companies are directed and controlled, defining the rights and responsibilities of the board, managers, shareholders and other stakeholders.",
+                  "explain": "It aims to protect shareholders and ensure accountability."
+              },
+              {
+                  "q": "What is the role of the board of directors?",
+                  "a": "To set strategy, appoint and oversee management, ensure effective risk management and internal control, and be accountable to shareholders.",
+                  "explain": "Directors owe fiduciary duties to the company."
+              },
+              {
+                  "q": "Why are non-executive directors important?",
+                  "a": "They bring independent judgement, challenge executive decisions, sit on audit, remuneration and nomination committees and help protect minority shareholders.",
+                  "explain": "Independence is key to effective challenge."
+              },
+              {
+                  "q": "Why separate the roles of chair and chief executive?",
+                  "a": "It avoids too much power in one person and allows the board to supervise management independently.",
+                  "explain": "A common recommendation in governance codes."
+              },
+              {
+                  "q": "What does the UK Corporate Governance Code use as its approach?",
+                  "a": "'Comply or explain': companies either follow the Code's provisions or explain why they depart from them.",
+                  "explain": "A flexible, principles-based approach."
+              },
+              {
+                  "q": "What is the role of the external auditor?",
+                  "a": "To give an independent opinion on whether the financial statements give a true and fair view, providing assurance to shareholders and other users.",
+                  "explain": "Auditor independence is safeguarded by rules on non-audit fees and rotation."
+              },
+              {
+                  "q": "What is the purpose of an audit committee?",
+                  "a": "To oversee financial reporting, internal control and the relationship with the external auditors, on behalf of the board.",
+                  "explain": "Made up mainly of independent non-executive directors."
+              },
+              {
+                  "q": "Why regulate financial reporting of companies?",
+                  "a": "Investors and lenders rely on reported information; regulation ensures it is prepared consistently, is reliable and is published, reducing fraud and information asymmetry.",
+                  "explain": "Company law and accounting standards set the rules."
+              },
+              {
+                  "q": "What is a remuneration committee's role?",
+                  "a": "Setting executive pay policy, aiming to attract and retain talent while aligning rewards with long-term performance and avoiding excessive risk-taking.",
+                  "explain": "Shareholders often have an advisory or binding vote on pay."
+              },
+              {
+                  "q": "What are the ethical responsibilities of managers and owners?",
+                  "a": "Honesty and integrity in reporting, fair dealing with stakeholders, complying with the spirit as well as the letter of the law, avoiding conflicts of interest and considering wider social and environmental impact.",
+                  "explain": "Ethics goes beyond legal compliance."
+              },
+              {
+                  "q": "What is whistleblowing?",
+                  "a": "Raising concerns about wrongdoing within an organisation, supported by policies that protect those who report in good faith.",
+                  "explain": "An important internal control."
+              },
+              {
+                  "q": "What is insider dealing?",
+                  "a": "Trading securities using non-public price-sensitive information, which is illegal because it undermines fairness in markets.",
+                  "explain": "Regulated by law and the market regulator."
+              },
+              {
+                  "q": "How does good governance help a company?",
+                  "a": "Reduces the risk of fraud and mismanagement, improves investor confidence and can lower the cost of capital.",
+                  "explain": "Poor governance often precedes corporate failures."
+              },
+              {
+                  "q": "What are shareholders' typical rights?",
+                  "a": "To vote on major decisions and directors' appointment, receive dividends when declared, receive reports and accounts and share in assets on winding up after creditors.",
+                  "explain": "Rights vary with the class of share."
+              },
+              {
+                  "q": "Why can institutional shareholders influence governance?",
+                  "a": "They hold large stakes, can engage with boards and vote, and increasingly follow stewardship codes.",
+                  "explain": "Stewardship complements board oversight."
+              }
+          ]
+      },
+      {
+          "id": "m03",
+          "title": "Business ownership",
+          "description": "Forms of business ownership: sole traders, partnerships, limited companies (private and public), social enterprises, the meaning and advantages of limited liability, and how ownership form affects control, finance and risk.",
+          "cards": [
+              {
+                  "q": "What are the characteristics of a sole trader?",
+                  "a": "One owner, unlimited personal liability, simple to set up, owner keeps all profit and bears all losses, limited ability to raise capital.",
+                  "explain": "No legal separation between owner and business."
+              },
+              {
+                  "q": "What is a partnership?",
+                  "a": "A business owned by two or more people who share profits and (in a general partnership) have joint and several unlimited liability.",
+                  "explain": "Finance is limited to partners' resources and borrowing."
+              },
+              {
+                  "q": "What is a limited company?",
+                  "a": "A separate legal entity owned by shareholders whose liability is limited to the amount they have invested or agreed to invest.",
+                  "explain": "The company can own property, sue and be sued."
+              },
+              {
+                  "q": "What are the advantages of limited liability?",
+                  "a": "Shareholders' personal assets are protected, which encourages investment and risk-taking, makes shares easily transferable and helps raise capital.",
+                  "explain": "The cost is extra regulation and disclosure."
+              },
+              {
+                  "q": "What is the difference between a private and a public company?",
+                  "a": "A public company may offer shares to the public and (if listed) trade them on a stock exchange, but faces stricter regulation and disclosure; a private company cannot offer shares to the public.",
+                  "explain": "Public companies must have a minimum share capital in many jurisdictions."
+              },
+              {
+                  "q": "What is a social enterprise?",
+                  "a": "A business with primarily social or environmental objectives, reinvesting most profits into its mission rather than distributing them to owners.",
+                  "explain": "Includes community interest companies and some co-operatives."
+              },
+              {
+                  "q": "What are the disadvantages of forming a limited company relative to trading as a sole trader?",
+                  "a": "More administration, legal formalities, disclosure of accounts and compliance costs, and less privacy; also lenders often demand personal guarantees from small company owners.",
+                  "explain": "Trade-off between protection and simplicity."
+              },
+              {
+                  "q": "What is a limited liability partnership?",
+                  "a": "A structure giving partners limited liability while being taxed like a partnership.",
+                  "explain": "Popular with professional firms."
+              },
+              {
+                  "q": "What does 'separate legal personality' mean?",
+                  "a": "The company exists independently of its owners, so it owns assets and owes debts in its own name.",
+                  "explain": "Foundation of limited liability."
+              },
+              {
+                  "q": "How does ownership form affect access to finance?",
+                  "a": "Sole traders and partnerships rely on owners' funds and bank loans, while companies can issue shares and debt and, if public, access capital markets.",
+                  "explain": "Growth usually needs a company structure."
+              },
+              {
+                  "q": "What is a co-operative?",
+                  "a": "A business owned and controlled by its members, who may be customers, employees or producers, with profits shared according to use.",
+                  "explain": "Democratic control."
+              },
+              {
+                  "q": "What is a holding company?",
+                  "a": "A company that owns shares in other companies (subsidiaries) and controls them.",
+                  "explain": "Links to group accounts."
+              },
+              {
+                  "q": "How does the transfer of ownership differ between a sole trader and a company?",
+                  "a": "A sole trader sells the business assets; a company's ownership changes by transferring shares without affecting the company itself.",
+                  "explain": "Continuity is a benefit of incorporation."
+              },
+              {
+                  "q": "Why might a family business remain private?",
+                  "a": "To keep control, avoid disclosure and regulation and to plan for long-term rather than market-driven goals.",
+                  "explain": "Private companies can still raise finance from banks and investors."
+              },
+              {
+                  "q": "What is unlimited liability and who bears it?",
+                  "a": "Owners are personally liable for all the business's debts, to the extent of their whole personal wealth; it applies to sole traders and general partners.",
+                  "explain": "Key risk for unincorporated businesses."
+              }
+          ]
+      },
+      {
+          "id": "m04",
+          "title": "Taxation",
+          "description": "Principles of personal and corporate taxation: income tax and capital gains tax, corporation tax, the classical, imputation and partial imputation systems, tax on dividends, double taxation relief and offshore investment funds, and how tax influences financing and behaviour.",
+          "cards": [
+              {
+                  "q": "What is the difference between direct and indirect tax?",
+                  "a": "Direct taxes are levied on income or wealth (income tax, corporation tax, capital gains tax); indirect taxes are levied on spending (VAT, duties).",
+                  "explain": "Company finance is mainly affected by direct taxes."
+              },
+              {
+                  "q": "How are capital gains taxed for individuals?",
+                  "a": "The gain (sale proceeds less cost, with allowances) is taxed at the individual's capital gains rates, often with an annual exempt amount.",
+                  "explain": "Deferral until sale is a tax advantage of holding growth assets."
+              },
+              {
+                  "q": "What is the classical system of company taxation?",
+                  "a": "Profits are taxed in the company and dividends are taxed again in the shareholder's hands with no credit for corporation tax, giving double taxation of distributed profits.",
+                  "explain": "Creates a tax bias towards retention and debt."
+              },
+              {
+                  "q": "What is the imputation system?",
+                  "a": "The shareholder receives a tax credit for corporation tax already paid on the profits out of which the dividend is paid, so profits are effectively taxed once at the shareholder's rate.",
+                  "explain": "Removes the double taxation of dividends."
+              },
+              {
+                  "q": "What is the partial imputation system?",
+                  "a": "The shareholder receives a credit for part of the corporation tax paid, so double taxation is reduced but not eliminated.",
+                  "explain": "A compromise between classical and full imputation."
+              },
+              {
+                  "q": "Why is debt interest often tax-advantaged?",
+                  "a": "Interest is usually deductible from taxable profit whereas dividends are not, so debt is cheaper after tax, subject to limits on deductibility.",
+                  "explain": "The 'tax shield' on debt is a key capital structure factor."
+              },
+              {
+                  "q": "What is a tax shield?",
+                  "a": "The reduction in tax caused by deducting a cost from taxable profit; for interest it equals interest × corporation tax rate.",
+                  "explain": "Interest of £10m at 25% saves £2.5m of tax."
+              },
+              {
+                  "q": "What is double taxation relief?",
+                  "a": "Relief (by credit, exemption or deduction) preventing the same income being taxed in two countries, often set out in double tax treaties.",
+                  "explain": "Important for multinational groups."
+              },
+              {
+                  "q": "What is a withholding tax?",
+                  "a": "Tax deducted at source on payments such as dividends, interest or royalties paid to non-residents.",
+                  "explain": "Rates are often reduced by treaty."
+              },
+              {
+                  "q": "How might offshore investment funds be taxed?",
+                  "a": "Some regimes tax the gains as income on disposal or apply special rules unless the fund meets reporting requirements, to prevent deferral of tax through offshore vehicles.",
+                  "explain": "Rules aim to stop tax avoidance."
+              },
+              {
+                  "q": "How does taxation influence dividend policy?",
+                  "a": "If dividends are taxed more heavily than capital gains, shareholders prefer retention or buybacks; tax-exempt investors prefer dividends.",
+                  "explain": "Clientele effect."
+              },
+              {
+                  "q": "What is capital allowances?",
+                  "a": "Tax relief for spending on fixed assets, given in place of accounting depreciation, which is not tax deductible.",
+                  "explain": "Affects cash flows in project appraisal."
+              },
+              {
+                  "q": "How do tax rules affect project appraisal?",
+                  "a": "Cash flows should be measured after tax, including tax on profits and the timing of capital allowances.",
+                  "explain": "Tax timing matters for NPV."
+              },
+              {
+                  "q": "Why might company tax systems affect where multinationals locate profits?",
+                  "a": "Lower tax jurisdictions attract profit shifting via transfer pricing and intra-group financing, prompting anti-avoidance rules.",
+                  "explain": "Base erosion issues."
+              },
+              {
+                  "q": "What is corporation tax?",
+                  "a": "Tax on company profits, charged at a set rate on taxable profit after allowable deductions.",
+                  "explain": "Paid after year end in many regimes."
+              }
+          ]
+      },
+      {
+          "id": "m05",
+          "title": "Long-term finance",
+          "description": "Long-term sources of company finance: ordinary and preference shares, authorised and issued share capital, loan stocks and debentures, Eurobonds, convertibles, contingent convertibles, floating rate notes, subordinated debt, asset-backed securities and company options, and their characteristics.",
+          "cards": [
+              {
+                  "q": "What is authorised versus issued share capital?",
+                  "a": "Authorised (where used) is the maximum share capital a company may issue under its constitution; issued is the amount actually issued to shareholders.",
+                  "explain": "Called-up and paid-up capital refine this further."
+              },
+              {
+                  "q": "What are ordinary shares?",
+                  "a": "Equity shares carrying voting rights and a residual claim on profits and assets after all other claims, with returns via dividends and capital gain.",
+                  "explain": "Highest risk, highest expected return."
+              },
+              {
+                  "q": "What are preference shares?",
+                  "a": "Shares with a fixed dividend paid before ordinary dividends, usually no vote and priority over ordinary shares on winding up.",
+                  "explain": "Cumulative preference shares carry forward unpaid dividends."
+              },
+              {
+                  "q": "What is a debenture?",
+                  "a": "A loan secured on the company's assets by a fixed or floating charge, paying fixed interest and repayable on a set date.",
+                  "explain": "Secured lenders rank ahead of unsecured creditors."
+              },
+              {
+                  "q": "What is unsecured loan stock?",
+                  "a": "Debt not secured on specific assets, so holders rank as unsecured creditors and demand higher interest than for debentures.",
+                  "explain": "Riskier than debentures."
+              },
+              {
+                  "q": "What is a Eurobond?",
+                  "a": "A bond issued in a currency other than that of the country where it is issued, usually sold to international investors and traded outside national regulation.",
+                  "explain": "Flexible and often bearer form."
+              },
+              {
+                  "q": "What is a convertible loan stock?",
+                  "a": "Debt that the holder may convert into ordinary shares on set terms, giving lower coupon in exchange for upside.",
+                  "explain": "Combines a bond with a call option on shares."
+              },
+              {
+                  "q": "What is a contingent convertible (CoCo)?",
+                  "a": "Debt that converts to equity or is written down automatically if a trigger event (e.g. capital ratio falling below a level) occurs.",
+                  "explain": "Issued mainly by banks to build loss-absorbing capital."
+              },
+              {
+                  "q": "What is a floating rate note?",
+                  "a": "A bond whose coupon is reset periodically by reference to a market rate (e.g. an overnight or interbank rate plus a margin).",
+                  "explain": "Protects investors against rising rates."
+              },
+              {
+                  "q": "What is subordinated debt?",
+                  "a": "Debt ranking behind senior creditors on liquidation but ahead of shareholders, so it pays higher interest.",
+                  "explain": "Counts as regulatory capital for banks and insurers."
+              },
+              {
+                  "q": "What are asset-backed securities?",
+                  "a": "Securities whose payments come from a pool of assets such as mortgages or loans, often split into tranches by seniority.",
+                  "explain": "Securitisation transfers risk to investors."
+              },
+              {
+                  "q": "What are warrants and company-issued options?",
+                  "a": "Options allowing the holder to buy new shares at a set price, often attached to bonds as a sweetener or used for employees.",
+                  "explain": "Exercise raises new equity."
+              },
+              {
+                  "q": "Why might a company issue preference shares rather than debt?",
+                  "a": "Preference dividends are not a legal obligation like interest, so non-payment does not trigger default, though they are not tax-deductible.",
+                  "explain": "Flexibility versus higher cost."
+              },
+              {
+                  "q": "What are the advantages of debt finance for a company?",
+                  "a": "Cheaper than equity, interest is tax-deductible, no dilution of control; the disadvantages are fixed obligations and financial risk.",
+                  "explain": "Balance of risk and cost."
+              },
+              {
+                  "q": "What is a floating charge?",
+                  "a": "Security over a class of changing assets (such as stock) that crystallises into a fixed charge on default.",
+                  "explain": "Allows the company to trade assets freely."
+              },
+              {
+                  "q": "What is a bond's coupon and redemption?",
+                  "a": "The coupon is the periodic interest; redemption is the repayment of principal at maturity (par or a premium).",
+                  "explain": "Determines the bond's cash flows."
+              }
+          ]
+      },
+      {
+          "id": "m06",
+          "title": "Issue of shares",
+          "description": "How companies issue and trade shares: reasons for and against a stock exchange quotation, methods of obtaining a listing (offer for sale, tender, subscription, placing, introduction), rights issues, the role of underwriting, and how shares are traded.",
+          "cards": [
+              {
+                  "q": "Why might a company seek a stock exchange quotation?",
+                  "a": "To raise capital more easily, gain liquidity for shareholders, enhance status and visibility, allow founders to realise value, use shares as acquisition currency and make employee share schemes attractive.",
+                  "explain": "Listing widens the pool of investors."
+              },
+              {
+                  "q": "What are the disadvantages of listing?",
+                  "a": "Costs of listing and ongoing compliance, greater disclosure and scrutiny, short-term pressures from the market, loss of control and takeover vulnerability.",
+                  "explain": "Some companies choose to delist."
+              },
+              {
+                  "q": "What is an offer for sale?",
+                  "a": "An issuing house buys the shares from the company and offers them to the public at a fixed price.",
+                  "explain": "Company gets certainty of proceeds."
+              },
+              {
+                  "q": "What is an offer for sale by tender?",
+                  "a": "Investors bid for shares at prices at or above a minimum, and the issue price is set at the level at which the issue clears.",
+                  "explain": "Price discovery."
+              },
+              {
+                  "q": "What is an offer for subscription?",
+                  "a": "The company offers new shares directly to the public, usually underwritten in case of undersubscription.",
+                  "explain": "Used by companies without an issuing house."
+              },
+              {
+                  "q": "What is a placing?",
+                  "a": "Shares are sold to selected institutional investors through the company's advisers, without a public offer.",
+                  "explain": "Cheaper and faster for smaller issues."
+              },
+              {
+                  "q": "What is an introduction?",
+                  "a": "A listing of shares already widely held, with no new shares issued, used when a company is already established.",
+                  "explain": "Provides a market rather than capital."
+              },
+              {
+                  "q": "What is a rights issue?",
+                  "a": "An offer of new shares to existing shareholders in proportion to their holdings, usually at a discount to the market price.",
+                  "explain": "Preserves existing shareholders' control if they take up rights."
+              },
+              {
+                  "q": "What is the theoretical ex-rights price (TERP)?",
+                  "a": "The expected share price after the rights issue: (value of old shares + funds raised) / total shares after the issue.",
+                  "explain": "Weighted average of old price and issue price."
+              },
+              {
+                  "q": "Worked example: 4 shares at 500p, rights issue 1 for 4 at 400p. TERP?",
+                  "a": "TERP = (4 × 500 + 1 × 400) / 5 = 480p; the right on one new share is worth 480 − 400 = 80p.",
+                  "explain": "Arithmetic check: 2,400/5 = 480."
+              },
+              {
+                  "q": "What is the role of underwriting in a share issue?",
+                  "a": "Underwriters (for a fee) agree to buy any shares the public does not take up, guaranteeing the company its funds.",
+                  "explain": "Sub-underwriters share the risk."
+              },
+              {
+                  "q": "Why are rights issues usually at a discount?",
+                  "a": "To make the offer attractive so that shareholders take it up and to reduce the risk of undersubscription if the share price falls.",
+                  "explain": "The discount does not by itself change shareholder wealth."
+              },
+              {
+                  "q": "What is a bonus (scrip) issue?",
+                  "a": "Free new shares issued to existing shareholders by capitalising reserves; it does not raise cash.",
+                  "explain": "Reduces the share price but not total value."
+              },
+              {
+                  "q": "How are shares traded on a stock exchange?",
+                  "a": "Through brokers and market-makers or electronic order books, with settlement through a central system.",
+                  "explain": "Liquidity is provided by trading."
+              },
+              {
+                  "q": "What is a stock split?",
+                  "a": "Dividing existing shares into more shares of lower nominal value to reduce the share price and improve marketability.",
+                  "explain": "No effect on total value."
+              }
+          ]
+      },
+      {
+          "id": "m07",
+          "title": "Short- and medium-term finance",
+          "description": "Short- and medium-term company finance: credit sales, leasing, bank loans, overdrafts, trade credit, factoring and invoice discounting, bills of exchange and commercial paper, and how to choose between them.",
+          "cards": [
+              {
+                  "q": "What are the main sources of medium-term finance?",
+                  "a": "Bank term loans, leasing and hire purchase, and credit sale agreements.",
+                  "explain": "Matching the term of finance to the life of the asset."
+              },
+              {
+                  "q": "What is leasing?",
+                  "a": "The lessee pays rentals to use an asset owned by the lessor; an operating lease is short and cancellable while a finance lease covers most of the asset's life.",
+                  "explain": "Finance leases are like borrowing to buy."
+              },
+              {
+                  "q": "What are the advantages of leasing?",
+                  "a": "No large initial outlay, possible tax benefits, flexibility and transfer of obsolescence risk under operating leases.",
+                  "explain": "But total cost may exceed buying."
+              },
+              {
+                  "q": "What is a bank overdraft?",
+                  "a": "Flexible short-term borrowing up to an agreed limit, repayable on demand, with interest charged only on the amount used.",
+                  "explain": "Suited to fluctuating working capital needs."
+              },
+              {
+                  "q": "What is trade credit?",
+                  "a": "Delayed payment agreed with suppliers, effectively free short-term finance, though early settlement discounts may be lost.",
+                  "explain": "Cost can be high if a discount is foregone."
+              },
+              {
+                  "q": "How is the cost of foregoing a discount calculated?",
+                  "a": "For terms '2/10 net 30', cost ≈ (2/98) × (365/20) = 37% a year.",
+                  "explain": "Arithmetic check: 0.02041 × 18.25 = 0.372."
+              },
+              {
+                  "q": "What is factoring?",
+                  "a": "Selling trade receivables to a factor, which advances cash (often about 80%), manages the ledger and may take over credit risk.",
+                  "explain": "Improves cash flow."
+              },
+              {
+                  "q": "What is invoice discounting?",
+                  "a": "Borrowing against the security of receivables, without the factor administering the ledger or the customer being informed.",
+                  "explain": "Confidential."
+              },
+              {
+                  "q": "What is a bill of exchange?",
+                  "a": "A written order to pay a specified sum at a future date, which can be discounted for cash before maturity.",
+                  "explain": "Used in international trade."
+              },
+              {
+                  "q": "What is commercial paper?",
+                  "a": "Short-term unsecured promissory notes issued by large creditworthy companies to investors at a discount.",
+                  "explain": "Cheaper than bank loans for strong issuers."
+              },
+              {
+                  "q": "What are the disadvantages of short-term borrowing to fund long-term assets?",
+                  "a": "Refinancing risk and interest rate risk, since the loan must be renewed at possibly worse terms.",
+                  "explain": "Match maturities."
+              },
+              {
+                  "q": "What is hire purchase?",
+                  "a": "The buyer pays instalments and takes ownership after the final payment, receiving capital allowances meanwhile.",
+                  "explain": "Similar to a loan secured on the asset."
+              },
+              {
+                  "q": "How does a credit sale differ from leasing?",
+                  "a": "A credit sale transfers ownership immediately with payment by instalments, whereas leasing keeps ownership with the lessor.",
+                  "explain": "Different tax and balance sheet effects."
+              },
+              {
+                  "q": "What factors influence the choice of short-term finance?",
+                  "a": "Cost, flexibility, security required, availability, the purpose and length of need and effect on relationships.",
+                  "explain": "Choose the cheapest suitable source."
+              },
+              {
+                  "q": "What is working capital?",
+                  "a": "Current assets less current liabilities: the funds tied up in stock, receivables and cash net of short-term creditors.",
+                  "explain": "Efficient management improves liquidity."
+              }
+          ]
+      },
+      {
+          "id": "m08",
+          "title": "Alternative sources of finance",
+          "description": "Finance outside the traditional banking system: shadow banking, direct project financing, peer-to-peer lending, crowdfunding, micro-finance, venture capital and business angels, and their benefits, risks and regulation.",
+          "cards": [
+              {
+                  "q": "What is shadow banking?",
+                  "a": "Credit intermediation by non-bank institutions (money market funds, hedge funds, finance companies) outside normal banking regulation.",
+                  "explain": "Can grow fast and create systemic risk."
+              },
+              {
+                  "q": "Why is shadow banking a concern for regulators?",
+                  "a": "It lacks deposit insurance and bank-style capital and liquidity rules, and is vulnerable to runs, yet is interconnected with the banking system.",
+                  "explain": "Contributed to the 2008 crisis."
+              },
+              {
+                  "q": "What is project finance?",
+                  "a": "Funding a specific project (e.g. infrastructure) mainly from its future cash flows, usually through a separate project company with limited recourse to sponsors.",
+                  "explain": "Risk allocation is crucial."
+              },
+              {
+                  "q": "What is peer-to-peer lending?",
+                  "a": "Online platforms matching lenders with borrowers directly, cutting out banks.",
+                  "explain": "Lower costs but credit and platform risk."
+              },
+              {
+                  "q": "What is crowdfunding?",
+                  "a": "Raising small amounts from many people via online platforms, in the form of donations, rewards, loans or equity.",
+                  "explain": "Useful for start-ups."
+              },
+              {
+                  "q": "What is micro-finance?",
+                  "a": "Small loans and other financial services for people excluded from conventional banking, often in developing economies.",
+                  "explain": "Group lending mitigates credit risk."
+              },
+              {
+                  "q": "What is venture capital?",
+                  "a": "Equity investment in young, high-growth companies by specialist funds, which take stakes and often board seats and exit by sale or listing.",
+                  "explain": "High risk, high potential return."
+              },
+              {
+                  "q": "What are business angels?",
+                  "a": "Wealthy individuals who invest their own money in early-stage businesses, often adding expertise.",
+                  "explain": "Earlier and smaller than venture capital."
+              },
+              {
+                  "q": "What are the risks to investors in alternative finance?",
+                  "a": "Higher default rates, lack of liquidity, less regulatory protection and platform failure.",
+                  "explain": "Diversification is important."
+              },
+              {
+                  "q": "Why might a company use alternative finance?",
+                  "a": "Banks may not lend to it, or terms may be more flexible or cheaper, or it may need speed or specialised support.",
+                  "explain": "Complements bank finance."
+              },
+              {
+                  "q": "What are the risks to the financial system from alternative finance growth?",
+                  "a": "Reduced oversight, opaque exposures, liquidity mismatches and contagion into regulated institutions.",
+                  "explain": "Regulators monitor it."
+              },
+              {
+                  "q": "What is a limited recourse loan?",
+                  "a": "Lenders can claim only against the project's assets and cash flows, not the sponsors' other assets.",
+                  "explain": "Typical in project finance."
+              },
+              {
+                  "q": "What is invoice trading?",
+                  "a": "Selling individual invoices on an online marketplace to investors for immediate cash.",
+                  "explain": "Fintech variant of factoring."
+              },
+              {
+                  "q": "What is equity crowdfunding?",
+                  "a": "Investors receive shares in return for funding via a platform, usually small stakes.",
+                  "explain": "Regulated more heavily than reward crowdfunding."
+              },
+              {
+                  "q": "What is mezzanine finance?",
+                  "a": "Hybrid debt with equity features, ranking below senior debt, often used in buyouts.",
+                  "explain": "Higher return for higher risk."
+              }
+          ]
+      },
+      {
+          "id": "m09",
+          "title": "Introduction to accounts",
+          "description": "Why companies produce annual reports and accounts, who uses them, key accounting concepts (going concern, accruals, prudence, consistency, materiality, historic cost, true and fair view), sustainability and alternative reporting, and the purpose of the main statements.",
+          "cards": [
+              {
+                  "q": "Why must companies produce annual reports and accounts?",
+                  "a": "To show shareholders how their money has been used (stewardship), give lenders and other users information for decisions, satisfy legal requirements and support tax assessment.",
+                  "explain": "Users include investors, lenders, employees, customers and regulators."
+              },
+              {
+                  "q": "What is the going concern concept?",
+                  "a": "Accounts are prepared on the assumption that the business will continue in operation for the foreseeable future, so assets are not valued as if being sold in liquidation.",
+                  "explain": "If not a going concern, a break-up basis is used."
+              },
+              {
+                  "q": "What is the accruals concept?",
+                  "a": "Income and expenses are recognised when earned or incurred, not when cash is received or paid.",
+                  "explain": "Matching revenues with the costs of earning them."
+              },
+              {
+                  "q": "What is the prudence concept?",
+                  "a": "Not overstating assets or income and not understating liabilities or expenses; recognise losses early but gains only when realised.",
+                  "explain": "Balanced today with neutrality."
+              },
+              {
+                  "q": "What is the consistency concept?",
+                  "a": "Similar items are treated in the same way within a period and from one period to the next, so results are comparable.",
+                  "explain": "Changes must be disclosed."
+              },
+              {
+                  "q": "What is materiality?",
+                  "a": "Information is material if omitting or misstating it could influence users' decisions; immaterial items need not be separately disclosed.",
+                  "explain": "Depends on size and nature."
+              },
+              {
+                  "q": "What does 'true and fair view' mean?",
+                  "a": "The accounts present the company's position and performance fairly, in accordance with accounting standards and law, free from material misstatement.",
+                  "explain": "Auditors give an opinion on this."
+              },
+              {
+                  "q": "What is the historic cost convention?",
+                  "a": "Assets are recorded at their original purchase cost, giving objective, verifiable figures but ignoring price changes.",
+                  "explain": "Some assets are revalued to fair value."
+              },
+              {
+                  "q": "What are the main statements in an annual report?",
+                  "a": "The statement of financial position (balance sheet), statement of profit or loss (and other comprehensive income), cash flow statement, statement of changes in equity and notes.",
+                  "explain": "Plus directors' and auditor's reports."
+              },
+              {
+                  "q": "Why is sustainability reporting valuable?",
+                  "a": "It informs users about environmental, social and governance risks and impacts that can affect long-term value, and encourages better management of them.",
+                  "explain": "Syllabus 4.1.2."
+              },
+              {
+                  "q": "What are alternatives to traditional financial reporting?",
+                  "a": "Integrated reporting, sustainability reports, key performance indicators and narrative reporting, aiming to show non-financial value drivers.",
+                  "explain": "Complement rather than replace accounts."
+              },
+              {
+                  "q": "What is the business entity concept?",
+                  "a": "The business is treated as separate from its owners, so personal transactions are excluded from its accounts.",
+                  "explain": "Basic accounting assumption."
+              },
+              {
+                  "q": "What is the money measurement concept?",
+                  "a": "Only items measurable in monetary terms are recorded, so things like staff quality do not appear as assets.",
+                  "explain": "A limitation of accounts."
+              },
+              {
+                  "q": "What is the difference between financial and management accounting?",
+                  "a": "Financial accounts are prepared for external users under legal and accounting rules; management accounts are for internal decisions and follow no fixed format.",
+                  "explain": "Different purposes."
+              },
+              {
+                  "q": "What is the double-entry principle?",
+                  "a": "Every transaction has two equal effects (a debit and a credit), so the accounting equation Assets = Liabilities + Equity always holds.",
+                  "explain": "Basis of the bookkeeping system."
+              }
+          ]
+      },
+      {
+          "id": "m10",
+          "title": "The main accounts",
+          "description": "The purpose and content of the statement of financial position, statement of comprehensive income and cash flow statement: assets, liabilities and equity, reserves and retained earnings, depreciation, and the notes to the accounts.",
+          "cards": [
+              {
+                  "q": "What does the statement of financial position show?",
+                  "a": "The company's assets, liabilities and equity at a point in time.",
+                  "explain": "Assets = Liabilities + Equity."
+              },
+              {
+                  "q": "What are non-current and current assets?",
+                  "a": "Non-current assets are held for long-term use (property, plant, intangibles); current assets are expected to be converted to cash within a year (inventory, receivables, cash).",
+                  "explain": "Order of liquidity."
+              },
+              {
+                  "q": "What are current liabilities?",
+                  "a": "Obligations due within one year, such as trade payables, short-term borrowings and tax due.",
+                  "explain": "Compare with current assets to assess liquidity."
+              },
+              {
+                  "q": "What is share capital?",
+                  "a": "The nominal value of shares issued; any amount paid above nominal is share premium.",
+                  "explain": "Part of equity."
+              },
+              {
+                  "q": "What are reserves and retained earnings?",
+                  "a": "Retained earnings are cumulative profits not distributed as dividends; other reserves include share premium and revaluation reserves.",
+                  "explain": "Reserves are not cash."
+              },
+              {
+                  "q": "What does the statement of profit or loss show?",
+                  "a": "Revenue less costs to give profit for a period: gross profit, operating profit, profit before tax and profit after tax.",
+                  "explain": "Performance over time."
+              },
+              {
+                  "q": "What is depreciation?",
+                  "a": "The allocation of the cost of a non-current asset over its useful life, charged as an expense; it is a non-cash item.",
+                  "explain": "Matches cost to the periods benefiting."
+              },
+              {
+                  "q": "Worked example: asset cost £50,000, residual £5,000, life 5 years. Straight-line depreciation?",
+                  "a": "(50,000 − 5,000) / 5 = £9,000 a year.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What is the reducing balance method?",
+                  "a": "Depreciation is a fixed percentage of the carrying amount each year, giving higher charges early.",
+                  "explain": "Suits assets losing value quickly."
+              },
+              {
+                  "q": "What is other comprehensive income?",
+                  "a": "Gains and losses recognised directly in equity rather than profit or loss, such as revaluation gains and some pension remeasurements.",
+                  "explain": "Total comprehensive income = profit + OCI."
+              },
+              {
+                  "q": "What is the purpose of the cash flow statement?",
+                  "a": "To show cash generated and used in operating, investing and financing activities, explaining the change in cash.",
+                  "explain": "Profit is not cash."
+              },
+              {
+                  "q": "Why can a profitable company run out of cash?",
+                  "a": "Profit includes non-cash items and credit sales, while cash is tied up in inventory, receivables and investment, and debts fall due.",
+                  "explain": "Overtrading."
+              },
+              {
+                  "q": "What are the notes to the accounts for?",
+                  "a": "To give detail behind figures, accounting policies, contingent liabilities, related-party transactions and other disclosures.",
+                  "explain": "Essential for interpretation."
+              },
+              {
+                  "q": "What is a contingent liability?",
+                  "a": "A possible obligation depending on a future event, disclosed but not recognised unless probable and measurable.",
+                  "explain": "E.g. pending litigation."
+              },
+              {
+                  "q": "What is goodwill?",
+                  "a": "The excess of the price paid for a business over the fair value of its net identifiable assets, an intangible asset tested annually for impairment.",
+                  "explain": "Arises on acquisitions."
+              }
+          ]
+      },
+      {
+          "id": "m11",
+          "title": "Constructing accounts",
+          "description": "Constructing a simple statement of financial position and statement of profit or loss from trial balance information: adjustments for accruals, prepayments, depreciation, bad debts and inventory, and preparing a basic cash flow statement.",
+          "cards": [
+              {
+                  "q": "What is a trial balance?",
+                  "a": "A list of all ledger balances showing that total debits equal total credits, the starting point for preparing accounts.",
+                  "explain": "Errors can still exist."
+              },
+              {
+                  "q": "How is gross profit calculated?",
+                  "a": "Revenue less cost of sales, where cost of sales = opening inventory + purchases − closing inventory.",
+                  "explain": "Manufacturer includes production costs."
+              },
+              {
+                  "q": "What is an accrual?",
+                  "a": "An expense incurred but not yet paid at the year end, recorded as a liability and an expense.",
+                  "explain": "Matches cost to the period."
+              },
+              {
+                  "q": "What is a prepayment?",
+                  "a": "Expense paid in advance for a future period, recorded as a current asset and excluded from the current expense.",
+                  "explain": "Reverse of an accrual."
+              },
+              {
+                  "q": "How are bad debts treated?",
+                  "a": "Irrecoverable receivables are written off as an expense; an allowance may be made for expected credit losses.",
+                  "explain": "Reduces receivables and profit."
+              },
+              {
+                  "q": "How is closing inventory valued?",
+                  "a": "At the lower of cost and net realisable value.",
+                  "explain": "Prudence."
+              },
+              {
+                  "q": "How is operating profit converted to operating cash flow (indirect method)?",
+                  "a": "Add back non-cash items (depreciation), adjust for changes in inventory, receivables and payables.",
+                  "explain": "Reconciles profit to cash."
+              },
+              {
+                  "q": "Worked example: operating profit £200k, depreciation £50k, inventory up £30k, receivables up £20k, payables up £10k. Operating cash flow?",
+                  "a": "200 + 50 − 30 − 20 + 10 = £210k.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "Where do dividends paid appear in the cash flow statement?",
+                  "a": "Under financing activities (or operating, depending on policy), reducing cash.",
+                  "explain": "As do share issues and loan repayments."
+              },
+              {
+                  "q": "What does investing cash flow include?",
+                  "a": "Purchase and sale of non-current assets and investments, and interest and dividends received.",
+                  "explain": "Usually negative for growing firms."
+              },
+              {
+                  "q": "What is the accounting equation?",
+                  "a": "Assets = Liabilities + Equity.",
+                  "explain": "Check the statement of financial position balances."
+              },
+              {
+                  "q": "What is a suspense account?",
+                  "a": "A temporary account holding amounts whose correct classification is not yet known, or to balance a trial balance temporarily.",
+                  "explain": "Must be cleared."
+              },
+              {
+                  "q": "How is a disposal of a non-current asset accounted for?",
+                  "a": "Compare proceeds with carrying amount; the difference is a profit or loss on disposal in profit or loss.",
+                  "explain": "Remove cost and accumulated depreciation."
+              },
+              {
+                  "q": "What is an impairment?",
+                  "a": "A write-down of an asset whose carrying amount exceeds its recoverable amount.",
+                  "explain": "Charged to profit or loss."
+              },
+              {
+                  "q": "How is tax accounted for in the accounts?",
+                  "a": "Tax expense is charged to profit and a tax liability shown until paid, with deferred tax for timing differences.",
+                  "explain": "Company tax."
+              }
+          ]
+      },
+      {
+          "id": "m12",
+          "title": "Accounts for groups, insurance companies and banks",
+          "description": "Group accounts (subsidiaries, associates, consolidation, non-controlling interest), and the structure and content of insurance and banking company accounts, including their special features.",
+          "cards": [
+              {
+                  "q": "What is a subsidiary?",
+                  "a": "A company controlled by another (the parent), usually through owning more than half of the voting rights; it is fully consolidated.",
+                  "explain": "Control is the test."
+              },
+              {
+                  "q": "What is an associate?",
+                  "a": "A company over which the investor has significant influence (typically 20–50% of votes) but not control, accounted for by the equity method.",
+                  "explain": "Share of profit is recorded."
+              },
+              {
+                  "q": "What is the purpose of consolidated accounts?",
+                  "a": "To present the group as a single economic entity, showing the combined assets, liabilities, income and expenses of parent and subsidiaries.",
+                  "explain": "Avoids hiding losses in subsidiaries."
+              },
+              {
+                  "q": "What is non-controlling interest?",
+                  "a": "The share of a subsidiary's net assets and profit not owned by the parent, shown separately within equity.",
+                  "explain": "Arises when the parent owns less than 100%."
+              },
+              {
+                  "q": "What adjustments are made on consolidation?",
+                  "a": "Eliminate intra-group balances and transactions, eliminate the parent's investment against subsidiary equity, and account for goodwill and non-controlling interest.",
+                  "explain": "Avoids double counting."
+              },
+              {
+                  "q": "What is the equity method?",
+                  "a": "The investment in an associate starts at cost and is adjusted for the investor's share of the associate's profit and dividends.",
+                  "explain": "One-line consolidation."
+              },
+              {
+                  "q": "How do insurance company accounts differ from other companies'?",
+                  "a": "They show premiums, claims incurred, technical provisions (reserves for claims and future benefits), investment income and often separate long-term and general business.",
+                  "explain": "Long-term liabilities dominate."
+              },
+              {
+                  "q": "What are technical provisions in insurer accounts?",
+                  "a": "Liabilities for insurance obligations: unearned premium, outstanding and incurred-but-not-reported claims, and life reserves.",
+                  "explain": "Estimated by actuaries."
+              },
+              {
+                  "q": "What is unique about banks' balance sheets?",
+                  "a": "Most assets are loans and securities, and most liabilities are customer deposits and borrowings, with high leverage and regulatory capital requirements.",
+                  "explain": "Liquidity and capital ratios matter."
+              },
+              {
+                  "q": "What are loan impairments in bank accounts?",
+                  "a": "Provisions for expected credit losses on loans, reducing profit and the carrying value of loans.",
+                  "explain": "A key judgement area."
+              },
+              {
+                  "q": "What is net interest income?",
+                  "a": "Interest earned on loans less interest paid on deposits and borrowings; the core bank profit measure.",
+                  "explain": "Interest margin."
+              },
+              {
+                  "q": "Why is insurer profit harder to interpret than a manufacturer's?",
+                  "a": "Claims reserves rely on estimates and long-term contracts, so reported profit depends on assumptions.",
+                  "explain": "Actuarial judgement."
+              },
+              {
+                  "q": "What is a joint venture?",
+                  "a": "An arrangement where parties jointly control an entity and share its net assets, usually accounted for by the equity method.",
+                  "explain": "Shared control."
+              },
+              {
+                  "q": "Why might a company own an associate rather than a subsidiary?",
+                  "a": "To gain influence over a supplier, technology or market with a smaller investment and less risk.",
+                  "explain": "Strategic stake."
+              },
+              {
+                  "q": "What is a minority interest's significance for gearing?",
+                  "a": "Non-controlling interest is part of group equity, so it should be considered when computing group ratios.",
+                  "explain": "Interpretation."
+              }
+          ]
+      },
+      {
+          "id": "m13",
+          "title": "Interpreting accounts (1)",
+          "description": "Ratio analysis, part 1: profitability (gross, operating and net margins, return on capital employed, return on equity), asset turnover and efficiency, and liquidity (current and quick ratios, working capital cycle), and their limitations.",
+          "cards": [
+              {
+                  "q": "How is return on capital employed (ROCE) calculated?",
+                  "a": "Operating profit (PBIT) divided by capital employed (equity plus long-term debt), expressed as a percentage.",
+                  "explain": "Overall performance."
+              },
+              {
+                  "q": "How is gross profit margin calculated?",
+                  "a": "Gross profit / revenue × 100.",
+                  "explain": "Reflects pricing and cost of sales."
+              },
+              {
+                  "q": "How is net profit margin calculated?",
+                  "a": "Profit after tax (or before tax) / revenue × 100.",
+                  "explain": "Overall margin."
+              },
+              {
+                  "q": "What is asset turnover?",
+                  "a": "Revenue / capital employed (or total assets).",
+                  "explain": "ROCE = margin × asset turnover."
+              },
+              {
+                  "q": "Worked example: PBIT £120m, capital employed £800m, revenue £1,200m. ROCE, margin, turnover?",
+                  "a": "ROCE = 15%; operating margin = 10%; asset turnover = 1.5; 10% × 1.5 = 15%.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What is return on equity?",
+                  "a": "Profit after tax attributable to shareholders / shareholders' equity.",
+                  "explain": "Boosted by gearing."
+              },
+              {
+                  "q": "What is the current ratio?",
+                  "a": "Current assets / current liabilities.",
+                  "explain": "Rule of thumb around 1.5, but varies by industry."
+              },
+              {
+                  "q": "What is the quick (acid test) ratio?",
+                  "a": "(Current assets − inventory) / current liabilities.",
+                  "explain": "Excludes inventory."
+              },
+              {
+                  "q": "How is the inventory turnover period calculated?",
+                  "a": "(Inventory / cost of sales) × 365 days.",
+                  "explain": "Efficiency."
+              },
+              {
+                  "q": "How is the receivables collection period calculated?",
+                  "a": "(Trade receivables / credit sales) × 365 days.",
+                  "explain": "Credit control."
+              },
+              {
+                  "q": "How is the payables period calculated?",
+                  "a": "(Trade payables / cost of sales or purchases) × 365 days.",
+                  "explain": "Use of supplier credit."
+              },
+              {
+                  "q": "What is the cash conversion cycle?",
+                  "a": "Inventory days + receivable days − payable days.",
+                  "explain": "Length of the working capital cycle."
+              },
+              {
+                  "q": "What are the limitations of ratio analysis?",
+                  "a": "Historic data, differing accounting policies, seasonal effects, lack of comparators, and ratios don't explain causes.",
+                  "explain": "Compare trends and peers."
+              },
+              {
+                  "q": "Why is a very high current ratio not always good?",
+                  "a": "It may indicate excess inventory, idle cash or slow collection of receivables.",
+                  "explain": "Efficiency matters."
+              },
+              {
+                  "q": "How does a fall in gross margin usually arise?",
+                  "a": "Lower selling prices, higher cost of sales, changes in sales mix or inventory errors.",
+                  "explain": "Investigate causes."
+              }
+          ]
+      },
+      {
+          "id": "m14",
+          "title": "Interpreting accounts (2)",
+          "description": "Ratio analysis, part 2: gearing, interest cover, asset cover, priority percentages, the impact of interest rate movements on a highly geared company, investor ratios (EPS, P/E, dividend yield and cover), and cash flow interpretation.",
+          "cards": [
+              {
+                  "q": "How is gearing measured?",
+                  "a": "Debt / (debt + equity), or debt / equity; the higher the ratio, the greater the financial risk.",
+                  "explain": "Definitions vary — state which you use."
+              },
+              {
+                  "q": "How is interest cover calculated?",
+                  "a": "Profit before interest and tax / interest expense.",
+                  "explain": "Ability to service debt."
+              },
+              {
+                  "q": "Worked example: PBIT £500m, interest £125m. Interest cover?",
+                  "a": "500 / 125 = 4.0 times.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What is asset cover for loan capital?",
+                  "a": "Net tangible assets available to the lenders / loan capital.",
+                  "explain": "Security."
+              },
+              {
+                  "q": "What are priority percentages?",
+                  "a": "Each layer of finance's claim as a percentage of total profit or cash flow available, showing how much profit must be earned to pay each tier before the next.",
+                  "explain": "Shows exposure of ordinary shareholders."
+              },
+              {
+                  "q": "How do rising interest rates affect a highly geared company?",
+                  "a": "Interest costs rise, cutting profit and cover and possibly forcing asset sales or breaching covenants; equity returns become more volatile.",
+                  "explain": "Gearing magnifies movements."
+              },
+              {
+                  "q": "What is earnings per share (EPS)?",
+                  "a": "Profit attributable to ordinary shareholders / weighted average number of ordinary shares.",
+                  "explain": "Headline investor measure."
+              },
+              {
+                  "q": "What is the price/earnings (P/E) ratio?",
+                  "a": "Share price / EPS.",
+                  "explain": "How many years of earnings the market pays."
+              },
+              {
+                  "q": "What is dividend yield?",
+                  "a": "Dividend per share / share price.",
+                  "explain": "Income return."
+              },
+              {
+                  "q": "What is dividend cover?",
+                  "a": "Profit after tax available for ordinary shareholders / ordinary dividends (or EPS / DPS).",
+                  "explain": "Safety of dividends."
+              },
+              {
+                  "q": "Worked example: EPS 50p, DPS 20p. Dividend cover?",
+                  "a": "50 / 20 = 2.5 times.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What does a high P/E suggest?",
+                  "a": "The market expects high growth or low risk, or the shares may be overvalued.",
+                  "explain": "Compare within sector."
+              },
+              {
+                  "q": "How can operating cash flow help interpret profit quality?",
+                  "a": "Consistently low cash relative to profit suggests aggressive revenue recognition or working capital problems.",
+                  "explain": "Cash flow statement."
+              },
+              {
+                  "q": "What is financial risk versus business risk?",
+                  "a": "Business risk comes from operations and is unaffected by financing; financial risk arises from debt obligations.",
+                  "explain": "Gearing affects financial risk."
+              },
+              {
+                  "q": "Why compare ratios with industry averages?",
+                  "a": "Different industries have different norms, so a ratio is meaningful only against peers and trends.",
+                  "explain": "Context."
+              }
+          ]
+      },
+      {
+          "id": "m15",
+          "title": "Derivatives",
+          "description": "Use of derivatives by a non-financial company: forwards and financial futures, options, interest rate and currency swaps; hedging versus speculation, basic pricing ideas, and the risks of derivative use.",
+          "cards": [
+              {
+                  "q": "What is a derivative?",
+                  "a": "A contract whose value depends on an underlying asset, rate or index, such as a share, currency or interest rate.",
+                  "explain": "Forwards, futures, options and swaps."
+              },
+              {
+                  "q": "Why might a non-financial company use derivatives?",
+                  "a": "To hedge exposures to interest rates, exchange rates and commodity prices, stabilising cash flows and costs.",
+                  "explain": "Not to speculate."
+              },
+              {
+                  "q": "What is a forward contract?",
+                  "a": "An agreement to buy or sell an asset at a fixed price on a future date, tailored and traded over the counter.",
+                  "explain": "Counterparty risk."
+              },
+              {
+                  "q": "How does a futures contract differ from a forward?",
+                  "a": "Standardised, exchange-traded, marked to market daily with margin and cleared through a clearing house.",
+                  "explain": "Less counterparty risk."
+              },
+              {
+                  "q": "What is a call option?",
+                  "a": "The right, but not the obligation, to buy an asset at a set price on or before a set date.",
+                  "explain": "Buyer pays a premium."
+              },
+              {
+                  "q": "What is a put option?",
+                  "a": "The right, but not the obligation, to sell an asset at a set price.",
+                  "explain": "Protects against price falls."
+              },
+              {
+                  "q": "What is an interest rate swap?",
+                  "a": "An agreement to exchange fixed-rate for floating-rate interest payments on a notional amount.",
+                  "explain": "Converts the type of borrowing."
+              },
+              {
+                  "q": "What is a currency swap?",
+                  "a": "An exchange of principal and interest in one currency for principal and interest in another.",
+                  "explain": "Hedges foreign currency borrowing."
+              },
+              {
+                  "q": "Worked example: forward price of an asset at £100 with rate 5% for one year (no income)?",
+                  "a": "£100 × 1.05 = £105.",
+                  "explain": "Arithmetic check: cost-of-carry."
+              },
+              {
+                  "q": "How can a company hedge a future foreign currency receipt?",
+                  "a": "Sell the currency forward, buy a put option on it, or borrow in that currency and convert now.",
+                  "explain": "Options keep upside."
+              },
+              {
+                  "q": "What is the difference between hedging and speculating?",
+                  "a": "Hedging reduces an existing risk; speculating takes on new risk in the hope of profit.",
+                  "explain": "Controls needed to prevent speculation."
+              },
+              {
+                  "q": "What are the risks of using derivatives?",
+                  "a": "Counterparty, basis and liquidity risks, leverage, complexity and control failures.",
+                  "explain": "Governance."
+              },
+              {
+                  "q": "What is put-call parity?",
+                  "a": "Call − Put = Share price − PV of exercise price (for a European option on a non-dividend share).",
+                  "explain": "No-arbitrage relationship."
+              },
+              {
+                  "q": "What is an option's intrinsic value?",
+                  "a": "The amount by which it is in the money: max(S − K, 0) for a call.",
+                  "explain": "Plus time value."
+              },
+              {
+                  "q": "What is basis risk?",
+                  "a": "The hedge does not perfectly track the exposure, leaving a residual risk.",
+                  "explain": "Imperfect hedge."
+              }
+          ]
+      },
+      {
+          "id": "m16",
+          "title": "Growth and restructuring of companies",
+          "description": "Why companies grow, internal versus external growth, constraints on growth, mergers and takeovers, the relationship between growth and profitability, and why companies divest subsidiaries or business units.",
+          "cards": [
+              {
+                  "q": "Why do companies want to grow larger?",
+                  "a": "To gain economies of scale, market power, diversification, managerial ambitions, defend against takeover and increase returns to shareholders.",
+                  "explain": "Growth should add value."
+              },
+              {
+                  "q": "What is internal (organic) growth?",
+                  "a": "Growth through investing in the company's own operations, products and markets, financed by retained profit or new capital.",
+                  "explain": "Slower, lower risk."
+              },
+              {
+                  "q": "What is external growth?",
+                  "a": "Growth through acquisitions or mergers with other companies.",
+                  "explain": "Faster but riskier."
+              },
+              {
+                  "q": "What are the main types of merger?",
+                  "a": "Horizontal (same industry), vertical (supply chain) and conglomerate (unrelated businesses).",
+                  "explain": "Different rationales."
+              },
+              {
+                  "q": "What are the reasons for takeovers?",
+                  "a": "Synergies, market share, acquiring assets or skills, eliminating competitors and buying undervalued companies.",
+                  "explain": "Value creation should exceed the premium."
+              },
+              {
+                  "q": "What are constraints on a company's growth?",
+                  "a": "Availability of finance, management capacity, market size and competition, regulation and competition law, and risk appetite.",
+                  "explain": "Syllabus 2.5.2."
+              },
+              {
+                  "q": "What is synergy?",
+                  "a": "The combined value exceeds the sum of the separate values (e.g. cost savings or revenue gains).",
+                  "explain": "Often overestimated."
+              },
+              {
+                  "q": "Why do many takeovers fail to create value for the acquirer?",
+                  "a": "The premium paid may transfer synergies to target shareholders, integration is difficult and cultures clash.",
+                  "explain": "Winner's curse."
+              },
+              {
+                  "q": "Why might a company divest a subsidiary or business unit?",
+                  "a": "To raise cash, refocus on core business, remove poor performers, meet regulators' conditions or defend against takeover.",
+                  "explain": "Syllabus 2.5.3."
+              },
+              {
+                  "q": "What is a demerger (spin-off)?",
+                  "a": "A company separates part of its business into a new independent company whose shares are distributed to existing shareholders.",
+                  "explain": "Unlocks value."
+              },
+              {
+                  "q": "What is a management buyout?",
+                  "a": "The existing management acquires the business, often with private equity and debt.",
+                  "explain": "Highly geared."
+              },
+              {
+                  "q": "How are takeovers financed?",
+                  "a": "By cash (from resources or borrowing), by shares, or a mix.",
+                  "explain": "Effects on gearing and control."
+              },
+              {
+                  "q": "What is a hostile takeover?",
+                  "a": "A bid made directly to shareholders without the agreement of the target's board.",
+                  "explain": "Defences include poison pills."
+              },
+              {
+                  "q": "What is the relationship between growth and profitability?",
+                  "a": "Growth increases profit only if new investment earns more than its cost of capital; growth financed by lower-return projects destroys value.",
+                  "explain": "Growth is not an end in itself."
+              },
+              {
+                  "q": "How can a company measure the success of an acquisition?",
+                  "a": "Compare post-acquisition returns and cash flows with the price paid and cost of capital.",
+                  "explain": "Post-audit."
+              }
+          ]
+      },
+      {
+          "id": "m17",
+          "title": "Weighted average cost of capital",
+          "description": "The cost of each source of finance (equity via dividend growth model and CAPM, preference shares, debt before and after tax), market-value weights, calculation of the weighted average cost of capital, and its uses and limitations.",
+          "cards": [
+              {
+                  "q": "What is the cost of capital?",
+                  "a": "The return required by providers of finance, and therefore the minimum return a project must earn to create value.",
+                  "explain": "Also the discount rate."
+              },
+              {
+                  "q": "How is the cost of equity estimated using the dividend growth model?",
+                  "a": "$k_e = \\frac{D_1}{P_0} + g$.",
+                  "explain": "Requires expected dividend and growth."
+              },
+              {
+                  "q": "Worked example: D1 = 5p, P0 = 83.33p, g = 4%. Cost of equity?",
+                  "a": "5/83.33 + 4% = 6% + 4% = 10%.",
+                  "explain": "Arithmetic check: 5/83.33 = 0.06."
+              },
+              {
+                  "q": "What is the CAPM cost of equity?",
+                  "a": "$k_e = r_f + \\beta (r_m - r_f)$.",
+                  "explain": "Risk-free rate plus beta times market risk premium."
+              },
+              {
+                  "q": "Worked example: rf 3%, beta 1.2, market premium 5%. Cost of equity?",
+                  "a": "3% + 1.2 × 5% = 9%.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "How is the after-tax cost of debt calculated?",
+                  "a": "$k_d(1 - t)$ where $k_d$ is the pre-tax yield to redemption.",
+                  "explain": "Interest is tax-deductible."
+              },
+              {
+                  "q": "How is the cost of irredeemable preference shares calculated?",
+                  "a": "Preference dividend / market price.",
+                  "explain": "No tax relief."
+              },
+              {
+                  "q": "Why use market values for weights?",
+                  "a": "They reflect the current cost of raising each type of capital and the actual proportions investors provide.",
+                  "explain": "Not book values."
+              },
+              {
+                  "q": "Worked example: E £60m at 12%, D £40m at 5% pre-tax, tax 25%. WACC?",
+                  "a": "0.6 × 12% + 0.4 × 5% × 0.75 = 7.2% + 1.5% = 8.7%.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What does beta measure?",
+                  "a": "Sensitivity of a share's returns to market returns, i.e. systematic risk.",
+                  "explain": "Beta 1.2 means 20% more volatile than market."
+              },
+              {
+                  "q": "What is the difference between equity beta and asset beta?",
+                  "a": "Equity beta includes financial risk from gearing; asset beta reflects business risk only and can be re-geared for a different capital structure.",
+                  "explain": "Used for project-specific rates."
+              },
+              {
+                  "q": "What are the limitations of using WACC as a discount rate?",
+                  "a": "It assumes the project has the same business risk and gearing as the company and that capital structure is constant.",
+                  "explain": "Syllabus 3.1.7."
+              },
+              {
+                  "q": "Why is debt cheaper than equity?",
+                  "a": "Lenders have prior claims and lower risk, and interest is tax-deductible.",
+                  "explain": "But more debt raises equity's cost."
+              },
+              {
+                  "q": "What is the cost of retained earnings?",
+                  "a": "The same as the cost of equity, since retained profits belong to shareholders who could otherwise have received them.",
+                  "explain": "No free source of capital."
+              },
+              {
+                  "q": "What are the limitations of the dividend growth model?",
+                  "a": "Constant growth assumption, sensitivity to g and problems for non-dividend payers.",
+                  "explain": "Use with CAPM."
+              }
+          ]
+      },
+      {
+          "id": "m18",
+          "title": "Capital structure and dividend policy",
+          "description": "How financing mix affects value: Modigliani-Miller propositions with and without tax, the trade-off theory, pecking order, financial distress, dividend policy (dividend irrelevance, signalling, clientele) and alternatives such as share buybacks.",
+          "cards": [
+              {
+                  "q": "What is Modigliani-Miller proposition I (no tax)?",
+                  "a": "In perfect markets a firm's value is independent of its capital structure.",
+                  "explain": "Gearing only redistributes risk."
+              },
+              {
+                  "q": "What is MM proposition II (no tax)?",
+                  "a": "$k_e = k_0 + (k_0 - k_d)\\frac{D}{E}$ — the cost of equity rises linearly with gearing.",
+                  "explain": "WACC stays constant."
+              },
+              {
+                  "q": "How do MM propositions change with corporate tax?",
+                  "a": "The value of a geared firm equals unlevered value plus the present value of the tax shield, so value rises with debt and WACC falls.",
+                  "explain": "Implies 100% debt without distress costs."
+              },
+              {
+                  "q": "What is the trade-off theory of capital structure?",
+                  "a": "Firms balance the tax advantage of debt against costs of financial distress, giving an optimal level of gearing.",
+                  "explain": "Reality between extremes."
+              },
+              {
+                  "q": "What are costs of financial distress?",
+                  "a": "Direct bankruptcy costs and indirect costs such as lost customers, suppliers' tightened credit and forced asset sales.",
+                  "explain": "Rise with gearing."
+              },
+              {
+                  "q": "What is the pecking order theory?",
+                  "a": "Companies prefer internal funds, then debt, then new equity, because of information asymmetry and issue costs.",
+                  "explain": "Explains observed behaviour."
+              },
+              {
+                  "q": "Worked example: tax shield on debt of £100m at 5% with 25% tax?",
+                  "a": "Interest £5m × 25% = £1.25m a year; if perpetual, value = 100 × 25% = £25m.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What factors determine dividend policy?",
+                  "a": "Profitability and cash flow, investment opportunities, shareholders' preferences and tax, legal restrictions, stability and signalling, and access to capital.",
+                  "explain": "Syllabus 2.4.3."
+              },
+              {
+                  "q": "What is the dividend irrelevance argument?",
+                  "a": "In perfect markets, value depends on investment decisions, not on how earnings are split between dividends and retention.",
+                  "explain": "MM dividend theory."
+              },
+              {
+                  "q": "What is the signalling effect of dividends?",
+                  "a": "Dividend changes convey management's view of future prospects, so increases raise prices and cuts lower them.",
+                  "explain": "Information content."
+              },
+              {
+                  "q": "What is the clientele effect?",
+                  "a": "Shareholders choose companies whose dividend policy suits their tax and income preferences.",
+                  "explain": "Explains stable policies."
+              },
+              {
+                  "q": "What is a share buyback?",
+                  "a": "The company repurchases its own shares, returning cash to shareholders and reducing shares in issue.",
+                  "explain": "Tax-efficient, flexible."
+              },
+              {
+                  "q": "What is a scrip dividend?",
+                  "a": "Shareholders receive new shares instead of cash, conserving company cash.",
+                  "explain": "Alternative distribution."
+              },
+              {
+                  "q": "What is the effect of gearing on earnings per share?",
+                  "a": "Gearing magnifies changes in EPS, raising it if returns exceed the cost of debt and lowering it otherwise.",
+                  "explain": "Financial risk."
+              },
+              {
+                  "q": "What is the residual dividend policy?",
+                  "a": "Pay dividends only from profit left after funding all positive-NPV investments.",
+                  "explain": "Variable dividends."
+              }
+          ]
+      },
+      {
+          "id": "m19",
+          "title": "Capital project appraisal (1)",
+          "description": "Appraising capital projects part 1: relevant cash flows (incremental, after tax, excluding sunk costs), payback and discounted payback, accounting rate of return, net present value and the profitability index.",
+          "cards": [
+              {
+                  "q": "What cash flows are relevant to a project?",
+                  "a": "Incremental future cash flows caused by the decision: initial outlay, operating inflows and outflows, working capital, tax effects and disposal value; ignore sunk costs and allocated overheads.",
+                  "explain": "Cash, not accounting profit."
+              },
+              {
+                  "q": "What is a sunk cost?",
+                  "a": "A cost already incurred that cannot be recovered whatever is decided, and so is irrelevant.",
+                  "explain": "E.g. market research already paid for."
+              },
+              {
+                  "q": "What is an opportunity cost?",
+                  "a": "The benefit forgone by using a resource for the project instead of its best alternative.",
+                  "explain": "Relevant cash flow."
+              },
+              {
+                  "q": "How is payback period calculated?",
+                  "a": "The time taken for cumulative cash inflows to recover the initial outlay.",
+                  "explain": "Ignores time value."
+              },
+              {
+                  "q": "Worked example: outlay £1,000; inflows £400, £500, £600. Payback?",
+                  "a": "Cumulative 900 after 2 years; remaining 100/600 = 0.17, so 2.17 years.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What are the disadvantages of payback?",
+                  "a": "Ignores cash flows after payback and the time value of money.",
+                  "explain": "Simple but crude."
+              },
+              {
+                  "q": "What is discounted payback?",
+                  "a": "Payback measured on discounted cash flows.",
+                  "explain": "Accounts for time value."
+              },
+              {
+                  "q": "What is the accounting rate of return (ARR)?",
+                  "a": "Average annual accounting profit / average (or initial) investment.",
+                  "explain": "Uses profit, not cash."
+              },
+              {
+                  "q": "How is NPV calculated?",
+                  "a": "Sum of discounted future cash flows minus the initial outlay, discounted at the cost of capital.",
+                  "explain": "Accept if NPV > 0."
+              },
+              {
+                  "q": "Worked example: outlay £1,000; inflows £400, £500, £600; discount 10%. NPV?",
+                  "a": "363.64 + 413.22 + 450.79 − 1,000 = £227.65.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "Why is NPV the theoretically best criterion?",
+                  "a": "It measures the increase in shareholder wealth, accounts for timing and risk and is additive across projects.",
+                  "explain": "Consistent with value maximisation."
+              },
+              {
+                  "q": "What is the profitability index?",
+                  "a": "PV of future cash flows / initial outlay.",
+                  "explain": "Useful under capital rationing."
+              },
+              {
+                  "q": "What is capital rationing?",
+                  "a": "A limit on funds available, so projects must be ranked, usually by profitability index for divisible projects.",
+                  "explain": "Hard or soft."
+              },
+              {
+                  "q": "How are capital allowances used in appraisal?",
+                  "a": "They reduce tax payable, so tax savings on allowances are included as cash inflows in the year they arise.",
+                  "explain": "After-tax cash flows."
+              },
+              {
+                  "q": "How is inflation treated in appraisal?",
+                  "a": "Either use nominal cash flows with a nominal discount rate, or real cash flows with a real rate; do not mix them.",
+                  "explain": "Consistency."
+              }
+          ]
+      },
+      {
+          "id": "m20",
+          "title": "Capital project appraisal (2)",
+          "description": "Appraising capital projects part 2: internal rate of return and its problems, comparing mutually exclusive projects, risk in appraisal (sensitivity, scenario analysis, simulation, certainty equivalents, risk-adjusted rates), determining the required return, and gearing and risk allowances.",
+          "cards": [
+              {
+                  "q": "What is the internal rate of return (IRR)?",
+                  "a": "The discount rate at which a project's NPV equals zero.",
+                  "explain": "Accept if IRR > cost of capital."
+              },
+              {
+                  "q": "Worked example: outlay £1,000, one inflow £1,100 after a year. IRR?",
+                  "a": "1,100/1,000 − 1 = 10%.",
+                  "explain": "Arithmetic check."
+              },
+              {
+                  "q": "What are the problems with IRR?",
+                  "a": "May give conflicting rankings for mutually exclusive projects, multiple IRRs with unconventional cash flows and assumes reinvestment at the IRR.",
+                  "explain": "NPV is preferred."
+              },
+              {
+                  "q": "What is the modified IRR?",
+                  "a": "IRR calculated assuming reinvestment of intermediate cash flows at the cost of capital.",
+                  "explain": "Fixes reinvestment assumption."
+              },
+              {
+                  "q": "What is sensitivity analysis?",
+                  "a": "Changing one variable at a time to see how much NPV changes, identifying critical assumptions.",
+                  "explain": "Simple but ignores correlation."
+              },
+              {
+                  "q": "What is scenario analysis?",
+                  "a": "Evaluating a project under coherent sets of assumptions (best, base, worst case).",
+                  "explain": "Captures combined effects."
+              },
+              {
+                  "q": "What is simulation in project appraisal?",
+                  "a": "Using random draws from probability distributions for key variables to produce a distribution of NPV.",
+                  "explain": "Monte Carlo."
+              },
+              {
+                  "q": "What is the certainty equivalent method?",
+                  "a": "Expected cash flows are converted to a certain amount the investor would accept instead, then discounted at the risk-free rate.",
+                  "explain": "Risk allowed in cash flows."
+              },
+              {
+                  "q": "What is a risk-adjusted discount rate?",
+                  "a": "A rate above the base cost of capital reflecting higher project risk (or beta).",
+                  "explain": "Risk allowed in the rate."
+              },
+              {
+                  "q": "How is expected NPV computed with probabilities?",
+                  "a": "Weight each scenario's NPV by its probability and sum.",
+                  "explain": "Also compute standard deviation."
+              },
+              {
+                  "q": "How do you find a project-specific discount rate?",
+                  "a": "Use a proxy company's asset beta, re-gear to the project's financing and apply CAPM.",
+                  "explain": "Syllabus 3.1.6."
+              },
+              {
+                  "q": "What is the effect of gearing on the required return?",
+                  "a": "Higher gearing increases equity risk and required return, while cheaper debt lowers WACC; the net effect depends on the theory used.",
+                  "explain": "Allowance for leverage."
+              },
+              {
+                  "q": "Why identify different types of project risk?",
+                  "a": "Risks (market, technical, regulatory, political, operational) differ in likelihood and timing, so mitigation and monitoring differ.",
+                  "explain": "Syllabus 3.1.8."
+              },
+              {
+                  "q": "What is a post-audit of a project?",
+                  "a": "Comparing actual results with the appraisal to learn and improve future forecasts.",
+                  "explain": "Control."
+              },
+              {
+                  "q": "How can real options add value to a project?",
+                  "a": "Options to expand, delay or abandon give flexibility valued in addition to static NPV.",
+                  "explain": "Ignored by simple NPV."
+              }
+          ]
+      }
+  ],
   CP3: [
     {
         "id": "m01",
