@@ -1580,3 +1580,389 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
 .pace-figure { font-weight: 800; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
 .pace-figure.ok { color: var(--done); }
 .pace-figure.over { color: var(--weak); }
+
+/* ---------- drills (multiple choice / select-all / cloze) ---------- */
+/*
+   Reuses the flashcard shell (.flashcard, .flash-head, .explain-panel) so a
+   drill reads as the same kind of object as a card. Everything below is the
+   bits a card doesn't have: selectable options, the cloze token tray, and the
+   marked state. All colours come from the theme tokens, so this follows the
+   light/dark toggle without a second palette.
+
+   Correct/wrong deliberately reuse --done and --weak rather than raw green
+   and red: those two already carry "good" and "needs work" everywhere else on
+   the site, and they're the pair that has been checked against both themes.
+*/
+
+.drill-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0 4px;
+}
+
+.drill-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease), background 0.15s var(--ease), transform 0.1s var(--ease);
+}
+
+.drill-option:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.drill-option:active:not(:disabled) { transform: scale(0.995); }
+.drill-option:disabled { cursor: default; }
+
+.drill-option-mark {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background: var(--not-started-bg);
+  color: var(--not-started);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.drill-option.picked {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.drill-option.picked .drill-option-mark {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* Marked state. The right answer is always highlighted, whether or not it was
+   the one picked -- seeing it is the point. A wrong pick is marked separately
+   so a select-all with two rights and one wrong reads correctly. */
+.drill-option.correct {
+  border-color: var(--done);
+  background: var(--done-bg);
+}
+
+.drill-option.correct .drill-option-mark {
+  background: var(--done);
+  color: var(--card-bg);
+}
+
+.drill-option.wrong {
+  border-color: var(--weak);
+  background: var(--weak-bg);
+}
+
+.drill-option.wrong .drill-option-mark {
+  background: var(--weak);
+  color: var(--card-bg);
+}
+
+.drill-type {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.drill-verdict {
+  margin: 16px 0 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.drill-verdict.correct { background: var(--done-bg); color: var(--done); }
+.drill-verdict.wrong { background: var(--weak-bg); color: var(--weak); }
+
+.drill-why {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--weak);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--weak-bg);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.drill-why strong { color: var(--weak); }
+
+/* ---------- cloze ---------- */
+
+.cloze-text {
+  margin: 18px 0 6px;
+  font-size: 1.02rem;
+  line-height: 2.1; /* roomy: the slots are taller than the text */
+}
+
+.cloze-slot {
+  display: inline-block;
+  min-width: 96px;
+  padding: 3px 11px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--border);
+  background: var(--not-started-bg);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cloze-slot.filled {
+  border-style: solid;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.cloze-slot.correct {
+  border-style: solid;
+  border-color: var(--done);
+  background: var(--done-bg);
+  color: var(--done);
+}
+
+.cloze-slot.wrong {
+  border-style: solid;
+  border-color: var(--weak);
+  background: var(--weak-bg);
+  color: var(--weak);
+  text-decoration: line-through;
+}
+
+/* The right answer, shown next to a wrong pick inside the same slot. */
+.cloze-actual {
+  text-decoration: none;
+  color: var(--done);
+}
+
+.cloze-actual::before { content: "\2192\00a0"; }
+
+.drill-tray {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+
+.drill-tray-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.drill-token {
+  padding: 7px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.drill-token:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.drill-token.picked {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.drill-btn { margin-top: 10px; }
+
+@media (max-width: 640px) {
+  .drill-option { padding: 12px; font-size: 0.92rem; }
+  .cloze-text { line-height: 2.3; }
+  .cloze-slot { min-width: 80px; }
+}
+
+/* ---------- hotspot diagrams ---------- */
+/*
+   Two layers, styled independently (see docs/diagrams.js for the markup):
+   .dg-art is the picture and never reacts to anything; .dg-hot sits on top
+   and carries all the interaction. Marking an answer only toggles a class on
+   a .hot group, so the diagram underneath never shifts or restyles — a wrong
+   answer can't leave the user looking at a misleading picture.
+
+   Every colour is a theme token, so diagrams follow the light/dark toggle
+   with no second palette to maintain.
+*/
+
+.dg-figure {
+  margin: 18px 0 6px;
+  padding: 10px 6px 4px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+
+.dg-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dg-caption {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.dg-hint {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+}
+
+/* --- artwork layer --- */
+
+.dg-axes line {
+  stroke: var(--text-muted);
+  stroke-width: 1.5;
+}
+
+.dg-axis-title,
+.dg-label {
+  fill: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dg-label { fill: var(--text); }
+
+.dg-curve {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* A second curve of the same family (MR against AR, AC against MC) is drawn
+   in a quieter weight so the pair reads as related rather than competing. */
+.dg-curve.muted { stroke: var(--text-muted); }
+.dg-curve.dashed { stroke-dasharray: 7 5; }
+
+.dg-guide {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.7;
+}
+
+.dg-arrow {
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  fill: none;
+  opacity: 0.8;
+}
+
+.dg-point {
+  fill: var(--accent);
+  stroke: var(--card-bg);
+  stroke-width: 2;
+}
+
+/* The deadweight-loss triangle is shaded in the "needs work" colour, since
+   that is what it represents everywhere else on the site. */
+.dg-dwl {
+  fill: var(--weak);
+  opacity: 0.22;
+  stroke: none;
+}
+
+/* --- interactive layer --- */
+
+.hot { outline: none; }
+
+/* The cursor lives on the figure, which is what actually receives the
+   pointer: app.js decides which region a click means by measuring distance
+   to each one (see nearestHotspot), so the region shapes take no events
+   themselves. */
+.dg-figure.dg-over { cursor: pointer; }
+
+/* Geometry only. These paths mirror the artwork and are what those distances
+   are measured against; they are never painted and never hit-tested. */
+.hot-hit {
+  fill: none;
+  stroke: none;
+  pointer-events: none;
+}
+
+/* Highlights inherit `color`, so each state only has to set that one
+   property rather than juggling fill and stroke per region shape. */
+.hot-mark {
+  opacity: 0;
+  color: var(--accent);
+  transition: opacity 0.15s var(--ease);
+  pointer-events: none;
+}
+
+.hot-mark.line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.hot-mark.area,
+.hot-mark.dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.hot.hover .hot-mark { opacity: 0.3; }
+.hot:focus-visible .hot-mark { opacity: 0.45; }
+.hot.picked .hot-mark { opacity: 0.7; }
+
+.hot.correct .hot-mark {
+  opacity: 0.75;
+  color: var(--done);
+}
+
+.hot.wrong .hot-mark {
+  opacity: 0.75;
+  color: var(--weak);
+}
+
+@media (max-width: 640px) {
+  .dg-figure { margin-left: -4px; margin-right: -4px; }
+  .dg-axis-title, .dg-label { font-size: 13px; }
+}

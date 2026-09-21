@@ -52,6 +52,8 @@ function loadBrowserScript(relPath, exportNames) {
 let SUBJECTS = {};
 let MODULES = {};
 let QUESTIONS = {};
+let DRILLS = {};
+let DIAGRAMS = {};
 
 try {
   ({ SUBJECTS, MODULES } = loadBrowserScript("docs/data.js", ["SUBJECTS", "MODULES"]));
@@ -62,6 +64,16 @@ try {
   ({ QUESTIONS } = loadBrowserScript("docs/questions.js", ["QUESTIONS"]));
 } catch (e) {
   fail(`docs/questions.js: failed to parse/execute -- ${e.message}`);
+}
+try {
+  ({ DIAGRAMS } = loadBrowserScript("docs/diagrams.js", ["DIAGRAMS"]));
+} catch (e) {
+  fail(`docs/diagrams.js: failed to parse/execute -- ${e.message}`);
+}
+try {
+  ({ DRILLS } = loadBrowserScript("docs/drills.js", ["DRILLS"]));
+} catch (e) {
+  fail(`docs/drills.js: failed to parse/execute -- ${e.message}`);
 }
 
 // A syntax error means nothing below can run meaningfully -- stop here.
@@ -160,6 +172,211 @@ for (const [code, questions] of Object.entries(QUESTIONS)) {
       }
     }
   }
+}
+
+// --- diagram library (docs/diagrams.js) ---
+//
+// A hotspot question is unanswerable if the region it asks for isn't in the
+// diagram, and that failure is invisible until someone actually opens the
+// question -- exactly the class of content bug this script exists for. The
+// region names are indexed here so the drill checks below can verify every
+// "answer" and every "why" key against the real SVG.
+
+const diagramRegions = {};
+for (const [id, dg] of Object.entries(DIAGRAMS)) {
+  const where = `diagram "${id}"`;
+  if (!dg.title || !dg.title.trim()) fail(`${where}: missing title`);
+  if (!dg.svg || !dg.svg.trim()) {
+    fail(`${where}: missing svg`);
+    continue;
+  }
+  const svg = dg.svg;
+  if (!/^\s*<svg[\s>]/.test(svg)) fail(`${where}: svg must start with an <svg> element`);
+  if (!/viewBox="/.test(svg)) fail(`${where}: svg has no viewBox, so it cannot scale responsively`);
+  if (!/role="img"/.test(svg) || !/aria-label="/.test(svg)) {
+    warn(`${where}: svg should carry role="img" and an aria-label describing it`);
+  }
+
+  // Hard-coded colours would survive the light/dark toggle in only one theme.
+  const literalColour = svg.match(/(?:fill|stroke)="(#[0-9a-f]{3,8}|rgba?\([^)]*\))"/i);
+  if (literalColour) {
+    fail(`${where}: hard-coded colour ${literalColour[1]} -- use a var(--...) theme token so the diagram works in both themes`);
+  }
+
+  const regions = [...svg.matchAll(/data-region="([^"]+)"/g)].map((m) => m[1]);
+  const dupe = regions.find((r, i) => regions.indexOf(r) !== i);
+  if (dupe) fail(`${where}: two regions share data-region="${dupe}"`);
+  if (regions.length < 2) fail(`${where}: needs at least 2 clickable regions to be worth a question`);
+  diagramRegions[id] = new Set(regions);
+
+  // Every region needs a fat transparent hit shape and a highlight, or it is
+  // either untappable on a phone or gives no feedback when marked.
+  const groups = svg.split(/<g class="hot"/).slice(1);
+  groups.forEach((g) => {
+    const name = (g.match(/data-region="([^"]+)"/) || [])[1] || "?";
+    if (!/class="hot-hit/.test(g)) fail(`${where}, region "${name}": no .hot-hit target shape`);
+    if (!/class="hot-mark/.test(g)) fail(`${where}, region "${name}": no .hot-mark highlight shape`);
+    if (!/aria-label="/.test(g)) warn(`${where}, region "${name}": no aria-label`);
+    if (!/tabindex="0"/.test(g)) warn(`${where}, region "${name}": not keyboard-focusable (needs tabindex="0")`);
+  });
+}
+
+// --- drill banks (docs/drills.js) ---
+//
+// Beyond the structural checks (ids, ranges, required fields), these encode
+// the failure modes that actually came out of the first generated batch, so
+// they get caught in CI rather than by eye:
+//
+//   - a cloze whose blanks are interchangeable, e.g. "marginal social {{0}}
+//     equals marginal social {{1}}" -- true whichever way round it is filled,
+//     so it grades a coin flip
+//   - an answer that leaks through its own shape: if the right option is far
+//     longer than every distractor, it can be picked without being read
+//   - two options that mean the same thing, so there isn't one right answer
+//
+// The length heuristic is a warning rather than an error: a long correct
+// answer is sometimes genuinely unavoidable.
+
+const stripTags = (s) => String(s).replace(/<[^>]+>/g, "").replace(/&[a-z]+;/gi, " ").trim();
+
+for (const [code, items] of Object.entries(DRILLS)) {
+  if (!SUBJECTS[code]) warn(`${code}: has a DRILLS entry but no SUBJECTS metadata`);
+  const knownModules = new Set((MODULES[code] || []).map((m) => m.id));
+  const seenIds = new Set();
+
+  items.forEach((item, i) => {
+    const where = `${code} drill ${item.id || "#" + (i + 1)}`;
+
+    if (!item.id || !/^[a-z0-9-]+$/.test(item.id)) fail(`${where}: missing or non-slug "id"`);
+    if (seenIds.has(item.id)) fail(`${where}: duplicate drill id (ids are storage keys and must never be reused)`);
+    seenIds.add(item.id);
+
+    if (!item.module) fail(`${where}: missing "module"`);
+    else if (knownModules.size && !knownModules.has(item.module)) fail(`${where}: module "${item.module}" is not in data.js`);
+
+    if (!item.explain || !stripTags(item.explain)) fail(`${where}: missing/empty "explain"`);
+    if (!["mcq", "multi", "cloze", "hotspot"].includes(item.type)) {
+      fail(`${where}: unknown type "${item.type}"`);
+      return;
+    }
+
+    for (const field of ["q", "text", "explain"]) {
+      if (item[field]) checkLatexSpans(item[field], where, field);
+    }
+
+    if (item.type === "mcq" || item.type === "multi") {
+      if (!Array.isArray(item.options) || item.options.length < 3) {
+        fail(`${where}: needs at least 3 options`);
+        return;
+      }
+      if (!item.q || !stripTags(item.q)) fail(`${where}: missing/empty "q"`);
+
+      const texts = item.options.map(stripTags);
+      const dupe = texts.find((t, j) => texts.indexOf(t) !== j);
+      if (dupe) fail(`${where}: two options have identical text ("${dupe.slice(0, 60)}")`);
+
+      if (item.type === "mcq" && !(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < item.options.length)) {
+        fail(`${where}: "correct" must be an option index`);
+        return;
+      }
+      if (item.type === "multi") {
+        if (!Array.isArray(item.correct) || !item.correct.length) {
+          fail(`${where}: "correct" must be a non-empty array of option indices`);
+          return;
+        }
+        if (item.correct.some((c) => !Number.isInteger(c) || c < 0 || c >= item.options.length)) {
+          fail(`${where}: "correct" contains an out-of-range option index`);
+          return;
+        }
+        if (new Set(item.correct).size !== item.correct.length) fail(`${where}: "correct" repeats an index`);
+        if (item.correct.length === item.options.length) fail(`${where}: every option is correct, so the item tests nothing`);
+      }
+      const correctIdx = item.type === "mcq" ? [item.correct] : item.correct;
+
+      // every wrong option in an mcq needs its "why" -- that explanation is
+      // the reason to prefer this format over a flashcard
+      if (item.type === "mcq") {
+        const missing = item.options.map((_, j) => j).filter((j) => j !== item.correct && !(item.why && item.why[j]));
+        if (missing.length) fail(`${where}: no "why" for distractor(s) ${missing.join(", ")}`);
+        Object.keys(item.why || {}).forEach((k) => {
+          if (Number(k) === item.correct) fail(`${where}: "why" has an entry for the CORRECT option ${k}`);
+          if (!item.options[Number(k)]) fail(`${where}: "why" references a non-existent option ${k}`);
+        });
+      }
+
+      // shape leak: is the right answer conspicuously longer than the rest?
+      const rightLens = correctIdx.map((c) => texts[c].length);
+      const wrongLens = texts.filter((_, j) => !correctIdx.includes(j)).map((t) => t.length);
+      if (wrongLens.length && rightLens.length) {
+        const meanWrong = wrongLens.reduce((a, b) => a + b, 0) / wrongLens.length;
+        const meanRight = rightLens.reduce((a, b) => a + b, 0) / rightLens.length;
+        if (meanRight > meanWrong * 1.7 && meanRight - meanWrong > 25) {
+          warn(
+            `${where}: correct option averages ${Math.round(meanRight)} chars vs ${Math.round(meanWrong)} for the distractors -- may be guessable from length alone`
+          );
+        }
+      }
+    }
+
+    if (item.type === "hotspot") {
+      if (!item.q || !stripTags(item.q)) fail(`${where}: missing/empty "q"`);
+      const regions = diagramRegions[item.diagram];
+      if (!regions) {
+        fail(`${where}: diagram "${item.diagram}" is not in docs/diagrams.js`);
+        return;
+      }
+      if (!item.answer) fail(`${where}: missing "answer"`);
+      else if (!regions.has(item.answer)) {
+        fail(`${where}: answer "${item.answer}" is not a region of diagram "${item.diagram}" (has: ${[...regions].join(", ")})`);
+      }
+      Object.keys(item.why || {}).forEach((k) => {
+        if (k === item.answer) fail(`${where}: "why" has an entry for the CORRECT region "${k}"`);
+        else if (!regions.has(k)) fail(`${where}: "why" references region "${k}", which diagram "${item.diagram}" does not have`);
+      });
+      // Not every region needs a why -- some are far-fetched for a given
+      // question -- but with none at all a wrong click teaches nothing.
+      if (!item.why || !Object.keys(item.why).length) {
+        warn(`${where}: no "why" entries, so a wrong click gets no explanation`);
+      }
+    }
+
+    if (item.type === "cloze") {
+      if (!item.text || !stripTags(item.text)) fail(`${where}: missing/empty "text"`);
+      const marks = [...String(item.text).matchAll(/\{\{(\d+)\}\}/g)].map((m) => Number(m[1]));
+      if (!Array.isArray(item.blanks) || !item.blanks.length) {
+        fail(`${where}: missing "blanks"`);
+        return;
+      }
+      if (marks.length !== item.blanks.length) {
+        fail(`${where}: text has ${marks.length} {{n}} marker(s) but ${item.blanks.length} blank(s)`);
+      }
+      const wantMarks = item.blanks.map((_, j) => j).join(",");
+      if ([...marks].sort((a, b) => a - b).join(",") !== wantMarks) {
+        fail(`${where}: {{n}} markers must be 0..${item.blanks.length - 1}, each exactly once`);
+      }
+
+      item.blanks.forEach((b, j) => {
+        if (!Array.isArray(b.options) || b.options.length < 3) fail(`${where} blank ${j}: needs at least 3 token options`);
+        if (!b.answer) fail(`${where} blank ${j}: missing "answer"`);
+        else if (!(b.options || []).includes(b.answer)) fail(`${where} blank ${j}: "answer" is not one of its options`);
+        if (b.options && new Set(b.options).size !== b.options.length) fail(`${where} blank ${j}: repeated token option`);
+      });
+
+      // interchangeable blanks: each one's answer also sits in the other's
+      // tray, so swapping them still reads as correct
+      for (let x = 0; x < item.blanks.length; x++) {
+        for (let y = x + 1; y < item.blanks.length; y++) {
+          const bx = item.blanks[x];
+          const by = item.blanks[y];
+          if ((bx.options || []).includes(by.answer) && (by.options || []).includes(bx.answer)) {
+            fail(
+              `${where}: blanks ${x} and ${y} are interchangeable -- each one's answer appears in the other's options, so the item can be satisfied both ways round`
+            );
+          }
+        }
+      }
+    }
+  });
 }
 
 function report() {
