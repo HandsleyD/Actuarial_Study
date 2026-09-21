@@ -6,13 +6,18 @@ name: Validate study content
 # missing "explain" fields, question marks not summing to their declared
 # total, and progress.md module rows drifting out of sync with
 # docs/data.js. See scripts/validate-content.mjs for what's actually
-# checked.
+# checked. drills.js and diagrams.js are on the list too: the validator also
+# checks drill item shapes and that every hotspot answer names a region its
+# diagram actually has, and a content-only change to either file would
+# otherwise skip CI entirely.
 
 on:
   push:
     paths:
       - "docs/data.js"
       - "docs/questions.js"
+      - "docs/drills.js"
+      - "docs/diagrams.js"
       - "maths-study/exams/*/progress.md"
       - "scripts/validate-content.mjs"
       - "docs/srs.js"
@@ -21,6 +26,8 @@ on:
     paths:
       - "docs/data.js"
       - "docs/questions.js"
+      - "docs/drills.js"
+      - "docs/diagrams.js"
       - "maths-study/exams/*/progress.md"
       - "scripts/validate-content.mjs"
       - "docs/srs.js"
