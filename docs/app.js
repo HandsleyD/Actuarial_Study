@@ -856,9 +856,9 @@ function renderSubjectView(code) {
       }
       ${
         totalDrills > 0
-          ? `<button class="btn drill-btn" id="startDrill">&#9989; Drills &mdash; ${totalDrills} marked question${totalDrills === 1 ? "" : "s"}${
-              drillsDue ? ` (<strong>${drillsDue} due</strong>)` : ""
-            }${drillAcc.attempts ? ` &middot; ${drillAcc.pct}% lifetime` : ""}</button>`
+          ? `<button class="btn drill-btn" id="startDrill">&#128221; Drills &mdash; ${totalDrills} question${totalDrills === 1 ? "" : "s"}, marked for you${
+              drillAcc.seen ? ` &middot; ${drillAcc.seen}/${totalDrills} tried, ${drillAcc.pct}% correct` : " &middot; none tried yet"
+            }${drillsDue ? ` (<strong>${drillsDue} due</strong>)` : ""}</button>`
           : ""
       }
       <div class="exemption-row">
@@ -1025,7 +1025,7 @@ function renderFlashView(code, moduleId) {
       <button class="mode-tab ${flashState.mode === "session" ? "active" : ""}" id="tabSession">Session (${Math.min(SESSION_SIZE, total)})</button>
       <button class="mode-tab ${flashState.mode === "full" ? "active" : ""}" id="tabFull">Full deck (${total})</button>
       ${flashState.mode === "session" ? `<button class="btn shuffle-btn" id="shuffleBtn">&#128256; New session</button>` : ""}
-      ${moduleDrills ? `<a class="btn drill-btn" href="#/${code}/drill/${moduleId}">&#9989; Drill ${moduleDrills}${moduleDrillsDue ? ` (${moduleDrillsDue} due)` : ""}</a>` : ""}
+      ${moduleDrills ? `<a class="btn drill-btn" href="#/${code}/drill/${moduleId}">&#128221; Drill ${moduleDrills}${moduleDrillsDue ? ` (${moduleDrillsDue} due)` : ""}</a>` : ""}
     </div>
     <div class="card-dots">${dots}</div>
     <div class="${flashcardLayoutClass(card, flashState.revealed)}">
@@ -2216,17 +2216,24 @@ function recordDrill(code, item, correct) {
   drillData[code] = Store.getDrillCache(code);
 }
 
+// attempts/correct count every go at an item; `seen` counts how many distinct
+// items have been tried at all. The button leads with `seen`, because the
+// first question anyone asks of a study tool is "how much of this have I
+// actually done" -- and an accuracy figure on its own can't answer it.
 function drillAccuracy(code, moduleId) {
   const prog = drillProgress(code);
   let attempts = 0;
   let correct = 0;
-  drillItems(code, moduleId).forEach((it) => {
+  let seen = 0;
+  const items = drillItems(code, moduleId);
+  items.forEach((it) => {
     const st = prog[it.id];
     if (!st) return;
+    seen += 1;
     attempts += st.attempts || 0;
     correct += st.correct || 0;
   });
-  return { attempts, correct, pct: attempts ? Math.round((correct / attempts) * 100) : 0 };
+  return { attempts, correct, seen, total: items.length, pct: attempts ? Math.round((correct / attempts) * 100) : 0 };
 }
 
 function drillTypeLabel(type) {
