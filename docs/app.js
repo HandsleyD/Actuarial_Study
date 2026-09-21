@@ -825,6 +825,12 @@ function renderSubjectView(code) {
 
   const totalCards = modDefs.reduce((s, m) => s + m.cards.length, 0);
   const totalQuestions = (QUESTIONS[code] || []).length;
+  // Drills are their own track, so they get their own count and their own
+  // accuracy figure rather than folding into the mastery star totals above.
+  const totalDrills = drillItems(code).length;
+  const drillsDue = totalDrills ? dueDrillCount(code, null) : 0;
+  const drillAcc = totalDrills ? drillAccuracy(code, null) : { attempts: 0, pct: 0 };
+  if (totalDrills) ensureDrillsLoaded(code);
   const subjectDue = dueCards(code).length;
   const subjectWeak = weakCards(code).length;
 
@@ -839,13 +845,20 @@ function renderSubjectView(code) {
           ? `<div class="subject-actions">
                ${subjectDue ? `<a class="btn primary" href="${reviewHash("due", code)}">&#128197; Review ${subjectDue} due card${subjectDue === 1 ? "" : "s"}</a>` : ""}
                <button class="btn ${subjectDue ? "" : "primary"} mixed-session-btn" id="startMixed">&#128256; Mixed session &mdash; 10 random cards across all of ${code}</button>
-               ${subjectWeak ? `<a class="btn" href="${reviewHash("weak", code)}">&#127919; Drill ${subjectWeak} weak card${subjectWeak === 1 ? "" : "s"}</a>` : ""}
+               ${subjectWeak ? `<a class="btn" href="${reviewHash("weak", code)}">&#127919; Practise ${subjectWeak} weak card${subjectWeak === 1 ? "" : "s"}</a>` : ""}
              </div>`
           : ""
       }
       ${
         totalQuestions > 0
           ? `<button class="btn qbank-btn" id="startQbank">&#128220; Practice exam questions &mdash; ${totalQuestions} original question${totalQuestions === 1 ? "" : "s"} in the IFoA style</button>`
+          : ""
+      }
+      ${
+        totalDrills > 0
+          ? `<button class="btn drill-btn" id="startDrill">&#9989; Drills &mdash; ${totalDrills} marked question${totalDrills === 1 ? "" : "s"}${
+              drillsDue ? ` (<strong>${drillsDue} due</strong>)` : ""
+            }${drillAcc.attempts ? ` &middot; ${drillAcc.pct}% lifetime` : ""}</button>`
           : ""
       }
       <div class="exemption-row">
@@ -867,6 +880,11 @@ function renderSubjectView(code) {
   const qbankBtn = document.getElementById("startQbank");
   if (qbankBtn) {
     qbankBtn.addEventListener("click", () => navigate(`#/${code}/questions`));
+  }
+
+  const drillBtn = document.getElementById("startDrill");
+  if (drillBtn) {
+    drillBtn.addEventListener("click", () => navigate(`#/${code}/drill`));
   }
 
   document.getElementById("markAllDone").addEventListener("click", () => {
@@ -937,6 +955,10 @@ function renderFlashView(code, moduleId) {
     return;
   }
 
+  const moduleDrills = drillItems(code, moduleId).length;
+  const moduleDrillsDue = moduleDrills ? dueDrillCount(code, moduleId) : 0;
+  if (moduleDrills) ensureDrillsLoaded(code);
+
   const fd = flashData[code] || { mastery: {} };
   const moduleMastery = fd.mastery[moduleId] || {};
   const cards = def.cards;
@@ -1003,6 +1025,7 @@ function renderFlashView(code, moduleId) {
       <button class="mode-tab ${flashState.mode === "session" ? "active" : ""}" id="tabSession">Session (${Math.min(SESSION_SIZE, total)})</button>
       <button class="mode-tab ${flashState.mode === "full" ? "active" : ""}" id="tabFull">Full deck (${total})</button>
       ${flashState.mode === "session" ? `<button class="btn shuffle-btn" id="shuffleBtn">&#128256; New session</button>` : ""}
+      ${moduleDrills ? `<a class="btn drill-btn" href="#/${code}/drill/${moduleId}">&#9989; Drill ${moduleDrills}${moduleDrillsDue ? ` (${moduleDrillsDue} due)` : ""}</a>` : ""}
     </div>
     <div class="card-dots">${dots}</div>
     <div class="${flashcardLayoutClass(card, flashState.revealed)}">
@@ -2061,6 +2084,566 @@ function onFlashDataChanged(code) {
   }
 }
 
+/* ---------- drills (multiple choice / select-all / cloze) ---------- */
+//
+// Drills are objectively graded, unlike flashcards which the user grades
+// themselves. That makes them a SEPARATE TRACK on purpose: a drill result
+// never writes to flashcard_mastery, so it can't move the star total or the
+// Associate/Fellow rank, which stay earned by honest self-assessment. What
+// drills report instead is accuracy -- a number that only means something
+// because the machine is doing the marking.
+//
+// They do share srs.js with flashcards, so a drilled item comes back on the
+// same expanding schedule. Content lives in docs/drills.js keyed by stable
+// string id -- see supabase/migrations/003_drills.sql for why the key isn't
+// the positional index flashcards use.
+
+const DRILL_RUN_SIZE = 10;
+
+const drillState = {
+  code: null,
+  module: null, // null = every module in the subject
+  items: [], // the run, in order
+  idx: 0,
+  order: [], // mcq/multi: display position -> authored option index
+  trays: [], // cloze: per-blank shuffled token list
+  choice: null, // mcq: display index
+  choices: [], // multi: display indices
+  blanks: [], // cloze: chosen token per blank (null = unanswered)
+  region: null, // hotspot: the data-region the user clicked
+  submitted: false,
+  lastCorrect: false,
+  stats: { answered: 0, correct: 0 },
+  done: false,
+  _lastKey: "",
+};
+
+// code -> { itemId: {reps, interval, ease, due, lapses, reviews, last, attempts, correct} }
+const drillData = {};
+const drillsLoading = new Set();
+
+function drillItems(code, moduleId) {
+  const all = (typeof DRILLS !== "undefined" && DRILLS[code]) || [];
+  return moduleId ? all.filter((it) => it.module === moduleId) : all;
+}
+
+function drillProgress(code) {
+  return drillData[code] || Store.getDrillCache(code) || {};
+}
+
+function ensureDrillsLoaded(code) {
+  if (drillData[code] || drillsLoading.has(code)) return;
+  drillsLoading.add(code);
+  drillData[code] = Store.getDrillCache(code); // show local state immediately
+  Store.loadDrills(code).then((map) => {
+    drillData[code] = map;
+    drillsLoading.delete(code);
+    const r = parseHash();
+    if (r.view === "subject" && r.exam === code) renderSubjectView(code);
+  });
+}
+
+function dueDrillCount(code, moduleId) {
+  const prog = drillProgress(code);
+  const today = SRS.today();
+  return drillItems(code, moduleId).filter((it) => SRS.isDue(prog[it.id], today)).length;
+}
+
+// Same priority order as a flashcard session: anything due first, then items
+// never attempted, then correct-and-not-yet-due as filler so a short run is
+// still a full run.
+function buildDrillRun(code, moduleId) {
+  const items = drillItems(code, moduleId);
+  const prog = drillProgress(code);
+  const today = SRS.today();
+  const due = shuffleArray(items.filter((it) => SRS.isDue(prog[it.id], today)));
+  const fresh = shuffleArray(items.filter((it) => !prog[it.id]));
+  const rest = shuffleArray(items.filter((it) => prog[it.id] && !SRS.isDue(prog[it.id], today)));
+  return [...due, ...fresh, ...rest].slice(0, Math.min(DRILL_RUN_SIZE, items.length));
+}
+
+// Option order is shuffled per presentation so the answer's position can't be
+// memorised across runs; `order` maps what's on screen back to the authored
+// indices, and is what grading compares against.
+function prepareDrillItem() {
+  const item = drillState.items[drillState.idx];
+  drillState.choice = null;
+  drillState.choices = [];
+  drillState.blanks = [];
+  drillState.region = null;
+  drillState.order = [];
+  drillState.trays = [];
+  drillState.submitted = false;
+  drillState.lastCorrect = false;
+  if (!item) return;
+  if (item.type === "mcq" || item.type === "multi") {
+    drillState.order = shuffleArray(item.options.map((_, i) => i));
+  } else if (item.type === "cloze") {
+    drillState.trays = item.blanks.map((b) => shuffleArray(b.options));
+    drillState.blanks = item.blanks.map(() => null);
+  }
+}
+
+function drillAnswered() {
+  const item = drillState.items[drillState.idx];
+  if (!item) return false;
+  if (item.type === "mcq") return drillState.choice !== null;
+  if (item.type === "multi") return drillState.choices.length > 0;
+  if (item.type === "cloze") return drillState.blanks.every((b) => b !== null);
+  if (item.type === "hotspot") return drillState.region !== null;
+  return false;
+}
+
+function gradeDrill() {
+  const item = drillState.items[drillState.idx];
+  if (item.type === "mcq") return drillState.order[drillState.choice] === item.correct;
+  if (item.type === "multi") {
+    const picked = drillState.choices.map((d) => drillState.order[d]).sort((a, b) => a - b);
+    const want = item.correct.slice().sort((a, b) => a - b);
+    return picked.length === want.length && picked.every((v, i) => v === want[i]);
+  }
+  if (item.type === "cloze") return item.blanks.every((b, i) => drillState.blanks[i] === b.answer);
+  if (item.type === "hotspot") return drillState.region === item.answer;
+  return false;
+}
+
+function recordDrill(code, item, correct) {
+  const prev = drillProgress(code)[item.id];
+  const next = SRS.next(prev, correct, SRS.today());
+  next.attempts = ((prev && prev.attempts) || 0) + 1;
+  next.correct = ((prev && prev.correct) || 0) + (correct ? 1 : 0);
+  Store.setDrill(code, item.id, next);
+  drillData[code] = Store.getDrillCache(code);
+}
+
+function drillAccuracy(code, moduleId) {
+  const prog = drillProgress(code);
+  let attempts = 0;
+  let correct = 0;
+  drillItems(code, moduleId).forEach((it) => {
+    const st = prog[it.id];
+    if (!st) return;
+    attempts += st.attempts || 0;
+    correct += st.correct || 0;
+  });
+  return { attempts, correct, pct: attempts ? Math.round((correct / attempts) * 100) : 0 };
+}
+
+function drillTypeLabel(type) {
+  if (type === "multi") return "Select all that apply";
+  if (type === "cloze") return "Fill the gaps";
+  if (type === "hotspot") return "Click the diagram";
+  return "Multiple choice";
+}
+
+// Cloze text is authored with {{0}}, {{1}} markers. Each becomes a slot:
+// before marking it's a button showing the chosen token, after marking it
+// turns green or red against the authored answer.
+function clozeTextHtml(item) {
+  return item.text.replace(/\{\{(\d+)\}\}/g, (_, nStr) => {
+    const n = Number(nStr);
+    const chosen = drillState.blanks[n];
+    if (drillState.submitted) {
+      const right = chosen === item.blanks[n].answer;
+      return `<span class="cloze-slot ${right ? "correct" : "wrong"}">${chosen ? escapeHtml(chosen) : "&mdash;"}${
+        right ? "" : ` <span class="cloze-actual">${escapeHtml(item.blanks[n].answer)}</span>`
+      }</span>`;
+    }
+    return `<span class="cloze-slot ${chosen ? "filled" : ""}">${chosen ? escapeHtml(chosen) : `blank ${n + 1}`}</span>`;
+  });
+}
+
+function drillBodyHtml(item) {
+  if (item.type === "hotspot") {
+    const dg = (typeof DIAGRAMS !== "undefined" && DIAGRAMS[item.diagram]) || null;
+    if (!dg) return `<p class="muted">Diagram &ldquo;${escapeHtml(item.diagram || "")}&rdquo; is missing.</p>`;
+    return `<figure class="dg-figure">
+      ${dg.svg}
+      <figcaption class="dg-caption">${dg.title}</figcaption>
+    </figure>
+    ${drillState.submitted ? "" : `<p class="dg-hint muted">Click a curve, point or area on the diagram. On a keyboard, Tab to a region and press Enter.</p>`}`;
+  }
+  if (item.type === "cloze") {
+    const trays = drillState.submitted
+      ? ""
+      : drillState.trays
+          .map((tokens, n) => {
+            const chosen = drillState.blanks[n];
+            return `<div class="drill-tray">
+              <span class="drill-tray-label">Blank ${n + 1}</span>
+              ${tokens
+                .map(
+                  (t) =>
+                    `<button class="drill-token ${chosen === t ? "picked" : ""}" data-blank="${n}" data-token="${escapeHtml(t)}">${escapeHtml(t)}</button>`
+                )
+                .join("")}
+            </div>`;
+          })
+          .join("");
+    return `<div class="cloze-text">${clozeTextHtml(item)}</div>${trays}`;
+  }
+
+  const multi = item.type === "multi";
+  return `<div class="drill-options">
+    ${drillState.order
+      .map((origIdx, displayIdx) => {
+        const picked = multi ? drillState.choices.includes(displayIdx) : drillState.choice === displayIdx;
+        let cls = picked ? "picked" : "";
+        if (drillState.submitted) {
+          const isRight = multi ? item.correct.includes(origIdx) : origIdx === item.correct;
+          cls = isRight ? "correct" : picked ? "wrong" : "";
+        }
+        return `<button class="drill-option ${cls}" data-display="${displayIdx}" ${drillState.submitted ? "disabled" : ""}>
+          <span class="drill-option-mark">${multi ? "&#9633;" : String.fromCharCode(65 + displayIdx)}</span>
+          <span class="drill-option-text">${item.options[origIdx]}</span>
+        </button>`;
+      })
+      .join("")}
+  </div>`;
+}
+
+// After marking, lead with why the chosen distractor was wrong -- that's the
+// part of the format worth having -- then the general explanation.
+function drillFeedbackHtml(item) {
+  if (!drillState.submitted) return "";
+  const bits = [];
+  if (item.type === "hotspot" && !drillState.lastCorrect) {
+    const why = item.why && item.why[drillState.region];
+    if (why) bits.push(`<div class="drill-why"><strong>Why that part of the diagram is wrong:</strong> ${why}</div>`);
+  }
+  if (item.type === "mcq" && !drillState.lastCorrect) {
+    const chosenOrig = drillState.order[drillState.choice];
+    const why = item.why && item.why[chosenOrig];
+    if (why) bits.push(`<div class="drill-why"><strong>Why that one is wrong:</strong> ${why}</div>`);
+  }
+  return `
+    <div class="drill-verdict ${drillState.lastCorrect ? "correct" : "wrong"}">
+      ${drillState.lastCorrect ? "&#9989; Correct" : "&#10060; Not quite"}
+    </div>
+    ${bits.join("")}
+    <details class="explain-panel" open>
+      <summary>Why this is the answer</summary>
+      <div class="explain-body">${item.explain}</div>
+    </details>`;
+}
+
+// Hotspot hit-testing.
+//
+// The obvious approach -- a fat transparent stroke on each region, letting
+// the browser hit-test it -- breaks exactly where these diagrams are most
+// interesting. Curves cross, the widened strokes overlap around the
+// crossing, and SVG resolves the overlap by document order, so whichever
+// curve happens to be drawn last wins. On a phone the AR and MC curves of
+// the monopoly diagram cross at the midpoint of AR, and a tap anywhere near
+// it selected MC however carefully the user aimed.
+//
+// So selection is resolved geometrically instead: convert the pointer to
+// diagram coordinates, measure the true distance to every region, and take
+// the nearest one within HOTSPOT_REACH. Ties go to whichever is actually
+// closer, which is what a user means by "that one". Hover uses the same
+// function, so what lights up under the cursor is always what a click will
+// select.
+//
+// Distances are computed in viewBox units but the reach is specified in
+// screen pixels and converted, so the target is the same physical size on a
+// phone as on a desktop -- a diagram rendered at 275px wide would otherwise
+// give a finger a third less to aim at than one rendered at 552px.
+//
+// Being generous costs nothing here: because the nearest region wins, a
+// larger reach never selects the wrong curve. It only decides how far from
+// everything a click has to be before it counts as missing the diagram.
+const HOTSPOT_REACH_PX = 24;
+// A sample every ~1.5 viewBox units. Coarser than this and the error in the
+// measured distance to a curve (up to half the sample spacing) grows big
+// enough to lose a tie it should win -- at 48 samples along a 374-unit line
+// the error reached 4 units, and the consumer-surplus area beat the very
+// demand curve that bounds it.
+const HOTSPOT_SAMPLE_SPACING = 1.5;
+const HOTSPOT_MAX_SAMPLES = 400;
+
+// When two regions are effectively the same distance away, the more specific
+// one should win: a point marker sits deliberately on top of the curves that
+// cross there, and a curve bounding an area is a more precise thing to aim at
+// than the area itself. Expressed as a small head start in viewBox units,
+// which only decides near-ties -- a click clearly closer to something else
+// still goes to that something else.
+const HOTSPOT_PRIORITY = { dot: 8, line: 4, area: 0 };
+
+function hotspotKind(hit) {
+  if (hit.classList.contains("area")) return "area";
+  if (hit.tagName.toLowerCase() === "circle") return "dot";
+  return "line";
+}
+
+// Sampled points are cached on the element: the geometry never changes, so
+// there is no reason to re-walk the path on every mousemove.
+function hotspotSamples(hit) {
+  if (hit.__dgPts) return hit.__dgPts;
+  const len = typeof hit.getTotalLength === "function" ? hit.getTotalLength() : 0;
+  const pts = [];
+  if (len) {
+    const n = Math.min(HOTSPOT_MAX_SAMPLES, Math.max(32, Math.ceil(len / HOTSPOT_SAMPLE_SPACING)));
+    for (let i = 0; i <= n; i++) {
+      const p = hit.getPointAtLength((len * i) / n);
+      pts.push([p.x, p.y]);
+    }
+  }
+  hit.__dgPts = pts;
+  return pts;
+}
+
+function hotspotDistance(hit, pt) {
+  const kind = hotspotKind(hit);
+  // Areas: you are either inside the shape or you are not.
+  if (kind === "area") {
+    try {
+      return hit.isPointInFill(pt) ? 0 : Infinity;
+    } catch {
+      return Infinity;
+    }
+  }
+  // Dots: distance to the centre, not to the circumference, so clicking the
+  // middle of a point marker beats a curve running underneath it.
+  if (kind === "dot") {
+    return Math.hypot(hit.cx.baseVal.value - pt.x, hit.cy.baseVal.value - pt.y);
+  }
+  let best = Infinity;
+  for (const [x, y] of hotspotSamples(hit)) {
+    const d = Math.hypot(x - pt.x, y - pt.y);
+    if (d < best) best = d;
+  }
+  return best;
+}
+
+function nearestHotspot(svg, clientX, clientY) {
+  const ctm = svg.getScreenCTM();
+  if (!ctm) return null;
+  const pt = svg.createSVGPoint();
+  pt.x = clientX;
+  pt.y = clientY;
+  const local = pt.matrixTransform(ctm.inverse());
+  // ctm.a is the horizontal scale from viewBox units to CSS pixels.
+  const scale = Math.abs(ctm.a) || 1;
+  const reach = HOTSPOT_REACH_PX / scale;
+  let best = null;
+  let bestScore = Infinity;
+  svg.querySelectorAll(".dg-hot .hot").forEach((g) => {
+    const hit = g.querySelector(".hot-hit");
+    if (!hit) return;
+    const d = hotspotDistance(hit, local);
+    if (d > reach) return; // out of reach on its own merits, before any head start
+    const score = d - HOTSPOT_PRIORITY[hotspotKind(hit)];
+    if (score < bestScore) {
+      bestScore = score;
+      best = g.getAttribute("data-region");
+    }
+  });
+  return best;
+}
+
+function wireHotspot(el, item, code, moduleId) {
+  const svg = el.querySelector(".dg-svg");
+  if (!svg) return;
+  const groups = [...el.querySelectorAll(".dg-hot .hot")];
+
+  groups.forEach((g) => {
+    const region = g.getAttribute("data-region");
+    g.classList.toggle("picked", !drillState.submitted && drillState.region === region);
+    if (drillState.submitted) {
+      g.classList.toggle("correct", region === item.answer);
+      g.classList.toggle("wrong", region === drillState.region && region !== item.answer);
+      g.removeAttribute("tabindex"); // marked: nothing left to choose
+    }
+  });
+
+  if (drillState.submitted) return;
+
+  const pick = (region) => {
+    if (!region) return;
+    drillState.region = drillState.region === region ? null : region;
+    renderDrillView(code, moduleId);
+  };
+
+  // Pointer events land on the figure, not on individual regions, because the
+  // regions no longer do their own hit-testing.
+  const surface = el.querySelector(".dg-figure") || svg;
+  surface.addEventListener("click", (e) => pick(nearestHotspot(svg, e.clientX, e.clientY)));
+  surface.addEventListener("mousemove", (e) => {
+    const near = nearestHotspot(svg, e.clientX, e.clientY);
+    surface.classList.toggle("dg-over", !!near);
+    groups.forEach((g) => g.classList.toggle("hover", g.getAttribute("data-region") === near));
+  });
+  surface.addEventListener("mouseleave", () => {
+    surface.classList.remove("dg-over");
+    groups.forEach((g) => g.classList.remove("hover"));
+  });
+
+  // Keyboard still works region by region: Tab to one, Enter to choose it.
+  groups.forEach((g) => {
+    g.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        pick(g.getAttribute("data-region"));
+      }
+    });
+    g.addEventListener("focus", () => {
+      groups.forEach((o) => o.classList.toggle("hover", o === g));
+    });
+    g.addEventListener("blur", () => g.classList.remove("hover"));
+  });
+}
+
+function renderDrillView(code, moduleId) {
+  const el = document.getElementById("drillView");
+  const key = `${code}:${moduleId || "all"}`;
+  ensureDrillsLoaded(code);
+
+  if (drillState._lastKey !== key) {
+    drillState._lastKey = key;
+    drillState.code = code;
+    drillState.module = moduleId || null;
+    drillState.items = buildDrillRun(code, moduleId);
+    drillState.idx = 0;
+    drillState.stats = { answered: 0, correct: 0 };
+    drillState.done = false;
+    prepareDrillItem();
+  }
+
+  const modDef = moduleId ? (MODULES[code] || []).find((m) => m.id === moduleId) : null;
+  const scopeLabel = modDef ? `${moduleId.toUpperCase()} &middot; ${modDef.title}` : `All of ${code}`;
+  const backHref = moduleId ? `#/${code}/${moduleId}` : `#/${code}`;
+  const backLabel = moduleId ? moduleId.toUpperCase() : code;
+
+  if (!drillState.items.length) {
+    el.innerHTML = `
+      <button class="back-link" id="drillBack">&larr; ${backLabel}</button>
+      <div class="flash-empty">
+        <h2>Drills</h2>
+        <p>No drill questions for ${scopeLabel} yet.</p>
+      </div>`;
+    document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
+    return;
+  }
+
+  if (drillState.done) {
+    const acc = drillState.stats.answered ? Math.round((drillState.stats.correct / drillState.stats.answered) * 100) : 0;
+    const lifetime = drillAccuracy(code, moduleId);
+    el.innerHTML = `
+      <button class="back-link" id="drillBack">&larr; ${backLabel}</button>
+      <div class="flash-session-summary">
+        <div class="summary-badge">${acc >= 80 ? "&#127881;" : "&#128218;"}</div>
+        <h2>Drill complete</h2>
+        <p class="summary-title">${scopeLabel}</p>
+        <p class="summary-stats">You answered <strong>${drillState.stats.correct}</strong> of
+          <strong>${drillState.stats.answered}</strong> correctly &mdash; <strong>${acc}%</strong>.</p>
+        <p class="summary-overall">Lifetime on this scope: ${lifetime.correct}/${lifetime.attempts} (${lifetime.pct}%).
+          Drill results are tracked separately from flashcard stars.</p>
+        <div class="summary-actions">
+          <button class="btn primary" id="drillAgain">&#128256; New drill run</button>
+          <button class="btn" id="drillBackBtn">&larr; Back to ${backLabel}</button>
+        </div>
+      </div>`;
+    document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
+    document.getElementById("drillBackBtn").addEventListener("click", () => navigate(backHref));
+    document.getElementById("drillAgain").addEventListener("click", () => {
+      drillState._lastKey = ""; // forces a fresh run on the next render
+      renderDrillView(code, moduleId);
+    });
+    renderMath(el);
+    return;
+  }
+
+  const item = drillState.items[drillState.idx];
+  const n = drillState.items.length;
+  const prog = drillProgress(code)[item.id];
+  const canSubmit = drillAnswered();
+  const isLast = drillState.idx === n - 1;
+
+  el.innerHTML = `
+    <button class="back-link" id="drillBack">&larr; ${backLabel}</button>
+    <div class="flash-head">
+      <div class="flash-title-row">
+        <h2>Drills &mdash; ${scopeLabel}</h2>
+        <span class="flash-progress">${drillState.stats.correct}/${drillState.stats.answered} correct</span>
+      </div>
+      <div class="flash-progress-track"><div class="flash-progress-fill" style="width:${Math.round((drillState.idx / n) * 100)}%"></div></div>
+    </div>
+    <div class="flashcard-layout">
+      <div class="flashcard drill-card">
+        <div class="flashcard-label">
+          Question ${drillState.idx + 1} of ${n}
+          <span class="drill-type">${drillTypeLabel(item.type)}</span>
+          <span class="srs-label ${SRS.isDue(prog, SRS.today()) ? "due" : prog ? "scheduled" : "new"}">${SRS.describeDue(prog, SRS.today())}</span>
+        </div>
+        ${item.q ? `<div class="flashcard-question">${item.q}</div>` : ""}
+        ${drillBodyHtml(item)}
+        ${drillFeedbackHtml(item)}
+        <div class="flash-score-row">
+          ${
+            drillState.submitted
+              ? `<button class="btn primary" id="drillNext">${isLast ? "Finish" : "Next question"} &rarr;</button>`
+              : `<button class="btn primary" id="drillSubmit" ${canSubmit ? "" : "disabled"}>Check answer</button>`
+          }
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
+
+  // Hotspot regions are <g> elements, so they need their state painted on
+  // directly and their own click/Enter handling rather than the button
+  // wiring the other types use.
+  wireHotspot(el, item, code, moduleId);
+
+  if (!drillState.submitted) {
+    el.querySelectorAll(".drill-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const d = Number(btn.dataset.display);
+        if (item.type === "multi") {
+          const at = drillState.choices.indexOf(d);
+          if (at >= 0) drillState.choices.splice(at, 1);
+          else drillState.choices.push(d);
+        } else {
+          drillState.choice = d;
+        }
+        renderDrillView(code, moduleId);
+      });
+    });
+    el.querySelectorAll(".drill-token").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const b = Number(btn.dataset.blank);
+        const token = btn.dataset.token;
+        drillState.blanks[b] = drillState.blanks[b] === token ? null : token;
+        renderDrillView(code, moduleId);
+      });
+    });
+    const submit = document.getElementById("drillSubmit");
+    if (submit) {
+      submit.addEventListener("click", () => {
+        if (!drillAnswered()) return;
+        drillState.lastCorrect = gradeDrill();
+        drillState.submitted = true;
+        drillState.stats.answered += 1;
+        if (drillState.lastCorrect) drillState.stats.correct += 1;
+        recordDrill(code, item, drillState.lastCorrect);
+        renderDrillView(code, moduleId);
+      });
+    }
+  } else {
+    document.getElementById("drillNext").addEventListener("click", () => {
+      if (isLast) {
+        drillState.done = true;
+      } else {
+        drillState.idx += 1;
+        prepareDrillItem();
+      }
+      renderDrillView(code, moduleId);
+    });
+  }
+
+  renderMath(el);
+}
+
 /* ---------- routing ---------- */
 
 function parseHash() {
@@ -2084,6 +2667,12 @@ function parseHash() {
   }
   if (parts.length === 1) return { view: "subject", exam: parts[0].toUpperCase() };
   if (parts[1].toLowerCase() === "mixed") return { view: "mixed", exam: parts[0].toUpperCase() };
+  // Drills scope by an optional THIRD segment (#/CB2/drill/m06) rather than
+  // hanging off the module route (#/CB2/m06/drill), so the flashcard route's
+  // third segment stays free for the card deep-links search emits.
+  if (parts[1].toLowerCase() === "drill") {
+    return { view: "drill", exam: parts[0].toUpperCase(), module: parts[2] ? parts[2].toLowerCase() : null };
+  }
   // optional third segment deep-links to a specific question / card (used by search)
   const idx = /^\d+$/.test(parts[2] || "") ? Number(parts[2]) : null;
   if (parts[1].toLowerCase() === "questions") return { view: "questions", exam: parts[0].toUpperCase(), index: idx };
@@ -2104,6 +2693,7 @@ function renderRoute() {
   document.getElementById("reviewView").hidden = r.view !== "review";
   document.getElementById("dashboardView").hidden = r.view !== "dashboard";
   document.getElementById("searchView").hidden = r.view !== "search";
+  document.getElementById("drillView").hidden = r.view !== "drill";
   if (r.view !== "questions") pauseQTimer();
   document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
@@ -2123,6 +2713,8 @@ function renderRoute() {
   } else if (r.view === "dashboard") {
     renderDashboardView();
     refreshDashboardActivity();
+  } else if (r.view === "drill") {
+    renderDrillView(r.exam, r.module);
   } else if (r.view === "subject") {
     renderSubjectView(r.exam);
   } else if (r.view === "flash") {

@@ -24,6 +24,7 @@ const Store = (function () {
   const STREAK_TABLE = "study_streak";
   const SESSION_TABLE = "session_log";
   const SRS_TABLE = "flashcard_srs"; // added by supabase/migrations/002_spaced_repetition.sql
+  const DRILL_TABLE = "drill_progress"; // added by supabase/migrations/003_drills.sql
   // Reviews with more than this much idle time between them belong to separate sessions.
   const SESSION_GAP_MS = 30 * 60 * 1000;
 
@@ -39,11 +40,15 @@ const Store = (function () {
   // Set when Supabase says flashcard_srs doesn't exist — i.e. the account's
   // project hasn't had supabase/migrations/002_spaced_repetition.sql run yet.
   let srsTableMissing = false;
+  // Same pair again for drills (supabase/migrations/003_drills.sql). Kept
+  // separate from the flashcard flag so a project that has run 002 but not
+  // 003 degrades on drills alone, rather than looking broken everywhere.
+  let drillTableMissing = false;
 
-  function looksLikeMissingTable(error) {
+  function looksLikeMissingTable(error, table) {
     const code = error && error.code;
     const msg = (error && error.message) || "";
-    return code === "42P01" || code === "PGRST205" || /flashcard_srs/.test(msg);
+    return code === "42P01" || code === "PGRST205" || (!!table && msg.includes(table));
   }
   const authListeners = [];
   const syncListeners = [];
@@ -191,8 +196,9 @@ const Store = (function () {
     requeueAllLocalData();
   }
 
-  // Re-enqueues every cached module-status / mastery / streak entry for the
-  // current user as a pending write (enqueue() itself kicks off the upload).
+  // Re-enqueues every cached module-status / mastery / schedule / drill /
+  // streak entry for the current user as a pending write (enqueue() itself
+  // kicks off the upload).
   function requeueAllLocalData() {
     const uKey = userKey();
     allKeys().forEach((key) => {
@@ -216,6 +222,10 @@ const Store = (function () {
             enqueue({ type: "srs", examCode, moduleId, cardIdx: Number(cardIdx), value: map[moduleId][cardIdx] })
           );
         });
+      } else if (key.startsWith(`${LS_PREFIX}:drill:${uKey}:`)) {
+        const examCode = key.split(":").pop();
+        const map = readLS(key, {});
+        Object.keys(map).forEach((itemId) => enqueue({ type: "drill", examCode, itemId, value: map[itemId] }));
       } else if (key === `${LS_PREFIX}:streak:${uKey}`) {
         const streak = readLS(key, null);
         if (streak) enqueue({ type: "streak", value: streak });
@@ -321,7 +331,7 @@ const Store = (function () {
         .select("module_id, card_idx, reps, interval_days, ease, due_date, lapses, reviews, last_reviewed")
         .eq("exam_code", examCode);
       if (error) {
-        srsTableMissing = looksLikeMissingTable(error);
+        srsTableMissing = looksLikeMissingTable(error, SRS_TABLE);
         throw error;
       }
       srsTableMissing = false;
@@ -381,6 +391,72 @@ const Store = (function () {
       });
     if (k) writeLS(lsKey("srs", examCode), cache);
     return k;
+  }
+
+  /* ---------- drills ---------- */
+  //
+  // Drills are their own track: nothing here writes to flashcard_mastery, so a
+  // drill result can never move the star total or the Associate/Fellow rank.
+  // Per-item state is the srs.js schedule plus lifetime attempts/correct — see
+  // supabase/migrations/003_drills.sql for why the key is a stable string id
+  // rather than the positional (module_id, card_idx) flashcards use.
+  //
+  // Shape: { itemId: { reps, interval, ease, due, lapses, reviews, last, attempts, correct } }
+
+  function getDrillCache(examCode) {
+    return readLS(lsKey("drill", examCode), {});
+  }
+
+  async function loadDrills(examCode) {
+    const cache = getDrillCache(examCode);
+    if (!client || !currentUser) return cache;
+    try {
+      const { data, error } = await client
+        .from(DRILL_TABLE)
+        .select("item_id, reps, interval_days, ease, due_date, lapses, reviews, last_reviewed, attempts, correct")
+        .eq("exam_code", examCode);
+      if (error) {
+        drillTableMissing = looksLikeMissingTable(error, DRILL_TABLE);
+        throw error;
+      }
+      drillTableMissing = false;
+      const merged = { ...cache };
+      (data || []).forEach((row) => {
+        const remote = {
+          reps: row.reps,
+          interval: row.interval_days,
+          ease: Number(row.ease),
+          due: row.due_date,
+          lapses: row.lapses,
+          reviews: row.reviews,
+          last: row.last_reviewed,
+          attempts: row.attempts,
+          correct: row.correct,
+        };
+        const local = merged[row.item_id];
+        // isNewer() compares last-reviewed date then review count — the same
+        // rule flashcard schedules merge by, so a device that was offline for
+        // a while can't roll back a newer attempt made elsewhere.
+        if (!local || isNewer(remote, local)) merged[row.item_id] = remote;
+      });
+      writeLS(lsKey("drill", examCode), merged);
+      return merged;
+    } catch {
+      // Table missing (003 not run yet) or offline — drills still grade and
+      // schedule locally, and upload once they can.
+      return cache;
+    }
+  }
+
+  function setDrill(examCode, itemId, value) {
+    const cache = getDrillCache(examCode);
+    cache[itemId] = value;
+    writeLS(lsKey("drill", examCode), cache);
+    enqueue({ type: "drill", examCode, itemId, value });
+  }
+
+  function isDrillTableMissing() {
+    return drillTableMissing;
   }
 
   /* ---------- streak ---------- */
@@ -613,7 +689,7 @@ const Store = (function () {
         try {
           const { error } = await client.from(SRS_TABLE).upsert(rows, { onConflict: "user_id,exam_code,module_id,card_idx" });
           if (error) {
-            srsTableMissing = looksLikeMissingTable(error);
+            srsTableMissing = looksLikeMissingTable(error, SRS_TABLE);
             throw error;
           }
           srsTableMissing = false;
@@ -625,12 +701,46 @@ const Store = (function () {
         }
       }
 
+      // Drill results upload in bulk for the same reason schedules do: a
+      // finished run queues a dozen or more at once.
+      const drillOps = list.filter((op) => op.type === "drill" && (!op.userId || op.userId === currentUser.id));
+      if (drillOps.length) {
+        const latest = new Map();
+        drillOps.forEach((op) => latest.set(`${op.examCode}|${op.itemId}`, op));
+        const now = new Date().toISOString();
+        const rows = [...latest.values()].map((op) => ({
+          user_id: currentUser.id,
+          exam_code: op.examCode,
+          item_id: op.itemId,
+          reps: op.value.reps,
+          interval_days: op.value.interval,
+          ease: op.value.ease,
+          due_date: op.value.due,
+          lapses: op.value.lapses,
+          reviews: op.value.reviews,
+          last_reviewed: op.value.last,
+          attempts: op.value.attempts,
+          correct: op.value.correct,
+          updated_at: now,
+        }));
+        try {
+          const { error } = await client.from(DRILL_TABLE).upsert(rows, { onConflict: "user_id,exam_code,item_id" });
+          if (error) {
+            drillTableMissing = looksLikeMissingTable(error, DRILL_TABLE);
+            throw error;
+          }
+          drillTableMissing = false;
+        } catch {
+          remaining.push(...latest.values());
+        }
+      }
+
       for (const op of list) {
         if (op.userId && op.userId !== currentUser.id) {
           remaining.push(op); // belongs to a different (now signed-out) account — leave it queued
           continue;
         }
-        if (op.type === "srs") continue; // handled in bulk above
+        if (op.type === "srs" || op.type === "drill") continue; // handled in bulk above
         try {
           if (op.type === "status") {
             const { error } = await client.from(STATUS_TABLE).upsert(
@@ -727,6 +837,10 @@ const Store = (function () {
     getSrsCache,
     seedSrsFromMastery,
     isSrsTableMissing,
+    loadDrills,
+    setDrill,
+    getDrillCache,
+    isDrillTableMissing,
     loadStreak,
     bumpStreak,
     getStreakCache,

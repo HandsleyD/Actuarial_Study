@@ -11,6 +11,7 @@ No install, no sign-up required — just open the link.
 ## What's here
 
 - **Flashcards** for every module of each subject, with a reveal-then-explain format: see the question, try to answer it, then reveal the answer alongside a short "why this matters" note that connects it to the wider syllabus.
+- **Drills** — machine-marked questions in four formats: multiple choice, select-all, fill-the-gap, and *click the diagram* (find the deadweight loss, the marginal revenue curve, the natural rate of unemployment). Each one explains why the answer you picked was tempting, not just what the right answer was. Scored separately from the flashcard stars, since these are marked for you rather than self-assessed. Currently CB2 only.
 - **Practice exams** — original, IFoA-style question banks (multi-part questions, command verbs like *Calculate*, *Explain*, *Discuss*, mark allocations that add up) for exam-condition practice.
 - **Progress tracking** — a mastery star for every flashcard you've nailed, a study streak, and real Associate/Fellow tracking based on the actual IFoA qualification structure (not a made-up point scale). Mark a whole subject complete in one click if you already hold an exemption or a prior pass.
 - **Works offline** — after one visit the site (cards, questions, maths rendering) is cached, so you can review on a train with no signal; scores are saved on the device and upload when you're back online. On a phone, use "Add to Home Screen" to install it like an app.
