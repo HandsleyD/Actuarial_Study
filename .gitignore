@@ -5,11 +5,6 @@ maths-study/.local/
 *.tmp
 *.temp
 
-# Large shared material - keep local only (not uploaded to remote)
-# Only source materials (textbooks, PDFs) are excluded
-maths-study/resources/source-material/
-maths-study/tools/materials/
-
 # Virtual environment
 .venv/
 venv/

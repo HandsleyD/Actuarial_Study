@@ -24,8 +24,7 @@ My goal: build exam-ready mastery across all planned IFoA subjects through consi
 
 ## Source Priority
 
-- Prefer relevant local material in /resources/source-material/ first when answering study questions
-- Then use the active exam workspace in /exams/<EXAM_CODE>/
+- Prefer the active exam workspace in /exams/<EXAM_CODE>/
 - If no relevant local source exists, fall back to built-in knowledge
 - If an answer is mainly based on built-in knowledge rather than repo material, say so briefly
 
