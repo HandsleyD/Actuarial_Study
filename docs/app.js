@@ -2772,9 +2772,13 @@ function renderExamHub(requested) {
         .join("")}</div>
       <ul class="hub-keydates">
         ${upcomingDeadlines.map((d) => `<li><span>${fmtHubDate(d.date)}</span> ${escapeHtml(d.label)}</li>`).join("")}
-        <li><span>${fmtHubDate(s.results[group])}</span> Results released${
-          s.breakdown ? ` (mark breakdown ${fmtHubDate(s.breakdown[group])})` : ""
-        }</li>
+        ${
+          s.results[group]
+            ? `<li><span>${fmtHubDate(s.results[group])}</span> Results released${
+                s.breakdown && s.breakdown[group] ? ` (mark breakdown ${fmtHubDate(s.breakdown[group])})` : ""
+              }</li>`
+            : `<li>Results date not published yet</li>`
+        }
       </ul>`;
     nextHtml = `
       <section class="dash-section">
@@ -2888,6 +2892,7 @@ function renderExamHub(requested) {
               { date: s.results.core, label: "Results released: CS, CM, CB" },
               { date: s.results.advanced, label: "Results released: CP, SP, SA" },
             ]
+              .filter((d) => d.date)
               .sort((a, b) => a.date.localeCompare(b.date))
               .map((d) => `<li class="${d.date < today ? "past" : ""}"><span>${fmtHubDate(d.date)}</span> ${escapeHtml(d.label)}</li>`)
               .join("");
@@ -2920,8 +2925,8 @@ function renderExamHub(requested) {
       sessionsHtml
         ? `<section class="dash-section">
         <div class="dash-section-head"><h3>IFoA exam timetable</h3></div>
-        <p class="dash-note">All papers start at 09:00 UK time. ${code} is highlighted. Checked against the <a href="${EXAM_DATES.source}" target="_blank" rel="noopener">IFoA exam dates page</a> on ${fmtHubDate(
-          EXAM_DATES.checked
+        <p class="dash-note">All papers start at 09:00 UK time. ${code} is highlighted. Copied from the <a href="${EXAM_DATES.source}" target="_blank" rel="noopener">IFoA exam dates page</a>, which is checked weekly; last changed ${fmtHubDate(
+          EXAM_DATES.updated
         )}. The IFoA can change dates, so confirm there before booking.</p>
         ${sessionsHtml}
       </section>`

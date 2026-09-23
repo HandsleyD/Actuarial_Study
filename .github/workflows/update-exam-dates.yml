@@ -1,0 +1,66 @@
+name: Update IFoA exam dates
+
+# Weekly: re-reads https://actuaries.org.uk/exam-dates/ with
+# scripts/update-exam-dates.mjs and, if the timetable, booking dates or
+# results dates have changed, opens (or refreshes) a PR updating
+# docs/exam-dates.js for the Exam Hub page. Nothing reaches main without the
+# PR being merged by hand.
+#
+# If the IFoA redesigns the page the script exits non-zero instead of writing
+# a half-empty file, so the run fails and GitHub emails the repo owner.
+#
+# Needs the repo setting Settings > Actions > General > "Allow GitHub Actions
+# to create and approve pull requests". PRs opened with GITHUB_TOKEN don't
+# trigger other workflows, so the content checks won't run on them; the
+# script's own checks cover this file.
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-exam-dates
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: bot/update-exam-dates
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Read the IFoA exam dates page
+        run: node scripts/update-exam-dates.mjs
+
+      - name: Open or refresh a PR if the dates changed
+        run: |
+          if git diff --quiet -- docs/exam-dates.js; then
+            echo "Exam dates unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add docs/exam-dates.js
+          git commit -m "Update IFoA exam dates from actuaries.org.uk"
+          git push --force origin "$BRANCH"
+          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --base "${{ github.event.repository.default_branch }}" --head "$BRANCH" \
+              --title "Update IFoA exam dates" \
+              --body "The IFoA's [key exam dates page](https://actuaries.org.uk/exam-dates/) has changed. This updates \`docs/exam-dates.js\`, which feeds the Exam Hub page. Check the diff against the IFoA page, then merge.
+
+          Opened automatically by the weekly \`update-exam-dates\` workflow."
+          else
+            echo "Existing PR refreshed."
+          fi
