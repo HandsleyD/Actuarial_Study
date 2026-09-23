@@ -22,6 +22,9 @@ on:
       - "scripts/validate-content.mjs"
       - "docs/srs.js"
       - "scripts/test-srs.mjs"
+      - "docs/exam-stats.js"
+      - "scripts/extract-exam-stats.mjs"
+      - "maths-study/resources/past-papers/processed/**/*examiner-report*"
   pull_request:
     paths:
       - "docs/data.js"
@@ -32,6 +35,9 @@ on:
       - "scripts/validate-content.mjs"
       - "docs/srs.js"
       - "scripts/test-srs.mjs"
+      - "docs/exam-stats.js"
+      - "scripts/extract-exam-stats.mjs"
+      - "maths-study/resources/past-papers/processed/**/*examiner-report*"
 
 jobs:
   validate:
@@ -48,3 +54,6 @@ jobs:
 
       - name: Spaced-repetition scheduling tests
         run: node scripts/test-srs.mjs
+
+      - name: Pass-rate data matches the examiners' reports
+        run: node scripts/extract-exam-stats.mjs --check

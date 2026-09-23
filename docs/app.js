@@ -833,6 +833,8 @@ function renderSubjectView(code) {
   if (totalDrills) ensureDrillsLoaded(code);
   const subjectDue = dueCards(code).length;
   const subjectWeak = weakCards(code).length;
+  const nextExam = nextSitting(code);
+  const firstPaper = nextExam && nextExam.papers.find((p) => p.date >= SRS.today());
 
   el.innerHTML = `
     <button class="back-link" id="backToHome">&larr; All subjects</button>
@@ -840,6 +842,9 @@ function renderSubjectView(code) {
       <div class="subject-code">${code}</div>
       <h2>${info.name}</h2>
       ${info.blurb ? `<p class="subject-blurb">${info.blurb}</p>` : ""}
+      <a class="hub-link" href="#/exams/${code}">&#127891; Pass rates and exam dates${
+        firstPaper ? ` &middot; next ${code} paper ${fmtHubDate(firstPaper.date)} (${countdownLabel(firstPaper.date)})` : ""
+      } &rarr;</a>
       ${
         totalCards > 0
           ? `<div class="subject-actions">
@@ -2651,6 +2656,286 @@ function renderDrillView(code, moduleId) {
   renderMath(el);
 }
 
+/* ---------- exam hub (pass rates + IFoA dates) ---------- */
+
+// PASS_STATS (exam-stats.js, generated from the examiners' reports) and
+// EXAM_DATES (exam-dates.js, copied by hand from the IFoA site) feed this page.
+
+const HUB_SUBJECT_KEY = "examHubSubject";
+const MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function sittingLabel(sitting) {
+  const [y, m] = sitting.split("-");
+  return `${MONTH_ABBR[Number(m) - 1]} ${y}`;
+}
+
+function fmtHubDate(iso, withWeekday) {
+  return new Date(`${iso}T12:00:00`).toLocaleDateString("en-GB", {
+    weekday: withWeekday ? "short" : undefined,
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+function daysFromToday(iso) {
+  return Math.round((new Date(`${iso}T12:00:00`) - new Date(`${SRS.today()}T12:00:00`)) / 86400000);
+}
+
+function countdownLabel(iso) {
+  const n = daysFromToday(iso);
+  if (n === 0) return "today";
+  if (n === 1) return "tomorrow";
+  if (n === -1) return "yesterday";
+  return n > 0 ? `in ${n} days` : `${-n} days ago`;
+}
+
+// Papers in a session that belong to a subject: "CM1A" and "CP1 paper 2"
+// both start with their subject code.
+function sessionPapers(session, code) {
+  return Object.entries(session.papers)
+    .flatMap(([date, papers]) => papers.filter((p) => p.slice(0, 3) === code).map((p) => ({ date, paper: p })))
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+function resultsGroup(code) {
+  return /^C[SMB]/.test(code) ? "core" : "advanced";
+}
+
+// The first session in which this subject still has a paper today or later.
+function nextSitting(code) {
+  if (typeof EXAM_DATES === "undefined") return null;
+  const today = SRS.today();
+  for (const s of EXAM_DATES.sessions) {
+    const papers = sessionPapers(s, code);
+    if (papers.length && papers[papers.length - 1].date >= today) return { session: s, papers };
+  }
+  return null;
+}
+
+function passSummary(rows) {
+  const sat = rows.reduce((a, r) => a + r.sat, 0);
+  const passed = rows.reduce((a, r) => a + r.passed, 0);
+  const marks = rows.map((r) => r.mark).filter((m) => m !== null).sort((a, b) => a - b);
+  return {
+    rate: sat ? (passed / sat) * 100 : 0,
+    sat,
+    passed,
+    minMark: marks[0],
+    maxMark: marks[marks.length - 1],
+    medianMark: marks.length ? marks[Math.floor(marks.length / 2)] : null,
+  };
+}
+
+function hubDefaultSubject() {
+  try {
+    const saved = localStorage.getItem(HUB_SUBJECT_KEY);
+    if (saved && SUBJECTS[saved]) return saved;
+  } catch {
+    /* storage unavailable */
+  }
+  return Object.keys(MODULES)[0] || "CB1";
+}
+
+function renderExamHub(requested) {
+  const el = document.getElementById("examHubView");
+  const code = requested && SUBJECTS[requested] ? requested : hubDefaultSubject();
+  try {
+    localStorage.setItem(HUB_SUBJECT_KEY, code);
+  } catch {
+    /* storage unavailable */
+  }
+  const rows = (typeof PASS_STATS !== "undefined" && PASS_STATS[code]) || [];
+  const today = SRS.today();
+
+  const options = Object.keys(SUBJECTS)
+    .map((c) => `<option value="${c}"${c === code ? " selected" : ""}>${c} &mdash; ${escapeHtml(SUBJECTS[c].name)}</option>`)
+    .join("");
+
+  // --- next sitting ---
+  const next = nextSitting(code);
+  let nextHtml;
+  if (next) {
+    const s = next.session;
+    const group = resultsGroup(code);
+    const upcomingDeadlines = s.deadlines.filter((d) => d.date >= today);
+    nextHtml = `
+      <div class="hub-papers">${next.papers
+        .map(
+          (p) => `
+        <div class="hub-paper${p.date < today ? " past" : ""}">
+          <span class="hub-paper-name">${escapeHtml(p.paper)}</span>
+          <span class="hub-paper-date">${fmtHubDate(p.date, true)}, 09:00</span>
+          <span class="hub-paper-count">${countdownLabel(p.date)}</span>
+        </div>`
+        )
+        .join("")}</div>
+      <ul class="hub-keydates">
+        ${upcomingDeadlines.map((d) => `<li><span>${fmtHubDate(d.date)}</span> ${escapeHtml(d.label)}</li>`).join("")}
+        <li><span>${fmtHubDate(s.results[group])}</span> Results released${
+          s.breakdown ? ` (mark breakdown ${fmtHubDate(s.breakdown[group])})` : ""
+        }</li>
+      </ul>`;
+    nextHtml = `
+      <section class="dash-section">
+        <div class="dash-section-head"><h3>Next sitting &mdash; ${s.name}</h3></div>
+        ${nextHtml}
+      </section>`;
+  } else {
+    nextHtml = `
+      <section class="dash-section">
+        <div class="dash-section-head"><h3>Next sitting</h3></div>
+        <p class="muted">${
+          code === "CB3"
+            ? "CB3 is booked as an online assessment through the member portal, outside the April and September sessions."
+            : `No upcoming ${code} dates on file. Check the <a href="${EXAM_DATES.source}" target="_blank" rel="noopener">IFoA exam dates page</a>.`
+        }</p>
+      </section>`;
+  }
+
+  // --- pass statistics ---
+  let statsHtml;
+  if (rows.length) {
+    const all = passSummary(rows);
+    const latest = rows[rows.length - 1];
+    const latestRate = (latest.passed / latest.sat) * 100;
+    const noted = rows.filter((r) => r.note);
+    const tableRows = rows
+      .slice()
+      .reverse()
+      .map((r) => {
+        const rate = (r.passed / r.sat) * 100;
+        return `
+        <tr>
+          <th scope="row">${sittingLabel(r.sitting)}${r.note ? `<sup title="${escapeHtml(r.note)}">&dagger;</sup>` : ""}</th>
+          <td class="num">${r.mark === null ? "&mdash;" : r.mark}</td>
+          <td class="num hub-sat">${r.sat.toLocaleString("en-GB")}</td>
+          <td class="num">${r.passed.toLocaleString("en-GB")}</td>
+          <td class="hub-rate">${barHtml(Math.round(rate))}<span class="dash-row-pct">${rate.toFixed(1)}%</span></td>
+        </tr>`;
+      })
+      .join("");
+
+    statsHtml = `
+      <section class="game-bar dash-tiles">
+        <div class="game-stat" title="${all.passed.toLocaleString("en-GB")} of ${all.sat.toLocaleString("en-GB")} candidates across ${rows.length} sittings">
+          <span class="game-stat-icon">&#9989;</span>
+          <span class="game-stat-value">${all.rate.toFixed(0)}%</span>
+          <span class="game-stat-label">pass rate, all ${rows.length} sittings</span>
+        </div>
+        <div class="game-stat">
+          <span class="game-stat-icon">&#128197;</span>
+          <span class="game-stat-value">${latestRate.toFixed(0)}%</span>
+          <span class="game-stat-label">pass rate, ${sittingLabel(latest.sitting)}</span>
+        </div>
+        <div class="game-stat">
+          <span class="game-stat-icon">&#127919;</span>
+          <span class="game-stat-value">${all.medianMark}</span>
+          <span class="game-stat-label">typical pass mark (range ${all.minMark}&ndash;${all.maxMark})</span>
+        </div>
+        <div class="game-stat">
+          <span class="game-stat-icon">&#128101;</span>
+          <span class="game-stat-value">${latest.sat.toLocaleString("en-GB")}</span>
+          <span class="game-stat-label">sat ${code} in ${sittingLabel(latest.sitting)}</span>
+        </div>
+      </section>
+
+      <section class="dash-section">
+        <div class="dash-section-head"><h3>Pass marks and pass rates</h3></div>
+        <p class="dash-note">The pass mark is out of 100 and set by the examiners after each sitting, according to how hard they judged the paper. ${
+          /^(CM|CS)/.test(code) ? `${code} has two papers (A and B); the figures cover both combined. ` : ""
+        }Taken from the examiners' reports in this repo, ${sittingLabel(rows[0].sitting)} to ${sittingLabel(latest.sitting)}.</p>
+        <div class="hub-table-wrap">
+          <table class="hub-table">
+            <thead><tr><th scope="col">Sitting</th><th scope="col" class="num">Pass mark</th><th scope="col" class="num hub-sat">Sat</th><th scope="col" class="num">Passed</th><th scope="col">Pass rate</th></tr></thead>
+            <tbody>${tableRows}</tbody>
+          </table>
+        </div>
+        ${noted.length ? `<p class="dash-note hub-footnote">${noted.map((r) => `&dagger; ${sittingLabel(r.sitting)}: ${escapeHtml(r.note)}`).join("<br>")}</p>` : ""}
+      </section>`;
+  } else {
+    statsHtml = `
+      <section class="dash-section">
+        <div class="dash-section-head"><h3>Pass marks and pass rates</h3></div>
+        <p class="muted">${
+          code === "CB3"
+            ? "CB3 is an online assessment with no examiners' report, so there are no pass marks or pass rates to show."
+            : `No examiners' reports for ${code} are in the repo yet.`
+        }</p>
+      </section>`;
+  }
+
+  // --- every session's timetable ---
+  const sessionsHtml =
+    typeof EXAM_DATES === "undefined"
+      ? ""
+      : EXAM_DATES.sessions
+          .map((s) => {
+            const done = Object.keys(s.papers).every((d) => d < today) && s.results.advanced < today;
+            const days = Object.entries(s.papers)
+              .map(
+                ([date, papers]) => `
+              <div class="hub-day${date < today ? " past" : ""}">
+                <span class="hub-day-date">${fmtHubDate(date, true)}</span>
+                <span class="hub-day-papers">${papers
+                  .map((p) => `<span class="hub-chip${p.slice(0, 3) === code ? " mine" : ""}">${escapeHtml(p)}</span>`)
+                  .join("")}</span>
+              </div>`
+              )
+              .join("");
+            const keyDates = [
+              ...s.deadlines,
+              { date: s.results.core, label: "Results released: CS, CM, CB" },
+              { date: s.results.advanced, label: "Results released: CP, SP, SA" },
+            ]
+              .sort((a, b) => a.date.localeCompare(b.date))
+              .map((d) => `<li class="${d.date < today ? "past" : ""}"><span>${fmtHubDate(d.date)}</span> ${escapeHtml(d.label)}</li>`)
+              .join("");
+            return `
+            <details class="dash-subject hub-session"${done ? "" : " open"}>
+              <summary><span class="dash-subject-name"><strong>${s.name}</strong></span><span class="dash-subject-meta">${done ? "finished" : ""}</span></summary>
+              <div class="hub-days">${days}</div>
+              <ul class="hub-keydates">${keyDates}</ul>
+            </details>`;
+          })
+          .join("");
+
+  el.innerHTML = `
+    <button class="back-link" id="backFromHub">&larr; All subjects</button>
+    <div class="subject-head">
+      <h2>Exam Hub</h2>
+      <p class="subject-blurb">Pass marks, pass rates and IFoA exam dates for each subject.</p>
+    </div>
+
+    <label class="hub-picker">
+      <span>Subject</span>
+      <select id="hubSubject" class="text-input">${options}</select>
+    </label>
+    <div class="hub-subject-line"><a href="#/${code}">Go to the ${code} study page &rarr;</a></div>
+
+    ${nextHtml}
+    ${statsHtml}
+
+    ${
+      sessionsHtml
+        ? `<section class="dash-section">
+        <div class="dash-section-head"><h3>IFoA exam timetable</h3></div>
+        <p class="dash-note">All papers start at 09:00 UK time. ${code} is highlighted. Checked against the <a href="${EXAM_DATES.source}" target="_blank" rel="noopener">IFoA exam dates page</a> on ${fmtHubDate(
+          EXAM_DATES.checked
+        )}. The IFoA can change dates, so confirm there before booking.</p>
+        ${sessionsHtml}
+      </section>`
+        : ""
+    }
+  `;
+
+  document.getElementById("backFromHub").addEventListener("click", () => navigate("#/"));
+  document.getElementById("hubSubject").addEventListener("change", (e) => {
+    history.replaceState(null, "", `#/exams/${e.target.value}`);
+    renderExamHub(e.target.value);
+  });
+}
+
 /* ---------- routing ---------- */
 
 function parseHash() {
@@ -2659,6 +2944,7 @@ function parseHash() {
   const parts = h.split("/").filter(Boolean);
   const first = parts[0].toLowerCase();
   if (first === "dashboard") return { view: "dashboard" };
+  if (first === "exams") return { view: "exams", exam: parts[1] ? parts[1].toUpperCase() : null };
   if (first.startsWith("search")) {
     const m = h.match(/[?&]q=([^&]*)/);
     let q = "";
@@ -2701,6 +2987,7 @@ function renderRoute() {
   document.getElementById("dashboardView").hidden = r.view !== "dashboard";
   document.getElementById("searchView").hidden = r.view !== "search";
   document.getElementById("drillView").hidden = r.view !== "drill";
+  document.getElementById("examHubView").hidden = r.view !== "exams";
   if (r.view !== "questions") pauseQTimer();
   document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
@@ -2722,6 +3009,8 @@ function renderRoute() {
     refreshDashboardActivity();
   } else if (r.view === "drill") {
     renderDrillView(r.exam, r.module);
+  } else if (r.view === "exams") {
+    renderExamHub(r.exam);
   } else if (r.view === "subject") {
     renderSubjectView(r.exam);
   } else if (r.view === "flash") {

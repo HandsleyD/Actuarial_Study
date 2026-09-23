@@ -1966,3 +1966,132 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
   .dg-figure { margin-left: -4px; margin-right: -4px; }
   .dg-axis-title, .dg-label { font-size: 13px; }
 }
+
+/* ---------- exam hub (pass rates + IFoA dates) ---------- */
+
+.hub-link {
+  display: inline-block;
+  margin: 10px 0 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+.hub-link:hover { text-decoration: underline; }
+
+.hub-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.hub-picker .text-input { width: auto; max-width: 100%; flex: 0 1 420px; margin: 0; }
+
+.hub-subject-line { font-size: 0.8rem; margin: 0 0 16px; }
+.hub-subject-line a { color: var(--text-muted); text-decoration: none; }
+.hub-subject-line a:hover { color: var(--accent); text-decoration: underline; }
+
+.hub-papers { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+
+.hub-paper {
+  display: grid;
+  grid-template-columns: minmax(90px, auto) 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  font-size: 0.9rem;
+}
+.hub-paper-name { font-weight: 800; color: var(--accent); }
+.hub-paper-count { font-weight: 700; font-variant-numeric: tabular-nums; }
+.hub-paper.past { background: var(--not-started-bg); color: var(--text-muted); }
+.hub-paper.past .hub-paper-name { color: var(--text-muted); }
+
+.hub-keydates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.hub-keydates li { padding: 3px 0; }
+.hub-keydates li span {
+  display: inline-block;
+  min-width: 108px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.hub-keydates li.past { color: var(--text-muted); text-decoration: line-through; }
+
+.hub-table-wrap { overflow-x: auto; }
+
+.hub-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+.hub-table th,
+.hub-table td {
+  padding: 8px 6px;
+  border-top: 1px solid var(--border-soft);
+  text-align: left;
+  white-space: nowrap;
+}
+.hub-table thead th {
+  border-top: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.hub-table tbody th { font-weight: 700; }
+.hub-table .num { text-align: right; }
+.hub-table sup { color: var(--progress); cursor: help; }
+.hub-rate { width: 40%; min-width: 150px; }
+.hub-rate .dash-bar { display: inline-block; vertical-align: middle; width: calc(100% - 56px); flex: none; }
+.hub-rate .dash-row-pct { display: inline-block; margin-left: 8px; }
+
+.hub-footnote { margin: 10px 0 0; }
+
+.hub-session .hub-days { margin: 10px 0 12px; display: flex; flex-direction: column; gap: 4px; }
+
+.hub-day {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.82rem;
+}
+.hub-day-date { font-weight: 700; font-variant-numeric: tabular-nums; }
+.hub-day-papers { display: flex; flex-wrap: wrap; gap: 4px; }
+.hub-day.past { opacity: 0.55; }
+
+.hub-chip {
+  padding: 1px 7px;
+  border-radius: var(--radius-sm);
+  background: var(--not-started-bg);
+  color: var(--text);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+.hub-chip.mine { background: var(--accent); color: var(--accent-contrast); font-weight: 800; }
+
+.hub-session > summary { grid-template-columns: minmax(0, 1fr) auto; }
+
+@media (max-width: 640px) {
+  .hub-picker { flex-wrap: wrap; }
+  .hub-picker .text-input { flex: 1 1 100%; }
+  .hub-paper { grid-template-columns: 1fr auto; }
+  .hub-paper-date { grid-column: 1 / -1; grid-row: 2; font-size: 0.8rem; }
+  .hub-day { grid-template-columns: 1fr; gap: 3px; }
+  .hub-keydates li span { display: block; min-width: 0; }
+  .hub-table th, .hub-table td { padding: 7px 4px; }
+  .hub-rate { min-width: 90px; }
+  .hub-table thead th { white-space: normal; }
+  .hub-sat { display: none; }
+}
