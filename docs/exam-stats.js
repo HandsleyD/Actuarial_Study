@@ -14,6 +14,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":63,"sat":1358,"passed":893},
     {"sitting":"2024-09","mark":63,"sat":1337,"passed":819},
     {"sitting":"2025-04","mark":58,"sat":1120,"passed":658},
+    {"sitting":"2025-09","mark":60,"sat":868,"passed":563},
+    {"sitting":"2026-04","mark":57,"sat":968,"passed":581},
   ],
   CB2: [
     {"sitting":"2020-09","mark":60,"sat":1079,"passed":703},
@@ -26,6 +28,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":60,"sat":1089,"passed":817},
     {"sitting":"2024-09","mark":65,"sat":1169,"passed":861},
     {"sitting":"2025-04","mark":59,"sat":639,"passed":401},
+    {"sitting":"2025-09","mark":58,"sat":941,"passed":579},
+    {"sitting":"2026-04","mark":58,"sat":887,"passed":550},
   ],
   CM1: [
     {"sitting":"2020-09","mark":58,"sat":1717,"passed":797},
@@ -38,6 +42,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":63,"sat":1981,"passed":872},
     {"sitting":"2024-09","mark":58,"sat":1599,"passed":480},
     {"sitting":"2025-04","mark":59,"sat":1376,"passed":548},
+    {"sitting":"2025-09","mark":59,"sat":1302,"passed":372},
+    {"sitting":"2026-04","mark":58,"sat":1794,"passed":591},
   ],
   CM2: [
     {"sitting":"2020-09","mark":60,"sat":1450,"passed":703},
@@ -50,6 +56,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":56,"sat":1307,"passed":583},
     {"sitting":"2024-09","mark":60,"sat":1426,"passed":661},
     {"sitting":"2025-04","mark":61,"sat":1012,"passed":483},
+    {"sitting":"2025-09","mark":59,"sat":1224,"passed":458},
+    {"sitting":"2026-04","mark":59,"sat":1200,"passed":545},
   ],
   CP1: [
     {"sitting":"2020-09","mark":55,"sat":878,"passed":364},
@@ -62,6 +70,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":56,"sat":1553,"passed":703},
     {"sitting":"2024-09","mark":53,"sat":891,"passed":394},
     {"sitting":"2025-04","mark":55,"sat":1249,"passed":544},
+    {"sitting":"2025-09","mark":55,"sat":759,"passed":317},
+    {"sitting":"2026-04","mark":54,"sat":1458,"passed":700},
   ],
   CP2: [
     {"sitting":"2020-09","mark":58,"sat":1252,"passed":797},
@@ -74,6 +84,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":61,"sat":1167,"passed":706},
     {"sitting":"2024-09","mark":60,"sat":1451,"passed":877},
     {"sitting":"2025-04","mark":59,"sat":968,"passed":572},
+    {"sitting":"2025-09","mark":57,"sat":1325,"passed":757},
+    {"sitting":"2026-04","mark":57,"sat":1069,"passed":609},
   ],
   CP3: [
     {"sitting":"2020-09","mark":55,"sat":1560,"passed":809},
@@ -86,6 +98,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":55,"sat":1357,"passed":647},
     {"sitting":"2024-09","mark":55,"sat":1692,"passed":966},
     {"sitting":"2025-04","mark":59,"sat":1322,"passed":702},
+    {"sitting":"2025-09","mark":57,"sat":1384,"passed":752},
+    {"sitting":"2026-04","mark":56,"sat":1060,"passed":551},
   ],
   CS1: [
     {"sitting":"2020-09","mark":60,"sat":1189,"passed":823},
@@ -98,6 +112,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":59,"sat":1613,"passed":771},
     {"sitting":"2024-09","mark":59,"sat":1672,"passed":849},
     {"sitting":"2025-04","mark":55,"sat":1070,"passed":469},
+    {"sitting":"2025-09","mark":58,"sat":1188,"passed":522},
+    {"sitting":"2026-04","mark":59,"sat":1306,"passed":586},
   ],
   CS2: [
     {"sitting":"2020-09","mark":56,"sat":1363,"passed":476},
@@ -110,6 +126,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":55,"sat":1286,"passed":463},
     {"sitting":"2024-09","mark":55,"sat":1167,"passed":549},
     {"sitting":"2025-04","mark":57,"sat":948,"passed":456},
+    {"sitting":"2025-09","mark":56,"sat":891,"passed":301},
+    {"sitting":"2026-04","mark":60,"sat":1207,"passed":510},
   ],
   SA1: [
     {"sitting":"2020-09","mark":60,"sat":54,"passed":20},
@@ -122,6 +140,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":56,"sat":80,"passed":37},
     {"sitting":"2024-09","mark":57,"sat":69,"passed":32},
     {"sitting":"2025-04","mark":55,"sat":50,"passed":22},
+    {"sitting":"2025-09","mark":55,"sat":44,"passed":13},
+    {"sitting":"2026-04","mark":59,"sat":54,"passed":21},
   ],
   SA2: [
     {"sitting":"2020-09","mark":64,"sat":391,"passed":165},
@@ -134,6 +154,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":56,"sat":570,"passed":194},
     {"sitting":"2024-09","mark":60,"sat":566,"passed":242},
     {"sitting":"2025-04","mark":45,"sat":441,"passed":199},
+    {"sitting":"2025-09","mark":45,"sat":400,"passed":139},
+    {"sitting":"2026-04","mark":57,"sat":483,"passed":217},
   ],
   SA3: [
     {"sitting":"2020-09","mark":65,"sat":394,"passed":183},
@@ -146,6 +168,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":65,"sat":492,"passed":224},
     {"sitting":"2024-09","mark":60,"sat":451,"passed":169},
     {"sitting":"2025-04","mark":58,"sat":443,"passed":140},
+    {"sitting":"2025-09","mark":60,"sat":457,"passed":195},
+    {"sitting":"2026-04","mark":59,"sat":516,"passed":208},
   ],
   SA4: [
     {"sitting":"2020-09","mark":55,"sat":217,"passed":87},
@@ -158,6 +182,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":54,"sat":176,"passed":74},
     {"sitting":"2024-09","mark":55,"sat":145,"passed":67},
     {"sitting":"2025-04","mark":55,"sat":167,"passed":88},
+    {"sitting":"2025-09","mark":58,"sat":136,"passed":68},
+    {"sitting":"2026-04","mark":56,"sat":164,"passed":61},
   ],
   SA7: [
     {"sitting":"2020-09","mark":59,"sat":112,"passed":54},
@@ -170,6 +196,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":58,"sat":110,"passed":57},
     {"sitting":"2024-09","mark":62,"sat":103,"passed":43},
     {"sitting":"2025-04","mark":59,"sat":83,"passed":42},
+    {"sitting":"2025-09","mark":53,"sat":76,"passed":27},
+    {"sitting":"2026-04","mark":53,"sat":78,"passed":23},
   ],
   SP1: [
     {"sitting":"2020-09","mark":60,"sat":276,"passed":128},
@@ -182,6 +210,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":55,"sat":334,"passed":185},
     {"sitting":"2024-09","mark":57,"sat":385,"passed":189},
     {"sitting":"2025-04","mark":55,"sat":218,"passed":111},
+    {"sitting":"2025-09","mark":60,"sat":260,"passed":130},
+    {"sitting":"2026-04","mark":58,"sat":250,"passed":121},
   ],
   SP2: [
     {"sitting":"2020-09","mark":60,"sat":599,"passed":308},
@@ -194,6 +224,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":53,"sat":576,"passed":294},
     {"sitting":"2024-09","mark":58,"sat":599,"passed":258},
     {"sitting":"2025-04","mark":55,"sat":418,"passed":175},
+    {"sitting":"2025-09","mark":56,"sat":498,"passed":204},
+    {"sitting":"2026-04","mark":53,"sat":434,"passed":204},
   ],
   SP4: [
     {"sitting":"2020-09","mark":63,"sat":226,"passed":81},
@@ -206,6 +238,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":60,"sat":151,"passed":82},
     {"sitting":"2024-09","mark":62,"sat":147,"passed":78},
     {"sitting":"2025-04","mark":58,"sat":131,"passed":85},
+    {"sitting":"2025-09","mark":58,"sat":153,"passed":70},
+    {"sitting":"2026-04","mark":58,"sat":146,"passed":70},
   ],
   SP5: [
     {"sitting":"2020-09","mark":62,"sat":336,"passed":162},
@@ -218,6 +252,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":63,"sat":262,"passed":145},
     {"sitting":"2024-09","mark":61,"sat":262,"passed":129},
     {"sitting":"2025-04","mark":60,"sat":192,"passed":98},
+    {"sitting":"2025-09","mark":64,"sat":253,"passed":132},
+    {"sitting":"2026-04","mark":55,"sat":250,"passed":126},
   ],
   SP6: [
     {"sitting":"2020-09","mark":60,"sat":68,"passed":23},
@@ -230,6 +266,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":60,"sat":22,"passed":17},
     {"sitting":"2024-09","mark":60,"sat":42,"passed":33},
     {"sitting":"2025-04","mark":59,"sat":25,"passed":13},
+    {"sitting":"2025-09","mark":60,"sat":39,"passed":18},
+    {"sitting":"2026-04","mark":60,"sat":37,"passed":10},
   ],
   SP7: [
     {"sitting":"2020-09","mark":59,"sat":399,"passed":80},
@@ -242,6 +280,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":60,"sat":456,"passed":210},
     {"sitting":"2024-09","mark":61,"sat":420,"passed":206},
     {"sitting":"2025-04","mark":60,"sat":397,"passed":173},
+    {"sitting":"2025-09","mark":64,"sat":385,"passed":148},
+    {"sitting":"2026-04","mark":59,"sat":492,"passed":152},
   ],
   SP8: [
     {"sitting":"2020-09","mark":57,"sat":337,"passed":125},
@@ -254,6 +294,8 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":62,"sat":434,"passed":171},
     {"sitting":"2024-09","mark":57,"sat":439,"passed":199},
     {"sitting":"2025-04","mark":57,"sat":387,"passed":139},
+    {"sitting":"2025-09","mark":58,"sat":401,"passed":206},
+    {"sitting":"2026-04","mark":54,"sat":385,"passed":91},
   ],
   SP9: [
     {"sitting":"2020-09","mark":61,"sat":329,"passed":132},
@@ -266,5 +308,7 @@ const PASS_STATS = {
     {"sitting":"2024-04","mark":60,"sat":167,"passed":79},
     {"sitting":"2024-09","mark":57,"sat":157,"passed":70},
     {"sitting":"2025-04","mark":55,"sat":147,"passed":54},
+    {"sitting":"2025-09","mark":57,"sat":150,"passed":67},
+    {"sitting":"2026-04","mark":61,"sat":171,"passed":66},
   ],
 };
