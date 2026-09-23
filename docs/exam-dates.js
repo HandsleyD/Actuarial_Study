@@ -1,0 +1,78 @@
+// IFoA exam sessions: which paper sits on which day, booking windows and
+// results days. Copied by hand from https://actuaries.org.uk/exam-dates/ --
+// the IFoA publishes no feed to pull this from, so update it (and CHECKED)
+// whenever a new session appears there. Dates are UK dates, "YYYY-MM-DD";
+// every paper starts at 09:00 UK time.
+//
+// results: "core" covers CS, CM and CB subjects; "advanced" covers CP, SP and
+// SA. breakdown (the per-question mark breakdown) is only listed for some
+// sessions. Papers are matched to a subject by their first three characters,
+// so "CM1A" and "CP1 paper 2" belong to CM1 and CP1.
+const EXAM_DATES = {
+  checked: "2026-09-23",
+  source: "https://actuaries.org.uk/exam-dates/",
+  sessions: [
+    {
+      name: "September 2026",
+      deadlines: [
+        { date: "2026-06-22", label: "Last day to apply for membership or reinstate lapsed membership" },
+        { date: "2026-07-13", label: "Exam entry opens" },
+        { date: "2026-07-24", label: "Exam entry closes (12:00 midday UK)" },
+        { date: "2026-10-23", label: "Mitigating circumstances applications close" },
+      ],
+      results: { core: "2026-12-08", advanced: "2026-12-10" },
+      papers: {
+        "2026-09-14": ["CM1A", "CP1 paper 1"],
+        "2026-09-15": ["CS2A", "CP1 paper 2", "SP2"],
+        "2026-09-16": ["CM1B", "SA1", "SA2", "SA3", "SA4", "SA7"],
+        "2026-09-17": ["CS2B", "CP2 paper 1", "SP1", "SP4"],
+        "2026-09-18": ["CS1A", "CP2 paper 2", "SP9"],
+        "2026-09-22": ["CS1B", "SP5", "SP7", "CB1"],
+        "2026-09-23": ["CM2A", "CB2", "SP8", "SP6"],
+        "2026-09-24": ["CM2B", "CP3"],
+      },
+    },
+    {
+      name: "April 2027",
+      deadlines: [
+        { date: "2027-01-04", label: "Last day to reinstate lapsed membership" },
+        { date: "2027-01-18", label: "Last day to apply for student membership" },
+        { date: "2027-01-25", label: "Exam entry opens" },
+        { date: "2027-02-05", label: "Exam entry closes (12:00 midday UK)" },
+      ],
+      results: { core: "2027-07-06", advanced: "2027-07-08" },
+      breakdown: { core: "2027-07-07", advanced: "2027-07-09" },
+      papers: {
+        "2027-04-12": ["CM1A", "CP1 paper 1"],
+        "2027-04-13": ["CS1A", "SP1", "SP2", "SP4", "SP8"],
+        "2027-04-14": ["CM1B", "CP1 paper 2", "SA1", "SA2"],
+        "2027-04-15": ["CS1B", "CP2 paper 1", "SP7", "SP9"],
+        "2027-04-16": ["CS2A", "CB2", "SP5"],
+        "2027-04-19": ["CM2A", "CP2 paper 2", "SP6"],
+        "2027-04-20": ["CS2B", "CP3", "SA7"],
+        "2027-04-21": ["CM2B", "CB1", "SA3", "SA4"],
+      },
+    },
+    {
+      name: "September 2027",
+      deadlines: [
+        { date: "2027-06-21", label: "Last day to reinstate lapsed membership" },
+        { date: "2027-07-05", label: "Last day to apply for student membership" },
+        { date: "2027-07-12", label: "Exam entry opens" },
+        { date: "2027-07-23", label: "Exam entry closes (12:00 midday UK)" },
+      ],
+      results: { core: "2027-12-07", advanced: "2027-12-09" },
+      breakdown: { core: "2027-12-08", advanced: "2027-12-10" },
+      papers: {
+        "2027-09-13": ["CS2A", "CP2 paper 1", "SP5"],
+        "2027-09-14": ["CM2A", "CB1", "SP6"],
+        "2027-09-15": ["CS2B", "CP2 paper 2", "SA7"],
+        "2027-09-16": ["CM2B", "CB2", "SA3", "SA4"],
+        "2027-09-17": ["CM1A", "CP3"],
+        "2027-09-20": ["CS1A", "CP1 paper 1", "SA1", "SA2"],
+        "2027-09-21": ["CM1B", "SP1", "SP2", "SP4", "SP8"],
+        "2027-09-22": ["CS1B", "CP1 paper 2", "SP7", "SP9"],
+      },
+    },
+  ],
+};
