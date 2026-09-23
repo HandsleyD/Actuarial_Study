@@ -19,6 +19,10 @@
 // they disagree (a typo in one of them) the first report's figures are kept
 // and the difference is recorded as a note shown on the site.
 //
+// From September 2025 the reports are only published on the IFoA's
+// members-only VLE, so those sittings are kept as short excerpts holding just
+// the pass mark section rather than the full converted report.
+//
 // Re-run after adding new examiners' reports:
 //   node scripts/extract-exam-stats.mjs
 // or check that docs/exam-stats.js is up to date without writing it:
@@ -37,7 +41,7 @@ const num = (s) => Number(s.replace(/,/g, ""));
 
 function parseReport(text) {
   const flat = text.replace(/\s+/g, " ");
-  const counts = flat.match(/([\d,]+) (?:candidates )?presented themselves and ([\d,]+) ?(?:candidates )?passed/i);
+  const counts = flat.match(/([\d,]+) (?:candidates )?presented themselves,? and ([\d,]+) ?(?:candidates )?passed/i);
   if (!counts) return null;
   const before = flat.slice(Math.max(0, counts.index - 1500), counts.index);
   const marks = [...before.matchAll(/pass mark\b[^.]*?\b(?:was|is|at|as|to|of)\s+(\d{2})\b|pass mark:\s*(\d{2})\b/gi)];
