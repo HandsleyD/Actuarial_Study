@@ -2551,13 +2551,14 @@ h1, h2, h3,
 }
 .ico-star { fill: var(--star); stroke: var(--star); stroke-width: 1.2; }
 
-/* header: roundel + name, round icon buttons */
+/* header: the Route F mark + name, round icon buttons */
 .topbar { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 1px solid var(--border); }
 .topbar h1 { font-size: 1.3rem; }
 .topbar-home { display: inline-flex; align-items: center; gap: 12px; }
-.roundel { width: 38px; height: 26px; flex-shrink: 0; }
-.roundel circle { fill: none; stroke: var(--accent); stroke-width: 5.5; }
-.roundel rect { fill: var(--text); }
+/* An "F" drawn as a route: a red line with stations at its three ends. */
+.mark { width: 30px; height: 30px; flex-shrink: 0; }
+.mark-line { fill: none; stroke: var(--rm-principles); stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; }
+.mark-stop { fill: var(--bg); stroke: var(--text); stroke-width: 2.4; }
 
 .icon-btn {
   display: inline-flex;
@@ -2716,7 +2717,7 @@ a.btn { display: inline-flex; }
 
 @media (max-width: 640px) {
   .topbar h1 { font-size: 1.05rem; }
-  .roundel { width: 30px; height: 21px; }
+  .mark { width: 26px; height: 26px; }
   .topbar-home { gap: 8px; }
   .subject-head h2 { font-size: 1.7rem; }
   .card-stamp { top: 56px; right: 16px; font-size: 1.25rem; }
@@ -2783,7 +2784,7 @@ a.btn { display: inline-flex; }
    the name still shows in full. */
 @media (max-width: 360px) {
   .topbar-inner { gap: 8px; }
-  .topbar .roundel { display: none; }
+  .topbar .mark { display: none; }
   .brand-name { font-size: 1.15rem; }
   .topbar-right { gap: 4px; }
   .topbar .icon-btn { width: 30px; height: 30px; }
