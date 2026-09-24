@@ -26,6 +26,7 @@ const Store = (function () {
   const SRS_TABLE = "flashcard_srs"; // added by supabase/migrations/002_spaced_repetition.sql
   const DRILL_TABLE = "drill_progress"; // added by supabase/migrations/003_drills.sql
   const PLAN_TABLE = "exam_plan"; // added by supabase/migrations/004_exam_plan.sql
+  const RESULT_TABLE = "subject_result"; // added by supabase/migrations/005_subject_results.sql
   // Reviews with more than this much idle time between them belong to separate sessions.
   const SESSION_GAP_MS = 30 * 60 * 1000;
 
@@ -46,6 +47,7 @@ const Store = (function () {
   // 003 degrades on drills alone, rather than looking broken everywhere.
   let drillTableMissing = false;
   let planTableMissing = false; // and again for the exam plan (004_exam_plan.sql)
+  let resultTableMissing = false; // and for exam results (005_subject_results.sql)
 
   function looksLikeMissingTable(error, table) {
     const code = error && error.code;
@@ -228,6 +230,9 @@ const Store = (function () {
         const examCode = key.split(":").pop();
         const map = readLS(key, {});
         Object.keys(map).forEach((itemId) => enqueue({ type: "drill", examCode, itemId, value: map[itemId] }));
+      } else if (key === `${LS_PREFIX}:result:${uKey}`) {
+        const map = readLS(key, {});
+        Object.keys(map).forEach((examCode) => enqueue({ type: "result", examCode, value: map[examCode] }));
       } else if (key === `${LS_PREFIX}:plan:${uKey}`) {
         const plan = readLS(key, null);
         if (plan) enqueue({ type: "plan", value: plan });
@@ -700,8 +705,83 @@ const Store = (function () {
     planListeners.push(cb);
   }
 
+  // Likewise for exam results.
+  const resultListeners = [];
+  function onResultsChange(cb) {
+    resultListeners.push(cb);
+  }
+
+  function notifyListeners(list) {
+    list.forEach((cb) => {
+      try {
+        cb();
+      } catch {
+        /* a listener throwing shouldn't requeue anything */
+      }
+    });
+  }
+
   function isPlanTableMissing() {
     return planTableMissing;
+  }
+
+  /* ---------- exam results ---------- */
+  //
+  // Whether the user has passed, or been exempted from, each subject. This is
+  // separate from module status: modules track revision, results track the
+  // exam itself, and only results count towards Associate and Fellow.
+  //
+  // Shape: { examCode: { status: "passed" | "exempt" | "none", sitting, updatedAt } }
+  // "none" is kept rather than deleting the entry, so clearing a result on
+  // one device syncs to the others like any other change.
+
+  function getResultsCache() {
+    return readLS(lsKey("result"), {});
+  }
+
+  async function loadResults() {
+    if (!client || !currentUser) return getResultsCache();
+    try {
+      const { data, error } = await client.from(RESULT_TABLE).select("exam_code, status, sitting, updated_at");
+      if (error) {
+        resultTableMissing = looksLikeMissingTable(error, RESULT_TABLE);
+        throw error;
+      }
+      resultTableMissing = false;
+      // Re-read after the fetch so a result set while it was in flight wins.
+      const merged = getResultsCache();
+      (data || []).forEach((row) => {
+        const remote = { status: row.status, sitting: row.sitting, updatedAt: Date.parse(row.updated_at) || 0 };
+        const local = merged[row.exam_code];
+        if (!local || remote.updatedAt > (local.updatedAt || 0)) merged[row.exam_code] = remote;
+      });
+      writeLS(lsKey("result"), merged);
+      return merged;
+    } catch {
+      return getResultsCache(); // table missing (005 not run yet) or offline
+    }
+  }
+
+  function setResult(examCode, status, sitting) {
+    const cache = getResultsCache();
+    const value = { status, sitting: sitting || null, updatedAt: Date.now() };
+    cache[examCode] = value;
+    writeLS(lsKey("result"), cache);
+    enqueue({ type: "result", examCode, value });
+    return cache;
+  }
+
+  function isResultTableMissing() {
+    return resultTableMissing;
+  }
+
+  // Per-device "don't show the welcome banner again".
+  function isWelcomed() {
+    return !!readLS(lsKey("welcomed"), false);
+  }
+
+  function setWelcomed() {
+    writeLS(lsKey("welcomed"), true);
   }
 
   // Grades a typed flashcard answer against the model answer using a
@@ -812,13 +892,7 @@ const Store = (function () {
           const remote = await fetchRemotePlan();
           if (remote && (remote.updatedAt || 0) >= (op.value.updatedAt || 0)) {
             adoptRemotePlanIfNewer(remote);
-            planListeners.forEach((cb) => {
-              try {
-                cb();
-              } catch {
-                /* a listener throwing shouldn't requeue the plan */
-              }
-            });
+            notifyListeners(planListeners);
           } else {
             const { error } = await client
               .from(PLAN_TABLE)
@@ -834,6 +908,7 @@ const Store = (function () {
         }
       }
 
+      let resultsChanged = false;
       for (const op of list) {
         if (op.userId && op.userId !== currentUser.id) {
           remaining.push(op); // belongs to a different (now signed-out) account — leave it queued
@@ -853,6 +928,43 @@ const Store = (function () {
               { onConflict: "user_id,exam_code,module_id" }
             );
             if (error) throw error;
+          } else if (op.type === "result") {
+            // Newer-wins on upload too: skip (and adopt) a server row that
+            // another device saved after this queued change was made.
+            const { data: existing, error: readError } = await client
+              .from(RESULT_TABLE)
+              .select("status, sitting, updated_at")
+              .eq("exam_code", op.examCode)
+              .maybeSingle();
+            if (readError) {
+              resultTableMissing = looksLikeMissingTable(readError, RESULT_TABLE);
+              throw readError;
+            }
+            const serverAt = existing ? Date.parse(existing.updated_at) || 0 : 0;
+            if (existing && serverAt >= op.value.updatedAt) {
+              const cache = getResultsCache();
+              if (!cache[op.examCode] || (cache[op.examCode].updatedAt || 0) < serverAt) {
+                cache[op.examCode] = { status: existing.status, sitting: existing.sitting, updatedAt: serverAt };
+                writeLS(lsKey("result"), cache);
+                resultsChanged = true;
+              }
+              continue;
+            }
+            const { error } = await client.from(RESULT_TABLE).upsert(
+              {
+                user_id: currentUser.id,
+                exam_code: op.examCode,
+                status: op.value.status,
+                sitting: op.value.sitting,
+                updated_at: new Date(op.value.updatedAt).toISOString(),
+              },
+              { onConflict: "user_id,exam_code" }
+            );
+            if (error) {
+              resultTableMissing = looksLikeMissingTable(error, RESULT_TABLE);
+              throw error;
+            }
+            resultTableMissing = false;
           } else if (op.type === "mastery") {
             const { error } = await client.from(MASTERY_TABLE).upsert(
               {
@@ -894,6 +1006,7 @@ const Store = (function () {
           remaining.push(op); // network/transient error — keep for retry
         }
       }
+      if (resultsChanged) notifyListeners(resultListeners);
     } finally {
       // Anything enqueued while this flush was awaiting the network was
       // appended after the snapshot we started from — keep it, don't clobber it.
@@ -945,6 +1058,13 @@ const Store = (function () {
     getExamPlanCache,
     isPlanTableMissing,
     onPlanChange,
+    onResultsChange,
+    loadResults,
+    setResult,
+    getResultsCache,
+    isResultTableMissing,
+    isWelcomed,
+    setWelcomed,
     loadStreak,
     bumpStreak,
     getStreakCache,

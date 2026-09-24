@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Sync tests for the exam plan in docs/store.js, run against a fake Supabase
-// client and an in-memory localStorage.
+// Sync tests for the exam plan and exam results in docs/store.js, run against
+// a fake Supabase client and an in-memory localStorage.
 // Run: node scripts/test-plan-sync.mjs   (also runs in CI — validate-content.yml)
 
 import { readFileSync } from "node:fs";
@@ -11,6 +11,8 @@ const mem = {};
 let server = null; // the user's exam_plan row's plan column, or null
 let fetchDelay = 0;
 let upserts = 0;
+const resultRows = {}; // exam_code -> { status, sitting, updated_at }
+let resultUpserts = 0;
 
 const ctx = {
   console,
@@ -35,7 +37,26 @@ const ctx = {
         getSession: async () => ({ data: { session: { user: { id: "u1" } } } }),
         onAuthStateChange() {},
       },
-      from: (table) => ({
+      from: (table) =>
+        table === "subject_result"
+          ? {
+              select: () => ({
+                eq: (_col, code) => ({
+                  maybeSingle: async () => ({ data: resultRows[code] || null, error: null }),
+                }),
+                then: (res, rej) =>
+                  Promise.resolve({
+                    data: Object.entries(resultRows).map(([exam_code, r]) => ({ exam_code, ...r })),
+                    error: null,
+                  }).then(res, rej),
+              }),
+              upsert: async (row) => {
+                resultUpserts++;
+                resultRows[row.exam_code] = { status: row.status, sitting: row.sitting, updated_at: row.updated_at };
+                return { error: null };
+              },
+            }
+          : {
         select: () => ({
           // Returns the row as it was when the request was sent, like a real
           // round trip, so edits made while it's in flight aren't in it.
@@ -53,7 +74,7 @@ const ctx = {
           }
           return { error: null };
         },
-      }),
+      },
     }),
   },
 };
@@ -106,4 +127,35 @@ await test("a stale queued plan doesn't overwrite a newer one from another devic
   assert.ok(!JSON.parse(mem["actuarialStudy:pending"]).some((op) => op.type === "plan"), "stale op left queued");
 });
 
-console.log(`${passed} plan sync test(s) passed.`);
+await test("a result uploads with the time it was made, and a newer server result wins on load", async () => {
+  Store.setResult("CB1", "exempt", null);
+  await settle();
+  assert.equal(resultRows.CB1.status, "exempt");
+  const madeAt = Store.getResultsCache().CB1.updatedAt;
+  assert.equal(Date.parse(resultRows.CB1.updated_at), madeAt);
+  resultRows.CB2 = { status: "passed", sitting: "2026-09", updated_at: new Date(Date.now() + 1000).toISOString() };
+  resultRows.CB1 = { status: "none", sitting: null, updated_at: new Date(madeAt - 5000).toISOString() };
+  const loaded = await Store.loadResults();
+  assert.equal(loaded.CB2.status, "passed");
+  assert.equal(loaded.CB1.status, "exempt", "older server row overwrote a newer local result");
+});
+
+await test("a stale queued result doesn't overwrite a newer one from another device", async () => {
+  const stale = Date.now() - 60000;
+  resultRows.CM1 = { status: "passed", sitting: "2026-09", updated_at: new Date().toISOString() };
+  mem["actuarialStudy:pending"] = JSON.stringify([
+    { type: "result", examCode: "CM1", value: { status: "none", sitting: null, updatedAt: stale }, userId: "u1", ts: stale },
+  ]);
+  let notified = 0;
+  Store.onResultsChange(() => notified++);
+  const before = resultUpserts;
+  Store.setModuleStatus("CB1", "m02", "Done");
+  await settle();
+  assert.equal(resultUpserts, before, "stale result was uploaded");
+  assert.equal(resultRows.CM1.status, "passed");
+  assert.equal(Store.getResultsCache().CM1.status, "passed");
+  assert.equal(notified, 1);
+  assert.ok(!JSON.parse(mem["actuarialStudy:pending"]).some((op) => op.type === "result"), "stale op left queued");
+});
+
+console.log(`${passed} sync test(s) passed.`);
