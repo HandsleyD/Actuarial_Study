@@ -442,13 +442,12 @@ async function fetchRaw(code) {
   return res.text();
 }
 
-// Module status baseline: read-only, unauthenticated fetch of progress.md
-// from the public repo. This stays as-is (no Supabase involved) since it's
-// also the file your study-session chats edit directly — it's a useful
-// starting point for anyone loading the site, logged in or not. Once
-// Supabase is configured and you're signed in, any status you toggle on the
-// site is layered on top of this baseline and saved to your account, not
-// written back to progress.md.
+// Module list: read-only, unauthenticated fetch of progress.md from the
+// public repo, used only for which modules a subject has. Its Status column
+// is the repo author's own progress, so it's ignored -- every visitor starts
+// at "Not started" and only sees statuses they've set themselves (saved on
+// this device, and to their account when signed in). Otherwise a signed-out
+// visitor would see e.g. CB2 flagged "Currently studying" on first load.
 async function loadExam(code) {
   let baseModules = null;
   try {
@@ -461,7 +460,7 @@ async function loadExam(code) {
   const overrides = await Store.loadModuleStatus(code);
 
   if (baseModules) {
-    examData[code] = { modules: baseModules.map((m) => ({ ...m, status: overrides[m.id] || m.status })) };
+    examData[code] = { modules: baseModules.map((m) => ({ ...m, status: overrides[m.id] || STATUSES[0] })) };
   } else {
     const ids = Object.keys(overrides).sort();
     examData[code] = ids.length
@@ -2993,6 +2992,10 @@ function renderRoute() {
   document.getElementById("searchView").hidden = r.view !== "search";
   document.getElementById("drillView").hidden = r.view !== "drill";
   document.getElementById("examHubView").hidden = r.view !== "exams";
+  document.querySelectorAll(".topbar .nav-link").forEach((a) => {
+    if (a.dataset.view === r.view) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
   if (r.view !== "questions") pauseQTimer();
   document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
