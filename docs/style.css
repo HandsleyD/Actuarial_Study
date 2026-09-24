@@ -2721,3 +2721,33 @@ a.btn { display: inline-flex; }
   .subject-head h2 { font-size: 1.7rem; }
   .card-stamp { top: 56px; right: 16px; font-size: 1.25rem; }
 }
+
+/* ---------- home: subjects grouped by line ---------- */
+
+.exam-groups { display: flex; flex-direction: column; gap: 30px; }
+
+.exam-group[data-stage="principles"] { --line: var(--rm-principles); }
+.exam-group[data-stage="practice"] { --line: var(--rm-practice); }
+.exam-group[data-stage="sp"] { --line: var(--rm-sp); }
+.exam-group[data-stage="sa"] { --line: var(--rm-sa); }
+
+.exam-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  margin-bottom: 14px;
+  border-top: 6px solid var(--line);
+}
+
+.exam-group-title { margin: 0; font-size: 1.35rem; }
+
+.exam-group-summary {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
