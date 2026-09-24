@@ -43,6 +43,7 @@ way as above (SQL Editor → New query → paste → Run):
 |------|------|------------|
 | [`migrations/002_spaced_repetition.sql`](./migrations/002_spaced_repetition.sql) | `flashcard_srs` table (+ RLS policy) | Syncing flashcard review schedules ("Due today", the study dashboard's weak areas) across devices |
 | [`migrations/003_drills.sql`](./migrations/003_drills.sql) | `drill_progress` table (+ RLS policy) | Syncing drill results &mdash; the marked multiple-choice, select-all and fill-the-gap questions &mdash; and their review schedules across devices |
+| [`migrations/004_exam_plan.sql`](./migrations/004_exam_plan.sql) | `exam_plan` table (+ RLS policy) | Syncing the study dashboard's exam plan (which subjects you intend to sit at each sitting) across devices |
 
 Each file is additive and guarded (`create table if not exists`, policies
 dropped and recreated), so re-running one by accident is harmless.
@@ -56,6 +57,9 @@ table exists). The Account panel says so while it's waiting.
 `003_drills.sql` behaves the same way: until it's run, drills still work and
 are still marked and scheduled, but results stay on the device you answered
 on and upload once the table exists.
+
+`004_exam_plan.sql` is the same again: until it's run, the exam planner
+works but the plan stays on the device you made it on.
 
 ## 3. (Optional) Skip email confirmation
 
