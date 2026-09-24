@@ -24,6 +24,9 @@ on:
       - "scripts/test-srs.mjs"
       - "docs/store.js"
       - "scripts/test-plan-sync.mjs"
+      - "docs/route.js"
+      - "docs/exam-dates.js"
+      - "scripts/test-route.mjs"
       - "docs/exam-stats.js"
       - "scripts/extract-exam-stats.mjs"
       - "maths-study/resources/past-papers/processed/**/*examiner-report*"
@@ -39,6 +42,9 @@ on:
       - "scripts/test-srs.mjs"
       - "docs/store.js"
       - "scripts/test-plan-sync.mjs"
+      - "docs/route.js"
+      - "docs/exam-dates.js"
+      - "scripts/test-route.mjs"
       - "docs/exam-stats.js"
       - "scripts/extract-exam-stats.mjs"
       - "maths-study/resources/past-papers/processed/**/*examiner-report*"
@@ -61,6 +67,9 @@ jobs:
 
       - name: Exam plan sync tests
         run: node scripts/test-plan-sync.mjs
+
+      - name: Route to Associate and Fellow tests
+        run: node scripts/test-route.mjs
 
       - name: Pass-rate data matches the examiners' reports
         run: node scripts/extract-exam-stats.mjs --check
