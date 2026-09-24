@@ -2551,13 +2551,14 @@ h1, h2, h3,
 }
 .ico-star { fill: var(--star); stroke: var(--star); stroke-width: 1.2; }
 
-/* header: roundel + name, round icon buttons */
+/* header: the Route F mark + name, round icon buttons */
 .topbar { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 1px solid var(--border); }
 .topbar h1 { font-size: 1.3rem; }
 .topbar-home { display: inline-flex; align-items: center; gap: 12px; }
-.roundel { width: 38px; height: 26px; flex-shrink: 0; }
-.roundel circle { fill: none; stroke: var(--accent); stroke-width: 5.5; }
-.roundel rect { fill: var(--text); }
+/* An "F" drawn as a route: a red line with stations at its three ends. */
+.mark { width: 30px; height: 30px; flex-shrink: 0; }
+.mark-line { fill: none; stroke: var(--rm-principles); stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; }
+.mark-stop { fill: var(--bg); stroke: var(--text); stroke-width: 2.4; }
 
 .icon-btn {
   display: inline-flex;
@@ -2716,7 +2717,7 @@ a.btn { display: inline-flex; }
 
 @media (max-width: 640px) {
   .topbar h1 { font-size: 1.05rem; }
-  .roundel { width: 30px; height: 21px; }
+  .mark { width: 26px; height: 26px; }
   .topbar-home { gap: 8px; }
   .subject-head h2 { font-size: 1.7rem; }
   .card-stamp { top: 56px; right: 16px; font-size: 1.25rem; }
@@ -2750,4 +2751,42 @@ a.btn { display: inline-flex; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+/* ---------- brand: "Fellow" with a descriptor ---------- */
+
+.brand { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }
+.brand-sub {
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .brand-name { font-size: 1.25rem; }
+  .brand-sub { font-size: 0.55rem; letter-spacing: 0.1em; }
+}
+
+.brand-sub { white-space: nowrap; }
+.topbar h1 { min-width: 0; overflow: hidden; }
+
+/* Narrow phones: the name alone (the header's icons need the room). */
+@media (max-width: 420px) {
+  .brand-sub { display: none; }
+}
+
+/* The narrowest phones (≈320px): drop the mark and tighten the icons so
+   the name still shows in full. */
+@media (max-width: 360px) {
+  .topbar-inner { gap: 8px; }
+  .topbar .mark { display: none; }
+  .brand-name { font-size: 1.15rem; }
+  .topbar-right { gap: 4px; }
+  .topbar .icon-btn { width: 30px; height: 30px; }
+  .topbar .icon-btn .ico { width: 17px; height: 17px; }
 }
