@@ -1780,7 +1780,7 @@ function renderDashboardView() {
     <button class="back-link" id="backFromDash">&larr; All subjects</button>
     <div class="subject-head">
       <h2>Study dashboard</h2>
-      <p class="subject-blurb">What's due, where you keep slipping, and mastery by subject and module.${
+      <p class="subject-blurb">What's due, where you keep slipping, mastery by subject and module, and your exam plan.${
         Store.isConfigured() && Store.getUser() ? "" : " Showing this device's data &mdash; sign in to combine devices."
       }</p>
     </div>
@@ -1829,6 +1829,8 @@ function renderDashboardView() {
       <div class="heat-legend">Less <span class="heat-cell l0"></span><span class="heat-cell l1"></span><span class="heat-cell l2"></span><span class="heat-cell l3"></span><span class="heat-cell l4"></span> More</div>
     </section>
 
+    ${planSectionHtml()}
+
     ${paceSectionHtml()}
 
     <section class="dash-section">
@@ -1845,12 +1847,328 @@ function renderDashboardView() {
   `;
 
   document.getElementById("backFromDash").addEventListener("click", () => navigate("#/"));
+  wirePlanSection(el);
   renderMath(el);
 }
 
 function refreshDashboardActivity() {
   Store.loadActivity().then((a) => {
     activityData = a;
+    if (parseHash().view === "dashboard") renderDashboardView();
+  });
+}
+
+/* ---------- exam planner (study dashboard) ---------- */
+//
+// Which subjects the user intends to sit at which sitting, laid out sitting
+// by sitting, with checks against the published timetable (exam-dates.js)
+// and a projection of when Associate and Fellow would be reached if every
+// planned exam is passed. Sittings are April and September; ones the IFoA
+// hasn't published yet are assumed to follow the same pattern.
+
+let examPlan = Store.getExamPlanCache(); // { sittings: { "2027-04": ["CS1"] }, updatedAt }
+let planExtraSittings = 0; // "Show later sittings" clicks this page load
+
+const PLAN_MAX_PER_SITTING = 3;
+const MONTH_NUM = { april: "04", september: "09" };
+
+// CB3 is an online assessment booked through the member portal, outside the
+// April/September sittings, so it isn't something to place in one.
+const PLANNABLE = EXAMS.filter((c) => c !== "CB3");
+
+function planGroup(code) {
+  if (/^C[BMS]/.test(code)) return "Core Principles";
+  if (code.startsWith("CP")) return "Core Practice";
+  if (code.startsWith("SP")) return "Specialist Principles";
+  return "Specialist Advanced";
+}
+
+function sessionSittingId(session) {
+  const [month, year] = session.name.toLowerCase().split(" ");
+  return MONTH_NUM[month] ? `${year}-${MONTH_NUM[month]}` : null;
+}
+
+function sittingName(id) {
+  const [y, m] = id.split("-");
+  return `${m === "04" ? "April" : "September"} ${y}`;
+}
+
+function nextSittingId(id) {
+  const [y, m] = id.split("-");
+  return m === "04" ? `${y}-09` : `${Number(y) + 1}-04`;
+}
+
+// One sitting: published dates when the IFoA has them, else an estimate
+// (mid-April / mid-September) so countdowns and pacing still work.
+function sittingInfo(id) {
+  const session =
+    (typeof EXAM_DATES !== "undefined" && EXAM_DATES.sessions.find((s) => sessionSittingId(s) === id)) || null;
+  if (session) {
+    const dates = Object.keys(session.papers).sort();
+    const entry = session.deadlines.find((d) => /entry closes/i.test(d.label));
+    return { id, session, first: dates[0], last: dates[dates.length - 1], entryCloses: entry ? entry.date : null };
+  }
+  const approx = `${id}-15`;
+  return { id, session: null, first: approx, last: approx, entryCloses: null };
+}
+
+// Sittings to show: any past sitting that still has subjects planned in it
+// (so they can be marked done or cleared), then upcoming ones.
+function planSittingList() {
+  const today = SRS.today();
+  const planned = Object.keys(examPlan.sittings).filter((id) => examPlan.sittings[id].length).sort();
+  let id = "2026-04";
+  while (sittingInfo(id).first <= today) id = nextSittingId(id);
+  const upcoming = [];
+  const lastPlanned = planned[planned.length - 1] || "";
+  const minCount = 4 + planExtraSittings;
+  while (upcoming.length < minCount || id <= lastPlanned) {
+    upcoming.push(id);
+    id = nextSittingId(id);
+  }
+  const past = planned.filter((p) => p < upcoming[0]);
+  return [...past, ...upcoming].map(sittingInfo);
+}
+
+function plannedSittingOf(code) {
+  return Object.keys(examPlan.sittings).find((id) => examPlan.sittings[id].includes(code)) || null;
+}
+
+function savePlan(sittings) {
+  Object.keys(sittings).forEach((id) => {
+    if (!sittings[id].length) delete sittings[id];
+  });
+  examPlan = Store.setExamPlan(sittings);
+  renderSyncStatus();
+  renderDashboardView();
+}
+
+// Adding a subject that's planned elsewhere moves it: a resit or a change of
+// mind, either way it only belongs in one sitting.
+function planAdd(sittingId, code) {
+  const sittings = JSON.parse(JSON.stringify(examPlan.sittings));
+  Object.keys(sittings).forEach((id) => (sittings[id] = sittings[id].filter((c) => c !== code)));
+  sittings[sittingId] = [...(sittings[sittingId] || []), code].sort(
+    (a, b) => PLANNABLE.indexOf(a) - PLANNABLE.indexOf(b)
+  );
+  savePlan(sittings);
+}
+
+function planRemove(sittingId, code) {
+  const sittings = JSON.parse(JSON.stringify(examPlan.sittings));
+  sittings[sittingId] = (sittings[sittingId] || []).filter((c) => c !== code);
+  savePlan(sittings);
+}
+
+function modulesLeft(code) {
+  const d = examData[code];
+  if (!d || d.error) return null;
+  return d.modules.filter((m) => m.status.toLowerCase() !== "done").length;
+}
+
+function qualifiesAssociate(done) {
+  return CORE_SUBJECTS.every((c) => done.has(c));
+}
+
+function qualifiesFellow(done) {
+  return (
+    qualifiesAssociate(done) &&
+    SP_CHOICES.filter((c) => done.has(c)).length >= 2 &&
+    SA_CHOICES.filter((c) => done.has(c)).length >= 1
+  );
+}
+
+function sittingWarnings(info, codes) {
+  const out = [];
+  if (codes.length > PLAN_MAX_PER_SITTING) {
+    out.push(`${codes.length} subjects in one sitting &mdash; most students sit ${PLAN_MAX_PER_SITTING} at most.`);
+  }
+  if (!info.session) return out;
+  const byDate = {};
+  codes.forEach((code) => {
+    const papers = sessionPapers(info.session, code);
+    if (!papers.length) {
+      out.push(`${code} isn't on the ${info.session.name} timetable.`);
+      return;
+    }
+    new Set(papers.map((p) => p.date)).forEach((d) => (byDate[d] = [...(byDate[d] || []), code]));
+  });
+  Object.keys(byDate)
+    .sort()
+    .forEach((d) => {
+      if (byDate[d].length > 1) {
+        out.push(
+          `${byDate[d].join(" and ")} both have a paper on ${fmtHubDate(d, true)} &mdash; every paper starts at 09:00, so they clash.`
+        );
+      }
+    });
+  return out;
+}
+
+function planSectionHtml() {
+  const today = SRS.today();
+  const sittings = planSittingList();
+  const doneNow = new Set(EXAMS.filter(isSubjectDone));
+
+  // Walk the sittings in order, pretending every planned exam is passed, to
+  // find when each qualification would be reached.
+  const projected = new Set(doneNow);
+  let associateAt = qualifiesAssociate(projected) ? "now" : null;
+  let fellowAt = qualifiesFellow(projected) ? "now" : null;
+  let prevEnd = today;
+
+  const rows = sittings.map((info) => {
+    const codes = examPlan.sittings[info.id] || [];
+    const past = info.first <= today; // started or finished: nothing left to plan in it
+    codes.forEach((c) => projected.add(c));
+    const cb3Ok = projected.has("CB3");
+    projected.add("CB3"); // assume CB3 is fitted in alongside; flagged below if not passed yet
+    if (!associateAt && qualifiesAssociate(projected)) associateAt = { info, codes, cb3: !cb3Ok };
+    if (!fellowAt && qualifiesFellow(projected)) fellowAt = { info, codes, cb3: !cb3Ok };
+    if (!cb3Ok) projected.delete("CB3");
+
+    const name = sittingName(info.id);
+    const dateRange = info.session
+      ? `${fmtHubDate(info.first)} &ndash; ${fmtHubDate(info.last)}`
+      : "dates not published yet";
+    const meta = [dateRange];
+    if (!past) meta.push(countdownLabel(info.first).replace(/^in /, "starts in "));
+    if (!past && info.entryCloses) {
+      meta.push(info.entryCloses >= today ? `entry closes ${fmtHubDate(info.entryCloses)}` : "entry has closed");
+    }
+
+    const chips = codes
+      .map((c) => {
+        const done = doneNow.has(c);
+        return `<span class="plan-chip${done ? " done" : ""}" title="${escapeHtml((SUBJECTS[c] || { name: "" }).name)}">
+          <a href="#/${c}">${c}</a>${done ? " &#10003;" : ""}
+          <button class="plan-chip-remove" data-sitting="${info.id}" data-code="${c}" aria-label="Remove ${c} from ${name}">&times;</button>
+        </span>`;
+      })
+      .join("");
+
+    let addHtml = "";
+    if (!past) {
+      const groups = {};
+      PLANNABLE.filter((c) => !doneNow.has(c) && !codes.includes(c)).forEach((c) => {
+        const offered = !info.session || sessionPapers(info.session, c).length > 0;
+        const elsewhere = plannedSittingOf(c);
+        const note = !offered ? " (not in this sitting)" : elsewhere ? ` (move from ${sittingLabel(elsewhere)})` : "";
+        (groups[planGroup(c)] = groups[planGroup(c)] || []).push(
+          `<option value="${c}"${offered ? "" : " disabled"}>${c} &mdash; ${escapeHtml((SUBJECTS[c] || { name: "" }).name)}${note}</option>`
+        );
+      });
+      const opts = Object.keys(groups)
+        .map((g) => `<optgroup label="${g}">${groups[g].join("")}</optgroup>`)
+        .join("");
+      addHtml = opts
+        ? `<select class="text-input plan-add" data-sitting="${info.id}" aria-label="Add a subject to ${name}">
+            <option value="">+ Add a subject&hellip;</option>${opts}</select>`
+        : "";
+    }
+
+    const notes = sittingWarnings(info, codes).map((w) => `<li class="plan-warn">${w}</li>`);
+    if (past && codes.some((c) => !doneNow.has(c))) {
+      notes.push(
+        `<li>This sitting has started. Once results are out, mark passed subjects done (from the subject page) or remove them to re-plan.</li>`
+      );
+    }
+    if (!past && codes.length) {
+      const left = codes.map(modulesLeft);
+      if (left.every((n) => n !== null)) {
+        const total = left.reduce((a, n) => a + n, 0);
+        const days = Math.max(1, daysFromToday(info.first) - Math.max(0, daysFromToday(prevEnd)));
+        const span = days < 14 ? `${days} day${days === 1 ? "" : "s"}` : `${Math.round(days / 7)} weeks`;
+        notes.push(
+          total
+            ? `${total} module${total === 1 ? "" : "s"} not yet marked done &mdash; about ${((total * 7) / days).toFixed(1)} a week over the ${span} ${prevEnd === today ? "from now" : "after the previous sitting"}.`
+            : "Every module is marked done &mdash; time for past papers."
+        );
+      }
+      prevEnd = info.last;
+    }
+
+    return `
+      <div class="plan-sitting${past ? " past" : ""}${codes.length ? "" : " empty"}">
+        <div class="plan-sitting-head">
+          <strong>${name}</strong>
+          <span class="plan-meta">${meta.join(" &middot; ")}</span>
+        </div>
+        <div class="plan-chips">${chips}${addHtml}</div>
+        ${notes.length ? `<ul class="plan-notes">${notes.join("")}</ul>` : ""}
+      </div>`;
+  });
+
+  // What's still unplanned towards each qualification.
+  const covered = new Set([...doneNow, ...Object.values(examPlan.sittings).flat()]);
+  const coreLeft = CORE_SUBJECTS.filter((c) => !covered.has(c) && c !== "CB3");
+  const spLeft = Math.max(0, 2 - SP_CHOICES.filter((c) => covered.has(c)).length);
+  const saLeft = Math.max(0, 1 - SA_CHOICES.filter((c) => covered.has(c)).length);
+  const unplanned = [];
+  if (coreLeft.length) unplanned.push(`${coreLeft.join(", ")}`);
+  if (spLeft) unplanned.push(`${spLeft} Specialist Principles subject${spLeft === 1 ? "" : "s"}`);
+  if (saLeft) unplanned.push(`1 Specialist Advanced subject`);
+
+  const when = (at, label) => {
+    if (at === "now") return `<li>You've completed the ${label} exams.</li>`;
+    if (!at) return "";
+    // Results day for the qualifying sitting: the later of the core and
+    // advanced release dates among the subjects planned in it.
+    const s = at.info.session;
+    const res = s && s.results ? at.codes.map((c) => s.results[resultsGroup(c)]).filter(Boolean).sort().pop() : null;
+    return `<li><strong>${label}</strong> after the ${sittingName(at.info.id)} sitting${
+      res ? ` (results ${fmtHubDate(res)})` : ""
+    }${at.cb3 ? ", once CB3 is also passed (it's booked online, any time)" : ""}.</li>`;
+  };
+
+  const summary = [when(associateAt, "Associate"), when(fellowAt, "Fellow")].join("");
+  const tableNote = Store.getUser() && Store.isPlanTableMissing()
+    ? " Saved on this device only until supabase/migrations/004_exam_plan.sql is run."
+    : "";
+
+  return `
+    <section class="dash-section" id="examPlan">
+      <div class="dash-section-head"><h3>Exam plan</h3></div>
+      <p class="dash-note">Pick which subjects you'll sit at each sitting &mdash; most students take 1&ndash;3 per sitting. Dates come from the <a href="#/exams">Exam Hub</a>; sittings not yet published are assumed to be mid-April and mid-September. CB3 is booked online outside the sittings, so it isn't listed.${tableNote}</p>
+      ${rows.join("")}
+      <button class="btn plan-more" id="planMore">Show later sittings</button>
+      <div class="plan-summary">
+        <h4 class="dash-sub">If you pass everything as planned</h4>
+        <ul class="plan-notes">
+          ${summary || "<li>Add subjects to sittings to see when you'd qualify.</li>"}
+          ${unplanned.length ? `<li>Still to plan: ${unplanned.join("; ")}.</li>` : ""}
+        </ul>
+      </div>
+    </section>`;
+}
+
+function wirePlanSection(el) {
+  el.querySelectorAll(".plan-add").forEach((sel) =>
+    sel.addEventListener("change", () => {
+      if (sel.value) planAdd(sel.dataset.sitting, sel.value);
+    })
+  );
+  el.querySelectorAll(".plan-chip-remove").forEach((btn) =>
+    btn.addEventListener("click", () => planRemove(btn.dataset.sitting, btn.dataset.code))
+  );
+  const more = el.querySelector("#planMore");
+  if (more) {
+    more.addEventListener("click", () => {
+      planExtraSittings += 4;
+      renderDashboardView();
+      document.getElementById("examPlan").scrollIntoView({ block: "end" });
+    });
+  }
+}
+
+Store.onPlanChange(() => {
+  examPlan = Store.getExamPlanCache();
+  if (parseHash().view === "dashboard") renderDashboardView();
+});
+
+function refreshExamPlan() {
+  Store.loadExamPlan().then((p) => {
+    examPlan = p;
     if (parseHash().view === "dashboard") renderDashboardView();
   });
 }
@@ -2070,6 +2388,7 @@ function onExamDataChanged(code) {
   const r = parseHash();
   if (r.view === "subject" && r.exam === code) renderSubjectView(code);
   if (r.view === "flash" && r.exam === code) renderFlashView(code, r.module);
+  if (r.view === "dashboard") renderDashboardView(); // the exam plan depends on which subjects are done
 }
 
 function onFlashDataChanged(code) {
@@ -3015,6 +3334,7 @@ function renderRoute() {
   } else if (r.view === "dashboard") {
     renderDashboardView();
     refreshDashboardActivity();
+    refreshExamPlan();
   } else if (r.view === "drill") {
     renderDrillView(r.exam, r.module);
   } else if (r.view === "exams") {
@@ -3137,6 +3457,8 @@ function renderSyncStatus() {
 
 function reloadAllForAuthChange() {
   activityData = null;
+  examPlan = Store.getExamPlanCache();
+  refreshExamPlan();
   reviewState.key = "";
   loadAll();
   loadAllFlash();
@@ -3293,4 +3615,5 @@ Store.init().then(() => {
   });
   Store.loadLastSession().then(() => renderGameBar());
   renderDueBanner();
+  refreshExamPlan(); // the plan cached before init was read under the signed-out key
 });

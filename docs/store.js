@@ -25,6 +25,7 @@ const Store = (function () {
   const SESSION_TABLE = "session_log";
   const SRS_TABLE = "flashcard_srs"; // added by supabase/migrations/002_spaced_repetition.sql
   const DRILL_TABLE = "drill_progress"; // added by supabase/migrations/003_drills.sql
+  const PLAN_TABLE = "exam_plan"; // added by supabase/migrations/004_exam_plan.sql
   // Reviews with more than this much idle time between them belong to separate sessions.
   const SESSION_GAP_MS = 30 * 60 * 1000;
 
@@ -44,6 +45,7 @@ const Store = (function () {
   // separate from the flashcard flag so a project that has run 002 but not
   // 003 degrades on drills alone, rather than looking broken everywhere.
   let drillTableMissing = false;
+  let planTableMissing = false; // and again for the exam plan (004_exam_plan.sql)
 
   function looksLikeMissingTable(error, table) {
     const code = error && error.code;
@@ -226,6 +228,9 @@ const Store = (function () {
         const examCode = key.split(":").pop();
         const map = readLS(key, {});
         Object.keys(map).forEach((itemId) => enqueue({ type: "drill", examCode, itemId, value: map[itemId] }));
+      } else if (key === `${LS_PREFIX}:plan:${uKey}`) {
+        const plan = readLS(key, null);
+        if (plan) enqueue({ type: "plan", value: plan });
       } else if (key === `${LS_PREFIX}:streak:${uKey}`) {
         const streak = readLS(key, null);
         if (streak) enqueue({ type: "streak", value: streak });
@@ -638,6 +643,67 @@ const Store = (function () {
 
   /* ---------- AI answer feedback (optional Supabase Edge Function) ---------- */
 
+  /* ---------- exam plan ---------- */
+  //
+  // Which subjects the user intends to sit at which sitting. One small
+  // document per user, merged last-write-wins on updatedAt (ms since epoch).
+  //
+  // Shape: { sittings: { "2027-04": ["CS1", "CM1"], ... }, updatedAt }
+
+  function getExamPlanCache() {
+    return readLS(lsKey("plan"), { sittings: {}, updatedAt: 0 });
+  }
+
+  // Server copy of the plan, or null if there's no row yet. Throws on error.
+  async function fetchRemotePlan() {
+    const { data, error } = await client.from(PLAN_TABLE).select("plan").maybeSingle();
+    if (error) {
+      planTableMissing = looksLikeMissingTable(error, PLAN_TABLE);
+      throw error;
+    }
+    planTableMissing = false;
+    const remote = data && data.plan;
+    return remote && remote.sittings ? remote : null;
+  }
+
+  // Adopts the server copy only if it's newer than what's cached NOW -- the
+  // cache is re-read after the network call, so an edit made while the fetch
+  // was in flight is never rolled back by an older server copy.
+  function adoptRemotePlanIfNewer(remote) {
+    const cache = getExamPlanCache();
+    if (remote && (remote.updatedAt || 0) > (cache.updatedAt || 0)) {
+      writeLS(lsKey("plan"), remote);
+      return remote;
+    }
+    return cache;
+  }
+
+  async function loadExamPlan() {
+    if (!client || !currentUser) return getExamPlanCache();
+    try {
+      return adoptRemotePlanIfNewer(await fetchRemotePlan());
+    } catch {
+      return getExamPlanCache(); // table missing (004 not run yet) or offline — the local plan still works
+    }
+  }
+
+  function setExamPlan(sittings) {
+    const plan = { sittings, updatedAt: Date.now() };
+    writeLS(lsKey("plan"), plan);
+    enqueue({ type: "plan", value: plan });
+    return plan;
+  }
+
+  // Called when a sync brings in a newer plan saved on another device.
+  const planListeners = [];
+  function onPlanChange(cb) {
+    planListeners.push(cb);
+  }
+
+  function isPlanTableMissing() {
+    return planTableMissing;
+  }
+
   // Grades a typed flashcard answer against the model answer using a
   // serverless proxy (supabase/functions/grade-answer) so the LLM API key
   // never has to live in the browser. Requires the user to be signed in —
@@ -735,12 +801,45 @@ const Store = (function () {
         }
       }
 
+      // The plan is one whole document, so only the latest queued copy matters.
+      const planOps = list.filter((op) => op.type === "plan" && (!op.userId || op.userId === currentUser.id));
+      if (planOps.length) {
+        const op = planOps[planOps.length - 1];
+        try {
+          // Last-write-wins applies on upload too: if another device has
+          // since saved a newer plan, this queued copy is dropped and the
+          // newer one adopted, rather than overwriting it.
+          const remote = await fetchRemotePlan();
+          if (remote && (remote.updatedAt || 0) >= (op.value.updatedAt || 0)) {
+            adoptRemotePlanIfNewer(remote);
+            planListeners.forEach((cb) => {
+              try {
+                cb();
+              } catch {
+                /* a listener throwing shouldn't requeue the plan */
+              }
+            });
+          } else {
+            const { error } = await client
+              .from(PLAN_TABLE)
+              .upsert({ user_id: currentUser.id, plan: op.value, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+            if (error) {
+              planTableMissing = looksLikeMissingTable(error, PLAN_TABLE);
+              throw error;
+            }
+            planTableMissing = false;
+          }
+        } catch {
+          remaining.push(op);
+        }
+      }
+
       for (const op of list) {
         if (op.userId && op.userId !== currentUser.id) {
           remaining.push(op); // belongs to a different (now signed-out) account — leave it queued
           continue;
         }
-        if (op.type === "srs" || op.type === "drill") continue; // handled in bulk above
+        if (op.type === "srs" || op.type === "drill" || op.type === "plan") continue; // handled in bulk above
         try {
           if (op.type === "status") {
             const { error } = await client.from(STATUS_TABLE).upsert(
@@ -841,6 +940,11 @@ const Store = (function () {
     setDrill,
     getDrillCache,
     isDrillTableMissing,
+    loadExamPlan,
+    setExamPlan,
+    getExamPlanCache,
+    isPlanTableMissing,
+    onPlanChange,
     loadStreak,
     bumpStreak,
     getStreakCache,
