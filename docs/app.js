@@ -37,6 +37,35 @@ const flashState = {
 // back into innerHTML (the textarea while answering, the comparison view
 // after reveal) — escape it so a pasted "<script>"/"<img onerror=...>" can't
 // run in the user's own page.
+// Line icons, drawn inline so they take the text colour and work in both
+// themes (no emoji: they render differently on every platform).
+const ICONS = {
+  home: "M3 11l9-7 9 7M5.5 9.5V20h13V9.5",
+  chart: "M4 20h16M7 16v-5M12 16V6M17 16v-8",
+  calendar: "M4 6h16v14H4zM4 10h16M8 3.5v5M16 3.5v5",
+  search: "M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14zM20 20l-4.2-4.2",
+  sun: "M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8zM12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4",
+  moon: "M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z",
+  user: "M12 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM4 21c1.5-4 4.5-6 8-6s6.5 2 8 6",
+  star: "M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z",
+  flame: "M12 21c-3.9 0-6-2.8-6-5.8 0-3.7 3.4-5.6 3.8-9.7 2.8 1.9 4 4.2 4.1 6.2.9-.8 1.6-1.9 1.8-3.4 1.8 1.9 2.3 4.4 2.3 6.9 0 3-2.1 5.8-6 5.8z",
+  shuffle: "M3 7h3.5l9 10H21M3 17h3.5l2.8-3.1M13.7 10.1L16.5 7H21M18.5 4.5L21 7l-2.5 2.5M18.5 14.5L21 17l-2.5 2.5",
+  target: "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18zM12 7.5a4.5 4.5 0 1 0 0 9a4.5 4.5 0 0 0 0-9zM12 11.2a.8.8 0 1 0 0 1.6a.8.8 0 0 0 0-1.6z",
+  pencil: "M4 20l1-4.5L16 4.5l3.5 3.5L8.5 19zM13.5 7l3.5 3.5",
+  doc: "M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6",
+  sparkle: "M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9zM18.5 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z",
+  check: "M5 12.5l4.5 4.5L19 7",
+  cross: "M6 6l12 12M18 6L6 18",
+  book: "M4 19V5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5M8 7h8",
+  users: "M9 11a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7zM2.5 20c.8-3.5 3.3-5 6.5-5s5.7 1.5 6.5 5M15.5 4.3a3.5 3.5 0 0 1 0 6.4M17.5 15.2c2 .7 3.3 2.2 3.9 4.8",
+  flag: "M5 21V4M5 4.5h11l-2 4 2 4H5",
+  clock: "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18zM12 7v5l3.2 2.2",
+};
+
+function ico(name, cls) {
+  return `<svg class="ico${cls ? ` ${cls}` : ""}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${ICONS[name]}"></path></svg>`;
+}
+
 function escapeHtml(str) {
   return str.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
@@ -606,6 +635,26 @@ function recordScore(code, moduleId, idx, sufficient) {
   srsData[code] = Store.getSrsCache(code);
 }
 
+// Grading presses a rubber stamp onto the card, then moves on. The score
+// buttons are disabled while it shows, so a double tap or key repeat can't
+// score twice. With reduced motion there's no pause.
+function stampThen(sufficient, fn) {
+  const view = document.querySelector(".flash-view:not([hidden])");
+  const card = view && view.querySelector(".flashcard");
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!card || reduce) {
+    fn();
+    return;
+  }
+  view.querySelectorAll(".score-btn").forEach((b) => (b.disabled = true));
+  const stamp = document.createElement("div");
+  stamp.className = `card-stamp ${sufficient ? "good" : "again"}`;
+  stamp.setAttribute("aria-hidden", "true");
+  stamp.textContent = sufficient ? "Sufficient" : "Insufficient";
+  card.appendChild(stamp);
+  setTimeout(fn, 420);
+}
+
 function srsLabelHtml(code, moduleId, idx) {
   const st = srsData[code] && srsData[code][moduleId] && srsData[code][moduleId][idx];
   const today = SRS.today();
@@ -683,7 +732,7 @@ function aiGradePanelHtml(typed) {
     return `<div class="ai-grade-panel hint">Sign in (gear icon) to get AI feedback on typed answers.</div>`;
   }
   if (aiGradeState.status === "idle") {
-    return `<button class="btn ai-grade-btn" id="aiGradeBtn">&#10024; Get AI feedback on my answer</button>`;
+    return `<button class="btn ai-grade-btn" id="aiGradeBtn">${ico("sparkle")} Get AI feedback on my answer</button>`;
   }
   if (aiGradeState.status === "loading") {
     return `<div class="ai-grade-panel loading">Grading your answer&hellip;</div>`;
@@ -807,6 +856,7 @@ function buildExamGrid() {
     const card = document.createElement("div");
     card.className = "exam-card loading";
     card.id = `card-${code}`;
+    card.dataset.stage = Route.stage(code); // its line colour on the route map
     card.innerHTML = `
       <div class="exam-card-head">
         <div class="exam-card-heading">
@@ -863,7 +913,7 @@ function renderSubjectView(code) {
             hasCards
               ? `<div class="module-card-foot">
                    <div class="mastery-track"><div class="mastery-fill" style="width:${pct}%"></div></div>
-                   <span class="mastery-label">${modDue ? `<span class="due-pill">${modDue} due</span> ` : ""}${masteredCount}/${cardCount} &#11088;</span>
+                   <span class="mastery-label">${modDue ? `<span class="due-pill">${modDue} due</span> ` : ""}${masteredCount}/${cardCount} ${ico("star", "ico-star")}</span>
                  </div>`
               : `<div class="module-card-foot muted">Flashcards coming soon</div>`
           }
@@ -891,26 +941,26 @@ function renderSubjectView(code) {
       <div class="subject-code">${code}</div>
       <h2>${info.name}</h2>
       ${info.blurb ? `<p class="subject-blurb">${info.blurb}</p>` : ""}
-      <a class="hub-link" href="#/exams/${code}">&#127891; Pass rates and exam dates${
+      <a class="hub-link" href="#/exams/${code}">${ico("calendar")} Pass rates and exam dates${
         firstPaper ? ` &middot; next ${code} paper ${fmtHubDate(firstPaper.date)} (${countdownLabel(firstPaper.date)})` : ""
       } &rarr;</a>
       ${
         totalCards > 0
           ? `<div class="subject-actions">
-               ${subjectDue ? `<a class="btn primary" href="${reviewHash("due", code)}">&#128197; Review ${subjectDue} due card${subjectDue === 1 ? "" : "s"}</a>` : ""}
-               <button class="btn ${subjectDue ? "" : "primary"} mixed-session-btn" id="startMixed">&#128256; Mixed session &mdash; 10 random cards across all of ${code}</button>
-               ${subjectWeak ? `<a class="btn" href="${reviewHash("weak", code)}">&#127919; Practise ${subjectWeak} weak card${subjectWeak === 1 ? "" : "s"}</a>` : ""}
+               ${subjectDue ? `<a class="btn primary" href="${reviewHash("due", code)}">${ico("calendar")} Review ${subjectDue} due card${subjectDue === 1 ? "" : "s"}</a>` : ""}
+               <button class="btn ${subjectDue ? "" : "primary"} mixed-session-btn" id="startMixed">${ico("shuffle")} Mixed session &mdash; 10 random cards across all of ${code}</button>
+               ${subjectWeak ? `<a class="btn" href="${reviewHash("weak", code)}">${ico("target")} Practise ${subjectWeak} weak card${subjectWeak === 1 ? "" : "s"}</a>` : ""}
              </div>`
           : ""
       }
       ${
         totalQuestions > 0
-          ? `<button class="btn qbank-btn" id="startQbank">&#128220; Practice exam questions &mdash; ${totalQuestions} original question${totalQuestions === 1 ? "" : "s"} in the IFoA style</button>`
+          ? `<button class="btn qbank-btn" id="startQbank">${ico("doc")} Practice exam questions &mdash; ${totalQuestions} original question${totalQuestions === 1 ? "" : "s"} in the IFoA style</button>`
           : ""
       }
       ${
         totalDrills > 0
-          ? `<button class="btn drill-btn" id="startDrill">&#128221; Drills &mdash; ${totalDrills} question${totalDrills === 1 ? "" : "s"}, marked for you${
+          ? `<button class="btn drill-btn" id="startDrill">${ico("pencil")} Drills &mdash; ${totalDrills} question${totalDrills === 1 ? "" : "s"}, marked for you${
               drillAcc.seen ? ` &middot; ${drillAcc.seen}/${totalDrills} tried, ${drillAcc.pct}% correct` : " &middot; none tried yet"
             }${drillsDue ? ` (<strong>${drillsDue} due</strong>)` : ""}</button>`
           : ""
@@ -996,14 +1046,14 @@ function renderSessionSummary(el, options) {
   el.innerHTML = `
     <button class="back-link" id="summaryBack">&larr; ${backLabel}</button>
     <div class="flash-session-summary">
-      <div class="summary-badge">&#127881;</div>
+      <div class="summary-badge">${ico("check")}</div>
       <h2>Session complete!</h2>
       <p class="summary-title">${title}</p>
       <p class="summary-stats">You reviewed <strong>${stats.reviewed}</strong> card${stats.reviewed === 1 ? "" : "s"}
         &mdash; <strong>${stats.mastered}</strong> marked sufficient.</p>
       <p class="summary-overall">${overallLabel}</p>
       <div class="summary-actions">
-        ${onNewSession ? `<button class="btn primary" id="summaryNewSession">&#128256; New session</button>` : ""}
+        ${onNewSession ? `<button class="btn primary" id="summaryNewSession">${ico("shuffle")} New session</button>` : ""}
         <button class="btn" id="summaryReviewAgain">&#8635; Review these cards again</button>
         <button class="btn" id="summaryBackBtn">&larr; Back to ${backLabel}</button>
       </div>
@@ -1086,7 +1136,7 @@ function renderFlashView(code, moduleId) {
     .map((realI, i) => {
       const m = !!moduleMastery[realI];
       const active = i === pos;
-      return `<button class="card-dot ${m ? "mastered" : ""} ${active ? "active" : ""}" data-idx="${i}" title="Card ${i + 1}">${m ? "&#11088;" : i + 1}</button>`;
+      return `<button class="card-dot ${m ? "mastered" : ""} ${active ? "active" : ""}" data-idx="${i}" title="Card ${i + 1}">${m ? ico("star", "ico-star") : i + 1}</button>`;
     })
     .join("");
 
@@ -1102,13 +1152,13 @@ function renderFlashView(code, moduleId) {
     <div class="flash-mode-tabs">
       <button class="mode-tab ${flashState.mode === "session" ? "active" : ""}" id="tabSession">Session (${Math.min(SESSION_SIZE, total)})</button>
       <button class="mode-tab ${flashState.mode === "full" ? "active" : ""}" id="tabFull">Full deck (${total})</button>
-      ${flashState.mode === "session" ? `<button class="btn shuffle-btn" id="shuffleBtn">&#128256; New session</button>` : ""}
-      ${moduleDrills ? `<a class="btn drill-btn" href="#/${code}/drill/${moduleId}">&#128221; Drill ${moduleDrills}${moduleDrillsDue ? ` (${moduleDrillsDue} due)` : ""}</a>` : ""}
+      ${flashState.mode === "session" ? `<button class="btn shuffle-btn" id="shuffleBtn">${ico("shuffle")} New session</button>` : ""}
+      ${moduleDrills ? `<a class="btn drill-btn" href="#/${code}/drill/${moduleId}">${ico("pencil")} Drill ${moduleDrills}${moduleDrillsDue ? ` (${moduleDrillsDue} due)` : ""}</a>` : ""}
     </div>
     <div class="card-dots">${dots}</div>
     <div class="${flashcardLayoutClass(card, flashState.revealed)}">
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
-        ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
+        ${isMastered ? `<div class="flashcard-star">${ico("star", "ico-star")}</div>` : ""}
         <div class="flashcard-label">Card ${pos + 1} of ${seq.length} ${srsLabelHtml(code, moduleId, realIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
         ${
@@ -1120,7 +1170,7 @@ function renderFlashView(code, moduleId) {
                ${aiGradePanelHtml(flashState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
-                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
+                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient</button>
                </div>`
         }
       </div>
@@ -1196,8 +1246,8 @@ function renderFlashView(code, moduleId) {
       renderFlashView(code, moduleId);
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => scoreCard(code, moduleId, realIdx, true));
-    document.getElementById("scoreBad").addEventListener("click", () => scoreCard(code, moduleId, realIdx, false));
+    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreCard(code, moduleId, realIdx, true)));
+    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreCard(code, moduleId, realIdx, false)));
     wireAiGradeButton(el, card, flashState.typed, () => renderFlashView(code, moduleId));
   }
 
@@ -1268,7 +1318,7 @@ function renderMixedView(code) {
       const eMastery = (fd.mastery && fd.mastery[e.moduleId]) || {};
       const m = !!eMastery[e.cardIdx];
       const active = i === pos;
-      return `<button class="card-dot ${m ? "mastered" : ""} ${active ? "active" : ""}" data-idx="${i}" title="Card ${i + 1} (${e.moduleId.toUpperCase()})">${m ? "&#11088;" : i + 1}</button>`;
+      return `<button class="card-dot ${m ? "mastered" : ""} ${active ? "active" : ""}" data-idx="${i}" title="Card ${i + 1} (${e.moduleId.toUpperCase()})">${m ? ico("star", "ico-star") : i + 1}</button>`;
     })
     .join("");
 
@@ -1283,12 +1333,12 @@ function renderMixedView(code) {
     </div>
     <div class="flash-mode-tabs">
       <span class="mode-tab active">Session (${mixedState.entries.length})</span>
-      <button class="btn shuffle-btn" id="shuffleMixedBtn">&#128256; New session</button>
+      <button class="btn shuffle-btn" id="shuffleMixedBtn">${ico("shuffle")} New session</button>
     </div>
     <div class="card-dots">${dots}</div>
     <div class="${flashcardLayoutClass(card, mixedState.revealed)}">
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
-        ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
+        ${isMastered ? `<div class="flashcard-star">${ico("star", "ico-star")}</div>` : ""}
         <a class="flashcard-source" href="#/${code}/${entry.moduleId}">${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
         <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length} ${srsLabelHtml(code, entry.moduleId, entry.cardIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
@@ -1301,7 +1351,7 @@ function renderMixedView(code) {
                ${aiGradePanelHtml(mixedState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
-                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
+                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient</button>
                </div>`
         }
       </div>
@@ -1355,8 +1405,8 @@ function renderMixedView(code) {
       renderMixedView(code);
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true));
-    document.getElementById("scoreBad").addEventListener("click", () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false));
+    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true)));
+    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false)));
     wireAiGradeButton(el, card, mixedState.typed, () => renderMixedView(code));
   }
 
@@ -1518,7 +1568,7 @@ function renderReviewView() {
       kind === "weak"
         ? `<p>No weak cards in ${scopeName} yet. Cards land here once you've marked them Insufficient &mdash; twice, or once and not yet re-starred.</p>`
         : scheduledCards(scope).length
-          ? `<p>Nothing due today in ${scopeName}. &#127881; ${nextDueSummary(scope)}</p>`
+          ? `<p>Nothing due today in ${scopeName}. ${nextDueSummary(scope)}</p>`
           : `<p>No cards scheduled yet. Every card you score Sufficient or Insufficient gets a review date &mdash; open a module and start a session, and cards will come back here when they're due.</p>`;
     el.innerHTML = `
       <button class="back-link" id="backFromReview">&larr; ${backLabel}</button>
@@ -1543,7 +1593,7 @@ function renderReviewView() {
   const dots = reviewState.entries
     .map((e, i) => {
       const m = isMasteredEntry(e);
-      return `<button class="card-dot ${m ? "mastered" : ""} ${i === pos ? "active" : ""}" data-idx="${i}" title="Card ${i + 1} (${e.code} ${e.moduleId.toUpperCase()})">${m ? "&#11088;" : i + 1}</button>`;
+      return `<button class="card-dot ${m ? "mastered" : ""} ${i === pos ? "active" : ""}" data-idx="${i}" title="Card ${i + 1} (${e.code} ${e.moduleId.toUpperCase()})">${m ? ico("star", "ico-star") : i + 1}</button>`;
     })
     .join("");
 
@@ -1558,7 +1608,7 @@ function renderReviewView() {
     <div class="card-dots">${dots}</div>
     <div class="${flashcardLayoutClass(card, reviewState.revealed)}">
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
-        ${isMastered ? '<div class="flashcard-star">&#11088;</div>' : ""}
+        ${isMastered ? `<div class="flashcard-star">${ico("star", "ico-star")}</div>` : ""}
         <a class="flashcard-source" href="#/${entry.code}/${entry.moduleId}">${entry.code} &middot; ${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
         <div class="flashcard-label">Card ${pos + 1} of ${reviewState.entries.length} ${srsLabelHtml(entry.code, entry.moduleId, entry.cardIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
@@ -1571,7 +1621,7 @@ function renderReviewView() {
                ${aiGradePanelHtml(reviewState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
-                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient &#11088;</button>
+                 <button class="btn score-btn sufficient" id="scoreGood">Sufficient</button>
                </div>`
         }
       </div>
@@ -1604,8 +1654,8 @@ function renderReviewView() {
       renderReviewView();
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => scoreReviewCard(entry, true));
-    document.getElementById("scoreBad").addEventListener("click", () => scoreReviewCard(entry, false));
+    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreReviewCard(entry, true)));
+    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreReviewCard(entry, false)));
     wireAiGradeButton(el, card, reviewState.typed, () => renderReviewView());
   }
 
@@ -1627,7 +1677,7 @@ function renderDueBanner() {
       .join(" &middot; ");
     el.innerHTML = `
       <div class="due-banner-text">
-        <strong>&#128197; ${due.length} card${due.length === 1 ? "" : "s"} due for review today</strong>
+        <strong>${ico("calendar")} ${due.length} card${due.length === 1 ? "" : "s"} due for review today</strong>
         <span class="due-banner-sub">${breakdown}</span>
       </div>
       <div class="due-banner-actions">
@@ -1637,7 +1687,7 @@ function renderDueBanner() {
   } else {
     el.innerHTML = `
       <div class="due-banner-text">
-        <strong>&#128197; ${scheduled ? "Nothing due today &#127881;" : "Spaced repetition"}</strong>
+        <strong>${ico("calendar")} ${scheduled ? "Nothing due today" : "Spaced repetition"}</strong>
         <span class="due-banner-sub">${
           scheduled
             ? nextDueSummary(null)
@@ -1830,7 +1880,7 @@ function renderDashboardView() {
     <details class="dash-subject">
       <summary>
         <span class="dash-subject-name"><strong>${s.code}</strong> ${(SUBJECTS[s.code] || { name: "" }).name}</span>
-        <span class="dash-subject-meta">${s.mastered}/${s.total} &#11088; &middot; ${s.due} due${s.lapses ? ` &middot; ${s.lapses} misses` : ""}</span>
+        <span class="dash-subject-meta">${s.mastered}/${s.total} ${ico("star", "ico-star")} &middot; ${s.due} due${s.lapses ? ` &middot; ${s.lapses} misses` : ""}</span>
         ${barHtml(pctOf(s.mastered, s.total))}
       </summary>
       <div class="dash-subject-actions">
@@ -1861,22 +1911,22 @@ function renderDashboardView() {
 
     <section class="game-bar dash-tiles">
       <a class="game-stat" href="#/review">
-        <span class="game-stat-icon">&#128197;</span>
+        <span class="game-stat-icon">${ico("calendar")}</span>
         <span class="game-stat-value">${totalDue}</span>
         <span class="game-stat-label">cards due today</span>
       </a>
       <div class="game-stat" title="Consecutive days on which you've scored at least one card">
-        <span class="game-stat-icon">&#128293;</span>
+        <span class="game-stat-icon">${ico("flame")}</span>
         <span class="game-stat-value">${streak}</span>
         <span class="game-stat-label">day study streak</span>
       </div>
       <div class="game-stat">
-        <span class="game-stat-icon">&#128202;</span>
+        <span class="game-stat-icon">${ico("chart")}</span>
         <span class="game-stat-value">${week}</span>
         <span class="game-stat-label">cards reviewed, last 7 days</span>
       </div>
       <div class="game-stat">
-        <span class="game-stat-icon">&#11088;</span>
+        <span class="game-stat-icon">${ico("star", "ico-star")}</span>
         <span class="game-stat-value">${masteredAll}</span>
         <span class="game-stat-label">${cardsInStudied ? `of ${cardsInStudied} starred in subjects you've started` : "cards starred"}</span>
       </div>
@@ -3300,7 +3350,7 @@ function drillFeedbackHtml(item) {
   }
   return `
     <div class="drill-verdict ${drillState.lastCorrect ? "correct" : "wrong"}">
-      ${drillState.lastCorrect ? "&#9989; Correct" : "&#10060; Not quite"}
+      ${drillState.lastCorrect ? `${ico("check")} Correct` : `${ico("cross")} Not quite`}
     </div>
     ${bits.join("")}
     <details class="explain-panel" open>
@@ -3513,7 +3563,7 @@ function renderDrillView(code, moduleId) {
     el.innerHTML = `
       <button class="back-link" id="drillBack">&larr; ${backLabel}</button>
       <div class="flash-session-summary">
-        <div class="summary-badge">${acc >= 80 ? "&#127881;" : "&#128218;"}</div>
+        <div class="summary-badge">${acc >= 80 ? ico("check") : ico("book")}</div>
         <h2>Drill complete</h2>
         <p class="summary-title">${scopeLabel}</p>
         <p class="summary-stats">You answered <strong>${drillState.stats.correct}</strong> of
@@ -3521,7 +3571,7 @@ function renderDrillView(code, moduleId) {
         <p class="summary-overall">Lifetime on this scope: ${lifetime.correct}/${lifetime.attempts} (${lifetime.pct}%).
           Drill results are tracked separately from flashcard stars.</p>
         <div class="summary-actions">
-          <button class="btn primary" id="drillAgain">&#128256; New drill run</button>
+          <button class="btn primary" id="drillAgain">${ico("shuffle")} New drill run</button>
           <button class="btn" id="drillBackBtn">&larr; Back to ${backLabel}</button>
         </div>
       </div>`;
@@ -3791,22 +3841,22 @@ function renderExamHub(requested) {
     statsHtml = `
       <section class="game-bar dash-tiles">
         <div class="game-stat" title="${all.passed.toLocaleString("en-GB")} of ${all.sat.toLocaleString("en-GB")} candidates across ${rows.length} sittings">
-          <span class="game-stat-icon">&#9989;</span>
+          <span class="game-stat-icon">${ico("check")}</span>
           <span class="game-stat-value">${all.rate.toFixed(0)}%</span>
           <span class="game-stat-label">pass rate, all ${rows.length} sittings</span>
         </div>
         <div class="game-stat">
-          <span class="game-stat-icon">&#128197;</span>
+          <span class="game-stat-icon">${ico("calendar")}</span>
           <span class="game-stat-value">${latestRate.toFixed(0)}%</span>
           <span class="game-stat-label">pass rate, ${sittingLabel(latest.sitting)}</span>
         </div>
         <div class="game-stat">
-          <span class="game-stat-icon">&#127919;</span>
+          <span class="game-stat-icon">${ico("target")}</span>
           <span class="game-stat-value">${all.medianMark}</span>
           <span class="game-stat-label">typical pass mark (range ${all.minMark}&ndash;${all.maxMark})</span>
         </div>
         <div class="game-stat">
-          <span class="game-stat-icon">&#128101;</span>
+          <span class="game-stat-icon">${ico("users")}</span>
           <span class="game-stat-value">${latest.sat.toLocaleString("en-GB")}</span>
           <span class="game-stat-label">sat ${code} in ${sittingLabel(latest.sitting)}</span>
         </div>
@@ -4196,8 +4246,9 @@ function renderThemeToggleBtn() {
   const btn = document.getElementById("themeToggleBtn");
   const isDark = currentTheme() === "dark";
   // Icon shows the theme a click would switch TO, matching common toggle conventions.
-  btn.textContent = isDark ? "☀️" : "\u{1F319}";
+  btn.innerHTML = ico(isDark ? "sun" : "moon");
   btn.title = isDark ? "Switch to light theme" : "Switch to dark theme";
+  btn.setAttribute("aria-label", btn.title);
 }
 
 function initThemeToggle() {

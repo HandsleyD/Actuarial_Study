@@ -6,7 +6,7 @@ A free study companion for the IFoA actuarial exams, live at:
 
 No install, no sign-up required — just open the link.
 
-![Progress tracker showing a user who has reached Associate and is working toward Fellow](.github/readme-assets/progress-screenshot.png)
+![The home page: a transit-map route from three passed subjects through planned and suggested sittings to Associate, with a fork to Fellow waiting on the choice of specialist subjects](.github/readme-assets/progress-screenshot.png)
 
 ## What's here
 
@@ -23,7 +23,7 @@ No install, no sign-up required — just open the link.
 - **Exam planner** — on the study dashboard, place your remaining subjects into the April and September sittings. It flags papers that clash on the same day, subjects not on a sitting's timetable, and sittings with more than three exams; shows the modules-per-week pace each sitting needs; and projects when you'd reach Associate and Fellow if you pass as planned.
 - **Works offline** — after one visit the site (cards, questions, maths rendering) is cached, so you can review on a train with no signal; scores are saved on the device and upload when you're back online. On a phone, use "Add to Home Screen" to install it like an app.
 - **Keyboard shortcuts** — Space to reveal, 1/2 to grade, arrow keys to move, <kbd>/</kbd> to search.
-- **Light/dark theme**, and a mobile-friendly layout.
+- **Light/dark theme** — cream paper by day, deep navy by night — and a mobile-friendly layout.
 
 Subjects currently covered span the Core Principles (CB, CM, CS), Core Practice (CP), Specialist Principles (SP) and Specialist Advanced (SA) parts of the IFoA syllabus — see the subject grid on the site for the full, current list.
 

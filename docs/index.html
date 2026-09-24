@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Actuarial Study Progress</title>
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#6d4aff">
+<meta name="theme-color" content="#1b2a41">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Jost:wght@400;500;600;700&display=swap">
 <script>
 // Resolve and apply the theme BEFORE first paint (and before style.css even
 // loads) to avoid a flash of the wrong theme. No stored preference means
@@ -26,21 +26,21 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=23">
+<link rel="stylesheet" href="style.css?v=24">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <h1><a class="topbar-home" href="#/">Actuarial Study Progress</a></h1>
+    <h1><a class="topbar-home" href="#/"><svg class="roundel" viewBox="0 0 44 30" aria-hidden="true" focusable="false"><circle cx="22" cy="15" r="11.5"></circle><rect x="2" y="11.2" width="40" height="7.6"></rect></svg><span>Actuarial Study</span></a></h1>
     <div class="topbar-right">
       <span id="syncStatus" class="sync-status" hidden></span>
-      <a class="icon-btn nav-link" data-view="home" href="#/" title="Home: all subjects" aria-label="Home">&#127968;</a>
-      <a class="icon-btn nav-link" data-view="dashboard" href="#/dashboard" title="Study dashboard: what's due, weak areas, activity" aria-label="Study dashboard">&#128202;</a>
-      <a id="examHubLink" class="icon-btn nav-link" data-view="exams" href="#/exams" title="Exam Hub: pass rates and exam dates" aria-label="Exam Hub">&#127891;</a>
-      <a id="searchLink" class="icon-btn nav-link" data-view="search" href="#/search" title="Search all cards and questions ( / )" aria-label="Search">&#128269;</a>
-      <button id="themeToggleBtn" class="icon-btn" title="Toggle light/dark theme">&#9728;&#65039;</button>
-      <button id="settingsBtn" class="icon-btn" title="Account">&#9881;</button>
+      <a class="icon-btn nav-link" data-view="home" href="#/" title="Home: all subjects" aria-label="Home"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5"></path></svg></a>
+      <a class="icon-btn nav-link" data-view="dashboard" href="#/dashboard" title="Study dashboard: what's due, weak areas, activity" aria-label="Study dashboard"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16v-5M12 16V6M17 16v-8"></path></svg></a>
+      <a id="examHubLink" class="icon-btn nav-link" data-view="exams" href="#/exams" title="Exam Hub: pass rates and exam dates" aria-label="Exam Hub"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16v14H4zM4 10h16M8 3.5v5M16 3.5v5"></path></svg></a>
+      <a id="searchLink" class="icon-btn nav-link" data-view="search" href="#/search" title="Search all cards and questions ( / )" aria-label="Search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14zM20 20l-4.2-4.2"></path></svg></a>
+      <button id="themeToggleBtn" class="icon-btn" title="Toggle light/dark theme" aria-label="Toggle light/dark theme"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg></button>
+      <button id="settingsBtn" class="icon-btn" title="Account" aria-label="Account"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg></button>
     </div>
   </div>
 </header>
@@ -55,22 +55,22 @@
 
     <section class="game-bar" id="gameBar">
       <div class="game-stat">
-        <span class="game-stat-icon">&#11088;</span>
+        <span class="game-stat-icon"><svg class="ico ico-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z"></path></svg></span>
         <span class="game-stat-value" id="starTotal">0</span>
         <span class="game-stat-label">cards mastered</span>
       </div>
       <div class="game-stat">
-        <span class="game-stat-icon">&#127942;</span>
+        <span class="game-stat-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4.5h11l-2 4 2 4H5"></path></svg></span>
         <span class="game-stat-value" id="rankLabel">Aspiring Actuary</span>
         <span class="game-stat-label" id="rankSub">Loading&hellip;</span>
       </div>
       <div class="game-stat">
-        <span class="game-stat-icon">&#128293;</span>
+        <span class="game-stat-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21c-3.9 0-6-2.8-6-5.8 0-3.7 3.4-5.6 3.8-9.7 2.8 1.9 4 4.2 4.1 6.2.9-.8 1.6-1.9 1.8-3.4 1.8 1.9 2.3 4.4 2.3 6.9 0 3-2.1 5.8-6 5.8z"></path></svg></span>
         <span class="game-stat-value" id="streakValue">0</span>
         <span class="game-stat-label">day streak</span>
       </div>
       <div class="game-stat">
-        <span class="game-stat-icon">&#128203;</span>
+        <span class="game-stat-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18zM12 7v5l3.2 2.2"></path></svg></span>
         <span class="game-stat-value" id="lastSessionValue">&mdash;</span>
         <span class="game-stat-label" id="lastSessionSub">No sessions yet</span>
       </div>
@@ -160,6 +160,6 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 <script src="exam-stats.js?v=1"></script>
 <script src="exam-dates.js?v=2"></script>
 <script src="route.js?v=1"></script>
-<script src="app.js?v=29"></script>
+<script src="app.js?v=30"></script>
 </body>
 </html>
