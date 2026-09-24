@@ -1,37 +1,47 @@
+/* ---------- design tokens: "The Fellowship Line" ----------
+   Cream paper and navy ink, with the four route-map line colours as the only
+   accents: red (Core Principles) leads, and doubles as the site accent. */
+
 :root {
-  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: "Jost", "Futura", "Avenir Next", "Century Gothic", system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
 
-  --bg: #f7f8fb;
-  --card-bg: #ffffff;
-  --text: #14181f;
-  --text-muted: #6b7280;
-  --border: #e5e7eb;
-  --border-soft: #eef0f3;
-  --accent: #6d4aff;
-  --accent-2: #9333ea;
-  --accent-soft: #f1edff;
-  --accent-contrast: #ffffff;
-  --done: #0f9d58;
-  --done-bg: #e3f8ec;
-  --progress: #b45309;
-  --progress-bg: #fef3e0;
-  --not-started: #6b7280;
-  --not-started-bg: #eef0f3;
-  --star: #b7791f;
-  --star-bg: #fdf3dc;
-  --studying: #6d4aff;
+  --bg: #f2ede2;
+  --card-bg: #fffdf7;
+  --text: #1b2a41;
+  --text-muted: #565d6b;
+  --border: #d9d0be;
+  --border-soft: #e6dfd0;
+  --accent: #b03a2e;
+  --accent-2: #b03a2e;
+  --accent-soft: #f6e3de;
+  --accent-contrast: #fffdf7;
+  --done: #2a7549;
+  --done-bg: #e1efe4;
+  --progress: #845a09;
+  --progress-bg: #f7ebcf;
+  --not-started: #565d6b;
+  --not-started-bg: #ebe5d8;
+  --star: #845a09;
+  --star-bg: #f7ebcf;
+  --studying: #b03a2e;
   --weak: #b91c1c;
-  --weak-bg: #fdecea;
+  --weak-bg: #fbe4e1;
+  --ink-button: #1b2a41;
+  --ink-button-text: #fffdf7;
+  --card-rule: #c9d9ec;
+  --card-margin: #e0857c;
+  --on-line: #ffffff; /* text on a line-coloured fill */
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
   --radius-pill: 999px;
 
-  --shadow-sm: 0 1px 2px rgba(20, 24, 31, 0.05), 0 1px 3px rgba(20, 24, 31, 0.04);
-  --shadow-md: 0 6px 16px rgba(20, 24, 31, 0.07), 0 2px 6px rgba(20, 24, 31, 0.04);
-  --shadow-lg: 0 16px 40px rgba(20, 24, 31, 0.12), 0 4px 10px rgba(20, 24, 31, 0.05);
+  --shadow-sm: none;
+  --shadow-md: 0 1px 0 var(--border);
+  --shadow-lg: 0 14px 30px -18px rgba(27, 42, 65, 0.45);
   --shadow: var(--shadow-sm);
 
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -40,65 +50,70 @@
 /* Dark palette applies when the OS/browser prefers dark AND the user hasn't
    explicitly picked light via the toggle, OR when the user has explicitly
    picked dark -- see the inline theme-resolving script in index.html, which
-   sets data-theme on <html> before first paint to avoid a flash. */
+   sets data-theme on <html> before first paint to avoid a flash. The night
+   version of the same map: deep navy ground, cream ink, brighter lines. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0a0c11;
-    --card-bg: #12151c;
-    --text: #eef1f6;
-    --text-muted: #8b93a3;
-    --border: #242938;
-    --border-soft: #1b1f2a;
-    --accent: #a78bfa;
-    --accent-2: #c084fc;
-    --accent-soft: #201a3a;
-    --accent-contrast: #12151c;
-    --done: #3ecf8e;
-    --done-bg: #0f2c22;
-    --progress: #e3a53f;
-    --progress-bg: #33270f;
-    --not-started: #8b93a3;
-    --not-started-bg: #1a1e29;
+    --bg: #0f1522;
+    --card-bg: #172033;
+    --text: #ede6d6;
+    --text-muted: #a3a9b7;
+    --border: #2d3954;
+    --border-soft: #222c43;
+    --accent: #ef7a6e;
+    --accent-2: #ef7a6e;
+    --accent-soft: #3a2426;
+    --accent-contrast: #0f1522;
+    --done: #5cc28a;
+    --done-bg: #15301f;
+    --progress: #e8b04a;
+    --progress-bg: #33280f;
+    --not-started: #a3a9b7;
+    --not-started-bg: #1f2940;
     --star: #f2c14e;
     --star-bg: #332711;
-    --studying: #a78bfa;
+    --studying: #ef7a6e;
     --weak: #f87171;
-    --weak-bg: #331616;
+    --weak-bg: #3a1c1c;
+    --ink-button: #ede6d6;
+    --ink-button-text: #0f1522;
+    --card-rule: #26344f;
+    --card-margin: #7a3a36;
+    --on-line: #0f1522;
 
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5), 0 6px 14px rgba(0, 0, 0, 0.35);
-    --shadow: var(--shadow-sm);
+    --shadow-lg: 0 18px 36px -20px rgba(0, 0, 0, 0.7);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #0a0c11;
-  --card-bg: #12151c;
-  --text: #eef1f6;
-  --text-muted: #8b93a3;
-  --border: #242938;
-  --border-soft: #1b1f2a;
-  --accent: #a78bfa;
-  --accent-2: #c084fc;
-  --accent-soft: #201a3a;
-  --accent-contrast: #12151c;
-  --done: #3ecf8e;
-  --done-bg: #0f2c22;
-  --progress: #e3a53f;
-  --progress-bg: #33270f;
-  --not-started: #8b93a3;
-  --not-started-bg: #1a1e29;
+  --bg: #0f1522;
+  --card-bg: #172033;
+  --text: #ede6d6;
+  --text-muted: #a3a9b7;
+  --border: #2d3954;
+  --border-soft: #222c43;
+  --accent: #ef7a6e;
+  --accent-2: #ef7a6e;
+  --accent-soft: #3a2426;
+  --accent-contrast: #0f1522;
+  --done: #5cc28a;
+  --done-bg: #15301f;
+  --progress: #e8b04a;
+  --progress-bg: #33280f;
+  --not-started: #a3a9b7;
+  --not-started-bg: #1f2940;
   --star: #f2c14e;
   --star-bg: #332711;
-  --studying: #a78bfa;
+  --studying: #ef7a6e;
   --weak: #f87171;
-  --weak-bg: #331616;
+  --weak-bg: #3a1c1c;
+  --ink-button: #ede6d6;
+  --ink-button-text: #0f1522;
+  --card-rule: #26344f;
+  --card-margin: #7a3a36;
+  --on-line: #0f1522;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5), 0 6px 14px rgba(0, 0, 0, 0.35);
-  --shadow: var(--shadow-sm);
+  --shadow-lg: 0 18px 36px -20px rgba(0, 0, 0, 0.7);
 }
 
 * { box-sizing: border-box; }
@@ -2311,7 +2326,7 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
   --rm-principles: #c0392b;
   --rm-practice: #1f5fad;
   --rm-sp: #2e7d4f;
-  --rm-sa: #b7800f;
+  --rm-sa: #936509;
   --rm-warn: #b91c1c;
 }
 
@@ -2404,14 +2419,14 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
 .rm-sign.past rect { fill: var(--text-muted); }
 
 .rm-clash circle { fill: var(--rm-warn); }
-.rm-clash text { fill: #fff; font-size: 14px; font-weight: 800; }
+.rm-clash text { fill: var(--on-line); font-size: 14px; font-weight: 800; }
 
 .rm-station circle { fill: var(--card-bg); stroke: var(--text); stroke-width: 3.5; }
 .rm-station text { fill: var(--text); font-size: 14px; font-weight: 800; }
 .rm-station.passed circle { fill: var(--rm); stroke-width: 2.5; }
 .rm-station.suggested circle { stroke: var(--text-muted); stroke-width: 2.5; stroke-dasharray: 4 3; }
 .rm-station.suggested text { fill: var(--text-muted); font-weight: 600; }
-.rm-tick { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.rm-tick { fill: none; stroke: var(--on-line); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 .rm-station:hover circle, .rm-station:focus circle { stroke: var(--accent); stroke-width: 4; }
 .rm-station:focus { outline: none; }
 .rm-station:focus-visible text { text-decoration: underline; }
@@ -2497,4 +2512,212 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
   .route-facts { grid-template-columns: minmax(0, 1fr); }
   .route-facts > div { padding: 10px 0 4px; border-top: 1px solid var(--border-soft); }
   .route-facts > div:first-child { border-top: none; }
+}
+
+/* ======================================================================
+   The Fellowship Line — component styles
+   Transport-map print: flat paper surfaces with hairline borders, pill
+   buttons like station signs, Fraunces for headings, Jost for text, and
+   the four line colours as the only accents.
+   ====================================================================== */
+
+button, input, select, textarea { font-family: inherit; }
+
+h1, h2, h3,
+.subject-head h2,
+.game-stat-value,
+.route-title,
+.flash-session-summary h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.subject-head h2 { font-weight: 400; font-size: 2.1rem; line-height: 1.1; }
+.route-title { font-weight: 400; font-size: 1.75rem; }
+.route-title em { font-style: italic; font-weight: 600; color: var(--text); }
+
+/* icons */
+.ico {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  vertical-align: -0.2em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ico-star { fill: var(--star); stroke: var(--star); stroke-width: 1.2; }
+
+/* header: roundel + name, round icon buttons */
+.topbar { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 1px solid var(--border); }
+.topbar h1 { font-size: 1.3rem; }
+.topbar-home { display: inline-flex; align-items: center; gap: 12px; }
+.roundel { width: 38px; height: 26px; flex-shrink: 0; }
+.roundel circle { fill: none; stroke: var(--accent); stroke-width: 5.5; }
+.roundel rect { fill: var(--text); }
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text);
+}
+.icon-btn .ico { width: 19px; height: 19px; }
+.icon-btn:hover { background: var(--card-bg); border-color: var(--text); transform: none; }
+.icon-btn[aria-current="page"] { background: var(--text); border-color: var(--text); color: var(--bg); }
+
+/* buttons: station-sign pills */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border);
+  padding: 9px 17px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+a.btn { display: inline-flex; }
+.btn:hover { transform: none; box-shadow: none; border-color: var(--text); }
+.btn.primary {
+  background: var(--ink-button);
+  color: var(--ink-button-text);
+  border-color: var(--ink-button);
+}
+.btn.primary:hover { filter: none; box-shadow: none; background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.btn:disabled:hover { border-color: var(--border); }
+
+/* flat paper surfaces */
+.game-stat,
+.exam-card,
+.module-card,
+.due-banner,
+.dash-section,
+.route-map,
+.welcome-group,
+.explain-panel {
+  box-shadow: none;
+  border-color: var(--border);
+}
+.game-stat:hover,
+.exam-card:hover,
+.module-card.clickable:hover { transform: none; box-shadow: none; border-color: var(--text); }
+
+.game-stat-icon { color: var(--text-muted); }
+.game-stat-icon .ico { width: 22px; height: 22px; }
+.game-stat-value { font-size: 1.6rem; }
+
+/* home: each subject card carries its line colour */
+.exam-card[data-stage="principles"] { --line: var(--rm-principles); }
+.exam-card[data-stage="practice"] { --line: var(--rm-practice); }
+.exam-card[data-stage="sp"] { --line: var(--rm-sp); }
+.exam-card[data-stage="sa"] { --line: var(--rm-sa); }
+.exam-code { display: inline-flex; align-items: center; gap: 8px; font-size: 1.1rem; }
+.exam-code::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 3px solid var(--line, var(--text));
+  background: var(--card-bg);
+}
+.exam-card.completed .exam-code::before { background: var(--line, var(--text)); }
+.exam-bar { height: 5px; border-radius: 0; background: var(--border-soft); }
+.exam-bar-fill { border-radius: 0; background: var(--line, var(--accent)); }
+.exam-card.studying,
+.exam-card.completed { box-shadow: none; }
+.exam-card.studying { border-color: var(--line, var(--studying)); }
+.exam-card.completed { border-color: var(--done); }
+
+.status-ribbon {
+  box-shadow: none;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 11px;
+  background: var(--text);
+  color: var(--bg);
+}
+.status-ribbon.studying-ribbon { background: var(--line, var(--accent)); color: var(--on-line); }
+.status-ribbon.completed-ribbon { background: var(--done); color: var(--on-line); }
+.status-ribbon.revised-ribbon { background: var(--text-muted); color: var(--bg); }
+
+.subject-code { background: transparent; border: 1.5px solid var(--accent); color: var(--accent); }
+.hub-link { display: inline-flex; align-items: center; gap: 6px; }
+.mode-tab:hover { transform: none; }
+
+/* flashcards: an index card — red header rule, blue ruled lines */
+.flashcard:not(.question-card):not(.drill-card) {
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background-color: var(--card-bg);
+  /* Header rule under the card's label line, and a short ruled band along
+     the bottom edge. Full-height ruling can't stay aligned with text of
+     every size, so the body of the card is left plain. */
+  background-image:
+    linear-gradient(var(--card-margin), var(--card-margin)),
+    repeating-linear-gradient(to top, transparent 0 11px, var(--card-rule) 11px 12px);
+  background-size: 100% 2px, 100% 36px;
+  background-position: 0 58px, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  padding-bottom: 44px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.flashcard.is-mastered { border-color: var(--border); }
+.flashcard-star .ico { width: 24px; height: 24px; }
+.flashcard-question { font-family: var(--font-display); font-weight: 400; }
+.flashcard-user-answer { font-family: var(--font-display); font-style: italic; }
+.question-card, .drill-card { border-radius: 6px; box-shadow: var(--shadow-lg); }
+
+@media (min-width: 641px) {
+  .flashcard:not(.question-card):not(.drill-card) { transform: rotate(-0.35deg); }
+}
+
+.score-btn { border-radius: var(--radius-pill); }
+.score-btn.sufficient { background: var(--rm-principles); border-color: var(--rm-principles); color: var(--on-line); }
+.score-btn.insufficient { background: transparent; border-color: var(--rm-practice); color: var(--rm-practice); }
+.score-btn.sufficient:hover { background: var(--rm-principles); border-color: var(--text); }
+.score-btn:disabled { opacity: 0.75; }
+
+/* the rubber stamp pressed on a graded card */
+.card-stamp {
+  position: absolute;
+  top: 70px;
+  right: 34px;
+  padding: 8px 18px;
+  border: 5px double currentColor;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  pointer-events: none;
+  animation: stamp-in 0.18s var(--ease) both;
+}
+.card-stamp.good { color: var(--rm-principles); transform: rotate(-12deg); }
+.card-stamp.again { color: var(--rm-practice); transform: rotate(8deg); }
+@keyframes stamp-in {
+  from { opacity: 0; scale: 1.6; }
+  to { opacity: 0.88; scale: 1; }
+}
+
+.card-dot .ico { width: 14px; height: 14px; vertical-align: -0.15em; }
+.mastery-label .ico, .dash-subject-meta .ico { width: 13px; height: 13px; }
+.summary-badge { color: var(--done); }
+.summary-badge .ico { width: 44px; height: 44px; }
+
+@media (max-width: 640px) {
+  .topbar h1 { font-size: 1.05rem; }
+  .roundel { width: 30px; height: 21px; }
+  .topbar-home { gap: 8px; }
+  .subject-head h2 { font-size: 1.7rem; }
+  .card-stamp { top: 56px; right: 16px; font-size: 1.25rem; }
 }
