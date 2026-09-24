@@ -26,7 +26,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=22">
+<link rel="stylesheet" href="style.css?v=23">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -50,6 +50,8 @@
     <section id="welcomeBanner" class="due-banner welcome-banner" hidden></section>
     <section id="resultsPrompt" class="due-banner results-prompt" hidden></section>
     <section id="dueBanner" class="due-banner"></section>
+
+    <section id="routeMap" class="route-map" aria-label="Your route to Associate and Fellow"></section>
 
     <section class="game-bar" id="gameBar">
       <div class="game-stat">
@@ -150,13 +152,14 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 }
 </script>
 <script src="srs.js?v=1"></script>
-<script src="store.js?v=7"></script>
+<script src="store.js?v=8"></script>
 <script src="data.js?v=44"></script>
 <script src="questions.js?v=34"></script>
 <script src="diagrams.js?v=1"></script>
 <script src="drills.js?v=2"></script>
 <script src="exam-stats.js?v=1"></script>
 <script src="exam-dates.js?v=2"></script>
-<script src="app.js?v=28"></script>
+<script src="route.js?v=1"></script>
+<script src="app.js?v=29"></script>
 </body>
 </html>

@@ -378,9 +378,12 @@ function generateMixedSession(code) {
 // requires every Core Principles + Core Practice subject; Fellowship
 // additionally requires any 2 Specialist Principles subjects and any 1
 // Specialist Advanced subject, from the candidate's choice of the full list.
-const CORE_SUBJECTS = ["CB1", "CB2", "CB3", "CM1", "CM2", "CS1", "CS2", "CP1", "CP2", "CP3"];
-const SP_CHOICES = ["SP1", "SP2", "SP4", "SP5", "SP6", "SP7", "SP8", "SP9"];
-const SA_CHOICES = ["SA1", "SA2", "SA3", "SA4", "SA7"];
+// The lists live in route.js, which also works out the route map.
+const CORE_SUBJECTS = Route.CORE;
+const SP_CHOICES = Route.SP;
+const SA_CHOICES = Route.SA;
+// Sitting dates and timetable lookups (route.js), from exam-dates.js.
+const CAL = Route.calendar(typeof EXAM_DATES !== "undefined" ? EXAM_DATES : null);
 
 function pathFor(code) {
   return `maths-study/exams/${code}/progress.md`;
@@ -545,6 +548,7 @@ function onResultsChanged() {
   EXAMS.forEach(updateHomeCard);
   renderGameBar();
   renderHomePrompts();
+  renderRouteMap();
   renderSyncStatus();
   const r = parseHash();
   if (r.view === "subject") renderSubjectView(r.exam);
@@ -1936,11 +1940,10 @@ function refreshDashboardActivity() {
 // planned exam is passed. Sittings are April and September; ones the IFoA
 // hasn't published yet are assumed to follow the same pattern.
 
-let examPlan = Store.getExamPlanCache(); // { sittings: { "2027-04": ["CS1"] }, updatedAt }
+let examPlan = Store.getExamPlanCache(); // { sittings: { "2027-04": ["CS1"] }, specialists: { sp, sa }, updatedAt }
 let planExtraSittings = 0; // "Show later sittings" clicks this page load
 
 const PLAN_MAX_PER_SITTING = 3;
-const MONTH_NUM = { april: "04", september: "09" };
 
 // CB3 is an online assessment booked through the member portal, outside the
 // April/September sittings, so it isn't something to place in one.
@@ -1953,33 +1956,18 @@ function planGroup(code) {
   return "Specialist Advanced";
 }
 
-function sessionSittingId(session) {
-  const [month, year] = session.name.toLowerCase().split(" ");
-  return MONTH_NUM[month] ? `${year}-${MONTH_NUM[month]}` : null;
-}
-
 function sittingName(id) {
-  const [y, m] = id.split("-");
-  return `${m === "04" ? "April" : "September"} ${y}`;
+  return CAL.name(id);
 }
 
 function nextSittingId(id) {
-  const [y, m] = id.split("-");
-  return m === "04" ? `${y}-09` : `${Number(y) + 1}-04`;
+  return CAL.next(id);
 }
 
 // One sitting: published dates when the IFoA has them, else an estimate
 // (mid-April / mid-September) so countdowns and pacing still work.
 function sittingInfo(id) {
-  const session =
-    (typeof EXAM_DATES !== "undefined" && EXAM_DATES.sessions.find((s) => sessionSittingId(s) === id)) || null;
-  if (session) {
-    const dates = Object.keys(session.papers).sort();
-    const entry = session.deadlines.find((d) => /entry closes/i.test(d.label));
-    return { id, session, first: dates[0], last: dates[dates.length - 1], entryCloses: entry ? entry.date : null };
-  }
-  const approx = `${id}-15`;
-  return { id, session: null, first: approx, last: approx, entryCloses: null };
+  return CAL.info(id);
 }
 
 // Sittings to show: any past sitting that still has subjects planned in it
@@ -2014,6 +2002,7 @@ function savePlan(sittings) {
   renderSyncStatus();
   renderDashboardView();
   renderHomePrompts();
+  renderRouteMap();
 }
 
 function removeFromPlan(code) {
@@ -2025,10 +2014,7 @@ function removeFromPlan(code) {
 
 // The first sitting that hasn't started yet.
 function firstUpcomingSittingId() {
-  const today = SRS.today();
-  let id = "2026-04";
-  while (sittingInfo(id).first <= today) id = nextSittingId(id);
-  return id;
+  return CAL.firstUpcoming(SRS.today());
 }
 
 // When results for a subject at a sitting are (or are expected to be) out:
@@ -2308,6 +2294,7 @@ Store.onPlanChange(() => {
   examPlan = Store.getExamPlanCache();
   if (parseHash().view === "dashboard") renderDashboardView();
   renderHomePrompts();
+  renderRouteMap();
 });
 
 Store.onResultsChange(() => {
@@ -2320,8 +2307,328 @@ function refreshExamPlan() {
     examPlan = p;
     if (parseHash().view === "dashboard") renderDashboardView();
     renderHomePrompts();
+    renderRouteMap();
   });
 }
+
+/* ---------- route map (home page) ---------- */
+//
+// The route to Associate and Fellow drawn as a transit line: route.js works
+// out the stops, this lays them out and draws them. Stations run left to
+// right, then snake back on the next row when the width runs out, so on a
+// phone the line runs down the screen.
+
+function planSpecialists() {
+  return examPlan.specialists || { sp: [], sa: [] };
+}
+
+function currentRoute() {
+  return Route.build({
+    today: SRS.today(),
+    calendar: CAL,
+    passed: EXAMS.filter(isSubjectPassed),
+    sittings: examPlan.sittings,
+    specialists: planSpecialists(),
+  });
+}
+
+function shortSitting(id) {
+  return sittingLabel(id).toUpperCase(); // "APR 2027"
+}
+
+// The stops in order: start, passed subjects, each sitting's subjects, and
+// the Associate and Fellow interchanges where the route reaches them.
+function routeNodes(route) {
+  const nodes = [{ t: "start" }];
+  route.passed.forEach((code) => nodes.push({ t: "station", code, kind: "passed" }));
+  const assocNode = { t: "associate", at: route.associate.at, needsCB3: route.associate.needsCB3 };
+  const fellowNode = { t: "fellow", at: route.fellow.at };
+  if (route.associate.at === "now") nodes.push(assocNode);
+  if (route.fellow.at === "now") nodes.push(fellowNode);
+  route.groups.forEach((g) => {
+    g.codes.forEach((code) => nodes.push({ t: "station", code, kind: g.kind, group: g }));
+    if (route.associate.at === g.id) nodes.push(assocNode);
+    if (route.fellow.at === g.id) nodes.push(fellowNode);
+  });
+  if (!route.associate.at) nodes.push(assocNode);
+  if (!route.fellow.at) {
+    if (route.fork.sp || route.fork.sa) nodes.push({ t: "fork", fork: route.fork });
+    nodes.push(fellowNode);
+  }
+  return nodes;
+}
+
+function stageClass(code) {
+  return `rm-${Route.stage(code)}`;
+}
+
+function routeMapSvg(route, width) {
+  const nodes = routeNodes(route);
+  // Stations spread evenly across the width, at least minStep apart so each
+  // sitting's sign has room.
+  const margin = width < 560 ? 52 : 70;
+  const minStep = 104;
+  const cols = Math.max(2, Math.floor((width - 2 * margin) / minStep) + 1);
+  const step = (width - 2 * margin) / (cols - 1);
+  const rowH = 158;
+  const top = 92;
+  const rows = Math.ceil(nodes.length / cols);
+  const height = top + (rows - 1) * rowH + 110;
+
+  nodes.forEach((n, i) => {
+    n.row = Math.floor(i / cols);
+    const col = i % cols;
+    n.ltr = n.row % 2 === 0;
+    n.x = n.ltr ? margin + col * step : width - margin - col * step;
+    n.y = top + n.row * rowH;
+  });
+
+  const colourOf = (n, prev) => (n.t === "station" ? stageClass(n.code) : prev ? prev.colour : "rm-principles");
+  nodes.forEach((n, i) => (n.colour = colourOf(n, nodes[i - 1])));
+  const dashed = (n) => (n.t === "station" && n.kind === "suggested") || n.t === "fork" || (n.t === "fellow" && !n.at) || (n.t === "associate" && !n.at);
+  // Track touching a suggestion is dashed: into a suggested station, and on
+  // into an interchange that's only reached through suggestions.
+  const dashedSeg = (a, b) => dashed(b) || (b.t !== "station" && dashed(a));
+
+  const out = [];
+  // Track, drawn under everything else.
+  for (let i = 1; i < nodes.length; i++) {
+    const a = nodes[i - 1];
+    const b = nodes[i];
+    let d;
+    if (a.row === b.row) {
+      d = `M${a.x} ${a.y} H${b.x}`;
+    } else {
+      const s = a.ltr ? 1 : -1;
+      const ex = a.ltr ? width - 16 : 16;
+      const r = 22;
+      d = `M${a.x} ${a.y} H${ex - s * r} Q${ex} ${a.y} ${ex} ${a.y + r} V${b.y - r} Q${ex} ${b.y} ${ex - s * r} ${b.y} H${b.x}`;
+    }
+    out.push(`<path class="rm-track ${b.colour}${dashedSeg(a, b) ? " rm-dashed" : ""}" d="${d}"></path>`);
+  }
+
+  // Sitting signs: one per run of a group's stations within a row.
+  let run = null;
+  const flush = () => {
+    if (!run) return;
+    const xs = run.nodes.map((n) => n.x);
+    const mid = (Math.min(...xs) + Math.max(...xs)) / 2;
+    const y = run.nodes[0].y;
+    if (run.passed) {
+      out.push(`<text class="rm-passed-label" x="${mid}" y="${y - 44}" text-anchor="middle">PASSED</text>`);
+    } else {
+      const g = run.group;
+      const label = shortSitting(g.id);
+      const w = label.length * 8 + 22;
+      out.push(
+        `<g class="rm-sign ${g.kind}${g.past ? " past" : ""}"><rect x="${mid - w / 2}" y="${y - 66}" width="${w}" height="26" rx="13"></rect><text x="${mid}" y="${y - 48}" text-anchor="middle">${label}</text></g>`
+      );
+      if (g.clashes.length) {
+        const c = g.clashes[0];
+        out.push(
+          `<g class="rm-clash"><title>Clash: ${c.codes.join(" and ")} both have a paper on ${fmtHubDate(c.date)}</title><circle cx="${mid + w / 2 + 4}" cy="${y - 53}" r="11"></circle><text x="${mid + w / 2 + 4}" y="${y - 48}" text-anchor="middle">!</text></g>`
+        );
+      }
+    }
+    run = null;
+  };
+  nodes.forEach((n) => {
+    const key = n.t === "station" ? (n.kind === "passed" ? "passed" : n.group.id) : null;
+    if (!run || run.key !== key || run.row !== n.row) {
+      flush();
+      if (key) run = { key, row: n.row, nodes: [], passed: key === "passed", group: n.group };
+    }
+    if (run) run.nodes.push(n);
+  });
+  flush();
+
+  // Stations and interchanges.
+  nodes.forEach((n) => {
+    if (n.t === "start") {
+      out.push(`<rect class="rm-start" x="${n.x - 5}" y="${n.y - 18}" width="10" height="36"></rect><text class="rm-small" x="${n.x}" y="${n.y + 40}" text-anchor="middle">START</text>`);
+    } else if (n.t === "station") {
+      const info = SUBJECTS[n.code] || { name: "" };
+      const where =
+        n.kind === "passed"
+          ? subjectResult(n.code) === "exempt"
+            ? "exempt"
+            : "passed"
+          : `${n.kind === "suggested" ? "suggested for" : "planned for"} ${sittingName(n.group.id)}`;
+      const mark =
+        n.kind === "passed"
+          ? `<path class="rm-tick" d="M${n.x - 5} ${n.y} l3.6 3.8 l6.6 -7.4"></path>`
+          : "";
+      out.push(
+        `<a class="rm-station ${n.kind} ${n.colour}" href="#/${n.code}" aria-label="${n.code} ${escapeHtml(info.name)}, ${where}"><title>${n.code} ${escapeHtml(info.name)} — ${where}</title><rect class="rm-hit" x="${n.x - 22}" y="${n.y - 22}" width="44" height="66"></rect><circle cx="${n.x}" cy="${n.y}" r="12"></circle>${mark}<text x="${n.x}" y="${n.y + 36}" text-anchor="middle">${n.code}</text></a>`
+      );
+    } else if (n.t === "associate" || n.t === "fellow") {
+      const name = n.t === "associate" ? "Associate" : "Fellow";
+      const when = n.at === "now" ? "reached" : n.at ? `after ${shortSitting(n.at)}` : "";
+      // Name and date sit above the interchange, leaving room below for the
+      // CB3 spur.
+      out.push(
+        `<g class="rm-interchange ${n.t}${n.at ? "" : " faded"}"><circle cx="${n.x}" cy="${n.y}" r="${n.t === "fellow" ? 19 : 16}"></circle>${
+          n.t === "fellow" ? `<circle class="rm-core" cx="${n.x}" cy="${n.y}" r="7"></circle>` : ""
+        }<text class="rm-name" x="${n.x}" y="${n.y - (when ? 44 : 30)}" text-anchor="middle">${name}</text>${
+          when ? `<text class="rm-small" x="${n.x}" y="${n.y - 28}" text-anchor="middle">${when.toUpperCase()}</text>` : ""
+        }</g>`
+      );
+      if (n.t === "associate" && n.needsCB3) {
+        out.push(
+          `<a class="rm-station suggested rm-principles rm-spur" href="#/CB3" aria-label="CB3 Business Management, also needed for Associate, booked online any time"><title>CB3 is also needed for Associate. It's booked online, any time.</title><path class="rm-track rm-principles rm-dashed" d="M${n.x} ${n.y + 20} V${n.y + 42}"></path><circle cx="${n.x}" cy="${n.y + 52}" r="9"></circle><text x="${n.x + 15}" y="${n.y + 57}" text-anchor="start">CB3</text></a>`
+        );
+      }
+    } else if (n.t === "fork") {
+      const need = [];
+      if (n.fork.sp) need.push(`${n.fork.sp} SP`);
+      if (n.fork.sa) need.push(`${n.fork.sa} SA`);
+      out.push(
+        `<a class="rm-fork" href="#routeSpecialists" aria-label="Choose your specialist subjects: ${need.join(" and ")} still to pick"><title>Choose your specialist subjects</title><rect class="rm-hit" x="${n.x - 40}" y="${n.y - 34}" width="80" height="86"></rect><path class="rm-fork-arm rm-sp" d="M${n.x - 24} ${n.y} C${n.x - 6} ${n.y} ${n.x - 4} ${n.y - 20} ${n.x + 16} ${n.y - 20}"></path><path class="rm-fork-arm rm-sa" d="M${n.x - 24} ${n.y} C${n.x - 6} ${n.y} ${n.x - 4} ${n.y + 20} ${n.x + 16} ${n.y + 20}"></path><circle class="rm-sp-dot" cx="${n.x + 18}" cy="${n.y - 20}" r="7"></circle><circle class="rm-sa-dot" cx="${n.x + 18}" cy="${n.y + 20}" r="7"></circle><text class="rm-small" x="${n.x}" y="${n.y + 44}" text-anchor="middle">${need.join(" + ")}</text></a>`
+      );
+    }
+  });
+
+  // You are here: just after the last passed subject.
+  const here = nodes.findIndex((n) => n.t !== "start" && !(n.t === "station" && n.kind === "passed"));
+  if (here > 0) {
+    const a = nodes[here - 1];
+    const b = nodes[here];
+    const raw = a.row === b.row ? (a.x + b.x) / 2 : a.x + (a.ltr ? step / 2 : -step / 2);
+    const x = Math.min(width - 56, Math.max(56, raw)); // keep the pill on screen
+    const y = a.y;
+    out.push(
+      `<g class="rm-here" aria-hidden="true"><rect x="${x - 16}" y="${y - 10}" width="32" height="20" rx="10"></rect><circle cx="${x + 7}" cy="${y}" r="3.5"></circle><path d="M${x} ${y + 12} V${y + 52}"></path><rect class="rm-here-pill" x="${x - 52}" y="${y + 52}" width="104" height="24" rx="12"></rect><text x="${x}" y="${y + 68}" text-anchor="middle">YOU ARE HERE</text></g>`
+    );
+  }
+
+  return `<svg class="route-svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="group" aria-label="Your route to Associate and Fellow">${out.join("")}</svg>`;
+}
+
+function renderRouteMap() {
+  const el = document.getElementById("routeMap");
+  if (!el || el.closest("[hidden]")) return;
+  const route = currentRoute();
+  const today = SRS.today();
+  const next = route.groups.find((g) => !g.past);
+  const nextInfo = next ? sittingInfo(next.id) : null;
+  const when = (at) => (at === "now" ? null : at ? sittingName(at) : null);
+
+  let headline;
+  if (route.fellow.at === "now") headline = `You&#8217;re a <em>Fellow</em>. Congratulations.`;
+  else if (route.associate.at === "now")
+    headline = route.fellow.at ? `Fellow by <em>${when(route.fellow.at)}</em>, on this plan.` : `<em>Associate</em> reached. Next stop, Fellow.`;
+  else if (route.associate.at) headline = `Associate by <em>${when(route.associate.at)}</em>, on this plan.`;
+  else headline = `Your route to <em>Associate</em>.`;
+
+  const facts = [
+    [
+      "Next stop",
+      next ? next.codes.join(" and ") : "&mdash;",
+      next
+        ? `${sittingName(next.id)}${next.kind === "suggested" ? " (suggested)" : ""}${
+            nextInfo.entryCloses && nextInfo.entryCloses >= today ? ` &middot; entry closes ${fmtHubDate(nextInfo.entryCloses)}` : ""
+          }`
+        : "",
+    ],
+    [
+      "Associate",
+      route.associate.at === "now" ? "Reached" : route.associate.at ? `After ${when(route.associate.at)}` : "&mdash;",
+      route.associate.at && route.associate.at !== "now" && route.associate.needsCB3 ? "once CB3 is passed too (online, any time)" : "",
+    ],
+    [
+      "Fellow",
+      route.fellow.at === "now" ? "Reached" : route.fellow.at ? `After ${when(route.fellow.at)}` : "Choose specialists",
+      route.fellow.at
+        ? `via ${[...route.specialists.sp, ...route.specialists.sa].join(", ")}`
+        : `pick ${route.fork.sp ? `${route.fork.sp} Specialist Principles` : ""}${route.fork.sp && route.fork.sa ? " and " : ""}${
+            route.fork.sa ? `${route.fork.sa} Specialist Advanced` : ""
+          }`,
+    ],
+  ];
+  const clashes = route.groups.flatMap((g) =>
+    g.clashes.map((c) => `${sittingName(g.id)}: ${c.codes.join(" and ")} both have a paper on ${fmtHubDate(c.date, true)}.`)
+  );
+
+  const width = Math.max(300, Math.floor(el.clientWidth || 900) - 2);
+  el.innerHTML = `
+    <div class="route-head">
+      <div>
+        <p class="route-eyebrow">${next ? `Next stop: ${next.codes.join(" &amp; ")} &middot; ${sittingName(next.id)}` : "Your route"}</p>
+        <h2 class="route-title">${headline}</h2>
+      </div>
+      <a class="btn" href="#/dashboard">Edit your plan</a>
+    </div>
+    <div class="route-canvas">${routeMapSvg(route, width - 2)}</div>
+    ${clashes.length ? `<ul class="plan-notes route-clashes">${clashes.map((c) => `<li class="plan-warn">Clash &mdash; ${c}</li>`).join("")}</ul>` : ""}
+    <div class="route-legend" aria-hidden="true">
+      <span><span class="rm-key passed"></span>Passed</span>
+      <span><span class="rm-key planned"></span>Planned by you</span>
+      <span><span class="rm-key suggested"></span>Suggested until you plan it</span>
+    </div>
+    <div class="route-facts">${facts
+      .map(([a, b, c]) => `<div><span class="route-fact-label">${a}</span><span class="route-fact-value">${b}</span><span class="route-fact-sub">${c}</span></div>`)
+      .join("")}</div>
+    ${specialistChooserHtml(route)}`;
+  wireSpecialistChooser(el, route);
+}
+
+// Choosing specialists: passed or planned ones already count and are shown
+// ticked and fixed; the rest can be picked up to what's needed.
+function specialistChooserHtml(route) {
+  const fixed = (c) => isSubjectPassed(c) || !!plannedSittingOf(c);
+  const box = (c, list, needed) => {
+    const chosen = list.includes(c);
+    const locked = fixed(c);
+    const full = !chosen && list.length >= needed;
+    return `<label class="spec-option${locked ? " locked" : ""}"><input type="checkbox" data-spec="${c}"${chosen ? " checked" : ""}${
+      locked || full ? " disabled" : ""
+    }> <strong>${c}</strong> ${escapeHtml((SUBJECTS[c] || { name: "" }).name)}${locked ? ` <span class="muted">(${isSubjectPassed(c) ? "passed" : "planned"})</span>` : ""}</label>`;
+  };
+  return `<details class="spec-chooser" id="routeSpecialists">
+      <summary>${route.fork.sp || route.fork.sa ? "Choose your specialist subjects" : "Change your specialist subjects"}</summary>
+      <fieldset><legend>Specialist Principles &mdash; any ${Route.SP_NEEDED}</legend>${Route.SP.map((c) => box(c, route.specialists.sp, Route.SP_NEEDED)).join("")}</fieldset>
+      <fieldset><legend>Specialist Advanced &mdash; any ${Route.SA_NEEDED}</legend>${Route.SA.map((c) => box(c, route.specialists.sa, Route.SA_NEEDED)).join("")}</fieldset>
+    </details>`;
+}
+
+function wireSpecialistChooser(el, route) {
+  el.querySelectorAll("[data-spec]").forEach((box) =>
+    box.addEventListener("change", () => {
+      const code = box.dataset.spec;
+      const key = Route.SP.includes(code) ? "sp" : "sa";
+      const saved = { sp: [...planSpecialists().sp], sa: [...planSpecialists().sa] };
+      // Keep the saved picks to the ones that still fill a place.
+      saved[key] = route.specialists[key].filter((c) => !isSubjectPassed(c) && !plannedSittingOf(c));
+      if (box.checked) saved[key].push(code);
+      else saved[key] = saved[key].filter((c) => c !== code);
+      examPlan = Store.setExamPlan(examPlan.sittings, saved);
+      renderSyncStatus();
+      renderRouteMap();
+      const again = document.querySelector(`#routeMap [data-spec="${code}"]`);
+      if (again) {
+        again.closest("details").open = true;
+        again.focus();
+      }
+    })
+  );
+  const details = el.querySelector("#routeSpecialists");
+  el.querySelectorAll('a[href="#routeSpecialists"]').forEach((a) =>
+    a.addEventListener("click", (e) => {
+      e.preventDefault(); // keep the router's hash; just open the chooser
+      details.open = true;
+      details.scrollIntoView({ block: "nearest" });
+      details.querySelector("summary").focus();
+    })
+  );
+}
+
+let routeResizeTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(routeResizeTimer);
+  routeResizeTimer = setTimeout(() => {
+    if (parseHash().view === "home") renderRouteMap();
+  }, 150);
+});
 
 /* ---------- home prompts: welcome and "did you pass?" ---------- */
 
@@ -3356,9 +3663,7 @@ function countdownLabel(iso) {
 // Papers in a session that belong to a subject: "CM1A" and "CP1 paper 2"
 // both start with their subject code.
 function sessionPapers(session, code) {
-  return Object.entries(session.papers)
-    .flatMap(([date, papers]) => papers.filter((p) => p.slice(0, 3) === code).map((p) => ({ date, paper: p })))
-    .sort((a, b) => a.date.localeCompare(b.date));
+  return CAL.papers(session, code);
 }
 
 function resultsGroup(code) {
@@ -3670,6 +3975,7 @@ function renderRoute() {
     renderGameBar();
     renderDueBanner();
     renderHomePrompts();
+    renderRouteMap();
   } else if (r.view === "review") {
     const key = `${r.kind}:${r.exam || "all"}`;
     if (reviewState.key !== key || reviewState.sessionDone) {

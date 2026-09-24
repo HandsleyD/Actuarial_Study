@@ -2304,3 +2304,197 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
 .welcome-how.text-input { width: auto; margin: 0; padding: 5px 10px; font-size: 0.8rem; }
 
 .welcome-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- route map (home page) ---------- */
+
+:root {
+  --rm-principles: #c0392b;
+  --rm-practice: #1f5fad;
+  --rm-sp: #2e7d4f;
+  --rm-sa: #b7800f;
+  --rm-warn: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --rm-principles: #ef7a6e;
+    --rm-practice: #6ea8f0;
+    --rm-sp: #5cc28a;
+    --rm-sa: #e8b04a;
+    --rm-warn: #f87171;
+  }
+}
+
+:root[data-theme="dark"] {
+  --rm-principles: #ef7a6e;
+  --rm-practice: #6ea8f0;
+  --rm-sp: #5cc28a;
+  --rm-sa: #e8b04a;
+  --rm-warn: #f87171;
+}
+
+.route-map {
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 20px 20px 16px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.route-map:empty { display: none; }
+
+.route-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.route-eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rm-principles);
+}
+
+.route-title {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.route-title em { font-style: normal; color: var(--accent); }
+
+.route-canvas { margin: 8px -20px 0; overflow: hidden; }
+
+.route-svg { display: block; font-family: var(--font-sans); }
+
+.rm-principles { --rm: var(--rm-principles); }
+.rm-practice { --rm: var(--rm-practice); }
+.rm-sp { --rm: var(--rm-sp); }
+.rm-sa { --rm: var(--rm-sa); }
+
+.rm-track { fill: none; stroke: var(--rm); stroke-width: 8; stroke-linecap: round; }
+.rm-track.rm-dashed { stroke-dasharray: 12 9; stroke-linecap: butt; opacity: 0.55; }
+
+.rm-start { fill: var(--text); }
+
+.rm-small {
+  fill: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.rm-passed-label {
+  fill: var(--text-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.rm-sign rect { fill: var(--text); }
+.rm-sign text { fill: var(--card-bg); font-size: 12px; font-weight: 800; letter-spacing: 0.06em; }
+.rm-sign.suggested rect { fill: none; stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.rm-sign.suggested text { fill: var(--text-muted); }
+.rm-sign.past rect { fill: var(--text-muted); }
+
+.rm-clash circle { fill: var(--rm-warn); }
+.rm-clash text { fill: #fff; font-size: 14px; font-weight: 800; }
+
+.rm-station circle { fill: var(--card-bg); stroke: var(--text); stroke-width: 3.5; }
+.rm-station text { fill: var(--text); font-size: 14px; font-weight: 800; }
+.rm-station.passed circle { fill: var(--rm); stroke-width: 2.5; }
+.rm-station.suggested circle { stroke: var(--text-muted); stroke-width: 2.5; stroke-dasharray: 4 3; }
+.rm-station.suggested text { fill: var(--text-muted); font-weight: 600; }
+.rm-tick { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.rm-station:hover circle, .rm-station:focus circle { stroke: var(--accent); stroke-width: 4; }
+.rm-station:focus { outline: none; }
+.rm-station:focus-visible text { text-decoration: underline; }
+
+.rm-interchange circle { fill: var(--card-bg); stroke: var(--text); stroke-width: 6; }
+.rm-interchange .rm-core { fill: var(--text); stroke: none; }
+.rm-interchange .rm-name { fill: var(--text); font-size: 15px; font-weight: 800; }
+.rm-interchange.faded { opacity: 0.5; }
+
+.rm-fork circle { stroke: none; }
+.rm-hit { fill: transparent; }
+.rm-fork-arm { fill: none; stroke: var(--rm); stroke-width: 6; stroke-linecap: round; }
+.rm-fork .rm-sp-dot { fill: var(--rm-sp); }
+.rm-fork .rm-sa-dot { fill: var(--rm-sa); }
+.rm-fork:hover .rm-small, .rm-fork:focus .rm-small { fill: var(--accent); }
+
+.rm-here rect { fill: var(--text); }
+.rm-here circle { fill: #f2c14e; }
+.rm-here path { stroke: var(--text); stroke-width: 1.5; }
+.rm-here text { fill: var(--card-bg); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; }
+
+.route-clashes { margin: 4px 0 8px; }
+
+.route-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.route-legend > span { display: inline-flex; align-items: center; gap: 7px; }
+
+.rm-key {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2.5px solid var(--text);
+  background: var(--card-bg);
+}
+
+.rm-key.passed { background: var(--rm-principles); border-width: 2px; }
+.rm-key.suggested { border: 2px dashed var(--text-muted); }
+
+.route-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--border-soft);
+}
+
+.route-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px 4px 0;
+}
+
+.route-fact-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.route-fact-value { font-size: 1.02rem; font-weight: 800; }
+.route-fact-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+.spec-chooser { margin-top: 12px; border-top: 1px solid var(--border-soft); padding-top: 10px; }
+.spec-chooser summary { cursor: pointer; font-weight: 700; font-size: 0.88rem; min-height: 32px; display: flex; align-items: center; }
+.spec-chooser fieldset { border: 0; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2px 16px; }
+.spec-chooser legend { font-weight: 800; font-size: 0.8rem; margin-bottom: 4px; }
+.spec-option { display: flex; align-items: center; gap: 8px; min-height: 36px; font-size: 0.85rem; cursor: pointer; }
+.spec-option.locked { cursor: default; }
+.spec-option input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+@media (max-width: 640px) {
+  .route-map { padding: 16px 14px 12px; }
+  .route-canvas { margin: 8px -14px 0; }
+  .route-title { font-size: 1.25rem; }
+  .route-facts { grid-template-columns: minmax(0, 1fr); }
+  .route-facts > div { padding: 10px 0 4px; border-top: 1px solid var(--border-soft); }
+  .route-facts > div:first-child { border-top: none; }
+}

@@ -653,10 +653,14 @@ const Store = (function () {
   // Which subjects the user intends to sit at which sitting. One small
   // document per user, merged last-write-wins on updatedAt (ms since epoch).
   //
-  // Shape: { sittings: { "2027-04": ["CS1", "CM1"], ... }, updatedAt }
+  // Shape: { sittings: { "2027-04": ["CS1", "CM1"], ... },
+  //         specialists: { sp: ["SP2", "SP4"], sa: ["SA2"] }, updatedAt }
+  // specialists are the Specialist subjects the user means to take but
+  // hasn't placed in a sitting yet (the route map suggests sittings for them).
 
   function getExamPlanCache() {
-    return readLS(lsKey("plan"), { sittings: {}, updatedAt: 0 });
+    const plan = readLS(lsKey("plan"), { sittings: {}, updatedAt: 0 });
+    return { ...plan, specialists: plan.specialists || { sp: [], sa: [] } };
   }
 
   // Server copy of the plan, or null if there's no row yet. Throws on error.
@@ -692,8 +696,9 @@ const Store = (function () {
     }
   }
 
-  function setExamPlan(sittings) {
-    const plan = { sittings, updatedAt: Date.now() };
+  // Leaving out specialists keeps the ones already saved.
+  function setExamPlan(sittings, specialists) {
+    const plan = { sittings, specialists: specialists || getExamPlanCache().specialists, updatedAt: Date.now() };
     writeLS(lsKey("plan"), plan);
     enqueue({ type: "plan", value: plan });
     return plan;
