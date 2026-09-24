@@ -1,6 +1,6 @@
-# Actuarial Study
+# Fellow
 
-A free study companion for the IFoA actuarial exams, live at:
+**Fellow** is a free study companion for the IFoA actuarial exams, live at:
 
 **👉 https://handsleyd.github.io/Actuarial_Study/**
 
@@ -35,7 +35,7 @@ Skipping the account is completely fine too — the site works fully without one
 
 ## About this project
 
-This site is a personal, self-study project — original content written to mirror the structure and topic weighting of the official IFoA syllabus, not a reproduction of any copyrighted IFoA past paper or study material. It isn't affiliated with, endorsed by, or produced by the Institute and Faculty of Actuaries, and shouldn't be treated as a substitute for the official Core Reading or a qualified tutor. Corrections and suggestions are welcome via [issues](https://github.com/HandsleyD/Actuarial_Study/issues).
+Fellow is a personal, self-study project — original content written to mirror the structure and topic weighting of the official IFoA syllabus, not a reproduction of any copyrighted IFoA past paper or study material. It isn't affiliated with, endorsed by, or produced by the Institute and Faculty of Actuaries, and shouldn't be treated as a substitute for the official Core Reading or a qualified tutor. Corrections and suggestions are welcome via [issues](https://github.com/HandsleyD/Actuarial_Study/issues).
 
 ## Repo structure
 
