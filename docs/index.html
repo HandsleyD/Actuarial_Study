@@ -26,17 +26,19 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=19">
+<link rel="stylesheet" href="style.css?v=20">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <h1>Actuarial Study Progress</h1>
+    <h1><a class="topbar-home" href="#/">Actuarial Study Progress</a></h1>
     <div class="topbar-right">
       <span id="syncStatus" class="sync-status" hidden></span>
-      <a id="examHubLink" class="icon-btn" href="#/exams" title="Exam Hub: pass rates and exam dates" aria-label="Exam Hub">&#127891;</a>
-      <a id="searchLink" class="icon-btn" href="#/search" title="Search all cards and questions ( / )" aria-label="Search">&#128269;</a>
+      <a class="icon-btn nav-link" data-view="home" href="#/" title="Home: all subjects" aria-label="Home">&#127968;</a>
+      <a class="icon-btn nav-link" data-view="dashboard" href="#/dashboard" title="Study dashboard: what's due, weak areas, activity" aria-label="Study dashboard">&#128202;</a>
+      <a id="examHubLink" class="icon-btn nav-link" data-view="exams" href="#/exams" title="Exam Hub: pass rates and exam dates" aria-label="Exam Hub">&#127891;</a>
+      <a id="searchLink" class="icon-btn nav-link" data-view="search" href="#/search" title="Search all cards and questions ( / )" aria-label="Search">&#128269;</a>
       <button id="themeToggleBtn" class="icon-btn" title="Toggle light/dark theme">&#9728;&#65039;</button>
       <button id="settingsBtn" class="icon-btn" title="Account">&#9881;</button>
     </div>
@@ -151,6 +153,6 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 <script src="drills.js?v=2"></script>
 <script src="exam-stats.js?v=1"></script>
 <script src="exam-dates.js?v=2"></script>
-<script src="app.js?v=25"></script>
+<script src="app.js?v=26"></script>
 </body>
 </html>
