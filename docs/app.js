@@ -575,6 +575,7 @@ function recordResult(code, status, sitting) {
 
 function onResultsChanged() {
   EXAMS.forEach(updateHomeCard);
+  updateExamGroupHeads();
   renderGameBar();
   renderHomePrompts();
   renderRouteMap();
@@ -849,9 +850,51 @@ function updateHomeCard(code) {
   }
 }
 
+// Home subjects, grouped as the route map's lines, in syllabus order.
+const EXAM_GROUPS = [
+  { stage: "principles", name: "Core Principles", codes: Route.CORE.filter((c) => !c.startsWith("CP")), need: null },
+  { stage: "practice", name: "Core Practice", codes: Route.CORE.filter((c) => c.startsWith("CP")), need: null },
+  { stage: "sp", name: "Specialist Principles", codes: Route.SP, need: Route.SP_NEEDED },
+  { stage: "sa", name: "Specialist Advanced", codes: Route.SA, need: Route.SA_NEEDED },
+];
+
+function examGroupSummary(g) {
+  const passed = g.codes.filter(isSubjectPassed).length;
+  if (g.need) {
+    const word = g.need === 1 ? "one" : "two";
+    return `Pick any ${word} &middot; ${Math.min(passed, g.need)} of ${g.need} passed`;
+  }
+  const all = g.codes.length === 7 ? "seven" : g.codes.length === 3 ? "three" : String(g.codes.length);
+  return `All ${all} required &middot; ${passed} of ${g.codes.length} passed`;
+}
+
+function updateExamGroupHeads() {
+  EXAM_GROUPS.forEach((g) => {
+    const el = document.getElementById(`group-${g.stage}-summary`);
+    if (el) el.innerHTML = examGroupSummary(g);
+  });
+}
+
 function buildExamGrid() {
-  const grid = document.getElementById("examGrid");
-  for (const code of EXAMS) {
+  const root = document.getElementById("examGrid");
+  for (const g of EXAM_GROUPS) {
+    const section = document.createElement("section");
+    section.className = "exam-group";
+    section.dataset.stage = g.stage;
+    section.setAttribute("aria-labelledby", `group-${g.stage}-title`);
+    section.innerHTML = `
+      <div class="exam-group-head">
+        <h2 class="exam-group-title" id="group-${g.stage}-title">${g.name}</h2>
+        <span class="exam-group-summary" id="group-${g.stage}-summary">${examGroupSummary(g)}</span>
+      </div>
+      <div class="exam-grid"></div>`;
+    root.appendChild(section);
+    buildExamCards(section.querySelector(".exam-grid"), g.codes);
+  }
+}
+
+function buildExamCards(grid, codes) {
+  for (const code of codes) {
     const info = SUBJECTS[code] || { name: "" };
     const card = document.createElement("div");
     card.className = "exam-card loading";
