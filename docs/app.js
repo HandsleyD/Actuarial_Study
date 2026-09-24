@@ -2078,10 +2078,11 @@ function planSectionHtml() {
       const left = codes.map(modulesLeft);
       if (left.every((n) => n !== null)) {
         const total = left.reduce((a, n) => a + n, 0);
-        const weeks = Math.max(1, (daysFromToday(info.first) - Math.max(0, daysFromToday(prevEnd))) / 7);
+        const days = Math.max(1, daysFromToday(info.first) - Math.max(0, daysFromToday(prevEnd)));
+        const span = days < 14 ? `${days} day${days === 1 ? "" : "s"}` : `${Math.round(days / 7)} weeks`;
         notes.push(
           total
-            ? `${total} module${total === 1 ? "" : "s"} not yet marked done &mdash; about ${(total / weeks).toFixed(1)} a week over the ${Math.round(weeks)} week${Math.round(weeks) === 1 ? "" : "s"} ${prevEnd === today ? "from now" : "after the previous sitting"}.`
+            ? `${total} module${total === 1 ? "" : "s"} not yet marked done &mdash; about ${((total * 7) / days).toFixed(1)} a week over the ${span} ${prevEnd === today ? "from now" : "after the previous sitting"}.`
             : "Every module is marked done &mdash; time for past papers."
         );
       }
@@ -2160,6 +2161,11 @@ function wirePlanSection(el) {
     });
   }
 }
+
+Store.onPlanChange(() => {
+  examPlan = Store.getExamPlanCache();
+  if (parseHash().view === "dashboard") renderDashboardView();
+});
 
 function refreshExamPlan() {
   Store.loadExamPlan().then((p) => {

@@ -654,24 +654,36 @@ const Store = (function () {
     return readLS(lsKey("plan"), { sittings: {}, updatedAt: 0 });
   }
 
-  async function loadExamPlan() {
+  // Server copy of the plan, or null if there's no row yet. Throws on error.
+  async function fetchRemotePlan() {
+    const { data, error } = await client.from(PLAN_TABLE).select("plan").maybeSingle();
+    if (error) {
+      planTableMissing = looksLikeMissingTable(error, PLAN_TABLE);
+      throw error;
+    }
+    planTableMissing = false;
+    const remote = data && data.plan;
+    return remote && remote.sittings ? remote : null;
+  }
+
+  // Adopts the server copy only if it's newer than what's cached NOW -- the
+  // cache is re-read after the network call, so an edit made while the fetch
+  // was in flight is never rolled back by an older server copy.
+  function adoptRemotePlanIfNewer(remote) {
     const cache = getExamPlanCache();
-    if (!client || !currentUser) return cache;
+    if (remote && (remote.updatedAt || 0) > (cache.updatedAt || 0)) {
+      writeLS(lsKey("plan"), remote);
+      return remote;
+    }
+    return cache;
+  }
+
+  async function loadExamPlan() {
+    if (!client || !currentUser) return getExamPlanCache();
     try {
-      const { data, error } = await client.from(PLAN_TABLE).select("plan").maybeSingle();
-      if (error) {
-        planTableMissing = looksLikeMissingTable(error, PLAN_TABLE);
-        throw error;
-      }
-      planTableMissing = false;
-      const remote = data && data.plan;
-      if (remote && remote.sittings && (remote.updatedAt || 0) > (cache.updatedAt || 0)) {
-        writeLS(lsKey("plan"), remote);
-        return remote;
-      }
-      return cache;
+      return adoptRemotePlanIfNewer(await fetchRemotePlan());
     } catch {
-      return cache; // table missing (004 not run yet) or offline — the local plan still works
+      return getExamPlanCache(); // table missing (004 not run yet) or offline — the local plan still works
     }
   }
 
@@ -680,6 +692,12 @@ const Store = (function () {
     writeLS(lsKey("plan"), plan);
     enqueue({ type: "plan", value: plan });
     return plan;
+  }
+
+  // Called when a sync brings in a newer plan saved on another device.
+  const planListeners = [];
+  function onPlanChange(cb) {
+    planListeners.push(cb);
   }
 
   function isPlanTableMissing() {
@@ -788,14 +806,29 @@ const Store = (function () {
       if (planOps.length) {
         const op = planOps[planOps.length - 1];
         try {
-          const { error } = await client
-            .from(PLAN_TABLE)
-            .upsert({ user_id: currentUser.id, plan: op.value, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
-          if (error) {
-            planTableMissing = looksLikeMissingTable(error, PLAN_TABLE);
-            throw error;
+          // Last-write-wins applies on upload too: if another device has
+          // since saved a newer plan, this queued copy is dropped and the
+          // newer one adopted, rather than overwriting it.
+          const remote = await fetchRemotePlan();
+          if (remote && (remote.updatedAt || 0) >= (op.value.updatedAt || 0)) {
+            adoptRemotePlanIfNewer(remote);
+            planListeners.forEach((cb) => {
+              try {
+                cb();
+              } catch {
+                /* a listener throwing shouldn't requeue the plan */
+              }
+            });
+          } else {
+            const { error } = await client
+              .from(PLAN_TABLE)
+              .upsert({ user_id: currentUser.id, plan: op.value, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+            if (error) {
+              planTableMissing = looksLikeMissingTable(error, PLAN_TABLE);
+              throw error;
+            }
+            planTableMissing = false;
           }
-          planTableMissing = false;
         } catch {
           remaining.push(op);
         }
@@ -911,6 +944,7 @@ const Store = (function () {
     setExamPlan,
     getExamPlanCache,
     isPlanTableMissing,
+    onPlanChange,
     loadStreak,
     bumpStreak,
     getStreakCache,
