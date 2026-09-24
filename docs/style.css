@@ -2198,3 +2198,109 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
 
 .plan-summary { margin-top: 6px; border-top: 1px solid var(--border-soft); }
 .plan-summary .plan-notes { color: var(--text); font-size: 0.82rem; }
+
+/* ---------- exam results, welcome and "did you pass?" ---------- */
+
+.due-banner[hidden] { display: none; }
+
+.status-ribbon.revised-ribbon {
+  background: var(--not-started);
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.result-label { font-weight: 700; font-size: 0.9rem; }
+
+.result-choice { display: inline-flex; gap: 0; }
+.result-choice .btn { border-radius: 0; margin-left: -1px; }
+.result-choice .btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); margin-left: 0; }
+.result-choice .btn:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.result-choice .btn[aria-pressed="true"] {
+  background: var(--done-bg);
+  border-color: var(--done);
+  color: var(--done);
+  position: relative;
+}
+
+.btn.small { padding: 6px 12px; font-size: 0.8rem; }
+
+.results-prompt { border-color: var(--done); }
+
+.result-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-list li,
+.plan-notes .plan-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 14px;
+  flex-wrap: wrap;
+}
+
+.result-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.plan-notes .plan-result { color: var(--text); padding: 4px 0; }
+
+.welcome-step {
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.welcome-form { display: flex; flex-direction: column; gap: 16px; }
+
+.welcome-group {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  padding: 10px 18px 12px;
+  margin: 0;
+}
+
+.welcome-group legend {
+  padding: 0 6px;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.welcome-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.welcome-row:first-of-type { border-top: none; }
+
+.welcome-row label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  min-width: 0;
+}
+
+.welcome-row input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--accent); }
+
+.welcome-how.text-input { width: auto; margin: 0; padding: 5px 10px; font-size: 0.8rem; }
+
+.welcome-actions { display: flex; gap: 10px; flex-wrap: wrap; }

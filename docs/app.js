@@ -497,9 +497,9 @@ function handleToggle(btn) {
   renderSyncStatus();
 }
 
-// Bulk status set for a whole subject at once -- e.g. an exemption or a
-// past pass means every module should flip to Done (or back) in one click
-// instead of toggling each module's badge individually.
+// Bulk status set for a whole subject's modules at once, so finished
+// revision (or starting over) doesn't take a click per module. This is
+// revision only: passes and exemptions are exam results, recorded below.
 function setAllModuleStatus(code, status) {
   const d = examData[code];
   if (!d || d.error) return;
@@ -511,15 +511,57 @@ function setAllModuleStatus(code, status) {
   renderSyncStatus();
 }
 
+// Every module marked Done: finished revising, which is not the same as
+// having passed the exam.
 function isSubjectDone(code) {
   const d = examData[code];
   return !!d && !d.error && computePct(d.modules) === 100;
 }
 
+/* ---------- exam results (passed / exempt) ---------- */
+//
+// Only results count towards Associate and Fellow. See Store's exam results
+// section for the shape; "none" means no result recorded.
+
+let subjectResults = Store.getResultsCache();
+
+function subjectResult(code) {
+  const r = subjectResults[code];
+  return r && (r.status === "passed" || r.status === "exempt") ? r.status : null;
+}
+
+function isSubjectPassed(code) {
+  return !!subjectResult(code);
+}
+
+// A passed subject no longer belongs in any sitting of the plan.
+function recordResult(code, status, sitting) {
+  subjectResults = Store.setResult(code, status, sitting);
+  if (status !== "none") removeFromPlan(code);
+  onResultsChanged();
+}
+
+function onResultsChanged() {
+  EXAMS.forEach(updateHomeCard);
+  renderGameBar();
+  renderHomePrompts();
+  renderSyncStatus();
+  const r = parseHash();
+  if (r.view === "subject") renderSubjectView(r.exam);
+  if (r.view === "dashboard") renderDashboardView();
+}
+
+function refreshResults() {
+  Store.loadResults().then((res) => {
+    subjectResults = res;
+    onResultsChanged();
+  });
+}
+
 function fellowshipStatus() {
-  const coreDone = CORE_SUBJECTS.every(isSubjectDone);
-  const spRemaining = Math.max(0, 2 - SP_CHOICES.filter(isSubjectDone).length);
-  const saRemaining = Math.max(0, 1 - SA_CHOICES.filter(isSubjectDone).length);
+  const coreDone = CORE_SUBJECTS.every(isSubjectPassed);
+  const spRemaining = Math.max(0, 2 - SP_CHOICES.filter(isSubjectPassed).length);
+  const saRemaining = Math.max(0, 1 - SA_CHOICES.filter(isSubjectPassed).length);
   const fellowRemaining = spRemaining + saRemaining;
 
   if (coreDone && fellowRemaining === 0) {
@@ -528,7 +570,7 @@ function fellowshipStatus() {
   if (coreDone) {
     return { label: "Associate", sub: `${fellowRemaining} more subject${fellowRemaining === 1 ? "" : "s"} to Fellow` };
   }
-  const coreRemaining = CORE_SUBJECTS.filter((c) => !isSubjectDone(c)).length;
+  const coreRemaining = CORE_SUBJECTS.filter((c) => !isSubjectPassed(c)).length;
   return { label: "Aspiring Actuary", sub: `${coreRemaining} more subject${coreRemaining === 1 ? "" : "s"} to Associate` };
 }
 
@@ -720,31 +762,35 @@ function updateHomeCard(code) {
   const barEl = card.querySelector(".exam-bar-fill");
 
   if (!d) return;
+  let pct = 0;
   if (d.error) {
     pctEl.textContent = "unavailable";
-    return;
+  } else {
+    pct = computePct(d.modules);
+    pctEl.textContent = `${pct}% (${d.modules.length} modules)`;
+    barEl.style.width = `${pct}%`;
   }
 
-  const pct = computePct(d.modules);
-  pctEl.textContent = `${pct}% (${d.modules.length} modules)`;
-  barEl.style.width = `${pct}%`;
+  // The exam result outranks revision status: passed or exempt is shown
+  // whatever the modules say; otherwise "studying" or "all modules done".
+  const result = subjectResult(code);
+  const revised = !result && !d.error && pct === 100;
+  const studying = !result && !revised && !d.error && d.modules.some((m) => m.status.toLowerCase() === "in progress");
 
-  const completed = pct === 100;
-  const studying = !completed && d.modules.some((m) => m.status.toLowerCase() === "in progress");
-
-  card.classList.toggle("completed", completed);
+  card.classList.toggle("completed", !!result);
   card.classList.toggle("studying", studying);
 
   let ribbon = card.querySelector(".status-ribbon");
-  if (completed || studying) {
+  if (result || revised || studying) {
     if (!ribbon) {
       ribbon = document.createElement("div");
       ribbon.className = "status-ribbon";
       card.prepend(ribbon);
     }
-    ribbon.classList.toggle("completed-ribbon", completed);
+    ribbon.classList.toggle("completed-ribbon", !!result);
     ribbon.classList.toggle("studying-ribbon", studying);
-    ribbon.textContent = completed ? "Completed ✓" : "Currently studying";
+    ribbon.classList.toggle("revised-ribbon", revised);
+    ribbon.textContent = result === "exempt" ? "Exempt ✓" : result ? "Passed ✓" : revised ? "All modules done" : "Currently studying";
   } else if (ribbon) {
     ribbon.remove();
   }
@@ -865,10 +911,24 @@ function renderSubjectView(code) {
             }${drillsDue ? ` (<strong>${drillsDue} due</strong>)` : ""}</button>`
           : ""
       }
+      <div class="result-row">
+        <span class="result-label" id="resultLabel">Exam result</span>
+        <div class="result-choice" role="group" aria-labelledby="resultLabel">${[
+          ["none", "Not yet"],
+          ["passed", "Passed"],
+          ["exempt", "Exempt"],
+        ]
+          .map(
+            ([v, label]) =>
+              `<button type="button" class="btn result-btn" data-result="${v}" aria-pressed="${(subjectResult(code) || "none") === v}">${label}</button>`
+          )
+          .join("")}</div>
+        <span class="exemption-hint">Your result is what counts towards Associate and Fellow; the module ticks below track your revision.</span>
+      </div>
       <div class="exemption-row">
-        <span class="exemption-hint">Already passed this exam, or have an exemption?</span>
-        <button class="btn" id="markAllDone">Mark whole subject complete</button>
-        <button class="btn" id="markAllReset">Reset progress</button>
+        <span class="exemption-hint">Revision:</span>
+        <button class="btn" id="markAllDone">Mark all modules done</button>
+        <button class="btn" id="markAllReset">Reset module progress</button>
       </div>
     </div>
     ${modulesHtml}
@@ -892,11 +952,21 @@ function renderSubjectView(code) {
   }
 
   document.getElementById("markAllDone").addEventListener("click", () => {
-    if (confirm(`Mark all of ${code}'s modules as Done? Use this for an exemption or a prior pass.`)) setAllModuleStatus(code, "Done");
+    if (confirm(`Mark all of ${code}'s modules as Done?`)) setAllModuleStatus(code, "Done");
   });
   document.getElementById("markAllReset").addEventListener("click", () => {
     if (confirm(`Reset all of ${code}'s modules back to "Not started"?`)) setAllModuleStatus(code, "Not started");
   });
+
+  el.querySelectorAll(".result-btn").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const prev = subjectResults[code];
+      const v = btn.dataset.result;
+      recordResult(code, v, prev && prev.status !== "none" ? prev.sitting : null);
+      const again = document.querySelector(`#subjectView .result-btn[data-result="${v}"]`); // the view re-rendered
+      if (again) again.focus();
+    })
+  );
 
   el.querySelectorAll(".status-badge").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -1915,10 +1985,8 @@ function sittingInfo(id) {
 // Sittings to show: any past sitting that still has subjects planned in it
 // (so they can be marked done or cleared), then upcoming ones.
 function planSittingList() {
-  const today = SRS.today();
   const planned = Object.keys(examPlan.sittings).filter((id) => examPlan.sittings[id].length).sort();
-  let id = "2026-04";
-  while (sittingInfo(id).first <= today) id = nextSittingId(id);
+  let id = firstUpcomingSittingId();
   const upcoming = [];
   const lastPlanned = planned[planned.length - 1] || "";
   const minCount = 4 + planExtraSittings;
@@ -1934,14 +2002,82 @@ function plannedSittingOf(code) {
   return Object.keys(examPlan.sittings).find((id) => examPlan.sittings[id].includes(code)) || null;
 }
 
-function savePlan(sittings) {
+function writePlan(sittings) {
   Object.keys(sittings).forEach((id) => {
     if (!sittings[id].length) delete sittings[id];
   });
   examPlan = Store.setExamPlan(sittings);
+}
+
+function savePlan(sittings) {
+  writePlan(sittings);
   renderSyncStatus();
   renderDashboardView();
+  renderHomePrompts();
 }
+
+function removeFromPlan(code) {
+  if (!plannedSittingOf(code)) return;
+  const sittings = JSON.parse(JSON.stringify(examPlan.sittings));
+  Object.keys(sittings).forEach((id) => (sittings[id] = sittings[id].filter((c) => c !== code)));
+  writePlan(sittings);
+}
+
+// The first sitting that hasn't started yet.
+function firstUpcomingSittingId() {
+  const today = SRS.today();
+  let id = "2026-04";
+  while (sittingInfo(id).first <= today) id = nextSittingId(id);
+  return id;
+}
+
+// When results for a subject at a sitting are (or are expected to be) out:
+// the published results day, else roughly 11 weeks after the last paper.
+function resultsDate(info, code) {
+  const s = info.session;
+  if (s && s.results && s.results[resultsGroup(code)]) return s.results[resultsGroup(code)];
+  return SRS.addDays(info.last, 77);
+}
+
+// Planned subjects at sittings whose results are out, with no result yet:
+// the "did you pass?" questions. [{ info, codes }]
+function pendingResults() {
+  const today = SRS.today();
+  return Object.keys(examPlan.sittings)
+    .sort()
+    .map(sittingInfo)
+    .filter((info) => info.first <= today)
+    .map((info) => ({
+      info,
+      codes: examPlan.sittings[info.id].filter((c) => !isSubjectPassed(c) && resultsDate(info, c) <= today),
+    }))
+    .filter((p) => p.codes.length);
+}
+
+function resultButtonsHtml(code, sittingId) {
+  const next = sittingName(firstUpcomingSittingId());
+  return `<span class="result-q"><strong>${code}</strong> ${escapeHtml((SUBJECTS[code] || { name: "" }).name)}</span>
+    <span class="result-actions">
+      <button type="button" class="btn primary small" data-pass="${code}" data-sitting="${sittingId}">Passed</button>
+      <button type="button" class="btn small" data-resit="${code}" data-sitting="${sittingId}">Not this time &mdash; move to ${next}</button>
+    </span>`;
+}
+
+// "Not this time": the subject moves to the next sitting that hasn't started.
+function planResit(code) {
+  const sittings = JSON.parse(JSON.stringify(examPlan.sittings));
+  Object.keys(sittings).forEach((id) => (sittings[id] = sittings[id].filter((c) => c !== code)));
+  const target = firstUpcomingSittingId();
+  sittings[target] = [...(sittings[target] || []), code].sort((a, b) => PLANNABLE.indexOf(a) - PLANNABLE.indexOf(b));
+  savePlan(sittings);
+}
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest && e.target.closest("[data-pass], [data-resit]");
+  if (!btn) return;
+  if (btn.dataset.pass) recordResult(btn.dataset.pass, "passed", btn.dataset.sitting);
+  else planResit(btn.dataset.resit);
+});
 
 // Adding a subject that's planned elsewhere moves it: a resit or a change of
 // mind, either way it only belongs in one sitting.
@@ -2008,7 +2144,7 @@ function sittingWarnings(info, codes) {
 function planSectionHtml() {
   const today = SRS.today();
   const sittings = planSittingList();
-  const doneNow = new Set(EXAMS.filter(isSubjectDone));
+  const doneNow = new Set(EXAMS.filter(isSubjectPassed));
 
   // Walk the sittings in order, pretending every planned exam is passed, to
   // find when each qualification would be reached.
@@ -2068,10 +2204,17 @@ function planSectionHtml() {
     }
 
     const notes = sittingWarnings(info, codes).map((w) => `<li class="plan-warn">${w}</li>`);
-    if (past && codes.some((c) => !doneNow.has(c))) {
-      notes.push(
-        `<li>This sitting has started. Once results are out, mark passed subjects done (from the subject page) or remove them to re-plan.</li>`
-      );
+    if (past) {
+      codes
+        .filter((c) => !doneNow.has(c))
+        .forEach((c) => {
+          const out = resultsDate(info, c);
+          notes.push(
+            out <= today
+              ? `<li class="plan-result">${resultButtonsHtml(c, info.id)}</li>`
+              : `<li>${c}: results ${info.session && info.session.results ? "due" : "expected around"} ${fmtHubDate(out)}. You can record them here once they're out.</li>`
+          );
+        });
     }
     if (!past && codes.length) {
       const left = codes.map(modulesLeft);
@@ -2164,13 +2307,215 @@ function wirePlanSection(el) {
 Store.onPlanChange(() => {
   examPlan = Store.getExamPlanCache();
   if (parseHash().view === "dashboard") renderDashboardView();
+  renderHomePrompts();
+});
+
+Store.onResultsChange(() => {
+  subjectResults = Store.getResultsCache();
+  onResultsChanged();
 });
 
 function refreshExamPlan() {
   Store.loadExamPlan().then((p) => {
     examPlan = p;
     if (parseHash().view === "dashboard") renderDashboardView();
+    renderHomePrompts();
   });
+}
+
+/* ---------- home prompts: welcome and "did you pass?" ---------- */
+
+function hasAnyResult() {
+  return Object.values(subjectResults).some((r) => r && r.status !== "none");
+}
+
+function hasAnyPlan() {
+  return Object.values(examPlan.sittings).some((codes) => codes.length);
+}
+
+function renderHomePrompts() {
+  const welcome = document.getElementById("welcomeBanner");
+  if (welcome) {
+    const show = !Store.isWelcomed() && !hasAnyResult() && !hasAnyPlan();
+    welcome.hidden = !show;
+    welcome.innerHTML = show
+      ? `<div class="due-banner-text">
+          <strong>New here? Two quick questions set things up.</strong>
+          <span class="due-banner-sub">Which exams you've already passed, and what you're sitting next. That sets your Associate and Fellow progress and starts your exam plan.</span>
+        </div>
+        <div class="due-banner-actions">
+          <a class="btn primary" href="#/welcome">Get started</a>
+          <button type="button" class="btn" id="welcomeDismiss">Not now</button>
+        </div>`
+      : "";
+    const dismiss = document.getElementById("welcomeDismiss");
+    if (dismiss) {
+      dismiss.addEventListener("click", () => {
+        Store.setWelcomed();
+        renderHomePrompts();
+      });
+    }
+  }
+
+  const prompt = document.getElementById("resultsPrompt");
+  if (prompt) {
+    const pending = pendingResults();
+    prompt.hidden = !pending.length;
+    prompt.innerHTML = pending
+      .map(
+        (p) => `
+        <div class="due-banner-text">
+          <strong>Results are out for ${sittingName(p.info.id)}. Did you pass?</strong>
+          <ul class="result-list">${p.codes.map((c) => `<li>${resultButtonsHtml(c, p.info.id)}</li>`).join("")}</ul>
+        </div>`
+      )
+      .join("");
+  }
+}
+
+/* ---------- welcome: first-run questions ---------- */
+//
+// Two steps: which exams are already passed or exempted, then what's being
+// sat at the next sitting. Nothing is saved until the end, so backing out
+// part-way changes nothing.
+
+const welcomeState = { step: 1, picks: {}, next: [] };
+
+function startWelcome() {
+  welcomeState.step = 1;
+  welcomeState.picks = {};
+  EXAMS.forEach((c) => {
+    const r = subjectResult(c);
+    if (r) welcomeState.picks[c] = r;
+  });
+  welcomeState.next = [...(examPlan.sittings[firstUpcomingSittingId()] || [])];
+}
+
+function welcomeGroupsHtml(codes, rowHtml) {
+  const groups = {};
+  codes.forEach((c) => (groups[planGroup(c)] = groups[planGroup(c)] || []).push(c));
+  return Object.keys(groups)
+    .map((g) => `<fieldset class="welcome-group"><legend>${g}</legend>${groups[g].map(rowHtml).join("")}</fieldset>`)
+    .join("");
+}
+
+function renderWelcomeView() {
+  const el = document.getElementById("welcomeView");
+  if (welcomeState.step === 1) {
+    el.innerHTML = `
+      <button class="back-link" id="welcomeBack">&larr; All subjects</button>
+      <div class="subject-head">
+        <p class="welcome-step">Step 1 of 2</p>
+        <h2>Which exams have you already passed?</h2>
+        <p class="subject-blurb">Tick any you've passed or been exempted from. These count towards Associate and Fellow; you can change them later on each subject's page.</p>
+      </div>
+      <form id="welcomeForm1" class="welcome-form">
+        ${welcomeGroupsHtml(EXAMS, (c) => {
+          const pick = welcomeState.picks[c];
+          return `<div class="welcome-row">
+            <label><input type="checkbox" data-code="${c}"${pick ? " checked" : ""}> <strong>${c}</strong> ${escapeHtml((SUBJECTS[c] || { name: "" }).name)}</label>
+            <select class="text-input welcome-how" data-code="${c}" aria-label="How you completed ${c}"${pick ? "" : " disabled"}>
+              <option value="passed"${pick !== "exempt" ? " selected" : ""}>Passed</option>
+              <option value="exempt"${pick === "exempt" ? " selected" : ""}>Exempt</option>
+            </select>
+          </div>`;
+        })}
+        <div class="welcome-actions">
+          <button type="submit" class="btn primary">Next: what you're sitting next &rarr;</button>
+        </div>
+      </form>`;
+    el.querySelectorAll('input[type="checkbox"]').forEach((box) =>
+      box.addEventListener("change", () => {
+        const how = el.querySelector(`.welcome-how[data-code="${box.dataset.code}"]`);
+        how.disabled = !box.checked;
+      })
+    );
+    document.getElementById("welcomeForm1").addEventListener("submit", (e) => {
+      e.preventDefault();
+      welcomeState.picks = {};
+      el.querySelectorAll('input[type="checkbox"]:checked').forEach((box) => {
+        welcomeState.picks[box.dataset.code] = el.querySelector(`.welcome-how[data-code="${box.dataset.code}"]`).value;
+      });
+      welcomeState.next = welcomeState.next.filter((c) => !welcomeState.picks[c]);
+      welcomeState.step = 2;
+      renderWelcomeView();
+      window.scrollTo(0, 0);
+      el.querySelector("h2").focus();
+    });
+  } else {
+    const info = sittingInfo(firstUpcomingSittingId());
+    const today = SRS.today();
+    const remaining = PLANNABLE.filter((c) => !welcomeState.picks[c]);
+    const when = info.session
+      ? `Papers run ${fmtHubDate(info.first)} &ndash; ${fmtHubDate(info.last)}${
+          info.entryCloses && info.entryCloses >= today ? `; exam entry closes ${fmtHubDate(info.entryCloses)}` : ""
+        }.`
+      : "Dates for this sitting aren't published yet.";
+    el.innerHTML = `
+      <button class="back-link" id="welcomeBack">&larr; Back to step 1</button>
+      <div class="subject-head">
+        <p class="welcome-step">Step 2 of 2</p>
+        <h2 tabindex="-1">What are you sitting in ${sittingName(info.id)}?</h2>
+        <p class="subject-blurb">${when} Most students take 1&ndash;3 subjects a sitting. You can plan later sittings on the dashboard.</p>
+      </div>
+      <form id="welcomeForm2" class="welcome-form">
+        ${welcomeGroupsHtml(remaining, (c) => {
+          const offered = !info.session || sessionPapers(info.session, c).length > 0;
+          return `<div class="welcome-row">
+            <label${offered ? "" : ' class="muted"'}><input type="checkbox" data-code="${c}"${welcomeState.next.includes(c) ? " checked" : ""}${
+              offered ? "" : " disabled"
+            }> <strong>${c}</strong> ${escapeHtml((SUBJECTS[c] || { name: "" }).name)}${offered ? "" : " (not in this sitting)"}</label>
+          </div>`;
+        })}
+        <ul class="plan-notes" id="welcomeWarnings" aria-live="polite"></ul>
+        <div class="welcome-actions">
+          <button type="submit" class="btn primary">Save and see my plan</button>
+          <button type="button" class="btn" id="welcomeSkipPlan">Not sure yet &mdash; save my results only</button>
+        </div>
+      </form>`;
+    const warn = () => {
+      welcomeState.next = [...el.querySelectorAll('input[type="checkbox"]:checked')].map((b) => b.dataset.code);
+      document.getElementById("welcomeWarnings").innerHTML = sittingWarnings(info, welcomeState.next)
+        .map((w) => `<li class="plan-warn">${w}</li>`)
+        .join("");
+    };
+    el.querySelectorAll('input[type="checkbox"]').forEach((box) => box.addEventListener("change", warn));
+    warn();
+    document.getElementById("welcomeForm2").addEventListener("submit", (e) => {
+      e.preventDefault();
+      finishWelcome(info.id, true);
+    });
+    document.getElementById("welcomeSkipPlan").addEventListener("click", () => finishWelcome(info.id, false));
+  }
+  document.getElementById("welcomeBack").addEventListener("click", () => {
+    if (welcomeState.step === 2) {
+      welcomeState.step = 1;
+      renderWelcomeView();
+    } else {
+      navigate("#/");
+    }
+  });
+}
+
+function finishWelcome(sittingId, withPlan) {
+  EXAMS.forEach((c) => {
+    const want = welcomeState.picks[c] || "none";
+    const have = subjectResult(c) || "none";
+    if (want !== have) subjectResults = Store.setResult(c, want, null);
+  });
+  const sittings = JSON.parse(JSON.stringify(examPlan.sittings));
+  const passed = Object.keys(welcomeState.picks);
+  const moving = withPlan ? welcomeState.next : [];
+  Object.keys(sittings).forEach((id) => (sittings[id] = sittings[id].filter((c) => !passed.includes(c) && !moving.includes(c))));
+  if (withPlan) sittings[sittingId] = [...moving].sort((a, b) => PLANNABLE.indexOf(a) - PLANNABLE.indexOf(b));
+  writePlan(sittings);
+  Store.setWelcomed();
+  onResultsChanged();
+  navigate(withPlan ? "#/dashboard" : "#/");
+  if (withPlan) {
+    const plan = document.getElementById("examPlan");
+    if (plan) plan.scrollIntoView({ block: "start" });
+  }
 }
 
 /* ---------- search across every card and practice question ---------- */
@@ -3267,6 +3612,7 @@ function parseHash() {
   const parts = h.split("/").filter(Boolean);
   const first = parts[0].toLowerCase();
   if (first === "dashboard") return { view: "dashboard" };
+  if (first === "welcome") return { view: "welcome" };
   if (first === "exams") return { view: "exams", exam: parts[1] ? parts[1].toUpperCase() : null };
   if (first.startsWith("search")) {
     const m = h.match(/[?&]q=([^&]*)/);
@@ -3311,6 +3657,7 @@ function renderRoute() {
   document.getElementById("searchView").hidden = r.view !== "search";
   document.getElementById("drillView").hidden = r.view !== "drill";
   document.getElementById("examHubView").hidden = r.view !== "exams";
+  document.getElementById("welcomeView").hidden = r.view !== "welcome";
   document.querySelectorAll(".topbar .nav-link").forEach((a) => {
     if (a.dataset.view === r.view) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
@@ -3322,6 +3669,7 @@ function renderRoute() {
   if (r.view === "home") {
     renderGameBar();
     renderDueBanner();
+    renderHomePrompts();
   } else if (r.view === "review") {
     const key = `${r.kind}:${r.exam || "all"}`;
     if (reviewState.key !== key || reviewState.sessionDone) {
@@ -3335,6 +3683,9 @@ function renderRoute() {
     renderDashboardView();
     refreshDashboardActivity();
     refreshExamPlan();
+  } else if (r.view === "welcome") {
+    startWelcome();
+    renderWelcomeView();
   } else if (r.view === "drill") {
     renderDrillView(r.exam, r.module);
   } else if (r.view === "exams") {
@@ -3416,6 +3767,9 @@ function renderAuthPanel() {
       (pending > 0 ? `${pending} change${pending === 1 ? "" : "s"} waiting to sync.` : "All changes saved.") +
       (Store.isSrsTableMissing()
         ? " Review schedules are saved on this device only until supabase/migrations/002_spaced_repetition.sql is run on the Supabase project (see supabase/SETUP.md)."
+        : "") +
+      (Store.isResultTableMissing()
+        ? " Exam results are saved on this device only until supabase/migrations/005_subject_results.sql is run on the Supabase project."
         : "");
   }
 }
@@ -3459,6 +3813,8 @@ function reloadAllForAuthChange() {
   activityData = null;
   examPlan = Store.getExamPlanCache();
   refreshExamPlan();
+  subjectResults = Store.getResultsCache();
+  refreshResults();
   reviewState.key = "";
   loadAll();
   loadAllFlash();
@@ -3616,4 +3972,6 @@ Store.init().then(() => {
   Store.loadLastSession().then(() => renderGameBar());
   renderDueBanner();
   refreshExamPlan(); // the plan cached before init was read under the signed-out key
+  subjectResults = Store.getResultsCache(); // likewise results
+  refreshResults();
 });
