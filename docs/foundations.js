@@ -574,7 +574,7 @@ const FOUNDATION_MODULES = {
     {
       id: "m14", title: "Estimation: method of moments and maximum likelihood",
       description: "Estimating parameters from data: the method of moments, maximum likelihood, and judging estimators by bias, variance and mean squared error.",
-      lesson: "<p>A model has unknown parameters (a Poisson mean, an exponential rate). An <strong>estimator</strong> is a rule for guessing them from data. CS1 uses two methods.</p>\n<h4>Method of moments</h4>\n<p>Set the population moments equal to the sample moments and solve. With one parameter, match the mean: $E[X] = \\bar{x}$. With two, also match the variance (or $E[X^2]$).</p>\n<div class=\"worked\"><strong>Worked example.</strong> For Exp($\\lambda$), $E[X] = \\frac{1}{\\lambda}$. Setting $\\frac{1}{\\lambda} = \\bar{x}$ gives $\\tilde\\lambda = \\frac{1}{\\bar{x}}$.</div>\n<h4>Maximum likelihood</h4>\n<p>The <strong>likelihood</strong> is the probability (or density) of the observed data, viewed as a function of the parameter:</p>\n<p>$$L(\\theta) = \\prod_{i=1}^n f(x_i; \\theta)$$</p>\n<p>The maximum likelihood estimate (MLE) $\\hat\\theta$ is the value that makes the observed data most probable. The recipe:</p>\n<ul>\n<li>Take logs: $\\ell(\\theta) = \\ln L(\\theta) = \\sum \\ln f(x_i; \\theta)$.</li>\n<li>Differentiate and set $\\ell'(\\theta) = 0$.</li>\n<li>Solve for $\\hat\\theta$, and check $\\ell''(\\hat\\theta) \\lt  0$.</li>\n</ul>\n<div class=\"worked\"><strong>Worked example.</strong> Poisson($\\mu$) data $x_1, \\ldots, x_n$. $\\ell(\\mu) = \\sum(-\\mu + x_i\\ln\\mu - \\ln x_i!) = -n\\mu + \\left(\\sum x_i\\right)\\ln\\mu + \\text{const}$. $\\ell'(\\mu) = -n + \\frac{\\sum x_i}{\\mu} = 0$ gives $\\hat\\mu = \\bar{x}$. And $\\ell''(\\mu) = -\\frac{\\sum x_i}{\\mu^2} \\lt  0$.</div>\n<h4>Judging an estimator</h4>\n<ul>\n<li><strong>Bias:</strong> $\\text{bias}(\\hat\\theta) = E[\\hat\\theta] - \\theta$. Unbiased means zero bias on average.</li>\n<li><strong>Mean squared error:</strong> $\\text{MSE}(\\hat\\theta) = E\\left[(\\hat\\theta - \\theta)^2\\right] = \\text{Var}(\\hat\\theta) + \\text{bias}^2$.</li>\n<li><strong>Consistency:</strong> the estimator converges to $\\theta$ as $n$ grows.</li>\n</ul>\n<p>MLEs are consistent and, for large samples, approximately normal and unbiased, with variance given by the Cramér-Rao lower bound, which CS1 covers.</p>",
+      lesson: "<p>A model has unknown parameters (a Poisson mean, an exponential rate). An <strong>estimator</strong> is a rule for guessing them from data. CS1 uses two methods.</p>\n<h4>Method of moments</h4>\n<p>Set the population moments equal to the sample moments and solve. With one parameter, match the mean: $E[X] = \\bar{x}$. With two, also match the variance (or $E[X^2]$).</p>\n<div class=\"worked\"><strong>Worked example.</strong> For Exp($\\lambda$), $E[X] = \\frac{1}{\\lambda}$. Setting $\\frac{1}{\\lambda} = \\bar{x}$ gives $\\tilde\\lambda = \\frac{1}{\\bar{x}}$.</div>\n<h4>Maximum likelihood</h4>\n<p>The <strong>likelihood</strong> is the probability (or density) of the observed data, viewed as a function of the parameter:</p>\n<p>$$L(\\theta) = \\prod_{i=1}^n f(x_i; \\theta)$$</p>\n<p>The maximum likelihood estimate (MLE) $\\hat\\theta$ is the value that makes the observed data most probable. The recipe:</p>\n<ul>\n<li>Take logs: $\\ell(\\theta) = \\ln L(\\theta) = \\sum \\ln f(x_i; \\theta)$.</li>\n<li>Differentiate and set $\\ell'(\\theta) = 0$.</li>\n<li>Solve for $\\hat\\theta$, and check $\\ell''(\\hat\\theta) \\lt  0$.</li>\n</ul>\n<div class=\"worked\"><strong>Worked example.</strong> Poisson($\\mu$) data $x_1, \\ldots, x_n$. $\\ell(\\mu) = \\sum(-\\mu + x_i\\ln\\mu - \\ln x_i!) = -n\\mu + \\left(\\sum x_i\\right)\\ln\\mu + \\text{const}$. $\\ell'(\\mu) = -n + \\frac{\\sum x_i}{\\mu} = 0$ gives $\\hat\\mu = \\bar{x}$. And $\\ell''(\\mu) = -\\frac{\\sum x_i}{\\mu^2} \\lt  0$.</div>\n<h4>Judging an estimator</h4>\n<ul>\n<li><strong>Bias:</strong> $\\text{bias}(\\hat\\theta) = E[\\hat\\theta] - \\theta$. Unbiased means zero bias on average.</li>\n<li><strong>Mean squared error:</strong> $\\text{MSE}(\\hat\\theta) = E\\left[(\\hat\\theta - \\theta)^2\\right] = \\text{Var}(\\hat\\theta) + \\text{bias}^2$.</li>\n<li><strong>Consistency:</strong> the estimator converges to $\\theta$ as $n$ grows.</li>\n</ul>\n<p>MLEs are consistent, and as the sample size grows they become approximately normal and approximately unbiased, with variance tending to the Cramér-Rao lower bound, which CS1 covers. These are large-sample properties: in a small sample an MLE can be biased.</p>",
       cards: [
         { q: "What is an estimator?", a: "A rule (a function of the sample) for estimating an unknown parameter.", explain: "The estimator is a random variable, because it depends on the random sample. The number you get from a particular sample is the estimate." },
         { q: "Describe the method of moments.", a: "Equate the population moments to the sample moments and solve for the parameters.", explain: "One parameter: match the mean. Two parameters: match the mean and variance. It's simple, but not always the most efficient." },
@@ -587,7 +587,7 @@ const FOUNDATION_MODULES = {
         { q: "Define the mean squared error and relate it to bias and variance.", a: "$\\text{MSE}(\\hat\\theta) = E\\left[(\\hat\\theta - \\theta)^2\\right] = \\text{Var}(\\hat\\theta) + \\text{bias}(\\hat\\theta)^2$", explain: "MSE balances accuracy and precision. A slightly biased estimator with a much smaller variance can have a lower MSE." },
         { q: "Is $S^2$ with divisor $n - 1$ unbiased for $\\sigma^2$? Is the divisor-$n$ version?", a: "Yes; no. With divisor $n$ the expectation is $\\frac{n-1}{n}\\sigma^2$.", explain: "The MLE of $\\sigma^2$ for normal data uses divisor $n$, so it is slightly biased, though the bias vanishes as $n$ grows." },
         { q: "What does it mean for an estimator to be consistent?", a: "It converges to the true value as the sample size grows.", explain: "A sufficient condition is that its bias and variance both tend to 0 as $n \\to \\infty$." },
-        { q: "What are the large-sample properties of MLEs?", a: "Approximately normal, unbiased, and with variance equal to the Cramér-Rao lower bound.", explain: "This is why MLEs are the default in CS1, and it gives approximate confidence intervals for them." },
+        { q: "What are the large-sample properties of MLEs?", a: "As the sample size grows: consistent, approximately normal, approximately unbiased, and with variance tending to the Cramér-Rao lower bound.", explain: "This is why MLEs are the default in CS1, and it gives approximate confidence intervals for them." },
       ],
     },
     {
@@ -648,12 +648,12 @@ const FOUNDATION_DRILLS = {
     {
       id: "fm-m01-d02", type: "mcq", module: "m01",
       q: "A price of £80 is increased by 25%, then the new price is reduced by 20%. What is the final price?",
-      options: ["£80", "£84", "£76", "£100"],
+      options: ["£80", "£84", "£64", "£100"],
       correct: 0,
       explain: "$80 \\times 1.25 = 100$, then $100 \\times 0.80 = 80$. The factors $1.25 \\times 0.80 = 1$ cancel exactly, even though 25% and 20% are different percentages.",
       why: {
         1: "This adds the percentages ($+25\\% - 20\\% = +5\\%$). Percentage changes combine by multiplying growth factors, not by adding.",
-        2: "This applies both changes to the original £80 separately. The 20% cut applies to the new price of £100.",
+        2: "This applies the 20% cut to the original £80 and forgets the rise. The cut applies to the new price of £100.",
         3: "This is the price after the first step only.",
       },
     },
@@ -719,8 +719,8 @@ const FOUNDATION_DRILLS = {
       explain: "Numerator: $x^{5 + (-2)} = x^3$. Divide by $x^2$: $x^{3-2} = x^1 = x$.",
       why: {
         1: "This cancels $x^{-2}$ against $x^{2}$, but they are not a matching pair: multiplying by $x^{-2}$ and then dividing by $x^{2}$ subtracts 4 from the index, not 0.",
-        2: "This treats $x^{-2}$ as $x^{2}$ and then divides; negative powers must keep their sign when adding.",
-        3: "This adds all the indices. Dividing subtracts.",
+        2: "This subtracts the indices the wrong way round: the numerator is $x^{3}$, and dividing by $x^{2}$ gives $3 - 2 = 1$, not $2 - 3 = -1$.",
+        3: "This drops the minus sign on $x^{-2}$ and adds every index: $5 + 2 + 2 = 9$. Keep the sign, and remember that dividing subtracts.",
       },
     },
     {
