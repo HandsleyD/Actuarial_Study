@@ -13,6 +13,28 @@ const EXAMS = [
   "SP1", "SP2", "SP4", "SP5", "SP6", "SP7", "SP8", "SP9",
 ];
 
+// Foundations (foundations.js): the maths and statistics the exams assume,
+// taught from zero. They study like any subject but are not IFoA exams, so
+// they stay out of EXAMS: never in the planner, the route map, results or the
+// qualification count.
+const FOUNDATION_CODES = typeof FOUNDATIONS !== "undefined" ? FOUNDATIONS : [];
+if (typeof FOUNDATION_SUBJECTS !== "undefined") Object.assign(SUBJECTS, FOUNDATION_SUBJECTS);
+if (typeof FOUNDATION_MODULES !== "undefined") Object.assign(MODULES, FOUNDATION_MODULES);
+if (typeof FOUNDATION_DRILLS !== "undefined" && typeof DRILLS !== "undefined") Object.assign(DRILLS, FOUNDATION_DRILLS);
+
+function isFoundation(code) {
+  return FOUNDATION_CODES.includes(code);
+}
+
+// The foundation modules each exam leans on hardest, linked from its
+// subject page.
+const PREREQUISITES = {
+  CM1: { FM: ["m06", "m07", "m08", "m10", "m12", "m15"], FS: ["m05", "m07"] },
+  CM2: { FM: ["m09", "m11", "m13", "m14", "m15"], FS: ["m08", "m09", "m10"] },
+  CS1: { FM: ["m09", "m11", "m12", "m14", "m16"], FS: ["m06", "m08", "m10", "m12", "m14", "m15", "m16"] },
+  CS2: { FM: ["m12", "m15", "m16"], FS: ["m04", "m08", "m11", "m16"] },
+};
+
 const STATUSES = ["Not started", "In progress", "Done"];
 
 const examData = {}; // code -> { modules: [{id, status, notes}] }
@@ -509,7 +531,7 @@ function computePct(modules) {
 }
 
 function loadAll() {
-  for (const code of EXAMS) loadExam(code);
+  for (const code of [...EXAMS, ...FOUNDATION_CODES]) loadExam(code);
 }
 
 function handleToggle(btn) {
@@ -852,6 +874,9 @@ function updateHomeCard(code) {
 
 // Home subjects, grouped as the route map's lines, in syllabus order.
 const EXAM_GROUPS = [
+  ...(FOUNDATION_CODES.length
+    ? [{ stage: "foundations", name: "Foundations: start here", codes: FOUNDATION_CODES, need: null, optional: true }]
+    : []),
   { stage: "principles", name: "Core Principles", codes: Route.CORE.filter((c) => !c.startsWith("CP")), need: null },
   { stage: "practice", name: "Core Practice", codes: Route.CORE.filter((c) => c.startsWith("CP")), need: null },
   { stage: "sp", name: "Specialist Principles", codes: Route.SP, need: Route.SP_NEEDED },
@@ -859,6 +884,7 @@ const EXAM_GROUPS = [
 ];
 
 function examGroupSummary(g) {
+  if (g.optional) return "Optional &middot; the maths and statistics the exams assume, from zero";
   const passed = g.codes.filter(isSubjectPassed).length;
   if (g.need) {
     const word = g.need === 1 ? "one" : "two";
@@ -899,7 +925,7 @@ function buildExamCards(grid, codes) {
     const card = document.createElement("div");
     card.className = "exam-card loading";
     card.id = `card-${code}`;
-    card.dataset.stage = Route.stage(code); // its line colour on the route map
+    card.dataset.stage = isFoundation(code) ? "foundations" : Route.stage(code); // its line colour on the route map
     card.innerHTML = `
       <div class="exam-card-head">
         <div class="exam-card-heading">
@@ -916,6 +942,30 @@ function buildExamCards(grid, codes) {
 }
 
 /* ---------- subject view ---------- */
+
+// "Maths and statistics you'll need": links from an exam to the foundation
+// modules it builds on. Folded by default; stays as the user left it when the
+// subject page re-renders.
+const prereqOpen = {};
+
+function prerequisitesHtml(code) {
+  const req = PREREQUISITES[code];
+  if (!req) return "";
+  const links = Object.entries(req)
+    .filter(([fc]) => MODULES[fc])
+    .flatMap(([fc, ids]) =>
+      ids
+        .map((id) => MODULES[fc].find((m) => m.id === id))
+        .filter(Boolean)
+        .map((m) => `<a class="prereq-link" href="#/${fc}/${m.id}"><span class="prereq-code">${fc} ${m.id.toUpperCase()}</span> ${m.title}</a>`)
+    );
+  if (!links.length) return "";
+  return `<details class="prereq-panel" id="prereqPanel" data-code="${code}"${prereqOpen[code] ? " open" : ""}>
+      <summary>Maths and statistics you'll need for ${code}</summary>
+      <p class="prereq-intro">${code} assumes you're comfortable with these. If any look unfamiliar, the Foundations modules teach them from scratch.</p>
+      <div class="prereq-links">${links.join("")}</div>
+    </details>`;
+}
 
 function renderSubjectView(code) {
   const el = document.getElementById("subjectView");
@@ -975,7 +1025,8 @@ function renderSubjectView(code) {
   if (totalDrills) ensureDrillsLoaded(code);
   const subjectDue = dueCards(code).length;
   const subjectWeak = weakCards(code).length;
-  const nextExam = nextSitting(code);
+  const foundation = isFoundation(code);
+  const nextExam = foundation ? null : nextSitting(code);
   const firstPaper = nextExam && nextExam.papers.find((p) => p.date >= SRS.today());
 
   el.innerHTML = `
@@ -984,9 +1035,14 @@ function renderSubjectView(code) {
       <div class="subject-code">${code}</div>
       <h2>${info.name}</h2>
       ${info.blurb ? `<p class="subject-blurb">${info.blurb}</p>` : ""}
-      <a class="hub-link" href="#/exams/${code}">${ico("calendar")} Pass rates and exam dates${
-        firstPaper ? ` &middot; next ${code} paper ${fmtHubDate(firstPaper.date)} (${countdownLabel(firstPaper.date)})` : ""
-      } &rarr;</a>
+      ${
+        foundation
+          ? `<p class="foundation-note">Not an IFoA exam: a from-scratch course. Work through the modules in order. Each opens with a short lesson, then flashcards and drills to make it stick.</p>`
+          : `<a class="hub-link" href="#/exams/${code}">${ico("calendar")} Pass rates and exam dates${
+              firstPaper ? ` &middot; next ${code} paper ${fmtHubDate(firstPaper.date)} (${countdownLabel(firstPaper.date)})` : ""
+            } &rarr;</a>`
+      }
+      ${prerequisitesHtml(code)}
       ${
         totalCards > 0
           ? `<div class="subject-actions">
@@ -1008,7 +1064,10 @@ function renderSubjectView(code) {
             }${drillsDue ? ` (<strong>${drillsDue} due</strong>)` : ""}</button>`
           : ""
       }
-      <div class="result-row">
+      ${
+        foundation
+          ? ""
+          : `<div class="result-row">
         <span class="result-label" id="resultLabel">Exam result</span>
         <div class="result-choice" role="group" aria-labelledby="resultLabel">${[
           ["none", "Not yet"],
@@ -1021,7 +1080,8 @@ function renderSubjectView(code) {
           )
           .join("")}</div>
         <span class="exemption-hint">Your result is what counts towards Associate and Fellow; the module ticks below track your revision.</span>
-      </div>
+      </div>`
+      }
       <div class="exemption-row">
         <span class="exemption-hint">Revision:</span>
         <button class="btn" id="markAllDone">Mark all modules done</button>
@@ -1032,6 +1092,9 @@ function renderSubjectView(code) {
   `;
 
   document.getElementById("backToHome").addEventListener("click", () => navigate("#/"));
+
+  const prereq = document.getElementById("prereqPanel");
+  if (prereq) prereq.querySelector("summary").addEventListener("click", () => (prereqOpen[prereq.dataset.code] = !prereq.open));
 
   const mixedBtn = document.getElementById("startMixed");
   if (mixedBtn) {
@@ -1110,6 +1173,21 @@ function renderSessionSummary(el, options) {
 }
 
 /* ---------- flashcard view ---------- */
+
+// Foundation modules open with a lesson. Until the user opens or closes it
+// themselves, it shows on the first card of a module with nothing mastered
+// yet, and folds away once they move on; after that it stays as they left it.
+const lessonOpen = {};
+
+function lessonPanelHtml(code, def, masteredCount) {
+  if (!def.lesson) return "";
+  const key = `${code}/${def.id}`;
+  const open = key in lessonOpen ? lessonOpen[key] : masteredCount === 0 && flashState.cardIndex === 0;
+  return `<details class="lesson-panel" id="lessonPanel" data-key="${key}"${open ? " open" : ""}>
+      <summary>${ico("doc")} Lesson: read this first</summary>
+      <div class="lesson-body">${def.lesson}</div>
+    </details>`;
+}
 
 function renderFlashView(code, moduleId) {
   const el = document.getElementById("flashView");
@@ -1192,6 +1270,7 @@ function renderFlashView(code, moduleId) {
       </div>
       <div class="flash-progress-track"><div class="flash-progress-fill" style="width:${Math.round((masteredCount / total) * 100)}%"></div></div>
     </div>
+    ${lessonPanelHtml(code, def, masteredCount)}
     <div class="flash-mode-tabs">
       <button class="mode-tab ${flashState.mode === "session" ? "active" : ""}" id="tabSession">Session (${Math.min(SESSION_SIZE, total)})</button>
       <button class="mode-tab ${flashState.mode === "full" ? "active" : ""}" id="tabFull">Full deck (${total})</button>
@@ -1226,6 +1305,11 @@ function renderFlashView(code, moduleId) {
   `;
 
   document.getElementById("backToSubject").addEventListener("click", () => navigate(`#/${code}`));
+
+  // Track the user's own clicks: a <details> rendered open fires "toggle" by
+  // itself, which would otherwise read as the user choosing to keep it open.
+  const lesson = document.getElementById("lessonPanel");
+  if (lesson) lesson.querySelector("summary").addEventListener("click", () => (lessonOpen[lesson.dataset.key] = !lesson.open));
 
   document.getElementById("tabSession").addEventListener("click", () => {
     if (flashState.mode !== "session") {
@@ -3791,7 +3875,7 @@ function passSummary(rows) {
 function hubDefaultSubject() {
   try {
     const saved = localStorage.getItem(HUB_SUBJECT_KEY);
-    if (saved && SUBJECTS[saved]) return saved;
+    if (saved && SUBJECTS[saved] && !isFoundation(saved)) return saved;
   } catch {
     /* storage unavailable */
   }
@@ -3800,7 +3884,7 @@ function hubDefaultSubject() {
 
 function renderExamHub(requested) {
   const el = document.getElementById("examHubView");
-  const code = requested && SUBJECTS[requested] ? requested : hubDefaultSubject();
+  const code = requested && SUBJECTS[requested] && !isFoundation(requested) ? requested : hubDefaultSubject();
   try {
     localStorage.setItem(HUB_SUBJECT_KEY, code);
   } catch {
@@ -3810,6 +3894,7 @@ function renderExamHub(requested) {
   const today = SRS.today();
 
   const options = Object.keys(SUBJECTS)
+    .filter((c) => !isFoundation(c))
     .map((c) => `<option value="${c}"${c === code ? " selected" : ""}>${c} &mdash; ${escapeHtml(SUBJECTS[c].name)}</option>`)
     .join("");
 

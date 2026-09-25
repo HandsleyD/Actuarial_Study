@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Validates docs/data.js and docs/questions.js against the class of content
+// Validates docs/data.js, docs/questions.js, docs/drills.js and
+// docs/foundations.js against the class of content
 // bugs that have actually shipped to main before this existed:
 //   - a syntax error in either file
 //   - a flashcard missing its "explain" field (the reveal-then-explain
@@ -76,6 +77,27 @@ try {
   fail(`docs/drills.js: failed to parse/execute -- ${e.message}`);
 }
 
+// Foundations (FM, FS) have the same shapes as data.js and drills.js, and
+// the site merges them in the same way, so every check below covers them
+// too. Their modules also carry a `lesson`, checked on its own below.
+try {
+  const F = loadBrowserScript("docs/foundations.js", [
+    "FOUNDATIONS",
+    "FOUNDATION_SUBJECTS",
+    "FOUNDATION_MODULES",
+    "FOUNDATION_DRILLS",
+  ]);
+  for (const code of F.FOUNDATIONS) {
+    if (!F.FOUNDATION_SUBJECTS[code]) fail(`foundations.js: ${code} is in FOUNDATIONS but has no FOUNDATION_SUBJECTS entry`);
+    if (SUBJECTS[code]) fail(`foundations.js: ${code} clashes with an exam subject in data.js`);
+  }
+  Object.assign(SUBJECTS, F.FOUNDATION_SUBJECTS);
+  Object.assign(MODULES, F.FOUNDATION_MODULES);
+  Object.assign(DRILLS, F.FOUNDATION_DRILLS);
+} catch (e) {
+  fail(`docs/foundations.js: failed to parse/execute -- ${e.message}`);
+}
+
 // A syntax error means nothing below can run meaningfully -- stop here.
 if (errors.length) {
   report();
@@ -106,7 +128,21 @@ function checkLatexSpans(text, where, field) {
   }
 }
 
-// --- flashcard content (docs/data.js) ---
+// Lessons are longer HTML with display maths ($$...$$) as well as inline
+// ($...$): check each kind of span, and that the $ signs pair up (an odd
+// count would swallow the rest of the lesson into one broken formula).
+function checkLesson(html, where) {
+  const display = html.match(/\$\$[\s\S]*?\$\$/g) || [];
+  display.forEach((span) => checkLatexSpans(span.slice(1, -1), where, "lesson"));
+  const inline = html.replace(/\$\$[\s\S]*?\$\$/g, "");
+  if ((inline.match(/\$/g) || []).length % 2) fail(`${where}: unbalanced $ signs`);
+  checkLatexSpans(inline, where, "lesson");
+  const open = (html.match(/<(p|h4|ul|li|div|strong|em)\b/g) || []).length;
+  const close = (html.match(/<\/(p|h4|ul|li|div|strong|em)>/g) || []).length;
+  if (open !== close) fail(`${where}: ${open} opening tags but ${close} closing tags`);
+}
+
+// --- flashcard content (docs/data.js, docs/foundations.js) ---
 for (const [code, modules] of Object.entries(MODULES)) {
   if (!SUBJECTS[code]) warn(`${code}: has a MODULES entry but no SUBJECTS metadata`);
 
@@ -119,6 +155,11 @@ for (const [code, modules] of Object.entries(MODULES)) {
     if (!Array.isArray(mod.cards) || !mod.cards.length) {
       warn(`${code}/${mod.id}: no flashcards`);
       continue;
+    }
+
+    if (mod.lesson !== undefined) {
+      if (!String(mod.lesson).trim()) fail(`${code}/${mod.id}: empty "lesson"`);
+      else checkLesson(mod.lesson, `${code}/${mod.id} lesson`);
     }
 
     mod.cards.forEach((card, idx) => {
