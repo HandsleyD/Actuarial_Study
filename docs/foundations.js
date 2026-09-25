@@ -648,12 +648,12 @@ const FOUNDATION_DRILLS = {
     {
       id: "fm-m01-d02", type: "mcq", module: "m01",
       q: "A price of £80 is increased by 25%, then the new price is reduced by 20%. What is the final price?",
-      options: ["£80", "£84", "£76", "£100"],
+      options: ["£80", "£84", "£64", "£100"],
       correct: 0,
       explain: "$80 \\times 1.25 = 100$, then $100 \\times 0.80 = 80$. The factors $1.25 \\times 0.80 = 1$ cancel exactly, even though 25% and 20% are different percentages.",
       why: {
         1: "This adds the percentages ($+25\\% - 20\\% = +5\\%$). Percentage changes combine by multiplying growth factors, not by adding.",
-        2: "This applies both changes to the original £80 separately. The 20% cut applies to the new price of £100.",
+        2: "This applies the 20% cut to the original £80 and forgets the rise. The cut applies to the new price of £100.",
         3: "This is the price after the first step only.",
       },
     },
@@ -719,8 +719,8 @@ const FOUNDATION_DRILLS = {
       explain: "Numerator: $x^{5 + (-2)} = x^3$. Divide by $x^2$: $x^{3-2} = x^1 = x$.",
       why: {
         1: "This cancels $x^{-2}$ against $x^{2}$, but they are not a matching pair: multiplying by $x^{-2}$ and then dividing by $x^{2}$ subtracts 4 from the index, not 0.",
-        2: "This treats $x^{-2}$ as $x^{2}$ and then divides; negative powers must keep their sign when adding.",
-        3: "This adds all the indices. Dividing subtracts.",
+        2: "This subtracts the indices the wrong way round: the numerator is $x^{3}$, and dividing by $x^{2}$ gives $3 - 2 = 1$, not $2 - 3 = -1$.",
+        3: "This drops the minus sign on $x^{-2}$ and adds every index: $5 + 2 + 2 = 9$. Keep the sign, and remember that dividing subtracts.",
       },
     },
     {
