@@ -6,7 +6,7 @@
 
 No install, no sign-up required — just open the link.
 
-![The home page: a transit-map route from three passed subjects through planned and suggested sittings to Associate, with a fork to Fellow waiting on the choice of specialist subjects](.github/readme-assets/progress-screenshot.png)
+![The home page: a transit-map route from three passed subjects through planned and suggested sittings to Associate, with a fork to Fellow waiting on the choice of specialist subjects, and below it the Foundations group with Foundation Mathematics and Foundation Statistics in progress](.github/readme-assets/progress-screenshot.png)
 
 ## What's here
 
