@@ -104,6 +104,18 @@ const Store = (function () {
     writeLS(PENDING_KEY, list);
   }
 
+  // Keys of this account's changes still waiting in the upload queue, for one
+  // type and subject: a load must not replace them with the server's older
+  // copy. keyOf(op) picks the key (module id, "module|card", ...).
+  function pendingKeys(type, examCode, keyOf) {
+    const uid = currentUser ? currentUser.id : null;
+    return new Set(
+      readPending()
+        .filter((op) => op.type === type && op.examCode === examCode && (!op.userId || op.userId === uid))
+        .map(keyOf)
+    );
+  }
+
   function enqueue(op) {
     const list = readPending();
     list.push({ ...op, userId: currentUser ? currentUser.id : null, ts: Date.now() });
@@ -250,14 +262,21 @@ const Store = (function () {
   }
 
   async function loadModuleStatus(examCode) {
-    const cache = getModuleStatusCache(examCode);
-    if (!client || !currentUser) return cache;
+    const before = getModuleStatusCache(examCode);
+    if (!client || !currentUser) return before;
     try {
       const { data, error } = await client.from(STATUS_TABLE).select("module_id, status").eq("exam_code", examCode);
       if (error) throw error;
+      // Server values win, except for a module changed on this device that
+      // the server doesn't have yet: still queued, or changed while this
+      // request was in flight (re-read the cache, don't reuse the snapshot).
+      const cache = getModuleStatusCache(examCode);
+      const pending = pendingKeys("status", examCode, (op) => op.moduleId);
       const merged = { ...cache };
       (data || []).forEach((row) => {
-        merged[row.module_id] = row.status;
+        const id = row.module_id;
+        if (pending.has(id) || cache[id] !== before[id]) return;
+        merged[id] = row.status;
       });
       writeLS(lsKey("status", examCode), merged);
       return merged;
@@ -280,18 +299,26 @@ const Store = (function () {
   }
 
   async function loadMastery(examCode) {
-    const cache = getMasteryCache(examCode);
-    if (!client || !currentUser) return cache;
+    const before = getMasteryCache(examCode);
+    if (!client || !currentUser) return before;
     try {
       const { data, error } = await client
         .from(MASTERY_TABLE)
         .select("module_id, card_idx, mastered")
         .eq("exam_code", examCode);
       if (error) throw error;
-      const merged = { ...cache };
+      // As for module status: a card scored on this device that the server
+      // doesn't have yet keeps its local mark.
+      const cache = getMasteryCache(examCode);
+      const pending = pendingKeys("mastery", examCode, (op) => `${op.moduleId}|${op.cardIdx}`);
+      const at = (m, id, idx) => (m[id] ? m[id][idx] : undefined);
+      const merged = JSON.parse(JSON.stringify(cache));
       (data || []).forEach((row) => {
-        if (!merged[row.module_id]) merged[row.module_id] = {};
-        merged[row.module_id][row.card_idx] = row.mastered;
+        const id = row.module_id;
+        const idx = row.card_idx;
+        if (pending.has(`${id}|${idx}`) || at(cache, id, idx) !== at(before, id, idx)) return;
+        if (!merged[id]) merged[id] = {};
+        merged[id][idx] = row.mastered;
       });
       writeLS(lsKey("mastery", examCode), merged);
       return merged;
@@ -327,6 +354,15 @@ const Store = (function () {
     const lb = b.last || "";
     if (la !== lb) return la > lb;
     return (a.reviews || 0) >= (b.reviews || 0);
+  }
+
+  // true only if schedule a reflects a strictly later review than b: used on
+  // upload, where a tie means the server already has this exact review.
+  function isStrictlyNewer(a, b) {
+    const la = a.last || "";
+    const lb = b.last || "";
+    if (la !== lb) return la > lb;
+    return (a.reviews || 0) > (b.reviews || 0);
   }
 
   async function loadSrs(examCode) {
@@ -485,22 +521,30 @@ const Store = (function () {
         .eq("user_id", currentUser.id)
         .maybeSingle();
       if (error) throw error;
-      if (data) {
+      // Keep whichever copy saw the later study day (or, on the same day, the
+      // longer run): this device may have studied since its last upload.
+      const local = getStreakCache();
+      if (data && (!local.lastDate || data.last_date > local.lastDate || (data.last_date === local.lastDate && data.count > local.count))) {
         const merged = { lastDate: data.last_date, count: data.count };
         writeLS(lsKey("streak"), merged);
         return merged;
       }
-      return cache;
+      return local;
     } catch {
       return cache;
     }
   }
 
+  // Local calendar dates, like the review schedule and the activity strip, so
+  // a late-night review counts towards the same day everywhere.
   function bumpStreak() {
-    const today = new Date().toISOString().slice(0, 10);
+    const now = new Date();
+    const today = localDate(now.getTime());
     const cache = getStreakCache();
     if (cache.lastDate === today) return cache;
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    const y = new Date(now);
+    y.setDate(y.getDate() - 1); // calendar arithmetic, so clock changes don't skip a day
+    const yesterday = localDate(y.getTime());
     const next = { count: cache.lastDate === yesterday ? cache.count + 1 : 1, lastDate: today };
     writeLS(lsKey("streak"), next);
     enqueue({ type: "streak", value: next });
@@ -569,11 +613,23 @@ const Store = (function () {
         const day = localDate(new Date(row.started_at).getTime());
         remote[day] = (remote[day] || 0) + row.cards_reviewed;
       });
-      // Per day, take whichever source saw more reviews: local knows about
-      // this device's unfinished session, remote knows about other devices.
+      // The server has every device's finished, uploaded sessions (this
+      // device's included). Add what it can't know yet: this device's open
+      // session and finished ones still queued. Local-only counts stay as a
+      // floor, for days from before session logging reached the server.
+      const unsent = {};
+      const add = (s) => {
+        if (!s || !s.cardsReviewed) return;
+        const day = localDate(s.startedAt);
+        unsent[day] = (unsent[day] || 0) + s.cardsReviewed;
+      };
+      add(getCurrentSession());
+      readPending()
+        .filter((op) => op.type === "session" && (!op.userId || op.userId === currentUser.id))
+        .forEach((op) => add(op.value));
       const merged = { ...local };
-      Object.keys(remote).forEach((day) => {
-        merged[day] = Math.max(merged[day] || 0, remote[day]);
+      new Set([...Object.keys(remote), ...Object.keys(unsent)]).forEach((day) => {
+        merged[day] = Math.max(local[day] || 0, (remote[day] || 0) + (unsent[day] || 0));
       });
       return merged;
     } catch {
@@ -823,6 +879,42 @@ const Store = (function () {
         const latest = new Map();
         srsOps.forEach((op) => latest.set(`${op.examCode}|${op.moduleId}|${op.cardIdx}`, op));
         const now = new Date().toISOString();
+        try {
+          // Newer-wins on upload too: a card another device has since
+          // reviewed more recently keeps the server's schedule, which this
+          // device adopts, rather than being rolled back by a stale queue.
+          const codes = [...new Set([...latest.values()].map((op) => op.examCode))];
+          const { data, error } = await client
+            .from(SRS_TABLE)
+            .select("exam_code, module_id, card_idx, reps, interval_days, ease, due_date, lapses, reviews, last_reviewed")
+            .in("exam_code", codes);
+          if (error) throw error;
+          (data || []).forEach((row) => {
+            const key = `${row.exam_code}|${row.module_id}|${row.card_idx}`;
+            const op = latest.get(key);
+            const remote = {
+              reps: row.reps,
+              interval: row.interval_days,
+              ease: Number(row.ease),
+              due: row.due_date,
+              lapses: row.lapses,
+              reviews: row.reviews,
+              last: row.last_reviewed,
+            };
+            if (!op || !isStrictlyNewer(remote, op.value)) return;
+            latest.delete(key);
+            const cache = getSrsCache(row.exam_code);
+            const local = cache[row.module_id] && cache[row.module_id][row.card_idx];
+            if (!local || isStrictlyNewer(remote, local)) {
+              if (!cache[row.module_id]) cache[row.module_id] = {};
+              cache[row.module_id][row.card_idx] = remote;
+              writeLS(lsKey("srs", row.exam_code), cache);
+            }
+          });
+        } catch {
+          // Couldn't read the server's copies (offline, table missing): the
+          // upsert below fails the same way and everything stays queued.
+        }
         const rows = [...latest.values()].map((op) => ({
           user_id: currentUser.id,
           exam_code: op.examCode,
@@ -838,12 +930,14 @@ const Store = (function () {
           updated_at: now,
         }));
         try {
-          const { error } = await client.from(SRS_TABLE).upsert(rows, { onConflict: "user_id,exam_code,module_id,card_idx" });
-          if (error) {
-            srsTableMissing = looksLikeMissingTable(error, SRS_TABLE);
-            throw error;
+          if (rows.length) {
+            const { error } = await client.from(SRS_TABLE).upsert(rows, { onConflict: "user_id,exam_code,module_id,card_idx" });
+            if (error) {
+              srsTableMissing = looksLikeMissingTable(error, SRS_TABLE);
+              throw error;
+            }
+            srsTableMissing = false;
           }
-          srsTableMissing = false;
         } catch {
           // Offline, or the table doesn't exist yet because
           // 002_spaced_repetition.sql hasn't been run — keep only the latest
@@ -859,6 +953,39 @@ const Store = (function () {
         const latest = new Map();
         drillOps.forEach((op) => latest.set(`${op.examCode}|${op.itemId}`, op));
         const now = new Date().toISOString();
+        try {
+          // Same newer-wins check as flashcard schedules above.
+          const codes = [...new Set([...latest.values()].map((op) => op.examCode))];
+          const { data, error } = await client
+            .from(DRILL_TABLE)
+            .select("exam_code, item_id, reps, interval_days, ease, due_date, lapses, reviews, last_reviewed, attempts, correct")
+            .in("exam_code", codes);
+          if (error) throw error;
+          (data || []).forEach((row) => {
+            const key = `${row.exam_code}|${row.item_id}`;
+            const op = latest.get(key);
+            const remote = {
+              reps: row.reps,
+              interval: row.interval_days,
+              ease: Number(row.ease),
+              due: row.due_date,
+              lapses: row.lapses,
+              reviews: row.reviews,
+              last: row.last_reviewed,
+              attempts: row.attempts,
+              correct: row.correct,
+            };
+            if (!op || !isStrictlyNewer(remote, op.value)) return;
+            latest.delete(key);
+            const cache = getDrillCache(row.exam_code);
+            if (!cache[row.item_id] || isStrictlyNewer(remote, cache[row.item_id])) {
+              cache[row.item_id] = remote;
+              writeLS(lsKey("drill", row.exam_code), cache);
+            }
+          });
+        } catch {
+          // As above: the upsert fails the same way and nothing is lost.
+        }
         const rows = [...latest.values()].map((op) => ({
           user_id: currentUser.id,
           exam_code: op.examCode,
@@ -875,12 +1002,14 @@ const Store = (function () {
           updated_at: now,
         }));
         try {
-          const { error } = await client.from(DRILL_TABLE).upsert(rows, { onConflict: "user_id,exam_code,item_id" });
-          if (error) {
-            drillTableMissing = looksLikeMissingTable(error, DRILL_TABLE);
-            throw error;
+          if (rows.length) {
+            const { error } = await client.from(DRILL_TABLE).upsert(rows, { onConflict: "user_id,exam_code,item_id" });
+            if (error) {
+              drillTableMissing = looksLikeMissingTable(error, DRILL_TABLE);
+              throw error;
+            }
+            drillTableMissing = false;
           }
-          drillTableMissing = false;
         } catch {
           remaining.push(...latest.values());
         }
