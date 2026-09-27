@@ -66,22 +66,28 @@ test.describe("drills", () => {
 
   test("every question type can be answered correctly", async ({ page }) => {
     test.slow();
-    // m02 has multiple choice, select-all, fill-the-gap and diagram questions.
+    // m02 has multiple choice, select-all, fill-the-gap and diagram questions:
+    // 11 in all, but a run is 10 picked at random, so one run can miss a type.
+    // A new run puts questions never tried first, so a second run always
+    // reaches whatever the first left out.
     await open(page, "CB2/drill/m02", "#drillSubmit");
-    const n = await page.evaluate(() => drillState.items.length);
     const seen = new Set();
-    for (let i = 0; i < n; i++) {
-      const it = await answer(page, true);
-      seen.add(it.type);
-      await expect(page.locator(".drill-verdict"), `${it.id} (${it.type})`).toHaveText(/Correct/);
-      await page.locator("#drillNext").click();
+    for (let run = 1; run <= 2; run++) {
+      const n = await page.evaluate(() => drillState.items.length);
+      for (let i = 0; i < n; i++) {
+        const it = await answer(page, true);
+        seen.add(it.type);
+        await expect(page.locator(".drill-verdict"), `${it.id} (${it.type})`).toHaveText(/Correct/);
+        await page.locator("#drillNext").click();
+      }
+      await expect(page.locator("#drillView h2")).toHaveText("Drill complete");
+      await expect(page.locator(".summary-stats")).toContainText(`${n} of`);
+      await expect(page.locator(".summary-stats")).toContainText("100%");
+      await page.locator("#drillAgain").click();
+      await expect(page.locator("#drillSubmit")).toBeVisible();
+      if (seen.size === 4) break;
     }
     expect([...seen].sort()).toEqual(["cloze", "hotspot", "mcq", "multi"]);
-    await expect(page.locator("#drillView h2")).toHaveText("Drill complete");
-    await expect(page.locator(".summary-stats")).toContainText(`${n} of`);
-    await expect(page.locator(".summary-stats")).toContainText("100%");
-    await page.locator("#drillAgain").click();
-    await expect(page.locator("#drillSubmit")).toBeVisible();
   });
 
   test("clicking a diagram picks the region nearest the pointer", async ({ page }) => {

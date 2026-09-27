@@ -21,6 +21,14 @@ test.describe("header and navigation", () => {
     await expect(page).toHaveURL(/#\/$/);
   });
 
+  test("the dashboard link opens at the top; #/dashboard/plan at the plan", async ({ page }) => {
+    await open(page, "dashboard", "#examPlan");
+    expect(await page.evaluate(() => scrollY)).toBe(0);
+    await page.goto("/#/dashboard/plan");
+    await expect(page.locator("#examPlan h3")).toBeInViewport();
+    expect(await page.evaluate(() => scrollY)).toBeGreaterThan(0);
+  });
+
   test("browser back and forward move between views", async ({ page }) => {
     await open(page);
     await page.locator("#card-CB2").click();
