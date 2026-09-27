@@ -25,6 +25,7 @@ on:
       - "scripts/test-srs.mjs"
       - "docs/store.js"
       - "scripts/test-plan-sync.mjs"
+      - "scripts/test-progress-sync.mjs"
       - "docs/route.js"
       - "docs/exam-dates.js"
       - "scripts/test-route.mjs"
@@ -44,6 +45,7 @@ on:
       - "scripts/test-srs.mjs"
       - "docs/store.js"
       - "scripts/test-plan-sync.mjs"
+      - "scripts/test-progress-sync.mjs"
       - "docs/route.js"
       - "docs/exam-dates.js"
       - "scripts/test-route.mjs"
@@ -69,6 +71,9 @@ jobs:
 
       - name: Exam plan sync tests
         run: node scripts/test-plan-sync.mjs
+
+      - name: Progress sync tests
+        run: node scripts/test-progress-sync.mjs
 
       - name: Route to Associate and Fellow tests
         run: node scripts/test-route.mjs
