@@ -32,6 +32,7 @@ npx playwright test --headed --debug    # watch and step through
 | `drills.spec.mjs` | Multiple choice, select-all, fill-the-gap and diagram questions, right and wrong answers, run summary |
 | `questions-search.spec.mjs` | Practice questions and timed mode; search and its subject filter |
 | `planning.spec.mjs` | Welcome questions, exam planner (clashes, moves, awaiting results), results day, route map and specialists, Exam Hub, dashboard |
+| `progress-status.spec.mjs` | Studying a module starts it; subjects awaiting results or passed pause their reviews, with a badge and a note; results day and resits |
 | `site.spec.mjs` | Header navigation, back/forward, theme, account panel, phone widths (390px and 320px), dark mode |
 
 When you add a feature, add a test for it to the file that fits, or a new `*.spec.mjs`.
