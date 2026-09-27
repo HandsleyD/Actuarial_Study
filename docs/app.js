@@ -2965,7 +2965,7 @@ function renderWelcomeView() {
               <option value="passed"${pick === "passed" || !pick ? " selected" : ""}>Passed</option>
               <option value="exempt"${pick === "exempt" ? " selected" : ""}>Exempt</option>${
                 awaitingInfo && canRecordAwaiting(awaitingInfo, c)
-                  ? `<option value="awaiting"${pick === "awaiting" ? " selected" : ""}>Sat ${sittingName(awaitingInfo.id)}, awaiting results</option>`
+                  ? `<option value="awaiting"${pick === "awaiting" ? " selected" : ""}>Sat, awaiting results</option>`
                   : ""
               }
             </select>

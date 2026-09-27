@@ -28,3 +28,8 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Node tooling for the browser tests
+node_modules/
+test-results/
+playwright-report/

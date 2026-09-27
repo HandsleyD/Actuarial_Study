@@ -2316,7 +2316,10 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
 
 .welcome-row input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--accent); }
 
-.welcome-how.text-input { width: auto; margin: 0; padding: 5px 10px; font-size: 0.8rem; }
+.welcome-how.text-input { width: auto; max-width: 50%; flex-shrink: 1; margin: 0; padding: 5px 10px; font-size: 0.8rem; }
+/* Fieldsets default to min-width: min-content, which would stop a row
+   shrinking to a phone's width. */
+.welcome-group { min-width: 0; }
 
 .welcome-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
