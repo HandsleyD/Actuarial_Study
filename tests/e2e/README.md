@@ -1,6 +1,6 @@
 # Browser tests
 
-These tests drive the real site in Chromium with [Playwright](https://playwright.dev), clicking through it as a person would. They run in CI on every change to the site (`.github/workflows/browser-tests.yml`).
+These tests drive the real site in Chromium with [Playwright](https://playwright.dev), clicking through it as a person would. They run in CI on every pull request (`.github/workflows/browser-tests.yml`), as a required check for merging into `main`.
 
 ## Running them
 
