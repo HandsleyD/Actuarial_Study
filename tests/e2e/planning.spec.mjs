@@ -30,7 +30,9 @@ test.describe("welcome questions", () => {
     await expect(page.locator("#welcomeWarnings")).toBeEmpty();
     await page.locator("#welcomeForm2 button[type=submit]").click();
 
-    await expect(page).toHaveURL(/#\/dashboard$/);
+    // Straight to the plan, not the top of the dashboard.
+    await expect(page).toHaveURL(/#\/dashboard\/plan$/);
+    await expect(page.locator("#examPlan h3")).toBeInViewport();
     const results = await readStore(page, "result");
     expect(results.CB1.status).toBe("passed");
     expect(results.CB3.status).toBe("exempt");
@@ -152,7 +154,15 @@ test.describe("route map", () => {
     await expect(map.locator(".rm-station.suggested").first()).toBeVisible();
     await expect(map.locator(".rm-here")).toHaveCount(1);
     await map.getByRole("link", { name: "Edit your plan" }).click();
-    await expect(page).toHaveURL(/#\/dashboard$/);
+    await expect(page).toHaveURL(/#\/dashboard\/plan$/);
+    // The plan is on screen and not hidden under the sticky header.
+    const planHeading = page.locator("#examPlan h3");
+    await expect(planHeading).toBeInViewport();
+    const [top, header] = await Promise.all([
+      planHeading.evaluate((h) => h.getBoundingClientRect().top),
+      page.locator(".topbar").evaluate((t) => t.getBoundingClientRect().bottom),
+    ]);
+    expect(top).toBeGreaterThanOrEqual(header);
   });
 
   test("choosing specialist subjects extends the route to Fellow", async ({ page }) => {

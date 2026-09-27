@@ -2894,3 +2894,6 @@ a.btn { display: inline-flex; }
 }
 .prereq-link:hover { border-color: var(--rm-fnd); }
 .prereq-code { white-space: nowrap; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--rm-fnd); }
+
+/* Sections opened by link (#/dashboard/plan) clear the sticky header. */
+.dash-section { scroll-margin-top: 84px; }

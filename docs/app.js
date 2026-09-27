@@ -2867,7 +2867,7 @@ function renderRouteMap() {
         <p class="route-eyebrow">${next ? `Next stop: ${next.codes.join(" &amp; ")} &middot; ${sittingName(next.id)}` : "Your route"}</p>
         <h2 class="route-title">${headline}</h2>
       </div>
-      <a class="btn" href="#/dashboard">Edit your plan</a>
+      <a class="btn" href="#/dashboard/plan">Edit your plan</a>
     </div>
     <div class="route-canvas">${routeMapSvg(route, width - 2)}</div>
     ${clashes.length ? `<ul class="plan-notes route-clashes">${clashes.map((c) => `<li class="plan-warn">Clash &mdash; ${c}</li>`).join("")}</ul>` : ""}
@@ -3152,11 +3152,7 @@ function finishWelcome(sittingId, withPlan) {
   writePlan(sittings);
   Store.setWelcomed();
   onResultsChanged();
-  navigate(withPlan ? "#/dashboard" : "#/");
-  if (withPlan) {
-    const plan = document.getElementById("examPlan");
-    if (plan) plan.scrollIntoView({ block: "start" });
-  }
+  navigate(withPlan ? "#/dashboard/plan" : "#/");
 }
 
 /* ---------- search across every card and practice question ---------- */
@@ -4253,7 +4249,7 @@ function parseHash() {
   if (!h) return { view: "home" };
   const parts = h.split("/").filter(Boolean);
   const first = parts[0].toLowerCase();
-  if (first === "dashboard") return { view: "dashboard" };
+  if (first === "dashboard") return { view: "dashboard", section: parts[1] ? parts[1].toLowerCase() : null };
   if (first === "welcome") return { view: "welcome" };
   if (first === "exams") return { view: "exams", exam: parts[1] ? parts[1].toUpperCase() : null };
   if (first.startsWith("search")) {
@@ -4281,6 +4277,15 @@ function parseHash() {
   const idx = /^\d+$/.test(parts[2] || "") ? Number(parts[2]) : null;
   if (parts[1].toLowerCase() === "questions") return { view: "questions", exam: parts[0].toUpperCase(), index: idx };
   return { view: "flash", exam: parts[0].toUpperCase(), module: parts[1].toLowerCase(), index: idx };
+}
+
+// #/dashboard/<section> opens the dashboard at one of its sections, so a
+// link like "Edit your plan" lands on the plan rather than the top.
+const DASH_SECTIONS = { plan: "examPlan" };
+
+function scrollToDashSection(section) {
+  const el = section && DASH_SECTIONS[section] && document.getElementById(DASH_SECTIONS[section]);
+  if (el) el.scrollIntoView({ block: "start" });
 }
 
 function navigate(hash) {
@@ -4324,6 +4329,7 @@ function renderRoute() {
     renderSearchView(r.q);
   } else if (r.view === "dashboard") {
     renderDashboardView();
+    scrollToDashSection(r.section);
     refreshDashboardActivity();
     refreshExamPlan();
   } else if (r.view === "welcome") {
