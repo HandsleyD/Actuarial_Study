@@ -43,7 +43,8 @@ Fellow is a personal, self-study project — original content written to mirror 
 - [`docs/`](docs/) — the study site itself (published via GitHub Pages from this folder)
 - [`maths-study/`](maths-study/) — the underlying study workspace (notes, concept indexes, past-paper work) that feeds the site's content
 - [`supabase/`](supabase/) — optional cloud-sync setup (schema, numbered migrations, and the AI-feedback edge function), see [`supabase/SETUP.md`](supabase/SETUP.md) if you're running your own fork
-- [`scripts/`](scripts/) — content validation, tests, and the generators behind the Exam Hub data; [`.github/workflows/`](.github/workflows/) runs them in CI and on a schedule
+- [`scripts/`](scripts/) — content validation, unit tests, and the generators behind the Exam Hub data; [`.github/workflows/`](.github/workflows/) runs them in CI and on a schedule
+- [`tests/e2e/`](tests/e2e/) — browser tests that click through every page of the site in Chromium (Playwright); `npm ci && npm test` runs everything locally, see [`tests/e2e/README.md`](tests/e2e/README.md)
 
 ## License
 

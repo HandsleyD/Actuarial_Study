@@ -8,23 +8,34 @@ name: Sync progress.md from Supabase
 # Credentials note: SUPABASE_SECRET_KEY (the dashboard's "Secret key", or
 # "service_role" on older projects) is a repo secret, injected only into
 # this workflow's environment -- it never touches the site or the browser.
-# The commit/push at the end uses the workflow's own short-lived
-# GITHUB_TOKEN (via the `permissions` block below), not a personal access
-# token stored anywhere.
+# The commit is pushed as the repo's own GitHub App (Fellow bot: see
+# .github/BOT.md), not with GITHUB_TOKEN: main requires the validate and e2e
+# checks, and the app is the one actor allowed to push past them. Each run
+# gets a token that is scoped to this repo and expires within the hour.
 
 on:
   schedule:
     - cron: "0 6 * * *" # daily at 06:00 UTC
   workflow_dispatch: {}
 
+# Writes go through the Fellow bot's token, so the built-in one only reads.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Get a token for the Fellow bot
+        id: bot
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.FELLOW_BOT_APP_ID }}
+          private-key: ${{ secrets.FELLOW_BOT_PRIVATE_KEY }}
+
       - uses: actions/checkout@v7
+        with:
+          token: ${{ steps.bot.outputs.token }}
 
       - uses: actions/setup-node@v7
         with:
@@ -37,9 +48,12 @@ jobs:
         run: node scripts/sync-progress-md.mjs
 
       - name: Commit and push if progress.md changed
+        env:
+          GH_TOKEN: ${{ steps.bot.outputs.token }}
+          BOT: ${{ steps.bot.outputs.app-slug }}[bot]
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "$BOT"
+          git config user.email "$(gh api "/users/$BOT" --jq .id)+$BOT@users.noreply.github.com"
           git add maths-study/exams/*/progress.md
           if git diff --cached --quiet; then
             echo "No status changes to commit."

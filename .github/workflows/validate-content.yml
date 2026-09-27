@@ -32,26 +32,10 @@ on:
       - "docs/exam-stats.js"
       - "scripts/extract-exam-stats.mjs"
       - "maths-study/resources/past-papers/processed/**/*examiner-report*"
+  # Every PR, with no path filter, so the check always reports: it's a
+  # required status check on main, and a required check that never runs
+  # leaves the PR waiting forever.
   pull_request:
-    paths:
-      - "docs/data.js"
-      - "docs/questions.js"
-      - "docs/drills.js"
-      - "docs/diagrams.js"
-      - "docs/foundations.js"
-      - "maths-study/exams/*/progress.md"
-      - "scripts/validate-content.mjs"
-      - "docs/srs.js"
-      - "scripts/test-srs.mjs"
-      - "docs/store.js"
-      - "scripts/test-plan-sync.mjs"
-      - "scripts/test-progress-sync.mjs"
-      - "docs/route.js"
-      - "docs/exam-dates.js"
-      - "scripts/test-route.mjs"
-      - "docs/exam-stats.js"
-      - "scripts/extract-exam-stats.mjs"
-      - "maths-study/resources/past-papers/processed/**/*examiner-report*"
 
 jobs:
   validate:

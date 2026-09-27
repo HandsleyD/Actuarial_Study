@@ -9,19 +9,20 @@ name: Update IFoA exam dates
 # If the IFoA redesigns the page the script exits non-zero instead of writing
 # a half-empty file, so the run fails and GitHub emails the repo owner.
 #
-# Needs the repo setting Settings > Actions > General > "Allow GitHub Actions
-# to create and approve pull requests". PRs opened with GITHUB_TOKEN don't
-# trigger other workflows, so the content checks won't run on them; the
-# script's own checks cover this file.
+# The branch and PR are made as the repo's own GitHub App (Fellow bot: see
+# .github/BOT.md), not with GITHUB_TOKEN. PRs opened with GITHUB_TOKEN don't
+# trigger other workflows, so the required validate and e2e checks would
+# never run and the PR could never be merged; the app's PRs trigger them
+# like anyone else's.
 
 on:
   schedule:
     - cron: "0 7 * * 1" # Mondays 07:00 UTC
   workflow_dispatch:
 
+# Writes go through the Fellow bot's token, so the built-in one only reads.
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 concurrency:
   group: update-exam-dates
@@ -32,9 +33,17 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH: bot/update-exam-dates
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      - name: Get a token for the Fellow bot
+        id: bot
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.FELLOW_BOT_APP_ID }}
+          private-key: ${{ secrets.FELLOW_BOT_PRIVATE_KEY }}
+
       - uses: actions/checkout@v7
+        with:
+          token: ${{ steps.bot.outputs.token }}
 
       - uses: actions/setup-node@v7
         with:
@@ -44,13 +53,16 @@ jobs:
         run: node scripts/update-exam-dates.mjs
 
       - name: Open or refresh a PR if the dates changed
+        env:
+          GH_TOKEN: ${{ steps.bot.outputs.token }}
+          BOT: ${{ steps.bot.outputs.app-slug }}[bot]
         run: |
           if git diff --quiet -- docs/exam-dates.js; then
             echo "Exam dates unchanged."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "$BOT"
+          git config user.email "$(gh api "/users/$BOT" --jq .id)+$BOT@users.noreply.github.com"
           git checkout -B "$BRANCH"
           git add docs/exam-dates.js
           git commit -m "Update IFoA exam dates from actuaries.org.uk"
