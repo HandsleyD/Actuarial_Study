@@ -2148,7 +2148,8 @@ function sittingInfo(id) {
 }
 
 // Sittings to show: any past sitting that still has subjects planned in it
-// (so they can be marked done or cleared), then upcoming ones.
+// (so they can be marked done or cleared), the sitting just gone while its
+// results are awaited, then upcoming ones.
 function planSittingList() {
   const planned = Object.keys(examPlan.sittings).filter((id) => examPlan.sittings[id].length).sort();
   let id = firstUpcomingSittingId();
@@ -2160,7 +2161,9 @@ function planSittingList() {
     id = nextSittingId(id);
   }
   const past = planned.filter((p) => p < upcoming[0]);
-  return [...past, ...upcoming].map(sittingInfo);
+  const awaiting = awaitingSittingId();
+  if (awaiting && !past.includes(awaiting)) past.push(awaiting);
+  return [...past.sort(), ...upcoming].map(sittingInfo);
 }
 
 function plannedSittingOf(code) {
@@ -2192,6 +2195,32 @@ function removeFromPlan(code) {
 // The first sitting that hasn't started yet.
 function firstUpcomingSittingId() {
   return CAL.firstUpcoming(SRS.today());
+}
+
+function prevSittingId(id) {
+  const [y, m] = id.split("-");
+  return m === "09" ? `${y}-04` : `${Number(y) - 1}-09`;
+}
+
+// A subject sat at a sitting that has started can still be recorded there
+// until its results are out: it was on the timetable, and results day is
+// still to come. From results day the "did you pass?" prompt takes over.
+function canRecordAwaiting(info, code) {
+  const today = SRS.today();
+  return (
+    info.first <= today &&
+    resultsDate(info, code) > today &&
+    (!info.session || sessionPapers(info.session, code).length > 0)
+  );
+}
+
+// The sitting just gone, while any of its results are still to come: the
+// one past sitting whose subjects can still be added to the plan (so
+// someone who has just sat an exam can record it and be asked about the
+// result on results day). null the rest of the time.
+function awaitingSittingId() {
+  const info = sittingInfo(prevSittingId(firstUpcomingSittingId()));
+  return PLANNABLE.some((c) => canRecordAwaiting(info, c)) ? info.id : null;
 }
 
 // When results for a subject at a sitting are (or are expected to be) out:
@@ -2316,9 +2345,11 @@ function planSectionHtml() {
   let fellowAt = qualifiesFellow(projected) ? "now" : null;
   let prevEnd = today;
 
+  const awaitingId = awaitingSittingId();
   const rows = sittings.map((info) => {
     const codes = examPlan.sittings[info.id] || [];
     const past = info.first <= today; // started or finished: nothing left to plan in it
+    const awaiting = info.id === awaitingId; // ...except recording what was sat, until results are out
     codes.forEach((c) => projected.add(c));
     const cb3Ok = projected.has("CB3");
     projected.add("CB3"); // assume CB3 is fitted in alongside; flagged below if not passed yet
@@ -2331,6 +2362,7 @@ function planSectionHtml() {
       ? `${fmtHubDate(info.first)} &ndash; ${fmtHubDate(info.last)}`
       : "dates not published yet";
     const meta = [dateRange];
+    if (awaiting) meta.push("sat &middot; awaiting results");
     if (!past) meta.push(countdownLabel(info.first).replace(/^in /, "starts in "));
     if (!past && info.entryCloses) {
       meta.push(info.entryCloses >= today ? `entry closes ${fmtHubDate(info.entryCloses)}` : "entry has closed");
@@ -2347,12 +2379,24 @@ function planSectionHtml() {
       .join("");
 
     let addHtml = "";
-    if (!past) {
+    if (!past || awaiting) {
       const groups = {};
       PLANNABLE.filter((c) => !doneNow.has(c) && !codes.includes(c)).forEach((c) => {
-        const offered = !info.session || sessionPapers(info.session, c).length > 0;
+        const onTimetable = !info.session || sessionPapers(info.session, c).length > 0;
+        // Every paper starts at 09:00, so nobody sat two subjects' papers on
+        // the same day: rule those out when recording what was sat.
+        const sameDay = awaiting && CAL.clashes(info, [...codes, c]).length > 0;
+        const offered = awaiting ? canRecordAwaiting(info, c) && !sameDay : onTimetable;
         const elsewhere = plannedSittingOf(c);
-        const note = !offered ? " (not in this sitting)" : elsewhere ? ` (move from ${sittingLabel(elsewhere)})` : "";
+        const note = !onTimetable
+          ? " (not in this sitting)"
+          : sameDay
+          ? " (same day as one you sat)"
+          : !offered
+          ? " (results already out)"
+          : elsewhere
+          ? ` (move from ${sittingLabel(elsewhere)})`
+          : "";
         (groups[planGroup(c)] = groups[planGroup(c)] || []).push(
           `<option value="${c}"${offered ? "" : " disabled"}>${c} &mdash; ${escapeHtml((SUBJECTS[c] || { name: "" }).name)}${note}</option>`
         );
@@ -2362,11 +2406,15 @@ function planSectionHtml() {
         .join("");
       addHtml = opts
         ? `<select class="text-input plan-add" data-sitting="${info.id}" aria-label="Add a subject to ${name}">
-            <option value="">+ Add a subject&hellip;</option>${opts}</select>`
+            <option value="">${awaiting ? "+ Add a subject you sat&hellip;" : "+ Add a subject&hellip;"}</option>${opts}</select>`
         : "";
     }
 
-    const notes = sittingWarnings(info, codes).map((w) => `<li class="plan-warn">${w}</li>`);
+    // Clashes and load only matter while there's still a sitting to plan.
+    const notes = past ? [] : sittingWarnings(info, codes).map((w) => `<li class="plan-warn">${w}</li>`);
+    if (awaiting && !codes.length) {
+      notes.push("<li>Just sat any exams here? Add them, and the site will ask how you did when results are out.</li>");
+    }
     if (past) {
       codes
         .filter((c) => !doneNow.has(c))
@@ -2395,7 +2443,7 @@ function planSectionHtml() {
     }
 
     return `
-      <div class="plan-sitting${past ? " past" : ""}${codes.length ? "" : " empty"}">
+      <div class="plan-sitting${past ? " past" : ""}${awaiting ? " awaiting" : ""}${codes.length ? "" : " empty"}">
         <div class="plan-sitting-head">
           <strong>${name}</strong>
           <span class="plan-meta">${meta.join(" &middot; ")}</span>
@@ -2435,7 +2483,7 @@ function planSectionHtml() {
   return `
     <section class="dash-section" id="examPlan">
       <div class="dash-section-head"><h3>Exam plan</h3></div>
-      <p class="dash-note">Pick which subjects you'll sit at each sitting &mdash; most students take 1&ndash;3 per sitting. Dates come from the <a href="#/exams">Exam Hub</a>; sittings not yet published are assumed to be mid-April and mid-September. CB3 is booked online outside the sittings, so it isn't listed.${tableNote}</p>
+      <p class="dash-note">Pick which subjects you'll sit at each sitting &mdash; most students take 1&ndash;3 per sitting. Dates come from the <a href="#/exams">Exam Hub</a>; sittings not yet published are assumed to be mid-April and mid-September. Just sat exams and waiting for results? Add them to that sitting and you'll be asked how you did on results day. CB3 is booked online outside the sittings, so it isn't listed.${tableNote}</p>
       ${rows.join("")}
       <button class="btn plan-more" id="planMore">Show later sittings</button>
       <div class="plan-summary">
@@ -2630,6 +2678,8 @@ function routeMapSvg(route, width) {
           ? subjectResult(n.code) === "exempt"
             ? "exempt"
             : "passed"
+          : n.group.past
+          ? `sat ${sittingName(n.group.id)}, result to come`
           : `${n.kind === "suggested" ? "suggested for" : "planned for"} ${sittingName(n.group.id)}`;
       const mark =
         n.kind === "passed"
@@ -2665,8 +2715,10 @@ function routeMapSvg(route, width) {
     }
   });
 
-  // You are here: just after the last passed subject.
-  const here = nodes.findIndex((n) => n.t !== "start" && !(n.t === "station" && n.kind === "passed"));
+  // You are here: just after the last subject passed or already sat.
+  const here = nodes.findIndex(
+    (n) => n.t !== "start" && !(n.t === "station" && (n.kind === "passed" || (n.group && n.group.past)))
+  );
   if (here > 0) {
     const a = nodes[here - 1];
     const b = nodes[here];
@@ -2859,9 +2911,11 @@ function renderHomePrompts() {
 
 /* ---------- welcome: first-run questions ---------- */
 //
-// Two steps: which exams are already passed or exempted, then what's being
-// sat at the next sitting. Nothing is saved until the end, so backing out
-// part-way changes nothing.
+// Two steps: which exams are already passed or exempted (or, between a
+// sitting and its results, already sat), then what's being sat at the next
+// sitting. Nothing is saved until the end, so backing out part-way changes
+// nothing. "Sat, awaiting results" isn't a result: it places the subject in
+// that sitting of the plan, so the "did you pass?" prompt asks on results day.
 
 const welcomeState = { step: 1, picks: {}, next: [] };
 
@@ -2871,6 +2925,10 @@ function startWelcome() {
   EXAMS.forEach((c) => {
     const r = subjectResult(c);
     if (r) welcomeState.picks[c] = r;
+  });
+  const awaiting = awaitingSittingId();
+  (awaiting ? examPlan.sittings[awaiting] || [] : []).forEach((c) => {
+    if (!welcomeState.picks[c]) welcomeState.picks[c] = "awaiting";
   });
   welcomeState.next = [...(examPlan.sittings[firstUpcomingSittingId()] || [])];
 }
@@ -2886,12 +2944,17 @@ function welcomeGroupsHtml(codes, rowHtml) {
 function renderWelcomeView() {
   const el = document.getElementById("welcomeView");
   if (welcomeState.step === 1) {
+    const awaitingInfo = awaitingSittingId() ? sittingInfo(awaitingSittingId()) : null;
     el.innerHTML = `
       <button class="back-link" id="welcomeBack">&larr; All subjects</button>
       <div class="subject-head">
         <p class="welcome-step">Step 1 of 2</p>
-        <h2>Which exams have you already passed?</h2>
-        <p class="subject-blurb">Tick any you've passed or been exempted from. These count towards Associate and Fellow; you can change them later on each subject's page.</p>
+        <h2>${awaitingInfo ? "Which exams have you passed, or just sat?" : "Which exams have you already passed?"}</h2>
+        <p class="subject-blurb">Tick any you've passed or been exempted from. These count towards Associate and Fellow; you can change them later on each subject's page.${
+          awaitingInfo
+            ? ` If you sat something in ${sittingName(awaitingInfo.id)} and are waiting for the result, tick it and choose &ldquo;Sat, awaiting results&rdquo;: the site will ask how you did when results are out.`
+            : ""
+        }</p>
       </div>
       <form id="welcomeForm1" class="welcome-form">
         ${welcomeGroupsHtml(EXAMS, (c) => {
@@ -2899,8 +2962,12 @@ function renderWelcomeView() {
           return `<div class="welcome-row">
             <label><input type="checkbox" data-code="${c}"${pick ? " checked" : ""}> <strong>${c}</strong> ${escapeHtml((SUBJECTS[c] || { name: "" }).name)}</label>
             <select class="text-input welcome-how" data-code="${c}" aria-label="How you completed ${c}"${pick ? "" : " disabled"}>
-              <option value="passed"${pick !== "exempt" ? " selected" : ""}>Passed</option>
-              <option value="exempt"${pick === "exempt" ? " selected" : ""}>Exempt</option>
+              <option value="passed"${pick === "passed" || !pick ? " selected" : ""}>Passed</option>
+              <option value="exempt"${pick === "exempt" ? " selected" : ""}>Exempt</option>${
+                awaitingInfo && canRecordAwaiting(awaitingInfo, c)
+                  ? `<option value="awaiting"${pick === "awaiting" ? " selected" : ""}>Sat ${sittingName(awaitingInfo.id)}, awaiting results</option>`
+                  : ""
+              }
             </select>
           </div>`;
         })}
@@ -2982,16 +3049,24 @@ function renderWelcomeView() {
 }
 
 function finishWelcome(sittingId, withPlan) {
+  const awaiting = awaitingSittingId();
+  const sat = awaiting ? Object.keys(welcomeState.picks).filter((c) => welcomeState.picks[c] === "awaiting") : [];
   EXAMS.forEach((c) => {
-    const want = welcomeState.picks[c] || "none";
+    const pick = welcomeState.picks[c];
+    const want = pick && pick !== "awaiting" ? pick : "none";
     const have = subjectResult(c) || "none";
     if (want !== have) subjectResults = Store.setResult(c, want, null);
   });
   const sittings = JSON.parse(JSON.stringify(examPlan.sittings));
-  const passed = Object.keys(welcomeState.picks);
+  const passed = Object.keys(welcomeState.picks).filter((c) => !sat.includes(c));
   const moving = withPlan ? welcomeState.next : [];
-  Object.keys(sittings).forEach((id) => (sittings[id] = sittings[id].filter((c) => !passed.includes(c) && !moving.includes(c))));
+  // Subjects the user no longer says they sat leave the awaiting sitting.
+  if (awaiting && sittings[awaiting]) sittings[awaiting] = sittings[awaiting].filter((c) => sat.includes(c));
+  Object.keys(sittings).forEach(
+    (id) => (sittings[id] = sittings[id].filter((c) => !passed.includes(c) && !moving.includes(c) && !(sat.includes(c) && id !== awaiting)))
+  );
   if (withPlan) sittings[sittingId] = [...moving].sort((a, b) => PLANNABLE.indexOf(a) - PLANNABLE.indexOf(b));
+  if (sat.length) sittings[awaiting] = [...sat].sort((a, b) => PLANNABLE.indexOf(a) - PLANNABLE.indexOf(b));
   writePlan(sittings);
   Store.setWelcomed();
   onResultsChanged();
