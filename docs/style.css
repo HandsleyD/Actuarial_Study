@@ -2654,6 +2654,7 @@ a.btn { display: inline-flex; }
 .status-ribbon.studying-ribbon { background: var(--line, var(--accent)); color: var(--on-line); }
 .status-ribbon.completed-ribbon { background: var(--done); color: var(--on-line); }
 .status-ribbon.revised-ribbon { background: var(--text-muted); color: var(--bg); }
+.status-ribbon.awaiting-ribbon { background: var(--progress-bg); color: var(--progress); box-shadow: inset 0 0 0 1px var(--progress); }
 
 .subject-code { background: transparent; border: 1.5px solid var(--accent); color: var(--accent); }
 .hub-link { display: inline-flex; align-items: center; gap: 6px; }
@@ -2800,6 +2801,20 @@ a.btn { display: inline-flex; }
 }
 
 /* ---------- foundations: lessons and prerequisites ---------- */
+
+.paused-note {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 12px 0 4px;
+  padding: 10px 14px;
+  max-width: 68ch;
+  border-radius: var(--radius-md);
+  background: var(--progress-bg);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+.paused-note .ico { flex-shrink: 0; width: 17px; height: 17px; margin-top: 1px; color: var(--progress); }
 
 .foundation-note {
   margin: 10px 0 4px;

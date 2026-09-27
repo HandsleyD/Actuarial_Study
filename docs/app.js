@@ -597,6 +597,7 @@ function recordResult(code, status, sitting) {
 
 function onResultsChanged() {
   EXAMS.forEach(updateHomeCard);
+  renderDueBanner(); // passed subjects' reviews pause
   updateExamGroupHeads();
   renderGameBar();
   renderHomePrompts();
@@ -649,7 +650,22 @@ function loadAllFlash() {
 
 // Every Sufficient/Insufficient tap, from any view, goes through here: the
 // star, the review schedule and the session log all update together.
+// Studying a module counts as starting it: the first card scored or drill
+// answered moves a "Not started" module to "In progress". Never further:
+// "Done" stays the user's call, and nothing ever moves a module backwards.
+function markModuleStarted(code, moduleId) {
+  const d = examData[code];
+  const mod = d && !d.error ? d.modules.find((m) => m.id === moduleId) : null;
+  const current = mod ? mod.status : Store.getModuleStatusCache(code)[moduleId] || STATUSES[0];
+  if (current.toLowerCase() !== STATUSES[0].toLowerCase()) return;
+  if (mod) mod.status = STATUSES[1];
+  Store.setModuleStatus(code, moduleId, STATUSES[1]);
+  updateHomeCard(code);
+  renderSyncStatus();
+}
+
 function recordScore(code, moduleId, idx, sufficient) {
+  markModuleStarted(code, moduleId);
   Store.setMastery(code, moduleId, idx, sufficient); // instant locally; syncs in the background if signed in
   const prev = (Store.getSrsCache(code)[moduleId] || {})[idx];
   Store.setSrs(code, moduleId, idx, SRS.next(prev, sufficient, SRS.today()));
@@ -847,17 +863,20 @@ function updateHomeCard(code) {
     barEl.style.width = `${pct}%`;
   }
 
-  // The exam result outranks revision status: passed or exempt is shown
-  // whatever the modules say; otherwise "studying" or "all modules done".
+  // The exam result outranks everything: passed or exempt is shown whatever
+  // the modules say. Then a sat exam awaiting its result, then revision
+  // status: "all modules done" or "currently studying".
   const result = subjectResult(code);
-  const revised = !result && !d.error && pct === 100;
-  const studying = !result && !revised && !d.error && d.modules.some((m) => m.status.toLowerCase() === "in progress");
+  const awaiting = !result && awaitingResult(code);
+  const resultsOut = awaiting && awaiting.resultsOn <= SRS.today();
+  const revised = !result && !awaiting && !d.error && pct === 100;
+  const studying = !result && !awaiting && !revised && !d.error && d.modules.some((m) => m.status.toLowerCase() === "in progress");
 
   card.classList.toggle("completed", !!result);
   card.classList.toggle("studying", studying);
 
   let ribbon = card.querySelector(".status-ribbon");
-  if (result || revised || studying) {
+  if (result || awaiting || revised || studying) {
     if (!ribbon) {
       ribbon = document.createElement("div");
       ribbon.className = "status-ribbon";
@@ -866,7 +885,19 @@ function updateHomeCard(code) {
     ribbon.classList.toggle("completed-ribbon", !!result);
     ribbon.classList.toggle("studying-ribbon", studying);
     ribbon.classList.toggle("revised-ribbon", revised);
-    ribbon.textContent = result === "exempt" ? "Exempt ✓" : result ? "Passed ✓" : revised ? "All modules done" : "Currently studying";
+    ribbon.classList.toggle("awaiting-ribbon", !!awaiting);
+    ribbon.textContent =
+      result === "exempt"
+        ? "Exempt ✓"
+        : result
+        ? "Passed ✓"
+        : awaiting
+        ? resultsOut
+          ? "Results out"
+          : "Awaiting results"
+        : revised
+        ? "All modules done"
+        : "Currently studying";
   } else if (ribbon) {
     ribbon.remove();
   }
@@ -942,6 +973,21 @@ function buildExamCards(grid, codes) {
 }
 
 /* ---------- subject view ---------- */
+
+// Why a subject's cards aren't coming up in daily reviews, if they aren't.
+function pausedNoteHtml(code) {
+  if (!reviewsPaused(code)) return "";
+  const awaiting = awaitingResult(code);
+  if (awaiting) {
+    const sitting = sittingName(awaiting.info.id);
+    const on = fmtHubDate(awaiting.resultsOn);
+    const out = awaiting.resultsOn <= SRS.today();
+    return `<p class="paused-note">${ico("calendar")} <span>Sat ${sitting} &middot; ${
+      out ? `results were due ${on}: record yours below.` : `results ${awaiting.info.session && awaiting.info.session.results ? "due" : "expected around"} ${on}.`
+    } Its cards are paused from your daily reviews until then; you can still study any module here.</span></p>`;
+  }
+  return `<p class="paused-note">${ico("check")} <span>${subjectResult(code) === "exempt" ? "Exempt" : "Passed"}, so its cards no longer come up in your daily reviews. You can still study any module here.</span></p>`;
+}
 
 // "Maths and statistics you'll need": links from an exam to the foundation
 // modules it builds on. Folded by default; stays as the user left it when the
@@ -1023,8 +1069,9 @@ function renderSubjectView(code) {
   const drillsDue = totalDrills ? dueDrillCount(code, null) : 0;
   const drillAcc = totalDrills ? drillAccuracy(code, null) : { attempts: 0, pct: 0 };
   if (totalDrills) ensureDrillsLoaded(code);
-  const subjectDue = dueCards(code).length;
-  const subjectWeak = weakCards(code).length;
+  const paused = reviewsPaused(code);
+  const subjectDue = paused ? 0 : dueCards(code).length;
+  const subjectWeak = paused ? 0 : weakCards(code).length;
   const foundation = isFoundation(code);
   const nextExam = foundation ? null : nextSitting(code);
   const firstPaper = nextExam && nextExam.papers.find((p) => p.date >= SRS.today());
@@ -1042,6 +1089,7 @@ function renderSubjectView(code) {
               firstPaper ? ` &middot; next ${code} paper ${fmtHubDate(firstPaper.date)} (${countdownLabel(firstPaper.date)})` : ""
             } &rarr;</a>`
       }
+      ${pausedNoteHtml(code)}
       ${prerequisitesHtml(code)}
       ${
         totalCards > 0
@@ -1544,9 +1592,12 @@ function renderMixedView(code) {
 
 // Every scheduled card (optionally within one subject), skipping any whose
 // module/card no longer exists in data.js.
+// Every scored card, for one subject or (with no scope) across all of them.
+// The cross-subject list leaves out subjects whose reviews are paused; a
+// subject's own list (its "review due" button, #/review/<code>) keeps them.
 function scheduledCards(scope) {
   const out = [];
-  const codes = scope ? [scope] : Object.keys(MODULES);
+  const codes = scope ? [scope] : Object.keys(MODULES).filter((c) => !reviewsPaused(c));
   for (const code of codes) {
     const bySrs = srsData[code] || {};
     for (const def of MODULES[code] || []) {
@@ -1847,12 +1898,13 @@ function moduleStats(code, def) {
   const modSrs = (srsData[code] && srsData[code][def.id]) || {};
   const today = SRS.today();
   const s = { code, def, total: def.cards.length, mastered: 0, seen: 0, due: 0, lapses: 0, reviews: 0, trouble: 0 };
+  const paused = reviewsPaused(code);
   for (let i = 0; i < def.cards.length; i++) {
     if (mastery[i]) s.mastered++;
     const st = modSrs[i];
     if (!st) continue;
     s.seen++;
-    if (SRS.isDue(st, today)) s.due++;
+    if (!paused && SRS.isDue(st, today)) s.due++;
     s.lapses += st.lapses || 0;
     s.reviews += st.reviews || 0;
     if (isTrouble(st, !!mastery[i])) s.trouble++;
@@ -2181,8 +2233,16 @@ function savePlan(sittings) {
   writePlan(sittings);
   renderSyncStatus();
   renderDashboardView();
+  onPlanShapeChanged();
+}
+
+// Home cards ("Awaiting results") and the due list (paused subjects) depend
+// on the plan as well as on progress.
+function onPlanShapeChanged() {
   renderHomePrompts();
   renderRouteMap();
+  EXAMS.forEach(updateHomeCard);
+  renderDueBanner();
 }
 
 function removeFromPlan(code) {
@@ -2244,6 +2304,30 @@ function pendingResults() {
       codes: examPlan.sittings[info.id].filter((c) => !isSubjectPassed(c) && resultsDate(info, c) <= today),
     }))
     .filter((p) => p.codes.length);
+}
+
+// A subject whose paper is behind the user, at a sitting in their plan,
+// with no result recorded yet: from the day after its last paper until the
+// result is recorded (the "did you pass?" prompt asks from results day).
+// { info, resultsOn } or null.
+function awaitingResult(code) {
+  if (isFoundation(code) || isSubjectPassed(code)) return null;
+  const id = plannedSittingOf(code);
+  if (!id) return null;
+  const info = sittingInfo(id);
+  const papers = info.session ? sessionPapers(info.session, code) : [];
+  const lastPaper = papers.length ? papers[papers.length - 1].date : info.last;
+  if (lastPaper >= SRS.today()) return null; // still to sit: keep revising
+  return { info, resultsOn: resultsDate(info, code) };
+}
+
+// Spaced-repetition reviews pause for subjects the user is done with, for
+// now (sat, awaiting the result) or for good (passed or exempt): their cards
+// leave the daily due list, the combined reviews and the due counts. The
+// subject can still be studied from its own page, and if the result is "not
+// this time" the subject moves to a later sitting and reviews carry on.
+function reviewsPaused(code) {
+  return !isFoundation(code) && (isSubjectPassed(code) || !!awaitingResult(code));
 }
 
 function resultButtonsHtml(code, sittingId) {
@@ -2518,8 +2602,7 @@ function wirePlanSection(el) {
 Store.onPlanChange(() => {
   examPlan = Store.getExamPlanCache();
   if (parseHash().view === "dashboard") renderDashboardView();
-  renderHomePrompts();
-  renderRouteMap();
+  onPlanShapeChanged();
 });
 
 Store.onResultsChange(() => {
@@ -2531,8 +2614,7 @@ function refreshExamPlan() {
   Store.loadExamPlan().then((p) => {
     examPlan = p;
     if (parseHash().view === "dashboard") renderDashboardView();
-    renderHomePrompts();
-    renderRouteMap();
+    onPlanShapeChanged();
   });
 }
 
@@ -3371,6 +3453,7 @@ function ensureDrillsLoaded(code) {
 }
 
 function dueDrillCount(code, moduleId) {
+  if (reviewsPaused(code)) return 0;
   const prog = drillProgress(code);
   const today = SRS.today();
   return drillItems(code, moduleId).filter((it) => SRS.isDue(prog[it.id], today)).length;
@@ -3435,6 +3518,7 @@ function gradeDrill() {
 }
 
 function recordDrill(code, item, correct) {
+  markModuleStarted(code, item.module);
   const prev = drillProgress(code)[item.id];
   const next = SRS.next(prev, correct, SRS.today());
   next.attempts = ((prev && prev.attempts) || 0) + 1;
