@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Rebuilds docs/exam-dates.js from the IFoA's key exam dates page
-// (https://actuaries.org.uk/exam-dates/). Run weekly by
+// (https://actuaries.org.uk/qualify/my-exams/key-dates/). Run weekly by
 // .github/workflows/update-exam-dates.yml, which opens a PR when the output
 // changes; it can also be run locally:
 //
@@ -26,7 +26,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const SOURCE = "https://actuaries.org.uk/exam-dates/";
+const SOURCE = "https://actuaries.org.uk/qualify/my-exams/key-dates/";
 const OUT = join(dirname(fileURLToPath(import.meta.url)), "..", "docs/exam-dates.js");
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];

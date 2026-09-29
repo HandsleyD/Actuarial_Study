@@ -1,6 +1,6 @@
 name: Update IFoA exam dates
 
-# Weekly: re-reads https://actuaries.org.uk/exam-dates/ with
+# Weekly: re-reads https://actuaries.org.uk/qualify/my-exams/key-dates/ with
 # scripts/update-exam-dates.mjs and, if the timetable, booking dates or
 # results dates have changed, opens (or refreshes) a PR updating
 # docs/exam-dates.js for the Exam Hub page. Nothing reaches main without the
@@ -70,7 +70,7 @@ jobs:
           if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
             gh pr create --base "${{ github.event.repository.default_branch }}" --head "$BRANCH" \
               --title "Update IFoA exam dates" \
-              --body "The IFoA's [key exam dates page](https://actuaries.org.uk/exam-dates/) has changed. This updates \`docs/exam-dates.js\`, which feeds the Exam Hub page. Check the diff against the IFoA page, then merge.
+              --body "The IFoA's [key exam dates page](https://actuaries.org.uk/qualify/my-exams/key-dates/) has changed. This updates \`docs/exam-dates.js\`, which feeds the Exam Hub page. Check the diff against the IFoA page, then merge.
 
           Opened automatically by the weekly \`update-exam-dates\` workflow."
           else
