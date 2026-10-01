@@ -2897,3 +2897,14 @@ a.btn { display: inline-flex; }
 
 /* Sections opened by link (#/dashboard/plan) clear the sticky header. */
 .dash-section { scroll-margin-top: 84px; }
+
+/* Honour the OS "reduce motion" setting: no transitions, animations or
+   smooth scrolling. (The grading stamp's pause is skipped in app.js.) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
