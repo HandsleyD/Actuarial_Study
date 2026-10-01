@@ -65,8 +65,9 @@ test.describe("home page", () => {
     await grade(page, true);
     await open(page);
     await expect(page.locator("#streakValue")).toHaveText("4");
-    await open(page, "dashboard", ".game-stat-value");
-    await expect(page.locator('.game-stat[title^="Consecutive days"] .game-stat-value')).toHaveText("4");
+    const dashStreak = '.game-stat[title^="Consecutive days"] .game-stat-value';
+    await open(page, "dashboard", dashStreak);
+    await expect(page.locator(dashStreak)).toHaveText("4");
   });
 
   test("a streak with a missed day shows as broken", async ({ page }) => {
