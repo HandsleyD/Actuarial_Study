@@ -29,6 +29,8 @@ on:
       - "docs/route.js"
       - "docs/exam-dates.js"
       - "scripts/test-route.mjs"
+      - "docs/mock.js"
+      - "scripts/test-mock.mjs"
       - "docs/exam-stats.js"
       - "scripts/extract-exam-stats.mjs"
       - "maths-study/resources/past-papers/processed/**/*examiner-report*"
@@ -58,6 +60,9 @@ jobs:
 
       - name: Progress sync tests
         run: node scripts/test-progress-sync.mjs
+
+      - name: Mock paper and self-marking tests
+        run: node scripts/test-mock.mjs
 
       - name: Route to Associate and Fellow tests
         run: node scripts/test-route.mjs

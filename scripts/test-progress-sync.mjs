@@ -20,12 +20,15 @@ const tables = {}; // table -> array of rows
 let offline = false; // upserts fail while true, so changes stay queued
 let fetchDelay = 0;
 let fakeNow = null; // ms since epoch, or null for the real clock
+const missing = new Set(); // tables whose migration "hasn't been run": every request fails as Postgres would
+const missingError = (table) => ({ error: { code: "42P01", message: `relation "public.${table}" does not exist` } });
 
 const rowsOf = (t) => (tables[t] = tables[t] || []);
 
 function query(table) {
   const filters = [];
   const run = async () => {
+    if (missing.has(table)) return { data: null, ...missingError(table) };
     const snap = rowsOf(table).filter((r) => filters.every((f) => f(r))).map((r) => ({ ...r }));
     await new Promise((r) => setTimeout(r, fetchDelay));
     return { data: snap, error: null };
@@ -44,6 +47,7 @@ function query(table) {
 }
 
 function upsert(table, rows, opts) {
+  if (missing.has(table)) return Promise.resolve(missingError(table));
   if (offline) return Promise.resolve({ error: { message: "offline" } });
   const keys = ((opts && opts.onConflict) || "user_id").split(",");
   [].concat(rows).forEach((row) => {
@@ -253,6 +257,63 @@ await test("daily activity adds this device's unsent reviews to every device's u
   const activity = await Store.loadActivity();
   assert.equal(activity[day], 30, `expected 5 + 20 uploaded + 5 unsent, got ${activity[day]}`);
   fakeNow = null;
+});
+
+const attempt = (at, parts, max, src) => ({ at, parts, score: parts.reduce((a, n) => a + n, 0), max, src: src || "practice" });
+
+await test("self-marks: attempts from two devices are kept side by side, and a queued one survives a load", async () => {
+  tables.question_score = [
+    { user_id: "u1", exam_code: "CB2", question_id: "cb2-q1", attempted_at: "2026-09-20T09:00:00.000Z", part_marks: [2, 3], score: 5, max_marks: 12, source: "practice" },
+  ];
+  offline = true;
+  Store.saveScore("CB2", "cb2-q1", attempt(Date.parse("2026-09-25T09:00:00Z"), [4, 4.5], 12));
+  await settle();
+  await Store.loadScores();
+  const list = Store.getScoreCache("CB2")["cb2-q1"];
+  assert.deepEqual(list.map((a) => a.score), [5, 8.5], "history should hold both attempts, oldest first");
+  assert.equal(queued("score").length, 1);
+  offline = false;
+  await Store.flushPending();
+  assert.equal(rowsOf("question_score").length, 2);
+  assert.equal(queued("score").length, 0);
+});
+
+await test("self-marks: re-marking an attempt replaces it rather than adding another", async () => {
+  const at = Date.parse("2026-09-26T09:00:00Z");
+  Store.saveScore("CB2", "cb2-q2", attempt(at, [1, 1], 12));
+  Store.saveScore("CB2", "cb2-q2", attempt(at, [6, 5], 12));
+  await settle();
+  assert.equal(Store.getScoreCache("CB2")["cb2-q2"].length, 1);
+  const rows = rowsOf("question_score").filter((r) => r.question_id === "cb2-q2");
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].score, 11);
+});
+
+await test("self-marks and mocks stay queued, and say so, until migration 006 is run", async () => {
+  missing.add("question_score");
+  missing.add("mock_result");
+  Store.saveScore("CM1", "cm1-q1", attempt(Date.parse("2026-09-27T09:00:00Z"), [3], 11, "mock"));
+  Store.addMockResult("CM1", { at: Date.parse("2026-09-27T12:15:00Z"), questionIds: ["cm1-q1"], score: 3, max: 11, pct: 27.27, passMark: 60, passSitting: "2026-04", usedMs: 1000 });
+  await settle();
+  assert.equal(Store.isScoreTableMissing(), true);
+  assert.equal(queued("score").length, 1);
+  assert.equal(queued("mock").length, 1);
+  await Store.loadScores(); // a failed load leaves the local copies alone
+  assert.equal(Store.getScoreCache("CM1")["cm1-q1"].length, 1);
+  assert.equal(Store.getMockCache("CM1").length, 1);
+  missing.clear();
+  await Store.flushPending();
+  assert.equal(Store.isScoreTableMissing(), false);
+  assert.equal(queued("score").length + queued("mock").length, 0);
+  assert.equal(rowsOf("mock_result")[0].pass_mark, 60);
+});
+
+await test("mock results from another device are merged in", async () => {
+  rowsOf("mock_result").push({ user_id: "u1", exam_code: "CM1", taken_at: "2026-09-10T12:00:00.000Z", question_ids: ["cm1-q2"], score: 70, max_marks: 100, pct: 70, pass_mark: 60, pass_sitting: "2026-04", used_ms: 5 });
+  await Store.loadMocks();
+  const mocks = Store.getMockCache("CM1");
+  assert.equal(mocks.length, 2);
+  assert.equal(mocks[0].pct, 70, "mocks should be oldest first");
 });
 
 console.log(`${passed} progress sync test(s) passed.`);

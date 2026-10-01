@@ -27,6 +27,8 @@ const Store = (function () {
   const DRILL_TABLE = "drill_progress"; // added by supabase/migrations/003_drills.sql
   const PLAN_TABLE = "exam_plan"; // added by supabase/migrations/004_exam_plan.sql
   const RESULT_TABLE = "subject_result"; // added by supabase/migrations/005_subject_results.sql
+  const SCORE_TABLE = "question_score"; // added by supabase/migrations/006_question_scores.sql
+  const MOCK_TABLE = "mock_result"; // likewise
   // Reviews with more than this much idle time between them belong to separate sessions.
   const SESSION_GAP_MS = 30 * 60 * 1000;
 
@@ -48,6 +50,7 @@ const Store = (function () {
   let drillTableMissing = false;
   let planTableMissing = false; // and again for the exam plan (004_exam_plan.sql)
   let resultTableMissing = false; // and for exam results (005_subject_results.sql)
+  let scoreTableMissing = false; // and for self-marks and mock papers (006_question_scores.sql)
 
   function looksLikeMissingTable(error, table) {
     const code = error && error.code;
@@ -242,6 +245,15 @@ const Store = (function () {
         const examCode = key.split(":").pop();
         const map = readLS(key, {});
         Object.keys(map).forEach((itemId) => enqueue({ type: "drill", examCode, itemId, value: map[itemId] }));
+      } else if (key.startsWith(`${LS_PREFIX}:score:${uKey}:`)) {
+        const examCode = key.split(":").pop();
+        const map = readLS(key, {});
+        Object.keys(map).forEach((questionId) =>
+          (map[questionId] || []).forEach((value) => enqueue({ type: "score", examCode, questionId, value }))
+        );
+      } else if (key.startsWith(`${LS_PREFIX}:mock:${uKey}:`)) {
+        const examCode = key.split(":").pop();
+        readLS(key, []).forEach((value) => enqueue({ type: "mock", examCode, value }));
       } else if (key === `${LS_PREFIX}:result:${uKey}`) {
         const map = readLS(key, {});
         Object.keys(map).forEach((examCode) => enqueue({ type: "result", examCode, value: map[examCode] }));
@@ -836,6 +848,128 @@ const Store = (function () {
     return resultTableMissing;
   }
 
+  /* ---------- self-marked practice questions and mock papers ---------- */
+  //
+  // Every time the user marks their own answer to a practice question, the
+  // attempt is kept (see docs/mock.js for its shape), so the history survives
+  // and the subject average can use the latest one. Attempts are keyed by
+  // their timestamp and only ever added, so merging is a union: no device can
+  // overwrite another's marks. Finished mock papers are kept the same way.
+  //
+  // Shapes: score  { questionId: [attempt, ...] }   per subject, oldest first
+  //         mock   [{ at, questionIds, score, max, pct, passMark, passSitting, usedMs }]
+  // The mock paper in progress (mockActive) stays on this device: it's a
+  // countdown running in one browser, not a record worth syncing.
+
+  function getScoreCache(examCode) {
+    return readLS(lsKey("score", examCode), {});
+  }
+
+  function getMockCache(examCode) {
+    return readLS(lsKey("mock", examCode), []);
+  }
+
+  // One request per table for every subject: the dashboard shows them all.
+  async function loadScores() {
+    if (!client || !currentUser) return;
+    try {
+      const { data, error } = await client
+        .from(SCORE_TABLE)
+        .select("exam_code, question_id, attempted_at, part_marks, score, max_marks, source");
+      if (error) {
+        scoreTableMissing = looksLikeMissingTable(error, SCORE_TABLE);
+        throw error;
+      }
+      scoreTableMissing = false;
+      const byExam = {};
+      (data || []).forEach((row) => (byExam[row.exam_code] = byExam[row.exam_code] || []).push(row));
+      Object.keys(byExam).forEach((examCode) => {
+        // Re-read after the fetch: an attempt this device already has (perhaps
+        // re-marked since) keeps its own copy.
+        const cache = getScoreCache(examCode);
+        byExam[examCode].forEach((row) => {
+          const at = Date.parse(row.attempted_at);
+          const list = cache[row.question_id] || (cache[row.question_id] = []);
+          if (list.some((a) => a.at === at)) return;
+          list.push({ at, parts: (row.part_marks || []).map(Number), score: Number(row.score), max: row.max_marks, src: row.source });
+          list.sort((a, b) => a.at - b.at);
+        });
+        writeLS(lsKey("score", examCode), cache);
+      });
+    } catch {
+      /* table missing (006 not run yet) or offline — the local marks still count */
+    }
+  }
+
+  async function loadMocks() {
+    if (!client || !currentUser) return;
+    try {
+      const { data, error } = await client
+        .from(MOCK_TABLE)
+        .select("exam_code, taken_at, question_ids, score, max_marks, pct, pass_mark, pass_sitting, used_ms");
+      if (error) {
+        scoreTableMissing = looksLikeMissingTable(error, MOCK_TABLE);
+        throw error;
+      }
+      const byExam = {};
+      (data || []).forEach((row) => (byExam[row.exam_code] = byExam[row.exam_code] || []).push(row));
+      Object.keys(byExam).forEach((examCode) => {
+        const cache = getMockCache(examCode);
+        byExam[examCode].forEach((row) => {
+          const at = Date.parse(row.taken_at);
+          if (cache.some((m) => m.at === at)) return;
+          cache.push({
+            at,
+            questionIds: row.question_ids || [],
+            score: Number(row.score),
+            max: row.max_marks,
+            pct: Number(row.pct),
+            passMark: row.pass_mark,
+            passSitting: row.pass_sitting,
+            usedMs: Number(row.used_ms) || 0,
+          });
+        });
+        cache.sort((a, b) => a.at - b.at);
+        writeLS(lsKey("mock", examCode), cache);
+      });
+    } catch {
+      /* as above */
+    }
+  }
+
+  // Adds an attempt, or replaces the one with the same timestamp (the user
+  // changed a mark before moving on).
+  function saveScore(examCode, questionId, attempt) {
+    const cache = getScoreCache(examCode);
+    const list = (cache[questionId] || []).filter((a) => a.at !== attempt.at);
+    list.push(attempt);
+    list.sort((a, b) => a.at - b.at);
+    cache[questionId] = list;
+    writeLS(lsKey("score", examCode), cache);
+    enqueue({ type: "score", examCode, questionId, value: attempt });
+    return cache;
+  }
+
+  function addMockResult(examCode, result) {
+    const cache = getMockCache(examCode);
+    cache.push(result);
+    writeLS(lsKey("mock", examCode), cache);
+    enqueue({ type: "mock", examCode, value: result });
+    return cache;
+  }
+
+  function getActiveMock(examCode) {
+    return readLS(lsKey("mockActive", examCode), null);
+  }
+
+  function setActiveMock(examCode, mock) {
+    writeLS(lsKey("mockActive", examCode), mock);
+  }
+
+  function isScoreTableMissing() {
+    return scoreTableMissing;
+  }
+
   // Per-device "don't show the welcome banner again".
   function isWelcomed() {
     return !!readLS(lsKey("welcomed"), false);
@@ -1015,6 +1149,68 @@ const Store = (function () {
         }
       }
 
+      // Self-marks and mock results upload in bulk too: marking a mock paper
+      // queues one attempt per question at once. Only the latest copy of each
+      // attempt is sent (it may have been re-marked while queued).
+      const scoreOps = list.filter((op) => op.type === "score" && (!op.userId || op.userId === currentUser.id));
+      if (scoreOps.length) {
+        const latest = new Map();
+        scoreOps.forEach((op) => latest.set(`${op.examCode}|${op.questionId}|${op.value.at}`, op));
+        const now = new Date().toISOString();
+        const rows = [...latest.values()].map((op) => ({
+          user_id: currentUser.id,
+          exam_code: op.examCode,
+          question_id: op.questionId,
+          attempted_at: new Date(op.value.at).toISOString(),
+          part_marks: op.value.parts,
+          score: op.value.score,
+          max_marks: op.value.max,
+          source: op.value.src,
+          updated_at: now,
+        }));
+        try {
+          const { error } = await client.from(SCORE_TABLE).upsert(rows, { onConflict: "user_id,exam_code,question_id,attempted_at" });
+          if (error) {
+            scoreTableMissing = looksLikeMissingTable(error, SCORE_TABLE);
+            throw error;
+          }
+          scoreTableMissing = false;
+        } catch {
+          // Offline, or 006_question_scores.sql hasn't been run yet — keep
+          // the latest copy of each attempt queued.
+          remaining.push(...latest.values());
+        }
+      }
+
+      const mockOps = list.filter((op) => op.type === "mock" && (!op.userId || op.userId === currentUser.id));
+      if (mockOps.length) {
+        const latest = new Map();
+        mockOps.forEach((op) => latest.set(`${op.examCode}|${op.value.at}`, op));
+        const now = new Date().toISOString();
+        const rows = [...latest.values()].map((op) => ({
+          user_id: currentUser.id,
+          exam_code: op.examCode,
+          taken_at: new Date(op.value.at).toISOString(),
+          question_ids: op.value.questionIds,
+          score: op.value.score,
+          max_marks: op.value.max,
+          pct: Math.round(op.value.pct * 100) / 100,
+          pass_mark: op.value.passMark,
+          pass_sitting: op.value.passSitting,
+          used_ms: Math.round(op.value.usedMs || 0),
+          updated_at: now,
+        }));
+        try {
+          const { error } = await client.from(MOCK_TABLE).upsert(rows, { onConflict: "user_id,exam_code,taken_at" });
+          if (error) {
+            scoreTableMissing = looksLikeMissingTable(error, MOCK_TABLE);
+            throw error;
+          }
+        } catch {
+          remaining.push(...latest.values());
+        }
+      }
+
       // The plan is one whole document, so only the latest queued copy matters.
       const planOps = list.filter((op) => op.type === "plan" && (!op.userId || op.userId === currentUser.id));
       if (planOps.length) {
@@ -1048,7 +1244,7 @@ const Store = (function () {
           remaining.push(op); // belongs to a different (now signed-out) account — leave it queued
           continue;
         }
-        if (op.type === "srs" || op.type === "drill" || op.type === "plan") continue; // handled in bulk above
+        if (["srs", "drill", "plan", "score", "mock"].includes(op.type)) continue; // handled in bulk above
         try {
           if (op.type === "status") {
             const { error } = await client.from(STATUS_TABLE).upsert(
@@ -1197,6 +1393,15 @@ const Store = (function () {
     setResult,
     getResultsCache,
     isResultTableMissing,
+    loadScores,
+    loadMocks,
+    getScoreCache,
+    getMockCache,
+    saveScore,
+    addMockResult,
+    getActiveMock,
+    setActiveMock,
+    isScoreTableMissing,
     isWelcomed,
     setWelcomed,
     loadStreak,

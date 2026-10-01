@@ -31,6 +31,7 @@ npx playwright test --headed --debug    # watch and step through
 | `flashcards.spec.mjs` | Reveal, grading, keyboard shortcuts, full deck, session summary, mixed sessions, due and weak-card reviews, Foundations lessons and their maths |
 | `drills.spec.mjs` | Multiple choice, select-all, fill-the-gap and diagram questions, right and wrong answers, run summary |
 | `questions-search.spec.mjs` | Practice questions and timed mode; search and its subject filter |
+| `self-marking.spec.mjs` | Self-marking practice questions (validation, re-marking, history), the subject and dashboard averages against the pass mark; mock papers (paper size, clock, hidden answers, reload, marking, results, time running out, abandoning) |
 | `planning.spec.mjs` | Welcome questions, exam planner (clashes, moves, awaiting results), results day, route map and specialists, Exam Hub, dashboard |
 | `progress-status.spec.mjs` | Studying a module starts it; subjects awaiting results or passed pause their reviews, with a badge and a note; results day and resits |
 | `site.spec.mjs` | Header navigation, back/forward, theme, account panel, phone widths (390px and 320px), dark mode |
