@@ -1,4 +1,4 @@
-import { test, expect, seed, open } from "./fixtures.mjs";
+import { test, expect, seed, open, grade } from "./fixtures.mjs";
 
 test.describe("home page", () => {
   test("groups every subject by stage, Foundations first", async ({ page }) => {
@@ -57,9 +57,21 @@ test.describe("home page", () => {
     await expect(banner).toBeHidden();
   });
 
-  test("the streak counts today's visit", async ({ page }) => {
+  test("opening the site doesn't extend the streak; studying does", async ({ page }) => {
     await seed(page, { welcomed: true, streak: { lastDate: "2026-09-26", count: 3 } });
     await open(page);
+    await expect(page.locator("#streakValue")).toHaveText("3");
+    await open(page, "CS1/m01", "#revealBtn");
+    await grade(page, true);
+    await open(page);
     await expect(page.locator("#streakValue")).toHaveText("4");
+    await open(page, "dashboard", ".game-stat-value");
+    await expect(page.locator('.game-stat[title^="Consecutive days"] .game-stat-value')).toHaveText("4");
+  });
+
+  test("a streak with a missed day shows as broken", async ({ page }) => {
+    await seed(page, { welcomed: true, streak: { lastDate: "2026-09-24", count: 5 } });
+    await open(page);
+    await expect(page.locator("#streakValue")).toHaveText("0");
   });
 });
