@@ -371,6 +371,7 @@ function renderQuestionsView(code) {
           date: SRS.today(),
         });
       }
+      Store.bumpStreak();
       qbankState.revealed = true;
       renderQuestionsView(code);
     });
@@ -679,6 +680,7 @@ function recordScore(code, moduleId, idx, sufficient) {
   const prev = (Store.getSrsCache(code)[moduleId] || {})[idx];
   Store.setSrs(code, moduleId, idx, SRS.next(prev, sufficient, SRS.today()));
   Store.recordCardReview(sufficient);
+  Store.bumpStreak();
   flashData[code] = { mastery: Store.getMasteryCache(code) };
   srsData[code] = Store.getSrsCache(code);
 }
@@ -977,14 +979,14 @@ function aiGradePanelHtml(typed) {
     return `<div class="ai-grade-panel loading">Grading your answer&hellip;</div>`;
   }
   if (aiGradeState.status === "error") {
-    return `<div class="ai-grade-panel error">${aiGradeState.error}</div>`;
+    return `<div class="ai-grade-panel error">${escapeHtml(aiGradeState.error)}</div>`;
   }
   const verdict = aiGradeState.result.verdict;
   const cls = verdict === "Strong" ? "strong" : verdict === "Weak" ? "weak" : "partial";
   return `
     <div class="ai-grade-panel ${cls}">
-      <span class="ai-grade-verdict">${verdict}</span>
-      <span class="ai-grade-feedback">${aiGradeState.result.feedback}</span>
+      <span class="ai-grade-verdict">${escapeHtml(String(verdict))}</span>
+      <span class="ai-grade-feedback">${escapeHtml(String(aiGradeState.result.feedback || ""))}</span>
     </div>`;
 }
 
@@ -1033,7 +1035,7 @@ function renderGameBar() {
   document.getElementById("starTotal").textContent = total;
   document.getElementById("rankLabel").textContent = status.label;
   document.getElementById("rankSub").textContent = status.sub;
-  document.getElementById("streakValue").textContent = Store.getStreakCache().count;
+  document.getElementById("streakValue").textContent = Store.currentStreak();
 
   const lastSession = Store.getLastSessionCache();
   document.getElementById("lastSessionValue").textContent = lastSession ? `${lastSession.cardsReviewed} cards` : "—";
@@ -1059,7 +1061,7 @@ function updateHomeCard(code) {
     pctEl.textContent = "unavailable";
   } else {
     pct = computePct(d.modules);
-    pctEl.textContent = `${pct}% (${d.modules.length} modules)`;
+    pctEl.textContent = `${pct}% (${d.modules.length} module${d.modules.length === 1 ? "" : "s"})`;
     barEl.style.width = `${pct}%`;
   }
 
@@ -1980,7 +1982,7 @@ function renderReviewView() {
   if (!reviewState.entries.length) {
     const msg =
       kind === "weak"
-        ? `<p>No weak cards in ${scopeName} yet. Cards land here once you've marked them Insufficient &mdash; twice, or once and not yet re-starred.</p>`
+        ? `<p>No weak cards in ${scopeName} yet. Cards land here once you've marked them Insufficient &mdash; twice, or once and not yet mastered again.</p>`
         : kind === "flagged"
           ? `<p>No flagged cards in ${scopeName}. Use the ${ico("flag")} Flag button on any flashcard to save it here for another look.</p>`
           : scheduledCards(scope).length
@@ -2122,17 +2124,6 @@ function renderDueBanner() {
 
 let activityData = null; // { "YYYY-MM-DD": cardsReviewed } — merged local + session_log
 
-function studyStreak(activity) {
-  let day = SRS.today();
-  if (!activity[day]) day = SRS.addDays(day, -1); // not studied yet today doesn't break the streak
-  let n = 0;
-  while (activity[day]) {
-    n++;
-    day = SRS.addDays(day, -1);
-  }
-  return n;
-}
-
 function moduleStats(code, def) {
   const fd = flashData[code];
   const mastery = (fd && fd.mastery && fd.mastery[def.id]) || {};
@@ -2226,7 +2217,7 @@ function renderDashboardView() {
   const allMods = subjects.flatMap((s) => s.mods);
 
   const totalDue = subjects.reduce((a, s) => a + s.due, 0);
-  const streak = studyStreak(activity);
+  const streak = Store.currentStreak();
   let week = 0;
   for (let i = 0; i < 7; i++) week += activity[SRS.addDays(today, -i)] || 0;
   const masteredAll = subjects.reduce((a, s) => a + s.mastered, 0);
@@ -2315,7 +2306,7 @@ function renderDashboardView() {
         <a class="dash-row" href="#/${s.code}/${m.def.id}">
           <span class="dash-row-name"><span class="dash-tag">${m.def.id.toUpperCase()}</span> ${m.def.title}</span>
           <span class="dash-row-meta">${m.due ? `<span class="due-pill">${m.due} due</span> ` : ""}${m.lapses ? `${m.lapses} miss${m.lapses === 1 ? "" : "es"}` : m.seen ? "" : "not started"}</span>
-          <span class="dash-row-bar" title="${m.mastered} of ${m.total} cards starred">${barHtml(pctOf(m.mastered, m.total))}<span class="dash-row-pct">${m.mastered}/${m.total}</span></span>
+          <span class="dash-row-bar" title="${m.mastered} of ${m.total} cards mastered">${barHtml(pctOf(m.mastered, m.total))}<span class="dash-row-pct">${m.mastered}/${m.total}</span></span>
         </a>`
         )
         .join("")}</div>
@@ -2336,7 +2327,7 @@ function renderDashboardView() {
         <span class="game-stat-value">${totalDue}</span>
         <span class="game-stat-label">cards due today</span>
       </a>
-      <div class="game-stat" title="Consecutive days on which you've scored at least one card">
+      <div class="game-stat" title="Consecutive days on which you've studied: scored a card, answered a drill or checked a practice answer">
         <span class="game-stat-icon">${ico("flame")}</span>
         <span class="game-stat-value">${streak}</span>
         <span class="game-stat-label">day study streak</span>
@@ -2349,7 +2340,7 @@ function renderDashboardView() {
       <div class="game-stat">
         <span class="game-stat-icon">${ico("star", "ico-star")}</span>
         <span class="game-stat-value">${masteredAll}</span>
-        <span class="game-stat-label">${cardsInStudied ? `of ${cardsInStudied} starred in subjects you've started` : "cards starred"}</span>
+        <span class="game-stat-label">${cardsInStudied ? `of ${cardsInStudied} mastered in subjects you've started` : "cards mastered"}</span>
       </div>
     </section>
 
@@ -2361,7 +2352,7 @@ function renderDashboardView() {
           ${flaggedAll ? `<a class="btn" href="#/flagged">${ico("flag")} ${flaggedAll} flagged card${flaggedAll === 1 ? "" : "s"}</a>` : ""}
         </span>
       </div>
-      <p class="dash-note">Modules ranked by how often you've marked their cards Insufficient; the bar is the share of that module's reviews that were misses. A card counts as a trouble card once it's been missed twice, or missed and not yet re-starred.</p>
+      <p class="dash-note">Modules ranked by how often you've marked their cards Insufficient; the bar is the share of that module's reviews that were misses. A card counts as a trouble card once it's been missed twice, or missed and not yet mastered again.</p>
       ${weakModsHtml}
       ${trouble.length ? `<h4 class="dash-sub">Most-missed cards</h4>${troubleHtml}` : ""}
     </section>
@@ -3784,6 +3775,7 @@ function recordDrill(code, item, correct) {
   next.attempts = ((prev && prev.attempts) || 0) + 1;
   next.correct = ((prev && prev.correct) || 0) + (correct ? 1 : 0);
   Store.setDrill(code, item.id, next);
+  Store.bumpStreak();
   drillData[code] = Store.getDrillCache(code);
 }
 
@@ -4896,10 +4888,7 @@ Store.init().then(() => {
   renderSyncStatus();
   loadAll();
   loadAllFlash();
-  Store.loadStreak().then(() => {
-    Store.bumpStreak();
-    renderGameBar();
-  });
+  Store.loadStreak().then(() => renderGameBar());
   Store.loadLastSession().then(() => renderGameBar());
   renderDueBanner();
   refreshExamPlan(); // the plan cached before init was read under the signed-out key

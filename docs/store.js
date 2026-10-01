@@ -619,18 +619,32 @@ const Store = (function () {
 
   // Local calendar dates, like the review schedule and the activity strip, so
   // a late-night review counts towards the same day everywhere.
+  function yesterdayOf(now) {
+    const y = new Date(now);
+    y.setDate(y.getDate() - 1); // calendar arithmetic, so clock changes don't skip a day
+    return localDate(y.getTime());
+  }
+
+  // Called on study actions (a card scored, a drill answered, a practice
+  // answer revealed), not on page load, so opening the site isn't studying.
   function bumpStreak() {
     const now = new Date();
     const today = localDate(now.getTime());
     const cache = getStreakCache();
     if (cache.lastDate === today) return cache;
-    const y = new Date(now);
-    y.setDate(y.getDate() - 1); // calendar arithmetic, so clock changes don't skip a day
-    const yesterday = localDate(y.getTime());
+    const yesterday = yesterdayOf(now);
     const next = { count: cache.lastDate === yesterday ? cache.count + 1 : 1, lastDate: today };
     writeLS(lsKey("streak"), next);
     enqueue({ type: "streak", value: next });
     return next;
+  }
+
+  // The run as it stands today: still alive if the last study day was today
+  // or yesterday (today's study may not have happened yet), otherwise broken.
+  function currentStreak() {
+    const now = new Date();
+    const { lastDate, count } = getStreakCache();
+    return lastDate === localDate(now.getTime()) || lastDate === yesterdayOf(now) ? count : 0;
   }
 
   /* ---------- session log ---------- */
@@ -1343,6 +1357,7 @@ const Store = (function () {
     loadStreak,
     bumpStreak,
     getStreakCache,
+    currentStreak,
     recordCardReview,
     loadLastSession,
     getLastSessionCache,
