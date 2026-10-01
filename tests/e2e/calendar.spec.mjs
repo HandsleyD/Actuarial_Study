@@ -52,6 +52,15 @@ test("the Exam Hub offers the plan when there is one", async ({ page }) => {
   expect(uids(text).some((u) => u.includes("CM1"))).toBe(false);
 });
 
+test("the Exam Hub offers the plan even for a subject with no sitting to come", async ({ page }) => {
+  // CB3 is booked online, so it never has a next sitting.
+  await seed(page, { welcomed: true, plan: plan({ "2027-04": ["CS1"] }) });
+  await open(page, "exams/CB3", "#hubSubject");
+  const { name, text } = await download(page, page.locator("#hubIcs", { hasText: "Add your exam plan to calendar" }));
+  expect(name).toBe("ifoa-exam-plan.ics");
+  expect(uids(text)).toContain("2027-04-CS1-paper-cs1a");
+});
+
 test("without a plan, the Exam Hub offers the viewed subject's next sitting", async ({ page }) => {
   await seed(page, { welcomed: true });
   await open(page, "exams/SP2", "#hubSubject");

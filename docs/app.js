@@ -4132,7 +4132,7 @@ function renderExamHub(requested) {
   } else {
     nextHtml = `
       <section class="dash-section">
-        <div class="dash-section-head"><h3>Next sitting</h3></div>
+        <div class="dash-section-head"><h3>Next sitting</h3>${hubCalButton}</div>
         <p class="muted">${
           code === "CB3"
             ? "CB3 is booked as an online assessment through the member portal, outside the April and September sessions."
