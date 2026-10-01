@@ -29,6 +29,8 @@ on:
       - "docs/route.js"
       - "docs/exam-dates.js"
       - "scripts/test-route.mjs"
+      - "docs/ics.js"
+      - "scripts/test-ics.mjs"
       - "docs/exam-stats.js"
       - "scripts/extract-exam-stats.mjs"
       - "maths-study/resources/past-papers/processed/**/*examiner-report*"
@@ -61,6 +63,9 @@ jobs:
 
       - name: Route to Associate and Fellow tests
         run: node scripts/test-route.mjs
+
+      - name: Add-to-calendar (.ics) tests
+        run: node scripts/test-ics.mjs
 
       - name: Pass-rate data matches the examiners' reports
         run: node scripts/extract-exam-stats.mjs --check

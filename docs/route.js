@@ -98,7 +98,7 @@ const Route = (function () {
       return !inf.session || papers(inf.session, code).length > 0;
     }
 
-    return { info, next, name, firstUpcoming, papers, clashes, offers };
+    return { info, next, name, firstUpcoming, papers, clashes, offers, idOf: sessionId };
   }
 
   function associateReady(done) {
