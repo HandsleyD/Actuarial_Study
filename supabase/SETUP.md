@@ -73,6 +73,29 @@ off: **Authentication → Providers → Email → uncheck "Confirm email"**.
 (Leave it on if you'd rather have the extra check — you'll just need to click
 the confirmation link Supabase emails you after signing up, once.)
 
+## 3b. Let password-reset links come back to the site
+
+The Account panel's **Forgot password?** link emails a reset link that
+returns to the site, signs the user in, and asks for a new password.
+Supabase only redirects to addresses it's been told about, so:
+
+1. **Authentication → URL Configuration**.
+2. Set **Site URL** to the site's address, e.g.
+   `https://handsleyd.github.io/Actuarial_Study/`.
+3. Under **Redirect URLs**, add the same address (and
+   `http://localhost:4173/` too if you want reset links to work against a
+   local copy of the site).
+
+The link goes back to whichever page the reset was requested from, minus
+any `#/route`, so these need to match that exactly, trailing slash
+included. If the address isn't listed, Supabase sends the user to the Site
+URL instead; if that isn't set either, the link lands on `localhost:3000`
+and goes nowhere.
+
+The email itself is Supabase's default "Reset Password" template
+(**Authentication → Emails**). The built-in mail sender is rate-limited to a
+handful of emails an hour, which is plenty for a personal site.
+
 ## 4. Get your Publishable key
 
 **Project Settings → API Keys**. You need two values:
@@ -203,6 +226,32 @@ you ever want to change models or tighten/loosen the grading prompt, it's
 all in
 [`supabase/functions/grade-answer/index.ts`](./functions/grade-answer/index.ts);
 redeploy with the same `supabase functions deploy grade-answer` command.
+
+## 8. Account deletion
+
+The Account panel has a **Delete my account and data** option (behind a
+type-DELETE-to-confirm step). The browser's publishable key can't delete
+users, so this goes through a second Edge Function,
+[`supabase/functions/delete-account/index.ts`](./functions/delete-account/index.ts).
+It checks the caller's access token, deletes that user's rows from every
+study table, then deletes the auth user, using the service role key that
+Supabase gives every Edge Function automatically
+(`SUPABASE_SERVICE_ROLE_KEY`). There's no secret to set. It only ever
+deletes the account whose token came with the request.
+
+With the CLI installed and linked (steps 2 and 3 of section 7):
+
+```bash
+supabase functions deploy delete-account
+```
+
+Redeploy with the same command after changing the function. Until it's
+deployed, the delete button shows an error and nothing is removed.
+
+To check it: create a throwaway account on the site, review a card or two,
+then delete it from the Account panel. **Authentication → Users** should no
+longer list it, and `select count(*) from flashcard_mastery where user_id =
+'<its id>'` in the SQL Editor should return 0.
 
 ## If your project still uses the old anon/service_role keys
 

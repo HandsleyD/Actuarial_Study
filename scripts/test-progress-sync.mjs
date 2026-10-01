@@ -7,7 +7,8 @@
 // Each test covers a way a change made on one device could be undone: by a
 // load that replaces a change still queued for upload, by a stale queued
 // change overwriting a newer one from another device, or by two parts of
-// the site disagreeing about which day it is.
+// the site disagreeing about which day it is. Then the progress file
+// (export, and import's newer-wins merge) and account deletion.
 
 process.env.TZ = "Europe/London"; // BST in the date tests: local and UTC dates differ after 23:00 UTC
 
@@ -20,6 +21,9 @@ const tables = {}; // table -> array of rows
 let offline = false; // upserts fail while true, so changes stay queued
 let fetchDelay = 0;
 let fakeNow = null; // ms since epoch, or null for the real clock
+const invoked = []; // Edge Function names called
+let deleteReply = { data: { deleted: true }, error: null }; // what delete-account answers
+const signOuts = [];
 
 const rowsOf = (t) => (tables[t] = tables[t] || []);
 
@@ -81,17 +85,22 @@ const ctx = {
       return Object.keys(mem).length;
     },
     key: (i) => Object.keys(mem)[i],
+    removeItem: (k) => delete mem[k],
   },
   supabase: {
     createClient: () => ({
       auth: {
         getSession: async () => ({ data: { session: { user: { id: "u1" } } } }),
         onAuthStateChange() {},
+        signOut: async (opts) => (signOuts.push(opts), { error: null }),
       },
       from: (table) => ({
         select: () => query(table),
         upsert: (rows, opts) => upsert(table, rows, opts),
       }),
+      functions: {
+        invoke: async (name) => (invoked.push(name), deleteReply),
+      },
     }),
   },
 };
@@ -253,6 +262,140 @@ await test("daily activity adds this device's unsent reviews to every device's u
   const activity = await Store.loadActivity();
   assert.equal(activity[day], 30, `expected 5 + 20 uploaded + 5 unsent, got ${activity[day]}`);
   fakeNow = null;
+});
+
+/* ---------- export / import ---------- */
+
+// Objects made inside the vm context have that context's prototypes, which
+// deepEqual would count as a difference: compare them as plain JSON.
+const plain = (v) => JSON.parse(JSON.stringify(v));
+const userKeys = (uid) => Object.keys(mem).filter((k) => k.endsWith(`:${uid}`) || k.includes(`:${uid}:`));
+
+await test("export then import onto an empty device restores everything", async () => {
+  Store.setExamPlan({ "2027-04": ["CM1", "CS1"] }, { sp: ["SP2"], sa: [] });
+  Store.setResult("CB1", "passed", "2026-04");
+  Store.addPaceEntry({ code: "CM1", qid: "q1", marks: 10, usedMs: 900000, allowedMs: 1080000, rate: 1.8, date: "2026-09-29" });
+  await settle();
+  const file = plain(Store.exportData());
+  assert.equal(file.app, "fellow");
+  assert.equal(file.format, 1);
+  for (const kind of ["status", "mastery", "srs", "drill", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
+    assert.ok(file.data[kind] !== null && file.data[kind] !== undefined, `export is missing ${kind}`);
+  }
+  assert.equal(file.data.status.CS1.m01, "Done");
+  assert.equal(file.data.srs.CM1.m01[4].last, "2026-09-27");
+
+  userKeys("u1").forEach((k) => delete mem[k]); // a new device, same account
+  assert.equal(Store.getModuleStatusCache("CS1").m01, undefined);
+  const adopted = Store.importData(file);
+  assert.ok(adopted > 0);
+  assert.deepEqual(plain(Store.exportData()).data, file.data, "a round trip changed the data");
+  assert.equal(Store.importData(file), 0, "importing the same file twice should change nothing");
+});
+
+await test("import keeps whichever copy of each entry is newer", async () => {
+  const before = plain(Store.exportData()).data;
+  Store.setMastery("CM1", "m01", 4, true); // its schedule says 2026-09-27
+  Store.setMastery("CM1", "m01", 6, false);
+  Store.setSrs("CM1", "m01", 6, sched("2026-09-01", 1));
+  await settle();
+  const file = {
+    app: "fellow",
+    format: 1,
+    data: {
+      status: { CS1: { m01: "In progress", m02: "Done", m04: "In progress" } },
+      mastery: { CM1: { m01: { 4: false, 6: true } } },
+      srs: { CM1: { m01: { 4: sched("2026-09-21", 1), 5: sched("2026-09-28", 2), 6: sched("2026-09-29", 3) } } },
+      drill: {
+        CM1: {
+          "cm1-m01-d01": { ...sched("2026-09-21", 1), attempts: 1, correct: 0 },
+          "cm1-m01-d02": { ...sched("2026-09-28", 1), attempts: 1, correct: 1 },
+        },
+      },
+      result: {
+        CB1: { status: "none", sitting: null, updatedAt: before.result.CB1.updatedAt - 1 },
+        CM1: { status: "passed", sitting: "2026-09", updatedAt: Date.now() + 1000 },
+      },
+      plan: { sittings: { "2028-04": ["SP2"] }, specialists: { sp: [], sa: [] }, updatedAt: 1 },
+      streak: { lastDate: "2026-09-30", count: 7 },
+      activity: { "2026-09-30": 1, "2026-09-15": 12 },
+      lastSession: { startedAt: 1, endedAt: 2, cardsReviewed: 3, cardsMastered: 1 },
+      pace: [before.pace[0], { code: "CS1", qid: "q9", marks: 8, usedMs: 1, allowedMs: 2, rate: 1.8, date: "2026-09-10" }],
+      "../../evil": {},
+    },
+  };
+  const adopted = Store.importData(file);
+
+  const status = Store.getModuleStatusCache("CS1");
+  assert.equal(status.m01, "Done", "an older status replaced one further along");
+  assert.equal(status.m02, "Done", "a further-along status from the file wasn't taken");
+  assert.equal(status.m04, "In progress", "a status missing locally wasn't taken");
+
+  const srs = Store.getSrsCache("CM1").m01;
+  assert.equal(srs[4].last, "2026-09-27", "an older schedule from the file replaced a newer local one");
+  assert.equal(srs[5].last, "2026-09-28");
+  assert.equal(srs[6].last, "2026-09-29");
+  const mastery = Store.getMasteryCache("CM1").m01;
+  assert.equal(mastery[4], true, "a mark from an older review replaced a newer one");
+  assert.equal(mastery[6], true, "a mark from a newer review wasn't taken");
+
+  const drills = Store.getDrillCache("CM1");
+  assert.equal(drills["cm1-m01-d01"].correct, 2, "an older drill result replaced a newer one");
+  assert.equal(drills["cm1-m01-d02"].correct, 1);
+
+  const results = Store.getResultsCache();
+  assert.equal(results.CB1.status, "passed", "an older result replaced a newer one");
+  assert.equal(results.CM1.status, "passed");
+  assert.deepEqual(plain(Store.getExamPlanCache().sittings), { "2027-04": ["CM1", "CS1"] }, "an older plan replaced a newer one");
+  assert.equal(Store.getStreakCache().count, 7);
+  assert.equal(Store.getActivityCache()["2026-09-30"], before.activity["2026-09-30"], "activity should keep the higher count");
+  assert.equal(Store.getActivityCache()["2026-09-15"], 12);
+  assert.equal(Store.getLastSessionCache().endedAt, before.lastSession.endedAt, "an older last session replaced a newer one");
+  assert.equal(Store.getPaceLog().length, 2, "pace entries should be merged without duplicates");
+  assert.equal(Store.getPaceLog()[0].qid, "q9", "pace log should stay in date order");
+  assert.ok(!Object.keys(mem).some((k) => k.includes("evil")));
+  // status m02 + m04, mastery 6, srs 5 + 6, drill d02, result CM1, streak, activity 09-15, pace q9
+  assert.equal(adopted, 10);
+
+  await settle(); // what was adopted uploads like any other change
+  assert.ok(rowsOf("flashcard_srs").some((r) => r.card_idx === 5 && r.last_reviewed === "2026-09-28"));
+  assert.ok(rowsOf("drill_progress").some((r) => r.item_id === "cm1-m01-d02"));
+  assert.ok(rowsOf("module_status").some((r) => r.module_id === "m04" && r.status === "In progress"));
+});
+
+await test("import rejects a file that isn't a progress download", async () => {
+  assert.throws(() => Store.importData({ hello: "world" }), /isn't a Fellow progress download/);
+  assert.throws(() => Store.importData(null), /isn't a Fellow progress download/);
+  assert.throws(() => Store.importData({ app: "fellow", format: 99, data: {} }), /newer version/);
+});
+
+/* ---------- account deletion ---------- */
+
+await test("a failed account deletion keeps everything", async () => {
+  deleteReply = { data: { error: "Couldn't delete all of your data just now." }, error: null };
+  const keys = userKeys("u1").length;
+  await assert.rejects(Store.deleteAccount(), /Couldn't delete all of your data/);
+  assert.equal(userKeys("u1").length, keys);
+  assert.equal(signOuts.length, 0);
+  deleteReply = { data: { deleted: true }, error: null };
+});
+
+await test("deleting the account clears that user's local data and signs out", async () => {
+  mem["actuarialStudy:status:anon:CS1"] = JSON.stringify({ m01: "Done" }); // made before signing in
+  mem["actuarialStudy:status:u2:CS1"] = JSON.stringify({ m01: "Done" }); // another account on this device
+  offline = true;
+  Store.setModuleStatus("CS1", "m05", "Done"); // still queued when the account goes
+  await settle();
+  assert.ok(queued("status").some((op) => op.userId === "u1"));
+  await Store.deleteAccount();
+  offline = false;
+  assert.deepEqual(invoked.slice(-1), ["delete-account"]);
+  assert.equal(userKeys("u1").length, 0, `left behind: ${userKeys("u1").join(", ")}`);
+  assert.ok(mem["actuarialStudy:status:anon:CS1"], "signed-out progress on this device should stay");
+  assert.ok(mem["actuarialStudy:status:u2:CS1"], "another account's progress should stay");
+  assert.ok(!JSON.parse(mem["actuarialStudy:pending"] || "[]").some((op) => op.userId === "u1"), "the deleted user's queue should go");
+  assert.equal(signOuts.length, 1);
+  assert.equal(signOuts[0].scope, "local");
 });
 
 console.log(`${passed} progress sync test(s) passed.`);
