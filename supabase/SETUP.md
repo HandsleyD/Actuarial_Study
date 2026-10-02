@@ -45,6 +45,7 @@ way as above (SQL Editor → New query → paste → Run):
 | [`migrations/003_drills.sql`](./migrations/003_drills.sql) | `drill_progress` table (+ RLS policy) | Syncing drill results &mdash; the marked multiple-choice, select-all and fill-the-gap questions &mdash; and their review schedules across devices |
 | [`migrations/004_exam_plan.sql`](./migrations/004_exam_plan.sql) | `exam_plan` table (+ RLS policy) | Syncing the study dashboard's exam plan (which subjects you intend to sit at each sitting) across devices |
 | [`migrations/005_subject_results.sql`](./migrations/005_subject_results.sql) | `subject_result` table (+ RLS policy) | Syncing exam results (passed / exempt per subject, which drive Associate and Fellow progress) across devices |
+| [`migrations/006_card_notes.sql`](./migrations/006_card_notes.sql) | `card_note` table (+ RLS policy) | Syncing your personal flashcard notes and flags (the "Flagged cards" review deck) across devices |
 
 Each file is additive and guarded (`create table if not exists`, policies
 dropped and recreated), so re-running one by accident is harmless.
@@ -65,6 +66,9 @@ works but the plan stays on the device you made it on.
 `005_subject_results.sql` likewise: until it's run, exam results you record
 stay on the device you recorded them on.
 
+`006_card_notes.sql` too: until it's run, flashcard notes and flags work
+but stay on the device you wrote them on, and upload once the table exists.
+
 ## 3. (Optional) Skip email confirmation
 
 By default, Supabase makes a new user confirm their email before they can
@@ -72,6 +76,29 @@ sign in. For a personal single-user site this is just friction. To turn it
 off: **Authentication → Providers → Email → uncheck "Confirm email"**.
 (Leave it on if you'd rather have the extra check — you'll just need to click
 the confirmation link Supabase emails you after signing up, once.)
+
+## 3b. Let password-reset links come back to the site
+
+The Account panel's **Forgot password?** link emails a reset link that
+returns to the site, signs the user in, and asks for a new password.
+Supabase only redirects to addresses it's been told about, so:
+
+1. **Authentication → URL Configuration**.
+2. Set **Site URL** to the site's address, e.g.
+   `https://handsleyd.github.io/Actuarial_Study/`.
+3. Under **Redirect URLs**, add the same address (and
+   `http://localhost:4173/` too if you want reset links to work against a
+   local copy of the site).
+
+The link goes back to whichever page the reset was requested from, minus
+any `#/route`, so these need to match that exactly, trailing slash
+included. If the address isn't listed, Supabase sends the user to the Site
+URL instead; if that isn't set either, the link lands on `localhost:3000`
+and goes nowhere.
+
+The email itself is Supabase's default "Reset Password" template
+(**Authentication → Emails**). The built-in mail sender is rate-limited to a
+handful of emails an hour, which is plenty for a personal site.
 
 ## 4. Get your Publishable key
 
@@ -203,6 +230,33 @@ you ever want to change models or tighten/loosen the grading prompt, it's
 all in
 [`supabase/functions/grade-answer/index.ts`](./functions/grade-answer/index.ts);
 redeploy with the same `supabase functions deploy grade-answer` command.
+
+## 8. Account deletion
+
+The Account panel has a **Delete my account and data** option (behind a
+type-DELETE-to-confirm step). The browser's publishable key can't delete
+users, so this goes through a second Edge Function,
+[`supabase/functions/delete-account/index.ts`](./functions/delete-account/index.ts).
+It checks the caller's access token, then deletes the auth user; every
+study table cascades from `auth.users`, so the account and all of its rows
+go in one transaction, or none of it does. It uses the service role key that
+Supabase gives every Edge Function automatically
+(`SUPABASE_SERVICE_ROLE_KEY`). There's no secret to set. It only ever
+deletes the account whose token came with the request.
+
+With the CLI installed and linked (steps 2 and 3 of section 7):
+
+```bash
+supabase functions deploy delete-account
+```
+
+Redeploy with the same command after changing the function. Until it's
+deployed, the delete button shows an error and nothing is removed.
+
+To check it: create a throwaway account on the site, review a card or two,
+then delete it from the Account panel. **Authentication → Users** should no
+longer list it, and `select count(*) from flashcard_mastery where user_id =
+'<its id>'` in the SQL Editor should return 0.
 
 ## If your project still uses the old anon/service_role keys
 
