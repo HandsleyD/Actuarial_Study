@@ -627,6 +627,11 @@ const Store = (function () {
     return readLS(lsKey("note", examCode), {});
   }
 
+  // A millisecond timestamp that Date can turn back into a date (±8.64e15 ms).
+  function isValidMs(t) {
+    return typeof t === "number" && Number.isFinite(t) && Math.abs(t) <= 8.64e15;
+  }
+
   function noteFromRow(row) {
     return { note: row.note || "", flagged: !!row.flagged, updatedAt: Date.parse(row.updated_at) || 0 };
   }
@@ -1214,8 +1219,11 @@ const Store = (function () {
   // uses, and queues what it adopts for upload like any other change.
 
   const EXPORT_APP = "fellow";
-  const EXPORT_FORMAT = 1;
-  const PER_EXAM_KINDS = ["status", "mastery", "srs", "drill", "score", "mock"];
+  // 2 added flashcard notes and flags. Bumped so a copy of the site from
+  // before then (an old cached offline version) refuses a newer file rather
+  // than restoring it without the notes; this version still reads format 1.
+  const EXPORT_FORMAT = 2;
+  const PER_EXAM_KINDS = ["status", "mastery", "srs", "drill", "note", "score", "mock"];
   // Statuses only move forward in practice: studying starts a module, and a
   // Done module stays Done.
   const STATUS_ORDER = ["Not started", "In progress", "Done"];
@@ -1327,6 +1335,28 @@ const Store = (function () {
         adopted++;
       });
       writeLS(lsKey("drill", code), cache);
+    });
+
+    // Notes and flags: the later edit wins, as on load. A cleared note or
+    // flag counts as an edit, so it can win over an older note too.
+    const isNote = (n) =>
+      isObj(n) && typeof n.note === "string" && n.note.length <= NOTE_MAX && typeof n.flagged === "boolean" && isValidMs(n.updatedAt);
+    examCodesIn(d.note).forEach((code) => {
+      const cache = getNotesCache(code);
+      Object.entries(d.note[code]).forEach(([moduleId, cards]) => {
+        if (!isObj(cards)) return;
+        Object.entries(cards).forEach(([idx, value]) => {
+          if (!isNote(value) || !/^\d+$/.test(idx)) return;
+          const local = cache[moduleId] ? cache[moduleId][idx] : null;
+          if (local && (value.updatedAt || 0) <= (local.updatedAt || 0)) return;
+          const entry = { note: value.note, flagged: value.flagged, updatedAt: value.updatedAt };
+          if (!cache[moduleId]) cache[moduleId] = {};
+          cache[moduleId][idx] = entry;
+          enqueue({ type: "note", examCode: code, moduleId, cardIdx: Number(idx), value: entry });
+          adopted++;
+        });
+      });
+      writeLS(lsKey("note", code), cache);
     });
 
     // Self-marks: attempts the device doesn't have are added, and a
@@ -1632,7 +1662,9 @@ const Store = (function () {
           card_idx: op.cardIdx,
           note: op.value.note || "",
           flagged: !!op.value.flagged,
-          updated_at: new Date(op.value.updatedAt || Date.now()).toISOString(),
+          // A timestamp Date can't represent would throw here, outside the
+          // upload's try, and wedge the whole queue: fall back to now.
+          updated_at: new Date(isValidMs(op.value.updatedAt) ? op.value.updatedAt : Date.now()).toISOString(),
         }));
         try {
           if (rows.length) {

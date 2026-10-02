@@ -455,11 +455,13 @@ await test("export then import onto an empty device restores everything", async 
   await settle();
   const file = plain(Store.exportData());
   assert.equal(file.app, "fellow");
-  assert.equal(file.format, 1);
-  for (const kind of ["status", "mastery", "srs", "drill", "score", "mock", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
+  assert.equal(file.format, 2);
+  for (const kind of ["status", "mastery", "srs", "drill", "note", "score", "mock", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
     assert.ok(file.data[kind] !== null && file.data[kind] !== undefined, `export is missing ${kind}`);
   }
   assert.equal(file.data.status.CS1.m01, "Done");
+  assert.equal(file.data.note.CB2.m03[4].note, "elasticity <1 means inelastic", "export should keep flashcard notes");
+  assert.equal(file.data.note.CB2.m03[4].flagged, true, "export should keep flags");
   assert.equal(file.data.score.CB2["cb2-q1"].length, 2, "export should keep every self-mark attempt");
   assert.equal(file.data.mock.CM1.length, 2);
   assert.equal(file.data.srs.CM1.m01[4].last, "2026-09-27");
@@ -477,7 +479,9 @@ await test("import keeps whichever copy of each entry is newer", async () => {
   Store.setMastery("CM1", "m01", 4, true); // its schedule says 2026-09-27
   Store.setMastery("CM1", "m01", 6, false);
   Store.setSrs("CM1", "m01", 6, sched("2026-09-01", 1));
+  Store.setCardNote("CM1", "m03", 0, { note: "local, newer" });
   await settle();
+  const noteAt = Store.getNotesCache("CM1").m03[0].updatedAt;
   const file = {
     app: "fellow",
     format: 1,
@@ -489,6 +493,17 @@ await test("import keeps whichever copy of each entry is newer", async () => {
         CM1: {
           "cm1-m01-d01": { ...sched("2026-09-21", 1), attempts: 1, correct: 0 },
           "cm1-m01-d02": { ...sched("2026-09-28", 1), attempts: 1, correct: 1 },
+        },
+      },
+      note: {
+        CM1: {
+          m03: {
+            0: { note: "file, older", flagged: true, updatedAt: noteAt - 1000 },
+            1: { note: "from the file", flagged: true, updatedAt: noteAt },
+            2: { note: 42, flagged: true, updatedAt: noteAt }, // malformed: skipped
+            3: { note: "bad time", flagged: true, updatedAt: "invalid" }, // skipped too
+            4: { note: "bad time", flagged: true, updatedAt: 1e20 }, // beyond what Date holds: skipped
+          },
         },
       },
       result: {
@@ -522,6 +537,14 @@ await test("import keeps whichever copy of each entry is newer", async () => {
   assert.equal(drills["cm1-m01-d01"].correct, 2, "an older drill result replaced a newer one");
   assert.equal(drills["cm1-m01-d02"].correct, 1);
 
+  const notes = Store.getNotesCache("CM1").m03;
+  assert.equal(notes[0].note, "local, newer", "an older note from the file replaced a newer local one");
+  assert.equal(notes[1].note, "from the file", "a note missing locally wasn't taken");
+  assert.equal(notes[1].flagged, true);
+  assert.equal(notes[2], undefined, "a malformed note was taken");
+  assert.equal(notes[3], undefined, "a note with a non-numeric timestamp was taken");
+  assert.equal(notes[4], undefined, "a note with an out-of-range timestamp was taken");
+
   const results = Store.getResultsCache();
   assert.equal(results.CB1.status, "passed", "an older result replaced a newer one");
   assert.equal(results.CM1.status, "passed");
@@ -533,19 +556,32 @@ await test("import keeps whichever copy of each entry is newer", async () => {
   assert.equal(Store.getPaceLog().length, 2, "pace entries should be merged without duplicates");
   assert.equal(Store.getPaceLog()[0].qid, "q9", "pace log should stay in date order");
   assert.ok(!Object.keys(mem).some((k) => k.includes("evil")));
-  // status m02 + m04, mastery 6, srs 5 + 6, drill d02, result CM1, streak, activity 09-15, pace q9
-  assert.equal(adopted, 10);
+  // status m02 + m04, mastery 6, srs 5 + 6, drill d02, note m03/1, result CM1, streak, activity 09-15, pace q9
+  assert.equal(adopted, 11);
 
   await settle(); // what was adopted uploads like any other change
   assert.ok(rowsOf("flashcard_srs").some((r) => r.card_idx === 5 && r.last_reviewed === "2026-09-28"));
   assert.ok(rowsOf("drill_progress").some((r) => r.item_id === "cm1-m01-d02"));
   assert.ok(rowsOf("module_status").some((r) => r.module_id === "m04" && r.status === "In progress"));
+  assert.ok(rowsOf("card_note").some((r) => r.exam_code === "CM1" && r.module_id === "m03" && r.card_idx === 1 && r.note === "from the file"));
 });
 
 await test("import rejects a file that isn't a progress download", async () => {
   assert.throws(() => Store.importData({ hello: "world" }), /isn't a Fellow progress download/);
   assert.throws(() => Store.importData(null), /isn't a Fellow progress download/);
   assert.throws(() => Store.importData({ app: "fellow", format: 99, data: {} }), /newer version/);
+  assert.equal(Store.importData({ app: "fellow", format: 1, data: {} }), 0, "a format-1 file (from before notes) should still import");
+});
+
+await test("a queued note with a timestamp Date can't hold still uploads, and doesn't block the queue", async () => {
+  const pending = JSON.parse(mem["actuarialStudy:pending"] || "[]");
+  pending.push({ type: "note", examCode: "CS2", moduleId: "m09", cardIdx: 0, value: { note: "odd", flagged: false, updatedAt: "invalid" }, userId: "u1", ts: 1 });
+  mem["actuarialStudy:pending"] = JSON.stringify(pending);
+  Store.setModuleStatus("CS2", "m09", "In progress"); // queued after it
+  await settle();
+  assert.equal(queued("note").length, 0, "the bad note is still stuck in the queue");
+  assert.equal(queued("status").length, 0, "a change queued after it didn't upload");
+  assert.ok(rowsOf("card_note").some((r) => r.exam_code === "CS2" && r.module_id === "m09" && r.note === "odd"));
 });
 
 /* ---------- account deletion ---------- */

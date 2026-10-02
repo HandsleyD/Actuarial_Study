@@ -13,6 +13,7 @@ test.describe("progress file", () => {
       "status:CS1": { m01: "Done" },
       "mastery:CS1": { m01: { 0: true } },
       "srs:CS1": { m01: { 0: { reps: 1, interval: 1, ease: 2.5, due: "2026-09-28", lapses: 0, reviews: 1, last: "2026-09-27" } } },
+      "note:CS1": { m01: { 0: { note: "my mnemonic", flagged: true, updatedAt: 3 } } },
       result: { CB1: { status: "passed", sitting: "2026-04", updatedAt: 5 } },
       plan: { sittings: { "2027-04": ["CM1"] }, specialists: { sp: [], sa: [] }, updatedAt: 7 },
     });
@@ -25,6 +26,7 @@ test.describe("progress file", () => {
     expect(file.data.status.CS1).toEqual({ m01: "Done" });
     expect(file.data.mastery.CS1.m01["0"]).toBe(true);
     expect(file.data.srs.CS1.m01["0"].last).toBe("2026-09-27");
+    expect(file.data.note.CS1.m01["0"]).toEqual({ note: "my mnemonic", flagged: true, updatedAt: 3 });
     expect(file.data.result.CB1.status).toBe("passed");
     expect(file.data.plan.sittings).toEqual({ "2027-04": ["CM1"] });
     await expect(page.locator("#dataMessage")).toContainText("fellow-progress-2026-09-27.json");
@@ -42,6 +44,7 @@ test.describe("progress file", () => {
         status: { CS1: { m01: "In progress", m02: "In progress" } },
         result: { CB1: { status: "passed", sitting: "2026-04", updatedAt: 5 } },
         streak: { lastDate: "2026-09-27", count: 5 }, // today, a longer run than this device's
+        note: { CB2: { m01: { 2: { note: "restored note", flagged: true, updatedAt: 9 } } } },
       },
     };
     await page.locator("#importFile").setInputFiles({
@@ -56,6 +59,10 @@ test.describe("progress file", () => {
     await page.locator("#closeSettings").click();
     await expect(page.locator("#streakValue")).toHaveText("5");
     await expect(page.locator("#card-CB1 .status-ribbon")).toHaveText("Passed ✓");
+    // ...and the restored note and flag.
+    expect((await readStore(page, "note:CB2")).m01["2"]).toMatchObject({ note: "restored note", flagged: true });
+    await page.goto("/#/CB2");
+    await expect(page.getByRole("link", { name: /Review 1 flagged card/ })).toBeVisible();
   });
 
   test("says so when a file isn't a progress download", async ({ page }) => {
