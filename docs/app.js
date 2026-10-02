@@ -781,23 +781,33 @@ function saveCardNote(code, moduleId, idx, patch) {
   renderSyncStatus();
 }
 
+// Notes for these subjects changed underneath the page (a load, or an upload
+// that found a newer copy from another device): re-read them and redraw
+// whatever shows them. A card whose note editor is open is left alone, so
+// the user's draft isn't thrown away.
+function onNotesChanged(codes) {
+  if (!codes.length) return;
+  codes.forEach((code) => (noteData[code] = Store.getNotesCache(code)));
+  searchIndex = null;
+  const r = parseHash();
+  if (r.view === "search") renderSearchResults();
+  if (r.view === "subject" && codes.includes(r.exam)) renderSubjectView(r.exam);
+  if (r.view === "dashboard") renderDashboardView();
+  if (noteEditState.editing) return;
+  if (r.view === "flash" && codes.includes(r.exam)) renderFlashView(r.exam, r.module);
+  if (r.view === "mixed" && codes.includes(r.exam)) renderMixedView(r.exam);
+  if (r.view === "review") {
+    if (r.kind === "flagged" && reviewRunUntouched() && !reviewState.sessionDone) startReviewRun(r.kind, r.exam);
+    renderReviewView();
+  }
+}
+
 // Pulls notes saved on other devices. Every subject comes back in one request.
 function refreshNotes() {
-  Store.loadNotes().then((changed) => {
-    const codes = Object.keys(changed);
-    if (!codes.length) return;
-    codes.forEach((code) => (noteData[code] = changed[code]));
-    searchIndex = null;
-    const r = parseHash();
-    if (r.view === "search") renderSearchResults();
-    if (r.view === "subject" && codes.includes(r.exam)) renderSubjectView(r.exam);
-    if (r.view === "dashboard") renderDashboardView();
-    if (r.view === "review" && r.kind === "flagged" && reviewRunUntouched() && !reviewState.sessionDone) {
-      startReviewRun(r.kind, r.exam);
-      renderReviewView();
-    }
-  });
+  Store.loadNotes().then((changed) => onNotesChanged(Object.keys(changed)));
 }
+
+Store.onNotesChange(onNotesChanged);
 
 // Which card's note editor is open. Moving to another card closes it.
 const noteEditState = { key: "", editing: false };
@@ -840,6 +850,9 @@ function cardNotePanelHtml(code, moduleId, idx) {
   return `<div class="card-note-add"><button type="button" class="link-btn" id="noteEdit">${ico("pencil")} Add a note</button></div>`;
 }
 
+// Every lookup goes through `el`, the view being drawn: hidden views keep
+// their last render, so the same ids (#noteInput, #flagBtn) can be in the
+// document more than once.
 function wireCardExtras(el, code, moduleId, idx, rerender) {
   const flag = el.querySelector("#flagBtn");
   if (flag) {
@@ -847,7 +860,7 @@ function wireCardExtras(el, code, moduleId, idx, rerender) {
       const n = cardNote(code, moduleId, idx);
       saveCardNote(code, moduleId, idx, { flagged: !(n && n.flagged) });
       rerender();
-      const again = document.getElementById("flagBtn");
+      const again = el.querySelector("#flagBtn");
       if (again) again.focus();
     });
   }
@@ -856,7 +869,7 @@ function wireCardExtras(el, code, moduleId, idx, rerender) {
     edit.addEventListener("click", () => {
       noteEditState.editing = true;
       rerender();
-      const input = document.getElementById("noteInput");
+      const input = el.querySelector("#noteInput");
       if (input) {
         input.focus();
         input.setSelectionRange(input.value.length, input.value.length);
@@ -870,7 +883,7 @@ function wireCardExtras(el, code, moduleId, idx, rerender) {
   const save = el.querySelector("#noteSave");
   if (save) {
     save.addEventListener("click", () => {
-      saveCardNote(code, moduleId, idx, { note: document.getElementById("noteInput").value.trim() });
+      saveCardNote(code, moduleId, idx, { note: el.querySelector("#noteInput").value.trim() });
       close();
     });
   }
@@ -4759,6 +4772,7 @@ function renderRoute() {
     else a.removeAttribute("aria-current");
   });
   if (r.view !== "questions") pauseQTimer();
+  noteEditState.editing = false; // leaving a card closes its note editor (an unsaved draft is dropped)
   document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
 
@@ -5198,6 +5212,10 @@ document.addEventListener("keydown", (e) => {
     return;
   }
   if (e.ctrlKey) return;
+  // Space/Enter on a focused button or link activates that control (the
+  // Flag button, a card dot, Add a note), not the reveal shortcut.
+  const activates = /^(BUTTON|A|SUMMARY)$/.test((e.target && e.target.tagName) || "");
+  if ((e.key === " " || e.key === "Enter") && activates) return;
 
   let handled = false;
   if (e.key === " " || e.key === "Enter") handled = clickIfEnabled("revealBtn") || clickIfEnabled("revealQBtn");

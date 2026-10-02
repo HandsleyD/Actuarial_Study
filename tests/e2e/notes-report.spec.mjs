@@ -1,5 +1,8 @@
 import { test, expect, seed, open, readStore } from "./fixtures.mjs";
 
+// Hidden views keep their last render, so ids like #revealBtn can be in the
+// page twice after moving between views: locators take the visible one.
+
 // The GitHub issue a "Report a mistake" link would open, decoded.
 async function reportLink(page, scope) {
   const href = await page.locator(`${scope} .report-link`).getAttribute("href");
@@ -17,10 +20,10 @@ test.describe("report a mistake", () => {
     await open(page, "CB2/m01/3", "#revealBtn");
     await expect(page.locator("#flashView .report-link")).toHaveCount(0);
     await page.locator("#answerInput").fill("my secret typed answer");
-    await page.locator("#revealBtn").click();
-    await page.locator("#noteEdit").click();
-    await page.locator("#noteInput").fill("my private note");
-    await page.locator("#noteSave").click();
+    await page.locator("#revealBtn:visible").click();
+    await page.locator("#noteEdit:visible").click();
+    await page.locator("#noteInput:visible").fill("my private note");
+    await page.locator("#noteSave:visible").click();
 
     const link = page.locator("#flashView .report-link");
     await expect(link).toBeVisible();
@@ -85,11 +88,11 @@ test.describe("notes and flags", () => {
 
   test("a note shows under the answer, escaped, and survives a reload", async ({ page }) => {
     await open(page, "CB2/m01/2", "#revealBtn");
-    await page.locator("#revealBtn").click();
+    await page.locator("#revealBtn:visible").click();
     await expect(page.locator(".card-note-text")).toHaveCount(0);
-    await page.locator("#noteEdit").click();
-    await page.locator("#noteInput").fill('remember <img src=x onerror="window.__pwned=1"> opportunity cost');
-    await page.locator("#noteSave").click();
+    await page.locator("#noteEdit:visible").click();
+    await page.locator("#noteInput:visible").fill('remember <img src=x onerror="window.__pwned=1"> opportunity cost');
+    await page.locator("#noteSave:visible").click();
 
     const note = page.locator("#flashView .card-note-text");
     await expect(note).toHaveText('remember <img src=x onerror="window.__pwned=1"> opportunity cost');
@@ -100,12 +103,12 @@ test.describe("notes and flags", () => {
     expect(saved.m01["2"]).toMatchObject({ note: 'remember <img src=x onerror="window.__pwned=1"> opportunity cost', flagged: false });
 
     await page.reload();
-    await page.locator("#revealBtn").click();
+    await page.locator("#revealBtn:visible").click();
     await expect(page.locator("#flashView .card-note-text")).toContainText("opportunity cost");
 
     // Editing to empty deletes it.
-    await page.locator("#noteEdit").click();
-    await page.locator("#noteDelete").click();
+    await page.locator("#noteEdit:visible").click();
+    await page.locator("#noteDelete:visible").click();
     await expect(page.locator("#flashView .card-note-text")).toHaveCount(0);
     expect((await readStore(page, "note:CB2")).m01["2"].note).toBe("");
   });
@@ -133,10 +136,10 @@ test.describe("notes and flags", () => {
     await open(page, "search?q=platypus", "#searchResults");
     await expect(page.locator(".search-result")).toHaveCount(0);
     await page.goto("/#/CB2/m01/0");
-    await page.locator("#revealBtn").click();
-    await page.locator("#noteEdit").click();
-    await page.locator("#noteInput").fill("platypus");
-    await page.locator("#noteSave").click();
+    await page.locator("#revealBtn:visible").click();
+    await page.locator("#noteEdit:visible").click();
+    await page.locator("#noteInput:visible").fill("platypus");
+    await page.locator("#noteSave:visible").click();
     await page.goto("/#/search?q=platypus");
     await expect(page.locator(".search-result")).toHaveCount(1);
   });
@@ -147,11 +150,11 @@ test.describe("notes and flags", () => {
 
     // The flag works before reveal too.
     await page.goto("/#/CB2/m01/4");
-    const flag = page.locator("#flagBtn");
+    const flag = page.locator("#flagBtn:visible");
     await expect(flag).toHaveAttribute("aria-pressed", "false");
     await flag.click();
-    await expect(page.locator("#flagBtn")).toHaveAttribute("aria-pressed", "true");
-    await expect(page.locator("#flagBtn")).toHaveText(/Flagged/);
+    await expect(page.locator("#flagBtn:visible")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#flagBtn:visible")).toHaveText(/Flagged/);
     expect((await readStore(page, "note:CB2")).m01["4"].flagged).toBe(true);
 
     await page.goto("/#/CB2");
@@ -163,7 +166,7 @@ test.describe("notes and flags", () => {
     await expect(page.locator("#reviewView .flash-progress")).toHaveText("1 flagged");
     await expect(page.locator("#reviewView .flashcard-source")).toContainText("CB2 · M01");
     // It's card index 4: its report link says so.
-    await page.locator("#revealBtn").click();
+    await page.locator("#revealBtn:visible").click();
     expect((await reportLink(page, "#reviewView")).body).toContain("#/CB2/m01/4");
 
     await page.goto("/#/dashboard");
@@ -171,26 +174,53 @@ test.describe("notes and flags", () => {
 
     // Unflagging from the deck takes it out of the next run.
     await page.goto("/#/flagged");
-    await page.locator("#flagBtn").click();
-    await expect(page.locator("#flagBtn")).toHaveAttribute("aria-pressed", "false");
+    await page.locator("#flagBtn:visible").click();
+    await expect(page.locator("#flagBtn:visible")).toHaveAttribute("aria-pressed", "false");
     await page.goto("/#/CB2");
     await expect(page.getByRole("link", { name: /flagged card/ })).toHaveCount(0);
   });
 
   test("the note editor and flag work in mixed sessions and review runs too", async ({ page }) => {
     await open(page, "CB2/mixed", "#revealBtn");
-    await page.locator("#flagBtn").click();
-    await page.locator("#revealBtn").click();
-    await page.locator("#noteEdit").click();
-    await page.locator("#noteInput").fill("mixed note");
-    await page.locator("#noteSave").click();
+    await page.locator("#flagBtn:visible").click();
+    await page.locator("#revealBtn:visible").click();
+    await page.locator("#noteEdit:visible").click();
+    await page.locator("#noteInput:visible").fill("mixed note");
+    await page.locator("#noteSave:visible").click();
     await expect(page.locator("#mixedView .card-note-text")).toHaveText("mixed note");
     await expect(page.locator("#mixedView .report-link")).toBeVisible();
 
     await page.goto("/#/flagged");
     await expect(page.locator("#reviewView .flash-progress")).toHaveText("1 flagged");
-    await page.locator("#revealBtn").click();
+    await page.locator("#revealBtn:visible").click();
     await expect(page.locator("#reviewView .card-note-text")).toHaveText("mixed note");
     await expect(page.locator("#reviewView .report-link")).toBeVisible();
+  });
+
+  test("Space on the focused Flag button flags the card instead of revealing it", async ({ page }) => {
+    await open(page, "CB2/m01/1", "#revealBtn");
+    await page.locator("#flagBtn:visible").focus();
+    await page.keyboard.press(" ");
+    await expect(page.locator("#flagBtn:visible")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#flashView .flashcard-answer")).toHaveCount(0);
+    expect((await readStore(page, "note:CB2")).m01["1"].flagged).toBe(true);
+  });
+
+  test("a note editor left open in another view doesn't capture the next save", async ({ page }) => {
+    // Leave an editor open on a module card, with a draft in it...
+    await open(page, "CB2/m01/0", "#revealBtn");
+    await page.locator("#revealBtn:visible").click();
+    await page.locator("#noteEdit:visible").click();
+    await page.locator("#noteInput:visible").fill("draft left behind");
+    // ...then note a card in a mixed session.
+    await page.goto("/#/CB2/mixed");
+    await page.locator("#revealBtn:visible").click();
+    await page.locator("#noteEdit:visible").click();
+    await page.locator("#noteInput:visible").fill("the note I meant");
+    await page.locator("#noteSave:visible").click();
+    await expect(page.locator("#mixedView .card-note-text")).toHaveText("the note I meant");
+    const notes = await readStore(page, "note:CB2");
+    const saved = Object.values(notes).flatMap((m) => Object.values(m).map((n) => n.note));
+    expect(saved).toEqual(["the note I meant"]);
   });
 });

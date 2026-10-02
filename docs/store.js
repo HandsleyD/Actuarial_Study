@@ -950,10 +950,17 @@ const Store = (function () {
     resultListeners.push(cb);
   }
 
-  function notifyListeners(list) {
+  // And for flashcard notes: called with the subject codes whose notes an
+  // upload replaced with a newer copy from another device.
+  const noteListeners = [];
+  function onNotesChange(cb) {
+    noteListeners.push(cb);
+  }
+
+  function notifyListeners(list, arg) {
     list.forEach((cb) => {
       try {
-        cb();
+        cb(arg);
       } catch {
         /* a listener throwing shouldn't requeue anything */
       }
@@ -1394,6 +1401,7 @@ const Store = (function () {
       if (noteOps.length) {
         const latest = new Map();
         noteOps.forEach((op) => latest.set(`${op.examCode}|${op.moduleId}|${op.cardIdx}`, op));
+        const adopted = new Set(); // subjects whose cache took a newer server copy
         try {
           const codes = [...new Set([...latest.values()].map((op) => op.examCode))];
           const { data, error } = await client
@@ -1413,11 +1421,15 @@ const Store = (function () {
               if (!cache[row.module_id]) cache[row.module_id] = {};
               cache[row.module_id][row.card_idx] = remote;
               writeLS(lsKey("note", row.exam_code), cache);
+              adopted.add(row.exam_code);
             }
           });
         } catch {
           // As above: the upsert fails the same way and nothing is lost.
         }
+        // The page keeps its own copy of the notes it shows: tell it, so it
+        // doesn't keep showing (and then re-save) the stale value.
+        if (adopted.size) notifyListeners(noteListeners, [...adopted]);
         const rows = [...latest.values()].map((op) => ({
           user_id: currentUser.id,
           exam_code: op.examCode,
@@ -1632,6 +1644,7 @@ const Store = (function () {
     isPlanTableMissing,
     onPlanChange,
     onResultsChange,
+    onNotesChange,
     loadResults,
     setResult,
     getResultsCache,

@@ -277,11 +277,14 @@ await test("a stale queued note doesn't overwrite a newer one from another devic
   await settle();
   const at = Store.getNotesCache("CM1").m02[1].updatedAt;
   rowsOf("card_note").push({ user_id: "u1", exam_code: "CM1", module_id: "m02", card_idx: 1, note: "", flagged: false, updated_at: new Date(at + 5000).toISOString() });
+  const told = [];
+  Store.onNotesChange((codes) => told.push(...codes));
   offline = false;
   await Store.flushPending();
   const row = rowsOf("card_note").find((r) => r.exam_code === "CM1" && r.module_id === "m02" && r.card_idx === 1);
   assert.equal(row.flagged, false, "stale queued flag overwrote the newer server row");
   assert.equal(Store.getNotesCache("CM1").m02[1].flagged, false, "the newer server copy wasn't adopted");
+  assert.deepEqual([...told], ["CM1"], "the page wasn't told its copy of CM1's notes is stale");
   assert.equal(queued("note").length, 0);
 });
 
