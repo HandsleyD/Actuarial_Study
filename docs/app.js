@@ -2657,6 +2657,10 @@ function savePlan(sittings) {
 // Home cards ("Awaiting results") and the due list (paused subjects) depend
 // on the plan as well as on progress.
 function onPlanShapeChanged() {
+  // The Hub's calendar button captures the plan when it renders. Refresh
+  // it after the account plan loads or sync replaces the cached plan.
+  const route = parseHash();
+  if (route.view === "exams") renderExamHub(route.exam);
   renderHomePrompts();
   renderRouteMap();
   EXAMS.forEach(updateHomeCard);

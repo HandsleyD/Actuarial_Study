@@ -14,6 +14,52 @@ async function download(page, button) {
 
 const uids = (text) => [...text.matchAll(/^UID:([^@\r]+)@/gm)].map((m) => m[1]);
 
+test("the Exam Hub refreshes after a delayed plan load and subsequent plan changes", async ({ page }) => {
+  // Hold the initial plan request until the Hub has rendered its fallback.
+  await page.route("**/app.js?*", async (route) => {
+    const response = await route.fetch();
+    await route.fulfill({ response, body: `
+      window.__releasePlan = null;
+      Store.loadExamPlan = () => new Promise(resolve => { window.__releasePlan = resolve; });
+      const registerPlanChange = Store.onPlanChange;
+      Store.onPlanChange = callback => {
+        window.__notifyPlanChange = callback;
+        registerPlanChange(callback);
+      };
+      ${await response.text()}
+    ` });
+  });
+  await seed(page, { welcomed: true });
+  await open(page, "exams/CM1", "#hubSubject");
+  await expect(page.locator("#hubIcs")).toHaveText(/Add CM1 to calendar/);
+  await page.waitForFunction(() => typeof window.__releasePlan === "function");
+  await page.evaluate(p => window.__releasePlan(p), plan({ "2027-04": ["CS1"] }));
+  await expect(page.locator("#hubIcs")).toHaveText(/Add your exam plan to calendar/);
+  const loaded = await download(page, page.locator("#hubIcs"));
+  expect(loaded.name).toBe("ifoa-exam-plan.ics");
+  expect(uids(loaded.text)).toContain("2027-04-CS1-paper-cs1a");
+  expect(uids(loaded.text).some(u => u.includes("CM1"))).toBe(false);
+
+  // Exercise the Store notification path without navigating away.
+  await page.evaluate(() => {
+    Store.setExamPlan({ "2027-04": ["CP1"] });
+    window.__notifyPlanChange();
+  });
+  const changed = await download(page, page.locator("#hubIcs"));
+  expect(uids(changed.text)).toContain("2027-04-CP1-paper-cp1-paper-1");
+  expect(uids(changed.text).some(u => u.includes("CS1"))).toBe(false);
+  await expect(page.locator("#hubSubject")).toHaveValue("CM1");
+
+  await page.evaluate(() => {
+    Store.setExamPlan({});
+    window.__notifyPlanChange();
+  });
+  await expect(page.locator("#hubIcs")).toHaveText(/Add CM1 to calendar/);
+  const cleared = await download(page, page.locator("#hubIcs"));
+  expect(cleared.name).toBe("ifoa-cm1-2027-04.ics");
+  expect(uids(cleared.text)).toContain("2027-04-CM1-paper-cm1a");
+});
+
 test("the exam plan downloads its papers, entry deadlines and results days", async ({ page }) => {
   await seed(page, { welcomed: true, plan: plan({ "2027-04": ["CM1", "CP1"] }) });
   await open(page, "dashboard", "#examPlan");
