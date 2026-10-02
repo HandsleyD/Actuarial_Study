@@ -3180,6 +3180,10 @@ function savePlan(sittings) {
 // Home cards ("Awaiting results") and the due list (paused subjects) depend
 // on the plan as well as on progress.
 function onPlanShapeChanged() {
+  // The Hub's calendar button captures the plan when it renders. Refresh
+  // it after the account plan loads or sync replaces the cached plan.
+  const route = parseHash();
+  if (route.view === "exams") renderExamHub(route.exam);
   renderHomePrompts();
   renderRouteMap();
   EXAMS.forEach(updateHomeCard);
@@ -3358,6 +3362,38 @@ function sittingWarnings(info, codes) {
   return out;
 }
 
+// "Add to calendar" (ics.js): papers, entry deadlines and results days for
+// the given sittings as an .ics download, built in the browser.
+function calendarEvents(sittings) {
+  const names = {};
+  Object.keys(SUBJECTS).forEach((c) => (names[c] = SUBJECTS[c].name));
+  return Ics.examEvents({
+    calendar: CAL,
+    sittings,
+    today: SRS.today(),
+    names,
+    source: typeof EXAM_DATES !== "undefined" ? EXAM_DATES.source : undefined,
+  });
+}
+
+function downloadCalendar(sittings, filename) {
+  const { events } = calendarEvents(sittings);
+  if (!events.length) return;
+  const text = Ics.build(events, { name: "IFoA exams", now: new Date() });
+  const url = URL.createObjectURL(new Blob([text], { type: "text/calendar;charset=utf-8" }));
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function planHasCalendarEvents() {
+  return calendarEvents(examPlan.sittings).events.length > 0;
+}
+
 function planSectionHtml() {
   const today = SRS.today();
   const sittings = planSittingList();
@@ -3503,13 +3539,19 @@ function planSectionHtml() {
   };
 
   const summary = [when(associateAt, "Associate"), when(fellowAt, "Fellow")].join("");
+  const cal = calendarEvents(examPlan.sittings);
+  const calButton = cal.events.length
+    ? `<button class="btn small" id="planIcs" title="Download an .ics file of your papers, entry deadlines and results days${
+        cal.unpublished.length ? ` (${cal.unpublished.map(sittingName).join(", ")} not published yet, so not included)` : ""
+      }">${ico("calendar")} Add to calendar</button>`
+    : "";
   const tableNote = Store.getUser() && Store.isPlanTableMissing()
     ? " Saved on this device only until supabase/migrations/004_exam_plan.sql is run."
     : "";
 
   return `
     <section class="dash-section" id="examPlan">
-      <div class="dash-section-head"><h3>Exam plan</h3></div>
+      <div class="dash-section-head"><h3>Exam plan</h3>${calButton}</div>
       <p class="dash-note">Pick which subjects you'll sit at each sitting &mdash; most students take 1&ndash;3 per sitting. Dates come from the <a href="#/exams">Exam Hub</a>; sittings not yet published are assumed to be mid-April and mid-September. Just sat exams and waiting for results? Add them to that sitting and you'll be asked how you did on results day. CB3 is booked online outside the sittings, so it isn't listed.${tableNote}</p>
       ${rows.join("")}
       <button class="btn plan-more" id="planMore">Show later sittings</button>
@@ -3532,6 +3574,8 @@ function wirePlanSection(el) {
   el.querySelectorAll(".plan-chip-remove").forEach((btn) =>
     btn.addEventListener("click", () => planRemove(btn.dataset.sitting, btn.dataset.code))
   );
+  const ics = el.querySelector("#planIcs");
+  if (ics) ics.addEventListener("click", () => downloadCalendar(examPlan.sittings, "ifoa-exam-plan.ics"));
   const more = el.querySelector("#planMore");
   if (more) {
     more.addEventListener("click", () => {
@@ -5108,6 +5152,17 @@ function renderExamHub(requested) {
 
   // --- next sitting ---
   const next = nextSitting(code);
+  // Add to calendar: the whole plan if there is one with published dates,
+  // else this subject's next sitting.
+  const usePlan = planHasCalendarEvents();
+  const hubCalSittings = usePlan ? examPlan.sittings : next ? { [CAL.idOf(next.session)]: [code] } : {};
+  const hubCalButton =
+    usePlan || (next && calendarEvents(hubCalSittings).events.length)
+      ? `<button class="btn small" id="hubIcs" title="${
+          usePlan ? "Download an .ics file of the papers, entry deadlines and results days in your exam plan" : `Download an .ics file of ${code}'s papers, entry deadlines and results day`
+        }">${ico("calendar")} ${usePlan ? "Add your exam plan to calendar" : `Add ${code} to calendar`}</button>`
+      : "";
+  const hubCalFile = usePlan ? "ifoa-exam-plan.ics" : next ? `ifoa-${code.toLowerCase()}-${CAL.idOf(next.session)}.ics` : "";
   let nextHtml;
   if (next) {
     const s = next.session;
@@ -5136,13 +5191,13 @@ function renderExamHub(requested) {
       </ul>`;
     nextHtml = `
       <section class="dash-section">
-        <div class="dash-section-head"><h3>Next sitting &mdash; ${s.name}</h3></div>
+        <div class="dash-section-head"><h3>Next sitting &mdash; ${s.name}</h3>${hubCalButton}</div>
         ${nextHtml}
       </section>`;
   } else {
     nextHtml = `
       <section class="dash-section">
-        <div class="dash-section-head"><h3>Next sitting</h3></div>
+        <div class="dash-section-head"><h3>Next sitting</h3>${hubCalButton}</div>
         <p class="muted">${
           code === "CB3"
             ? "CB3 is booked as an online assessment through the member portal, outside the April and September sessions."
@@ -5289,6 +5344,8 @@ function renderExamHub(requested) {
   `;
 
   document.getElementById("backFromHub").addEventListener("click", () => navigate("#/"));
+  const hubIcs = document.getElementById("hubIcs");
+  if (hubIcs) hubIcs.addEventListener("click", () => downloadCalendar(hubCalSittings, hubCalFile));
   document.getElementById("hubSubject").addEventListener("change", (e) => {
     history.replaceState(null, "", `#/exams/${e.target.value}`);
     renderExamHub(e.target.value);
