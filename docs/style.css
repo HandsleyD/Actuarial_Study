@@ -1267,6 +1267,134 @@ main {
   margin-top: 4px;
 }
 
+/* ---------- self-marking and mock papers ---------- */
+
+.self-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.mark-input.text-input {
+  width: 5.5em;
+  margin: 0;
+  padding: 6px 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.mark-input[aria-invalid="true"] {
+  border-color: var(--weak);
+  box-shadow: 0 0 0 3px var(--weak-bg);
+}
+
+.self-mark-of { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+.self-mark-panel { margin-top: 6px; }
+
+.self-mark-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.self-mark-total { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.self-mark-error { color: var(--weak); font-size: 0.85rem; font-weight: 600; margin: 10px 0 0; }
+
+.self-mark-history { font-size: 0.8rem; color: var(--text-muted); margin: 12px 0 0; line-height: 1.9; }
+
+.mark-chip {
+  display: inline-block;
+  padding: 1px 8px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.mark-chip small { font-weight: 400; color: var(--text-muted); }
+
+.score-summary { font-size: 0.85rem; color: var(--text-muted); margin: 8px 0 0; }
+.score-summary strong { color: var(--text); }
+
+.vs-pass { font-weight: 700; }
+.vs-pass.above { color: var(--done); }
+.vs-pass.below { color: var(--weak); }
+
+.mock-btn { margin-top: 10px; }
+
+/* Sticks just under the sticky header; app.js keeps --topbar-h current. */
+.mock-bar {
+  position: sticky;
+  top: calc(var(--topbar-h, 64px) + 8px);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.mock-bar .btn { margin-left: auto; }
+
+.mock-clock, .mock-total {
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.mock-clock.low { color: var(--weak); }
+
+.mock-question { margin-bottom: 14px; }
+
+.mock-intro p { line-height: 1.6; margin: 0 0 12px; }
+
+.mock-note { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; margin: 8px 0 0; }
+
+.mock-foot { display: flex; justify-content: flex-end; margin: 6px 0 20px; }
+
+.mock-result {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+}
+
+.mock-result.pass { border-color: var(--done); background: var(--done-bg); }
+.mock-result.fail { border-color: var(--weak); background: var(--weak-bg); }
+
+.mock-result-pct {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.mock-result-text { line-height: 1.55; font-size: 0.9rem; }
+.mock-result-text strong { display: block; }
+
+/* the dashboard's self-marked bars: the tick is the pass mark */
+.dash-bar.pass-bar { position: relative; overflow: visible; }
+.dash-bar.pass-bar .dash-bar-fill { background: var(--weak); }
+.dash-bar.pass-bar .dash-bar-fill.above { background: var(--done); }
+
+.pass-tick {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--text);
+}
+
 /* ---------- spaced repetition ---------- */
 
 .muted { color: var(--text-muted); }

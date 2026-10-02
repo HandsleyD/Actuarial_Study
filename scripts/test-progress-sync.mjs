@@ -29,6 +29,7 @@ const invoked = []; // Edge Function names called
 let deleteReply = { data: { deleted: true }, error: null }; // what delete-account answers
 const signOuts = [];
 
+
 const rowsOf = (t) => (tables[t] = tables[t] || []);
 
 function query(table) {
@@ -340,6 +341,106 @@ await test("daily activity adds this device's unsent reviews to every device's u
   fakeNow = null;
 });
 
+/* ---------- self-marked questions and mock papers ---------- */
+
+const attempt = (at, parts, max, src) => ({ at, parts, score: parts.reduce((a, n) => a + n, 0), max, src: src || "practice" });
+
+await test("self-marks: attempts from two devices are kept side by side, and a queued one survives a load", async () => {
+  tables.question_score = [
+    { user_id: "u1", exam_code: "CB2", question_id: "cb2-q1", attempted_at: "2026-09-20T09:00:00.000Z", part_marks: [2, 3], score: 5, max_marks: 12, source: "practice" },
+  ];
+  offline = true;
+  Store.saveScore("CB2", "cb2-q1", attempt(Date.parse("2026-09-25T09:00:00Z"), [4, 4.5], 12));
+  await settle();
+  await Store.loadScores();
+  const list = Store.getScoreCache("CB2")["cb2-q1"];
+  assert.deepEqual(list.map((a) => a.score), [5, 8.5], "history should hold both attempts, oldest first");
+  assert.equal(queued("score").length, 1);
+  offline = false;
+  await Store.flushPending();
+  assert.equal(rowsOf("question_score").length, 2);
+  assert.equal(queued("score").length, 0);
+});
+
+await test("self-marks: re-marking an attempt replaces it rather than adding another", async () => {
+  const at = Date.parse("2026-09-26T09:00:00Z");
+  Store.saveScore("CB2", "cb2-q2", attempt(at, [1, 1], 12));
+  Store.saveScore("CB2", "cb2-q2", attempt(at, [6, 5], 12));
+  await settle();
+  assert.equal(Store.getScoreCache("CB2")["cb2-q2"].length, 1);
+  const rows = rowsOf("question_score").filter((r) => r.question_id === "cb2-q2");
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].score, 11);
+});
+
+await test("self-marks and mocks stay queued, and say so, until migration 007 is run", async () => {
+  missingTables.add("question_score");
+  missingTables.add("mock_result");
+  Store.saveScore("CM1", "cm1-q1", attempt(Date.parse("2026-09-27T09:00:00Z"), [3], 11, "mock"));
+  Store.addMockResult("CM1", { at: Date.parse("2026-09-27T12:15:00Z"), questionIds: ["cm1-q1"], score: 3, max: 11, pct: 27.27, passMark: 60, passSitting: "2026-04", usedMs: 1000 });
+  await settle();
+  assert.equal(Store.isScoreTableMissing(), true);
+  assert.equal(queued("score").length, 1);
+  assert.equal(queued("mock").length, 1);
+  await Store.loadScores(); // a failed load leaves the local copies alone
+  assert.equal(Store.getScoreCache("CM1")["cm1-q1"].length, 1);
+  assert.equal(Store.getMockCache("CM1").length, 1);
+  missingTables.delete("question_score");
+  missingTables.delete("mock_result");
+  await Store.flushPending();
+  assert.equal(Store.isScoreTableMissing(), false);
+  assert.equal(queued("score").length + queued("mock").length, 0);
+  assert.equal(rowsOf("mock_result")[0].pass_mark, 60);
+});
+
+await test("self-marks: an attempt re-marked on another device replaces this device's older copy", async () => {
+  const at = Date.parse("2026-09-28T09:00:00Z");
+  fakeNow = Date.parse("2026-09-28T09:05:00Z");
+  Store.saveScore("CS1", "cs1-q1", attempt(at, [2], 12));
+  await settle(); // uploaded
+  // Device A re-marks the same attempt later.
+  const row = rowsOf("question_score").find((r) => r.question_id === "cs1-q1");
+  Object.assign(row, { part_marks: [9], score: 9, updated_at: "2026-09-28T10:00:00.000Z" });
+  await Store.loadScores();
+  const list = Store.getScoreCache("CS1")["cs1-q1"];
+  assert.equal(list.length, 1);
+  assert.equal(list[0].score, 9, "kept the stale copy of a re-marked attempt");
+  fakeNow = null;
+});
+
+await test("self-marks: a re-mark still queued here isn't undone by a load, and isn't overwritten by an older server copy", async () => {
+  const at = Date.parse("2026-09-28T09:00:00Z");
+  offline = true;
+  fakeNow = Date.parse("2026-09-28T11:00:00Z");
+  Store.saveScore("CS1", "cs1-q1", attempt(at, [11], 12)); // newer than the server's 10:00 copy
+  await settle();
+  await Store.loadScores();
+  assert.equal(Store.getScoreCache("CS1")["cs1-q1"][0].score, 11, "load undid a queued re-mark");
+  offline = false;
+  await Store.flushPending();
+  assert.equal(rowsOf("question_score").find((r) => r.question_id === "cs1-q1").score, 11);
+  // A stale queued copy loses to a newer one from another device.
+  offline = true;
+  fakeNow = Date.parse("2026-09-28T12:00:00Z");
+  Store.saveScore("CS1", "cs1-q1", attempt(at, [3], 12));
+  await settle();
+  Object.assign(rowsOf("question_score").find((r) => r.question_id === "cs1-q1"), { score: 7, part_marks: [7], updated_at: "2026-09-28T13:00:00.000Z" });
+  offline = false;
+  await Store.flushPending();
+  assert.equal(rowsOf("question_score").find((r) => r.question_id === "cs1-q1").score, 7, "stale queued re-mark overwrote a newer one");
+  assert.equal(Store.getScoreCache("CS1")["cs1-q1"][0].score, 7, "newer server copy not adopted");
+  assert.equal(queued("score").length, 0);
+  fakeNow = null;
+});
+
+await test("mock results from another device are merged in", async () => {
+  rowsOf("mock_result").push({ user_id: "u1", exam_code: "CM1", taken_at: "2026-09-10T12:00:00.000Z", question_ids: ["cm1-q2"], score: 70, max_marks: 100, pct: 70, pass_mark: 60, pass_sitting: "2026-04", used_ms: 5 });
+  await Store.loadMocks();
+  const mocks = Store.getMockCache("CM1");
+  assert.equal(mocks.length, 2);
+  assert.equal(mocks[0].pct, 70, "mocks should be oldest first");
+});
+
 /* ---------- export / import ---------- */
 
 // Objects made inside the vm context have that context's prototypes, which
@@ -355,10 +456,12 @@ await test("export then import onto an empty device restores everything", async 
   const file = plain(Store.exportData());
   assert.equal(file.app, "fellow");
   assert.equal(file.format, 1);
-  for (const kind of ["status", "mastery", "srs", "drill", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
+  for (const kind of ["status", "mastery", "srs", "drill", "score", "mock", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
     assert.ok(file.data[kind] !== null && file.data[kind] !== undefined, `export is missing ${kind}`);
   }
   assert.equal(file.data.status.CS1.m01, "Done");
+  assert.equal(file.data.score.CB2["cb2-q1"].length, 2, "export should keep every self-mark attempt");
+  assert.equal(file.data.mock.CM1.length, 2);
   assert.equal(file.data.srs.CM1.m01[4].last, "2026-09-27");
 
   userKeys("u1").forEach((k) => delete mem[k]); // a new device, same account
@@ -479,5 +582,59 @@ await test("deleting the account clears that user's local data and signs out", a
   assert.equal(signOuts.length, 1);
   assert.equal(signOuts[0].scope, "local");
 });
+
+// Isolated stores let us switch accounts without disturbing the shared fixture.
+for (const [loader, table, kind, row] of [
+  ["loadScores", "question_score", "score", { exam_code: "CB2", question_id: "private-q", attempted_at: "2026-09-30T12:00:00Z", part_marks: [7], score: 7, max_marks: 10, source: "practice" }],
+  ["loadMocks", "mock_result", "mock", { exam_code: "CB2", taken_at: "2026-09-30T12:00:00Z", question_ids: ["private-q"], score: 7, max_marks: 10, pct: 70 }],
+]) {
+  for (const nextUser of [null, { id: "u2" }]) {
+    for (const fails of [false, true]) {
+      await test(`${loader} discards a late ${fails ? "error" : "response"} after ${nextUser ? "an account switch" : "sign-out"}`, async () => {
+        const storage = {};
+        const listeners = [];
+        const filters = [];
+        let resolveFetch;
+        const response = new Promise((resolve) => { resolveFetch = resolve; });
+        response.eq = (col, value) => (filters.push([col, value]), response);
+        const isolated = {
+          ...ctx,
+          localStorage: {
+            getItem: (k) => storage[k] ?? null,
+            setItem: (k, v) => { storage[k] = String(v); },
+            removeItem: (k) => { delete storage[k]; },
+            get length() { return Object.keys(storage).length; },
+            key: (i) => Object.keys(storage)[i],
+          },
+          supabase: {
+            createClient: () => ({
+              auth: {
+                getSession: async () => ({ data: { session: { user: { id: "u1" } } } }),
+                onAuthStateChange: (cb) => listeners.push(cb),
+              },
+              from: (name) => {
+                assert.equal(name, table);
+                return { select: () => response };
+              },
+            }),
+          },
+        };
+        vm.createContext(isolated);
+        vm.runInContext(`${readFileSync(new URL("../docs/store.js", import.meta.url), "utf8")};this.Store = Store;`, isolated);
+        const store = isolated.Store;
+        await store.init();
+        const loading = store[loader]();
+        listeners.forEach((cb) => cb(nextUser ? "SIGNED_IN" : "SIGNED_OUT", nextUser ? { user: nextUser } : null));
+        const before = { ...storage };
+        resolveFetch(fails ? { data: null, error: MISSING(table) } : { data: [row], error: null });
+        await loading;
+        assert.deepEqual(storage, before, "a stale response changed local storage");
+        assert.equal(storage[`actuarialStudy:${kind}:${nextUser ? "u2" : "anon"}:CB2`], undefined);
+        assert.equal(store.isScoreTableMissing(), false, "a stale error changed the current account's sync status");
+        assert.deepEqual(filters, [["user_id", "u1"]], "fetch must be scoped to its initiating account");
+      });
+    }
+  }
+}
 
 console.log(`${passed} progress sync test(s) passed.`);
