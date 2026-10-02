@@ -884,12 +884,23 @@ const Store = (function () {
   }
 
   // One request per table for every subject: the dashboard shows them all.
+  function scoreFromRow(row) {
+    return {
+      at: Date.parse(row.attempted_at),
+      parts: (row.part_marks || []).map(Number),
+      score: Number(row.score),
+      max: row.max_marks,
+      src: row.source,
+      updatedAt: Date.parse(row.updated_at) || 0,
+    };
+  }
+
   async function loadScores() {
     if (!client || !currentUser) return;
     try {
       const { data, error } = await client
         .from(SCORE_TABLE)
-        .select("exam_code, question_id, attempted_at, part_marks, score, max_marks, source");
+        .select("exam_code, question_id, attempted_at, part_marks, score, max_marks, source, updated_at");
       if (error) {
         scoreTableMissing = looksLikeMissingTable(error, SCORE_TABLE);
         throw error;
@@ -898,14 +909,17 @@ const Store = (function () {
       const byExam = {};
       (data || []).forEach((row) => (byExam[row.exam_code] = byExam[row.exam_code] || []).push(row));
       Object.keys(byExam).forEach((examCode) => {
-        // Re-read after the fetch: an attempt this device already has (perhaps
-        // re-marked since) keeps its own copy.
+        // Re-read after the fetch. An attempt re-marked on another device
+        // replaces this device's copy if the server's is newer, unless this
+        // device's own re-mark is still waiting to upload.
         const cache = getScoreCache(examCode);
+        const pending = pendingKeys("score", examCode, (op) => `${op.questionId}|${op.value.at}`);
         byExam[examCode].forEach((row) => {
-          const at = Date.parse(row.attempted_at);
+          const remote = scoreFromRow(row);
           const list = cache[row.question_id] || (cache[row.question_id] = []);
-          if (list.some((a) => a.at === at)) return;
-          list.push({ at, parts: (row.part_marks || []).map(Number), score: Number(row.score), max: row.max_marks, src: row.source });
+          const i = list.findIndex((a) => a.at === remote.at);
+          if (i < 0) list.push(remote);
+          else if (!pending.has(`${row.question_id}|${remote.at}`) && remote.updatedAt > (list[i].updatedAt || 0)) list[i] = remote;
           list.sort((a, b) => a.at - b.at);
         });
         writeLS(lsKey("score", examCode), cache);
@@ -954,6 +968,7 @@ const Store = (function () {
   // Adds an attempt, or replaces the one with the same timestamp (the user
   // changed a mark before moving on).
   function saveScore(examCode, questionId, attempt) {
+    attempt = { ...attempt, updatedAt: Date.now() }; // which copy of a re-marked attempt is newest
     const cache = getScoreCache(examCode);
     const list = (cache[questionId] || []).filter((a) => a.at !== attempt.at);
     list.push(attempt);
@@ -1171,6 +1186,32 @@ const Store = (function () {
         const latest = new Map();
         scoreOps.forEach((op) => latest.set(`${op.examCode}|${op.questionId}|${op.value.at}`, op));
         const now = new Date().toISOString();
+        try {
+          // Newer-wins on upload too: an attempt re-marked since on another
+          // device keeps the server's copy, which this device adopts.
+          const codes = [...new Set([...latest.values()].map((op) => op.examCode))];
+          const { data, error } = await client
+            .from(SCORE_TABLE)
+            .select("exam_code, question_id, attempted_at, part_marks, score, max_marks, source, updated_at")
+            .in("exam_code", codes);
+          if (error) throw error;
+          (data || []).forEach((row) => {
+            const remote = scoreFromRow(row);
+            const key = `${row.exam_code}|${row.question_id}|${remote.at}`;
+            const op = latest.get(key);
+            if (!op || remote.updatedAt <= (op.value.updatedAt || 0)) return;
+            latest.delete(key);
+            const cache = getScoreCache(row.exam_code);
+            const list = cache[row.question_id] || [];
+            const i = list.findIndex((a) => a.at === remote.at);
+            if (i >= 0 && (list[i].updatedAt || 0) < remote.updatedAt) {
+              list[i] = remote;
+              writeLS(lsKey("score", row.exam_code), cache);
+            }
+          });
+        } catch {
+          // Offline or table missing: the upsert below fails the same way.
+        }
         const rows = [...latest.values()].map((op) => ({
           user_id: currentUser.id,
           exam_code: op.examCode,
@@ -1180,7 +1221,7 @@ const Store = (function () {
           score: op.value.score,
           max_marks: op.value.max,
           source: op.value.src,
-          updated_at: now,
+          updated_at: op.value.updatedAt ? new Date(op.value.updatedAt).toISOString() : now,
         }));
         try {
           const { error } = await client.from(SCORE_TABLE).upsert(rows, { onConflict: "user_id,exam_code,question_id,attempted_at" });

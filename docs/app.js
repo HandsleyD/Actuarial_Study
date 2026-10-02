@@ -602,10 +602,17 @@ function questionScoresSectionHtml() {
     </section>`;
 }
 
+// Runs after sign-in state is known (and again on every auth change): a page
+// opened straight onto a mock or the question bank was first drawn from the
+// signed-out cache, and a signed-in user's paper in progress lives under their
+// account. The question bank is left alone once its answers are showing, so
+// marks being typed aren't wiped.
 function onScoresLoaded() {
   const r = parseHash();
   if (r.view === "subject") renderSubjectView(r.exam);
   if (r.view === "dashboard") renderDashboardView();
+  if (r.view === "mock") renderMockView(r.exam);
+  if (r.view === "questions" && !qbankState.revealed) renderQuestionsView(r.exam);
 }
 
 function refreshScores() {

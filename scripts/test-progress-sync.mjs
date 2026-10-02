@@ -308,6 +308,46 @@ await test("self-marks and mocks stay queued, and say so, until migration 006 is
   assert.equal(rowsOf("mock_result")[0].pass_mark, 60);
 });
 
+await test("self-marks: an attempt re-marked on another device replaces this device's older copy", async () => {
+  const at = Date.parse("2026-09-28T09:00:00Z");
+  fakeNow = Date.parse("2026-09-28T09:05:00Z");
+  Store.saveScore("CS1", "cs1-q1", attempt(at, [2], 12));
+  await settle(); // uploaded
+  // Device A re-marks the same attempt later.
+  const row = rowsOf("question_score").find((r) => r.question_id === "cs1-q1");
+  Object.assign(row, { part_marks: [9], score: 9, updated_at: "2026-09-28T10:00:00.000Z" });
+  await Store.loadScores();
+  const list = Store.getScoreCache("CS1")["cs1-q1"];
+  assert.equal(list.length, 1);
+  assert.equal(list[0].score, 9, "kept the stale copy of a re-marked attempt");
+  fakeNow = null;
+});
+
+await test("self-marks: a re-mark still queued here isn't undone by a load, and isn't overwritten by an older server copy", async () => {
+  const at = Date.parse("2026-09-28T09:00:00Z");
+  offline = true;
+  fakeNow = Date.parse("2026-09-28T11:00:00Z");
+  Store.saveScore("CS1", "cs1-q1", attempt(at, [11], 12)); // newer than the server's 10:00 copy
+  await settle();
+  await Store.loadScores();
+  assert.equal(Store.getScoreCache("CS1")["cs1-q1"][0].score, 11, "load undid a queued re-mark");
+  offline = false;
+  await Store.flushPending();
+  assert.equal(rowsOf("question_score").find((r) => r.question_id === "cs1-q1").score, 11);
+  // A stale queued copy loses to a newer one from another device.
+  offline = true;
+  fakeNow = Date.parse("2026-09-28T12:00:00Z");
+  Store.saveScore("CS1", "cs1-q1", attempt(at, [3], 12));
+  await settle();
+  Object.assign(rowsOf("question_score").find((r) => r.question_id === "cs1-q1"), { score: 7, part_marks: [7], updated_at: "2026-09-28T13:00:00.000Z" });
+  offline = false;
+  await Store.flushPending();
+  assert.equal(rowsOf("question_score").find((r) => r.question_id === "cs1-q1").score, 7, "stale queued re-mark overwrote a newer one");
+  assert.equal(Store.getScoreCache("CS1")["cs1-q1"][0].score, 7, "newer server copy not adopted");
+  assert.equal(queued("score").length, 0);
+  fakeNow = null;
+});
+
 await test("mock results from another device are merged in", async () => {
   rowsOf("mock_result").push({ user_id: "u1", exam_code: "CM1", taken_at: "2026-09-10T12:00:00.000Z", question_ids: ["cm1-q2"], score: 70, max_marks: 100, pct: 70, pass_mark: 60, pass_sitting: "2026-04", used_ms: 5 });
   await Store.loadMocks();

@@ -4,7 +4,8 @@
 //
 // A self-mark attempt is { at, parts: [marks per part], score, max, src },
 // where at is ms since epoch (also the attempt's identity), score is the sum
-// of parts, max the question's marks, and src "practice" or "mock".
+// of parts, max the question's marks, and src "practice" or "mock". Store adds
+// updatedAt when it's saved, so a re-marked attempt syncs newest-wins.
 
 const Mock = (function () {
   // A real IFoA paper: 100 marks in 3 hours 15 minutes (reading time included).
