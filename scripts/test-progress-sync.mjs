@@ -456,10 +456,12 @@ await test("export then import onto an empty device restores everything", async 
   const file = plain(Store.exportData());
   assert.equal(file.app, "fellow");
   assert.equal(file.format, 1);
-  for (const kind of ["status", "mastery", "srs", "drill", "score", "mock", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
+  for (const kind of ["status", "mastery", "srs", "drill", "note", "score", "mock", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
     assert.ok(file.data[kind] !== null && file.data[kind] !== undefined, `export is missing ${kind}`);
   }
   assert.equal(file.data.status.CS1.m01, "Done");
+  assert.equal(file.data.note.CB2.m03[4].note, "elasticity <1 means inelastic", "export should keep flashcard notes");
+  assert.equal(file.data.note.CB2.m03[4].flagged, true, "export should keep flags");
   assert.equal(file.data.score.CB2["cb2-q1"].length, 2, "export should keep every self-mark attempt");
   assert.equal(file.data.mock.CM1.length, 2);
   assert.equal(file.data.srs.CM1.m01[4].last, "2026-09-27");
@@ -477,7 +479,9 @@ await test("import keeps whichever copy of each entry is newer", async () => {
   Store.setMastery("CM1", "m01", 4, true); // its schedule says 2026-09-27
   Store.setMastery("CM1", "m01", 6, false);
   Store.setSrs("CM1", "m01", 6, sched("2026-09-01", 1));
+  Store.setCardNote("CM1", "m03", 0, { note: "local, newer" });
   await settle();
+  const noteAt = Store.getNotesCache("CM1").m03[0].updatedAt;
   const file = {
     app: "fellow",
     format: 1,
@@ -489,6 +493,15 @@ await test("import keeps whichever copy of each entry is newer", async () => {
         CM1: {
           "cm1-m01-d01": { ...sched("2026-09-21", 1), attempts: 1, correct: 0 },
           "cm1-m01-d02": { ...sched("2026-09-28", 1), attempts: 1, correct: 1 },
+        },
+      },
+      note: {
+        CM1: {
+          m03: {
+            0: { note: "file, older", flagged: true, updatedAt: noteAt - 1000 },
+            1: { note: "from the file", flagged: true, updatedAt: noteAt },
+            2: { note: 42, flagged: true, updatedAt: noteAt }, // malformed: skipped
+          },
         },
       },
       result: {
@@ -522,6 +535,12 @@ await test("import keeps whichever copy of each entry is newer", async () => {
   assert.equal(drills["cm1-m01-d01"].correct, 2, "an older drill result replaced a newer one");
   assert.equal(drills["cm1-m01-d02"].correct, 1);
 
+  const notes = Store.getNotesCache("CM1").m03;
+  assert.equal(notes[0].note, "local, newer", "an older note from the file replaced a newer local one");
+  assert.equal(notes[1].note, "from the file", "a note missing locally wasn't taken");
+  assert.equal(notes[1].flagged, true);
+  assert.equal(notes[2], undefined, "a malformed note was taken");
+
   const results = Store.getResultsCache();
   assert.equal(results.CB1.status, "passed", "an older result replaced a newer one");
   assert.equal(results.CM1.status, "passed");
@@ -533,13 +552,14 @@ await test("import keeps whichever copy of each entry is newer", async () => {
   assert.equal(Store.getPaceLog().length, 2, "pace entries should be merged without duplicates");
   assert.equal(Store.getPaceLog()[0].qid, "q9", "pace log should stay in date order");
   assert.ok(!Object.keys(mem).some((k) => k.includes("evil")));
-  // status m02 + m04, mastery 6, srs 5 + 6, drill d02, result CM1, streak, activity 09-15, pace q9
-  assert.equal(adopted, 10);
+  // status m02 + m04, mastery 6, srs 5 + 6, drill d02, note m03/1, result CM1, streak, activity 09-15, pace q9
+  assert.equal(adopted, 11);
 
   await settle(); // what was adopted uploads like any other change
   assert.ok(rowsOf("flashcard_srs").some((r) => r.card_idx === 5 && r.last_reviewed === "2026-09-28"));
   assert.ok(rowsOf("drill_progress").some((r) => r.item_id === "cm1-m01-d02"));
   assert.ok(rowsOf("module_status").some((r) => r.module_id === "m04" && r.status === "In progress"));
+  assert.ok(rowsOf("card_note").some((r) => r.exam_code === "CM1" && r.module_id === "m03" && r.card_idx === 1 && r.note === "from the file"));
 });
 
 await test("import rejects a file that isn't a progress download", async () => {

@@ -1215,7 +1215,7 @@ const Store = (function () {
 
   const EXPORT_APP = "fellow";
   const EXPORT_FORMAT = 1;
-  const PER_EXAM_KINDS = ["status", "mastery", "srs", "drill", "score", "mock"];
+  const PER_EXAM_KINDS = ["status", "mastery", "srs", "drill", "note", "score", "mock"];
   // Statuses only move forward in practice: studying starts a module, and a
   // Done module stays Done.
   const STATUS_ORDER = ["Not started", "In progress", "Done"];
@@ -1327,6 +1327,27 @@ const Store = (function () {
         adopted++;
       });
       writeLS(lsKey("drill", code), cache);
+    });
+
+    // Notes and flags: the later edit wins, as on load. A cleared note or
+    // flag counts as an edit, so it can win over an older note too.
+    const isNote = (n) => isObj(n) && typeof n.note === "string" && n.note.length <= NOTE_MAX && typeof n.flagged === "boolean";
+    examCodesIn(d.note).forEach((code) => {
+      const cache = getNotesCache(code);
+      Object.entries(d.note[code]).forEach(([moduleId, cards]) => {
+        if (!isObj(cards)) return;
+        Object.entries(cards).forEach(([idx, value]) => {
+          if (!isNote(value) || !/^\d+$/.test(idx)) return;
+          const local = cache[moduleId] ? cache[moduleId][idx] : null;
+          if (local && (value.updatedAt || 0) <= (local.updatedAt || 0)) return;
+          const entry = { note: value.note, flagged: value.flagged, updatedAt: value.updatedAt || 0 };
+          if (!cache[moduleId]) cache[moduleId] = {};
+          cache[moduleId][idx] = entry;
+          enqueue({ type: "note", examCode: code, moduleId, cardIdx: Number(idx), value: entry });
+          adopted++;
+        });
+      });
+      writeLS(lsKey("note", code), cache);
     });
 
     // Self-marks: attempts the device doesn't have are added, and a
