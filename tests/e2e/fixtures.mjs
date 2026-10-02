@@ -24,17 +24,51 @@ const katexDist = path.join(repo, "node_modules/katex/dist");
 // sitting is September 2026 and the next sitting is April 2027.
 export const NOW = new Date("2026-09-27T10:00:00+01:00");
 
-const SUPABASE_STUB = `window.supabase = { createClient: () => ({
-  auth: {
-    getSession: async () => ({ data: { session: null } }),
-    onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }),
-    signInWithPassword: async () => ({ data: {}, error: { message: "Sign-in is not available in tests." } }),
-    signUp: async () => ({ data: {}, error: { message: "Sign-up is not available in tests." } }),
-    signOut: async () => ({ error: null }),
-  },
-  from: () => ({ select: () => ({ eq: async () => ({ data: [], error: null }) }), upsert: async () => ({ error: null }) }),
-  functions: { invoke: async () => ({ error: { message: "offline" } }) },
-}) };`;
+// Signed out, unless a test calls signedIn(page): then getSession() returns
+// that user, and with { recovery: true } the page behaves as if it was
+// opened from a password-reset link. Every table reads back empty.
+const SUPABASE_STUB = `(function () {
+  const auth = () => window.__e2eAuth || null;
+  const listeners = [];
+  const query = () => {
+    const q = {
+      then: (res, rej) => Promise.resolve({ data: [], error: null }).then(res, rej),
+      maybeSingle: async () => ({ data: null, error: null }),
+    };
+    ["select", "eq", "in", "gte", "order", "limit"].forEach((m) => (q[m] = () => q));
+    return q;
+  };
+  window.supabase = { createClient: () => ({
+    auth: {
+      getSession: async () => ({ data: { session: auth() ? { user: auth().user } : null } }),
+      onAuthStateChange: (cb) => {
+        listeners.push(cb);
+        if (auth() && auth().recovery) setTimeout(() => cb("PASSWORD_RECOVERY", { user: auth().user }), 0);
+        return { data: { subscription: { unsubscribe() {} } } };
+      },
+      signInWithPassword: async () => ({ data: {}, error: { message: "Sign-in is not available in tests." } }),
+      signUp: async () => ({ data: {}, error: { message: "Sign-up is not available in tests." } }),
+      signOut: async () => {
+        window.__e2eAuth = null;
+        listeners.forEach((cb) => cb("SIGNED_OUT", null));
+        return { error: null };
+      },
+      resetPasswordForEmail: async () => ({ data: {}, error: null }),
+      updateUser: async () => ({ data: {}, error: null }),
+    },
+    from: () => ({ select: query, upsert: async () => ({ error: null }) }),
+    functions: {
+      invoke: async (name) =>
+        name === "delete-account" ? { data: { deleted: true }, error: null } : { error: { message: "offline" } },
+    },
+  }) };
+})();`;
+
+export const E2E_USER = { id: "e2e-user", email: "student@example.com" };
+
+export async function signedIn(page, { recovery = false } = {}) {
+  await page.addInitScript((a) => (window.__e2eAuth = a), { user: E2E_USER, recovery });
+}
 
 const CONTENT_TYPES = { ".js": "application/javascript", ".css": "text/css", ".woff2": "font/woff2", ".woff": "font/woff", ".ttf": "font/ttf" };
 

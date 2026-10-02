@@ -60,6 +60,12 @@ const Store = (function () {
   }
   const authListeners = [];
   const syncListeners = [];
+  const recoveryListeners = [];
+  // True from arriving via a password-reset email until a new password is set.
+  let passwordRecovery = false;
+  // Accounts deleted this page load: their queued changes are dropped, even
+  // ones a flush that was in flight at the time puts back (see flushPending).
+  const deletedUsers = new Set();
 
   function isConfigured() {
     return typeof SUPABASE_URL === "string" && SUPABASE_URL.length > 0 &&
@@ -151,6 +157,15 @@ const Store = (function () {
       return readyPromise;
     }
     client = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+    // Arriving from a password-reset email: supabase-js reads the link's
+    // token from the URL while it starts up and reports PASSWORD_RECOVERY.
+    // Listen before getSession(), which waits for that start-up, or the
+    // event has already gone by.
+    client.auth.onAuthStateChange((event) => {
+      if (event !== "PASSWORD_RECOVERY") return;
+      passwordRecovery = true;
+      notifyListeners(recoveryListeners);
+    });
     readyPromise = client.auth
       .getSession()
       .then(({ data }) => {
@@ -195,6 +210,73 @@ const Store = (function () {
   async function signOut() {
     if (!client) return;
     await client.auth.signOut();
+  }
+
+  // Emails a link back to this page (without its #/route) that signs the
+  // user in for long enough to choose a new password. The page's address
+  // must be in the project's Redirect URLs list: see supabase/SETUP.md.
+  async function requestPasswordReset(email) {
+    if (!client) throw new Error("Cloud sync isn't set up on this site yet.");
+    const { error } = await client.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
+    if (error) throw error;
+  }
+
+  async function updatePassword(password) {
+    if (!client || !currentUser) throw new Error("Open the link in your password-reset email again, then choose a new password.");
+    const { error } = await client.auth.updateUser({ password });
+    if (error) throw error;
+    passwordRecovery = false;
+  }
+
+  function isPasswordRecovery() {
+    return passwordRecovery;
+  }
+
+  function onPasswordRecovery(cb) {
+    recoveryListeners.push(cb);
+  }
+
+  // Deletes the signed-in account and every row it owns, via the
+  // delete-account Edge Function (the browser's key can't delete users),
+  // then forgets this device's copy of that account's progress. Progress
+  // kept on this device without an account (the "anon" namespace) stays.
+  async function deleteAccount() {
+    if (!client) throw new Error("Cloud sync isn't set up on this site yet.");
+    if (!currentUser) throw new Error("Sign in to delete your account.");
+    const uid = currentUser.id;
+    const { data, error } = await client.functions.invoke("delete-account", { method: "POST" });
+    if (error || !data || !data.deleted) {
+      let detail = data && data.error;
+      try {
+        // A non-2xx reply arrives as an error whose context is the Response.
+        if (!detail && error && error.context && error.context.json) detail = (await error.context.json()).error;
+      } catch {
+        /* no JSON body */
+      }
+      throw new Error(detail || "Couldn't reach the server to delete your account. Try again later.");
+    }
+    clearLocalData(uid);
+    // The account no longer exists, so there's no server session to end:
+    // just forget this one. That fires the usual signed-out auth change.
+    try {
+      await client.auth.signOut({ scope: "local" });
+    } catch {
+      /* already gone */
+    }
+  }
+
+  function clearLocalData(uid) {
+    deletedUsers.add(uid);
+    allKeys().forEach((key) => {
+      if (key.startsWith(`${LS_PREFIX}:`) && (key.endsWith(`:${uid}`) || key.includes(`:${uid}:`))) {
+        try {
+          localStorage.removeItem(key);
+        } catch {
+          /* localStorage unavailable */
+        }
+      }
+    });
+    writePending(readPending().filter((op) => op.userId !== uid));
   }
 
   // Progress made before signing in (stored under the "anon" cache namespace)
@@ -958,6 +1040,201 @@ const Store = (function () {
     return data;
   }
 
+  /* ---------- export / import ---------- */
+  //
+  // Everything above, for the current user (or the signed-out "anon"
+  // namespace), as one JSON document the user can keep as a backup or carry
+  // to another device without an account. Importing merges entry by entry,
+  // keeping whichever copy is newer by the same rules a load from the server
+  // uses, and queues what it adopts for upload like any other change.
+
+  const EXPORT_APP = "fellow";
+  const EXPORT_FORMAT = 1;
+  const PER_EXAM_KINDS = ["status", "mastery", "srs", "drill"];
+  // Statuses only move forward in practice: studying starts a module, and a
+  // Done module stays Done.
+  const STATUS_ORDER = ["Not started", "In progress", "Done"];
+
+  function exportData() {
+    checkStaleSession(); // so a session that has finished counts as the last one
+    const uKey = userKey();
+    const data = {};
+    PER_EXAM_KINDS.forEach((kind) => {
+      const prefix = `${LS_PREFIX}:${kind}:${uKey}:`;
+      data[kind] = {};
+      allKeys()
+        .filter((key) => key.startsWith(prefix))
+        .forEach((key) => {
+          const value = readLS(key, null);
+          if (value && Object.keys(value).length) data[kind][key.slice(prefix.length)] = value;
+        });
+    });
+    data.result = getResultsCache();
+    data.plan = readLS(lsKey("plan"), null);
+    data.streak = readLS(lsKey("streak"), null);
+    data.activity = getActivityCache();
+    data.lastSession = getLastSessionCache();
+    data.pace = getPaceLog();
+    return { app: EXPORT_APP, format: EXPORT_FORMAT, exportedAt: new Date().toISOString(), data };
+  }
+
+  const isObj = (v) => !!v && typeof v === "object" && !Array.isArray(v);
+  const PLAIN_CODE = /^[A-Za-z0-9_-]+$/; // exam codes from a file become part of a storage key
+  const examCodesIn = (m) => (isObj(m) ? Object.keys(m).filter((c) => PLAIN_CODE.test(c) && isObj(m[c])) : []);
+
+  // Merges an exportData() document into this device's progress and returns
+  // how many entries it took from the file. Throws if it isn't one.
+  function importData(file) {
+    if (!isObj(file) || file.app !== EXPORT_APP || !isObj(file.data)) {
+      throw new Error("That file isn't a Fellow progress download.");
+    }
+    if (!(file.format <= EXPORT_FORMAT)) {
+      throw new Error("That file was saved by a newer version of this site. Reload the page and try again.");
+    }
+    const d = file.data;
+    let adopted = 0;
+
+    // Module status has no timestamp, so the further-along status wins.
+    examCodesIn(d.status).forEach((code) => {
+      const cache = getModuleStatusCache(code);
+      Object.entries(d.status[code]).forEach(([moduleId, value]) => {
+        const rank = STATUS_ORDER.indexOf(value);
+        if (rank < 0 || (moduleId in cache && rank <= STATUS_ORDER.indexOf(cache[moduleId]))) return;
+        cache[moduleId] = value;
+        enqueue({ type: "status", examCode: code, moduleId, value });
+        adopted++;
+      });
+      writeLS(lsKey("status", code), cache);
+    });
+
+    // A mastery mark is set by the same review that updates the card's
+    // schedule, so it's as new as that schedule: take the file's mark where
+    // this device has none, or where the file reviewed the card later. This
+    // runs before the schedules themselves merge, below.
+    examCodesIn(d.mastery).forEach((code) => {
+      const cache = getMasteryCache(code);
+      const localSrs = getSrsCache(code);
+      const fileSrs = isObj(d.srs) && isObj(d.srs[code]) ? d.srs[code] : {};
+      Object.entries(d.mastery[code]).forEach(([moduleId, cards]) => {
+        if (!isObj(cards)) return;
+        Object.entries(cards).forEach(([idx, value]) => {
+          if (typeof value !== "boolean" || !/^\d+$/.test(idx)) return;
+          const local = cache[moduleId] ? cache[moduleId][idx] : undefined;
+          if (local === value) return;
+          if (local !== undefined) {
+            const theirs = isObj(fileSrs[moduleId]) ? fileSrs[moduleId][idx] : null;
+            const ours = localSrs[moduleId] ? localSrs[moduleId][idx] : null;
+            if (!isObj(theirs) || (ours && !isStrictlyNewer(theirs, ours))) return;
+          }
+          if (!cache[moduleId]) cache[moduleId] = {};
+          cache[moduleId][idx] = value;
+          enqueue({ type: "mastery", examCode: code, moduleId, cardIdx: Number(idx), value });
+          adopted++;
+        });
+      });
+      writeLS(lsKey("mastery", code), cache);
+    });
+
+    // Schedules and drills: the later review wins, as on load and upload.
+    examCodesIn(d.srs).forEach((code) => {
+      const cache = getSrsCache(code);
+      Object.entries(d.srs[code]).forEach(([moduleId, cards]) => {
+        if (!isObj(cards)) return;
+        Object.entries(cards).forEach(([idx, value]) => {
+          if (!isObj(value) || !/^\d+$/.test(idx)) return;
+          const local = cache[moduleId] ? cache[moduleId][idx] : null;
+          if (local && !isStrictlyNewer(value, local)) return;
+          if (!cache[moduleId]) cache[moduleId] = {};
+          cache[moduleId][idx] = value;
+          enqueue({ type: "srs", examCode: code, moduleId, cardIdx: Number(idx), value });
+          adopted++;
+        });
+      });
+      writeLS(lsKey("srs", code), cache);
+    });
+
+    examCodesIn(d.drill).forEach((code) => {
+      const cache = getDrillCache(code);
+      Object.entries(d.drill[code]).forEach(([itemId, value]) => {
+        if (!isObj(value) || (cache[itemId] && !isStrictlyNewer(value, cache[itemId]))) return;
+        cache[itemId] = value;
+        enqueue({ type: "drill", examCode: code, itemId, value });
+        adopted++;
+      });
+      writeLS(lsKey("drill", code), cache);
+    });
+
+    // Results and the plan: last write wins on updatedAt.
+    if (isObj(d.result)) {
+      const cache = getResultsCache();
+      Object.entries(d.result).forEach(([code, value]) => {
+        if (!PLAIN_CODE.test(code) || !isObj(value)) return;
+        if (cache[code] && (value.updatedAt || 0) <= (cache[code].updatedAt || 0)) return;
+        cache[code] = value;
+        enqueue({ type: "result", examCode: code, value });
+        adopted++;
+      });
+      writeLS(lsKey("result"), cache);
+    }
+
+    if (isObj(d.plan) && isObj(d.plan.sittings) && (d.plan.updatedAt || 0) > (getExamPlanCache().updatedAt || 0)) {
+      writeLS(lsKey("plan"), d.plan);
+      enqueue({ type: "plan", value: d.plan });
+      adopted++;
+    }
+
+    // Streak: the later study day, or on the same day the longer run.
+    if (isObj(d.streak) && typeof d.streak.lastDate === "string") {
+      const local = getStreakCache();
+      const s = d.streak;
+      if (!local.lastDate || s.lastDate > local.lastDate || (s.lastDate === local.lastDate && s.count > local.count)) {
+        const next = { lastDate: s.lastDate, count: s.count };
+        writeLS(lsKey("streak"), next);
+        enqueue({ type: "streak", value: next });
+        adopted++;
+      }
+    }
+
+    // Daily activity: the higher count for each day, the way loadActivity()
+    // keeps local counts as a floor under the server's.
+    if (isObj(d.activity)) {
+      const activity = getActivityCache();
+      Object.entries(d.activity).forEach(([day, n]) => {
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || typeof n !== "number" || n <= (activity[day] || 0)) return;
+        activity[day] = n;
+        adopted++;
+      });
+      writeLS(lsKey("activity"), activity);
+    }
+
+    // The last finished session: whichever ended later. Uploading it is
+    // harmless if the server already has it (session_log is keyed on start).
+    if (isObj(d.lastSession) && typeof d.lastSession.endedAt === "number") {
+      const local = getLastSessionCache();
+      if (!local || d.lastSession.endedAt > local.endedAt) {
+        writeLS(lsKey("lastSession"), d.lastSession);
+        enqueue({ type: "session", value: d.lastSession });
+        adopted++;
+      }
+    }
+
+    // Pace log: every entry from both, without duplicates, oldest first.
+    if (Array.isArray(d.pace)) {
+      const log = getPaceLog();
+      const seen = new Set(log.map((e) => JSON.stringify(e)));
+      d.pace.forEach((e) => {
+        if (!isObj(e) || seen.has(JSON.stringify(e))) return;
+        seen.add(JSON.stringify(e));
+        log.push(e);
+        adopted++;
+      });
+      log.sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+      writeLS(lsKey("pace"), log.slice(-300));
+    }
+
+    return adopted;
+  }
+
   /* ---------- sync queue ---------- */
 
   async function flushPending() {
@@ -1296,7 +1573,7 @@ const Store = (function () {
       // Anything enqueued while this flush was awaiting the network was
       // appended after the snapshot we started from — keep it, don't clobber it.
       const addedMeanwhile = readPending().slice(list.length);
-      writePending([...remaining, ...addedMeanwhile]);
+      writePending([...remaining, ...addedMeanwhile].filter((op) => !deletedUsers.has(op.userId)));
       flushing = false;
       notifySync();
       if (addedMeanwhile.length) flushPending();
@@ -1323,6 +1600,13 @@ const Store = (function () {
     signUp,
     signIn,
     signOut,
+    requestPasswordReset,
+    updatePassword,
+    isPasswordRecovery,
+    onPasswordRecovery,
+    deleteAccount,
+    exportData,
+    importData,
     loadModuleStatus,
     setModuleStatus,
     getModuleStatusCache,
