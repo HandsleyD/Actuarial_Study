@@ -32,7 +32,12 @@ test.describe("content loading", () => {
       await gate;
       await route.continue();
     });
-    await open(page, "SP4", ".module-card");
+    // Load the site first, then move to SP4 within it: the subject page
+    // prefetches SP4, and a held request during page load would hold up the
+    // load event that page.goto waits for.
+    await open(page, "", "#dueBanner");
+    await page.evaluate(() => (location.hash = "#/SP4"));
+    await page.locator(".module-card").first().waitFor();
     await expect(page.locator('.module-card[data-module="m01"] .mastery-label')).toContainText("0/15");
     await page.locator('.module-card[data-module="m01"]').click();
     await expect(page.locator("#flashView .content-loading")).toContainText("Loading SP4");
