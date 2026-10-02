@@ -34,7 +34,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=33">
+<link rel="stylesheet" href="style.css?v=34">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -129,7 +129,17 @@
         <button id="signInBtn" class="btn primary">Sign in</button>
         <button id="signUpBtn" class="btn">Create account</button>
       </div>
+      <button id="forgotPasswordBtn" class="link-btn" type="button">Forgot password?</button>
       <div id="authError" class="auth-error" hidden></div>
+    </div>
+
+    <div id="authRecovery" hidden>
+      <p class="settings-note">Choose a new password for <strong id="recoveryEmailLabel"></strong>.</p>
+      <input id="newPassword" class="text-input" type="password" placeholder="New password" autocomplete="new-password">
+      <div class="settings-actions">
+        <button id="setPasswordBtn" class="btn primary">Set new password</button>
+      </div>
+      <div id="recoveryMessage" class="auth-error" hidden></div>
     </div>
 
     <div id="authSignedIn" hidden>
@@ -138,6 +148,28 @@
       <div class="settings-actions">
         <button id="signOutBtn" class="btn">Sign out</button>
       </div>
+      <button id="deleteAccountBtn" class="link-btn danger" type="button">Delete my account and data</button>
+      <div id="deleteConfirm" class="delete-confirm" hidden>
+        <p class="settings-note">This permanently deletes your account and everything synced to it: mastery, review schedules, drill results, module status, exam results, your exam plan, streak and session log. It can't be undone. Download your progress first if you might want it back. Progress saved on this device without an account isn't affected.</p>
+        <label class="settings-note" for="deleteConfirmInput">Type <strong>DELETE</strong> to confirm.</label>
+        <input id="deleteConfirmInput" class="text-input" type="text" autocomplete="off" spellcheck="false">
+        <div class="settings-actions">
+          <button id="deleteAccountConfirmBtn" class="btn danger" disabled>Delete everything</button>
+          <button id="deleteAccountCancelBtn" class="btn">Cancel</button>
+        </div>
+      </div>
+      <div id="accountMessage" class="auth-error" hidden></div>
+    </div>
+
+    <div id="dataSection" class="settings-section">
+      <h3>Your progress file</h3>
+      <p class="settings-note">Save everything this site keeps for you on this device to a file, or merge a saved file back in (the newer copy of each entry wins). Works with or without an account.</p>
+      <div class="settings-actions">
+        <button id="exportBtn" class="btn">Download my progress</button>
+        <button id="importBtn" class="btn">Restore from file</button>
+      </div>
+      <input id="importFile" type="file" accept=".json,application/json" hidden>
+      <div id="dataMessage" class="auth-error" hidden></div>
     </div>
   </div>
 </div>
@@ -160,7 +192,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 }
 </script>
 <script src="srs.js?v=1"></script>
-<script src="store.js?v=10"></script>
+<script src="store.js?v=11"></script>
 <script src="data.js?v=44"></script>
 <script src="questions.js?v=34"></script>
 <script src="diagrams.js?v=1"></script>
@@ -171,6 +203,6 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 <script src="route.js?v=2"></script>
 <script src="readiness.js?v=1"></script>
 <script src="ics.js?v=1"></script>
-<script src="app.js?v=40"></script>
+<script src="app.js?v=41"></script>
 </body>
 </html>
