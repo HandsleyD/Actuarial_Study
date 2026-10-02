@@ -29,6 +29,8 @@ on:
       - "docs/route.js"
       - "docs/exam-dates.js"
       - "scripts/test-route.mjs"
+      - "docs/readiness.js"
+      - "scripts/test-readiness.mjs"
       - "docs/mock.js"
       - "scripts/test-mock.mjs"
       - "docs/exam-stats.js"
@@ -66,6 +68,9 @@ jobs:
 
       - name: Route to Associate and Fellow tests
         run: node scripts/test-route.mjs
+
+      - name: Readiness and daily pace tests
+        run: node scripts/test-readiness.mjs
 
       - name: Pass-rate data matches the examiners' reports
         run: node scripts/extract-exam-stats.mjs --check
