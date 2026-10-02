@@ -1667,15 +1667,16 @@ const CALC = (() => {
         const x = randInt(30, 50);
         const t = randInt(5, 20);
         const N = randStep(1000, 20000, 500);
-        const expected = N * qx(x + t);
-        return { x, t, N, S: randStep(10000, 100000, 5000), i: lifeI(), A: Math.max(0, Math.round(expected * randStep(0.5, 1.5, 0.05))) };
+        const q = roundTo(qx(x + t), 6);
+        const expected = N * q;
+        return { x, t, N, q, S: randStep(10000, 100000, 5000), i: lifeI(), A: Math.max(0, Math.round(expected * randStep(0.5, 1.5, 0.05))) };
       },
       question: (p) =>
-        `An insurer issued whole life policies of ${money(p.S, 0)} each (death benefit at the end of the year of death, premiums annually in advance for life) ${p.t} years ago to lives then aged ${p.x}. At the start of this policy year ${grp(p.N, 0)} policies were in force, and ${p.A} policyholder${p.A === 1 ? "" : "s"} died during the year. Calculate the mortality profit for the year, using net premium reserves on the basis ${BASIS(p.i)}.`,
+        `An insurer issued whole life policies of ${money(p.S, 0)} each (death benefit at the end of the year of death, premiums annually in advance for life) ${p.t} years ago to lives then aged ${p.x}. At the start of this policy year ${grp(p.N, 0)} policies were in force, and ${p.A} policyholder${p.A === 1 ? "" : "s"} died during the year. Use $q_{${p.x + p.t}} = ${nf(p.q, 6)}$. Calculate the mortality profit for the year, using net premium reserves on the basis ${BASIS(p.i)}.`,
       solve: (p) => {
         const V = p.S * (1 - adx(p.x + p.t + 1, p.i) / adx(p.x, p.i));
         const dsar = p.S - V;
-        const q = qx(p.x + p.t);
+        const q = p.q;
         const EDS = p.N * q * dsar;
         const ADS = p.A * dsar;
         return { V, dsar, q, EDS, ADS, ans: EDS - ADS };
@@ -1694,13 +1695,14 @@ const CALC = (() => {
       params: () => {
         const y = randInt(65, 85);
         const N = randStep(500, 10000, 100);
-        return { y, N, X: randStep(2000, 20000, 500), i: lifeI(), A: Math.max(0, Math.round(N * qx(y) * randStep(0.5, 1.5, 0.05))) };
+        const q = roundTo(qx(y), 6);
+        return { y, N, q, X: randStep(2000, 20000, 500), i: lifeI(), A: Math.max(0, Math.round(N * q * randStep(0.5, 1.5, 0.05))) };
       },
       question: (p) =>
-        `An insurer has ${grp(p.N, 0)} annuitants aged ${p.y}, each receiving ${money(p.X, 0)} a year annually in advance; this year's payment has just been made. During the year ${p.A} of them die. Calculate the mortality profit for the year, using net premium reserves on the basis ${BASIS(p.i)}.`,
+        `An insurer has ${grp(p.N, 0)} annuitants aged ${p.y}, each receiving ${money(p.X, 0)} a year annually in advance; this year's payment has just been made. During the year ${p.A} of them die. Use $q_{${p.y}} = ${nf(p.q, 6)}$. Calculate the mortality profit for the year, using net premium reserves on the basis ${BASIS(p.i)}.`,
       solve: (p) => {
         const V = p.X * adx(p.y + 1, p.i);
-        const q = qx(p.y);
+        const q = p.q;
         const dsar = -V;
         return { V, q, dsar, EDS: p.N * q * dsar, ADS: p.A * dsar, ans: p.N * q * dsar - p.A * dsar };
       },

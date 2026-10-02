@@ -284,8 +284,8 @@ const REF = {
     const y = p.x + p.t + 1;
     return p.S - (epvDeath(y, p.i, () => p.S) - P * aDue(y, p.i));
   },
-  "cm1-m21-c02": (p) => (p.N * q(p.x + p.t) - p.A) * REF["cm1-m21-c01"](p),
-  "cm1-m21-c03": (p) => (p.A - p.N * q(p.y)) * epvAlive(p.y + 1, p.i, () => p.X),
+  "cm1-m21-c02": (p) => (p.N * Number(q(p.x + p.t).toFixed(6)) - p.A) * REF["cm1-m21-c01"](p),
+  "cm1-m21-c03": (p) => (p.A - p.N * Number(q(p.y).toFixed(6))) * epvAlive(p.y + 1, p.i, () => p.X),
   // m22: integrate the multiple-decrement definitions
   "cm1-m22-c01": (p) => simpson((t) => p.qa * (1 - t * p.qb), 0, 1, 100),
   "cm1-m22-c02": (p) => {
@@ -347,6 +347,27 @@ for (const item of items) {
     CALC.unseed();
   });
 }
+
+test("mortality profit accepts calculations from the displayed rounded inputs", () => {
+  for (const id of ["cm1-m21-c02", "cm1-m21-c03"]) {
+    const item = items.find((it) => it.id === id);
+    for (const seed of [45, ...SEEDS]) {
+      CALC.seed(seed);
+      const p = item.params();
+      const age = id.endsWith("c02") ? p.x + p.t : p.y;
+      const shownRate = item.question(p).match(/Use \$q_\{\d+\} = ([\d.]+)\$/);
+      assert.ok(shownRate, `${id}: question must state the mortality rate`);
+      const roundedQ = Number(shownRate[1]);
+      assert.equal(roundedQ, Number(q(age).toFixed(6)));
+      const shownDsar = item.working(p).match(/DSAR \$=[^$]*?(-?\d+\.\d{2})\$/);
+      assert.ok(shownDsar, `${id}: worked solution must show DSAR`);
+      const dsar = Number(shownDsar[1]);
+      const submitted = Math.round((p.N * roundedQ - p.A) * dsar);
+      assert.equal(CALC.mark(item, p, String(submitted)).ok, true, `${id}, seed ${seed}: displayed inputs give ${submitted}`);
+    }
+  }
+  CALC.unseed();
+});
 
 test("fixed seeds give fixed questions", () => {
   const it = items[0];
