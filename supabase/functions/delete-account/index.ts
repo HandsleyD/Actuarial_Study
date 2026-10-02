@@ -13,9 +13,11 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.4";
 
 // Every table holding per-user rows (schema.sql and migrations/). They all
-// cascade on delete from auth.users, so deleting the user would remove them
-// anyway; deleting them first, explicitly, means a table added later without
-// the cascade can't be left behind holding someone's data.
+// reference auth.users with ON DELETE CASCADE, so deleting the user removes
+// the account and all of its rows in one transaction: it either all goes or
+// none of it does. The sweep of these tables afterwards only matters if a
+// table is ever added without the cascade, and runs once the account is
+// already gone, so a failure there can't leave a half-deleted account.
 const USER_TABLES = [
   "module_status",
   "flashcard_mastery",
@@ -66,18 +68,15 @@ Deno.serve(async (req) => {
       auth: { persistSession: false, autoRefreshToken: false },
     });
 
-    for (const table of USER_TABLES) {
-      const { error } = await admin.from(table).delete().eq("user_id", user.id);
-      if (error && !isMissingTable(error)) {
-        console.error(`Deleting from ${table} failed`, error);
-        return json({ error: "Couldn't delete all of your data just now, and your account is still there. Try again later." });
-      }
-    }
-
     const { error } = await admin.auth.admin.deleteUser(user.id);
     if (error) {
       console.error("Deleting the auth user failed", error);
-      return json({ error: "Your study data was deleted, but the account itself couldn't be. Try again later." });
+      return json({ error: "Couldn't delete your account just now. Nothing was removed; try again later." });
+    }
+
+    for (const table of USER_TABLES) {
+      const { error: sweepError } = await admin.from(table).delete().eq("user_id", user.id);
+      if (sweepError && !isMissingTable(sweepError)) console.error(`Sweeping ${table} after deleting ${user.id} failed`, sweepError);
     }
 
     return json({ deleted: true });

@@ -59,6 +59,9 @@ const Store = (function () {
   const recoveryListeners = [];
   // True from arriving via a password-reset email until a new password is set.
   let passwordRecovery = false;
+  // Accounts deleted this page load: their queued changes are dropped, even
+  // ones a flush that was in flight at the time puts back (see flushPending).
+  const deletedUsers = new Set();
 
   function isConfigured() {
     return typeof SUPABASE_URL === "string" && SUPABASE_URL.length > 0 &&
@@ -259,6 +262,7 @@ const Store = (function () {
   }
 
   function clearLocalData(uid) {
+    deletedUsers.add(uid);
     allKeys().forEach((key) => {
       if (key.startsWith(`${LS_PREFIX}:`) && (key.endsWith(`:${uid}`) || key.includes(`:${uid}:`))) {
         try {
@@ -1432,7 +1436,7 @@ const Store = (function () {
       // Anything enqueued while this flush was awaiting the network was
       // appended after the snapshot we started from — keep it, don't clobber it.
       const addedMeanwhile = readPending().slice(list.length);
-      writePending([...remaining, ...addedMeanwhile]);
+      writePending([...remaining, ...addedMeanwhile].filter((op) => !deletedUsers.has(op.userId)));
       flushing = false;
       notifySync();
       if (addedMeanwhile.length) flushPending();

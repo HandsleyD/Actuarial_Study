@@ -233,8 +233,9 @@ The Account panel has a **Delete my account and data** option (behind a
 type-DELETE-to-confirm step). The browser's publishable key can't delete
 users, so this goes through a second Edge Function,
 [`supabase/functions/delete-account/index.ts`](./functions/delete-account/index.ts).
-It checks the caller's access token, deletes that user's rows from every
-study table, then deletes the auth user, using the service role key that
+It checks the caller's access token, then deletes the auth user; every
+study table cascades from `auth.users`, so the account and all of its rows
+go in one transaction, or none of it does. It uses the service role key that
 Supabase gives every Edge Function automatically
 (`SUPABASE_SERVICE_ROLE_KEY`). There's no secret to set. It only ever
 deletes the account whose token came with the request.

@@ -387,7 +387,13 @@ await test("deleting the account clears that user's local data and signs out", a
   Store.setModuleStatus("CS1", "m05", "Done"); // still queued when the account goes
   await settle();
   assert.ok(queued("status").some((op) => op.userId === "u1"));
+  // A review whose upload is still in flight when the account goes: that
+  // flush must not put the deleted user's changes back in the queue.
+  fetchDelay = 40;
+  Store.setSrs("CM1", "m02", 0, sched("2026-09-30", 1));
   await Store.deleteAccount();
+  await settle();
+  fetchDelay = 0;
   offline = false;
   assert.deepEqual(invoked.slice(-1), ["delete-account"]);
   assert.equal(userKeys("u1").length, 0, `left behind: ${userKeys("u1").join(", ")}`);
