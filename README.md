@@ -38,6 +38,12 @@ By default, your progress (mastery stars, review schedules, drill results, strea
 
 Skipping the account is completely fine too — the site works fully without one.
 
+Your data stays yours either way, from the same account panel:
+
+- **Download my progress** saves everything the site keeps for you (mastery, review schedules, drill results, self-marked questions and mock papers, module status, exam results, exam plan, streak, daily activity, last session and exam pacing) to a JSON file. **Restore from file** merges one back in, keeping whichever copy of each entry is newer. Neither needs an account, so this is also how to move progress between devices without one, or keep a backup.
+- **Forgot password?** emails you a link to choose a new one.
+- **Delete my account and data** permanently removes your account and everything synced to it from the server, and clears that account's progress from the device you delete it on. Progress you made on a device before signing in stays on that device.
+
 ## About this project
 
 Fellow is a personal, self-study project — original content written to mirror the structure and topic weighting of the official IFoA syllabus, not a reproduction of any copyrighted IFoA past paper or study material. It isn't affiliated with, endorsed by, or produced by the Institute and Faculty of Actuaries, and shouldn't be treated as a substitute for the official Core Reading or a qualified tutor. Corrections and suggestions are welcome via [issues](https://github.com/HandsleyD/Actuarial_Study/issues).

@@ -1,4 +1,4 @@
-import { test, expect, seed, open, readStore, NOW } from "./fixtures.mjs";
+import { test, expect, seed, open, readStore, signedIn, E2E_USER, NOW } from "./fixtures.mjs";
 
 // The latest CB2 pass mark comes from exam-stats.js, which a scheduled job
 // regenerates, so read it from the page rather than hard-coding it.
@@ -185,5 +185,25 @@ test.describe("a mock paper left running", () => {
     await expect(page.locator("#mockView .qbank-note")).toContainText("Time’s up");
     await expect(page.locator("#finishMockBtn")).toBeVisible();
     await expect(page.locator("#mockView .part-answer").first()).toBeVisible();
+  });
+});
+
+test.describe("a signed-in user's mock paper", () => {
+  test("opening the mock page directly shows the paper still running, not a new one", async ({ page }) => {
+    // The page first draws before sign-in is known, from the signed-out
+    // cache; once it is, the account's paper in progress must take over.
+    await signedIn(page);
+    await page.addInitScript(
+      ({ uid, now }) =>
+        localStorage.setItem(
+          `actuarialStudy:mockActive:${uid}:CB2`,
+          JSON.stringify({ startedAt: now, endsAt: now + (3 * 60 + 15) * 60 * 1000, questionIds: ["cb2-q1", "cb2-q2"], marks: 26, submittedAt: null, partMarks: {} })
+        ),
+      { uid: E2E_USER.id, now: NOW.getTime() }
+    );
+    await open(page, "CB2/mock", "#mockView .back-link");
+    await expect(page.locator("#mockClock")).toHaveText("3:15:00");
+    await expect(page.locator("#startMockBtn")).toHaveCount(0);
+    await expect(page.locator("#mockView .mock-question")).toHaveCount(2);
   });
 });

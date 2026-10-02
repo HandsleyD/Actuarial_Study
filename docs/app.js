@@ -4936,6 +4936,9 @@ function renderExamHub(requested) {
 function parseHash() {
   const h = location.hash.replace(/^#\/?/, "");
   if (!h) return { view: "home" };
+  // A sign-in link's tokens (or its error), until supabase-js has read them
+  // and cleared the address: not a route.
+  if (/(^|&)(access_token|error)=/.test(h)) return { view: "home" };
   const parts = h.split("/").filter(Boolean);
   const first = parts[0].toLowerCase();
   if (first === "dashboard") return { view: "dashboard", section: parts[1] ? parts[1].toLowerCase() : null };
@@ -5084,22 +5087,34 @@ function openSettings() {
 function closeSettings() {
   document.getElementById("settingsPanel").hidden = true;
   hideAuthMessage();
+  resetDeleteConfirm();
 }
 
 function renderAuthPanel() {
   const unconfigured = document.getElementById("authUnconfigured");
   const signedOut = document.getElementById("authSignedOut");
   const signedIn = document.getElementById("authSignedIn");
+  const recovery = document.getElementById("authRecovery");
 
   if (!Store.isConfigured()) {
     unconfigured.hidden = false;
     signedOut.hidden = true;
     signedIn.hidden = true;
+    recovery.hidden = true;
     return;
   }
   unconfigured.hidden = true;
 
   const user = Store.getUser();
+  // Arrived from a password-reset link: choosing a new password comes first.
+  if (Store.isPasswordRecovery()) {
+    recovery.hidden = false;
+    signedOut.hidden = true;
+    signedIn.hidden = true;
+    document.getElementById("recoveryEmailLabel").textContent = (user && user.email) || "your account";
+    return;
+  }
+  recovery.hidden = true;
   signedOut.hidden = !!user;
   signedIn.hidden = !user;
 
@@ -5120,15 +5135,28 @@ function renderAuthPanel() {
   }
 }
 
-function showAuthMessage(msg, isError) {
-  const el = document.getElementById("authError");
+// Each part of the account panel has its own message line, next to the
+// buttons it's about: authError (signed out), recoveryMessage (new
+// password), accountMessage (signed in) and dataMessage (progress file).
+function showAuthMessage(msg, isError, id = "authError") {
+  const el = document.getElementById(id);
   el.textContent = msg;
   el.hidden = false;
   el.classList.toggle("is-error", !!isError);
 }
 
 function hideAuthMessage() {
-  document.getElementById("authError").hidden = true;
+  ["authError", "recoveryMessage", "accountMessage", "dataMessage"].forEach((id) => {
+    document.getElementById(id).hidden = true;
+  });
+}
+
+function resetDeleteConfirm() {
+  document.getElementById("deleteConfirm").hidden = true;
+  document.getElementById("deleteConfirmInput").value = "";
+  const btn = document.getElementById("deleteAccountConfirmBtn");
+  btn.disabled = true;
+  btn.textContent = "Delete everything";
 }
 
 function renderSyncStatus() {
@@ -5215,6 +5243,127 @@ function initAuthUI() {
   document.getElementById("signOutBtn").addEventListener("click", async () => {
     await Store.signOut();
     closeSettings();
+  });
+
+  document.getElementById("forgotPasswordBtn").addEventListener("click", async () => {
+    hideAuthMessage();
+    const email = document.getElementById("authEmail").value.trim();
+    if (!email) {
+      showAuthMessage("Enter your email above, then choose Forgot password.", true);
+      document.getElementById("authEmail").focus();
+      return;
+    }
+    try {
+      await Store.requestPasswordReset(email);
+      showAuthMessage(`If there's an account for ${email}, an email with a link to choose a new password is on its way.`, false);
+    } catch (e) {
+      showAuthMessage(e.message || "Could not send the reset email.", true);
+    }
+  });
+
+  document.getElementById("setPasswordBtn").addEventListener("click", async () => {
+    hideAuthMessage();
+    const password = document.getElementById("newPassword").value;
+    if (password.length < 6) {
+      showAuthMessage("Password must be at least 6 characters.", true, "recoveryMessage");
+      return;
+    }
+    try {
+      await Store.updatePassword(password);
+      document.getElementById("newPassword").value = "";
+      renderAuthPanel();
+      showAuthMessage("Password changed. You're signed in.", false, "accountMessage");
+    } catch (e) {
+      showAuthMessage(e.message || "Could not change the password.", true, "recoveryMessage");
+    }
+  });
+  Store.onPasswordRecovery(openSettings);
+
+  // A reset link that has expired or was already used comes back with an
+  // error in the address instead of a session.
+  const linkError = location.hash.match(/[#&]error_description=([^&]*)/);
+  if (linkError && Store.isConfigured()) {
+    history.replaceState(null, "", location.pathname + location.search);
+    openSettings();
+    let why = linkError[1];
+    try {
+      why = decodeURIComponent(why.replace(/\+/g, " "));
+    } catch {
+      /* keep it encoded */
+    }
+    showAuthMessage(`That link didn't work (${why}). Enter your email and choose Forgot password to get a new one.`, true);
+  }
+
+  document.getElementById("deleteAccountBtn").addEventListener("click", () => {
+    hideAuthMessage();
+    document.getElementById("deleteConfirm").hidden = false;
+    document.getElementById("deleteConfirmInput").focus();
+  });
+  document.getElementById("deleteConfirmInput").addEventListener("input", (e) => {
+    document.getElementById("deleteAccountConfirmBtn").disabled = e.target.value.trim() !== "DELETE";
+  });
+  document.getElementById("deleteAccountCancelBtn").addEventListener("click", resetDeleteConfirm);
+  document.getElementById("deleteAccountConfirmBtn").addEventListener("click", async (e) => {
+    const btn = e.currentTarget;
+    if (document.getElementById("deleteConfirmInput").value.trim() !== "DELETE") return;
+    btn.disabled = true;
+    btn.textContent = "Deleting…";
+    try {
+      await Store.deleteAccount();
+      resetDeleteConfirm();
+      renderAuthPanel();
+      showAuthMessage("Your account and everything synced to it have been deleted.", false);
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = "Delete everything";
+      showAuthMessage(err.message || "Could not delete your account.", true, "accountMessage");
+    }
+  });
+
+  document.getElementById("exportBtn").addEventListener("click", () => {
+    hideAuthMessage();
+    const name = `fellow-progress-${SRS.today()}.json`;
+    const blob = new Blob([JSON.stringify(Store.exportData(), null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showAuthMessage(`Saved ${name}.`, false, "dataMessage");
+  });
+  document.getElementById("importBtn").addEventListener("click", () => {
+    hideAuthMessage();
+    document.getElementById("importFile").click();
+  });
+  document.getElementById("importFile").addEventListener("change", async (e) => {
+    const input = e.target;
+    const file = input.files && input.files[0];
+    if (!file) return;
+    try {
+      let parsed;
+      try {
+        parsed = JSON.parse(await file.text());
+      } catch {
+        throw new Error("That file isn't a Fellow progress download.");
+      }
+      const n = Store.importData(parsed);
+      reloadAllForAuthChange(); // re-read every view from the merged caches
+      renderSyncStatus();
+      showAuthMessage(
+        n
+          ? `Restored ${n} entr${n === 1 ? "y" : "ies"} from ${file.name}.`
+          : `Nothing to restore: this device already has everything in ${file.name}.`,
+        false,
+        "dataMessage"
+      );
+    } catch (err) {
+      showAuthMessage(err.message || "Could not read that file.", true, "dataMessage");
+    } finally {
+      input.value = ""; // so choosing the same file again still fires "change"
+    }
   });
 
   Store.onAuthChange(() => {
@@ -5319,5 +5468,6 @@ Store.init().then(() => {
   refreshExamPlan(); // the plan cached before init was read under the signed-out key
   subjectResults = Store.getResultsCache(); // likewise results
   refreshResults();
+  if (Store.isPasswordRecovery()) openSettings();
   refreshScores();
 });
