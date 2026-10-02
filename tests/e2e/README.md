@@ -31,6 +31,7 @@ npx playwright test --headed --debug    # watch and step through
 | `flashcards.spec.mjs` | Reveal, grading, keyboard shortcuts, full deck, session summary, mixed sessions, due and weak-card reviews, Foundations lessons and their maths |
 | `drills.spec.mjs` | Multiple choice, select-all, fill-the-gap and diagram questions, right and wrong answers, run summary |
 | `questions-search.spec.mjs` | Practice questions and timed mode; search and its subject filter |
+| `notes-report.spec.mjs` | "Report a mistake" links on cards, drills and practice questions (and that they carry no progress data); flashcard notes (escaped, saved, searchable) and flags, and the flagged-cards deck |
 | `planning.spec.mjs` | Welcome questions, exam planner (clashes, moves, awaiting results), results day, route map and specialists, Exam Hub, dashboard |
 | `readiness.spec.mjs` | The home page Today card (due reviews, new cards paced to the plan, the no-plan nudge, the revision fortnight) and readiness on subject pages, the route map and the exam plan |
 | `progress-status.spec.mjs` | Studying a module starts it; subjects awaiting results or passed pause their reviews, with a badge and a note; results day and resits |

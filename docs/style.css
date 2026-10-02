@@ -2956,6 +2956,79 @@ a.btn { display: inline-flex; }
 
 /* Sections opened by link (#/dashboard/plan) clear the sticky header. */
 .dash-section { scroll-margin-top: 84px; }
+.dash-section-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- flashcard notes, flags and "Report a mistake" ---------- */
+
+.card-flag-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 6px;
+  padding: 2px 9px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  cursor: pointer;
+  vertical-align: 1px;
+}
+.card-flag-btn .ico { width: 12px; height: 12px; }
+.card-flag-btn:hover { border-color: var(--progress); color: var(--progress); }
+.card-flag-btn.on { background: var(--progress-bg); border-color: var(--progress); color: var(--progress); }
+.card-flag-btn.on .ico { fill: currentColor; }
+
+.card-note {
+  margin: -6px 0 16px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--progress);
+  background: var(--progress-bg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.card-note.editing { background: transparent; border-left-color: var(--border); padding-right: 0; }
+.card-note-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--progress);
+  margin-bottom: 4px;
+}
+.card-note.editing .card-note-head { color: var(--text-muted); margin-bottom: 6px; }
+.card-note-text { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); }
+.card-note .note-input { min-height: 70px; margin-bottom: 8px; }
+.card-note-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.card-note-add { margin: -8px 0 14px; }
+
+.link-btn {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+.link-btn:hover { text-decoration: underline; }
+.link-btn .ico { width: 14px; height: 14px; }
+
+.report-row { margin-top: 14px; text-align: right; }
+.report-link { font-size: 0.78rem; color: var(--text-muted); text-decoration: none; }
+.report-link:hover { color: var(--accent); text-decoration: underline; }
+.report-link .ico { width: 12px; height: 12px; }
 
 /* ---------- Today card (home) ---------- */
 
