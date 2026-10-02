@@ -373,7 +373,10 @@ function renderQuestionsView(code) {
     saveBtn.addEventListener("click", () => {
       const parts = readMarkInputs(inputs, q.parts, document.getElementById("markError"));
       if (!parts) return;
-      qbankState.markAt = qbankState.markAt || Date.now();
+      // An attempt's timestamp is its identity, so a new one must come after
+      // the last, even if the clock hasn't moved on.
+      const last = Mock.latestAttempt(history);
+      qbankState.markAt = qbankState.markAt || Math.max(Date.now(), last ? last.at + 1 : 0);
       Store.saveScore(code, q.id, Mock.attemptOf(parts, q.marks, "practice", qbankState.markAt));
       renderQuestionsView(code);
     });
@@ -629,11 +632,20 @@ function fmtLongClock(ms) {
   return `${h}:${m}:${s}`;
 }
 
+// The mock's clock bar sticks below the sticky header, whose height changes
+// with the viewport width.
+function syncTopbarHeight() {
+  const bar = document.querySelector(".topbar");
+  if (bar) document.documentElement.style.setProperty("--topbar-h", `${bar.offsetHeight}px`);
+}
+window.addEventListener("resize", syncTopbarHeight);
+
 function renderMockView(code) {
   const el = document.getElementById("mockView");
   const bank = QUESTIONS[code] || [];
   const info = SUBJECTS[code] || { name: code };
   clearInterval(mockTimerInterval);
+  syncTopbarHeight();
 
   if (!bank.length) {
     el.innerHTML = `
@@ -846,9 +858,11 @@ function renderMockMarking(el, code, info, active, byId) {
       all[q.id] = marks;
     }
     const at = active.submittedAt;
+    const scores = Store.getScoreCache(code);
     let score = 0;
     questions.forEach((q) => {
-      const attempt = Mock.attemptOf(all[q.id], q.marks, "mock", at);
+      const last = Mock.latestAttempt(scores[q.id]); // as in the question bank: a new attempt comes after the last
+      const attempt = Mock.attemptOf(all[q.id], q.marks, "mock", Math.max(at, last ? last.at + 1 : 0));
       score += attempt.score;
       Store.saveScore(code, q.id, attempt);
     });

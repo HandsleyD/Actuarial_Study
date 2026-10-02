@@ -1264,9 +1264,10 @@ main {
 
 .mock-btn { margin-top: 10px; }
 
+/* Sticks just under the sticky header; app.js keeps --topbar-h current. */
 .mock-bar {
   position: sticky;
-  top: 0;
+  top: calc(var(--topbar-h, 64px) + 8px);
   z-index: 5;
   display: flex;
   align-items: center;
