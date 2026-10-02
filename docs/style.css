@@ -1791,6 +1791,17 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
   font-size: 0.82rem;
 }
 
+/* A long formula in a worked solution scrolls on its own rather than
+   pushing the card wider than a phone screen. */
+.calc-working .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  padding: 2px 0;
+}
+
 .calc-compare {
   margin: 0 0 12px;
   font-size: 0.95rem;

@@ -3849,7 +3849,7 @@ function drillFeedbackHtml(item) {
       <span class="muted">(${tol.abs === 0 ? "must be exact" : `marked right within ${tolText}`})</span>.</p>
     <details class="explain-panel" open>
       <summary>Worked solution</summary>
-      <div class="explain-body">${item.working(drillState.params)}${item.explain ? `<p>${item.explain}</p>` : ""}</div>
+      <div class="explain-body calc-working">${item.working(drillState.params)}${item.explain ? `<p>${item.explain}</p>` : ""}</div>
     </details>`;
   }
   if (item.type === "mcq" && !drillState.lastCorrect) {

@@ -881,7 +881,7 @@ const CALC = (() => {
             ? `$i^{(2)} > (1 - t_1)D/R$, so the price is below ${p.R} and there is a gain to tax: $P = (1-t_1)D\\,a^{(2)}_{\\overline{${p.n}}|} + R\\,v^{${p.n}} - t_2(R - P)v^{${p.n}}$.`
             : `$i^{(2)} \\le (1 - t_1)D/R$, so the price is at least ${p.R}: there is no capital gain and CGT doesn't apply. $P = (1-t_1)D\\,a^{(2)}_{\\overline{${p.n}}|} + R\\,v^{${p.n}}$.`,
           s.gain
-            ? `Rearranging: $P = \\frac{(1-t_1)D\\,a^{(2)}_{\\overline{${p.n}}|} + R(1 - t_2)v^{${p.n}}}{1 - t_2 v^{${p.n}}} = \\frac{${nf((1 - p.t1) * p.D, 4)} \\times ${nf(s.a2, 4)} + ${nf(p.R * (1 - p.t2), 4)} \\times ${nf(s.v, 6)}}{1 - ${nf(p.t2, 4)} \\times ${nf(s.v, 6)}} = ${m2(s.ans)}$.`
+            ? `Rearranging: $P = \\dfrac{(1-t_1)D\\,a^{(2)}_{\\overline{${p.n}}|} + R(1 - t_2)v^{${p.n}}}{1 - t_2 v^{${p.n}}}$ $= \\dfrac{${nf((1 - p.t1) * p.D, 4)} \\times ${nf(s.a2, 4)} + ${nf(p.R * (1 - p.t2), 4)} \\times ${nf(s.v, 6)}}{1 - ${nf(p.t2, 4)} \\times ${nf(s.v, 6)}} = ${m2(s.ans)}$.`
             : `$P = ${nf((1 - p.t1) * p.D, 4)} \\times ${nf(s.a2, 4)} + ${p.R} \\times ${nf(s.v, 6)} = ${m2(s.ans)}$.`,
           ans(money(s.ans))
         ),
