@@ -76,8 +76,11 @@ function registerContent(code, data) {
   contentLoaded.add(code);
 }
 
+// Ready means the subject's file has run and, for a subject with hotspot
+// drills, diagrams.js too: they load in parallel, and either can fail alone.
 function contentReady(code) {
-  return !CATALOG[code] || contentLoaded.has(code);
+  const entry = CATALOG[code];
+  return !entry || (contentLoaded.has(code) && (!entry.diagrams || typeof DIAGRAMS !== "undefined"));
 }
 
 function loadScript(src) {
@@ -109,7 +112,12 @@ function loadContent(code) {
   if (contentReady(code)) return Promise.resolve();
   if (!contentLoads[code]) {
     const entry = CATALOG[code];
-    contentLoads[code] = Promise.all([loadScript(entry.file), entry.diagrams ? loadDiagrams() : null])
+    // Fetch only what's still missing, so a retry after a failed diagrams.js
+    // doesn't run the subject's file a second time.
+    contentLoads[code] = Promise.all([
+      contentLoaded.has(code) ? null : loadScript(entry.file),
+      entry.diagrams ? loadDiagrams() : null,
+    ])
       .then(() => {
         if (!contentLoaded.has(code)) throw new Error(`${entry.file} didn't register ${code}`);
         contentFailed.delete(code);

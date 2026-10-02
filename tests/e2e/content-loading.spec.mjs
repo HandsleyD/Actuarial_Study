@@ -57,6 +57,19 @@ test.describe("content loading", () => {
     await expect(page.locator("#flashView .flashcard-question")).toBeVisible();
   });
 
+  test("if only the diagrams fail, a retry fetches just them", async ({ page }) => {
+    await seed(page, { welcomed: true });
+    const fetched = contentRequests(page);
+    let fail = true;
+    await page.route("**/diagrams.js*", (route) => (fail ? route.abort() : route.continue()));
+    await open(page, "CB2/drill/m02", "#drillView .content-error");
+    fail = false;
+    await page.locator("#contentRetry").click();
+    await expect(page.locator("#drillSubmit")).toBeVisible();
+    expect(await page.evaluate(() => typeof DIAGRAMS)).toBe("object");
+    expect(fetched).toEqual(["CB2"]); // the subject's own file isn't fetched again
+  });
+
   test("the dashboard fetches only the subjects its most-missed cards come from", async ({ page }) => {
     const schedule = (over) => ({ reps: 1, interval: 1, ease: 2.5, due: "2026-10-10", lapses: 2, reviews: 3, last: "2026-09-24", ...over });
     await seed(page, { welcomed: true, "srs:SP9": { m02: { 0: schedule() } } });
