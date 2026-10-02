@@ -19,7 +19,10 @@
 //
 // Item shape (all types):
 //   id       stable, never reused, never renumbered — the storage key
-//   type     "mcq" | "multi" | "cloze"
+//   type     "mcq" | "multi" | "cloze" | "hotspot" | "calc"
+//            (calc items -- typed numerical answers with fresh numbers on
+//            every attempt -- live in calc-drills.js, which documents their
+//            shape; app.js merges them in here by subject)
 //   module   the data.js module this drills, for grouping and deep links
 //   explain  why the right answer is right — same reveal-then-explain
 //            contract as a flashcard, and required on every item
