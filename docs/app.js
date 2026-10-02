@@ -236,7 +236,7 @@ function renderQuestionsView(code) {
         <h2>Practice exam questions</h2>
         <p>No practice questions for ${code} yet.</p>
       </div>`;
-    document.getElementById("backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
+    el.querySelector("#backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
     return;
   }
 
@@ -341,7 +341,7 @@ function renderQuestionsView(code) {
     </div>
   `;
 
-  document.getElementById("backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
+  el.querySelector("#backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
 
   const goTo = (i) => {
     pauseQTimer();
@@ -354,7 +354,7 @@ function renderQuestionsView(code) {
     btn.addEventListener("click", () => goTo(Number(btn.dataset.idx)));
   });
 
-  const revealBtn = document.getElementById("revealQBtn");
+  const revealBtn = el.querySelector("#revealQBtn");
   if (revealBtn) {
     revealBtn.addEventListener("click", () => {
       if (pref.on && !timer.done && (timer.since || timer.elapsed)) {
@@ -377,21 +377,21 @@ function renderQuestionsView(code) {
     });
   }
 
-  document.getElementById("prevQ").addEventListener("click", () => goTo(Math.max(0, idx - 1)));
-  document.getElementById("nextQ").addEventListener("click", () => goTo(Math.min(questions.length - 1, idx + 1)));
+  el.querySelector("#prevQ").addEventListener("click", () => goTo(Math.max(0, idx - 1)));
+  el.querySelector("#nextQ").addEventListener("click", () => goTo(Math.min(questions.length - 1, idx + 1)));
 
-  const timedToggle = document.getElementById("timedToggle");
+  const timedToggle = el.querySelector("#timedToggle");
   timedToggle.addEventListener("change", () => {
     pauseQTimer();
     saveTimedPref(timedToggle.checked, timedPref().rate);
     renderQuestionsView(code);
   });
-  const rateSel = document.getElementById("timedRate");
+  const rateSel = el.querySelector("#timedRate");
   rateSel.addEventListener("change", () => {
     saveTimedPref(true, Number(rateSel.value));
     renderQuestionsView(code);
   });
-  const timerBtn = document.getElementById("timerBtn");
+  const timerBtn = el.querySelector("#timerBtn");
   if (timerBtn) {
     timerBtn.addEventListener("click", () => {
       if (timer.since) pauseQTimer();
@@ -1445,10 +1445,10 @@ function renderSessionSummary(el, options) {
       </div>
     </div>`;
 
-  document.getElementById("summaryBack").addEventListener("click", () => navigate(backHref));
-  document.getElementById("summaryBackBtn").addEventListener("click", () => navigate(backHref));
-  document.getElementById("summaryReviewAgain").addEventListener("click", onReviewAgain);
-  const newSessionBtn = document.getElementById("summaryNewSession");
+  el.querySelector("#summaryBack").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#summaryBackBtn").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#summaryReviewAgain").addEventListener("click", onReviewAgain);
+  const newSessionBtn = el.querySelector("#summaryNewSession");
   if (newSessionBtn) newSessionBtn.addEventListener("click", onNewSession);
 }
 
@@ -1480,7 +1480,7 @@ function renderFlashView(code, moduleId) {
         <h2>${moduleId.toUpperCase()}</h2>
         <p>No flashcards for this module yet.</p>
       </div>`;
-    document.getElementById("backToSubject").addEventListener("click", () => navigate(`#/${code}`));
+    el.querySelector("#backToSubject").addEventListener("click", () => navigate(`#/${code}`));
     return;
   }
 
@@ -1586,14 +1586,14 @@ function renderFlashView(code, moduleId) {
     </div>
   `;
 
-  document.getElementById("backToSubject").addEventListener("click", () => navigate(`#/${code}`));
+  el.querySelector("#backToSubject").addEventListener("click", () => navigate(`#/${code}`));
 
   // Track the user's own clicks: a <details> rendered open fires "toggle" by
   // itself, which would otherwise read as the user choosing to keep it open.
-  const lesson = document.getElementById("lessonPanel");
+  const lesson = el.querySelector("#lessonPanel");
   if (lesson) lesson.querySelector("summary").addEventListener("click", () => (lessonOpen[lesson.dataset.key] = !lesson.open));
 
-  document.getElementById("tabSession").addEventListener("click", () => {
+  el.querySelector("#tabSession").addEventListener("click", () => {
     if (flashState.mode !== "session") {
       flashState.mode = "session";
       if (!flashState.sessionIndices.length) flashState.sessionIndices = generateSession(code, moduleId);
@@ -1603,7 +1603,7 @@ function renderFlashView(code, moduleId) {
       renderFlashView(code, moduleId);
     }
   });
-  document.getElementById("tabFull").addEventListener("click", () => {
+  el.querySelector("#tabFull").addEventListener("click", () => {
     if (flashState.mode !== "full") {
       flashState.mode = "full";
       flashState.cardIndex = 0;
@@ -1612,7 +1612,7 @@ function renderFlashView(code, moduleId) {
       renderFlashView(code, moduleId);
     }
   });
-  const shuffleBtn = document.getElementById("shuffleBtn");
+  const shuffleBtn = el.querySelector("#shuffleBtn");
   if (shuffleBtn) {
     shuffleBtn.addEventListener("click", () => {
       flashState.sessionIndices = generateSession(code, moduleId);
@@ -1632,13 +1632,13 @@ function renderFlashView(code, moduleId) {
     });
   });
 
-  document.getElementById("prevCard").addEventListener("click", () => {
+  el.querySelector("#prevCard").addEventListener("click", () => {
     flashState.cardIndex = Math.max(0, pos - 1);
     flashState.revealed = false;
     flashState.typed = "";
     renderFlashView(code, moduleId);
   });
-  document.getElementById("nextCard").addEventListener("click", () => {
+  el.querySelector("#nextCard").addEventListener("click", () => {
     flashState.cardIndex = Math.min(seq.length - 1, pos + 1);
     flashState.revealed = false;
     flashState.typed = "";
@@ -1646,17 +1646,17 @@ function renderFlashView(code, moduleId) {
   });
 
   if (!flashState.revealed) {
-    const ta = document.getElementById("answerInput");
+    const ta = el.querySelector("#answerInput");
     ta.addEventListener("input", () => {
       flashState.typed = ta.value;
     });
-    document.getElementById("revealBtn").addEventListener("click", () => {
+    el.querySelector("#revealBtn").addEventListener("click", () => {
       flashState.revealed = true;
       renderFlashView(code, moduleId);
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreCard(code, moduleId, realIdx, true)));
-    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreCard(code, moduleId, realIdx, false)));
+    el.querySelector("#scoreGood").addEventListener("click", () => stampThen(true, () => scoreCard(code, moduleId, realIdx, true)));
+    el.querySelector("#scoreBad").addEventListener("click", () => stampThen(false, () => scoreCard(code, moduleId, realIdx, false)));
     wireAiGradeButton(el, card, flashState.typed, () => renderFlashView(code, moduleId));
   }
   wireCardExtras(el, code, moduleId, realIdx, () => renderFlashView(code, moduleId));
@@ -1678,7 +1678,7 @@ function renderMixedView(code) {
         <h2>Mixed session</h2>
         <p>No flashcards for ${code} yet.</p>
       </div>`;
-    document.getElementById("backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
+    el.querySelector("#backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
     return;
   }
 
@@ -1775,9 +1775,9 @@ function renderMixedView(code) {
     </div>
   `;
 
-  document.getElementById("backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
+  el.querySelector("#backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
 
-  document.getElementById("shuffleMixedBtn").addEventListener("click", () => {
+  el.querySelector("#shuffleMixedBtn").addEventListener("click", () => {
     mixedState.entries = generateMixedSession(code);
     mixedState.cardIndex = 0;
     mixedState.revealed = false;
@@ -1794,13 +1794,13 @@ function renderMixedView(code) {
     });
   });
 
-  document.getElementById("prevCard").addEventListener("click", () => {
+  el.querySelector("#prevCard").addEventListener("click", () => {
     mixedState.cardIndex = Math.max(0, pos - 1);
     mixedState.revealed = false;
     mixedState.typed = "";
     renderMixedView(code);
   });
-  document.getElementById("nextCard").addEventListener("click", () => {
+  el.querySelector("#nextCard").addEventListener("click", () => {
     mixedState.cardIndex = Math.min(mixedState.entries.length - 1, pos + 1);
     mixedState.revealed = false;
     mixedState.typed = "";
@@ -1808,17 +1808,17 @@ function renderMixedView(code) {
   });
 
   if (!mixedState.revealed) {
-    const ta = document.getElementById("answerInput");
+    const ta = el.querySelector("#answerInput");
     ta.addEventListener("input", () => {
       mixedState.typed = ta.value;
     });
-    document.getElementById("revealBtn").addEventListener("click", () => {
+    el.querySelector("#revealBtn").addEventListener("click", () => {
       mixedState.revealed = true;
       renderMixedView(code);
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true)));
-    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false)));
+    el.querySelector("#scoreGood").addEventListener("click", () => stampThen(true, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true)));
+    el.querySelector("#scoreBad").addEventListener("click", () => stampThen(false, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false)));
     wireAiGradeButton(el, card, mixedState.typed, () => renderMixedView(code));
   }
   wireCardExtras(el, code, entry.moduleId, entry.cardIdx, () => renderMixedView(code));
@@ -2023,7 +2023,7 @@ function renderReviewView() {
         ${msg}
         <p><a href="#/dashboard">Open the study dashboard &rarr;</a></p>
       </div>`;
-    document.getElementById("backFromReview").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#backFromReview").addEventListener("click", () => navigate(backHref));
     return;
   }
 
@@ -2081,7 +2081,7 @@ function renderReviewView() {
     </div>
   `;
 
-  document.getElementById("backFromReview").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#backFromReview").addEventListener("click", () => navigate(backHref));
   const go = (i) => {
     reviewState.cardIndex = i;
     reviewState.revealed = false;
@@ -2089,21 +2089,21 @@ function renderReviewView() {
     renderReviewView();
   };
   el.querySelectorAll(".card-dot").forEach((btn) => btn.addEventListener("click", () => go(Number(btn.dataset.idx))));
-  document.getElementById("prevCard").addEventListener("click", () => go(Math.max(0, pos - 1)));
-  document.getElementById("nextCard").addEventListener("click", () => go(Math.min(reviewState.entries.length - 1, pos + 1)));
+  el.querySelector("#prevCard").addEventListener("click", () => go(Math.max(0, pos - 1)));
+  el.querySelector("#nextCard").addEventListener("click", () => go(Math.min(reviewState.entries.length - 1, pos + 1)));
 
   if (!reviewState.revealed) {
-    const ta = document.getElementById("answerInput");
+    const ta = el.querySelector("#answerInput");
     ta.addEventListener("input", () => {
       reviewState.typed = ta.value;
     });
-    document.getElementById("revealBtn").addEventListener("click", () => {
+    el.querySelector("#revealBtn").addEventListener("click", () => {
       reviewState.revealed = true;
       renderReviewView();
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreReviewCard(entry, true)));
-    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreReviewCard(entry, false)));
+    el.querySelector("#scoreGood").addEventListener("click", () => stampThen(true, () => scoreReviewCard(entry, true)));
+    el.querySelector("#scoreBad").addEventListener("click", () => stampThen(false, () => scoreReviewCard(entry, false)));
     wireAiGradeButton(el, card, reviewState.typed, () => renderReviewView());
   }
   wireCardExtras(el, entry.code, entry.moduleId, entry.cardIdx, () => renderReviewView());
@@ -4282,7 +4282,7 @@ function renderDrillView(code, moduleId) {
         <h2>Drills</h2>
         <p>No drill questions for ${scopeLabel} yet.</p>
       </div>`;
-    document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#drillBack").addEventListener("click", () => navigate(backHref));
     return;
   }
 
@@ -4304,9 +4304,9 @@ function renderDrillView(code, moduleId) {
           <button class="btn" id="drillBackBtn">&larr; Back to ${backLabel}</button>
         </div>
       </div>`;
-    document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
-    document.getElementById("drillBackBtn").addEventListener("click", () => navigate(backHref));
-    document.getElementById("drillAgain").addEventListener("click", () => {
+    el.querySelector("#drillBack").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#drillBackBtn").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#drillAgain").addEventListener("click", () => {
       drillState._lastKey = ""; // forces a fresh run on the next render
       renderDrillView(code, moduleId);
     });
@@ -4361,7 +4361,7 @@ function renderDrillView(code, moduleId) {
       </div>
     </div>`;
 
-  document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#drillBack").addEventListener("click", () => navigate(backHref));
 
   // Hotspot regions are <g> elements, so they need their state painted on
   // directly and their own click/Enter handling rather than the button
@@ -4390,7 +4390,7 @@ function renderDrillView(code, moduleId) {
         renderDrillView(code, moduleId);
       });
     });
-    const submit = document.getElementById("drillSubmit");
+    const submit = el.querySelector("#drillSubmit");
     if (submit) {
       submit.addEventListener("click", () => {
         if (!drillAnswered()) return;
@@ -4403,7 +4403,7 @@ function renderDrillView(code, moduleId) {
       });
     }
   } else {
-    document.getElementById("drillNext").addEventListener("click", () => {
+    el.querySelector("#drillNext").addEventListener("click", () => {
       if (isLast) {
         drillState.done = true;
       } else {
@@ -5184,9 +5184,11 @@ initThemeToggle();
 // model answers, Left/Right change question. Ignored while typing in a text
 // box (Ctrl/Cmd+Enter there reveals, so you can type an answer then reveal
 // without reaching for the mouse) and when a modifier key is held.
+// Hidden views keep their last render, so an id can be in the page more than
+// once: act on the copy that is actually showing.
 function clickIfEnabled(id) {
-  const el = document.getElementById(id);
-  if (el && !el.disabled && el.offsetParent !== null) {
+  const el = [...document.querySelectorAll(`[id="${id}"]`)].find((b) => b.offsetParent !== null);
+  if (el && !el.disabled) {
     el.click();
     return true;
   }
