@@ -17,6 +17,8 @@ on:
       - "docs/data.js"
       - "docs/questions.js"
       - "docs/drills.js"
+      - "docs/calc-drills.js"
+      - "scripts/test-calc-drills.mjs"
       - "docs/diagrams.js"
       - "docs/foundations.js"
       - "maths-study/exams/*/progress.md"
@@ -53,6 +55,9 @@ jobs:
 
       - name: Validate content
         run: node scripts/validate-content.mjs
+
+      - name: Calculation drills match independent calculations
+        run: node scripts/test-calc-drills.mjs
 
       - name: Spaced-repetition scheduling tests
         run: node scripts/test-srs.mjs

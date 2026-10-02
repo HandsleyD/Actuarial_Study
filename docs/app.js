@@ -21,6 +21,10 @@ const FOUNDATION_CODES = typeof FOUNDATIONS !== "undefined" ? FOUNDATIONS : [];
 if (typeof FOUNDATION_SUBJECTS !== "undefined") Object.assign(SUBJECTS, FOUNDATION_SUBJECTS);
 if (typeof FOUNDATION_MODULES !== "undefined") Object.assign(MODULES, FOUNDATION_MODULES);
 if (typeof FOUNDATION_DRILLS !== "undefined" && typeof DRILLS !== "undefined") Object.assign(DRILLS, FOUNDATION_DRILLS);
+// Calculation drills (calc-drills.js) join a subject's other drills.
+if (typeof CALC_DRILLS !== "undefined" && typeof DRILLS !== "undefined") {
+  for (const [code, items] of Object.entries(CALC_DRILLS)) DRILLS[code] = (DRILLS[code] || []).concat(items);
+}
 
 function isFoundation(code) {
   return FOUNDATION_CODES.includes(code);
@@ -4354,7 +4358,7 @@ function onFlashDataChanged(code) {
   }
 }
 
-/* ---------- drills (multiple choice / select-all / cloze) ---------- */
+/* ---------- drills (multiple choice / select-all / cloze / diagram / calc) ---------- */
 //
 // Drills are objectively graded, unlike flashcards which the user grades
 // themselves. That makes them a SEPARATE TRACK on purpose: a drill result
@@ -4381,6 +4385,9 @@ const drillState = {
   choices: [], // multi: display indices
   blanks: [], // cloze: chosen token per blank (null = unanswered)
   region: null, // hotspot: the data-region the user clicked
+  params: null, // calc: this attempt's numbers, drawn fresh each time
+  input: "", // calc: what the user has typed
+  result: null, // calc: CALC.mark() outcome once submitted
   submitted: false,
   lastCorrect: false,
   stats: { answered: 0, correct: 0 },
@@ -4442,6 +4449,9 @@ function prepareDrillItem() {
   drillState.choices = [];
   drillState.blanks = [];
   drillState.region = null;
+  drillState.params = null;
+  drillState.input = "";
+  drillState.result = null;
   drillState.order = [];
   drillState.trays = [];
   drillState.submitted = false;
@@ -4452,6 +4462,8 @@ function prepareDrillItem() {
   } else if (item.type === "cloze") {
     drillState.trays = item.blanks.map((b) => shuffleArray(b.options));
     drillState.blanks = item.blanks.map(() => null);
+  } else if (item.type === "calc") {
+    drillState.params = item.params();
   }
 }
 
@@ -4462,6 +4474,7 @@ function drillAnswered() {
   if (item.type === "multi") return drillState.choices.length > 0;
   if (item.type === "cloze") return drillState.blanks.every((b) => b !== null);
   if (item.type === "hotspot") return drillState.region !== null;
+  if (item.type === "calc") return CALC.parseAnswer(drillState.input) !== null;
   return false;
 }
 
@@ -4475,6 +4488,10 @@ function gradeDrill() {
   }
   if (item.type === "cloze") return item.blanks.every((b, i) => drillState.blanks[i] === b.answer);
   if (item.type === "hotspot") return drillState.region === item.answer;
+  if (item.type === "calc") {
+    drillState.result = CALC.mark(item, drillState.params, drillState.input);
+    return !!(drillState.result && drillState.result.ok);
+  }
   return false;
 }
 
@@ -4513,6 +4530,7 @@ function drillTypeLabel(type) {
   if (type === "multi") return "Select all that apply";
   if (type === "cloze") return "Fill the gaps";
   if (type === "hotspot") return "Click the diagram";
+  if (type === "calc") return "Calculate";
   return "Multiple choice";
 }
 
@@ -4533,7 +4551,28 @@ function clozeTextHtml(item) {
   });
 }
 
+function drillQuestionHtml(item) {
+  return item.type === "calc" ? item.question(drillState.params) : item.q;
+}
+
+// A calc answer is typed. Before marking, the field takes "£1,234.5", "4.5%"
+// and the like (CALC.parseAnswer); after, it's locked showing what was typed.
+function calcInputHtml(item) {
+  const prefix = item.unit === "£" ? `<span class="calc-affix">£</span>` : "";
+  const suffix = item.unit === "%" ? `<span class="calc-affix">%</span>` : item.unit === "years" ? `<span class="calc-affix">years</span>` : "";
+  const bad = drillState.input.trim() !== "" && CALC.parseAnswer(drillState.input) === null;
+  return `<div class="calc-answer">
+    <label class="calc-label" for="calcInput">Your answer${item.dp != null ? ` <span class="muted">(to ${item.dp} d.p.)</span>` : ""}</label>
+    <div class="calc-input-row">
+      ${prefix}<input id="calcInput" class="calc-input" type="text" inputmode="${item.signed ? "text" : "decimal"}" autocomplete="off" spellcheck="false"
+        value="${escapeHtml(drillState.input)}" ${drillState.submitted ? "disabled" : ""}>${suffix}
+    </div>
+    <p class="calc-hint muted" id="calcHint" ${bad ? "" : "hidden"}>Enter a number, e.g. 1234.56 or 1,234.56.</p>
+  </div>`;
+}
+
 function drillBodyHtml(item) {
+  if (item.type === "calc") return calcInputHtml(item);
   if (item.type === "hotspot") {
     const dg = (typeof DIAGRAMS !== "undefined" && DIAGRAMS[item.diagram]) || null;
     if (!dg) return `<p class="muted">Diagram &ldquo;${escapeHtml(item.diagram || "")}&rdquo; is missing.</p>`;
@@ -4590,6 +4629,24 @@ function drillFeedbackHtml(item) {
   if (item.type === "hotspot" && !drillState.lastCorrect) {
     const why = item.why && item.why[drillState.region];
     if (why) bits.push(`<div class="drill-why"><strong>Why that part of the diagram is wrong:</strong> ${why}</div>`);
+  }
+  if (item.type === "calc") {
+    const r = drillState.result;
+    const tol = item.tolerance;
+    const tolText = [tol.rel != null ? `${+(tol.rel * 100).toFixed(3)}%` : "", tol.abs != null ? `${tol.abs}${item.unit === "%" ? " percentage points" : ""}` : ""]
+      .filter(Boolean)
+      .join(" or ");
+    return `
+    <div class="drill-verdict ${drillState.lastCorrect ? "correct" : "wrong"}">
+      ${drillState.lastCorrect ? `${ico("check")} Correct` : `${ico("cross")} Not quite`}
+    </div>
+    <p class="calc-compare">You entered <strong>${r ? CALC.answerText(item, r.value) : escapeHtml(drillState.input)}</strong>;
+      the answer is <strong>${CALC.answerText(item, item.answer(drillState.params))}</strong>
+      <span class="muted">(${tol.abs === 0 ? "must be exact" : `marked right within ${tolText}`})</span>.</p>
+    <details class="explain-panel" open>
+      <summary>Worked solution</summary>
+      <div class="explain-body calc-working">${item.working(drillState.params)}${item.explain ? `<p>${item.explain}</p>` : ""}</div>
+    </details>`;
   }
   if (item.type === "mcq" && !drillState.lastCorrect) {
     const chosenOrig = drillState.order[drillState.choice];
@@ -4855,7 +4912,7 @@ function renderDrillView(code, moduleId) {
           <span class="drill-type">${drillTypeLabel(item.type)}</span>
           <span class="srs-label ${SRS.isDue(prog, SRS.today()) ? "due" : prog ? "scheduled" : "new"}">${SRS.describeDue(prog, SRS.today())}</span>
         </div>
-        ${item.q ? `<div class="flashcard-question">${item.q}</div>` : ""}
+        ${drillQuestionHtml(item) ? `<div class="flashcard-question">${drillQuestionHtml(item)}</div>` : ""}
         ${drillBodyHtml(item)}
         ${drillFeedbackHtml(item)}
         <div class="flash-score-row">
@@ -4910,6 +4967,24 @@ function renderDrillView(code, moduleId) {
       });
     });
     const submit = el.querySelector("#drillSubmit");
+    // Typing mustn't re-render (that would drop focus mid-number), so the
+    // input only updates state and the button; Enter submits.
+    const calcInput = el.querySelector("#calcInput");
+    if (calcInput) {
+      calcInput.addEventListener("input", () => {
+        drillState.input = calcInput.value;
+        const ok = drillAnswered();
+        if (submit) submit.disabled = !ok;
+        el.querySelector("#calcHint").hidden = ok || calcInput.value.trim() === "";
+      });
+      calcInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && submit && drillAnswered()) {
+          e.preventDefault();
+          submit.click();
+        }
+      });
+      calcInput.focus({ preventScroll: true });
+    }
     if (submit) {
       submit.addEventListener("click", () => {
         if (!drillAnswered()) return;

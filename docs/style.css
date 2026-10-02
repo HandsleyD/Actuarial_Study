@@ -1929,6 +1929,72 @@ a.icon-btn { text-decoration: none; display: inline-flex; align-items: center; j
 
 .drill-why strong { color: var(--weak); }
 
+/* ---------- calc (typed numerical answer) ---------- */
+
+.calc-answer { margin: 18px 0 4px; }
+
+.calc-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.calc-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-affix {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.calc-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 260px;
+  padding: 11px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.calc-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.calc-input:disabled { opacity: 0.8; }
+
+.calc-hint {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+}
+
+/* A long formula in a worked solution scrolls on its own rather than
+   pushing the card wider than a phone screen. */
+.calc-working .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  padding: 2px 0;
+}
+
+.calc-compare {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 /* ---------- cloze ---------- */
 
 .cloze-text {

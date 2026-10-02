@@ -4,7 +4,7 @@
   "description": "Dev tooling for the Fellow study site. The site itself (docs/) has no build step or runtime dependencies.",
   "scripts": {
     "test": "npm run test:unit && npm run test:e2e",
-    "test:unit": "node scripts/validate-content.mjs && node scripts/test-srs.mjs && node scripts/test-plan-sync.mjs && node scripts/test-progress-sync.mjs && node scripts/test-route.mjs && node scripts/test-readiness.mjs && node scripts/test-mock.mjs",
+    "test:unit": "node scripts/validate-content.mjs && node scripts/test-calc-drills.mjs && node scripts/test-srs.mjs && node scripts/test-plan-sync.mjs && node scripts/test-progress-sync.mjs && node scripts/test-route.mjs && node scripts/test-readiness.mjs && node scripts/test-mock.mjs",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
