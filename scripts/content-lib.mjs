@@ -76,14 +76,15 @@ export function contentHash(text) {
 }
 
 // The generated docs/catalog.js, as text. Subjects follow SUBJECTS order.
-export function catalogSource(subjects, content, diagramsText) {
+export function catalogSource(subjects, content, diagramsText, calcDrills = {}) {
   const codes = Object.keys(subjects).filter((c) => content[c]);
   const q = (s) => JSON.stringify(s);
   const body = codes
     .map((code) => {
       const c = content[code];
       const drillsBy = {};
-      c.drills.forEach((d) => (drillsBy[d.module] = (drillsBy[d.module] || 0) + 1));
+      const drills = c.drills.concat(calcDrills[code] || []);
+      drills.forEach((d) => (drillsBy[d.module] = (drillsBy[d.module] || 0) + 1));
       const hotspots = c.drills.some((d) => d.type === "hotspot");
       const mods = c.modules
         .map(
@@ -94,7 +95,7 @@ export function catalogSource(subjects, content, diagramsText) {
       return `  ${code}: {
     file: "content/${code}.js?v=${c.hash}",
     questions: ${c.questions.length},
-    drills: ${c.drills.length},${hotspots ? "\n    diagrams: true," : ""}
+    drills: ${drills.length},${hotspots ? "\n    diagrams: true," : ""}
     modules: [
 ${mods}
     ],
@@ -129,7 +130,9 @@ export function buildCatalog(repoRoot) {
     if (!SUBJECTS[code]) errors.push(`docs/content/${code}.js: ${code} has no SUBJECTS entry in docs/data.js`);
   }
   const diagramsText = readFileSync(path.join(repoRoot, "docs/diagrams.js"), "utf8");
-  const catalog = catalogSource(SUBJECTS, content, diagramsText);
+  const calcFile = path.join(repoRoot, "docs/calc-drills.js");
+  const { CALC_DRILLS } = runBrowserScript(readFileSync(calcFile, "utf8"), calcFile, ["CALC_DRILLS"]);
+  const catalog = catalogSource(SUBJECTS, content, diagramsText, CALC_DRILLS);
   const indexFile = path.join(repoRoot, "docs/index.html");
   const index = readFileSync(indexFile, "utf8");
   const indexOut = index.replace(/catalog\.js\?v=[0-9a-f]*/, `catalog.js?v=${contentHash(catalog)}`);

@@ -46,6 +46,9 @@ const oldDrills = { ...old.DRILLS, ...old.FOUNDATION_DRILLS };
 
 const neu = loadSubjects(repoRoot);
 const { content, errors } = loadContentFiles(repoRoot);
+// Calculation drills were added after the split baseline. They remain in
+// their own file, but the catalog includes them alongside subject drills.
+const { CALC_DRILLS } = runBrowserScript(readFileSync(path.join(repoRoot, "docs/calc-drills.js"), "utf8"), "calc-drills.js", ["CALC_DRILLS"]);
 const { CATALOG } = runBrowserScript(readFileSync(path.join(repoRoot, "docs/catalog.js"), "utf8"), "catalog.js", ["CATALOG"]);
 
 const problems = [...errors];
@@ -109,7 +112,8 @@ for (const code of oldCodes) {
   if (!cat) problems.push(`${code}: missing from docs/catalog.js`);
   else {
     const drillsBy = {};
-    oldDs.forEach((d) => (drillsBy[d.module] = (drillsBy[d.module] || 0) + 1));
+    const catalogDrills = oldDs.concat(CALC_DRILLS[code] || []);
+    catalogDrills.forEach((d) => (drillsBy[d.module] = (drillsBy[d.module] || 0) + 1));
     catOk =
       expectSame(
         oldMods.map((m) => ({ id: m.id, title: m.title, description: m.description || "", cards: m.cards.length, drills: drillsBy[m.id] || 0 })),
@@ -117,7 +121,7 @@ for (const code of oldCodes) {
         `${code} catalog modules`
       ) &&
       expectSame(oldQs.length, cat.questions, `${code} catalog question count`) &&
-      expectSame(oldDs.length, cat.drills, `${code} catalog drill count`);
+      expectSame(catalogDrills.length, cat.drills, `${code} catalog drill count`);
   }
   const cards = oldMods.reduce((n, m) => n + m.cards.length, 0);
   rows.push([code, oldMods.length, cards, oldQs.length, oldDs.length, ok && catOk ? "identical" : "DIFFERENT"]);

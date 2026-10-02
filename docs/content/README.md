@@ -101,3 +101,9 @@ Distractors should be real confusions (most come from the `explain` notes on the
 ## Offline
 
 `sw.js` caches the app shell on install. Once the first page is up, `app.js` asks it to fetch every content file in the background, so the whole site works offline after one visit. A rebuilt catalog gives an edited file a new `?v=` URL, which the service worker fetches and uses in place of the old copy.
+# Calculation drills
+
+`docs/calc-drills.js` holds the numerical drill templates and calculation helpers.
+It loads with the app shell; its items join a subject's drills when that subject
+loads. The generated catalog includes these items in its drill counts. After
+editing calculation drills, also run `node scripts/build-catalog.mjs`.

@@ -50,6 +50,7 @@ const MODULES = {};
 const QUESTIONS = {};
 const DRILLS = {};
 let DIAGRAMS = {};
+let CALC = null;
 
 try {
   const built = buildCatalog(repoRoot);
@@ -78,6 +79,14 @@ try {
   ({ DIAGRAMS } = runBrowserScript(readFileSync(file, "utf8"), file, ["DIAGRAMS"]));
 } catch (e) {
   fail(`docs/diagrams.js: failed to parse/execute -- ${e.message}`);
+}
+
+try {
+  const file = path.join(repoRoot, "docs/calc-drills.js");
+  ({ CALC } = runBrowserScript(readFileSync(file, "utf8"), file, ["CALC"]));
+  for (const [code, items] of Object.entries(CALC.DRILLS)) DRILLS[code] = (DRILLS[code] || []).concat(items);
+} catch (e) {
+  fail(`docs/calc-drills.js: failed to parse/execute -- ${e.message}`);
 }
 
 // Foundations (FM, FS) have the same shapes as every other subject, so every
@@ -284,8 +293,9 @@ for (const [code, items] of Object.entries(DRILLS)) {
     if (!item.module) fail(`${where}: missing "module"`);
     else if (knownModules.size && !knownModules.has(item.module)) fail(`${where}: module "${item.module}" is not a module of ${code}`);
 
-    if (!item.explain || !stripTags(item.explain)) fail(`${where}: missing/empty "explain"`);
-    if (!["mcq", "multi", "cloze", "hotspot"].includes(item.type)) {
+    // a calc item's worked solution does the explaining
+    if (item.type !== "calc" && (!item.explain || !stripTags(item.explain))) fail(`${where}: missing/empty "explain"`);
+    if (!["mcq", "multi", "cloze", "hotspot", "calc"].includes(item.type)) {
       fail(`${where}: unknown type "${item.type}"`);
       return;
     }
@@ -370,6 +380,8 @@ for (const [code, items] of Object.entries(DRILLS)) {
       }
     }
 
+    if (item.type === "calc") checkCalc(item, where);
+
     if (item.type === "cloze") {
       if (!item.text || !stripTags(item.text)) fail(`${where}: missing/empty "text"`);
       const marks = [...String(item.text).matchAll(/\{\{(\d+)\}\}/g)].map((m) => Number(m[1]));
@@ -407,6 +419,82 @@ for (const [code, items] of Object.entries(DRILLS)) {
       }
     }
   });
+}
+
+// --- calc items ---
+//
+// A calc item is code, not text, so check it by running it: draw it many
+// times (seeded, so a failure reproduces) and require every draw to give a
+// finite answer, a question and a worked solution, clean LaTeX, and an
+// answer that -- shown at the item's own decimal places -- still marks as
+// right. That last one catches a tolerance tighter than the rounding the
+// site itself shows. Mathematical correctness is checked separately, against
+// independent calculations, by scripts/test-calc-drills.mjs.
+
+function checkCalc(item, where) {
+  const CALC_DRAWS = 400;
+  for (const fn of ["params", "question", "answer", "working"]) {
+    if (typeof item[fn] !== "function") {
+      fail(`${where}: calc item needs a "${fn}" function`);
+      return;
+    }
+  }
+  const tol = item.tolerance || {};
+  const okTol = (k) => tol[k] == null || (typeof tol[k] === "number" && tol[k] >= 0);
+  if ((tol.rel == null && tol.abs == null) || !okTol("rel") || !okTol("abs")) {
+    fail(`${where}: "tolerance" needs a non-negative "rel" and/or "abs"`);
+    return;
+  }
+  if (!["£", "%", "years", ""].includes(item.unit)) fail(`${where}: unknown unit "${item.unit}"`);
+  if (!Number.isInteger(item.dp) || item.dp < 0) fail(`${where}: "dp" must be a whole number of decimal places`);
+
+  const answers = new Set();
+  for (let k = 1; k <= CALC_DRAWS; k++) {
+    CALC.seed(k * 7919);
+    const at = `${where} (seed ${k * 7919})`;
+    let p, a, q, w;
+    try {
+      p = item.params();
+      a = item.answer(p);
+      q = item.question(p);
+      w = item.working(p);
+    } catch (e) {
+      fail(`${at}: threw -- ${e.message}`);
+      break;
+    }
+    if (typeof a !== "number" || !Number.isFinite(a)) {
+      fail(`${at}: answer is not a finite number (${a}) for ${JSON.stringify(p)}`);
+      break;
+    }
+    if (a < 0 && !item.signed) {
+      fail(`${at}: answer ${a} is negative but the item isn't marked "signed" (the keypad would have no minus key)`);
+      break;
+    }
+    if (!stripTags(q) || !stripTags(w)) {
+      fail(`${at}: empty question or working`);
+      break;
+    }
+    if (/NaN|undefined|Infinity/.test(q + w)) {
+      fail(`${at}: "NaN", "undefined" or "Infinity" in the question or working`);
+      break;
+    }
+    if (k <= 20) {
+      const before = errors.length;
+      checkLatexSpans(q, at, "question");
+      checkLatexSpans(w, at, "working");
+      if ((q.match(/\$/g) || []).length % 2 || (w.match(/\$/g) || []).length % 2) fail(`${at}: unbalanced $ in question or working`);
+      if (errors.length > before) break;
+    }
+    const shown = CALC.answerText(item, a).replace(/&minus;/g, "-");
+    const m = CALC.mark(item, p, shown);
+    if (!m || !m.ok) {
+      fail(`${at}: the answer as displayed ("${shown}") does not mark as correct against ${a} -- tolerance tighter than dp?`);
+      break;
+    }
+    answers.add(a.toPrecision(10));
+  }
+  CALC.unseed();
+  if (answers.size < 2) fail(`${where}: every draw gives the same answer -- params don't vary`);
 }
 
 function report() {
