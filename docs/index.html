@@ -27,7 +27,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=31">
+<link rel="stylesheet" href="style.css?v=32">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -135,13 +135,17 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<!-- KaTeX and supabase-js are deferred: the app renders without them and
+     picks them up once they arrive (renderMath queues any maths until KaTeX
+     is ready; Store.init waits for supabase-js). Deferred scripts still run
+     in order, so auto-render always follows katex. -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 <!-- Pinned rather than @2 (floating tag): recent-enough to speak Supabase's
      newer sb_publishable_/sb_secret_ API key format, which older 2.x
      releases predate. createClient() itself needs no code changes for the
      new format either way -- see supabase/SETUP.md. -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
 <script>
 // Offline support: see sw.js. Registration failure (older browser, private
@@ -153,15 +157,15 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 }
 </script>
 <script src="srs.js?v=1"></script>
-<script src="store.js?v=9"></script>
-<script src="data.js?v=44"></script>
-<script src="questions.js?v=34"></script>
-<script src="diagrams.js?v=1"></script>
-<script src="drills.js?v=2"></script>
-<script src="foundations.js?v=1"></script>
+<script src="store.js?v=10"></script>
+<!-- Subject metadata and the generated content catalog. Each subject's cards,
+     questions and drills (content/<CODE>.js) load on demand: see app.js's
+     loadContent() and docs/content/README.md. -->
+<script src="data.js?v=45"></script>
+<script src="catalog.js?v=f87a8b5740"></script>
 <script src="exam-stats.js?v=1"></script>
 <script src="exam-dates.js?v=3"></script>
 <script src="route.js?v=1"></script>
-<script src="app.js?v=36"></script>
+<script src="app.js?v=37"></script>
 </body>
 </html>

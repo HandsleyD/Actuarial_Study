@@ -5,6 +5,15 @@
 // mostly a matter of keeping the app shell, card data and third-party
 // libraries in the browser cache.
 //
+//   - Install caches the app shell: index.html and every script and
+//     stylesheet it links (which includes catalog.js but not the per-subject
+//     content files).
+//   - Content (content/<CODE>.js, diagrams.js) is fetched by the page only
+//     when it needs it, so once the first page is up the page posts the full
+//     list of content URLs here and they're cached in the background
+//     ({ type: "precache", urls }). URLs carry ?v=<hash>, so a new version is
+//     a new URL; older copies of the same file are dropped as it's replaced.
+//
 //   - Same-origin files (HTML, JS, CSS, data): network first, falling back to
 //     the cache. Online you always get the latest deploy; offline you get
 //     whatever was last fetched.
@@ -17,7 +26,7 @@
 //
 // Bump CACHE to drop every cached file (only needed if this file's rules change).
 
-const CACHE = "actuarial-study-v2";
+const CACHE = "actuarial-study-v3";
 
 const CDN_HOSTS = ["cdn.jsdelivr.net", "fonts.googleapis.com", "fonts.gstatic.com"];
 
@@ -76,6 +85,34 @@ self.addEventListener("install", (event) => {
         })
       );
       await self.skipWaiting();
+    })()
+  );
+});
+
+// Background precache of content files the page asks for. Anything already
+// cached at this exact URL (same ?v=) is skipped, so this is cheap on repeat
+// visits; a file fetched at a new version replaces its older copies.
+self.addEventListener("message", (event) => {
+  const msg = event.data;
+  if (!msg || msg.type !== "precache" || !Array.isArray(msg.urls)) return;
+  event.waitUntil(
+    (async () => {
+      const cache = await caches.open(CACHE);
+      const urls = msg.urls.filter((u) => {
+        try {
+          return new URL(u).origin === self.location.origin;
+        } catch {
+          return false;
+        }
+      });
+      const keys = await cache.keys();
+      for (const url of urls) {
+        if (await cache.match(url)) continue;
+        const res = await cacheUrl(cache, url);
+        if (!res) continue;
+        const path = new URL(url).pathname;
+        await Promise.all(keys.filter((k) => new URL(k.url).pathname === path && k.url !== url).map((k) => cache.delete(k)));
+      }
     })()
   );
 });

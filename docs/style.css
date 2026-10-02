@@ -2897,3 +2897,36 @@ a.btn { display: inline-flex; }
 
 /* Sections opened by link (#/dashboard/plan) clear the sticky header. */
 .dash-section { scroll-margin-top: 84px; }
+
+/* Waiting for a subject's content file (see loadContent in app.js), or it
+   failed to arrive. */
+.content-loading {
+  color: var(--text-muted);
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.content-loading::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  animation: content-spin 0.8s linear infinite;
+}
+@keyframes content-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .content-loading::before { animation: none; }
+}
+.content-error {
+  color: var(--weak);
+  background: var(--weak-bg);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+.content-error p { margin: 0 0 10px; }
+.search-status { margin: 8px 0 12px; }
