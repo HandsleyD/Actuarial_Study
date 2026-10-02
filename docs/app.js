@@ -238,7 +238,7 @@ function renderQuestionsView(code) {
         <h2>Practice exam questions</h2>
         <p>No practice questions for ${code} yet.</p>
       </div>`;
-    document.getElementById("backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
+    el.querySelector("#backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
     return;
   }
 
@@ -340,6 +340,14 @@ function renderQuestionsView(code) {
             ? `<div class="qbank-reveal-row"><button class="btn primary" id="revealQBtn">Reveal model answers</button></div>`
             : markPanelHtml
         }
+        ${reportLinkHtml({
+          code,
+          module: q.modules || "",
+          item: `practice question ${q.id} (Q${idx + 1})`,
+          ref: q.id,
+          question: [q.title, ...q.parts.map((p) => `${p.label} ${p.question}`)].join(" "),
+          link: `#/${code}/questions/${idx}`,
+        })}
       </div>
       ${explainPanelHtml(explainCard, revealed, "Examiner&rsquo;s insight")}
     </div>
@@ -349,7 +357,7 @@ function renderQuestionsView(code) {
     </div>
   `;
 
-  document.getElementById("backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
+  el.querySelector("#backToSubjectQ").addEventListener("click", () => navigate(`#/${code}`));
 
   const goTo = (i) => {
     pauseQTimer();
@@ -386,7 +394,7 @@ function renderQuestionsView(code) {
     btn.addEventListener("click", () => goTo(Number(btn.dataset.idx)));
   });
 
-  const revealBtn = document.getElementById("revealQBtn");
+  const revealBtn = el.querySelector("#revealQBtn");
   if (revealBtn) {
     revealBtn.addEventListener("click", () => {
       if (pref.on && !timer.done && (timer.since || timer.elapsed)) {
@@ -410,21 +418,21 @@ function renderQuestionsView(code) {
     });
   }
 
-  document.getElementById("prevQ").addEventListener("click", () => goTo(Math.max(0, idx - 1)));
-  document.getElementById("nextQ").addEventListener("click", () => goTo(Math.min(questions.length - 1, idx + 1)));
+  el.querySelector("#prevQ").addEventListener("click", () => goTo(Math.max(0, idx - 1)));
+  el.querySelector("#nextQ").addEventListener("click", () => goTo(Math.min(questions.length - 1, idx + 1)));
 
-  const timedToggle = document.getElementById("timedToggle");
+  const timedToggle = el.querySelector("#timedToggle");
   timedToggle.addEventListener("change", () => {
     pauseQTimer();
     saveTimedPref(timedToggle.checked, timedPref().rate);
     renderQuestionsView(code);
   });
-  const rateSel = document.getElementById("timedRate");
+  const rateSel = el.querySelector("#timedRate");
   rateSel.addEventListener("change", () => {
     saveTimedPref(true, Number(rateSel.value));
     renderQuestionsView(code);
   });
-  const timerBtn = document.getElementById("timerBtn");
+  const timerBtn = el.querySelector("#timerBtn");
   if (timerBtn) {
     timerBtn.addEventListener("click", () => {
       if (timer.since) pauseQTimer();
@@ -1158,6 +1166,7 @@ async function loadFlash(code) {
 
 function loadAllFlash() {
   for (const code of Object.keys(MODULES)) loadFlash(code);
+  refreshNotes();
 }
 
 // Every Sufficient/Insufficient tap, from any view, goes through here: the
@@ -1256,6 +1265,210 @@ function scoreMixedCard(code, moduleId, idx, sufficient) {
   renderMixedView(code);
   renderGameBar();
   renderSyncStatus();
+}
+
+/* ---------- personal notes and flags on flashcards ---------- */
+//
+// Stored per (subject, module, card index) by Store.setCardNote and synced
+// like the rest of the user's progress (supabase/migrations/006_card_notes.sql).
+// The note is the user's own text, so it's always escaped before display.
+
+const noteData = {}; // code -> { m01: { "0": { note, flagged, updatedAt } } }
+
+function notesFor(code) {
+  if (!noteData[code]) noteData[code] = Store.getNotesCache(code);
+  return noteData[code];
+}
+
+function cardNote(code, moduleId, idx) {
+  const mod = notesFor(code)[moduleId];
+  return (mod && mod[idx]) || null;
+}
+
+function saveCardNote(code, moduleId, idx, patch) {
+  Store.setCardNote(code, moduleId, idx, patch);
+  noteData[code] = Store.getNotesCache(code);
+  if (patch.note !== undefined) searchIndex = null; // notes are searchable: rebuild with this one
+  renderSyncStatus();
+}
+
+// Notes for these subjects changed underneath the page (a load, or an upload
+// that found a newer copy from another device): re-read them and redraw
+// whatever shows them. A card whose note editor is open is left alone, so
+// the user's draft isn't thrown away.
+function onNotesChanged(codes) {
+  if (!codes.length) return;
+  codes.forEach((code) => (noteData[code] = Store.getNotesCache(code)));
+  searchIndex = null;
+  const r = parseHash();
+  if (r.view === "search") renderSearchResults();
+  if (r.view === "subject" && codes.includes(r.exam)) renderSubjectView(r.exam);
+  if (r.view === "dashboard") renderDashboardView();
+  if (noteEditState.editing) return;
+  if (r.view === "flash" && codes.includes(r.exam)) renderFlashView(r.exam, r.module);
+  if (r.view === "mixed" && codes.includes(r.exam)) renderMixedView(r.exam);
+  if (r.view === "review") {
+    if (r.kind === "flagged" && reviewRunUntouched() && !reviewState.sessionDone) startReviewRun(r.kind, r.exam);
+    renderReviewView();
+  }
+}
+
+// Pulls notes saved on other devices. Every subject comes back in one request.
+function refreshNotes() {
+  Store.loadNotes().then((changed) => onNotesChanged(Object.keys(changed)));
+}
+
+Store.onNotesChange(onNotesChanged);
+
+// Which card's note editor is open. Moving to another card closes it.
+const noteEditState = { key: "", editing: false };
+
+function flagButtonHtml(code, moduleId, idx) {
+  const n = cardNote(code, moduleId, idx);
+  const on = !!(n && n.flagged);
+  return `<button type="button" class="card-flag-btn ${on ? "on" : ""}" id="flagBtn" aria-pressed="${on}" title="${
+    on ? "Remove from your flagged cards" : "Flag this card to come back to it"
+  }">${ico("flag")} ${on ? "Flagged" : "Flag"}</button>`;
+}
+
+// Under the answer: the user's note (or a link to add one) and, after that,
+// the link to report a mistake in the card itself.
+function cardNotePanelHtml(code, moduleId, idx) {
+  const key = `${code}:${moduleId}:${idx}`;
+  if (noteEditState.key !== key) {
+    noteEditState.key = key;
+    noteEditState.editing = false;
+  }
+  const n = cardNote(code, moduleId, idx);
+  const text = (n && n.note) || "";
+  if (noteEditState.editing) {
+    return `<div class="card-note editing">
+      <label class="card-note-head" for="noteInput">Your note</label>
+      <textarea id="noteInput" class="answer-input note-input" maxlength="2000" placeholder="A mnemonic, a link to another card, what tripped you up&hellip; Only you can see this.">${escapeHtml(text)}</textarea>
+      <div class="card-note-actions">
+        <button type="button" class="btn primary" id="noteSave">Save note</button>
+        <button type="button" class="btn" id="noteCancel">Cancel</button>
+        ${text ? `<button type="button" class="btn" id="noteDelete">Delete note</button>` : ""}
+      </div>
+    </div>`;
+  }
+  if (text) {
+    return `<div class="card-note">
+      <div class="card-note-head">Your note <button type="button" class="link-btn" id="noteEdit">Edit</button></div>
+      <div class="card-note-text">${escapeHtml(text)}</div>
+    </div>`;
+  }
+  return `<div class="card-note-add"><button type="button" class="link-btn" id="noteEdit">${ico("pencil")} Add a note</button></div>`;
+}
+
+// Every lookup goes through `el`, the view being drawn: hidden views keep
+// their last render, so the same ids (#noteInput, #flagBtn) can be in the
+// document more than once.
+function wireCardExtras(el, code, moduleId, idx, rerender) {
+  const flag = el.querySelector("#flagBtn");
+  if (flag) {
+    flag.addEventListener("click", () => {
+      const n = cardNote(code, moduleId, idx);
+      saveCardNote(code, moduleId, idx, { flagged: !(n && n.flagged) });
+      rerender();
+      const again = el.querySelector("#flagBtn");
+      if (again) again.focus();
+    });
+  }
+  const edit = el.querySelector("#noteEdit");
+  if (edit) {
+    edit.addEventListener("click", () => {
+      noteEditState.editing = true;
+      rerender();
+      const input = el.querySelector("#noteInput");
+      if (input) {
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+      }
+    });
+  }
+  const close = () => {
+    noteEditState.editing = false;
+    rerender();
+  };
+  const save = el.querySelector("#noteSave");
+  if (save) {
+    save.addEventListener("click", () => {
+      saveCardNote(code, moduleId, idx, { note: el.querySelector("#noteInput").value.trim() });
+      close();
+    });
+  }
+  const cancel = el.querySelector("#noteCancel");
+  if (cancel) cancel.addEventListener("click", close);
+  const del = el.querySelector("#noteDelete");
+  if (del) {
+    del.addEventListener("click", () => {
+      saveCardNote(code, moduleId, idx, { note: "" });
+      close();
+    });
+  }
+}
+
+/* ---------- "Report a mistake" (pre-filled GitHub issue) ---------- */
+//
+// Opens a new issue on the repo with the content's location and question
+// text filled in, matching .github/ISSUE_TEMPLATE/content-error.md. Only the
+// content goes in: never the user's answer, note, scores or anything else
+// about their progress.
+
+const REPORT_ISSUE_URL = `https://github.com/${CONFIG.owner}/${CONFIG.repo}/issues/new`;
+const REPORT_QUESTION_MAX = 600; // keeps the URL well under GitHub's length limit
+
+// opts: { code, module, item, ref, question, link }
+//   module   module id ("m06") or a description ("Modules 2, 3, 8")
+//   item     what the item is, for the body ("card index 4", "drill cb2-m06-d01")
+//   ref      short form for the title ("m06 card 5", "cb2-m06-d01")
+//   link     the site hash that opens this item ("#/CB2/m06/4")
+function reportIssueHref(opts) {
+  const subject = SUBJECTS[opts.code] ? `${opts.code} (${plainText(SUBJECTS[opts.code].name)})` : opts.code;
+  let question = plainText(opts.question);
+  if (question.length > REPORT_QUESTION_MAX) question = `${question.slice(0, REPORT_QUESTION_MAX)} …`;
+  const short = question.length > 60 ? `${question.slice(0, 57)}…` : question;
+  const site = `${location.origin}${location.pathname}`;
+  const title = `[Content error] ${opts.code} ${opts.ref}: ${short}`;
+  const body = [
+    "**Where**",
+    `- Subject: ${subject}`,
+    `- Module: ${opts.module}`,
+    `- Item: ${opts.item}`,
+    `- Link: ${site}${opts.link}`,
+    `- Seen at: ${location.hash || "#/"}`,
+    "",
+    "**Question text**",
+    "",
+    `> ${question}`, // plainText() has already collapsed it to one line
+    "",
+    "**What's wrong**",
+    "",
+    "<!-- Describe the mistake: a wrong answer, a typo, a formula that doesn't render, an explanation that's misleading... -->",
+    "",
+    "**Suggested correction (optional)**",
+    "",
+  ].join("\n");
+  const params = new URLSearchParams({ template: "content-error.md", labels: "content-error", title, body });
+  return `${REPORT_ISSUE_URL}?${params}`;
+}
+
+function reportLinkHtml(opts) {
+  return `<div class="report-row"><a class="report-link" href="${escapeHtml(reportIssueHref(opts))}" target="_blank" rel="noopener">${ico(
+    "flag"
+  )} Report a mistake</a></div>`;
+}
+
+function cardReportHtml(code, moduleId, idx, card) {
+  return reportLinkHtml({
+    code,
+    module: moduleId,
+    item: `card index ${idx} (card ${idx + 1} of the module's full deck)`,
+    ref: `${moduleId} card ${idx + 1}`,
+    question: card.q,
+    link: `#/${code}/${moduleId}/${idx}`,
+  });
 }
 
 /* ---------- AI answer feedback (optional, needs sign-in) ---------- */
@@ -1599,6 +1812,7 @@ function renderSubjectView(code) {
   const paused = reviewsPaused(code);
   const subjectDue = paused ? 0 : dueCards(code).length;
   const subjectWeak = paused ? 0 : weakCards(code).length;
+  const subjectFlagged = flaggedCards(code).length;
   const foundation = isFoundation(code);
   const nextExam = foundation ? null : nextSitting(code);
   const firstPaper = nextExam && nextExam.papers.find((p) => p.date >= SRS.today());
@@ -1625,6 +1839,7 @@ function renderSubjectView(code) {
                ${subjectDue ? `<a class="btn primary" href="${reviewHash("due", code)}">${ico("calendar")} Review ${subjectDue} due card${subjectDue === 1 ? "" : "s"}</a>` : ""}
                <button class="btn ${subjectDue ? "" : "primary"} mixed-session-btn" id="startMixed">${ico("shuffle")} Mixed session &mdash; 10 random cards across all of ${code}</button>
                ${subjectWeak ? `<a class="btn" href="${reviewHash("weak", code)}">${ico("target")} Practise ${subjectWeak} weak card${subjectWeak === 1 ? "" : "s"}</a>` : ""}
+               ${subjectFlagged ? `<a class="btn" href="${reviewHash("flagged", code)}">${ico("flag")} Review ${subjectFlagged} flagged card${subjectFlagged === 1 ? "" : "s"}</a>` : ""}
              </div>`
           : ""
       }
@@ -1747,10 +1962,10 @@ function renderSessionSummary(el, options) {
       </div>
     </div>`;
 
-  document.getElementById("summaryBack").addEventListener("click", () => navigate(backHref));
-  document.getElementById("summaryBackBtn").addEventListener("click", () => navigate(backHref));
-  document.getElementById("summaryReviewAgain").addEventListener("click", onReviewAgain);
-  const newSessionBtn = document.getElementById("summaryNewSession");
+  el.querySelector("#summaryBack").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#summaryBackBtn").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#summaryReviewAgain").addEventListener("click", onReviewAgain);
+  const newSessionBtn = el.querySelector("#summaryNewSession");
   if (newSessionBtn) newSessionBtn.addEventListener("click", onNewSession);
 }
 
@@ -1782,7 +1997,7 @@ function renderFlashView(code, moduleId) {
         <h2>${moduleId.toUpperCase()}</h2>
         <p>No flashcards for this module yet.</p>
       </div>`;
-    document.getElementById("backToSubject").addEventListener("click", () => navigate(`#/${code}`));
+    el.querySelector("#backToSubject").addEventListener("click", () => navigate(`#/${code}`));
     return;
   }
 
@@ -1863,7 +2078,7 @@ function renderFlashView(code, moduleId) {
     <div class="${flashcardLayoutClass(card, flashState.revealed)}">
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
         ${isMastered ? `<div class="flashcard-star">${ico("star", "ico-star")}</div>` : ""}
-        <div class="flashcard-label">Card ${pos + 1} of ${seq.length} ${srsLabelHtml(code, moduleId, realIdx)}</div>
+        <div class="flashcard-label">Card ${pos + 1} of ${seq.length} ${srsLabelHtml(code, moduleId, realIdx)} ${flagButtonHtml(code, moduleId, realIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
         ${
           !flashState.revealed
@@ -1871,11 +2086,13 @@ function renderFlashView(code, moduleId) {
                <button class="btn primary" id="revealBtn">Reveal answer</button>`
             : `${userAnswerHtml(flashState.typed)}
                <div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               ${cardNotePanelHtml(code, moduleId, realIdx)}
                ${aiGradePanelHtml(flashState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
                  <button class="btn score-btn sufficient" id="scoreGood">Sufficient</button>
-               </div>`
+               </div>
+               ${cardReportHtml(code, moduleId, realIdx, card)}`
         }
       </div>
       ${explainPanelHtml(card, flashState.revealed)}
@@ -1886,14 +2103,14 @@ function renderFlashView(code, moduleId) {
     </div>
   `;
 
-  document.getElementById("backToSubject").addEventListener("click", () => navigate(`#/${code}`));
+  el.querySelector("#backToSubject").addEventListener("click", () => navigate(`#/${code}`));
 
   // Track the user's own clicks: a <details> rendered open fires "toggle" by
   // itself, which would otherwise read as the user choosing to keep it open.
-  const lesson = document.getElementById("lessonPanel");
+  const lesson = el.querySelector("#lessonPanel");
   if (lesson) lesson.querySelector("summary").addEventListener("click", () => (lessonOpen[lesson.dataset.key] = !lesson.open));
 
-  document.getElementById("tabSession").addEventListener("click", () => {
+  el.querySelector("#tabSession").addEventListener("click", () => {
     if (flashState.mode !== "session") {
       flashState.mode = "session";
       if (!flashState.sessionIndices.length) flashState.sessionIndices = generateSession(code, moduleId);
@@ -1903,7 +2120,7 @@ function renderFlashView(code, moduleId) {
       renderFlashView(code, moduleId);
     }
   });
-  document.getElementById("tabFull").addEventListener("click", () => {
+  el.querySelector("#tabFull").addEventListener("click", () => {
     if (flashState.mode !== "full") {
       flashState.mode = "full";
       flashState.cardIndex = 0;
@@ -1912,7 +2129,7 @@ function renderFlashView(code, moduleId) {
       renderFlashView(code, moduleId);
     }
   });
-  const shuffleBtn = document.getElementById("shuffleBtn");
+  const shuffleBtn = el.querySelector("#shuffleBtn");
   if (shuffleBtn) {
     shuffleBtn.addEventListener("click", () => {
       flashState.sessionIndices = generateSession(code, moduleId);
@@ -1932,13 +2149,13 @@ function renderFlashView(code, moduleId) {
     });
   });
 
-  document.getElementById("prevCard").addEventListener("click", () => {
+  el.querySelector("#prevCard").addEventListener("click", () => {
     flashState.cardIndex = Math.max(0, pos - 1);
     flashState.revealed = false;
     flashState.typed = "";
     renderFlashView(code, moduleId);
   });
-  document.getElementById("nextCard").addEventListener("click", () => {
+  el.querySelector("#nextCard").addEventListener("click", () => {
     flashState.cardIndex = Math.min(seq.length - 1, pos + 1);
     flashState.revealed = false;
     flashState.typed = "";
@@ -1946,19 +2163,20 @@ function renderFlashView(code, moduleId) {
   });
 
   if (!flashState.revealed) {
-    const ta = document.getElementById("answerInput");
+    const ta = el.querySelector("#answerInput");
     ta.addEventListener("input", () => {
       flashState.typed = ta.value;
     });
-    document.getElementById("revealBtn").addEventListener("click", () => {
+    el.querySelector("#revealBtn").addEventListener("click", () => {
       flashState.revealed = true;
       renderFlashView(code, moduleId);
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreCard(code, moduleId, realIdx, true)));
-    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreCard(code, moduleId, realIdx, false)));
+    el.querySelector("#scoreGood").addEventListener("click", () => stampThen(true, () => scoreCard(code, moduleId, realIdx, true)));
+    el.querySelector("#scoreBad").addEventListener("click", () => stampThen(false, () => scoreCard(code, moduleId, realIdx, false)));
     wireAiGradeButton(el, card, flashState.typed, () => renderFlashView(code, moduleId));
   }
+  wireCardExtras(el, code, moduleId, realIdx, () => renderFlashView(code, moduleId));
 
   renderMath(el);
 }
@@ -1977,7 +2195,7 @@ function renderMixedView(code) {
         <h2>Mixed session</h2>
         <p>No flashcards for ${code} yet.</p>
       </div>`;
-    document.getElementById("backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
+    el.querySelector("#backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
     return;
   }
 
@@ -2049,7 +2267,7 @@ function renderMixedView(code) {
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
         ${isMastered ? `<div class="flashcard-star">${ico("star", "ico-star")}</div>` : ""}
         <a class="flashcard-source" href="#/${code}/${entry.moduleId}">${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
-        <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length} ${srsLabelHtml(code, entry.moduleId, entry.cardIdx)}</div>
+        <div class="flashcard-label">Card ${pos + 1} of ${mixedState.entries.length} ${srsLabelHtml(code, entry.moduleId, entry.cardIdx)} ${flagButtonHtml(code, entry.moduleId, entry.cardIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
         ${
           !mixedState.revealed
@@ -2057,11 +2275,13 @@ function renderMixedView(code) {
                <button class="btn primary" id="revealBtn">Reveal answer</button>`
             : `${userAnswerHtml(mixedState.typed)}
                <div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               ${cardNotePanelHtml(code, entry.moduleId, entry.cardIdx)}
                ${aiGradePanelHtml(mixedState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
                  <button class="btn score-btn sufficient" id="scoreGood">Sufficient</button>
-               </div>`
+               </div>
+               ${cardReportHtml(code, entry.moduleId, entry.cardIdx, card)}`
         }
       </div>
       ${explainPanelHtml(card, mixedState.revealed)}
@@ -2072,9 +2292,9 @@ function renderMixedView(code) {
     </div>
   `;
 
-  document.getElementById("backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
+  el.querySelector("#backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
 
-  document.getElementById("shuffleMixedBtn").addEventListener("click", () => {
+  el.querySelector("#shuffleMixedBtn").addEventListener("click", () => {
     mixedState.entries = generateMixedSession(code);
     mixedState.cardIndex = 0;
     mixedState.revealed = false;
@@ -2091,13 +2311,13 @@ function renderMixedView(code) {
     });
   });
 
-  document.getElementById("prevCard").addEventListener("click", () => {
+  el.querySelector("#prevCard").addEventListener("click", () => {
     mixedState.cardIndex = Math.max(0, pos - 1);
     mixedState.revealed = false;
     mixedState.typed = "";
     renderMixedView(code);
   });
-  document.getElementById("nextCard").addEventListener("click", () => {
+  el.querySelector("#nextCard").addEventListener("click", () => {
     mixedState.cardIndex = Math.min(mixedState.entries.length - 1, pos + 1);
     mixedState.revealed = false;
     mixedState.typed = "";
@@ -2105,19 +2325,20 @@ function renderMixedView(code) {
   });
 
   if (!mixedState.revealed) {
-    const ta = document.getElementById("answerInput");
+    const ta = el.querySelector("#answerInput");
     ta.addEventListener("input", () => {
       mixedState.typed = ta.value;
     });
-    document.getElementById("revealBtn").addEventListener("click", () => {
+    el.querySelector("#revealBtn").addEventListener("click", () => {
       mixedState.revealed = true;
       renderMixedView(code);
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true)));
-    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false)));
+    el.querySelector("#scoreGood").addEventListener("click", () => stampThen(true, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, true)));
+    el.querySelector("#scoreBad").addEventListener("click", () => stampThen(false, () => scoreMixedCard(code, entry.moduleId, entry.cardIdx, false)));
     wireAiGradeButton(el, card, mixedState.typed, () => renderMixedView(code));
   }
+  wireCardExtras(el, code, entry.moduleId, entry.cardIdx, () => renderMixedView(code));
 
   renderMath(el);
 }
@@ -2170,10 +2391,36 @@ function weakCards(scope) {
     .sort((a, b) => (b.st.lapses || 0) - (a.st.lapses || 0) || (a.st.ease || 0) - (b.st.ease || 0));
 }
 
+// Cards the user has flagged, most recently flagged first. Unlike the due
+// and weak decks this one isn't driven by the schedule, so it keeps subjects
+// whose reviews are paused: a flag is a deliberate "show me this again".
+function flaggedCards(scope) {
+  const out = [];
+  const codes = scope ? [scope] : Object.keys(MODULES);
+  for (const code of codes) {
+    const notes = notesFor(code);
+    for (const def of MODULES[code] || []) {
+      const mod = notes[def.id];
+      if (!mod) continue;
+      Object.keys(mod).forEach((k) => {
+        const cardIdx = Number(k);
+        if (cardIdx < def.cards.length && mod[k] && mod[k].flagged) out.push({ code, moduleId: def.id, cardIdx, at: mod[k].updatedAt || 0 });
+      });
+    }
+  }
+  return out.sort((a, b) => b.at - a.at);
+}
+
+function reviewPool(kind, scope) {
+  if (kind === "weak") return weakCards(scope);
+  if (kind === "flagged") return flaggedCards(scope);
+  return dueCards(scope);
+}
+
 function buildReviewDeck(kind, scope) {
-  const pool = kind === "weak" ? weakCards(scope) : dueCards(scope);
-  // Highest-priority batch first (most overdue / most missed), shuffled within
-  // the batch so subjects and modules interleave.
+  const pool = reviewPool(kind, scope);
+  // Highest-priority batch first (most overdue / most missed / most recently
+  // flagged), shuffled within the batch so subjects and modules interleave.
   return shuffleArray(pool.slice(0, REVIEW_BATCH)).map(({ code, moduleId, cardIdx }) => ({ code, moduleId, cardIdx }));
 }
 
@@ -2205,7 +2452,7 @@ function reviewRunUntouched() {
 }
 
 function reviewHash(kind, scope) {
-  return `#/${kind === "weak" ? "weak" : "review"}${scope ? `/${scope}` : ""}`;
+  return `#/${kind === "weak" || kind === "flagged" ? kind : "review"}${scope ? `/${scope}` : ""}`;
 }
 
 function scoreReviewCard(entry, sufficient) {
@@ -2240,12 +2487,12 @@ function renderReviewView() {
   const el = document.getElementById("reviewView");
   const { kind, scope } = reviewState;
   const scopeName = scope ? `${scope} &mdash; ${(SUBJECTS[scope] || { name: "" }).name}` : "all subjects";
-  const title = kind === "weak" ? "Weak-card drill" : "Due for review";
+  const title = kind === "weak" ? "Weak-card drill" : kind === "flagged" ? "Flagged cards" : "Due for review";
   const backHref = scope ? `#/${scope}` : "#/";
   const backLabel = scope || "Home";
 
   if (reviewState.sessionDone) {
-    const left = kind === "weak" ? weakCards(scope).length : dueCards(scope).length;
+    const left = reviewPool(kind, scope).length;
     renderSessionSummary(el, {
       title: `${title} &mdash; ${scopeName}`,
       backHref,
@@ -2253,10 +2500,12 @@ function renderReviewView() {
       stats: reviewState.sessionStats,
       overallLabel:
         kind === "weak"
-          ? `${left} weak card${left === 1 ? "" : "s"} still flagged.`
-          : left
-            ? `${left} more card${left === 1 ? "" : "s"} due today.`
-            : `All caught up for today. ${nextDueSummary(scope)}`,
+          ? `${left} weak card${left === 1 ? "" : "s"} left.`
+          : kind === "flagged"
+            ? `${left} card${left === 1 ? "" : "s"} still flagged. Unflag a card once you've got it.`
+            : left
+              ? `${left} more card${left === 1 ? "" : "s"} due today.`
+              : `All caught up for today. ${nextDueSummary(scope)}`,
       onReviewAgain: () => {
         reviewState.sessionDone = false;
         reviewState.sessionStats = { reviewed: 0, mastered: 0 };
@@ -2279,9 +2528,11 @@ function renderReviewView() {
     const msg =
       kind === "weak"
         ? `<p>No weak cards in ${scopeName} yet. Cards land here once you've marked them Insufficient &mdash; twice, or once and not yet mastered again.</p>`
-        : scheduledCards(scope).length
-          ? `<p>Nothing due today in ${scopeName}. ${nextDueSummary(scope)}</p>`
-          : `<p>No cards scheduled yet. Every card you score Sufficient or Insufficient gets a review date &mdash; open a module and start a session, and cards will come back here when they're due.</p>`;
+        : kind === "flagged"
+          ? `<p>No flagged cards in ${scopeName}. Use the ${ico("flag")} Flag button on any flashcard to save it here for another look.</p>`
+          : scheduledCards(scope).length
+            ? `<p>Nothing due today in ${scopeName}. ${nextDueSummary(scope)}</p>`
+            : `<p>No cards scheduled yet. Every card you score Sufficient or Insufficient gets a review date &mdash; open a module and start a session, and cards will come back here when they're due.</p>`;
     el.innerHTML = `
       <button class="back-link" id="backFromReview">&larr; ${backLabel}</button>
       <div class="flash-empty">
@@ -2289,7 +2540,7 @@ function renderReviewView() {
         ${msg}
         <p><a href="#/dashboard">Open the study dashboard &rarr;</a></p>
       </div>`;
-    document.getElementById("backFromReview").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#backFromReview").addEventListener("click", () => navigate(backHref));
     return;
   }
 
@@ -2300,7 +2551,7 @@ function renderReviewView() {
   const card = def.cards[entry.cardIdx];
   const isMastered = isMasteredEntry(entry);
   resetAiGradeIfStale(`review:${entry.code}:${entry.moduleId}:${entry.cardIdx}`);
-  const remaining = (kind === "weak" ? weakCards(scope) : dueCards(scope)).length;
+  const remaining = reviewPool(kind, scope).length;
 
   const dots = reviewState.entries
     .map((e, i) => {
@@ -2314,7 +2565,7 @@ function renderReviewView() {
     <div class="flash-head">
       <div class="flash-title-row">
         <h2>${title} &mdash; ${scopeName}</h2>
-        <span class="flash-progress">${remaining} ${kind === "weak" ? "flagged" : "due"}</span>
+        <span class="flash-progress">${remaining} ${kind === "weak" ? "weak" : kind === "flagged" ? "flagged" : "due"}</span>
       </div>
     </div>
     <div class="card-dots">${dots}</div>
@@ -2322,7 +2573,7 @@ function renderReviewView() {
       <div class="flashcard ${isMastered ? "is-mastered" : ""}">
         ${isMastered ? `<div class="flashcard-star">${ico("star", "ico-star")}</div>` : ""}
         <a class="flashcard-source" href="#/${entry.code}/${entry.moduleId}">${entry.code} &middot; ${entry.moduleId.toUpperCase()} &middot; ${def.title}</a>
-        <div class="flashcard-label">Card ${pos + 1} of ${reviewState.entries.length} ${srsLabelHtml(entry.code, entry.moduleId, entry.cardIdx)}</div>
+        <div class="flashcard-label">Card ${pos + 1} of ${reviewState.entries.length} ${srsLabelHtml(entry.code, entry.moduleId, entry.cardIdx)} ${flagButtonHtml(entry.code, entry.moduleId, entry.cardIdx)}</div>
         <div class="flashcard-question">${card.q}</div>
         ${
           !reviewState.revealed
@@ -2330,11 +2581,13 @@ function renderReviewView() {
                <button class="btn primary" id="revealBtn">Reveal answer</button>`
             : `${userAnswerHtml(reviewState.typed)}
                <div class="flashcard-answer"><strong>Answer:</strong> ${card.a}</div>
+               ${cardNotePanelHtml(entry.code, entry.moduleId, entry.cardIdx)}
                ${aiGradePanelHtml(reviewState.typed)}
                <div class="flash-score-row">
                  <button class="btn score-btn insufficient" id="scoreBad">Insufficient</button>
                  <button class="btn score-btn sufficient" id="scoreGood">Sufficient</button>
-               </div>`
+               </div>
+               ${cardReportHtml(entry.code, entry.moduleId, entry.cardIdx, card)}`
         }
       </div>
       ${explainPanelHtml(card, reviewState.revealed)}
@@ -2345,7 +2598,7 @@ function renderReviewView() {
     </div>
   `;
 
-  document.getElementById("backFromReview").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#backFromReview").addEventListener("click", () => navigate(backHref));
   const go = (i) => {
     reviewState.cardIndex = i;
     reviewState.revealed = false;
@@ -2353,23 +2606,24 @@ function renderReviewView() {
     renderReviewView();
   };
   el.querySelectorAll(".card-dot").forEach((btn) => btn.addEventListener("click", () => go(Number(btn.dataset.idx))));
-  document.getElementById("prevCard").addEventListener("click", () => go(Math.max(0, pos - 1)));
-  document.getElementById("nextCard").addEventListener("click", () => go(Math.min(reviewState.entries.length - 1, pos + 1)));
+  el.querySelector("#prevCard").addEventListener("click", () => go(Math.max(0, pos - 1)));
+  el.querySelector("#nextCard").addEventListener("click", () => go(Math.min(reviewState.entries.length - 1, pos + 1)));
 
   if (!reviewState.revealed) {
-    const ta = document.getElementById("answerInput");
+    const ta = el.querySelector("#answerInput");
     ta.addEventListener("input", () => {
       reviewState.typed = ta.value;
     });
-    document.getElementById("revealBtn").addEventListener("click", () => {
+    el.querySelector("#revealBtn").addEventListener("click", () => {
       reviewState.revealed = true;
       renderReviewView();
     });
   } else {
-    document.getElementById("scoreGood").addEventListener("click", () => stampThen(true, () => scoreReviewCard(entry, true)));
-    document.getElementById("scoreBad").addEventListener("click", () => stampThen(false, () => scoreReviewCard(entry, false)));
+    el.querySelector("#scoreGood").addEventListener("click", () => stampThen(true, () => scoreReviewCard(entry, true)));
+    el.querySelector("#scoreBad").addEventListener("click", () => stampThen(false, () => scoreReviewCard(entry, false)));
     wireAiGradeButton(el, card, reviewState.typed, () => renderReviewView());
   }
+  wireCardExtras(el, entry.code, entry.moduleId, entry.cardIdx, () => renderReviewView());
 
   renderMath(el);
 }
@@ -2717,9 +2971,10 @@ function renderDashboardView() {
           </a>`;
         })
         .join("")}</div>`
-    : `<p class="muted">Nothing flagged yet. Modules show up here once you've marked some of their cards Insufficient.</p>`;
+    : `<p class="muted">No weak areas yet. Modules show up here once you've marked some of their cards Insufficient.</p>`;
 
   const trouble = weakCards(null).slice(0, 10);
+  const flaggedAll = flaggedCards(null).length;
   const troubleHtml = trouble.length
     ? `<ol class="trouble-list">${trouble
         .map((e) => {
@@ -2791,7 +3046,10 @@ function renderDashboardView() {
     <section class="dash-section">
       <div class="dash-section-head">
         <h3>Weak areas</h3>
-        ${trouble.length ? `<a class="btn primary" href="#/weak">Drill weak cards</a>` : ""}
+        <span class="dash-section-actions">
+          ${trouble.length ? `<a class="btn primary" href="#/weak">Drill weak cards</a>` : ""}
+          ${flaggedAll ? `<a class="btn" href="#/flagged">${ico("flag")} ${flaggedAll} flagged card${flaggedAll === 1 ? "" : "s"}</a>` : ""}
+        </span>
       </div>
       <p class="dash-note">Modules ranked by how often you've marked their cards Insufficient; the bar is the share of that module's reviews that were misses. A card counts as a trouble card once it's been missed twice, or missed and not yet mastered again.</p>
       ${weakModsHtml}
@@ -3843,7 +4101,9 @@ function finishWelcome(sittingId, withPlan) {
 
 /* ---------- search across every card and practice question ---------- */
 
-let searchIndex = null; // built on first use: cards and question parts, lower-cased once
+// Built on first use: cards (with the user's notes on them) and question
+// parts, lower-cased once. Saving or syncing a note clears it to be rebuilt.
+let searchIndex = null;
 const searchState = { q: "", exam: "" };
 
 function plainText(html) {
@@ -3858,12 +4118,17 @@ function plainText(html) {
 function buildSearchIndex() {
   const items = [];
   for (const code of Object.keys(MODULES)) {
+    const notes = notesFor(code);
     for (const def of MODULES[code]) {
       const title = plainText(def.title);
+      const modNotes = notes[def.id] || {};
       def.cards.forEach((c, i) => {
         const q = plainText(c.q);
         const a = plainText(c.a);
         const e = plainText(c.explain);
+        // The note is the user's own plain text, not HTML: kept as typed
+        // (highlightText escapes it), just with the line breaks flattened.
+        const note = ((modNotes[i] && modNotes[i].note) || "").replace(/\s+/g, " ").trim();
         items.push({
           kind: "card",
           code,
@@ -3873,9 +4138,11 @@ function buildSearchIndex() {
           q,
           a,
           e,
+          note,
           lq: q.toLowerCase(),
           la: a.toLowerCase(),
           le: e.toLowerCase(),
+          ln: note.toLowerCase(),
           lt: title.toLowerCase(),
         });
       });
@@ -3897,9 +4164,11 @@ function buildSearchIndex() {
           q,
           a,
           e,
+          note: "",
           lq: q.toLowerCase(),
           la: a.toLowerCase(),
           le: e.toLowerCase(),
+          ln: "",
           lt: title.toLowerCase(),
         });
       });
@@ -3929,6 +4198,7 @@ function runSearch(query, exam) {
     for (const t of tokens) {
       let s = 0;
       if (it.lq.includes(t)) s += 4;
+      if (it.ln.includes(t)) s += 3; // the user's own words for it
       if (it.lt.includes(t)) s += 2;
       if (it.la.includes(t)) s += 2;
       if (it.le.includes(t)) s += 1;
@@ -3987,7 +4257,7 @@ function renderSearchResults() {
   if (!el) return;
   const { tokens, results, total } = runSearch(searchState.q, searchState.exam);
   if (!tokens.length) {
-    el.innerHTML = `<p class="muted">Type at least two letters. Every word must appear somewhere in the card or question; matches in the question rank highest.</p>`;
+    el.innerHTML = `<p class="muted">Type at least two letters. Every word must appear somewhere in the card, your note on it, or the question; matches in the question rank highest.</p>`;
     return;
   }
   if (!results.length) {
@@ -3998,7 +4268,14 @@ function renderSearchResults() {
     `<p class="muted search-count">${total > results.length ? `Showing the best ${results.length} of ${total} matches` : `${total} match${total === 1 ? "" : "es"}`}</p>` +
     results
       .map((it) => {
-        const where = tokens.some((t) => it.lq.includes(t)) ? null : tokens.some((t) => it.la.includes(t)) ? ["Answer", it.a] : ["Explanation", it.e];
+        // A matching note is always shown: it's what the user will recognise.
+        const where = tokens.some((t) => it.ln.includes(t))
+          ? ["Your note", it.note]
+          : tokens.some((t) => it.lq.includes(t))
+            ? null
+            : tokens.some((t) => it.la.includes(t))
+              ? ["Answer", it.a]
+              : ["Explanation", it.e];
         return `
         <a class="search-result" href="${it.href}">
           <span class="search-result-label">${escapeHtml(it.label)}</span>
@@ -4018,7 +4295,7 @@ function renderSearchView(q) {
     <button class="back-link" id="backFromSearch">&larr; Home</button>
     <div class="subject-head">
       <h2>Search</h2>
-      <p class="subject-blurb">Find a concept across every flashcard and practice question, without needing to remember which module it lives in.</p>
+      <p class="subject-blurb">Find a concept across every flashcard, practice question and note of your own, without needing to remember which module it lives in.</p>
     </div>
     <div class="search-bar">
       <input id="searchInput" class="text-input" type="search" placeholder="e.g. tracking error, Bornhuetter, section 75" value="${escapeHtml(searchState.q)}" autocomplete="off">
@@ -4524,7 +4801,7 @@ function renderDrillView(code, moduleId) {
         <h2>Drills</h2>
         <p>No drill questions for ${scopeLabel} yet.</p>
       </div>`;
-    document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#drillBack").addEventListener("click", () => navigate(backHref));
     return;
   }
 
@@ -4546,9 +4823,9 @@ function renderDrillView(code, moduleId) {
           <button class="btn" id="drillBackBtn">&larr; Back to ${backLabel}</button>
         </div>
       </div>`;
-    document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
-    document.getElementById("drillBackBtn").addEventListener("click", () => navigate(backHref));
-    document.getElementById("drillAgain").addEventListener("click", () => {
+    el.querySelector("#drillBack").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#drillBackBtn").addEventListener("click", () => navigate(backHref));
+    el.querySelector("#drillAgain").addEventListener("click", () => {
       drillState._lastKey = ""; // forces a fresh run on the next render
       renderDrillView(code, moduleId);
     });
@@ -4588,10 +4865,22 @@ function renderDrillView(code, moduleId) {
               : `<button class="btn primary" id="drillSubmit" ${canSubmit ? "" : "disabled"}>Check answer</button>`
           }
         </div>
+        ${
+          drillState.submitted
+            ? reportLinkHtml({
+                code,
+                module: item.module,
+                item: `drill ${item.id} (${drillTypeLabel(item.type).toLowerCase()}${item.diagram ? `, diagram ${item.diagram}` : ""})`,
+                ref: item.id,
+                question: [item.q, item.text].filter(Boolean).join(" ").replace(/\{\{\d+\}\}/g, "___"),
+                link: `#/${code}/drill/${item.module}`,
+              })
+            : ""
+        }
       </div>
     </div>`;
 
-  document.getElementById("drillBack").addEventListener("click", () => navigate(backHref));
+  el.querySelector("#drillBack").addEventListener("click", () => navigate(backHref));
 
   // Hotspot regions are <g> elements, so they need their state painted on
   // directly and their own click/Enter handling rather than the button
@@ -4620,7 +4909,7 @@ function renderDrillView(code, moduleId) {
         renderDrillView(code, moduleId);
       });
     });
-    const submit = document.getElementById("drillSubmit");
+    const submit = el.querySelector("#drillSubmit");
     if (submit) {
       submit.addEventListener("click", () => {
         if (!drillAnswered()) return;
@@ -4633,7 +4922,7 @@ function renderDrillView(code, moduleId) {
       });
     }
   } else {
-    document.getElementById("drillNext").addEventListener("click", () => {
+    el.querySelector("#drillNext").addEventListener("click", () => {
       if (isLast) {
         drillState.done = true;
       } else {
@@ -4954,8 +5243,8 @@ function parseHash() {
     }
     return { view: "search", q };
   }
-  if (first === "review" || first === "weak") {
-    return { view: "review", kind: first === "weak" ? "weak" : "due", exam: parts[1] ? parts[1].toUpperCase() : null };
+  if (first === "review" || first === "weak" || first === "flagged") {
+    return { view: "review", kind: first === "review" ? "due" : first, exam: parts[1] ? parts[1].toUpperCase() : null };
   }
   if (parts.length === 1) return { view: "subject", exam: parts[0].toUpperCase() };
   if (parts[1].toLowerCase() === "mixed") return { view: "mixed", exam: parts[0].toUpperCase() };
@@ -5004,6 +5293,7 @@ function renderRoute() {
     else a.removeAttribute("aria-current");
   });
   if (r.view !== "questions") pauseQTimer();
+  noteEditState.editing = false; // leaving a card closes its note editor (an unsaved draft is dropped)
   document.getElementById("kbdHint").hidden = !["flash", "mixed", "review", "questions"].includes(r.view);
   window.scrollTo(0, 0);
 
@@ -5129,8 +5419,11 @@ function renderAuthPanel() {
       (Store.isResultTableMissing()
         ? " Exam results are saved on this device only until supabase/migrations/005_subject_results.sql is run on the Supabase project."
         : "") +
+      (Store.isNoteTableMissing()
+        ? " Flashcard notes and flags are saved on this device only until supabase/migrations/006_card_notes.sql is run on the Supabase project."
+        : "") +
       (Store.isScoreTableMissing()
-        ? " Self-marked questions and mock papers are saved on this device only until supabase/migrations/006_question_scores.sql is run on the Supabase project."
+        ? " Self-marked questions and mock papers are saved on this device only until supabase/migrations/007_question_scores.sql is run on the Supabase project."
         : "");
   }
 }
@@ -5191,6 +5484,8 @@ function reloadAllForAuthChange() {
   refreshResults();
   refreshScores();
   reviewState.key = "";
+  Object.keys(noteData).forEach((code) => delete noteData[code]); // re-read under the new account's key
+  searchIndex = null;
   loadAll();
   loadAllFlash();
   Store.loadStreak().then(() => renderGameBar());
@@ -5417,9 +5712,11 @@ initThemeToggle();
 // model answers, Left/Right change question. Ignored while typing in a text
 // box (Ctrl/Cmd+Enter there reveals, so you can type an answer then reveal
 // without reaching for the mouse) and when a modifier key is held.
+// Hidden views keep their last render, so an id can be in the page more than
+// once: act on the copy that is actually showing.
 function clickIfEnabled(id) {
-  const el = document.getElementById(id);
-  if (el && !el.disabled && el.offsetParent !== null) {
+  const el = [...document.querySelectorAll(`[id="${id}"]`)].find((b) => b.offsetParent !== null);
+  if (el && !el.disabled) {
     el.click();
     return true;
   }
@@ -5445,6 +5742,10 @@ document.addEventListener("keydown", (e) => {
     return;
   }
   if (e.ctrlKey) return;
+  // Space/Enter on a focused button or link activates that control (the
+  // Flag button, a card dot, Add a note), not the reveal shortcut.
+  const activates = /^(BUTTON|A|SUMMARY)$/.test((e.target && e.target.tagName) || "");
+  if ((e.key === " " || e.key === "Enter") && activates) return;
 
   let handled = false;
   if (e.key === " " || e.key === "Enter") handled = clickIfEnabled("revealBtn") || clickIfEnabled("revealQBtn");

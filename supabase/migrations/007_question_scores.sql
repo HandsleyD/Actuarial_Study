@@ -1,4 +1,4 @@
--- Migration 006 — self-marked practice questions and mock papers
+-- Migration 007 — self-marked practice questions and mock papers
 --
 -- Run this ONCE in the Supabase SQL editor (Project → SQL Editor → New query →
 -- paste → Run), AFTER supabase/schema.sql and the earlier migrations.

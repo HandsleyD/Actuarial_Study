@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Sync tests for study progress in docs/store.js (module status, flashcard
-// mastery, review schedules, drills, streak, daily activity), run against a
+// mastery, review schedules, drills, card notes and flags, streak, daily
+// activity), run against a
 // fake Supabase client and an in-memory localStorage.
 // Run: node scripts/test-progress-sync.mjs   (also runs in CI — validate-content.yml)
 //
@@ -21,19 +22,20 @@ const tables = {}; // table -> array of rows
 let offline = false; // upserts fail while true, so changes stay queued
 let fetchDelay = 0;
 let fakeNow = null; // ms since epoch, or null for the real clock
+const missingTables = new Set(); // tables whose migration "hasn't been run": every request errors
+
+const MISSING = (t) => ({ code: "PGRST205", message: `Could not find the table 'public.${t}' in the schema cache` });
 const invoked = []; // Edge Function names called
 let deleteReply = { data: { deleted: true }, error: null }; // what delete-account answers
 const signOuts = [];
 
-const missing = new Set(); // tables whose migration "hasn't been run": every request fails as Postgres would
-const missingError = (table) => ({ error: { code: "42P01", message: `relation "public.${table}" does not exist` } });
 
 const rowsOf = (t) => (tables[t] = tables[t] || []);
 
 function query(table) {
   const filters = [];
   const run = async () => {
-    if (missing.has(table)) return { data: null, ...missingError(table) };
+    if (missingTables.has(table)) return { data: null, error: MISSING(table) };
     const snap = rowsOf(table).filter((r) => filters.every((f) => f(r))).map((r) => ({ ...r }));
     await new Promise((r) => setTimeout(r, fetchDelay));
     return { data: snap, error: null };
@@ -52,8 +54,8 @@ function query(table) {
 }
 
 function upsert(table, rows, opts) {
-  if (missing.has(table)) return Promise.resolve(missingError(table));
   if (offline) return Promise.resolve({ error: { message: "offline" } });
+  if (missingTables.has(table)) return Promise.resolve({ error: MISSING(table) });
   const keys = ((opts && opts.onConflict) || "user_id").split(",");
   [].concat(rows).forEach((row) => {
     const list = rowsOf(table);
@@ -234,6 +236,76 @@ await test("a stale queued drill result doesn't overwrite a newer one from anoth
   assert.equal(Store.getDrillCache("CM1")["cm1-m01-d01"].correct, 2);
 });
 
+await test("a card note and flag upload, and a later edit only changes what it touches", async () => {
+  Store.setCardNote("CB2", "m03", 4, { note: "elasticity <1 means inelastic" });
+  await settle();
+  Store.setCardNote("CB2", "m03", 4, { flagged: true });
+  await settle();
+  const row = rowsOf("card_note").find((r) => r.exam_code === "CB2" && r.module_id === "m03" && r.card_idx === 4);
+  assert.ok(row, "note wasn't uploaded");
+  assert.equal(row.note, "elasticity <1 means inelastic");
+  assert.equal(row.flagged, true);
+  assert.equal(queued("note").length, 0);
+  assert.deepEqual(
+    { note: Store.getNotesCache("CB2").m03[4].note, flagged: Store.getNotesCache("CB2").m03[4].flagged },
+    { note: "elasticity <1 means inelastic", flagged: true }
+  );
+});
+
+await test("a note still queued for upload survives a load; a newer one from another device wins", async () => {
+  offline = true;
+  Store.setCardNote("CB2", "m01", 0, { note: "local, unsent" });
+  await settle();
+  const localAt = Store.getNotesCache("CB2").m01[0].updatedAt;
+  // Another device: an older edit of the same card, and a newer edit of another.
+  rowsOf("card_note").push(
+    { user_id: "u1", exam_code: "CB2", module_id: "m01", card_idx: 0, note: "older", flagged: true, updated_at: new Date(localAt - 60000).toISOString() },
+    { user_id: "u1", exam_code: "CS1", module_id: "m02", card_idx: 7, note: "from my phone", flagged: true, updated_at: new Date(localAt + 60000).toISOString() }
+  );
+  const changed = await Store.loadNotes();
+  assert.equal(Store.getNotesCache("CB2").m01[0].note, "local, unsent", "load replaced a newer local note");
+  assert.equal(Store.getNotesCache("CS1").m02[7].note, "from my phone");
+  assert.ok(changed.CS1 && !changed.CB2, "loadNotes should report only the subjects it changed");
+  offline = false;
+  await Store.flushPending();
+  const row = rowsOf("card_note").find((r) => r.exam_code === "CB2" && r.module_id === "m01" && r.card_idx === 0);
+  assert.equal(row.note, "local, unsent");
+});
+
+await test("a stale queued note doesn't overwrite a newer one from another device", async () => {
+  offline = true;
+  Store.setCardNote("CM1", "m02", 1, { note: "stale", flagged: true });
+  await settle();
+  const at = Store.getNotesCache("CM1").m02[1].updatedAt;
+  rowsOf("card_note").push({ user_id: "u1", exam_code: "CM1", module_id: "m02", card_idx: 1, note: "", flagged: false, updated_at: new Date(at + 5000).toISOString() });
+  const told = [];
+  Store.onNotesChange((codes) => told.push(...codes));
+  offline = false;
+  await Store.flushPending();
+  const row = rowsOf("card_note").find((r) => r.exam_code === "CM1" && r.module_id === "m02" && r.card_idx === 1);
+  assert.equal(row.flagged, false, "stale queued flag overwrote the newer server row");
+  assert.equal(Store.getNotesCache("CM1").m02[1].flagged, false, "the newer server copy wasn't adopted");
+  assert.deepEqual([...told], ["CM1"], "the page wasn't told its copy of CM1's notes is stale");
+  assert.equal(queued("note").length, 0);
+});
+
+await test("notes keep working on the device when card_note doesn't exist yet, and upload once it does", async () => {
+  missingTables.add("card_note");
+  Store.setCardNote("CS2", "m05", 2, { note: "first draft" });
+  Store.setCardNote("CS2", "m05", 2, { note: "second draft", flagged: true });
+  await settle();
+  assert.equal(Store.isNoteTableMissing(), true);
+  assert.equal(Store.getNotesCache("CS2").m05[2].note, "second draft");
+  assert.equal(Object.keys(await Store.loadNotes()).length, 0, "a missing table should load nothing, not throw");
+  assert.equal(queued("note").length, 1, "only the latest value per card should stay queued");
+  missingTables.delete("card_note");
+  await Store.flushPending();
+  assert.equal(Store.isNoteTableMissing(), false);
+  const row = rowsOf("card_note").find((r) => r.exam_code === "CS2");
+  assert.equal(row.note, "second draft");
+  assert.equal(row.flagged, true);
+});
+
 await test("the streak uses the local date, not UTC", async () => {
   mem["actuarialStudy:streak:u1"] = JSON.stringify({ lastDate: "2026-09-27", count: 4 });
   fakeNow = Date.parse("2026-09-27T23:30:00Z"); // 00:30 on 28 September in London (BST)
@@ -301,9 +373,9 @@ await test("self-marks: re-marking an attempt replaces it rather than adding ano
   assert.equal(rows[0].score, 11);
 });
 
-await test("self-marks and mocks stay queued, and say so, until migration 006 is run", async () => {
-  missing.add("question_score");
-  missing.add("mock_result");
+await test("self-marks and mocks stay queued, and say so, until migration 007 is run", async () => {
+  missingTables.add("question_score");
+  missingTables.add("mock_result");
   Store.saveScore("CM1", "cm1-q1", attempt(Date.parse("2026-09-27T09:00:00Z"), [3], 11, "mock"));
   Store.addMockResult("CM1", { at: Date.parse("2026-09-27T12:15:00Z"), questionIds: ["cm1-q1"], score: 3, max: 11, pct: 27.27, passMark: 60, passSitting: "2026-04", usedMs: 1000 });
   await settle();
@@ -313,7 +385,8 @@ await test("self-marks and mocks stay queued, and say so, until migration 006 is
   await Store.loadScores(); // a failed load leaves the local copies alone
   assert.equal(Store.getScoreCache("CM1")["cm1-q1"].length, 1);
   assert.equal(Store.getMockCache("CM1").length, 1);
-  missing.clear();
+  missingTables.delete("question_score");
+  missingTables.delete("mock_result");
   await Store.flushPending();
   assert.equal(Store.isScoreTableMissing(), false);
   assert.equal(queued("score").length + queued("mock").length, 0);

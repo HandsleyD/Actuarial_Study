@@ -27,8 +27,9 @@ const USER_TABLES = [
   "drill_progress", // 003_drills.sql
   "exam_plan", // 004_exam_plan.sql
   "subject_result", // 005_subject_results.sql
-  "question_score", // 006_question_scores.sql
-  "mock_result", // 006_question_scores.sql
+  "card_note", // 006_card_notes.sql
+  "question_score", // 007_question_scores.sql
+  "mock_result", // 007_question_scores.sql
 ];
 
 const CORS_HEADERS = {
