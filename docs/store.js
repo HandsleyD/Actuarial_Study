@@ -1068,10 +1068,14 @@ const Store = (function () {
 
   async function loadScores() {
     if (!client || !currentUser) return;
+    const uid = currentUser.id;
     try {
       const { data, error } = await client
         .from(SCORE_TABLE)
-        .select("exam_code, question_id, attempted_at, part_marks, score, max_marks, source, updated_at");
+        .select("exam_code, question_id, attempted_at, part_marks, score, max_marks, source, updated_at")
+        .eq("user_id", uid);
+      // Auth may change during the fetch; its response belongs only to uid.
+      if (!currentUser || currentUser.id !== uid) return;
       if (error) {
         scoreTableMissing = looksLikeMissingTable(error, SCORE_TABLE);
         throw error;
@@ -1102,10 +1106,13 @@ const Store = (function () {
 
   async function loadMocks() {
     if (!client || !currentUser) return;
+    const uid = currentUser.id;
     try {
       const { data, error } = await client
         .from(MOCK_TABLE)
-        .select("exam_code, taken_at, question_ids, score, max_marks, pct, pass_mark, pass_sitting, used_ms");
+        .select("exam_code, taken_at, question_ids, score, max_marks, pct, pass_mark, pass_sitting, used_ms")
+        .eq("user_id", uid);
+      if (!currentUser || currentUser.id !== uid) return;
       if (error) {
         scoreTableMissing = looksLikeMissingTable(error, MOCK_TABLE);
         throw error;

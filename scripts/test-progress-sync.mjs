@@ -583,4 +583,58 @@ await test("deleting the account clears that user's local data and signs out", a
   assert.equal(signOuts[0].scope, "local");
 });
 
+// Isolated stores let us switch accounts without disturbing the shared fixture.
+for (const [loader, table, kind, row] of [
+  ["loadScores", "question_score", "score", { exam_code: "CB2", question_id: "private-q", attempted_at: "2026-09-30T12:00:00Z", part_marks: [7], score: 7, max_marks: 10, source: "practice" }],
+  ["loadMocks", "mock_result", "mock", { exam_code: "CB2", taken_at: "2026-09-30T12:00:00Z", question_ids: ["private-q"], score: 7, max_marks: 10, pct: 70 }],
+]) {
+  for (const nextUser of [null, { id: "u2" }]) {
+    for (const fails of [false, true]) {
+      await test(`${loader} discards a late ${fails ? "error" : "response"} after ${nextUser ? "an account switch" : "sign-out"}`, async () => {
+        const storage = {};
+        const listeners = [];
+        const filters = [];
+        let resolveFetch;
+        const response = new Promise((resolve) => { resolveFetch = resolve; });
+        response.eq = (col, value) => (filters.push([col, value]), response);
+        const isolated = {
+          ...ctx,
+          localStorage: {
+            getItem: (k) => storage[k] ?? null,
+            setItem: (k, v) => { storage[k] = String(v); },
+            removeItem: (k) => { delete storage[k]; },
+            get length() { return Object.keys(storage).length; },
+            key: (i) => Object.keys(storage)[i],
+          },
+          supabase: {
+            createClient: () => ({
+              auth: {
+                getSession: async () => ({ data: { session: { user: { id: "u1" } } } }),
+                onAuthStateChange: (cb) => listeners.push(cb),
+              },
+              from: (name) => {
+                assert.equal(name, table);
+                return { select: () => response };
+              },
+            }),
+          },
+        };
+        vm.createContext(isolated);
+        vm.runInContext(`${readFileSync(new URL("../docs/store.js", import.meta.url), "utf8")};this.Store = Store;`, isolated);
+        const store = isolated.Store;
+        await store.init();
+        const loading = store[loader]();
+        listeners.forEach((cb) => cb(nextUser ? "SIGNED_IN" : "SIGNED_OUT", nextUser ? { user: nextUser } : null));
+        const before = { ...storage };
+        resolveFetch(fails ? { data: null, error: MISSING(table) } : { data: [row], error: null });
+        await loading;
+        assert.deepEqual(storage, before, "a stale response changed local storage");
+        assert.equal(storage[`actuarialStudy:${kind}:${nextUser ? "u2" : "anon"}:CB2`], undefined);
+        assert.equal(store.isScoreTableMissing(), false, "a stale error changed the current account's sync status");
+        assert.deepEqual(filters, [["user_id", "u1"]], "fetch must be scoped to its initiating account");
+      });
+    }
+  }
+}
+
 console.log(`${passed} progress sync test(s) passed.`);
