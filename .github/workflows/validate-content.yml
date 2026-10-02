@@ -31,6 +31,8 @@ on:
       - "docs/route.js"
       - "docs/exam-dates.js"
       - "scripts/test-route.mjs"
+      - "docs/ics.js"
+      - "scripts/test-ics.mjs"
       - "docs/readiness.js"
       - "scripts/test-readiness.mjs"
       - "docs/exam-stats.js"
@@ -68,6 +70,9 @@ jobs:
 
       - name: Route to Associate and Fellow tests
         run: node scripts/test-route.mjs
+
+      - name: Add-to-calendar (.ics) tests
+        run: node scripts/test-ics.mjs
 
       - name: Readiness and daily pace tests
         run: node scripts/test-readiness.mjs
