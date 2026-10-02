@@ -458,6 +458,65 @@ main {
   color: var(--progress);
 }
 
+.settings-card {
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.settings-actions { flex-wrap: wrap; }
+
+.settings-section {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.settings-section h3 {
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+}
+
+.link-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.link-btn:hover { color: var(--text); }
+.link-btn.danger { color: var(--weak); }
+
+.delete-confirm {
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid var(--weak);
+  border-radius: var(--radius-sm);
+  background: var(--weak-bg);
+}
+
+.delete-confirm label.settings-note { display: block; }
+
+.btn.danger,
+.btn.danger:hover {
+  background: var(--weak);
+  border-color: var(--weak);
+  color: var(--card-bg);
+}
+
+.btn.danger:disabled,
+.btn.danger:disabled:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--weak);
+}
+
 /* ---------- gamification bar ---------- */
 
 .game-bar {
@@ -2897,6 +2956,67 @@ a.btn { display: inline-flex; }
 
 /* Sections opened by link (#/dashboard/plan) clear the sticky header. */
 .dash-section { scroll-margin-top: 84px; }
+
+/* ---------- Today card (home) ---------- */
+
+.due-banner.today-card {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+.today-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.today-title { margin: 0; font-size: 1.3rem; font-weight: 400; }
+.today-dash { font-size: 0.82rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+.today-dash:hover { text-decoration: underline; }
+.today-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 14px;
+  flex-wrap: wrap;
+}
+.today-row + .today-row { border-top: 1px solid var(--border-soft); padding-top: 12px; }
+
+/* ---------- readiness ---------- */
+
+.readiness-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: 10px 0 4px;
+  font-size: 0.85rem;
+}
+.readiness-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid var(--text);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.readiness-badge.small { padding: 0 8px; font-size: 0.72rem; }
+.readiness-parts { color: var(--text); }
+.readiness-note { flex-basis: 100%; font-size: 0.75rem; color: var(--text-muted); }
+.rm-sign .rm-ready { font-weight: 600; }
+
+/* Honour the OS "reduce motion" setting: no transitions, animations or
+   smooth scrolling. (The grading stamp's pause is skipped in app.js.) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 /* Waiting for a subject's content file (see loadContent in app.js), or it
    failed to arrive. */

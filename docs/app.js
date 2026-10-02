@@ -536,6 +536,7 @@ function renderQuestionsView(code) {
           date: SRS.today(),
         });
       }
+      Store.bumpStreak();
       qbankState.revealed = true;
       renderQuestionsView(code);
     });
@@ -861,6 +862,7 @@ function recordScore(code, moduleId, idx, sufficient) {
   const prev = (Store.getSrsCache(code)[moduleId] || {})[idx];
   Store.setSrs(code, moduleId, idx, SRS.next(prev, sufficient, SRS.today()));
   Store.recordCardReview(sufficient);
+  Store.bumpStreak();
   flashData[code] = { mastery: Store.getMasteryCache(code) };
   srsData[code] = Store.getSrsCache(code);
 }
@@ -968,14 +970,14 @@ function aiGradePanelHtml(typed) {
     return `<div class="ai-grade-panel loading">Grading your answer&hellip;</div>`;
   }
   if (aiGradeState.status === "error") {
-    return `<div class="ai-grade-panel error">${aiGradeState.error}</div>`;
+    return `<div class="ai-grade-panel error">${escapeHtml(aiGradeState.error)}</div>`;
   }
   const verdict = aiGradeState.result.verdict;
   const cls = verdict === "Strong" ? "strong" : verdict === "Weak" ? "weak" : "partial";
   return `
     <div class="ai-grade-panel ${cls}">
-      <span class="ai-grade-verdict">${verdict}</span>
-      <span class="ai-grade-feedback">${aiGradeState.result.feedback}</span>
+      <span class="ai-grade-verdict">${escapeHtml(String(verdict))}</span>
+      <span class="ai-grade-feedback">${escapeHtml(String(aiGradeState.result.feedback || ""))}</span>
     </div>`;
 }
 
@@ -1024,7 +1026,7 @@ function renderGameBar() {
   document.getElementById("starTotal").textContent = total;
   document.getElementById("rankLabel").textContent = status.label;
   document.getElementById("rankSub").textContent = status.sub;
-  document.getElementById("streakValue").textContent = Store.getStreakCache().count;
+  document.getElementById("streakValue").textContent = Store.currentStreak();
 
   const lastSession = Store.getLastSessionCache();
   document.getElementById("lastSessionValue").textContent = lastSession ? `${lastSession.cardsReviewed} cards` : "—";
@@ -1050,7 +1052,7 @@ function updateHomeCard(code) {
     pctEl.textContent = "unavailable";
   } else {
     pct = computePct(d.modules);
-    pctEl.textContent = `${pct}% (${d.modules.length} modules)`;
+    pctEl.textContent = `${pct}% (${d.modules.length} module${d.modules.length === 1 ? "" : "s"})`;
     barEl.style.width = `${pct}%`;
   }
 
@@ -1166,6 +1168,20 @@ function buildExamCards(grid, codes) {
 /* ---------- subject view ---------- */
 
 // Why a subject's cards aren't coming up in daily reviews, if they aren't.
+// Subject page: readiness % and what it's made of. Left off Foundations (no
+// exam) and subjects already passed or exempt.
+function readinessHtml(code) {
+  if (isFoundation(code) || isSubjectPassed(code)) return "";
+  const r = subjectReadiness(code);
+  if (!r) return "";
+  const id = plannedSittingOf(code);
+  return `<p class="readiness-line">
+      <span class="readiness-badge">Readiness ${r.pct}%</span>
+      <span class="readiness-parts">${readinessBreakdown(r)}${id ? ` &middot; planned for ${sittingName(id)}` : ""}</span>
+      <span class="readiness-note">${READINESS_NOTE}</span>
+    </p>`;
+}
+
 function pausedNoteHtml(code) {
   if (!reviewsPaused(code)) return "";
   const awaiting = awaitingResult(code);
@@ -1286,6 +1302,7 @@ function renderSubjectView(code) {
             } &rarr;</a>`
       }
       ${pausedNoteHtml(code)}
+      ${readinessHtml(code)}
       ${prerequisitesHtml(code)}
       ${
         totalCards > 0
@@ -1942,7 +1959,7 @@ function renderReviewView() {
   if (!reviewState.entries.length) {
     const msg =
       kind === "weak"
-        ? `<p>No weak cards in ${scopeName} yet. Cards land here once you've marked them Insufficient &mdash; twice, or once and not yet re-starred.</p>`
+        ? `<p>No weak cards in ${scopeName} yet. Cards land here once you've marked them Insufficient &mdash; twice, or once and not yet mastered again.</p>`
         : scheduledCards(scope).length
           ? `<p>Nothing due today in ${scopeName}. ${nextDueSummary(scope)}</p>`
           : `<p>No cards scheduled yet. Every card you score Sufficient or Insufficient gets a review date &mdash; open a module and start a session, and cards will come back here when they're due.</p>`;
@@ -2042,12 +2059,135 @@ function renderReviewView() {
   renderMath(el);
 }
 
-// Home-page entry point: "N cards due today" with a one-click start.
+// New cards to learn today, paced to the next planned sitting (readiness.js):
+// every card in the modules not yet marked done should be met two weeks
+// before the subject's first paper. Only the next sitting with something
+// still to sit counts: later sittings' subjects start after it, as in the
+// exam plan's pacing. Cards first scored today count towards today's number,
+// so it counts down as you study rather than shrinking.
+// { state: "noplan" | "none" | "plan", ... }
+function todayNewCards() {
+  if (!hasAnyPlan()) return { state: "noplan" };
+  const today = SRS.today();
+  const firstPaper = (code, info) => {
+    const papers = info.session ? sessionPapers(info.session, code) : [];
+    return papers.length ? papers[0].date : info.first;
+  };
+  let sitting = null;
+  let codes = [];
+  for (const id of Object.keys(examPlan.sittings).sort()) {
+    const info = sittingInfo(id);
+    codes = examPlan.sittings[id].filter((c) => !isSubjectPassed(c) && firstPaper(c, info) >= today);
+    if (codes.length) {
+      sitting = info;
+      break;
+    }
+  }
+  if (!sitting) return { state: "none" };
+
+  const subjects = codes.map((code) => {
+    const defs = MODULES[code] || [];
+    const d = examData[code];
+    const statusOf = (def) => {
+      const m = d && !d.error ? d.modules.find((x) => x.id === def.id) : null;
+      return (m ? m.status : Store.getModuleStatusCache(code)[def.id] || STATUSES[0]).toLowerCase();
+    };
+    const open = defs.filter((def) => statusOf(def) !== "done");
+    const modSrs = srsData[code] || {};
+    let left = 0;
+    let learnedToday = 0;
+    open.forEach((def) => {
+      const st = modSrs[def.id] || {};
+      for (let i = 0; i < def.count; i++) {
+        if (!st[i]) left++;
+        else if (st[i].reviews === 1 && st[i].last === today) learnedToday++;
+      }
+    });
+    const pace = Readiness.pace({ today, paper: firstPaper(code, sitting), cardsLeft: left + learnedToday });
+    // Next module to start: the first one not started that has cards to meet.
+    const unseen = (def) => {
+      const st = modSrs[def.id] || {};
+      for (let i = 0; i < def.count; i++) if (!st[i]) return true;
+      return false;
+    };
+    const next =
+      open.find((def) => statusOf(def) === STATUSES[0].toLowerCase() && unseen(def)) || open.find(unseen) || null;
+    const nextStarted = !!next && statusOf(next) !== STATUSES[0].toLowerCase();
+    return { code, cards: defs.length > 0, left, learnedToday, perDay: pace.perDay, pace, next, nextStarted };
+  });
+  const withCards = subjects.filter((s) => s.cards);
+  const perDay = withCards.reduce((a, s) => a + s.perDay, 0);
+  const learnedToday = withCards.reduce((a, s) => a + Math.min(s.learnedToday, s.perDay), 0);
+  return { state: "plan", sitting, subjects: withCards, noCards: subjects.filter((s) => !s.cards).map((s) => s.code), perDay, learnedToday };
+}
+
+function todayNewHtml() {
+  const t = todayNewCards();
+  if (t.state === "noplan" || t.state === "none") {
+    return `
+      <div class="today-row">
+        <div class="due-banner-text">
+          <strong>${ico("target")} ${t.state === "noplan" ? "No exam plan yet" : "Nothing planned ahead"}</strong>
+          <span class="due-banner-sub">Plan which subjects you'll sit when, and this card will set how many new cards to learn each day to finish with two weeks to revise.</span>
+        </div>
+        <div class="due-banner-actions"><a class="btn" href="#/dashboard/plan">Make a plan</a></div>
+      </div>`;
+  }
+  const name = sittingName(t.sitting.id);
+  if (!t.subjects.length) {
+    return `
+      <div class="today-row">
+        <div class="due-banner-text">
+          <strong>${ico("target")} ${name}: ${t.noCards.join(" and ")}</strong>
+          <span class="due-banner-sub">No flashcards for ${t.noCards.length === 1 ? "this subject" : "these subjects"} yet, so there are no new cards to pace.</span>
+        </div>
+      </div>`;
+  }
+  const remaining = Math.max(0, t.perDay - t.learnedToday);
+  // Link to the next module of a subject with cards still to learn today.
+  const next = t.subjects.find((s) => s.next && s.perDay > s.learnedToday) || t.subjects.find((s) => s.next);
+  const target = t.subjects.map((s) => s.pace.target).sort()[0];
+  const inRevision = t.subjects.every((s) => s.pace.inRevision);
+  const perSubject = t.subjects
+    .filter((s) => s.perDay)
+    .map((s) => `<a href="#/${s.code}">${s.code}&nbsp;${s.perDay}</a>`)
+    .join(" &middot; ");
+  let headline;
+  let sub;
+  if (!t.perDay) {
+    headline = "Every card in your planned modules is started";
+    sub = `Keep up the reviews, and try practice questions and past papers for ${name}.`;
+  } else {
+    headline = remaining
+      ? `${remaining} new card${remaining === 1 ? "" : "s"} to learn today`
+      : `Today's ${t.perDay} new card${t.perDay === 1 ? "" : "s"} learned`;
+    sub = inRevision
+      ? `${perSubject} &middot; you're in the last two weeks before ${name}: meet what's left, then revise.`
+      : `${perSubject} &middot; to meet every card by ${fmtHubDate(target)}, two weeks before the ${name} papers.`;
+    if (t.learnedToday && remaining) sub = `${t.learnedToday} of ${t.perDay} done &middot; ${sub}`;
+  }
+  const nextTitle = next ? `${next.code} ${next.next.id.toUpperCase()}: ${escapeHtml(next.next.title)}` : "";
+  return `
+    <div class="today-row">
+      <div class="due-banner-text">
+        <strong>${ico("target")} ${headline}</strong>
+        <span class="due-banner-sub">${sub}</span>
+      </div>
+      ${
+        next
+          ? `<div class="due-banner-actions"><a class="btn${remaining ? " primary" : ""} today-next" href="#/${next.code}/${next.next.id}" title="${nextTitle}">${next.nextStarted ? "Continue" : "Start"} ${next.code} ${next.next.id.toUpperCase()}</a></div>`
+          : ""
+      }
+    </div>`;
+}
+
+// Home page "Today" card: reviews due, then new cards paced to the plan.
 function renderDueBanner() {
   const el = document.getElementById("dueBanner");
   if (!el) return;
   const due = dueCards(null);
   const scheduled = scheduledCards(null).length;
+  let reviews;
   if (due.length) {
     const bySubject = {};
     due.forEach((e) => (bySubject[e.code] = (bySubject[e.code] || 0) + 1));
@@ -2055,17 +2195,16 @@ function renderDueBanner() {
       .sort((a, b) => bySubject[b] - bySubject[a])
       .map((c) => `<a href="${reviewHash("due", c)}">${c}&nbsp;${bySubject[c]}</a>`)
       .join(" &middot; ");
-    el.innerHTML = `
+    reviews = `
       <div class="due-banner-text">
         <strong>${ico("calendar")} ${due.length} card${due.length === 1 ? "" : "s"} due for review today</strong>
         <span class="due-banner-sub">${breakdown}</span>
       </div>
       <div class="due-banner-actions">
         <a class="btn primary" href="#/review">Review due cards${due.length > REVIEW_BATCH ? ` (${REVIEW_BATCH} at a time)` : ""}</a>
-        <a class="btn" href="#/dashboard">Dashboard</a>
       </div>`;
   } else {
-    el.innerHTML = `
+    reviews = `
       <div class="due-banner-text">
         <strong>${ico("calendar")} ${scheduled ? "Nothing due today" : "Spaced repetition"}</strong>
         <span class="due-banner-sub">${
@@ -2073,26 +2212,21 @@ function renderDueBanner() {
             ? nextDueSummary(null)
             : "Cards you score in any module get a review date and come back here when they're due."
         }</span>
-      </div>
-      <div class="due-banner-actions"><a class="btn" href="#/dashboard">Dashboard</a></div>`;
+      </div>`;
   }
+  el.innerHTML = `
+    <div class="today-head">
+      <h2 class="today-title">Today</h2>
+      <a class="today-dash" href="#/dashboard">Dashboard &rarr;</a>
+    </div>
+    <div class="today-row today-reviews">${reviews}</div>
+    ${todayNewHtml()}`;
   el.classList.toggle("has-due", due.length > 0);
 }
 
 /* ---------- study dashboard ---------- */
 
 let activityData = null; // { "YYYY-MM-DD": cardsReviewed } — merged local + session_log
-
-function studyStreak(activity) {
-  let day = SRS.today();
-  if (!activity[day]) day = SRS.addDays(day, -1); // not studied yet today doesn't break the streak
-  let n = 0;
-  while (activity[day]) {
-    n++;
-    day = SRS.addDays(day, -1);
-  }
-  return n;
-}
 
 function moduleStats(code, def) {
   const fd = flashData[code];
@@ -2112,6 +2246,36 @@ function moduleStats(code, def) {
     if (isTrouble(st, !!mastery[i])) s.trouble++;
   }
   return s;
+}
+
+// Readiness (readiness.js): a study-progress gauge from cards, drills and the
+// review backlog. Not a pass probability, and the wording says so wherever
+// it's shown. null for a subject with no cards.
+function subjectReadiness(code) {
+  const mods = (MODULES[code] || []).map((def) => moduleStats(code, def));
+  const drills = drillCount(code) ? drillAccuracy(code, null) : null;
+  return Readiness.score(mods, drills);
+}
+
+const READINESS_NOTE = "A study-progress gauge from your cards, drills and review backlog, not a pass probability.";
+
+function readinessBreakdown(r) {
+  const c = r.counts;
+  const bits = [
+    `${c.covered}/${c.modules} modules covered`,
+    `${c.mastered}/${c.cards} cards starred`,
+    r.parts.drills === null ? null : `drills ${Math.round(r.parts.drills * 100)}% right`,
+    c.seen ? (c.due ? `${c.due} review${c.due === 1 ? "" : "s"} overdue` : "reviews up to date") : null,
+  ];
+  return bits.filter(Boolean).join(" &middot; ");
+}
+
+// Readiness of the subjects in one sitting: { pct, title } or null.
+function sittingReadiness(codes) {
+  const per = codes.map((c) => ({ c, r: subjectReadiness(c) })).filter((x) => x.r);
+  const pct = Readiness.sitting(per.map((x) => x.r.pct));
+  if (pct === null) return null;
+  return { pct, title: `Readiness ${pct}%: ${per.map((x) => `${x.c} ${x.r.pct}%`).join(", ")}. ${READINESS_NOTE}` };
 }
 
 function pctOf(n, d) {
@@ -2187,7 +2351,7 @@ function renderDashboardView() {
   const allMods = subjects.flatMap((s) => s.mods);
 
   const totalDue = subjects.reduce((a, s) => a + s.due, 0);
-  const streak = studyStreak(activity);
+  const streak = Store.currentStreak();
   let week = 0;
   for (let i = 0; i < 7; i++) week += activity[SRS.addDays(today, -i)] || 0;
   const masteredAll = subjects.reduce((a, s) => a + s.mastered, 0);
@@ -2283,7 +2447,7 @@ function renderDashboardView() {
         <a class="dash-row" href="#/${s.code}/${m.def.id}">
           <span class="dash-row-name"><span class="dash-tag">${m.def.id.toUpperCase()}</span> ${m.def.title}</span>
           <span class="dash-row-meta">${m.due ? `<span class="due-pill">${m.due} due</span> ` : ""}${m.lapses ? `${m.lapses} miss${m.lapses === 1 ? "" : "es"}` : m.seen ? "" : "not started"}</span>
-          <span class="dash-row-bar" title="${m.mastered} of ${m.total} cards starred">${barHtml(pctOf(m.mastered, m.total))}<span class="dash-row-pct">${m.mastered}/${m.total}</span></span>
+          <span class="dash-row-bar" title="${m.mastered} of ${m.total} cards mastered">${barHtml(pctOf(m.mastered, m.total))}<span class="dash-row-pct">${m.mastered}/${m.total}</span></span>
         </a>`
         )
         .join("")}</div>
@@ -2304,7 +2468,7 @@ function renderDashboardView() {
         <span class="game-stat-value">${totalDue}</span>
         <span class="game-stat-label">cards due today</span>
       </a>
-      <div class="game-stat" title="Consecutive days on which you've scored at least one card">
+      <div class="game-stat" title="Consecutive days on which you've studied: scored a card, answered a drill or checked a practice answer">
         <span class="game-stat-icon">${ico("flame")}</span>
         <span class="game-stat-value">${streak}</span>
         <span class="game-stat-label">day study streak</span>
@@ -2317,7 +2481,7 @@ function renderDashboardView() {
       <div class="game-stat">
         <span class="game-stat-icon">${ico("star", "ico-star")}</span>
         <span class="game-stat-value">${masteredAll}</span>
-        <span class="game-stat-label">${cardsInStudied ? `of ${cardsInStudied} starred in subjects you've started` : "cards starred"}</span>
+        <span class="game-stat-label">${cardsInStudied ? `of ${cardsInStudied} mastered in subjects you've started` : "cards mastered"}</span>
       </div>
     </section>
 
@@ -2326,7 +2490,7 @@ function renderDashboardView() {
         <h3>Weak areas</h3>
         ${trouble.length ? `<a class="btn primary" href="#/weak">Drill weak cards</a>` : ""}
       </div>
-      <p class="dash-note">Modules ranked by how often you've marked their cards Insufficient; the bar is the share of that module's reviews that were misses. A card counts as a trouble card once it's been missed twice, or missed and not yet re-starred.</p>
+      <p class="dash-note">Modules ranked by how often you've marked their cards Insufficient; the bar is the share of that module's reviews that were misses. A card counts as a trouble card once it's been missed twice, or missed and not yet mastered again.</p>
       ${weakModsHtml}
       ${trouble.length ? `<h4 class="dash-sub">Most-missed cards</h4>${troubleHtml}` : ""}
     </section>
@@ -2736,10 +2900,12 @@ function planSectionHtml() {
       prevEnd = info.last;
     }
 
+    const ready = past ? null : sittingReadiness(codes.filter((c) => !doneNow.has(c)));
     return `
       <div class="plan-sitting${past ? " past" : ""}${awaiting ? " awaiting" : ""}${codes.length ? "" : " empty"}">
         <div class="plan-sitting-head">
           <strong>${name}</strong>
+          ${ready ? `<span class="readiness-badge small" title="${ready.title}">Readiness ${ready.pct}%</span>` : ""}
           <span class="plan-meta">${meta.join(" &middot; ")}</span>
         </div>
         <div class="plan-chips">${chips}${addHtml}</div>
@@ -2936,9 +3102,14 @@ function routeMapSvg(route, width) {
     } else {
       const g = run.group;
       const label = shortSitting(g.id);
-      const w = label.length * 8 + 22;
+      // Planned sittings still to come carry their readiness in the sign.
+      const ready = g.kind === "planned" && !g.past ? sittingReadiness(g.codes) : null;
+      const extra = ready ? ` · ${ready.pct}%` : "";
+      const w = (label.length + extra.length) * 8 + 22;
       out.push(
-        `<g class="rm-sign ${g.kind}${g.past ? " past" : ""}"><rect x="${mid - w / 2}" y="${y - 66}" width="${w}" height="26" rx="13"></rect><text x="${mid}" y="${y - 48}" text-anchor="middle">${label}</text></g>`
+        `<g class="rm-sign ${g.kind}${g.past ? " past" : ""}">${ready ? `<title>${ready.title}</title>` : ""}<rect x="${mid - w / 2}" y="${y - 66}" width="${w}" height="26" rx="13"></rect><text x="${mid}" y="${y - 48}" text-anchor="middle">${label}${
+          ready ? `<tspan class="rm-ready">${extra}</tspan>` : ""
+        }</text></g>`
       );
       if (g.clashes.length) {
         const c = g.clashes[0];
@@ -3603,6 +3774,7 @@ function renderSearchView(q) {
 function onExamDataChanged(code) {
   updateHomeCard(code);
   renderGameBar();
+  renderDueBanner(); // the Today card paces new cards over modules not yet done
   const r = parseHash();
   if (r.view === "subject" && r.exam === code) renderSubjectView(code);
   if (r.view === "flash" && r.exam === code) renderFlashView(code, r.module);
@@ -3612,6 +3784,7 @@ function onExamDataChanged(code) {
 function onFlashDataChanged(code) {
   renderGameBar();
   renderDueBanner();
+  renderRouteMap(); // readiness on the planned sittings' signs
   const r = parseHash();
   if (r.view === "subject" && r.exam === code) renderSubjectView(code);
   if (r.view === "flash" && r.exam === code) renderFlashView(code, r.module);
@@ -3756,6 +3929,7 @@ function recordDrill(code, item, correct) {
   next.attempts = ((prev && prev.attempts) || 0) + 1;
   next.correct = ((prev && prev.correct) || 0) + (correct ? 1 : 0);
   Store.setDrill(code, item.id, next);
+  Store.bumpStreak();
   drillData[code] = Store.getDrillCache(code);
 }
 
@@ -3763,12 +3937,17 @@ function recordDrill(code, item, correct) {
 // items have been tried at all. The button leads with `seen`, because the
 // first question anyone asks of a study tool is "how much of this have I
 // actually done" -- and an accuracy figure on its own can't answer it.
+//
+// Readiness asks for a whole subject's accuracy on the home page, before the
+// subject's drill items have loaded; until then it's worked out from the
+// stored results themselves, which are keyed by the same item ids.
 function drillAccuracy(code, moduleId) {
   const prog = drillProgress(code);
   let attempts = 0;
   let correct = 0;
   let seen = 0;
-  const items = drillItems(code, moduleId);
+  const items = !moduleId && !contentReady(code) ? Object.keys(prog).map((id) => ({ id })) : drillItems(code, moduleId);
+  const total = moduleId ? items.length : drillCount(code);
   items.forEach((it) => {
     const st = prog[it.id];
     if (!st) return;
@@ -3776,7 +3955,7 @@ function drillAccuracy(code, moduleId) {
     attempts += st.attempts || 0;
     correct += st.correct || 0;
   });
-  return { attempts, correct, seen, total: items.length, pct: attempts ? Math.round((correct / attempts) * 100) : 0 };
+  return { attempts, correct, seen, total, pct: attempts ? Math.round((correct / attempts) * 100) : 0 };
 }
 
 function drillTypeLabel(type) {
@@ -4485,6 +4664,9 @@ function renderExamHub(requested) {
 function parseHash() {
   const h = location.hash.replace(/^#\/?/, "");
   if (!h) return { view: "home" };
+  // A sign-in link's tokens (or its error), until supabase-js has read them
+  // and cleared the address: not a route.
+  if (/(^|&)(access_token|error)=/.test(h)) return { view: "home" };
   const parts = h.split("/").filter(Boolean);
   const first = parts[0].toLowerCase();
   if (first === "dashboard") return { view: "dashboard", section: parts[1] ? parts[1].toLowerCase() : null };
@@ -4629,22 +4811,34 @@ function openSettings() {
 function closeSettings() {
   document.getElementById("settingsPanel").hidden = true;
   hideAuthMessage();
+  resetDeleteConfirm();
 }
 
 function renderAuthPanel() {
   const unconfigured = document.getElementById("authUnconfigured");
   const signedOut = document.getElementById("authSignedOut");
   const signedIn = document.getElementById("authSignedIn");
+  const recovery = document.getElementById("authRecovery");
 
   if (!Store.isConfigured()) {
     unconfigured.hidden = false;
     signedOut.hidden = true;
     signedIn.hidden = true;
+    recovery.hidden = true;
     return;
   }
   unconfigured.hidden = true;
 
   const user = Store.getUser();
+  // Arrived from a password-reset link: choosing a new password comes first.
+  if (Store.isPasswordRecovery()) {
+    recovery.hidden = false;
+    signedOut.hidden = true;
+    signedIn.hidden = true;
+    document.getElementById("recoveryEmailLabel").textContent = (user && user.email) || "your account";
+    return;
+  }
+  recovery.hidden = true;
   signedOut.hidden = !!user;
   signedIn.hidden = !user;
 
@@ -4662,15 +4856,28 @@ function renderAuthPanel() {
   }
 }
 
-function showAuthMessage(msg, isError) {
-  const el = document.getElementById("authError");
+// Each part of the account panel has its own message line, next to the
+// buttons it's about: authError (signed out), recoveryMessage (new
+// password), accountMessage (signed in) and dataMessage (progress file).
+function showAuthMessage(msg, isError, id = "authError") {
+  const el = document.getElementById(id);
   el.textContent = msg;
   el.hidden = false;
   el.classList.toggle("is-error", !!isError);
 }
 
 function hideAuthMessage() {
-  document.getElementById("authError").hidden = true;
+  ["authError", "recoveryMessage", "accountMessage", "dataMessage"].forEach((id) => {
+    document.getElementById(id).hidden = true;
+  });
+}
+
+function resetDeleteConfirm() {
+  document.getElementById("deleteConfirm").hidden = true;
+  document.getElementById("deleteConfirmInput").value = "";
+  const btn = document.getElementById("deleteAccountConfirmBtn");
+  btn.disabled = true;
+  btn.textContent = "Delete everything";
 }
 
 function renderSyncStatus() {
@@ -4756,6 +4963,127 @@ function initAuthUI() {
   document.getElementById("signOutBtn").addEventListener("click", async () => {
     await Store.signOut();
     closeSettings();
+  });
+
+  document.getElementById("forgotPasswordBtn").addEventListener("click", async () => {
+    hideAuthMessage();
+    const email = document.getElementById("authEmail").value.trim();
+    if (!email) {
+      showAuthMessage("Enter your email above, then choose Forgot password.", true);
+      document.getElementById("authEmail").focus();
+      return;
+    }
+    try {
+      await Store.requestPasswordReset(email);
+      showAuthMessage(`If there's an account for ${email}, an email with a link to choose a new password is on its way.`, false);
+    } catch (e) {
+      showAuthMessage(e.message || "Could not send the reset email.", true);
+    }
+  });
+
+  document.getElementById("setPasswordBtn").addEventListener("click", async () => {
+    hideAuthMessage();
+    const password = document.getElementById("newPassword").value;
+    if (password.length < 6) {
+      showAuthMessage("Password must be at least 6 characters.", true, "recoveryMessage");
+      return;
+    }
+    try {
+      await Store.updatePassword(password);
+      document.getElementById("newPassword").value = "";
+      renderAuthPanel();
+      showAuthMessage("Password changed. You're signed in.", false, "accountMessage");
+    } catch (e) {
+      showAuthMessage(e.message || "Could not change the password.", true, "recoveryMessage");
+    }
+  });
+  Store.onPasswordRecovery(openSettings);
+
+  // A reset link that has expired or was already used comes back with an
+  // error in the address instead of a session.
+  const linkError = location.hash.match(/[#&]error_description=([^&]*)/);
+  if (linkError && Store.isConfigured()) {
+    history.replaceState(null, "", location.pathname + location.search);
+    openSettings();
+    let why = linkError[1];
+    try {
+      why = decodeURIComponent(why.replace(/\+/g, " "));
+    } catch {
+      /* keep it encoded */
+    }
+    showAuthMessage(`That link didn't work (${why}). Enter your email and choose Forgot password to get a new one.`, true);
+  }
+
+  document.getElementById("deleteAccountBtn").addEventListener("click", () => {
+    hideAuthMessage();
+    document.getElementById("deleteConfirm").hidden = false;
+    document.getElementById("deleteConfirmInput").focus();
+  });
+  document.getElementById("deleteConfirmInput").addEventListener("input", (e) => {
+    document.getElementById("deleteAccountConfirmBtn").disabled = e.target.value.trim() !== "DELETE";
+  });
+  document.getElementById("deleteAccountCancelBtn").addEventListener("click", resetDeleteConfirm);
+  document.getElementById("deleteAccountConfirmBtn").addEventListener("click", async (e) => {
+    const btn = e.currentTarget;
+    if (document.getElementById("deleteConfirmInput").value.trim() !== "DELETE") return;
+    btn.disabled = true;
+    btn.textContent = "Deleting…";
+    try {
+      await Store.deleteAccount();
+      resetDeleteConfirm();
+      renderAuthPanel();
+      showAuthMessage("Your account and everything synced to it have been deleted.", false);
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = "Delete everything";
+      showAuthMessage(err.message || "Could not delete your account.", true, "accountMessage");
+    }
+  });
+
+  document.getElementById("exportBtn").addEventListener("click", () => {
+    hideAuthMessage();
+    const name = `fellow-progress-${SRS.today()}.json`;
+    const blob = new Blob([JSON.stringify(Store.exportData(), null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showAuthMessage(`Saved ${name}.`, false, "dataMessage");
+  });
+  document.getElementById("importBtn").addEventListener("click", () => {
+    hideAuthMessage();
+    document.getElementById("importFile").click();
+  });
+  document.getElementById("importFile").addEventListener("change", async (e) => {
+    const input = e.target;
+    const file = input.files && input.files[0];
+    if (!file) return;
+    try {
+      let parsed;
+      try {
+        parsed = JSON.parse(await file.text());
+      } catch {
+        throw new Error("That file isn't a Fellow progress download.");
+      }
+      const n = Store.importData(parsed);
+      reloadAllForAuthChange(); // re-read every view from the merged caches
+      renderSyncStatus();
+      showAuthMessage(
+        n
+          ? `Restored ${n} entr${n === 1 ? "y" : "ies"} from ${file.name}.`
+          : `Nothing to restore: this device already has everything in ${file.name}.`,
+        false,
+        "dataMessage"
+      );
+    } catch (err) {
+      showAuthMessage(err.message || "Could not read that file.", true, "dataMessage");
+    } finally {
+      input.value = ""; // so choosing the same file again still fires "change"
+    }
   });
 
   Store.onAuthChange(() => {
@@ -4855,15 +5183,13 @@ afterDeferredScripts(() => Store.init().then(() => {
   renderSyncStatus();
   loadAll();
   loadAllFlash();
-  Store.loadStreak().then(() => {
-    Store.bumpStreak();
-    renderGameBar();
-  });
+  Store.loadStreak().then(() => renderGameBar());
   Store.loadLastSession().then(() => renderGameBar());
   renderDueBanner();
   refreshExamPlan(); // the plan cached before init was read under the signed-out key
   subjectResults = Store.getResultsCache(); // likewise results
   refreshResults();
+  if (Store.isPasswordRecovery()) openSettings();
 }));
 
 // With the first page up, fetch every subject's content into the offline

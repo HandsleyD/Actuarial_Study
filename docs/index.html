@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fellow · IFoA exam study companion</title>
 <meta name="description" content="Fellow: a free study companion for the IFoA actuarial exams — flashcards, practice questions, drills, an exam planner and your route to Associate and Fellow.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fellow">
+<meta property="og:title" content="Fellow · IFoA exam study companion">
+<meta property="og:description" content="Free flashcards, spaced repetition, practice questions, drills and an exam planner for the IFoA actuarial exams.">
+<meta property="og:url" content="https://handsleyd.github.io/Actuarial_Study/">
+<meta property="og:image" content="https://handsleyd.github.io/Actuarial_Study/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#1b2a41">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
@@ -27,7 +34,7 @@
   } catch (e) { /* localStorage unavailable -- falls back to system preference */ }
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=32">
+<link rel="stylesheet" href="style.css?v=35">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
@@ -50,7 +57,7 @@
   <div id="homeView">
     <section id="welcomeBanner" class="due-banner welcome-banner" hidden></section>
     <section id="resultsPrompt" class="due-banner results-prompt" hidden></section>
-    <section id="dueBanner" class="due-banner"></section>
+    <section id="dueBanner" class="due-banner today-card" aria-label="Today"></section>
 
     <section id="routeMap" class="route-map" aria-label="Your route to Associate and Fellow"></section>
 
@@ -122,7 +129,17 @@
         <button id="signInBtn" class="btn primary">Sign in</button>
         <button id="signUpBtn" class="btn">Create account</button>
       </div>
+      <button id="forgotPasswordBtn" class="link-btn" type="button">Forgot password?</button>
       <div id="authError" class="auth-error" hidden></div>
+    </div>
+
+    <div id="authRecovery" hidden>
+      <p class="settings-note">Choose a new password for <strong id="recoveryEmailLabel"></strong>.</p>
+      <input id="newPassword" class="text-input" type="password" placeholder="New password" autocomplete="new-password">
+      <div class="settings-actions">
+        <button id="setPasswordBtn" class="btn primary">Set new password</button>
+      </div>
+      <div id="recoveryMessage" class="auth-error" hidden></div>
     </div>
 
     <div id="authSignedIn" hidden>
@@ -131,6 +148,28 @@
       <div class="settings-actions">
         <button id="signOutBtn" class="btn">Sign out</button>
       </div>
+      <button id="deleteAccountBtn" class="link-btn danger" type="button">Delete my account and data</button>
+      <div id="deleteConfirm" class="delete-confirm" hidden>
+        <p class="settings-note">This permanently deletes your account and everything synced to it: mastery, review schedules, drill results, module status, exam results, your exam plan, streak and session log. It can't be undone. Download your progress first if you might want it back. Progress saved on this device without an account isn't affected.</p>
+        <label class="settings-note" for="deleteConfirmInput">Type <strong>DELETE</strong> to confirm.</label>
+        <input id="deleteConfirmInput" class="text-input" type="text" autocomplete="off" spellcheck="false">
+        <div class="settings-actions">
+          <button id="deleteAccountConfirmBtn" class="btn danger" disabled>Delete everything</button>
+          <button id="deleteAccountCancelBtn" class="btn">Cancel</button>
+        </div>
+      </div>
+      <div id="accountMessage" class="auth-error" hidden></div>
+    </div>
+
+    <div id="dataSection" class="settings-section">
+      <h3>Your progress file</h3>
+      <p class="settings-note">Save everything this site keeps for you on this device to a file, or merge a saved file back in (the newer copy of each entry wins). Works with or without an account.</p>
+      <div class="settings-actions">
+        <button id="exportBtn" class="btn">Download my progress</button>
+        <button id="importBtn" class="btn">Restore from file</button>
+      </div>
+      <input id="importFile" type="file" accept=".json,application/json" hidden>
+      <div id="dataMessage" class="auth-error" hidden></div>
     </div>
   </div>
 </div>
@@ -157,7 +196,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 }
 </script>
 <script src="srs.js?v=1"></script>
-<script src="store.js?v=10"></script>
+<script src="store.js?v=12"></script>
 <!-- Subject metadata and the generated content catalog. Each subject's cards,
      questions and drills (content/<CODE>.js) load on demand: see app.js's
      loadContent() and docs/content/README.md. -->
@@ -166,6 +205,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 <script src="exam-stats.js?v=1"></script>
 <script src="exam-dates.js?v=3"></script>
 <script src="route.js?v=1"></script>
-<script src="app.js?v=37"></script>
+<script src="readiness.js?v=1"></script>
+<script src="app.js?v=40"></script>
 </body>
 </html>
