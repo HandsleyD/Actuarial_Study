@@ -124,7 +124,10 @@ const CALC = (() => {
     } else {
       reads.push(parsed.percent ? parsed.value / 100 : parsed.value);
     }
-    return { ok: reads.some((x) => within(x, target, item.tolerance)), value: reads[0], answer: target };
+    // Report the reading that was marked right, so "0.0525" is echoed back
+    // as 5.25%, not 0.05%.
+    const hit = reads.find((x) => within(x, target, item.tolerance));
+    return { ok: hit !== undefined, value: hit !== undefined ? hit : reads[0], answer: target };
   }
 
   /* ---------- interest functions ---------- */

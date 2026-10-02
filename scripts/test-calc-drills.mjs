@@ -378,6 +378,10 @@ test("mark: percentage items take 5.25, 5.25% or 0.0525", () => {
   for (const s of ["5.25", "5.25%", "0.0525", "5.258"]) assert.equal(CALC.mark(item, {}, s).ok, true, s);
   for (const s of ["5.3", "0.053", "52.5"]) assert.equal(CALC.mark(item, {}, s).ok, false, s);
   assert.equal(CALC.mark(item, {}, "nonsense"), null);
+  // feedback echoes the reading that was marked, not the raw first reading
+  assert.equal(CALC.mark(item, {}, "0.0525").value, 5.25);
+  assert.equal(CALC.mark(item, {}, "5.25").value, 5.25);
+  assert.equal(CALC.mark(item, {}, "0.07").value, 0.07); // wrong: shown as typed
 });
 
 test("mark: money items use the relative tolerance, and a % sign divides by 100", () => {
