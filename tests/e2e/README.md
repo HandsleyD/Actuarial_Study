@@ -37,6 +37,7 @@ npx playwright test --headed --debug    # watch and step through
 | `calendar.spec.mjs` | Add to calendar: the .ics download from the exam plan and the Exam Hub, with and without a plan |
 | `readiness.spec.mjs` | The home page Today card (due reviews, new cards paced to the plan, the no-plan nudge, the revision fortnight) and readiness on subject pages, the route map and the exam plan |
 | `progress-status.spec.mjs` | Studying a module starts it; subjects awaiting results or passed pause their reviews, with a badge and a note; results day and resits |
+| `content-loading.spec.mjs` | Subjects' cards load on demand: nothing on the home page, one subject per module, only the dashboard's own; loading note, failure and retry |
 | `account.spec.mjs` | Downloading and restoring the progress file, forgot password and the reset link, account deletion |
 | `site.spec.mjs` | Header navigation, back/forward, theme, account panel, phone widths (390px and 320px), dark mode |
 

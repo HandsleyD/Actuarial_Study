@@ -1,8 +1,13 @@
 #!/usr/bin/env node
-// Validates docs/data.js, docs/questions.js, docs/drills.js,
-// docs/calc-drills.js and docs/foundations.js against the class of content
-// bugs that have actually shipped to main before this existed:
-//   - a syntax error in either file
+// Validates the study content -- docs/data.js (subjects), every
+// docs/content/<CODE>.js (modules, flashcards, practice questions, drills)
+// and docs/diagrams.js -- against the class of content bugs that have
+// actually shipped to main before this existed:
+//   - a syntax error in any file, or a content file that doesn't register
+//     the subject its name says
+//   - docs/catalog.js out of date with the content files (an edit that
+//     wasn't followed by `node scripts/build-catalog.mjs`), which would show
+//     the wrong card counts and serve a stale cached file
 //   - a flashcard missing its "explain" field (the reveal-then-explain
 //     pattern this site is built around requires every card to have one)
 //   - a LaTeX command inside a $...$ span missing its escaping backslash --
@@ -15,7 +20,7 @@
 //   - a question bank entry whose declared "marks" doesn't equal the sum of
 //     its parts' marks
 //   - a maths-study/exams/<CODE>/progress.md missing a row for a module
-//     data.js knows about (the "module-count bug" that silently hid modules
+//     its content file knows about (the "module-count bug" that silently hid modules
 //     on the site until progress.md was hand-expanded)
 //   - duplicate module ids within a subject, or duplicate question ids
 //
@@ -26,7 +31,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import Module from "node:module";
+import { runBrowserScript, buildCatalog } from "./content-lib.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -36,75 +41,59 @@ const warnings = [];
 const fail = (msg) => errors.push(msg);
 const warn = (msg) => warnings.push(msg);
 
-// data.js/questions.js are plain browser scripts (const SUBJECTS = {...}),
-// not modules -- compile them the same way this repo's scratch-verification
-// scripts have all along: append a module.exports line and run through
-// Module._compile so a real syntax/runtime error surfaces clearly.
-function loadBrowserScript(relPath, exportNames) {
-  const file = path.join(repoRoot, relPath);
-  const src = readFileSync(file, "utf8");
-  const m = new Module(file);
-  m.filename = file;
-  m.paths = Module._nodeModulePaths(path.dirname(file));
-  m._compile(`${src}\nmodule.exports = { ${exportNames.join(",")} };`, file);
-  return m.exports;
-}
-
+// Content files are plain browser scripts (registerContent("CB2", {...}));
+// content-lib.mjs runs them the way the site does and collects what each
+// one registers. buildCatalog() also regenerates docs/catalog.js in memory,
+// so a stale catalog is caught here as well as by build-catalog --check.
 let SUBJECTS = {};
-let MODULES = {};
-let QUESTIONS = {};
-let DRILLS = {};
+const MODULES = {};
+const QUESTIONS = {};
+const DRILLS = {};
 let DIAGRAMS = {};
 let CALC = null;
 
 try {
-  ({ SUBJECTS, MODULES } = loadBrowserScript("docs/data.js", ["SUBJECTS", "MODULES"]));
+  const built = buildCatalog(repoRoot);
+  built.errors.forEach(fail);
+  SUBJECTS = built.SUBJECTS;
+  for (const [code, c] of Object.entries(built.content)) {
+    MODULES[code] = c.modules;
+    if (c.questions.length) QUESTIONS[code] = c.questions;
+    if (c.drills.length) DRILLS[code] = c.drills;
+  }
+  const lf = (t) => t.replace(/\r\n/g, "\n");
+  let current = "";
+  try {
+    current = readFileSync(path.join(repoRoot, "docs/catalog.js"), "utf8");
+  } catch {
+    /* reported below */
+  }
+  if (lf(current) !== built.catalog || lf(built.index) !== lf(built.indexOut)) {
+    fail("docs/catalog.js (or its ?v= in docs/index.html) is out of date with docs/content -- run: node scripts/build-catalog.mjs");
+  }
 } catch (e) {
-  fail(`docs/data.js: failed to parse/execute -- ${e.message}`);
+  fail(`docs/data.js or docs/content: failed to parse/execute -- ${e.message}`);
 }
 try {
-  ({ QUESTIONS } = loadBrowserScript("docs/questions.js", ["QUESTIONS"]));
-} catch (e) {
-  fail(`docs/questions.js: failed to parse/execute -- ${e.message}`);
-}
-try {
-  ({ DIAGRAMS } = loadBrowserScript("docs/diagrams.js", ["DIAGRAMS"]));
+  const file = path.join(repoRoot, "docs/diagrams.js");
+  ({ DIAGRAMS } = runBrowserScript(readFileSync(file, "utf8"), file, ["DIAGRAMS"]));
 } catch (e) {
   fail(`docs/diagrams.js: failed to parse/execute -- ${e.message}`);
 }
-try {
-  ({ DRILLS } = loadBrowserScript("docs/drills.js", ["DRILLS"]));
-} catch (e) {
-  fail(`docs/drills.js: failed to parse/execute -- ${e.message}`);
-}
 
-// Calculation drills join their subject's drill bank, as app.js does.
 try {
-  ({ CALC } = loadBrowserScript("docs/calc-drills.js", ["CALC"]));
+  const file = path.join(repoRoot, "docs/calc-drills.js");
+  ({ CALC } = runBrowserScript(readFileSync(file, "utf8"), file, ["CALC"]));
   for (const [code, items] of Object.entries(CALC.DRILLS)) DRILLS[code] = (DRILLS[code] || []).concat(items);
 } catch (e) {
   fail(`docs/calc-drills.js: failed to parse/execute -- ${e.message}`);
 }
 
-// Foundations (FM, FS) have the same shapes as data.js and drills.js, and
-// the site merges them in the same way, so every check below covers them
-// too. Their modules also carry a `lesson`, checked on its own below.
-try {
-  const F = loadBrowserScript("docs/foundations.js", [
-    "FOUNDATIONS",
-    "FOUNDATION_SUBJECTS",
-    "FOUNDATION_MODULES",
-    "FOUNDATION_DRILLS",
-  ]);
-  for (const code of F.FOUNDATIONS) {
-    if (!F.FOUNDATION_SUBJECTS[code]) fail(`foundations.js: ${code} is in FOUNDATIONS but has no FOUNDATION_SUBJECTS entry`);
-    if (SUBJECTS[code]) fail(`foundations.js: ${code} clashes with an exam subject in data.js`);
-  }
-  Object.assign(SUBJECTS, F.FOUNDATION_SUBJECTS);
-  Object.assign(MODULES, F.FOUNDATION_MODULES);
-  Object.assign(DRILLS, F.FOUNDATION_DRILLS);
-} catch (e) {
-  fail(`docs/foundations.js: failed to parse/execute -- ${e.message}`);
+// Foundations (FM, FS) have the same shapes as every other subject, so every
+// check below covers them too. Their modules also carry a `lesson`, checked
+// on its own below.
+for (const code of ["FM", "FS"]) {
+  if (!SUBJECTS[code] || !SUBJECTS[code].foundation) fail(`docs/data.js: ${code} should be in SUBJECTS with foundation: true`);
 }
 
 // A syntax error means nothing below can run meaningfully -- stop here.
@@ -151,7 +140,7 @@ function checkLesson(html, where) {
   if (open !== close) fail(`${where}: ${open} opening tags but ${close} closing tags`);
 }
 
-// --- flashcard content (docs/data.js, docs/foundations.js) ---
+// --- flashcard content (docs/content/<CODE>.js) ---
 for (const [code, modules] of Object.entries(MODULES)) {
   if (!SUBJECTS[code]) warn(`${code}: has a MODULES entry but no SUBJECTS metadata`);
 
@@ -199,12 +188,12 @@ for (const code of Object.keys(MODULES)) {
   if (missing.length) {
     fail(
       `${code}: progress.md is missing row(s) for ${missing.join(", ")} ` +
-        `(data.js has ${modIds.length} modules, progress.md has ${rowIds.length} rows)`
+        `(docs/content/${code}.js has ${modIds.length} modules, progress.md has ${rowIds.length} rows)`
     );
   }
 }
 
-// --- question banks (docs/questions.js) ---
+// --- question banks (docs/content/<CODE>.js) ---
 for (const [code, questions] of Object.entries(QUESTIONS)) {
   const seenQuestionIds = new Set();
   for (const q of questions) {
@@ -271,7 +260,7 @@ for (const [id, dg] of Object.entries(DIAGRAMS)) {
   });
 }
 
-// --- drill banks (docs/drills.js) ---
+// --- drill banks (docs/content/<CODE>.js) ---
 //
 // Beyond the structural checks (ids, ranges, required fields), these encode
 // the failure modes that actually came out of the first generated batch, so
@@ -302,7 +291,7 @@ for (const [code, items] of Object.entries(DRILLS)) {
     seenIds.add(item.id);
 
     if (!item.module) fail(`${where}: missing "module"`);
-    else if (knownModules.size && !knownModules.has(item.module)) fail(`${where}: module "${item.module}" is not in data.js`);
+    else if (knownModules.size && !knownModules.has(item.module)) fail(`${where}: module "${item.module}" is not a module of ${code}`);
 
     // a calc item's worked solution does the explaining
     if (item.type !== "calc" && (!item.explain || !stripTags(item.explain))) fail(`${where}: missing/empty "explain"`);

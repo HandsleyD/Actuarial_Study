@@ -155,7 +155,9 @@ const Store = (function () {
 
   function init() {
     if (readyPromise) return readyPromise;
-    if (!isConfigured()) {
+    // supabase-js is loaded with defer from a CDN; if it never arrived
+    // (offline with nothing cached), run local-only like an unconfigured site.
+    if (!isConfigured() || typeof supabase === "undefined") {
       readyPromise = Promise.resolve();
       return readyPromise;
     }

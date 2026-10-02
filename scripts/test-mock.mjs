@@ -4,15 +4,15 @@
 // Run: node scripts/test-mock.mjs   (also runs in CI — validate-content.yml)
 
 import { createRequire } from "node:module";
-import { readFileSync } from "node:fs";
-import vm from "node:vm";
+import { fileURLToPath } from "node:url";
+import { loadContentFiles } from "./content-lib.mjs";
 import assert from "node:assert/strict";
 
 const require = createRequire(import.meta.url);
 const Mock = require("../docs/mock.js");
-const ctx = {};
-vm.createContext(ctx);
-vm.runInContext(`${readFileSync(new URL("../docs/questions.js", import.meta.url), "utf8")};this.QUESTIONS = QUESTIONS;`, ctx);
+const { content, errors } = loadContentFiles(fileURLToPath(new URL("../", import.meta.url)));
+assert.deepEqual(errors, []);
+const ctx = { QUESTIONS: Object.fromEntries(Object.entries(content).filter(([, c]) => c.questions.length).map(([code, c]) => [code, c.questions])) };
 
 let passed = 0;
 function test(name, fn) {

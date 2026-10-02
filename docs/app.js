@@ -13,21 +13,191 @@ const EXAMS = [
   "SP1", "SP2", "SP4", "SP5", "SP6", "SP7", "SP8", "SP9",
 ];
 
-// Foundations (foundations.js): the maths and statistics the exams assume,
-// taught from zero. They study like any subject but are not IFoA exams, so
-// they stay out of EXAMS: never in the planner, the route map, results or the
-// qualification count.
+// Foundations (FM and FS in data.js): the maths and statistics the exams
+// assume, taught from zero. They study like any subject but are not IFoA
+// exams, so they stay out of EXAMS: never in the planner, the route map,
+// results or the qualification count.
 const FOUNDATION_CODES = typeof FOUNDATIONS !== "undefined" ? FOUNDATIONS : [];
-if (typeof FOUNDATION_SUBJECTS !== "undefined") Object.assign(SUBJECTS, FOUNDATION_SUBJECTS);
-if (typeof FOUNDATION_MODULES !== "undefined") Object.assign(MODULES, FOUNDATION_MODULES);
-if (typeof FOUNDATION_DRILLS !== "undefined" && typeof DRILLS !== "undefined") Object.assign(DRILLS, FOUNDATION_DRILLS);
-// Calculation drills (calc-drills.js) join a subject's other drills.
-if (typeof CALC_DRILLS !== "undefined" && typeof DRILLS !== "undefined") {
-  for (const [code, items] of Object.entries(CALC_DRILLS)) DRILLS[code] = (DRILLS[code] || []).concat(items);
-}
 
 function isFoundation(code) {
   return FOUNDATION_CODES.includes(code);
+}
+
+/* ---------- study content: catalog up front, cards on demand ---------- */
+//
+// catalog.js (generated from docs/content by scripts/build-catalog.mjs)
+// describes every subject's modules: titles, descriptions, and how many cards
+// and drills each has. That is all the home page, route map, planner,
+// dashboard tables and due counts need. The cards, practice questions and
+// drills themselves are in content/<CODE>.js, one file per subject, fetched
+// the first time a page needs a subject's text.
+//
+// MODULES[code] has one object per module, built from the catalog. `count`
+// is how many cards it has; `cards` stays null until the subject's file
+// arrives, and then holds them (plus `lesson`, for Foundations). Card
+// identity is (subject, module id, index into `cards`), so anything that only
+// needs to know which cards exist (sessions, schedules, mastery totals) runs
+// off `count` and never waits for the file.
+
+const MODULES = {}; // code -> [{ id, title, description, count, drillCount, cards, lesson }]
+const QUESTIONS = {}; // code -> practice questions, once loaded
+const DRILLS = {}; // code -> drill items, once loaded
+for (const [code, entry] of Object.entries(CATALOG)) {
+  MODULES[code] = entry.modules.map((m) => ({
+    id: m.id,
+    title: m.title,
+    description: m.description,
+    count: m.cards,
+    drillCount: m.drills,
+    cards: null,
+    lesson: undefined,
+  }));
+}
+
+const contentLoaded = new Set();
+const contentFailed = new Set();
+const contentLoads = {}; // code -> Promise while its file is on its way
+
+// Called by each content/<CODE>.js as it runs.
+function registerContent(code, data) {
+  const defs = MODULES[code];
+  if (!defs) return;
+  (data.modules || []).forEach((m) => {
+    const def = defs.find((d) => d.id === m.id);
+    if (!def) return;
+    def.cards = m.cards || [];
+    def.lesson = m.lesson;
+  });
+  defs.forEach((def) => {
+    if (!def.cards) def.cards = [];
+  });
+  QUESTIONS[code] = data.questions || [];
+  DRILLS[code] = (data.drills || []).concat(typeof CALC_DRILLS !== "undefined" ? CALC_DRILLS[code] || [] : []);
+  contentLoaded.add(code);
+}
+
+// Ready means the subject's file has run and, for a subject with hotspot
+// drills, diagrams.js too: they load in parallel, and either can fail alone.
+function contentReady(code) {
+  const entry = CATALOG[code];
+  return !entry || (contentLoaded.has(code) && (!entry.diagrams || typeof DIAGRAMS !== "undefined"));
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = () => {
+      s.remove();
+      reject(new Error(`Couldn't load ${src}`));
+    };
+    document.head.appendChild(s);
+  });
+}
+
+let diagramsLoad = null;
+function loadDiagrams() {
+  if (typeof DIAGRAMS !== "undefined") return Promise.resolve();
+  if (!diagramsLoad) {
+    diagramsLoad = loadScript(DIAGRAMS_FILE).catch((e) => {
+      diagramsLoad = null;
+      throw e;
+    });
+  }
+  return diagramsLoad;
+}
+
+function loadContent(code) {
+  if (contentReady(code)) return Promise.resolve();
+  if (!contentLoads[code]) {
+    const entry = CATALOG[code];
+    // Fetch only what's still missing, so a retry after a failed diagrams.js
+    // doesn't run the subject's file a second time.
+    contentLoads[code] = Promise.all([
+      contentLoaded.has(code) ? null : loadScript(entry.file),
+      entry.diagrams ? loadDiagrams() : null,
+    ])
+      .then(() => {
+        if (!contentLoaded.has(code)) throw new Error(`${entry.file} didn't register ${code}`);
+        contentFailed.delete(code);
+      })
+      .catch((e) => {
+        contentFailed.add(code);
+        throw e;
+      })
+      .finally(() => delete contentLoads[code]);
+  }
+  return contentLoads[code];
+}
+
+// Fetch whichever of `codes` aren't in yet, then call `rerender` -- if the
+// user is still where they asked for them (`stillHere`; by default, the same
+// URL). A failed subject is remembered, so the re-render shows an error
+// rather than starting the fetch again in a loop.
+function requestContent(codes, rerender, stillHere) {
+  const hash = location.hash;
+  const here = stillHere || (() => location.hash === hash);
+  const missing = [...new Set(codes)].filter((c) => !contentReady(c) && !contentFailed.has(c));
+  if (!missing.length) return;
+  Promise.allSettled(missing.map(loadContent)).then(() => {
+    if (here()) rerender();
+  });
+}
+
+function contentLoadingHtml(codes) {
+  const label = codes.length === 1 ? `${codes[0]}&rsquo;s cards` : `cards from ${codes.length} subjects`;
+  return `<p class="content-loading" role="status">Loading ${label}&hellip;</p>`;
+}
+
+// For a view that can't draw anything useful without these subjects' text:
+// true when they're all in. Otherwise fills `el` with a back link and a
+// loading note (or, if a fetch failed, an error with a retry button), starts
+// the fetch, and returns false; `rerender` redraws the view once it's done.
+function whenContent(codes, el, rerender, back) {
+  const missing = [...new Set(codes)].filter((c) => !contentReady(c));
+  if (!missing.length) return true;
+  const failed = missing.filter((c) => contentFailed.has(c));
+  const backHtml = back ? `<button class="back-link" id="contentBack">&larr; ${back.label}</button>` : "";
+  el.innerHTML = failed.length
+    ? `${backHtml}<div class="content-error" role="alert">
+        <p>Couldn&rsquo;t load ${failed.join(", ")}. Check your connection and try again.</p>
+        <button class="btn" id="contentRetry">Try again</button>
+      </div>`
+    : `${backHtml}${contentLoadingHtml(missing)}`;
+  if (back) document.getElementById("contentBack").addEventListener("click", () => navigate(back.href));
+  if (failed.length) {
+    document.getElementById("contentRetry").addEventListener("click", () => {
+      failed.forEach((c) => contentFailed.delete(c));
+      rerender();
+    });
+  } else {
+    requestContent(missing, rerender);
+  }
+  return false;
+}
+
+// Precache: once the first page is up and the browser is idle, ask the
+// service worker to fetch every subject's file, so the whole site works
+// offline after one visit. It skips files it already has at this version.
+function precacheContent() {
+  if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
+  const urls = [...Object.values(CATALOG).map((e) => e.file), DIAGRAMS_FILE].map((f) => new URL(f, location.href).href);
+  navigator.serviceWorker.ready
+    .then((reg) => {
+      if (reg.active) reg.active.postMessage({ type: "precache", urls });
+    })
+    .catch(() => {});
+}
+
+function drillCount(code, moduleId) {
+  if (!moduleId) return CATALOG[code] ? CATALOG[code].drills : 0;
+  const def = (MODULES[code] || []).find((d) => d.id === moduleId);
+  return def ? def.drillCount : 0;
+}
+
+function questionCount(code) {
+  return CATALOG[code] ? CATALOG[code].questions : 0;
 }
 
 // The foundation modules each exam leans on hardest, linked from its
@@ -115,7 +285,7 @@ function generateSession(code, moduleId) {
   const moduleMastery = (fd && fd.mastery && fd.mastery[moduleId]) || {};
   const moduleSrs = (srsData[code] && srsData[code][moduleId]) || {};
   const today = SRS.today();
-  const total = def.cards.length;
+  const total = def.count;
   const allIdx = Array.from({ length: total }, (_, i) => i);
   const due = shuffleArray(allIdx.filter((i) => SRS.isDue(moduleSrs[i], today)));
   const rest = allIdx.filter((i) => !SRS.isDue(moduleSrs[i], today));
@@ -131,7 +301,7 @@ function currentSequence(code, moduleId, def) {
     }
     return flashState.sessionIndices;
   }
-  return Array.from({ length: def.cards.length }, (_, i) => i);
+  return Array.from({ length: def.count }, (_, i) => i);
 }
 
 /* ---------- mixed session (across every module in a subject) ---------- */
@@ -149,8 +319,12 @@ const mixedState = {
 
 /* ---------- practice exam question bank ---------- */
 
-// markAt: the timestamp of the self-mark attempt saved since the answers were
-// last revealed, so saving again updates that attempt instead of adding one.
+// The questions (in each subject's content file) are original, written in
+// the IFoA style, not real papers with the numbers changed: see
+// docs/content/README.md. Real past papers and examiners' reports are on the
+// IFoA's Virtual Learning Environment, behind a student/member login.
+const IFOA_PAST_PAPERS_URL = "https://actuaries.org.uk/past-exam-papers-and-examiners-reports/";
+
 const qbankState = { code: null, qIndex: 0, revealed: false, markAt: null, _lastKey: "", timers: {} };
 
 /* ---------- timed mode for the question bank ---------- */
@@ -232,6 +406,7 @@ function tickQTimer(code, qIndex) {
 
 function renderQuestionsView(code) {
   const el = document.getElementById("questionsView");
+  if (questionCount(code) && !whenContent([code], el, () => renderQuestionsView(code), { href: `#/${code}`, label: code })) return;
   const questions = QUESTIONS[code] || [];
   const info = SUBJECTS[code] || { name: code };
 
@@ -588,7 +763,9 @@ function passBarHtml(pct, pass) {
 
 // Study dashboard: each subject's self-marked average next to its pass mark.
 function questionScoresSectionHtml() {
-  const rows = Object.keys(QUESTIONS)
+  const codes = Object.keys(CATALOG).filter((code) => Object.keys(Store.getScoreCache(code)).length || Store.getMockCache(code).length);
+  requestContent(codes, renderDashboardView);
+  const rows = codes.filter(contentReady)
     .map((code) => ({ code, ...questionScoreSummary(code) }))
     .filter((r) => r.avg.attempted || r.lastMock);
   if (!rows.length) return "";
@@ -662,9 +839,10 @@ window.addEventListener("resize", syncTopbarHeight);
 
 function renderMockView(code) {
   const el = document.getElementById("mockView");
+  clearInterval(mockTimerInterval);
+  if (!whenContent([code], el, () => renderMockView(code), { label: code, href: `#/${code}` })) return;
   const bank = QUESTIONS[code] || [];
   const info = SUBJECTS[code] || { name: code };
-  clearInterval(mockTimerInterval);
   syncTopbarHeight();
 
   if (!bank.length) {
@@ -926,7 +1104,7 @@ function subjectMasteryTotals(code) {
   let total = 0;
   let masteredCount = 0;
   for (const mod of modules) {
-    total += mod.cards.length;
+    total += mod.count;
     const modMastery = mastery[mod.id] || {};
     masteredCount += Object.values(modMastery).filter(Boolean).length;
   }
@@ -941,10 +1119,10 @@ function generateMixedSession(code) {
   const mastered = [];
   for (const mod of modules) {
     const modMastery = mastery[mod.id] || {};
-    mod.cards.forEach((c, i) => {
+    for (let i = 0; i < mod.count; i++) {
       const entry = { moduleId: mod.id, cardIdx: i };
       (modMastery[i] ? mastered : unmastered).push(entry);
-    });
+    }
   }
   return [...shuffleArray(unmastered), ...shuffleArray(mastered)].slice(0, SESSION_SIZE);
 }
@@ -964,17 +1142,35 @@ function pathFor(code) {
   return `maths-study/exams/${code}/progress.md`;
 }
 
+// KaTeX is loaded with `defer`, so the first render can run before it has
+// arrived. Anything drawn by then is queued and typeset once it's in.
+const pendingMath = new Set();
+
 function renderMath(el) {
-  if (window.renderMathInElement) {
-    renderMathInElement(el, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-      ],
-      throwOnError: false,
-    });
+  if (!window.renderMathInElement) {
+    pendingMath.add(el);
+    return;
   }
+  renderMathInElement(el, {
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "$", right: "$", display: false },
+    ],
+    throwOnError: false,
+  });
 }
+
+// Deferred scripts (KaTeX, supabase-js) have all run by DOMContentLoaded.
+function afterDeferredScripts(fn) {
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn, { once: true });
+  else fn();
+}
+
+afterDeferredScripts(() => {
+  const els = [...pendingMath];
+  pendingMath.clear();
+  els.forEach(renderMath);
+});
 
 // Explanation panel: only ever rendered once the answer is revealed, so a
 // card with no explanation looks identical to today, and a card with one
@@ -1292,7 +1488,7 @@ function cardNote(code, moduleId, idx) {
 function saveCardNote(code, moduleId, idx, patch) {
   Store.setCardNote(code, moduleId, idx, patch);
   noteData[code] = Store.getNotesCache(code);
-  if (patch.note !== undefined) searchIndex = null; // notes are searchable: rebuild with this one
+  if (patch.note !== undefined) searchIndex = {}; // notes are searchable: rebuild with this one
   renderSyncStatus();
 }
 
@@ -1303,7 +1499,7 @@ function saveCardNote(code, moduleId, idx, patch) {
 function onNotesChanged(codes) {
   if (!codes.length) return;
   codes.forEach((code) => (noteData[code] = Store.getNotesCache(code)));
-  searchIndex = null;
+  searchIndex = {};
   const r = parseHash();
   if (r.view === "search") renderSearchResults();
   if (r.view === "subject" && codes.includes(r.exam)) renderSubjectView(r.exam);
@@ -1777,7 +1973,7 @@ function renderSubjectView(code) {
         const def = modDefMap[mod.id];
         const title = def ? def.title : `Module ${mod.id.replace(/^m/, "")}`;
         const desc = def ? def.description : "";
-        const cardCount = def ? def.cards.length : 0;
+        const cardCount = def ? def.count : 0;
         const hasCards = cardCount > 0;
         const masteryMap = fd && fd.mastery && fd.mastery[mod.id] ? fd.mastery[mod.id] : {};
         const masteredCount = Object.values(masteryMap).filter(Boolean).length;
@@ -1805,13 +2001,18 @@ function renderSubjectView(code) {
       .join("")}</div>`;
   }
 
-  const totalCards = modDefs.reduce((s, m) => s + m.cards.length, 0);
-  const totalQuestions = (QUESTIONS[code] || []).length;
+  const totalCards = modDefs.reduce((s, m) => s + m.count, 0);
+  const totalQuestions = questionCount(code);
   // Drills are their own track, so they get their own count and their own
   // accuracy figure rather than folding into the mastery star totals above.
-  const totalDrills = drillItems(code).length;
-  const drillsDue = totalDrills ? dueDrillCount(code, null) : 0;
-  const drillAcc = totalDrills ? drillAccuracy(code, null) : { attempts: 0, pct: 0 };
+  // Both of those need the drill items, so they show once the subject's
+  // content file is in; it's fetched now anyway, ahead of the user opening
+  // a module.
+  const loaded = contentReady(code);
+  if (!loaded) requestContent([code], () => renderSubjectView(code));
+  const totalDrills = drillCount(code);
+  const drillsDue = totalDrills && loaded ? dueDrillCount(code, null) : 0;
+  const drillAcc = totalDrills && loaded ? drillAccuracy(code, null) : null;
   if (totalDrills) ensureDrillsLoaded(code);
   const paused = reviewsPaused(code);
   const subjectDue = paused ? 0 : dueCards(code).length;
@@ -1856,7 +2057,7 @@ function renderSubjectView(code) {
       ${
         totalDrills > 0
           ? `<button class="btn drill-btn" id="startDrill">${ico("pencil")} Drills &mdash; ${totalDrills} question${totalDrills === 1 ? "" : "s"}, marked for you${
-              drillAcc.seen ? ` &middot; ${drillAcc.seen}/${totalDrills} tried, ${drillAcc.pct}% correct` : " &middot; none tried yet"
+              !drillAcc ? "" : drillAcc.seen ? ` &middot; ${drillAcc.seen}/${totalDrills} tried, ${drillAcc.pct}% correct` : " &middot; none tried yet"
             }${drillsDue ? ` (<strong>${drillsDue} due</strong>)` : ""}</button>`
           : ""
       }
@@ -1993,8 +2194,9 @@ function lessonPanelHtml(code, def, masteredCount) {
 function renderFlashView(code, moduleId) {
   const el = document.getElementById("flashView");
   const def = (MODULES[code] || []).find((m) => m.id === moduleId);
+  if (def && def.count && !whenContent([code], el, () => renderFlashView(code, moduleId), { href: `#/${code}`, label: code })) return;
 
-  if (!def || !def.cards.length) {
+  if (!def || !def.count) {
     el.innerHTML = `
       <button class="back-link" id="backToSubject">&larr; ${code}</button>
       <div class="flash-empty">
@@ -2005,7 +2207,7 @@ function renderFlashView(code, moduleId) {
     return;
   }
 
-  const moduleDrills = drillItems(code, moduleId).length;
+  const moduleDrills = drillCount(code, moduleId);
   const moduleDrillsDue = moduleDrills ? dueDrillCount(code, moduleId) : 0;
   if (moduleDrills) ensureDrillsLoaded(code);
 
@@ -2202,6 +2404,7 @@ function renderMixedView(code) {
     el.querySelector("#backToSubjectMixed").addEventListener("click", () => navigate(`#/${code}`));
     return;
   }
+  if (!whenContent([code], el, () => renderMixedView(code), { href: `#/${code}`, label: code })) return;
 
   if (mixedState.sessionDone) {
     const { total, masteredCount } = subjectMasteryTotals(code);
@@ -2350,7 +2553,7 @@ function renderMixedView(code) {
 /* ---------- spaced repetition: due-today & weak-card review runs ---------- */
 
 // Every scheduled card (optionally within one subject), skipping any whose
-// module/card no longer exists in data.js.
+// module/card no longer exists in the catalog.
 // Every scored card, for one subject or (with no scope) across all of them.
 // The cross-subject list leaves out subjects whose reviews are paused; a
 // subject's own list (its "review due" button, #/review/<code>) keeps them.
@@ -2364,7 +2567,7 @@ function scheduledCards(scope) {
       if (!modSrs) continue;
       Object.keys(modSrs).forEach((k) => {
         const cardIdx = Number(k);
-        if (cardIdx < def.cards.length && modSrs[k]) out.push({ code, moduleId: def.id, cardIdx, st: modSrs[k] });
+        if (cardIdx < def.count && modSrs[k]) out.push({ code, moduleId: def.id, cardIdx, st: modSrs[k] });
       });
     }
   }
@@ -2408,7 +2611,7 @@ function flaggedCards(scope) {
       if (!mod) continue;
       Object.keys(mod).forEach((k) => {
         const cardIdx = Number(k);
-        if (cardIdx < def.cards.length && mod[k] && mod[k].flagged) out.push({ code, moduleId: def.id, cardIdx, at: mod[k].updatedAt || 0 });
+        if (cardIdx < def.count && mod[k] && mod[k].flagged) out.push({ code, moduleId: def.id, cardIdx, at: mod[k].updatedAt || 0 });
       });
     }
   }
@@ -2548,6 +2751,10 @@ function renderReviewView() {
     return;
   }
 
+  // Every subject in the run is fetched up front, so the run never stops
+  // halfway for a file.
+  if (!whenContent(reviewState.entries.map((e) => e.code), el, renderReviewView, { href: backHref, label: backLabel })) return;
+
   if (reviewState.cardIndex >= reviewState.entries.length) reviewState.cardIndex = 0;
   const pos = reviewState.cardIndex;
   const entry = reviewState.entries[pos];
@@ -2671,14 +2878,18 @@ function todayNewCards() {
     let learnedToday = 0;
     open.forEach((def) => {
       const st = modSrs[def.id] || {};
-      for (let i = 0; i < def.cards.length; i++) {
+      for (let i = 0; i < def.count; i++) {
         if (!st[i]) left++;
         else if (st[i].reviews === 1 && st[i].last === today) learnedToday++;
       }
     });
     const pace = Readiness.pace({ today, paper: firstPaper(code, sitting), cardsLeft: left + learnedToday });
     // Next module to start: the first one not started that has cards to meet.
-    const unseen = (def) => def.cards.some((_, i) => !(modSrs[def.id] || {})[i]);
+    const unseen = (def) => {
+      const st = modSrs[def.id] || {};
+      for (let i = 0; i < def.count; i++) if (!st[i]) return true;
+      return false;
+    };
     const next =
       open.find((def) => statusOf(def) === STATUSES[0].toLowerCase() && unseen(def)) || open.find(unseen) || null;
     const nextStarted = !!next && statusOf(next) !== STATUSES[0].toLowerCase();
@@ -2802,9 +3013,9 @@ function moduleStats(code, def) {
   const mastery = (fd && fd.mastery && fd.mastery[def.id]) || {};
   const modSrs = (srsData[code] && srsData[code][def.id]) || {};
   const today = SRS.today();
-  const s = { code, def, total: def.cards.length, mastered: 0, seen: 0, due: 0, lapses: 0, reviews: 0, trouble: 0 };
+  const s = { code, def, total: def.count, mastered: 0, seen: 0, due: 0, lapses: 0, reviews: 0, trouble: 0 };
   const paused = reviewsPaused(code);
-  for (let i = 0; i < def.cards.length; i++) {
+  for (let i = 0; i < def.count; i++) {
     if (mastery[i]) s.mastered++;
     const st = modSrs[i];
     if (!st) continue;
@@ -2822,7 +3033,7 @@ function moduleStats(code, def) {
 // it's shown. null for a subject with no cards.
 function subjectReadiness(code) {
   const mods = (MODULES[code] || []).map((def) => moduleStats(code, def));
-  const drills = drillItems(code).length ? drillAccuracy(code, null) : null;
+  const drills = drillCount(code) ? drillAccuracy(code, null) : null;
   return Readiness.score(mods, drills);
 }
 
@@ -2977,10 +3188,19 @@ function renderDashboardView() {
         .join("")}</div>`
     : `<p class="muted">No weak areas yet. Modules show up here once you've marked some of their cards Insufficient.</p>`;
 
+  // The most-missed list quotes each card, so it needs those subjects'
+  // content; everything else on the dashboard runs off the catalog.
   const trouble = weakCards(null).slice(0, 10);
   const flaggedAll = flaggedCards(null).length;
-  const troubleHtml = trouble.length
-    ? `<ol class="trouble-list">${trouble
+  const troubleCodes = [...new Set(trouble.map((e) => e.code))].filter((c) => !contentReady(c));
+  if (troubleCodes.length) requestContent(troubleCodes, renderDashboardView, () => parseHash().view === "dashboard");
+  const troubleHtml = !trouble.length
+    ? ""
+    : troubleCodes.some((c) => contentFailed.has(c))
+    ? `<p class="content-error">Couldn&rsquo;t load the cards for ${troubleCodes.join(", ")}. Check your connection, then reopen the dashboard.</p>`
+    : troubleCodes.length
+    ? contentLoadingHtml(troubleCodes)
+    : `<ol class="trouble-list">${trouble
         .map((e) => {
           const def = MODULES[e.code].find((m) => m.id === e.moduleId);
           const q = stripHtml(def.cards[e.cardIdx].q);
@@ -2988,8 +3208,7 @@ function renderDashboardView() {
             <span class="trouble-q">${escapeHtml(q)}</span></a>
             <span class="trouble-meta">missed ${e.st.lapses}&times; &middot; ${SRS.describeDue(e.st, today).toLowerCase()}</span></li>`;
         })
-        .join("")}</ol>`
-    : "";
+        .join("")}</ol>`;
 
   const subjectRow = (s) => `
     <details class="dash-subject">
@@ -4149,9 +4368,12 @@ function finishWelcome(sittingId, withPlan) {
 
 /* ---------- search across every card and practice question ---------- */
 
-// Built on first use: cards (with the user's notes on them) and question
-// parts, lower-cased once. Saving or syncing a note clears it to be rebuilt.
-let searchIndex = null;
+// Built per subject as each one's content arrives: cards (with the user's
+// notes on them) and question parts, lower-cased once. Saving or syncing a
+// note empties it, to be rebuilt. Search needs every subject's text (or one subject's, when
+// filtered), so opening it starts fetching them all; results come from
+// whatever has arrived so far, with a note while the rest are on their way.
+let searchIndex = {}; // code -> items
 const searchState = { q: "", exam: "" };
 
 function plainText(html) {
@@ -4163,65 +4385,61 @@ function plainText(html) {
     .trim();
 }
 
-function buildSearchIndex() {
+function buildSearchIndex(code) {
   const items = [];
-  for (const code of Object.keys(MODULES)) {
-    const notes = notesFor(code);
-    for (const def of MODULES[code]) {
-      const title = plainText(def.title);
-      const modNotes = notes[def.id] || {};
-      def.cards.forEach((c, i) => {
-        const q = plainText(c.q);
-        const a = plainText(c.a);
-        const e = plainText(c.explain);
-        // The note is the user's own plain text, not HTML: kept as typed
-        // (highlightText escapes it), just with the line breaks flattened.
-        const note = ((modNotes[i] && modNotes[i].note) || "").replace(/\s+/g, " ").trim();
-        items.push({
-          kind: "card",
-          code,
-          href: `#/${code}/${def.id}/${i}`,
-          label: `${code} · ${def.id.toUpperCase()} · ${title}`,
-          title,
-          q,
-          a,
-          e,
-          note,
-          lq: q.toLowerCase(),
-          la: a.toLowerCase(),
-          le: e.toLowerCase(),
-          ln: note.toLowerCase(),
-          lt: title.toLowerCase(),
-        });
-      });
-    }
-  }
-  for (const code of Object.keys(QUESTIONS)) {
-    QUESTIONS[code].forEach((qq, qi) => {
-      const title = plainText(qq.title);
-      qq.parts.forEach((p) => {
-        const q = plainText(p.question);
-        const a = plainText(p.answer);
-        const e = plainText(p.note);
-        items.push({
-          kind: "question",
-          code,
-          href: `#/${code}/questions/${qi}`,
-          label: `${code} · Practice Q${qi + 1} ${p.label} · ${title}`,
-          title,
-          q,
-          a,
-          e,
-          note: "",
-          lq: q.toLowerCase(),
-          la: a.toLowerCase(),
-          le: e.toLowerCase(),
-          ln: "",
-          lt: title.toLowerCase(),
-        });
+  const notes = notesFor(code);
+  for (const def of MODULES[code] || []) {
+    const title = plainText(def.title);
+    const modNotes = notes[def.id] || {};
+    def.cards.forEach((c, i) => {
+      const q = plainText(c.q);
+      const a = plainText(c.a);
+      const e = plainText(c.explain);
+      // The note is the user's own plain text, not HTML: kept as typed
+      // (highlightText escapes it), just with the line breaks flattened.
+      const note = ((modNotes[i] && modNotes[i].note) || "").replace(/\s+/g, " ").trim();
+      items.push({
+        kind: "card",
+        code,
+        href: `#/${code}/${def.id}/${i}`,
+        label: `${code} · ${def.id.toUpperCase()} · ${title}`,
+        title,
+        q,
+        a,
+        e,
+        note,
+        lq: q.toLowerCase(),
+        la: a.toLowerCase(),
+        le: e.toLowerCase(),
+        ln: note.toLowerCase(),
+        lt: title.toLowerCase(),
       });
     });
   }
+  (QUESTIONS[code] || []).forEach((qq, qi) => {
+    const title = plainText(qq.title);
+    qq.parts.forEach((p) => {
+      const q = plainText(p.question);
+      const a = plainText(p.answer);
+      const e = plainText(p.note);
+      items.push({
+        kind: "question",
+        code,
+        href: `#/${code}/questions/${qi}`,
+        label: `${code} · Practice Q${qi + 1} ${p.label} · ${title}`,
+        title,
+        q,
+        a,
+        e,
+        note: "",
+        lq: q.toLowerCase(),
+        la: a.toLowerCase(),
+        le: e.toLowerCase(),
+        ln: "",
+        lt: title.toLowerCase(),
+      });
+    });
+  });
   return items;
 }
 
@@ -4235,12 +4453,13 @@ function searchTokens(query) {
 
 function runSearch(query, exam) {
   const tokens = searchTokens(query);
-  if (!tokens.length) return { tokens, results: [], total: 0 };
-  if (!searchIndex) searchIndex = buildSearchIndex();
+  const codes = searchCodes(exam);
+  const missing = codes.filter((c) => !contentReady(c));
+  if (!tokens.length) return { tokens, results: [], total: 0, missing };
   const phrase = query.trim().toLowerCase();
   const scored = [];
-  for (const it of searchIndex) {
-    if (exam && it.code !== exam) continue;
+  const items = codes.filter(contentReady).flatMap((c) => searchIndex[c] || (searchIndex[c] = buildSearchIndex(c)));
+  for (const it of items) {
     let score = 0;
     let ok = true;
     for (const t of tokens) {
@@ -4265,7 +4484,17 @@ function runSearch(query, exam) {
     scored.push([score, it]);
   }
   scored.sort((a, b) => b[0] - a[0]);
-  return { tokens, results: scored.slice(0, 60).map((x) => x[1]), total: scored.length };
+  return { tokens, results: scored.slice(0, 60).map((x) => x[1]), total: scored.length, missing };
+}
+
+function searchCodes(exam) {
+  return exam ? [exam] : Object.keys(CATALOG);
+}
+
+// One re-render per subject as it lands, so results fill in progressively.
+function loadSearchContent() {
+  const stillHere = () => parseHash().view === "search";
+  searchCodes(searchState.exam).forEach((c) => requestContent([c], renderSearchResults, stillHere));
 }
 
 // Escape, then wrap matches in <mark> — but only outside $...$ maths spans so
@@ -4303,16 +4532,29 @@ function excerpt(text, tokens, len) {
 function renderSearchResults() {
   const el = document.getElementById("searchResults");
   if (!el) return;
-  const { tokens, results, total } = runSearch(searchState.q, searchState.exam);
+  const { tokens, results, total, missing } = runSearch(searchState.q, searchState.exam);
+  const failed = missing.filter((c) => contentFailed.has(c));
+  const status = !tokens.length
+    ? ""
+    : failed.length
+    ? `<p class="content-error search-status">Couldn&rsquo;t load ${failed.join(", ")}, so ${failed.length === 1 ? "it isn&rsquo;t" : "they aren&rsquo;t"} included. Check your connection and try again. <button class="btn" id="searchContentRetry">Retry loading</button></p>`
+    : missing.length
+    ? `<p class="content-loading search-status" role="status">Still loading ${missing.length} of ${searchCodes(searchState.exam).length} subjects&hellip;</p>`
+    : "";
   if (!tokens.length) {
     el.innerHTML = `<p class="muted">Type at least two letters. Every word must appear somewhere in the card, your note on it, or the question; matches in the question rank highest.</p>`;
     return;
   }
+  if (!results.length && missing.length > failed.length) {
+    el.innerHTML = status;
+    return;
+  }
   if (!results.length) {
-    el.innerHTML = `<p class="muted">No cards or questions match &ldquo;${escapeHtml(searchState.q)}&rdquo;${searchState.exam ? ` in ${searchState.exam}` : ""}.</p>`;
+    el.innerHTML = `${status}<p class="muted">No cards or questions match &ldquo;${escapeHtml(searchState.q)}&rdquo;${searchState.exam ? ` in ${searchState.exam}` : ""}.</p>`;
     return;
   }
   el.innerHTML =
+    status +
     `<p class="muted search-count">${total > results.length ? `Showing the best ${results.length} of ${total} matches` : `${total} match${total === 1 ? "" : "es"}`}</p>` +
     results
       .map((it) => {
@@ -4354,6 +4596,12 @@ function renderSearchView(q) {
     </div>
     <div id="searchResults"></div>`;
   document.getElementById("backFromSearch").addEventListener("click", () => navigate("#/"));
+  document.getElementById("searchResults").addEventListener("click", (e) => {
+    if (!e.target.closest("#searchContentRetry")) return;
+    searchCodes(searchState.exam).forEach((c) => contentFailed.delete(c));
+    loadSearchContent();
+    renderSearchResults();
+  });
   const input = document.getElementById("searchInput");
   let timer = null;
   input.addEventListener("input", () => {
@@ -4367,8 +4615,10 @@ function renderSearchView(q) {
   });
   document.getElementById("searchExam").addEventListener("change", (e) => {
     searchState.exam = e.target.value;
+    loadSearchContent();
     renderSearchResults();
   });
+  loadSearchContent();
   renderSearchResults();
   input.focus();
 }
@@ -4412,9 +4662,9 @@ function onFlashDataChanged(code) {
 // because the machine is doing the marking.
 //
 // They do share srs.js with flashcards, so a drilled item comes back on the
-// same expanding schedule. Content lives in docs/drills.js keyed by stable
-// string id -- see supabase/migrations/003_drills.sql for why the key isn't
-// the positional index flashcards use.
+// same expanding schedule. Items live in each subject's content file keyed
+// by stable string id -- see supabase/migrations/003_drills.sql for why the
+// key isn't the positional index flashcards use.
 
 const DRILL_RUN_SIZE = 10;
 
@@ -4444,7 +4694,7 @@ const drillData = {};
 const drillsLoading = new Set();
 
 function drillItems(code, moduleId) {
-  const all = (typeof DRILLS !== "undefined" && DRILLS[code]) || [];
+  const all = DRILLS[code] || []; // empty until the subject's content is in
   return moduleId ? all.filter((it) => it.module === moduleId) : all;
 }
 
@@ -4554,12 +4804,17 @@ function recordDrill(code, item, correct) {
 // items have been tried at all. The button leads with `seen`, because the
 // first question anyone asks of a study tool is "how much of this have I
 // actually done" -- and an accuracy figure on its own can't answer it.
+//
+// Readiness asks for a whole subject's accuracy on the home page, before the
+// subject's drill items have loaded; until then it's worked out from the
+// stored results themselves, which are keyed by the same item ids.
 function drillAccuracy(code, moduleId) {
   const prog = drillProgress(code);
   let attempts = 0;
   let correct = 0;
   let seen = 0;
-  const items = drillItems(code, moduleId);
+  const items = !moduleId && !contentReady(code) ? Object.keys(prog).map((id) => ({ id })) : drillItems(code, moduleId);
+  const total = moduleId ? items.length : drillCount(code);
   items.forEach((it) => {
     const st = prog[it.id];
     if (!st) return;
@@ -4567,7 +4822,7 @@ function drillAccuracy(code, moduleId) {
     attempts += st.attempts || 0;
     correct += st.correct || 0;
   });
-  return { attempts, correct, seen, total: items.length, pct: attempts ? Math.round((correct / attempts) * 100) : 0 };
+  return { attempts, correct, seen, total, pct: attempts ? Math.round((correct / attempts) * 100) : 0 };
 }
 
 function drillTypeLabel(type) {
@@ -4878,6 +5133,8 @@ function renderDrillView(code, moduleId) {
   const el = document.getElementById("drillView");
   const key = `${code}:${moduleId || "all"}`;
   ensureDrillsLoaded(code);
+  const back = moduleId ? { href: `#/${code}/${moduleId}`, label: moduleId.toUpperCase() } : { href: `#/${code}`, label: code };
+  if (drillCount(code) && !whenContent([code], el, () => renderDrillView(code, moduleId), back)) return;
 
   if (drillState._lastKey !== key) {
     drillState._lastKey = key;
@@ -5408,6 +5665,7 @@ function navigate(hash) {
 
 function renderRoute() {
   const r = parseHash();
+  contentFailed.clear(); // moving to another page retries anything that failed to load
   document.getElementById("homeView").hidden = r.view !== "home";
   document.getElementById("subjectView").hidden = r.view !== "subject";
   document.getElementById("flashView").hidden = r.view !== "flash";
@@ -5617,7 +5875,7 @@ function reloadAllForAuthChange() {
   refreshScores();
   reviewState.key = "";
   Object.keys(noteData).forEach((code) => delete noteData[code]); // re-read under the new account's key
-  searchIndex = null;
+  searchIndex = {};
   loadAll();
   loadAllFlash();
   Store.loadStreak().then(() => renderGameBar());
@@ -5891,7 +6149,8 @@ document.addEventListener("keydown", (e) => {
 window.addEventListener("hashchange", renderRoute);
 renderRoute();
 
-Store.init().then(() => {
+// supabase-js is deferred, so start syncing once it has run.
+afterDeferredScripts(() => Store.init().then(() => {
   renderSyncStatus();
   loadAll();
   loadAllFlash();
@@ -5903,4 +6162,11 @@ Store.init().then(() => {
   refreshResults();
   if (Store.isPasswordRecovery()) openSettings();
   refreshScores();
+}));
+
+// With the first page up, fetch every subject's content into the offline
+// cache in the background (see precacheContent and sw.js).
+window.addEventListener("load", () => {
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 2000));
+  idle(precacheContent, { timeout: 10000 });
 });

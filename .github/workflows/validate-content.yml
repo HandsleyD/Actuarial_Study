@@ -4,25 +4,29 @@ name: Validate study content
 # escaping in flashcard/question text (a raw backslash silently dropped, or
 # turned into a real JS escape like \t, corrupting the visible text),
 # missing "explain" fields, question marks not summing to their declared
-# total, and progress.md module rows drifting out of sync with
-# docs/data.js. See scripts/validate-content.mjs for what's actually
-# checked. drills.js and diagrams.js are on the list too: the validator also
-# checks drill item shapes and that every hotspot answer names a region its
-# diagram actually has, and a content-only change to either file would
-# otherwise skip CI entirely.
+# total, progress.md module rows drifting out of sync with the subject's
+# content file, and docs/catalog.js not rebuilt after a content edit. See
+# scripts/validate-content.mjs for what's actually checked, and
+# docs/content/README.md for the layout. diagrams.js is on the list too: the
+# validator checks that every hotspot answer names a region its diagram
+# actually has, and a diagram-only change would otherwise skip CI entirely.
 
 on:
   push:
     paths:
       - "docs/data.js"
+      - "docs/content/**"
+      - "docs/catalog.js"
+      - "docs/index.html"
       - "docs/questions.js"
       - "docs/drills.js"
       - "docs/calc-drills.js"
       - "scripts/test-calc-drills.mjs"
       - "docs/diagrams.js"
-      - "docs/foundations.js"
       - "maths-study/exams/*/progress.md"
       - "scripts/validate-content.mjs"
+      - "scripts/build-catalog.mjs"
+      - "scripts/content-lib.mjs"
       - "docs/srs.js"
       - "scripts/test-srs.mjs"
       - "docs/store.js"
@@ -58,6 +62,8 @@ jobs:
       - name: Validate content
         run: node scripts/validate-content.mjs
 
+      - name: Content catalog is up to date
+        run: node scripts/build-catalog.mjs --check
       - name: Calculation drills match independent calculations
         run: node scripts/test-calc-drills.mjs
 
