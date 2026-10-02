@@ -455,7 +455,7 @@ await test("export then import onto an empty device restores everything", async 
   await settle();
   const file = plain(Store.exportData());
   assert.equal(file.app, "fellow");
-  assert.equal(file.format, 1);
+  assert.equal(file.format, 2);
   for (const kind of ["status", "mastery", "srs", "drill", "note", "score", "mock", "result", "plan", "streak", "activity", "lastSession", "pace"]) {
     assert.ok(file.data[kind] !== null && file.data[kind] !== undefined, `export is missing ${kind}`);
   }
@@ -501,6 +501,8 @@ await test("import keeps whichever copy of each entry is newer", async () => {
             0: { note: "file, older", flagged: true, updatedAt: noteAt - 1000 },
             1: { note: "from the file", flagged: true, updatedAt: noteAt },
             2: { note: 42, flagged: true, updatedAt: noteAt }, // malformed: skipped
+            3: { note: "bad time", flagged: true, updatedAt: "invalid" }, // skipped too
+            4: { note: "bad time", flagged: true, updatedAt: 1e20 }, // beyond what Date holds: skipped
           },
         },
       },
@@ -540,6 +542,8 @@ await test("import keeps whichever copy of each entry is newer", async () => {
   assert.equal(notes[1].note, "from the file", "a note missing locally wasn't taken");
   assert.equal(notes[1].flagged, true);
   assert.equal(notes[2], undefined, "a malformed note was taken");
+  assert.equal(notes[3], undefined, "a note with a non-numeric timestamp was taken");
+  assert.equal(notes[4], undefined, "a note with an out-of-range timestamp was taken");
 
   const results = Store.getResultsCache();
   assert.equal(results.CB1.status, "passed", "an older result replaced a newer one");
@@ -566,6 +570,18 @@ await test("import rejects a file that isn't a progress download", async () => {
   assert.throws(() => Store.importData({ hello: "world" }), /isn't a Fellow progress download/);
   assert.throws(() => Store.importData(null), /isn't a Fellow progress download/);
   assert.throws(() => Store.importData({ app: "fellow", format: 99, data: {} }), /newer version/);
+  assert.equal(Store.importData({ app: "fellow", format: 1, data: {} }), 0, "a format-1 file (from before notes) should still import");
+});
+
+await test("a queued note with a timestamp Date can't hold still uploads, and doesn't block the queue", async () => {
+  const pending = JSON.parse(mem["actuarialStudy:pending"] || "[]");
+  pending.push({ type: "note", examCode: "CS2", moduleId: "m09", cardIdx: 0, value: { note: "odd", flagged: false, updatedAt: "invalid" }, userId: "u1", ts: 1 });
+  mem["actuarialStudy:pending"] = JSON.stringify(pending);
+  Store.setModuleStatus("CS2", "m09", "In progress"); // queued after it
+  await settle();
+  assert.equal(queued("note").length, 0, "the bad note is still stuck in the queue");
+  assert.equal(queued("status").length, 0, "a change queued after it didn't upload");
+  assert.ok(rowsOf("card_note").some((r) => r.exam_code === "CS2" && r.module_id === "m09" && r.note === "odd"));
 });
 
 /* ---------- account deletion ---------- */
