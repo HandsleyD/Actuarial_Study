@@ -3973,7 +3973,7 @@ function renderSearchResults() {
   const status = !tokens.length
     ? ""
     : failed.length
-    ? `<p class="content-error search-status">Couldn&rsquo;t load ${failed.join(", ")}, so ${failed.length === 1 ? "it isn&rsquo;t" : "they aren&rsquo;t"} included. Check your connection and search again.</p>`
+    ? `<p class="content-error search-status">Couldn&rsquo;t load ${failed.join(", ")}, so ${failed.length === 1 ? "it isn&rsquo;t" : "they aren&rsquo;t"} included. Check your connection and try again. <button class="btn" id="searchContentRetry">Retry loading</button></p>`
     : missing.length
     ? `<p class="content-loading search-status" role="status">Still loading ${missing.length} of ${searchCodes(searchState.exam).length} subjects&hellip;</p>`
     : "";
@@ -4032,6 +4032,12 @@ function renderSearchView(q) {
     </div>
     <div id="searchResults"></div>`;
   document.getElementById("backFromSearch").addEventListener("click", () => navigate("#/"));
+  document.getElementById("searchResults").addEventListener("click", (e) => {
+    if (!e.target.closest("#searchContentRetry")) return;
+    searchCodes(searchState.exam).forEach((c) => contentFailed.delete(c));
+    loadSearchContent();
+    renderSearchResults();
+  });
   const input = document.getElementById("searchInput");
   let timer = null;
   input.addEventListener("input", () => {

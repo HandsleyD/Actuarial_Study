@@ -57,6 +57,26 @@ test.describe("content loading", () => {
     await expect(page.locator("#flashView .flashcard-question")).toBeVisible();
   });
 
+  test("search retries failed subjects without losing the query or filter", async ({ page }) => {
+    await seed(page, { welcomed: true });
+    let fail = true;
+    let attempts = 0;
+    await page.route("**/content/SP8.js*", (route) => {
+      attempts++;
+      return fail ? route.abort() : route.continue();
+    });
+    await open(page, "search?q=risk", "#searchContentRetry");
+    await page.locator("#searchExam").selectOption("SP8");
+    await expect(page.locator("#searchResults .content-error")).toContainText("SP8");
+    fail = false;
+    await page.locator("#searchContentRetry").click();
+    await expect(page.locator("#searchResults .search-result").first()).toBeVisible();
+    await expect(page.locator("#searchContentRetry")).toHaveCount(0);
+    await expect(page.locator("#searchInput")).toHaveValue("risk");
+    await expect(page.locator("#searchExam")).toHaveValue("SP8");
+    expect(attempts).toBe(2);
+  });
+
   test("if only the diagrams fail, a retry fetches just them", async ({ page }) => {
     await seed(page, { welcomed: true });
     const fetched = contentRequests(page);
