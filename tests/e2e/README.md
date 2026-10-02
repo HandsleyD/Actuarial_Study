@@ -32,6 +32,7 @@ npx playwright test --headed --debug    # watch and step through
 | `drills.spec.mjs` | Multiple choice, select-all, fill-the-gap and diagram questions, right and wrong answers, run summary |
 | `questions-search.spec.mjs` | Practice questions and timed mode; search and its subject filter |
 | `notes-report.spec.mjs` | "Report a mistake" links on cards, drills and practice questions (and that they carry no progress data); flashcard notes (escaped, saved, searchable) and flags, and the flagged-cards deck |
+| `self-marking.spec.mjs` | Self-marking practice questions (validation, re-marking, history), the subject and dashboard averages against the pass mark; mock papers (paper size, clock, hidden answers, reload, marking, results, time running out, abandoning) |
 | `planning.spec.mjs` | Welcome questions, exam planner (clashes, moves, awaiting results), results day, route map and specialists, Exam Hub, dashboard |
 | `calendar.spec.mjs` | Add to calendar: the .ics download from the exam plan and the Exam Hub, with and without a plan |
 | `readiness.spec.mjs` | The home page Today card (due reviews, new cards paced to the plan, the no-plan nudge, the revision fortnight) and readiness on subject pages, the route map and the exam plan |

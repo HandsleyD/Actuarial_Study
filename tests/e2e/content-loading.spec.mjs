@@ -98,4 +98,12 @@ test.describe("content loading", () => {
     await expect(page.locator(".trouble-list li")).toContainText("SP9 M02");
     expect(fetched).toEqual(["SP9"]);
   });
+
+  test("a cold dashboard loads subjects with saved question marks", async ({ page }) => {
+    await seed(page, { welcomed: true, "score:CB2": { "cb2-q1": [{ at: 1, score: 6, max: 12, src: "practice" }] } });
+    const fetched = contentRequests(page);
+    await open(page, "dashboard", '#questionScores .score-row[data-code="CB2"]');
+    await expect(page.locator('#questionScores .score-row[data-code="CB2"]')).toContainText("50%");
+    expect(fetched).toEqual(["CB2"]);
+  });
 });

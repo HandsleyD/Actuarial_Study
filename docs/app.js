@@ -325,7 +325,7 @@ const mixedState = {
 // IFoA's Virtual Learning Environment, behind a student/member login.
 const IFOA_PAST_PAPERS_URL = "https://actuaries.org.uk/past-exam-papers-and-examiners-reports/";
 
-const qbankState = { code: null, qIndex: 0, revealed: false, _lastKey: "", timers: {} };
+const qbankState = { code: null, qIndex: 0, revealed: false, markAt: null, _lastKey: "", timers: {} };
 
 /* ---------- timed mode for the question bank ---------- */
 //
@@ -431,11 +431,16 @@ function renderQuestionsView(code) {
   const timer = qTimer(code, idx);
   timer.allowed = allowedMs;
 
+  const scores = Store.getScoreCache(code);
+  const history = scores[q.id] || [];
+  const current = qbankState.markAt ? history.find((a) => a.at === qbankState.markAt) : null;
+
   const dots = questions
     .map((qq, i) => {
       const t = qbankState.timers[`${code}:${i}`];
       const pace = t && t.done ? (t.elapsed <= t.allowed ? "in-time" : "over-time") : "";
-      const tip = t && t.done ? ` — ${fmtClock(t.elapsed)} of ${fmtClock(t.allowed)}` : "";
+      const last = Mock.latestAttempt(scores[qq.id]);
+      const tip = (t && t.done ? ` — ${fmtClock(t.elapsed)} of ${fmtClock(t.allowed)}` : "") + (last ? ` — last marked ${fmtMark(last.score)}/${last.max}` : "");
       return `<button class="card-dot ${pace} ${i === idx ? "active" : ""}" data-idx="${i}" title="Q${i + 1}: ${qq.title}${tip}">${i + 1}</button>`;
     })
     .join("");
@@ -461,17 +466,26 @@ function renderQuestionsView(code) {
 
   const partsHtml = q.parts
     .map(
-      (p) => `
+      (p, i) => `
     <div class="question-part">
-      <div class="part-head">
-        <span class="part-label">${p.label} ${p.command ? `<em>${p.command}</em>` : ""}</span>
-        <span class="part-marks">[${p.marks} mark${p.marks === 1 ? "" : "s"}]</span>
-      </div>
-      <div class="part-question">${p.question}</div>
-      ${revealed ? `<div class="part-answer"><strong>Model answer:</strong> ${p.answer}</div>` : ""}
+      ${partHeadHtml(p)}
+      ${revealed ? `<div class="part-answer"><strong>Model answer:</strong> ${p.answer}</div>${markInputHtml(p, i, current ? current.parts[i] : "")}` : ""}
     </div>`
     )
     .join("");
+
+  const markPanelHtml = `
+    <div class="self-mark-panel">
+      <p class="qbank-done-note">Compare your working against the model answers, give yourself a mark for each part, and save it to track your average.</p>
+      <div class="self-mark-row">
+        <button class="btn primary" id="saveMarksBtn">${current ? "Update marks" : "Save marks"}</button>
+        <span class="self-mark-total" id="markTotal">${
+          current ? `Saved &mdash; ${fmtMark(current.score)}/${current.max} (${Math.round((current.score / current.max) * 100)}%)` : ""
+        }</span>
+      </div>
+      <p class="self-mark-error" id="markError" role="alert" hidden></p>
+      ${markHistoryHtml(history)}
+    </div>`;
 
   // Reuse the flashcard explain-panel mechanism: fake a "card" whose
   // .explain is every part's examiner note stitched together, so a marker's-
@@ -503,7 +517,7 @@ function renderQuestionsView(code) {
         ${
           !revealed
             ? `<div class="qbank-reveal-row"><button class="btn primary" id="revealQBtn">Reveal model answers</button></div>`
-            : `<p class="qbank-done-note">Compare your working against the model answers above, then move to the next question.</p>`
+            : markPanelHtml
         }
         ${reportLinkHtml({
           code,
@@ -528,8 +542,32 @@ function renderQuestionsView(code) {
     pauseQTimer();
     qbankState.qIndex = i;
     qbankState.revealed = false;
+    qbankState.markAt = null;
     renderQuestionsView(code);
   };
+
+  const saveBtn = document.getElementById("saveMarksBtn");
+  if (saveBtn) {
+    const inputs = [...el.querySelectorAll(".mark-input")];
+    wireMarkInputs(
+      el,
+      () => {
+        const sum = markInputsTotal(inputs, q.parts);
+        document.getElementById("markTotal").textContent = sum === null ? "" : `${fmtMark(sum)}/${q.marks}`;
+      },
+      () => saveBtn.click()
+    );
+    saveBtn.addEventListener("click", () => {
+      const parts = readMarkInputs(inputs, q.parts, document.getElementById("markError"));
+      if (!parts) return;
+      // An attempt's timestamp is its identity, so a new one must come after
+      // the last, even if the clock hasn't moved on.
+      const last = Mock.latestAttempt(history);
+      qbankState.markAt = qbankState.markAt || Math.max(Date.now(), last ? last.at + 1 : 0);
+      Store.saveScore(code, q.id, Mock.attemptOf(parts, q.marks, "practice", qbankState.markAt));
+      renderQuestionsView(code);
+    });
+  }
 
   el.querySelectorAll(".card-dot").forEach((btn) => {
     btn.addEventListener("click", () => goTo(Number(btn.dataset.idx)));
@@ -554,6 +592,7 @@ function renderQuestionsView(code) {
       }
       Store.bumpStreak();
       qbankState.revealed = true;
+      qbankState.markAt = null;
       renderQuestionsView(code);
     });
   }
@@ -583,6 +622,479 @@ function renderQuestionsView(code) {
   if (timer.since && !timer.done) tickQTimer(code, idx);
 
   renderMath(el);
+}
+
+/* ---------- self-marking (question bank and mock papers) ---------- */
+//
+// Once the model answers are showing, the user gives themselves a mark for
+// each part. Every save is an attempt kept in Store (see mock.js for the
+// shape); a subject's average uses the latest attempt at each question.
+
+function fmtMark(n) {
+  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
+
+function partHeadHtml(p) {
+  return `
+      <div class="part-head">
+        <span class="part-label">${p.label} ${p.command ? `<em>${p.command}</em>` : ""}</span>
+        <span class="part-marks">[${p.marks} mark${p.marks === 1 ? "" : "s"}]</span>
+      </div>
+      <div class="part-question">${p.question}</div>`;
+}
+
+// value is what the user typed last (a number, or the raw string while a
+// mock is being marked), so it's escaped on the way back into the page.
+function markInputHtml(p, i, value, attrs) {
+  const v = value === undefined || value === null ? "" : String(value);
+  return `<label class="self-mark"><span>Your mark</span>
+      <input type="number" class="text-input mark-input" inputmode="decimal" min="0" max="${p.marks}" step="0.5" data-part="${i}" ${attrs || ""}
+        value="${escapeHtml(v)}" aria-label="Your mark for part ${escapeHtml(stripHtml(p.label))}">
+      <span class="self-mark-of">/ ${p.marks}</span></label>`;
+}
+
+function markHistoryHtml(history) {
+  if (!history.length) return "";
+  const day = (ts) => new Date(ts).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  return `<p class="self-mark-history">Your marks for this question, latest last: ${history
+    .slice(-6)
+    .map((a) => `<span class="mark-chip">${fmtMark(a.score)}/${a.max} <small>${day(a.at)}${a.src === "mock" ? " &middot; mock" : ""}</small></span>`)
+    .join(" ")}</p>`;
+}
+
+// Enter in a mark box saves; typing updates the running total.
+function wireMarkInputs(el, onInput, onEnter) {
+  el.querySelectorAll(".mark-input").forEach((input) => {
+    input.addEventListener("input", () => {
+      input.removeAttribute("aria-invalid");
+      onInput(input);
+    });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        onEnter();
+      }
+    });
+  });
+}
+
+// The total of the marks typed so far (blank or invalid boxes count as
+// nothing), or null if none are filled in yet.
+function markInputsTotal(inputs, parts) {
+  let sum = null;
+  inputs.forEach((input, i) => {
+    const m = Mock.parseMark(input.value, parts[i].marks);
+    if (m !== null) sum = (sum || 0) + m;
+  });
+  return sum;
+}
+
+// Marks for every part, or null after flagging the first one that's missing
+// or out of range in errorEl.
+function readMarkInputs(inputs, parts, errorEl) {
+  const marks = parts.map((p, i) => Mock.parseMark(inputs[i] ? inputs[i].value : "", p.marks));
+  const bad = marks.findIndex((m) => m === null);
+  if (bad < 0) {
+    errorEl.hidden = true;
+    return marks;
+  }
+  const missing = marks.filter((m) => m === null).length;
+  inputs.forEach((input, i) => (marks[i] === null ? input.setAttribute("aria-invalid", "true") : input.removeAttribute("aria-invalid")));
+  errorEl.textContent = `Give a mark from 0 to ${parts[bad].marks} for part ${stripHtml(parts[bad].label)}${
+    missing > 1 ? ` (${missing} parts still need one)` : ""
+  }. Half marks are fine.`;
+  errorEl.hidden = false;
+  inputs[bad].focus();
+  return null;
+}
+
+function latestPassMark(code) {
+  return typeof PASS_STATS !== "undefined" ? Mock.latestPassMark(PASS_STATS[code]) : null;
+}
+
+function passMarkLabel(pass) {
+  return pass ? `latest pass mark ${pass.mark}% (${sittingLabel(pass.sitting)})` : "no published pass mark yet";
+}
+
+// What the subject page and the dashboard show for a subject's practice
+// questions: { avg (Mock.subjectAverage), pass, lastMock }.
+function questionScoreSummary(code) {
+  const mocks = Store.getMockCache(code);
+  return {
+    avg: Mock.subjectAverage(QUESTIONS[code] || [], Store.getScoreCache(code)),
+    pass: latestPassMark(code),
+    lastMock: mocks.length ? mocks[mocks.length - 1] : null,
+  };
+}
+
+// A self-marked percentage against the pass mark: "6 points above the Apr 2026 pass mark of 58%".
+function versusPassHtml(pct, pass) {
+  const diff = Math.round(pct) - pass.mark;
+  const word = diff === 1 || diff === -1 ? "point" : "points";
+  return `${
+    diff >= 0 ? `<span class="vs-pass above">${diff} ${word} above</span>` : `<span class="vs-pass below">${-diff} ${word} below</span>`
+  } the ${sittingLabel(pass.sitting)} pass mark of ${pass.mark}%`;
+}
+
+// The subject page's line under the question bank button, and the mock paper button.
+function questionScoresHtml(code) {
+  const { avg, pass, lastMock } = questionScoreSummary(code);
+  const active = Store.getActiveMock(code);
+  const inProgress = active ? (active.submittedAt ? " &middot; <strong>waiting to be marked</strong>" : " &middot; <strong>in progress</strong>") : "";
+  return `
+      <p class="score-summary" id="scoreSummary">${
+        avg.attempted
+          ? `Self-marked ${avg.attempted} of ${avg.questions} question${avg.questions === 1 ? "" : "s"}: average <strong>${Math.round(avg.pct)}%</strong>${
+              pass ? `, ${versusPassHtml(avg.pct, pass)}` : ` &middot; ${passMarkLabel(pass)}`
+            }`
+          : `No questions self-marked yet &middot; ${passMarkLabel(pass)}`
+      }</p>
+      <button class="btn mock-btn" id="startMock">${ico("clock")} Mock paper &mdash; about ${Mock.TARGET_MARKS} marks against a 3h15m clock${
+        lastMock ? ` &middot; last mock ${Math.round(lastMock.pct)}%` : ""
+      }${inProgress}</button>`;
+}
+
+// A percentage bar with a tick at the pass mark.
+function passBarHtml(pct, pass) {
+  return `<div class="dash-bar pass-bar"><div class="dash-bar-fill ${pass && Math.round(pct) >= pass.mark ? "above" : ""}" style="width:${Math.min(100, Math.round(pct))}%"></div>${
+    pass ? `<span class="pass-tick" style="left:${pass.mark}%"></span>` : ""
+  }</div>`;
+}
+
+// Study dashboard: each subject's self-marked average next to its pass mark.
+function questionScoresSectionHtml() {
+  const codes = Object.keys(CATALOG).filter((code) => Object.keys(Store.getScoreCache(code)).length || Store.getMockCache(code).length);
+  requestContent(codes, renderDashboardView);
+  const rows = codes.filter(contentReady)
+    .map((code) => ({ code, ...questionScoreSummary(code) }))
+    .filter((r) => r.avg.attempted || r.lastMock);
+  if (!rows.length) return "";
+  return `
+    <section class="dash-section" id="questionScores">
+      <div class="dash-section-head"><h3>Practice questions &mdash; self-marked</h3></div>
+      <p class="dash-note">Your average across each subject's practice questions, using your latest mark for each one, next to the subject's latest pass mark (the tick on the bar). Pass marks come from the examiners' reports; your own marking is likely to be kinder than an examiner's.</p>
+      <div class="dash-table">${rows
+        .map((r) => {
+          const pct = r.avg.attempted ? r.avg.pct : null;
+          return `
+          <a class="dash-row score-row" href="#/${r.code}/questions" data-code="${r.code}">
+            <span class="dash-row-name"><span class="dash-tag">${r.code}</span> ${(SUBJECTS[r.code] || { name: "" }).name}</span>
+            <span class="dash-row-meta">${r.avg.attempted}/${r.avg.questions} marked${r.lastMock ? ` &middot; last mock ${Math.round(r.lastMock.pct)}%` : ""} &middot; ${
+              r.pass ? `pass mark ${r.pass.mark}% (${sittingLabel(r.pass.sitting)})` : "no pass mark yet"
+            }</span>
+            <span class="dash-row-bar" title="${pct === null ? "No questions marked yet" : `Average ${Math.round(pct)}%`}${
+              r.pass ? ` against the ${sittingLabel(r.pass.sitting)} pass mark of ${r.pass.mark}%` : ""
+            }">${passBarHtml(pct || 0, r.pass)}<span class="dash-row-pct">${pct === null ? "&mdash;" : `${Math.round(pct)}%`}</span></span>
+          </a>`;
+        })
+        .join("")}</div>
+    </section>`;
+}
+
+// Runs after sign-in state is known (and again on every auth change): a page
+// opened straight onto a mock or the question bank was first drawn from the
+// signed-out cache, and a signed-in user's paper in progress lives under their
+// account. The question bank is left alone once its answers are showing, so
+// marks being typed aren't wiped.
+function onScoresLoaded() {
+  const r = parseHash();
+  if (r.view === "subject") renderSubjectView(r.exam);
+  if (r.view === "dashboard") renderDashboardView();
+  if (r.view === "mock") renderMockView(r.exam);
+  if (r.view === "questions" && !qbankState.revealed) renderQuestionsView(r.exam);
+}
+
+function refreshScores() {
+  Promise.all([Store.loadScores(), Store.loadMocks()]).then(onScoresLoaded);
+}
+
+/* ---------- mock paper ---------- */
+//
+// #/<CODE>/mock: a paper drawn from the subject's question bank, as close to
+// 100 marks as the bank allows (mock.js), sat against one 3h15m countdown
+// with the model answers hidden. On submitting (or when the clock runs out)
+// every part is self-marked, and the total goes up against the latest pass
+// mark. The paper in progress is kept on this device, with the clock running
+// off the wall-clock end time, so leaving the page or reloading doesn't lose
+// it or pause it.
+
+const mockState = { justFinished: null }; // { code, at } of the mock just marked, for its headline
+let mockTimerInterval = null;
+
+function fmtLongClock(ms) {
+  const total = Math.max(0, Math.floor(ms / 1000));
+  const h = Math.floor(total / 3600);
+  const m = String(Math.floor((total % 3600) / 60)).padStart(2, "0");
+  const s = String(total % 60).padStart(2, "0");
+  return `${h}:${m}:${s}`;
+}
+
+// The mock's clock bar sticks below the sticky header, whose height changes
+// with the viewport width.
+function syncTopbarHeight() {
+  const bar = document.querySelector(".topbar");
+  if (bar) document.documentElement.style.setProperty("--topbar-h", `${bar.offsetHeight}px`);
+}
+window.addEventListener("resize", syncTopbarHeight);
+
+function renderMockView(code) {
+  const el = document.getElementById("mockView");
+  clearInterval(mockTimerInterval);
+  if (!whenContent([code], el, () => renderMockView(code), { label: code, href: `#/${code}` })) return;
+  const bank = QUESTIONS[code] || [];
+  const info = SUBJECTS[code] || { name: code };
+  syncTopbarHeight();
+
+  if (!bank.length) {
+    el.innerHTML = `
+      <button class="back-link" id="backFromMock">&larr; ${code}</button>
+      <div class="flash-empty"><h2>Mock paper</h2><p>No practice questions for ${code} yet, so there's nothing to build a paper from.</p></div>`;
+    document.getElementById("backFromMock").addEventListener("click", () => navigate(`#/${code}`));
+    return;
+  }
+
+  const byId = {};
+  bank.forEach((q) => (byId[q.id] = q));
+  let active = Store.getActiveMock(code);
+  if (active && !(active.questionIds || []).every((id) => byId[id])) {
+    // The question bank changed under a paper in progress: it can't be marked.
+    active = null;
+    Store.setActiveMock(code, null);
+  }
+  if (active && !active.submittedAt && Date.now() >= active.endsAt) {
+    active.submittedAt = active.endsAt;
+    active.timeUp = true;
+    Store.setActiveMock(code, active);
+  }
+
+  if (!active) renderMockIntro(el, code, info, bank);
+  else if (!active.submittedAt) renderMockSitting(el, code, info, active, byId);
+  else renderMockMarking(el, code, info, active, byId);
+  document.getElementById("backFromMock").addEventListener("click", () => navigate(`#/${code}`));
+  renderMath(el);
+}
+
+function mockResultHtml(m) {
+  const pass = m.passMark !== null && m.passMark !== undefined ? { mark: m.passMark, sitting: m.passSitting } : null;
+  const passed = pass ? Math.round(m.pct) >= pass.mark : null;
+  return `
+    <div class="mock-result ${passed === null ? "" : passed ? "pass" : "fail"}" id="mockResult">
+      <span class="mock-result-pct">${Math.round(m.pct)}%</span>
+      <span class="mock-result-text">
+        <strong>${passed === null ? "Mock paper marked" : passed ? "Above the pass mark" : "Below the pass mark"}</strong>
+        ${fmtMark(m.score)} of ${m.max} marks, in ${fmtLongClock(m.usedMs)}.
+        ${pass ? `That's ${versusPassHtml(m.pct, pass)}.` : "There's no published pass mark to compare with yet."}
+      </span>
+    </div>`;
+}
+
+function renderMockIntro(el, code, info, bank) {
+  const mocks = Store.getMockCache(code);
+  const pass = latestPassMark(code);
+  const total = bank.reduce((a, q) => a + q.marks, 0);
+  const just = mockState.justFinished && mockState.justFinished.code === code ? mocks.find((m) => m.at === mockState.justFinished.at) : null;
+  const day = (ts) => new Date(ts).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  const historyHtml = mocks.length
+    ? `<section class="dash-section">
+        <div class="dash-section-head"><h3>Your mock papers</h3></div>
+        <div class="dash-table">${mocks
+          .slice()
+          .reverse()
+          .map(
+            (m) => `
+          <div class="dash-row mock-row">
+            <span class="dash-row-name">${day(m.at)} &middot; ${m.questionIds.length} questions</span>
+            <span class="dash-row-meta">${fmtMark(m.score)}/${m.max} &middot; ${fmtLongClock(m.usedMs)}${
+              m.passMark !== null && m.passMark !== undefined ? ` &middot; pass mark ${m.passMark}%` : ""
+            }</span>
+            <span class="dash-row-bar">${passBarHtml(m.pct, m.passMark !== null && m.passMark !== undefined ? { mark: m.passMark } : null)}<span class="dash-row-pct">${Math.round(m.pct)}%</span></span>
+          </div>`
+          )
+          .join("")}</div>
+      </section>`
+    : "";
+  el.innerHTML = `
+    <button class="back-link" id="backFromMock">&larr; ${code}</button>
+    <div class="flash-head"><div class="flash-title-row"><h2>Mock paper &mdash; ${info.name}</h2></div></div>
+    ${just ? mockResultHtml(just) : ""}
+    <div class="flashcard question-card mock-intro">
+      <p>A full paper from the ${code} question bank: questions adding up to as close to ${Mock.TARGET_MARKS} marks as the bank allows${
+        total <= Mock.TARGET_MARKS ? ` (here that's all ${bank.length} questions, ${total} marks, and your total is scaled to 100)` : ""
+      }, against one <strong>3 hour 15 minute</strong> clock, like the real exam. Write your answers on paper.</p>
+      <p>The model answers stay hidden until you submit, or the clock runs out. Then you mark every part yourself and get your total against the ${passMarkLabel(pass)}. Each question's marks also count towards your ${code} self-marked average.</p>
+      <p class="muted">The clock keeps running if you leave this page, so you can come back to it.</p>
+      <div class="qbank-reveal-row"><button class="btn primary" id="startMockBtn">${ico("clock")} Start the clock</button></div>
+    </div>
+    ${historyHtml}`;
+
+  document.getElementById("startMockBtn").addEventListener("click", () => {
+    const paper = Mock.pickPaper(bank, Mock.TARGET_MARKS);
+    const now = Date.now();
+    Store.setActiveMock(code, {
+      startedAt: now,
+      endsAt: now + Mock.DURATION_MS,
+      questionIds: paper.questions.map((q) => q.id),
+      marks: paper.marks,
+      submittedAt: null,
+      partMarks: {},
+    });
+    mockState.justFinished = null;
+    renderMockView(code);
+    window.scrollTo(0, 0);
+  });
+}
+
+function mockQuestionHtml(q, n, body) {
+  return `
+    <div class="flashcard question-card mock-question" data-q="${q.id}">
+      <div class="question-meta">Question ${n} &middot; ${q.modules} &middot; ${q.marks} marks</div>
+      <h3 class="question-title">${q.title}</h3>
+      ${body}
+    </div>`;
+}
+
+function renderMockSitting(el, code, info, active, byId) {
+  const questions = active.questionIds.map((id) => byId[id]);
+  const left = active.endsAt - Date.now();
+  el.innerHTML = `
+    <button class="back-link" id="backFromMock">&larr; ${code}</button>
+    <div class="flash-head"><div class="flash-title-row"><h2>Mock paper &mdash; ${info.name}</h2><span class="flash-progress">${questions.length} questions &middot; ${active.marks} marks</span></div></div>
+    <div class="mock-bar">
+      <span class="mock-clock" id="mockClock">${fmtLongClock(left)}</span>
+      <span class="timer-note">left of 3:15:00</span>
+      <button class="btn primary" id="submitMockBtn">Submit paper</button>
+    </div>
+    <p class="qbank-note">The model answers are hidden until you submit. When the clock reaches zero the paper is submitted for you.</p>
+    ${questions.map((q, i) => mockQuestionHtml(q, i + 1, q.parts.map((p) => `<div class="question-part">${partHeadHtml(p)}</div>`).join(""))).join("")}
+    <div class="mock-foot">
+      <button class="btn" id="abandonMockBtn">Abandon this mock</button>
+    </div>`;
+
+  document.getElementById("submitMockBtn").addEventListener("click", () => {
+    if (!confirm("Submit the paper? The model answers will be shown and the questions can't be reattempted in this mock.")) return;
+    active.submittedAt = Math.min(Date.now(), active.endsAt);
+    Store.setActiveMock(code, active);
+    renderMockView(code);
+    window.scrollTo(0, 0);
+  });
+  document.getElementById("abandonMockBtn").addEventListener("click", () => {
+    if (!confirm("Abandon this mock paper? Nothing from it will be saved.")) return;
+    Store.setActiveMock(code, null);
+    renderMockView(code);
+  });
+
+  const clock = document.getElementById("mockClock");
+  clock.classList.toggle("low", left < 15 * 60000);
+  mockTimerInterval = setInterval(() => {
+    const readout = document.getElementById("mockClock");
+    if (!readout || parseHash().view !== "mock") {
+      clearInterval(mockTimerInterval);
+      return;
+    }
+    const remaining = active.endsAt - Date.now();
+    if (remaining <= 0) {
+      renderMockView(code); // submits it
+      return;
+    }
+    readout.textContent = fmtLongClock(remaining);
+    readout.classList.toggle("low", remaining < 15 * 60000);
+  }, 1000);
+}
+
+function renderMockMarking(el, code, info, active, byId) {
+  const questions = active.questionIds.map((id) => byId[id]);
+  const saved = active.partMarks || {};
+  const used = active.submittedAt - active.startedAt;
+  el.innerHTML = `
+    <button class="back-link" id="backFromMock">&larr; ${code}</button>
+    <div class="flash-head"><div class="flash-title-row"><h2>Mark your mock &mdash; ${info.name}</h2><span class="flash-progress">${questions.length} questions &middot; ${active.marks} marks</span></div></div>
+    <div class="mock-bar">
+      <span class="mock-total" id="mockTotal"></span>
+      <button class="btn primary" id="finishMockBtn">Finish marking</button>
+    </div>
+    <p class="qbank-note">${
+      active.timeUp ? "Time&rsquo;s up &mdash; the paper was submitted when the clock reached zero." : `Submitted after ${fmtLongClock(used)}.`
+    } Give yourself a mark for every part against the model answer (half marks are fine), then finish to see your total against the ${passMarkLabel(latestPassMark(code))}. Your marks are kept as you type.</p>
+    ${questions
+      .map((q, n) =>
+        mockQuestionHtml(
+          q,
+          n + 1,
+          q.parts
+            .map(
+              (p, i) => `
+          <div class="question-part">
+            ${partHeadHtml(p)}
+            <div class="part-answer"><strong>Model answer:</strong> ${p.answer}</div>
+            ${p.note ? `<p class="mock-note"><strong>Examiner&rsquo;s insight:</strong> ${p.note}</p>` : ""}
+            ${markInputHtml(p, i, saved[q.id] ? saved[q.id][i] : "", `data-q="${q.id}"`)}
+          </div>`
+            )
+            .join("")
+        )
+      )
+      .join("")}
+    <p class="self-mark-error" id="mockError" role="alert" hidden></p>
+    <div class="mock-foot"><button class="btn primary" id="finishMockBtnFoot">Finish marking</button></div>`;
+
+  const inputsOf = (q) => [...el.querySelectorAll(`.mark-input[data-q="${q.id}"]`)];
+  const showTotal = () => {
+    const sum = questions.reduce((a, q) => a + (markInputsTotal(inputsOf(q), q.parts) || 0), 0);
+    document.getElementById("mockTotal").textContent = `${fmtMark(sum)} / ${active.marks} marks`;
+  };
+  showTotal();
+
+  const finish = () => {
+    const errorEl = document.getElementById("mockError");
+    const all = {};
+    for (const q of questions) {
+      const marks = readMarkInputs(inputsOf(q), q.parts, errorEl);
+      if (!marks) {
+        errorEl.textContent = `Question ${questions.indexOf(q) + 1}: ${errorEl.textContent}`;
+        return;
+      }
+      all[q.id] = marks;
+    }
+    const at = active.submittedAt;
+    const scores = Store.getScoreCache(code);
+    let score = 0;
+    questions.forEach((q) => {
+      const last = Mock.latestAttempt(scores[q.id]); // as in the question bank: a new attempt comes after the last
+      const attempt = Mock.attemptOf(all[q.id], q.marks, "mock", Math.max(at, last ? last.at + 1 : 0));
+      score += attempt.score;
+      Store.saveScore(code, q.id, attempt);
+    });
+    const r = Mock.mockResult(score, active.marks, latestPassMark(code));
+    Store.addMockResult(code, {
+      at,
+      questionIds: active.questionIds,
+      score,
+      max: active.marks,
+      pct: r.pct,
+      passMark: r.passMark,
+      passSitting: r.passSitting,
+      usedMs: used,
+    });
+    Store.setActiveMock(code, null);
+    mockState.justFinished = { code, at };
+    renderMockView(code);
+    window.scrollTo(0, 0);
+  };
+
+  wireMarkInputs(
+    el,
+    (input) => {
+      const qid = input.dataset.q;
+      active.partMarks = active.partMarks || {};
+      active.partMarks[qid] = active.partMarks[qid] || [];
+      active.partMarks[qid][Number(input.dataset.part)] = input.value;
+      Store.setActiveMock(code, active);
+      showTotal();
+    },
+    () => {}
+  );
+  document.getElementById("finishMockBtn").addEventListener("click", finish);
+  document.getElementById("finishMockBtnFoot").addEventListener("click", finish);
 }
 
 function subjectMasteryTotals(code) {
@@ -1541,6 +2053,7 @@ function renderSubjectView(code) {
           ? `<button class="btn qbank-btn" id="startQbank">${ico("doc")} Practice exam questions &mdash; ${totalQuestions} original question${totalQuestions === 1 ? "" : "s"} in the IFoA style</button>`
           : ""
       }
+      ${totalQuestions > 0 ? questionScoresHtml(code) : ""}
       ${
         totalDrills > 0
           ? `<button class="btn drill-btn" id="startDrill">${ico("pencil")} Drills &mdash; ${totalDrills} question${totalDrills === 1 ? "" : "s"}, marked for you${
@@ -1588,6 +2101,11 @@ function renderSubjectView(code) {
   const qbankBtn = document.getElementById("startQbank");
   if (qbankBtn) {
     qbankBtn.addEventListener("click", () => navigate(`#/${code}/questions`));
+  }
+
+  const mockBtn = document.getElementById("startMock");
+  if (mockBtn) {
+    mockBtn.addEventListener("click", () => navigate(`#/${code}/mock`));
   }
 
   const drillBtn = document.getElementById("startDrill");
@@ -2773,6 +3291,8 @@ function renderDashboardView() {
     </section>
 
     ${planSectionHtml()}
+
+    ${questionScoresSectionHtml()}
 
     ${paceSectionHtml()}
 
@@ -5117,6 +5637,7 @@ function parseHash() {
   }
   if (parts.length === 1) return { view: "subject", exam: parts[0].toUpperCase() };
   if (parts[1].toLowerCase() === "mixed") return { view: "mixed", exam: parts[0].toUpperCase() };
+  if (parts[1].toLowerCase() === "mock") return { view: "mock", exam: parts[0].toUpperCase() };
   // Drills scope by an optional THIRD segment (#/CB2/drill/m06) rather than
   // hanging off the module route (#/CB2/m06/drill), so the flashcard route's
   // third segment stays free for the card deep-links search emits.
@@ -5150,6 +5671,7 @@ function renderRoute() {
   document.getElementById("flashView").hidden = r.view !== "flash";
   document.getElementById("mixedView").hidden = r.view !== "mixed";
   document.getElementById("questionsView").hidden = r.view !== "questions";
+  document.getElementById("mockView").hidden = r.view !== "mock";
   document.getElementById("reviewView").hidden = r.view !== "review";
   document.getElementById("dashboardView").hidden = r.view !== "dashboard";
   document.getElementById("searchView").hidden = r.view !== "search";
@@ -5189,6 +5711,8 @@ function renderRoute() {
     renderWelcomeView();
   } else if (r.view === "drill") {
     renderDrillView(r.exam, r.module);
+  } else if (r.view === "mock") {
+    renderMockView(r.exam);
   } else if (r.view === "exams") {
     renderExamHub(r.exam);
   } else if (r.view === "subject") {
@@ -5226,6 +5750,7 @@ function renderRoute() {
     if (qbankState._lastKey !== key) {
       qbankState.qIndex = r.index === null ? 0 : r.index;
       qbankState.revealed = false;
+      qbankState.markAt = null;
       qbankState._lastKey = key;
     }
     renderQuestionsView(r.exam);
@@ -5286,6 +5811,9 @@ function renderAuthPanel() {
         : "") +
       (Store.isNoteTableMissing()
         ? " Flashcard notes and flags are saved on this device only until supabase/migrations/006_card_notes.sql is run on the Supabase project."
+        : "") +
+      (Store.isScoreTableMissing()
+        ? " Self-marked questions and mock papers are saved on this device only until supabase/migrations/007_question_scores.sql is run on the Supabase project."
         : "");
   }
 }
@@ -5344,6 +5872,7 @@ function reloadAllForAuthChange() {
   refreshExamPlan();
   subjectResults = Store.getResultsCache();
   refreshResults();
+  refreshScores();
   reviewState.key = "";
   Object.keys(noteData).forEach((code) => delete noteData[code]); // re-read under the new account's key
   searchIndex = {};
@@ -5632,6 +6161,7 @@ afterDeferredScripts(() => Store.init().then(() => {
   subjectResults = Store.getResultsCache(); // likewise results
   refreshResults();
   if (Store.isPasswordRecovery()) openSettings();
+  refreshScores();
 }));
 
 // With the first page up, fetch every subject's content into the offline

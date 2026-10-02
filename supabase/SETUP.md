@@ -46,6 +46,7 @@ way as above (SQL Editor → New query → paste → Run):
 | [`migrations/004_exam_plan.sql`](./migrations/004_exam_plan.sql) | `exam_plan` table (+ RLS policy) | Syncing the study dashboard's exam plan (which subjects you intend to sit at each sitting) across devices |
 | [`migrations/005_subject_results.sql`](./migrations/005_subject_results.sql) | `subject_result` table (+ RLS policy) | Syncing exam results (passed / exempt per subject, which drive Associate and Fellow progress) across devices |
 | [`migrations/006_card_notes.sql`](./migrations/006_card_notes.sql) | `card_note` table (+ RLS policy) | Syncing your personal flashcard notes and flags (the "Flagged cards" review deck) across devices |
+| [`migrations/007_question_scores.sql`](./migrations/007_question_scores.sql) | `question_score` and `mock_result` tables (+ RLS policies) | Syncing self-marked practice questions (every attempt) and finished mock papers across devices |
 
 Each file is additive and guarded (`create table if not exists`, policies
 dropped and recreated), so re-running one by accident is harmless.
@@ -68,6 +69,10 @@ stay on the device you recorded them on.
 
 `006_card_notes.sql` too: until it's run, flashcard notes and flags work
 but stay on the device you wrote them on, and upload once the table exists.
+
+`007_question_scores.sql` too: until it's run, self-marking and mock papers
+work, but the marks and mock results stay on the device you made them on
+(queued, and uploaded once the tables exist). The Account panel says so.
 
 ## 3. (Optional) Skip email confirmation
 
