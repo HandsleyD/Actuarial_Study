@@ -17,7 +17,7 @@
 |Module|Status|Notes|
 |---|---|---|
 |m01|In progress||
-|m02|Not started||
+|m02|In progress||
 |m03|Not started||
 |m04|Not started||
 |m05|Not started||
