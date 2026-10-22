@@ -18,7 +18,7 @@
 
 | Module | Status | Notes |
 |---|---|---|
-| m01 | Not started | Exam passed |
+|m01|In progress| Exam passed |
 | m02 | Not started |  |
 | m03 | Not started |  |
 | m04 | Not started |  |
