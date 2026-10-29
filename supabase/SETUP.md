@@ -47,6 +47,7 @@ way as above (SQL Editor → New query → paste → Run):
 | [`migrations/005_subject_results.sql`](./migrations/005_subject_results.sql) | `subject_result` table (+ RLS policy) | Syncing exam results (passed / exempt per subject, which drive Associate and Fellow progress) across devices |
 | [`migrations/006_card_notes.sql`](./migrations/006_card_notes.sql) | `card_note` table (+ RLS policy) | Syncing your personal flashcard notes and flags (the "Flagged cards" review deck) across devices |
 | [`migrations/007_question_scores.sql`](./migrations/007_question_scores.sql) | `question_score` and `mock_result` tables (+ RLS policies) | Syncing self-marked practice questions (every attempt) and finished mock papers across devices |
+| [`migrations/008_keepalive.sql`](./migrations/008_keepalive.sql) | `keepalive` table (RLS on, no policies) | The keep-alive job that stops Supabase pausing the project for inactivity (step 6b) |
 
 Each file is additive and guarded (`create table if not exists`, policies
 dropped and recreated), so re-running one by accident is harmless.
@@ -187,6 +188,20 @@ This only writes files locally — review the diff and commit/push yourself
 when you're happy with it. Don't put the Secret key in a file; pass it as an
 environment variable each time (or keep it in a password manager and paste
 it into the shell command when you need it).
+
+## 6b. (Optional) Stop Supabase pausing the project
+
+Free-tier Supabase projects are paused after about a week without activity,
+with a warning email beforehand. Reads (like the daily sync in step 6) don't
+seem to count, so [`.github/workflows/supabase-keepalive.yml`](../.github/workflows/supabase-keepalive.yml)
+makes a real write every other day: it overwrites the single row of the
+`keepalive` table with the current time.
+
+1. Run [`migrations/008_keepalive.sql`](./migrations/008_keepalive.sql) (step 2b).
+2. Add the `SUPABASE_URL` and `SUPABASE_SECRET_KEY` repo secrets (step 6,
+   items 1–2) if you haven't already; this workflow uses the same ones.
+3. Test it: **Actions → Keep Supabase awake → Run workflow**. It should go
+   green, and `select * from keepalive;` in the SQL editor shows the time.
 
 ## 7. (Optional) AI feedback on typed flashcard answers
 

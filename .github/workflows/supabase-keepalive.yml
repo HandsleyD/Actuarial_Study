@@ -1,0 +1,35 @@
+name: Keep Supabase awake
+
+# Supabase pauses free-tier projects after about a week without activity, and
+# the daily read in sync-progress.yml doesn't count as activity. This writes
+# the current time into the one-row keepalive table
+# (supabase/migrations/008_keepalive.sql) every other day, so a missed run or
+# two still leaves plenty of margin. See scripts/supabase-keepalive.mjs.
+#
+# Uses the same SUPABASE_URL / SUPABASE_SECRET_KEY repo secrets as
+# sync-progress.yml. It never touches the repo, so it needs no bot token. If a
+# run fails (e.g. the migration hasn't been run), GitHub emails the repo owner.
+
+on:
+  schedule:
+    - cron: "17 5 */2 * *" # every other day at 05:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Write a keep-alive row to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: node scripts/supabase-keepalive.mjs
